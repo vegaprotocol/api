@@ -14,7 +14,7 @@ from .generated.proto import (
 __all__ = [
     "VegaTradingClient",
     "VegaTradingDataClient",
-    "WalletClient"
+    "WalletClient",
     "api",
     "governance",
     "governance_grpc",
