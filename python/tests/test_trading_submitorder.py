@@ -1,0 +1,71 @@
+import base64
+import binascii
+from google.protobuf.empty_pb2 import Empty
+
+import vegaapiclient as vac
+
+from .fixtures import (  # noqa: F401
+    trading,
+    tradingdata,
+    walletclient,
+    walletname,
+    walletpassphrase,
+    walletClientWalletKeypair
+)
+
+
+def test_SubmitOrder(
+    trading, tradingdata, walletClientWalletKeypair  # noqa: F811
+):
+    (
+        walletclient, walletname, passphrase, pubKey  # noqa: F811
+    ) = walletClientWalletKeypair
+
+    # Get free money for the pubKey
+    request = vac.api.trading.NotifyTraderAccountRequest(
+        notif=vac.vega.NotifyTraderAccount(
+            traderID=pubKey,
+            amount=10000000
+        )
+    )
+    response = trading.NotifyTraderAccount(request)
+    assert response.submitted
+
+    markets = tradingdata.Markets(Empty()).markets
+    assert len(markets) > 0
+    market = markets[0]
+
+    # Prepare the SubmitOrder
+    now = int(tradingdata.GetVegaTime(Empty()).timestamp)
+    request = vac.api.trading.SubmitOrderRequest(
+        submission=vac.vega.OrderSubmission(
+            expiresAt=now + 120000000000,
+            marketID=market.id,
+            partyID=pubKey,
+            price=10,
+            side=vac.vega.Side.Buy,
+            size=1,
+            timeInForce=vac.vega.Order.TimeInForce.GTT,
+            type=vac.vega.Order.Type.LIMIT
+        )
+    )
+    response = trading.PrepareSubmitOrder(request)
+    blob = response.blob
+
+    # Sign the tx
+    r = walletclient.signtx(base64.b64encode(blob).decode("ascii"), pubKey)
+    assert r.status_code == 200
+    signedTx = r.json()["signedTx"]
+
+    # Submit the signed transaction
+    assert blob == base64.b64decode(signedTx["data"])
+    request = vac.api.trading.SubmitTransactionRequest(
+        tx=vac.vega.SignedBundle(
+            data=blob,
+            sig=base64.b64decode(signedTx["sig"]),
+            pubKey=binascii.unhexlify(signedTx["pubKey"])
+        )
+    )
+    assert len(request.tx.pubKey) == 32, binascii.hexlify(request.tx.pubKey)
+    response = trading.SubmitTransaction(request)
+    assert response.success

@@ -1,0 +1,55 @@
+name: Python tests
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        cd python
+        pip install -r requirements.txt
+
+    - name: Lint with flake8
+      run: |
+        cd python
+        make flake8
+
+    - name: Test with pytest
+      env:
+        GRPC_NODE: ${{ secrets.GRPC_NODE }}
+        WALLETSERVER: ${{ secrets.WALLETSERVER }}
+      run: |
+        cd python
+        make test
+
+    - name: Coverage with pytest
+      env:
+        GRPC_NODE: ${{ secrets.GRPC_NODE }}
+        WALLETSERVER: ${{ secrets.WALLETSERVER }}
+      run: |
+        cd python
+        make coverage
+
+    - name: Type-check with mypy
+      run: |
+        cd python
+        make mypy
