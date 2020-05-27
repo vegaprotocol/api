@@ -6670,7 +6670,8 @@ proto.vega.Vote.toObject = function(includeInstance, msg) {
   var f, obj = {
     partyid: jspb.Message.getFieldWithDefault(msg, 1, ""),
     value: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    proposalid: jspb.Message.getFieldWithDefault(msg, 3, "")
+    proposalid: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    timestamp: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -6719,6 +6720,10 @@ proto.vega.Vote.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setProposalid(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTimestamp(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -6766,6 +6771,13 @@ proto.vega.Vote.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getTimestamp();
+  if (f !== 0) {
+    writer.writeInt64(
+      4,
       f
     );
   }
@@ -6822,6 +6834,21 @@ proto.vega.Vote.prototype.getProposalid = function() {
 /** @param {string} value */
 proto.vega.Vote.prototype.setProposalid = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional int64 timestamp = 4;
+ * @return {number}
+ */
+proto.vega.Vote.prototype.getTimestamp = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/** @param {number} value */
+proto.vega.Vote.prototype.setTimestamp = function(value) {
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -13276,7 +13303,8 @@ proto.vega.NodeRegistration.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.NodeRegistration.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pubkey: msg.getPubkey_asB64()
+    pubkey: msg.getPubkey_asB64(),
+    chainpubkey: msg.getChainpubkey_asB64()
   };
 
   if (includeInstance) {
@@ -13317,6 +13345,10 @@ proto.vega.NodeRegistration.deserializeBinaryFromReader = function(msg, reader) 
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setPubkey(value);
       break;
+    case 2:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setChainpubkey(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -13350,6 +13382,13 @@ proto.vega.NodeRegistration.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeBytes(
       1,
+      f
+    );
+  }
+  f = message.getChainpubkey_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      2,
       f
     );
   }
@@ -13392,6 +13431,45 @@ proto.vega.NodeRegistration.prototype.getPubkey_asU8 = function() {
 /** @param {!(string|Uint8Array)} value */
 proto.vega.NodeRegistration.prototype.setPubkey = function(value) {
   jspb.Message.setProto3BytesField(this, 1, value);
+};
+
+
+/**
+ * optional bytes chainPubKey = 2;
+ * @return {!(string|Uint8Array)}
+ */
+proto.vega.NodeRegistration.prototype.getChainpubkey = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * optional bytes chainPubKey = 2;
+ * This is a type-conversion wrapper around `getChainpubkey()`
+ * @return {string}
+ */
+proto.vega.NodeRegistration.prototype.getChainpubkey_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getChainpubkey()));
+};
+
+
+/**
+ * optional bytes chainPubKey = 2;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getChainpubkey()`
+ * @return {!Uint8Array}
+ */
+proto.vega.NodeRegistration.prototype.getChainpubkey_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getChainpubkey()));
+};
+
+
+/** @param {!(string|Uint8Array)} value */
+proto.vega.NodeRegistration.prototype.setChainpubkey = function(value) {
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 

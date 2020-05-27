@@ -1427,6 +1427,12 @@ class Vote :
   ::std::string* release_proposalid();
   void set_allocated_proposalid(::std::string* proposalid);
 
+  // int64 timestamp = 4;
+  void clear_timestamp();
+  static const int kTimestampFieldNumber = 4;
+  ::google::protobuf::int64 timestamp() const;
+  void set_timestamp(::google::protobuf::int64 value);
+
   // .vega.Vote.Value value = 2 [(.validator.field) = {
   void clear_value();
   static const int kValueFieldNumber = 2;
@@ -1440,6 +1446,7 @@ class Vote :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr partyid_;
   ::google::protobuf::internal::ArenaStringPtr proposalid_;
+  ::google::protobuf::int64 timestamp_;
   int value_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fgovernance_2eproto;
@@ -2394,6 +2401,20 @@ inline void Vote::set_allocated_proposalid(::std::string* proposalid) {
   }
   proposalid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), proposalid);
   // @@protoc_insertion_point(field_set_allocated:vega.Vote.proposalID)
+}
+
+// int64 timestamp = 4;
+inline void Vote::clear_timestamp() {
+  timestamp_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 Vote::timestamp() const {
+  // @@protoc_insertion_point(field_get:vega.Vote.timestamp)
+  return timestamp_;
+}
+inline void Vote::set_timestamp(::google::protobuf::int64 value) {
+  
+  timestamp_ = value;
+  // @@protoc_insertion_point(field_set:vega.Vote.timestamp)
 }
 
 #ifdef __GNUC__

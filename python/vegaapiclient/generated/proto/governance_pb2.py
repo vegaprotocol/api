@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='vega',
   syntax='proto3',
   serialized_options=b'Z\037code.vegaprotocol.io/vega/proto',
-  serialized_pb=b'\n\x16proto/governance.proto\x12\x04vega\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\x1a\x13proto/markets.proto\x1a\x12proto/assets.proto\"\xa1\x01\n\x14NetworkConfiguration\x12\x19\n\x11minCloseInSeconds\x18\x01 \x01(\x03\x12\x19\n\x11maxCloseInSeconds\x18\x02 \x01(\x03\x12\x19\n\x11minEnactInSeconds\x18\x03 \x01(\x03\x12\x19\n\x11maxEnactInSeconds\x18\x04 \x01(\x03\x12\x1d\n\x15minParticipationStake\x18\x05 \x01(\x04\"\x0e\n\x0cUpdateMarket\"2\n\tNewMarket\x12%\n\x07\x63hanges\x18\x01 \x01(\x0b\x32\x0c.vega.MarketB\x06\xe2\xdf\x1f\x02 \x01\"D\n\rUpdateNetwork\x12\x33\n\x07\x63hanges\x18\x01 \x01(\x0b\x32\x1a.vega.NetworkConfigurationB\x06\xe2\xdf\x1f\x02 \x01\"6\n\x08NewAsset\x12*\n\x07\x63hanges\x18\x01 \x01(\x0b\x32\x11.vega.AssetSourceB\x06\xe2\xdf\x1f\x02 \x01\"\xc7\x02\n\rProposalTerms\x12 \n\x10\x63losingTimestamp\x18\x01 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00\x12\"\n\x12\x65nactmentTimestamp\x18\x02 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00\x12%\n\x15minParticipationStake\x18\x03 \x01(\x04\x42\x06\xe2\xdf\x1f\x02\x10\x00\x12\x1b\n\x13validationTimestamp\x18\x04 \x01(\x03\x12*\n\x0cupdateMarket\x18\x65 \x01(\x0b\x32\x12.vega.UpdateMarketH\x00\x12$\n\tnewMarket\x18\x66 \x01(\x0b\x32\x0f.vega.NewMarketH\x00\x12,\n\rupdateNetwork\x18g \x01(\x0b\x32\x13.vega.UpdateNetworkH\x00\x12\"\n\x08newAsset\x18h \x01(\x0b\x32\x0e.vega.NewAssetH\x00\x42\x08\n\x06\x63hange\"c\n\x0eGovernanceData\x12 \n\x08proposal\x18\x01 \x01(\x0b\x32\x0e.vega.Proposal\x12\x17\n\x03yes\x18\x02 \x03(\x0b\x32\n.vega.Vote\x12\x16\n\x02no\x18\x03 \x03(\x0b\x32\n.vega.Vote\"\x83\x02\n\x08Proposal\x12\n\n\x02ID\x18\x01 \x01(\t\x12\x11\n\treference\x18\x02 \x01(\t\x12\x17\n\x07partyID\x18\x03 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12,\n\x05state\x18\x04 \x01(\x0e\x32\x14.vega.Proposal.StateB\x07\xe2\xdf\x1f\x03\x88\x01\x01\x12\x11\n\ttimestamp\x18\x05 \x01(\x03\x12*\n\x05terms\x18\x06 \x01(\x0b\x32\x13.vega.ProposalTermsB\x06\xe2\xdf\x1f\x02 \x01\"R\n\x05State\x12\n\n\x06\x46\x41ILED\x10\x00\x12\x08\n\x04OPEN\x10\x01\x12\n\n\x06PASSED\x10\x02\x12\x0c\n\x08REJECTED\x10\x03\x12\x0c\n\x08\x44\x45\x43LINED\x10\x04\x12\x0b\n\x07\x45NACTED\x10\x05\"\x7f\n\x04Vote\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12(\n\x05value\x18\x02 \x01(\x0e\x32\x10.vega.Vote.ValueB\x07\xe2\xdf\x1f\x03\x88\x01\x01\x12\x1a\n\nproposalID\x18\x03 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"\x18\n\x05Value\x12\x06\n\x02NO\x10\x00\x12\x07\n\x03YES\x10\x01\x42!Z\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
+  serialized_pb=b'\n\x16proto/governance.proto\x12\x04vega\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\x1a\x13proto/markets.proto\x1a\x12proto/assets.proto\"\xa1\x01\n\x14NetworkConfiguration\x12\x19\n\x11minCloseInSeconds\x18\x01 \x01(\x03\x12\x19\n\x11maxCloseInSeconds\x18\x02 \x01(\x03\x12\x19\n\x11minEnactInSeconds\x18\x03 \x01(\x03\x12\x19\n\x11maxEnactInSeconds\x18\x04 \x01(\x03\x12\x1d\n\x15minParticipationStake\x18\x05 \x01(\x04\"\x0e\n\x0cUpdateMarket\"2\n\tNewMarket\x12%\n\x07\x63hanges\x18\x01 \x01(\x0b\x32\x0c.vega.MarketB\x06\xe2\xdf\x1f\x02 \x01\"D\n\rUpdateNetwork\x12\x33\n\x07\x63hanges\x18\x01 \x01(\x0b\x32\x1a.vega.NetworkConfigurationB\x06\xe2\xdf\x1f\x02 \x01\"6\n\x08NewAsset\x12*\n\x07\x63hanges\x18\x01 \x01(\x0b\x32\x11.vega.AssetSourceB\x06\xe2\xdf\x1f\x02 \x01\"\xc9\x02\n\rProposalTerms\x12 \n\x10\x63losingTimestamp\x18\x01 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00\x12\"\n\x12\x65nactmentTimestamp\x18\x02 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00\x12\'\n\x15minParticipationStake\x18\x03 \x01(\x04\x42\x08\xe2\xdf\x1f\x04\x10\x00\x18\x65\x12\x1b\n\x13validationTimestamp\x18\x04 \x01(\x03\x12*\n\x0cupdateMarket\x18\x65 \x01(\x0b\x32\x12.vega.UpdateMarketH\x00\x12$\n\tnewMarket\x18\x66 \x01(\x0b\x32\x0f.vega.NewMarketH\x00\x12,\n\rupdateNetwork\x18g \x01(\x0b\x32\x13.vega.UpdateNetworkH\x00\x12\"\n\x08newAsset\x18h \x01(\x0b\x32\x0e.vega.NewAssetH\x00\x42\x08\n\x06\x63hange\"c\n\x0eGovernanceData\x12 \n\x08proposal\x18\x01 \x01(\x0b\x32\x0e.vega.Proposal\x12\x17\n\x03yes\x18\x02 \x03(\x0b\x32\n.vega.Vote\x12\x16\n\x02no\x18\x03 \x03(\x0b\x32\n.vega.Vote\"\x83\x02\n\x08Proposal\x12\n\n\x02ID\x18\x01 \x01(\t\x12\x11\n\treference\x18\x02 \x01(\t\x12\x17\n\x07partyID\x18\x03 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12,\n\x05state\x18\x04 \x01(\x0e\x32\x14.vega.Proposal.StateB\x07\xe2\xdf\x1f\x03\x88\x01\x01\x12\x11\n\ttimestamp\x18\x05 \x01(\x03\x12*\n\x05terms\x18\x06 \x01(\x0b\x32\x13.vega.ProposalTermsB\x06\xe2\xdf\x1f\x02 \x01\"R\n\x05State\x12\n\n\x06\x46\x41ILED\x10\x00\x12\x08\n\x04OPEN\x10\x01\x12\n\n\x06PASSED\x10\x02\x12\x0c\n\x08REJECTED\x10\x03\x12\x0c\n\x08\x44\x45\x43LINED\x10\x04\x12\x0b\n\x07\x45NACTED\x10\x05\"\x92\x01\n\x04Vote\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12(\n\x05value\x18\x02 \x01(\x0e\x32\x10.vega.Vote.ValueB\x07\xe2\xdf\x1f\x03\x88\x01\x01\x12\x1a\n\nproposalID\x18\x03 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x11\n\ttimestamp\x18\x04 \x01(\x03\"\x18\n\x05Value\x12\x06\n\x02NO\x10\x00\x12\x07\n\x03YES\x10\x01\x42!Z\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
   ,
   dependencies=[github_dot_com_dot_mwitkow_dot_go__proto__validators_dot_validator__pb2.DESCRIPTOR,markets_DESCRIPTOR,assets_DESCRIPTOR,])
 
@@ -60,8 +60,8 @@ _PROPOSAL_STATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1096,
-  serialized_end=1178,
+  serialized_start=1098,
+  serialized_end=1180,
 )
 _sym_db.RegisterEnumDescriptor(_PROPOSAL_STATE)
 
@@ -82,8 +82,8 @@ _VOTE_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1283,
-  serialized_end=1307,
+  serialized_start=1305,
+  serialized_end=1329,
 )
 _sym_db.RegisterEnumDescriptor(_VOTE_VALUE)
 
@@ -291,7 +291,7 @@ _PROPOSALTERMS = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002\020\000', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\004\020\000\030e', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='validationTimestamp', full_name='vega.ProposalTerms.validationTimestamp', index=3,
       number=4, type=3, cpp_type=2, label=1,
@@ -343,7 +343,7 @@ _PROPOSALTERMS = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=488,
-  serialized_end=815,
+  serialized_end=817,
 )
 
 
@@ -387,8 +387,8 @@ _GOVERNANCEDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=817,
-  serialized_end=916,
+  serialized_start=819,
+  serialized_end=918,
 )
 
 
@@ -454,8 +454,8 @@ _PROPOSAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=919,
-  serialized_end=1178,
+  serialized_start=921,
+  serialized_end=1180,
 )
 
 
@@ -487,6 +487,13 @@ _VOTE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='vega.Vote.timestamp', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -500,8 +507,8 @@ _VOTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1180,
-  serialized_end=1307,
+  serialized_start=1183,
+  serialized_end=1329,
 )
 
 _NEWMARKET.fields_by_name['changes'].message_type = markets_MARKET

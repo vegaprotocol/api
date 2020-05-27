@@ -4255,12 +4255,27 @@ class NodeRegistration :
   ::std::string* release_pubkey();
   void set_allocated_pubkey(::std::string* pubkey);
 
+  // bytes chainPubKey = 2 [(.validator.field) = {
+  void clear_chainpubkey();
+  static const int kChainPubKeyFieldNumber = 2;
+  const ::std::string& chainpubkey() const;
+  void set_chainpubkey(const ::std::string& value);
+  #if LANG_CXX11
+  void set_chainpubkey(::std::string&& value);
+  #endif
+  void set_chainpubkey(const char* value);
+  void set_chainpubkey(const void* value, size_t size);
+  ::std::string* mutable_chainpubkey();
+  ::std::string* release_chainpubkey();
+  void set_allocated_chainpubkey(::std::string* chainpubkey);
+
   // @@protoc_insertion_point(class_scope:vega.NodeRegistration)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr pubkey_;
+  ::google::protobuf::internal::ArenaStringPtr chainpubkey_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
@@ -9668,6 +9683,59 @@ inline void NodeRegistration::set_allocated_pubkey(::std::string* pubkey) {
   }
   pubkey_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), pubkey);
   // @@protoc_insertion_point(field_set_allocated:vega.NodeRegistration.pubKey)
+}
+
+// bytes chainPubKey = 2 [(.validator.field) = {
+inline void NodeRegistration::clear_chainpubkey() {
+  chainpubkey_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& NodeRegistration::chainpubkey() const {
+  // @@protoc_insertion_point(field_get:vega.NodeRegistration.chainPubKey)
+  return chainpubkey_.GetNoArena();
+}
+inline void NodeRegistration::set_chainpubkey(const ::std::string& value) {
+  
+  chainpubkey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.NodeRegistration.chainPubKey)
+}
+#if LANG_CXX11
+inline void NodeRegistration::set_chainpubkey(::std::string&& value) {
+  
+  chainpubkey_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.NodeRegistration.chainPubKey)
+}
+#endif
+inline void NodeRegistration::set_chainpubkey(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  chainpubkey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.NodeRegistration.chainPubKey)
+}
+inline void NodeRegistration::set_chainpubkey(const void* value, size_t size) {
+  
+  chainpubkey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.NodeRegistration.chainPubKey)
+}
+inline ::std::string* NodeRegistration::mutable_chainpubkey() {
+  
+  // @@protoc_insertion_point(field_mutable:vega.NodeRegistration.chainPubKey)
+  return chainpubkey_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* NodeRegistration::release_chainpubkey() {
+  // @@protoc_insertion_point(field_release:vega.NodeRegistration.chainPubKey)
+  
+  return chainpubkey_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void NodeRegistration::set_allocated_chainpubkey(::std::string* chainpubkey) {
+  if (chainpubkey != nullptr) {
+    
+  } else {
+    
+  }
+  chainpubkey_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), chainpubkey);
+  // @@protoc_insertion_point(field_set_allocated:vega.NodeRegistration.chainPubKey)
 }
 
 // -------------------------------------------------------------------

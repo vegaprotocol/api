@@ -295,6 +295,7 @@ const ::google::protobuf::uint32 TableStruct_proto_2fgovernance_2eproto::offsets
   PROTOBUF_FIELD_OFFSET(::vega::Vote, partyid_),
   PROTOBUF_FIELD_OFFSET(::vega::Vote, value_),
   PROTOBUF_FIELD_OFFSET(::vega::Vote, proposalid_),
+  PROTOBUF_FIELD_OFFSET(::vega::Vote, timestamp_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::NetworkConfiguration)},
@@ -339,33 +340,34 @@ const char descriptor_table_protodef_proto_2fgovernance_2eproto[] =
   "D\n\rUpdateNetwork\0223\n\007changes\030\001 \001(\0132\032.vega"
   ".NetworkConfigurationB\006\342\337\037\002 \001\"6\n\010NewAsse"
   "t\022*\n\007changes\030\001 \001(\0132\021.vega.AssetSourceB\006\342"
-  "\337\037\002 \001\"\307\002\n\rProposalTerms\022 \n\020closingTimest"
+  "\337\037\002 \001\"\311\002\n\rProposalTerms\022 \n\020closingTimest"
   "amp\030\001 \001(\003B\006\342\337\037\002\020\000\022\"\n\022enactmentTimestamp\030"
-  "\002 \001(\003B\006\342\337\037\002\020\000\022%\n\025minParticipationStake\030\003"
-  " \001(\004B\006\342\337\037\002\020\000\022\033\n\023validationTimestamp\030\004 \001("
-  "\003\022*\n\014updateMarket\030e \001(\0132\022.vega.UpdateMar"
-  "ketH\000\022$\n\tnewMarket\030f \001(\0132\017.vega.NewMarke"
-  "tH\000\022,\n\rupdateNetwork\030g \001(\0132\023.vega.Update"
-  "NetworkH\000\022\"\n\010newAsset\030h \001(\0132\016.vega.NewAs"
-  "setH\000B\010\n\006change\"c\n\016GovernanceData\022 \n\010pro"
-  "posal\030\001 \001(\0132\016.vega.Proposal\022\027\n\003yes\030\002 \003(\013"
-  "2\n.vega.Vote\022\026\n\002no\030\003 \003(\0132\n.vega.Vote\"\203\002\n"
-  "\010Proposal\022\n\n\002ID\030\001 \001(\t\022\021\n\treference\030\002 \001(\t"
-  "\022\027\n\007partyID\030\003 \001(\tB\006\342\337\037\002X\001\022,\n\005state\030\004 \001(\016"
-  "2\024.vega.Proposal.StateB\007\342\337\037\003\210\001\001\022\021\n\ttimes"
-  "tamp\030\005 \001(\003\022*\n\005terms\030\006 \001(\0132\023.vega.Proposa"
-  "lTermsB\006\342\337\037\002 \001\"R\n\005State\022\n\n\006FAILED\020\000\022\010\n\004O"
-  "PEN\020\001\022\n\n\006PASSED\020\002\022\014\n\010REJECTED\020\003\022\014\n\010DECLI"
-  "NED\020\004\022\013\n\007ENACTED\020\005\"\177\n\004Vote\022\027\n\007partyID\030\001 "
-  "\001(\tB\006\342\337\037\002X\001\022(\n\005value\030\002 \001(\0162\020.vega.Vote.V"
-  "alueB\007\342\337\037\003\210\001\001\022\032\n\nproposalID\030\003 \001(\tB\006\342\337\037\002X"
-  "\001\"\030\n\005Value\022\006\n\002NO\020\000\022\007\n\003YES\020\001B!Z\037code.vega"
-  "protocol.io/vega/protob\006proto3"
+  "\002 \001(\003B\006\342\337\037\002\020\000\022\'\n\025minParticipationStake\030\003"
+  " \001(\004B\010\342\337\037\004\020\000\030e\022\033\n\023validationTimestamp\030\004 "
+  "\001(\003\022*\n\014updateMarket\030e \001(\0132\022.vega.UpdateM"
+  "arketH\000\022$\n\tnewMarket\030f \001(\0132\017.vega.NewMar"
+  "ketH\000\022,\n\rupdateNetwork\030g \001(\0132\023.vega.Upda"
+  "teNetworkH\000\022\"\n\010newAsset\030h \001(\0132\016.vega.New"
+  "AssetH\000B\010\n\006change\"c\n\016GovernanceData\022 \n\010p"
+  "roposal\030\001 \001(\0132\016.vega.Proposal\022\027\n\003yes\030\002 \003"
+  "(\0132\n.vega.Vote\022\026\n\002no\030\003 \003(\0132\n.vega.Vote\"\203"
+  "\002\n\010Proposal\022\n\n\002ID\030\001 \001(\t\022\021\n\treference\030\002 \001"
+  "(\t\022\027\n\007partyID\030\003 \001(\tB\006\342\337\037\002X\001\022,\n\005state\030\004 \001"
+  "(\0162\024.vega.Proposal.StateB\007\342\337\037\003\210\001\001\022\021\n\ttim"
+  "estamp\030\005 \001(\003\022*\n\005terms\030\006 \001(\0132\023.vega.Propo"
+  "salTermsB\006\342\337\037\002 \001\"R\n\005State\022\n\n\006FAILED\020\000\022\010\n"
+  "\004OPEN\020\001\022\n\n\006PASSED\020\002\022\014\n\010REJECTED\020\003\022\014\n\010DEC"
+  "LINED\020\004\022\013\n\007ENACTED\020\005\"\222\001\n\004Vote\022\027\n\007partyID"
+  "\030\001 \001(\tB\006\342\337\037\002X\001\022(\n\005value\030\002 \001(\0162\020.vega.Vot"
+  "e.ValueB\007\342\337\037\003\210\001\001\022\032\n\nproposalID\030\003 \001(\tB\006\342\337"
+  "\037\002X\001\022\021\n\ttimestamp\030\004 \001(\003\"\030\n\005Value\022\006\n\002NO\020\000"
+  "\022\007\n\003YES\020\001B!Z\037code.vegaprotocol.io/vega/p"
+  "rotob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fgovernance_2eproto = {
   false, InitDefaults_proto_2fgovernance_2eproto, 
   descriptor_table_protodef_proto_2fgovernance_2eproto,
-  "proto/governance.proto", &assign_descriptors_table_proto_2fgovernance_2eproto, 1350,
+  "proto/governance.proto", &assign_descriptors_table_proto_2fgovernance_2eproto, 1372,
 };
 
 void AddDescriptors_proto_2fgovernance_2eproto() {
@@ -3715,6 +3717,7 @@ class Vote::HasBitSetters {
 const int Vote::kPartyIDFieldNumber;
 const int Vote::kValueFieldNumber;
 const int Vote::kProposalIDFieldNumber;
+const int Vote::kTimestampFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Vote::Vote()
@@ -3734,7 +3737,9 @@ Vote::Vote(const Vote& from)
   if (from.proposalid().size() > 0) {
     proposalid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.proposalid_);
   }
-  value_ = from.value_;
+  ::memcpy(&timestamp_, &from.timestamp_,
+    static_cast<size_t>(reinterpret_cast<char*>(&value_) -
+    reinterpret_cast<char*>(&timestamp_)) + sizeof(value_));
   // @@protoc_insertion_point(copy_constructor:vega.Vote)
 }
 
@@ -3743,7 +3748,9 @@ void Vote::SharedCtor() {
       &scc_info_Vote_proto_2fgovernance_2eproto.base);
   partyid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   proposalid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  value_ = 0;
+  ::memset(&timestamp_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&value_) -
+      reinterpret_cast<char*>(&timestamp_)) + sizeof(value_));
 }
 
 Vote::~Vote() {
@@ -3773,7 +3780,9 @@ void Vote::Clear() {
 
   partyid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   proposalid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  value_ = 0;
+  ::memset(&timestamp_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&value_) -
+      reinterpret_cast<char*>(&timestamp_)) + sizeof(value_));
   _internal_metadata_.Clear();
 }
 
@@ -3828,6 +3837,13 @@ const char* Vote::_InternalParse(const char* begin, const char* end, void* objec
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
+        break;
+      }
+      // int64 timestamp = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
+        msg->set_timestamp(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -3908,6 +3924,19 @@ bool Vote::MergePartialFromCodedStream(
         break;
       }
 
+      // int64 timestamp = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &timestamp_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -3961,6 +3990,11 @@ void Vote::SerializeWithCachedSizes(
       3, this->proposalid(), output);
   }
 
+  // int64 timestamp = 4;
+  if (this->timestamp() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(4, this->timestamp(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -4002,6 +4036,11 @@ void Vote::SerializeWithCachedSizes(
         3, this->proposalid(), target);
   }
 
+  // int64 timestamp = 4;
+  if (this->timestamp() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(4, this->timestamp(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -4035,6 +4074,13 @@ size_t Vote::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->proposalid());
+  }
+
+  // int64 timestamp = 4;
+  if (this->timestamp() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->timestamp());
   }
 
   // .vega.Vote.Value value = 2 [(.validator.field) = {
@@ -4078,6 +4124,9 @@ void Vote::MergeFrom(const Vote& from) {
 
     proposalid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.proposalid_);
   }
+  if (from.timestamp() != 0) {
+    set_timestamp(from.timestamp());
+  }
   if (from.value() != 0) {
     set_value(from.value());
   }
@@ -4112,6 +4161,7 @@ void Vote::InternalSwap(Vote* other) {
     GetArenaNoVirtual());
   proposalid_.Swap(&other->proposalid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(timestamp_, other->timestamp_);
   swap(value_, other->value_);
 }
 
