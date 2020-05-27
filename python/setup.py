@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="Vega API client",
-    version="0.18.1",
+    version="0.19.0",
     author="Vega",
     author_email="hi@vega.xyz",
-    description="Vega API client for gRPC and REST",
+    description="Vega API client for gRPC",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/vegaprotocol/vegaapiclient",
