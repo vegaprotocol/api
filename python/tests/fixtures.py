@@ -7,7 +7,7 @@ from typing import Any, Tuple
 import vegaapiclient as vac
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def trading():
     """
     Provide a VegaTradingClient, connected to $GRPC_NODE.
@@ -17,7 +17,7 @@ def trading():
     return vac.VegaTradingClient(grpc_node)
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def tradingdata():
     """
     Provide a VegaTradingDataClient, connected to $GRPC_NODE.
@@ -27,7 +27,7 @@ def tradingdata():
     return vac.VegaTradingDataClient(grpc_node)
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def walletclient():
     """
     Provide a WalletClient, connected to $WALLETSERVER.
@@ -37,7 +37,7 @@ def walletclient():
     return vac.WalletClient(walletserver)
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def walletname() -> str:
     """
     Return a random wallet name.
@@ -46,30 +46,25 @@ def walletname() -> str:
     return "".join(random.choice(choices) for i in range(40))
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def walletpassphrase() -> str:
     """
     Return a random wallet passphrase, passing strength requirements.
     """
     return "".join(
-        "".join(
-            random.choice(req)
-            for i in range(5)
-        )
+        "".join(random.choice(req) for i in range(5))
         for req in [
             string.ascii_uppercase,
             string.ascii_lowercase,
             string.digits,
-            string.punctuation
+            string.punctuation,
         ]
     )
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def walletClientWalletKeypair(
-    walletclient,
-    walletname,
-    walletpassphrase
+    walletclient, walletname, walletpassphrase
 ) -> Tuple[Any, str, str, str]:
     """
     Provide a WalletClient that has had a wallet and keypair added.

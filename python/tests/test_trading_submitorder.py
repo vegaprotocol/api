@@ -10,7 +10,7 @@ from .fixtures import (  # noqa: F401
     walletclient,
     walletname,
     walletpassphrase,
-    walletClientWalletKeypair
+    walletClientWalletKeypair,
 )
 
 
@@ -18,15 +18,15 @@ def test_SubmitOrder(
     trading, tradingdata, walletClientWalletKeypair  # noqa: F811
 ):
     (
-        walletclient, walletname, passphrase, pubKey  # noqa: F811
+        walletclient,
+        walletname,
+        passphrase,
+        pubKey,  # noqa: F811
     ) = walletClientWalletKeypair
 
     # Get free money for the pubKey
     request = vac.api.trading.NotifyTraderAccountRequest(
-        notif=vac.vega.NotifyTraderAccount(
-            traderID=pubKey,
-            amount=10000000
-        )
+        notif=vac.vega.NotifyTraderAccount(traderID=pubKey, amount=10000000)
     )
     response = trading.NotifyTraderAccount(request)
     assert response.submitted
@@ -46,7 +46,7 @@ def test_SubmitOrder(
             side=vac.vega.Side.SIDE_BUY,
             size=1,
             timeInForce=vac.vega.Order.TimeInForce.TIF_GTT,
-            type=vac.vega.Order.Type.TYPE_LIMIT
+            type=vac.vega.Order.Type.TYPE_LIMIT,
         )
     )
     response = trading.PrepareSubmitOrder(request)
@@ -63,7 +63,7 @@ def test_SubmitOrder(
         tx=vac.vega.SignedBundle(
             data=blob,
             sig=base64.b64decode(signedTx["sig"]),
-            pubKey=binascii.unhexlify(signedTx["pubKey"])
+            pubKey=binascii.unhexlify(signedTx["pubKey"]),
         )
     )
     assert len(request.tx.pubKey) == 32, binascii.hexlify(request.tx.pubKey)

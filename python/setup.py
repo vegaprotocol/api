@@ -13,19 +13,13 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/vegaprotocol/vegaapiclient",
     packages=setuptools.find_packages(),
-    package_data={
-        "vegaapiclient": ["py.typed"],
-    },
+    package_data={"vegaapiclient": ["py.typed"],},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
-    install_requires=[
-        'googleapis-common-protos',
-        'grpcio',
-        'requests',
-    ],
+    python_requires=">=3.6",
+    install_requires=["googleapis-common-protos", "grpcio", "requests",],
     zip_safe=False,
 )

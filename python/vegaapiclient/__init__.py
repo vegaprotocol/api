@@ -8,7 +8,7 @@ from .generated.proto import (
     markets_pb2 as markets,
     markets_pb2_grpc as markets_grpc,
     vega_pb2 as vega,
-    vega_pb2_grpc as vega_grpc
+    vega_pb2_grpc as vega_grpc,
 )
 
 __all__ = [
@@ -21,5 +21,5 @@ __all__ = [
     "markets",
     "markets_grpc",
     "vega",
-    "vega_grpc"
+    "vega_grpc",
 ]

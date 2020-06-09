@@ -4,11 +4,7 @@ from typing import Any, Dict, List
 
 
 class WalletClient(object):
-
-    def __init__(
-        self,
-        url: str
-    ) -> None:
+    def __init__(self, url: str) -> None:
         self.token = ""
         self.url = url
 
@@ -19,20 +15,13 @@ class WalletClient(object):
             raise Exception("not logged in")
         return {"Authorization": "Bearer " + self.token}
 
-    def create(
-        self,
-        walletname: str,
-        passphrase: str
-    ) -> requests.Response:
+    def create(self, walletname: str, passphrase: str) -> requests.Response:
         """
         Create a wallet using a wallet name and a passphrase. If a wallet
         already exists, the action fails. Otherwise, a JWT (json web token) is
         returned.
         """
-        req = {
-            "wallet": walletname,
-            "passphrase": passphrase
-        }
+        req = {"wallet": walletname, "passphrase": passphrase}
         url = "{}/api/v1/wallets".format(self.url)
         r = self._httpsession.post(url, json=req)
         if r.status_code != 200:
@@ -41,20 +30,13 @@ class WalletClient(object):
             self.token = r.json()["token"]
         return r
 
-    def login(
-        self,
-        walletname: str,
-        passphrase: str
-    ) -> requests.Response:
+    def login(self, walletname: str, passphrase: str) -> requests.Response:
         """
         Log in to an existing wallet. If the wallet does not exist, or if the
         passphrase is incorrect, the action fails. Otherwise, a JWN (json web
         token) is returned.
         """
-        req = {
-            "wallet": walletname,
-            "passphrase": passphrase
-        }
+        req = {"wallet": walletname, "passphrase": passphrase}
         url = "{}/api/v1/auth/token".format(self.url)
         r = self._httpsession.post(url, json=req)
         if r.status_code == 200:
@@ -74,10 +56,7 @@ class WalletClient(object):
             self.token = ""
         return r
 
-    def getkey(
-        self,
-        pubKey: str
-    ) -> requests.Response:
+    def getkey(self, pubKey: str) -> requests.Response:
         """
         Get keypair information (excluding private key).
 
@@ -86,19 +65,13 @@ class WalletClient(object):
         url = "{}/api/v1/keys/{}".format(self.url, pubKey)
         return self._httpsession.get(url, headers=self._header())
 
-    def taintkey(
-        self,
-        pubKey: str,
-        passphrase: str
-    ) -> requests.Response:
+    def taintkey(self, pubKey: str, passphrase: str) -> requests.Response:
         """
         Label a keypair as tainted.
 
         pubKey must be a hex-encoded string.
         """
-        req = {
-            "passphrase": passphrase
-        }
+        req = {"passphrase": passphrase}
         url = "{}/api/v1/keys/{}/taint".format(self.url, pubKey)
         return self._httpsession.put(url, headers=self._header(), json=req)
 
@@ -110,17 +83,12 @@ class WalletClient(object):
         return self._httpsession.get(url, headers=self._header())
 
     def generatekey(
-        self,
-        passphrase: str,
-        metadata: List[Dict[str, str]]
+        self, passphrase: str, metadata: List[Dict[str, str]]
     ) -> requests.Response:
         """
         Generate a new keypair with the given metadata.
         """
-        req = {
-            "passphrase": passphrase,
-            "meta": metadata
-        }
+        req = {"passphrase": passphrase, "meta": metadata}
         url = "{}/api/v1/keys".format(self.url)
         return self._httpsession.post(url, headers=self._header(), json=req)
 
@@ -133,19 +101,12 @@ class WalletClient(object):
 
         pubKey must be a hex-encoded string.
         """
-        req = {
-            "tx": tx,
-            "pubKey": pubKey,
-            "propagate": False
-        }
+        req = {"tx": tx, "pubKey": pubKey, "propagate": False}
         url = "{}/api/v1/messages".format(self.url)
         return self._httpsession.post(url, headers=self._header(), json=req)
 
     def updatekeymetadata(
-        self,
-        pubKey: str,
-        passphrase: str,
-        metadata: List[Dict[str, str]]
+        self, pubKey: str, passphrase: str, metadata: List[Dict[str, str]]
     ) -> requests.Response:
         """
         Update the metadata for a keypair. Any existing metadata is removed,
@@ -153,9 +114,6 @@ class WalletClient(object):
 
         pubKey must be a hex-encoded string.
         """
-        req = {
-            "passphrase": passphrase,
-            "meta": metadata
-        }
+        req = {"passphrase": passphrase, "meta": metadata}
         url = "{}/api/v1/keys/{}/metadata".format(self.url, pubKey)
         return self._httpsession.put(url, headers=self._header(), json=req)
