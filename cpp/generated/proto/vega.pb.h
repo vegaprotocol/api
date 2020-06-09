@@ -211,16 +211,16 @@ namespace vega {
 
 enum Order_TimeInForce {
   Order_TimeInForce_TIF_UNSPECIFIED = 0,
-  Order_TimeInForce_GTC = 1,
-  Order_TimeInForce_GTT = 2,
-  Order_TimeInForce_IOC = 3,
-  Order_TimeInForce_FOK = 4,
+  Order_TimeInForce_TIF_GTC = 1,
+  Order_TimeInForce_TIF_GTT = 2,
+  Order_TimeInForce_TIF_IOC = 3,
+  Order_TimeInForce_TIF_FOK = 4,
   Order_TimeInForce_Order_TimeInForce_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   Order_TimeInForce_Order_TimeInForce_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool Order_TimeInForce_IsValid(int value);
 const Order_TimeInForce Order_TimeInForce_TimeInForce_MIN = Order_TimeInForce_TIF_UNSPECIFIED;
-const Order_TimeInForce Order_TimeInForce_TimeInForce_MAX = Order_TimeInForce_FOK;
+const Order_TimeInForce Order_TimeInForce_TimeInForce_MAX = Order_TimeInForce_TIF_FOK;
 const int Order_TimeInForce_TimeInForce_ARRAYSIZE = Order_TimeInForce_TimeInForce_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Order_TimeInForce_descriptor();
@@ -234,15 +234,16 @@ inline bool Order_TimeInForce_Parse(
     Order_TimeInForce_descriptor(), name, value);
 }
 enum Order_Type {
-  Order_Type_LIMIT = 0,
-  Order_Type_MARKET = 1,
-  Order_Type_NETWORK = 2,
+  Order_Type_TYPE_UNSPECIFIED = 0,
+  Order_Type_TYPE_LIMIT = 1,
+  Order_Type_TYPE_MARKET = 2,
+  Order_Type_TYPE_NETWORK = 3,
   Order_Type_Order_Type_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   Order_Type_Order_Type_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool Order_Type_IsValid(int value);
-const Order_Type Order_Type_Type_MIN = Order_Type_LIMIT;
-const Order_Type Order_Type_Type_MAX = Order_Type_NETWORK;
+const Order_Type Order_Type_Type_MIN = Order_Type_TYPE_UNSPECIFIED;
+const Order_Type Order_Type_Type_MAX = Order_Type_TYPE_NETWORK;
 const int Order_Type_Type_ARRAYSIZE = Order_Type_Type_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Order_Type_descriptor();
@@ -256,19 +257,20 @@ inline bool Order_Type_Parse(
     Order_Type_descriptor(), name, value);
 }
 enum Order_Status {
-  Order_Status_Active = 0,
-  Order_Status_Expired = 1,
-  Order_Status_Cancelled = 2,
-  Order_Status_Stopped = 3,
-  Order_Status_Filled = 4,
-  Order_Status_Rejected = 5,
-  Order_Status_PartiallyFilled = 6,
+  Order_Status_STATUS_INVALID = 0,
+  Order_Status_STATUS_ACTIVE = 1,
+  Order_Status_STATUS_EXPIRED = 2,
+  Order_Status_STATUS_CANCELLED = 3,
+  Order_Status_STATUS_STOPPED = 4,
+  Order_Status_STATUS_FILLED = 5,
+  Order_Status_STATUS_REJECTED = 6,
+  Order_Status_STATUS_PARTIALLY_FILLED = 7,
   Order_Status_Order_Status_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   Order_Status_Order_Status_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool Order_Status_IsValid(int value);
-const Order_Status Order_Status_Status_MIN = Order_Status_Active;
-const Order_Status Order_Status_Status_MAX = Order_Status_PartiallyFilled;
+const Order_Status Order_Status_Status_MIN = Order_Status_STATUS_INVALID;
+const Order_Status Order_Status_Status_MAX = Order_Status_STATUS_PARTIALLY_FILLED;
 const int Order_Status_Status_ARRAYSIZE = Order_Status_Status_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Order_Status_descriptor();
@@ -282,15 +284,16 @@ inline bool Order_Status_Parse(
     Order_Status_descriptor(), name, value);
 }
 enum Trade_Type {
-  Trade_Type_DEFAULT = 0,
-  Trade_Type_NETWORK_CLOSE_OUT_GOOD = 1,
-  Trade_Type_NETWORK_CLOSE_OUT_BAD = 2,
+  Trade_Type_TYPE_UNSPECIFIED = 0,
+  Trade_Type_TYPE_DEFAULT = 1,
+  Trade_Type_TYPE_NETWORK_CLOSE_OUT_GOOD = 2,
+  Trade_Type_TYPE_NETWORK_CLOSE_OUT_BAD = 3,
   Trade_Type_Trade_Type_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   Trade_Type_Trade_Type_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool Trade_Type_IsValid(int value);
-const Trade_Type Trade_Type_Type_MIN = Trade_Type_DEFAULT;
-const Trade_Type Trade_Type_Type_MAX = Trade_Type_NETWORK_CLOSE_OUT_BAD;
+const Trade_Type Trade_Type_Type_MIN = Trade_Type_TYPE_UNSPECIFIED;
+const Trade_Type Trade_Type_Type_MAX = Trade_Type_TYPE_NETWORK_CLOSE_OUT_BAD;
 const int Trade_Type_Type_ARRAYSIZE = Trade_Type_Type_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Trade_Type_descriptor();
@@ -304,14 +307,15 @@ inline bool Trade_Type_Parse(
     Trade_Type_descriptor(), name, value);
 }
 enum Side {
-  Buy = 0,
-  Sell = 1,
+  SIDE_UNSPECIFIED = 0,
+  SIDE_BUY = 1,
+  SIDE_SELL = 2,
   Side_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   Side_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool Side_IsValid(int value);
-const Side Side_MIN = Buy;
-const Side Side_MAX = Sell;
+const Side Side_MIN = SIDE_UNSPECIFIED;
+const Side Side_MAX = SIDE_SELL;
 const int Side_ARRAYSIZE = Side_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Side_descriptor();
@@ -325,18 +329,19 @@ inline bool Side_Parse(
     Side_descriptor(), name, value);
 }
 enum Interval {
-  I1M = 0,
-  I5M = 1,
-  I15M = 2,
-  I1H = 3,
-  I6H = 4,
-  I1D = 5,
+  INTERVAL_UNSPECIFIED = 0,
+  INTERVAL_I1M = 60,
+  INTERVAL_I5M = 300,
+  INTERVAL_I15M = 900,
+  INTERVAL_I1H = 3600,
+  INTERVAL_I6H = 21600,
+  INTERVAL_I1D = 86400,
   Interval_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   Interval_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool Interval_IsValid(int value);
-const Interval Interval_MIN = I1M;
-const Interval Interval_MAX = I1D;
+const Interval Interval_MIN = INTERVAL_UNSPECIFIED;
+const Interval Interval_MAX = INTERVAL_I1D;
 const int Interval_ARRAYSIZE = Interval_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Interval_descriptor();
@@ -350,31 +355,32 @@ inline bool Interval_Parse(
     Interval_descriptor(), name, value);
 }
 enum OrderError {
-  NONE = 0,
-  INVALID_MARKET_ID = 1,
-  INVALID_ORDER_ID = 2,
-  ORDER_OUT_OF_SEQUENCE = 3,
-  INVALID_REMAINING_SIZE = 4,
-  TIME_FAILURE = 5,
-  ORDER_REMOVAL_FAILURE = 6,
-  INVALID_EXPIRATION_DATETIME = 7,
-  INVALID_ORDER_REFERENCE = 8,
-  EDIT_NOT_ALLOWED = 9,
-  ORDER_AMEND_FAILURE = 10,
-  ORDER_NOT_FOUND = 11,
-  INVALID_PARTY_ID = 12,
-  MARKET_CLOSED = 13,
-  MARGIN_CHECK_FAILED = 14,
-  MISSING_GENERAL_ACCOUNT = 15,
-  INTERNAL_ERROR = 16,
-  INVALID_SIZE = 17,
-  INVALID_PERSISTENCE = 18,
+  ORDER_ERROR_NONE = 0,
+  ORDER_ERROR_INVALID_MARKET_ID = 1,
+  ORDER_ERROR_INVALID_ORDER_ID = 2,
+  ORDER_ERROR_OUT_OF_SEQUENCE = 3,
+  ORDER_ERROR_INVALID_REMAINING_SIZE = 4,
+  ORDER_ERROR_TIME_FAILURE = 5,
+  ORDER_ERROR_REMOVAL_FAILURE = 6,
+  ORDER_ERROR_INVALID_EXPIRATION_DATETIME = 7,
+  ORDER_ERROR_INVALID_ORDER_REFERENCE = 8,
+  ORDER_ERROR_EDIT_NOT_ALLOWED = 9,
+  ORDER_ERROR_AMEND_FAILURE = 10,
+  ORDER_ERROR_NOT_FOUND = 11,
+  ORDER_ERROR_INVALID_PARTY_ID = 12,
+  ORDER_ERROR_MARKET_CLOSED = 13,
+  ORDER_ERROR_MARGIN_CHECK_FAILED = 14,
+  ORDER_ERROR_MISSING_GENERAL_ACCOUNT = 15,
+  ORDER_ERROR_INTERNAL_ERROR = 16,
+  ORDER_ERROR_INVALID_SIZE = 17,
+  ORDER_ERROR_INVALID_PERSISTENCE = 18,
+  ORDER_ERROR_INVALID_TYPE = 19,
   OrderError_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   OrderError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool OrderError_IsValid(int value);
-const OrderError OrderError_MIN = NONE;
-const OrderError OrderError_MAX = INVALID_PERSISTENCE;
+const OrderError OrderError_MIN = ORDER_ERROR_NONE;
+const OrderError OrderError_MAX = ORDER_ERROR_INVALID_TYPE;
 const int OrderError_ARRAYSIZE = OrderError_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* OrderError_descriptor();
@@ -388,15 +394,16 @@ inline bool OrderError_Parse(
     OrderError_descriptor(), name, value);
 }
 enum ChainStatus {
-  DISCONNECTED = 0,
-  REPLAYING = 1,
-  CONNECTED = 2,
+  CHAIN_STATUS_UNSPECIFIED = 0,
+  CHAIN_STATUS_DISCONNECTED = 1,
+  CHAIN_STATUS_REPLAYING = 2,
+  CHAIN_STATUS_CONNECTED = 3,
   ChainStatus_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   ChainStatus_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool ChainStatus_IsValid(int value);
-const ChainStatus ChainStatus_MIN = DISCONNECTED;
-const ChainStatus ChainStatus_MAX = CONNECTED;
+const ChainStatus ChainStatus_MIN = CHAIN_STATUS_UNSPECIFIED;
+const ChainStatus ChainStatus_MAX = CHAIN_STATUS_CONNECTED;
 const int ChainStatus_ARRAYSIZE = ChainStatus_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* ChainStatus_descriptor();
@@ -410,17 +417,17 @@ inline bool ChainStatus_Parse(
     ChainStatus_descriptor(), name, value);
 }
 enum AccountType {
-  ALL = 0,
-  INSURANCE = 1,
-  SETTLEMENT = 2,
-  MARGIN = 3,
-  GENERAL = 4,
+  ACCOUNT_TYPE_UNSPECIFIED = 0,
+  ACCOUNT_TYPE_INSURANCE = 1,
+  ACCOUNT_TYPE_SETTLEMENT = 2,
+  ACCOUNT_TYPE_MARGIN = 3,
+  ACCOUNT_TYPE_GENERAL = 4,
   AccountType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   AccountType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool AccountType_IsValid(int value);
-const AccountType AccountType_MIN = ALL;
-const AccountType AccountType_MAX = GENERAL;
+const AccountType AccountType_MIN = ACCOUNT_TYPE_UNSPECIFIED;
+const AccountType AccountType_MAX = ACCOUNT_TYPE_GENERAL;
 const int AccountType_ARRAYSIZE = AccountType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* AccountType_descriptor();
@@ -434,20 +441,21 @@ inline bool AccountType_Parse(
     AccountType_descriptor(), name, value);
 }
 enum TransferType {
-  LOSS = 0,
-  WIN = 1,
-  CLOSE = 2,
-  MTM_LOSS = 3,
-  MTM_WIN = 4,
-  MARGIN_LOW = 5,
-  MARGIN_HIGH = 6,
-  MARGIN_CONFISCATED = 7,
+  TRANSFER_TYPE_UNSPECIFIED = 0,
+  TRANSFER_TYPE_LOSS = 1,
+  TRANSFER_TYPE_WIN = 2,
+  TRANSFER_TYPE_CLOSE = 3,
+  TRANSFER_TYPE_MTM_LOSS = 4,
+  TRANSFER_TYPE_MTM_WIN = 5,
+  TRANSFER_TYPE_MARGIN_LOW = 6,
+  TRANSFER_TYPE_MARGIN_HIGH = 7,
+  TRANSFER_TYPE_MARGIN_CONFISCATED = 8,
   TransferType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   TransferType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool TransferType_IsValid(int value);
-const TransferType TransferType_MIN = LOSS;
-const TransferType TransferType_MAX = MARGIN_CONFISCATED;
+const TransferType TransferType_MIN = TRANSFER_TYPE_UNSPECIFIED;
+const TransferType TransferType_MAX = TRANSFER_TYPE_MARGIN_CONFISCATED;
 const int TransferType_ARRAYSIZE = TransferType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* TransferType_descriptor();
@@ -1354,14 +1362,14 @@ class Order :
   typedef Order_TimeInForce TimeInForce;
   static const TimeInForce TIF_UNSPECIFIED =
     Order_TimeInForce_TIF_UNSPECIFIED;
-  static const TimeInForce GTC =
-    Order_TimeInForce_GTC;
-  static const TimeInForce GTT =
-    Order_TimeInForce_GTT;
-  static const TimeInForce IOC =
-    Order_TimeInForce_IOC;
-  static const TimeInForce FOK =
-    Order_TimeInForce_FOK;
+  static const TimeInForce TIF_GTC =
+    Order_TimeInForce_TIF_GTC;
+  static const TimeInForce TIF_GTT =
+    Order_TimeInForce_TIF_GTT;
+  static const TimeInForce TIF_IOC =
+    Order_TimeInForce_TIF_IOC;
+  static const TimeInForce TIF_FOK =
+    Order_TimeInForce_TIF_FOK;
   static inline bool TimeInForce_IsValid(int value) {
     return Order_TimeInForce_IsValid(value);
   }
@@ -1384,12 +1392,14 @@ class Order :
   }
 
   typedef Order_Type Type;
-  static const Type LIMIT =
-    Order_Type_LIMIT;
-  static const Type MARKET =
-    Order_Type_MARKET;
-  static const Type NETWORK =
-    Order_Type_NETWORK;
+  static const Type TYPE_UNSPECIFIED =
+    Order_Type_TYPE_UNSPECIFIED;
+  static const Type TYPE_LIMIT =
+    Order_Type_TYPE_LIMIT;
+  static const Type TYPE_MARKET =
+    Order_Type_TYPE_MARKET;
+  static const Type TYPE_NETWORK =
+    Order_Type_TYPE_NETWORK;
   static inline bool Type_IsValid(int value) {
     return Order_Type_IsValid(value);
   }
@@ -1412,20 +1422,22 @@ class Order :
   }
 
   typedef Order_Status Status;
-  static const Status Active =
-    Order_Status_Active;
-  static const Status Expired =
-    Order_Status_Expired;
-  static const Status Cancelled =
-    Order_Status_Cancelled;
-  static const Status Stopped =
-    Order_Status_Stopped;
-  static const Status Filled =
-    Order_Status_Filled;
-  static const Status Rejected =
-    Order_Status_Rejected;
-  static const Status PartiallyFilled =
-    Order_Status_PartiallyFilled;
+  static const Status STATUS_INVALID =
+    Order_Status_STATUS_INVALID;
+  static const Status STATUS_ACTIVE =
+    Order_Status_STATUS_ACTIVE;
+  static const Status STATUS_EXPIRED =
+    Order_Status_STATUS_EXPIRED;
+  static const Status STATUS_CANCELLED =
+    Order_Status_STATUS_CANCELLED;
+  static const Status STATUS_STOPPED =
+    Order_Status_STATUS_STOPPED;
+  static const Status STATUS_FILLED =
+    Order_Status_STATUS_FILLED;
+  static const Status STATUS_REJECTED =
+    Order_Status_STATUS_REJECTED;
+  static const Status STATUS_PARTIALLY_FILLED =
+    Order_Status_STATUS_PARTIALLY_FILLED;
   static inline bool Status_IsValid(int value) {
     return Order_Status_IsValid(value);
   }
@@ -1953,12 +1965,14 @@ class Trade :
   // nested types ----------------------------------------------------
 
   typedef Trade_Type Type;
-  static const Type DEFAULT =
-    Trade_Type_DEFAULT;
-  static const Type NETWORK_CLOSE_OUT_GOOD =
-    Trade_Type_NETWORK_CLOSE_OUT_GOOD;
-  static const Type NETWORK_CLOSE_OUT_BAD =
-    Trade_Type_NETWORK_CLOSE_OUT_BAD;
+  static const Type TYPE_UNSPECIFIED =
+    Trade_Type_TYPE_UNSPECIFIED;
+  static const Type TYPE_DEFAULT =
+    Trade_Type_TYPE_DEFAULT;
+  static const Type TYPE_NETWORK_CLOSE_OUT_GOOD =
+    Trade_Type_TYPE_NETWORK_CLOSE_OUT_GOOD;
+  static const Type TYPE_NETWORK_CLOSE_OUT_BAD =
+    Trade_Type_TYPE_NETWORK_CLOSE_OUT_BAD;
   static inline bool Type_IsValid(int value) {
     return Trade_Type_IsValid(value);
   }
@@ -3158,6 +3172,20 @@ class Statistics :
   ::std::string* release_uptime();
   void set_allocated_uptime(::std::string* uptime);
 
+  // string chainID = 33;
+  void clear_chainid();
+  static const int kChainIDFieldNumber = 33;
+  const ::std::string& chainid() const;
+  void set_chainid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_chainid(::std::string&& value);
+  #endif
+  void set_chainid(const char* value);
+  void set_chainid(const char* value, size_t size);
+  ::std::string* mutable_chainid();
+  ::std::string* release_chainid();
+  void set_allocated_chainid(::std::string* chainid);
+
   // uint64 blockHeight = 1;
   void clear_blockheight();
   static const int kBlockHeightFieldNumber = 1;
@@ -3308,6 +3336,7 @@ class Statistics :
   ::google::protobuf::internal::ArenaStringPtr appversion_;
   ::google::protobuf::internal::ArenaStringPtr chainversion_;
   ::google::protobuf::internal::ArenaStringPtr uptime_;
+  ::google::protobuf::internal::ArenaStringPtr chainid_;
   ::google::protobuf::uint64 blockheight_;
   ::google::protobuf::uint64 backloglength_;
   ::google::protobuf::uint64 totalpeers_;
@@ -8675,6 +8704,59 @@ inline void Statistics::set_allocated_uptime(::std::string* uptime) {
   }
   uptime_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), uptime);
   // @@protoc_insertion_point(field_set_allocated:vega.Statistics.uptime)
+}
+
+// string chainID = 33;
+inline void Statistics::clear_chainid() {
+  chainid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Statistics::chainid() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.chainID)
+  return chainid_.GetNoArena();
+}
+inline void Statistics::set_chainid(const ::std::string& value) {
+  
+  chainid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.chainID)
+}
+#if LANG_CXX11
+inline void Statistics::set_chainid(::std::string&& value) {
+  
+  chainid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.Statistics.chainID)
+}
+#endif
+inline void Statistics::set_chainid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  chainid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.Statistics.chainID)
+}
+inline void Statistics::set_chainid(const char* value, size_t size) {
+  
+  chainid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.Statistics.chainID)
+}
+inline ::std::string* Statistics::mutable_chainid() {
+  
+  // @@protoc_insertion_point(field_mutable:vega.Statistics.chainID)
+  return chainid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Statistics::release_chainid() {
+  // @@protoc_insertion_point(field_release:vega.Statistics.chainID)
+  
+  return chainid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Statistics::set_allocated_chainid(::std::string* chainid) {
+  if (chainid != nullptr) {
+    
+  } else {
+    
+  }
+  chainid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), chainid);
+  // @@protoc_insertion_point(field_set_allocated:vega.Statistics.chainID)
 }
 
 // -------------------------------------------------------------------

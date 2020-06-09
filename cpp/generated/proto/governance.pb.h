@@ -97,18 +97,19 @@ template<> ::vega::Vote* Arena::CreateMaybeMessage<::vega::Vote>(Arena*);
 namespace vega {
 
 enum Proposal_State {
-  Proposal_State_FAILED = 0,
-  Proposal_State_OPEN = 1,
-  Proposal_State_PASSED = 2,
-  Proposal_State_REJECTED = 3,
-  Proposal_State_DECLINED = 4,
-  Proposal_State_ENACTED = 5,
+  Proposal_State_STATE_UNSPECIFIED = 0,
+  Proposal_State_STATE_FAILED = 1,
+  Proposal_State_STATE_OPEN = 2,
+  Proposal_State_STATE_PASSED = 3,
+  Proposal_State_STATE_REJECTED = 4,
+  Proposal_State_STATE_DECLINED = 5,
+  Proposal_State_STATE_ENACTED = 6,
   Proposal_State_Proposal_State_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   Proposal_State_Proposal_State_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool Proposal_State_IsValid(int value);
-const Proposal_State Proposal_State_State_MIN = Proposal_State_FAILED;
-const Proposal_State Proposal_State_State_MAX = Proposal_State_ENACTED;
+const Proposal_State Proposal_State_State_MIN = Proposal_State_STATE_UNSPECIFIED;
+const Proposal_State Proposal_State_State_MAX = Proposal_State_STATE_ENACTED;
 const int Proposal_State_State_ARRAYSIZE = Proposal_State_State_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Proposal_State_descriptor();
@@ -122,14 +123,15 @@ inline bool Proposal_State_Parse(
     Proposal_State_descriptor(), name, value);
 }
 enum Vote_Value {
-  Vote_Value_NO = 0,
-  Vote_Value_YES = 1,
+  Vote_Value_VALUE_UNSPECIFIED = 0,
+  Vote_Value_VALUE_NO = 1,
+  Vote_Value_VALUE_YES = 2,
   Vote_Value_Vote_Value_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   Vote_Value_Vote_Value_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool Vote_Value_IsValid(int value);
-const Vote_Value Vote_Value_Value_MIN = Vote_Value_NO;
-const Vote_Value Vote_Value_Value_MAX = Vote_Value_YES;
+const Vote_Value Vote_Value_Value_MIN = Vote_Value_VALUE_UNSPECIFIED;
+const Vote_Value Vote_Value_Value_MAX = Vote_Value_VALUE_YES;
 const int Vote_Value_Value_ARRAYSIZE = Vote_Value_Value_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Vote_Value_descriptor();
@@ -1164,18 +1166,20 @@ class Proposal :
   // nested types ----------------------------------------------------
 
   typedef Proposal_State State;
-  static const State FAILED =
-    Proposal_State_FAILED;
-  static const State OPEN =
-    Proposal_State_OPEN;
-  static const State PASSED =
-    Proposal_State_PASSED;
-  static const State REJECTED =
-    Proposal_State_REJECTED;
-  static const State DECLINED =
-    Proposal_State_DECLINED;
-  static const State ENACTED =
-    Proposal_State_ENACTED;
+  static const State STATE_UNSPECIFIED =
+    Proposal_State_STATE_UNSPECIFIED;
+  static const State STATE_FAILED =
+    Proposal_State_STATE_FAILED;
+  static const State STATE_OPEN =
+    Proposal_State_STATE_OPEN;
+  static const State STATE_PASSED =
+    Proposal_State_STATE_PASSED;
+  static const State STATE_REJECTED =
+    Proposal_State_STATE_REJECTED;
+  static const State STATE_DECLINED =
+    Proposal_State_STATE_DECLINED;
+  static const State STATE_ENACTED =
+    Proposal_State_STATE_ENACTED;
   static inline bool State_IsValid(int value) {
     return Proposal_State_IsValid(value);
   }
@@ -1372,10 +1376,12 @@ class Vote :
   // nested types ----------------------------------------------------
 
   typedef Vote_Value Value;
-  static const Value NO =
-    Vote_Value_NO;
-  static const Value YES =
-    Vote_Value_YES;
+  static const Value VALUE_UNSPECIFIED =
+    Vote_Value_VALUE_UNSPECIFIED;
+  static const Value VALUE_NO =
+    Vote_Value_VALUE_NO;
+  static const Value VALUE_YES =
+    Vote_Value_VALUE_YES;
   static inline bool Value_IsValid(int value) {
     return Vote_Value_IsValid(value);
   }

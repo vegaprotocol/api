@@ -350,24 +350,26 @@ const char descriptor_table_protodef_proto_2fgovernance_2eproto[] =
   "teNetworkH\000\022\"\n\010newAsset\030h \001(\0132\016.vega.New"
   "AssetH\000B\010\n\006change\"c\n\016GovernanceData\022 \n\010p"
   "roposal\030\001 \001(\0132\016.vega.Proposal\022\027\n\003yes\030\002 \003"
-  "(\0132\n.vega.Vote\022\026\n\002no\030\003 \003(\0132\n.vega.Vote\"\203"
+  "(\0132\n.vega.Vote\022\026\n\002no\030\003 \003(\0132\n.vega.Vote\"\277"
   "\002\n\010Proposal\022\n\n\002ID\030\001 \001(\t\022\021\n\treference\030\002 \001"
   "(\t\022\027\n\007partyID\030\003 \001(\tB\006\342\337\037\002X\001\022,\n\005state\030\004 \001"
   "(\0162\024.vega.Proposal.StateB\007\342\337\037\003\210\001\001\022\021\n\ttim"
   "estamp\030\005 \001(\003\022*\n\005terms\030\006 \001(\0132\023.vega.Propo"
-  "salTermsB\006\342\337\037\002 \001\"R\n\005State\022\n\n\006FAILED\020\000\022\010\n"
-  "\004OPEN\020\001\022\n\n\006PASSED\020\002\022\014\n\010REJECTED\020\003\022\014\n\010DEC"
-  "LINED\020\004\022\013\n\007ENACTED\020\005\"\222\001\n\004Vote\022\027\n\007partyID"
-  "\030\001 \001(\tB\006\342\337\037\002X\001\022(\n\005value\030\002 \001(\0162\020.vega.Vot"
-  "e.ValueB\007\342\337\037\003\210\001\001\022\032\n\nproposalID\030\003 \001(\tB\006\342\337"
-  "\037\002X\001\022\021\n\ttimestamp\030\004 \001(\003\"\030\n\005Value\022\006\n\002NO\020\000"
-  "\022\007\n\003YES\020\001B!Z\037code.vegaprotocol.io/vega/p"
-  "rotob\006proto3"
+  "salTermsB\006\342\337\037\002 \001\"\215\001\n\005State\022\025\n\021STATE_UNSP"
+  "ECIFIED\020\000\022\020\n\014STATE_FAILED\020\001\022\016\n\nSTATE_OPE"
+  "N\020\002\022\020\n\014STATE_PASSED\020\003\022\022\n\016STATE_REJECTED\020"
+  "\004\022\022\n\016STATE_DECLINED\020\005\022\021\n\rSTATE_ENACTED\020\006"
+  "\"\265\001\n\004Vote\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\022(\n\005va"
+  "lue\030\002 \001(\0162\020.vega.Vote.ValueB\007\342\337\037\003\210\001\001\022\032\n\n"
+  "proposalID\030\003 \001(\tB\006\342\337\037\002X\001\022\021\n\ttimestamp\030\004 "
+  "\001(\003\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010V"
+  "ALUE_NO\020\001\022\r\n\tVALUE_YES\020\002B!Z\037code.vegapro"
+  "tocol.io/vega/protob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fgovernance_2eproto = {
   false, InitDefaults_proto_2fgovernance_2eproto, 
   descriptor_table_protodef_proto_2fgovernance_2eproto,
-  "proto/governance.proto", &assign_descriptors_table_proto_2fgovernance_2eproto, 1372,
+  "proto/governance.proto", &assign_descriptors_table_proto_2fgovernance_2eproto, 1467,
 };
 
 void AddDescriptors_proto_2fgovernance_2eproto() {
@@ -395,6 +397,7 @@ bool Proposal_State_IsValid(int value) {
     case 3:
     case 4:
     case 5:
+    case 6:
       return true;
     default:
       return false;
@@ -402,12 +405,13 @@ bool Proposal_State_IsValid(int value) {
 }
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const Proposal_State Proposal::FAILED;
-const Proposal_State Proposal::OPEN;
-const Proposal_State Proposal::PASSED;
-const Proposal_State Proposal::REJECTED;
-const Proposal_State Proposal::DECLINED;
-const Proposal_State Proposal::ENACTED;
+const Proposal_State Proposal::STATE_UNSPECIFIED;
+const Proposal_State Proposal::STATE_FAILED;
+const Proposal_State Proposal::STATE_OPEN;
+const Proposal_State Proposal::STATE_PASSED;
+const Proposal_State Proposal::STATE_REJECTED;
+const Proposal_State Proposal::STATE_DECLINED;
+const Proposal_State Proposal::STATE_ENACTED;
 const Proposal_State Proposal::State_MIN;
 const Proposal_State Proposal::State_MAX;
 const int Proposal::State_ARRAYSIZE;
@@ -420,6 +424,7 @@ bool Vote_Value_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
+    case 2:
       return true;
     default:
       return false;
@@ -427,8 +432,9 @@ bool Vote_Value_IsValid(int value) {
 }
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const Vote_Value Vote::NO;
-const Vote_Value Vote::YES;
+const Vote_Value Vote::VALUE_UNSPECIFIED;
+const Vote_Value Vote::VALUE_NO;
+const Vote_Value Vote::VALUE_YES;
 const Vote_Value Vote::Value_MIN;
 const Vote_Value Vote::Value_MAX;
 const int Vote::Value_ARRAYSIZE;

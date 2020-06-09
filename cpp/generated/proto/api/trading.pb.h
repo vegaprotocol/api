@@ -46,7 +46,7 @@ struct TableStruct_proto_2fapi_2ftrading_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[82]
+  static const ::google::protobuf::internal::ParseTable schema[91]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -72,33 +72,60 @@ extern CandlesResponseDefaultTypeInternal _CandlesResponse_default_instance_;
 class CandlesSubscribeRequest;
 class CandlesSubscribeRequestDefaultTypeInternal;
 extern CandlesSubscribeRequestDefaultTypeInternal _CandlesSubscribeRequest_default_instance_;
-class GetGovernanceDataResponse;
-class GetGovernanceDataResponseDefaultTypeInternal;
-extern GetGovernanceDataResponseDefaultTypeInternal _GetGovernanceDataResponse_default_instance_;
+class GetNetworkParametersProposalsRequest;
+class GetNetworkParametersProposalsRequestDefaultTypeInternal;
+extern GetNetworkParametersProposalsRequestDefaultTypeInternal _GetNetworkParametersProposalsRequest_default_instance_;
+class GetNetworkParametersProposalsResponse;
+class GetNetworkParametersProposalsResponseDefaultTypeInternal;
+extern GetNetworkParametersProposalsResponseDefaultTypeInternal _GetNetworkParametersProposalsResponse_default_instance_;
+class GetNewAssetProposalsRequest;
+class GetNewAssetProposalsRequestDefaultTypeInternal;
+extern GetNewAssetProposalsRequestDefaultTypeInternal _GetNewAssetProposalsRequest_default_instance_;
+class GetNewAssetProposalsResponse;
+class GetNewAssetProposalsResponseDefaultTypeInternal;
+extern GetNewAssetProposalsResponseDefaultTypeInternal _GetNewAssetProposalsResponse_default_instance_;
+class GetNewMarketProposalsRequest;
+class GetNewMarketProposalsRequestDefaultTypeInternal;
+extern GetNewMarketProposalsRequestDefaultTypeInternal _GetNewMarketProposalsRequest_default_instance_;
+class GetNewMarketProposalsResponse;
+class GetNewMarketProposalsResponseDefaultTypeInternal;
+extern GetNewMarketProposalsResponseDefaultTypeInternal _GetNewMarketProposalsResponse_default_instance_;
 class GetProposalByIDRequest;
 class GetProposalByIDRequestDefaultTypeInternal;
 extern GetProposalByIDRequestDefaultTypeInternal _GetProposalByIDRequest_default_instance_;
+class GetProposalByIDResponse;
+class GetProposalByIDResponseDefaultTypeInternal;
+extern GetProposalByIDResponseDefaultTypeInternal _GetProposalByIDResponse_default_instance_;
 class GetProposalByReferenceRequest;
 class GetProposalByReferenceRequestDefaultTypeInternal;
 extern GetProposalByReferenceRequestDefaultTypeInternal _GetProposalByReferenceRequest_default_instance_;
-class GetProposalResponse;
-class GetProposalResponseDefaultTypeInternal;
-extern GetProposalResponseDefaultTypeInternal _GetProposalResponse_default_instance_;
+class GetProposalByReferenceResponse;
+class GetProposalByReferenceResponseDefaultTypeInternal;
+extern GetProposalByReferenceResponseDefaultTypeInternal _GetProposalByReferenceResponse_default_instance_;
 class GetProposalsByPartyRequest;
 class GetProposalsByPartyRequestDefaultTypeInternal;
 extern GetProposalsByPartyRequestDefaultTypeInternal _GetProposalsByPartyRequest_default_instance_;
-class GetProposalsByStateRequest;
-class GetProposalsByStateRequestDefaultTypeInternal;
-extern GetProposalsByStateRequestDefaultTypeInternal _GetProposalsByStateRequest_default_instance_;
+class GetProposalsByPartyResponse;
+class GetProposalsByPartyResponseDefaultTypeInternal;
+extern GetProposalsByPartyResponseDefaultTypeInternal _GetProposalsByPartyResponse_default_instance_;
+class GetProposalsRequest;
+class GetProposalsRequestDefaultTypeInternal;
+extern GetProposalsRequestDefaultTypeInternal _GetProposalsRequest_default_instance_;
+class GetProposalsResponse;
+class GetProposalsResponseDefaultTypeInternal;
+extern GetProposalsResponseDefaultTypeInternal _GetProposalsResponse_default_instance_;
 class GetUpdateMarketProposalsRequest;
 class GetUpdateMarketProposalsRequestDefaultTypeInternal;
 extern GetUpdateMarketProposalsRequestDefaultTypeInternal _GetUpdateMarketProposalsRequest_default_instance_;
+class GetUpdateMarketProposalsResponse;
+class GetUpdateMarketProposalsResponseDefaultTypeInternal;
+extern GetUpdateMarketProposalsResponseDefaultTypeInternal _GetUpdateMarketProposalsResponse_default_instance_;
 class GetVotesByPartyRequest;
 class GetVotesByPartyRequestDefaultTypeInternal;
 extern GetVotesByPartyRequestDefaultTypeInternal _GetVotesByPartyRequest_default_instance_;
-class GetVotesResponse;
-class GetVotesResponseDefaultTypeInternal;
-extern GetVotesResponseDefaultTypeInternal _GetVotesResponse_default_instance_;
+class GetVotesByPartyResponse;
+class GetVotesByPartyResponseDefaultTypeInternal;
+extern GetVotesByPartyResponseDefaultTypeInternal _GetVotesByPartyResponse_default_instance_;
 class LastTradeRequest;
 class LastTradeRequestDefaultTypeInternal;
 extern LastTradeRequestDefaultTypeInternal _LastTradeRequest_default_instance_;
@@ -309,15 +336,24 @@ template<> ::api::CancelOrderRequest* Arena::CreateMaybeMessage<::api::CancelOrd
 template<> ::api::CandlesRequest* Arena::CreateMaybeMessage<::api::CandlesRequest>(Arena*);
 template<> ::api::CandlesResponse* Arena::CreateMaybeMessage<::api::CandlesResponse>(Arena*);
 template<> ::api::CandlesSubscribeRequest* Arena::CreateMaybeMessage<::api::CandlesSubscribeRequest>(Arena*);
-template<> ::api::GetGovernanceDataResponse* Arena::CreateMaybeMessage<::api::GetGovernanceDataResponse>(Arena*);
+template<> ::api::GetNetworkParametersProposalsRequest* Arena::CreateMaybeMessage<::api::GetNetworkParametersProposalsRequest>(Arena*);
+template<> ::api::GetNetworkParametersProposalsResponse* Arena::CreateMaybeMessage<::api::GetNetworkParametersProposalsResponse>(Arena*);
+template<> ::api::GetNewAssetProposalsRequest* Arena::CreateMaybeMessage<::api::GetNewAssetProposalsRequest>(Arena*);
+template<> ::api::GetNewAssetProposalsResponse* Arena::CreateMaybeMessage<::api::GetNewAssetProposalsResponse>(Arena*);
+template<> ::api::GetNewMarketProposalsRequest* Arena::CreateMaybeMessage<::api::GetNewMarketProposalsRequest>(Arena*);
+template<> ::api::GetNewMarketProposalsResponse* Arena::CreateMaybeMessage<::api::GetNewMarketProposalsResponse>(Arena*);
 template<> ::api::GetProposalByIDRequest* Arena::CreateMaybeMessage<::api::GetProposalByIDRequest>(Arena*);
+template<> ::api::GetProposalByIDResponse* Arena::CreateMaybeMessage<::api::GetProposalByIDResponse>(Arena*);
 template<> ::api::GetProposalByReferenceRequest* Arena::CreateMaybeMessage<::api::GetProposalByReferenceRequest>(Arena*);
-template<> ::api::GetProposalResponse* Arena::CreateMaybeMessage<::api::GetProposalResponse>(Arena*);
+template<> ::api::GetProposalByReferenceResponse* Arena::CreateMaybeMessage<::api::GetProposalByReferenceResponse>(Arena*);
 template<> ::api::GetProposalsByPartyRequest* Arena::CreateMaybeMessage<::api::GetProposalsByPartyRequest>(Arena*);
-template<> ::api::GetProposalsByStateRequest* Arena::CreateMaybeMessage<::api::GetProposalsByStateRequest>(Arena*);
+template<> ::api::GetProposalsByPartyResponse* Arena::CreateMaybeMessage<::api::GetProposalsByPartyResponse>(Arena*);
+template<> ::api::GetProposalsRequest* Arena::CreateMaybeMessage<::api::GetProposalsRequest>(Arena*);
+template<> ::api::GetProposalsResponse* Arena::CreateMaybeMessage<::api::GetProposalsResponse>(Arena*);
 template<> ::api::GetUpdateMarketProposalsRequest* Arena::CreateMaybeMessage<::api::GetUpdateMarketProposalsRequest>(Arena*);
+template<> ::api::GetUpdateMarketProposalsResponse* Arena::CreateMaybeMessage<::api::GetUpdateMarketProposalsResponse>(Arena*);
 template<> ::api::GetVotesByPartyRequest* Arena::CreateMaybeMessage<::api::GetVotesByPartyRequest>(Arena*);
-template<> ::api::GetVotesResponse* Arena::CreateMaybeMessage<::api::GetVotesResponse>(Arena*);
+template<> ::api::GetVotesByPartyResponse* Arena::CreateMaybeMessage<::api::GetVotesByPartyResponse>(Arena*);
 template<> ::api::LastTradeRequest* Arena::CreateMaybeMessage<::api::LastTradeRequest>(Arena*);
 template<> ::api::LastTradeResponse* Arena::CreateMaybeMessage<::api::LastTradeResponse>(Arena*);
 template<> ::api::MarginLevelsRequest* Arena::CreateMaybeMessage<::api::MarginLevelsRequest>(Arena*);
@@ -1904,25 +1940,25 @@ class OptionalProposalState :
 };
 // -------------------------------------------------------------------
 
-class GetProposalsByStateRequest :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetProposalsByStateRequest) */ {
+class GetProposalsRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetProposalsRequest) */ {
  public:
-  GetProposalsByStateRequest();
-  virtual ~GetProposalsByStateRequest();
+  GetProposalsRequest();
+  virtual ~GetProposalsRequest();
 
-  GetProposalsByStateRequest(const GetProposalsByStateRequest& from);
+  GetProposalsRequest(const GetProposalsRequest& from);
 
-  inline GetProposalsByStateRequest& operator=(const GetProposalsByStateRequest& from) {
+  inline GetProposalsRequest& operator=(const GetProposalsRequest& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  GetProposalsByStateRequest(GetProposalsByStateRequest&& from) noexcept
-    : GetProposalsByStateRequest() {
+  GetProposalsRequest(GetProposalsRequest&& from) noexcept
+    : GetProposalsRequest() {
     *this = ::std::move(from);
   }
 
-  inline GetProposalsByStateRequest& operator=(GetProposalsByStateRequest&& from) noexcept {
+  inline GetProposalsRequest& operator=(GetProposalsRequest&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1934,34 +1970,34 @@ class GetProposalsByStateRequest :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const GetProposalsByStateRequest& default_instance();
+  static const GetProposalsRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const GetProposalsByStateRequest* internal_default_instance() {
-    return reinterpret_cast<const GetProposalsByStateRequest*>(
-               &_GetProposalsByStateRequest_default_instance_);
+  static inline const GetProposalsRequest* internal_default_instance() {
+    return reinterpret_cast<const GetProposalsRequest*>(
+               &_GetProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     13;
 
-  void Swap(GetProposalsByStateRequest* other);
-  friend void swap(GetProposalsByStateRequest& a, GetProposalsByStateRequest& b) {
+  void Swap(GetProposalsRequest* other);
+  friend void swap(GetProposalsRequest& a, GetProposalsRequest& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline GetProposalsByStateRequest* New() const final {
-    return CreateMaybeMessage<GetProposalsByStateRequest>(nullptr);
+  inline GetProposalsRequest* New() const final {
+    return CreateMaybeMessage<GetProposalsRequest>(nullptr);
   }
 
-  GetProposalsByStateRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<GetProposalsByStateRequest>(arena);
+  GetProposalsRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetProposalsRequest>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const GetProposalsByStateRequest& from);
-  void MergeFrom(const GetProposalsByStateRequest& from);
+  void CopyFrom(const GetProposalsRequest& from);
+  void MergeFrom(const GetProposalsRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1983,7 +2019,7 @@ class GetProposalsByStateRequest :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(GetProposalsByStateRequest* other);
+  void InternalSwap(GetProposalsRequest* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -1999,45 +2035,45 @@ class GetProposalsByStateRequest :
 
   // accessors -------------------------------------------------------
 
-  // .api.OptionalProposalState state = 1;
-  bool has_state() const;
-  void clear_state();
-  static const int kStateFieldNumber = 1;
-  const ::api::OptionalProposalState& state() const;
-  ::api::OptionalProposalState* release_state();
-  ::api::OptionalProposalState* mutable_state();
-  void set_allocated_state(::api::OptionalProposalState* state);
+  // .api.OptionalProposalState selectInState = 1;
+  bool has_selectinstate() const;
+  void clear_selectinstate();
+  static const int kSelectInStateFieldNumber = 1;
+  const ::api::OptionalProposalState& selectinstate() const;
+  ::api::OptionalProposalState* release_selectinstate();
+  ::api::OptionalProposalState* mutable_selectinstate();
+  void set_allocated_selectinstate(::api::OptionalProposalState* selectinstate);
 
-  // @@protoc_insertion_point(class_scope:api.GetProposalsByStateRequest)
+  // @@protoc_insertion_point(class_scope:api.GetProposalsRequest)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::api::OptionalProposalState* state_;
+  ::api::OptionalProposalState* selectinstate_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
 // -------------------------------------------------------------------
 
-class GetGovernanceDataResponse :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetGovernanceDataResponse) */ {
+class GetProposalsResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetProposalsResponse) */ {
  public:
-  GetGovernanceDataResponse();
-  virtual ~GetGovernanceDataResponse();
+  GetProposalsResponse();
+  virtual ~GetProposalsResponse();
 
-  GetGovernanceDataResponse(const GetGovernanceDataResponse& from);
+  GetProposalsResponse(const GetProposalsResponse& from);
 
-  inline GetGovernanceDataResponse& operator=(const GetGovernanceDataResponse& from) {
+  inline GetProposalsResponse& operator=(const GetProposalsResponse& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  GetGovernanceDataResponse(GetGovernanceDataResponse&& from) noexcept
-    : GetGovernanceDataResponse() {
+  GetProposalsResponse(GetProposalsResponse&& from) noexcept
+    : GetProposalsResponse() {
     *this = ::std::move(from);
   }
 
-  inline GetGovernanceDataResponse& operator=(GetGovernanceDataResponse&& from) noexcept {
+  inline GetProposalsResponse& operator=(GetProposalsResponse&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -2049,34 +2085,34 @@ class GetGovernanceDataResponse :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const GetGovernanceDataResponse& default_instance();
+  static const GetProposalsResponse& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const GetGovernanceDataResponse* internal_default_instance() {
-    return reinterpret_cast<const GetGovernanceDataResponse*>(
-               &_GetGovernanceDataResponse_default_instance_);
+  static inline const GetProposalsResponse* internal_default_instance() {
+    return reinterpret_cast<const GetProposalsResponse*>(
+               &_GetProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     14;
 
-  void Swap(GetGovernanceDataResponse* other);
-  friend void swap(GetGovernanceDataResponse& a, GetGovernanceDataResponse& b) {
+  void Swap(GetProposalsResponse* other);
+  friend void swap(GetProposalsResponse& a, GetProposalsResponse& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline GetGovernanceDataResponse* New() const final {
-    return CreateMaybeMessage<GetGovernanceDataResponse>(nullptr);
+  inline GetProposalsResponse* New() const final {
+    return CreateMaybeMessage<GetProposalsResponse>(nullptr);
   }
 
-  GetGovernanceDataResponse* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<GetGovernanceDataResponse>(arena);
+  GetProposalsResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetProposalsResponse>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const GetGovernanceDataResponse& from);
-  void MergeFrom(const GetGovernanceDataResponse& from);
+  void CopyFrom(const GetProposalsResponse& from);
+  void MergeFrom(const GetProposalsResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -2098,7 +2134,7 @@ class GetGovernanceDataResponse :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(GetGovernanceDataResponse* other);
+  void InternalSwap(GetProposalsResponse* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -2126,245 +2162,12 @@ class GetGovernanceDataResponse :
   const ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >&
       data() const;
 
-  // @@protoc_insertion_point(class_scope:api.GetGovernanceDataResponse)
+  // @@protoc_insertion_point(class_scope:api.GetProposalsResponse)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData > data_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
-};
-// -------------------------------------------------------------------
-
-class GetProposalResponse :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetProposalResponse) */ {
- public:
-  GetProposalResponse();
-  virtual ~GetProposalResponse();
-
-  GetProposalResponse(const GetProposalResponse& from);
-
-  inline GetProposalResponse& operator=(const GetProposalResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  GetProposalResponse(GetProposalResponse&& from) noexcept
-    : GetProposalResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline GetProposalResponse& operator=(GetProposalResponse&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const GetProposalResponse& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const GetProposalResponse* internal_default_instance() {
-    return reinterpret_cast<const GetProposalResponse*>(
-               &_GetProposalResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    15;
-
-  void Swap(GetProposalResponse* other);
-  friend void swap(GetProposalResponse& a, GetProposalResponse& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline GetProposalResponse* New() const final {
-    return CreateMaybeMessage<GetProposalResponse>(nullptr);
-  }
-
-  GetProposalResponse* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<GetProposalResponse>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const GetProposalResponse& from);
-  void MergeFrom(const GetProposalResponse& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(GetProposalResponse* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .vega.GovernanceData proposal = 1;
-  bool has_proposal() const;
-  void clear_proposal();
-  static const int kProposalFieldNumber = 1;
-  const ::vega::GovernanceData& proposal() const;
-  ::vega::GovernanceData* release_proposal();
-  ::vega::GovernanceData* mutable_proposal();
-  void set_allocated_proposal(::vega::GovernanceData* proposal);
-
-  // @@protoc_insertion_point(class_scope:api.GetProposalResponse)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::vega::GovernanceData* proposal_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
-};
-// -------------------------------------------------------------------
-
-class GetVotesResponse :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetVotesResponse) */ {
- public:
-  GetVotesResponse();
-  virtual ~GetVotesResponse();
-
-  GetVotesResponse(const GetVotesResponse& from);
-
-  inline GetVotesResponse& operator=(const GetVotesResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  GetVotesResponse(GetVotesResponse&& from) noexcept
-    : GetVotesResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline GetVotesResponse& operator=(GetVotesResponse&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const GetVotesResponse& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const GetVotesResponse* internal_default_instance() {
-    return reinterpret_cast<const GetVotesResponse*>(
-               &_GetVotesResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    16;
-
-  void Swap(GetVotesResponse* other);
-  friend void swap(GetVotesResponse& a, GetVotesResponse& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline GetVotesResponse* New() const final {
-    return CreateMaybeMessage<GetVotesResponse>(nullptr);
-  }
-
-  GetVotesResponse* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<GetVotesResponse>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const GetVotesResponse& from);
-  void MergeFrom(const GetVotesResponse& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(GetVotesResponse* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // repeated .vega.Vote votes = 1;
-  int votes_size() const;
-  void clear_votes();
-  static const int kVotesFieldNumber = 1;
-  ::vega::Vote* mutable_votes(int index);
-  ::google::protobuf::RepeatedPtrField< ::vega::Vote >*
-      mutable_votes();
-  const ::vega::Vote& votes(int index) const;
-  ::vega::Vote* add_votes();
-  const ::google::protobuf::RepeatedPtrField< ::vega::Vote >&
-      votes() const;
-
-  // @@protoc_insertion_point(class_scope:api.GetVotesResponse)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::vega::Vote > votes_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
@@ -2408,7 +2211,7 @@ class GetProposalsByPartyRequest :
                &_GetProposalsByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    15;
 
   void Swap(GetProposalsByPartyRequest* other);
   friend void swap(GetProposalsByPartyRequest& a, GetProposalsByPartyRequest& b) {
@@ -2479,14 +2282,14 @@ class GetProposalsByPartyRequest :
   ::std::string* release_partyid();
   void set_allocated_partyid(::std::string* partyid);
 
-  // .api.OptionalProposalState state = 2;
-  bool has_state() const;
-  void clear_state();
-  static const int kStateFieldNumber = 2;
-  const ::api::OptionalProposalState& state() const;
-  ::api::OptionalProposalState* release_state();
-  ::api::OptionalProposalState* mutable_state();
-  void set_allocated_state(::api::OptionalProposalState* state);
+  // .api.OptionalProposalState selectInState = 2;
+  bool has_selectinstate() const;
+  void clear_selectinstate();
+  static const int kSelectInStateFieldNumber = 2;
+  const ::api::OptionalProposalState& selectinstate() const;
+  ::api::OptionalProposalState* release_selectinstate();
+  ::api::OptionalProposalState* mutable_selectinstate();
+  void set_allocated_selectinstate(::api::OptionalProposalState* selectinstate);
 
   // @@protoc_insertion_point(class_scope:api.GetProposalsByPartyRequest)
  private:
@@ -2494,7 +2297,125 @@ class GetProposalsByPartyRequest :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr partyid_;
-  ::api::OptionalProposalState* state_;
+  ::api::OptionalProposalState* selectinstate_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetProposalsByPartyResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetProposalsByPartyResponse) */ {
+ public:
+  GetProposalsByPartyResponse();
+  virtual ~GetProposalsByPartyResponse();
+
+  GetProposalsByPartyResponse(const GetProposalsByPartyResponse& from);
+
+  inline GetProposalsByPartyResponse& operator=(const GetProposalsByPartyResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetProposalsByPartyResponse(GetProposalsByPartyResponse&& from) noexcept
+    : GetProposalsByPartyResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetProposalsByPartyResponse& operator=(GetProposalsByPartyResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetProposalsByPartyResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetProposalsByPartyResponse* internal_default_instance() {
+    return reinterpret_cast<const GetProposalsByPartyResponse*>(
+               &_GetProposalsByPartyResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  void Swap(GetProposalsByPartyResponse* other);
+  friend void swap(GetProposalsByPartyResponse& a, GetProposalsByPartyResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetProposalsByPartyResponse* New() const final {
+    return CreateMaybeMessage<GetProposalsByPartyResponse>(nullptr);
+  }
+
+  GetProposalsByPartyResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetProposalsByPartyResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetProposalsByPartyResponse& from);
+  void MergeFrom(const GetProposalsByPartyResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetProposalsByPartyResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .vega.GovernanceData data = 1;
+  int data_size() const;
+  void clear_data();
+  static const int kDataFieldNumber = 1;
+  ::vega::GovernanceData* mutable_data(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >*
+      mutable_data();
+  const ::vega::GovernanceData& data(int index) const;
+  ::vega::GovernanceData* add_data();
+  const ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >&
+      data() const;
+
+  // @@protoc_insertion_point(class_scope:api.GetProposalsByPartyResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData > data_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
@@ -2538,7 +2459,7 @@ class GetVotesByPartyRequest :
                &_GetVotesByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    17;
 
   void Swap(GetVotesByPartyRequest* other);
   friend void swap(GetVotesByPartyRequest& a, GetVotesByPartyRequest& b) {
@@ -2620,6 +2541,357 @@ class GetVotesByPartyRequest :
 };
 // -------------------------------------------------------------------
 
+class GetVotesByPartyResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetVotesByPartyResponse) */ {
+ public:
+  GetVotesByPartyResponse();
+  virtual ~GetVotesByPartyResponse();
+
+  GetVotesByPartyResponse(const GetVotesByPartyResponse& from);
+
+  inline GetVotesByPartyResponse& operator=(const GetVotesByPartyResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetVotesByPartyResponse(GetVotesByPartyResponse&& from) noexcept
+    : GetVotesByPartyResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetVotesByPartyResponse& operator=(GetVotesByPartyResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetVotesByPartyResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetVotesByPartyResponse* internal_default_instance() {
+    return reinterpret_cast<const GetVotesByPartyResponse*>(
+               &_GetVotesByPartyResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  void Swap(GetVotesByPartyResponse* other);
+  friend void swap(GetVotesByPartyResponse& a, GetVotesByPartyResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetVotesByPartyResponse* New() const final {
+    return CreateMaybeMessage<GetVotesByPartyResponse>(nullptr);
+  }
+
+  GetVotesByPartyResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetVotesByPartyResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetVotesByPartyResponse& from);
+  void MergeFrom(const GetVotesByPartyResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetVotesByPartyResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .vega.Vote votes = 1;
+  int votes_size() const;
+  void clear_votes();
+  static const int kVotesFieldNumber = 1;
+  ::vega::Vote* mutable_votes(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::Vote >*
+      mutable_votes();
+  const ::vega::Vote& votes(int index) const;
+  ::vega::Vote* add_votes();
+  const ::google::protobuf::RepeatedPtrField< ::vega::Vote >&
+      votes() const;
+
+  // @@protoc_insertion_point(class_scope:api.GetVotesByPartyResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::vega::Vote > votes_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetNewMarketProposalsRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetNewMarketProposalsRequest) */ {
+ public:
+  GetNewMarketProposalsRequest();
+  virtual ~GetNewMarketProposalsRequest();
+
+  GetNewMarketProposalsRequest(const GetNewMarketProposalsRequest& from);
+
+  inline GetNewMarketProposalsRequest& operator=(const GetNewMarketProposalsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetNewMarketProposalsRequest(GetNewMarketProposalsRequest&& from) noexcept
+    : GetNewMarketProposalsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetNewMarketProposalsRequest& operator=(GetNewMarketProposalsRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetNewMarketProposalsRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetNewMarketProposalsRequest* internal_default_instance() {
+    return reinterpret_cast<const GetNewMarketProposalsRequest*>(
+               &_GetNewMarketProposalsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    19;
+
+  void Swap(GetNewMarketProposalsRequest* other);
+  friend void swap(GetNewMarketProposalsRequest& a, GetNewMarketProposalsRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetNewMarketProposalsRequest* New() const final {
+    return CreateMaybeMessage<GetNewMarketProposalsRequest>(nullptr);
+  }
+
+  GetNewMarketProposalsRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetNewMarketProposalsRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetNewMarketProposalsRequest& from);
+  void MergeFrom(const GetNewMarketProposalsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetNewMarketProposalsRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .api.OptionalProposalState selectInState = 1;
+  bool has_selectinstate() const;
+  void clear_selectinstate();
+  static const int kSelectInStateFieldNumber = 1;
+  const ::api::OptionalProposalState& selectinstate() const;
+  ::api::OptionalProposalState* release_selectinstate();
+  ::api::OptionalProposalState* mutable_selectinstate();
+  void set_allocated_selectinstate(::api::OptionalProposalState* selectinstate);
+
+  // @@protoc_insertion_point(class_scope:api.GetNewMarketProposalsRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::api::OptionalProposalState* selectinstate_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetNewMarketProposalsResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetNewMarketProposalsResponse) */ {
+ public:
+  GetNewMarketProposalsResponse();
+  virtual ~GetNewMarketProposalsResponse();
+
+  GetNewMarketProposalsResponse(const GetNewMarketProposalsResponse& from);
+
+  inline GetNewMarketProposalsResponse& operator=(const GetNewMarketProposalsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetNewMarketProposalsResponse(GetNewMarketProposalsResponse&& from) noexcept
+    : GetNewMarketProposalsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetNewMarketProposalsResponse& operator=(GetNewMarketProposalsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetNewMarketProposalsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetNewMarketProposalsResponse* internal_default_instance() {
+    return reinterpret_cast<const GetNewMarketProposalsResponse*>(
+               &_GetNewMarketProposalsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    20;
+
+  void Swap(GetNewMarketProposalsResponse* other);
+  friend void swap(GetNewMarketProposalsResponse& a, GetNewMarketProposalsResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetNewMarketProposalsResponse* New() const final {
+    return CreateMaybeMessage<GetNewMarketProposalsResponse>(nullptr);
+  }
+
+  GetNewMarketProposalsResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetNewMarketProposalsResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetNewMarketProposalsResponse& from);
+  void MergeFrom(const GetNewMarketProposalsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetNewMarketProposalsResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .vega.GovernanceData data = 1;
+  int data_size() const;
+  void clear_data();
+  static const int kDataFieldNumber = 1;
+  ::vega::GovernanceData* mutable_data(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >*
+      mutable_data();
+  const ::vega::GovernanceData& data(int index) const;
+  ::vega::GovernanceData* add_data();
+  const ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >&
+      data() const;
+
+  // @@protoc_insertion_point(class_scope:api.GetNewMarketProposalsResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData > data_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetUpdateMarketProposalsRequest :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetUpdateMarketProposalsRequest) */ {
  public:
@@ -2658,7 +2930,7 @@ class GetUpdateMarketProposalsRequest :
                &_GetUpdateMarketProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   void Swap(GetUpdateMarketProposalsRequest* other);
   friend void swap(GetUpdateMarketProposalsRequest& a, GetUpdateMarketProposalsRequest& b) {
@@ -2729,14 +3001,14 @@ class GetUpdateMarketProposalsRequest :
   ::std::string* release_marketid();
   void set_allocated_marketid(::std::string* marketid);
 
-  // .api.OptionalProposalState state = 2;
-  bool has_state() const;
-  void clear_state();
-  static const int kStateFieldNumber = 2;
-  const ::api::OptionalProposalState& state() const;
-  ::api::OptionalProposalState* release_state();
-  ::api::OptionalProposalState* mutable_state();
-  void set_allocated_state(::api::OptionalProposalState* state);
+  // .api.OptionalProposalState selectInState = 2;
+  bool has_selectinstate() const;
+  void clear_selectinstate();
+  static const int kSelectInStateFieldNumber = 2;
+  const ::api::OptionalProposalState& selectinstate() const;
+  ::api::OptionalProposalState* release_selectinstate();
+  ::api::OptionalProposalState* mutable_selectinstate();
+  void set_allocated_selectinstate(::api::OptionalProposalState* selectinstate);
 
   // @@protoc_insertion_point(class_scope:api.GetUpdateMarketProposalsRequest)
  private:
@@ -2744,7 +3016,591 @@ class GetUpdateMarketProposalsRequest :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr marketid_;
-  ::api::OptionalProposalState* state_;
+  ::api::OptionalProposalState* selectinstate_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetUpdateMarketProposalsResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetUpdateMarketProposalsResponse) */ {
+ public:
+  GetUpdateMarketProposalsResponse();
+  virtual ~GetUpdateMarketProposalsResponse();
+
+  GetUpdateMarketProposalsResponse(const GetUpdateMarketProposalsResponse& from);
+
+  inline GetUpdateMarketProposalsResponse& operator=(const GetUpdateMarketProposalsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetUpdateMarketProposalsResponse(GetUpdateMarketProposalsResponse&& from) noexcept
+    : GetUpdateMarketProposalsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetUpdateMarketProposalsResponse& operator=(GetUpdateMarketProposalsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetUpdateMarketProposalsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetUpdateMarketProposalsResponse* internal_default_instance() {
+    return reinterpret_cast<const GetUpdateMarketProposalsResponse*>(
+               &_GetUpdateMarketProposalsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  void Swap(GetUpdateMarketProposalsResponse* other);
+  friend void swap(GetUpdateMarketProposalsResponse& a, GetUpdateMarketProposalsResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetUpdateMarketProposalsResponse* New() const final {
+    return CreateMaybeMessage<GetUpdateMarketProposalsResponse>(nullptr);
+  }
+
+  GetUpdateMarketProposalsResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetUpdateMarketProposalsResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetUpdateMarketProposalsResponse& from);
+  void MergeFrom(const GetUpdateMarketProposalsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetUpdateMarketProposalsResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .vega.GovernanceData data = 1;
+  int data_size() const;
+  void clear_data();
+  static const int kDataFieldNumber = 1;
+  ::vega::GovernanceData* mutable_data(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >*
+      mutable_data();
+  const ::vega::GovernanceData& data(int index) const;
+  ::vega::GovernanceData* add_data();
+  const ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >&
+      data() const;
+
+  // @@protoc_insertion_point(class_scope:api.GetUpdateMarketProposalsResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData > data_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetNetworkParametersProposalsRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetNetworkParametersProposalsRequest) */ {
+ public:
+  GetNetworkParametersProposalsRequest();
+  virtual ~GetNetworkParametersProposalsRequest();
+
+  GetNetworkParametersProposalsRequest(const GetNetworkParametersProposalsRequest& from);
+
+  inline GetNetworkParametersProposalsRequest& operator=(const GetNetworkParametersProposalsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetNetworkParametersProposalsRequest(GetNetworkParametersProposalsRequest&& from) noexcept
+    : GetNetworkParametersProposalsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetNetworkParametersProposalsRequest& operator=(GetNetworkParametersProposalsRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetNetworkParametersProposalsRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetNetworkParametersProposalsRequest* internal_default_instance() {
+    return reinterpret_cast<const GetNetworkParametersProposalsRequest*>(
+               &_GetNetworkParametersProposalsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  void Swap(GetNetworkParametersProposalsRequest* other);
+  friend void swap(GetNetworkParametersProposalsRequest& a, GetNetworkParametersProposalsRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetNetworkParametersProposalsRequest* New() const final {
+    return CreateMaybeMessage<GetNetworkParametersProposalsRequest>(nullptr);
+  }
+
+  GetNetworkParametersProposalsRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetNetworkParametersProposalsRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetNetworkParametersProposalsRequest& from);
+  void MergeFrom(const GetNetworkParametersProposalsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetNetworkParametersProposalsRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .api.OptionalProposalState selectInState = 1;
+  bool has_selectinstate() const;
+  void clear_selectinstate();
+  static const int kSelectInStateFieldNumber = 1;
+  const ::api::OptionalProposalState& selectinstate() const;
+  ::api::OptionalProposalState* release_selectinstate();
+  ::api::OptionalProposalState* mutable_selectinstate();
+  void set_allocated_selectinstate(::api::OptionalProposalState* selectinstate);
+
+  // @@protoc_insertion_point(class_scope:api.GetNetworkParametersProposalsRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::api::OptionalProposalState* selectinstate_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetNetworkParametersProposalsResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetNetworkParametersProposalsResponse) */ {
+ public:
+  GetNetworkParametersProposalsResponse();
+  virtual ~GetNetworkParametersProposalsResponse();
+
+  GetNetworkParametersProposalsResponse(const GetNetworkParametersProposalsResponse& from);
+
+  inline GetNetworkParametersProposalsResponse& operator=(const GetNetworkParametersProposalsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetNetworkParametersProposalsResponse(GetNetworkParametersProposalsResponse&& from) noexcept
+    : GetNetworkParametersProposalsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetNetworkParametersProposalsResponse& operator=(GetNetworkParametersProposalsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetNetworkParametersProposalsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetNetworkParametersProposalsResponse* internal_default_instance() {
+    return reinterpret_cast<const GetNetworkParametersProposalsResponse*>(
+               &_GetNetworkParametersProposalsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  void Swap(GetNetworkParametersProposalsResponse* other);
+  friend void swap(GetNetworkParametersProposalsResponse& a, GetNetworkParametersProposalsResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetNetworkParametersProposalsResponse* New() const final {
+    return CreateMaybeMessage<GetNetworkParametersProposalsResponse>(nullptr);
+  }
+
+  GetNetworkParametersProposalsResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetNetworkParametersProposalsResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetNetworkParametersProposalsResponse& from);
+  void MergeFrom(const GetNetworkParametersProposalsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetNetworkParametersProposalsResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .vega.GovernanceData data = 1;
+  int data_size() const;
+  void clear_data();
+  static const int kDataFieldNumber = 1;
+  ::vega::GovernanceData* mutable_data(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >*
+      mutable_data();
+  const ::vega::GovernanceData& data(int index) const;
+  ::vega::GovernanceData* add_data();
+  const ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >&
+      data() const;
+
+  // @@protoc_insertion_point(class_scope:api.GetNetworkParametersProposalsResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData > data_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetNewAssetProposalsRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetNewAssetProposalsRequest) */ {
+ public:
+  GetNewAssetProposalsRequest();
+  virtual ~GetNewAssetProposalsRequest();
+
+  GetNewAssetProposalsRequest(const GetNewAssetProposalsRequest& from);
+
+  inline GetNewAssetProposalsRequest& operator=(const GetNewAssetProposalsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetNewAssetProposalsRequest(GetNewAssetProposalsRequest&& from) noexcept
+    : GetNewAssetProposalsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetNewAssetProposalsRequest& operator=(GetNewAssetProposalsRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetNewAssetProposalsRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetNewAssetProposalsRequest* internal_default_instance() {
+    return reinterpret_cast<const GetNewAssetProposalsRequest*>(
+               &_GetNewAssetProposalsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  void Swap(GetNewAssetProposalsRequest* other);
+  friend void swap(GetNewAssetProposalsRequest& a, GetNewAssetProposalsRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetNewAssetProposalsRequest* New() const final {
+    return CreateMaybeMessage<GetNewAssetProposalsRequest>(nullptr);
+  }
+
+  GetNewAssetProposalsRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetNewAssetProposalsRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetNewAssetProposalsRequest& from);
+  void MergeFrom(const GetNewAssetProposalsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetNewAssetProposalsRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .api.OptionalProposalState selectInState = 1;
+  bool has_selectinstate() const;
+  void clear_selectinstate();
+  static const int kSelectInStateFieldNumber = 1;
+  const ::api::OptionalProposalState& selectinstate() const;
+  ::api::OptionalProposalState* release_selectinstate();
+  ::api::OptionalProposalState* mutable_selectinstate();
+  void set_allocated_selectinstate(::api::OptionalProposalState* selectinstate);
+
+  // @@protoc_insertion_point(class_scope:api.GetNewAssetProposalsRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::api::OptionalProposalState* selectinstate_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetNewAssetProposalsResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetNewAssetProposalsResponse) */ {
+ public:
+  GetNewAssetProposalsResponse();
+  virtual ~GetNewAssetProposalsResponse();
+
+  GetNewAssetProposalsResponse(const GetNewAssetProposalsResponse& from);
+
+  inline GetNewAssetProposalsResponse& operator=(const GetNewAssetProposalsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetNewAssetProposalsResponse(GetNewAssetProposalsResponse&& from) noexcept
+    : GetNewAssetProposalsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetNewAssetProposalsResponse& operator=(GetNewAssetProposalsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetNewAssetProposalsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetNewAssetProposalsResponse* internal_default_instance() {
+    return reinterpret_cast<const GetNewAssetProposalsResponse*>(
+               &_GetNewAssetProposalsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    26;
+
+  void Swap(GetNewAssetProposalsResponse* other);
+  friend void swap(GetNewAssetProposalsResponse& a, GetNewAssetProposalsResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetNewAssetProposalsResponse* New() const final {
+    return CreateMaybeMessage<GetNewAssetProposalsResponse>(nullptr);
+  }
+
+  GetNewAssetProposalsResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetNewAssetProposalsResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetNewAssetProposalsResponse& from);
+  void MergeFrom(const GetNewAssetProposalsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetNewAssetProposalsResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .vega.GovernanceData data = 1;
+  int data_size() const;
+  void clear_data();
+  static const int kDataFieldNumber = 1;
+  ::vega::GovernanceData* mutable_data(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >*
+      mutable_data();
+  const ::vega::GovernanceData& data(int index) const;
+  ::vega::GovernanceData* add_data();
+  const ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >&
+      data() const;
+
+  // @@protoc_insertion_point(class_scope:api.GetNewAssetProposalsResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData > data_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
@@ -2788,7 +3644,7 @@ class GetProposalByIDRequest :
                &_GetProposalByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    27;
 
   void Swap(GetProposalByIDRequest* other);
   friend void swap(GetProposalByIDRequest& a, GetProposalByIDRequest& b) {
@@ -2870,6 +3726,121 @@ class GetProposalByIDRequest :
 };
 // -------------------------------------------------------------------
 
+class GetProposalByIDResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetProposalByIDResponse) */ {
+ public:
+  GetProposalByIDResponse();
+  virtual ~GetProposalByIDResponse();
+
+  GetProposalByIDResponse(const GetProposalByIDResponse& from);
+
+  inline GetProposalByIDResponse& operator=(const GetProposalByIDResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetProposalByIDResponse(GetProposalByIDResponse&& from) noexcept
+    : GetProposalByIDResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetProposalByIDResponse& operator=(GetProposalByIDResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetProposalByIDResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetProposalByIDResponse* internal_default_instance() {
+    return reinterpret_cast<const GetProposalByIDResponse*>(
+               &_GetProposalByIDResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    28;
+
+  void Swap(GetProposalByIDResponse* other);
+  friend void swap(GetProposalByIDResponse& a, GetProposalByIDResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetProposalByIDResponse* New() const final {
+    return CreateMaybeMessage<GetProposalByIDResponse>(nullptr);
+  }
+
+  GetProposalByIDResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetProposalByIDResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetProposalByIDResponse& from);
+  void MergeFrom(const GetProposalByIDResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetProposalByIDResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .vega.GovernanceData data = 1;
+  bool has_data() const;
+  void clear_data();
+  static const int kDataFieldNumber = 1;
+  const ::vega::GovernanceData& data() const;
+  ::vega::GovernanceData* release_data();
+  ::vega::GovernanceData* mutable_data();
+  void set_allocated_data(::vega::GovernanceData* data);
+
+  // @@protoc_insertion_point(class_scope:api.GetProposalByIDResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::vega::GovernanceData* data_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetProposalByReferenceRequest :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetProposalByReferenceRequest) */ {
  public:
@@ -2908,7 +3879,7 @@ class GetProposalByReferenceRequest :
                &_GetProposalByReferenceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    29;
 
   void Swap(GetProposalByReferenceRequest* other);
   friend void swap(GetProposalByReferenceRequest& a, GetProposalByReferenceRequest& b) {
@@ -2990,6 +3961,121 @@ class GetProposalByReferenceRequest :
 };
 // -------------------------------------------------------------------
 
+class GetProposalByReferenceResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetProposalByReferenceResponse) */ {
+ public:
+  GetProposalByReferenceResponse();
+  virtual ~GetProposalByReferenceResponse();
+
+  GetProposalByReferenceResponse(const GetProposalByReferenceResponse& from);
+
+  inline GetProposalByReferenceResponse& operator=(const GetProposalByReferenceResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetProposalByReferenceResponse(GetProposalByReferenceResponse&& from) noexcept
+    : GetProposalByReferenceResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetProposalByReferenceResponse& operator=(GetProposalByReferenceResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetProposalByReferenceResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetProposalByReferenceResponse* internal_default_instance() {
+    return reinterpret_cast<const GetProposalByReferenceResponse*>(
+               &_GetProposalByReferenceResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    30;
+
+  void Swap(GetProposalByReferenceResponse* other);
+  friend void swap(GetProposalByReferenceResponse& a, GetProposalByReferenceResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetProposalByReferenceResponse* New() const final {
+    return CreateMaybeMessage<GetProposalByReferenceResponse>(nullptr);
+  }
+
+  GetProposalByReferenceResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetProposalByReferenceResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetProposalByReferenceResponse& from);
+  void MergeFrom(const GetProposalByReferenceResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetProposalByReferenceResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .vega.GovernanceData data = 1;
+  bool has_data() const;
+  void clear_data();
+  static const int kDataFieldNumber = 1;
+  const ::vega::GovernanceData& data() const;
+  ::vega::GovernanceData* release_data();
+  ::vega::GovernanceData* mutable_data();
+  void set_allocated_data(::vega::GovernanceData* data);
+
+  // @@protoc_insertion_point(class_scope:api.GetProposalByReferenceResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::vega::GovernanceData* data_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
 class ObservePartyProposalsRequest :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.ObservePartyProposalsRequest) */ {
  public:
@@ -3028,7 +4114,7 @@ class ObservePartyProposalsRequest :
                &_ObservePartyProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    31;
 
   void Swap(ObservePartyProposalsRequest* other);
   friend void swap(ObservePartyProposalsRequest& a, ObservePartyProposalsRequest& b) {
@@ -3148,7 +4234,7 @@ class ObserveProposalVotesRequest :
                &_ObserveProposalVotesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    32;
 
   void Swap(ObserveProposalVotesRequest* other);
   friend void swap(ObserveProposalVotesRequest& a, ObserveProposalVotesRequest& b) {
@@ -3268,7 +4354,7 @@ class ObservePartyVotesRequest :
                &_ObservePartyVotesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    33;
 
   void Swap(ObservePartyVotesRequest* other);
   friend void swap(ObservePartyVotesRequest& a, ObservePartyVotesRequest& b) {
@@ -3388,7 +4474,7 @@ class MarginLevelsSubscribeRequest :
                &_MarginLevelsSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    34;
 
   void Swap(MarginLevelsSubscribeRequest* other);
   friend void swap(MarginLevelsSubscribeRequest& a, MarginLevelsSubscribeRequest& b) {
@@ -3523,7 +4609,7 @@ class MarginLevelsRequest :
                &_MarginLevelsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    35;
 
   void Swap(MarginLevelsRequest* other);
   friend void swap(MarginLevelsRequest& a, MarginLevelsRequest& b) {
@@ -3658,7 +4744,7 @@ class MarginLevelsResponse :
                &_MarginLevelsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    36;
 
   void Swap(MarginLevelsResponse* other);
   friend void swap(MarginLevelsResponse& a, MarginLevelsResponse& b) {
@@ -3776,7 +4862,7 @@ class MarketsDataSubscribeRequest :
                &_MarketsDataSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    37;
 
   void Swap(MarketsDataSubscribeRequest* other);
   friend void swap(MarketsDataSubscribeRequest& a, MarketsDataSubscribeRequest& b) {
@@ -3896,7 +4982,7 @@ class MarketDataByIDRequest :
                &_MarketDataByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    38;
 
   void Swap(MarketDataByIDRequest* other);
   friend void swap(MarketDataByIDRequest& a, MarketDataByIDRequest& b) {
@@ -4016,7 +5102,7 @@ class MarketDataByIDResponse :
                &_MarketDataByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    39;
 
   void Swap(MarketDataByIDResponse* other);
   friend void swap(MarketDataByIDResponse& a, MarketDataByIDResponse& b) {
@@ -4131,7 +5217,7 @@ class MarketsDataResponse :
                &_MarketsDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    40;
 
   void Swap(MarketsDataResponse* other);
   friend void swap(MarketsDataResponse& a, MarketsDataResponse& b) {
@@ -4249,7 +5335,7 @@ class LastTradeRequest :
                &_LastTradeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    41;
 
   void Swap(LastTradeRequest* other);
   friend void swap(LastTradeRequest& a, LastTradeRequest& b) {
@@ -4369,7 +5455,7 @@ class LastTradeResponse :
                &_LastTradeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    42;
 
   void Swap(LastTradeResponse* other);
   friend void swap(LastTradeResponse& a, LastTradeResponse& b) {
@@ -4484,7 +5570,7 @@ class MarketByIDRequest :
                &_MarketByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    43;
 
   void Swap(MarketByIDRequest* other);
   friend void swap(MarketByIDRequest& a, MarketByIDRequest& b) {
@@ -4604,7 +5690,7 @@ class MarketByIDResponse :
                &_MarketByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    44;
 
   void Swap(MarketByIDResponse* other);
   friend void swap(MarketByIDResponse& a, MarketByIDResponse& b) {
@@ -4719,7 +5805,7 @@ class PartyByIDRequest :
                &_PartyByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    45;
 
   void Swap(PartyByIDRequest* other);
   friend void swap(PartyByIDRequest& a, PartyByIDRequest& b) {
@@ -4839,7 +5925,7 @@ class PartyByIDResponse :
                &_PartyByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    46;
 
   void Swap(PartyByIDResponse* other);
   friend void swap(PartyByIDResponse& a, PartyByIDResponse& b) {
@@ -4954,7 +6040,7 @@ class PartiesResponse :
                &_PartiesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    47;
 
   void Swap(PartiesResponse* other);
   friend void swap(PartiesResponse& a, PartiesResponse& b) {
@@ -5072,7 +6158,7 @@ class TradesByPartyRequest :
                &_TradesByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    48;
 
   void Swap(TradesByPartyRequest* other);
   friend void swap(TradesByPartyRequest& a, TradesByPartyRequest& b) {
@@ -5217,7 +6303,7 @@ class TradesByPartyResponse :
                &_TradesByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    49;
 
   void Swap(TradesByPartyResponse* other);
   friend void swap(TradesByPartyResponse& a, TradesByPartyResponse& b) {
@@ -5335,7 +6421,7 @@ class TradesByOrderRequest :
                &_TradesByOrderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    50;
 
   void Swap(TradesByOrderRequest* other);
   friend void swap(TradesByOrderRequest& a, TradesByOrderRequest& b) {
@@ -5455,7 +6541,7 @@ class TradesByOrderResponse :
                &_TradesByOrderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    51;
 
   void Swap(TradesByOrderResponse* other);
   friend void swap(TradesByOrderResponse& a, TradesByOrderResponse& b) {
@@ -5573,7 +6659,7 @@ class AccountsSubscribeRequest :
                &_AccountsSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    52;
 
   void Swap(AccountsSubscribeRequest* other);
   friend void swap(AccountsSubscribeRequest& a, AccountsSubscribeRequest& b) {
@@ -5730,7 +6816,7 @@ class OrdersSubscribeRequest :
                &_OrdersSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    53;
 
   void Swap(OrdersSubscribeRequest* other);
   friend void swap(OrdersSubscribeRequest& a, OrdersSubscribeRequest& b) {
@@ -5865,7 +6951,7 @@ class TradesSubscribeRequest :
                &_TradesSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    54;
 
   void Swap(TradesSubscribeRequest* other);
   friend void swap(TradesSubscribeRequest& a, TradesSubscribeRequest& b) {
@@ -6000,7 +7086,7 @@ class CandlesSubscribeRequest :
                &_CandlesSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    55;
 
   void Swap(CandlesSubscribeRequest* other);
   friend void swap(CandlesSubscribeRequest& a, CandlesSubscribeRequest& b) {
@@ -6127,7 +7213,7 @@ class MarketDepthSubscribeRequest :
                &_MarketDepthSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    56;
 
   void Swap(MarketDepthSubscribeRequest* other);
   friend void swap(MarketDepthSubscribeRequest& a, MarketDepthSubscribeRequest& b) {
@@ -6247,7 +7333,7 @@ class PositionsSubscribeRequest :
                &_PositionsSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    57;
 
   void Swap(PositionsSubscribeRequest* other);
   friend void swap(PositionsSubscribeRequest& a, PositionsSubscribeRequest& b) {
@@ -6367,7 +7453,7 @@ class OrdersByMarketRequest :
                &_OrdersByMarketRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    58;
 
   void Swap(OrdersByMarketRequest* other);
   friend void swap(OrdersByMarketRequest& a, OrdersByMarketRequest& b) {
@@ -6504,7 +7590,7 @@ class OrdersByMarketResponse :
                &_OrdersByMarketResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    59;
 
   void Swap(OrdersByMarketResponse* other);
   friend void swap(OrdersByMarketResponse& a, OrdersByMarketResponse& b) {
@@ -6622,7 +7708,7 @@ class OrdersByPartyRequest :
                &_OrdersByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    60;
 
   void Swap(OrdersByPartyRequest* other);
   friend void swap(OrdersByPartyRequest& a, OrdersByPartyRequest& b) {
@@ -6759,7 +7845,7 @@ class OrdersByPartyResponse :
                &_OrdersByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    61;
 
   void Swap(OrdersByPartyResponse* other);
   friend void swap(OrdersByPartyResponse& a, OrdersByPartyResponse& b) {
@@ -6877,7 +7963,7 @@ class OrderByMarketAndIdRequest :
                &_OrderByMarketAndIdRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    62;
 
   void Swap(OrderByMarketAndIdRequest* other);
   friend void swap(OrderByMarketAndIdRequest& a, OrderByMarketAndIdRequest& b) {
@@ -7012,7 +8098,7 @@ class OrderByMarketAndIdResponse :
                &_OrderByMarketAndIdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    63;
 
   void Swap(OrderByMarketAndIdResponse* other);
   friend void swap(OrderByMarketAndIdResponse& a, OrderByMarketAndIdResponse& b) {
@@ -7127,7 +8213,7 @@ class OrderByReferenceRequest :
                &_OrderByReferenceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    64;
 
   void Swap(OrderByReferenceRequest* other);
   friend void swap(OrderByReferenceRequest& a, OrderByReferenceRequest& b) {
@@ -7247,7 +8333,7 @@ class OrderByReferenceResponse :
                &_OrderByReferenceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    65;
 
   void Swap(OrderByReferenceResponse* other);
   friend void swap(OrderByReferenceResponse& a, OrderByReferenceResponse& b) {
@@ -7362,7 +8448,7 @@ class MarketsResponse :
                &_MarketsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    66;
 
   void Swap(MarketsResponse* other);
   friend void swap(MarketsResponse& a, MarketsResponse& b) {
@@ -7480,7 +8566,7 @@ class CandlesRequest :
                &_CandlesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    67;
 
   void Swap(CandlesRequest* other);
   friend void swap(CandlesRequest& a, CandlesRequest& b) {
@@ -7614,7 +8700,7 @@ class CandlesResponse :
                &_CandlesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    68;
 
   void Swap(CandlesResponse* other);
   friend void swap(CandlesResponse& a, CandlesResponse& b) {
@@ -7732,7 +8818,7 @@ class MarketDepthRequest :
                &_MarketDepthRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    69;
 
   void Swap(MarketDepthRequest* other);
   friend void swap(MarketDepthRequest& a, MarketDepthRequest& b) {
@@ -7859,7 +8945,7 @@ class MarketDepthResponse :
                &_MarketDepthResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    70;
 
   void Swap(MarketDepthResponse* other);
   friend void swap(MarketDepthResponse& a, MarketDepthResponse& b) {
@@ -8015,7 +9101,7 @@ class TradesByMarketRequest :
                &_TradesByMarketRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    71;
 
   void Swap(TradesByMarketRequest* other);
   friend void swap(TradesByMarketRequest& a, TradesByMarketRequest& b) {
@@ -8145,7 +9231,7 @@ class TradesByMarketResponse :
                &_TradesByMarketResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    72;
 
   void Swap(TradesByMarketResponse* other);
   friend void swap(TradesByMarketResponse& a, TradesByMarketResponse& b) {
@@ -8263,7 +9349,7 @@ class PositionsByPartyRequest :
                &_PositionsByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    73;
 
   void Swap(PositionsByPartyRequest* other);
   friend void swap(PositionsByPartyRequest& a, PositionsByPartyRequest& b) {
@@ -8398,7 +9484,7 @@ class PositionsByPartyResponse :
                &_PositionsByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    74;
 
   void Swap(PositionsByPartyResponse* other);
   friend void swap(PositionsByPartyResponse& a, PositionsByPartyResponse& b) {
@@ -8516,7 +9602,7 @@ class VegaTimeResponse :
                &_VegaTimeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    75;
 
   void Swap(VegaTimeResponse* other);
   friend void swap(VegaTimeResponse& a, VegaTimeResponse& b) {
@@ -8628,7 +9714,7 @@ class Pagination :
                &_Pagination_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    76;
 
   void Swap(Pagination* other);
   friend void swap(Pagination& a, Pagination& b) {
@@ -8754,7 +9840,7 @@ class OrdersStream :
                &_OrdersStream_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    77;
 
   void Swap(OrdersStream* other);
   friend void swap(OrdersStream& a, OrdersStream& b) {
@@ -8872,7 +9958,7 @@ class TradesStream :
                &_TradesStream_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    78;
 
   void Swap(TradesStream* other);
   friend void swap(TradesStream& a, TradesStream& b) {
@@ -8990,7 +10076,7 @@ class PartyAccountsRequest :
                &_PartyAccountsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    79;
 
   void Swap(PartyAccountsRequest* other);
   friend void swap(PartyAccountsRequest& a, PartyAccountsRequest& b) {
@@ -9147,7 +10233,7 @@ class PartyAccountsResponse :
                &_PartyAccountsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    80;
 
   void Swap(PartyAccountsResponse* other);
   friend void swap(PartyAccountsResponse& a, PartyAccountsResponse& b) {
@@ -9265,7 +10351,7 @@ class MarketAccountsRequest :
                &_MarketAccountsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    81;
 
   void Swap(MarketAccountsRequest* other);
   friend void swap(MarketAccountsRequest& a, MarketAccountsRequest& b) {
@@ -9400,7 +10486,7 @@ class MarketAccountsResponse :
                &_MarketAccountsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    82;
 
   void Swap(MarketAccountsResponse* other);
   friend void swap(MarketAccountsResponse& a, MarketAccountsResponse& b) {
@@ -9518,7 +10604,7 @@ class PrepareProposalRequest :
                &_PrepareProposalRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    83;
 
   void Swap(PrepareProposalRequest* other);
   friend void swap(PrepareProposalRequest& a, PrepareProposalRequest& b) {
@@ -9663,7 +10749,7 @@ class PrepareProposalResponse :
                &_PrepareProposalResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    84;
 
   void Swap(PrepareProposalResponse* other);
   friend void swap(PrepareProposalResponse& a, PrepareProposalResponse& b) {
@@ -9793,7 +10879,7 @@ class PrepareVoteRequest :
                &_PrepareVoteRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    85;
 
   void Swap(PrepareVoteRequest* other);
   friend void swap(PrepareVoteRequest& a, PrepareVoteRequest& b) {
@@ -9908,7 +10994,7 @@ class PrepareVoteResponse :
                &_PrepareVoteResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    86;
 
   void Swap(PrepareVoteResponse* other);
   friend void swap(PrepareVoteResponse& a, PrepareVoteResponse& b) {
@@ -10038,7 +11124,7 @@ class OrderByIDRequest :
                &_OrderByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    87;
 
   void Swap(OrderByIDRequest* other);
   friend void swap(OrderByIDRequest& a, OrderByIDRequest& b) {
@@ -10165,7 +11251,7 @@ class OrderByReferenceIDRequest :
                &_OrderByReferenceIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    88;
 
   void Swap(OrderByReferenceIDRequest* other);
   friend void swap(OrderByReferenceIDRequest& a, OrderByReferenceIDRequest& b) {
@@ -10285,7 +11371,7 @@ class OrderVersionsByIDRequest :
                &_OrderVersionsByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    89;
 
   void Swap(OrderVersionsByIDRequest* other);
   friend void swap(OrderVersionsByIDRequest& a, OrderVersionsByIDRequest& b) {
@@ -10415,7 +11501,7 @@ class OrderVersionsResponse :
                &_OrderVersionsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    81;
+    90;
 
   void Swap(OrderVersionsResponse* other);
   friend void swap(OrderVersionsResponse& a, OrderVersionsResponse& b) {
@@ -11092,168 +12178,88 @@ inline void OptionalProposalState::set_value(::vega::Proposal_State value) {
 
 // -------------------------------------------------------------------
 
-// GetProposalsByStateRequest
+// GetProposalsRequest
 
-// .api.OptionalProposalState state = 1;
-inline bool GetProposalsByStateRequest::has_state() const {
-  return this != internal_default_instance() && state_ != nullptr;
+// .api.OptionalProposalState selectInState = 1;
+inline bool GetProposalsRequest::has_selectinstate() const {
+  return this != internal_default_instance() && selectinstate_ != nullptr;
 }
-inline void GetProposalsByStateRequest::clear_state() {
-  if (GetArenaNoVirtual() == nullptr && state_ != nullptr) {
-    delete state_;
+inline void GetProposalsRequest::clear_selectinstate() {
+  if (GetArenaNoVirtual() == nullptr && selectinstate_ != nullptr) {
+    delete selectinstate_;
   }
-  state_ = nullptr;
+  selectinstate_ = nullptr;
 }
-inline const ::api::OptionalProposalState& GetProposalsByStateRequest::state() const {
-  const ::api::OptionalProposalState* p = state_;
-  // @@protoc_insertion_point(field_get:api.GetProposalsByStateRequest.state)
+inline const ::api::OptionalProposalState& GetProposalsRequest::selectinstate() const {
+  const ::api::OptionalProposalState* p = selectinstate_;
+  // @@protoc_insertion_point(field_get:api.GetProposalsRequest.selectInState)
   return p != nullptr ? *p : *reinterpret_cast<const ::api::OptionalProposalState*>(
       &::api::_OptionalProposalState_default_instance_);
 }
-inline ::api::OptionalProposalState* GetProposalsByStateRequest::release_state() {
-  // @@protoc_insertion_point(field_release:api.GetProposalsByStateRequest.state)
+inline ::api::OptionalProposalState* GetProposalsRequest::release_selectinstate() {
+  // @@protoc_insertion_point(field_release:api.GetProposalsRequest.selectInState)
   
-  ::api::OptionalProposalState* temp = state_;
-  state_ = nullptr;
+  ::api::OptionalProposalState* temp = selectinstate_;
+  selectinstate_ = nullptr;
   return temp;
 }
-inline ::api::OptionalProposalState* GetProposalsByStateRequest::mutable_state() {
+inline ::api::OptionalProposalState* GetProposalsRequest::mutable_selectinstate() {
   
-  if (state_ == nullptr) {
+  if (selectinstate_ == nullptr) {
     auto* p = CreateMaybeMessage<::api::OptionalProposalState>(GetArenaNoVirtual());
-    state_ = p;
+    selectinstate_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.GetProposalsByStateRequest.state)
-  return state_;
+  // @@protoc_insertion_point(field_mutable:api.GetProposalsRequest.selectInState)
+  return selectinstate_;
 }
-inline void GetProposalsByStateRequest::set_allocated_state(::api::OptionalProposalState* state) {
+inline void GetProposalsRequest::set_allocated_selectinstate(::api::OptionalProposalState* selectinstate) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete state_;
+    delete selectinstate_;
   }
-  if (state) {
+  if (selectinstate) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      state = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, state, submessage_arena);
+      selectinstate = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, selectinstate, submessage_arena);
     }
     
   } else {
     
   }
-  state_ = state;
-  // @@protoc_insertion_point(field_set_allocated:api.GetProposalsByStateRequest.state)
+  selectinstate_ = selectinstate;
+  // @@protoc_insertion_point(field_set_allocated:api.GetProposalsRequest.selectInState)
 }
 
 // -------------------------------------------------------------------
 
-// GetGovernanceDataResponse
+// GetProposalsResponse
 
 // repeated .vega.GovernanceData data = 1;
-inline int GetGovernanceDataResponse::data_size() const {
+inline int GetProposalsResponse::data_size() const {
   return data_.size();
 }
-inline ::vega::GovernanceData* GetGovernanceDataResponse::mutable_data(int index) {
-  // @@protoc_insertion_point(field_mutable:api.GetGovernanceDataResponse.data)
+inline ::vega::GovernanceData* GetProposalsResponse::mutable_data(int index) {
+  // @@protoc_insertion_point(field_mutable:api.GetProposalsResponse.data)
   return data_.Mutable(index);
 }
 inline ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >*
-GetGovernanceDataResponse::mutable_data() {
-  // @@protoc_insertion_point(field_mutable_list:api.GetGovernanceDataResponse.data)
+GetProposalsResponse::mutable_data() {
+  // @@protoc_insertion_point(field_mutable_list:api.GetProposalsResponse.data)
   return &data_;
 }
-inline const ::vega::GovernanceData& GetGovernanceDataResponse::data(int index) const {
-  // @@protoc_insertion_point(field_get:api.GetGovernanceDataResponse.data)
+inline const ::vega::GovernanceData& GetProposalsResponse::data(int index) const {
+  // @@protoc_insertion_point(field_get:api.GetProposalsResponse.data)
   return data_.Get(index);
 }
-inline ::vega::GovernanceData* GetGovernanceDataResponse::add_data() {
-  // @@protoc_insertion_point(field_add:api.GetGovernanceDataResponse.data)
+inline ::vega::GovernanceData* GetProposalsResponse::add_data() {
+  // @@protoc_insertion_point(field_add:api.GetProposalsResponse.data)
   return data_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >&
-GetGovernanceDataResponse::data() const {
-  // @@protoc_insertion_point(field_list:api.GetGovernanceDataResponse.data)
+GetProposalsResponse::data() const {
+  // @@protoc_insertion_point(field_list:api.GetProposalsResponse.data)
   return data_;
-}
-
-// -------------------------------------------------------------------
-
-// GetProposalResponse
-
-// .vega.GovernanceData proposal = 1;
-inline bool GetProposalResponse::has_proposal() const {
-  return this != internal_default_instance() && proposal_ != nullptr;
-}
-inline const ::vega::GovernanceData& GetProposalResponse::proposal() const {
-  const ::vega::GovernanceData* p = proposal_;
-  // @@protoc_insertion_point(field_get:api.GetProposalResponse.proposal)
-  return p != nullptr ? *p : *reinterpret_cast<const ::vega::GovernanceData*>(
-      &::vega::_GovernanceData_default_instance_);
-}
-inline ::vega::GovernanceData* GetProposalResponse::release_proposal() {
-  // @@protoc_insertion_point(field_release:api.GetProposalResponse.proposal)
-  
-  ::vega::GovernanceData* temp = proposal_;
-  proposal_ = nullptr;
-  return temp;
-}
-inline ::vega::GovernanceData* GetProposalResponse::mutable_proposal() {
-  
-  if (proposal_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::GovernanceData>(GetArenaNoVirtual());
-    proposal_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.GetProposalResponse.proposal)
-  return proposal_;
-}
-inline void GetProposalResponse::set_allocated_proposal(::vega::GovernanceData* proposal) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(proposal_);
-  }
-  if (proposal) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      proposal = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, proposal, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  proposal_ = proposal;
-  // @@protoc_insertion_point(field_set_allocated:api.GetProposalResponse.proposal)
-}
-
-// -------------------------------------------------------------------
-
-// GetVotesResponse
-
-// repeated .vega.Vote votes = 1;
-inline int GetVotesResponse::votes_size() const {
-  return votes_.size();
-}
-inline ::vega::Vote* GetVotesResponse::mutable_votes(int index) {
-  // @@protoc_insertion_point(field_mutable:api.GetVotesResponse.votes)
-  return votes_.Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField< ::vega::Vote >*
-GetVotesResponse::mutable_votes() {
-  // @@protoc_insertion_point(field_mutable_list:api.GetVotesResponse.votes)
-  return &votes_;
-}
-inline const ::vega::Vote& GetVotesResponse::votes(int index) const {
-  // @@protoc_insertion_point(field_get:api.GetVotesResponse.votes)
-  return votes_.Get(index);
-}
-inline ::vega::Vote* GetVotesResponse::add_votes() {
-  // @@protoc_insertion_point(field_add:api.GetVotesResponse.votes)
-  return votes_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::vega::Vote >&
-GetVotesResponse::votes() const {
-  // @@protoc_insertion_point(field_list:api.GetVotesResponse.votes)
-  return votes_;
 }
 
 // -------------------------------------------------------------------
@@ -11313,55 +12319,86 @@ inline void GetProposalsByPartyRequest::set_allocated_partyid(::std::string* par
   // @@protoc_insertion_point(field_set_allocated:api.GetProposalsByPartyRequest.partyID)
 }
 
-// .api.OptionalProposalState state = 2;
-inline bool GetProposalsByPartyRequest::has_state() const {
-  return this != internal_default_instance() && state_ != nullptr;
+// .api.OptionalProposalState selectInState = 2;
+inline bool GetProposalsByPartyRequest::has_selectinstate() const {
+  return this != internal_default_instance() && selectinstate_ != nullptr;
 }
-inline void GetProposalsByPartyRequest::clear_state() {
-  if (GetArenaNoVirtual() == nullptr && state_ != nullptr) {
-    delete state_;
+inline void GetProposalsByPartyRequest::clear_selectinstate() {
+  if (GetArenaNoVirtual() == nullptr && selectinstate_ != nullptr) {
+    delete selectinstate_;
   }
-  state_ = nullptr;
+  selectinstate_ = nullptr;
 }
-inline const ::api::OptionalProposalState& GetProposalsByPartyRequest::state() const {
-  const ::api::OptionalProposalState* p = state_;
-  // @@protoc_insertion_point(field_get:api.GetProposalsByPartyRequest.state)
+inline const ::api::OptionalProposalState& GetProposalsByPartyRequest::selectinstate() const {
+  const ::api::OptionalProposalState* p = selectinstate_;
+  // @@protoc_insertion_point(field_get:api.GetProposalsByPartyRequest.selectInState)
   return p != nullptr ? *p : *reinterpret_cast<const ::api::OptionalProposalState*>(
       &::api::_OptionalProposalState_default_instance_);
 }
-inline ::api::OptionalProposalState* GetProposalsByPartyRequest::release_state() {
-  // @@protoc_insertion_point(field_release:api.GetProposalsByPartyRequest.state)
+inline ::api::OptionalProposalState* GetProposalsByPartyRequest::release_selectinstate() {
+  // @@protoc_insertion_point(field_release:api.GetProposalsByPartyRequest.selectInState)
   
-  ::api::OptionalProposalState* temp = state_;
-  state_ = nullptr;
+  ::api::OptionalProposalState* temp = selectinstate_;
+  selectinstate_ = nullptr;
   return temp;
 }
-inline ::api::OptionalProposalState* GetProposalsByPartyRequest::mutable_state() {
+inline ::api::OptionalProposalState* GetProposalsByPartyRequest::mutable_selectinstate() {
   
-  if (state_ == nullptr) {
+  if (selectinstate_ == nullptr) {
     auto* p = CreateMaybeMessage<::api::OptionalProposalState>(GetArenaNoVirtual());
-    state_ = p;
+    selectinstate_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.GetProposalsByPartyRequest.state)
-  return state_;
+  // @@protoc_insertion_point(field_mutable:api.GetProposalsByPartyRequest.selectInState)
+  return selectinstate_;
 }
-inline void GetProposalsByPartyRequest::set_allocated_state(::api::OptionalProposalState* state) {
+inline void GetProposalsByPartyRequest::set_allocated_selectinstate(::api::OptionalProposalState* selectinstate) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete state_;
+    delete selectinstate_;
   }
-  if (state) {
+  if (selectinstate) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      state = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, state, submessage_arena);
+      selectinstate = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, selectinstate, submessage_arena);
     }
     
   } else {
     
   }
-  state_ = state;
-  // @@protoc_insertion_point(field_set_allocated:api.GetProposalsByPartyRequest.state)
+  selectinstate_ = selectinstate;
+  // @@protoc_insertion_point(field_set_allocated:api.GetProposalsByPartyRequest.selectInState)
+}
+
+// -------------------------------------------------------------------
+
+// GetProposalsByPartyResponse
+
+// repeated .vega.GovernanceData data = 1;
+inline int GetProposalsByPartyResponse::data_size() const {
+  return data_.size();
+}
+inline ::vega::GovernanceData* GetProposalsByPartyResponse::mutable_data(int index) {
+  // @@protoc_insertion_point(field_mutable:api.GetProposalsByPartyResponse.data)
+  return data_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >*
+GetProposalsByPartyResponse::mutable_data() {
+  // @@protoc_insertion_point(field_mutable_list:api.GetProposalsByPartyResponse.data)
+  return &data_;
+}
+inline const ::vega::GovernanceData& GetProposalsByPartyResponse::data(int index) const {
+  // @@protoc_insertion_point(field_get:api.GetProposalsByPartyResponse.data)
+  return data_.Get(index);
+}
+inline ::vega::GovernanceData* GetProposalsByPartyResponse::add_data() {
+  // @@protoc_insertion_point(field_add:api.GetProposalsByPartyResponse.data)
+  return data_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >&
+GetProposalsByPartyResponse::data() const {
+  // @@protoc_insertion_point(field_list:api.GetProposalsByPartyResponse.data)
+  return data_;
 }
 
 // -------------------------------------------------------------------
@@ -11423,6 +12460,123 @@ inline void GetVotesByPartyRequest::set_allocated_partyid(::std::string* partyid
 
 // -------------------------------------------------------------------
 
+// GetVotesByPartyResponse
+
+// repeated .vega.Vote votes = 1;
+inline int GetVotesByPartyResponse::votes_size() const {
+  return votes_.size();
+}
+inline ::vega::Vote* GetVotesByPartyResponse::mutable_votes(int index) {
+  // @@protoc_insertion_point(field_mutable:api.GetVotesByPartyResponse.votes)
+  return votes_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::Vote >*
+GetVotesByPartyResponse::mutable_votes() {
+  // @@protoc_insertion_point(field_mutable_list:api.GetVotesByPartyResponse.votes)
+  return &votes_;
+}
+inline const ::vega::Vote& GetVotesByPartyResponse::votes(int index) const {
+  // @@protoc_insertion_point(field_get:api.GetVotesByPartyResponse.votes)
+  return votes_.Get(index);
+}
+inline ::vega::Vote* GetVotesByPartyResponse::add_votes() {
+  // @@protoc_insertion_point(field_add:api.GetVotesByPartyResponse.votes)
+  return votes_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::Vote >&
+GetVotesByPartyResponse::votes() const {
+  // @@protoc_insertion_point(field_list:api.GetVotesByPartyResponse.votes)
+  return votes_;
+}
+
+// -------------------------------------------------------------------
+
+// GetNewMarketProposalsRequest
+
+// .api.OptionalProposalState selectInState = 1;
+inline bool GetNewMarketProposalsRequest::has_selectinstate() const {
+  return this != internal_default_instance() && selectinstate_ != nullptr;
+}
+inline void GetNewMarketProposalsRequest::clear_selectinstate() {
+  if (GetArenaNoVirtual() == nullptr && selectinstate_ != nullptr) {
+    delete selectinstate_;
+  }
+  selectinstate_ = nullptr;
+}
+inline const ::api::OptionalProposalState& GetNewMarketProposalsRequest::selectinstate() const {
+  const ::api::OptionalProposalState* p = selectinstate_;
+  // @@protoc_insertion_point(field_get:api.GetNewMarketProposalsRequest.selectInState)
+  return p != nullptr ? *p : *reinterpret_cast<const ::api::OptionalProposalState*>(
+      &::api::_OptionalProposalState_default_instance_);
+}
+inline ::api::OptionalProposalState* GetNewMarketProposalsRequest::release_selectinstate() {
+  // @@protoc_insertion_point(field_release:api.GetNewMarketProposalsRequest.selectInState)
+  
+  ::api::OptionalProposalState* temp = selectinstate_;
+  selectinstate_ = nullptr;
+  return temp;
+}
+inline ::api::OptionalProposalState* GetNewMarketProposalsRequest::mutable_selectinstate() {
+  
+  if (selectinstate_ == nullptr) {
+    auto* p = CreateMaybeMessage<::api::OptionalProposalState>(GetArenaNoVirtual());
+    selectinstate_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.GetNewMarketProposalsRequest.selectInState)
+  return selectinstate_;
+}
+inline void GetNewMarketProposalsRequest::set_allocated_selectinstate(::api::OptionalProposalState* selectinstate) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete selectinstate_;
+  }
+  if (selectinstate) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      selectinstate = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, selectinstate, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  selectinstate_ = selectinstate;
+  // @@protoc_insertion_point(field_set_allocated:api.GetNewMarketProposalsRequest.selectInState)
+}
+
+// -------------------------------------------------------------------
+
+// GetNewMarketProposalsResponse
+
+// repeated .vega.GovernanceData data = 1;
+inline int GetNewMarketProposalsResponse::data_size() const {
+  return data_.size();
+}
+inline ::vega::GovernanceData* GetNewMarketProposalsResponse::mutable_data(int index) {
+  // @@protoc_insertion_point(field_mutable:api.GetNewMarketProposalsResponse.data)
+  return data_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >*
+GetNewMarketProposalsResponse::mutable_data() {
+  // @@protoc_insertion_point(field_mutable_list:api.GetNewMarketProposalsResponse.data)
+  return &data_;
+}
+inline const ::vega::GovernanceData& GetNewMarketProposalsResponse::data(int index) const {
+  // @@protoc_insertion_point(field_get:api.GetNewMarketProposalsResponse.data)
+  return data_.Get(index);
+}
+inline ::vega::GovernanceData* GetNewMarketProposalsResponse::add_data() {
+  // @@protoc_insertion_point(field_add:api.GetNewMarketProposalsResponse.data)
+  return data_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >&
+GetNewMarketProposalsResponse::data() const {
+  // @@protoc_insertion_point(field_list:api.GetNewMarketProposalsResponse.data)
+  return data_;
+}
+
+// -------------------------------------------------------------------
+
 // GetUpdateMarketProposalsRequest
 
 // string marketID = 1 [(.validator.field) = {
@@ -11478,55 +12632,258 @@ inline void GetUpdateMarketProposalsRequest::set_allocated_marketid(::std::strin
   // @@protoc_insertion_point(field_set_allocated:api.GetUpdateMarketProposalsRequest.marketID)
 }
 
-// .api.OptionalProposalState state = 2;
-inline bool GetUpdateMarketProposalsRequest::has_state() const {
-  return this != internal_default_instance() && state_ != nullptr;
+// .api.OptionalProposalState selectInState = 2;
+inline bool GetUpdateMarketProposalsRequest::has_selectinstate() const {
+  return this != internal_default_instance() && selectinstate_ != nullptr;
 }
-inline void GetUpdateMarketProposalsRequest::clear_state() {
-  if (GetArenaNoVirtual() == nullptr && state_ != nullptr) {
-    delete state_;
+inline void GetUpdateMarketProposalsRequest::clear_selectinstate() {
+  if (GetArenaNoVirtual() == nullptr && selectinstate_ != nullptr) {
+    delete selectinstate_;
   }
-  state_ = nullptr;
+  selectinstate_ = nullptr;
 }
-inline const ::api::OptionalProposalState& GetUpdateMarketProposalsRequest::state() const {
-  const ::api::OptionalProposalState* p = state_;
-  // @@protoc_insertion_point(field_get:api.GetUpdateMarketProposalsRequest.state)
+inline const ::api::OptionalProposalState& GetUpdateMarketProposalsRequest::selectinstate() const {
+  const ::api::OptionalProposalState* p = selectinstate_;
+  // @@protoc_insertion_point(field_get:api.GetUpdateMarketProposalsRequest.selectInState)
   return p != nullptr ? *p : *reinterpret_cast<const ::api::OptionalProposalState*>(
       &::api::_OptionalProposalState_default_instance_);
 }
-inline ::api::OptionalProposalState* GetUpdateMarketProposalsRequest::release_state() {
-  // @@protoc_insertion_point(field_release:api.GetUpdateMarketProposalsRequest.state)
+inline ::api::OptionalProposalState* GetUpdateMarketProposalsRequest::release_selectinstate() {
+  // @@protoc_insertion_point(field_release:api.GetUpdateMarketProposalsRequest.selectInState)
   
-  ::api::OptionalProposalState* temp = state_;
-  state_ = nullptr;
+  ::api::OptionalProposalState* temp = selectinstate_;
+  selectinstate_ = nullptr;
   return temp;
 }
-inline ::api::OptionalProposalState* GetUpdateMarketProposalsRequest::mutable_state() {
+inline ::api::OptionalProposalState* GetUpdateMarketProposalsRequest::mutable_selectinstate() {
   
-  if (state_ == nullptr) {
+  if (selectinstate_ == nullptr) {
     auto* p = CreateMaybeMessage<::api::OptionalProposalState>(GetArenaNoVirtual());
-    state_ = p;
+    selectinstate_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.GetUpdateMarketProposalsRequest.state)
-  return state_;
+  // @@protoc_insertion_point(field_mutable:api.GetUpdateMarketProposalsRequest.selectInState)
+  return selectinstate_;
 }
-inline void GetUpdateMarketProposalsRequest::set_allocated_state(::api::OptionalProposalState* state) {
+inline void GetUpdateMarketProposalsRequest::set_allocated_selectinstate(::api::OptionalProposalState* selectinstate) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete state_;
+    delete selectinstate_;
   }
-  if (state) {
+  if (selectinstate) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      state = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, state, submessage_arena);
+      selectinstate = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, selectinstate, submessage_arena);
     }
     
   } else {
     
   }
-  state_ = state;
-  // @@protoc_insertion_point(field_set_allocated:api.GetUpdateMarketProposalsRequest.state)
+  selectinstate_ = selectinstate;
+  // @@protoc_insertion_point(field_set_allocated:api.GetUpdateMarketProposalsRequest.selectInState)
+}
+
+// -------------------------------------------------------------------
+
+// GetUpdateMarketProposalsResponse
+
+// repeated .vega.GovernanceData data = 1;
+inline int GetUpdateMarketProposalsResponse::data_size() const {
+  return data_.size();
+}
+inline ::vega::GovernanceData* GetUpdateMarketProposalsResponse::mutable_data(int index) {
+  // @@protoc_insertion_point(field_mutable:api.GetUpdateMarketProposalsResponse.data)
+  return data_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >*
+GetUpdateMarketProposalsResponse::mutable_data() {
+  // @@protoc_insertion_point(field_mutable_list:api.GetUpdateMarketProposalsResponse.data)
+  return &data_;
+}
+inline const ::vega::GovernanceData& GetUpdateMarketProposalsResponse::data(int index) const {
+  // @@protoc_insertion_point(field_get:api.GetUpdateMarketProposalsResponse.data)
+  return data_.Get(index);
+}
+inline ::vega::GovernanceData* GetUpdateMarketProposalsResponse::add_data() {
+  // @@protoc_insertion_point(field_add:api.GetUpdateMarketProposalsResponse.data)
+  return data_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >&
+GetUpdateMarketProposalsResponse::data() const {
+  // @@protoc_insertion_point(field_list:api.GetUpdateMarketProposalsResponse.data)
+  return data_;
+}
+
+// -------------------------------------------------------------------
+
+// GetNetworkParametersProposalsRequest
+
+// .api.OptionalProposalState selectInState = 1;
+inline bool GetNetworkParametersProposalsRequest::has_selectinstate() const {
+  return this != internal_default_instance() && selectinstate_ != nullptr;
+}
+inline void GetNetworkParametersProposalsRequest::clear_selectinstate() {
+  if (GetArenaNoVirtual() == nullptr && selectinstate_ != nullptr) {
+    delete selectinstate_;
+  }
+  selectinstate_ = nullptr;
+}
+inline const ::api::OptionalProposalState& GetNetworkParametersProposalsRequest::selectinstate() const {
+  const ::api::OptionalProposalState* p = selectinstate_;
+  // @@protoc_insertion_point(field_get:api.GetNetworkParametersProposalsRequest.selectInState)
+  return p != nullptr ? *p : *reinterpret_cast<const ::api::OptionalProposalState*>(
+      &::api::_OptionalProposalState_default_instance_);
+}
+inline ::api::OptionalProposalState* GetNetworkParametersProposalsRequest::release_selectinstate() {
+  // @@protoc_insertion_point(field_release:api.GetNetworkParametersProposalsRequest.selectInState)
+  
+  ::api::OptionalProposalState* temp = selectinstate_;
+  selectinstate_ = nullptr;
+  return temp;
+}
+inline ::api::OptionalProposalState* GetNetworkParametersProposalsRequest::mutable_selectinstate() {
+  
+  if (selectinstate_ == nullptr) {
+    auto* p = CreateMaybeMessage<::api::OptionalProposalState>(GetArenaNoVirtual());
+    selectinstate_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.GetNetworkParametersProposalsRequest.selectInState)
+  return selectinstate_;
+}
+inline void GetNetworkParametersProposalsRequest::set_allocated_selectinstate(::api::OptionalProposalState* selectinstate) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete selectinstate_;
+  }
+  if (selectinstate) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      selectinstate = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, selectinstate, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  selectinstate_ = selectinstate;
+  // @@protoc_insertion_point(field_set_allocated:api.GetNetworkParametersProposalsRequest.selectInState)
+}
+
+// -------------------------------------------------------------------
+
+// GetNetworkParametersProposalsResponse
+
+// repeated .vega.GovernanceData data = 1;
+inline int GetNetworkParametersProposalsResponse::data_size() const {
+  return data_.size();
+}
+inline ::vega::GovernanceData* GetNetworkParametersProposalsResponse::mutable_data(int index) {
+  // @@protoc_insertion_point(field_mutable:api.GetNetworkParametersProposalsResponse.data)
+  return data_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >*
+GetNetworkParametersProposalsResponse::mutable_data() {
+  // @@protoc_insertion_point(field_mutable_list:api.GetNetworkParametersProposalsResponse.data)
+  return &data_;
+}
+inline const ::vega::GovernanceData& GetNetworkParametersProposalsResponse::data(int index) const {
+  // @@protoc_insertion_point(field_get:api.GetNetworkParametersProposalsResponse.data)
+  return data_.Get(index);
+}
+inline ::vega::GovernanceData* GetNetworkParametersProposalsResponse::add_data() {
+  // @@protoc_insertion_point(field_add:api.GetNetworkParametersProposalsResponse.data)
+  return data_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >&
+GetNetworkParametersProposalsResponse::data() const {
+  // @@protoc_insertion_point(field_list:api.GetNetworkParametersProposalsResponse.data)
+  return data_;
+}
+
+// -------------------------------------------------------------------
+
+// GetNewAssetProposalsRequest
+
+// .api.OptionalProposalState selectInState = 1;
+inline bool GetNewAssetProposalsRequest::has_selectinstate() const {
+  return this != internal_default_instance() && selectinstate_ != nullptr;
+}
+inline void GetNewAssetProposalsRequest::clear_selectinstate() {
+  if (GetArenaNoVirtual() == nullptr && selectinstate_ != nullptr) {
+    delete selectinstate_;
+  }
+  selectinstate_ = nullptr;
+}
+inline const ::api::OptionalProposalState& GetNewAssetProposalsRequest::selectinstate() const {
+  const ::api::OptionalProposalState* p = selectinstate_;
+  // @@protoc_insertion_point(field_get:api.GetNewAssetProposalsRequest.selectInState)
+  return p != nullptr ? *p : *reinterpret_cast<const ::api::OptionalProposalState*>(
+      &::api::_OptionalProposalState_default_instance_);
+}
+inline ::api::OptionalProposalState* GetNewAssetProposalsRequest::release_selectinstate() {
+  // @@protoc_insertion_point(field_release:api.GetNewAssetProposalsRequest.selectInState)
+  
+  ::api::OptionalProposalState* temp = selectinstate_;
+  selectinstate_ = nullptr;
+  return temp;
+}
+inline ::api::OptionalProposalState* GetNewAssetProposalsRequest::mutable_selectinstate() {
+  
+  if (selectinstate_ == nullptr) {
+    auto* p = CreateMaybeMessage<::api::OptionalProposalState>(GetArenaNoVirtual());
+    selectinstate_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.GetNewAssetProposalsRequest.selectInState)
+  return selectinstate_;
+}
+inline void GetNewAssetProposalsRequest::set_allocated_selectinstate(::api::OptionalProposalState* selectinstate) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete selectinstate_;
+  }
+  if (selectinstate) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      selectinstate = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, selectinstate, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  selectinstate_ = selectinstate;
+  // @@protoc_insertion_point(field_set_allocated:api.GetNewAssetProposalsRequest.selectInState)
+}
+
+// -------------------------------------------------------------------
+
+// GetNewAssetProposalsResponse
+
+// repeated .vega.GovernanceData data = 1;
+inline int GetNewAssetProposalsResponse::data_size() const {
+  return data_.size();
+}
+inline ::vega::GovernanceData* GetNewAssetProposalsResponse::mutable_data(int index) {
+  // @@protoc_insertion_point(field_mutable:api.GetNewAssetProposalsResponse.data)
+  return data_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >*
+GetNewAssetProposalsResponse::mutable_data() {
+  // @@protoc_insertion_point(field_mutable_list:api.GetNewAssetProposalsResponse.data)
+  return &data_;
+}
+inline const ::vega::GovernanceData& GetNewAssetProposalsResponse::data(int index) const {
+  // @@protoc_insertion_point(field_get:api.GetNewAssetProposalsResponse.data)
+  return data_.Get(index);
+}
+inline ::vega::GovernanceData* GetNewAssetProposalsResponse::add_data() {
+  // @@protoc_insertion_point(field_add:api.GetNewAssetProposalsResponse.data)
+  return data_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::GovernanceData >&
+GetNewAssetProposalsResponse::data() const {
+  // @@protoc_insertion_point(field_list:api.GetNewAssetProposalsResponse.data)
+  return data_;
 }
 
 // -------------------------------------------------------------------
@@ -11588,6 +12945,55 @@ inline void GetProposalByIDRequest::set_allocated_proposalid(::std::string* prop
 
 // -------------------------------------------------------------------
 
+// GetProposalByIDResponse
+
+// .vega.GovernanceData data = 1;
+inline bool GetProposalByIDResponse::has_data() const {
+  return this != internal_default_instance() && data_ != nullptr;
+}
+inline const ::vega::GovernanceData& GetProposalByIDResponse::data() const {
+  const ::vega::GovernanceData* p = data_;
+  // @@protoc_insertion_point(field_get:api.GetProposalByIDResponse.data)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::GovernanceData*>(
+      &::vega::_GovernanceData_default_instance_);
+}
+inline ::vega::GovernanceData* GetProposalByIDResponse::release_data() {
+  // @@protoc_insertion_point(field_release:api.GetProposalByIDResponse.data)
+  
+  ::vega::GovernanceData* temp = data_;
+  data_ = nullptr;
+  return temp;
+}
+inline ::vega::GovernanceData* GetProposalByIDResponse::mutable_data() {
+  
+  if (data_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::GovernanceData>(GetArenaNoVirtual());
+    data_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.GetProposalByIDResponse.data)
+  return data_;
+}
+inline void GetProposalByIDResponse::set_allocated_data(::vega::GovernanceData* data) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(data_);
+  }
+  if (data) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      data = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, data, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  data_ = data;
+  // @@protoc_insertion_point(field_set_allocated:api.GetProposalByIDResponse.data)
+}
+
+// -------------------------------------------------------------------
+
 // GetProposalByReferenceRequest
 
 // string Reference = 1 [(.validator.field) = {
@@ -11641,6 +13047,55 @@ inline void GetProposalByReferenceRequest::set_allocated_reference(::std::string
   }
   reference_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), reference);
   // @@protoc_insertion_point(field_set_allocated:api.GetProposalByReferenceRequest.Reference)
+}
+
+// -------------------------------------------------------------------
+
+// GetProposalByReferenceResponse
+
+// .vega.GovernanceData data = 1;
+inline bool GetProposalByReferenceResponse::has_data() const {
+  return this != internal_default_instance() && data_ != nullptr;
+}
+inline const ::vega::GovernanceData& GetProposalByReferenceResponse::data() const {
+  const ::vega::GovernanceData* p = data_;
+  // @@protoc_insertion_point(field_get:api.GetProposalByReferenceResponse.data)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::GovernanceData*>(
+      &::vega::_GovernanceData_default_instance_);
+}
+inline ::vega::GovernanceData* GetProposalByReferenceResponse::release_data() {
+  // @@protoc_insertion_point(field_release:api.GetProposalByReferenceResponse.data)
+  
+  ::vega::GovernanceData* temp = data_;
+  data_ = nullptr;
+  return temp;
+}
+inline ::vega::GovernanceData* GetProposalByReferenceResponse::mutable_data() {
+  
+  if (data_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::GovernanceData>(GetArenaNoVirtual());
+    data_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.GetProposalByReferenceResponse.data)
+  return data_;
+}
+inline void GetProposalByReferenceResponse::set_allocated_data(::vega::GovernanceData* data) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(data_);
+  }
+  if (data) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      data = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, data, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  data_ = data;
+  // @@protoc_insertion_point(field_set_allocated:api.GetProposalByReferenceResponse.data)
 }
 
 // -------------------------------------------------------------------
@@ -15848,6 +17303,24 @@ OrderVersionsResponse::orders() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

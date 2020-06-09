@@ -43,10 +43,10 @@ def test_SubmitOrder(
             marketID=market.id,
             partyID=pubKey,
             price=10,
-            side=vac.vega.Side.Buy,
+            side=vac.vega.Side.SIDE_BUY,
             size=1,
-            timeInForce=vac.vega.Order.TimeInForce.GTT,
-            type=vac.vega.Order.Type.LIMIT
+            timeInForce=vac.vega.Order.TimeInForce.TIF_GTT,
+            type=vac.vega.Order.Type.TYPE_LIMIT
         )
     )
     response = trading.PrepareSubmitOrder(request)

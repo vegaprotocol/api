@@ -14,15 +14,24 @@ goog.provide('proto.api.CancelOrderRequest');
 goog.provide('proto.api.CandlesRequest');
 goog.provide('proto.api.CandlesResponse');
 goog.provide('proto.api.CandlesSubscribeRequest');
-goog.provide('proto.api.GetGovernanceDataResponse');
+goog.provide('proto.api.GetNetworkParametersProposalsRequest');
+goog.provide('proto.api.GetNetworkParametersProposalsResponse');
+goog.provide('proto.api.GetNewAssetProposalsRequest');
+goog.provide('proto.api.GetNewAssetProposalsResponse');
+goog.provide('proto.api.GetNewMarketProposalsRequest');
+goog.provide('proto.api.GetNewMarketProposalsResponse');
 goog.provide('proto.api.GetProposalByIDRequest');
+goog.provide('proto.api.GetProposalByIDResponse');
 goog.provide('proto.api.GetProposalByReferenceRequest');
-goog.provide('proto.api.GetProposalResponse');
+goog.provide('proto.api.GetProposalByReferenceResponse');
 goog.provide('proto.api.GetProposalsByPartyRequest');
-goog.provide('proto.api.GetProposalsByStateRequest');
+goog.provide('proto.api.GetProposalsByPartyResponse');
+goog.provide('proto.api.GetProposalsRequest');
+goog.provide('proto.api.GetProposalsResponse');
 goog.provide('proto.api.GetUpdateMarketProposalsRequest');
+goog.provide('proto.api.GetUpdateMarketProposalsResponse');
 goog.provide('proto.api.GetVotesByPartyRequest');
-goog.provide('proto.api.GetVotesResponse');
+goog.provide('proto.api.GetVotesByPartyResponse');
 goog.provide('proto.api.LastTradeRequest');
 goog.provide('proto.api.LastTradeResponse');
 goog.provide('proto.api.MarginLevelsRequest');
@@ -6522,12 +6531,13 @@ proto.vega.Proposal.serializeBinaryToWriter = function(message, writer) {
  * @enum {number}
  */
 proto.vega.Proposal.State = {
-  FAILED: 0,
-  OPEN: 1,
-  PASSED: 2,
-  REJECTED: 3,
-  DECLINED: 4,
-  ENACTED: 5
+  STATE_UNSPECIFIED: 0,
+  STATE_FAILED: 1,
+  STATE_OPEN: 2,
+  STATE_PASSED: 3,
+  STATE_REJECTED: 4,
+  STATE_DECLINED: 5,
+  STATE_ENACTED: 6
 };
 
 /**
@@ -6788,8 +6798,9 @@ proto.vega.Vote.serializeBinaryToWriter = function(message, writer) {
  * @enum {number}
  */
 proto.vega.Vote.Value = {
-  NO: 0,
-  YES: 1
+  VALUE_UNSPECIFIED: 0,
+  VALUE_NO: 1,
+  VALUE_YES: 2
 };
 
 /**
@@ -8777,32 +8788,34 @@ proto.vega.Order.serializeBinaryToWriter = function(message, writer) {
  */
 proto.vega.Order.TimeInForce = {
   TIF_UNSPECIFIED: 0,
-  GTC: 1,
-  GTT: 2,
-  IOC: 3,
-  FOK: 4
+  TIF_GTC: 1,
+  TIF_GTT: 2,
+  TIF_IOC: 3,
+  TIF_FOK: 4
 };
 
 /**
  * @enum {number}
  */
 proto.vega.Order.Type = {
-  LIMIT: 0,
-  MARKET: 1,
-  NETWORK: 2
+  TYPE_UNSPECIFIED: 0,
+  TYPE_LIMIT: 1,
+  TYPE_MARKET: 2,
+  TYPE_NETWORK: 3
 };
 
 /**
  * @enum {number}
  */
 proto.vega.Order.Status = {
-  ACTIVE: 0,
-  EXPIRED: 1,
-  CANCELLED: 2,
-  STOPPED: 3,
-  FILLED: 4,
-  REJECTED: 5,
-  PARTIALLYFILLED: 6
+  STATUS_INVALID: 0,
+  STATUS_ACTIVE: 1,
+  STATUS_EXPIRED: 2,
+  STATUS_CANCELLED: 3,
+  STATUS_STOPPED: 4,
+  STATUS_FILLED: 5,
+  STATUS_REJECTED: 6,
+  STATUS_PARTIALLY_FILLED: 7
 };
 
 /**
@@ -9674,9 +9687,10 @@ proto.vega.Trade.serializeBinaryToWriter = function(message, writer) {
  * @enum {number}
  */
 proto.vega.Trade.Type = {
-  DEFAULT: 0,
-  NETWORK_CLOSE_OUT_GOOD: 1,
-  NETWORK_CLOSE_OUT_BAD: 2
+  TYPE_UNSPECIFIED: 0,
+  TYPE_DEFAULT: 1,
+  TYPE_NETWORK_CLOSE_OUT_GOOD: 2,
+  TYPE_NETWORK_CLOSE_OUT_BAD: 3
 };
 
 /**
@@ -11219,7 +11233,8 @@ proto.vega.Statistics.toObject = function(includeInstance, msg) {
     appversion: jspb.Message.getFieldWithDefault(msg, 29, ""),
     chainversion: jspb.Message.getFieldWithDefault(msg, 30, ""),
     blockduration: jspb.Message.getFieldWithDefault(msg, 31, 0),
-    uptime: jspb.Message.getFieldWithDefault(msg, 32, "")
+    uptime: jspb.Message.getFieldWithDefault(msg, 32, ""),
+    chainid: jspb.Message.getFieldWithDefault(msg, 33, "")
   };
 
   if (includeInstance) {
@@ -11375,6 +11390,10 @@ proto.vega.Statistics.deserializeBinaryFromReader = function(msg, reader) {
     case 32:
       var value = /** @type {string} */ (reader.readString());
       msg.setUptime(value);
+      break;
+    case 33:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setChainid(value);
       break;
     default:
       reader.skipField();
@@ -11612,6 +11631,13 @@ proto.vega.Statistics.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       32,
+      f
+    );
+  }
+  f = message.getChainid();
+  if (f.length > 0) {
+    writer.writeString(
+      33,
       f
     );
   }
@@ -12065,6 +12091,21 @@ proto.vega.Statistics.prototype.getUptime = function() {
 /** @param {string} value */
 proto.vega.Statistics.prototype.setUptime = function(value) {
   jspb.Message.setProto3StringField(this, 32, value);
+};
+
+
+/**
+ * optional string chainID = 33;
+ * @return {string}
+ */
+proto.vega.Statistics.prototype.getChainid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 33, ""));
+};
+
+
+/** @param {string} value */
+proto.vega.Statistics.prototype.setChainid = function(value) {
+  jspb.Message.setProto3StringField(this, 33, value);
 };
 
 
@@ -16406,79 +16447,84 @@ proto.vega.SignedBundle.prototype.hasPubkey = function() {
  * @enum {number}
  */
 proto.vega.Side = {
-  BUY: 0,
-  SELL: 1
+  SIDE_UNSPECIFIED: 0,
+  SIDE_BUY: 1,
+  SIDE_SELL: 2
 };
 
 /**
  * @enum {number}
  */
 proto.vega.Interval = {
-  I1M: 0,
-  I5M: 1,
-  I15M: 2,
-  I1H: 3,
-  I6H: 4,
-  I1D: 5
+  INTERVAL_UNSPECIFIED: 0,
+  INTERVAL_I1M: 60,
+  INTERVAL_I5M: 300,
+  INTERVAL_I15M: 900,
+  INTERVAL_I1H: 3600,
+  INTERVAL_I6H: 21600,
+  INTERVAL_I1D: 86400
 };
 
 /**
  * @enum {number}
  */
 proto.vega.OrderError = {
-  NONE: 0,
-  INVALID_MARKET_ID: 1,
-  INVALID_ORDER_ID: 2,
-  ORDER_OUT_OF_SEQUENCE: 3,
-  INVALID_REMAINING_SIZE: 4,
-  TIME_FAILURE: 5,
-  ORDER_REMOVAL_FAILURE: 6,
-  INVALID_EXPIRATION_DATETIME: 7,
-  INVALID_ORDER_REFERENCE: 8,
-  EDIT_NOT_ALLOWED: 9,
-  ORDER_AMEND_FAILURE: 10,
-  ORDER_NOT_FOUND: 11,
-  INVALID_PARTY_ID: 12,
-  MARKET_CLOSED: 13,
-  MARGIN_CHECK_FAILED: 14,
-  MISSING_GENERAL_ACCOUNT: 15,
-  INTERNAL_ERROR: 16,
-  INVALID_SIZE: 17,
-  INVALID_PERSISTENCE: 18
+  ORDER_ERROR_NONE: 0,
+  ORDER_ERROR_INVALID_MARKET_ID: 1,
+  ORDER_ERROR_INVALID_ORDER_ID: 2,
+  ORDER_ERROR_OUT_OF_SEQUENCE: 3,
+  ORDER_ERROR_INVALID_REMAINING_SIZE: 4,
+  ORDER_ERROR_TIME_FAILURE: 5,
+  ORDER_ERROR_REMOVAL_FAILURE: 6,
+  ORDER_ERROR_INVALID_EXPIRATION_DATETIME: 7,
+  ORDER_ERROR_INVALID_ORDER_REFERENCE: 8,
+  ORDER_ERROR_EDIT_NOT_ALLOWED: 9,
+  ORDER_ERROR_AMEND_FAILURE: 10,
+  ORDER_ERROR_NOT_FOUND: 11,
+  ORDER_ERROR_INVALID_PARTY_ID: 12,
+  ORDER_ERROR_MARKET_CLOSED: 13,
+  ORDER_ERROR_MARGIN_CHECK_FAILED: 14,
+  ORDER_ERROR_MISSING_GENERAL_ACCOUNT: 15,
+  ORDER_ERROR_INTERNAL_ERROR: 16,
+  ORDER_ERROR_INVALID_SIZE: 17,
+  ORDER_ERROR_INVALID_PERSISTENCE: 18,
+  ORDER_ERROR_INVALID_TYPE: 19
 };
 
 /**
  * @enum {number}
  */
 proto.vega.ChainStatus = {
-  DISCONNECTED: 0,
-  REPLAYING: 1,
-  CONNECTED: 2
+  CHAIN_STATUS_UNSPECIFIED: 0,
+  CHAIN_STATUS_DISCONNECTED: 1,
+  CHAIN_STATUS_REPLAYING: 2,
+  CHAIN_STATUS_CONNECTED: 3
 };
 
 /**
  * @enum {number}
  */
 proto.vega.AccountType = {
-  ALL: 0,
-  INSURANCE: 1,
-  SETTLEMENT: 2,
-  MARGIN: 3,
-  GENERAL: 4
+  ACCOUNT_TYPE_UNSPECIFIED: 0,
+  ACCOUNT_TYPE_INSURANCE: 1,
+  ACCOUNT_TYPE_SETTLEMENT: 2,
+  ACCOUNT_TYPE_MARGIN: 3,
+  ACCOUNT_TYPE_GENERAL: 4
 };
 
 /**
  * @enum {number}
  */
 proto.vega.TransferType = {
-  LOSS: 0,
-  WIN: 1,
-  CLOSE: 2,
-  MTM_LOSS: 3,
-  MTM_WIN: 4,
-  MARGIN_LOW: 5,
-  MARGIN_HIGH: 6,
-  MARGIN_CONFISCATED: 7
+  TRANSFER_TYPE_UNSPECIFIED: 0,
+  TRANSFER_TYPE_LOSS: 1,
+  TRANSFER_TYPE_WIN: 2,
+  TRANSFER_TYPE_CLOSE: 3,
+  TRANSFER_TYPE_MTM_LOSS: 4,
+  TRANSFER_TYPE_MTM_WIN: 5,
+  TRANSFER_TYPE_MARGIN_LOW: 6,
+  TRANSFER_TYPE_MARGIN_HIGH: 7,
+  TRANSFER_TYPE_MARGIN_CONFISCATED: 8
 };
 
 /**
@@ -16764,16 +16810,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetProposalsByStateRequest = function(opt_data) {
+proto.api.GetProposalsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.GetProposalsByStateRequest, jspb.Message);
+goog.inherits(proto.api.GetProposalsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetProposalsByStateRequest.displayName = 'proto.api.GetProposalsByStateRequest';
+  proto.api.GetProposalsRequest.displayName = 'proto.api.GetProposalsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -16785,58 +16831,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetGovernanceDataResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetGovernanceDataResponse.repeatedFields_, null);
+proto.api.GetProposalsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetProposalsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.GetGovernanceDataResponse, jspb.Message);
+goog.inherits(proto.api.GetProposalsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetGovernanceDataResponse.displayName = 'proto.api.GetGovernanceDataResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.api.GetProposalResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.api.GetProposalResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.api.GetProposalResponse.displayName = 'proto.api.GetProposalResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.api.GetVotesResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetVotesResponse.repeatedFields_, null);
-};
-goog.inherits(proto.api.GetVotesResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.api.GetVotesResponse.displayName = 'proto.api.GetVotesResponse';
+  proto.api.GetProposalsResponse.displayName = 'proto.api.GetProposalsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -16869,6 +16873,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.api.GetProposalsByPartyResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetProposalsByPartyResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.GetProposalsByPartyResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.GetProposalsByPartyResponse.displayName = 'proto.api.GetProposalsByPartyResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.api.GetVotesByPartyRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -16879,6 +16904,69 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.api.GetVotesByPartyRequest.displayName = 'proto.api.GetVotesByPartyRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.GetVotesByPartyResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetVotesByPartyResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.GetVotesByPartyResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.GetVotesByPartyResponse.displayName = 'proto.api.GetVotesByPartyResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.GetNewMarketProposalsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.GetNewMarketProposalsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.GetNewMarketProposalsRequest.displayName = 'proto.api.GetNewMarketProposalsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.GetNewMarketProposalsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetNewMarketProposalsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.GetNewMarketProposalsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.GetNewMarketProposalsResponse.displayName = 'proto.api.GetNewMarketProposalsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -16911,6 +16999,111 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.api.GetUpdateMarketProposalsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetUpdateMarketProposalsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.GetUpdateMarketProposalsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.GetUpdateMarketProposalsResponse.displayName = 'proto.api.GetUpdateMarketProposalsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.GetNetworkParametersProposalsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.GetNetworkParametersProposalsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.GetNetworkParametersProposalsRequest.displayName = 'proto.api.GetNetworkParametersProposalsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.GetNetworkParametersProposalsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetNetworkParametersProposalsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.GetNetworkParametersProposalsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.GetNetworkParametersProposalsResponse.displayName = 'proto.api.GetNetworkParametersProposalsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.GetNewAssetProposalsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.GetNewAssetProposalsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.GetNewAssetProposalsRequest.displayName = 'proto.api.GetNewAssetProposalsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.GetNewAssetProposalsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetNewAssetProposalsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.GetNewAssetProposalsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.GetNewAssetProposalsResponse.displayName = 'proto.api.GetNewAssetProposalsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.api.GetProposalByIDRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -16932,6 +17125,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.api.GetProposalByIDResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.GetProposalByIDResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.GetProposalByIDResponse.displayName = 'proto.api.GetProposalByIDResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.api.GetProposalByReferenceRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -16942,6 +17156,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.api.GetProposalByReferenceRequest.displayName = 'proto.api.GetProposalByReferenceRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.GetProposalByReferenceResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.GetProposalByReferenceResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.GetProposalByReferenceResponse.displayName = 'proto.api.GetProposalByReferenceResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -20067,8 +20302,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetProposalsByStateRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetProposalsByStateRequest.toObject(opt_includeInstance, this);
+proto.api.GetProposalsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.GetProposalsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -20077,13 +20312,13 @@ proto.api.GetProposalsByStateRequest.prototype.toObject = function(opt_includeIn
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetProposalsByStateRequest} msg The msg instance to transform.
+ * @param {!proto.api.GetProposalsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalsByStateRequest.toObject = function(includeInstance, msg) {
+proto.api.GetProposalsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    state: (f = msg.getState()) && proto.api.OptionalProposalState.toObject(includeInstance, f)
+    selectinstate: (f = msg.getSelectinstate()) && proto.api.OptionalProposalState.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -20097,23 +20332,23 @@ proto.api.GetProposalsByStateRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetProposalsByStateRequest}
+ * @return {!proto.api.GetProposalsRequest}
  */
-proto.api.GetProposalsByStateRequest.deserializeBinary = function(bytes) {
+proto.api.GetProposalsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetProposalsByStateRequest;
-  return proto.api.GetProposalsByStateRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.GetProposalsRequest;
+  return proto.api.GetProposalsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetProposalsByStateRequest} msg The message object to deserialize into.
+ * @param {!proto.api.GetProposalsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetProposalsByStateRequest}
+ * @return {!proto.api.GetProposalsRequest}
  */
-proto.api.GetProposalsByStateRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.GetProposalsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -20123,7 +20358,7 @@ proto.api.GetProposalsByStateRequest.deserializeBinaryFromReader = function(msg,
     case 1:
       var value = new proto.api.OptionalProposalState;
       reader.readMessage(value,proto.api.OptionalProposalState.deserializeBinaryFromReader);
-      msg.setState(value);
+      msg.setSelectinstate(value);
       break;
     default:
       reader.skipField();
@@ -20138,9 +20373,9 @@ proto.api.GetProposalsByStateRequest.deserializeBinaryFromReader = function(msg,
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetProposalsByStateRequest.prototype.serializeBinary = function() {
+proto.api.GetProposalsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetProposalsByStateRequest.serializeBinaryToWriter(this, writer);
+  proto.api.GetProposalsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -20148,13 +20383,13 @@ proto.api.GetProposalsByStateRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetProposalsByStateRequest} message
+ * @param {!proto.api.GetProposalsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalsByStateRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.GetProposalsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getState();
+  f = message.getSelectinstate();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -20166,17 +20401,17 @@ proto.api.GetProposalsByStateRequest.serializeBinaryToWriter = function(message,
 
 
 /**
- * optional OptionalProposalState state = 1;
+ * optional OptionalProposalState selectInState = 1;
  * @return {?proto.api.OptionalProposalState}
  */
-proto.api.GetProposalsByStateRequest.prototype.getState = function() {
+proto.api.GetProposalsRequest.prototype.getSelectinstate = function() {
   return /** @type{?proto.api.OptionalProposalState} */ (
     jspb.Message.getWrapperField(this, proto.api.OptionalProposalState, 1));
 };
 
 
 /** @param {?proto.api.OptionalProposalState|undefined} value */
-proto.api.GetProposalsByStateRequest.prototype.setState = function(value) {
+proto.api.GetProposalsRequest.prototype.setSelectinstate = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -20184,8 +20419,8 @@ proto.api.GetProposalsByStateRequest.prototype.setState = function(value) {
 /**
  * Clears the message field making it undefined.
  */
-proto.api.GetProposalsByStateRequest.prototype.clearState = function() {
-  this.setState(undefined);
+proto.api.GetProposalsRequest.prototype.clearSelectinstate = function() {
+  this.setSelectinstate(undefined);
 };
 
 
@@ -20193,7 +20428,7 @@ proto.api.GetProposalsByStateRequest.prototype.clearState = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.GetProposalsByStateRequest.prototype.hasState = function() {
+proto.api.GetProposalsRequest.prototype.hasSelectinstate = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -20204,7 +20439,7 @@ proto.api.GetProposalsByStateRequest.prototype.hasState = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.api.GetGovernanceDataResponse.repeatedFields_ = [1];
+proto.api.GetProposalsResponse.repeatedFields_ = [1];
 
 
 
@@ -20219,8 +20454,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetGovernanceDataResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetGovernanceDataResponse.toObject(opt_includeInstance, this);
+proto.api.GetProposalsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.GetProposalsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -20229,11 +20464,11 @@ proto.api.GetGovernanceDataResponse.prototype.toObject = function(opt_includeIns
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetGovernanceDataResponse} msg The msg instance to transform.
+ * @param {!proto.api.GetProposalsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetGovernanceDataResponse.toObject = function(includeInstance, msg) {
+proto.api.GetProposalsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     dataList: jspb.Message.toObjectList(msg.getDataList(),
     proto.vega.GovernanceData.toObject, includeInstance)
@@ -20250,23 +20485,23 @@ proto.api.GetGovernanceDataResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetGovernanceDataResponse}
+ * @return {!proto.api.GetProposalsResponse}
  */
-proto.api.GetGovernanceDataResponse.deserializeBinary = function(bytes) {
+proto.api.GetProposalsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetGovernanceDataResponse;
-  return proto.api.GetGovernanceDataResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.GetProposalsResponse;
+  return proto.api.GetProposalsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetGovernanceDataResponse} msg The message object to deserialize into.
+ * @param {!proto.api.GetProposalsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetGovernanceDataResponse}
+ * @return {!proto.api.GetProposalsResponse}
  */
-proto.api.GetGovernanceDataResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.GetProposalsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -20291,9 +20526,9 @@ proto.api.GetGovernanceDataResponse.deserializeBinaryFromReader = function(msg, 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetGovernanceDataResponse.prototype.serializeBinary = function() {
+proto.api.GetProposalsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetGovernanceDataResponse.serializeBinaryToWriter(this, writer);
+  proto.api.GetProposalsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -20301,11 +20536,11 @@ proto.api.GetGovernanceDataResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetGovernanceDataResponse} message
+ * @param {!proto.api.GetProposalsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetGovernanceDataResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.GetProposalsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDataList();
   if (f.length > 0) {
@@ -20322,14 +20557,14 @@ proto.api.GetGovernanceDataResponse.serializeBinaryToWriter = function(message, 
  * repeated vega.GovernanceData data = 1;
  * @return {!Array<!proto.vega.GovernanceData>}
  */
-proto.api.GetGovernanceDataResponse.prototype.getDataList = function() {
+proto.api.GetProposalsResponse.prototype.getDataList = function() {
   return /** @type{!Array<!proto.vega.GovernanceData>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.vega.GovernanceData, 1));
 };
 
 
 /** @param {!Array<!proto.vega.GovernanceData>} value */
-proto.api.GetGovernanceDataResponse.prototype.setDataList = function(value) {
+proto.api.GetProposalsResponse.prototype.setDataList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -20339,7 +20574,7 @@ proto.api.GetGovernanceDataResponse.prototype.setDataList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.GovernanceData}
  */
-proto.api.GetGovernanceDataResponse.prototype.addData = function(opt_value, opt_index) {
+proto.api.GetProposalsResponse.prototype.addData = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.GovernanceData, opt_index);
 };
 
@@ -20347,307 +20582,8 @@ proto.api.GetGovernanceDataResponse.prototype.addData = function(opt_value, opt_
 /**
  * Clears the list making it empty but non-null.
  */
-proto.api.GetGovernanceDataResponse.prototype.clearDataList = function() {
+proto.api.GetProposalsResponse.prototype.clearDataList = function() {
   this.setDataList([]);
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.api.GetProposalResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetProposalResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.api.GetProposalResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.api.GetProposalResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    proposal: (f = msg.getProposal()) && proto.vega.GovernanceData.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetProposalResponse}
- */
-proto.api.GetProposalResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetProposalResponse;
-  return proto.api.GetProposalResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.api.GetProposalResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetProposalResponse}
- */
-proto.api.GetProposalResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new proto.vega.GovernanceData;
-      reader.readMessage(value,proto.vega.GovernanceData.deserializeBinaryFromReader);
-      msg.setProposal(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.api.GetProposalResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.api.GetProposalResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetProposalResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.api.GetProposalResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getProposal();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      proto.vega.GovernanceData.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional vega.GovernanceData proposal = 1;
- * @return {?proto.vega.GovernanceData}
- */
-proto.api.GetProposalResponse.prototype.getProposal = function() {
-  return /** @type{?proto.vega.GovernanceData} */ (
-    jspb.Message.getWrapperField(this, proto.vega.GovernanceData, 1));
-};
-
-
-/** @param {?proto.vega.GovernanceData|undefined} value */
-proto.api.GetProposalResponse.prototype.setProposal = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- */
-proto.api.GetProposalResponse.prototype.clearProposal = function() {
-  this.setProposal(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.api.GetProposalResponse.prototype.hasProposal = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.GetVotesResponse.repeatedFields_ = [1];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.api.GetVotesResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetVotesResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.api.GetVotesResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.api.GetVotesResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    votesList: jspb.Message.toObjectList(msg.getVotesList(),
-    proto.vega.Vote.toObject, includeInstance)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetVotesResponse}
- */
-proto.api.GetVotesResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetVotesResponse;
-  return proto.api.GetVotesResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.api.GetVotesResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetVotesResponse}
- */
-proto.api.GetVotesResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new proto.vega.Vote;
-      reader.readMessage(value,proto.vega.Vote.deserializeBinaryFromReader);
-      msg.addVotes(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.api.GetVotesResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.api.GetVotesResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetVotesResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.api.GetVotesResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getVotesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      proto.vega.Vote.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * repeated vega.Vote votes = 1;
- * @return {!Array<!proto.vega.Vote>}
- */
-proto.api.GetVotesResponse.prototype.getVotesList = function() {
-  return /** @type{!Array<!proto.vega.Vote>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.vega.Vote, 1));
-};
-
-
-/** @param {!Array<!proto.vega.Vote>} value */
-proto.api.GetVotesResponse.prototype.setVotesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 1, value);
-};
-
-
-/**
- * @param {!proto.vega.Vote=} opt_value
- * @param {number=} opt_index
- * @return {!proto.vega.Vote}
- */
-proto.api.GetVotesResponse.prototype.addVotes = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Vote, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- */
-proto.api.GetVotesResponse.prototype.clearVotesList = function() {
-  this.setVotesList([]);
 };
 
 
@@ -20682,7 +20618,7 @@ proto.api.GetProposalsByPartyRequest.prototype.toObject = function(opt_includeIn
 proto.api.GetProposalsByPartyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     partyid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    state: (f = msg.getState()) && proto.api.OptionalProposalState.toObject(includeInstance, f)
+    selectinstate: (f = msg.getSelectinstate()) && proto.api.OptionalProposalState.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -20726,7 +20662,7 @@ proto.api.GetProposalsByPartyRequest.deserializeBinaryFromReader = function(msg,
     case 2:
       var value = new proto.api.OptionalProposalState;
       reader.readMessage(value,proto.api.OptionalProposalState.deserializeBinaryFromReader);
-      msg.setState(value);
+      msg.setSelectinstate(value);
       break;
     default:
       reader.skipField();
@@ -20764,7 +20700,7 @@ proto.api.GetProposalsByPartyRequest.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = message.getState();
+  f = message.getSelectinstate();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -20791,17 +20727,17 @@ proto.api.GetProposalsByPartyRequest.prototype.setPartyid = function(value) {
 
 
 /**
- * optional OptionalProposalState state = 2;
+ * optional OptionalProposalState selectInState = 2;
  * @return {?proto.api.OptionalProposalState}
  */
-proto.api.GetProposalsByPartyRequest.prototype.getState = function() {
+proto.api.GetProposalsByPartyRequest.prototype.getSelectinstate = function() {
   return /** @type{?proto.api.OptionalProposalState} */ (
     jspb.Message.getWrapperField(this, proto.api.OptionalProposalState, 2));
 };
 
 
 /** @param {?proto.api.OptionalProposalState|undefined} value */
-proto.api.GetProposalsByPartyRequest.prototype.setState = function(value) {
+proto.api.GetProposalsByPartyRequest.prototype.setSelectinstate = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -20809,8 +20745,8 @@ proto.api.GetProposalsByPartyRequest.prototype.setState = function(value) {
 /**
  * Clears the message field making it undefined.
  */
-proto.api.GetProposalsByPartyRequest.prototype.clearState = function() {
-  this.setState(undefined);
+proto.api.GetProposalsByPartyRequest.prototype.clearSelectinstate = function() {
+  this.setSelectinstate(undefined);
 };
 
 
@@ -20818,8 +20754,162 @@ proto.api.GetProposalsByPartyRequest.prototype.clearState = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.GetProposalsByPartyRequest.prototype.hasState = function() {
+proto.api.GetProposalsByPartyRequest.prototype.hasSelectinstate = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.GetProposalsByPartyResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.GetProposalsByPartyResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.GetProposalsByPartyResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.GetProposalsByPartyResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetProposalsByPartyResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    dataList: jspb.Message.toObjectList(msg.getDataList(),
+    proto.vega.GovernanceData.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.GetProposalsByPartyResponse}
+ */
+proto.api.GetProposalsByPartyResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.GetProposalsByPartyResponse;
+  return proto.api.GetProposalsByPartyResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.GetProposalsByPartyResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.GetProposalsByPartyResponse}
+ */
+proto.api.GetProposalsByPartyResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.vega.GovernanceData;
+      reader.readMessage(value,proto.vega.GovernanceData.deserializeBinaryFromReader);
+      msg.addData(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.GetProposalsByPartyResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.GetProposalsByPartyResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.GetProposalsByPartyResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetProposalsByPartyResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getDataList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.vega.GovernanceData.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated vega.GovernanceData data = 1;
+ * @return {!Array<!proto.vega.GovernanceData>}
+ */
+proto.api.GetProposalsByPartyResponse.prototype.getDataList = function() {
+  return /** @type{!Array<!proto.vega.GovernanceData>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.vega.GovernanceData, 1));
+};
+
+
+/** @param {!Array<!proto.vega.GovernanceData>} value */
+proto.api.GetProposalsByPartyResponse.prototype.setDataList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.vega.GovernanceData=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.vega.GovernanceData}
+ */
+proto.api.GetProposalsByPartyResponse.prototype.addData = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.GovernanceData, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ */
+proto.api.GetProposalsByPartyResponse.prototype.clearDataList = function() {
+  this.setDataList([]);
 };
 
 
@@ -20949,6 +21039,459 @@ proto.api.GetVotesByPartyRequest.prototype.setPartyid = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.GetVotesByPartyResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.GetVotesByPartyResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.GetVotesByPartyResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.GetVotesByPartyResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetVotesByPartyResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    votesList: jspb.Message.toObjectList(msg.getVotesList(),
+    proto.vega.Vote.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.GetVotesByPartyResponse}
+ */
+proto.api.GetVotesByPartyResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.GetVotesByPartyResponse;
+  return proto.api.GetVotesByPartyResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.GetVotesByPartyResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.GetVotesByPartyResponse}
+ */
+proto.api.GetVotesByPartyResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.vega.Vote;
+      reader.readMessage(value,proto.vega.Vote.deserializeBinaryFromReader);
+      msg.addVotes(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.GetVotesByPartyResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.GetVotesByPartyResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.GetVotesByPartyResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetVotesByPartyResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getVotesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.vega.Vote.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated vega.Vote votes = 1;
+ * @return {!Array<!proto.vega.Vote>}
+ */
+proto.api.GetVotesByPartyResponse.prototype.getVotesList = function() {
+  return /** @type{!Array<!proto.vega.Vote>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.vega.Vote, 1));
+};
+
+
+/** @param {!Array<!proto.vega.Vote>} value */
+proto.api.GetVotesByPartyResponse.prototype.setVotesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.vega.Vote=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.vega.Vote}
+ */
+proto.api.GetVotesByPartyResponse.prototype.addVotes = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Vote, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ */
+proto.api.GetVotesByPartyResponse.prototype.clearVotesList = function() {
+  this.setVotesList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.GetNewMarketProposalsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.GetNewMarketProposalsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.GetNewMarketProposalsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetNewMarketProposalsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    selectinstate: (f = msg.getSelectinstate()) && proto.api.OptionalProposalState.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.GetNewMarketProposalsRequest}
+ */
+proto.api.GetNewMarketProposalsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.GetNewMarketProposalsRequest;
+  return proto.api.GetNewMarketProposalsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.GetNewMarketProposalsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.GetNewMarketProposalsRequest}
+ */
+proto.api.GetNewMarketProposalsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.OptionalProposalState;
+      reader.readMessage(value,proto.api.OptionalProposalState.deserializeBinaryFromReader);
+      msg.setSelectinstate(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.GetNewMarketProposalsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.GetNewMarketProposalsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.GetNewMarketProposalsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetNewMarketProposalsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSelectinstate();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.OptionalProposalState.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional OptionalProposalState selectInState = 1;
+ * @return {?proto.api.OptionalProposalState}
+ */
+proto.api.GetNewMarketProposalsRequest.prototype.getSelectinstate = function() {
+  return /** @type{?proto.api.OptionalProposalState} */ (
+    jspb.Message.getWrapperField(this, proto.api.OptionalProposalState, 1));
+};
+
+
+/** @param {?proto.api.OptionalProposalState|undefined} value */
+proto.api.GetNewMarketProposalsRequest.prototype.setSelectinstate = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ */
+proto.api.GetNewMarketProposalsRequest.prototype.clearSelectinstate = function() {
+  this.setSelectinstate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.GetNewMarketProposalsRequest.prototype.hasSelectinstate = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.GetNewMarketProposalsResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.GetNewMarketProposalsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.GetNewMarketProposalsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.GetNewMarketProposalsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetNewMarketProposalsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    dataList: jspb.Message.toObjectList(msg.getDataList(),
+    proto.vega.GovernanceData.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.GetNewMarketProposalsResponse}
+ */
+proto.api.GetNewMarketProposalsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.GetNewMarketProposalsResponse;
+  return proto.api.GetNewMarketProposalsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.GetNewMarketProposalsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.GetNewMarketProposalsResponse}
+ */
+proto.api.GetNewMarketProposalsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.vega.GovernanceData;
+      reader.readMessage(value,proto.vega.GovernanceData.deserializeBinaryFromReader);
+      msg.addData(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.GetNewMarketProposalsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.GetNewMarketProposalsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.GetNewMarketProposalsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetNewMarketProposalsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getDataList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.vega.GovernanceData.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated vega.GovernanceData data = 1;
+ * @return {!Array<!proto.vega.GovernanceData>}
+ */
+proto.api.GetNewMarketProposalsResponse.prototype.getDataList = function() {
+  return /** @type{!Array<!proto.vega.GovernanceData>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.vega.GovernanceData, 1));
+};
+
+
+/** @param {!Array<!proto.vega.GovernanceData>} value */
+proto.api.GetNewMarketProposalsResponse.prototype.setDataList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.vega.GovernanceData=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.vega.GovernanceData}
+ */
+proto.api.GetNewMarketProposalsResponse.prototype.addData = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.GovernanceData, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ */
+proto.api.GetNewMarketProposalsResponse.prototype.clearDataList = function() {
+  this.setDataList([]);
+};
+
+
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -20979,7 +21522,7 @@ proto.api.GetUpdateMarketProposalsRequest.prototype.toObject = function(opt_incl
 proto.api.GetUpdateMarketProposalsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    state: (f = msg.getState()) && proto.api.OptionalProposalState.toObject(includeInstance, f)
+    selectinstate: (f = msg.getSelectinstate()) && proto.api.OptionalProposalState.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -21023,7 +21566,7 @@ proto.api.GetUpdateMarketProposalsRequest.deserializeBinaryFromReader = function
     case 2:
       var value = new proto.api.OptionalProposalState;
       reader.readMessage(value,proto.api.OptionalProposalState.deserializeBinaryFromReader);
-      msg.setState(value);
+      msg.setSelectinstate(value);
       break;
     default:
       reader.skipField();
@@ -21061,7 +21604,7 @@ proto.api.GetUpdateMarketProposalsRequest.serializeBinaryToWriter = function(mes
       f
     );
   }
-  f = message.getState();
+  f = message.getSelectinstate();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -21088,17 +21631,17 @@ proto.api.GetUpdateMarketProposalsRequest.prototype.setMarketid = function(value
 
 
 /**
- * optional OptionalProposalState state = 2;
+ * optional OptionalProposalState selectInState = 2;
  * @return {?proto.api.OptionalProposalState}
  */
-proto.api.GetUpdateMarketProposalsRequest.prototype.getState = function() {
+proto.api.GetUpdateMarketProposalsRequest.prototype.getSelectinstate = function() {
   return /** @type{?proto.api.OptionalProposalState} */ (
     jspb.Message.getWrapperField(this, proto.api.OptionalProposalState, 2));
 };
 
 
 /** @param {?proto.api.OptionalProposalState|undefined} value */
-proto.api.GetUpdateMarketProposalsRequest.prototype.setState = function(value) {
+proto.api.GetUpdateMarketProposalsRequest.prototype.setSelectinstate = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -21106,8 +21649,8 @@ proto.api.GetUpdateMarketProposalsRequest.prototype.setState = function(value) {
 /**
  * Clears the message field making it undefined.
  */
-proto.api.GetUpdateMarketProposalsRequest.prototype.clearState = function() {
-  this.setState(undefined);
+proto.api.GetUpdateMarketProposalsRequest.prototype.clearSelectinstate = function() {
+  this.setSelectinstate(undefined);
 };
 
 
@@ -21115,8 +21658,760 @@ proto.api.GetUpdateMarketProposalsRequest.prototype.clearState = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.GetUpdateMarketProposalsRequest.prototype.hasState = function() {
+proto.api.GetUpdateMarketProposalsRequest.prototype.hasSelectinstate = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.GetUpdateMarketProposalsResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.GetUpdateMarketProposalsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.GetUpdateMarketProposalsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.GetUpdateMarketProposalsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetUpdateMarketProposalsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    dataList: jspb.Message.toObjectList(msg.getDataList(),
+    proto.vega.GovernanceData.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.GetUpdateMarketProposalsResponse}
+ */
+proto.api.GetUpdateMarketProposalsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.GetUpdateMarketProposalsResponse;
+  return proto.api.GetUpdateMarketProposalsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.GetUpdateMarketProposalsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.GetUpdateMarketProposalsResponse}
+ */
+proto.api.GetUpdateMarketProposalsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.vega.GovernanceData;
+      reader.readMessage(value,proto.vega.GovernanceData.deserializeBinaryFromReader);
+      msg.addData(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.GetUpdateMarketProposalsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.GetUpdateMarketProposalsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.GetUpdateMarketProposalsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetUpdateMarketProposalsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getDataList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.vega.GovernanceData.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated vega.GovernanceData data = 1;
+ * @return {!Array<!proto.vega.GovernanceData>}
+ */
+proto.api.GetUpdateMarketProposalsResponse.prototype.getDataList = function() {
+  return /** @type{!Array<!proto.vega.GovernanceData>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.vega.GovernanceData, 1));
+};
+
+
+/** @param {!Array<!proto.vega.GovernanceData>} value */
+proto.api.GetUpdateMarketProposalsResponse.prototype.setDataList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.vega.GovernanceData=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.vega.GovernanceData}
+ */
+proto.api.GetUpdateMarketProposalsResponse.prototype.addData = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.GovernanceData, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ */
+proto.api.GetUpdateMarketProposalsResponse.prototype.clearDataList = function() {
+  this.setDataList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.GetNetworkParametersProposalsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.GetNetworkParametersProposalsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.GetNetworkParametersProposalsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetNetworkParametersProposalsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    selectinstate: (f = msg.getSelectinstate()) && proto.api.OptionalProposalState.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.GetNetworkParametersProposalsRequest}
+ */
+proto.api.GetNetworkParametersProposalsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.GetNetworkParametersProposalsRequest;
+  return proto.api.GetNetworkParametersProposalsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.GetNetworkParametersProposalsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.GetNetworkParametersProposalsRequest}
+ */
+proto.api.GetNetworkParametersProposalsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.OptionalProposalState;
+      reader.readMessage(value,proto.api.OptionalProposalState.deserializeBinaryFromReader);
+      msg.setSelectinstate(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.GetNetworkParametersProposalsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.GetNetworkParametersProposalsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.GetNetworkParametersProposalsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetNetworkParametersProposalsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSelectinstate();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.OptionalProposalState.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional OptionalProposalState selectInState = 1;
+ * @return {?proto.api.OptionalProposalState}
+ */
+proto.api.GetNetworkParametersProposalsRequest.prototype.getSelectinstate = function() {
+  return /** @type{?proto.api.OptionalProposalState} */ (
+    jspb.Message.getWrapperField(this, proto.api.OptionalProposalState, 1));
+};
+
+
+/** @param {?proto.api.OptionalProposalState|undefined} value */
+proto.api.GetNetworkParametersProposalsRequest.prototype.setSelectinstate = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ */
+proto.api.GetNetworkParametersProposalsRequest.prototype.clearSelectinstate = function() {
+  this.setSelectinstate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.GetNetworkParametersProposalsRequest.prototype.hasSelectinstate = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.GetNetworkParametersProposalsResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.GetNetworkParametersProposalsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.GetNetworkParametersProposalsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.GetNetworkParametersProposalsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetNetworkParametersProposalsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    dataList: jspb.Message.toObjectList(msg.getDataList(),
+    proto.vega.GovernanceData.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.GetNetworkParametersProposalsResponse}
+ */
+proto.api.GetNetworkParametersProposalsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.GetNetworkParametersProposalsResponse;
+  return proto.api.GetNetworkParametersProposalsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.GetNetworkParametersProposalsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.GetNetworkParametersProposalsResponse}
+ */
+proto.api.GetNetworkParametersProposalsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.vega.GovernanceData;
+      reader.readMessage(value,proto.vega.GovernanceData.deserializeBinaryFromReader);
+      msg.addData(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.GetNetworkParametersProposalsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.GetNetworkParametersProposalsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.GetNetworkParametersProposalsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetNetworkParametersProposalsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getDataList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.vega.GovernanceData.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated vega.GovernanceData data = 1;
+ * @return {!Array<!proto.vega.GovernanceData>}
+ */
+proto.api.GetNetworkParametersProposalsResponse.prototype.getDataList = function() {
+  return /** @type{!Array<!proto.vega.GovernanceData>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.vega.GovernanceData, 1));
+};
+
+
+/** @param {!Array<!proto.vega.GovernanceData>} value */
+proto.api.GetNetworkParametersProposalsResponse.prototype.setDataList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.vega.GovernanceData=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.vega.GovernanceData}
+ */
+proto.api.GetNetworkParametersProposalsResponse.prototype.addData = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.GovernanceData, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ */
+proto.api.GetNetworkParametersProposalsResponse.prototype.clearDataList = function() {
+  this.setDataList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.GetNewAssetProposalsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.GetNewAssetProposalsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.GetNewAssetProposalsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetNewAssetProposalsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    selectinstate: (f = msg.getSelectinstate()) && proto.api.OptionalProposalState.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.GetNewAssetProposalsRequest}
+ */
+proto.api.GetNewAssetProposalsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.GetNewAssetProposalsRequest;
+  return proto.api.GetNewAssetProposalsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.GetNewAssetProposalsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.GetNewAssetProposalsRequest}
+ */
+proto.api.GetNewAssetProposalsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.api.OptionalProposalState;
+      reader.readMessage(value,proto.api.OptionalProposalState.deserializeBinaryFromReader);
+      msg.setSelectinstate(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.GetNewAssetProposalsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.GetNewAssetProposalsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.GetNewAssetProposalsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetNewAssetProposalsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSelectinstate();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.api.OptionalProposalState.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional OptionalProposalState selectInState = 1;
+ * @return {?proto.api.OptionalProposalState}
+ */
+proto.api.GetNewAssetProposalsRequest.prototype.getSelectinstate = function() {
+  return /** @type{?proto.api.OptionalProposalState} */ (
+    jspb.Message.getWrapperField(this, proto.api.OptionalProposalState, 1));
+};
+
+
+/** @param {?proto.api.OptionalProposalState|undefined} value */
+proto.api.GetNewAssetProposalsRequest.prototype.setSelectinstate = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ */
+proto.api.GetNewAssetProposalsRequest.prototype.clearSelectinstate = function() {
+  this.setSelectinstate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.GetNewAssetProposalsRequest.prototype.hasSelectinstate = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.GetNewAssetProposalsResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.GetNewAssetProposalsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.GetNewAssetProposalsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.GetNewAssetProposalsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetNewAssetProposalsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    dataList: jspb.Message.toObjectList(msg.getDataList(),
+    proto.vega.GovernanceData.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.GetNewAssetProposalsResponse}
+ */
+proto.api.GetNewAssetProposalsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.GetNewAssetProposalsResponse;
+  return proto.api.GetNewAssetProposalsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.GetNewAssetProposalsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.GetNewAssetProposalsResponse}
+ */
+proto.api.GetNewAssetProposalsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.vega.GovernanceData;
+      reader.readMessage(value,proto.vega.GovernanceData.deserializeBinaryFromReader);
+      msg.addData(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.GetNewAssetProposalsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.GetNewAssetProposalsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.GetNewAssetProposalsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetNewAssetProposalsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getDataList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.vega.GovernanceData.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated vega.GovernanceData data = 1;
+ * @return {!Array<!proto.vega.GovernanceData>}
+ */
+proto.api.GetNewAssetProposalsResponse.prototype.getDataList = function() {
+  return /** @type{!Array<!proto.vega.GovernanceData>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.vega.GovernanceData, 1));
+};
+
+
+/** @param {!Array<!proto.vega.GovernanceData>} value */
+proto.api.GetNewAssetProposalsResponse.prototype.setDataList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.vega.GovernanceData=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.vega.GovernanceData}
+ */
+proto.api.GetNewAssetProposalsResponse.prototype.addData = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.GovernanceData, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ */
+proto.api.GetNewAssetProposalsResponse.prototype.clearDataList = function() {
+  this.setDataList([]);
 };
 
 
@@ -21259,6 +22554,151 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
+proto.api.GetProposalByIDResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.GetProposalByIDResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.GetProposalByIDResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetProposalByIDResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    data: (f = msg.getData()) && proto.vega.GovernanceData.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.GetProposalByIDResponse}
+ */
+proto.api.GetProposalByIDResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.GetProposalByIDResponse;
+  return proto.api.GetProposalByIDResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.GetProposalByIDResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.GetProposalByIDResponse}
+ */
+proto.api.GetProposalByIDResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.vega.GovernanceData;
+      reader.readMessage(value,proto.vega.GovernanceData.deserializeBinaryFromReader);
+      msg.setData(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.GetProposalByIDResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.GetProposalByIDResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.GetProposalByIDResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetProposalByIDResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getData();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.vega.GovernanceData.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional vega.GovernanceData data = 1;
+ * @return {?proto.vega.GovernanceData}
+ */
+proto.api.GetProposalByIDResponse.prototype.getData = function() {
+  return /** @type{?proto.vega.GovernanceData} */ (
+    jspb.Message.getWrapperField(this, proto.vega.GovernanceData, 1));
+};
+
+
+/** @param {?proto.vega.GovernanceData|undefined} value */
+proto.api.GetProposalByIDResponse.prototype.setData = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ */
+proto.api.GetProposalByIDResponse.prototype.clearData = function() {
+  this.setData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.GetProposalByIDResponse.prototype.hasData = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
 proto.api.GetProposalByReferenceRequest.prototype.toObject = function(opt_includeInstance) {
   return proto.api.GetProposalByReferenceRequest.toObject(opt_includeInstance, this);
 };
@@ -21367,6 +22807,151 @@ proto.api.GetProposalByReferenceRequest.prototype.getReference = function() {
 /** @param {string} value */
 proto.api.GetProposalByReferenceRequest.prototype.setReference = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.GetProposalByReferenceResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.GetProposalByReferenceResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.GetProposalByReferenceResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetProposalByReferenceResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    data: (f = msg.getData()) && proto.vega.GovernanceData.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.GetProposalByReferenceResponse}
+ */
+proto.api.GetProposalByReferenceResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.GetProposalByReferenceResponse;
+  return proto.api.GetProposalByReferenceResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.GetProposalByReferenceResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.GetProposalByReferenceResponse}
+ */
+proto.api.GetProposalByReferenceResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.vega.GovernanceData;
+      reader.readMessage(value,proto.vega.GovernanceData.deserializeBinaryFromReader);
+      msg.setData(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.GetProposalByReferenceResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.GetProposalByReferenceResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.GetProposalByReferenceResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.GetProposalByReferenceResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getData();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.vega.GovernanceData.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional vega.GovernanceData data = 1;
+ * @return {?proto.vega.GovernanceData}
+ */
+proto.api.GetProposalByReferenceResponse.prototype.getData = function() {
+  return /** @type{?proto.vega.GovernanceData} */ (
+    jspb.Message.getWrapperField(this, proto.vega.GovernanceData, 1));
+};
+
+
+/** @param {?proto.vega.GovernanceData|undefined} value */
+proto.api.GetProposalByReferenceResponse.prototype.setData = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ */
+proto.api.GetProposalByReferenceResponse.prototype.clearData = function() {
+  this.setData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.GetProposalByReferenceResponse.prototype.hasData = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

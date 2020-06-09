@@ -427,48 +427,48 @@ class trading_dataStub(object):
                 )
         self.GetProposals = channel.unary_unary(
                 '/api.trading_data/GetProposals',
-                request_serializer=proto_dot_api_dot_trading__pb2.GetProposalsByStateRequest.SerializeToString,
-                response_deserializer=proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.FromString,
+                request_serializer=proto_dot_api_dot_trading__pb2.GetProposalsRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.GetProposalsResponse.FromString,
                 )
         self.GetProposalsByParty = channel.unary_unary(
                 '/api.trading_data/GetProposalsByParty',
                 request_serializer=proto_dot_api_dot_trading__pb2.GetProposalsByPartyRequest.SerializeToString,
-                response_deserializer=proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.FromString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.GetProposalsByPartyResponse.FromString,
                 )
         self.GetVotesByParty = channel.unary_unary(
                 '/api.trading_data/GetVotesByParty',
                 request_serializer=proto_dot_api_dot_trading__pb2.GetVotesByPartyRequest.SerializeToString,
-                response_deserializer=proto_dot_api_dot_trading__pb2.GetVotesResponse.FromString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.GetVotesByPartyResponse.FromString,
                 )
         self.GetNewMarketProposals = channel.unary_unary(
                 '/api.trading_data/GetNewMarketProposals',
-                request_serializer=proto_dot_api_dot_trading__pb2.GetProposalsByStateRequest.SerializeToString,
-                response_deserializer=proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.FromString,
+                request_serializer=proto_dot_api_dot_trading__pb2.GetNewMarketProposalsRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.GetNewMarketProposalsResponse.FromString,
                 )
         self.GetUpdateMarketProposals = channel.unary_unary(
                 '/api.trading_data/GetUpdateMarketProposals',
                 request_serializer=proto_dot_api_dot_trading__pb2.GetUpdateMarketProposalsRequest.SerializeToString,
-                response_deserializer=proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.FromString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.GetUpdateMarketProposalsResponse.FromString,
                 )
         self.GetNetworkParametersProposals = channel.unary_unary(
                 '/api.trading_data/GetNetworkParametersProposals',
-                request_serializer=proto_dot_api_dot_trading__pb2.GetProposalsByStateRequest.SerializeToString,
-                response_deserializer=proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.FromString,
+                request_serializer=proto_dot_api_dot_trading__pb2.GetNetworkParametersProposalsRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.GetNetworkParametersProposalsResponse.FromString,
                 )
         self.GetNewAssetProposals = channel.unary_unary(
                 '/api.trading_data/GetNewAssetProposals',
-                request_serializer=proto_dot_api_dot_trading__pb2.GetProposalsByStateRequest.SerializeToString,
-                response_deserializer=proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.FromString,
+                request_serializer=proto_dot_api_dot_trading__pb2.GetNewAssetProposalsRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.GetNewAssetProposalsResponse.FromString,
                 )
         self.GetProposalByID = channel.unary_unary(
                 '/api.trading_data/GetProposalByID',
                 request_serializer=proto_dot_api_dot_trading__pb2.GetProposalByIDRequest.SerializeToString,
-                response_deserializer=proto_dot_api_dot_trading__pb2.GetProposalResponse.FromString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.GetProposalByIDResponse.FromString,
                 )
         self.GetProposalByReference = channel.unary_unary(
                 '/api.trading_data/GetProposalByReference',
                 request_serializer=proto_dot_api_dot_trading__pb2.GetProposalByReferenceRequest.SerializeToString,
-                response_deserializer=proto_dot_api_dot_trading__pb2.GetProposalResponse.FromString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.GetProposalByReferenceResponse.FromString,
                 )
         self.ObserveGovernance = channel.unary_stream(
                 '/api.trading_data/ObserveGovernance',
@@ -1019,48 +1019,48 @@ def add_trading_dataServicer_to_server(servicer, server):
             ),
             'GetProposals': grpc.unary_unary_rpc_method_handler(
                     servicer.GetProposals,
-                    request_deserializer=proto_dot_api_dot_trading__pb2.GetProposalsByStateRequest.FromString,
-                    response_serializer=proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.SerializeToString,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.GetProposalsRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.GetProposalsResponse.SerializeToString,
             ),
             'GetProposalsByParty': grpc.unary_unary_rpc_method_handler(
                     servicer.GetProposalsByParty,
                     request_deserializer=proto_dot_api_dot_trading__pb2.GetProposalsByPartyRequest.FromString,
-                    response_serializer=proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.SerializeToString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.GetProposalsByPartyResponse.SerializeToString,
             ),
             'GetVotesByParty': grpc.unary_unary_rpc_method_handler(
                     servicer.GetVotesByParty,
                     request_deserializer=proto_dot_api_dot_trading__pb2.GetVotesByPartyRequest.FromString,
-                    response_serializer=proto_dot_api_dot_trading__pb2.GetVotesResponse.SerializeToString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.GetVotesByPartyResponse.SerializeToString,
             ),
             'GetNewMarketProposals': grpc.unary_unary_rpc_method_handler(
                     servicer.GetNewMarketProposals,
-                    request_deserializer=proto_dot_api_dot_trading__pb2.GetProposalsByStateRequest.FromString,
-                    response_serializer=proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.SerializeToString,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.GetNewMarketProposalsRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.GetNewMarketProposalsResponse.SerializeToString,
             ),
             'GetUpdateMarketProposals': grpc.unary_unary_rpc_method_handler(
                     servicer.GetUpdateMarketProposals,
                     request_deserializer=proto_dot_api_dot_trading__pb2.GetUpdateMarketProposalsRequest.FromString,
-                    response_serializer=proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.SerializeToString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.GetUpdateMarketProposalsResponse.SerializeToString,
             ),
             'GetNetworkParametersProposals': grpc.unary_unary_rpc_method_handler(
                     servicer.GetNetworkParametersProposals,
-                    request_deserializer=proto_dot_api_dot_trading__pb2.GetProposalsByStateRequest.FromString,
-                    response_serializer=proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.SerializeToString,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.GetNetworkParametersProposalsRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.GetNetworkParametersProposalsResponse.SerializeToString,
             ),
             'GetNewAssetProposals': grpc.unary_unary_rpc_method_handler(
                     servicer.GetNewAssetProposals,
-                    request_deserializer=proto_dot_api_dot_trading__pb2.GetProposalsByStateRequest.FromString,
-                    response_serializer=proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.SerializeToString,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.GetNewAssetProposalsRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.GetNewAssetProposalsResponse.SerializeToString,
             ),
             'GetProposalByID': grpc.unary_unary_rpc_method_handler(
                     servicer.GetProposalByID,
                     request_deserializer=proto_dot_api_dot_trading__pb2.GetProposalByIDRequest.FromString,
-                    response_serializer=proto_dot_api_dot_trading__pb2.GetProposalResponse.SerializeToString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.GetProposalByIDResponse.SerializeToString,
             ),
             'GetProposalByReference': grpc.unary_unary_rpc_method_handler(
                     servicer.GetProposalByReference,
                     request_deserializer=proto_dot_api_dot_trading__pb2.GetProposalByReferenceRequest.FromString,
-                    response_serializer=proto_dot_api_dot_trading__pb2.GetProposalResponse.SerializeToString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.GetProposalByReferenceResponse.SerializeToString,
             ),
             'ObserveGovernance': grpc.unary_stream_rpc_method_handler(
                     servicer.ObserveGovernance,
@@ -1526,8 +1526,8 @@ class trading_data(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetProposals',
-            proto_dot_api_dot_trading__pb2.GetProposalsByStateRequest.SerializeToString,
-            proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.FromString,
+            proto_dot_api_dot_trading__pb2.GetProposalsRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.GetProposalsResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1543,7 +1543,7 @@ class trading_data(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetProposalsByParty',
             proto_dot_api_dot_trading__pb2.GetProposalsByPartyRequest.SerializeToString,
-            proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.FromString,
+            proto_dot_api_dot_trading__pb2.GetProposalsByPartyResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1559,7 +1559,7 @@ class trading_data(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetVotesByParty',
             proto_dot_api_dot_trading__pb2.GetVotesByPartyRequest.SerializeToString,
-            proto_dot_api_dot_trading__pb2.GetVotesResponse.FromString,
+            proto_dot_api_dot_trading__pb2.GetVotesByPartyResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1574,8 +1574,8 @@ class trading_data(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetNewMarketProposals',
-            proto_dot_api_dot_trading__pb2.GetProposalsByStateRequest.SerializeToString,
-            proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.FromString,
+            proto_dot_api_dot_trading__pb2.GetNewMarketProposalsRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.GetNewMarketProposalsResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1591,7 +1591,7 @@ class trading_data(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetUpdateMarketProposals',
             proto_dot_api_dot_trading__pb2.GetUpdateMarketProposalsRequest.SerializeToString,
-            proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.FromString,
+            proto_dot_api_dot_trading__pb2.GetUpdateMarketProposalsResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1606,8 +1606,8 @@ class trading_data(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetNetworkParametersProposals',
-            proto_dot_api_dot_trading__pb2.GetProposalsByStateRequest.SerializeToString,
-            proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.FromString,
+            proto_dot_api_dot_trading__pb2.GetNetworkParametersProposalsRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.GetNetworkParametersProposalsResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1622,8 +1622,8 @@ class trading_data(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetNewAssetProposals',
-            proto_dot_api_dot_trading__pb2.GetProposalsByStateRequest.SerializeToString,
-            proto_dot_api_dot_trading__pb2.GetGovernanceDataResponse.FromString,
+            proto_dot_api_dot_trading__pb2.GetNewAssetProposalsRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.GetNewAssetProposalsResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1639,7 +1639,7 @@ class trading_data(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetProposalByID',
             proto_dot_api_dot_trading__pb2.GetProposalByIDRequest.SerializeToString,
-            proto_dot_api_dot_trading__pb2.GetProposalResponse.FromString,
+            proto_dot_api_dot_trading__pb2.GetProposalByIDResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1655,7 +1655,7 @@ class trading_data(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetProposalByReference',
             proto_dot_api_dot_trading__pb2.GetProposalByReferenceRequest.SerializeToString,
-            proto_dot_api_dot_trading__pb2.GetProposalResponse.FromString,
+            proto_dot_api_dot_trading__pb2.GetProposalByReferenceResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
