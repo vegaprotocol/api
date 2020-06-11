@@ -1,7 +1,7 @@
 # Makefile
 
 GENERATED_DIR := vegaapiclient/generated
-VENV := /tmp/venv-python-api-client
+VENV := /tmp/venv-api-clients
 
 .PHONY: default
 default:
