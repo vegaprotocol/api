@@ -14,9 +14,7 @@ from .fixtures import (  # noqa: F401
 )
 
 
-def test_SubmitOrder(
-    trading, tradingdata, walletClientWalletKeypair  # noqa: F811
-):
+def test_SubmitOrder(trading, tradingdata, walletClientWalletKeypair):  # noqa: F811
     (
         walletclient,
         walletname,
