@@ -28,10 +28,10 @@ jobs:
         cd python
         pip install -r requirements.txt
 
-    - name: Lint with flake8
+    - name: Lint with black
       run: |
         cd python
-        make flake8
+        make black
 
     - name: Test with pytest
       env:

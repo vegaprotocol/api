@@ -6,13 +6,23 @@ VENV := /tmp/venv-api-clients
 .PHONY: default
 default:
 	@echo "Please select a target:"
-	@echo "- coverage:  make coverage report"
-	@echo "- dist:      build and upload to PyPI"
-	@echo "- dist_test: build and upload to test-PyPI"
-	@echo "- flake8:    run flake8 on (non-auto-generated) py files"
-	@echo "- mypy:      run mypy"
-	@echo "- venv:      Create a python virtualenv and install requirements"
-	@echo "- clean:     remove the generated dir"
+	@echo "- black:      autoformat non-auto-generated py files"
+	@echo "- blackcheck: check non-auto-generated py files"
+	@echo "- coverage:   make coverage report"
+	@echo "- dist:       build and upload to PyPI"
+	@echo "- dist_test:  build and upload to test-PyPI"
+	@echo "- mypy:       run mypy"
+	@echo "- test:       run pytest"
+	@echo "- venv:       Create a python virtualenv and install requirements"
+	@echo "- clean:      remove the generated dir"
+
+.PHONY: black
+black:
+	@black --exclude generated vegaapiclient/ tests/
+
+.PHONY: blackcheck
+blackcheck:
+	@black --exclude generated --check vegaapiclient/ tests/
 
 .PHONY: coverage
 coverage: varcheck
@@ -29,10 +39,6 @@ dist_test:
 	@rm -rf dist && mkdir dist
 	@python3 setup.py sdist bdist_wheel
 	@twine upload --repository-url https://test.pypi.org/legacy/ dist/*
-
-.PHONY: flake8
-flake8:
-	@find -name build -prune -o -name generated -prune -o -name '*.py' -print0 | xargs -0r flake8
 
 .PHONY: mypy
 mypy:
