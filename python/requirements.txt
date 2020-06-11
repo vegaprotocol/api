@@ -1,8 +1,11 @@
+appdirs==1.4.4
 attrs==19.3.0
+black==19.10b0
 bleach==3.1.4
 certifi==2019.11.28
 cffi==1.14.0
 chardet==3.0.4
+click==7.1.2
 coverage==5.0.4
 cryptography==2.8
 docutils==0.16
@@ -20,7 +23,7 @@ more-itertools==8.2.0
 mypy==0.770
 mypy-extensions==0.4.3
 packaging==20.3
-pkginfo==1.5.0.1
+pathspec==0.8.0
 pluggy==0.13.1
 protobuf==3.11.3
 py==1.8.1
@@ -32,10 +35,12 @@ pyparsing==2.4.6
 pytest==5.4.1
 pytest-cov==2.8.1
 readme-renderer==25.0
+regex==2020.6.8
 requests==2.23.0
 requests-toolbelt==0.9.1
 SecretStorage==3.1.2
 six==1.14.0
+toml==0.10.1
 tqdm==4.44.1
 twine==3.1.1
 typed-ast==1.4.1
