@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="Vega API client",
-    version="0.19.0",
+    version="0.20.0",
     author="Vega",
     author_email="hi@vega.xyz",
     description="Vega API client for gRPC",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/vegaprotocol/vegaapiclient",
+    url="https://github.com/vegaprotocol/api-clients",
     packages=setuptools.find_packages(),
     package_data={"vegaapiclient": ["py.typed"],},
     classifiers=[
