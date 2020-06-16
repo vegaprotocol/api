@@ -34,7 +34,7 @@ proto-javascript:
 		xargs protoc \
 		-I. \
 		-Iexternal \
-		--js_out=library=vegaprotocol/vegaapiclient,binary:$(JAVASCRIPT_GENERATED_DIR)
+		--js_out=import_style=commonjs,binary:$(JAVASCRIPT_GENERATED_DIR)
 
 PYTHON_GENERATED_DIR := python/vegaapiclient/generated
 
