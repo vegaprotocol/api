@@ -4,7 +4,7 @@
   "description": "A GRPC client for Vega Protocol",
   "main": "generated/vegaprotocol/vegaapiclient.js",
   "scripts": {
-    "test": "tape test/**.js"
+    "test": "tape test/**.js | tap-dot"
   },
   "repository": {
     "type": "git",
