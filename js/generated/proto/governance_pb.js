@@ -251,7 +251,10 @@ proto.vega.NetworkConfiguration.toObject = function(includeInstance, msg) {
     maxcloseinseconds: jspb.Message.getFieldWithDefault(msg, 2, 0),
     minenactinseconds: jspb.Message.getFieldWithDefault(msg, 3, 0),
     maxenactinseconds: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    minparticipationstake: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    requiredparticipation: +jspb.Message.getFieldWithDefault(msg, 5, 0.0),
+    requiredmajority: +jspb.Message.getFieldWithDefault(msg, 6, 0.0),
+    minproposerbalance: +jspb.Message.getFieldWithDefault(msg, 7, 0.0),
+    minvoterbalance: +jspb.Message.getFieldWithDefault(msg, 8, 0.0)
   };
 
   if (includeInstance) {
@@ -305,8 +308,20 @@ proto.vega.NetworkConfiguration.deserializeBinaryFromReader = function(msg, read
       msg.setMaxenactinseconds(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readUint64());
-      msg.setMinparticipationstake(value);
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setRequiredparticipation(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setRequiredmajority(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setMinproposerbalance(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setMinvoterbalance(value);
       break;
     default:
       reader.skipField();
@@ -365,10 +380,31 @@ proto.vega.NetworkConfiguration.serializeBinaryToWriter = function(message, writ
       f
     );
   }
-  f = message.getMinparticipationstake();
-  if (f !== 0) {
-    writer.writeUint64(
+  f = message.getRequiredparticipation();
+  if (f !== 0.0) {
+    writer.writeFloat(
       5,
+      f
+    );
+  }
+  f = message.getRequiredmajority();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      6,
+      f
+    );
+  }
+  f = message.getMinproposerbalance();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      7,
+      f
+    );
+  }
+  f = message.getMinvoterbalance();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      8,
       f
     );
   }
@@ -436,17 +472,62 @@ proto.vega.NetworkConfiguration.prototype.setMaxenactinseconds = function(value)
 
 
 /**
- * optional uint64 minParticipationStake = 5;
+ * optional float requiredParticipation = 5;
  * @return {number}
  */
-proto.vega.NetworkConfiguration.prototype.getMinparticipationstake = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+proto.vega.NetworkConfiguration.prototype.getRequiredparticipation = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 5, 0.0));
 };
 
 
 /** @param {number} value */
-proto.vega.NetworkConfiguration.prototype.setMinparticipationstake = function(value) {
-  jspb.Message.setProto3IntField(this, 5, value);
+proto.vega.NetworkConfiguration.prototype.setRequiredparticipation = function(value) {
+  jspb.Message.setProto3FloatField(this, 5, value);
+};
+
+
+/**
+ * optional float requiredMajority = 6;
+ * @return {number}
+ */
+proto.vega.NetworkConfiguration.prototype.getRequiredmajority = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 6, 0.0));
+};
+
+
+/** @param {number} value */
+proto.vega.NetworkConfiguration.prototype.setRequiredmajority = function(value) {
+  jspb.Message.setProto3FloatField(this, 6, value);
+};
+
+
+/**
+ * optional float minProposerBalance = 7;
+ * @return {number}
+ */
+proto.vega.NetworkConfiguration.prototype.getMinproposerbalance = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 7, 0.0));
+};
+
+
+/** @param {number} value */
+proto.vega.NetworkConfiguration.prototype.setMinproposerbalance = function(value) {
+  jspb.Message.setProto3FloatField(this, 7, value);
+};
+
+
+/**
+ * optional float minVoterBalance = 8;
+ * @return {number}
+ */
+proto.vega.NetworkConfiguration.prototype.getMinvoterbalance = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 8, 0.0));
+};
+
+
+/** @param {number} value */
+proto.vega.NetworkConfiguration.prototype.setMinvoterbalance = function(value) {
+  jspb.Message.setProto3FloatField(this, 8, value);
 };
 
 
@@ -1044,8 +1125,7 @@ proto.vega.ProposalTerms.toObject = function(includeInstance, msg) {
   var f, obj = {
     closingtimestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
     enactmenttimestamp: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    minparticipationstake: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    validationtimestamp: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    validationtimestamp: jspb.Message.getFieldWithDefault(msg, 5, 0),
     updatemarket: (f = msg.getUpdatemarket()) && proto.vega.UpdateMarket.toObject(includeInstance, f),
     newmarket: (f = msg.getNewmarket()) && proto.vega.NewMarket.toObject(includeInstance, f),
     updatenetwork: (f = msg.getUpdatenetwork()) && proto.vega.UpdateNetwork.toObject(includeInstance, f),
@@ -1094,11 +1174,7 @@ proto.vega.ProposalTerms.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readInt64());
       msg.setEnactmenttimestamp(value);
       break;
-    case 3:
-      var value = /** @type {number} */ (reader.readUint64());
-      msg.setMinparticipationstake(value);
-      break;
-    case 4:
+    case 5:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setValidationtimestamp(value);
       break;
@@ -1165,17 +1241,10 @@ proto.vega.ProposalTerms.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getMinparticipationstake();
-  if (f !== 0) {
-    writer.writeUint64(
-      3,
-      f
-    );
-  }
   f = message.getValidationtimestamp();
   if (f !== 0) {
     writer.writeInt64(
-      4,
+      5,
       f
     );
   }
@@ -1245,32 +1314,17 @@ proto.vega.ProposalTerms.prototype.setEnactmenttimestamp = function(value) {
 
 
 /**
- * optional uint64 minParticipationStake = 3;
- * @return {number}
- */
-proto.vega.ProposalTerms.prototype.getMinparticipationstake = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/** @param {number} value */
-proto.vega.ProposalTerms.prototype.setMinparticipationstake = function(value) {
-  jspb.Message.setProto3IntField(this, 3, value);
-};
-
-
-/**
- * optional int64 validationTimestamp = 4;
+ * optional int64 validationTimestamp = 5;
  * @return {number}
  */
 proto.vega.ProposalTerms.prototype.getValidationtimestamp = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /** @param {number} value */
 proto.vega.ProposalTerms.prototype.setValidationtimestamp = function(value) {
-  jspb.Message.setProto3IntField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
