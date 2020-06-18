@@ -230,7 +230,10 @@ const ::google::protobuf::uint32 TableStruct_proto_2fgovernance_2eproto::offsets
   PROTOBUF_FIELD_OFFSET(::vega::NetworkConfiguration, maxcloseinseconds_),
   PROTOBUF_FIELD_OFFSET(::vega::NetworkConfiguration, minenactinseconds_),
   PROTOBUF_FIELD_OFFSET(::vega::NetworkConfiguration, maxenactinseconds_),
-  PROTOBUF_FIELD_OFFSET(::vega::NetworkConfiguration, minparticipationstake_),
+  PROTOBUF_FIELD_OFFSET(::vega::NetworkConfiguration, requiredparticipation_),
+  PROTOBUF_FIELD_OFFSET(::vega::NetworkConfiguration, requiredmajority_),
+  PROTOBUF_FIELD_OFFSET(::vega::NetworkConfiguration, minproposerbalance_),
+  PROTOBUF_FIELD_OFFSET(::vega::NetworkConfiguration, minvoterbalance_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::UpdateMarket, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -261,7 +264,6 @@ const ::google::protobuf::uint32 TableStruct_proto_2fgovernance_2eproto::offsets
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::ProposalTerms, closingtimestamp_),
   PROTOBUF_FIELD_OFFSET(::vega::ProposalTerms, enactmenttimestamp_),
-  PROTOBUF_FIELD_OFFSET(::vega::ProposalTerms, minparticipationstake_),
   PROTOBUF_FIELD_OFFSET(::vega::ProposalTerms, validationtimestamp_),
   offsetof(::vega::ProposalTermsDefaultTypeInternal, updatemarket_),
   offsetof(::vega::ProposalTermsDefaultTypeInternal, newmarket_),
@@ -299,14 +301,14 @@ const ::google::protobuf::uint32 TableStruct_proto_2fgovernance_2eproto::offsets
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::NetworkConfiguration)},
-  { 10, -1, sizeof(::vega::UpdateMarket)},
-  { 15, -1, sizeof(::vega::NewMarket)},
-  { 21, -1, sizeof(::vega::UpdateNetwork)},
-  { 27, -1, sizeof(::vega::NewAsset)},
-  { 33, -1, sizeof(::vega::ProposalTerms)},
-  { 47, -1, sizeof(::vega::GovernanceData)},
-  { 55, -1, sizeof(::vega::Proposal)},
-  { 66, -1, sizeof(::vega::Vote)},
+  { 13, -1, sizeof(::vega::UpdateMarket)},
+  { 18, -1, sizeof(::vega::NewMarket)},
+  { 24, -1, sizeof(::vega::UpdateNetwork)},
+  { 30, -1, sizeof(::vega::NewAsset)},
+  { 36, -1, sizeof(::vega::ProposalTerms)},
+  { 49, -1, sizeof(::vega::GovernanceData)},
+  { 57, -1, sizeof(::vega::Proposal)},
+  { 68, -1, sizeof(::vega::Vote)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -331,45 +333,46 @@ const char descriptor_table_protodef_proto_2fgovernance_2eproto[] =
   "\n\026proto/governance.proto\022\004vega\0326github.c"
   "om/mwitkow/go-proto-validators/validator"
   ".proto\032\023proto/markets.proto\032\022proto/asset"
-  "s.proto\"\241\001\n\024NetworkConfiguration\022\031\n\021minC"
+  "s.proto\"\360\001\n\024NetworkConfiguration\022\031\n\021minC"
   "loseInSeconds\030\001 \001(\003\022\031\n\021maxCloseInSeconds"
   "\030\002 \001(\003\022\031\n\021minEnactInSeconds\030\003 \001(\003\022\031\n\021max"
-  "EnactInSeconds\030\004 \001(\003\022\035\n\025minParticipation"
-  "Stake\030\005 \001(\004\"\016\n\014UpdateMarket\"2\n\tNewMarket"
-  "\022%\n\007changes\030\001 \001(\0132\014.vega.MarketB\006\342\337\037\002 \001\""
-  "D\n\rUpdateNetwork\0223\n\007changes\030\001 \001(\0132\032.vega"
-  ".NetworkConfigurationB\006\342\337\037\002 \001\"6\n\010NewAsse"
-  "t\022*\n\007changes\030\001 \001(\0132\021.vega.AssetSourceB\006\342"
-  "\337\037\002 \001\"\311\002\n\rProposalTerms\022 \n\020closingTimest"
-  "amp\030\001 \001(\003B\006\342\337\037\002\020\000\022\"\n\022enactmentTimestamp\030"
-  "\002 \001(\003B\006\342\337\037\002\020\000\022\'\n\025minParticipationStake\030\003"
-  " \001(\004B\010\342\337\037\004\020\000\030e\022\033\n\023validationTimestamp\030\004 "
-  "\001(\003\022*\n\014updateMarket\030e \001(\0132\022.vega.UpdateM"
-  "arketH\000\022$\n\tnewMarket\030f \001(\0132\017.vega.NewMar"
-  "ketH\000\022,\n\rupdateNetwork\030g \001(\0132\023.vega.Upda"
-  "teNetworkH\000\022\"\n\010newAsset\030h \001(\0132\016.vega.New"
-  "AssetH\000B\010\n\006change\"c\n\016GovernanceData\022 \n\010p"
-  "roposal\030\001 \001(\0132\016.vega.Proposal\022\027\n\003yes\030\002 \003"
-  "(\0132\n.vega.Vote\022\026\n\002no\030\003 \003(\0132\n.vega.Vote\"\277"
-  "\002\n\010Proposal\022\n\n\002ID\030\001 \001(\t\022\021\n\treference\030\002 \001"
-  "(\t\022\027\n\007partyID\030\003 \001(\tB\006\342\337\037\002X\001\022,\n\005state\030\004 \001"
-  "(\0162\024.vega.Proposal.StateB\007\342\337\037\003\210\001\001\022\021\n\ttim"
-  "estamp\030\005 \001(\003\022*\n\005terms\030\006 \001(\0132\023.vega.Propo"
-  "salTermsB\006\342\337\037\002 \001\"\215\001\n\005State\022\025\n\021STATE_UNSP"
-  "ECIFIED\020\000\022\020\n\014STATE_FAILED\020\001\022\016\n\nSTATE_OPE"
-  "N\020\002\022\020\n\014STATE_PASSED\020\003\022\022\n\016STATE_REJECTED\020"
-  "\004\022\022\n\016STATE_DECLINED\020\005\022\021\n\rSTATE_ENACTED\020\006"
-  "\"\265\001\n\004Vote\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\022(\n\005va"
-  "lue\030\002 \001(\0162\020.vega.Vote.ValueB\007\342\337\037\003\210\001\001\022\032\n\n"
-  "proposalID\030\003 \001(\tB\006\342\337\037\002X\001\022\021\n\ttimestamp\030\004 "
-  "\001(\003\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010V"
-  "ALUE_NO\020\001\022\r\n\tVALUE_YES\020\002B!Z\037code.vegapro"
-  "tocol.io/vega/protob\006proto3"
+  "EnactInSeconds\030\004 \001(\003\022\035\n\025requiredParticip"
+  "ation\030\005 \001(\002\022\030\n\020requiredMajority\030\006 \001(\002\022\032\n"
+  "\022minProposerBalance\030\007 \001(\002\022\027\n\017minVoterBal"
+  "ance\030\010 \001(\002\"\016\n\014UpdateMarket\"2\n\tNewMarket\022"
+  "%\n\007changes\030\001 \001(\0132\014.vega.MarketB\006\342\337\037\002 \001\"D"
+  "\n\rUpdateNetwork\0223\n\007changes\030\001 \001(\0132\032.vega."
+  "NetworkConfigurationB\006\342\337\037\002 \001\"6\n\010NewAsset"
+  "\022*\n\007changes\030\001 \001(\0132\021.vega.AssetSourceB\006\342\337"
+  "\037\002 \001\"\240\002\n\rProposalTerms\022 \n\020closingTimesta"
+  "mp\030\001 \001(\003B\006\342\337\037\002\020\000\022\"\n\022enactmentTimestamp\030\002"
+  " \001(\003B\006\342\337\037\002\020\000\022\033\n\023validationTimestamp\030\005 \001("
+  "\003\022*\n\014updateMarket\030e \001(\0132\022.vega.UpdateMar"
+  "ketH\000\022$\n\tnewMarket\030f \001(\0132\017.vega.NewMarke"
+  "tH\000\022,\n\rupdateNetwork\030g \001(\0132\023.vega.Update"
+  "NetworkH\000\022\"\n\010newAsset\030h \001(\0132\016.vega.NewAs"
+  "setH\000B\010\n\006change\"c\n\016GovernanceData\022 \n\010pro"
+  "posal\030\001 \001(\0132\016.vega.Proposal\022\027\n\003yes\030\002 \003(\013"
+  "2\n.vega.Vote\022\026\n\002no\030\003 \003(\0132\n.vega.Vote\"\277\002\n"
+  "\010Proposal\022\n\n\002ID\030\001 \001(\t\022\021\n\treference\030\002 \001(\t"
+  "\022\027\n\007partyID\030\003 \001(\tB\006\342\337\037\002X\001\022,\n\005state\030\004 \001(\016"
+  "2\024.vega.Proposal.StateB\007\342\337\037\003\210\001\001\022\021\n\ttimes"
+  "tamp\030\005 \001(\003\022*\n\005terms\030\006 \001(\0132\023.vega.Proposa"
+  "lTermsB\006\342\337\037\002 \001\"\215\001\n\005State\022\025\n\021STATE_UNSPEC"
+  "IFIED\020\000\022\020\n\014STATE_FAILED\020\001\022\016\n\nSTATE_OPEN\020"
+  "\002\022\020\n\014STATE_PASSED\020\003\022\022\n\016STATE_REJECTED\020\004\022"
+  "\022\n\016STATE_DECLINED\020\005\022\021\n\rSTATE_ENACTED\020\006\"\265"
+  "\001\n\004Vote\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\022(\n\005valu"
+  "e\030\002 \001(\0162\020.vega.Vote.ValueB\007\342\337\037\003\210\001\001\022\032\n\npr"
+  "oposalID\030\003 \001(\tB\006\342\337\037\002X\001\022\021\n\ttimestamp\030\004 \001("
+  "\003\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VAL"
+  "UE_NO\020\001\022\r\n\tVALUE_YES\020\002B!Z\037code.vegaproto"
+  "col.io/vega/protob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fgovernance_2eproto = {
   false, InitDefaults_proto_2fgovernance_2eproto, 
   descriptor_table_protodef_proto_2fgovernance_2eproto,
-  "proto/governance.proto", &assign_descriptors_table_proto_2fgovernance_2eproto, 1467,
+  "proto/governance.proto", &assign_descriptors_table_proto_2fgovernance_2eproto, 1505,
 };
 
 void AddDescriptors_proto_2fgovernance_2eproto() {
@@ -453,7 +456,10 @@ const int NetworkConfiguration::kMinCloseInSecondsFieldNumber;
 const int NetworkConfiguration::kMaxCloseInSecondsFieldNumber;
 const int NetworkConfiguration::kMinEnactInSecondsFieldNumber;
 const int NetworkConfiguration::kMaxEnactInSecondsFieldNumber;
-const int NetworkConfiguration::kMinParticipationStakeFieldNumber;
+const int NetworkConfiguration::kRequiredParticipationFieldNumber;
+const int NetworkConfiguration::kRequiredMajorityFieldNumber;
+const int NetworkConfiguration::kMinProposerBalanceFieldNumber;
+const int NetworkConfiguration::kMinVoterBalanceFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 NetworkConfiguration::NetworkConfiguration()
@@ -466,15 +472,15 @@ NetworkConfiguration::NetworkConfiguration(const NetworkConfiguration& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&mincloseinseconds_, &from.mincloseinseconds_,
-    static_cast<size_t>(reinterpret_cast<char*>(&minparticipationstake_) -
-    reinterpret_cast<char*>(&mincloseinseconds_)) + sizeof(minparticipationstake_));
+    static_cast<size_t>(reinterpret_cast<char*>(&minvoterbalance_) -
+    reinterpret_cast<char*>(&mincloseinseconds_)) + sizeof(minvoterbalance_));
   // @@protoc_insertion_point(copy_constructor:vega.NetworkConfiguration)
 }
 
 void NetworkConfiguration::SharedCtor() {
   ::memset(&mincloseinseconds_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&minparticipationstake_) -
-      reinterpret_cast<char*>(&mincloseinseconds_)) + sizeof(minparticipationstake_));
+      reinterpret_cast<char*>(&minvoterbalance_) -
+      reinterpret_cast<char*>(&mincloseinseconds_)) + sizeof(minvoterbalance_));
 }
 
 NetworkConfiguration::~NetworkConfiguration() {
@@ -501,8 +507,8 @@ void NetworkConfiguration::Clear() {
   (void) cached_has_bits;
 
   ::memset(&mincloseinseconds_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&minparticipationstake_) -
-      reinterpret_cast<char*>(&mincloseinseconds_)) + sizeof(minparticipationstake_));
+      reinterpret_cast<char*>(&minvoterbalance_) -
+      reinterpret_cast<char*>(&mincloseinseconds_)) + sizeof(minvoterbalance_));
   _internal_metadata_.Clear();
 }
 
@@ -547,11 +553,32 @@ const char* NetworkConfiguration::_InternalParse(const char* begin, const char* 
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // uint64 minParticipationStake = 5;
+      // float requiredParticipation = 5;
       case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 40) goto handle_unusual;
-        msg->set_minparticipationstake(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        if (static_cast<::google::protobuf::uint8>(tag) != 45) goto handle_unusual;
+        msg->set_requiredparticipation(::google::protobuf::io::UnalignedLoad<float>(ptr));
+        ptr += sizeof(float);
+        break;
+      }
+      // float requiredMajority = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 53) goto handle_unusual;
+        msg->set_requiredmajority(::google::protobuf::io::UnalignedLoad<float>(ptr));
+        ptr += sizeof(float);
+        break;
+      }
+      // float minProposerBalance = 7;
+      case 7: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 61) goto handle_unusual;
+        msg->set_minproposerbalance(::google::protobuf::io::UnalignedLoad<float>(ptr));
+        ptr += sizeof(float);
+        break;
+      }
+      // float minVoterBalance = 8;
+      case 8: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 69) goto handle_unusual;
+        msg->set_minvoterbalance(::google::protobuf::io::UnalignedLoad<float>(ptr));
+        ptr += sizeof(float);
         break;
       }
       default: {
@@ -633,13 +660,52 @@ bool NetworkConfiguration::MergePartialFromCodedStream(
         break;
       }
 
-      // uint64 minParticipationStake = 5;
+      // float requiredParticipation = 5;
       case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (40 & 0xFF)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (45 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &minparticipationstake_)));
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &requiredparticipation_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float requiredMajority = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (53 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &requiredmajority_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float minProposerBalance = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (61 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &minproposerbalance_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float minVoterBalance = 8;
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (69 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &minvoterbalance_)));
         } else {
           goto handle_unusual;
         }
@@ -693,9 +759,24 @@ void NetworkConfiguration::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(4, this->maxenactinseconds(), output);
   }
 
-  // uint64 minParticipationStake = 5;
-  if (this->minparticipationstake() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->minparticipationstake(), output);
+  // float requiredParticipation = 5;
+  if (this->requiredparticipation() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->requiredparticipation(), output);
+  }
+
+  // float requiredMajority = 6;
+  if (this->requiredmajority() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->requiredmajority(), output);
+  }
+
+  // float minProposerBalance = 7;
+  if (this->minproposerbalance() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->minproposerbalance(), output);
+  }
+
+  // float minVoterBalance = 8;
+  if (this->minvoterbalance() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->minvoterbalance(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -731,9 +812,24 @@ void NetworkConfiguration::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(4, this->maxenactinseconds(), target);
   }
 
-  // uint64 minParticipationStake = 5;
-  if (this->minparticipationstake() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->minparticipationstake(), target);
+  // float requiredParticipation = 5;
+  if (this->requiredparticipation() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->requiredparticipation(), target);
+  }
+
+  // float requiredMajority = 6;
+  if (this->requiredmajority() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->requiredmajority(), target);
+  }
+
+  // float minProposerBalance = 7;
+  if (this->minproposerbalance() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->minproposerbalance(), target);
+  }
+
+  // float minVoterBalance = 8;
+  if (this->minvoterbalance() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->minvoterbalance(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -785,11 +881,24 @@ size_t NetworkConfiguration::ByteSizeLong() const {
         this->maxenactinseconds());
   }
 
-  // uint64 minParticipationStake = 5;
-  if (this->minparticipationstake() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->minparticipationstake());
+  // float requiredParticipation = 5;
+  if (this->requiredparticipation() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float requiredMajority = 6;
+  if (this->requiredmajority() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float minProposerBalance = 7;
+  if (this->minproposerbalance() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float minVoterBalance = 8;
+  if (this->minvoterbalance() != 0) {
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -831,8 +940,17 @@ void NetworkConfiguration::MergeFrom(const NetworkConfiguration& from) {
   if (from.maxenactinseconds() != 0) {
     set_maxenactinseconds(from.maxenactinseconds());
   }
-  if (from.minparticipationstake() != 0) {
-    set_minparticipationstake(from.minparticipationstake());
+  if (from.requiredparticipation() != 0) {
+    set_requiredparticipation(from.requiredparticipation());
+  }
+  if (from.requiredmajority() != 0) {
+    set_requiredmajority(from.requiredmajority());
+  }
+  if (from.minproposerbalance() != 0) {
+    set_minproposerbalance(from.minproposerbalance());
+  }
+  if (from.minvoterbalance() != 0) {
+    set_minvoterbalance(from.minvoterbalance());
   }
 }
 
@@ -865,7 +983,10 @@ void NetworkConfiguration::InternalSwap(NetworkConfiguration* other) {
   swap(maxcloseinseconds_, other->maxcloseinseconds_);
   swap(minenactinseconds_, other->minenactinseconds_);
   swap(maxenactinseconds_, other->maxenactinseconds_);
-  swap(minparticipationstake_, other->minparticipationstake_);
+  swap(requiredparticipation_, other->requiredparticipation_);
+  swap(requiredmajority_, other->requiredmajority_);
+  swap(minproposerbalance_, other->minproposerbalance_);
+  swap(minvoterbalance_, other->minvoterbalance_);
 }
 
 ::google::protobuf::Metadata NetworkConfiguration::GetMetadata() const {
@@ -2051,7 +2172,6 @@ void ProposalTerms::set_allocated_newasset(::vega::NewAsset* newasset) {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ProposalTerms::kClosingTimestampFieldNumber;
 const int ProposalTerms::kEnactmentTimestampFieldNumber;
-const int ProposalTerms::kMinParticipationStakeFieldNumber;
 const int ProposalTerms::kValidationTimestampFieldNumber;
 const int ProposalTerms::kUpdateMarketFieldNumber;
 const int ProposalTerms::kNewMarketFieldNumber;
@@ -2192,16 +2312,9 @@ const char* ProposalTerms::_InternalParse(const char* begin, const char* end, vo
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // uint64 minParticipationStake = 3 [(.validator.field) = {
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
-        msg->set_minparticipationstake(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
-      // int64 validationTimestamp = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
+      // int64 validationTimestamp = 5;
+      case 5: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 40) goto handle_unusual;
         msg->set_validationtimestamp(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
@@ -2314,22 +2427,9 @@ bool ProposalTerms::MergePartialFromCodedStream(
         break;
       }
 
-      // uint64 minParticipationStake = 3 [(.validator.field) = {
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &minparticipationstake_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // int64 validationTimestamp = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
+      // int64 validationTimestamp = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (40 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
@@ -2421,14 +2521,9 @@ void ProposalTerms::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->enactmenttimestamp(), output);
   }
 
-  // uint64 minParticipationStake = 3 [(.validator.field) = {
-  if (this->minparticipationstake() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(3, this->minparticipationstake(), output);
-  }
-
-  // int64 validationTimestamp = 4;
+  // int64 validationTimestamp = 5;
   if (this->validationtimestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(4, this->validationtimestamp(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(5, this->validationtimestamp(), output);
   }
 
   // .vega.UpdateMarket updateMarket = 101;
@@ -2478,14 +2573,9 @@ void ProposalTerms::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->enactmenttimestamp(), target);
   }
 
-  // uint64 minParticipationStake = 3 [(.validator.field) = {
-  if (this->minparticipationstake() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(3, this->minparticipationstake(), target);
-  }
-
-  // int64 validationTimestamp = 4;
+  // int64 validationTimestamp = 5;
   if (this->validationtimestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(4, this->validationtimestamp(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(5, this->validationtimestamp(), target);
   }
 
   // .vega.UpdateMarket updateMarket = 101;
@@ -2551,14 +2641,7 @@ size_t ProposalTerms::ByteSizeLong() const {
         this->enactmenttimestamp());
   }
 
-  // uint64 minParticipationStake = 3 [(.validator.field) = {
-  if (this->minparticipationstake() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->minparticipationstake());
-  }
-
-  // int64 validationTimestamp = 4;
+  // int64 validationTimestamp = 5;
   if (this->validationtimestamp() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int64Size(
@@ -2631,9 +2714,6 @@ void ProposalTerms::MergeFrom(const ProposalTerms& from) {
   if (from.enactmenttimestamp() != 0) {
     set_enactmenttimestamp(from.enactmenttimestamp());
   }
-  if (from.minparticipationstake() != 0) {
-    set_minparticipationstake(from.minparticipationstake());
-  }
   if (from.validationtimestamp() != 0) {
     set_validationtimestamp(from.validationtimestamp());
   }
@@ -2687,7 +2767,6 @@ void ProposalTerms::InternalSwap(ProposalTerms* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(closingtimestamp_, other->closingtimestamp_);
   swap(enactmenttimestamp_, other->enactmenttimestamp_);
-  swap(minparticipationstake_, other->minparticipationstake_);
   swap(validationtimestamp_, other->validationtimestamp_);
   swap(change_, other->change_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);

@@ -265,11 +265,29 @@ class NetworkConfiguration :
   ::google::protobuf::int64 maxenactinseconds() const;
   void set_maxenactinseconds(::google::protobuf::int64 value);
 
-  // uint64 minParticipationStake = 5;
-  void clear_minparticipationstake();
-  static const int kMinParticipationStakeFieldNumber = 5;
-  ::google::protobuf::uint64 minparticipationstake() const;
-  void set_minparticipationstake(::google::protobuf::uint64 value);
+  // float requiredParticipation = 5;
+  void clear_requiredparticipation();
+  static const int kRequiredParticipationFieldNumber = 5;
+  float requiredparticipation() const;
+  void set_requiredparticipation(float value);
+
+  // float requiredMajority = 6;
+  void clear_requiredmajority();
+  static const int kRequiredMajorityFieldNumber = 6;
+  float requiredmajority() const;
+  void set_requiredmajority(float value);
+
+  // float minProposerBalance = 7;
+  void clear_minproposerbalance();
+  static const int kMinProposerBalanceFieldNumber = 7;
+  float minproposerbalance() const;
+  void set_minproposerbalance(float value);
+
+  // float minVoterBalance = 8;
+  void clear_minvoterbalance();
+  static const int kMinVoterBalanceFieldNumber = 8;
+  float minvoterbalance() const;
+  void set_minvoterbalance(float value);
 
   // @@protoc_insertion_point(class_scope:vega.NetworkConfiguration)
  private:
@@ -280,7 +298,10 @@ class NetworkConfiguration :
   ::google::protobuf::int64 maxcloseinseconds_;
   ::google::protobuf::int64 minenactinseconds_;
   ::google::protobuf::int64 maxenactinseconds_;
-  ::google::protobuf::uint64 minparticipationstake_;
+  float requiredparticipation_;
+  float requiredmajority_;
+  float minproposerbalance_;
+  float minvoterbalance_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fgovernance_2eproto;
 };
@@ -851,15 +872,9 @@ class ProposalTerms :
   ::google::protobuf::int64 enactmenttimestamp() const;
   void set_enactmenttimestamp(::google::protobuf::int64 value);
 
-  // uint64 minParticipationStake = 3 [(.validator.field) = {
-  void clear_minparticipationstake();
-  static const int kMinParticipationStakeFieldNumber = 3;
-  ::google::protobuf::uint64 minparticipationstake() const;
-  void set_minparticipationstake(::google::protobuf::uint64 value);
-
-  // int64 validationTimestamp = 4;
+  // int64 validationTimestamp = 5;
   void clear_validationtimestamp();
-  static const int kValidationTimestampFieldNumber = 4;
+  static const int kValidationTimestampFieldNumber = 5;
   ::google::protobuf::int64 validationtimestamp() const;
   void set_validationtimestamp(::google::protobuf::int64 value);
 
@@ -915,7 +930,6 @@ class ProposalTerms :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::int64 closingtimestamp_;
   ::google::protobuf::int64 enactmenttimestamp_;
-  ::google::protobuf::uint64 minparticipationstake_;
   ::google::protobuf::int64 validationtimestamp_;
   union ChangeUnion {
     ChangeUnion() {}
@@ -1524,18 +1538,60 @@ inline void NetworkConfiguration::set_maxenactinseconds(::google::protobuf::int6
   // @@protoc_insertion_point(field_set:vega.NetworkConfiguration.maxEnactInSeconds)
 }
 
-// uint64 minParticipationStake = 5;
-inline void NetworkConfiguration::clear_minparticipationstake() {
-  minparticipationstake_ = PROTOBUF_ULONGLONG(0);
+// float requiredParticipation = 5;
+inline void NetworkConfiguration::clear_requiredparticipation() {
+  requiredparticipation_ = 0;
 }
-inline ::google::protobuf::uint64 NetworkConfiguration::minparticipationstake() const {
-  // @@protoc_insertion_point(field_get:vega.NetworkConfiguration.minParticipationStake)
-  return minparticipationstake_;
+inline float NetworkConfiguration::requiredparticipation() const {
+  // @@protoc_insertion_point(field_get:vega.NetworkConfiguration.requiredParticipation)
+  return requiredparticipation_;
 }
-inline void NetworkConfiguration::set_minparticipationstake(::google::protobuf::uint64 value) {
+inline void NetworkConfiguration::set_requiredparticipation(float value) {
   
-  minparticipationstake_ = value;
-  // @@protoc_insertion_point(field_set:vega.NetworkConfiguration.minParticipationStake)
+  requiredparticipation_ = value;
+  // @@protoc_insertion_point(field_set:vega.NetworkConfiguration.requiredParticipation)
+}
+
+// float requiredMajority = 6;
+inline void NetworkConfiguration::clear_requiredmajority() {
+  requiredmajority_ = 0;
+}
+inline float NetworkConfiguration::requiredmajority() const {
+  // @@protoc_insertion_point(field_get:vega.NetworkConfiguration.requiredMajority)
+  return requiredmajority_;
+}
+inline void NetworkConfiguration::set_requiredmajority(float value) {
+  
+  requiredmajority_ = value;
+  // @@protoc_insertion_point(field_set:vega.NetworkConfiguration.requiredMajority)
+}
+
+// float minProposerBalance = 7;
+inline void NetworkConfiguration::clear_minproposerbalance() {
+  minproposerbalance_ = 0;
+}
+inline float NetworkConfiguration::minproposerbalance() const {
+  // @@protoc_insertion_point(field_get:vega.NetworkConfiguration.minProposerBalance)
+  return minproposerbalance_;
+}
+inline void NetworkConfiguration::set_minproposerbalance(float value) {
+  
+  minproposerbalance_ = value;
+  // @@protoc_insertion_point(field_set:vega.NetworkConfiguration.minProposerBalance)
+}
+
+// float minVoterBalance = 8;
+inline void NetworkConfiguration::clear_minvoterbalance() {
+  minvoterbalance_ = 0;
+}
+inline float NetworkConfiguration::minvoterbalance() const {
+  // @@protoc_insertion_point(field_get:vega.NetworkConfiguration.minVoterBalance)
+  return minvoterbalance_;
+}
+inline void NetworkConfiguration::set_minvoterbalance(float value) {
+  
+  minvoterbalance_ = value;
+  // @@protoc_insertion_point(field_set:vega.NetworkConfiguration.minVoterBalance)
 }
 
 // -------------------------------------------------------------------
@@ -1727,21 +1783,7 @@ inline void ProposalTerms::set_enactmenttimestamp(::google::protobuf::int64 valu
   // @@protoc_insertion_point(field_set:vega.ProposalTerms.enactmentTimestamp)
 }
 
-// uint64 minParticipationStake = 3 [(.validator.field) = {
-inline void ProposalTerms::clear_minparticipationstake() {
-  minparticipationstake_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::google::protobuf::uint64 ProposalTerms::minparticipationstake() const {
-  // @@protoc_insertion_point(field_get:vega.ProposalTerms.minParticipationStake)
-  return minparticipationstake_;
-}
-inline void ProposalTerms::set_minparticipationstake(::google::protobuf::uint64 value) {
-  
-  minparticipationstake_ = value;
-  // @@protoc_insertion_point(field_set:vega.ProposalTerms.minParticipationStake)
-}
-
-// int64 validationTimestamp = 4;
+// int64 validationTimestamp = 5;
 inline void ProposalTerms::clear_validationtimestamp() {
   validationtimestamp_ = PROTOBUF_LONGLONG(0);
 }
