@@ -13,13 +13,13 @@ test('Basic test: Can be imported', function (t) {
 
 test('Voting: PrepareVoteRequest exists', function (t) {
   t.plan(1);
-  t.equal(typeof vega.PrepareVoteRequest, 'function');
+  t.equal(typeof trading.PrepareVoteRequest, 'function');
 });
 
 test('Voting: PrepareVoteResponse exists', function (t) {
   t.plan(1);
-  t.equal(typeof vega.PrepareVoteResponse, 'function');
-}
+  t.equal(typeof trading.PrepareVoteResponse, 'function');
+});
 
 test('SubmitOrderRequest (de)serializeBinary', function (t) {
   t.plan(1);
