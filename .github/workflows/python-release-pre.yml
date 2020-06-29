@@ -1,4 +1,4 @@
-name: Python Release to test-PyPI
+name: Python Release to test PyPI
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
         cd python
         pip install -r requirements.txt
 
-    - name: Push release to test-PyPI
+    - name: Push release to test PyPI
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.TWINE_TEST_PASSWORD }}

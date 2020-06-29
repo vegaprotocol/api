@@ -1,4 +1,4 @@
-name: Python Release to PyPI
+name: Python Release to production PyPI
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
         cd python
         pip install -r requirements.txt
 
-    - name: Push release to PyPI
+    - name: Push release to production PyPI
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
