@@ -34,6 +34,8 @@ jobs:
         setuppy_tag="$(python -c "$(awk '/^VERSION = /' setup.py); print(VERSION)")"
         if test "$github_tag" '!=' "$setuppy_tag" ; then
           echo "Tags do not match."
+          echo "Github:   $github_tag"
+          echo "setup.py: $setuppy_tag"
           exit 1
         fi
         make dist_test
