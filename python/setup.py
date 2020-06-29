@@ -3,9 +3,11 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+VERSION = "0.22.0-pre1"
+
 setuptools.setup(
     name="Vega API client",
-    version="0.21.0",
+    version=VERSION,
     author="Vega",
     author_email="hi@vega.xyz",
     description="Vega API client for gRPC",
