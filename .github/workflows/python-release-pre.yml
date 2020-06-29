@@ -31,7 +31,7 @@ jobs:
       run: |
         cd python
         github_tag="${GITHUB_REF/refs\/tags\//}"
-        setuppy_tag="$(python -c "$(awk '/^VERSION = /' setup.py); print(VERSION)")"
+        setuppy_tag="v$(python -c "$(awk '/^VERSION = /' setup.py); print(VERSION)")"
         if test "$github_tag" '!=' "$setuppy_tag" ; then
           echo "Tags do not match."
           echo "Github:   $github_tag"
