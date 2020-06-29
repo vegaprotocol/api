@@ -1,0 +1,42 @@
+name: Python Release to PyPI
+
+on:
+  push:
+    tags:
+      - "v*"
+      - "!v*-pre*"
+
+jobs:
+
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        cd python
+        pip install -r requirements.txt
+
+    - name: Push release to PyPI
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+      run: |
+        cd python
+        github_tag="${GITHUB_REF/refs\/tags\//}"
+        setuppy_tag="v$(python -c "$(awk '/^VERSION = /' setup.py); print(VERSION)")"
+        if test "$github_tag" '!=' "$setuppy_tag" ; then
+          echo "Tags do not match."
+          echo "Github:   $github_tag"
+          echo "setup.py: $setuppy_tag"
+          exit 1
+        fi
+        make dist

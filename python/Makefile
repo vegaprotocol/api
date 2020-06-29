@@ -30,6 +30,10 @@ coverage: varcheck
 
 .PHONY: dist
 dist:
+	@if test -z "$$TWINE_USERNAME" -o -z "$$TWINE_PASSWORD" ; then \
+		echo "Please set TWINE_USERNAME and TWINE_PASSWORD." ; \
+		exit 1 ; \
+	fi
 	@rm -rf dist && mkdir dist
 	@python3 setup.py sdist bdist_wheel
 	@twine upload dist/*
