@@ -19,7 +19,7 @@ var proto_governance_pb = require('../../proto/governance_pb.js');
 goog.object.extend(proto, proto_governance_pb);
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 goog.object.extend(proto, google_protobuf_empty_pb);
-var github_com_mwitkow_go$proto$validators_validator_pb = require('../../github.com/mwitkow/go-proto-validators/validator_pb.js');
+var github_com_mwitkow_go$proto$validators_validator_pb = require('../../external/github.com/mwitkow/go-proto-validators/validator_pb.js');
 goog.object.extend(proto, github_com_mwitkow_go$proto$validators_validator_pb);
 goog.exportSymbol('proto.api.AccountsSubscribeRequest', null, global);
 goog.exportSymbol('proto.api.AmendOrderRequest', null, global);

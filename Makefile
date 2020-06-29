@@ -35,6 +35,19 @@ proto-javascript:
 		-I. \
 		-Iexternal \
 		--js_out=import_style=commonjs,binary:$(JAVASCRIPT_GENERATED_DIR)
+	@find external/github.com/mwitkow \
+		-name '*.proto' | \
+		xargs protoc \
+		-I. \
+		-Iexternal \
+		--js_out=import_style=commonjs,binary:$(JAVASCRIPT_GENERATED_DIR)
+	@sed --in-place \
+		-e 's#\.\./\.\./github.com#../../external/github.com#' \
+		"$(JAVASCRIPT_GENERATED_DIR)/proto/api"/*.js
+	@sed --in-place \
+		-e 's#\.\./github.com#../external/github.com#' \
+		"$(JAVASCRIPT_GENERATED_DIR)/proto"/*.js
+
 
 PYTHON_GENERATED_DIR := python/vegaapiclient/generated
 
