@@ -3,7 +3,7 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-VERSION = "0.22.0-pre2"
+VERSION = "0.22.0-pre3"
 
 setuptools.setup(
     name="Vega API client",
@@ -23,5 +23,6 @@ setuptools.setup(
     ],
     python_requires=">=3.6",
     install_requires=["googleapis-common-protos", "grpcio", "requests",],
+    setup_requires=["wheel"],
     zip_safe=False,
 )
