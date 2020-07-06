@@ -12,6 +12,9 @@ preproto:
 	@mkdir -p proto/api && find "$(VEGACORE)"/proto/api -maxdepth 1 -name '*.proto' -exec cp '{}' proto/api/ ';'
 	@(cd "$(VEGACORE)" && git describe --tags) >proto/from.txt
 
+.PHONT: proto
+proto: proto-cpp proto-javascript proto-python
+
 CPP_GENERATED_DIR := cpp/generated
 
 .PHONY: proto-cpp
@@ -68,16 +71,11 @@ proto-python:
 		--python_out="$(PYTHON_GENERATED_DIR)" \
 		--grpc_python_out="$(PYTHON_GENERATED_DIR)"
 	@sed --in-place \
-		-e 's#from proto import assets_pb2 as proto_dot_assets__pb2#from .assets_pb2 import (DESCRIPTOR as assets_DESCRIPTOR, _ASSET as assets_ASSET, _ASSETSOURCE as assets_ASSETSOURCE)#' \
-		-e 's#proto_dot_assets__pb2.DESCRIPTOR#assets_DESCRIPTOR#' \
-		-e 's#proto_dot_assets__pb2._ASSET#assets_ASSET#' \
-		-e 's#from proto import markets_pb2 as proto_dot_markets__pb2#from .markets_pb2 import (DESCRIPTOR as markets_DESCRIPTOR, _MARKET as markets_MARKET)#' \
-		-e 's#proto_dot_markets__pb2.DESCRIPTOR#markets_DESCRIPTOR#' \
-		-e 's#proto_dot_markets__pb2._MARKET#markets_MARKET#' \
+		-e 's#^from proto import#from . import#' \
 		"$(PYTHON_GENERATED_DIR)/proto/governance_pb2.py"
 	@sed --in-place \
-		-e 's#from proto import#from .. import#' \
-		-e 's#from proto.api import#from . import#' \
+		-e 's#^from proto import#from .. import#' \
+		-e 's#^from proto.api import#from . import#' \
 		"$(PYTHON_GENERATED_DIR)/proto/api"/*.py
 	@echo 'from . import trading_pb2 as trading\nfrom . import trading_pb2_grpc as trading_grpc\n\n__all__ = ["trading", "trading_grpc"]' \
 		>"$(PYTHON_GENERATED_DIR)/proto/api/__init__.py"
@@ -91,3 +89,19 @@ proto-python:
 		-e 's#^from github.com.mwitkow.go_proto_validators import validator_pb2 as#from .. import mwitkow_goprotovalidators_validator_pb2 as#' \
 		"$(PYTHON_GENERATED_DIR)/proto/api"/*.py
 	@rm -rf "$(PYTHON_GENERATED_DIR)/github" "$(PYTHON_GENERATED_DIR)/github.com"
+
+.PHONY: test
+test: test-cpp test-javascript test-python
+	##
+
+.PHONY: test-cpp
+test-cpp:
+	echo "test-cpp TBD"
+
+.PHONY: test-javascript
+test-javascript:
+	@cd js && npm install && npm test
+
+.PHONY: test
+test-python:
+	@cd python && make test

@@ -11,6 +11,8 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+var github_com_mwitkow_go$proto$validators_validator_pb = require('../external/github.com/mwitkow/go-proto-validators/validator_pb.js');
+goog.object.extend(proto, github_com_mwitkow_go$proto$validators_validator_pb);
 goog.exportSymbol('proto.vega.ContinuousTrading', null, global);
 goog.exportSymbol('proto.vega.DiscreteTrading', null, global);
 goog.exportSymbol('proto.vega.EthereumEvent', null, global);
@@ -496,7 +498,8 @@ proto.vega.DiscreteTrading.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.DiscreteTrading.toObject = function(includeInstance, msg) {
   var f, obj = {
-    duration: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    durationns: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    ticksize: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -535,7 +538,11 @@ proto.vega.DiscreteTrading.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setDuration(value);
+      msg.setDurationns(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setTicksize(value);
       break;
     default:
       reader.skipField();
@@ -566,10 +573,17 @@ proto.vega.DiscreteTrading.prototype.serializeBinary = function() {
  */
 proto.vega.DiscreteTrading.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDuration();
+  f = message.getDurationns();
   if (f !== 0) {
     writer.writeInt64(
       1,
+      f
+    );
+  }
+  f = message.getTicksize();
+  if (f !== 0) {
+    writer.writeUint64(
+      2,
       f
     );
   }
@@ -577,17 +591,32 @@ proto.vega.DiscreteTrading.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional int64 duration = 1;
+ * optional int64 durationNs = 1;
  * @return {number}
  */
-proto.vega.DiscreteTrading.prototype.getDuration = function() {
+proto.vega.DiscreteTrading.prototype.getDurationns = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /** @param {number} value */
-proto.vega.DiscreteTrading.prototype.setDuration = function(value) {
+proto.vega.DiscreteTrading.prototype.setDurationns = function(value) {
   jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional uint64 tickSize = 2;
+ * @return {number}
+ */
+proto.vega.DiscreteTrading.prototype.getTicksize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/** @param {number} value */
+proto.vega.DiscreteTrading.prototype.setTicksize = function(value) {
+  jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -3122,9 +3151,8 @@ proto.vega.Market.prototype.toObject = function(opt_includeInstance) {
 proto.vega.Market.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     tradableinstrument: (f = msg.getTradableinstrument()) && proto.vega.TradableInstrument.toObject(includeInstance, f),
-    decimalplaces: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    decimalplaces: jspb.Message.getFieldWithDefault(msg, 3, 0),
     continuous: (f = msg.getContinuous()) && proto.vega.ContinuousTrading.toObject(includeInstance, f),
     discrete: (f = msg.getDiscrete()) && proto.vega.DiscreteTrading.toObject(includeInstance, f)
   };
@@ -3168,15 +3196,11 @@ proto.vega.Market.deserializeBinaryFromReader = function(msg, reader) {
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
       var value = new proto.vega.TradableInstrument;
       reader.readMessage(value,proto.vega.TradableInstrument.deserializeBinaryFromReader);
       msg.setTradableinstrument(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {number} */ (reader.readUint64());
       msg.setDecimalplaces(value);
       break;
@@ -3226,17 +3250,10 @@ proto.vega.Market.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
   f = message.getTradableinstrument();
   if (f != null) {
     writer.writeMessage(
-      3,
+      2,
       f,
       proto.vega.TradableInstrument.serializeBinaryToWriter
     );
@@ -3244,7 +3261,7 @@ proto.vega.Market.serializeBinaryToWriter = function(message, writer) {
   f = message.getDecimalplaces();
   if (f !== 0) {
     writer.writeUint64(
-      4,
+      3,
       f
     );
   }
@@ -3283,33 +3300,18 @@ proto.vega.Market.prototype.setId = function(value) {
 
 
 /**
- * optional string name = 2;
- * @return {string}
- */
-proto.vega.Market.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/** @param {string} value */
-proto.vega.Market.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional TradableInstrument tradableInstrument = 3;
+ * optional TradableInstrument tradableInstrument = 2;
  * @return {?proto.vega.TradableInstrument}
  */
 proto.vega.Market.prototype.getTradableinstrument = function() {
   return /** @type{?proto.vega.TradableInstrument} */ (
-    jspb.Message.getWrapperField(this, proto.vega.TradableInstrument, 3));
+    jspb.Message.getWrapperField(this, proto.vega.TradableInstrument, 2));
 };
 
 
 /** @param {?proto.vega.TradableInstrument|undefined} value */
 proto.vega.Market.prototype.setTradableinstrument = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -3326,22 +3328,22 @@ proto.vega.Market.prototype.clearTradableinstrument = function() {
  * @return {boolean}
  */
 proto.vega.Market.prototype.hasTradableinstrument = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional uint64 decimalPlaces = 4;
+ * optional uint64 decimalPlaces = 3;
  * @return {number}
  */
 proto.vega.Market.prototype.getDecimalplaces = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /** @param {number} value */
 proto.vega.Market.prototype.setDecimalplaces = function(value) {
-  jspb.Message.setProto3IntField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 

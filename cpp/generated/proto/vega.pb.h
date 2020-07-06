@@ -46,7 +46,7 @@ struct TableStruct_proto_2fvega_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[37]
+  static const ::google::protobuf::internal::ParseTable schema[38]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -84,6 +84,9 @@ extern MarketDepthDefaultTypeInternal _MarketDepth_default_instance_;
 class NodeRegistration;
 class NodeRegistrationDefaultTypeInternal;
 extern NodeRegistrationDefaultTypeInternal _NodeRegistration_default_instance_;
+class NodeSignature;
+class NodeSignatureDefaultTypeInternal;
+extern NodeSignatureDefaultTypeInternal _NodeSignature_default_instance_;
 class NodeVote;
 class NodeVoteDefaultTypeInternal;
 extern NodeVoteDefaultTypeInternal _NodeVote_default_instance_;
@@ -178,6 +181,7 @@ template<> ::vega::MarginLevels* Arena::CreateMaybeMessage<::vega::MarginLevels>
 template<> ::vega::MarketData* Arena::CreateMaybeMessage<::vega::MarketData>(Arena*);
 template<> ::vega::MarketDepth* Arena::CreateMaybeMessage<::vega::MarketDepth>(Arena*);
 template<> ::vega::NodeRegistration* Arena::CreateMaybeMessage<::vega::NodeRegistration>(Arena*);
+template<> ::vega::NodeSignature* Arena::CreateMaybeMessage<::vega::NodeSignature>(Arena*);
 template<> ::vega::NodeVote* Arena::CreateMaybeMessage<::vega::NodeVote>(Arena*);
 template<> ::vega::NotifyTraderAccount* Arena::CreateMaybeMessage<::vega::NotifyTraderAccount>(Arena*);
 template<> ::vega::Order* Arena::CreateMaybeMessage<::vega::Order>(Arena*);
@@ -467,6 +471,28 @@ inline bool TransferType_Parse(
     const ::std::string& name, TransferType* value) {
   return ::google::protobuf::internal::ParseNamedEnum<TransferType>(
     TransferType_descriptor(), name, value);
+}
+enum NodeSignatureKind {
+  NODE_SIGNATURE_KIND_UNSPECIFIED = 0,
+  NODE_SIGNATURE_KIND_ASSET_NEW = 1,
+  NODE_SIGNATURE_KIND_ASSET_WITHDRAWAL = 2,
+  NodeSignatureKind_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  NodeSignatureKind_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool NodeSignatureKind_IsValid(int value);
+const NodeSignatureKind NodeSignatureKind_MIN = NODE_SIGNATURE_KIND_UNSPECIFIED;
+const NodeSignatureKind NodeSignatureKind_MAX = NODE_SIGNATURE_KIND_ASSET_WITHDRAWAL;
+const int NodeSignatureKind_ARRAYSIZE = NodeSignatureKind_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* NodeSignatureKind_descriptor();
+inline const ::std::string& NodeSignatureKind_Name(NodeSignatureKind value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    NodeSignatureKind_descriptor(), value);
+}
+inline bool NodeSignatureKind_Parse(
+    const ::std::string& name, NodeSignatureKind* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<NodeSignatureKind>(
+    NodeSignatureKind_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -6185,6 +6211,148 @@ class SignedBundle :
 
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
+// -------------------------------------------------------------------
+
+class NodeSignature :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.NodeSignature) */ {
+ public:
+  NodeSignature();
+  virtual ~NodeSignature();
+
+  NodeSignature(const NodeSignature& from);
+
+  inline NodeSignature& operator=(const NodeSignature& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  NodeSignature(NodeSignature&& from) noexcept
+    : NodeSignature() {
+    *this = ::std::move(from);
+  }
+
+  inline NodeSignature& operator=(NodeSignature&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const NodeSignature& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const NodeSignature* internal_default_instance() {
+    return reinterpret_cast<const NodeSignature*>(
+               &_NodeSignature_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    37;
+
+  void Swap(NodeSignature* other);
+  friend void swap(NodeSignature& a, NodeSignature& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline NodeSignature* New() const final {
+    return CreateMaybeMessage<NodeSignature>(nullptr);
+  }
+
+  NodeSignature* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<NodeSignature>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const NodeSignature& from);
+  void MergeFrom(const NodeSignature& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(NodeSignature* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string ID = 1;
+  void clear_id();
+  static const int kIDFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // bytes sig = 2;
+  void clear_sig();
+  static const int kSigFieldNumber = 2;
+  const ::std::string& sig() const;
+  void set_sig(const ::std::string& value);
+  #if LANG_CXX11
+  void set_sig(::std::string&& value);
+  #endif
+  void set_sig(const char* value);
+  void set_sig(const void* value, size_t size);
+  ::std::string* mutable_sig();
+  ::std::string* release_sig();
+  void set_allocated_sig(::std::string* sig);
+
+  // .vega.NodeSignatureKind kind = 3;
+  void clear_kind();
+  static const int kKindFieldNumber = 3;
+  ::vega::NodeSignatureKind kind() const;
+  void set_kind(::vega::NodeSignatureKind value);
+
+  // @@protoc_insertion_point(class_scope:vega.NodeSignature)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  ::google::protobuf::internal::ArenaStringPtr sig_;
+  int kind_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fvega_2eproto;
+};
 // ===================================================================
 
 
@@ -11771,9 +11939,135 @@ inline void SignedBundle::clear_has_auth() {
 inline SignedBundle::AuthCase SignedBundle::auth_case() const {
   return SignedBundle::AuthCase(_oneof_case_[0]);
 }
+// -------------------------------------------------------------------
+
+// NodeSignature
+
+// string ID = 1;
+inline void NodeSignature::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& NodeSignature::id() const {
+  // @@protoc_insertion_point(field_get:vega.NodeSignature.ID)
+  return id_.GetNoArena();
+}
+inline void NodeSignature::set_id(const ::std::string& value) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.NodeSignature.ID)
+}
+#if LANG_CXX11
+inline void NodeSignature::set_id(::std::string&& value) {
+  
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.NodeSignature.ID)
+}
+#endif
+inline void NodeSignature::set_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.NodeSignature.ID)
+}
+inline void NodeSignature::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.NodeSignature.ID)
+}
+inline ::std::string* NodeSignature::mutable_id() {
+  
+  // @@protoc_insertion_point(field_mutable:vega.NodeSignature.ID)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* NodeSignature::release_id() {
+  // @@protoc_insertion_point(field_release:vega.NodeSignature.ID)
+  
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void NodeSignature::set_allocated_id(::std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:vega.NodeSignature.ID)
+}
+
+// bytes sig = 2;
+inline void NodeSignature::clear_sig() {
+  sig_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& NodeSignature::sig() const {
+  // @@protoc_insertion_point(field_get:vega.NodeSignature.sig)
+  return sig_.GetNoArena();
+}
+inline void NodeSignature::set_sig(const ::std::string& value) {
+  
+  sig_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.NodeSignature.sig)
+}
+#if LANG_CXX11
+inline void NodeSignature::set_sig(::std::string&& value) {
+  
+  sig_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.NodeSignature.sig)
+}
+#endif
+inline void NodeSignature::set_sig(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  sig_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.NodeSignature.sig)
+}
+inline void NodeSignature::set_sig(const void* value, size_t size) {
+  
+  sig_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.NodeSignature.sig)
+}
+inline ::std::string* NodeSignature::mutable_sig() {
+  
+  // @@protoc_insertion_point(field_mutable:vega.NodeSignature.sig)
+  return sig_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* NodeSignature::release_sig() {
+  // @@protoc_insertion_point(field_release:vega.NodeSignature.sig)
+  
+  return sig_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void NodeSignature::set_allocated_sig(::std::string* sig) {
+  if (sig != nullptr) {
+    
+  } else {
+    
+  }
+  sig_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), sig);
+  // @@protoc_insertion_point(field_set_allocated:vega.NodeSignature.sig)
+}
+
+// .vega.NodeSignatureKind kind = 3;
+inline void NodeSignature::clear_kind() {
+  kind_ = 0;
+}
+inline ::vega::NodeSignatureKind NodeSignature::kind() const {
+  // @@protoc_insertion_point(field_get:vega.NodeSignature.kind)
+  return static_cast< ::vega::NodeSignatureKind >(kind_);
+}
+inline void NodeSignature::set_kind(::vega::NodeSignatureKind value) {
+  
+  kind_ = value;
+  // @@protoc_insertion_point(field_set:vega.NodeSignature.kind)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -11903,6 +12197,11 @@ template <> struct is_proto_enum< ::vega::TransferType> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::vega::TransferType>() {
   return ::vega::TransferType_descriptor();
+}
+template <> struct is_proto_enum< ::vega::NodeSignatureKind> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::vega::NodeSignatureKind>() {
+  return ::vega::NodeSignatureKind_descriptor();
 }
 
 }  // namespace protobuf

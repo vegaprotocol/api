@@ -46,7 +46,7 @@ struct TableStruct_proto_2fapi_2ftrading_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[91]
+  static const ::google::protobuf::internal::ParseTable schema[93]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -90,6 +90,12 @@ extern GetNewMarketProposalsRequestDefaultTypeInternal _GetNewMarketProposalsReq
 class GetNewMarketProposalsResponse;
 class GetNewMarketProposalsResponseDefaultTypeInternal;
 extern GetNewMarketProposalsResponseDefaultTypeInternal _GetNewMarketProposalsResponse_default_instance_;
+class GetNodeSignaturesAggregateRequest;
+class GetNodeSignaturesAggregateRequestDefaultTypeInternal;
+extern GetNodeSignaturesAggregateRequestDefaultTypeInternal _GetNodeSignaturesAggregateRequest_default_instance_;
+class GetNodeSignaturesAggregateResponse;
+class GetNodeSignaturesAggregateResponseDefaultTypeInternal;
+extern GetNodeSignaturesAggregateResponseDefaultTypeInternal _GetNodeSignaturesAggregateResponse_default_instance_;
 class GetProposalByIDRequest;
 class GetProposalByIDRequestDefaultTypeInternal;
 extern GetProposalByIDRequestDefaultTypeInternal _GetProposalByIDRequest_default_instance_;
@@ -342,6 +348,8 @@ template<> ::api::GetNewAssetProposalsRequest* Arena::CreateMaybeMessage<::api::
 template<> ::api::GetNewAssetProposalsResponse* Arena::CreateMaybeMessage<::api::GetNewAssetProposalsResponse>(Arena*);
 template<> ::api::GetNewMarketProposalsRequest* Arena::CreateMaybeMessage<::api::GetNewMarketProposalsRequest>(Arena*);
 template<> ::api::GetNewMarketProposalsResponse* Arena::CreateMaybeMessage<::api::GetNewMarketProposalsResponse>(Arena*);
+template<> ::api::GetNodeSignaturesAggregateRequest* Arena::CreateMaybeMessage<::api::GetNodeSignaturesAggregateRequest>(Arena*);
+template<> ::api::GetNodeSignaturesAggregateResponse* Arena::CreateMaybeMessage<::api::GetNodeSignaturesAggregateResponse>(Arena*);
 template<> ::api::GetProposalByIDRequest* Arena::CreateMaybeMessage<::api::GetProposalByIDRequest>(Arena*);
 template<> ::api::GetProposalByIDResponse* Arena::CreateMaybeMessage<::api::GetProposalByIDResponse>(Arena*);
 template<> ::api::GetProposalByReferenceRequest* Arena::CreateMaybeMessage<::api::GetProposalByReferenceRequest>(Arena*);
@@ -1828,6 +1836,244 @@ class AmendOrderRequest :
 };
 // -------------------------------------------------------------------
 
+class GetNodeSignaturesAggregateRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetNodeSignaturesAggregateRequest) */ {
+ public:
+  GetNodeSignaturesAggregateRequest();
+  virtual ~GetNodeSignaturesAggregateRequest();
+
+  GetNodeSignaturesAggregateRequest(const GetNodeSignaturesAggregateRequest& from);
+
+  inline GetNodeSignaturesAggregateRequest& operator=(const GetNodeSignaturesAggregateRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetNodeSignaturesAggregateRequest(GetNodeSignaturesAggregateRequest&& from) noexcept
+    : GetNodeSignaturesAggregateRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetNodeSignaturesAggregateRequest& operator=(GetNodeSignaturesAggregateRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetNodeSignaturesAggregateRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetNodeSignaturesAggregateRequest* internal_default_instance() {
+    return reinterpret_cast<const GetNodeSignaturesAggregateRequest*>(
+               &_GetNodeSignaturesAggregateRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  void Swap(GetNodeSignaturesAggregateRequest* other);
+  friend void swap(GetNodeSignaturesAggregateRequest& a, GetNodeSignaturesAggregateRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetNodeSignaturesAggregateRequest* New() const final {
+    return CreateMaybeMessage<GetNodeSignaturesAggregateRequest>(nullptr);
+  }
+
+  GetNodeSignaturesAggregateRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetNodeSignaturesAggregateRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetNodeSignaturesAggregateRequest& from);
+  void MergeFrom(const GetNodeSignaturesAggregateRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetNodeSignaturesAggregateRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string ID = 1;
+  void clear_id();
+  static const int kIDFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // @@protoc_insertion_point(class_scope:api.GetNodeSignaturesAggregateRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetNodeSignaturesAggregateResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetNodeSignaturesAggregateResponse) */ {
+ public:
+  GetNodeSignaturesAggregateResponse();
+  virtual ~GetNodeSignaturesAggregateResponse();
+
+  GetNodeSignaturesAggregateResponse(const GetNodeSignaturesAggregateResponse& from);
+
+  inline GetNodeSignaturesAggregateResponse& operator=(const GetNodeSignaturesAggregateResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetNodeSignaturesAggregateResponse(GetNodeSignaturesAggregateResponse&& from) noexcept
+    : GetNodeSignaturesAggregateResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetNodeSignaturesAggregateResponse& operator=(GetNodeSignaturesAggregateResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetNodeSignaturesAggregateResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetNodeSignaturesAggregateResponse* internal_default_instance() {
+    return reinterpret_cast<const GetNodeSignaturesAggregateResponse*>(
+               &_GetNodeSignaturesAggregateResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  void Swap(GetNodeSignaturesAggregateResponse* other);
+  friend void swap(GetNodeSignaturesAggregateResponse& a, GetNodeSignaturesAggregateResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetNodeSignaturesAggregateResponse* New() const final {
+    return CreateMaybeMessage<GetNodeSignaturesAggregateResponse>(nullptr);
+  }
+
+  GetNodeSignaturesAggregateResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetNodeSignaturesAggregateResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetNodeSignaturesAggregateResponse& from);
+  void MergeFrom(const GetNodeSignaturesAggregateResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetNodeSignaturesAggregateResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .vega.NodeSignature signatures = 1;
+  int signatures_size() const;
+  void clear_signatures();
+  static const int kSignaturesFieldNumber = 1;
+  ::vega::NodeSignature* mutable_signatures(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::NodeSignature >*
+      mutable_signatures();
+  const ::vega::NodeSignature& signatures(int index) const;
+  ::vega::NodeSignature* add_signatures();
+  const ::google::protobuf::RepeatedPtrField< ::vega::NodeSignature >&
+      signatures() const;
+
+  // @@protoc_insertion_point(class_scope:api.GetNodeSignaturesAggregateResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::vega::NodeSignature > signatures_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
 class OptionalProposalState :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.OptionalProposalState) */ {
  public:
@@ -1866,7 +2112,7 @@ class OptionalProposalState :
                &_OptionalProposalState_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   void Swap(OptionalProposalState* other);
   friend void swap(OptionalProposalState& a, OptionalProposalState& b) {
@@ -1978,7 +2224,7 @@ class GetProposalsRequest :
                &_GetProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   void Swap(GetProposalsRequest* other);
   friend void swap(GetProposalsRequest& a, GetProposalsRequest& b) {
@@ -2093,7 +2339,7 @@ class GetProposalsResponse :
                &_GetProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   void Swap(GetProposalsResponse* other);
   friend void swap(GetProposalsResponse& a, GetProposalsResponse& b) {
@@ -2211,7 +2457,7 @@ class GetProposalsByPartyRequest :
                &_GetProposalsByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   void Swap(GetProposalsByPartyRequest* other);
   friend void swap(GetProposalsByPartyRequest& a, GetProposalsByPartyRequest& b) {
@@ -2341,7 +2587,7 @@ class GetProposalsByPartyResponse :
                &_GetProposalsByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   void Swap(GetProposalsByPartyResponse* other);
   friend void swap(GetProposalsByPartyResponse& a, GetProposalsByPartyResponse& b) {
@@ -2459,7 +2705,7 @@ class GetVotesByPartyRequest :
                &_GetVotesByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   void Swap(GetVotesByPartyRequest* other);
   friend void swap(GetVotesByPartyRequest& a, GetVotesByPartyRequest& b) {
@@ -2579,7 +2825,7 @@ class GetVotesByPartyResponse :
                &_GetVotesByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   void Swap(GetVotesByPartyResponse* other);
   friend void swap(GetVotesByPartyResponse& a, GetVotesByPartyResponse& b) {
@@ -2697,7 +2943,7 @@ class GetNewMarketProposalsRequest :
                &_GetNewMarketProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   void Swap(GetNewMarketProposalsRequest* other);
   friend void swap(GetNewMarketProposalsRequest& a, GetNewMarketProposalsRequest& b) {
@@ -2812,7 +3058,7 @@ class GetNewMarketProposalsResponse :
                &_GetNewMarketProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   void Swap(GetNewMarketProposalsResponse* other);
   friend void swap(GetNewMarketProposalsResponse& a, GetNewMarketProposalsResponse& b) {
@@ -2930,7 +3176,7 @@ class GetUpdateMarketProposalsRequest :
                &_GetUpdateMarketProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   void Swap(GetUpdateMarketProposalsRequest* other);
   friend void swap(GetUpdateMarketProposalsRequest& a, GetUpdateMarketProposalsRequest& b) {
@@ -3060,7 +3306,7 @@ class GetUpdateMarketProposalsResponse :
                &_GetUpdateMarketProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   void Swap(GetUpdateMarketProposalsResponse* other);
   friend void swap(GetUpdateMarketProposalsResponse& a, GetUpdateMarketProposalsResponse& b) {
@@ -3178,7 +3424,7 @@ class GetNetworkParametersProposalsRequest :
                &_GetNetworkParametersProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   void Swap(GetNetworkParametersProposalsRequest* other);
   friend void swap(GetNetworkParametersProposalsRequest& a, GetNetworkParametersProposalsRequest& b) {
@@ -3293,7 +3539,7 @@ class GetNetworkParametersProposalsResponse :
                &_GetNetworkParametersProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   void Swap(GetNetworkParametersProposalsResponse* other);
   friend void swap(GetNetworkParametersProposalsResponse& a, GetNetworkParametersProposalsResponse& b) {
@@ -3411,7 +3657,7 @@ class GetNewAssetProposalsRequest :
                &_GetNewAssetProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   void Swap(GetNewAssetProposalsRequest* other);
   friend void swap(GetNewAssetProposalsRequest& a, GetNewAssetProposalsRequest& b) {
@@ -3526,7 +3772,7 @@ class GetNewAssetProposalsResponse :
                &_GetNewAssetProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   void Swap(GetNewAssetProposalsResponse* other);
   friend void swap(GetNewAssetProposalsResponse& a, GetNewAssetProposalsResponse& b) {
@@ -3644,7 +3890,7 @@ class GetProposalByIDRequest :
                &_GetProposalByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   void Swap(GetProposalByIDRequest* other);
   friend void swap(GetProposalByIDRequest& a, GetProposalByIDRequest& b) {
@@ -3764,7 +4010,7 @@ class GetProposalByIDResponse :
                &_GetProposalByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   void Swap(GetProposalByIDResponse* other);
   friend void swap(GetProposalByIDResponse& a, GetProposalByIDResponse& b) {
@@ -3879,7 +4125,7 @@ class GetProposalByReferenceRequest :
                &_GetProposalByReferenceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   void Swap(GetProposalByReferenceRequest* other);
   friend void swap(GetProposalByReferenceRequest& a, GetProposalByReferenceRequest& b) {
@@ -3999,7 +4245,7 @@ class GetProposalByReferenceResponse :
                &_GetProposalByReferenceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   void Swap(GetProposalByReferenceResponse* other);
   friend void swap(GetProposalByReferenceResponse& a, GetProposalByReferenceResponse& b) {
@@ -4114,7 +4360,7 @@ class ObservePartyProposalsRequest :
                &_ObservePartyProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   void Swap(ObservePartyProposalsRequest* other);
   friend void swap(ObservePartyProposalsRequest& a, ObservePartyProposalsRequest& b) {
@@ -4234,7 +4480,7 @@ class ObserveProposalVotesRequest :
                &_ObserveProposalVotesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   void Swap(ObserveProposalVotesRequest* other);
   friend void swap(ObserveProposalVotesRequest& a, ObserveProposalVotesRequest& b) {
@@ -4354,7 +4600,7 @@ class ObservePartyVotesRequest :
                &_ObservePartyVotesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   void Swap(ObservePartyVotesRequest* other);
   friend void swap(ObservePartyVotesRequest& a, ObservePartyVotesRequest& b) {
@@ -4474,7 +4720,7 @@ class MarginLevelsSubscribeRequest :
                &_MarginLevelsSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   void Swap(MarginLevelsSubscribeRequest* other);
   friend void swap(MarginLevelsSubscribeRequest& a, MarginLevelsSubscribeRequest& b) {
@@ -4609,7 +4855,7 @@ class MarginLevelsRequest :
                &_MarginLevelsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   void Swap(MarginLevelsRequest* other);
   friend void swap(MarginLevelsRequest& a, MarginLevelsRequest& b) {
@@ -4744,7 +4990,7 @@ class MarginLevelsResponse :
                &_MarginLevelsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    38;
 
   void Swap(MarginLevelsResponse* other);
   friend void swap(MarginLevelsResponse& a, MarginLevelsResponse& b) {
@@ -4862,7 +5108,7 @@ class MarketsDataSubscribeRequest :
                &_MarketsDataSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    39;
 
   void Swap(MarketsDataSubscribeRequest* other);
   friend void swap(MarketsDataSubscribeRequest& a, MarketsDataSubscribeRequest& b) {
@@ -4982,7 +5228,7 @@ class MarketDataByIDRequest :
                &_MarketDataByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    40;
 
   void Swap(MarketDataByIDRequest* other);
   friend void swap(MarketDataByIDRequest& a, MarketDataByIDRequest& b) {
@@ -5102,7 +5348,7 @@ class MarketDataByIDResponse :
                &_MarketDataByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    41;
 
   void Swap(MarketDataByIDResponse* other);
   friend void swap(MarketDataByIDResponse& a, MarketDataByIDResponse& b) {
@@ -5217,7 +5463,7 @@ class MarketsDataResponse :
                &_MarketsDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    42;
 
   void Swap(MarketsDataResponse* other);
   friend void swap(MarketsDataResponse& a, MarketsDataResponse& b) {
@@ -5335,7 +5581,7 @@ class LastTradeRequest :
                &_LastTradeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    43;
 
   void Swap(LastTradeRequest* other);
   friend void swap(LastTradeRequest& a, LastTradeRequest& b) {
@@ -5455,7 +5701,7 @@ class LastTradeResponse :
                &_LastTradeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    44;
 
   void Swap(LastTradeResponse* other);
   friend void swap(LastTradeResponse& a, LastTradeResponse& b) {
@@ -5570,7 +5816,7 @@ class MarketByIDRequest :
                &_MarketByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    45;
 
   void Swap(MarketByIDRequest* other);
   friend void swap(MarketByIDRequest& a, MarketByIDRequest& b) {
@@ -5690,7 +5936,7 @@ class MarketByIDResponse :
                &_MarketByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    46;
 
   void Swap(MarketByIDResponse* other);
   friend void swap(MarketByIDResponse& a, MarketByIDResponse& b) {
@@ -5805,7 +6051,7 @@ class PartyByIDRequest :
                &_PartyByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    47;
 
   void Swap(PartyByIDRequest* other);
   friend void swap(PartyByIDRequest& a, PartyByIDRequest& b) {
@@ -5925,7 +6171,7 @@ class PartyByIDResponse :
                &_PartyByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    48;
 
   void Swap(PartyByIDResponse* other);
   friend void swap(PartyByIDResponse& a, PartyByIDResponse& b) {
@@ -6040,7 +6286,7 @@ class PartiesResponse :
                &_PartiesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    49;
 
   void Swap(PartiesResponse* other);
   friend void swap(PartiesResponse& a, PartiesResponse& b) {
@@ -6158,7 +6404,7 @@ class TradesByPartyRequest :
                &_TradesByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    50;
 
   void Swap(TradesByPartyRequest* other);
   friend void swap(TradesByPartyRequest& a, TradesByPartyRequest& b) {
@@ -6303,7 +6549,7 @@ class TradesByPartyResponse :
                &_TradesByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    51;
 
   void Swap(TradesByPartyResponse* other);
   friend void swap(TradesByPartyResponse& a, TradesByPartyResponse& b) {
@@ -6421,7 +6667,7 @@ class TradesByOrderRequest :
                &_TradesByOrderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    52;
 
   void Swap(TradesByOrderRequest* other);
   friend void swap(TradesByOrderRequest& a, TradesByOrderRequest& b) {
@@ -6541,7 +6787,7 @@ class TradesByOrderResponse :
                &_TradesByOrderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    53;
 
   void Swap(TradesByOrderResponse* other);
   friend void swap(TradesByOrderResponse& a, TradesByOrderResponse& b) {
@@ -6659,7 +6905,7 @@ class AccountsSubscribeRequest :
                &_AccountsSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    54;
 
   void Swap(AccountsSubscribeRequest* other);
   friend void swap(AccountsSubscribeRequest& a, AccountsSubscribeRequest& b) {
@@ -6816,7 +7062,7 @@ class OrdersSubscribeRequest :
                &_OrdersSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    55;
 
   void Swap(OrdersSubscribeRequest* other);
   friend void swap(OrdersSubscribeRequest& a, OrdersSubscribeRequest& b) {
@@ -6951,7 +7197,7 @@ class TradesSubscribeRequest :
                &_TradesSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    56;
 
   void Swap(TradesSubscribeRequest* other);
   friend void swap(TradesSubscribeRequest& a, TradesSubscribeRequest& b) {
@@ -7086,7 +7332,7 @@ class CandlesSubscribeRequest :
                &_CandlesSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    57;
 
   void Swap(CandlesSubscribeRequest* other);
   friend void swap(CandlesSubscribeRequest& a, CandlesSubscribeRequest& b) {
@@ -7213,7 +7459,7 @@ class MarketDepthSubscribeRequest :
                &_MarketDepthSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    58;
 
   void Swap(MarketDepthSubscribeRequest* other);
   friend void swap(MarketDepthSubscribeRequest& a, MarketDepthSubscribeRequest& b) {
@@ -7333,7 +7579,7 @@ class PositionsSubscribeRequest :
                &_PositionsSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    59;
 
   void Swap(PositionsSubscribeRequest* other);
   friend void swap(PositionsSubscribeRequest& a, PositionsSubscribeRequest& b) {
@@ -7453,7 +7699,7 @@ class OrdersByMarketRequest :
                &_OrdersByMarketRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    60;
 
   void Swap(OrdersByMarketRequest* other);
   friend void swap(OrdersByMarketRequest& a, OrdersByMarketRequest& b) {
@@ -7590,7 +7836,7 @@ class OrdersByMarketResponse :
                &_OrdersByMarketResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    61;
 
   void Swap(OrdersByMarketResponse* other);
   friend void swap(OrdersByMarketResponse& a, OrdersByMarketResponse& b) {
@@ -7708,7 +7954,7 @@ class OrdersByPartyRequest :
                &_OrdersByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    62;
 
   void Swap(OrdersByPartyRequest* other);
   friend void swap(OrdersByPartyRequest& a, OrdersByPartyRequest& b) {
@@ -7845,7 +8091,7 @@ class OrdersByPartyResponse :
                &_OrdersByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    63;
 
   void Swap(OrdersByPartyResponse* other);
   friend void swap(OrdersByPartyResponse& a, OrdersByPartyResponse& b) {
@@ -7963,7 +8209,7 @@ class OrderByMarketAndIdRequest :
                &_OrderByMarketAndIdRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    64;
 
   void Swap(OrderByMarketAndIdRequest* other);
   friend void swap(OrderByMarketAndIdRequest& a, OrderByMarketAndIdRequest& b) {
@@ -8098,7 +8344,7 @@ class OrderByMarketAndIdResponse :
                &_OrderByMarketAndIdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    65;
 
   void Swap(OrderByMarketAndIdResponse* other);
   friend void swap(OrderByMarketAndIdResponse& a, OrderByMarketAndIdResponse& b) {
@@ -8213,7 +8459,7 @@ class OrderByReferenceRequest :
                &_OrderByReferenceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    66;
 
   void Swap(OrderByReferenceRequest* other);
   friend void swap(OrderByReferenceRequest& a, OrderByReferenceRequest& b) {
@@ -8333,7 +8579,7 @@ class OrderByReferenceResponse :
                &_OrderByReferenceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    67;
 
   void Swap(OrderByReferenceResponse* other);
   friend void swap(OrderByReferenceResponse& a, OrderByReferenceResponse& b) {
@@ -8448,7 +8694,7 @@ class MarketsResponse :
                &_MarketsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    68;
 
   void Swap(MarketsResponse* other);
   friend void swap(MarketsResponse& a, MarketsResponse& b) {
@@ -8566,7 +8812,7 @@ class CandlesRequest :
                &_CandlesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    69;
 
   void Swap(CandlesRequest* other);
   friend void swap(CandlesRequest& a, CandlesRequest& b) {
@@ -8700,7 +8946,7 @@ class CandlesResponse :
                &_CandlesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    70;
 
   void Swap(CandlesResponse* other);
   friend void swap(CandlesResponse& a, CandlesResponse& b) {
@@ -8818,7 +9064,7 @@ class MarketDepthRequest :
                &_MarketDepthRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    71;
 
   void Swap(MarketDepthRequest* other);
   friend void swap(MarketDepthRequest& a, MarketDepthRequest& b) {
@@ -8945,7 +9191,7 @@ class MarketDepthResponse :
                &_MarketDepthResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    72;
 
   void Swap(MarketDepthResponse* other);
   friend void swap(MarketDepthResponse& a, MarketDepthResponse& b) {
@@ -9101,7 +9347,7 @@ class TradesByMarketRequest :
                &_TradesByMarketRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    73;
 
   void Swap(TradesByMarketRequest* other);
   friend void swap(TradesByMarketRequest& a, TradesByMarketRequest& b) {
@@ -9231,7 +9477,7 @@ class TradesByMarketResponse :
                &_TradesByMarketResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    74;
 
   void Swap(TradesByMarketResponse* other);
   friend void swap(TradesByMarketResponse& a, TradesByMarketResponse& b) {
@@ -9349,7 +9595,7 @@ class PositionsByPartyRequest :
                &_PositionsByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    75;
 
   void Swap(PositionsByPartyRequest* other);
   friend void swap(PositionsByPartyRequest& a, PositionsByPartyRequest& b) {
@@ -9484,7 +9730,7 @@ class PositionsByPartyResponse :
                &_PositionsByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    76;
 
   void Swap(PositionsByPartyResponse* other);
   friend void swap(PositionsByPartyResponse& a, PositionsByPartyResponse& b) {
@@ -9602,7 +9848,7 @@ class VegaTimeResponse :
                &_VegaTimeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    77;
 
   void Swap(VegaTimeResponse* other);
   friend void swap(VegaTimeResponse& a, VegaTimeResponse& b) {
@@ -9714,7 +9960,7 @@ class Pagination :
                &_Pagination_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    78;
 
   void Swap(Pagination* other);
   friend void swap(Pagination& a, Pagination& b) {
@@ -9840,7 +10086,7 @@ class OrdersStream :
                &_OrdersStream_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    79;
 
   void Swap(OrdersStream* other);
   friend void swap(OrdersStream& a, OrdersStream& b) {
@@ -9958,7 +10204,7 @@ class TradesStream :
                &_TradesStream_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    80;
 
   void Swap(TradesStream* other);
   friend void swap(TradesStream& a, TradesStream& b) {
@@ -10076,7 +10322,7 @@ class PartyAccountsRequest :
                &_PartyAccountsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    81;
 
   void Swap(PartyAccountsRequest* other);
   friend void swap(PartyAccountsRequest& a, PartyAccountsRequest& b) {
@@ -10233,7 +10479,7 @@ class PartyAccountsResponse :
                &_PartyAccountsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    82;
 
   void Swap(PartyAccountsResponse* other);
   friend void swap(PartyAccountsResponse& a, PartyAccountsResponse& b) {
@@ -10351,7 +10597,7 @@ class MarketAccountsRequest :
                &_MarketAccountsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    81;
+    83;
 
   void Swap(MarketAccountsRequest* other);
   friend void swap(MarketAccountsRequest& a, MarketAccountsRequest& b) {
@@ -10486,7 +10732,7 @@ class MarketAccountsResponse :
                &_MarketAccountsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    82;
+    84;
 
   void Swap(MarketAccountsResponse* other);
   friend void swap(MarketAccountsResponse& a, MarketAccountsResponse& b) {
@@ -10604,7 +10850,7 @@ class PrepareProposalRequest :
                &_PrepareProposalRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    83;
+    85;
 
   void Swap(PrepareProposalRequest* other);
   friend void swap(PrepareProposalRequest& a, PrepareProposalRequest& b) {
@@ -10749,7 +10995,7 @@ class PrepareProposalResponse :
                &_PrepareProposalResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    84;
+    86;
 
   void Swap(PrepareProposalResponse* other);
   friend void swap(PrepareProposalResponse& a, PrepareProposalResponse& b) {
@@ -10879,7 +11125,7 @@ class PrepareVoteRequest :
                &_PrepareVoteRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    85;
+    87;
 
   void Swap(PrepareVoteRequest* other);
   friend void swap(PrepareVoteRequest& a, PrepareVoteRequest& b) {
@@ -10994,7 +11240,7 @@ class PrepareVoteResponse :
                &_PrepareVoteResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    86;
+    88;
 
   void Swap(PrepareVoteResponse* other);
   friend void swap(PrepareVoteResponse& a, PrepareVoteResponse& b) {
@@ -11124,7 +11370,7 @@ class OrderByIDRequest :
                &_OrderByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    87;
+    89;
 
   void Swap(OrderByIDRequest* other);
   friend void swap(OrderByIDRequest& a, OrderByIDRequest& b) {
@@ -11251,7 +11497,7 @@ class OrderByReferenceIDRequest :
                &_OrderByReferenceIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    88;
+    90;
 
   void Swap(OrderByReferenceIDRequest* other);
   friend void swap(OrderByReferenceIDRequest& a, OrderByReferenceIDRequest& b) {
@@ -11371,7 +11617,7 @@ class OrderVersionsByIDRequest :
                &_OrderVersionsByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    89;
+    91;
 
   void Swap(OrderVersionsByIDRequest* other);
   friend void swap(OrderVersionsByIDRequest& a, OrderVersionsByIDRequest& b) {
@@ -11501,7 +11747,7 @@ class OrderVersionsResponse :
                &_OrderVersionsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    90;
+    92;
 
   void Swap(OrderVersionsResponse* other);
   friend void swap(OrderVersionsResponse& a, OrderVersionsResponse& b) {
@@ -12156,6 +12402,94 @@ inline void AmendOrderRequest::set_allocated_amendment(::vega::OrderAmendment* a
   }
   amendment_ = amendment;
   // @@protoc_insertion_point(field_set_allocated:api.AmendOrderRequest.amendment)
+}
+
+// -------------------------------------------------------------------
+
+// GetNodeSignaturesAggregateRequest
+
+// string ID = 1;
+inline void GetNodeSignaturesAggregateRequest::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& GetNodeSignaturesAggregateRequest::id() const {
+  // @@protoc_insertion_point(field_get:api.GetNodeSignaturesAggregateRequest.ID)
+  return id_.GetNoArena();
+}
+inline void GetNodeSignaturesAggregateRequest::set_id(const ::std::string& value) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.GetNodeSignaturesAggregateRequest.ID)
+}
+#if LANG_CXX11
+inline void GetNodeSignaturesAggregateRequest::set_id(::std::string&& value) {
+  
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.GetNodeSignaturesAggregateRequest.ID)
+}
+#endif
+inline void GetNodeSignaturesAggregateRequest::set_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.GetNodeSignaturesAggregateRequest.ID)
+}
+inline void GetNodeSignaturesAggregateRequest::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.GetNodeSignaturesAggregateRequest.ID)
+}
+inline ::std::string* GetNodeSignaturesAggregateRequest::mutable_id() {
+  
+  // @@protoc_insertion_point(field_mutable:api.GetNodeSignaturesAggregateRequest.ID)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* GetNodeSignaturesAggregateRequest::release_id() {
+  // @@protoc_insertion_point(field_release:api.GetNodeSignaturesAggregateRequest.ID)
+  
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void GetNodeSignaturesAggregateRequest::set_allocated_id(::std::string* id) {
+  if (id != nullptr) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.GetNodeSignaturesAggregateRequest.ID)
+}
+
+// -------------------------------------------------------------------
+
+// GetNodeSignaturesAggregateResponse
+
+// repeated .vega.NodeSignature signatures = 1;
+inline int GetNodeSignaturesAggregateResponse::signatures_size() const {
+  return signatures_.size();
+}
+inline ::vega::NodeSignature* GetNodeSignaturesAggregateResponse::mutable_signatures(int index) {
+  // @@protoc_insertion_point(field_mutable:api.GetNodeSignaturesAggregateResponse.signatures)
+  return signatures_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::NodeSignature >*
+GetNodeSignaturesAggregateResponse::mutable_signatures() {
+  // @@protoc_insertion_point(field_mutable_list:api.GetNodeSignaturesAggregateResponse.signatures)
+  return &signatures_;
+}
+inline const ::vega::NodeSignature& GetNodeSignaturesAggregateResponse::signatures(int index) const {
+  // @@protoc_insertion_point(field_get:api.GetNodeSignaturesAggregateResponse.signatures)
+  return signatures_.Get(index);
+}
+inline ::vega::NodeSignature* GetNodeSignaturesAggregateResponse::add_signatures() {
+  // @@protoc_insertion_point(field_add:api.GetNodeSignaturesAggregateResponse.signatures)
+  return signatures_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::NodeSignature >&
+GetNodeSignaturesAggregateResponse::signatures() const {
+  // @@protoc_insertion_point(field_list:api.GetNodeSignaturesAggregateResponse.signatures)
+  return signatures_;
 }
 
 // -------------------------------------------------------------------
@@ -17303,6 +17637,10 @@ OrderVersionsResponse::orders() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

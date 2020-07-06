@@ -179,6 +179,10 @@ class SignedBundleDefaultTypeInternal {
   ::google::protobuf::internal::ArenaStringPtr address_;
   ::google::protobuf::internal::ArenaStringPtr pubkey_;
 } _SignedBundle_default_instance_;
+class NodeSignatureDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<NodeSignature> _instance;
+} _NodeSignature_default_instance_;
 }  // namespace vega
 static void InitDefaultsPrice_proto_2fvega_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -712,6 +716,20 @@ static void InitDefaultsSignedBundle_proto_2fvega_2eproto() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_SignedBundle_proto_2fvega_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSignedBundle_proto_2fvega_2eproto}, {}};
 
+static void InitDefaultsNodeSignature_proto_2fvega_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vega::_NodeSignature_default_instance_;
+    new (ptr) ::vega::NodeSignature();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::vega::NodeSignature::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_NodeSignature_proto_2fvega_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsNodeSignature_proto_2fvega_2eproto}, {}};
+
 void InitDefaults_proto_2fvega_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_Price_proto_2fvega_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Timestamp_proto_2fvega_2eproto.base);
@@ -750,10 +768,11 @@ void InitDefaults_proto_2fvega_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_MarketData_proto_2fvega_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ErrorDetail_proto_2fvega_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SignedBundle_proto_2fvega_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_NodeSignature_proto_2fvega_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_proto_2fvega_2eproto[37];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_proto_2fvega_2eproto[10];
+::google::protobuf::Metadata file_level_metadata_proto_2fvega_2eproto[38];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_proto_2fvega_2eproto[11];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_proto_2fvega_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_proto_2fvega_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -1128,6 +1147,14 @@ const ::google::protobuf::uint32 TableStruct_proto_2fvega_2eproto::offsets[] PRO
   offsetof(::vega::SignedBundleDefaultTypeInternal, address_),
   offsetof(::vega::SignedBundleDefaultTypeInternal, pubkey_),
   PROTOBUF_FIELD_OFFSET(::vega::SignedBundle, auth_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vega::NodeSignature, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vega::NodeSignature, id_),
+  PROTOBUF_FIELD_OFFSET(::vega::NodeSignature, sig_),
+  PROTOBUF_FIELD_OFFSET(::vega::NodeSignature, kind_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::Price)},
@@ -1167,6 +1194,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 340, -1, sizeof(::vega::MarketData)},
   { 353, -1, sizeof(::vega::ErrorDetail)},
   { 361, -1, sizeof(::vega::SignedBundle)},
+  { 371, -1, sizeof(::vega::NodeSignature)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -1207,12 +1235,13 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_MarketData_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_ErrorDetail_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_SignedBundle_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_NodeSignature_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_proto_2fvega_2eproto = {
   {}, AddDescriptors_proto_2fvega_2eproto, "proto/vega.proto", schemas,
   file_default_instances, TableStruct_proto_2fvega_2eproto::offsets,
-  file_level_metadata_proto_2fvega_2eproto, 37, file_level_enum_descriptors_proto_2fvega_2eproto, file_level_service_descriptors_proto_2fvega_2eproto,
+  file_level_metadata_proto_2fvega_2eproto, 38, file_level_enum_descriptors_proto_2fvega_2eproto, file_level_service_descriptors_proto_2fvega_2eproto,
 };
 
 const char descriptor_table_protodef_proto_2fvega_2eproto[] =
@@ -1348,50 +1377,55 @@ const char descriptor_table_protodef_proto_2fvega_2eproto[] =
   " \001(\003\";\n\013ErrorDetail\022\014\n\004code\030\001 \001(\005\022\017\n\007mes"
   "sage\030\002 \001(\t\022\r\n\005inner\030\003 \001(\t\"V\n\014SignedBundl"
   "e\022\014\n\004data\030\001 \001(\014\022\013\n\003sig\030\002 \001(\014\022\021\n\007address\030"
-  "e \001(\014H\000\022\020\n\006pubKey\030f \001(\014H\000B\006\n\004auth*9\n\004Sid"
-  "e\022\024\n\020SIDE_UNSPECIFIED\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n"
-  "\tSIDE_SELL\020\002*\230\001\n\010Interval\022\030\n\024INTERVAL_UN"
-  "SPECIFIED\020\000\022\020\n\014INTERVAL_I1M\020<\022\021\n\014INTERVA"
-  "L_I5M\020\254\002\022\022\n\rINTERVAL_I15M\020\204\007\022\021\n\014INTERVAL"
-  "_I1H\020\220\034\022\022\n\014INTERVAL_I6H\020\340\250\001\022\022\n\014INTERVAL_"
-  "I1D\020\200\243\005*\261\005\n\nOrderError\022\024\n\020ORDER_ERROR_NO"
-  "NE\020\000\022!\n\035ORDER_ERROR_INVALID_MARKET_ID\020\001\022"
-  " \n\034ORDER_ERROR_INVALID_ORDER_ID\020\002\022\037\n\033ORD"
-  "ER_ERROR_OUT_OF_SEQUENCE\020\003\022&\n\"ORDER_ERRO"
-  "R_INVALID_REMAINING_SIZE\020\004\022\034\n\030ORDER_ERRO"
-  "R_TIME_FAILURE\020\005\022\037\n\033ORDER_ERROR_REMOVAL_"
-  "FAILURE\020\006\022+\n\'ORDER_ERROR_INVALID_EXPIRAT"
-  "ION_DATETIME\020\007\022\'\n#ORDER_ERROR_INVALID_OR"
-  "DER_REFERENCE\020\010\022 \n\034ORDER_ERROR_EDIT_NOT_"
-  "ALLOWED\020\t\022\035\n\031ORDER_ERROR_AMEND_FAILURE\020\n"
-  "\022\031\n\025ORDER_ERROR_NOT_FOUND\020\013\022 \n\034ORDER_ERR"
-  "OR_INVALID_PARTY_ID\020\014\022\035\n\031ORDER_ERROR_MAR"
-  "KET_CLOSED\020\r\022#\n\037ORDER_ERROR_MARGIN_CHECK"
-  "_FAILED\020\016\022\'\n#ORDER_ERROR_MISSING_GENERAL"
-  "_ACCOUNT\020\017\022\036\n\032ORDER_ERROR_INTERNAL_ERROR"
-  "\020\020\022\034\n\030ORDER_ERROR_INVALID_SIZE\020\021\022#\n\037ORDE"
-  "R_ERROR_INVALID_PERSISTENCE\020\022\022\034\n\030ORDER_E"
-  "RROR_INVALID_TYPE\020\023*\202\001\n\013ChainStatus\022\034\n\030C"
-  "HAIN_STATUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_STATU"
-  "S_DISCONNECTED\020\001\022\032\n\026CHAIN_STATUS_REPLAYI"
-  "NG\020\002\022\032\n\026CHAIN_STATUS_CONNECTED\020\003*\227\001\n\013Acc"
-  "ountType\022\034\n\030ACCOUNT_TYPE_UNSPECIFIED\020\000\022\032"
-  "\n\026ACCOUNT_TYPE_INSURANCE\020\001\022\033\n\027ACCOUNT_TY"
-  "PE_SETTLEMENT\020\002\022\027\n\023ACCOUNT_TYPE_MARGIN\020\003"
-  "\022\030\n\024ACCOUNT_TYPE_GENERAL\020\004*\217\002\n\014TransferT"
-  "ype\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\026\n\022TR"
-  "ANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSFER_TYPE_WIN\020"
-  "\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032\n\026TRANSFER_T"
-  "YPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_TYPE_MTM_WIN\020"
-  "\005\022\034\n\030TRANSFER_TYPE_MARGIN_LOW\020\006\022\035\n\031TRANS"
-  "FER_TYPE_MARGIN_HIGH\020\007\022$\n TRANSFER_TYPE_"
-  "MARGIN_CONFISCATED\020\010B!Z\037code.vegaprotoco"
-  "l.io/vega/protob\006proto3"
+  "e \001(\014H\000\022\020\n\006pubKey\030f \001(\014H\000B\006\n\004auth\"O\n\rNod"
+  "eSignature\022\n\n\002ID\030\001 \001(\t\022\013\n\003sig\030\002 \001(\014\022%\n\004k"
+  "ind\030\003 \001(\0162\027.vega.NodeSignatureKind*9\n\004Si"
+  "de\022\024\n\020SIDE_UNSPECIFIED\020\000\022\014\n\010SIDE_BUY\020\001\022\r"
+  "\n\tSIDE_SELL\020\002*\230\001\n\010Interval\022\030\n\024INTERVAL_U"
+  "NSPECIFIED\020\000\022\020\n\014INTERVAL_I1M\020<\022\021\n\014INTERV"
+  "AL_I5M\020\254\002\022\022\n\rINTERVAL_I15M\020\204\007\022\021\n\014INTERVA"
+  "L_I1H\020\220\034\022\022\n\014INTERVAL_I6H\020\340\250\001\022\022\n\014INTERVAL"
+  "_I1D\020\200\243\005*\261\005\n\nOrderError\022\024\n\020ORDER_ERROR_N"
+  "ONE\020\000\022!\n\035ORDER_ERROR_INVALID_MARKET_ID\020\001"
+  "\022 \n\034ORDER_ERROR_INVALID_ORDER_ID\020\002\022\037\n\033OR"
+  "DER_ERROR_OUT_OF_SEQUENCE\020\003\022&\n\"ORDER_ERR"
+  "OR_INVALID_REMAINING_SIZE\020\004\022\034\n\030ORDER_ERR"
+  "OR_TIME_FAILURE\020\005\022\037\n\033ORDER_ERROR_REMOVAL"
+  "_FAILURE\020\006\022+\n\'ORDER_ERROR_INVALID_EXPIRA"
+  "TION_DATETIME\020\007\022\'\n#ORDER_ERROR_INVALID_O"
+  "RDER_REFERENCE\020\010\022 \n\034ORDER_ERROR_EDIT_NOT"
+  "_ALLOWED\020\t\022\035\n\031ORDER_ERROR_AMEND_FAILURE\020"
+  "\n\022\031\n\025ORDER_ERROR_NOT_FOUND\020\013\022 \n\034ORDER_ER"
+  "ROR_INVALID_PARTY_ID\020\014\022\035\n\031ORDER_ERROR_MA"
+  "RKET_CLOSED\020\r\022#\n\037ORDER_ERROR_MARGIN_CHEC"
+  "K_FAILED\020\016\022\'\n#ORDER_ERROR_MISSING_GENERA"
+  "L_ACCOUNT\020\017\022\036\n\032ORDER_ERROR_INTERNAL_ERRO"
+  "R\020\020\022\034\n\030ORDER_ERROR_INVALID_SIZE\020\021\022#\n\037ORD"
+  "ER_ERROR_INVALID_PERSISTENCE\020\022\022\034\n\030ORDER_"
+  "ERROR_INVALID_TYPE\020\023*\202\001\n\013ChainStatus\022\034\n\030"
+  "CHAIN_STATUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_STAT"
+  "US_DISCONNECTED\020\001\022\032\n\026CHAIN_STATUS_REPLAY"
+  "ING\020\002\022\032\n\026CHAIN_STATUS_CONNECTED\020\003*\227\001\n\013Ac"
+  "countType\022\034\n\030ACCOUNT_TYPE_UNSPECIFIED\020\000\022"
+  "\032\n\026ACCOUNT_TYPE_INSURANCE\020\001\022\033\n\027ACCOUNT_T"
+  "YPE_SETTLEMENT\020\002\022\027\n\023ACCOUNT_TYPE_MARGIN\020"
+  "\003\022\030\n\024ACCOUNT_TYPE_GENERAL\020\004*\217\002\n\014Transfer"
+  "Type\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\026\n\022T"
+  "RANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSFER_TYPE_WIN"
+  "\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032\n\026TRANSFER_"
+  "TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_TYPE_MTM_WIN"
+  "\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_LOW\020\006\022\035\n\031TRAN"
+  "SFER_TYPE_MARGIN_HIGH\020\007\022$\n TRANSFER_TYPE"
+  "_MARGIN_CONFISCATED\020\010*\205\001\n\021NodeSignatureK"
+  "ind\022#\n\037NODE_SIGNATURE_KIND_UNSPECIFIED\020\000"
+  "\022!\n\035NODE_SIGNATURE_KIND_ASSET_NEW\020\001\022(\n$N"
+  "ODE_SIGNATURE_KIND_ASSET_WITHDRAWAL\020\002B!Z"
+  "\037code.vegaprotocol.io/vega/protob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fvega_2eproto = {
   false, InitDefaults_proto_2fvega_2eproto, 
   descriptor_table_protodef_proto_2fvega_2eproto,
-  "proto/vega.proto", &assign_descriptors_table_proto_2fvega_2eproto, 6823,
+  "proto/vega.proto", &assign_descriptors_table_proto_2fvega_2eproto, 7040,
 };
 
 void AddDescriptors_proto_2fvega_2eproto() {
@@ -1629,6 +1663,21 @@ bool TransferType_IsValid(int value) {
     case 6:
     case 7:
     case 8:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::google::protobuf::EnumDescriptor* NodeSignatureKind_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_proto_2fvega_2eproto);
+  return file_level_enum_descriptors_proto_2fvega_2eproto[10];
+}
+bool NodeSignatureKind_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
       return true;
     default:
       return false;
@@ -19594,6 +19643,411 @@ void SignedBundle::InternalSwap(SignedBundle* other) {
 }
 
 
+// ===================================================================
+
+void NodeSignature::InitAsDefaultInstance() {
+}
+class NodeSignature::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int NodeSignature::kIDFieldNumber;
+const int NodeSignature::kSigFieldNumber;
+const int NodeSignature::kKindFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+NodeSignature::NodeSignature()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:vega.NodeSignature)
+}
+NodeSignature::NodeSignature(const NodeSignature& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.id().size() > 0) {
+    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+  }
+  sig_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.sig().size() > 0) {
+    sig_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.sig_);
+  }
+  kind_ = from.kind_;
+  // @@protoc_insertion_point(copy_constructor:vega.NodeSignature)
+}
+
+void NodeSignature::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_NodeSignature_proto_2fvega_2eproto.base);
+  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  sig_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  kind_ = 0;
+}
+
+NodeSignature::~NodeSignature() {
+  // @@protoc_insertion_point(destructor:vega.NodeSignature)
+  SharedDtor();
+}
+
+void NodeSignature::SharedDtor() {
+  id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  sig_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void NodeSignature::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const NodeSignature& NodeSignature::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_NodeSignature_proto_2fvega_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void NodeSignature::Clear() {
+// @@protoc_insertion_point(message_clear_start:vega.NodeSignature)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  sig_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  kind_ = 0;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* NodeSignature::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<NodeSignature*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // string ID = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("vega.NodeSignature.ID");
+        object = msg->mutable_id();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // bytes sig = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        object = msg->mutable_sig();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParser;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheck(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // .vega.NodeSignatureKind kind = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_kind(static_cast<::vega::NodeSignatureKind>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool NodeSignature::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:vega.NodeSignature)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string ID = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_id()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->id().data(), static_cast<int>(this->id().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "vega.NodeSignature.ID"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // bytes sig = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->mutable_sig()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .vega.NodeSignatureKind kind = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_kind(static_cast< ::vega::NodeSignatureKind >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:vega.NodeSignature)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:vega.NodeSignature)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void NodeSignature::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:vega.NodeSignature)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string ID = 1;
+  if (this->id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->id().data(), static_cast<int>(this->id().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "vega.NodeSignature.ID");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->id(), output);
+  }
+
+  // bytes sig = 2;
+  if (this->sig().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
+      2, this->sig(), output);
+  }
+
+  // .vega.NodeSignatureKind kind = 3;
+  if (this->kind() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      3, this->kind(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:vega.NodeSignature)
+}
+
+::google::protobuf::uint8* NodeSignature::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vega.NodeSignature)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string ID = 1;
+  if (this->id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->id().data(), static_cast<int>(this->id().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "vega.NodeSignature.ID");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->id(), target);
+  }
+
+  // bytes sig = 2;
+  if (this->sig().size() > 0) {
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
+        2, this->sig(), target);
+  }
+
+  // .vega.NodeSignatureKind kind = 3;
+  if (this->kind() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      3, this->kind(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vega.NodeSignature)
+  return target;
+}
+
+size_t NodeSignature::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vega.NodeSignature)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string ID = 1;
+  if (this->id().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->id());
+  }
+
+  // bytes sig = 2;
+  if (this->sig().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
+        this->sig());
+  }
+
+  // .vega.NodeSignatureKind kind = 3;
+  if (this->kind() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->kind());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void NodeSignature::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vega.NodeSignature)
+  GOOGLE_DCHECK_NE(&from, this);
+  const NodeSignature* source =
+      ::google::protobuf::DynamicCastToGenerated<NodeSignature>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.NodeSignature)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.NodeSignature)
+    MergeFrom(*source);
+  }
+}
+
+void NodeSignature::MergeFrom(const NodeSignature& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vega.NodeSignature)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.id().size() > 0) {
+
+    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+  }
+  if (from.sig().size() > 0) {
+
+    sig_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.sig_);
+  }
+  if (from.kind() != 0) {
+    set_kind(from.kind());
+  }
+}
+
+void NodeSignature::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vega.NodeSignature)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void NodeSignature::CopyFrom(const NodeSignature& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vega.NodeSignature)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool NodeSignature::IsInitialized() const {
+  return true;
+}
+
+void NodeSignature::Swap(NodeSignature* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void NodeSignature::InternalSwap(NodeSignature* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  sig_.Swap(&other->sig_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(kind_, other->kind_);
+}
+
+::google::protobuf::Metadata NodeSignature::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_proto_2fvega_2eproto);
+  return ::file_level_metadata_proto_2fvega_2eproto[kIndexInFileMessages];
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace vega
 namespace google {
@@ -19708,6 +20162,9 @@ template<> PROTOBUF_NOINLINE ::vega::ErrorDetail* Arena::CreateMaybeMessage< ::v
 }
 template<> PROTOBUF_NOINLINE ::vega::SignedBundle* Arena::CreateMaybeMessage< ::vega::SignedBundle >(Arena* arena) {
   return Arena::CreateInternal< ::vega::SignedBundle >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vega::NodeSignature* Arena::CreateMaybeMessage< ::vega::NodeSignature >(Arena* arena) {
+  return Arena::CreateInternal< ::vega::NodeSignature >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

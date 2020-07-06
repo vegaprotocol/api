@@ -545,6 +545,11 @@ class trading_dataStub(object):
                 request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
                 response_deserializer=proto_dot_vega__pb2.TransferResponse.FromString,
                 )
+        self.GetNodeSignaturesAggregate = channel.unary_unary(
+                '/api.trading_data/GetNodeSignaturesAggregate',
+                request_serializer=proto_dot_api_dot_trading__pb2.GetNodeSignaturesAggregateRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.GetNodeSignaturesAggregateResponse.FromString,
+                )
 
 
 class trading_dataServicer(object):
@@ -899,6 +904,13 @@ class trading_dataServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetNodeSignaturesAggregate(self, request, context):
+        """Get an aggregate of signature from all the node of the network
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_trading_dataServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1136,6 +1148,11 @@ def add_trading_dataServicer_to_server(servicer, server):
                     servicer.TransferResponsesSubscribe,
                     request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                     response_serializer=proto_dot_vega__pb2.TransferResponse.SerializeToString,
+            ),
+            'GetNodeSignaturesAggregate': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetNodeSignaturesAggregate,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.GetNodeSignaturesAggregateRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.GetNodeSignaturesAggregateResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1896,5 +1913,21 @@ class trading_data(object):
         return grpc.experimental.unary_stream(request, target, '/api.trading_data/TransferResponsesSubscribe',
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             proto_dot_vega__pb2.TransferResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetNodeSignaturesAggregate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetNodeSignaturesAggregate',
+            proto_dot_api_dot_trading__pb2.GetNodeSignaturesAggregateRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.GetNodeSignaturesAggregateResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)

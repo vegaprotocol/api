@@ -34,6 +34,7 @@
 #include <google/protobuf/map_entry.h>
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "github.com/mwitkow/go-proto-validators/validator.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto
@@ -332,18 +333,25 @@ class DiscreteTrading :
 
   // accessors -------------------------------------------------------
 
-  // int64 duration = 1;
-  void clear_duration();
-  static const int kDurationFieldNumber = 1;
-  ::google::protobuf::int64 duration() const;
-  void set_duration(::google::protobuf::int64 value);
+  // int64 durationNs = 1 [(.validator.field) = {
+  void clear_durationns();
+  static const int kDurationNsFieldNumber = 1;
+  ::google::protobuf::int64 durationns() const;
+  void set_durationns(::google::protobuf::int64 value);
+
+  // uint64 tickSize = 2;
+  void clear_ticksize();
+  static const int kTickSizeFieldNumber = 2;
+  ::google::protobuf::uint64 ticksize() const;
+  void set_ticksize(::google::protobuf::uint64 value);
 
   // @@protoc_insertion_point(class_scope:vega.DiscreteTrading)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::int64 duration_;
+  ::google::protobuf::int64 durationns_;
+  ::google::protobuf::uint64 ticksize_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fmarkets_2eproto;
 };
@@ -2198,32 +2206,18 @@ class Market :
   ::std::string* release_id();
   void set_allocated_id(::std::string* id);
 
-  // string name = 2;
-  void clear_name();
-  static const int kNameFieldNumber = 2;
-  const ::std::string& name() const;
-  void set_name(const ::std::string& value);
-  #if LANG_CXX11
-  void set_name(::std::string&& value);
-  #endif
-  void set_name(const char* value);
-  void set_name(const char* value, size_t size);
-  ::std::string* mutable_name();
-  ::std::string* release_name();
-  void set_allocated_name(::std::string* name);
-
-  // .vega.TradableInstrument tradableInstrument = 3;
+  // .vega.TradableInstrument tradableInstrument = 2;
   bool has_tradableinstrument() const;
   void clear_tradableinstrument();
-  static const int kTradableInstrumentFieldNumber = 3;
+  static const int kTradableInstrumentFieldNumber = 2;
   const ::vega::TradableInstrument& tradableinstrument() const;
   ::vega::TradableInstrument* release_tradableinstrument();
   ::vega::TradableInstrument* mutable_tradableinstrument();
   void set_allocated_tradableinstrument(::vega::TradableInstrument* tradableinstrument);
 
-  // uint64 decimalPlaces = 4;
+  // uint64 decimalPlaces = 3;
   void clear_decimalplaces();
-  static const int kDecimalPlacesFieldNumber = 4;
+  static const int kDecimalPlacesFieldNumber = 3;
   ::google::protobuf::uint64 decimalplaces() const;
   void set_decimalplaces(::google::protobuf::uint64 value);
 
@@ -2258,7 +2252,6 @@ class Market :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr id_;
-  ::google::protobuf::internal::ArenaStringPtr name_;
   ::vega::TradableInstrument* tradableinstrument_;
   ::google::protobuf::uint64 decimalplaces_;
   union TradingModeUnion {
@@ -2300,18 +2293,32 @@ inline void ContinuousTrading::set_ticksize(::google::protobuf::uint64 value) {
 
 // DiscreteTrading
 
-// int64 duration = 1;
-inline void DiscreteTrading::clear_duration() {
-  duration_ = PROTOBUF_LONGLONG(0);
+// int64 durationNs = 1 [(.validator.field) = {
+inline void DiscreteTrading::clear_durationns() {
+  durationns_ = PROTOBUF_LONGLONG(0);
 }
-inline ::google::protobuf::int64 DiscreteTrading::duration() const {
-  // @@protoc_insertion_point(field_get:vega.DiscreteTrading.duration)
-  return duration_;
+inline ::google::protobuf::int64 DiscreteTrading::durationns() const {
+  // @@protoc_insertion_point(field_get:vega.DiscreteTrading.durationNs)
+  return durationns_;
 }
-inline void DiscreteTrading::set_duration(::google::protobuf::int64 value) {
+inline void DiscreteTrading::set_durationns(::google::protobuf::int64 value) {
   
-  duration_ = value;
-  // @@protoc_insertion_point(field_set:vega.DiscreteTrading.duration)
+  durationns_ = value;
+  // @@protoc_insertion_point(field_set:vega.DiscreteTrading.durationNs)
+}
+
+// uint64 tickSize = 2;
+inline void DiscreteTrading::clear_ticksize() {
+  ticksize_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 DiscreteTrading::ticksize() const {
+  // @@protoc_insertion_point(field_get:vega.DiscreteTrading.tickSize)
+  return ticksize_;
+}
+inline void DiscreteTrading::set_ticksize(::google::protobuf::uint64 value) {
+  
+  ticksize_ = value;
+  // @@protoc_insertion_point(field_set:vega.DiscreteTrading.tickSize)
 }
 
 // -------------------------------------------------------------------
@@ -3797,60 +3804,7 @@ inline void Market::set_allocated_id(::std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:vega.Market.id)
 }
 
-// string name = 2;
-inline void Market::clear_name() {
-  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Market::name() const {
-  // @@protoc_insertion_point(field_get:vega.Market.name)
-  return name_.GetNoArena();
-}
-inline void Market::set_name(const ::std::string& value) {
-  
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.Market.name)
-}
-#if LANG_CXX11
-inline void Market::set_name(::std::string&& value) {
-  
-  name_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.Market.name)
-}
-#endif
-inline void Market::set_name(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.Market.name)
-}
-inline void Market::set_name(const char* value, size_t size) {
-  
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.Market.name)
-}
-inline ::std::string* Market::mutable_name() {
-  
-  // @@protoc_insertion_point(field_mutable:vega.Market.name)
-  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Market::release_name() {
-  // @@protoc_insertion_point(field_release:vega.Market.name)
-  
-  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Market::set_allocated_name(::std::string* name) {
-  if (name != nullptr) {
-    
-  } else {
-    
-  }
-  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:vega.Market.name)
-}
-
-// .vega.TradableInstrument tradableInstrument = 3;
+// .vega.TradableInstrument tradableInstrument = 2;
 inline bool Market::has_tradableinstrument() const {
   return this != internal_default_instance() && tradableinstrument_ != nullptr;
 }
@@ -3901,7 +3855,7 @@ inline void Market::set_allocated_tradableinstrument(::vega::TradableInstrument*
   // @@protoc_insertion_point(field_set_allocated:vega.Market.tradableInstrument)
 }
 
-// uint64 decimalPlaces = 4;
+// uint64 decimalPlaces = 3;
 inline void Market::clear_decimalplaces() {
   decimalplaces_ = PROTOBUF_ULONGLONG(0);
 }
