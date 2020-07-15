@@ -526,9 +526,9 @@ class BuiltinAsset :
 
   // accessors -------------------------------------------------------
 
-  // string name = 2;
+  // string name = 1;
   void clear_name();
-  static const int kNameFieldNumber = 2;
+  static const int kNameFieldNumber = 1;
   const ::std::string& name() const;
   void set_name(const ::std::string& value);
   #if LANG_CXX11
@@ -540,9 +540,9 @@ class BuiltinAsset :
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
-  // string symbol = 3;
+  // string symbol = 2;
   void clear_symbol();
-  static const int kSymbolFieldNumber = 3;
+  static const int kSymbolFieldNumber = 2;
   const ::std::string& symbol() const;
   void set_symbol(const ::std::string& value);
   #if LANG_CXX11
@@ -554,9 +554,9 @@ class BuiltinAsset :
   ::std::string* release_symbol();
   void set_allocated_symbol(::std::string* symbol);
 
-  // string totalSupply = 4;
+  // string totalSupply = 3;
   void clear_totalsupply();
-  static const int kTotalSupplyFieldNumber = 4;
+  static const int kTotalSupplyFieldNumber = 3;
   const ::std::string& totalsupply() const;
   void set_totalsupply(const ::std::string& value);
   #if LANG_CXX11
@@ -568,9 +568,9 @@ class BuiltinAsset :
   ::std::string* release_totalsupply();
   void set_allocated_totalsupply(::std::string* totalsupply);
 
-  // uint64 decimals = 5;
+  // uint64 decimals = 4;
   void clear_decimals();
-  static const int kDecimalsFieldNumber = 5;
+  static const int kDecimalsFieldNumber = 4;
   ::google::protobuf::uint64 decimals() const;
   void set_decimals(::google::protobuf::uint64 value);
 
@@ -844,13 +844,13 @@ inline const ::std::string& Asset::id() const {
   return id_.GetNoArena();
 }
 inline void Asset::set_id(const ::std::string& value) {
-  
+
   id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.Asset.ID)
 }
 #if LANG_CXX11
 inline void Asset::set_id(::std::string&& value) {
-  
+
   id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.Asset.ID)
@@ -858,31 +858,31 @@ inline void Asset::set_id(::std::string&& value) {
 #endif
 inline void Asset::set_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.Asset.ID)
 }
 inline void Asset::set_id(const char* value, size_t size) {
-  
+
   id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.Asset.ID)
 }
 inline ::std::string* Asset::mutable_id() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.Asset.ID)
   return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* Asset::release_id() {
   // @@protoc_insertion_point(field_release:vega.Asset.ID)
-  
+
   return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void Asset::set_allocated_id(::std::string* id) {
   if (id != nullptr) {
-    
+
   } else {
-    
+
   }
   id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
   // @@protoc_insertion_point(field_set_allocated:vega.Asset.ID)
@@ -897,13 +897,13 @@ inline const ::std::string& Asset::name() const {
   return name_.GetNoArena();
 }
 inline void Asset::set_name(const ::std::string& value) {
-  
+
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.Asset.name)
 }
 #if LANG_CXX11
 inline void Asset::set_name(::std::string&& value) {
-  
+
   name_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.Asset.name)
@@ -911,31 +911,31 @@ inline void Asset::set_name(::std::string&& value) {
 #endif
 inline void Asset::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.Asset.name)
 }
 inline void Asset::set_name(const char* value, size_t size) {
-  
+
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.Asset.name)
 }
 inline ::std::string* Asset::mutable_name() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.Asset.name)
   return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* Asset::release_name() {
   // @@protoc_insertion_point(field_release:vega.Asset.name)
-  
+
   return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void Asset::set_allocated_name(::std::string* name) {
   if (name != nullptr) {
-    
+
   } else {
-    
+
   }
   name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
   // @@protoc_insertion_point(field_set_allocated:vega.Asset.name)
@@ -950,13 +950,13 @@ inline const ::std::string& Asset::symbol() const {
   return symbol_.GetNoArena();
 }
 inline void Asset::set_symbol(const ::std::string& value) {
-  
+
   symbol_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.Asset.symbol)
 }
 #if LANG_CXX11
 inline void Asset::set_symbol(::std::string&& value) {
-  
+
   symbol_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.Asset.symbol)
@@ -964,31 +964,31 @@ inline void Asset::set_symbol(::std::string&& value) {
 #endif
 inline void Asset::set_symbol(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   symbol_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.Asset.symbol)
 }
 inline void Asset::set_symbol(const char* value, size_t size) {
-  
+
   symbol_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.Asset.symbol)
 }
 inline ::std::string* Asset::mutable_symbol() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.Asset.symbol)
   return symbol_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* Asset::release_symbol() {
   // @@protoc_insertion_point(field_release:vega.Asset.symbol)
-  
+
   return symbol_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void Asset::set_allocated_symbol(::std::string* symbol) {
   if (symbol != nullptr) {
-    
+
   } else {
-    
+
   }
   symbol_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), symbol);
   // @@protoc_insertion_point(field_set_allocated:vega.Asset.symbol)
@@ -1003,13 +1003,13 @@ inline const ::std::string& Asset::totalsupply() const {
   return totalsupply_.GetNoArena();
 }
 inline void Asset::set_totalsupply(const ::std::string& value) {
-  
+
   totalsupply_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.Asset.totalSupply)
 }
 #if LANG_CXX11
 inline void Asset::set_totalsupply(::std::string&& value) {
-  
+
   totalsupply_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.Asset.totalSupply)
@@ -1017,31 +1017,31 @@ inline void Asset::set_totalsupply(::std::string&& value) {
 #endif
 inline void Asset::set_totalsupply(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   totalsupply_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.Asset.totalSupply)
 }
 inline void Asset::set_totalsupply(const char* value, size_t size) {
-  
+
   totalsupply_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.Asset.totalSupply)
 }
 inline ::std::string* Asset::mutable_totalsupply() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.Asset.totalSupply)
   return totalsupply_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* Asset::release_totalsupply() {
   // @@protoc_insertion_point(field_release:vega.Asset.totalSupply)
-  
+
   return totalsupply_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void Asset::set_allocated_totalsupply(::std::string* totalsupply) {
   if (totalsupply != nullptr) {
-    
+
   } else {
-    
+
   }
   totalsupply_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), totalsupply);
   // @@protoc_insertion_point(field_set_allocated:vega.Asset.totalSupply)
@@ -1056,7 +1056,7 @@ inline ::google::protobuf::uint64 Asset::decimals() const {
   return decimals_;
 }
 inline void Asset::set_decimals(::google::protobuf::uint64 value) {
-  
+
   decimals_ = value;
   // @@protoc_insertion_point(field_set:vega.Asset.decimals)
 }
@@ -1251,7 +1251,7 @@ inline AssetSource::SourceCase AssetSource::source_case() const {
 
 // BuiltinAsset
 
-// string name = 2;
+// string name = 1;
 inline void BuiltinAsset::clear_name() {
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1260,13 +1260,13 @@ inline const ::std::string& BuiltinAsset::name() const {
   return name_.GetNoArena();
 }
 inline void BuiltinAsset::set_name(const ::std::string& value) {
-  
+
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.BuiltinAsset.name)
 }
 #if LANG_CXX11
 inline void BuiltinAsset::set_name(::std::string&& value) {
-  
+
   name_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAsset.name)
@@ -1274,37 +1274,37 @@ inline void BuiltinAsset::set_name(::std::string&& value) {
 #endif
 inline void BuiltinAsset::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.BuiltinAsset.name)
 }
 inline void BuiltinAsset::set_name(const char* value, size_t size) {
-  
+
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAsset.name)
 }
 inline ::std::string* BuiltinAsset::mutable_name() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.BuiltinAsset.name)
   return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* BuiltinAsset::release_name() {
   // @@protoc_insertion_point(field_release:vega.BuiltinAsset.name)
-  
+
   return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void BuiltinAsset::set_allocated_name(::std::string* name) {
   if (name != nullptr) {
-    
+
   } else {
-    
+
   }
   name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
   // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAsset.name)
 }
 
-// string symbol = 3;
+// string symbol = 2;
 inline void BuiltinAsset::clear_symbol() {
   symbol_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1313,13 +1313,13 @@ inline const ::std::string& BuiltinAsset::symbol() const {
   return symbol_.GetNoArena();
 }
 inline void BuiltinAsset::set_symbol(const ::std::string& value) {
-  
+
   symbol_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.BuiltinAsset.symbol)
 }
 #if LANG_CXX11
 inline void BuiltinAsset::set_symbol(::std::string&& value) {
-  
+
   symbol_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAsset.symbol)
@@ -1327,37 +1327,37 @@ inline void BuiltinAsset::set_symbol(::std::string&& value) {
 #endif
 inline void BuiltinAsset::set_symbol(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   symbol_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.BuiltinAsset.symbol)
 }
 inline void BuiltinAsset::set_symbol(const char* value, size_t size) {
-  
+
   symbol_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAsset.symbol)
 }
 inline ::std::string* BuiltinAsset::mutable_symbol() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.BuiltinAsset.symbol)
   return symbol_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* BuiltinAsset::release_symbol() {
   // @@protoc_insertion_point(field_release:vega.BuiltinAsset.symbol)
-  
+
   return symbol_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void BuiltinAsset::set_allocated_symbol(::std::string* symbol) {
   if (symbol != nullptr) {
-    
+
   } else {
-    
+
   }
   symbol_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), symbol);
   // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAsset.symbol)
 }
 
-// string totalSupply = 4;
+// string totalSupply = 3;
 inline void BuiltinAsset::clear_totalsupply() {
   totalsupply_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1366,13 +1366,13 @@ inline const ::std::string& BuiltinAsset::totalsupply() const {
   return totalsupply_.GetNoArena();
 }
 inline void BuiltinAsset::set_totalsupply(const ::std::string& value) {
-  
+
   totalsupply_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.BuiltinAsset.totalSupply)
 }
 #if LANG_CXX11
 inline void BuiltinAsset::set_totalsupply(::std::string&& value) {
-  
+
   totalsupply_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAsset.totalSupply)
@@ -1380,37 +1380,37 @@ inline void BuiltinAsset::set_totalsupply(::std::string&& value) {
 #endif
 inline void BuiltinAsset::set_totalsupply(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   totalsupply_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.BuiltinAsset.totalSupply)
 }
 inline void BuiltinAsset::set_totalsupply(const char* value, size_t size) {
-  
+
   totalsupply_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAsset.totalSupply)
 }
 inline ::std::string* BuiltinAsset::mutable_totalsupply() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.BuiltinAsset.totalSupply)
   return totalsupply_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* BuiltinAsset::release_totalsupply() {
   // @@protoc_insertion_point(field_release:vega.BuiltinAsset.totalSupply)
-  
+
   return totalsupply_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void BuiltinAsset::set_allocated_totalsupply(::std::string* totalsupply) {
   if (totalsupply != nullptr) {
-    
+
   } else {
-    
+
   }
   totalsupply_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), totalsupply);
   // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAsset.totalSupply)
 }
 
-// uint64 decimals = 5;
+// uint64 decimals = 4;
 inline void BuiltinAsset::clear_decimals() {
   decimals_ = PROTOBUF_ULONGLONG(0);
 }
@@ -1419,7 +1419,7 @@ inline ::google::protobuf::uint64 BuiltinAsset::decimals() const {
   return decimals_;
 }
 inline void BuiltinAsset::set_decimals(::google::protobuf::uint64 value) {
-  
+
   decimals_ = value;
   // @@protoc_insertion_point(field_set:vega.BuiltinAsset.decimals)
 }
@@ -1437,13 +1437,13 @@ inline const ::std::string& ERC20::contractaddress() const {
   return contractaddress_.GetNoArena();
 }
 inline void ERC20::set_contractaddress(const ::std::string& value) {
-  
+
   contractaddress_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.ERC20.contractAddress)
 }
 #if LANG_CXX11
 inline void ERC20::set_contractaddress(::std::string&& value) {
-  
+
   contractaddress_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.ERC20.contractAddress)
@@ -1451,31 +1451,31 @@ inline void ERC20::set_contractaddress(::std::string&& value) {
 #endif
 inline void ERC20::set_contractaddress(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   contractaddress_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.ERC20.contractAddress)
 }
 inline void ERC20::set_contractaddress(const char* value, size_t size) {
-  
+
   contractaddress_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.ERC20.contractAddress)
 }
 inline ::std::string* ERC20::mutable_contractaddress() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.ERC20.contractAddress)
   return contractaddress_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* ERC20::release_contractaddress() {
   // @@protoc_insertion_point(field_release:vega.ERC20.contractAddress)
-  
+
   return contractaddress_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void ERC20::set_allocated_contractaddress(::std::string* contractaddress) {
   if (contractaddress != nullptr) {
-    
+
   } else {
-    
+
   }
   contractaddress_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), contractaddress);
   // @@protoc_insertion_point(field_set_allocated:vega.ERC20.contractAddress)

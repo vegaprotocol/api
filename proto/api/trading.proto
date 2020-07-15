@@ -5,6 +5,8 @@ option go_package = "code.vegaprotocol.io/vega/proto/api";
 import "proto/vega.proto";
 import "proto/markets.proto";
 import "proto/governance.proto";
+import "proto/chain_events.proto";
+import "proto/assets.proto";
 
 package api;
 
@@ -39,6 +41,21 @@ service trading {
 
   // Prepare a vote to be put on the chain (via SubmitTransaction)
   rpc PrepareVote(PrepareVoteRequest) returns (PrepareVoteResponse);
+
+  // chain events
+  rpc PropagateChainEvent(PropagateChainEventRequest) returns (PropagateChainEventResponse);
+}
+
+// The request for a new event sent by the blockchain queue to be propagated into vega
+message PropagateChainEventRequest {
+  // The event
+  vega.ChainEvent evt = 1;
+}
+
+// The response for a new event sent to vega
+message PropagateChainEventResponse {
+  // Did the event get accepted by the node successfully
+  bool success = 1;
 }
 
 message SubmitTransactionRequest {
@@ -258,6 +275,33 @@ service trading_data {
 
   // Get an aggregate of signature from all the node of the network
   rpc GetNodeSignaturesAggregate(GetNodeSignaturesAggregateRequest) returns (GetNodeSignaturesAggregateResponse);
+
+  // Get an asset by its ID
+  rpc AssetByID(AssetByIDRequest) returns (AssetByIDResponse);
+
+  // Get the list of all assets in vega
+  rpc Assets(AssetsRequest) returns (AssetsResponse);
+}
+
+// The request to get the lit of all assets in vega
+message AssetsRequest {}
+
+// The response containing the list of all assets enabled in vega
+message AssetsResponse {
+  // The list of assets
+  repeated vega.Asset assets = 1;
+}
+
+// The request message to get an AssetByID
+message AssetByIDRequest {
+  // ID of the asset to get
+  string ID = 1;
+}
+
+// The response message to get an AssetByID
+message AssetByIDResponse {
+  // The asset corresponding to the requested ID
+  vega.Asset asset = 1;
 }
 
 // The request message to specify the ID of the resource we want to retrieve
@@ -272,7 +316,6 @@ message GetNodeSignaturesAggregateResponse {
   // The list of signatures
   repeated vega.NodeSignature signatures = 1;
 }
-
 
 message OptionalProposalState {
   vega.Proposal.State value = 1;

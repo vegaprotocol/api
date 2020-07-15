@@ -207,8 +207,8 @@ const char descriptor_table_protodef_proto_2fassets_2eproto[] =
   "e\"a\n\013AssetSource\022*\n\014builtinAsset\030\001 \001(\0132\022"
   ".vega.BuiltinAssetH\000\022\034\n\005erc20\030\002 \001(\0132\013.ve"
   "ga.ERC20H\000B\010\n\006source\"S\n\014BuiltinAsset\022\014\n\004"
-  "name\030\002 \001(\t\022\016\n\006symbol\030\003 \001(\t\022\023\n\013totalSuppl"
-  "y\030\004 \001(\t\022\020\n\010decimals\030\005 \001(\004\" \n\005ERC20\022\027\n\017co"
+  "name\030\001 \001(\t\022\016\n\006symbol\030\002 \001(\t\022\023\n\013totalSuppl"
+  "y\030\003 \001(\t\022\020\n\010decimals\030\004 \001(\004\" \n\005ERC20\022\027\n\017co"
   "ntractAddress\030\001 \001(\t\"/\n\tDevAssets\022\"\n\007sour"
   "ces\030\001 \003(\0132\021.vega.AssetSourceB!Z\037code.veg"
   "aprotocol.io/vega/protob\006proto3"
@@ -1486,9 +1486,9 @@ const char* BuiltinAsset::_InternalParse(const char* begin, const char* end, voi
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // string name = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+      // string name = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("vega.BuiltinAsset.name");
@@ -1502,9 +1502,9 @@ const char* BuiltinAsset::_InternalParse(const char* begin, const char* end, voi
         ptr += size;
         break;
       }
-      // string symbol = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+      // string symbol = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("vega.BuiltinAsset.symbol");
@@ -1518,9 +1518,9 @@ const char* BuiltinAsset::_InternalParse(const char* begin, const char* end, voi
         ptr += size;
         break;
       }
-      // string totalSupply = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+      // string totalSupply = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("vega.BuiltinAsset.totalSupply");
@@ -1534,9 +1534,9 @@ const char* BuiltinAsset::_InternalParse(const char* begin, const char* end, voi
         ptr += size;
         break;
       }
-      // uint64 decimals = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 40) goto handle_unusual;
+      // uint64 decimals = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
         msg->set_decimals(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
@@ -1575,9 +1575,9 @@ bool BuiltinAsset::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string name = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+      // string name = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_name()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1590,9 +1590,9 @@ bool BuiltinAsset::MergePartialFromCodedStream(
         break;
       }
 
-      // string symbol = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+      // string symbol = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_symbol()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1605,9 +1605,9 @@ bool BuiltinAsset::MergePartialFromCodedStream(
         break;
       }
 
-      // string totalSupply = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+      // string totalSupply = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_totalsupply()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1620,9 +1620,9 @@ bool BuiltinAsset::MergePartialFromCodedStream(
         break;
       }
 
-      // uint64 decimals = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (40 & 0xFF)) {
+      // uint64 decimals = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
@@ -1660,39 +1660,39 @@ void BuiltinAsset::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string name = 2;
+  // string name = 1;
   if (this->name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->name().data(), static_cast<int>(this->name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "vega.BuiltinAsset.name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->name(), output);
+      1, this->name(), output);
   }
 
-  // string symbol = 3;
+  // string symbol = 2;
   if (this->symbol().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->symbol().data(), static_cast<int>(this->symbol().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "vega.BuiltinAsset.symbol");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->symbol(), output);
+      2, this->symbol(), output);
   }
 
-  // string totalSupply = 4;
+  // string totalSupply = 3;
   if (this->totalsupply().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->totalsupply().data(), static_cast<int>(this->totalsupply().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "vega.BuiltinAsset.totalSupply");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->totalsupply(), output);
+      3, this->totalsupply(), output);
   }
 
-  // uint64 decimals = 5;
+  // uint64 decimals = 4;
   if (this->decimals() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->decimals(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(4, this->decimals(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1708,7 +1708,7 @@ void BuiltinAsset::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string name = 2;
+  // string name = 1;
   if (this->name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->name().data(), static_cast<int>(this->name().length()),
@@ -1716,10 +1716,10 @@ void BuiltinAsset::SerializeWithCachedSizes(
       "vega.BuiltinAsset.name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->name(), target);
+        1, this->name(), target);
   }
 
-  // string symbol = 3;
+  // string symbol = 2;
   if (this->symbol().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->symbol().data(), static_cast<int>(this->symbol().length()),
@@ -1727,10 +1727,10 @@ void BuiltinAsset::SerializeWithCachedSizes(
       "vega.BuiltinAsset.symbol");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->symbol(), target);
+        2, this->symbol(), target);
   }
 
-  // string totalSupply = 4;
+  // string totalSupply = 3;
   if (this->totalsupply().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->totalsupply().data(), static_cast<int>(this->totalsupply().length()),
@@ -1738,12 +1738,12 @@ void BuiltinAsset::SerializeWithCachedSizes(
       "vega.BuiltinAsset.totalSupply");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->totalsupply(), target);
+        3, this->totalsupply(), target);
   }
 
-  // uint64 decimals = 5;
+  // uint64 decimals = 4;
   if (this->decimals() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->decimals(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(4, this->decimals(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1767,28 +1767,28 @@ size_t BuiltinAsset::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string name = 2;
+  // string name = 1;
   if (this->name().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->name());
   }
 
-  // string symbol = 3;
+  // string symbol = 2;
   if (this->symbol().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->symbol());
   }
 
-  // string totalSupply = 4;
+  // string totalSupply = 3;
   if (this->totalsupply().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->totalsupply());
   }
 
-  // uint64 decimals = 5;
+  // uint64 decimals = 4;
   if (this->decimals() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt64Size(

@@ -12,7 +12,7 @@ preproto:
 	@mkdir -p proto/api && find "$(VEGACORE)"/proto/api -maxdepth 1 -name '*.proto' -exec cp '{}' proto/api/ ';'
 	@(cd "$(VEGACORE)" && git describe --tags) >proto/from.txt
 
-.PHONT: proto
+.PHONY: proto
 proto: proto-cpp proto-javascript proto-python
 
 CPP_GENERATED_DIR := cpp/generated
@@ -26,6 +26,7 @@ proto-cpp:
 		-I. \
 		-Iexternal \
 		--cpp_out="$(CPP_GENERATED_DIR)"
+	@find cpp/generated -name '*.pb.cc' -o -name '*.pb.h' -print0 | xargs -0 sed --in-place -re 's#^[ \\t]+$$##'
 
 JAVASCRIPT_GENERATED_DIR := js/generated
 
@@ -72,7 +73,7 @@ proto-python:
 		--grpc_python_out="$(PYTHON_GENERATED_DIR)"
 	@sed --in-place \
 		-e 's#^from proto import#from . import#' \
-		"$(PYTHON_GENERATED_DIR)/proto/governance_pb2.py"
+		"$(PYTHON_GENERATED_DIR)/proto/"*.py
 	@sed --in-place \
 		-e 's#^from proto import#from .. import#' \
 		-e 's#^from proto.api import#from . import#' \
@@ -96,7 +97,7 @@ test: test-cpp test-javascript test-python
 
 .PHONY: test-cpp
 test-cpp:
-	echo "test-cpp TBD"
+	@echo "TBD: test-cpp"
 
 .PHONY: test-javascript
 test-javascript:
