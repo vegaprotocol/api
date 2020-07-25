@@ -8843,7 +8843,8 @@ proto.vega.MarketData.toObject = function(includeInstance, msg) {
     bestoffervolume: jspb.Message.getFieldWithDefault(msg, 5, 0),
     midprice: jspb.Message.getFieldWithDefault(msg, 6, 0),
     market: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 8, 0)
+    timestamp: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    openinterest: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -8911,6 +8912,10 @@ proto.vega.MarketData.deserializeBinaryFromReader = function(msg, reader) {
     case 8:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTimestamp(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setOpeninterest(value);
       break;
     default:
       reader.skipField();
@@ -8994,6 +8999,13 @@ proto.vega.MarketData.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt64(
       8,
+      f
+    );
+  }
+  f = message.getOpeninterest();
+  if (f !== 0) {
+    writer.writeUint64(
+      9,
       f
     );
   }
@@ -9117,6 +9129,21 @@ proto.vega.MarketData.prototype.getTimestamp = function() {
 /** @param {number} value */
 proto.vega.MarketData.prototype.setTimestamp = function(value) {
   jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional uint64 openInterest = 9;
+ * @return {number}
+ */
+proto.vega.MarketData.prototype.getOpeninterest = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/** @param {number} value */
+proto.vega.MarketData.prototype.setOpeninterest = function(value) {
+  jspb.Message.setProto3IntField(this, 9, value);
 };
 
 

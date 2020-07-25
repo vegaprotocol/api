@@ -8490,12 +8490,6 @@ class OrdersByMarketRequest :
   ::api::Pagination* mutable_pagination();
   void set_allocated_pagination(::api::Pagination* pagination);
 
-  // bool open = 3;
-  void clear_open();
-  static const int kOpenFieldNumber = 3;
-  bool open() const;
-  void set_open(bool value);
-
   // @@protoc_insertion_point(class_scope:api.OrdersByMarketRequest)
  private:
   class HasBitSetters;
@@ -8503,7 +8497,6 @@ class OrdersByMarketRequest :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr marketid_;
   ::api::Pagination* pagination_;
-  bool open_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
@@ -8745,12 +8738,6 @@ class OrdersByPartyRequest :
   ::api::Pagination* mutable_pagination();
   void set_allocated_pagination(::api::Pagination* pagination);
 
-  // bool open = 3;
-  void clear_open();
-  static const int kOpenFieldNumber = 3;
-  bool open() const;
-  void set_open(bool value);
-
   // @@protoc_insertion_point(class_scope:api.OrdersByPartyRequest)
  private:
   class HasBitSetters;
@@ -8758,7 +8745,6 @@ class OrdersByPartyRequest :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr partyid_;
   ::api::Pagination* pagination_;
-  bool open_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
@@ -16286,20 +16272,6 @@ inline void OrdersByMarketRequest::set_allocated_pagination(::api::Pagination* p
   // @@protoc_insertion_point(field_set_allocated:api.OrdersByMarketRequest.pagination)
 }
 
-// bool open = 3;
-inline void OrdersByMarketRequest::clear_open() {
-  open_ = false;
-}
-inline bool OrdersByMarketRequest::open() const {
-  // @@protoc_insertion_point(field_get:api.OrdersByMarketRequest.open)
-  return open_;
-}
-inline void OrdersByMarketRequest::set_open(bool value) {
-
-  open_ = value;
-  // @@protoc_insertion_point(field_set:api.OrdersByMarketRequest.open)
-}
-
 // -------------------------------------------------------------------
 
 // OrdersByMarketResponse
@@ -16437,20 +16409,6 @@ inline void OrdersByPartyRequest::set_allocated_pagination(::api::Pagination* pa
   }
   pagination_ = pagination;
   // @@protoc_insertion_point(field_set_allocated:api.OrdersByPartyRequest.pagination)
-}
-
-// bool open = 3;
-inline void OrdersByPartyRequest::clear_open() {
-  open_ = false;
-}
-inline bool OrdersByPartyRequest::open() const {
-  // @@protoc_insertion_point(field_get:api.OrdersByPartyRequest.open)
-  return open_;
-}
-inline void OrdersByPartyRequest::set_open(bool value) {
-
-  open_ = value;
-  // @@protoc_insertion_point(field_set:api.OrdersByPartyRequest.open)
 }
 
 // -------------------------------------------------------------------

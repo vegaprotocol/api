@@ -5864,6 +5864,12 @@ class MarketData :
   ::google::protobuf::int64 timestamp() const;
   void set_timestamp(::google::protobuf::int64 value);
 
+  // uint64 openInterest = 9;
+  void clear_openinterest();
+  static const int kOpenInterestFieldNumber = 9;
+  ::google::protobuf::uint64 openinterest() const;
+  void set_openinterest(::google::protobuf::uint64 value);
+
   // @@protoc_insertion_point(class_scope:vega.MarketData)
  private:
   class HasBitSetters;
@@ -5877,6 +5883,7 @@ class MarketData :
   ::google::protobuf::uint64 bestoffervolume_;
   ::google::protobuf::uint64 midprice_;
   ::google::protobuf::int64 timestamp_;
+  ::google::protobuf::uint64 openinterest_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
@@ -11510,6 +11517,20 @@ inline void MarketData::set_timestamp(::google::protobuf::int64 value) {
 
   timestamp_ = value;
   // @@protoc_insertion_point(field_set:vega.MarketData.timestamp)
+}
+
+// uint64 openInterest = 9;
+inline void MarketData::clear_openinterest() {
+  openinterest_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 MarketData::openinterest() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.openInterest)
+  return openinterest_;
+}
+inline void MarketData::set_openinterest(::google::protobuf::uint64 value) {
+
+  openinterest_ = value;
+  // @@protoc_insertion_point(field_set:vega.MarketData.openInterest)
 }
 
 // -------------------------------------------------------------------

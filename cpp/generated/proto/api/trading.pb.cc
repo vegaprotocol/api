@@ -2405,7 +2405,6 @@ const ::google::protobuf::uint32 TableStruct_proto_2fapi_2ftrading_2eproto::offs
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::api::OrdersByMarketRequest, marketid_),
   PROTOBUF_FIELD_OFFSET(::api::OrdersByMarketRequest, pagination_),
-  PROTOBUF_FIELD_OFFSET(::api::OrdersByMarketRequest, open_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::api::OrdersByMarketResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2419,7 +2418,6 @@ const ::google::protobuf::uint32 TableStruct_proto_2fapi_2ftrading_2eproto::offs
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::api::OrdersByPartyRequest, partyid_),
   PROTOBUF_FIELD_OFFSET(::api::OrdersByPartyRequest, pagination_),
-  PROTOBUF_FIELD_OFFSET(::api::OrdersByPartyRequest, open_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::api::OrdersByPartyResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2690,38 +2688,38 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 396, -1, sizeof(::api::MarketDepthSubscribeRequest)},
   { 402, -1, sizeof(::api::PositionsSubscribeRequest)},
   { 408, -1, sizeof(::api::OrdersByMarketRequest)},
-  { 416, -1, sizeof(::api::OrdersByMarketResponse)},
-  { 422, -1, sizeof(::api::OrdersByPartyRequest)},
-  { 430, -1, sizeof(::api::OrdersByPartyResponse)},
-  { 436, -1, sizeof(::api::OrderByMarketAndIdRequest)},
-  { 443, -1, sizeof(::api::OrderByMarketAndIdResponse)},
-  { 449, -1, sizeof(::api::OrderByReferenceRequest)},
-  { 455, -1, sizeof(::api::OrderByReferenceResponse)},
-  { 461, -1, sizeof(::api::MarketsResponse)},
-  { 467, -1, sizeof(::api::CandlesRequest)},
-  { 475, -1, sizeof(::api::CandlesResponse)},
-  { 481, -1, sizeof(::api::MarketDepthRequest)},
-  { 488, -1, sizeof(::api::MarketDepthResponse)},
-  { 497, -1, sizeof(::api::TradesByMarketRequest)},
-  { 504, -1, sizeof(::api::TradesByMarketResponse)},
-  { 510, -1, sizeof(::api::PositionsByPartyRequest)},
-  { 517, -1, sizeof(::api::PositionsByPartyResponse)},
-  { 523, -1, sizeof(::api::VegaTimeResponse)},
-  { 529, -1, sizeof(::api::Pagination)},
-  { 537, -1, sizeof(::api::OrdersStream)},
-  { 543, -1, sizeof(::api::TradesStream)},
-  { 549, -1, sizeof(::api::PartyAccountsRequest)},
-  { 558, -1, sizeof(::api::PartyAccountsResponse)},
-  { 564, -1, sizeof(::api::MarketAccountsRequest)},
-  { 571, -1, sizeof(::api::MarketAccountsResponse)},
-  { 577, -1, sizeof(::api::PrepareProposalRequest)},
-  { 585, -1, sizeof(::api::PrepareProposalResponse)},
-  { 592, -1, sizeof(::api::PrepareVoteRequest)},
-  { 598, -1, sizeof(::api::PrepareVoteResponse)},
-  { 605, -1, sizeof(::api::OrderByIDRequest)},
-  { 612, -1, sizeof(::api::OrderByReferenceIDRequest)},
-  { 618, -1, sizeof(::api::OrderVersionsByIDRequest)},
-  { 625, -1, sizeof(::api::OrderVersionsResponse)},
+  { 415, -1, sizeof(::api::OrdersByMarketResponse)},
+  { 421, -1, sizeof(::api::OrdersByPartyRequest)},
+  { 428, -1, sizeof(::api::OrdersByPartyResponse)},
+  { 434, -1, sizeof(::api::OrderByMarketAndIdRequest)},
+  { 441, -1, sizeof(::api::OrderByMarketAndIdResponse)},
+  { 447, -1, sizeof(::api::OrderByReferenceRequest)},
+  { 453, -1, sizeof(::api::OrderByReferenceResponse)},
+  { 459, -1, sizeof(::api::MarketsResponse)},
+  { 465, -1, sizeof(::api::CandlesRequest)},
+  { 473, -1, sizeof(::api::CandlesResponse)},
+  { 479, -1, sizeof(::api::MarketDepthRequest)},
+  { 486, -1, sizeof(::api::MarketDepthResponse)},
+  { 495, -1, sizeof(::api::TradesByMarketRequest)},
+  { 502, -1, sizeof(::api::TradesByMarketResponse)},
+  { 508, -1, sizeof(::api::PositionsByPartyRequest)},
+  { 515, -1, sizeof(::api::PositionsByPartyResponse)},
+  { 521, -1, sizeof(::api::VegaTimeResponse)},
+  { 527, -1, sizeof(::api::Pagination)},
+  { 535, -1, sizeof(::api::OrdersStream)},
+  { 541, -1, sizeof(::api::TradesStream)},
+  { 547, -1, sizeof(::api::PartyAccountsRequest)},
+  { 556, -1, sizeof(::api::PartyAccountsResponse)},
+  { 562, -1, sizeof(::api::MarketAccountsRequest)},
+  { 569, -1, sizeof(::api::MarketAccountsResponse)},
+  { 575, -1, sizeof(::api::PrepareProposalRequest)},
+  { 583, -1, sizeof(::api::PrepareProposalResponse)},
+  { 590, -1, sizeof(::api::PrepareVoteRequest)},
+  { 596, -1, sizeof(::api::PrepareVoteResponse)},
+  { 603, -1, sizeof(::api::OrderByIDRequest)},
+  { 610, -1, sizeof(::api::OrderByReferenceIDRequest)},
+  { 616, -1, sizeof(::api::OrderVersionsByIDRequest)},
+  { 623, -1, sizeof(::api::OrderVersionsResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -2939,181 +2937,181 @@ const char descriptor_table_protodef_proto_2fapi_2ftrading_2eproto[] =
   "terval\030\002 \001(\0162\016.vega.Interval\"7\n\033MarketDe"
   "pthSubscribeRequest\022\030\n\010marketID\030\001 \001(\tB\006\342"
   "\337\037\002X\001\",\n\031PositionsSubscribeRequest\022\017\n\007pa"
-  "rtyID\030\001 \001(\t\"d\n\025OrdersByMarketRequest\022\030\n\010"
+  "rtyID\030\001 \001(\t\"V\n\025OrdersByMarketRequest\022\030\n\010"
   "marketID\030\001 \001(\tB\006\342\337\037\002X\001\022#\n\npagination\030\002 \001"
-  "(\0132\017.api.Pagination\022\014\n\004open\030\003 \001(\010\"5\n\026Ord"
-  "ersByMarketResponse\022\033\n\006orders\030\001 \003(\0132\013.ve"
-  "ga.Order\"b\n\024OrdersByPartyRequest\022\027\n\007part"
-  "yID\030\001 \001(\tB\006\342\337\037\002X\001\022#\n\npagination\030\002 \001(\0132\017."
-  "api.Pagination\022\014\n\004open\030\003 \001(\010\"4\n\025OrdersBy"
-  "PartyResponse\022\033\n\006orders\030\001 \003(\0132\013.vega.Ord"
-  "er\"N\n\031OrderByMarketAndIdRequest\022\030\n\010marke"
-  "tID\030\001 \001(\tB\006\342\337\037\002X\001\022\027\n\007orderID\030\002 \001(\tB\006\342\337\037\002"
-  "X\001\"8\n\032OrderByMarketAndIdResponse\022\032\n\005orde"
-  "r\030\001 \001(\0132\013.vega.Order\"4\n\027OrderByReference"
-  "Request\022\031\n\treference\030\001 \001(\tB\006\342\337\037\002X\001\"6\n\030Or"
-  "derByReferenceResponse\022\032\n\005order\030\001 \001(\0132\013."
-  "vega.Order\"0\n\017MarketsResponse\022\035\n\007markets"
-  "\030\001 \003(\0132\014.vega.Market\"l\n\016CandlesRequest\022\030"
-  "\n\010marketID\030\001 \001(\tB\006\342\337\037\002X\001\022\036\n\016sinceTimesta"
-  "mp\030\002 \001(\003B\006\342\337\037\002\020\000\022 \n\010interval\030\003 \001(\0162\016.veg"
-  "a.Interval\"0\n\017CandlesResponse\022\035\n\007candles"
-  "\030\001 \003(\0132\014.vega.Candle\"@\n\022MarketDepthReque"
-  "st\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037\002X\001\022\020\n\010maxDepth"
-  "\030\002 \001(\004\"\206\001\n\023MarketDepthResponse\022\020\n\010market"
-  "ID\030\001 \001(\t\022\035\n\003buy\030\002 \003(\0132\020.vega.PriceLevel\022"
-  "\036\n\004sell\030\003 \003(\0132\020.vega.PriceLevel\022\036\n\tlastT"
-  "rade\030\004 \001(\0132\013.vega.Trade\"V\n\025TradesByMarke"
-  "tRequest\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037\002X\001\022#\n\npa"
-  "gination\030\002 \001(\0132\017.api.Pagination\"5\n\026Trade"
-  "sByMarketResponse\022\033\n\006trades\030\001 \003(\0132\013.vega"
-  ".Trade\"D\n\027PositionsByPartyRequest\022\027\n\007par"
-  "tyID\030\001 \001(\tB\006\342\337\037\002X\001\022\020\n\010marketID\030\002 \001(\t\"=\n\030"
-  "PositionsByPartyResponse\022!\n\tpositions\030\001 "
-  "\003(\0132\016.vega.Position\"%\n\020VegaTimeResponse\022"
-  "\021\n\ttimestamp\030\001 \001(\003\"=\n\nPagination\022\014\n\004skip"
-  "\030\001 \001(\004\022\r\n\005limit\030\002 \001(\004\022\022\n\ndescending\030\003 \001("
-  "\010\"+\n\014OrdersStream\022\033\n\006orders\030\001 \003(\0132\013.vega"
-  ".Order\"+\n\014TradesStream\022\033\n\006trades\030\001 \003(\0132\013"
-  ".vega.Trade\"i\n\024PartyAccountsRequest\022\017\n\007p"
-  "artyID\030\001 \001(\t\022\020\n\010marketID\030\002 \001(\t\022\037\n\004type\030\003"
-  " \001(\0162\021.vega.AccountType\022\r\n\005asset\030\004 \001(\t\"8"
-  "\n\025PartyAccountsResponse\022\037\n\010accounts\030\001 \003("
-  "\0132\r.vega.Account\"8\n\025MarketAccountsReques"
-  "t\022\020\n\010marketID\030\001 \001(\t\022\r\n\005asset\030\002 \001(\t\"9\n\026Ma"
-  "rketAccountsResponse\022\037\n\010accounts\030\001 \003(\0132\r"
-  ".vega.Account\"s\n\026PrepareProposalRequest\022"
-  "\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\022\021\n\treference\030\002 "
-  "\001(\t\022-\n\010proposal\030\003 \001(\0132\023.vega.ProposalTer"
-  "msB\006\342\337\037\002 \001\"P\n\027PrepareProposalResponse\022\014\n"
-  "\004blob\030\001 \001(\014\022\'\n\017pendingProposal\030\002 \001(\0132\016.v"
-  "ega.Proposal\"6\n\022PrepareVoteRequest\022 \n\004vo"
-  "te\030\001 \001(\0132\n.vega.VoteB\006\342\337\037\002 \001\"=\n\023PrepareV"
-  "oteResponse\022\014\n\004blob\030\001 \001(\014\022\030\n\004vote\030\002 \001(\0132"
-  "\n.vega.Vote\"<\n\020OrderByIDRequest\022\027\n\007order"
-  "ID\030\001 \001(\tB\006\342\337\037\002 \001\022\017\n\007version\030\002 \001(\004\"8\n\031Ord"
-  "erByReferenceIDRequest\022\033\n\013referenceID\030\001 "
-  "\001(\tB\006\342\337\037\002 \001\"X\n\030OrderVersionsByIDRequest\022"
-  "\027\n\007orderID\030\001 \001(\tB\006\342\337\037\002 \001\022#\n\npagination\030\002"
-  " \001(\0132\017.api.Pagination\"4\n\025OrderVersionsRe"
-  "sponse\022\033\n\006orders\030\001 \003(\0132\013.vega.Order2\307\005\n\007"
-  "trading\022N\n\022PrepareSubmitOrder\022\027.api.Subm"
-  "itOrderRequest\032\037.api.PrepareSubmitOrderR"
-  "esponse\022N\n\022PrepareCancelOrder\022\027.api.Canc"
-  "elOrderRequest\032\037.api.PrepareCancelOrderR"
-  "esponse\022K\n\021PrepareAmendOrder\022\026.api.Amend"
-  "OrderRequest\032\036.api.PrepareAmendOrderResp"
-  "onse\022X\n\023NotifyTraderAccount\022\037.api.Notify"
-  "TraderAccountRequest\032 .api.NotifyTraderA"
-  "ccountResponse\0227\n\010Withdraw\022\024.api.Withdra"
-  "wRequest\032\025.api.WithdrawResponse\022R\n\021Submi"
-  "tTransaction\022\035.api.SubmitTransactionRequ"
-  "est\032\036.api.SubmitTransactionResponse\022L\n\017P"
-  "repareProposal\022\033.api.PrepareProposalRequ"
-  "est\032\034.api.PrepareProposalResponse\022@\n\013Pre"
-  "pareVote\022\027.api.PrepareVoteRequest\032\030.api."
-  "PrepareVoteResponse\022X\n\023PropagateChainEve"
-  "nt\022\037.api.PropagateChainEventRequest\032 .ap"
-  "i.PropagateChainEventResponse2\211\035\n\014tradin"
-  "g_data\022I\n\016MarketAccounts\022\032.api.MarketAcc"
-  "ountsRequest\032\033.api.MarketAccountsRespons"
-  "e\022F\n\rPartyAccounts\022\031.api.PartyAccountsRe"
-  "quest\032\032.api.PartyAccountsResponse\0224\n\007Can"
-  "dles\022\023.api.CandlesRequest\032\024.api.CandlesR"
-  "esponse\022I\n\016MarketDataByID\022\032.api.MarketDa"
-  "taByIDRequest\032\033.api.MarketDataByIDRespon"
-  "se\022\?\n\013MarketsData\022\026.google.protobuf.Empt"
-  "y\032\030.api.MarketsDataResponse\022=\n\nMarketByI"
-  "D\022\026.api.MarketByIDRequest\032\027.api.MarketBy"
-  "IDResponse\022@\n\013MarketDepth\022\027.api.MarketDe"
-  "pthRequest\032\030.api.MarketDepthResponse\0227\n\007"
-  "Markets\022\026.google.protobuf.Empty\032\024.api.Ma"
-  "rketsResponse\022U\n\022OrderByMarketAndID\022\036.ap"
-  "i.OrderByMarketAndIdRequest\032\037.api.OrderB"
-  "yMarketAndIdResponse\022O\n\020OrderByReference"
-  "\022\034.api.OrderByReferenceRequest\032\035.api.Ord"
-  "erByReferenceResponse\022I\n\016OrdersByMarket\022"
-  "\032.api.OrdersByMarketRequest\032\033.api.Orders"
-  "ByMarketResponse\022F\n\rOrdersByParty\022\031.api."
-  "OrdersByPartyRequest\032\032.api.OrdersByParty"
-  "Response\022/\n\tOrderByID\022\025.api.OrderByIDReq"
-  "uest\032\013.vega.Order\022A\n\022OrderByReferenceID\022"
-  "\036.api.OrderByReferenceIDRequest\032\013.vega.O"
-  "rder\022N\n\021OrderVersionsByID\022\035.api.OrderVer"
-  "sionsByIDRequest\032\032.api.OrderVersionsResp"
-  "onse\022C\n\014MarginLevels\022\030.api.MarginLevelsR"
-  "equest\032\031.api.MarginLevelsResponse\0227\n\007Par"
-  "ties\022\026.google.protobuf.Empty\032\024.api.Parti"
-  "esResponse\022:\n\tPartyByID\022\025.api.PartyByIDR"
-  "equest\032\026.api.PartyByIDResponse\022O\n\020Positi"
-  "onsByParty\022\034.api.PositionsByPartyRequest"
-  "\032\035.api.PositionsByPartyResponse\022:\n\tLastT"
-  "rade\022\025.api.LastTradeRequest\032\026.api.LastTr"
-  "adeResponse\022I\n\016TradesByMarket\022\032.api.Trad"
-  "esByMarketRequest\032\033.api.TradesByMarketRe"
-  "sponse\022F\n\rTradesByOrder\022\031.api.TradesByOr"
-  "derRequest\032\032.api.TradesByOrderResponse\022F"
-  "\n\rTradesByParty\022\031.api.TradesByPartyReque"
-  "st\032\032.api.TradesByPartyResponse\022C\n\014GetPro"
-  "posals\022\030.api.GetProposalsRequest\032\031.api.G"
-  "etProposalsResponse\022X\n\023GetProposalsByPar"
-  "ty\022\037.api.GetProposalsByPartyRequest\032 .ap"
-  "i.GetProposalsByPartyResponse\022L\n\017GetVote"
-  "sByParty\022\033.api.GetVotesByPartyRequest\032\034."
-  "api.GetVotesByPartyResponse\022^\n\025GetNewMar"
-  "ketProposals\022!.api.GetNewMarketProposals"
-  "Request\032\".api.GetNewMarketProposalsRespo"
-  "nse\022g\n\030GetUpdateMarketProposals\022$.api.Ge"
-  "tUpdateMarketProposalsRequest\032%.api.GetU"
-  "pdateMarketProposalsResponse\022v\n\035GetNetwo"
-  "rkParametersProposals\022).api.GetNetworkPa"
-  "rametersProposalsRequest\032*.api.GetNetwor"
-  "kParametersProposalsResponse\022[\n\024GetNewAs"
-  "setProposals\022 .api.GetNewAssetProposalsR"
-  "equest\032!.api.GetNewAssetProposalsRespons"
-  "e\022L\n\017GetProposalByID\022\033.api.GetProposalBy"
-  "IDRequest\032\034.api.GetProposalByIDResponse\022"
-  "a\n\026GetProposalByReference\022\".api.GetPropo"
-  "salByReferenceRequest\032#.api.GetProposalB"
-  "yReferenceResponse\022C\n\021ObserveGovernance\022"
-  "\026.google.protobuf.Empty\032\024.vega.Governanc"
-  "eData0\001\022R\n\025ObservePartyProposals\022!.api.O"
-  "bservePartyProposalsRequest\032\024.vega.Gover"
-  "nanceData0\001\022@\n\021ObservePartyVotes\022\035.api.O"
-  "bservePartyVotesRequest\032\n.vega.Vote0\001\022F\n"
-  "\024ObserveProposalVotes\022 .api.ObservePropo"
-  "salVotesRequest\032\n.vega.Vote0\001\0226\n\nStatist"
-  "ics\022\026.google.protobuf.Empty\032\020.vega.Stati"
-  "stics\022<\n\013GetVegaTime\022\026.google.protobuf.E"
-  "mpty\032\025.api.VegaTimeResponse\022C\n\021AccountsS"
-  "ubscribe\022\035.api.AccountsSubscribeRequest\032"
-  "\r.vega.Account0\001\022@\n\020CandlesSubscribe\022\034.a"
-  "pi.CandlesSubscribeRequest\032\014.vega.Candle"
-  "0\001\022P\n\025MarginLevelsSubscribe\022!.api.Margin"
-  "LevelsSubscribeRequest\032\022.vega.MarginLeve"
-  "ls0\001\022M\n\024MarketDepthSubscribe\022 .api.Marke"
-  "tDepthSubscribeRequest\032\021.vega.MarketDept"
-  "h0\001\022L\n\024MarketsDataSubscribe\022 .api.Market"
-  "sDataSubscribeRequest\032\020.vega.MarketData0"
-  "\001\022C\n\017OrdersSubscribe\022\033.api.OrdersSubscri"
-  "beRequest\032\021.api.OrdersStream0\001\022F\n\022Positi"
-  "onsSubscribe\022\036.api.PositionsSubscribeReq"
-  "uest\032\016.vega.Position0\001\022C\n\017TradesSubscrib"
-  "e\022\033.api.TradesSubscribeRequest\032\021.api.Tra"
-  "desStream0\001\022N\n\032TransferResponsesSubscrib"
-  "e\022\026.google.protobuf.Empty\032\026.vega.Transfe"
-  "rResponse0\001\022m\n\032GetNodeSignaturesAggregat"
-  "e\022&.api.GetNodeSignaturesAggregateReques"
-  "t\032\'.api.GetNodeSignaturesAggregateRespon"
-  "se\022:\n\tAssetByID\022\025.api.AssetByIDRequest\032\026"
-  ".api.AssetByIDResponse\0221\n\006Assets\022\022.api.A"
-  "ssetsRequest\032\023.api.AssetsResponseB%Z#cod"
-  "e.vegaprotocol.io/vega/proto/apib\006proto3"
+  "(\0132\017.api.Pagination\"5\n\026OrdersByMarketRes"
+  "ponse\022\033\n\006orders\030\001 \003(\0132\013.vega.Order\"T\n\024Or"
+  "dersByPartyRequest\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037"
+  "\002X\001\022#\n\npagination\030\002 \001(\0132\017.api.Pagination"
+  "\"4\n\025OrdersByPartyResponse\022\033\n\006orders\030\001 \003("
+  "\0132\013.vega.Order\"N\n\031OrderByMarketAndIdRequ"
+  "est\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037\002X\001\022\027\n\007orderID"
+  "\030\002 \001(\tB\006\342\337\037\002X\001\"8\n\032OrderByMarketAndIdResp"
+  "onse\022\032\n\005order\030\001 \001(\0132\013.vega.Order\"4\n\027Orde"
+  "rByReferenceRequest\022\031\n\treference\030\001 \001(\tB\006"
+  "\342\337\037\002X\001\"6\n\030OrderByReferenceResponse\022\032\n\005or"
+  "der\030\001 \001(\0132\013.vega.Order\"0\n\017MarketsRespons"
+  "e\022\035\n\007markets\030\001 \003(\0132\014.vega.Market\"l\n\016Cand"
+  "lesRequest\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037\002X\001\022\036\n\016"
+  "sinceTimestamp\030\002 \001(\003B\006\342\337\037\002\020\000\022 \n\010interval"
+  "\030\003 \001(\0162\016.vega.Interval\"0\n\017CandlesRespons"
+  "e\022\035\n\007candles\030\001 \003(\0132\014.vega.Candle\"@\n\022Mark"
+  "etDepthRequest\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037\002X\001"
+  "\022\020\n\010maxDepth\030\002 \001(\004\"\206\001\n\023MarketDepthRespon"
+  "se\022\020\n\010marketID\030\001 \001(\t\022\035\n\003buy\030\002 \003(\0132\020.vega"
+  ".PriceLevel\022\036\n\004sell\030\003 \003(\0132\020.vega.PriceLe"
+  "vel\022\036\n\tlastTrade\030\004 \001(\0132\013.vega.Trade\"V\n\025T"
+  "radesByMarketRequest\022\030\n\010marketID\030\001 \001(\tB\006"
+  "\342\337\037\002X\001\022#\n\npagination\030\002 \001(\0132\017.api.Paginat"
+  "ion\"5\n\026TradesByMarketResponse\022\033\n\006trades\030"
+  "\001 \003(\0132\013.vega.Trade\"D\n\027PositionsByPartyRe"
+  "quest\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\022\020\n\010market"
+  "ID\030\002 \001(\t\"=\n\030PositionsByPartyResponse\022!\n\t"
+  "positions\030\001 \003(\0132\016.vega.Position\"%\n\020VegaT"
+  "imeResponse\022\021\n\ttimestamp\030\001 \001(\003\"=\n\nPagina"
+  "tion\022\014\n\004skip\030\001 \001(\004\022\r\n\005limit\030\002 \001(\004\022\022\n\ndes"
+  "cending\030\003 \001(\010\"+\n\014OrdersStream\022\033\n\006orders\030"
+  "\001 \003(\0132\013.vega.Order\"+\n\014TradesStream\022\033\n\006tr"
+  "ades\030\001 \003(\0132\013.vega.Trade\"i\n\024PartyAccounts"
+  "Request\022\017\n\007partyID\030\001 \001(\t\022\020\n\010marketID\030\002 \001"
+  "(\t\022\037\n\004type\030\003 \001(\0162\021.vega.AccountType\022\r\n\005a"
+  "sset\030\004 \001(\t\"8\n\025PartyAccountsResponse\022\037\n\010a"
+  "ccounts\030\001 \003(\0132\r.vega.Account\"8\n\025MarketAc"
+  "countsRequest\022\020\n\010marketID\030\001 \001(\t\022\r\n\005asset"
+  "\030\002 \001(\t\"9\n\026MarketAccountsResponse\022\037\n\010acco"
+  "unts\030\001 \003(\0132\r.vega.Account\"s\n\026PrepareProp"
+  "osalRequest\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\022\021\n\t"
+  "reference\030\002 \001(\t\022-\n\010proposal\030\003 \001(\0132\023.vega"
+  ".ProposalTermsB\006\342\337\037\002 \001\"P\n\027PrepareProposa"
+  "lResponse\022\014\n\004blob\030\001 \001(\014\022\'\n\017pendingPropos"
+  "al\030\002 \001(\0132\016.vega.Proposal\"6\n\022PrepareVoteR"
+  "equest\022 \n\004vote\030\001 \001(\0132\n.vega.VoteB\006\342\337\037\002 \001"
+  "\"=\n\023PrepareVoteResponse\022\014\n\004blob\030\001 \001(\014\022\030\n"
+  "\004vote\030\002 \001(\0132\n.vega.Vote\"<\n\020OrderByIDRequ"
+  "est\022\027\n\007orderID\030\001 \001(\tB\006\342\337\037\002 \001\022\017\n\007version\030"
+  "\002 \001(\004\"8\n\031OrderByReferenceIDRequest\022\033\n\013re"
+  "ferenceID\030\001 \001(\tB\006\342\337\037\002 \001\"X\n\030OrderVersions"
+  "ByIDRequest\022\027\n\007orderID\030\001 \001(\tB\006\342\337\037\002 \001\022#\n\n"
+  "pagination\030\002 \001(\0132\017.api.Pagination\"4\n\025Ord"
+  "erVersionsResponse\022\033\n\006orders\030\001 \003(\0132\013.veg"
+  "a.Order2\307\005\n\007trading\022N\n\022PrepareSubmitOrde"
+  "r\022\027.api.SubmitOrderRequest\032\037.api.Prepare"
+  "SubmitOrderResponse\022N\n\022PrepareCancelOrde"
+  "r\022\027.api.CancelOrderRequest\032\037.api.Prepare"
+  "CancelOrderResponse\022K\n\021PrepareAmendOrder"
+  "\022\026.api.AmendOrderRequest\032\036.api.PrepareAm"
+  "endOrderResponse\022X\n\023NotifyTraderAccount\022"
+  "\037.api.NotifyTraderAccountRequest\032 .api.N"
+  "otifyTraderAccountResponse\0227\n\010Withdraw\022\024"
+  ".api.WithdrawRequest\032\025.api.WithdrawRespo"
+  "nse\022R\n\021SubmitTransaction\022\035.api.SubmitTra"
+  "nsactionRequest\032\036.api.SubmitTransactionR"
+  "esponse\022L\n\017PrepareProposal\022\033.api.Prepare"
+  "ProposalRequest\032\034.api.PrepareProposalRes"
+  "ponse\022@\n\013PrepareVote\022\027.api.PrepareVoteRe"
+  "quest\032\030.api.PrepareVoteResponse\022X\n\023Propa"
+  "gateChainEvent\022\037.api.PropagateChainEvent"
+  "Request\032 .api.PropagateChainEventRespons"
+  "e2\211\035\n\014trading_data\022I\n\016MarketAccounts\022\032.a"
+  "pi.MarketAccountsRequest\032\033.api.MarketAcc"
+  "ountsResponse\022F\n\rPartyAccounts\022\031.api.Par"
+  "tyAccountsRequest\032\032.api.PartyAccountsRes"
+  "ponse\0224\n\007Candles\022\023.api.CandlesRequest\032\024."
+  "api.CandlesResponse\022I\n\016MarketDataByID\022\032."
+  "api.MarketDataByIDRequest\032\033.api.MarketDa"
+  "taByIDResponse\022\?\n\013MarketsData\022\026.google.p"
+  "rotobuf.Empty\032\030.api.MarketsDataResponse\022"
+  "=\n\nMarketByID\022\026.api.MarketByIDRequest\032\027."
+  "api.MarketByIDResponse\022@\n\013MarketDepth\022\027."
+  "api.MarketDepthRequest\032\030.api.MarketDepth"
+  "Response\0227\n\007Markets\022\026.google.protobuf.Em"
+  "pty\032\024.api.MarketsResponse\022U\n\022OrderByMark"
+  "etAndID\022\036.api.OrderByMarketAndIdRequest\032"
+  "\037.api.OrderByMarketAndIdResponse\022O\n\020Orde"
+  "rByReference\022\034.api.OrderByReferenceReque"
+  "st\032\035.api.OrderByReferenceResponse\022I\n\016Ord"
+  "ersByMarket\022\032.api.OrdersByMarketRequest\032"
+  "\033.api.OrdersByMarketResponse\022F\n\rOrdersBy"
+  "Party\022\031.api.OrdersByPartyRequest\032\032.api.O"
+  "rdersByPartyResponse\022/\n\tOrderByID\022\025.api."
+  "OrderByIDRequest\032\013.vega.Order\022A\n\022OrderBy"
+  "ReferenceID\022\036.api.OrderByReferenceIDRequ"
+  "est\032\013.vega.Order\022N\n\021OrderVersionsByID\022\035."
+  "api.OrderVersionsByIDRequest\032\032.api.Order"
+  "VersionsResponse\022C\n\014MarginLevels\022\030.api.M"
+  "arginLevelsRequest\032\031.api.MarginLevelsRes"
+  "ponse\0227\n\007Parties\022\026.google.protobuf.Empty"
+  "\032\024.api.PartiesResponse\022:\n\tPartyByID\022\025.ap"
+  "i.PartyByIDRequest\032\026.api.PartyByIDRespon"
+  "se\022O\n\020PositionsByParty\022\034.api.PositionsBy"
+  "PartyRequest\032\035.api.PositionsByPartyRespo"
+  "nse\022:\n\tLastTrade\022\025.api.LastTradeRequest\032"
+  "\026.api.LastTradeResponse\022I\n\016TradesByMarke"
+  "t\022\032.api.TradesByMarketRequest\032\033.api.Trad"
+  "esByMarketResponse\022F\n\rTradesByOrder\022\031.ap"
+  "i.TradesByOrderRequest\032\032.api.TradesByOrd"
+  "erResponse\022F\n\rTradesByParty\022\031.api.Trades"
+  "ByPartyRequest\032\032.api.TradesByPartyRespon"
+  "se\022C\n\014GetProposals\022\030.api.GetProposalsReq"
+  "uest\032\031.api.GetProposalsResponse\022X\n\023GetPr"
+  "oposalsByParty\022\037.api.GetProposalsByParty"
+  "Request\032 .api.GetProposalsByPartyRespons"
+  "e\022L\n\017GetVotesByParty\022\033.api.GetVotesByPar"
+  "tyRequest\032\034.api.GetVotesByPartyResponse\022"
+  "^\n\025GetNewMarketProposals\022!.api.GetNewMar"
+  "ketProposalsRequest\032\".api.GetNewMarketPr"
+  "oposalsResponse\022g\n\030GetUpdateMarketPropos"
+  "als\022$.api.GetUpdateMarketProposalsReques"
+  "t\032%.api.GetUpdateMarketProposalsResponse"
+  "\022v\n\035GetNetworkParametersProposals\022).api."
+  "GetNetworkParametersProposalsRequest\032*.a"
+  "pi.GetNetworkParametersProposalsResponse"
+  "\022[\n\024GetNewAssetProposals\022 .api.GetNewAss"
+  "etProposalsRequest\032!.api.GetNewAssetProp"
+  "osalsResponse\022L\n\017GetProposalByID\022\033.api.G"
+  "etProposalByIDRequest\032\034.api.GetProposalB"
+  "yIDResponse\022a\n\026GetProposalByReference\022\"."
+  "api.GetProposalByReferenceRequest\032#.api."
+  "GetProposalByReferenceResponse\022C\n\021Observ"
+  "eGovernance\022\026.google.protobuf.Empty\032\024.ve"
+  "ga.GovernanceData0\001\022R\n\025ObservePartyPropo"
+  "sals\022!.api.ObservePartyProposalsRequest\032"
+  "\024.vega.GovernanceData0\001\022@\n\021ObservePartyV"
+  "otes\022\035.api.ObservePartyVotesRequest\032\n.ve"
+  "ga.Vote0\001\022F\n\024ObserveProposalVotes\022 .api."
+  "ObserveProposalVotesRequest\032\n.vega.Vote0"
+  "\001\0226\n\nStatistics\022\026.google.protobuf.Empty\032"
+  "\020.vega.Statistics\022<\n\013GetVegaTime\022\026.googl"
+  "e.protobuf.Empty\032\025.api.VegaTimeResponse\022"
+  "C\n\021AccountsSubscribe\022\035.api.AccountsSubsc"
+  "ribeRequest\032\r.vega.Account0\001\022@\n\020CandlesS"
+  "ubscribe\022\034.api.CandlesSubscribeRequest\032\014"
+  ".vega.Candle0\001\022P\n\025MarginLevelsSubscribe\022"
+  "!.api.MarginLevelsSubscribeRequest\032\022.veg"
+  "a.MarginLevels0\001\022M\n\024MarketDepthSubscribe"
+  "\022 .api.MarketDepthSubscribeRequest\032\021.veg"
+  "a.MarketDepth0\001\022L\n\024MarketsDataSubscribe\022"
+  " .api.MarketsDataSubscribeRequest\032\020.vega"
+  ".MarketData0\001\022C\n\017OrdersSubscribe\022\033.api.O"
+  "rdersSubscribeRequest\032\021.api.OrdersStream"
+  "0\001\022F\n\022PositionsSubscribe\022\036.api.Positions"
+  "SubscribeRequest\032\016.vega.Position0\001\022C\n\017Tr"
+  "adesSubscribe\022\033.api.TradesSubscribeReque"
+  "st\032\021.api.TradesStream0\001\022N\n\032TransferRespo"
+  "nsesSubscribe\022\026.google.protobuf.Empty\032\026."
+  "vega.TransferResponse0\001\022m\n\032GetNodeSignat"
+  "uresAggregate\022&.api.GetNodeSignaturesAgg"
+  "regateRequest\032\'.api.GetNodeSignaturesAgg"
+  "regateResponse\022:\n\tAssetByID\022\025.api.AssetB"
+  "yIDRequest\032\026.api.AssetByIDResponse\0221\n\006As"
+  "sets\022\022.api.AssetsRequest\032\023.api.AssetsRes"
+  "ponseB%Z#code.vegaprotocol.io/vega/proto"
+  "/apib\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fapi_2ftrading_2eproto = {
   false, InitDefaults_proto_2fapi_2ftrading_2eproto, 
   descriptor_table_protodef_proto_2fapi_2ftrading_2eproto,
-  "proto/api/trading.proto", &assign_descriptors_table_proto_2fapi_2ftrading_2eproto, 11040,
+  "proto/api/trading.proto", &assign_descriptors_table_proto_2fapi_2ftrading_2eproto, 11012,
 };
 
 void AddDescriptors_proto_2fapi_2ftrading_2eproto() {
@@ -23026,7 +23024,6 @@ OrdersByMarketRequest::HasBitSetters::pagination(const OrdersByMarketRequest* ms
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int OrdersByMarketRequest::kMarketIDFieldNumber;
 const int OrdersByMarketRequest::kPaginationFieldNumber;
-const int OrdersByMarketRequest::kOpenFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 OrdersByMarketRequest::OrdersByMarketRequest()
@@ -23047,7 +23044,6 @@ OrdersByMarketRequest::OrdersByMarketRequest(const OrdersByMarketRequest& from)
   } else {
     pagination_ = nullptr;
   }
-  open_ = from.open_;
   // @@protoc_insertion_point(copy_constructor:api.OrdersByMarketRequest)
 }
 
@@ -23055,9 +23051,7 @@ void OrdersByMarketRequest::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_OrdersByMarketRequest_proto_2fapi_2ftrading_2eproto.base);
   marketid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&pagination_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&open_) -
-      reinterpret_cast<char*>(&pagination_)) + sizeof(open_));
+  pagination_ = nullptr;
 }
 
 OrdersByMarketRequest::~OrdersByMarketRequest() {
@@ -23090,7 +23084,6 @@ void OrdersByMarketRequest::Clear() {
     delete pagination_;
   }
   pagination_ = nullptr;
-  open_ = false;
   _internal_metadata_.Clear();
 }
 
@@ -23134,13 +23127,6 @@ const char* OrdersByMarketRequest::_InternalParse(const char* begin, const char*
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // bool open = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
-        msg->set_open(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -23203,19 +23189,6 @@ bool OrdersByMarketRequest::MergePartialFromCodedStream(
         break;
       }
 
-      // bool open = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &open_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -23259,11 +23232,6 @@ void OrdersByMarketRequest::SerializeWithCachedSizes(
       2, HasBitSetters::pagination(this), output);
   }
 
-  // bool open = 3;
-  if (this->open() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->open(), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -23293,11 +23261,6 @@ void OrdersByMarketRequest::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         2, HasBitSetters::pagination(this), target);
-  }
-
-  // bool open = 3;
-  if (this->open() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->open(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -23335,11 +23298,6 @@ size_t OrdersByMarketRequest::ByteSizeLong() const {
         *pagination_);
   }
 
-  // bool open = 3;
-  if (this->open() != 0) {
-    total_size += 1 + 1;
-  }
-
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -23374,9 +23332,6 @@ void OrdersByMarketRequest::MergeFrom(const OrdersByMarketRequest& from) {
   if (from.has_pagination()) {
     mutable_pagination()->::api::Pagination::MergeFrom(from.pagination());
   }
-  if (from.open() != 0) {
-    set_open(from.open());
-  }
 }
 
 void OrdersByMarketRequest::CopyFrom(const ::google::protobuf::Message& from) {
@@ -23407,7 +23362,6 @@ void OrdersByMarketRequest::InternalSwap(OrdersByMarketRequest* other) {
   marketid_.Swap(&other->marketid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(pagination_, other->pagination_);
-  swap(open_, other->open_);
 }
 
 ::google::protobuf::Metadata OrdersByMarketRequest::GetMetadata() const {
@@ -23717,7 +23671,6 @@ OrdersByPartyRequest::HasBitSetters::pagination(const OrdersByPartyRequest* msg)
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int OrdersByPartyRequest::kPartyIDFieldNumber;
 const int OrdersByPartyRequest::kPaginationFieldNumber;
-const int OrdersByPartyRequest::kOpenFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 OrdersByPartyRequest::OrdersByPartyRequest()
@@ -23738,7 +23691,6 @@ OrdersByPartyRequest::OrdersByPartyRequest(const OrdersByPartyRequest& from)
   } else {
     pagination_ = nullptr;
   }
-  open_ = from.open_;
   // @@protoc_insertion_point(copy_constructor:api.OrdersByPartyRequest)
 }
 
@@ -23746,9 +23698,7 @@ void OrdersByPartyRequest::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_OrdersByPartyRequest_proto_2fapi_2ftrading_2eproto.base);
   partyid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&pagination_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&open_) -
-      reinterpret_cast<char*>(&pagination_)) + sizeof(open_));
+  pagination_ = nullptr;
 }
 
 OrdersByPartyRequest::~OrdersByPartyRequest() {
@@ -23781,7 +23731,6 @@ void OrdersByPartyRequest::Clear() {
     delete pagination_;
   }
   pagination_ = nullptr;
-  open_ = false;
   _internal_metadata_.Clear();
 }
 
@@ -23825,13 +23774,6 @@ const char* OrdersByPartyRequest::_InternalParse(const char* begin, const char* 
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // bool open = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
-        msg->set_open(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -23894,19 +23836,6 @@ bool OrdersByPartyRequest::MergePartialFromCodedStream(
         break;
       }
 
-      // bool open = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &open_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -23950,11 +23879,6 @@ void OrdersByPartyRequest::SerializeWithCachedSizes(
       2, HasBitSetters::pagination(this), output);
   }
 
-  // bool open = 3;
-  if (this->open() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->open(), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -23984,11 +23908,6 @@ void OrdersByPartyRequest::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         2, HasBitSetters::pagination(this), target);
-  }
-
-  // bool open = 3;
-  if (this->open() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->open(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -24026,11 +23945,6 @@ size_t OrdersByPartyRequest::ByteSizeLong() const {
         *pagination_);
   }
 
-  // bool open = 3;
-  if (this->open() != 0) {
-    total_size += 1 + 1;
-  }
-
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -24065,9 +23979,6 @@ void OrdersByPartyRequest::MergeFrom(const OrdersByPartyRequest& from) {
   if (from.has_pagination()) {
     mutable_pagination()->::api::Pagination::MergeFrom(from.pagination());
   }
-  if (from.open() != 0) {
-    set_open(from.open());
-  }
 }
 
 void OrdersByPartyRequest::CopyFrom(const ::google::protobuf::Message& from) {
@@ -24098,7 +24009,6 @@ void OrdersByPartyRequest::InternalSwap(OrdersByPartyRequest* other) {
   partyid_.Swap(&other->partyid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(pagination_, other->pagination_);
-  swap(open_, other->open_);
 }
 
 ::google::protobuf::Metadata OrdersByPartyRequest::GetMetadata() const {

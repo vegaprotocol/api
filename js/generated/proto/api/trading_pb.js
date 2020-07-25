@@ -11715,8 +11715,7 @@ proto.api.OrdersByMarketRequest.prototype.toObject = function(opt_includeInstanc
 proto.api.OrdersByMarketRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pagination: (f = msg.getPagination()) && proto.api.Pagination.toObject(includeInstance, f),
-    open: jspb.Message.getFieldWithDefault(msg, 3, false)
+    pagination: (f = msg.getPagination()) && proto.api.Pagination.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11762,10 +11761,6 @@ proto.api.OrdersByMarketRequest.deserializeBinaryFromReader = function(msg, read
       reader.readMessage(value,proto.api.Pagination.deserializeBinaryFromReader);
       msg.setPagination(value);
       break;
-    case 3:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOpen(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -11808,13 +11803,6 @@ proto.api.OrdersByMarketRequest.serializeBinaryToWriter = function(message, writ
       2,
       f,
       proto.api.Pagination.serializeBinaryToWriter
-    );
-  }
-  f = message.getOpen();
-  if (f) {
-    writer.writeBool(
-      3,
-      f
     );
   }
 };
@@ -11865,23 +11853,6 @@ proto.api.OrdersByMarketRequest.prototype.clearPagination = function() {
  */
 proto.api.OrdersByMarketRequest.prototype.hasPagination = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional bool open = 3;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
- * @return {boolean}
- */
-proto.api.OrdersByMarketRequest.prototype.getOpen = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 3, false));
-};
-
-
-/** @param {boolean} value */
-proto.api.OrdersByMarketRequest.prototype.setOpen = function(value) {
-  jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
@@ -12070,8 +12041,7 @@ proto.api.OrdersByPartyRequest.prototype.toObject = function(opt_includeInstance
 proto.api.OrdersByPartyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     partyid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pagination: (f = msg.getPagination()) && proto.api.Pagination.toObject(includeInstance, f),
-    open: jspb.Message.getFieldWithDefault(msg, 3, false)
+    pagination: (f = msg.getPagination()) && proto.api.Pagination.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12117,10 +12087,6 @@ proto.api.OrdersByPartyRequest.deserializeBinaryFromReader = function(msg, reade
       reader.readMessage(value,proto.api.Pagination.deserializeBinaryFromReader);
       msg.setPagination(value);
       break;
-    case 3:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOpen(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -12163,13 +12129,6 @@ proto.api.OrdersByPartyRequest.serializeBinaryToWriter = function(message, write
       2,
       f,
       proto.api.Pagination.serializeBinaryToWriter
-    );
-  }
-  f = message.getOpen();
-  if (f) {
-    writer.writeBool(
-      3,
-      f
     );
   }
 };
@@ -12220,23 +12179,6 @@ proto.api.OrdersByPartyRequest.prototype.clearPagination = function() {
  */
 proto.api.OrdersByPartyRequest.prototype.hasPagination = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional bool open = 3;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
- * @return {boolean}
- */
-proto.api.OrdersByPartyRequest.prototype.getOpen = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 3, false));
-};
-
-
-/** @param {boolean} value */
-proto.api.OrdersByPartyRequest.prototype.setOpen = function(value) {
-  jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 

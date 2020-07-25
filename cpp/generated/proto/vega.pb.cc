@@ -1129,6 +1129,7 @@ const ::google::protobuf::uint32 TableStruct_proto_2fvega_2eproto::offsets[] PRO
   PROTOBUF_FIELD_OFFSET(::vega::MarketData, midprice_),
   PROTOBUF_FIELD_OFFSET(::vega::MarketData, market_),
   PROTOBUF_FIELD_OFFSET(::vega::MarketData, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::vega::MarketData, openinterest_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::ErrorDetail, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1192,9 +1193,9 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 320, -1, sizeof(::vega::TransferResponse)},
   { 327, -1, sizeof(::vega::MarginLevels)},
   { 340, -1, sizeof(::vega::MarketData)},
-  { 353, -1, sizeof(::vega::ErrorDetail)},
-  { 361, -1, sizeof(::vega::SignedBundle)},
-  { 371, -1, sizeof(::vega::NodeSignature)},
+  { 354, -1, sizeof(::vega::ErrorDetail)},
+  { 362, -1, sizeof(::vega::SignedBundle)},
+  { 372, -1, sizeof(::vega::NodeSignature)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -1369,63 +1370,64 @@ const char descriptor_table_protodef_proto_2fvega_2eproto[] =
   "\n\013searchLevel\030\002 \001(\004\022\025\n\rinitialMargin\030\003 \001"
   "(\004\022\036\n\026collateralReleaseLevel\030\004 \001(\004\022\017\n\007pa"
   "rtyID\030\005 \001(\t\022\020\n\010marketID\030\006 \001(\t\022\r\n\005asset\030\007"
-  " \001(\t\022\021\n\ttimestamp\030\010 \001(\003\"\262\001\n\nMarketData\022\021"
+  " \001(\t\022\021\n\ttimestamp\030\010 \001(\003\"\310\001\n\nMarketData\022\021"
   "\n\tmarkPrice\030\001 \001(\004\022\024\n\014bestBidPrice\030\002 \001(\004\022"
   "\025\n\rbestBidVolume\030\003 \001(\004\022\026\n\016bestOfferPrice"
   "\030\004 \001(\004\022\027\n\017bestOfferVolume\030\005 \001(\004\022\020\n\010midPr"
   "ice\030\006 \001(\004\022\016\n\006market\030\007 \001(\t\022\021\n\ttimestamp\030\010"
-  " \001(\003\";\n\013ErrorDetail\022\014\n\004code\030\001 \001(\005\022\017\n\007mes"
-  "sage\030\002 \001(\t\022\r\n\005inner\030\003 \001(\t\"V\n\014SignedBundl"
-  "e\022\014\n\004data\030\001 \001(\014\022\013\n\003sig\030\002 \001(\014\022\021\n\007address\030"
-  "e \001(\014H\000\022\020\n\006pubKey\030f \001(\014H\000B\006\n\004auth\"O\n\rNod"
-  "eSignature\022\n\n\002ID\030\001 \001(\t\022\013\n\003sig\030\002 \001(\014\022%\n\004k"
-  "ind\030\003 \001(\0162\027.vega.NodeSignatureKind*9\n\004Si"
-  "de\022\024\n\020SIDE_UNSPECIFIED\020\000\022\014\n\010SIDE_BUY\020\001\022\r"
-  "\n\tSIDE_SELL\020\002*\230\001\n\010Interval\022\030\n\024INTERVAL_U"
-  "NSPECIFIED\020\000\022\020\n\014INTERVAL_I1M\020<\022\021\n\014INTERV"
-  "AL_I5M\020\254\002\022\022\n\rINTERVAL_I15M\020\204\007\022\021\n\014INTERVA"
-  "L_I1H\020\220\034\022\022\n\014INTERVAL_I6H\020\340\250\001\022\022\n\014INTERVAL"
-  "_I1D\020\200\243\005*\261\005\n\nOrderError\022\024\n\020ORDER_ERROR_N"
-  "ONE\020\000\022!\n\035ORDER_ERROR_INVALID_MARKET_ID\020\001"
-  "\022 \n\034ORDER_ERROR_INVALID_ORDER_ID\020\002\022\037\n\033OR"
-  "DER_ERROR_OUT_OF_SEQUENCE\020\003\022&\n\"ORDER_ERR"
-  "OR_INVALID_REMAINING_SIZE\020\004\022\034\n\030ORDER_ERR"
-  "OR_TIME_FAILURE\020\005\022\037\n\033ORDER_ERROR_REMOVAL"
-  "_FAILURE\020\006\022+\n\'ORDER_ERROR_INVALID_EXPIRA"
-  "TION_DATETIME\020\007\022\'\n#ORDER_ERROR_INVALID_O"
-  "RDER_REFERENCE\020\010\022 \n\034ORDER_ERROR_EDIT_NOT"
-  "_ALLOWED\020\t\022\035\n\031ORDER_ERROR_AMEND_FAILURE\020"
-  "\n\022\031\n\025ORDER_ERROR_NOT_FOUND\020\013\022 \n\034ORDER_ER"
-  "ROR_INVALID_PARTY_ID\020\014\022\035\n\031ORDER_ERROR_MA"
-  "RKET_CLOSED\020\r\022#\n\037ORDER_ERROR_MARGIN_CHEC"
-  "K_FAILED\020\016\022\'\n#ORDER_ERROR_MISSING_GENERA"
-  "L_ACCOUNT\020\017\022\036\n\032ORDER_ERROR_INTERNAL_ERRO"
-  "R\020\020\022\034\n\030ORDER_ERROR_INVALID_SIZE\020\021\022#\n\037ORD"
-  "ER_ERROR_INVALID_PERSISTENCE\020\022\022\034\n\030ORDER_"
-  "ERROR_INVALID_TYPE\020\023*\202\001\n\013ChainStatus\022\034\n\030"
-  "CHAIN_STATUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_STAT"
-  "US_DISCONNECTED\020\001\022\032\n\026CHAIN_STATUS_REPLAY"
-  "ING\020\002\022\032\n\026CHAIN_STATUS_CONNECTED\020\003*\227\001\n\013Ac"
-  "countType\022\034\n\030ACCOUNT_TYPE_UNSPECIFIED\020\000\022"
-  "\032\n\026ACCOUNT_TYPE_INSURANCE\020\001\022\033\n\027ACCOUNT_T"
-  "YPE_SETTLEMENT\020\002\022\027\n\023ACCOUNT_TYPE_MARGIN\020"
-  "\003\022\030\n\024ACCOUNT_TYPE_GENERAL\020\004*\217\002\n\014Transfer"
-  "Type\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\026\n\022T"
-  "RANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSFER_TYPE_WIN"
-  "\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032\n\026TRANSFER_"
-  "TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_TYPE_MTM_WIN"
-  "\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_LOW\020\006\022\035\n\031TRAN"
-  "SFER_TYPE_MARGIN_HIGH\020\007\022$\n TRANSFER_TYPE"
-  "_MARGIN_CONFISCATED\020\010*\205\001\n\021NodeSignatureK"
-  "ind\022#\n\037NODE_SIGNATURE_KIND_UNSPECIFIED\020\000"
-  "\022!\n\035NODE_SIGNATURE_KIND_ASSET_NEW\020\001\022(\n$N"
-  "ODE_SIGNATURE_KIND_ASSET_WITHDRAWAL\020\002B!Z"
-  "\037code.vegaprotocol.io/vega/protob\006proto3"
+  " \001(\003\022\024\n\014openInterest\030\t \001(\004\";\n\013ErrorDetai"
+  "l\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\r\n\005inne"
+  "r\030\003 \001(\t\"V\n\014SignedBundle\022\014\n\004data\030\001 \001(\014\022\013\n"
+  "\003sig\030\002 \001(\014\022\021\n\007address\030e \001(\014H\000\022\020\n\006pubKey\030"
+  "f \001(\014H\000B\006\n\004auth\"O\n\rNodeSignature\022\n\n\002ID\030\001"
+  " \001(\t\022\013\n\003sig\030\002 \001(\014\022%\n\004kind\030\003 \001(\0162\027.vega.N"
+  "odeSignatureKind*9\n\004Side\022\024\n\020SIDE_UNSPECI"
+  "FIED\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n\tSIDE_SELL\020\002*\230\001\n\010"
+  "Interval\022\030\n\024INTERVAL_UNSPECIFIED\020\000\022\020\n\014IN"
+  "TERVAL_I1M\020<\022\021\n\014INTERVAL_I5M\020\254\002\022\022\n\rINTER"
+  "VAL_I15M\020\204\007\022\021\n\014INTERVAL_I1H\020\220\034\022\022\n\014INTERV"
+  "AL_I6H\020\340\250\001\022\022\n\014INTERVAL_I1D\020\200\243\005*\261\005\n\nOrder"
+  "Error\022\024\n\020ORDER_ERROR_NONE\020\000\022!\n\035ORDER_ERR"
+  "OR_INVALID_MARKET_ID\020\001\022 \n\034ORDER_ERROR_IN"
+  "VALID_ORDER_ID\020\002\022\037\n\033ORDER_ERROR_OUT_OF_S"
+  "EQUENCE\020\003\022&\n\"ORDER_ERROR_INVALID_REMAINI"
+  "NG_SIZE\020\004\022\034\n\030ORDER_ERROR_TIME_FAILURE\020\005\022"
+  "\037\n\033ORDER_ERROR_REMOVAL_FAILURE\020\006\022+\n\'ORDE"
+  "R_ERROR_INVALID_EXPIRATION_DATETIME\020\007\022\'\n"
+  "#ORDER_ERROR_INVALID_ORDER_REFERENCE\020\010\022 "
+  "\n\034ORDER_ERROR_EDIT_NOT_ALLOWED\020\t\022\035\n\031ORDE"
+  "R_ERROR_AMEND_FAILURE\020\n\022\031\n\025ORDER_ERROR_N"
+  "OT_FOUND\020\013\022 \n\034ORDER_ERROR_INVALID_PARTY_"
+  "ID\020\014\022\035\n\031ORDER_ERROR_MARKET_CLOSED\020\r\022#\n\037O"
+  "RDER_ERROR_MARGIN_CHECK_FAILED\020\016\022\'\n#ORDE"
+  "R_ERROR_MISSING_GENERAL_ACCOUNT\020\017\022\036\n\032ORD"
+  "ER_ERROR_INTERNAL_ERROR\020\020\022\034\n\030ORDER_ERROR"
+  "_INVALID_SIZE\020\021\022#\n\037ORDER_ERROR_INVALID_P"
+  "ERSISTENCE\020\022\022\034\n\030ORDER_ERROR_INVALID_TYPE"
+  "\020\023*\202\001\n\013ChainStatus\022\034\n\030CHAIN_STATUS_UNSPE"
+  "CIFIED\020\000\022\035\n\031CHAIN_STATUS_DISCONNECTED\020\001\022"
+  "\032\n\026CHAIN_STATUS_REPLAYING\020\002\022\032\n\026CHAIN_STA"
+  "TUS_CONNECTED\020\003*\227\001\n\013AccountType\022\034\n\030ACCOU"
+  "NT_TYPE_UNSPECIFIED\020\000\022\032\n\026ACCOUNT_TYPE_IN"
+  "SURANCE\020\001\022\033\n\027ACCOUNT_TYPE_SETTLEMENT\020\002\022\027"
+  "\n\023ACCOUNT_TYPE_MARGIN\020\003\022\030\n\024ACCOUNT_TYPE_"
+  "GENERAL\020\004*\217\002\n\014TransferType\022\035\n\031TRANSFER_T"
+  "YPE_UNSPECIFIED\020\000\022\026\n\022TRANSFER_TYPE_LOSS\020"
+  "\001\022\025\n\021TRANSFER_TYPE_WIN\020\002\022\027\n\023TRANSFER_TYP"
+  "E_CLOSE\020\003\022\032\n\026TRANSFER_TYPE_MTM_LOSS\020\004\022\031\n"
+  "\025TRANSFER_TYPE_MTM_WIN\020\005\022\034\n\030TRANSFER_TYP"
+  "E_MARGIN_LOW\020\006\022\035\n\031TRANSFER_TYPE_MARGIN_H"
+  "IGH\020\007\022$\n TRANSFER_TYPE_MARGIN_CONFISCATE"
+  "D\020\010*\205\001\n\021NodeSignatureKind\022#\n\037NODE_SIGNAT"
+  "URE_KIND_UNSPECIFIED\020\000\022!\n\035NODE_SIGNATURE"
+  "_KIND_ASSET_NEW\020\001\022(\n$NODE_SIGNATURE_KIND"
+  "_ASSET_WITHDRAWAL\020\002B!Z\037code.vegaprotocol"
+  ".io/vega/protob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fvega_2eproto = {
   false, InitDefaults_proto_2fvega_2eproto, 
   descriptor_table_protodef_proto_2fvega_2eproto,
-  "proto/vega.proto", &assign_descriptors_table_proto_2fvega_2eproto, 7040,
+  "proto/vega.proto", &assign_descriptors_table_proto_2fvega_2eproto, 7062,
 };
 
 void AddDescriptors_proto_2fvega_2eproto() {
@@ -18145,6 +18147,7 @@ const int MarketData::kBestOfferVolumeFieldNumber;
 const int MarketData::kMidPriceFieldNumber;
 const int MarketData::kMarketFieldNumber;
 const int MarketData::kTimestampFieldNumber;
+const int MarketData::kOpenInterestFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 MarketData::MarketData()
@@ -18161,8 +18164,8 @@ MarketData::MarketData(const MarketData& from)
     market_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.market_);
   }
   ::memcpy(&markprice_, &from.markprice_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&markprice_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&openinterest_) -
+    reinterpret_cast<char*>(&markprice_)) + sizeof(openinterest_));
   // @@protoc_insertion_point(copy_constructor:vega.MarketData)
 }
 
@@ -18171,8 +18174,8 @@ void MarketData::SharedCtor() {
       &scc_info_MarketData_proto_2fvega_2eproto.base);
   market_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&markprice_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&markprice_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&openinterest_) -
+      reinterpret_cast<char*>(&markprice_)) + sizeof(openinterest_));
 }
 
 MarketData::~MarketData() {
@@ -18201,8 +18204,8 @@ void MarketData::Clear() {
 
   market_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&markprice_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&markprice_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&openinterest_) -
+      reinterpret_cast<char*>(&markprice_)) + sizeof(openinterest_));
   _internal_metadata_.Clear();
 }
 
@@ -18281,6 +18284,13 @@ const char* MarketData::_InternalParse(const char* begin, const char* end, void*
       case 8: {
         if (static_cast<::google::protobuf::uint8>(tag) != 64) goto handle_unusual;
         msg->set_timestamp(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // uint64 openInterest = 9;
+      case 9: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 72) goto handle_unusual;
+        msg->set_openinterest(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -18424,6 +18434,19 @@ bool MarketData::MergePartialFromCodedStream(
         break;
       }
 
+      // uint64 openInterest = 9;
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (72 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &openinterest_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -18496,6 +18519,11 @@ void MarketData::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(8, this->timestamp(), output);
   }
 
+  // uint64 openInterest = 9;
+  if (this->openinterest() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(9, this->openinterest(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -18553,6 +18581,11 @@ void MarketData::SerializeWithCachedSizes(
   // int64 timestamp = 8;
   if (this->timestamp() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(8, this->timestamp(), target);
+  }
+
+  // uint64 openInterest = 9;
+  if (this->openinterest() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(9, this->openinterest(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -18632,6 +18665,13 @@ size_t MarketData::ByteSizeLong() const {
         this->timestamp());
   }
 
+  // uint64 openInterest = 9;
+  if (this->openinterest() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt64Size(
+        this->openinterest());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -18684,6 +18724,9 @@ void MarketData::MergeFrom(const MarketData& from) {
   if (from.timestamp() != 0) {
     set_timestamp(from.timestamp());
   }
+  if (from.openinterest() != 0) {
+    set_openinterest(from.openinterest());
+  }
 }
 
 void MarketData::CopyFrom(const ::google::protobuf::Message& from) {
@@ -18720,6 +18763,7 @@ void MarketData::InternalSwap(MarketData* other) {
   swap(bestoffervolume_, other->bestoffervolume_);
   swap(midprice_, other->midprice_);
   swap(timestamp_, other->timestamp_);
+  swap(openinterest_, other->openinterest_);
 }
 
 ::google::protobuf::Metadata MarketData::GetMetadata() const {
