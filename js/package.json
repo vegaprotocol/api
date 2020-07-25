@@ -1,6 +1,6 @@
 {
   "name": "vega-grpc",
-  "version": "0.20.0",
+  "version": "0.22.0",
   "description": "A GRPC client for Vega Protocol",
   "main": "generated/vegaprotocol/vegaapiclient.js",
   "scripts": {
