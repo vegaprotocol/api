@@ -34,6 +34,8 @@
 #include "proto/vega.pb.h"
 #include "proto/markets.pb.h"
 #include "proto/governance.pb.h"
+#include "proto/chain_events.pb.h"
+#include "proto/assets.pb.h"
 #include <google/protobuf/empty.pb.h>
 #include "github.com/mwitkow/go-proto-validators/validator.pb.h"
 // @@protoc_insertion_point(includes)
@@ -46,7 +48,7 @@ struct TableStruct_proto_2fapi_2ftrading_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[91]
+  static const ::google::protobuf::internal::ParseTable schema[99]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -60,6 +62,18 @@ extern AccountsSubscribeRequestDefaultTypeInternal _AccountsSubscribeRequest_def
 class AmendOrderRequest;
 class AmendOrderRequestDefaultTypeInternal;
 extern AmendOrderRequestDefaultTypeInternal _AmendOrderRequest_default_instance_;
+class AssetByIDRequest;
+class AssetByIDRequestDefaultTypeInternal;
+extern AssetByIDRequestDefaultTypeInternal _AssetByIDRequest_default_instance_;
+class AssetByIDResponse;
+class AssetByIDResponseDefaultTypeInternal;
+extern AssetByIDResponseDefaultTypeInternal _AssetByIDResponse_default_instance_;
+class AssetsRequest;
+class AssetsRequestDefaultTypeInternal;
+extern AssetsRequestDefaultTypeInternal _AssetsRequest_default_instance_;
+class AssetsResponse;
+class AssetsResponseDefaultTypeInternal;
+extern AssetsResponseDefaultTypeInternal _AssetsResponse_default_instance_;
 class CancelOrderRequest;
 class CancelOrderRequestDefaultTypeInternal;
 extern CancelOrderRequestDefaultTypeInternal _CancelOrderRequest_default_instance_;
@@ -90,6 +104,12 @@ extern GetNewMarketProposalsRequestDefaultTypeInternal _GetNewMarketProposalsReq
 class GetNewMarketProposalsResponse;
 class GetNewMarketProposalsResponseDefaultTypeInternal;
 extern GetNewMarketProposalsResponseDefaultTypeInternal _GetNewMarketProposalsResponse_default_instance_;
+class GetNodeSignaturesAggregateRequest;
+class GetNodeSignaturesAggregateRequestDefaultTypeInternal;
+extern GetNodeSignaturesAggregateRequestDefaultTypeInternal _GetNodeSignaturesAggregateRequest_default_instance_;
+class GetNodeSignaturesAggregateResponse;
+class GetNodeSignaturesAggregateResponseDefaultTypeInternal;
+extern GetNodeSignaturesAggregateResponseDefaultTypeInternal _GetNodeSignaturesAggregateResponse_default_instance_;
 class GetProposalByIDRequest;
 class GetProposalByIDRequestDefaultTypeInternal;
 extern GetProposalByIDRequestDefaultTypeInternal _GetProposalByIDRequest_default_instance_;
@@ -285,6 +305,12 @@ extern PrepareVoteRequestDefaultTypeInternal _PrepareVoteRequest_default_instanc
 class PrepareVoteResponse;
 class PrepareVoteResponseDefaultTypeInternal;
 extern PrepareVoteResponseDefaultTypeInternal _PrepareVoteResponse_default_instance_;
+class PropagateChainEventRequest;
+class PropagateChainEventRequestDefaultTypeInternal;
+extern PropagateChainEventRequestDefaultTypeInternal _PropagateChainEventRequest_default_instance_;
+class PropagateChainEventResponse;
+class PropagateChainEventResponseDefaultTypeInternal;
+extern PropagateChainEventResponseDefaultTypeInternal _PropagateChainEventResponse_default_instance_;
 class SubmitOrderRequest;
 class SubmitOrderRequestDefaultTypeInternal;
 extern SubmitOrderRequestDefaultTypeInternal _SubmitOrderRequest_default_instance_;
@@ -332,6 +358,10 @@ namespace google {
 namespace protobuf {
 template<> ::api::AccountsSubscribeRequest* Arena::CreateMaybeMessage<::api::AccountsSubscribeRequest>(Arena*);
 template<> ::api::AmendOrderRequest* Arena::CreateMaybeMessage<::api::AmendOrderRequest>(Arena*);
+template<> ::api::AssetByIDRequest* Arena::CreateMaybeMessage<::api::AssetByIDRequest>(Arena*);
+template<> ::api::AssetByIDResponse* Arena::CreateMaybeMessage<::api::AssetByIDResponse>(Arena*);
+template<> ::api::AssetsRequest* Arena::CreateMaybeMessage<::api::AssetsRequest>(Arena*);
+template<> ::api::AssetsResponse* Arena::CreateMaybeMessage<::api::AssetsResponse>(Arena*);
 template<> ::api::CancelOrderRequest* Arena::CreateMaybeMessage<::api::CancelOrderRequest>(Arena*);
 template<> ::api::CandlesRequest* Arena::CreateMaybeMessage<::api::CandlesRequest>(Arena*);
 template<> ::api::CandlesResponse* Arena::CreateMaybeMessage<::api::CandlesResponse>(Arena*);
@@ -342,6 +372,8 @@ template<> ::api::GetNewAssetProposalsRequest* Arena::CreateMaybeMessage<::api::
 template<> ::api::GetNewAssetProposalsResponse* Arena::CreateMaybeMessage<::api::GetNewAssetProposalsResponse>(Arena*);
 template<> ::api::GetNewMarketProposalsRequest* Arena::CreateMaybeMessage<::api::GetNewMarketProposalsRequest>(Arena*);
 template<> ::api::GetNewMarketProposalsResponse* Arena::CreateMaybeMessage<::api::GetNewMarketProposalsResponse>(Arena*);
+template<> ::api::GetNodeSignaturesAggregateRequest* Arena::CreateMaybeMessage<::api::GetNodeSignaturesAggregateRequest>(Arena*);
+template<> ::api::GetNodeSignaturesAggregateResponse* Arena::CreateMaybeMessage<::api::GetNodeSignaturesAggregateResponse>(Arena*);
 template<> ::api::GetProposalByIDRequest* Arena::CreateMaybeMessage<::api::GetProposalByIDRequest>(Arena*);
 template<> ::api::GetProposalByIDResponse* Arena::CreateMaybeMessage<::api::GetProposalByIDResponse>(Arena*);
 template<> ::api::GetProposalByReferenceRequest* Arena::CreateMaybeMessage<::api::GetProposalByReferenceRequest>(Arena*);
@@ -407,6 +439,8 @@ template<> ::api::PrepareProposalResponse* Arena::CreateMaybeMessage<::api::Prep
 template<> ::api::PrepareSubmitOrderResponse* Arena::CreateMaybeMessage<::api::PrepareSubmitOrderResponse>(Arena*);
 template<> ::api::PrepareVoteRequest* Arena::CreateMaybeMessage<::api::PrepareVoteRequest>(Arena*);
 template<> ::api::PrepareVoteResponse* Arena::CreateMaybeMessage<::api::PrepareVoteResponse>(Arena*);
+template<> ::api::PropagateChainEventRequest* Arena::CreateMaybeMessage<::api::PropagateChainEventRequest>(Arena*);
+template<> ::api::PropagateChainEventResponse* Arena::CreateMaybeMessage<::api::PropagateChainEventResponse>(Arena*);
 template<> ::api::SubmitOrderRequest* Arena::CreateMaybeMessage<::api::SubmitOrderRequest>(Arena*);
 template<> ::api::SubmitTransactionRequest* Arena::CreateMaybeMessage<::api::SubmitTransactionRequest>(Arena*);
 template<> ::api::SubmitTransactionResponse* Arena::CreateMaybeMessage<::api::SubmitTransactionResponse>(Arena*);
@@ -426,6 +460,233 @@ template<> ::api::WithdrawResponse* Arena::CreateMaybeMessage<::api::WithdrawRes
 namespace api {
 
 // ===================================================================
+
+class PropagateChainEventRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.PropagateChainEventRequest) */ {
+ public:
+  PropagateChainEventRequest();
+  virtual ~PropagateChainEventRequest();
+
+  PropagateChainEventRequest(const PropagateChainEventRequest& from);
+
+  inline PropagateChainEventRequest& operator=(const PropagateChainEventRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  PropagateChainEventRequest(PropagateChainEventRequest&& from) noexcept
+    : PropagateChainEventRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline PropagateChainEventRequest& operator=(PropagateChainEventRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const PropagateChainEventRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PropagateChainEventRequest* internal_default_instance() {
+    return reinterpret_cast<const PropagateChainEventRequest*>(
+               &_PropagateChainEventRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  void Swap(PropagateChainEventRequest* other);
+  friend void swap(PropagateChainEventRequest& a, PropagateChainEventRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PropagateChainEventRequest* New() const final {
+    return CreateMaybeMessage<PropagateChainEventRequest>(nullptr);
+  }
+
+  PropagateChainEventRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PropagateChainEventRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const PropagateChainEventRequest& from);
+  void MergeFrom(const PropagateChainEventRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PropagateChainEventRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .vega.ChainEvent evt = 1;
+  bool has_evt() const;
+  void clear_evt();
+  static const int kEvtFieldNumber = 1;
+  const ::vega::ChainEvent& evt() const;
+  ::vega::ChainEvent* release_evt();
+  ::vega::ChainEvent* mutable_evt();
+  void set_allocated_evt(::vega::ChainEvent* evt);
+
+  // @@protoc_insertion_point(class_scope:api.PropagateChainEventRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::vega::ChainEvent* evt_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class PropagateChainEventResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.PropagateChainEventResponse) */ {
+ public:
+  PropagateChainEventResponse();
+  virtual ~PropagateChainEventResponse();
+
+  PropagateChainEventResponse(const PropagateChainEventResponse& from);
+
+  inline PropagateChainEventResponse& operator=(const PropagateChainEventResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  PropagateChainEventResponse(PropagateChainEventResponse&& from) noexcept
+    : PropagateChainEventResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline PropagateChainEventResponse& operator=(PropagateChainEventResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const PropagateChainEventResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PropagateChainEventResponse* internal_default_instance() {
+    return reinterpret_cast<const PropagateChainEventResponse*>(
+               &_PropagateChainEventResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(PropagateChainEventResponse* other);
+  friend void swap(PropagateChainEventResponse& a, PropagateChainEventResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PropagateChainEventResponse* New() const final {
+    return CreateMaybeMessage<PropagateChainEventResponse>(nullptr);
+  }
+
+  PropagateChainEventResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PropagateChainEventResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const PropagateChainEventResponse& from);
+  void MergeFrom(const PropagateChainEventResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PropagateChainEventResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // bool success = 1;
+  void clear_success();
+  static const int kSuccessFieldNumber = 1;
+  bool success() const;
+  void set_success(bool value);
+
+  // @@protoc_insertion_point(class_scope:api.PropagateChainEventResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  bool success_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
 
 class SubmitTransactionRequest :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.SubmitTransactionRequest) */ {
@@ -465,7 +726,7 @@ class SubmitTransactionRequest :
                &_SubmitTransactionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   void Swap(SubmitTransactionRequest* other);
   friend void swap(SubmitTransactionRequest& a, SubmitTransactionRequest& b) {
@@ -580,7 +841,7 @@ class SubmitTransactionResponse :
                &_SubmitTransactionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   void Swap(SubmitTransactionResponse* other);
   friend void swap(SubmitTransactionResponse& a, SubmitTransactionResponse& b) {
@@ -692,7 +953,7 @@ class WithdrawRequest :
                &_WithdrawRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   void Swap(WithdrawRequest* other);
   friend void swap(WithdrawRequest& a, WithdrawRequest& b) {
@@ -807,7 +1068,7 @@ class WithdrawResponse :
                &_WithdrawResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   void Swap(WithdrawResponse* other);
   friend void swap(WithdrawResponse& a, WithdrawResponse& b) {
@@ -919,7 +1180,7 @@ class NotifyTraderAccountRequest :
                &_NotifyTraderAccountRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   void Swap(NotifyTraderAccountRequest* other);
   friend void swap(NotifyTraderAccountRequest& a, NotifyTraderAccountRequest& b) {
@@ -1034,7 +1295,7 @@ class NotifyTraderAccountResponse :
                &_NotifyTraderAccountResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   void Swap(NotifyTraderAccountResponse* other);
   friend void swap(NotifyTraderAccountResponse& a, NotifyTraderAccountResponse& b) {
@@ -1146,7 +1407,7 @@ class PrepareSubmitOrderResponse :
                &_PrepareSubmitOrderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   void Swap(PrepareSubmitOrderResponse* other);
   friend void swap(PrepareSubmitOrderResponse& a, PrepareSubmitOrderResponse& b) {
@@ -1281,7 +1542,7 @@ class PrepareCancelOrderResponse :
                &_PrepareCancelOrderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   void Swap(PrepareCancelOrderResponse* other);
   friend void swap(PrepareCancelOrderResponse& a, PrepareCancelOrderResponse& b) {
@@ -1401,7 +1662,7 @@ class PrepareAmendOrderResponse :
                &_PrepareAmendOrderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   void Swap(PrepareAmendOrderResponse* other);
   friend void swap(PrepareAmendOrderResponse& a, PrepareAmendOrderResponse& b) {
@@ -1521,7 +1782,7 @@ class SubmitOrderRequest :
                &_SubmitOrderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   void Swap(SubmitOrderRequest* other);
   friend void swap(SubmitOrderRequest& a, SubmitOrderRequest& b) {
@@ -1636,7 +1897,7 @@ class CancelOrderRequest :
                &_CancelOrderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   void Swap(CancelOrderRequest* other);
   friend void swap(CancelOrderRequest& a, CancelOrderRequest& b) {
@@ -1751,7 +2012,7 @@ class AmendOrderRequest :
                &_AmendOrderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   void Swap(AmendOrderRequest* other);
   friend void swap(AmendOrderRequest& a, AmendOrderRequest& b) {
@@ -1828,6 +2089,702 @@ class AmendOrderRequest :
 };
 // -------------------------------------------------------------------
 
+class AssetsRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.AssetsRequest) */ {
+ public:
+  AssetsRequest();
+  virtual ~AssetsRequest();
+
+  AssetsRequest(const AssetsRequest& from);
+
+  inline AssetsRequest& operator=(const AssetsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  AssetsRequest(AssetsRequest&& from) noexcept
+    : AssetsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AssetsRequest& operator=(AssetsRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const AssetsRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AssetsRequest* internal_default_instance() {
+    return reinterpret_cast<const AssetsRequest*>(
+               &_AssetsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  void Swap(AssetsRequest* other);
+  friend void swap(AssetsRequest& a, AssetsRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AssetsRequest* New() const final {
+    return CreateMaybeMessage<AssetsRequest>(nullptr);
+  }
+
+  AssetsRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AssetsRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const AssetsRequest& from);
+  void MergeFrom(const AssetsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AssetsRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:api.AssetsRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AssetsResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.AssetsResponse) */ {
+ public:
+  AssetsResponse();
+  virtual ~AssetsResponse();
+
+  AssetsResponse(const AssetsResponse& from);
+
+  inline AssetsResponse& operator=(const AssetsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  AssetsResponse(AssetsResponse&& from) noexcept
+    : AssetsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline AssetsResponse& operator=(AssetsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const AssetsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AssetsResponse* internal_default_instance() {
+    return reinterpret_cast<const AssetsResponse*>(
+               &_AssetsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  void Swap(AssetsResponse* other);
+  friend void swap(AssetsResponse& a, AssetsResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AssetsResponse* New() const final {
+    return CreateMaybeMessage<AssetsResponse>(nullptr);
+  }
+
+  AssetsResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AssetsResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const AssetsResponse& from);
+  void MergeFrom(const AssetsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AssetsResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .vega.Asset assets = 1;
+  int assets_size() const;
+  void clear_assets();
+  static const int kAssetsFieldNumber = 1;
+  ::vega::Asset* mutable_assets(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::Asset >*
+      mutable_assets();
+  const ::vega::Asset& assets(int index) const;
+  ::vega::Asset* add_assets();
+  const ::google::protobuf::RepeatedPtrField< ::vega::Asset >&
+      assets() const;
+
+  // @@protoc_insertion_point(class_scope:api.AssetsResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::vega::Asset > assets_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AssetByIDRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.AssetByIDRequest) */ {
+ public:
+  AssetByIDRequest();
+  virtual ~AssetByIDRequest();
+
+  AssetByIDRequest(const AssetByIDRequest& from);
+
+  inline AssetByIDRequest& operator=(const AssetByIDRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  AssetByIDRequest(AssetByIDRequest&& from) noexcept
+    : AssetByIDRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AssetByIDRequest& operator=(AssetByIDRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const AssetByIDRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AssetByIDRequest* internal_default_instance() {
+    return reinterpret_cast<const AssetByIDRequest*>(
+               &_AssetByIDRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  void Swap(AssetByIDRequest* other);
+  friend void swap(AssetByIDRequest& a, AssetByIDRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AssetByIDRequest* New() const final {
+    return CreateMaybeMessage<AssetByIDRequest>(nullptr);
+  }
+
+  AssetByIDRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AssetByIDRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const AssetByIDRequest& from);
+  void MergeFrom(const AssetByIDRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AssetByIDRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string ID = 1;
+  void clear_id();
+  static const int kIDFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // @@protoc_insertion_point(class_scope:api.AssetByIDRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AssetByIDResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.AssetByIDResponse) */ {
+ public:
+  AssetByIDResponse();
+  virtual ~AssetByIDResponse();
+
+  AssetByIDResponse(const AssetByIDResponse& from);
+
+  inline AssetByIDResponse& operator=(const AssetByIDResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  AssetByIDResponse(AssetByIDResponse&& from) noexcept
+    : AssetByIDResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline AssetByIDResponse& operator=(AssetByIDResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const AssetByIDResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AssetByIDResponse* internal_default_instance() {
+    return reinterpret_cast<const AssetByIDResponse*>(
+               &_AssetByIDResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  void Swap(AssetByIDResponse* other);
+  friend void swap(AssetByIDResponse& a, AssetByIDResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AssetByIDResponse* New() const final {
+    return CreateMaybeMessage<AssetByIDResponse>(nullptr);
+  }
+
+  AssetByIDResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AssetByIDResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const AssetByIDResponse& from);
+  void MergeFrom(const AssetByIDResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AssetByIDResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .vega.Asset asset = 1;
+  bool has_asset() const;
+  void clear_asset();
+  static const int kAssetFieldNumber = 1;
+  const ::vega::Asset& asset() const;
+  ::vega::Asset* release_asset();
+  ::vega::Asset* mutable_asset();
+  void set_allocated_asset(::vega::Asset* asset);
+
+  // @@protoc_insertion_point(class_scope:api.AssetByIDResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::vega::Asset* asset_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetNodeSignaturesAggregateRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetNodeSignaturesAggregateRequest) */ {
+ public:
+  GetNodeSignaturesAggregateRequest();
+  virtual ~GetNodeSignaturesAggregateRequest();
+
+  GetNodeSignaturesAggregateRequest(const GetNodeSignaturesAggregateRequest& from);
+
+  inline GetNodeSignaturesAggregateRequest& operator=(const GetNodeSignaturesAggregateRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetNodeSignaturesAggregateRequest(GetNodeSignaturesAggregateRequest&& from) noexcept
+    : GetNodeSignaturesAggregateRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetNodeSignaturesAggregateRequest& operator=(GetNodeSignaturesAggregateRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetNodeSignaturesAggregateRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetNodeSignaturesAggregateRequest* internal_default_instance() {
+    return reinterpret_cast<const GetNodeSignaturesAggregateRequest*>(
+               &_GetNodeSignaturesAggregateRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  void Swap(GetNodeSignaturesAggregateRequest* other);
+  friend void swap(GetNodeSignaturesAggregateRequest& a, GetNodeSignaturesAggregateRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetNodeSignaturesAggregateRequest* New() const final {
+    return CreateMaybeMessage<GetNodeSignaturesAggregateRequest>(nullptr);
+  }
+
+  GetNodeSignaturesAggregateRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetNodeSignaturesAggregateRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetNodeSignaturesAggregateRequest& from);
+  void MergeFrom(const GetNodeSignaturesAggregateRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetNodeSignaturesAggregateRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string ID = 1;
+  void clear_id();
+  static const int kIDFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // @@protoc_insertion_point(class_scope:api.GetNodeSignaturesAggregateRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetNodeSignaturesAggregateResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.GetNodeSignaturesAggregateResponse) */ {
+ public:
+  GetNodeSignaturesAggregateResponse();
+  virtual ~GetNodeSignaturesAggregateResponse();
+
+  GetNodeSignaturesAggregateResponse(const GetNodeSignaturesAggregateResponse& from);
+
+  inline GetNodeSignaturesAggregateResponse& operator=(const GetNodeSignaturesAggregateResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GetNodeSignaturesAggregateResponse(GetNodeSignaturesAggregateResponse&& from) noexcept
+    : GetNodeSignaturesAggregateResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetNodeSignaturesAggregateResponse& operator=(GetNodeSignaturesAggregateResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const GetNodeSignaturesAggregateResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetNodeSignaturesAggregateResponse* internal_default_instance() {
+    return reinterpret_cast<const GetNodeSignaturesAggregateResponse*>(
+               &_GetNodeSignaturesAggregateResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    19;
+
+  void Swap(GetNodeSignaturesAggregateResponse* other);
+  friend void swap(GetNodeSignaturesAggregateResponse& a, GetNodeSignaturesAggregateResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetNodeSignaturesAggregateResponse* New() const final {
+    return CreateMaybeMessage<GetNodeSignaturesAggregateResponse>(nullptr);
+  }
+
+  GetNodeSignaturesAggregateResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetNodeSignaturesAggregateResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GetNodeSignaturesAggregateResponse& from);
+  void MergeFrom(const GetNodeSignaturesAggregateResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetNodeSignaturesAggregateResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .vega.NodeSignature signatures = 1;
+  int signatures_size() const;
+  void clear_signatures();
+  static const int kSignaturesFieldNumber = 1;
+  ::vega::NodeSignature* mutable_signatures(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::NodeSignature >*
+      mutable_signatures();
+  const ::vega::NodeSignature& signatures(int index) const;
+  ::vega::NodeSignature* add_signatures();
+  const ::google::protobuf::RepeatedPtrField< ::vega::NodeSignature >&
+      signatures() const;
+
+  // @@protoc_insertion_point(class_scope:api.GetNodeSignaturesAggregateResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::vega::NodeSignature > signatures_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
 class OptionalProposalState :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.OptionalProposalState) */ {
  public:
@@ -1866,7 +2823,7 @@ class OptionalProposalState :
                &_OptionalProposalState_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    20;
 
   void Swap(OptionalProposalState* other);
   friend void swap(OptionalProposalState& a, OptionalProposalState& b) {
@@ -1978,7 +2935,7 @@ class GetProposalsRequest :
                &_GetProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    21;
 
   void Swap(GetProposalsRequest* other);
   friend void swap(GetProposalsRequest& a, GetProposalsRequest& b) {
@@ -2093,7 +3050,7 @@ class GetProposalsResponse :
                &_GetProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    22;
 
   void Swap(GetProposalsResponse* other);
   friend void swap(GetProposalsResponse& a, GetProposalsResponse& b) {
@@ -2211,7 +3168,7 @@ class GetProposalsByPartyRequest :
                &_GetProposalsByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    23;
 
   void Swap(GetProposalsByPartyRequest* other);
   friend void swap(GetProposalsByPartyRequest& a, GetProposalsByPartyRequest& b) {
@@ -2341,7 +3298,7 @@ class GetProposalsByPartyResponse :
                &_GetProposalsByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    24;
 
   void Swap(GetProposalsByPartyResponse* other);
   friend void swap(GetProposalsByPartyResponse& a, GetProposalsByPartyResponse& b) {
@@ -2459,7 +3416,7 @@ class GetVotesByPartyRequest :
                &_GetVotesByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    25;
 
   void Swap(GetVotesByPartyRequest* other);
   friend void swap(GetVotesByPartyRequest& a, GetVotesByPartyRequest& b) {
@@ -2579,7 +3536,7 @@ class GetVotesByPartyResponse :
                &_GetVotesByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    26;
 
   void Swap(GetVotesByPartyResponse* other);
   friend void swap(GetVotesByPartyResponse& a, GetVotesByPartyResponse& b) {
@@ -2697,7 +3654,7 @@ class GetNewMarketProposalsRequest :
                &_GetNewMarketProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    27;
 
   void Swap(GetNewMarketProposalsRequest* other);
   friend void swap(GetNewMarketProposalsRequest& a, GetNewMarketProposalsRequest& b) {
@@ -2812,7 +3769,7 @@ class GetNewMarketProposalsResponse :
                &_GetNewMarketProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    28;
 
   void Swap(GetNewMarketProposalsResponse* other);
   friend void swap(GetNewMarketProposalsResponse& a, GetNewMarketProposalsResponse& b) {
@@ -2930,7 +3887,7 @@ class GetUpdateMarketProposalsRequest :
                &_GetUpdateMarketProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    29;
 
   void Swap(GetUpdateMarketProposalsRequest* other);
   friend void swap(GetUpdateMarketProposalsRequest& a, GetUpdateMarketProposalsRequest& b) {
@@ -3060,7 +4017,7 @@ class GetUpdateMarketProposalsResponse :
                &_GetUpdateMarketProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    30;
 
   void Swap(GetUpdateMarketProposalsResponse* other);
   friend void swap(GetUpdateMarketProposalsResponse& a, GetUpdateMarketProposalsResponse& b) {
@@ -3178,7 +4135,7 @@ class GetNetworkParametersProposalsRequest :
                &_GetNetworkParametersProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    31;
 
   void Swap(GetNetworkParametersProposalsRequest* other);
   friend void swap(GetNetworkParametersProposalsRequest& a, GetNetworkParametersProposalsRequest& b) {
@@ -3293,7 +4250,7 @@ class GetNetworkParametersProposalsResponse :
                &_GetNetworkParametersProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    32;
 
   void Swap(GetNetworkParametersProposalsResponse* other);
   friend void swap(GetNetworkParametersProposalsResponse& a, GetNetworkParametersProposalsResponse& b) {
@@ -3411,7 +4368,7 @@ class GetNewAssetProposalsRequest :
                &_GetNewAssetProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    33;
 
   void Swap(GetNewAssetProposalsRequest* other);
   friend void swap(GetNewAssetProposalsRequest& a, GetNewAssetProposalsRequest& b) {
@@ -3526,7 +4483,7 @@ class GetNewAssetProposalsResponse :
                &_GetNewAssetProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    34;
 
   void Swap(GetNewAssetProposalsResponse* other);
   friend void swap(GetNewAssetProposalsResponse& a, GetNewAssetProposalsResponse& b) {
@@ -3644,7 +4601,7 @@ class GetProposalByIDRequest :
                &_GetProposalByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    35;
 
   void Swap(GetProposalByIDRequest* other);
   friend void swap(GetProposalByIDRequest& a, GetProposalByIDRequest& b) {
@@ -3764,7 +4721,7 @@ class GetProposalByIDResponse :
                &_GetProposalByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    36;
 
   void Swap(GetProposalByIDResponse* other);
   friend void swap(GetProposalByIDResponse& a, GetProposalByIDResponse& b) {
@@ -3879,7 +4836,7 @@ class GetProposalByReferenceRequest :
                &_GetProposalByReferenceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    37;
 
   void Swap(GetProposalByReferenceRequest* other);
   friend void swap(GetProposalByReferenceRequest& a, GetProposalByReferenceRequest& b) {
@@ -3999,7 +4956,7 @@ class GetProposalByReferenceResponse :
                &_GetProposalByReferenceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    38;
 
   void Swap(GetProposalByReferenceResponse* other);
   friend void swap(GetProposalByReferenceResponse& a, GetProposalByReferenceResponse& b) {
@@ -4114,7 +5071,7 @@ class ObservePartyProposalsRequest :
                &_ObservePartyProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    39;
 
   void Swap(ObservePartyProposalsRequest* other);
   friend void swap(ObservePartyProposalsRequest& a, ObservePartyProposalsRequest& b) {
@@ -4234,7 +5191,7 @@ class ObserveProposalVotesRequest :
                &_ObserveProposalVotesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    40;
 
   void Swap(ObserveProposalVotesRequest* other);
   friend void swap(ObserveProposalVotesRequest& a, ObserveProposalVotesRequest& b) {
@@ -4354,7 +5311,7 @@ class ObservePartyVotesRequest :
                &_ObservePartyVotesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    41;
 
   void Swap(ObservePartyVotesRequest* other);
   friend void swap(ObservePartyVotesRequest& a, ObservePartyVotesRequest& b) {
@@ -4474,7 +5431,7 @@ class MarginLevelsSubscribeRequest :
                &_MarginLevelsSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    42;
 
   void Swap(MarginLevelsSubscribeRequest* other);
   friend void swap(MarginLevelsSubscribeRequest& a, MarginLevelsSubscribeRequest& b) {
@@ -4609,7 +5566,7 @@ class MarginLevelsRequest :
                &_MarginLevelsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    43;
 
   void Swap(MarginLevelsRequest* other);
   friend void swap(MarginLevelsRequest& a, MarginLevelsRequest& b) {
@@ -4744,7 +5701,7 @@ class MarginLevelsResponse :
                &_MarginLevelsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    44;
 
   void Swap(MarginLevelsResponse* other);
   friend void swap(MarginLevelsResponse& a, MarginLevelsResponse& b) {
@@ -4862,7 +5819,7 @@ class MarketsDataSubscribeRequest :
                &_MarketsDataSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    45;
 
   void Swap(MarketsDataSubscribeRequest* other);
   friend void swap(MarketsDataSubscribeRequest& a, MarketsDataSubscribeRequest& b) {
@@ -4982,7 +5939,7 @@ class MarketDataByIDRequest :
                &_MarketDataByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    46;
 
   void Swap(MarketDataByIDRequest* other);
   friend void swap(MarketDataByIDRequest& a, MarketDataByIDRequest& b) {
@@ -5102,7 +6059,7 @@ class MarketDataByIDResponse :
                &_MarketDataByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    47;
 
   void Swap(MarketDataByIDResponse* other);
   friend void swap(MarketDataByIDResponse& a, MarketDataByIDResponse& b) {
@@ -5217,7 +6174,7 @@ class MarketsDataResponse :
                &_MarketsDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    48;
 
   void Swap(MarketsDataResponse* other);
   friend void swap(MarketsDataResponse& a, MarketsDataResponse& b) {
@@ -5335,7 +6292,7 @@ class LastTradeRequest :
                &_LastTradeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    49;
 
   void Swap(LastTradeRequest* other);
   friend void swap(LastTradeRequest& a, LastTradeRequest& b) {
@@ -5455,7 +6412,7 @@ class LastTradeResponse :
                &_LastTradeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    50;
 
   void Swap(LastTradeResponse* other);
   friend void swap(LastTradeResponse& a, LastTradeResponse& b) {
@@ -5570,7 +6527,7 @@ class MarketByIDRequest :
                &_MarketByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    51;
 
   void Swap(MarketByIDRequest* other);
   friend void swap(MarketByIDRequest& a, MarketByIDRequest& b) {
@@ -5690,7 +6647,7 @@ class MarketByIDResponse :
                &_MarketByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    52;
 
   void Swap(MarketByIDResponse* other);
   friend void swap(MarketByIDResponse& a, MarketByIDResponse& b) {
@@ -5805,7 +6762,7 @@ class PartyByIDRequest :
                &_PartyByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    53;
 
   void Swap(PartyByIDRequest* other);
   friend void swap(PartyByIDRequest& a, PartyByIDRequest& b) {
@@ -5925,7 +6882,7 @@ class PartyByIDResponse :
                &_PartyByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    54;
 
   void Swap(PartyByIDResponse* other);
   friend void swap(PartyByIDResponse& a, PartyByIDResponse& b) {
@@ -6040,7 +6997,7 @@ class PartiesResponse :
                &_PartiesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    55;
 
   void Swap(PartiesResponse* other);
   friend void swap(PartiesResponse& a, PartiesResponse& b) {
@@ -6158,7 +7115,7 @@ class TradesByPartyRequest :
                &_TradesByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    56;
 
   void Swap(TradesByPartyRequest* other);
   friend void swap(TradesByPartyRequest& a, TradesByPartyRequest& b) {
@@ -6303,7 +7260,7 @@ class TradesByPartyResponse :
                &_TradesByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    57;
 
   void Swap(TradesByPartyResponse* other);
   friend void swap(TradesByPartyResponse& a, TradesByPartyResponse& b) {
@@ -6421,7 +7378,7 @@ class TradesByOrderRequest :
                &_TradesByOrderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    58;
 
   void Swap(TradesByOrderRequest* other);
   friend void swap(TradesByOrderRequest& a, TradesByOrderRequest& b) {
@@ -6541,7 +7498,7 @@ class TradesByOrderResponse :
                &_TradesByOrderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    59;
 
   void Swap(TradesByOrderResponse* other);
   friend void swap(TradesByOrderResponse& a, TradesByOrderResponse& b) {
@@ -6659,7 +7616,7 @@ class AccountsSubscribeRequest :
                &_AccountsSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    60;
 
   void Swap(AccountsSubscribeRequest* other);
   friend void swap(AccountsSubscribeRequest& a, AccountsSubscribeRequest& b) {
@@ -6816,7 +7773,7 @@ class OrdersSubscribeRequest :
                &_OrdersSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    61;
 
   void Swap(OrdersSubscribeRequest* other);
   friend void swap(OrdersSubscribeRequest& a, OrdersSubscribeRequest& b) {
@@ -6951,7 +7908,7 @@ class TradesSubscribeRequest :
                &_TradesSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    62;
 
   void Swap(TradesSubscribeRequest* other);
   friend void swap(TradesSubscribeRequest& a, TradesSubscribeRequest& b) {
@@ -7086,7 +8043,7 @@ class CandlesSubscribeRequest :
                &_CandlesSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    63;
 
   void Swap(CandlesSubscribeRequest* other);
   friend void swap(CandlesSubscribeRequest& a, CandlesSubscribeRequest& b) {
@@ -7213,7 +8170,7 @@ class MarketDepthSubscribeRequest :
                &_MarketDepthSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    64;
 
   void Swap(MarketDepthSubscribeRequest* other);
   friend void swap(MarketDepthSubscribeRequest& a, MarketDepthSubscribeRequest& b) {
@@ -7333,7 +8290,7 @@ class PositionsSubscribeRequest :
                &_PositionsSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    65;
 
   void Swap(PositionsSubscribeRequest* other);
   friend void swap(PositionsSubscribeRequest& a, PositionsSubscribeRequest& b) {
@@ -7453,7 +8410,7 @@ class OrdersByMarketRequest :
                &_OrdersByMarketRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    66;
 
   void Swap(OrdersByMarketRequest* other);
   friend void swap(OrdersByMarketRequest& a, OrdersByMarketRequest& b) {
@@ -7533,12 +8490,6 @@ class OrdersByMarketRequest :
   ::api::Pagination* mutable_pagination();
   void set_allocated_pagination(::api::Pagination* pagination);
 
-  // bool open = 3;
-  void clear_open();
-  static const int kOpenFieldNumber = 3;
-  bool open() const;
-  void set_open(bool value);
-
   // @@protoc_insertion_point(class_scope:api.OrdersByMarketRequest)
  private:
   class HasBitSetters;
@@ -7546,7 +8497,6 @@ class OrdersByMarketRequest :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr marketid_;
   ::api::Pagination* pagination_;
-  bool open_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
@@ -7590,7 +8540,7 @@ class OrdersByMarketResponse :
                &_OrdersByMarketResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    67;
 
   void Swap(OrdersByMarketResponse* other);
   friend void swap(OrdersByMarketResponse& a, OrdersByMarketResponse& b) {
@@ -7708,7 +8658,7 @@ class OrdersByPartyRequest :
                &_OrdersByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    68;
 
   void Swap(OrdersByPartyRequest* other);
   friend void swap(OrdersByPartyRequest& a, OrdersByPartyRequest& b) {
@@ -7788,12 +8738,6 @@ class OrdersByPartyRequest :
   ::api::Pagination* mutable_pagination();
   void set_allocated_pagination(::api::Pagination* pagination);
 
-  // bool open = 3;
-  void clear_open();
-  static const int kOpenFieldNumber = 3;
-  bool open() const;
-  void set_open(bool value);
-
   // @@protoc_insertion_point(class_scope:api.OrdersByPartyRequest)
  private:
   class HasBitSetters;
@@ -7801,7 +8745,6 @@ class OrdersByPartyRequest :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr partyid_;
   ::api::Pagination* pagination_;
-  bool open_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
@@ -7845,7 +8788,7 @@ class OrdersByPartyResponse :
                &_OrdersByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    69;
 
   void Swap(OrdersByPartyResponse* other);
   friend void swap(OrdersByPartyResponse& a, OrdersByPartyResponse& b) {
@@ -7963,7 +8906,7 @@ class OrderByMarketAndIdRequest :
                &_OrderByMarketAndIdRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    70;
 
   void Swap(OrderByMarketAndIdRequest* other);
   friend void swap(OrderByMarketAndIdRequest& a, OrderByMarketAndIdRequest& b) {
@@ -8098,7 +9041,7 @@ class OrderByMarketAndIdResponse :
                &_OrderByMarketAndIdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    71;
 
   void Swap(OrderByMarketAndIdResponse* other);
   friend void swap(OrderByMarketAndIdResponse& a, OrderByMarketAndIdResponse& b) {
@@ -8213,7 +9156,7 @@ class OrderByReferenceRequest :
                &_OrderByReferenceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    72;
 
   void Swap(OrderByReferenceRequest* other);
   friend void swap(OrderByReferenceRequest& a, OrderByReferenceRequest& b) {
@@ -8333,7 +9276,7 @@ class OrderByReferenceResponse :
                &_OrderByReferenceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    73;
 
   void Swap(OrderByReferenceResponse* other);
   friend void swap(OrderByReferenceResponse& a, OrderByReferenceResponse& b) {
@@ -8448,7 +9391,7 @@ class MarketsResponse :
                &_MarketsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    74;
 
   void Swap(MarketsResponse* other);
   friend void swap(MarketsResponse& a, MarketsResponse& b) {
@@ -8566,7 +9509,7 @@ class CandlesRequest :
                &_CandlesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    75;
 
   void Swap(CandlesRequest* other);
   friend void swap(CandlesRequest& a, CandlesRequest& b) {
@@ -8700,7 +9643,7 @@ class CandlesResponse :
                &_CandlesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    76;
 
   void Swap(CandlesResponse* other);
   friend void swap(CandlesResponse& a, CandlesResponse& b) {
@@ -8818,7 +9761,7 @@ class MarketDepthRequest :
                &_MarketDepthRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    77;
 
   void Swap(MarketDepthRequest* other);
   friend void swap(MarketDepthRequest& a, MarketDepthRequest& b) {
@@ -8945,7 +9888,7 @@ class MarketDepthResponse :
                &_MarketDepthResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    78;
 
   void Swap(MarketDepthResponse* other);
   friend void swap(MarketDepthResponse& a, MarketDepthResponse& b) {
@@ -9101,7 +10044,7 @@ class TradesByMarketRequest :
                &_TradesByMarketRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    79;
 
   void Swap(TradesByMarketRequest* other);
   friend void swap(TradesByMarketRequest& a, TradesByMarketRequest& b) {
@@ -9231,7 +10174,7 @@ class TradesByMarketResponse :
                &_TradesByMarketResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    80;
 
   void Swap(TradesByMarketResponse* other);
   friend void swap(TradesByMarketResponse& a, TradesByMarketResponse& b) {
@@ -9349,7 +10292,7 @@ class PositionsByPartyRequest :
                &_PositionsByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    81;
 
   void Swap(PositionsByPartyRequest* other);
   friend void swap(PositionsByPartyRequest& a, PositionsByPartyRequest& b) {
@@ -9484,7 +10427,7 @@ class PositionsByPartyResponse :
                &_PositionsByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    82;
 
   void Swap(PositionsByPartyResponse* other);
   friend void swap(PositionsByPartyResponse& a, PositionsByPartyResponse& b) {
@@ -9602,7 +10545,7 @@ class VegaTimeResponse :
                &_VegaTimeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    83;
 
   void Swap(VegaTimeResponse* other);
   friend void swap(VegaTimeResponse& a, VegaTimeResponse& b) {
@@ -9714,7 +10657,7 @@ class Pagination :
                &_Pagination_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    84;
 
   void Swap(Pagination* other);
   friend void swap(Pagination& a, Pagination& b) {
@@ -9840,7 +10783,7 @@ class OrdersStream :
                &_OrdersStream_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    85;
 
   void Swap(OrdersStream* other);
   friend void swap(OrdersStream& a, OrdersStream& b) {
@@ -9958,7 +10901,7 @@ class TradesStream :
                &_TradesStream_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    86;
 
   void Swap(TradesStream* other);
   friend void swap(TradesStream& a, TradesStream& b) {
@@ -10076,7 +11019,7 @@ class PartyAccountsRequest :
                &_PartyAccountsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    87;
 
   void Swap(PartyAccountsRequest* other);
   friend void swap(PartyAccountsRequest& a, PartyAccountsRequest& b) {
@@ -10233,7 +11176,7 @@ class PartyAccountsResponse :
                &_PartyAccountsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    88;
 
   void Swap(PartyAccountsResponse* other);
   friend void swap(PartyAccountsResponse& a, PartyAccountsResponse& b) {
@@ -10351,7 +11294,7 @@ class MarketAccountsRequest :
                &_MarketAccountsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    81;
+    89;
 
   void Swap(MarketAccountsRequest* other);
   friend void swap(MarketAccountsRequest& a, MarketAccountsRequest& b) {
@@ -10486,7 +11429,7 @@ class MarketAccountsResponse :
                &_MarketAccountsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    82;
+    90;
 
   void Swap(MarketAccountsResponse* other);
   friend void swap(MarketAccountsResponse& a, MarketAccountsResponse& b) {
@@ -10604,7 +11547,7 @@ class PrepareProposalRequest :
                &_PrepareProposalRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    83;
+    91;
 
   void Swap(PrepareProposalRequest* other);
   friend void swap(PrepareProposalRequest& a, PrepareProposalRequest& b) {
@@ -10749,7 +11692,7 @@ class PrepareProposalResponse :
                &_PrepareProposalResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    84;
+    92;
 
   void Swap(PrepareProposalResponse* other);
   friend void swap(PrepareProposalResponse& a, PrepareProposalResponse& b) {
@@ -10879,7 +11822,7 @@ class PrepareVoteRequest :
                &_PrepareVoteRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    85;
+    93;
 
   void Swap(PrepareVoteRequest* other);
   friend void swap(PrepareVoteRequest& a, PrepareVoteRequest& b) {
@@ -10994,7 +11937,7 @@ class PrepareVoteResponse :
                &_PrepareVoteResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    86;
+    94;
 
   void Swap(PrepareVoteResponse* other);
   friend void swap(PrepareVoteResponse& a, PrepareVoteResponse& b) {
@@ -11124,7 +12067,7 @@ class OrderByIDRequest :
                &_OrderByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    87;
+    95;
 
   void Swap(OrderByIDRequest* other);
   friend void swap(OrderByIDRequest& a, OrderByIDRequest& b) {
@@ -11251,7 +12194,7 @@ class OrderByReferenceIDRequest :
                &_OrderByReferenceIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    88;
+    96;
 
   void Swap(OrderByReferenceIDRequest* other);
   friend void swap(OrderByReferenceIDRequest& a, OrderByReferenceIDRequest& b) {
@@ -11371,7 +12314,7 @@ class OrderVersionsByIDRequest :
                &_OrderVersionsByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    89;
+    97;
 
   void Swap(OrderVersionsByIDRequest* other);
   friend void swap(OrderVersionsByIDRequest& a, OrderVersionsByIDRequest& b) {
@@ -11501,7 +12444,7 @@ class OrderVersionsResponse :
                &_OrderVersionsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    90;
+    98;
 
   void Swap(OrderVersionsResponse* other);
   friend void swap(OrderVersionsResponse& a, OrderVersionsResponse& b) {
@@ -11588,6 +12531,73 @@ class OrderVersionsResponse :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// PropagateChainEventRequest
+
+// .vega.ChainEvent evt = 1;
+inline bool PropagateChainEventRequest::has_evt() const {
+  return this != internal_default_instance() && evt_ != nullptr;
+}
+inline const ::vega::ChainEvent& PropagateChainEventRequest::evt() const {
+  const ::vega::ChainEvent* p = evt_;
+  // @@protoc_insertion_point(field_get:api.PropagateChainEventRequest.evt)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::ChainEvent*>(
+      &::vega::_ChainEvent_default_instance_);
+}
+inline ::vega::ChainEvent* PropagateChainEventRequest::release_evt() {
+  // @@protoc_insertion_point(field_release:api.PropagateChainEventRequest.evt)
+
+  ::vega::ChainEvent* temp = evt_;
+  evt_ = nullptr;
+  return temp;
+}
+inline ::vega::ChainEvent* PropagateChainEventRequest::mutable_evt() {
+
+  if (evt_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::ChainEvent>(GetArenaNoVirtual());
+    evt_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.PropagateChainEventRequest.evt)
+  return evt_;
+}
+inline void PropagateChainEventRequest::set_allocated_evt(::vega::ChainEvent* evt) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(evt_);
+  }
+  if (evt) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      evt = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, evt, submessage_arena);
+    }
+
+  } else {
+
+  }
+  evt_ = evt;
+  // @@protoc_insertion_point(field_set_allocated:api.PropagateChainEventRequest.evt)
+}
+
+// -------------------------------------------------------------------
+
+// PropagateChainEventResponse
+
+// bool success = 1;
+inline void PropagateChainEventResponse::clear_success() {
+  success_ = false;
+}
+inline bool PropagateChainEventResponse::success() const {
+  // @@protoc_insertion_point(field_get:api.PropagateChainEventResponse.success)
+  return success_;
+}
+inline void PropagateChainEventResponse::set_success(bool value) {
+
+  success_ = value;
+  // @@protoc_insertion_point(field_set:api.PropagateChainEventResponse.success)
+}
+
+// -------------------------------------------------------------------
+
 // SubmitTransactionRequest
 
 // .vega.SignedBundle tx = 1;
@@ -11602,13 +12612,13 @@ inline const ::vega::SignedBundle& SubmitTransactionRequest::tx() const {
 }
 inline ::vega::SignedBundle* SubmitTransactionRequest::release_tx() {
   // @@protoc_insertion_point(field_release:api.SubmitTransactionRequest.tx)
-  
+
   ::vega::SignedBundle* temp = tx_;
   tx_ = nullptr;
   return temp;
 }
 inline ::vega::SignedBundle* SubmitTransactionRequest::mutable_tx() {
-  
+
   if (tx_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::SignedBundle>(GetArenaNoVirtual());
     tx_ = p;
@@ -11627,9 +12637,9 @@ inline void SubmitTransactionRequest::set_allocated_tx(::vega::SignedBundle* tx)
       tx = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, tx, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   tx_ = tx;
   // @@protoc_insertion_point(field_set_allocated:api.SubmitTransactionRequest.tx)
@@ -11648,7 +12658,7 @@ inline bool SubmitTransactionResponse::success() const {
   return success_;
 }
 inline void SubmitTransactionResponse::set_success(bool value) {
-  
+
   success_ = value;
   // @@protoc_insertion_point(field_set:api.SubmitTransactionResponse.success)
 }
@@ -11669,13 +12679,13 @@ inline const ::vega::Withdraw& WithdrawRequest::withdraw() const {
 }
 inline ::vega::Withdraw* WithdrawRequest::release_withdraw() {
   // @@protoc_insertion_point(field_release:api.WithdrawRequest.withdraw)
-  
+
   ::vega::Withdraw* temp = withdraw_;
   withdraw_ = nullptr;
   return temp;
 }
 inline ::vega::Withdraw* WithdrawRequest::mutable_withdraw() {
-  
+
   if (withdraw_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::Withdraw>(GetArenaNoVirtual());
     withdraw_ = p;
@@ -11694,9 +12704,9 @@ inline void WithdrawRequest::set_allocated_withdraw(::vega::Withdraw* withdraw) 
       withdraw = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, withdraw, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   withdraw_ = withdraw;
   // @@protoc_insertion_point(field_set_allocated:api.WithdrawRequest.withdraw)
@@ -11715,7 +12725,7 @@ inline bool WithdrawResponse::success() const {
   return success_;
 }
 inline void WithdrawResponse::set_success(bool value) {
-  
+
   success_ = value;
   // @@protoc_insertion_point(field_set:api.WithdrawResponse.success)
 }
@@ -11736,13 +12746,13 @@ inline const ::vega::NotifyTraderAccount& NotifyTraderAccountRequest::notif() co
 }
 inline ::vega::NotifyTraderAccount* NotifyTraderAccountRequest::release_notif() {
   // @@protoc_insertion_point(field_release:api.NotifyTraderAccountRequest.notif)
-  
+
   ::vega::NotifyTraderAccount* temp = notif_;
   notif_ = nullptr;
   return temp;
 }
 inline ::vega::NotifyTraderAccount* NotifyTraderAccountRequest::mutable_notif() {
-  
+
   if (notif_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::NotifyTraderAccount>(GetArenaNoVirtual());
     notif_ = p;
@@ -11761,9 +12771,9 @@ inline void NotifyTraderAccountRequest::set_allocated_notif(::vega::NotifyTrader
       notif = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, notif, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   notif_ = notif;
   // @@protoc_insertion_point(field_set_allocated:api.NotifyTraderAccountRequest.notif)
@@ -11782,7 +12792,7 @@ inline bool NotifyTraderAccountResponse::submitted() const {
   return submitted_;
 }
 inline void NotifyTraderAccountResponse::set_submitted(bool value) {
-  
+
   submitted_ = value;
   // @@protoc_insertion_point(field_set:api.NotifyTraderAccountResponse.submitted)
 }
@@ -11800,13 +12810,13 @@ inline const ::std::string& PrepareSubmitOrderResponse::blob() const {
   return blob_.GetNoArena();
 }
 inline void PrepareSubmitOrderResponse::set_blob(const ::std::string& value) {
-  
+
   blob_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.PrepareSubmitOrderResponse.blob)
 }
 #if LANG_CXX11
 inline void PrepareSubmitOrderResponse::set_blob(::std::string&& value) {
-  
+
   blob_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.PrepareSubmitOrderResponse.blob)
@@ -11814,31 +12824,31 @@ inline void PrepareSubmitOrderResponse::set_blob(::std::string&& value) {
 #endif
 inline void PrepareSubmitOrderResponse::set_blob(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   blob_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.PrepareSubmitOrderResponse.blob)
 }
 inline void PrepareSubmitOrderResponse::set_blob(const void* value, size_t size) {
-  
+
   blob_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.PrepareSubmitOrderResponse.blob)
 }
 inline ::std::string* PrepareSubmitOrderResponse::mutable_blob() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.PrepareSubmitOrderResponse.blob)
   return blob_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PrepareSubmitOrderResponse::release_blob() {
   // @@protoc_insertion_point(field_release:api.PrepareSubmitOrderResponse.blob)
-  
+
   return blob_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void PrepareSubmitOrderResponse::set_allocated_blob(::std::string* blob) {
   if (blob != nullptr) {
-    
+
   } else {
-    
+
   }
   blob_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), blob);
   // @@protoc_insertion_point(field_set_allocated:api.PrepareSubmitOrderResponse.blob)
@@ -11853,13 +12863,13 @@ inline const ::std::string& PrepareSubmitOrderResponse::submitid() const {
   return submitid_.GetNoArena();
 }
 inline void PrepareSubmitOrderResponse::set_submitid(const ::std::string& value) {
-  
+
   submitid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.PrepareSubmitOrderResponse.submitID)
 }
 #if LANG_CXX11
 inline void PrepareSubmitOrderResponse::set_submitid(::std::string&& value) {
-  
+
   submitid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.PrepareSubmitOrderResponse.submitID)
@@ -11867,31 +12877,31 @@ inline void PrepareSubmitOrderResponse::set_submitid(::std::string&& value) {
 #endif
 inline void PrepareSubmitOrderResponse::set_submitid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   submitid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.PrepareSubmitOrderResponse.submitID)
 }
 inline void PrepareSubmitOrderResponse::set_submitid(const char* value, size_t size) {
-  
+
   submitid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.PrepareSubmitOrderResponse.submitID)
 }
 inline ::std::string* PrepareSubmitOrderResponse::mutable_submitid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.PrepareSubmitOrderResponse.submitID)
   return submitid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PrepareSubmitOrderResponse::release_submitid() {
   // @@protoc_insertion_point(field_release:api.PrepareSubmitOrderResponse.submitID)
-  
+
   return submitid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void PrepareSubmitOrderResponse::set_allocated_submitid(::std::string* submitid) {
   if (submitid != nullptr) {
-    
+
   } else {
-    
+
   }
   submitid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), submitid);
   // @@protoc_insertion_point(field_set_allocated:api.PrepareSubmitOrderResponse.submitID)
@@ -11910,13 +12920,13 @@ inline const ::std::string& PrepareCancelOrderResponse::blob() const {
   return blob_.GetNoArena();
 }
 inline void PrepareCancelOrderResponse::set_blob(const ::std::string& value) {
-  
+
   blob_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.PrepareCancelOrderResponse.blob)
 }
 #if LANG_CXX11
 inline void PrepareCancelOrderResponse::set_blob(::std::string&& value) {
-  
+
   blob_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.PrepareCancelOrderResponse.blob)
@@ -11924,31 +12934,31 @@ inline void PrepareCancelOrderResponse::set_blob(::std::string&& value) {
 #endif
 inline void PrepareCancelOrderResponse::set_blob(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   blob_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.PrepareCancelOrderResponse.blob)
 }
 inline void PrepareCancelOrderResponse::set_blob(const void* value, size_t size) {
-  
+
   blob_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.PrepareCancelOrderResponse.blob)
 }
 inline ::std::string* PrepareCancelOrderResponse::mutable_blob() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.PrepareCancelOrderResponse.blob)
   return blob_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PrepareCancelOrderResponse::release_blob() {
   // @@protoc_insertion_point(field_release:api.PrepareCancelOrderResponse.blob)
-  
+
   return blob_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void PrepareCancelOrderResponse::set_allocated_blob(::std::string* blob) {
   if (blob != nullptr) {
-    
+
   } else {
-    
+
   }
   blob_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), blob);
   // @@protoc_insertion_point(field_set_allocated:api.PrepareCancelOrderResponse.blob)
@@ -11967,13 +12977,13 @@ inline const ::std::string& PrepareAmendOrderResponse::blob() const {
   return blob_.GetNoArena();
 }
 inline void PrepareAmendOrderResponse::set_blob(const ::std::string& value) {
-  
+
   blob_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.PrepareAmendOrderResponse.blob)
 }
 #if LANG_CXX11
 inline void PrepareAmendOrderResponse::set_blob(::std::string&& value) {
-  
+
   blob_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.PrepareAmendOrderResponse.blob)
@@ -11981,31 +12991,31 @@ inline void PrepareAmendOrderResponse::set_blob(::std::string&& value) {
 #endif
 inline void PrepareAmendOrderResponse::set_blob(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   blob_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.PrepareAmendOrderResponse.blob)
 }
 inline void PrepareAmendOrderResponse::set_blob(const void* value, size_t size) {
-  
+
   blob_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.PrepareAmendOrderResponse.blob)
 }
 inline ::std::string* PrepareAmendOrderResponse::mutable_blob() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.PrepareAmendOrderResponse.blob)
   return blob_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PrepareAmendOrderResponse::release_blob() {
   // @@protoc_insertion_point(field_release:api.PrepareAmendOrderResponse.blob)
-  
+
   return blob_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void PrepareAmendOrderResponse::set_allocated_blob(::std::string* blob) {
   if (blob != nullptr) {
-    
+
   } else {
-    
+
   }
   blob_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), blob);
   // @@protoc_insertion_point(field_set_allocated:api.PrepareAmendOrderResponse.blob)
@@ -12027,13 +13037,13 @@ inline const ::vega::OrderSubmission& SubmitOrderRequest::submission() const {
 }
 inline ::vega::OrderSubmission* SubmitOrderRequest::release_submission() {
   // @@protoc_insertion_point(field_release:api.SubmitOrderRequest.submission)
-  
+
   ::vega::OrderSubmission* temp = submission_;
   submission_ = nullptr;
   return temp;
 }
 inline ::vega::OrderSubmission* SubmitOrderRequest::mutable_submission() {
-  
+
   if (submission_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::OrderSubmission>(GetArenaNoVirtual());
     submission_ = p;
@@ -12052,9 +13062,9 @@ inline void SubmitOrderRequest::set_allocated_submission(::vega::OrderSubmission
       submission = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, submission, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   submission_ = submission;
   // @@protoc_insertion_point(field_set_allocated:api.SubmitOrderRequest.submission)
@@ -12076,13 +13086,13 @@ inline const ::vega::OrderCancellation& CancelOrderRequest::cancellation() const
 }
 inline ::vega::OrderCancellation* CancelOrderRequest::release_cancellation() {
   // @@protoc_insertion_point(field_release:api.CancelOrderRequest.cancellation)
-  
+
   ::vega::OrderCancellation* temp = cancellation_;
   cancellation_ = nullptr;
   return temp;
 }
 inline ::vega::OrderCancellation* CancelOrderRequest::mutable_cancellation() {
-  
+
   if (cancellation_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::OrderCancellation>(GetArenaNoVirtual());
     cancellation_ = p;
@@ -12101,9 +13111,9 @@ inline void CancelOrderRequest::set_allocated_cancellation(::vega::OrderCancella
       cancellation = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, cancellation, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   cancellation_ = cancellation;
   // @@protoc_insertion_point(field_set_allocated:api.CancelOrderRequest.cancellation)
@@ -12125,13 +13135,13 @@ inline const ::vega::OrderAmendment& AmendOrderRequest::amendment() const {
 }
 inline ::vega::OrderAmendment* AmendOrderRequest::release_amendment() {
   // @@protoc_insertion_point(field_release:api.AmendOrderRequest.amendment)
-  
+
   ::vega::OrderAmendment* temp = amendment_;
   amendment_ = nullptr;
   return temp;
 }
 inline ::vega::OrderAmendment* AmendOrderRequest::mutable_amendment() {
-  
+
   if (amendment_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::OrderAmendment>(GetArenaNoVirtual());
     amendment_ = p;
@@ -12150,12 +13160,241 @@ inline void AmendOrderRequest::set_allocated_amendment(::vega::OrderAmendment* a
       amendment = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, amendment, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   amendment_ = amendment;
   // @@protoc_insertion_point(field_set_allocated:api.AmendOrderRequest.amendment)
+}
+
+// -------------------------------------------------------------------
+
+// AssetsRequest
+
+// -------------------------------------------------------------------
+
+// AssetsResponse
+
+// repeated .vega.Asset assets = 1;
+inline int AssetsResponse::assets_size() const {
+  return assets_.size();
+}
+inline ::vega::Asset* AssetsResponse::mutable_assets(int index) {
+  // @@protoc_insertion_point(field_mutable:api.AssetsResponse.assets)
+  return assets_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::Asset >*
+AssetsResponse::mutable_assets() {
+  // @@protoc_insertion_point(field_mutable_list:api.AssetsResponse.assets)
+  return &assets_;
+}
+inline const ::vega::Asset& AssetsResponse::assets(int index) const {
+  // @@protoc_insertion_point(field_get:api.AssetsResponse.assets)
+  return assets_.Get(index);
+}
+inline ::vega::Asset* AssetsResponse::add_assets() {
+  // @@protoc_insertion_point(field_add:api.AssetsResponse.assets)
+  return assets_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::Asset >&
+AssetsResponse::assets() const {
+  // @@protoc_insertion_point(field_list:api.AssetsResponse.assets)
+  return assets_;
+}
+
+// -------------------------------------------------------------------
+
+// AssetByIDRequest
+
+// string ID = 1;
+inline void AssetByIDRequest::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& AssetByIDRequest::id() const {
+  // @@protoc_insertion_point(field_get:api.AssetByIDRequest.ID)
+  return id_.GetNoArena();
+}
+inline void AssetByIDRequest::set_id(const ::std::string& value) {
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.AssetByIDRequest.ID)
+}
+#if LANG_CXX11
+inline void AssetByIDRequest::set_id(::std::string&& value) {
+
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.AssetByIDRequest.ID)
+}
+#endif
+inline void AssetByIDRequest::set_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.AssetByIDRequest.ID)
+}
+inline void AssetByIDRequest::set_id(const char* value, size_t size) {
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.AssetByIDRequest.ID)
+}
+inline ::std::string* AssetByIDRequest::mutable_id() {
+
+  // @@protoc_insertion_point(field_mutable:api.AssetByIDRequest.ID)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AssetByIDRequest::release_id() {
+  // @@protoc_insertion_point(field_release:api.AssetByIDRequest.ID)
+
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AssetByIDRequest::set_allocated_id(::std::string* id) {
+  if (id != nullptr) {
+
+  } else {
+
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.AssetByIDRequest.ID)
+}
+
+// -------------------------------------------------------------------
+
+// AssetByIDResponse
+
+// .vega.Asset asset = 1;
+inline bool AssetByIDResponse::has_asset() const {
+  return this != internal_default_instance() && asset_ != nullptr;
+}
+inline const ::vega::Asset& AssetByIDResponse::asset() const {
+  const ::vega::Asset* p = asset_;
+  // @@protoc_insertion_point(field_get:api.AssetByIDResponse.asset)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::Asset*>(
+      &::vega::_Asset_default_instance_);
+}
+inline ::vega::Asset* AssetByIDResponse::release_asset() {
+  // @@protoc_insertion_point(field_release:api.AssetByIDResponse.asset)
+
+  ::vega::Asset* temp = asset_;
+  asset_ = nullptr;
+  return temp;
+}
+inline ::vega::Asset* AssetByIDResponse::mutable_asset() {
+
+  if (asset_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::Asset>(GetArenaNoVirtual());
+    asset_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.AssetByIDResponse.asset)
+  return asset_;
+}
+inline void AssetByIDResponse::set_allocated_asset(::vega::Asset* asset) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(asset_);
+  }
+  if (asset) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      asset = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, asset, submessage_arena);
+    }
+
+  } else {
+
+  }
+  asset_ = asset;
+  // @@protoc_insertion_point(field_set_allocated:api.AssetByIDResponse.asset)
+}
+
+// -------------------------------------------------------------------
+
+// GetNodeSignaturesAggregateRequest
+
+// string ID = 1;
+inline void GetNodeSignaturesAggregateRequest::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& GetNodeSignaturesAggregateRequest::id() const {
+  // @@protoc_insertion_point(field_get:api.GetNodeSignaturesAggregateRequest.ID)
+  return id_.GetNoArena();
+}
+inline void GetNodeSignaturesAggregateRequest::set_id(const ::std::string& value) {
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.GetNodeSignaturesAggregateRequest.ID)
+}
+#if LANG_CXX11
+inline void GetNodeSignaturesAggregateRequest::set_id(::std::string&& value) {
+
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.GetNodeSignaturesAggregateRequest.ID)
+}
+#endif
+inline void GetNodeSignaturesAggregateRequest::set_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.GetNodeSignaturesAggregateRequest.ID)
+}
+inline void GetNodeSignaturesAggregateRequest::set_id(const char* value, size_t size) {
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.GetNodeSignaturesAggregateRequest.ID)
+}
+inline ::std::string* GetNodeSignaturesAggregateRequest::mutable_id() {
+
+  // @@protoc_insertion_point(field_mutable:api.GetNodeSignaturesAggregateRequest.ID)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* GetNodeSignaturesAggregateRequest::release_id() {
+  // @@protoc_insertion_point(field_release:api.GetNodeSignaturesAggregateRequest.ID)
+
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void GetNodeSignaturesAggregateRequest::set_allocated_id(::std::string* id) {
+  if (id != nullptr) {
+
+  } else {
+
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.GetNodeSignaturesAggregateRequest.ID)
+}
+
+// -------------------------------------------------------------------
+
+// GetNodeSignaturesAggregateResponse
+
+// repeated .vega.NodeSignature signatures = 1;
+inline int GetNodeSignaturesAggregateResponse::signatures_size() const {
+  return signatures_.size();
+}
+inline ::vega::NodeSignature* GetNodeSignaturesAggregateResponse::mutable_signatures(int index) {
+  // @@protoc_insertion_point(field_mutable:api.GetNodeSignaturesAggregateResponse.signatures)
+  return signatures_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::NodeSignature >*
+GetNodeSignaturesAggregateResponse::mutable_signatures() {
+  // @@protoc_insertion_point(field_mutable_list:api.GetNodeSignaturesAggregateResponse.signatures)
+  return &signatures_;
+}
+inline const ::vega::NodeSignature& GetNodeSignaturesAggregateResponse::signatures(int index) const {
+  // @@protoc_insertion_point(field_get:api.GetNodeSignaturesAggregateResponse.signatures)
+  return signatures_.Get(index);
+}
+inline ::vega::NodeSignature* GetNodeSignaturesAggregateResponse::add_signatures() {
+  // @@protoc_insertion_point(field_add:api.GetNodeSignaturesAggregateResponse.signatures)
+  return signatures_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::NodeSignature >&
+GetNodeSignaturesAggregateResponse::signatures() const {
+  // @@protoc_insertion_point(field_list:api.GetNodeSignaturesAggregateResponse.signatures)
+  return signatures_;
 }
 
 // -------------------------------------------------------------------
@@ -12171,7 +13410,7 @@ inline ::vega::Proposal_State OptionalProposalState::value() const {
   return static_cast< ::vega::Proposal_State >(value_);
 }
 inline void OptionalProposalState::set_value(::vega::Proposal_State value) {
-  
+
   value_ = value;
   // @@protoc_insertion_point(field_set:api.OptionalProposalState.value)
 }
@@ -12198,13 +13437,13 @@ inline const ::api::OptionalProposalState& GetProposalsRequest::selectinstate() 
 }
 inline ::api::OptionalProposalState* GetProposalsRequest::release_selectinstate() {
   // @@protoc_insertion_point(field_release:api.GetProposalsRequest.selectInState)
-  
+
   ::api::OptionalProposalState* temp = selectinstate_;
   selectinstate_ = nullptr;
   return temp;
 }
 inline ::api::OptionalProposalState* GetProposalsRequest::mutable_selectinstate() {
-  
+
   if (selectinstate_ == nullptr) {
     auto* p = CreateMaybeMessage<::api::OptionalProposalState>(GetArenaNoVirtual());
     selectinstate_ = p;
@@ -12223,9 +13462,9 @@ inline void GetProposalsRequest::set_allocated_selectinstate(::api::OptionalProp
       selectinstate = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, selectinstate, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   selectinstate_ = selectinstate;
   // @@protoc_insertion_point(field_set_allocated:api.GetProposalsRequest.selectInState)
@@ -12275,13 +13514,13 @@ inline const ::std::string& GetProposalsByPartyRequest::partyid() const {
   return partyid_.GetNoArena();
 }
 inline void GetProposalsByPartyRequest::set_partyid(const ::std::string& value) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.GetProposalsByPartyRequest.partyID)
 }
 #if LANG_CXX11
 inline void GetProposalsByPartyRequest::set_partyid(::std::string&& value) {
-  
+
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.GetProposalsByPartyRequest.partyID)
@@ -12289,31 +13528,31 @@ inline void GetProposalsByPartyRequest::set_partyid(::std::string&& value) {
 #endif
 inline void GetProposalsByPartyRequest::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.GetProposalsByPartyRequest.partyID)
 }
 inline void GetProposalsByPartyRequest::set_partyid(const char* value, size_t size) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.GetProposalsByPartyRequest.partyID)
 }
 inline ::std::string* GetProposalsByPartyRequest::mutable_partyid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.GetProposalsByPartyRequest.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* GetProposalsByPartyRequest::release_partyid() {
   // @@protoc_insertion_point(field_release:api.GetProposalsByPartyRequest.partyID)
-  
+
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void GetProposalsByPartyRequest::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
-    
+
   } else {
-    
+
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.GetProposalsByPartyRequest.partyID)
@@ -12337,13 +13576,13 @@ inline const ::api::OptionalProposalState& GetProposalsByPartyRequest::selectins
 }
 inline ::api::OptionalProposalState* GetProposalsByPartyRequest::release_selectinstate() {
   // @@protoc_insertion_point(field_release:api.GetProposalsByPartyRequest.selectInState)
-  
+
   ::api::OptionalProposalState* temp = selectinstate_;
   selectinstate_ = nullptr;
   return temp;
 }
 inline ::api::OptionalProposalState* GetProposalsByPartyRequest::mutable_selectinstate() {
-  
+
   if (selectinstate_ == nullptr) {
     auto* p = CreateMaybeMessage<::api::OptionalProposalState>(GetArenaNoVirtual());
     selectinstate_ = p;
@@ -12362,9 +13601,9 @@ inline void GetProposalsByPartyRequest::set_allocated_selectinstate(::api::Optio
       selectinstate = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, selectinstate, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   selectinstate_ = selectinstate;
   // @@protoc_insertion_point(field_set_allocated:api.GetProposalsByPartyRequest.selectInState)
@@ -12414,13 +13653,13 @@ inline const ::std::string& GetVotesByPartyRequest::partyid() const {
   return partyid_.GetNoArena();
 }
 inline void GetVotesByPartyRequest::set_partyid(const ::std::string& value) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.GetVotesByPartyRequest.partyID)
 }
 #if LANG_CXX11
 inline void GetVotesByPartyRequest::set_partyid(::std::string&& value) {
-  
+
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.GetVotesByPartyRequest.partyID)
@@ -12428,31 +13667,31 @@ inline void GetVotesByPartyRequest::set_partyid(::std::string&& value) {
 #endif
 inline void GetVotesByPartyRequest::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.GetVotesByPartyRequest.partyID)
 }
 inline void GetVotesByPartyRequest::set_partyid(const char* value, size_t size) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.GetVotesByPartyRequest.partyID)
 }
 inline ::std::string* GetVotesByPartyRequest::mutable_partyid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.GetVotesByPartyRequest.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* GetVotesByPartyRequest::release_partyid() {
   // @@protoc_insertion_point(field_release:api.GetVotesByPartyRequest.partyID)
-  
+
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void GetVotesByPartyRequest::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
-    
+
   } else {
-    
+
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.GetVotesByPartyRequest.partyID)
@@ -12511,13 +13750,13 @@ inline const ::api::OptionalProposalState& GetNewMarketProposalsRequest::selecti
 }
 inline ::api::OptionalProposalState* GetNewMarketProposalsRequest::release_selectinstate() {
   // @@protoc_insertion_point(field_release:api.GetNewMarketProposalsRequest.selectInState)
-  
+
   ::api::OptionalProposalState* temp = selectinstate_;
   selectinstate_ = nullptr;
   return temp;
 }
 inline ::api::OptionalProposalState* GetNewMarketProposalsRequest::mutable_selectinstate() {
-  
+
   if (selectinstate_ == nullptr) {
     auto* p = CreateMaybeMessage<::api::OptionalProposalState>(GetArenaNoVirtual());
     selectinstate_ = p;
@@ -12536,9 +13775,9 @@ inline void GetNewMarketProposalsRequest::set_allocated_selectinstate(::api::Opt
       selectinstate = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, selectinstate, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   selectinstate_ = selectinstate;
   // @@protoc_insertion_point(field_set_allocated:api.GetNewMarketProposalsRequest.selectInState)
@@ -12588,13 +13827,13 @@ inline const ::std::string& GetUpdateMarketProposalsRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void GetUpdateMarketProposalsRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.GetUpdateMarketProposalsRequest.marketID)
 }
 #if LANG_CXX11
 inline void GetUpdateMarketProposalsRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.GetUpdateMarketProposalsRequest.marketID)
@@ -12602,31 +13841,31 @@ inline void GetUpdateMarketProposalsRequest::set_marketid(::std::string&& value)
 #endif
 inline void GetUpdateMarketProposalsRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.GetUpdateMarketProposalsRequest.marketID)
 }
 inline void GetUpdateMarketProposalsRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.GetUpdateMarketProposalsRequest.marketID)
 }
 inline ::std::string* GetUpdateMarketProposalsRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.GetUpdateMarketProposalsRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* GetUpdateMarketProposalsRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.GetUpdateMarketProposalsRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void GetUpdateMarketProposalsRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.GetUpdateMarketProposalsRequest.marketID)
@@ -12650,13 +13889,13 @@ inline const ::api::OptionalProposalState& GetUpdateMarketProposalsRequest::sele
 }
 inline ::api::OptionalProposalState* GetUpdateMarketProposalsRequest::release_selectinstate() {
   // @@protoc_insertion_point(field_release:api.GetUpdateMarketProposalsRequest.selectInState)
-  
+
   ::api::OptionalProposalState* temp = selectinstate_;
   selectinstate_ = nullptr;
   return temp;
 }
 inline ::api::OptionalProposalState* GetUpdateMarketProposalsRequest::mutable_selectinstate() {
-  
+
   if (selectinstate_ == nullptr) {
     auto* p = CreateMaybeMessage<::api::OptionalProposalState>(GetArenaNoVirtual());
     selectinstate_ = p;
@@ -12675,9 +13914,9 @@ inline void GetUpdateMarketProposalsRequest::set_allocated_selectinstate(::api::
       selectinstate = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, selectinstate, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   selectinstate_ = selectinstate;
   // @@protoc_insertion_point(field_set_allocated:api.GetUpdateMarketProposalsRequest.selectInState)
@@ -12736,13 +13975,13 @@ inline const ::api::OptionalProposalState& GetNetworkParametersProposalsRequest:
 }
 inline ::api::OptionalProposalState* GetNetworkParametersProposalsRequest::release_selectinstate() {
   // @@protoc_insertion_point(field_release:api.GetNetworkParametersProposalsRequest.selectInState)
-  
+
   ::api::OptionalProposalState* temp = selectinstate_;
   selectinstate_ = nullptr;
   return temp;
 }
 inline ::api::OptionalProposalState* GetNetworkParametersProposalsRequest::mutable_selectinstate() {
-  
+
   if (selectinstate_ == nullptr) {
     auto* p = CreateMaybeMessage<::api::OptionalProposalState>(GetArenaNoVirtual());
     selectinstate_ = p;
@@ -12761,9 +14000,9 @@ inline void GetNetworkParametersProposalsRequest::set_allocated_selectinstate(::
       selectinstate = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, selectinstate, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   selectinstate_ = selectinstate;
   // @@protoc_insertion_point(field_set_allocated:api.GetNetworkParametersProposalsRequest.selectInState)
@@ -12822,13 +14061,13 @@ inline const ::api::OptionalProposalState& GetNewAssetProposalsRequest::selectin
 }
 inline ::api::OptionalProposalState* GetNewAssetProposalsRequest::release_selectinstate() {
   // @@protoc_insertion_point(field_release:api.GetNewAssetProposalsRequest.selectInState)
-  
+
   ::api::OptionalProposalState* temp = selectinstate_;
   selectinstate_ = nullptr;
   return temp;
 }
 inline ::api::OptionalProposalState* GetNewAssetProposalsRequest::mutable_selectinstate() {
-  
+
   if (selectinstate_ == nullptr) {
     auto* p = CreateMaybeMessage<::api::OptionalProposalState>(GetArenaNoVirtual());
     selectinstate_ = p;
@@ -12847,9 +14086,9 @@ inline void GetNewAssetProposalsRequest::set_allocated_selectinstate(::api::Opti
       selectinstate = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, selectinstate, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   selectinstate_ = selectinstate;
   // @@protoc_insertion_point(field_set_allocated:api.GetNewAssetProposalsRequest.selectInState)
@@ -12899,13 +14138,13 @@ inline const ::std::string& GetProposalByIDRequest::proposalid() const {
   return proposalid_.GetNoArena();
 }
 inline void GetProposalByIDRequest::set_proposalid(const ::std::string& value) {
-  
+
   proposalid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.GetProposalByIDRequest.proposalID)
 }
 #if LANG_CXX11
 inline void GetProposalByIDRequest::set_proposalid(::std::string&& value) {
-  
+
   proposalid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.GetProposalByIDRequest.proposalID)
@@ -12913,31 +14152,31 @@ inline void GetProposalByIDRequest::set_proposalid(::std::string&& value) {
 #endif
 inline void GetProposalByIDRequest::set_proposalid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   proposalid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.GetProposalByIDRequest.proposalID)
 }
 inline void GetProposalByIDRequest::set_proposalid(const char* value, size_t size) {
-  
+
   proposalid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.GetProposalByIDRequest.proposalID)
 }
 inline ::std::string* GetProposalByIDRequest::mutable_proposalid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.GetProposalByIDRequest.proposalID)
   return proposalid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* GetProposalByIDRequest::release_proposalid() {
   // @@protoc_insertion_point(field_release:api.GetProposalByIDRequest.proposalID)
-  
+
   return proposalid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void GetProposalByIDRequest::set_allocated_proposalid(::std::string* proposalid) {
   if (proposalid != nullptr) {
-    
+
   } else {
-    
+
   }
   proposalid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), proposalid);
   // @@protoc_insertion_point(field_set_allocated:api.GetProposalByIDRequest.proposalID)
@@ -12959,13 +14198,13 @@ inline const ::vega::GovernanceData& GetProposalByIDResponse::data() const {
 }
 inline ::vega::GovernanceData* GetProposalByIDResponse::release_data() {
   // @@protoc_insertion_point(field_release:api.GetProposalByIDResponse.data)
-  
+
   ::vega::GovernanceData* temp = data_;
   data_ = nullptr;
   return temp;
 }
 inline ::vega::GovernanceData* GetProposalByIDResponse::mutable_data() {
-  
+
   if (data_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::GovernanceData>(GetArenaNoVirtual());
     data_ = p;
@@ -12984,9 +14223,9 @@ inline void GetProposalByIDResponse::set_allocated_data(::vega::GovernanceData* 
       data = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, data, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   data_ = data;
   // @@protoc_insertion_point(field_set_allocated:api.GetProposalByIDResponse.data)
@@ -13005,13 +14244,13 @@ inline const ::std::string& GetProposalByReferenceRequest::reference() const {
   return reference_.GetNoArena();
 }
 inline void GetProposalByReferenceRequest::set_reference(const ::std::string& value) {
-  
+
   reference_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.GetProposalByReferenceRequest.Reference)
 }
 #if LANG_CXX11
 inline void GetProposalByReferenceRequest::set_reference(::std::string&& value) {
-  
+
   reference_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.GetProposalByReferenceRequest.Reference)
@@ -13019,31 +14258,31 @@ inline void GetProposalByReferenceRequest::set_reference(::std::string&& value) 
 #endif
 inline void GetProposalByReferenceRequest::set_reference(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   reference_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.GetProposalByReferenceRequest.Reference)
 }
 inline void GetProposalByReferenceRequest::set_reference(const char* value, size_t size) {
-  
+
   reference_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.GetProposalByReferenceRequest.Reference)
 }
 inline ::std::string* GetProposalByReferenceRequest::mutable_reference() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.GetProposalByReferenceRequest.Reference)
   return reference_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* GetProposalByReferenceRequest::release_reference() {
   // @@protoc_insertion_point(field_release:api.GetProposalByReferenceRequest.Reference)
-  
+
   return reference_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void GetProposalByReferenceRequest::set_allocated_reference(::std::string* reference) {
   if (reference != nullptr) {
-    
+
   } else {
-    
+
   }
   reference_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), reference);
   // @@protoc_insertion_point(field_set_allocated:api.GetProposalByReferenceRequest.Reference)
@@ -13065,13 +14304,13 @@ inline const ::vega::GovernanceData& GetProposalByReferenceResponse::data() cons
 }
 inline ::vega::GovernanceData* GetProposalByReferenceResponse::release_data() {
   // @@protoc_insertion_point(field_release:api.GetProposalByReferenceResponse.data)
-  
+
   ::vega::GovernanceData* temp = data_;
   data_ = nullptr;
   return temp;
 }
 inline ::vega::GovernanceData* GetProposalByReferenceResponse::mutable_data() {
-  
+
   if (data_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::GovernanceData>(GetArenaNoVirtual());
     data_ = p;
@@ -13090,9 +14329,9 @@ inline void GetProposalByReferenceResponse::set_allocated_data(::vega::Governanc
       data = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, data, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   data_ = data;
   // @@protoc_insertion_point(field_set_allocated:api.GetProposalByReferenceResponse.data)
@@ -13111,13 +14350,13 @@ inline const ::std::string& ObservePartyProposalsRequest::partyid() const {
   return partyid_.GetNoArena();
 }
 inline void ObservePartyProposalsRequest::set_partyid(const ::std::string& value) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.ObservePartyProposalsRequest.partyID)
 }
 #if LANG_CXX11
 inline void ObservePartyProposalsRequest::set_partyid(::std::string&& value) {
-  
+
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.ObservePartyProposalsRequest.partyID)
@@ -13125,31 +14364,31 @@ inline void ObservePartyProposalsRequest::set_partyid(::std::string&& value) {
 #endif
 inline void ObservePartyProposalsRequest::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.ObservePartyProposalsRequest.partyID)
 }
 inline void ObservePartyProposalsRequest::set_partyid(const char* value, size_t size) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.ObservePartyProposalsRequest.partyID)
 }
 inline ::std::string* ObservePartyProposalsRequest::mutable_partyid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.ObservePartyProposalsRequest.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* ObservePartyProposalsRequest::release_partyid() {
   // @@protoc_insertion_point(field_release:api.ObservePartyProposalsRequest.partyID)
-  
+
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void ObservePartyProposalsRequest::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
-    
+
   } else {
-    
+
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.ObservePartyProposalsRequest.partyID)
@@ -13168,13 +14407,13 @@ inline const ::std::string& ObserveProposalVotesRequest::proposalid() const {
   return proposalid_.GetNoArena();
 }
 inline void ObserveProposalVotesRequest::set_proposalid(const ::std::string& value) {
-  
+
   proposalid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.ObserveProposalVotesRequest.proposalID)
 }
 #if LANG_CXX11
 inline void ObserveProposalVotesRequest::set_proposalid(::std::string&& value) {
-  
+
   proposalid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.ObserveProposalVotesRequest.proposalID)
@@ -13182,31 +14421,31 @@ inline void ObserveProposalVotesRequest::set_proposalid(::std::string&& value) {
 #endif
 inline void ObserveProposalVotesRequest::set_proposalid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   proposalid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.ObserveProposalVotesRequest.proposalID)
 }
 inline void ObserveProposalVotesRequest::set_proposalid(const char* value, size_t size) {
-  
+
   proposalid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.ObserveProposalVotesRequest.proposalID)
 }
 inline ::std::string* ObserveProposalVotesRequest::mutable_proposalid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.ObserveProposalVotesRequest.proposalID)
   return proposalid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* ObserveProposalVotesRequest::release_proposalid() {
   // @@protoc_insertion_point(field_release:api.ObserveProposalVotesRequest.proposalID)
-  
+
   return proposalid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void ObserveProposalVotesRequest::set_allocated_proposalid(::std::string* proposalid) {
   if (proposalid != nullptr) {
-    
+
   } else {
-    
+
   }
   proposalid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), proposalid);
   // @@protoc_insertion_point(field_set_allocated:api.ObserveProposalVotesRequest.proposalID)
@@ -13225,13 +14464,13 @@ inline const ::std::string& ObservePartyVotesRequest::partyid() const {
   return partyid_.GetNoArena();
 }
 inline void ObservePartyVotesRequest::set_partyid(const ::std::string& value) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.ObservePartyVotesRequest.partyID)
 }
 #if LANG_CXX11
 inline void ObservePartyVotesRequest::set_partyid(::std::string&& value) {
-  
+
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.ObservePartyVotesRequest.partyID)
@@ -13239,31 +14478,31 @@ inline void ObservePartyVotesRequest::set_partyid(::std::string&& value) {
 #endif
 inline void ObservePartyVotesRequest::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.ObservePartyVotesRequest.partyID)
 }
 inline void ObservePartyVotesRequest::set_partyid(const char* value, size_t size) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.ObservePartyVotesRequest.partyID)
 }
 inline ::std::string* ObservePartyVotesRequest::mutable_partyid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.ObservePartyVotesRequest.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* ObservePartyVotesRequest::release_partyid() {
   // @@protoc_insertion_point(field_release:api.ObservePartyVotesRequest.partyID)
-  
+
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void ObservePartyVotesRequest::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
-    
+
   } else {
-    
+
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.ObservePartyVotesRequest.partyID)
@@ -13282,13 +14521,13 @@ inline const ::std::string& MarginLevelsSubscribeRequest::partyid() const {
   return partyid_.GetNoArena();
 }
 inline void MarginLevelsSubscribeRequest::set_partyid(const ::std::string& value) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.MarginLevelsSubscribeRequest.partyID)
 }
 #if LANG_CXX11
 inline void MarginLevelsSubscribeRequest::set_partyid(::std::string&& value) {
-  
+
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.MarginLevelsSubscribeRequest.partyID)
@@ -13296,31 +14535,31 @@ inline void MarginLevelsSubscribeRequest::set_partyid(::std::string&& value) {
 #endif
 inline void MarginLevelsSubscribeRequest::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.MarginLevelsSubscribeRequest.partyID)
 }
 inline void MarginLevelsSubscribeRequest::set_partyid(const char* value, size_t size) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.MarginLevelsSubscribeRequest.partyID)
 }
 inline ::std::string* MarginLevelsSubscribeRequest::mutable_partyid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.MarginLevelsSubscribeRequest.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* MarginLevelsSubscribeRequest::release_partyid() {
   // @@protoc_insertion_point(field_release:api.MarginLevelsSubscribeRequest.partyID)
-  
+
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void MarginLevelsSubscribeRequest::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
-    
+
   } else {
-    
+
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.MarginLevelsSubscribeRequest.partyID)
@@ -13335,13 +14574,13 @@ inline const ::std::string& MarginLevelsSubscribeRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void MarginLevelsSubscribeRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.MarginLevelsSubscribeRequest.marketID)
 }
 #if LANG_CXX11
 inline void MarginLevelsSubscribeRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.MarginLevelsSubscribeRequest.marketID)
@@ -13349,31 +14588,31 @@ inline void MarginLevelsSubscribeRequest::set_marketid(::std::string&& value) {
 #endif
 inline void MarginLevelsSubscribeRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.MarginLevelsSubscribeRequest.marketID)
 }
 inline void MarginLevelsSubscribeRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.MarginLevelsSubscribeRequest.marketID)
 }
 inline ::std::string* MarginLevelsSubscribeRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.MarginLevelsSubscribeRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* MarginLevelsSubscribeRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.MarginLevelsSubscribeRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void MarginLevelsSubscribeRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.MarginLevelsSubscribeRequest.marketID)
@@ -13392,13 +14631,13 @@ inline const ::std::string& MarginLevelsRequest::partyid() const {
   return partyid_.GetNoArena();
 }
 inline void MarginLevelsRequest::set_partyid(const ::std::string& value) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.MarginLevelsRequest.partyID)
 }
 #if LANG_CXX11
 inline void MarginLevelsRequest::set_partyid(::std::string&& value) {
-  
+
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.MarginLevelsRequest.partyID)
@@ -13406,31 +14645,31 @@ inline void MarginLevelsRequest::set_partyid(::std::string&& value) {
 #endif
 inline void MarginLevelsRequest::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.MarginLevelsRequest.partyID)
 }
 inline void MarginLevelsRequest::set_partyid(const char* value, size_t size) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.MarginLevelsRequest.partyID)
 }
 inline ::std::string* MarginLevelsRequest::mutable_partyid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.MarginLevelsRequest.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* MarginLevelsRequest::release_partyid() {
   // @@protoc_insertion_point(field_release:api.MarginLevelsRequest.partyID)
-  
+
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void MarginLevelsRequest::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
-    
+
   } else {
-    
+
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.MarginLevelsRequest.partyID)
@@ -13445,13 +14684,13 @@ inline const ::std::string& MarginLevelsRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void MarginLevelsRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.MarginLevelsRequest.marketID)
 }
 #if LANG_CXX11
 inline void MarginLevelsRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.MarginLevelsRequest.marketID)
@@ -13459,31 +14698,31 @@ inline void MarginLevelsRequest::set_marketid(::std::string&& value) {
 #endif
 inline void MarginLevelsRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.MarginLevelsRequest.marketID)
 }
 inline void MarginLevelsRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.MarginLevelsRequest.marketID)
 }
 inline ::std::string* MarginLevelsRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.MarginLevelsRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* MarginLevelsRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.MarginLevelsRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void MarginLevelsRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.MarginLevelsRequest.marketID)
@@ -13533,13 +14772,13 @@ inline const ::std::string& MarketsDataSubscribeRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void MarketsDataSubscribeRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.MarketsDataSubscribeRequest.marketID)
 }
 #if LANG_CXX11
 inline void MarketsDataSubscribeRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.MarketsDataSubscribeRequest.marketID)
@@ -13547,31 +14786,31 @@ inline void MarketsDataSubscribeRequest::set_marketid(::std::string&& value) {
 #endif
 inline void MarketsDataSubscribeRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.MarketsDataSubscribeRequest.marketID)
 }
 inline void MarketsDataSubscribeRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.MarketsDataSubscribeRequest.marketID)
 }
 inline ::std::string* MarketsDataSubscribeRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.MarketsDataSubscribeRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* MarketsDataSubscribeRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.MarketsDataSubscribeRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void MarketsDataSubscribeRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.MarketsDataSubscribeRequest.marketID)
@@ -13590,13 +14829,13 @@ inline const ::std::string& MarketDataByIDRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void MarketDataByIDRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.MarketDataByIDRequest.marketID)
 }
 #if LANG_CXX11
 inline void MarketDataByIDRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.MarketDataByIDRequest.marketID)
@@ -13604,31 +14843,31 @@ inline void MarketDataByIDRequest::set_marketid(::std::string&& value) {
 #endif
 inline void MarketDataByIDRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.MarketDataByIDRequest.marketID)
 }
 inline void MarketDataByIDRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.MarketDataByIDRequest.marketID)
 }
 inline ::std::string* MarketDataByIDRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.MarketDataByIDRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* MarketDataByIDRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.MarketDataByIDRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void MarketDataByIDRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.MarketDataByIDRequest.marketID)
@@ -13650,13 +14889,13 @@ inline const ::vega::MarketData& MarketDataByIDResponse::marketdata() const {
 }
 inline ::vega::MarketData* MarketDataByIDResponse::release_marketdata() {
   // @@protoc_insertion_point(field_release:api.MarketDataByIDResponse.marketData)
-  
+
   ::vega::MarketData* temp = marketdata_;
   marketdata_ = nullptr;
   return temp;
 }
 inline ::vega::MarketData* MarketDataByIDResponse::mutable_marketdata() {
-  
+
   if (marketdata_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::MarketData>(GetArenaNoVirtual());
     marketdata_ = p;
@@ -13675,9 +14914,9 @@ inline void MarketDataByIDResponse::set_allocated_marketdata(::vega::MarketData*
       marketdata = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, marketdata, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   marketdata_ = marketdata;
   // @@protoc_insertion_point(field_set_allocated:api.MarketDataByIDResponse.marketData)
@@ -13727,13 +14966,13 @@ inline const ::std::string& LastTradeRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void LastTradeRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.LastTradeRequest.marketID)
 }
 #if LANG_CXX11
 inline void LastTradeRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.LastTradeRequest.marketID)
@@ -13741,31 +14980,31 @@ inline void LastTradeRequest::set_marketid(::std::string&& value) {
 #endif
 inline void LastTradeRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.LastTradeRequest.marketID)
 }
 inline void LastTradeRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.LastTradeRequest.marketID)
 }
 inline ::std::string* LastTradeRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.LastTradeRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* LastTradeRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.LastTradeRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void LastTradeRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.LastTradeRequest.marketID)
@@ -13787,13 +15026,13 @@ inline const ::vega::Trade& LastTradeResponse::trade() const {
 }
 inline ::vega::Trade* LastTradeResponse::release_trade() {
   // @@protoc_insertion_point(field_release:api.LastTradeResponse.trade)
-  
+
   ::vega::Trade* temp = trade_;
   trade_ = nullptr;
   return temp;
 }
 inline ::vega::Trade* LastTradeResponse::mutable_trade() {
-  
+
   if (trade_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::Trade>(GetArenaNoVirtual());
     trade_ = p;
@@ -13812,9 +15051,9 @@ inline void LastTradeResponse::set_allocated_trade(::vega::Trade* trade) {
       trade = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, trade, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   trade_ = trade;
   // @@protoc_insertion_point(field_set_allocated:api.LastTradeResponse.trade)
@@ -13833,13 +15072,13 @@ inline const ::std::string& MarketByIDRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void MarketByIDRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.MarketByIDRequest.marketID)
 }
 #if LANG_CXX11
 inline void MarketByIDRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.MarketByIDRequest.marketID)
@@ -13847,31 +15086,31 @@ inline void MarketByIDRequest::set_marketid(::std::string&& value) {
 #endif
 inline void MarketByIDRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.MarketByIDRequest.marketID)
 }
 inline void MarketByIDRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.MarketByIDRequest.marketID)
 }
 inline ::std::string* MarketByIDRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.MarketByIDRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* MarketByIDRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.MarketByIDRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void MarketByIDRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.MarketByIDRequest.marketID)
@@ -13893,13 +15132,13 @@ inline const ::vega::Market& MarketByIDResponse::market() const {
 }
 inline ::vega::Market* MarketByIDResponse::release_market() {
   // @@protoc_insertion_point(field_release:api.MarketByIDResponse.market)
-  
+
   ::vega::Market* temp = market_;
   market_ = nullptr;
   return temp;
 }
 inline ::vega::Market* MarketByIDResponse::mutable_market() {
-  
+
   if (market_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::Market>(GetArenaNoVirtual());
     market_ = p;
@@ -13918,9 +15157,9 @@ inline void MarketByIDResponse::set_allocated_market(::vega::Market* market) {
       market = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, market, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   market_ = market;
   // @@protoc_insertion_point(field_set_allocated:api.MarketByIDResponse.market)
@@ -13939,13 +15178,13 @@ inline const ::std::string& PartyByIDRequest::partyid() const {
   return partyid_.GetNoArena();
 }
 inline void PartyByIDRequest::set_partyid(const ::std::string& value) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.PartyByIDRequest.partyID)
 }
 #if LANG_CXX11
 inline void PartyByIDRequest::set_partyid(::std::string&& value) {
-  
+
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.PartyByIDRequest.partyID)
@@ -13953,31 +15192,31 @@ inline void PartyByIDRequest::set_partyid(::std::string&& value) {
 #endif
 inline void PartyByIDRequest::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.PartyByIDRequest.partyID)
 }
 inline void PartyByIDRequest::set_partyid(const char* value, size_t size) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.PartyByIDRequest.partyID)
 }
 inline ::std::string* PartyByIDRequest::mutable_partyid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.PartyByIDRequest.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PartyByIDRequest::release_partyid() {
   // @@protoc_insertion_point(field_release:api.PartyByIDRequest.partyID)
-  
+
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void PartyByIDRequest::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
-    
+
   } else {
-    
+
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.PartyByIDRequest.partyID)
@@ -13999,13 +15238,13 @@ inline const ::vega::Party& PartyByIDResponse::party() const {
 }
 inline ::vega::Party* PartyByIDResponse::release_party() {
   // @@protoc_insertion_point(field_release:api.PartyByIDResponse.party)
-  
+
   ::vega::Party* temp = party_;
   party_ = nullptr;
   return temp;
 }
 inline ::vega::Party* PartyByIDResponse::mutable_party() {
-  
+
   if (party_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::Party>(GetArenaNoVirtual());
     party_ = p;
@@ -14024,9 +15263,9 @@ inline void PartyByIDResponse::set_allocated_party(::vega::Party* party) {
       party = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, party, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   party_ = party;
   // @@protoc_insertion_point(field_set_allocated:api.PartyByIDResponse.party)
@@ -14076,13 +15315,13 @@ inline const ::std::string& TradesByPartyRequest::partyid() const {
   return partyid_.GetNoArena();
 }
 inline void TradesByPartyRequest::set_partyid(const ::std::string& value) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.TradesByPartyRequest.partyID)
 }
 #if LANG_CXX11
 inline void TradesByPartyRequest::set_partyid(::std::string&& value) {
-  
+
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.TradesByPartyRequest.partyID)
@@ -14090,31 +15329,31 @@ inline void TradesByPartyRequest::set_partyid(::std::string&& value) {
 #endif
 inline void TradesByPartyRequest::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.TradesByPartyRequest.partyID)
 }
 inline void TradesByPartyRequest::set_partyid(const char* value, size_t size) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.TradesByPartyRequest.partyID)
 }
 inline ::std::string* TradesByPartyRequest::mutable_partyid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.TradesByPartyRequest.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* TradesByPartyRequest::release_partyid() {
   // @@protoc_insertion_point(field_release:api.TradesByPartyRequest.partyID)
-  
+
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void TradesByPartyRequest::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
-    
+
   } else {
-    
+
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.TradesByPartyRequest.partyID)
@@ -14129,13 +15368,13 @@ inline const ::std::string& TradesByPartyRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void TradesByPartyRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.TradesByPartyRequest.marketID)
 }
 #if LANG_CXX11
 inline void TradesByPartyRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.TradesByPartyRequest.marketID)
@@ -14143,31 +15382,31 @@ inline void TradesByPartyRequest::set_marketid(::std::string&& value) {
 #endif
 inline void TradesByPartyRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.TradesByPartyRequest.marketID)
 }
 inline void TradesByPartyRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.TradesByPartyRequest.marketID)
 }
 inline ::std::string* TradesByPartyRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.TradesByPartyRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* TradesByPartyRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.TradesByPartyRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void TradesByPartyRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.TradesByPartyRequest.marketID)
@@ -14191,13 +15430,13 @@ inline const ::api::Pagination& TradesByPartyRequest::pagination() const {
 }
 inline ::api::Pagination* TradesByPartyRequest::release_pagination() {
   // @@protoc_insertion_point(field_release:api.TradesByPartyRequest.pagination)
-  
+
   ::api::Pagination* temp = pagination_;
   pagination_ = nullptr;
   return temp;
 }
 inline ::api::Pagination* TradesByPartyRequest::mutable_pagination() {
-  
+
   if (pagination_ == nullptr) {
     auto* p = CreateMaybeMessage<::api::Pagination>(GetArenaNoVirtual());
     pagination_ = p;
@@ -14216,9 +15455,9 @@ inline void TradesByPartyRequest::set_allocated_pagination(::api::Pagination* pa
       pagination = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, pagination, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   pagination_ = pagination;
   // @@protoc_insertion_point(field_set_allocated:api.TradesByPartyRequest.pagination)
@@ -14268,13 +15507,13 @@ inline const ::std::string& TradesByOrderRequest::orderid() const {
   return orderid_.GetNoArena();
 }
 inline void TradesByOrderRequest::set_orderid(const ::std::string& value) {
-  
+
   orderid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.TradesByOrderRequest.orderID)
 }
 #if LANG_CXX11
 inline void TradesByOrderRequest::set_orderid(::std::string&& value) {
-  
+
   orderid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.TradesByOrderRequest.orderID)
@@ -14282,31 +15521,31 @@ inline void TradesByOrderRequest::set_orderid(::std::string&& value) {
 #endif
 inline void TradesByOrderRequest::set_orderid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   orderid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.TradesByOrderRequest.orderID)
 }
 inline void TradesByOrderRequest::set_orderid(const char* value, size_t size) {
-  
+
   orderid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.TradesByOrderRequest.orderID)
 }
 inline ::std::string* TradesByOrderRequest::mutable_orderid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.TradesByOrderRequest.orderID)
   return orderid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* TradesByOrderRequest::release_orderid() {
   // @@protoc_insertion_point(field_release:api.TradesByOrderRequest.orderID)
-  
+
   return orderid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void TradesByOrderRequest::set_allocated_orderid(::std::string* orderid) {
   if (orderid != nullptr) {
-    
+
   } else {
-    
+
   }
   orderid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), orderid);
   // @@protoc_insertion_point(field_set_allocated:api.TradesByOrderRequest.orderID)
@@ -14356,13 +15595,13 @@ inline const ::std::string& AccountsSubscribeRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void AccountsSubscribeRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.AccountsSubscribeRequest.marketID)
 }
 #if LANG_CXX11
 inline void AccountsSubscribeRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.AccountsSubscribeRequest.marketID)
@@ -14370,31 +15609,31 @@ inline void AccountsSubscribeRequest::set_marketid(::std::string&& value) {
 #endif
 inline void AccountsSubscribeRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.AccountsSubscribeRequest.marketID)
 }
 inline void AccountsSubscribeRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.AccountsSubscribeRequest.marketID)
 }
 inline ::std::string* AccountsSubscribeRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.AccountsSubscribeRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* AccountsSubscribeRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.AccountsSubscribeRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void AccountsSubscribeRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.AccountsSubscribeRequest.marketID)
@@ -14409,13 +15648,13 @@ inline const ::std::string& AccountsSubscribeRequest::partyid() const {
   return partyid_.GetNoArena();
 }
 inline void AccountsSubscribeRequest::set_partyid(const ::std::string& value) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.AccountsSubscribeRequest.partyID)
 }
 #if LANG_CXX11
 inline void AccountsSubscribeRequest::set_partyid(::std::string&& value) {
-  
+
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.AccountsSubscribeRequest.partyID)
@@ -14423,31 +15662,31 @@ inline void AccountsSubscribeRequest::set_partyid(::std::string&& value) {
 #endif
 inline void AccountsSubscribeRequest::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.AccountsSubscribeRequest.partyID)
 }
 inline void AccountsSubscribeRequest::set_partyid(const char* value, size_t size) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.AccountsSubscribeRequest.partyID)
 }
 inline ::std::string* AccountsSubscribeRequest::mutable_partyid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.AccountsSubscribeRequest.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* AccountsSubscribeRequest::release_partyid() {
   // @@protoc_insertion_point(field_release:api.AccountsSubscribeRequest.partyID)
-  
+
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void AccountsSubscribeRequest::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
-    
+
   } else {
-    
+
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.AccountsSubscribeRequest.partyID)
@@ -14462,13 +15701,13 @@ inline const ::std::string& AccountsSubscribeRequest::asset() const {
   return asset_.GetNoArena();
 }
 inline void AccountsSubscribeRequest::set_asset(const ::std::string& value) {
-  
+
   asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.AccountsSubscribeRequest.asset)
 }
 #if LANG_CXX11
 inline void AccountsSubscribeRequest::set_asset(::std::string&& value) {
-  
+
   asset_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.AccountsSubscribeRequest.asset)
@@ -14476,31 +15715,31 @@ inline void AccountsSubscribeRequest::set_asset(::std::string&& value) {
 #endif
 inline void AccountsSubscribeRequest::set_asset(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.AccountsSubscribeRequest.asset)
 }
 inline void AccountsSubscribeRequest::set_asset(const char* value, size_t size) {
-  
+
   asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.AccountsSubscribeRequest.asset)
 }
 inline ::std::string* AccountsSubscribeRequest::mutable_asset() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.AccountsSubscribeRequest.asset)
   return asset_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* AccountsSubscribeRequest::release_asset() {
   // @@protoc_insertion_point(field_release:api.AccountsSubscribeRequest.asset)
-  
+
   return asset_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void AccountsSubscribeRequest::set_allocated_asset(::std::string* asset) {
   if (asset != nullptr) {
-    
+
   } else {
-    
+
   }
   asset_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), asset);
   // @@protoc_insertion_point(field_set_allocated:api.AccountsSubscribeRequest.asset)
@@ -14515,7 +15754,7 @@ inline ::vega::AccountType AccountsSubscribeRequest::type() const {
   return static_cast< ::vega::AccountType >(type_);
 }
 inline void AccountsSubscribeRequest::set_type(::vega::AccountType value) {
-  
+
   type_ = value;
   // @@protoc_insertion_point(field_set:api.AccountsSubscribeRequest.type)
 }
@@ -14533,13 +15772,13 @@ inline const ::std::string& OrdersSubscribeRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void OrdersSubscribeRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.OrdersSubscribeRequest.marketID)
 }
 #if LANG_CXX11
 inline void OrdersSubscribeRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.OrdersSubscribeRequest.marketID)
@@ -14547,31 +15786,31 @@ inline void OrdersSubscribeRequest::set_marketid(::std::string&& value) {
 #endif
 inline void OrdersSubscribeRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.OrdersSubscribeRequest.marketID)
 }
 inline void OrdersSubscribeRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.OrdersSubscribeRequest.marketID)
 }
 inline ::std::string* OrdersSubscribeRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.OrdersSubscribeRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* OrdersSubscribeRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.OrdersSubscribeRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void OrdersSubscribeRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.OrdersSubscribeRequest.marketID)
@@ -14586,13 +15825,13 @@ inline const ::std::string& OrdersSubscribeRequest::partyid() const {
   return partyid_.GetNoArena();
 }
 inline void OrdersSubscribeRequest::set_partyid(const ::std::string& value) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.OrdersSubscribeRequest.partyID)
 }
 #if LANG_CXX11
 inline void OrdersSubscribeRequest::set_partyid(::std::string&& value) {
-  
+
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.OrdersSubscribeRequest.partyID)
@@ -14600,31 +15839,31 @@ inline void OrdersSubscribeRequest::set_partyid(::std::string&& value) {
 #endif
 inline void OrdersSubscribeRequest::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.OrdersSubscribeRequest.partyID)
 }
 inline void OrdersSubscribeRequest::set_partyid(const char* value, size_t size) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.OrdersSubscribeRequest.partyID)
 }
 inline ::std::string* OrdersSubscribeRequest::mutable_partyid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.OrdersSubscribeRequest.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* OrdersSubscribeRequest::release_partyid() {
   // @@protoc_insertion_point(field_release:api.OrdersSubscribeRequest.partyID)
-  
+
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void OrdersSubscribeRequest::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
-    
+
   } else {
-    
+
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.OrdersSubscribeRequest.partyID)
@@ -14643,13 +15882,13 @@ inline const ::std::string& TradesSubscribeRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void TradesSubscribeRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.TradesSubscribeRequest.marketID)
 }
 #if LANG_CXX11
 inline void TradesSubscribeRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.TradesSubscribeRequest.marketID)
@@ -14657,31 +15896,31 @@ inline void TradesSubscribeRequest::set_marketid(::std::string&& value) {
 #endif
 inline void TradesSubscribeRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.TradesSubscribeRequest.marketID)
 }
 inline void TradesSubscribeRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.TradesSubscribeRequest.marketID)
 }
 inline ::std::string* TradesSubscribeRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.TradesSubscribeRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* TradesSubscribeRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.TradesSubscribeRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void TradesSubscribeRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.TradesSubscribeRequest.marketID)
@@ -14696,13 +15935,13 @@ inline const ::std::string& TradesSubscribeRequest::partyid() const {
   return partyid_.GetNoArena();
 }
 inline void TradesSubscribeRequest::set_partyid(const ::std::string& value) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.TradesSubscribeRequest.partyID)
 }
 #if LANG_CXX11
 inline void TradesSubscribeRequest::set_partyid(::std::string&& value) {
-  
+
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.TradesSubscribeRequest.partyID)
@@ -14710,31 +15949,31 @@ inline void TradesSubscribeRequest::set_partyid(::std::string&& value) {
 #endif
 inline void TradesSubscribeRequest::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.TradesSubscribeRequest.partyID)
 }
 inline void TradesSubscribeRequest::set_partyid(const char* value, size_t size) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.TradesSubscribeRequest.partyID)
 }
 inline ::std::string* TradesSubscribeRequest::mutable_partyid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.TradesSubscribeRequest.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* TradesSubscribeRequest::release_partyid() {
   // @@protoc_insertion_point(field_release:api.TradesSubscribeRequest.partyID)
-  
+
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void TradesSubscribeRequest::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
-    
+
   } else {
-    
+
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.TradesSubscribeRequest.partyID)
@@ -14753,13 +15992,13 @@ inline const ::std::string& CandlesSubscribeRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void CandlesSubscribeRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.CandlesSubscribeRequest.marketID)
 }
 #if LANG_CXX11
 inline void CandlesSubscribeRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.CandlesSubscribeRequest.marketID)
@@ -14767,31 +16006,31 @@ inline void CandlesSubscribeRequest::set_marketid(::std::string&& value) {
 #endif
 inline void CandlesSubscribeRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.CandlesSubscribeRequest.marketID)
 }
 inline void CandlesSubscribeRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.CandlesSubscribeRequest.marketID)
 }
 inline ::std::string* CandlesSubscribeRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.CandlesSubscribeRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* CandlesSubscribeRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.CandlesSubscribeRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void CandlesSubscribeRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.CandlesSubscribeRequest.marketID)
@@ -14806,7 +16045,7 @@ inline ::vega::Interval CandlesSubscribeRequest::interval() const {
   return static_cast< ::vega::Interval >(interval_);
 }
 inline void CandlesSubscribeRequest::set_interval(::vega::Interval value) {
-  
+
   interval_ = value;
   // @@protoc_insertion_point(field_set:api.CandlesSubscribeRequest.interval)
 }
@@ -14824,13 +16063,13 @@ inline const ::std::string& MarketDepthSubscribeRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void MarketDepthSubscribeRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.MarketDepthSubscribeRequest.marketID)
 }
 #if LANG_CXX11
 inline void MarketDepthSubscribeRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.MarketDepthSubscribeRequest.marketID)
@@ -14838,31 +16077,31 @@ inline void MarketDepthSubscribeRequest::set_marketid(::std::string&& value) {
 #endif
 inline void MarketDepthSubscribeRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.MarketDepthSubscribeRequest.marketID)
 }
 inline void MarketDepthSubscribeRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.MarketDepthSubscribeRequest.marketID)
 }
 inline ::std::string* MarketDepthSubscribeRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.MarketDepthSubscribeRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* MarketDepthSubscribeRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.MarketDepthSubscribeRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void MarketDepthSubscribeRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.MarketDepthSubscribeRequest.marketID)
@@ -14881,13 +16120,13 @@ inline const ::std::string& PositionsSubscribeRequest::partyid() const {
   return partyid_.GetNoArena();
 }
 inline void PositionsSubscribeRequest::set_partyid(const ::std::string& value) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.PositionsSubscribeRequest.partyID)
 }
 #if LANG_CXX11
 inline void PositionsSubscribeRequest::set_partyid(::std::string&& value) {
-  
+
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.PositionsSubscribeRequest.partyID)
@@ -14895,31 +16134,31 @@ inline void PositionsSubscribeRequest::set_partyid(::std::string&& value) {
 #endif
 inline void PositionsSubscribeRequest::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.PositionsSubscribeRequest.partyID)
 }
 inline void PositionsSubscribeRequest::set_partyid(const char* value, size_t size) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.PositionsSubscribeRequest.partyID)
 }
 inline ::std::string* PositionsSubscribeRequest::mutable_partyid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.PositionsSubscribeRequest.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PositionsSubscribeRequest::release_partyid() {
   // @@protoc_insertion_point(field_release:api.PositionsSubscribeRequest.partyID)
-  
+
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void PositionsSubscribeRequest::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
-    
+
   } else {
-    
+
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.PositionsSubscribeRequest.partyID)
@@ -14938,13 +16177,13 @@ inline const ::std::string& OrdersByMarketRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void OrdersByMarketRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.OrdersByMarketRequest.marketID)
 }
 #if LANG_CXX11
 inline void OrdersByMarketRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.OrdersByMarketRequest.marketID)
@@ -14952,31 +16191,31 @@ inline void OrdersByMarketRequest::set_marketid(::std::string&& value) {
 #endif
 inline void OrdersByMarketRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.OrdersByMarketRequest.marketID)
 }
 inline void OrdersByMarketRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.OrdersByMarketRequest.marketID)
 }
 inline ::std::string* OrdersByMarketRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.OrdersByMarketRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* OrdersByMarketRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.OrdersByMarketRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void OrdersByMarketRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.OrdersByMarketRequest.marketID)
@@ -15000,13 +16239,13 @@ inline const ::api::Pagination& OrdersByMarketRequest::pagination() const {
 }
 inline ::api::Pagination* OrdersByMarketRequest::release_pagination() {
   // @@protoc_insertion_point(field_release:api.OrdersByMarketRequest.pagination)
-  
+
   ::api::Pagination* temp = pagination_;
   pagination_ = nullptr;
   return temp;
 }
 inline ::api::Pagination* OrdersByMarketRequest::mutable_pagination() {
-  
+
   if (pagination_ == nullptr) {
     auto* p = CreateMaybeMessage<::api::Pagination>(GetArenaNoVirtual());
     pagination_ = p;
@@ -15025,26 +16264,12 @@ inline void OrdersByMarketRequest::set_allocated_pagination(::api::Pagination* p
       pagination = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, pagination, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   pagination_ = pagination;
   // @@protoc_insertion_point(field_set_allocated:api.OrdersByMarketRequest.pagination)
-}
-
-// bool open = 3;
-inline void OrdersByMarketRequest::clear_open() {
-  open_ = false;
-}
-inline bool OrdersByMarketRequest::open() const {
-  // @@protoc_insertion_point(field_get:api.OrdersByMarketRequest.open)
-  return open_;
-}
-inline void OrdersByMarketRequest::set_open(bool value) {
-  
-  open_ = value;
-  // @@protoc_insertion_point(field_set:api.OrdersByMarketRequest.open)
 }
 
 // -------------------------------------------------------------------
@@ -15091,13 +16316,13 @@ inline const ::std::string& OrdersByPartyRequest::partyid() const {
   return partyid_.GetNoArena();
 }
 inline void OrdersByPartyRequest::set_partyid(const ::std::string& value) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.OrdersByPartyRequest.partyID)
 }
 #if LANG_CXX11
 inline void OrdersByPartyRequest::set_partyid(::std::string&& value) {
-  
+
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.OrdersByPartyRequest.partyID)
@@ -15105,31 +16330,31 @@ inline void OrdersByPartyRequest::set_partyid(::std::string&& value) {
 #endif
 inline void OrdersByPartyRequest::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.OrdersByPartyRequest.partyID)
 }
 inline void OrdersByPartyRequest::set_partyid(const char* value, size_t size) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.OrdersByPartyRequest.partyID)
 }
 inline ::std::string* OrdersByPartyRequest::mutable_partyid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.OrdersByPartyRequest.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* OrdersByPartyRequest::release_partyid() {
   // @@protoc_insertion_point(field_release:api.OrdersByPartyRequest.partyID)
-  
+
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void OrdersByPartyRequest::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
-    
+
   } else {
-    
+
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.OrdersByPartyRequest.partyID)
@@ -15153,13 +16378,13 @@ inline const ::api::Pagination& OrdersByPartyRequest::pagination() const {
 }
 inline ::api::Pagination* OrdersByPartyRequest::release_pagination() {
   // @@protoc_insertion_point(field_release:api.OrdersByPartyRequest.pagination)
-  
+
   ::api::Pagination* temp = pagination_;
   pagination_ = nullptr;
   return temp;
 }
 inline ::api::Pagination* OrdersByPartyRequest::mutable_pagination() {
-  
+
   if (pagination_ == nullptr) {
     auto* p = CreateMaybeMessage<::api::Pagination>(GetArenaNoVirtual());
     pagination_ = p;
@@ -15178,26 +16403,12 @@ inline void OrdersByPartyRequest::set_allocated_pagination(::api::Pagination* pa
       pagination = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, pagination, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   pagination_ = pagination;
   // @@protoc_insertion_point(field_set_allocated:api.OrdersByPartyRequest.pagination)
-}
-
-// bool open = 3;
-inline void OrdersByPartyRequest::clear_open() {
-  open_ = false;
-}
-inline bool OrdersByPartyRequest::open() const {
-  // @@protoc_insertion_point(field_get:api.OrdersByPartyRequest.open)
-  return open_;
-}
-inline void OrdersByPartyRequest::set_open(bool value) {
-  
-  open_ = value;
-  // @@protoc_insertion_point(field_set:api.OrdersByPartyRequest.open)
 }
 
 // -------------------------------------------------------------------
@@ -15244,13 +16455,13 @@ inline const ::std::string& OrderByMarketAndIdRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void OrderByMarketAndIdRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.OrderByMarketAndIdRequest.marketID)
 }
 #if LANG_CXX11
 inline void OrderByMarketAndIdRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.OrderByMarketAndIdRequest.marketID)
@@ -15258,31 +16469,31 @@ inline void OrderByMarketAndIdRequest::set_marketid(::std::string&& value) {
 #endif
 inline void OrderByMarketAndIdRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.OrderByMarketAndIdRequest.marketID)
 }
 inline void OrderByMarketAndIdRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.OrderByMarketAndIdRequest.marketID)
 }
 inline ::std::string* OrderByMarketAndIdRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.OrderByMarketAndIdRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* OrderByMarketAndIdRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.OrderByMarketAndIdRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void OrderByMarketAndIdRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.OrderByMarketAndIdRequest.marketID)
@@ -15297,13 +16508,13 @@ inline const ::std::string& OrderByMarketAndIdRequest::orderid() const {
   return orderid_.GetNoArena();
 }
 inline void OrderByMarketAndIdRequest::set_orderid(const ::std::string& value) {
-  
+
   orderid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.OrderByMarketAndIdRequest.orderID)
 }
 #if LANG_CXX11
 inline void OrderByMarketAndIdRequest::set_orderid(::std::string&& value) {
-  
+
   orderid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.OrderByMarketAndIdRequest.orderID)
@@ -15311,31 +16522,31 @@ inline void OrderByMarketAndIdRequest::set_orderid(::std::string&& value) {
 #endif
 inline void OrderByMarketAndIdRequest::set_orderid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   orderid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.OrderByMarketAndIdRequest.orderID)
 }
 inline void OrderByMarketAndIdRequest::set_orderid(const char* value, size_t size) {
-  
+
   orderid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.OrderByMarketAndIdRequest.orderID)
 }
 inline ::std::string* OrderByMarketAndIdRequest::mutable_orderid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.OrderByMarketAndIdRequest.orderID)
   return orderid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* OrderByMarketAndIdRequest::release_orderid() {
   // @@protoc_insertion_point(field_release:api.OrderByMarketAndIdRequest.orderID)
-  
+
   return orderid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void OrderByMarketAndIdRequest::set_allocated_orderid(::std::string* orderid) {
   if (orderid != nullptr) {
-    
+
   } else {
-    
+
   }
   orderid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), orderid);
   // @@protoc_insertion_point(field_set_allocated:api.OrderByMarketAndIdRequest.orderID)
@@ -15357,13 +16568,13 @@ inline const ::vega::Order& OrderByMarketAndIdResponse::order() const {
 }
 inline ::vega::Order* OrderByMarketAndIdResponse::release_order() {
   // @@protoc_insertion_point(field_release:api.OrderByMarketAndIdResponse.order)
-  
+
   ::vega::Order* temp = order_;
   order_ = nullptr;
   return temp;
 }
 inline ::vega::Order* OrderByMarketAndIdResponse::mutable_order() {
-  
+
   if (order_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::Order>(GetArenaNoVirtual());
     order_ = p;
@@ -15382,9 +16593,9 @@ inline void OrderByMarketAndIdResponse::set_allocated_order(::vega::Order* order
       order = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, order, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   order_ = order;
   // @@protoc_insertion_point(field_set_allocated:api.OrderByMarketAndIdResponse.order)
@@ -15403,13 +16614,13 @@ inline const ::std::string& OrderByReferenceRequest::reference() const {
   return reference_.GetNoArena();
 }
 inline void OrderByReferenceRequest::set_reference(const ::std::string& value) {
-  
+
   reference_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.OrderByReferenceRequest.reference)
 }
 #if LANG_CXX11
 inline void OrderByReferenceRequest::set_reference(::std::string&& value) {
-  
+
   reference_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.OrderByReferenceRequest.reference)
@@ -15417,31 +16628,31 @@ inline void OrderByReferenceRequest::set_reference(::std::string&& value) {
 #endif
 inline void OrderByReferenceRequest::set_reference(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   reference_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.OrderByReferenceRequest.reference)
 }
 inline void OrderByReferenceRequest::set_reference(const char* value, size_t size) {
-  
+
   reference_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.OrderByReferenceRequest.reference)
 }
 inline ::std::string* OrderByReferenceRequest::mutable_reference() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.OrderByReferenceRequest.reference)
   return reference_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* OrderByReferenceRequest::release_reference() {
   // @@protoc_insertion_point(field_release:api.OrderByReferenceRequest.reference)
-  
+
   return reference_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void OrderByReferenceRequest::set_allocated_reference(::std::string* reference) {
   if (reference != nullptr) {
-    
+
   } else {
-    
+
   }
   reference_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), reference);
   // @@protoc_insertion_point(field_set_allocated:api.OrderByReferenceRequest.reference)
@@ -15463,13 +16674,13 @@ inline const ::vega::Order& OrderByReferenceResponse::order() const {
 }
 inline ::vega::Order* OrderByReferenceResponse::release_order() {
   // @@protoc_insertion_point(field_release:api.OrderByReferenceResponse.order)
-  
+
   ::vega::Order* temp = order_;
   order_ = nullptr;
   return temp;
 }
 inline ::vega::Order* OrderByReferenceResponse::mutable_order() {
-  
+
   if (order_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::Order>(GetArenaNoVirtual());
     order_ = p;
@@ -15488,9 +16699,9 @@ inline void OrderByReferenceResponse::set_allocated_order(::vega::Order* order) 
       order = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, order, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   order_ = order;
   // @@protoc_insertion_point(field_set_allocated:api.OrderByReferenceResponse.order)
@@ -15540,13 +16751,13 @@ inline const ::std::string& CandlesRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void CandlesRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.CandlesRequest.marketID)
 }
 #if LANG_CXX11
 inline void CandlesRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.CandlesRequest.marketID)
@@ -15554,31 +16765,31 @@ inline void CandlesRequest::set_marketid(::std::string&& value) {
 #endif
 inline void CandlesRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.CandlesRequest.marketID)
 }
 inline void CandlesRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.CandlesRequest.marketID)
 }
 inline ::std::string* CandlesRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.CandlesRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* CandlesRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.CandlesRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void CandlesRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.CandlesRequest.marketID)
@@ -15593,7 +16804,7 @@ inline ::google::protobuf::int64 CandlesRequest::sincetimestamp() const {
   return sincetimestamp_;
 }
 inline void CandlesRequest::set_sincetimestamp(::google::protobuf::int64 value) {
-  
+
   sincetimestamp_ = value;
   // @@protoc_insertion_point(field_set:api.CandlesRequest.sinceTimestamp)
 }
@@ -15607,7 +16818,7 @@ inline ::vega::Interval CandlesRequest::interval() const {
   return static_cast< ::vega::Interval >(interval_);
 }
 inline void CandlesRequest::set_interval(::vega::Interval value) {
-  
+
   interval_ = value;
   // @@protoc_insertion_point(field_set:api.CandlesRequest.interval)
 }
@@ -15656,13 +16867,13 @@ inline const ::std::string& MarketDepthRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void MarketDepthRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.MarketDepthRequest.marketID)
 }
 #if LANG_CXX11
 inline void MarketDepthRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.MarketDepthRequest.marketID)
@@ -15670,31 +16881,31 @@ inline void MarketDepthRequest::set_marketid(::std::string&& value) {
 #endif
 inline void MarketDepthRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.MarketDepthRequest.marketID)
 }
 inline void MarketDepthRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.MarketDepthRequest.marketID)
 }
 inline ::std::string* MarketDepthRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.MarketDepthRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* MarketDepthRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.MarketDepthRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void MarketDepthRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.MarketDepthRequest.marketID)
@@ -15709,7 +16920,7 @@ inline ::google::protobuf::uint64 MarketDepthRequest::maxdepth() const {
   return maxdepth_;
 }
 inline void MarketDepthRequest::set_maxdepth(::google::protobuf::uint64 value) {
-  
+
   maxdepth_ = value;
   // @@protoc_insertion_point(field_set:api.MarketDepthRequest.maxDepth)
 }
@@ -15727,13 +16938,13 @@ inline const ::std::string& MarketDepthResponse::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void MarketDepthResponse::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.MarketDepthResponse.marketID)
 }
 #if LANG_CXX11
 inline void MarketDepthResponse::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.MarketDepthResponse.marketID)
@@ -15741,31 +16952,31 @@ inline void MarketDepthResponse::set_marketid(::std::string&& value) {
 #endif
 inline void MarketDepthResponse::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.MarketDepthResponse.marketID)
 }
 inline void MarketDepthResponse::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.MarketDepthResponse.marketID)
 }
 inline ::std::string* MarketDepthResponse::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.MarketDepthResponse.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* MarketDepthResponse::release_marketid() {
   // @@protoc_insertion_point(field_release:api.MarketDepthResponse.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void MarketDepthResponse::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.MarketDepthResponse.marketID)
@@ -15837,13 +17048,13 @@ inline const ::vega::Trade& MarketDepthResponse::lasttrade() const {
 }
 inline ::vega::Trade* MarketDepthResponse::release_lasttrade() {
   // @@protoc_insertion_point(field_release:api.MarketDepthResponse.lastTrade)
-  
+
   ::vega::Trade* temp = lasttrade_;
   lasttrade_ = nullptr;
   return temp;
 }
 inline ::vega::Trade* MarketDepthResponse::mutable_lasttrade() {
-  
+
   if (lasttrade_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::Trade>(GetArenaNoVirtual());
     lasttrade_ = p;
@@ -15862,9 +17073,9 @@ inline void MarketDepthResponse::set_allocated_lasttrade(::vega::Trade* lasttrad
       lasttrade = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, lasttrade, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   lasttrade_ = lasttrade;
   // @@protoc_insertion_point(field_set_allocated:api.MarketDepthResponse.lastTrade)
@@ -15883,13 +17094,13 @@ inline const ::std::string& TradesByMarketRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void TradesByMarketRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.TradesByMarketRequest.marketID)
 }
 #if LANG_CXX11
 inline void TradesByMarketRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.TradesByMarketRequest.marketID)
@@ -15897,31 +17108,31 @@ inline void TradesByMarketRequest::set_marketid(::std::string&& value) {
 #endif
 inline void TradesByMarketRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.TradesByMarketRequest.marketID)
 }
 inline void TradesByMarketRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.TradesByMarketRequest.marketID)
 }
 inline ::std::string* TradesByMarketRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.TradesByMarketRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* TradesByMarketRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.TradesByMarketRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void TradesByMarketRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.TradesByMarketRequest.marketID)
@@ -15945,13 +17156,13 @@ inline const ::api::Pagination& TradesByMarketRequest::pagination() const {
 }
 inline ::api::Pagination* TradesByMarketRequest::release_pagination() {
   // @@protoc_insertion_point(field_release:api.TradesByMarketRequest.pagination)
-  
+
   ::api::Pagination* temp = pagination_;
   pagination_ = nullptr;
   return temp;
 }
 inline ::api::Pagination* TradesByMarketRequest::mutable_pagination() {
-  
+
   if (pagination_ == nullptr) {
     auto* p = CreateMaybeMessage<::api::Pagination>(GetArenaNoVirtual());
     pagination_ = p;
@@ -15970,9 +17181,9 @@ inline void TradesByMarketRequest::set_allocated_pagination(::api::Pagination* p
       pagination = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, pagination, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   pagination_ = pagination;
   // @@protoc_insertion_point(field_set_allocated:api.TradesByMarketRequest.pagination)
@@ -16022,13 +17233,13 @@ inline const ::std::string& PositionsByPartyRequest::partyid() const {
   return partyid_.GetNoArena();
 }
 inline void PositionsByPartyRequest::set_partyid(const ::std::string& value) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.PositionsByPartyRequest.partyID)
 }
 #if LANG_CXX11
 inline void PositionsByPartyRequest::set_partyid(::std::string&& value) {
-  
+
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.PositionsByPartyRequest.partyID)
@@ -16036,31 +17247,31 @@ inline void PositionsByPartyRequest::set_partyid(::std::string&& value) {
 #endif
 inline void PositionsByPartyRequest::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.PositionsByPartyRequest.partyID)
 }
 inline void PositionsByPartyRequest::set_partyid(const char* value, size_t size) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.PositionsByPartyRequest.partyID)
 }
 inline ::std::string* PositionsByPartyRequest::mutable_partyid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.PositionsByPartyRequest.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PositionsByPartyRequest::release_partyid() {
   // @@protoc_insertion_point(field_release:api.PositionsByPartyRequest.partyID)
-  
+
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void PositionsByPartyRequest::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
-    
+
   } else {
-    
+
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.PositionsByPartyRequest.partyID)
@@ -16075,13 +17286,13 @@ inline const ::std::string& PositionsByPartyRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void PositionsByPartyRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.PositionsByPartyRequest.marketID)
 }
 #if LANG_CXX11
 inline void PositionsByPartyRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.PositionsByPartyRequest.marketID)
@@ -16089,31 +17300,31 @@ inline void PositionsByPartyRequest::set_marketid(::std::string&& value) {
 #endif
 inline void PositionsByPartyRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.PositionsByPartyRequest.marketID)
 }
 inline void PositionsByPartyRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.PositionsByPartyRequest.marketID)
 }
 inline ::std::string* PositionsByPartyRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.PositionsByPartyRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PositionsByPartyRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.PositionsByPartyRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void PositionsByPartyRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.PositionsByPartyRequest.marketID)
@@ -16163,7 +17374,7 @@ inline ::google::protobuf::int64 VegaTimeResponse::timestamp() const {
   return timestamp_;
 }
 inline void VegaTimeResponse::set_timestamp(::google::protobuf::int64 value) {
-  
+
   timestamp_ = value;
   // @@protoc_insertion_point(field_set:api.VegaTimeResponse.timestamp)
 }
@@ -16181,7 +17392,7 @@ inline ::google::protobuf::uint64 Pagination::skip() const {
   return skip_;
 }
 inline void Pagination::set_skip(::google::protobuf::uint64 value) {
-  
+
   skip_ = value;
   // @@protoc_insertion_point(field_set:api.Pagination.skip)
 }
@@ -16195,7 +17406,7 @@ inline ::google::protobuf::uint64 Pagination::limit() const {
   return limit_;
 }
 inline void Pagination::set_limit(::google::protobuf::uint64 value) {
-  
+
   limit_ = value;
   // @@protoc_insertion_point(field_set:api.Pagination.limit)
 }
@@ -16209,7 +17420,7 @@ inline bool Pagination::descending() const {
   return descending_;
 }
 inline void Pagination::set_descending(bool value) {
-  
+
   descending_ = value;
   // @@protoc_insertion_point(field_set:api.Pagination.descending)
 }
@@ -16289,13 +17500,13 @@ inline const ::std::string& PartyAccountsRequest::partyid() const {
   return partyid_.GetNoArena();
 }
 inline void PartyAccountsRequest::set_partyid(const ::std::string& value) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.PartyAccountsRequest.partyID)
 }
 #if LANG_CXX11
 inline void PartyAccountsRequest::set_partyid(::std::string&& value) {
-  
+
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.PartyAccountsRequest.partyID)
@@ -16303,31 +17514,31 @@ inline void PartyAccountsRequest::set_partyid(::std::string&& value) {
 #endif
 inline void PartyAccountsRequest::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.PartyAccountsRequest.partyID)
 }
 inline void PartyAccountsRequest::set_partyid(const char* value, size_t size) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.PartyAccountsRequest.partyID)
 }
 inline ::std::string* PartyAccountsRequest::mutable_partyid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.PartyAccountsRequest.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PartyAccountsRequest::release_partyid() {
   // @@protoc_insertion_point(field_release:api.PartyAccountsRequest.partyID)
-  
+
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void PartyAccountsRequest::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
-    
+
   } else {
-    
+
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.PartyAccountsRequest.partyID)
@@ -16342,13 +17553,13 @@ inline const ::std::string& PartyAccountsRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void PartyAccountsRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.PartyAccountsRequest.marketID)
 }
 #if LANG_CXX11
 inline void PartyAccountsRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.PartyAccountsRequest.marketID)
@@ -16356,31 +17567,31 @@ inline void PartyAccountsRequest::set_marketid(::std::string&& value) {
 #endif
 inline void PartyAccountsRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.PartyAccountsRequest.marketID)
 }
 inline void PartyAccountsRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.PartyAccountsRequest.marketID)
 }
 inline ::std::string* PartyAccountsRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.PartyAccountsRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PartyAccountsRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.PartyAccountsRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void PartyAccountsRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.PartyAccountsRequest.marketID)
@@ -16395,7 +17606,7 @@ inline ::vega::AccountType PartyAccountsRequest::type() const {
   return static_cast< ::vega::AccountType >(type_);
 }
 inline void PartyAccountsRequest::set_type(::vega::AccountType value) {
-  
+
   type_ = value;
   // @@protoc_insertion_point(field_set:api.PartyAccountsRequest.type)
 }
@@ -16409,13 +17620,13 @@ inline const ::std::string& PartyAccountsRequest::asset() const {
   return asset_.GetNoArena();
 }
 inline void PartyAccountsRequest::set_asset(const ::std::string& value) {
-  
+
   asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.PartyAccountsRequest.asset)
 }
 #if LANG_CXX11
 inline void PartyAccountsRequest::set_asset(::std::string&& value) {
-  
+
   asset_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.PartyAccountsRequest.asset)
@@ -16423,31 +17634,31 @@ inline void PartyAccountsRequest::set_asset(::std::string&& value) {
 #endif
 inline void PartyAccountsRequest::set_asset(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.PartyAccountsRequest.asset)
 }
 inline void PartyAccountsRequest::set_asset(const char* value, size_t size) {
-  
+
   asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.PartyAccountsRequest.asset)
 }
 inline ::std::string* PartyAccountsRequest::mutable_asset() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.PartyAccountsRequest.asset)
   return asset_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PartyAccountsRequest::release_asset() {
   // @@protoc_insertion_point(field_release:api.PartyAccountsRequest.asset)
-  
+
   return asset_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void PartyAccountsRequest::set_allocated_asset(::std::string* asset) {
   if (asset != nullptr) {
-    
+
   } else {
-    
+
   }
   asset_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), asset);
   // @@protoc_insertion_point(field_set_allocated:api.PartyAccountsRequest.asset)
@@ -16497,13 +17708,13 @@ inline const ::std::string& MarketAccountsRequest::marketid() const {
   return marketid_.GetNoArena();
 }
 inline void MarketAccountsRequest::set_marketid(const ::std::string& value) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.MarketAccountsRequest.marketID)
 }
 #if LANG_CXX11
 inline void MarketAccountsRequest::set_marketid(::std::string&& value) {
-  
+
   marketid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.MarketAccountsRequest.marketID)
@@ -16511,31 +17722,31 @@ inline void MarketAccountsRequest::set_marketid(::std::string&& value) {
 #endif
 inline void MarketAccountsRequest::set_marketid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.MarketAccountsRequest.marketID)
 }
 inline void MarketAccountsRequest::set_marketid(const char* value, size_t size) {
-  
+
   marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.MarketAccountsRequest.marketID)
 }
 inline ::std::string* MarketAccountsRequest::mutable_marketid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.MarketAccountsRequest.marketID)
   return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* MarketAccountsRequest::release_marketid() {
   // @@protoc_insertion_point(field_release:api.MarketAccountsRequest.marketID)
-  
+
   return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void MarketAccountsRequest::set_allocated_marketid(::std::string* marketid) {
   if (marketid != nullptr) {
-    
+
   } else {
-    
+
   }
   marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
   // @@protoc_insertion_point(field_set_allocated:api.MarketAccountsRequest.marketID)
@@ -16550,13 +17761,13 @@ inline const ::std::string& MarketAccountsRequest::asset() const {
   return asset_.GetNoArena();
 }
 inline void MarketAccountsRequest::set_asset(const ::std::string& value) {
-  
+
   asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.MarketAccountsRequest.asset)
 }
 #if LANG_CXX11
 inline void MarketAccountsRequest::set_asset(::std::string&& value) {
-  
+
   asset_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.MarketAccountsRequest.asset)
@@ -16564,31 +17775,31 @@ inline void MarketAccountsRequest::set_asset(::std::string&& value) {
 #endif
 inline void MarketAccountsRequest::set_asset(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.MarketAccountsRequest.asset)
 }
 inline void MarketAccountsRequest::set_asset(const char* value, size_t size) {
-  
+
   asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.MarketAccountsRequest.asset)
 }
 inline ::std::string* MarketAccountsRequest::mutable_asset() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.MarketAccountsRequest.asset)
   return asset_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* MarketAccountsRequest::release_asset() {
   // @@protoc_insertion_point(field_release:api.MarketAccountsRequest.asset)
-  
+
   return asset_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void MarketAccountsRequest::set_allocated_asset(::std::string* asset) {
   if (asset != nullptr) {
-    
+
   } else {
-    
+
   }
   asset_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), asset);
   // @@protoc_insertion_point(field_set_allocated:api.MarketAccountsRequest.asset)
@@ -16638,13 +17849,13 @@ inline const ::std::string& PrepareProposalRequest::partyid() const {
   return partyid_.GetNoArena();
 }
 inline void PrepareProposalRequest::set_partyid(const ::std::string& value) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.PrepareProposalRequest.partyID)
 }
 #if LANG_CXX11
 inline void PrepareProposalRequest::set_partyid(::std::string&& value) {
-  
+
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.PrepareProposalRequest.partyID)
@@ -16652,31 +17863,31 @@ inline void PrepareProposalRequest::set_partyid(::std::string&& value) {
 #endif
 inline void PrepareProposalRequest::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.PrepareProposalRequest.partyID)
 }
 inline void PrepareProposalRequest::set_partyid(const char* value, size_t size) {
-  
+
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.PrepareProposalRequest.partyID)
 }
 inline ::std::string* PrepareProposalRequest::mutable_partyid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.PrepareProposalRequest.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PrepareProposalRequest::release_partyid() {
   // @@protoc_insertion_point(field_release:api.PrepareProposalRequest.partyID)
-  
+
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void PrepareProposalRequest::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
-    
+
   } else {
-    
+
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.PrepareProposalRequest.partyID)
@@ -16691,13 +17902,13 @@ inline const ::std::string& PrepareProposalRequest::reference() const {
   return reference_.GetNoArena();
 }
 inline void PrepareProposalRequest::set_reference(const ::std::string& value) {
-  
+
   reference_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.PrepareProposalRequest.reference)
 }
 #if LANG_CXX11
 inline void PrepareProposalRequest::set_reference(::std::string&& value) {
-  
+
   reference_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.PrepareProposalRequest.reference)
@@ -16705,31 +17916,31 @@ inline void PrepareProposalRequest::set_reference(::std::string&& value) {
 #endif
 inline void PrepareProposalRequest::set_reference(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   reference_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.PrepareProposalRequest.reference)
 }
 inline void PrepareProposalRequest::set_reference(const char* value, size_t size) {
-  
+
   reference_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.PrepareProposalRequest.reference)
 }
 inline ::std::string* PrepareProposalRequest::mutable_reference() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.PrepareProposalRequest.reference)
   return reference_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PrepareProposalRequest::release_reference() {
   // @@protoc_insertion_point(field_release:api.PrepareProposalRequest.reference)
-  
+
   return reference_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void PrepareProposalRequest::set_allocated_reference(::std::string* reference) {
   if (reference != nullptr) {
-    
+
   } else {
-    
+
   }
   reference_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), reference);
   // @@protoc_insertion_point(field_set_allocated:api.PrepareProposalRequest.reference)
@@ -16747,13 +17958,13 @@ inline const ::vega::ProposalTerms& PrepareProposalRequest::proposal() const {
 }
 inline ::vega::ProposalTerms* PrepareProposalRequest::release_proposal() {
   // @@protoc_insertion_point(field_release:api.PrepareProposalRequest.proposal)
-  
+
   ::vega::ProposalTerms* temp = proposal_;
   proposal_ = nullptr;
   return temp;
 }
 inline ::vega::ProposalTerms* PrepareProposalRequest::mutable_proposal() {
-  
+
   if (proposal_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::ProposalTerms>(GetArenaNoVirtual());
     proposal_ = p;
@@ -16772,9 +17983,9 @@ inline void PrepareProposalRequest::set_allocated_proposal(::vega::ProposalTerms
       proposal = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, proposal, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   proposal_ = proposal;
   // @@protoc_insertion_point(field_set_allocated:api.PrepareProposalRequest.proposal)
@@ -16793,13 +18004,13 @@ inline const ::std::string& PrepareProposalResponse::blob() const {
   return blob_.GetNoArena();
 }
 inline void PrepareProposalResponse::set_blob(const ::std::string& value) {
-  
+
   blob_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.PrepareProposalResponse.blob)
 }
 #if LANG_CXX11
 inline void PrepareProposalResponse::set_blob(::std::string&& value) {
-  
+
   blob_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.PrepareProposalResponse.blob)
@@ -16807,31 +18018,31 @@ inline void PrepareProposalResponse::set_blob(::std::string&& value) {
 #endif
 inline void PrepareProposalResponse::set_blob(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   blob_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.PrepareProposalResponse.blob)
 }
 inline void PrepareProposalResponse::set_blob(const void* value, size_t size) {
-  
+
   blob_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.PrepareProposalResponse.blob)
 }
 inline ::std::string* PrepareProposalResponse::mutable_blob() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.PrepareProposalResponse.blob)
   return blob_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PrepareProposalResponse::release_blob() {
   // @@protoc_insertion_point(field_release:api.PrepareProposalResponse.blob)
-  
+
   return blob_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void PrepareProposalResponse::set_allocated_blob(::std::string* blob) {
   if (blob != nullptr) {
-    
+
   } else {
-    
+
   }
   blob_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), blob);
   // @@protoc_insertion_point(field_set_allocated:api.PrepareProposalResponse.blob)
@@ -16849,13 +18060,13 @@ inline const ::vega::Proposal& PrepareProposalResponse::pendingproposal() const 
 }
 inline ::vega::Proposal* PrepareProposalResponse::release_pendingproposal() {
   // @@protoc_insertion_point(field_release:api.PrepareProposalResponse.pendingProposal)
-  
+
   ::vega::Proposal* temp = pendingproposal_;
   pendingproposal_ = nullptr;
   return temp;
 }
 inline ::vega::Proposal* PrepareProposalResponse::mutable_pendingproposal() {
-  
+
   if (pendingproposal_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::Proposal>(GetArenaNoVirtual());
     pendingproposal_ = p;
@@ -16874,9 +18085,9 @@ inline void PrepareProposalResponse::set_allocated_pendingproposal(::vega::Propo
       pendingproposal = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, pendingproposal, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   pendingproposal_ = pendingproposal;
   // @@protoc_insertion_point(field_set_allocated:api.PrepareProposalResponse.pendingProposal)
@@ -16898,13 +18109,13 @@ inline const ::vega::Vote& PrepareVoteRequest::vote() const {
 }
 inline ::vega::Vote* PrepareVoteRequest::release_vote() {
   // @@protoc_insertion_point(field_release:api.PrepareVoteRequest.vote)
-  
+
   ::vega::Vote* temp = vote_;
   vote_ = nullptr;
   return temp;
 }
 inline ::vega::Vote* PrepareVoteRequest::mutable_vote() {
-  
+
   if (vote_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::Vote>(GetArenaNoVirtual());
     vote_ = p;
@@ -16923,9 +18134,9 @@ inline void PrepareVoteRequest::set_allocated_vote(::vega::Vote* vote) {
       vote = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, vote, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   vote_ = vote;
   // @@protoc_insertion_point(field_set_allocated:api.PrepareVoteRequest.vote)
@@ -16944,13 +18155,13 @@ inline const ::std::string& PrepareVoteResponse::blob() const {
   return blob_.GetNoArena();
 }
 inline void PrepareVoteResponse::set_blob(const ::std::string& value) {
-  
+
   blob_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.PrepareVoteResponse.blob)
 }
 #if LANG_CXX11
 inline void PrepareVoteResponse::set_blob(::std::string&& value) {
-  
+
   blob_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.PrepareVoteResponse.blob)
@@ -16958,31 +18169,31 @@ inline void PrepareVoteResponse::set_blob(::std::string&& value) {
 #endif
 inline void PrepareVoteResponse::set_blob(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   blob_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.PrepareVoteResponse.blob)
 }
 inline void PrepareVoteResponse::set_blob(const void* value, size_t size) {
-  
+
   blob_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.PrepareVoteResponse.blob)
 }
 inline ::std::string* PrepareVoteResponse::mutable_blob() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.PrepareVoteResponse.blob)
   return blob_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PrepareVoteResponse::release_blob() {
   // @@protoc_insertion_point(field_release:api.PrepareVoteResponse.blob)
-  
+
   return blob_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void PrepareVoteResponse::set_allocated_blob(::std::string* blob) {
   if (blob != nullptr) {
-    
+
   } else {
-    
+
   }
   blob_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), blob);
   // @@protoc_insertion_point(field_set_allocated:api.PrepareVoteResponse.blob)
@@ -17000,13 +18211,13 @@ inline const ::vega::Vote& PrepareVoteResponse::vote() const {
 }
 inline ::vega::Vote* PrepareVoteResponse::release_vote() {
   // @@protoc_insertion_point(field_release:api.PrepareVoteResponse.vote)
-  
+
   ::vega::Vote* temp = vote_;
   vote_ = nullptr;
   return temp;
 }
 inline ::vega::Vote* PrepareVoteResponse::mutable_vote() {
-  
+
   if (vote_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::Vote>(GetArenaNoVirtual());
     vote_ = p;
@@ -17025,9 +18236,9 @@ inline void PrepareVoteResponse::set_allocated_vote(::vega::Vote* vote) {
       vote = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, vote, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   vote_ = vote;
   // @@protoc_insertion_point(field_set_allocated:api.PrepareVoteResponse.vote)
@@ -17046,13 +18257,13 @@ inline const ::std::string& OrderByIDRequest::orderid() const {
   return orderid_.GetNoArena();
 }
 inline void OrderByIDRequest::set_orderid(const ::std::string& value) {
-  
+
   orderid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.OrderByIDRequest.orderID)
 }
 #if LANG_CXX11
 inline void OrderByIDRequest::set_orderid(::std::string&& value) {
-  
+
   orderid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.OrderByIDRequest.orderID)
@@ -17060,31 +18271,31 @@ inline void OrderByIDRequest::set_orderid(::std::string&& value) {
 #endif
 inline void OrderByIDRequest::set_orderid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   orderid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.OrderByIDRequest.orderID)
 }
 inline void OrderByIDRequest::set_orderid(const char* value, size_t size) {
-  
+
   orderid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.OrderByIDRequest.orderID)
 }
 inline ::std::string* OrderByIDRequest::mutable_orderid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.OrderByIDRequest.orderID)
   return orderid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* OrderByIDRequest::release_orderid() {
   // @@protoc_insertion_point(field_release:api.OrderByIDRequest.orderID)
-  
+
   return orderid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void OrderByIDRequest::set_allocated_orderid(::std::string* orderid) {
   if (orderid != nullptr) {
-    
+
   } else {
-    
+
   }
   orderid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), orderid);
   // @@protoc_insertion_point(field_set_allocated:api.OrderByIDRequest.orderID)
@@ -17099,7 +18310,7 @@ inline ::google::protobuf::uint64 OrderByIDRequest::version() const {
   return version_;
 }
 inline void OrderByIDRequest::set_version(::google::protobuf::uint64 value) {
-  
+
   version_ = value;
   // @@protoc_insertion_point(field_set:api.OrderByIDRequest.version)
 }
@@ -17117,13 +18328,13 @@ inline const ::std::string& OrderByReferenceIDRequest::referenceid() const {
   return referenceid_.GetNoArena();
 }
 inline void OrderByReferenceIDRequest::set_referenceid(const ::std::string& value) {
-  
+
   referenceid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.OrderByReferenceIDRequest.referenceID)
 }
 #if LANG_CXX11
 inline void OrderByReferenceIDRequest::set_referenceid(::std::string&& value) {
-  
+
   referenceid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.OrderByReferenceIDRequest.referenceID)
@@ -17131,31 +18342,31 @@ inline void OrderByReferenceIDRequest::set_referenceid(::std::string&& value) {
 #endif
 inline void OrderByReferenceIDRequest::set_referenceid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   referenceid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.OrderByReferenceIDRequest.referenceID)
 }
 inline void OrderByReferenceIDRequest::set_referenceid(const char* value, size_t size) {
-  
+
   referenceid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.OrderByReferenceIDRequest.referenceID)
 }
 inline ::std::string* OrderByReferenceIDRequest::mutable_referenceid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.OrderByReferenceIDRequest.referenceID)
   return referenceid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* OrderByReferenceIDRequest::release_referenceid() {
   // @@protoc_insertion_point(field_release:api.OrderByReferenceIDRequest.referenceID)
-  
+
   return referenceid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void OrderByReferenceIDRequest::set_allocated_referenceid(::std::string* referenceid) {
   if (referenceid != nullptr) {
-    
+
   } else {
-    
+
   }
   referenceid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), referenceid);
   // @@protoc_insertion_point(field_set_allocated:api.OrderByReferenceIDRequest.referenceID)
@@ -17174,13 +18385,13 @@ inline const ::std::string& OrderVersionsByIDRequest::orderid() const {
   return orderid_.GetNoArena();
 }
 inline void OrderVersionsByIDRequest::set_orderid(const ::std::string& value) {
-  
+
   orderid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.OrderVersionsByIDRequest.orderID)
 }
 #if LANG_CXX11
 inline void OrderVersionsByIDRequest::set_orderid(::std::string&& value) {
-  
+
   orderid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:api.OrderVersionsByIDRequest.orderID)
@@ -17188,31 +18399,31 @@ inline void OrderVersionsByIDRequest::set_orderid(::std::string&& value) {
 #endif
 inline void OrderVersionsByIDRequest::set_orderid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   orderid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:api.OrderVersionsByIDRequest.orderID)
 }
 inline void OrderVersionsByIDRequest::set_orderid(const char* value, size_t size) {
-  
+
   orderid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:api.OrderVersionsByIDRequest.orderID)
 }
 inline ::std::string* OrderVersionsByIDRequest::mutable_orderid() {
-  
+
   // @@protoc_insertion_point(field_mutable:api.OrderVersionsByIDRequest.orderID)
   return orderid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* OrderVersionsByIDRequest::release_orderid() {
   // @@protoc_insertion_point(field_release:api.OrderVersionsByIDRequest.orderID)
-  
+
   return orderid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void OrderVersionsByIDRequest::set_allocated_orderid(::std::string* orderid) {
   if (orderid != nullptr) {
-    
+
   } else {
-    
+
   }
   orderid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), orderid);
   // @@protoc_insertion_point(field_set_allocated:api.OrderVersionsByIDRequest.orderID)
@@ -17236,13 +18447,13 @@ inline const ::api::Pagination& OrderVersionsByIDRequest::pagination() const {
 }
 inline ::api::Pagination* OrderVersionsByIDRequest::release_pagination() {
   // @@protoc_insertion_point(field_release:api.OrderVersionsByIDRequest.pagination)
-  
+
   ::api::Pagination* temp = pagination_;
   pagination_ = nullptr;
   return temp;
 }
 inline ::api::Pagination* OrderVersionsByIDRequest::mutable_pagination() {
-  
+
   if (pagination_ == nullptr) {
     auto* p = CreateMaybeMessage<::api::Pagination>(GetArenaNoVirtual());
     pagination_ = p;
@@ -17261,9 +18472,9 @@ inline void OrderVersionsByIDRequest::set_allocated_pagination(::api::Pagination
       pagination = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, pagination, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   pagination_ = pagination;
   // @@protoc_insertion_point(field_set_allocated:api.OrderVersionsByIDRequest.pagination)
@@ -17303,6 +18514,22 @@ OrderVersionsResponse::orders() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

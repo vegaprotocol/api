@@ -56,6 +56,11 @@ class tradingStub(object):
                 request_serializer=proto_dot_api_dot_trading__pb2.PrepareVoteRequest.SerializeToString,
                 response_deserializer=proto_dot_api_dot_trading__pb2.PrepareVoteResponse.FromString,
                 )
+        self.PropagateChainEvent = channel.unary_unary(
+                '/api.trading/PropagateChainEvent',
+                request_serializer=proto_dot_api_dot_trading__pb2.PropagateChainEventRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.PropagateChainEventResponse.FromString,
+                )
 
 
 class tradingServicer(object):
@@ -119,6 +124,13 @@ class tradingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PropagateChainEvent(self, request, context):
+        """chain events
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_tradingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -161,6 +173,11 @@ def add_tradingServicer_to_server(servicer, server):
                     servicer.PrepareVote,
                     request_deserializer=proto_dot_api_dot_trading__pb2.PrepareVoteRequest.FromString,
                     response_serializer=proto_dot_api_dot_trading__pb2.PrepareVoteResponse.SerializeToString,
+            ),
+            'PropagateChainEvent': grpc.unary_unary_rpc_method_handler(
+                    servicer.PropagateChainEvent,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.PropagateChainEventRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.PropagateChainEventResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -297,6 +314,22 @@ class trading(object):
         return grpc.experimental.unary_unary(request, target, '/api.trading/PrepareVote',
             proto_dot_api_dot_trading__pb2.PrepareVoteRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.PrepareVoteResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PropagateChainEvent(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.trading/PropagateChainEvent',
+            proto_dot_api_dot_trading__pb2.PropagateChainEventRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.PropagateChainEventResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -544,6 +577,21 @@ class trading_dataStub(object):
                 '/api.trading_data/TransferResponsesSubscribe',
                 request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
                 response_deserializer=proto_dot_vega__pb2.TransferResponse.FromString,
+                )
+        self.GetNodeSignaturesAggregate = channel.unary_unary(
+                '/api.trading_data/GetNodeSignaturesAggregate',
+                request_serializer=proto_dot_api_dot_trading__pb2.GetNodeSignaturesAggregateRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.GetNodeSignaturesAggregateResponse.FromString,
+                )
+        self.AssetByID = channel.unary_unary(
+                '/api.trading_data/AssetByID',
+                request_serializer=proto_dot_api_dot_trading__pb2.AssetByIDRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.AssetByIDResponse.FromString,
+                )
+        self.Assets = channel.unary_unary(
+                '/api.trading_data/Assets',
+                request_serializer=proto_dot_api_dot_trading__pb2.AssetsRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.AssetsResponse.FromString,
                 )
 
 
@@ -899,6 +947,27 @@ class trading_dataServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetNodeSignaturesAggregate(self, request, context):
+        """Get an aggregate of signature from all the node of the network
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AssetByID(self, request, context):
+        """Get an asset by its ID
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Assets(self, request, context):
+        """Get the list of all assets in vega
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_trading_dataServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1136,6 +1205,21 @@ def add_trading_dataServicer_to_server(servicer, server):
                     servicer.TransferResponsesSubscribe,
                     request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                     response_serializer=proto_dot_vega__pb2.TransferResponse.SerializeToString,
+            ),
+            'GetNodeSignaturesAggregate': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetNodeSignaturesAggregate,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.GetNodeSignaturesAggregateRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.GetNodeSignaturesAggregateResponse.SerializeToString,
+            ),
+            'AssetByID': grpc.unary_unary_rpc_method_handler(
+                    servicer.AssetByID,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.AssetByIDRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.AssetByIDResponse.SerializeToString,
+            ),
+            'Assets': grpc.unary_unary_rpc_method_handler(
+                    servicer.Assets,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.AssetsRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.AssetsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1896,5 +1980,53 @@ class trading_data(object):
         return grpc.experimental.unary_stream(request, target, '/api.trading_data/TransferResponsesSubscribe',
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             proto_dot_vega__pb2.TransferResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetNodeSignaturesAggregate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetNodeSignaturesAggregate',
+            proto_dot_api_dot_trading__pb2.GetNodeSignaturesAggregateRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.GetNodeSignaturesAggregateResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AssetByID(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.trading_data/AssetByID',
+            proto_dot_api_dot_trading__pb2.AssetByIDRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.AssetByIDResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Assets(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.trading_data/Assets',
+            proto_dot_api_dot_trading__pb2.AssetsRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.AssetsResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -34,6 +34,7 @@
 #include <google/protobuf/map_entry.h>
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "github.com/mwitkow/go-proto-validators/validator.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto
@@ -332,18 +333,25 @@ class DiscreteTrading :
 
   // accessors -------------------------------------------------------
 
-  // int64 duration = 1;
-  void clear_duration();
-  static const int kDurationFieldNumber = 1;
-  ::google::protobuf::int64 duration() const;
-  void set_duration(::google::protobuf::int64 value);
+  // int64 durationNs = 1 [(.validator.field) = {
+  void clear_durationns();
+  static const int kDurationNsFieldNumber = 1;
+  ::google::protobuf::int64 durationns() const;
+  void set_durationns(::google::protobuf::int64 value);
+
+  // uint64 tickSize = 2;
+  void clear_ticksize();
+  static const int kTickSizeFieldNumber = 2;
+  ::google::protobuf::uint64 ticksize() const;
+  void set_ticksize(::google::protobuf::uint64 value);
 
   // @@protoc_insertion_point(class_scope:vega.DiscreteTrading)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::int64 duration_;
+  ::google::protobuf::int64 durationns_;
+  ::google::protobuf::uint64 ticksize_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fmarkets_2eproto;
 };
@@ -2198,32 +2206,18 @@ class Market :
   ::std::string* release_id();
   void set_allocated_id(::std::string* id);
 
-  // string name = 2;
-  void clear_name();
-  static const int kNameFieldNumber = 2;
-  const ::std::string& name() const;
-  void set_name(const ::std::string& value);
-  #if LANG_CXX11
-  void set_name(::std::string&& value);
-  #endif
-  void set_name(const char* value);
-  void set_name(const char* value, size_t size);
-  ::std::string* mutable_name();
-  ::std::string* release_name();
-  void set_allocated_name(::std::string* name);
-
-  // .vega.TradableInstrument tradableInstrument = 3;
+  // .vega.TradableInstrument tradableInstrument = 2;
   bool has_tradableinstrument() const;
   void clear_tradableinstrument();
-  static const int kTradableInstrumentFieldNumber = 3;
+  static const int kTradableInstrumentFieldNumber = 2;
   const ::vega::TradableInstrument& tradableinstrument() const;
   ::vega::TradableInstrument* release_tradableinstrument();
   ::vega::TradableInstrument* mutable_tradableinstrument();
   void set_allocated_tradableinstrument(::vega::TradableInstrument* tradableinstrument);
 
-  // uint64 decimalPlaces = 4;
+  // uint64 decimalPlaces = 3;
   void clear_decimalplaces();
-  static const int kDecimalPlacesFieldNumber = 4;
+  static const int kDecimalPlacesFieldNumber = 3;
   ::google::protobuf::uint64 decimalplaces() const;
   void set_decimalplaces(::google::protobuf::uint64 value);
 
@@ -2258,7 +2252,6 @@ class Market :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr id_;
-  ::google::protobuf::internal::ArenaStringPtr name_;
   ::vega::TradableInstrument* tradableinstrument_;
   ::google::protobuf::uint64 decimalplaces_;
   union TradingModeUnion {
@@ -2291,7 +2284,7 @@ inline ::google::protobuf::uint64 ContinuousTrading::ticksize() const {
   return ticksize_;
 }
 inline void ContinuousTrading::set_ticksize(::google::protobuf::uint64 value) {
-  
+
   ticksize_ = value;
   // @@protoc_insertion_point(field_set:vega.ContinuousTrading.tickSize)
 }
@@ -2300,18 +2293,32 @@ inline void ContinuousTrading::set_ticksize(::google::protobuf::uint64 value) {
 
 // DiscreteTrading
 
-// int64 duration = 1;
-inline void DiscreteTrading::clear_duration() {
-  duration_ = PROTOBUF_LONGLONG(0);
+// int64 durationNs = 1 [(.validator.field) = {
+inline void DiscreteTrading::clear_durationns() {
+  durationns_ = PROTOBUF_LONGLONG(0);
 }
-inline ::google::protobuf::int64 DiscreteTrading::duration() const {
-  // @@protoc_insertion_point(field_get:vega.DiscreteTrading.duration)
-  return duration_;
+inline ::google::protobuf::int64 DiscreteTrading::durationns() const {
+  // @@protoc_insertion_point(field_get:vega.DiscreteTrading.durationNs)
+  return durationns_;
 }
-inline void DiscreteTrading::set_duration(::google::protobuf::int64 value) {
-  
-  duration_ = value;
-  // @@protoc_insertion_point(field_set:vega.DiscreteTrading.duration)
+inline void DiscreteTrading::set_durationns(::google::protobuf::int64 value) {
+
+  durationns_ = value;
+  // @@protoc_insertion_point(field_set:vega.DiscreteTrading.durationNs)
+}
+
+// uint64 tickSize = 2;
+inline void DiscreteTrading::clear_ticksize() {
+  ticksize_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 DiscreteTrading::ticksize() const {
+  // @@protoc_insertion_point(field_get:vega.DiscreteTrading.tickSize)
+  return ticksize_;
+}
+inline void DiscreteTrading::set_ticksize(::google::protobuf::uint64 value) {
+
+  ticksize_ = value;
+  // @@protoc_insertion_point(field_set:vega.DiscreteTrading.tickSize)
 }
 
 // -------------------------------------------------------------------
@@ -2327,13 +2334,13 @@ inline const ::std::string& Future::maturity() const {
   return maturity_.GetNoArena();
 }
 inline void Future::set_maturity(const ::std::string& value) {
-  
+
   maturity_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.Future.maturity)
 }
 #if LANG_CXX11
 inline void Future::set_maturity(::std::string&& value) {
-  
+
   maturity_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.Future.maturity)
@@ -2341,31 +2348,31 @@ inline void Future::set_maturity(::std::string&& value) {
 #endif
 inline void Future::set_maturity(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   maturity_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.Future.maturity)
 }
 inline void Future::set_maturity(const char* value, size_t size) {
-  
+
   maturity_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.Future.maturity)
 }
 inline ::std::string* Future::mutable_maturity() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.Future.maturity)
   return maturity_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* Future::release_maturity() {
   // @@protoc_insertion_point(field_release:vega.Future.maturity)
-  
+
   return maturity_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void Future::set_allocated_maturity(::std::string* maturity) {
   if (maturity != nullptr) {
-    
+
   } else {
-    
+
   }
   maturity_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), maturity);
   // @@protoc_insertion_point(field_set_allocated:vega.Future.maturity)
@@ -2380,13 +2387,13 @@ inline const ::std::string& Future::asset() const {
   return asset_.GetNoArena();
 }
 inline void Future::set_asset(const ::std::string& value) {
-  
+
   asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.Future.asset)
 }
 #if LANG_CXX11
 inline void Future::set_asset(::std::string&& value) {
-  
+
   asset_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.Future.asset)
@@ -2394,31 +2401,31 @@ inline void Future::set_asset(::std::string&& value) {
 #endif
 inline void Future::set_asset(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.Future.asset)
 }
 inline void Future::set_asset(const char* value, size_t size) {
-  
+
   asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.Future.asset)
 }
 inline ::std::string* Future::mutable_asset() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.Future.asset)
   return asset_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* Future::release_asset() {
   // @@protoc_insertion_point(field_release:vega.Future.asset)
-  
+
   return asset_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void Future::set_allocated_asset(::std::string* asset) {
   if (asset != nullptr) {
-    
+
   } else {
-    
+
   }
   asset_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), asset);
   // @@protoc_insertion_point(field_set_allocated:vega.Future.asset)
@@ -2487,13 +2494,13 @@ inline const ::std::string& EthereumEvent::contractid() const {
   return contractid_.GetNoArena();
 }
 inline void EthereumEvent::set_contractid(const ::std::string& value) {
-  
+
   contractid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.EthereumEvent.contractID)
 }
 #if LANG_CXX11
 inline void EthereumEvent::set_contractid(::std::string&& value) {
-  
+
   contractid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.EthereumEvent.contractID)
@@ -2501,31 +2508,31 @@ inline void EthereumEvent::set_contractid(::std::string&& value) {
 #endif
 inline void EthereumEvent::set_contractid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   contractid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.EthereumEvent.contractID)
 }
 inline void EthereumEvent::set_contractid(const char* value, size_t size) {
-  
+
   contractid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.EthereumEvent.contractID)
 }
 inline ::std::string* EthereumEvent::mutable_contractid() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.EthereumEvent.contractID)
   return contractid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* EthereumEvent::release_contractid() {
   // @@protoc_insertion_point(field_release:vega.EthereumEvent.contractID)
-  
+
   return contractid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void EthereumEvent::set_allocated_contractid(::std::string* contractid) {
   if (contractid != nullptr) {
-    
+
   } else {
-    
+
   }
   contractid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), contractid);
   // @@protoc_insertion_point(field_set_allocated:vega.EthereumEvent.contractID)
@@ -2540,13 +2547,13 @@ inline const ::std::string& EthereumEvent::event() const {
   return event_.GetNoArena();
 }
 inline void EthereumEvent::set_event(const ::std::string& value) {
-  
+
   event_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.EthereumEvent.event)
 }
 #if LANG_CXX11
 inline void EthereumEvent::set_event(::std::string&& value) {
-  
+
   event_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.EthereumEvent.event)
@@ -2554,31 +2561,31 @@ inline void EthereumEvent::set_event(::std::string&& value) {
 #endif
 inline void EthereumEvent::set_event(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   event_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.EthereumEvent.event)
 }
 inline void EthereumEvent::set_event(const char* value, size_t size) {
-  
+
   event_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.EthereumEvent.event)
 }
 inline ::std::string* EthereumEvent::mutable_event() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.EthereumEvent.event)
   return event_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* EthereumEvent::release_event() {
   // @@protoc_insertion_point(field_release:vega.EthereumEvent.event)
-  
+
   return event_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void EthereumEvent::set_allocated_event(::std::string* event) {
   if (event != nullptr) {
-    
+
   } else {
-    
+
   }
   event_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), event);
   // @@protoc_insertion_point(field_set_allocated:vega.EthereumEvent.event)
@@ -2593,7 +2600,7 @@ inline ::google::protobuf::uint64 EthereumEvent::value() const {
   return value_;
 }
 inline void EthereumEvent::set_value(::google::protobuf::uint64 value) {
-  
+
   value_ = value;
   // @@protoc_insertion_point(field_set:vega.EthereumEvent.value)
 }
@@ -2684,13 +2691,13 @@ inline const ::std::string& Instrument::id() const {
   return id_.GetNoArena();
 }
 inline void Instrument::set_id(const ::std::string& value) {
-  
+
   id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.Instrument.id)
 }
 #if LANG_CXX11
 inline void Instrument::set_id(::std::string&& value) {
-  
+
   id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.Instrument.id)
@@ -2698,31 +2705,31 @@ inline void Instrument::set_id(::std::string&& value) {
 #endif
 inline void Instrument::set_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.Instrument.id)
 }
 inline void Instrument::set_id(const char* value, size_t size) {
-  
+
   id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.Instrument.id)
 }
 inline ::std::string* Instrument::mutable_id() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.Instrument.id)
   return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* Instrument::release_id() {
   // @@protoc_insertion_point(field_release:vega.Instrument.id)
-  
+
   return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void Instrument::set_allocated_id(::std::string* id) {
   if (id != nullptr) {
-    
+
   } else {
-    
+
   }
   id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
   // @@protoc_insertion_point(field_set_allocated:vega.Instrument.id)
@@ -2737,13 +2744,13 @@ inline const ::std::string& Instrument::code() const {
   return code_.GetNoArena();
 }
 inline void Instrument::set_code(const ::std::string& value) {
-  
+
   code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.Instrument.code)
 }
 #if LANG_CXX11
 inline void Instrument::set_code(::std::string&& value) {
-  
+
   code_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.Instrument.code)
@@ -2751,31 +2758,31 @@ inline void Instrument::set_code(::std::string&& value) {
 #endif
 inline void Instrument::set_code(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.Instrument.code)
 }
 inline void Instrument::set_code(const char* value, size_t size) {
-  
+
   code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.Instrument.code)
 }
 inline ::std::string* Instrument::mutable_code() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.Instrument.code)
   return code_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* Instrument::release_code() {
   // @@protoc_insertion_point(field_release:vega.Instrument.code)
-  
+
   return code_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void Instrument::set_allocated_code(::std::string* code) {
   if (code != nullptr) {
-    
+
   } else {
-    
+
   }
   code_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), code);
   // @@protoc_insertion_point(field_set_allocated:vega.Instrument.code)
@@ -2790,13 +2797,13 @@ inline const ::std::string& Instrument::name() const {
   return name_.GetNoArena();
 }
 inline void Instrument::set_name(const ::std::string& value) {
-  
+
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.Instrument.name)
 }
 #if LANG_CXX11
 inline void Instrument::set_name(::std::string&& value) {
-  
+
   name_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.Instrument.name)
@@ -2804,31 +2811,31 @@ inline void Instrument::set_name(::std::string&& value) {
 #endif
 inline void Instrument::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.Instrument.name)
 }
 inline void Instrument::set_name(const char* value, size_t size) {
-  
+
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.Instrument.name)
 }
 inline ::std::string* Instrument::mutable_name() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.Instrument.name)
   return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* Instrument::release_name() {
   // @@protoc_insertion_point(field_release:vega.Instrument.name)
-  
+
   return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void Instrument::set_allocated_name(::std::string* name) {
   if (name != nullptr) {
-    
+
   } else {
-    
+
   }
   name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
   // @@protoc_insertion_point(field_set_allocated:vega.Instrument.name)
@@ -2843,13 +2850,13 @@ inline const ::std::string& Instrument::basename() const {
   return basename_.GetNoArena();
 }
 inline void Instrument::set_basename(const ::std::string& value) {
-  
+
   basename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.Instrument.baseName)
 }
 #if LANG_CXX11
 inline void Instrument::set_basename(::std::string&& value) {
-  
+
   basename_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.Instrument.baseName)
@@ -2857,31 +2864,31 @@ inline void Instrument::set_basename(::std::string&& value) {
 #endif
 inline void Instrument::set_basename(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   basename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.Instrument.baseName)
 }
 inline void Instrument::set_basename(const char* value, size_t size) {
-  
+
   basename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.Instrument.baseName)
 }
 inline ::std::string* Instrument::mutable_basename() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.Instrument.baseName)
   return basename_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* Instrument::release_basename() {
   // @@protoc_insertion_point(field_release:vega.Instrument.baseName)
-  
+
   return basename_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void Instrument::set_allocated_basename(::std::string* basename) {
   if (basename != nullptr) {
-    
+
   } else {
-    
+
   }
   basename_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), basename);
   // @@protoc_insertion_point(field_set_allocated:vega.Instrument.baseName)
@@ -2896,13 +2903,13 @@ inline const ::std::string& Instrument::quotename() const {
   return quotename_.GetNoArena();
 }
 inline void Instrument::set_quotename(const ::std::string& value) {
-  
+
   quotename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.Instrument.quoteName)
 }
 #if LANG_CXX11
 inline void Instrument::set_quotename(::std::string&& value) {
-  
+
   quotename_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.Instrument.quoteName)
@@ -2910,31 +2917,31 @@ inline void Instrument::set_quotename(::std::string&& value) {
 #endif
 inline void Instrument::set_quotename(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   quotename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.Instrument.quoteName)
 }
 inline void Instrument::set_quotename(const char* value, size_t size) {
-  
+
   quotename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.Instrument.quoteName)
 }
 inline ::std::string* Instrument::mutable_quotename() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.Instrument.quoteName)
   return quotename_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* Instrument::release_quotename() {
   // @@protoc_insertion_point(field_release:vega.Instrument.quoteName)
-  
+
   return quotename_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void Instrument::set_allocated_quotename(::std::string* quotename) {
   if (quotename != nullptr) {
-    
+
   } else {
-    
+
   }
   quotename_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), quotename);
   // @@protoc_insertion_point(field_set_allocated:vega.Instrument.quoteName)
@@ -2958,13 +2965,13 @@ inline const ::vega::InstrumentMetadata& Instrument::metadata() const {
 }
 inline ::vega::InstrumentMetadata* Instrument::release_metadata() {
   // @@protoc_insertion_point(field_release:vega.Instrument.metadata)
-  
+
   ::vega::InstrumentMetadata* temp = metadata_;
   metadata_ = nullptr;
   return temp;
 }
 inline ::vega::InstrumentMetadata* Instrument::mutable_metadata() {
-  
+
   if (metadata_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::InstrumentMetadata>(GetArenaNoVirtual());
     metadata_ = p;
@@ -2983,9 +2990,9 @@ inline void Instrument::set_allocated_metadata(::vega::InstrumentMetadata* metad
       metadata = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, metadata, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   metadata_ = metadata;
   // @@protoc_insertion_point(field_set_allocated:vega.Instrument.metadata)
@@ -3000,7 +3007,7 @@ inline ::google::protobuf::uint64 Instrument::initialmarkprice() const {
   return initialmarkprice_;
 }
 inline void Instrument::set_initialmarkprice(::google::protobuf::uint64 value) {
-  
+
   initialmarkprice_ = value;
   // @@protoc_insertion_point(field_set:vega.Instrument.initialMarkPrice)
 }
@@ -3068,7 +3075,7 @@ inline double LogNormalRiskModel::riskaversionparameter() const {
   return riskaversionparameter_;
 }
 inline void LogNormalRiskModel::set_riskaversionparameter(double value) {
-  
+
   riskaversionparameter_ = value;
   // @@protoc_insertion_point(field_set:vega.LogNormalRiskModel.riskAversionParameter)
 }
@@ -3082,7 +3089,7 @@ inline double LogNormalRiskModel::tau() const {
   return tau_;
 }
 inline void LogNormalRiskModel::set_tau(double value) {
-  
+
   tau_ = value;
   // @@protoc_insertion_point(field_set:vega.LogNormalRiskModel.tau)
 }
@@ -3105,13 +3112,13 @@ inline const ::vega::LogNormalModelParams& LogNormalRiskModel::params() const {
 }
 inline ::vega::LogNormalModelParams* LogNormalRiskModel::release_params() {
   // @@protoc_insertion_point(field_release:vega.LogNormalRiskModel.params)
-  
+
   ::vega::LogNormalModelParams* temp = params_;
   params_ = nullptr;
   return temp;
 }
 inline ::vega::LogNormalModelParams* LogNormalRiskModel::mutable_params() {
-  
+
   if (params_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::LogNormalModelParams>(GetArenaNoVirtual());
     params_ = p;
@@ -3130,9 +3137,9 @@ inline void LogNormalRiskModel::set_allocated_params(::vega::LogNormalModelParam
       params = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, params, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   params_ = params;
   // @@protoc_insertion_point(field_set_allocated:vega.LogNormalRiskModel.params)
@@ -3151,7 +3158,7 @@ inline double LogNormalModelParams::mu() const {
   return mu_;
 }
 inline void LogNormalModelParams::set_mu(double value) {
-  
+
   mu_ = value;
   // @@protoc_insertion_point(field_set:vega.LogNormalModelParams.mu)
 }
@@ -3165,7 +3172,7 @@ inline double LogNormalModelParams::r() const {
   return r_;
 }
 inline void LogNormalModelParams::set_r(double value) {
-  
+
   r_ = value;
   // @@protoc_insertion_point(field_set:vega.LogNormalModelParams.r)
 }
@@ -3179,7 +3186,7 @@ inline double LogNormalModelParams::sigma() const {
   return sigma_;
 }
 inline void LogNormalModelParams::set_sigma(double value) {
-  
+
   sigma_ = value;
   // @@protoc_insertion_point(field_set:vega.LogNormalModelParams.sigma)
 }
@@ -3206,13 +3213,13 @@ inline const ::vega::SimpleModelParams& SimpleRiskModel::params() const {
 }
 inline ::vega::SimpleModelParams* SimpleRiskModel::release_params() {
   // @@protoc_insertion_point(field_release:vega.SimpleRiskModel.params)
-  
+
   ::vega::SimpleModelParams* temp = params_;
   params_ = nullptr;
   return temp;
 }
 inline ::vega::SimpleModelParams* SimpleRiskModel::mutable_params() {
-  
+
   if (params_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::SimpleModelParams>(GetArenaNoVirtual());
     params_ = p;
@@ -3231,9 +3238,9 @@ inline void SimpleRiskModel::set_allocated_params(::vega::SimpleModelParams* par
       params = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, params, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   params_ = params;
   // @@protoc_insertion_point(field_set_allocated:vega.SimpleRiskModel.params)
@@ -3252,7 +3259,7 @@ inline double SimpleModelParams::factorlong() const {
   return factorlong_;
 }
 inline void SimpleModelParams::set_factorlong(double value) {
-  
+
   factorlong_ = value;
   // @@protoc_insertion_point(field_set:vega.SimpleModelParams.factorLong)
 }
@@ -3266,7 +3273,7 @@ inline double SimpleModelParams::factorshort() const {
   return factorshort_;
 }
 inline void SimpleModelParams::set_factorshort(double value) {
-  
+
   factorshort_ = value;
   // @@protoc_insertion_point(field_set:vega.SimpleModelParams.factorShort)
 }
@@ -3286,13 +3293,13 @@ inline const ::std::string& ExternalRiskModel::name() const {
   return name_.GetNoArena();
 }
 inline void ExternalRiskModel::set_name(const ::std::string& value) {
-  
+
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.ExternalRiskModel.name)
 }
 #if LANG_CXX11
 inline void ExternalRiskModel::set_name(::std::string&& value) {
-  
+
   name_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.ExternalRiskModel.name)
@@ -3300,31 +3307,31 @@ inline void ExternalRiskModel::set_name(::std::string&& value) {
 #endif
 inline void ExternalRiskModel::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.ExternalRiskModel.name)
 }
 inline void ExternalRiskModel::set_name(const char* value, size_t size) {
-  
+
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.ExternalRiskModel.name)
 }
 inline ::std::string* ExternalRiskModel::mutable_name() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.ExternalRiskModel.name)
   return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* ExternalRiskModel::release_name() {
   // @@protoc_insertion_point(field_release:vega.ExternalRiskModel.name)
-  
+
   return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void ExternalRiskModel::set_allocated_name(::std::string* name) {
   if (name != nullptr) {
-    
+
   } else {
-    
+
   }
   name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
   // @@protoc_insertion_point(field_set_allocated:vega.ExternalRiskModel.name)
@@ -3339,13 +3346,13 @@ inline const ::std::string& ExternalRiskModel::socket() const {
   return socket_.GetNoArena();
 }
 inline void ExternalRiskModel::set_socket(const ::std::string& value) {
-  
+
   socket_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.ExternalRiskModel.socket)
 }
 #if LANG_CXX11
 inline void ExternalRiskModel::set_socket(::std::string&& value) {
-  
+
   socket_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.ExternalRiskModel.socket)
@@ -3353,31 +3360,31 @@ inline void ExternalRiskModel::set_socket(::std::string&& value) {
 #endif
 inline void ExternalRiskModel::set_socket(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   socket_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.ExternalRiskModel.socket)
 }
 inline void ExternalRiskModel::set_socket(const char* value, size_t size) {
-  
+
   socket_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.ExternalRiskModel.socket)
 }
 inline ::std::string* ExternalRiskModel::mutable_socket() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.ExternalRiskModel.socket)
   return socket_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* ExternalRiskModel::release_socket() {
   // @@protoc_insertion_point(field_release:vega.ExternalRiskModel.socket)
-  
+
   return socket_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void ExternalRiskModel::set_allocated_socket(::std::string* socket) {
   if (socket != nullptr) {
-    
+
   } else {
-    
+
   }
   socket_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), socket);
   // @@protoc_insertion_point(field_set_allocated:vega.ExternalRiskModel.socket)
@@ -3414,7 +3421,7 @@ inline double ScalingFactors::searchlevel() const {
   return searchlevel_;
 }
 inline void ScalingFactors::set_searchlevel(double value) {
-  
+
   searchlevel_ = value;
   // @@protoc_insertion_point(field_set:vega.ScalingFactors.searchLevel)
 }
@@ -3428,7 +3435,7 @@ inline double ScalingFactors::initialmargin() const {
   return initialmargin_;
 }
 inline void ScalingFactors::set_initialmargin(double value) {
-  
+
   initialmargin_ = value;
   // @@protoc_insertion_point(field_set:vega.ScalingFactors.initialMargin)
 }
@@ -3442,7 +3449,7 @@ inline double ScalingFactors::collateralrelease() const {
   return collateralrelease_;
 }
 inline void ScalingFactors::set_collateralrelease(double value) {
-  
+
   collateralrelease_ = value;
   // @@protoc_insertion_point(field_set:vega.ScalingFactors.collateralRelease)
 }
@@ -3469,13 +3476,13 @@ inline const ::vega::ScalingFactors& MarginCalculator::scalingfactors() const {
 }
 inline ::vega::ScalingFactors* MarginCalculator::release_scalingfactors() {
   // @@protoc_insertion_point(field_release:vega.MarginCalculator.scalingFactors)
-  
+
   ::vega::ScalingFactors* temp = scalingfactors_;
   scalingfactors_ = nullptr;
   return temp;
 }
 inline ::vega::ScalingFactors* MarginCalculator::mutable_scalingfactors() {
-  
+
   if (scalingfactors_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::ScalingFactors>(GetArenaNoVirtual());
     scalingfactors_ = p;
@@ -3494,9 +3501,9 @@ inline void MarginCalculator::set_allocated_scalingfactors(::vega::ScalingFactor
       scalingfactors = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, scalingfactors, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   scalingfactors_ = scalingfactors;
   // @@protoc_insertion_point(field_set_allocated:vega.MarginCalculator.scalingFactors)
@@ -3524,13 +3531,13 @@ inline const ::vega::Instrument& TradableInstrument::instrument() const {
 }
 inline ::vega::Instrument* TradableInstrument::release_instrument() {
   // @@protoc_insertion_point(field_release:vega.TradableInstrument.instrument)
-  
+
   ::vega::Instrument* temp = instrument_;
   instrument_ = nullptr;
   return temp;
 }
 inline ::vega::Instrument* TradableInstrument::mutable_instrument() {
-  
+
   if (instrument_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::Instrument>(GetArenaNoVirtual());
     instrument_ = p;
@@ -3549,9 +3556,9 @@ inline void TradableInstrument::set_allocated_instrument(::vega::Instrument* ins
       instrument = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, instrument, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   instrument_ = instrument;
   // @@protoc_insertion_point(field_set_allocated:vega.TradableInstrument.instrument)
@@ -3575,13 +3582,13 @@ inline const ::vega::MarginCalculator& TradableInstrument::margincalculator() co
 }
 inline ::vega::MarginCalculator* TradableInstrument::release_margincalculator() {
   // @@protoc_insertion_point(field_release:vega.TradableInstrument.marginCalculator)
-  
+
   ::vega::MarginCalculator* temp = margincalculator_;
   margincalculator_ = nullptr;
   return temp;
 }
 inline ::vega::MarginCalculator* TradableInstrument::mutable_margincalculator() {
-  
+
   if (margincalculator_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::MarginCalculator>(GetArenaNoVirtual());
     margincalculator_ = p;
@@ -3600,9 +3607,9 @@ inline void TradableInstrument::set_allocated_margincalculator(::vega::MarginCal
       margincalculator = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, margincalculator, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   margincalculator_ = margincalculator;
   // @@protoc_insertion_point(field_set_allocated:vega.TradableInstrument.marginCalculator)
@@ -3753,13 +3760,13 @@ inline const ::std::string& Market::id() const {
   return id_.GetNoArena();
 }
 inline void Market::set_id(const ::std::string& value) {
-  
+
   id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:vega.Market.id)
 }
 #if LANG_CXX11
 inline void Market::set_id(::std::string&& value) {
-  
+
   id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:vega.Market.id)
@@ -3767,90 +3774,37 @@ inline void Market::set_id(::std::string&& value) {
 #endif
 inline void Market::set_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:vega.Market.id)
 }
 inline void Market::set_id(const char* value, size_t size) {
-  
+
   id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:vega.Market.id)
 }
 inline ::std::string* Market::mutable_id() {
-  
+
   // @@protoc_insertion_point(field_mutable:vega.Market.id)
   return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* Market::release_id() {
   // @@protoc_insertion_point(field_release:vega.Market.id)
-  
+
   return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void Market::set_allocated_id(::std::string* id) {
   if (id != nullptr) {
-    
+
   } else {
-    
+
   }
   id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
   // @@protoc_insertion_point(field_set_allocated:vega.Market.id)
 }
 
-// string name = 2;
-inline void Market::clear_name() {
-  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Market::name() const {
-  // @@protoc_insertion_point(field_get:vega.Market.name)
-  return name_.GetNoArena();
-}
-inline void Market::set_name(const ::std::string& value) {
-  
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.Market.name)
-}
-#if LANG_CXX11
-inline void Market::set_name(::std::string&& value) {
-  
-  name_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.Market.name)
-}
-#endif
-inline void Market::set_name(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.Market.name)
-}
-inline void Market::set_name(const char* value, size_t size) {
-  
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.Market.name)
-}
-inline ::std::string* Market::mutable_name() {
-  
-  // @@protoc_insertion_point(field_mutable:vega.Market.name)
-  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Market::release_name() {
-  // @@protoc_insertion_point(field_release:vega.Market.name)
-  
-  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Market::set_allocated_name(::std::string* name) {
-  if (name != nullptr) {
-    
-  } else {
-    
-  }
-  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:vega.Market.name)
-}
-
-// .vega.TradableInstrument tradableInstrument = 3;
+// .vega.TradableInstrument tradableInstrument = 2;
 inline bool Market::has_tradableinstrument() const {
   return this != internal_default_instance() && tradableinstrument_ != nullptr;
 }
@@ -3868,13 +3822,13 @@ inline const ::vega::TradableInstrument& Market::tradableinstrument() const {
 }
 inline ::vega::TradableInstrument* Market::release_tradableinstrument() {
   // @@protoc_insertion_point(field_release:vega.Market.tradableInstrument)
-  
+
   ::vega::TradableInstrument* temp = tradableinstrument_;
   tradableinstrument_ = nullptr;
   return temp;
 }
 inline ::vega::TradableInstrument* Market::mutable_tradableinstrument() {
-  
+
   if (tradableinstrument_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::TradableInstrument>(GetArenaNoVirtual());
     tradableinstrument_ = p;
@@ -3893,15 +3847,15 @@ inline void Market::set_allocated_tradableinstrument(::vega::TradableInstrument*
       tradableinstrument = ::google::protobuf::internal::GetOwnedMessage(
           message_arena, tradableinstrument, submessage_arena);
     }
-    
+
   } else {
-    
+
   }
   tradableinstrument_ = tradableinstrument;
   // @@protoc_insertion_point(field_set_allocated:vega.Market.tradableInstrument)
 }
 
-// uint64 decimalPlaces = 4;
+// uint64 decimalPlaces = 3;
 inline void Market::clear_decimalplaces() {
   decimalplaces_ = PROTOBUF_ULONGLONG(0);
 }
@@ -3910,7 +3864,7 @@ inline ::google::protobuf::uint64 Market::decimalplaces() const {
   return decimalplaces_;
 }
 inline void Market::set_decimalplaces(::google::protobuf::uint64 value) {
-  
+
   decimalplaces_ = value;
   // @@protoc_insertion_point(field_set:vega.Market.decimalPlaces)
 }

@@ -722,10 +722,10 @@ proto.vega.BuiltinAsset.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.BuiltinAsset.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    symbol: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    totalsupply: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    decimals: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    symbol: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    totalsupply: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    decimals: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -762,19 +762,19 @@ proto.vega.BuiltinAsset.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
-    case 3:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setSymbol(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setTotalsupply(value);
       break;
-    case 5:
+    case 4:
       var value = /** @type {number} */ (reader.readUint64());
       msg.setDecimals(value);
       break;
@@ -810,28 +810,28 @@ proto.vega.BuiltinAsset.serializeBinaryToWriter = function(message, writer) {
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
-      2,
+      1,
       f
     );
   }
   f = message.getSymbol();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
     );
   }
   f = message.getTotalsupply();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      3,
       f
     );
   }
   f = message.getDecimals();
   if (f !== 0) {
     writer.writeUint64(
-      5,
+      4,
       f
     );
   }
@@ -839,62 +839,62 @@ proto.vega.BuiltinAsset.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string name = 2;
+ * optional string name = 1;
  * @return {string}
  */
 proto.vega.BuiltinAsset.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
 proto.vega.BuiltinAsset.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string symbol = 3;
+ * optional string symbol = 2;
  * @return {string}
  */
 proto.vega.BuiltinAsset.prototype.getSymbol = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
 proto.vega.BuiltinAsset.prototype.setSymbol = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string totalSupply = 4;
+ * optional string totalSupply = 3;
  * @return {string}
  */
 proto.vega.BuiltinAsset.prototype.getTotalsupply = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
 proto.vega.BuiltinAsset.prototype.setTotalsupply = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional uint64 decimals = 5;
+ * optional uint64 decimals = 4;
  * @return {number}
  */
 proto.vega.BuiltinAsset.prototype.getDecimals = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /** @param {number} value */
 proto.vega.BuiltinAsset.prototype.setDecimals = function(value) {
-  jspb.Message.setProto3IntField(this, 5, value);
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
