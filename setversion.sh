@@ -29,6 +29,8 @@ checkfile README.md '^Version: '"$version"'$'
 # Javascript
 sed --in-place -e 's#"version": "[^"]*"#"version": "'"$version"'"#' js/package.json
 checkfile js/package.json '"version": "'"$version"'",'
+sed --in-place -e 's#^  "version": "[^"]*"#  "version": "'"$version"'"#' js/package-lock.json
+checkfile js/package-lock.json '^  "version": "'"$version"'",'
 
 # Python
 sed --in-place -e 's#^VERSION = "[^"]*"#VERSION = "'"$version"'"#' python/setup.py
