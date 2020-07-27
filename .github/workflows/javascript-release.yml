@@ -18,11 +18,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
+        registry-url: https://registry.npmjs.org/
 
     - name: Install
       run: |
         cd js
-        npm install
+        npm ci
 
     - name: Test
       run: |
@@ -32,8 +33,8 @@ jobs:
         CI: true
 
     - name: Push release to npm (public)
-      env: {}
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       run: |
         cd js
-        echo npm publish --access public .
-        exit 1
+        npm publish --access public .
