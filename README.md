@@ -1,6 +1,8 @@
-# API Clients
+# Vega API auto-generated gRPC clients
 
-This repository contains auto-generated Vega API clients.
+Version: 0.22.0
+
+This repository contains auto-generated gRPC clients for various languages.
 
 ## Update process
 
@@ -13,4 +15,10 @@ make proto
 
 # Run tests
 GRPC_NODE=veganode.example.com:1234 WALLETSERVER=https://vegawallet.example.com make test
+```
+
+## Release process
+
+```bash
+./setversion.sh 1.2.3  # no "v" prefix
 ```

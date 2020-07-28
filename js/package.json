@@ -1,8 +1,8 @@
 {
   "name": "@vegaprotocol/vega-grpc",
   "version": "0.22.0",
-  "description": "A GRPC client for Vega Protocol",
-  "main": "generated/vegaprotocol/vegaapiclient.js",
+  "description": "A gRPC client for Vega Protocol",
+  "main": "index.js",
   "scripts": {
     "test": "tape test/**.js | tap-dot"
   },
@@ -11,7 +11,8 @@
     "url": "git+https://github.com/vegaprotocol/api-clients.git"
   },
   "keywords": [
-    "vega"
+    "vega",
+    "vegaprotocol"
   ],
   "author": "Vega <hi@vega.xyz>",
   "license": "MIT",

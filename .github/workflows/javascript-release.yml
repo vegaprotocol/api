@@ -1,0 +1,40 @@
+name: Javascript Release to npm (public)
+
+on:
+  push:
+    tags:
+      - "v*"
+      - "!v*-pre*"
+
+jobs:
+
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+        registry-url: https://registry.npmjs.org/
+
+    - name: Install
+      run: |
+        cd js
+        npm ci
+
+    - name: Test
+      run: |
+        cd js
+        npm test
+      env:
+        CI: true
+
+    - name: Push release to npm (public)
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      run: |
+        cd js
+        npm publish --access public .
