@@ -1,6 +1,6 @@
 # Vega API auto-generated gRPC clients
 
-Version: 0.22.0
+Version: 0.23.0-pre1
 
 This repository contains auto-generated gRPC clients for various languages.
 
