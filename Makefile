@@ -51,6 +51,7 @@ proto-javascript:
 	@sed --in-place \
 		-e 's#\.\./github.com#../external/github.com#' \
 		"$(JAVASCRIPT_GENERATED_DIR)/proto"/*.js
+	@(cd js; ./.generate_indexjs.sh >index.js)
 
 
 PYTHON_GENERATED_DIR := python/vegaapiclient/generated
