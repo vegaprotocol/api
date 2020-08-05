@@ -70,8 +70,7 @@ def test_walletclient(walletclient, walletname, walletpassphrase):  # noqa: F811
     j = r.json()
     assert "signedTx" in j, "Bad response: {}".format(j)
     signedTx = j["signedTx"]
-    assert signedTx["pubKey"] == k["pub"]
-    assert signedTx["data"] == tx
+    assert blob in base64.b64decode(signedTx["tx"])
     # TODO: check signature
 
     # Update key metadata

@@ -56,14 +56,16 @@ def test_SubmitOrder(trading, tradingdata, walletClientWalletKeypair):  # noqa: 
     signedTx = r.json()["signedTx"]
 
     # Submit the signed transaction
-    assert blob == base64.b64decode(signedTx["data"])
+    # assert blob == base64.b64decode(signedTx["data"])
     request = vac.api.trading.SubmitTransactionRequest(
         tx=vac.vega.SignedBundle(
-            data=blob,
-            sig=base64.b64decode(signedTx["sig"]),
-            pubKey=binascii.unhexlify(signedTx["pubKey"]),
-        )
+            tx=base64.b64decode(signedTx["tx"]),
+            sig=vac.vega.Signature(
+                sig=base64.b64decode(signedTx["sig"]["sig"]),
+                algo=signedTx["sig"]["algo"],
+                version=signedTx["sig"]["version"],
+            ),
+       )
     )
-    assert len(request.tx.pubKey) == 32, binascii.hexlify(request.tx.pubKey)
     response = trading.SubmitTransaction(request)
     assert response.success

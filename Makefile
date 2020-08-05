@@ -10,6 +10,7 @@ preproto:
 	@if test -z "$(VEGACORE)" ; then echo "Please set VEGACORE" ; exit 1 ; fi
 	@mkdir -p proto && find "$(VEGACORE)"/proto -maxdepth 1 -name '*.proto' -exec cp '{}' proto/ ';'
 	@mkdir -p proto/api && find "$(VEGACORE)"/proto/api -maxdepth 1 -name '*.proto' -exec cp '{}' proto/api/ ';'
+	@find proto -name '*.proto' -print0 | xargs -0 sed --in-place -re 's#^[ \\t]+$$##'
 	@(cd "$(VEGACORE)" && git describe --tags) >proto/from.txt
 
 .PHONY: proto
