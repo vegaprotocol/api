@@ -23,8 +23,6 @@ namespace vega {
 class AssetDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Asset> _instance;
-  const ::vega::BuiltinAsset* builtinasset_;
-  const ::vega::ERC20* erc20_;
 } _Asset_default_instance_;
 class AssetSourceDefaultTypeInternal {
  public:
@@ -56,10 +54,9 @@ static void InitDefaultsAsset_proto_2fassets_2eproto() {
   ::vega::Asset::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_Asset_proto_2fassets_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsAsset_proto_2fassets_2eproto}, {
-      &scc_info_BuiltinAsset_proto_2fassets_2eproto.base,
-      &scc_info_ERC20_proto_2fassets_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<1> scc_info_Asset_proto_2fassets_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsAsset_proto_2fassets_2eproto}, {
+      &scc_info_AssetSource_proto_2fassets_2eproto.base,}};
 
 static void InitDefaultsAssetSource_proto_2fassets_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -136,15 +133,13 @@ const ::google::protobuf::uint32 TableStruct_proto_2fassets_2eproto::offsets[] P
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::Asset, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::vega::Asset, _oneof_case_[0]),
+  ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::Asset, id_),
   PROTOBUF_FIELD_OFFSET(::vega::Asset, name_),
   PROTOBUF_FIELD_OFFSET(::vega::Asset, symbol_),
   PROTOBUF_FIELD_OFFSET(::vega::Asset, totalsupply_),
   PROTOBUF_FIELD_OFFSET(::vega::Asset, decimals_),
-  offsetof(::vega::AssetDefaultTypeInternal, builtinasset_),
-  offsetof(::vega::AssetDefaultTypeInternal, erc20_),
   PROTOBUF_FIELD_OFFSET(::vega::Asset, source_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::AssetSource, _internal_metadata_),
@@ -178,10 +173,10 @@ const ::google::protobuf::uint32 TableStruct_proto_2fassets_2eproto::offsets[] P
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::Asset)},
-  { 13, -1, sizeof(::vega::AssetSource)},
-  { 21, -1, sizeof(::vega::BuiltinAsset)},
-  { 30, -1, sizeof(::vega::ERC20)},
-  { 36, -1, sizeof(::vega::DevAssets)},
+  { 11, -1, sizeof(::vega::AssetSource)},
+  { 19, -1, sizeof(::vega::BuiltinAsset)},
+  { 28, -1, sizeof(::vega::ERC20)},
+  { 34, -1, sizeof(::vega::DevAssets)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -199,24 +194,23 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_proto_2fassets_2eproto[] =
-  "\n\022proto/assets.proto\022\004vega\"\254\001\n\005Asset\022\n\n\002"
-  "ID\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006symbol\030\003 \001(\t\022\023"
-  "\n\013totalSupply\030\004 \001(\t\022\020\n\010decimals\030\005 \001(\004\022*\n"
-  "\014builtinAsset\030e \001(\0132\022.vega.BuiltinAssetH"
-  "\000\022\034\n\005erc20\030f \001(\0132\013.vega.ERC20H\000B\010\n\006sourc"
-  "e\"a\n\013AssetSource\022*\n\014builtinAsset\030\001 \001(\0132\022"
-  ".vega.BuiltinAssetH\000\022\034\n\005erc20\030\002 \001(\0132\013.ve"
-  "ga.ERC20H\000B\010\n\006source\"S\n\014BuiltinAsset\022\014\n\004"
-  "name\030\001 \001(\t\022\016\n\006symbol\030\002 \001(\t\022\023\n\013totalSuppl"
-  "y\030\003 \001(\t\022\020\n\010decimals\030\004 \001(\004\" \n\005ERC20\022\027\n\017co"
-  "ntractAddress\030\001 \001(\t\"/\n\tDevAssets\022\"\n\007sour"
-  "ces\030\001 \003(\0132\021.vega.AssetSourceB!Z\037code.veg"
-  "aprotocol.io/vega/protob\006proto3"
+  "\n\022proto/assets.proto\022\004vega\"{\n\005Asset\022\n\n\002I"
+  "D\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006symbol\030\003 \001(\t\022\023\n"
+  "\013totalSupply\030\004 \001(\t\022\020\n\010decimals\030\005 \001(\004\022!\n\006"
+  "source\030\007 \001(\0132\021.vega.AssetSource\"a\n\013Asset"
+  "Source\022*\n\014builtinAsset\030\001 \001(\0132\022.vega.Buil"
+  "tinAssetH\000\022\034\n\005erc20\030\002 \001(\0132\013.vega.ERC20H\000"
+  "B\010\n\006source\"S\n\014BuiltinAsset\022\014\n\004name\030\001 \001(\t"
+  "\022\016\n\006symbol\030\002 \001(\t\022\023\n\013totalSupply\030\003 \001(\t\022\020\n"
+  "\010decimals\030\004 \001(\004\" \n\005ERC20\022\027\n\017contractAddr"
+  "ess\030\001 \001(\t\"/\n\tDevAssets\022\"\n\007sources\030\001 \003(\0132"
+  "\021.vega.AssetSourceB!Z\037code.vegaprotocol."
+  "io/vega/protob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fassets_2eproto = {
   false, InitDefaults_proto_2fassets_2eproto, 
   descriptor_table_protodef_proto_2fassets_2eproto,
-  "proto/assets.proto", &assign_descriptors_table_proto_2fassets_2eproto, 511,
+  "proto/assets.proto", &assign_descriptors_table_proto_2fassets_2eproto, 461,
 };
 
 void AddDescriptors_proto_2fassets_2eproto() {
@@ -233,52 +227,17 @@ namespace vega {
 // ===================================================================
 
 void Asset::InitAsDefaultInstance() {
-  ::vega::_Asset_default_instance_.builtinasset_ = const_cast< ::vega::BuiltinAsset*>(
-      ::vega::BuiltinAsset::internal_default_instance());
-  ::vega::_Asset_default_instance_.erc20_ = const_cast< ::vega::ERC20*>(
-      ::vega::ERC20::internal_default_instance());
+  ::vega::_Asset_default_instance_._instance.get_mutable()->source_ = const_cast< ::vega::AssetSource*>(
+      ::vega::AssetSource::internal_default_instance());
 }
 class Asset::HasBitSetters {
  public:
-  static const ::vega::BuiltinAsset& builtinasset(const Asset* msg);
-  static const ::vega::ERC20& erc20(const Asset* msg);
+  static const ::vega::AssetSource& source(const Asset* msg);
 };
 
-const ::vega::BuiltinAsset&
-Asset::HasBitSetters::builtinasset(const Asset* msg) {
-  return *msg->source_.builtinasset_;
-}
-const ::vega::ERC20&
-Asset::HasBitSetters::erc20(const Asset* msg) {
-  return *msg->source_.erc20_;
-}
-void Asset::set_allocated_builtinasset(::vega::BuiltinAsset* builtinasset) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  clear_source();
-  if (builtinasset) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      builtinasset = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, builtinasset, submessage_arena);
-    }
-    set_has_builtinasset();
-    source_.builtinasset_ = builtinasset;
-  }
-  // @@protoc_insertion_point(field_set_allocated:vega.Asset.builtinAsset)
-}
-void Asset::set_allocated_erc20(::vega::ERC20* erc20) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  clear_source();
-  if (erc20) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      erc20 = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, erc20, submessage_arena);
-    }
-    set_has_erc20();
-    source_.erc20_ = erc20;
-  }
-  // @@protoc_insertion_point(field_set_allocated:vega.Asset.erc20)
+const ::vega::AssetSource&
+Asset::HasBitSetters::source(const Asset* msg) {
+  return *msg->source_;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Asset::kIDFieldNumber;
@@ -286,8 +245,7 @@ const int Asset::kNameFieldNumber;
 const int Asset::kSymbolFieldNumber;
 const int Asset::kTotalSupplyFieldNumber;
 const int Asset::kDecimalsFieldNumber;
-const int Asset::kBuiltinAssetFieldNumber;
-const int Asset::kErc20FieldNumber;
+const int Asset::kSourceFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Asset::Asset()
@@ -315,21 +273,12 @@ Asset::Asset(const Asset& from)
   if (from.totalsupply().size() > 0) {
     totalsupply_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.totalsupply_);
   }
-  decimals_ = from.decimals_;
-  clear_has_source();
-  switch (from.source_case()) {
-    case kBuiltinAsset: {
-      mutable_builtinasset()->::vega::BuiltinAsset::MergeFrom(from.builtinasset());
-      break;
-    }
-    case kErc20: {
-      mutable_erc20()->::vega::ERC20::MergeFrom(from.erc20());
-      break;
-    }
-    case SOURCE_NOT_SET: {
-      break;
-    }
+  if (from.has_source()) {
+    source_ = new ::vega::AssetSource(*from.source_);
+  } else {
+    source_ = nullptr;
   }
+  decimals_ = from.decimals_;
   // @@protoc_insertion_point(copy_constructor:vega.Asset)
 }
 
@@ -340,8 +289,9 @@ void Asset::SharedCtor() {
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   symbol_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   totalsupply_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  decimals_ = PROTOBUF_ULONGLONG(0);
-  clear_has_source();
+  ::memset(&source_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&decimals_) -
+      reinterpret_cast<char*>(&source_)) + sizeof(decimals_));
 }
 
 Asset::~Asset() {
@@ -354,9 +304,7 @@ void Asset::SharedDtor() {
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   symbol_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   totalsupply_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (has_source()) {
-    clear_source();
-  }
+  if (this != internal_default_instance()) delete source_;
 }
 
 void Asset::SetCachedSize(int size) const {
@@ -365,25 +313,6 @@ void Asset::SetCachedSize(int size) const {
 const Asset& Asset::default_instance() {
   ::google::protobuf::internal::InitSCC(&::scc_info_Asset_proto_2fassets_2eproto.base);
   return *internal_default_instance();
-}
-
-
-void Asset::clear_source() {
-// @@protoc_insertion_point(one_of_clear_start:vega.Asset)
-  switch (source_case()) {
-    case kBuiltinAsset: {
-      delete source_.builtinasset_;
-      break;
-    }
-    case kErc20: {
-      delete source_.erc20_;
-      break;
-    }
-    case SOURCE_NOT_SET: {
-      break;
-    }
-  }
-  _oneof_case_[0] = SOURCE_NOT_SET;
 }
 
 
@@ -397,8 +326,11 @@ void Asset::Clear() {
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   symbol_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   totalsupply_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && source_ != nullptr) {
+    delete source_;
+  }
+  source_ = nullptr;
   decimals_ = PROTOBUF_ULONGLONG(0);
-  clear_source();
   _internal_metadata_.Clear();
 }
 
@@ -486,26 +418,13 @@ const char* Asset::_InternalParse(const char* begin, const char* end, void* obje
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // .vega.BuiltinAsset builtinAsset = 101;
-      case 101: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
+      // .vega.AssetSource source = 7;
+      case 7: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 58) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::vega::BuiltinAsset::_InternalParse;
-        object = msg->mutable_builtinasset();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // .vega.ERC20 erc20 = 102;
-      case 102: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::vega::ERC20::_InternalParse;
-        object = msg->mutable_erc20();
+        parser_till_end = ::vega::AssetSource::_InternalParse;
+        object = msg->mutable_source();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -542,7 +461,7 @@ bool Asset::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:vega.Asset)
   for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(16383u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -619,22 +538,11 @@ bool Asset::MergePartialFromCodedStream(
         break;
       }
 
-      // .vega.BuiltinAsset builtinAsset = 101;
-      case 101: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (810 & 0xFF)) {
+      // .vega.AssetSource source = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (58 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_builtinasset()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .vega.ERC20 erc20 = 102;
-      case 102: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (818 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_erc20()));
+               input, mutable_source()));
         } else {
           goto handle_unusual;
         }
@@ -713,16 +621,10 @@ void Asset::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->decimals(), output);
   }
 
-  // .vega.BuiltinAsset builtinAsset = 101;
-  if (has_builtinasset()) {
+  // .vega.AssetSource source = 7;
+  if (this->has_source()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      101, HasBitSetters::builtinasset(this), output);
-  }
-
-  // .vega.ERC20 erc20 = 102;
-  if (has_erc20()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      102, HasBitSetters::erc20(this), output);
+      7, HasBitSetters::source(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -787,18 +689,11 @@ void Asset::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->decimals(), target);
   }
 
-  // .vega.BuiltinAsset builtinAsset = 101;
-  if (has_builtinasset()) {
+  // .vega.AssetSource source = 7;
+  if (this->has_source()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        101, HasBitSetters::builtinasset(this), target);
-  }
-
-  // .vega.ERC20 erc20 = 102;
-  if (has_erc20()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        102, HasBitSetters::erc20(this), target);
+        7, HasBitSetters::source(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -850,6 +745,13 @@ size_t Asset::ByteSizeLong() const {
         this->totalsupply());
   }
 
+  // .vega.AssetSource source = 7;
+  if (this->has_source()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *source_);
+  }
+
   // uint64 decimals = 5;
   if (this->decimals() != 0) {
     total_size += 1 +
@@ -857,25 +759,6 @@ size_t Asset::ByteSizeLong() const {
         this->decimals());
   }
 
-  switch (source_case()) {
-    // .vega.BuiltinAsset builtinAsset = 101;
-    case kBuiltinAsset: {
-      total_size += 2 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *source_.builtinasset_);
-      break;
-    }
-    // .vega.ERC20 erc20 = 102;
-    case kErc20: {
-      total_size += 2 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *source_.erc20_);
-      break;
-    }
-    case SOURCE_NOT_SET: {
-      break;
-    }
-  }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -919,21 +802,11 @@ void Asset::MergeFrom(const Asset& from) {
 
     totalsupply_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.totalsupply_);
   }
+  if (from.has_source()) {
+    mutable_source()->::vega::AssetSource::MergeFrom(from.source());
+  }
   if (from.decimals() != 0) {
     set_decimals(from.decimals());
-  }
-  switch (from.source_case()) {
-    case kBuiltinAsset: {
-      mutable_builtinasset()->::vega::BuiltinAsset::MergeFrom(from.builtinasset());
-      break;
-    }
-    case kErc20: {
-      mutable_erc20()->::vega::ERC20::MergeFrom(from.erc20());
-      break;
-    }
-    case SOURCE_NOT_SET: {
-      break;
-    }
   }
 }
 
@@ -970,9 +843,8 @@ void Asset::InternalSwap(Asset* other) {
     GetArenaNoVirtual());
   totalsupply_.Swap(&other->totalsupply_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(decimals_, other->decimals_);
   swap(source_, other->source_);
-  swap(_oneof_case_[0], other->_oneof_case_[0]);
+  swap(decimals_, other->decimals_);
 }
 
 ::google::protobuf::Metadata Asset::GetMetadata() const {

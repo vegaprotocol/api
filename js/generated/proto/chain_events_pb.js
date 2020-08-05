@@ -11,8 +11,6 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var proto_assets_pb = require('../proto/assets_pb.js');
-goog.object.extend(proto, proto_assets_pb);
 goog.exportSymbol('proto.vega.AddValidator', null, global);
 goog.exportSymbol('proto.vega.BTCDeposit', null, global);
 goog.exportSymbol('proto.vega.BTCEvent', null, global);

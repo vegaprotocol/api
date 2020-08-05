@@ -11,7 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from . import assets_pb2 as proto_dot_assets__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -19,9 +18,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='vega',
   syntax='proto3',
   serialized_options=b'Z\037code.vegaprotocol.io/vega/proto',
-  serialized_pb=b'\n\x18proto/chain_events.proto\x12\x04vega\x1a\x12proto/assets.proto\"K\n\x13\x42uiltinAssetDeposit\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x0f\n\x07partyID\x18\x02 \x01(\t\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x04\"N\n\x16\x42uiltinAssetWithdrawal\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x0f\n\x07partyID\x18\x02 \x01(\t\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x04\"\x81\x01\n\x11\x42uiltinAssetEvent\x12-\n\x07\x64\x65posit\x18\xe9\x07 \x01(\x0b\x32\x19.vega.BuiltinAssetDepositH\x00\x12\x33\n\nwithdrawal\x18\xea\x07 \x01(\x0b\x32\x1c.vega.BuiltinAssetWithdrawalH\x00\x42\x08\n\x06\x61\x63tion\"%\n\x0e\x45RC20AssetList\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\"\'\n\x10\x45RC20AssetDelist\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\"Y\n\x0c\x45RC20Deposit\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x1d\n\x15sourceEthereumAddress\x18\x02 \x01(\t\x12\x15\n\rtargetPartyID\x18\x03 \x01(\t\"t\n\x0f\x45RC20Withdrawal\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x15\n\rsourcePartyId\x18\x02 \x01(\t\x12\x1d\n\x15targetEthereumAddress\x18\x03 \x01(\t\x12\x16\n\x0ereferenceNonce\x18\x04 \x01(\t\"\xe6\x01\n\nERC20Event\x12\r\n\x05index\x18\x01 \x01(\x04\x12\r\n\x05\x62lock\x18\x02 \x01(\x04\x12*\n\tassetList\x18\xe9\x07 \x01(\x0b\x32\x14.vega.ERC20AssetListH\x00\x12.\n\x0b\x61ssetDelist\x18\xea\x07 \x01(\x0b\x32\x16.vega.ERC20AssetDelistH\x00\x12&\n\x07\x64\x65posit\x18\xeb\x07 \x01(\x0b\x32\x12.vega.ERC20DepositH\x00\x12,\n\nwithdrawal\x18\xec\x07 \x01(\x0b\x32\x15.vega.ERC20WithdrawalH\x00\x42\x08\n\x06\x61\x63tion\"R\n\nBTCDeposit\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x18\n\x10sourceBTCAddress\x18\x02 \x01(\t\x12\x15\n\rtargetPartyId\x18\x03 \x01(\t\"m\n\rBTCWithdrawal\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x15\n\rsourcePartyId\x18\x02 \x01(\t\x12\x18\n\x10targetBTCAddress\x18\x03 \x01(\t\x12\x16\n\x0ereferenceNonce\x18\x04 \x01(\t\"\x84\x01\n\x08\x42TCEvent\x12\r\n\x05index\x18\x01 \x01(\x04\x12\r\n\x05\x62lock\x18\x02 \x01(\x04\x12$\n\x07\x64\x65posit\x18\xe9\x07 \x01(\x0b\x32\x10.vega.BTCDepositH\x00\x12*\n\nwithdrawal\x18\xea\x07 \x01(\x0b\x32\x13.vega.BTCWithdrawalH\x00\x42\x08\n\x06\x61\x63tion\"\"\n\x0f\x45thereumAddress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"!\n\x0e\x42itcoinAddress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"|\n\nIdentifier\x12\x30\n\x0f\x65thereumAddress\x18\x01 \x01(\x0b\x32\x15.vega.EthereumAddressH\x00\x12.\n\x0e\x62itcoinAddress\x18\x02 \x01(\x0b\x32\x14.vega.BitcoinAddressH\x00\x42\x0c\n\nidentifier\",\n\x0c\x41\x64\x64Validator\x12\x1c\n\x02id\x18\x01 \x01(\x0b\x32\x10.vega.Identifier\"/\n\x0fRemoveValidator\x12\x1c\n\x02id\x18\x01 \x01(\x0b\x32\x10.vega.Identifier\"v\n\x0eValidatorEvent\x12\x10\n\x08sourceID\x18\x01 \x01(\t\x12\"\n\x03\x61\x64\x64\x18\xe9\x07 \x01(\x0b\x32\x12.vega.AddValidatorH\x00\x12$\n\x02rm\x18\xea\x07 \x01(\x0b\x32\x15.vega.RemoveValidatorH\x00\x42\x08\n\x06\x61\x63tion\"\xc0\x01\n\nChainEvent\x12\x0c\n\x04txID\x18\x01 \x01(\t\x12+\n\x07\x62uiltin\x18\xe9\x07 \x01(\x0b\x32\x17.vega.BuiltinAssetEventH\x00\x12\"\n\x05\x65rc20\x18\xea\x07 \x01(\x0b\x32\x10.vega.ERC20EventH\x00\x12\x1e\n\x03\x62tc\x18\xeb\x07 \x01(\x0b\x32\x0e.vega.BTCEventH\x00\x12*\n\tvalidator\x18\xec\x07 \x01(\x0b\x32\x14.vega.ValidatorEventH\x00\x42\x07\n\x05\x65ventB!Z\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
-  ,
-  dependencies=[proto_dot_assets__pb2.DESCRIPTOR,])
+  create_key=_descriptor._internal_create_key,
+  serialized_pb=b'\n\x18proto/chain_events.proto\x12\x04vega\"K\n\x13\x42uiltinAssetDeposit\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x0f\n\x07partyID\x18\x02 \x01(\t\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x04\"N\n\x16\x42uiltinAssetWithdrawal\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x0f\n\x07partyID\x18\x02 \x01(\t\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x04\"\x81\x01\n\x11\x42uiltinAssetEvent\x12-\n\x07\x64\x65posit\x18\xe9\x07 \x01(\x0b\x32\x19.vega.BuiltinAssetDepositH\x00\x12\x33\n\nwithdrawal\x18\xea\x07 \x01(\x0b\x32\x1c.vega.BuiltinAssetWithdrawalH\x00\x42\x08\n\x06\x61\x63tion\"%\n\x0e\x45RC20AssetList\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\"\'\n\x10\x45RC20AssetDelist\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\"Y\n\x0c\x45RC20Deposit\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x1d\n\x15sourceEthereumAddress\x18\x02 \x01(\t\x12\x15\n\rtargetPartyID\x18\x03 \x01(\t\"t\n\x0f\x45RC20Withdrawal\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x15\n\rsourcePartyId\x18\x02 \x01(\t\x12\x1d\n\x15targetEthereumAddress\x18\x03 \x01(\t\x12\x16\n\x0ereferenceNonce\x18\x04 \x01(\t\"\xe6\x01\n\nERC20Event\x12\r\n\x05index\x18\x01 \x01(\x04\x12\r\n\x05\x62lock\x18\x02 \x01(\x04\x12*\n\tassetList\x18\xe9\x07 \x01(\x0b\x32\x14.vega.ERC20AssetListH\x00\x12.\n\x0b\x61ssetDelist\x18\xea\x07 \x01(\x0b\x32\x16.vega.ERC20AssetDelistH\x00\x12&\n\x07\x64\x65posit\x18\xeb\x07 \x01(\x0b\x32\x12.vega.ERC20DepositH\x00\x12,\n\nwithdrawal\x18\xec\x07 \x01(\x0b\x32\x15.vega.ERC20WithdrawalH\x00\x42\x08\n\x06\x61\x63tion\"R\n\nBTCDeposit\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x18\n\x10sourceBTCAddress\x18\x02 \x01(\t\x12\x15\n\rtargetPartyId\x18\x03 \x01(\t\"m\n\rBTCWithdrawal\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x15\n\rsourcePartyId\x18\x02 \x01(\t\x12\x18\n\x10targetBTCAddress\x18\x03 \x01(\t\x12\x16\n\x0ereferenceNonce\x18\x04 \x01(\t\"\x84\x01\n\x08\x42TCEvent\x12\r\n\x05index\x18\x01 \x01(\x04\x12\r\n\x05\x62lock\x18\x02 \x01(\x04\x12$\n\x07\x64\x65posit\x18\xe9\x07 \x01(\x0b\x32\x10.vega.BTCDepositH\x00\x12*\n\nwithdrawal\x18\xea\x07 \x01(\x0b\x32\x13.vega.BTCWithdrawalH\x00\x42\x08\n\x06\x61\x63tion\"\"\n\x0f\x45thereumAddress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"!\n\x0e\x42itcoinAddress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"|\n\nIdentifier\x12\x30\n\x0f\x65thereumAddress\x18\x01 \x01(\x0b\x32\x15.vega.EthereumAddressH\x00\x12.\n\x0e\x62itcoinAddress\x18\x02 \x01(\x0b\x32\x14.vega.BitcoinAddressH\x00\x42\x0c\n\nidentifier\",\n\x0c\x41\x64\x64Validator\x12\x1c\n\x02id\x18\x01 \x01(\x0b\x32\x10.vega.Identifier\"/\n\x0fRemoveValidator\x12\x1c\n\x02id\x18\x01 \x01(\x0b\x32\x10.vega.Identifier\"v\n\x0eValidatorEvent\x12\x10\n\x08sourceID\x18\x01 \x01(\t\x12\"\n\x03\x61\x64\x64\x18\xe9\x07 \x01(\x0b\x32\x12.vega.AddValidatorH\x00\x12$\n\x02rm\x18\xea\x07 \x01(\x0b\x32\x15.vega.RemoveValidatorH\x00\x42\x08\n\x06\x61\x63tion\"\xc0\x01\n\nChainEvent\x12\x0c\n\x04txID\x18\x01 \x01(\t\x12+\n\x07\x62uiltin\x18\xe9\x07 \x01(\x0b\x32\x17.vega.BuiltinAssetEventH\x00\x12\"\n\x05\x65rc20\x18\xea\x07 \x01(\x0b\x32\x10.vega.ERC20EventH\x00\x12\x1e\n\x03\x62tc\x18\xeb\x07 \x01(\x0b\x32\x0e.vega.BTCEventH\x00\x12*\n\tvalidator\x18\xec\x07 \x01(\x0b\x32\x14.vega.ValidatorEventH\x00\x42\x07\n\x05\x65ventB!Z\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
+)
 
 
 
@@ -32,6 +31,7 @@ _BUILTINASSETDEPOSIT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='vegaAssetID', full_name='vega.BuiltinAssetDeposit.vegaAssetID', index=0,
@@ -39,21 +39,21 @@ _BUILTINASSETDEPOSIT = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='partyID', full_name='vega.BuiltinAssetDeposit.partyID', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='amount', full_name='vega.BuiltinAssetDeposit.amount', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -66,8 +66,8 @@ _BUILTINASSETDEPOSIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=54,
-  serialized_end=129,
+  serialized_start=34,
+  serialized_end=109,
 )
 
 
@@ -77,6 +77,7 @@ _BUILTINASSETWITHDRAWAL = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='vegaAssetID', full_name='vega.BuiltinAssetWithdrawal.vegaAssetID', index=0,
@@ -84,21 +85,21 @@ _BUILTINASSETWITHDRAWAL = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='partyID', full_name='vega.BuiltinAssetWithdrawal.partyID', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='amount', full_name='vega.BuiltinAssetWithdrawal.amount', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -111,8 +112,8 @@ _BUILTINASSETWITHDRAWAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=131,
-  serialized_end=209,
+  serialized_start=111,
+  serialized_end=189,
 )
 
 
@@ -122,6 +123,7 @@ _BUILTINASSETEVENT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='deposit', full_name='vega.BuiltinAssetEvent.deposit', index=0,
@@ -129,14 +131,14 @@ _BUILTINASSETEVENT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='withdrawal', full_name='vega.BuiltinAssetEvent.withdrawal', index=1,
       number=1002, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -150,10 +152,12 @@ _BUILTINASSETEVENT = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='action', full_name='vega.BuiltinAssetEvent.action',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
-  serialized_start=212,
-  serialized_end=341,
+  serialized_start=192,
+  serialized_end=321,
 )
 
 
@@ -163,6 +167,7 @@ _ERC20ASSETLIST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='vegaAssetID', full_name='vega.ERC20AssetList.vegaAssetID', index=0,
@@ -170,7 +175,7 @@ _ERC20ASSETLIST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -183,8 +188,8 @@ _ERC20ASSETLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=343,
-  serialized_end=380,
+  serialized_start=323,
+  serialized_end=360,
 )
 
 
@@ -194,6 +199,7 @@ _ERC20ASSETDELIST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='vegaAssetID', full_name='vega.ERC20AssetDelist.vegaAssetID', index=0,
@@ -201,7 +207,7 @@ _ERC20ASSETDELIST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -214,8 +220,8 @@ _ERC20ASSETDELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=382,
-  serialized_end=421,
+  serialized_start=362,
+  serialized_end=401,
 )
 
 
@@ -225,6 +231,7 @@ _ERC20DEPOSIT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='vegaAssetID', full_name='vega.ERC20Deposit.vegaAssetID', index=0,
@@ -232,21 +239,21 @@ _ERC20DEPOSIT = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='sourceEthereumAddress', full_name='vega.ERC20Deposit.sourceEthereumAddress', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='targetPartyID', full_name='vega.ERC20Deposit.targetPartyID', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -259,8 +266,8 @@ _ERC20DEPOSIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=423,
-  serialized_end=512,
+  serialized_start=403,
+  serialized_end=492,
 )
 
 
@@ -270,6 +277,7 @@ _ERC20WITHDRAWAL = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='vegaAssetID', full_name='vega.ERC20Withdrawal.vegaAssetID', index=0,
@@ -277,28 +285,28 @@ _ERC20WITHDRAWAL = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='sourcePartyId', full_name='vega.ERC20Withdrawal.sourcePartyId', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='targetEthereumAddress', full_name='vega.ERC20Withdrawal.targetEthereumAddress', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='referenceNonce', full_name='vega.ERC20Withdrawal.referenceNonce', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -311,8 +319,8 @@ _ERC20WITHDRAWAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=514,
-  serialized_end=630,
+  serialized_start=494,
+  serialized_end=610,
 )
 
 
@@ -322,6 +330,7 @@ _ERC20EVENT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='index', full_name='vega.ERC20Event.index', index=0,
@@ -329,42 +338,42 @@ _ERC20EVENT = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='block', full_name='vega.ERC20Event.block', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='assetList', full_name='vega.ERC20Event.assetList', index=2,
       number=1001, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='assetDelist', full_name='vega.ERC20Event.assetDelist', index=3,
       number=1002, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='deposit', full_name='vega.ERC20Event.deposit', index=4,
       number=1003, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='withdrawal', full_name='vega.ERC20Event.withdrawal', index=5,
       number=1004, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -378,10 +387,12 @@ _ERC20EVENT = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='action', full_name='vega.ERC20Event.action',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
-  serialized_start=633,
-  serialized_end=863,
+  serialized_start=613,
+  serialized_end=843,
 )
 
 
@@ -391,6 +402,7 @@ _BTCDEPOSIT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='vegaAssetID', full_name='vega.BTCDeposit.vegaAssetID', index=0,
@@ -398,21 +410,21 @@ _BTCDEPOSIT = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='sourceBTCAddress', full_name='vega.BTCDeposit.sourceBTCAddress', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='targetPartyId', full_name='vega.BTCDeposit.targetPartyId', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -425,8 +437,8 @@ _BTCDEPOSIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=865,
-  serialized_end=947,
+  serialized_start=845,
+  serialized_end=927,
 )
 
 
@@ -436,6 +448,7 @@ _BTCWITHDRAWAL = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='vegaAssetID', full_name='vega.BTCWithdrawal.vegaAssetID', index=0,
@@ -443,28 +456,28 @@ _BTCWITHDRAWAL = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='sourcePartyId', full_name='vega.BTCWithdrawal.sourcePartyId', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='targetBTCAddress', full_name='vega.BTCWithdrawal.targetBTCAddress', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='referenceNonce', full_name='vega.BTCWithdrawal.referenceNonce', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -477,8 +490,8 @@ _BTCWITHDRAWAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=949,
-  serialized_end=1058,
+  serialized_start=929,
+  serialized_end=1038,
 )
 
 
@@ -488,6 +501,7 @@ _BTCEVENT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='index', full_name='vega.BTCEvent.index', index=0,
@@ -495,28 +509,28 @@ _BTCEVENT = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='block', full_name='vega.BTCEvent.block', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='deposit', full_name='vega.BTCEvent.deposit', index=2,
       number=1001, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='withdrawal', full_name='vega.BTCEvent.withdrawal', index=3,
       number=1002, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -530,10 +544,12 @@ _BTCEVENT = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='action', full_name='vega.BTCEvent.action',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
-  serialized_start=1061,
-  serialized_end=1193,
+  serialized_start=1041,
+  serialized_end=1173,
 )
 
 
@@ -543,6 +559,7 @@ _ETHEREUMADDRESS = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='address', full_name='vega.EthereumAddress.address', index=0,
@@ -550,7 +567,7 @@ _ETHEREUMADDRESS = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -563,8 +580,8 @@ _ETHEREUMADDRESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1195,
-  serialized_end=1229,
+  serialized_start=1175,
+  serialized_end=1209,
 )
 
 
@@ -574,6 +591,7 @@ _BITCOINADDRESS = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='address', full_name='vega.BitcoinAddress.address', index=0,
@@ -581,7 +599,7 @@ _BITCOINADDRESS = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -594,8 +612,8 @@ _BITCOINADDRESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1231,
-  serialized_end=1264,
+  serialized_start=1211,
+  serialized_end=1244,
 )
 
 
@@ -605,6 +623,7 @@ _IDENTIFIER = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ethereumAddress', full_name='vega.Identifier.ethereumAddress', index=0,
@@ -612,14 +631,14 @@ _IDENTIFIER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='bitcoinAddress', full_name='vega.Identifier.bitcoinAddress', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -633,10 +652,12 @@ _IDENTIFIER = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='identifier', full_name='vega.Identifier.identifier',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
-  serialized_start=1266,
-  serialized_end=1390,
+  serialized_start=1246,
+  serialized_end=1370,
 )
 
 
@@ -646,6 +667,7 @@ _ADDVALIDATOR = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='vega.AddValidator.id', index=0,
@@ -653,7 +675,7 @@ _ADDVALIDATOR = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -666,8 +688,8 @@ _ADDVALIDATOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1392,
-  serialized_end=1436,
+  serialized_start=1372,
+  serialized_end=1416,
 )
 
 
@@ -677,6 +699,7 @@ _REMOVEVALIDATOR = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='vega.RemoveValidator.id', index=0,
@@ -684,7 +707,7 @@ _REMOVEVALIDATOR = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -697,8 +720,8 @@ _REMOVEVALIDATOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1438,
-  serialized_end=1485,
+  serialized_start=1418,
+  serialized_end=1465,
 )
 
 
@@ -708,6 +731,7 @@ _VALIDATOREVENT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='sourceID', full_name='vega.ValidatorEvent.sourceID', index=0,
@@ -715,21 +739,21 @@ _VALIDATOREVENT = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='add', full_name='vega.ValidatorEvent.add', index=1,
       number=1001, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='rm', full_name='vega.ValidatorEvent.rm', index=2,
       number=1002, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -743,10 +767,12 @@ _VALIDATOREVENT = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='action', full_name='vega.ValidatorEvent.action',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
-  serialized_start=1487,
-  serialized_end=1605,
+  serialized_start=1467,
+  serialized_end=1585,
 )
 
 
@@ -756,6 +782,7 @@ _CHAINEVENT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='txID', full_name='vega.ChainEvent.txID', index=0,
@@ -763,35 +790,35 @@ _CHAINEVENT = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='builtin', full_name='vega.ChainEvent.builtin', index=1,
       number=1001, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='erc20', full_name='vega.ChainEvent.erc20', index=2,
       number=1002, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='btc', full_name='vega.ChainEvent.btc', index=3,
       number=1003, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='validator', full_name='vega.ChainEvent.validator', index=4,
       number=1004, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -805,10 +832,12 @@ _CHAINEVENT = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='event', full_name='vega.ChainEvent.event',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
-  serialized_start=1608,
-  serialized_end=1800,
+  serialized_start=1588,
+  serialized_end=1780,
 )
 
 _BUILTINASSETEVENT.fields_by_name['deposit'].message_type = _BUILTINASSETDEPOSIT

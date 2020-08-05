@@ -20,7 +20,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='vega',
   syntax='proto3',
   serialized_options=b'Z\037code.vegaprotocol.io/vega/proto',
-  serialized_pb=b'\n\x10proto/vega.proto\x12\x04vega\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\"\x16\n\x05Price\x12\r\n\x05value\x18\x01 \x01(\x04\"\x1a\n\tTimestamp\x12\r\n\x05value\x18\x01 \x01(\x03\"\x17\n\x06\x41mount\x12\r\n\x05value\x18\x01 \x01(\t\"\x1b\n\x05Party\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02 \x01\"9\n\nRiskFactor\x12\x0e\n\x06market\x18\x01 \x01(\t\x12\r\n\x05short\x18\x02 \x01(\x01\x12\x0c\n\x04long\x18\x03 \x01(\x01\"\xe6\x02\n\nRiskResult\x12\x18\n\x10updatedTimestamp\x18\x01 \x01(\x03\x12\x36\n\x0briskFactors\x18\x02 \x03(\x0b\x32!.vega.RiskResult.RiskFactorsEntry\x12\x1b\n\x13nextUpdateTimestamp\x18\x03 \x01(\x03\x12P\n\x18predictedNextRiskFactors\x18\x04 \x03(\x0b\x32..vega.RiskResult.PredictedNextRiskFactorsEntry\x1a\x44\n\x10RiskFactorsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1f\n\x05value\x18\x02 \x01(\x0b\x32\x10.vega.RiskFactor:\x02\x38\x01\x1aQ\n\x1dPredictedNextRiskFactorsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1f\n\x05value\x18\x02 \x01(\x0b\x32\x10.vega.RiskFactor:\x02\x38\x01\"\xcf\x05\n\x05Order\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08marketID\x18\x02 \x01(\t\x12\x0f\n\x07partyID\x18\x03 \x01(\t\x12\x18\n\x04side\x18\x04 \x01(\x0e\x32\n.vega.Side\x12\r\n\x05price\x18\x05 \x01(\x04\x12\x0c\n\x04size\x18\x06 \x01(\x04\x12\x11\n\tremaining\x18\x07 \x01(\x04\x12,\n\x0btimeInForce\x18\x08 \x01(\x0e\x32\x17.vega.Order.TimeInForce\x12\x1e\n\x04type\x18\t \x01(\x0e\x32\x10.vega.Order.Type\x12\x11\n\tcreatedAt\x18\n \x01(\x03\x12\"\n\x06status\x18\x0b \x01(\x0e\x32\x12.vega.Order.Status\x12\x11\n\texpiresAt\x18\x0c \x01(\x03\x12\x11\n\treference\x18\r \x01(\t\x12 \n\x06reason\x18\x0e \x01(\x0e\x32\x10.vega.OrderError\x12\x11\n\tupdatedAt\x18\x0f \x01(\x03\x12\x0f\n\x07version\x18\x10 \x01(\x04\"V\n\x0bTimeInForce\x12\x13\n\x0fTIF_UNSPECIFIED\x10\x00\x12\x0b\n\x07TIF_GTC\x10\x01\x12\x0b\n\x07TIF_GTT\x10\x02\x12\x0b\n\x07TIF_IOC\x10\x03\x12\x0b\n\x07TIF_FOK\x10\x04\"O\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nTYPE_LIMIT\x10\x01\x12\x0f\n\x0bTYPE_MARKET\x10\x02\x12\x10\n\x0cTYPE_NETWORK\x10\x03\"\xb2\x01\n\x06Status\x12\x12\n\x0eSTATUS_INVALID\x10\x00\x12\x11\n\rSTATUS_ACTIVE\x10\x01\x12\x12\n\x0eSTATUS_EXPIRED\x10\x02\x12\x14\n\x10STATUS_CANCELLED\x10\x03\x12\x12\n\x0eSTATUS_STOPPED\x10\x04\x12\x11\n\rSTATUS_FILLED\x10\x05\x12\x13\n\x0fSTATUS_REJECTED\x10\x06\x12\x1b\n\x17STATUS_PARTIALLY_FILLED\x10\x07\";\n\x1dOrderCancellationConfirmation\x12\x1a\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.Order\"x\n\x11OrderConfirmation\x12\x1a\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.Order\x12\x1b\n\x06trades\x18\x02 \x03(\x0b\x32\x0b.vega.Trade\x12*\n\x15passiveOrdersAffected\x18\x03 \x03(\x0b\x32\x0b.vega.Order\"\xc9\x02\n\x05Trade\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08marketID\x18\x02 \x01(\t\x12\r\n\x05price\x18\x03 \x01(\x04\x12\x0c\n\x04size\x18\x04 \x01(\x04\x12\r\n\x05\x62uyer\x18\x05 \x01(\t\x12\x0e\n\x06seller\x18\x06 \x01(\t\x12\x1d\n\taggressor\x18\x07 \x01(\x0e\x32\n.vega.Side\x12\x10\n\x08\x62uyOrder\x18\x08 \x01(\t\x12\x11\n\tsellOrder\x18\t \x01(\t\x12\x11\n\ttimestamp\x18\n \x01(\x03\x12\x1e\n\x04type\x18\x0b \x01(\x0e\x32\x10.vega.Trade.Type\"o\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x10\n\x0cTYPE_DEFAULT\x10\x01\x12\x1f\n\x1bTYPE_NETWORK_CLOSE_OUT_GOOD\x10\x02\x12\x1e\n\x1aTYPE_NETWORK_CLOSE_OUT_BAD\x10\x03\"\'\n\x08TradeSet\x12\x1b\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.Trade\"\x97\x01\n\x06\x43\x61ndle\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x10\n\x08\x64\x61tetime\x18\x02 \x01(\t\x12\x0c\n\x04high\x18\x03 \x01(\x04\x12\x0b\n\x03low\x18\x04 \x01(\x04\x12\x0c\n\x04open\x18\x05 \x01(\x04\x12\r\n\x05\x63lose\x18\x06 \x01(\x04\x12\x0e\n\x06volume\x18\x07 \x01(\x04\x12 \n\x08interval\x18\x08 \x01(\x0e\x32\x0e.vega.Interval\"]\n\nPriceLevel\x12\r\n\x05price\x18\x01 \x01(\x04\x12\x16\n\x0enumberOfOrders\x18\x02 \x01(\x04\x12\x0e\n\x06volume\x18\x03 \x01(\x04\x12\x18\n\x10\x63umulativeVolume\x18\x04 \x01(\x04\"^\n\x0bMarketDepth\x12\x10\n\x08marketID\x18\x01 \x01(\t\x12\x1d\n\x03\x62uy\x18\x02 \x03(\x0b\x32\x10.vega.PriceLevel\x12\x1e\n\x04sell\x18\x03 \x03(\x0b\x32\x10.vega.PriceLevel\"\x88\x01\n\x08Position\x12\x10\n\x08marketID\x18\x01 \x01(\t\x12\x0f\n\x07partyID\x18\x02 \x01(\t\x12\x12\n\nopenVolume\x18\x03 \x01(\x03\x12\x13\n\x0brealisedPNL\x18\x04 \x01(\x03\x12\x15\n\runrealisedPNL\x18\x05 \x01(\x03\x12\x19\n\x11\x61verageEntryPrice\x18\x06 \x01(\x04\".\n\rPositionTrade\x12\x0e\n\x06volume\x18\x01 \x01(\x03\x12\r\n\x05price\x18\x02 \x01(\x04\"\x85\x06\n\nStatistics\x12\x13\n\x0b\x62lockHeight\x18\x01 \x01(\x04\x12\x15\n\rbacklogLength\x18\x02 \x01(\x04\x12\x12\n\ntotalPeers\x18\x03 \x01(\x04\x12\x13\n\x0bgenesisTime\x18\x04 \x01(\t\x12\x13\n\x0b\x63urrentTime\x18\x05 \x01(\t\x12\x10\n\x08vegaTime\x18\x06 \x01(\t\x12!\n\x06status\x18\x07 \x01(\x0e\x32\x11.vega.ChainStatus\x12\x12\n\ntxPerBlock\x18\x08 \x01(\x04\x12\x16\n\x0e\x61verageTxBytes\x18\t \x01(\x04\x12\x1d\n\x15\x61verageOrdersPerBlock\x18\n \x01(\x04\x12\x17\n\x0ftradesPerSecond\x18\x0b \x01(\x04\x12\x17\n\x0fordersPerSecond\x18\x0c \x01(\x04\x12\x14\n\x0ctotalMarkets\x18\r \x01(\x04\x12\x17\n\x0ftotalAmendOrder\x18\x10 \x01(\x04\x12\x18\n\x10totalCancelOrder\x18\x11 \x01(\x04\x12\x18\n\x10totalCreateOrder\x18\x12 \x01(\x04\x12\x13\n\x0btotalOrders\x18\x13 \x01(\x04\x12\x13\n\x0btotalTrades\x18\x14 \x01(\x04\x12\x1a\n\x12orderSubscriptions\x18\x15 \x01(\r\x12\x1a\n\x12tradeSubscriptions\x18\x16 \x01(\r\x12\x1b\n\x13\x63\x61ndleSubscriptions\x18\x17 \x01(\r\x12 \n\x18marketDepthSubscriptions\x18\x18 \x01(\r\x12\x1e\n\x16positionsSubscriptions\x18\x19 \x01(\r\x12\x1c\n\x14\x61\x63\x63ountSubscriptions\x18\x1a \x01(\r\x12\x1f\n\x17marketDataSubscriptions\x18\x1b \x01(\r\x12\x16\n\x0e\x61ppVersionHash\x18\x1c \x01(\t\x12\x12\n\nappVersion\x18\x1d \x01(\t\x12\x14\n\x0c\x63hainVersion\x18\x1e \x01(\t\x12\x15\n\rblockDuration\x18\x1f \x01(\x04\x12\x0e\n\x06uptime\x18  \x01(\t\x12\x0f\n\x07\x63hainID\x18! \x01(\t\"7\n\x13NotifyTraderAccount\x12\x10\n\x08traderID\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x04\":\n\x08Withdraw\x12\x0f\n\x07partyID\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x04\x12\r\n\x05\x61sset\x18\x03 \x01(\t\"\xd5\x01\n\x0eOrderAmendment\x12\x17\n\x07orderID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x17\n\x07partyID\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x10\n\x08marketID\x18\x03 \x01(\t\x12\x1a\n\x05price\x18\x04 \x01(\x0b\x32\x0b.vega.Price\x12\x11\n\tsizeDelta\x18\x05 \x01(\x03\x12\"\n\texpiresAt\x18\x06 \x01(\x0b\x32\x0f.vega.Timestamp\x12,\n\x0btimeInForce\x18\x07 \x01(\x0e\x32\x17.vega.Order.TimeInForce\"\xa6\x02\n\x0fOrderSubmission\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x00\x12\x18\n\x08marketID\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x17\n\x07partyID\x18\x03 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\r\n\x05price\x18\x04 \x01(\x04\x12\x14\n\x04size\x18\x05 \x01(\x04\x42\x06\xe2\xdf\x1f\x02\x10\x00\x12!\n\x04side\x18\x06 \x01(\x0e\x32\n.vega.SideB\x07\xe2\xdf\x1f\x03\x88\x01\x01\x12\x35\n\x0btimeInForce\x18\x07 \x01(\x0e\x32\x17.vega.Order.TimeInForceB\x07\xe2\xdf\x1f\x03\x88\x01\x01\x12\x11\n\texpiresAt\x18\x08 \x01(\x03\x12\'\n\x04type\x18\t \x01(\x0e\x32\x10.vega.Order.TypeB\x07\xe2\xdf\x1f\x03\x88\x01\x01\x12\x11\n\treference\x18\n \x01(\t\"_\n\x11OrderCancellation\x12\x17\n\x07orderID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x18\n\x08marketID\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x17\n\x07partyID\x18\x03 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"G\n\x10NodeRegistration\x12\x16\n\x06pubKey\x18\x01 \x01(\x0c\x42\x06\xe2\xdf\x1f\x02X\x01\x12\x1b\n\x0b\x63hainPubKey\x18\x02 \x01(\x0c\x42\x06\xe2\xdf\x1f\x02X\x01\"=\n\x08NodeVote\x12\x16\n\x06pubKey\x18\x01 \x01(\x0c\x42\x06\xe2\xdf\x1f\x02X\x01\x12\x19\n\treference\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"w\n\x07\x41\x63\x63ount\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05owner\x18\x02 \x01(\t\x12\x0f\n\x07\x62\x61lance\x18\x03 \x01(\x04\x12\r\n\x05\x61sset\x18\x04 \x01(\t\x12\x10\n\x08marketID\x18\x05 \x01(\t\x12\x1f\n\x04type\x18\x06 \x01(\x0e\x32\x11.vega.AccountType\"0\n\x0f\x46inancialAmount\x12\x0e\n\x06\x61mount\x18\x01 \x01(\x03\x12\r\n\x05\x61sset\x18\x02 \x01(\t\"u\n\x08Transfer\x12\r\n\x05owner\x18\x01 \x01(\t\x12%\n\x06\x61mount\x18\x02 \x01(\x0b\x32\x15.vega.FinancialAmount\x12 \n\x04type\x18\x03 \x01(\x0e\x32\x12.vega.TransferType\x12\x11\n\tminAmount\x18\x04 \x01(\x03\"\x9c\x01\n\x0fTransferRequest\x12\"\n\x0b\x66romAccount\x18\x01 \x03(\x0b\x32\r.vega.Account\x12 \n\ttoAccount\x18\x02 \x03(\x0b\x32\r.vega.Account\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x04\x12\x11\n\tminAmount\x18\x04 \x01(\x04\x12\r\n\x05\x61sset\x18\x05 \x01(\t\x12\x11\n\treference\x18\x06 \x01(\t\"y\n\x0bLedgerEntry\x12\x13\n\x0b\x66romAccount\x18\x01 \x01(\t\x12\x11\n\ttoAccount\x18\x02 \x01(\t\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x04\x12\x11\n\treference\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\t\x12\x11\n\ttimestamp\x18\x06 \x01(\x03\"B\n\x0fTransferBalance\x12\x1e\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32\r.vega.Account\x12\x0f\n\x07\x62\x61lance\x18\x02 \x01(\x04\"a\n\x10TransferResponse\x12$\n\ttransfers\x18\x01 \x03(\x0b\x32\x11.vega.LedgerEntry\x12\'\n\x08\x62\x61lances\x18\x02 \x03(\x0b\x32\x15.vega.TransferBalance\"\xba\x01\n\x0cMarginLevels\x12\x19\n\x11maintenanceMargin\x18\x01 \x01(\x04\x12\x13\n\x0bsearchLevel\x18\x02 \x01(\x04\x12\x15\n\rinitialMargin\x18\x03 \x01(\x04\x12\x1e\n\x16\x63ollateralReleaseLevel\x18\x04 \x01(\x04\x12\x0f\n\x07partyID\x18\x05 \x01(\t\x12\x10\n\x08marketID\x18\x06 \x01(\t\x12\r\n\x05\x61sset\x18\x07 \x01(\t\x12\x11\n\ttimestamp\x18\x08 \x01(\x03\"\xc8\x01\n\nMarketData\x12\x11\n\tmarkPrice\x18\x01 \x01(\x04\x12\x14\n\x0c\x62\x65stBidPrice\x18\x02 \x01(\x04\x12\x15\n\rbestBidVolume\x18\x03 \x01(\x04\x12\x16\n\x0e\x62\x65stOfferPrice\x18\x04 \x01(\x04\x12\x17\n\x0f\x62\x65stOfferVolume\x18\x05 \x01(\x04\x12\x10\n\x08midPrice\x18\x06 \x01(\x04\x12\x0e\n\x06market\x18\x07 \x01(\t\x12\x11\n\ttimestamp\x18\x08 \x01(\x03\x12\x14\n\x0copenInterest\x18\t \x01(\x04\";\n\x0b\x45rrorDetail\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05inner\x18\x03 \x01(\t\"V\n\x0cSignedBundle\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x0b\n\x03sig\x18\x02 \x01(\x0c\x12\x11\n\x07\x61\x64\x64ress\x18\x65 \x01(\x0cH\x00\x12\x10\n\x06pubKey\x18\x66 \x01(\x0cH\x00\x42\x06\n\x04\x61uth\"O\n\rNodeSignature\x12\n\n\x02ID\x18\x01 \x01(\t\x12\x0b\n\x03sig\x18\x02 \x01(\x0c\x12%\n\x04kind\x18\x03 \x01(\x0e\x32\x17.vega.NodeSignatureKind*9\n\x04Side\x12\x14\n\x10SIDE_UNSPECIFIED\x10\x00\x12\x0c\n\x08SIDE_BUY\x10\x01\x12\r\n\tSIDE_SELL\x10\x02*\x98\x01\n\x08Interval\x12\x18\n\x14INTERVAL_UNSPECIFIED\x10\x00\x12\x10\n\x0cINTERVAL_I1M\x10<\x12\x11\n\x0cINTERVAL_I5M\x10\xac\x02\x12\x12\n\rINTERVAL_I15M\x10\x84\x07\x12\x11\n\x0cINTERVAL_I1H\x10\x90\x1c\x12\x12\n\x0cINTERVAL_I6H\x10\xe0\xa8\x01\x12\x12\n\x0cINTERVAL_I1D\x10\x80\xa3\x05*\xb1\x05\n\nOrderError\x12\x14\n\x10ORDER_ERROR_NONE\x10\x00\x12!\n\x1dORDER_ERROR_INVALID_MARKET_ID\x10\x01\x12 \n\x1cORDER_ERROR_INVALID_ORDER_ID\x10\x02\x12\x1f\n\x1bORDER_ERROR_OUT_OF_SEQUENCE\x10\x03\x12&\n\"ORDER_ERROR_INVALID_REMAINING_SIZE\x10\x04\x12\x1c\n\x18ORDER_ERROR_TIME_FAILURE\x10\x05\x12\x1f\n\x1bORDER_ERROR_REMOVAL_FAILURE\x10\x06\x12+\n\'ORDER_ERROR_INVALID_EXPIRATION_DATETIME\x10\x07\x12\'\n#ORDER_ERROR_INVALID_ORDER_REFERENCE\x10\x08\x12 \n\x1cORDER_ERROR_EDIT_NOT_ALLOWED\x10\t\x12\x1d\n\x19ORDER_ERROR_AMEND_FAILURE\x10\n\x12\x19\n\x15ORDER_ERROR_NOT_FOUND\x10\x0b\x12 \n\x1cORDER_ERROR_INVALID_PARTY_ID\x10\x0c\x12\x1d\n\x19ORDER_ERROR_MARKET_CLOSED\x10\r\x12#\n\x1fORDER_ERROR_MARGIN_CHECK_FAILED\x10\x0e\x12\'\n#ORDER_ERROR_MISSING_GENERAL_ACCOUNT\x10\x0f\x12\x1e\n\x1aORDER_ERROR_INTERNAL_ERROR\x10\x10\x12\x1c\n\x18ORDER_ERROR_INVALID_SIZE\x10\x11\x12#\n\x1fORDER_ERROR_INVALID_PERSISTENCE\x10\x12\x12\x1c\n\x18ORDER_ERROR_INVALID_TYPE\x10\x13*\x82\x01\n\x0b\x43hainStatus\x12\x1c\n\x18\x43HAIN_STATUS_UNSPECIFIED\x10\x00\x12\x1d\n\x19\x43HAIN_STATUS_DISCONNECTED\x10\x01\x12\x1a\n\x16\x43HAIN_STATUS_REPLAYING\x10\x02\x12\x1a\n\x16\x43HAIN_STATUS_CONNECTED\x10\x03*\x97\x01\n\x0b\x41\x63\x63ountType\x12\x1c\n\x18\x41\x43\x43OUNT_TYPE_UNSPECIFIED\x10\x00\x12\x1a\n\x16\x41\x43\x43OUNT_TYPE_INSURANCE\x10\x01\x12\x1b\n\x17\x41\x43\x43OUNT_TYPE_SETTLEMENT\x10\x02\x12\x17\n\x13\x41\x43\x43OUNT_TYPE_MARGIN\x10\x03\x12\x18\n\x14\x41\x43\x43OUNT_TYPE_GENERAL\x10\x04*\x8f\x02\n\x0cTransferType\x12\x1d\n\x19TRANSFER_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12TRANSFER_TYPE_LOSS\x10\x01\x12\x15\n\x11TRANSFER_TYPE_WIN\x10\x02\x12\x17\n\x13TRANSFER_TYPE_CLOSE\x10\x03\x12\x1a\n\x16TRANSFER_TYPE_MTM_LOSS\x10\x04\x12\x19\n\x15TRANSFER_TYPE_MTM_WIN\x10\x05\x12\x1c\n\x18TRANSFER_TYPE_MARGIN_LOW\x10\x06\x12\x1d\n\x19TRANSFER_TYPE_MARGIN_HIGH\x10\x07\x12$\n TRANSFER_TYPE_MARGIN_CONFISCATED\x10\x08*\x85\x01\n\x11NodeSignatureKind\x12#\n\x1fNODE_SIGNATURE_KIND_UNSPECIFIED\x10\x00\x12!\n\x1dNODE_SIGNATURE_KIND_ASSET_NEW\x10\x01\x12(\n$NODE_SIGNATURE_KIND_ASSET_WITHDRAWAL\x10\x02\x42!Z\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
+  create_key=_descriptor._internal_create_key,
+  serialized_pb=b'\n\x10proto/vega.proto\x12\x04vega\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\"\x16\n\x05Price\x12\r\n\x05value\x18\x01 \x01(\x04\"\x1a\n\tTimestamp\x12\r\n\x05value\x18\x01 \x01(\x03\"\x1b\n\x05Party\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02 \x01\"9\n\nRiskFactor\x12\x0e\n\x06market\x18\x01 \x01(\t\x12\r\n\x05short\x18\x02 \x01(\x01\x12\x0c\n\x04long\x18\x03 \x01(\x01\"\xe6\x02\n\nRiskResult\x12\x18\n\x10updatedTimestamp\x18\x01 \x01(\x03\x12\x36\n\x0briskFactors\x18\x02 \x03(\x0b\x32!.vega.RiskResult.RiskFactorsEntry\x12\x1b\n\x13nextUpdateTimestamp\x18\x03 \x01(\x03\x12P\n\x18predictedNextRiskFactors\x18\x04 \x03(\x0b\x32..vega.RiskResult.PredictedNextRiskFactorsEntry\x1a\x44\n\x10RiskFactorsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1f\n\x05value\x18\x02 \x01(\x0b\x32\x10.vega.RiskFactor:\x02\x38\x01\x1aQ\n\x1dPredictedNextRiskFactorsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1f\n\x05value\x18\x02 \x01(\x0b\x32\x10.vega.RiskFactor:\x02\x38\x01\"\xe0\x05\n\x05Order\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08marketID\x18\x02 \x01(\t\x12\x0f\n\x07partyID\x18\x03 \x01(\t\x12\x18\n\x04side\x18\x04 \x01(\x0e\x32\n.vega.Side\x12\r\n\x05price\x18\x05 \x01(\x04\x12\x0c\n\x04size\x18\x06 \x01(\x04\x12\x11\n\tremaining\x18\x07 \x01(\x04\x12,\n\x0btimeInForce\x18\x08 \x01(\x0e\x32\x17.vega.Order.TimeInForce\x12\x1e\n\x04type\x18\t \x01(\x0e\x32\x10.vega.Order.Type\x12\x11\n\tcreatedAt\x18\n \x01(\x03\x12\"\n\x06status\x18\x0b \x01(\x0e\x32\x12.vega.Order.Status\x12\x11\n\texpiresAt\x18\x0c \x01(\x03\x12\x11\n\treference\x18\r \x01(\t\x12 \n\x06reason\x18\x0e \x01(\x0e\x32\x10.vega.OrderError\x12\x11\n\tupdatedAt\x18\x0f \x01(\x03\x12\x0f\n\x07version\x18\x10 \x01(\x04\x12\x0f\n\x07\x62\x61tchID\x18\x11 \x01(\x04\"V\n\x0bTimeInForce\x12\x13\n\x0fTIF_UNSPECIFIED\x10\x00\x12\x0b\n\x07TIF_GTC\x10\x01\x12\x0b\n\x07TIF_GTT\x10\x02\x12\x0b\n\x07TIF_IOC\x10\x03\x12\x0b\n\x07TIF_FOK\x10\x04\"O\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nTYPE_LIMIT\x10\x01\x12\x0f\n\x0bTYPE_MARKET\x10\x02\x12\x10\n\x0cTYPE_NETWORK\x10\x03\"\xb2\x01\n\x06Status\x12\x12\n\x0eSTATUS_INVALID\x10\x00\x12\x11\n\rSTATUS_ACTIVE\x10\x01\x12\x12\n\x0eSTATUS_EXPIRED\x10\x02\x12\x14\n\x10STATUS_CANCELLED\x10\x03\x12\x12\n\x0eSTATUS_STOPPED\x10\x04\x12\x11\n\rSTATUS_FILLED\x10\x05\x12\x13\n\x0fSTATUS_REJECTED\x10\x06\x12\x1b\n\x17STATUS_PARTIALLY_FILLED\x10\x07\";\n\x1dOrderCancellationConfirmation\x12\x1a\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.Order\"x\n\x11OrderConfirmation\x12\x1a\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.Order\x12\x1b\n\x06trades\x18\x02 \x03(\x0b\x32\x0b.vega.Trade\x12*\n\x15passiveOrdersAffected\x18\x03 \x03(\x0b\x32\x0b.vega.Order\"\x87\x01\n\x16\x41uctionIndicativeState\x12\x10\n\x08marketID\x18\x01 \x01(\t\x12\x17\n\x0findicativePrice\x18\x02 \x01(\x04\x12\x18\n\x10indicativeVolume\x18\x03 \x01(\x04\x12\x14\n\x0c\x61uctionStart\x18\x04 \x01(\x03\x12\x12\n\nauctionEnd\x18\x05 \x01(\x03\"\xbb\x03\n\x05Trade\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08marketID\x18\x02 \x01(\t\x12\r\n\x05price\x18\x03 \x01(\x04\x12\x0c\n\x04size\x18\x04 \x01(\x04\x12\r\n\x05\x62uyer\x18\x05 \x01(\t\x12\x0e\n\x06seller\x18\x06 \x01(\t\x12\x1d\n\taggressor\x18\x07 \x01(\x0e\x32\n.vega.Side\x12\x10\n\x08\x62uyOrder\x18\x08 \x01(\t\x12\x11\n\tsellOrder\x18\t \x01(\t\x12\x11\n\ttimestamp\x18\n \x01(\x03\x12\x1e\n\x04type\x18\x0b \x01(\x0e\x32\x10.vega.Trade.Type\x12\x1b\n\x08\x62uyerFee\x18\x0c \x01(\x0b\x32\t.vega.Fee\x12\x1c\n\tsellerFee\x18\r \x01(\x0b\x32\t.vega.Fee\x12\x19\n\x11\x62uyerAuctionBatch\x18\x0e \x01(\x04\x12\x1a\n\x12sellerAuctionBatch\x18\x0f \x01(\x04\"o\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x10\n\x0cTYPE_DEFAULT\x10\x01\x12\x1f\n\x1bTYPE_NETWORK_CLOSE_OUT_GOOD\x10\x02\x12\x1e\n\x1aTYPE_NETWORK_CLOSE_OUT_BAD\x10\x03\"H\n\x03\x46\x65\x65\x12\x10\n\x08makerFee\x18\x01 \x01(\x04\x12\x19\n\x11infrastructureFee\x18\x02 \x01(\x04\x12\x14\n\x0cliquidityFee\x18\x03 \x01(\x04\"\'\n\x08TradeSet\x12\x1b\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.Trade\"\x97\x01\n\x06\x43\x61ndle\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x10\n\x08\x64\x61tetime\x18\x02 \x01(\t\x12\x0c\n\x04high\x18\x03 \x01(\x04\x12\x0b\n\x03low\x18\x04 \x01(\x04\x12\x0c\n\x04open\x18\x05 \x01(\x04\x12\r\n\x05\x63lose\x18\x06 \x01(\x04\x12\x0e\n\x06volume\x18\x07 \x01(\x04\x12 \n\x08interval\x18\x08 \x01(\x0e\x32\x0e.vega.Interval\"]\n\nPriceLevel\x12\r\n\x05price\x18\x01 \x01(\x04\x12\x16\n\x0enumberOfOrders\x18\x02 \x01(\x04\x12\x0e\n\x06volume\x18\x03 \x01(\x04\x12\x18\n\x10\x63umulativeVolume\x18\x04 \x01(\x04\"^\n\x0bMarketDepth\x12\x10\n\x08marketID\x18\x01 \x01(\t\x12\x1d\n\x03\x62uy\x18\x02 \x03(\x0b\x32\x10.vega.PriceLevel\x12\x1e\n\x04sell\x18\x03 \x03(\x0b\x32\x10.vega.PriceLevel\"\x88\x01\n\x08Position\x12\x10\n\x08marketID\x18\x01 \x01(\t\x12\x0f\n\x07partyID\x18\x02 \x01(\t\x12\x12\n\nopenVolume\x18\x03 \x01(\x03\x12\x13\n\x0brealisedPNL\x18\x04 \x01(\x03\x12\x15\n\runrealisedPNL\x18\x05 \x01(\x03\x12\x19\n\x11\x61verageEntryPrice\x18\x06 \x01(\x04\".\n\rPositionTrade\x12\x0e\n\x06volume\x18\x01 \x01(\x03\x12\r\n\x05price\x18\x02 \x01(\x04\"\x85\x06\n\nStatistics\x12\x13\n\x0b\x62lockHeight\x18\x01 \x01(\x04\x12\x15\n\rbacklogLength\x18\x02 \x01(\x04\x12\x12\n\ntotalPeers\x18\x03 \x01(\x04\x12\x13\n\x0bgenesisTime\x18\x04 \x01(\t\x12\x13\n\x0b\x63urrentTime\x18\x05 \x01(\t\x12\x10\n\x08vegaTime\x18\x06 \x01(\t\x12!\n\x06status\x18\x07 \x01(\x0e\x32\x11.vega.ChainStatus\x12\x12\n\ntxPerBlock\x18\x08 \x01(\x04\x12\x16\n\x0e\x61verageTxBytes\x18\t \x01(\x04\x12\x1d\n\x15\x61verageOrdersPerBlock\x18\n \x01(\x04\x12\x17\n\x0ftradesPerSecond\x18\x0b \x01(\x04\x12\x17\n\x0fordersPerSecond\x18\x0c \x01(\x04\x12\x14\n\x0ctotalMarkets\x18\r \x01(\x04\x12\x17\n\x0ftotalAmendOrder\x18\x10 \x01(\x04\x12\x18\n\x10totalCancelOrder\x18\x11 \x01(\x04\x12\x18\n\x10totalCreateOrder\x18\x12 \x01(\x04\x12\x13\n\x0btotalOrders\x18\x13 \x01(\x04\x12\x13\n\x0btotalTrades\x18\x14 \x01(\x04\x12\x1a\n\x12orderSubscriptions\x18\x15 \x01(\r\x12\x1a\n\x12tradeSubscriptions\x18\x16 \x01(\r\x12\x1b\n\x13\x63\x61ndleSubscriptions\x18\x17 \x01(\r\x12 \n\x18marketDepthSubscriptions\x18\x18 \x01(\r\x12\x1e\n\x16positionsSubscriptions\x18\x19 \x01(\r\x12\x1c\n\x14\x61\x63\x63ountSubscriptions\x18\x1a \x01(\r\x12\x1f\n\x17marketDataSubscriptions\x18\x1b \x01(\r\x12\x16\n\x0e\x61ppVersionHash\x18\x1c \x01(\t\x12\x12\n\nappVersion\x18\x1d \x01(\t\x12\x14\n\x0c\x63hainVersion\x18\x1e \x01(\t\x12\x15\n\rblockDuration\x18\x1f \x01(\x04\x12\x0e\n\x06uptime\x18  \x01(\t\x12\x0f\n\x07\x63hainID\x18! \x01(\t\"7\n\x13NotifyTraderAccount\x12\x10\n\x08traderID\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x04\":\n\x08Withdraw\x12\x0f\n\x07partyID\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x04\x12\r\n\x05\x61sset\x18\x03 \x01(\t\"\xd5\x01\n\x0eOrderAmendment\x12\x17\n\x07orderID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x17\n\x07partyID\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x10\n\x08marketID\x18\x03 \x01(\t\x12\x1a\n\x05price\x18\x04 \x01(\x0b\x32\x0b.vega.Price\x12\x11\n\tsizeDelta\x18\x05 \x01(\x03\x12\"\n\texpiresAt\x18\x06 \x01(\x0b\x32\x0f.vega.Timestamp\x12,\n\x0btimeInForce\x18\x07 \x01(\x0e\x32\x17.vega.Order.TimeInForce\"\xa6\x02\n\x0fOrderSubmission\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x00\x12\x18\n\x08marketID\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x17\n\x07partyID\x18\x03 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\r\n\x05price\x18\x04 \x01(\x04\x12\x14\n\x04size\x18\x05 \x01(\x04\x42\x06\xe2\xdf\x1f\x02\x10\x00\x12!\n\x04side\x18\x06 \x01(\x0e\x32\n.vega.SideB\x07\xe2\xdf\x1f\x03\x88\x01\x01\x12\x35\n\x0btimeInForce\x18\x07 \x01(\x0e\x32\x17.vega.Order.TimeInForceB\x07\xe2\xdf\x1f\x03\x88\x01\x01\x12\x11\n\texpiresAt\x18\x08 \x01(\x03\x12\'\n\x04type\x18\t \x01(\x0e\x32\x10.vega.Order.TypeB\x07\xe2\xdf\x1f\x03\x88\x01\x01\x12\x11\n\treference\x18\n \x01(\t\"_\n\x11OrderCancellation\x12\x17\n\x07orderID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x18\n\x08marketID\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x17\n\x07partyID\x18\x03 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"G\n\x10NodeRegistration\x12\x16\n\x06pubKey\x18\x01 \x01(\x0c\x42\x06\xe2\xdf\x1f\x02X\x01\x12\x1b\n\x0b\x63hainPubKey\x18\x02 \x01(\x0c\x42\x06\xe2\xdf\x1f\x02X\x01\"=\n\x08NodeVote\x12\x16\n\x06pubKey\x18\x01 \x01(\x0c\x42\x06\xe2\xdf\x1f\x02X\x01\x12\x19\n\treference\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"w\n\x07\x41\x63\x63ount\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05owner\x18\x02 \x01(\t\x12\x0f\n\x07\x62\x61lance\x18\x03 \x01(\x04\x12\r\n\x05\x61sset\x18\x04 \x01(\t\x12\x10\n\x08marketID\x18\x05 \x01(\t\x12\x1f\n\x04type\x18\x06 \x01(\x0e\x32\x11.vega.AccountType\"0\n\x0f\x46inancialAmount\x12\x0e\n\x06\x61mount\x18\x01 \x01(\x03\x12\r\n\x05\x61sset\x18\x02 \x01(\t\"u\n\x08Transfer\x12\r\n\x05owner\x18\x01 \x01(\t\x12%\n\x06\x61mount\x18\x02 \x01(\x0b\x32\x15.vega.FinancialAmount\x12 \n\x04type\x18\x03 \x01(\x0e\x32\x12.vega.TransferType\x12\x11\n\tminAmount\x18\x04 \x01(\x03\"\x9c\x01\n\x0fTransferRequest\x12\"\n\x0b\x66romAccount\x18\x01 \x03(\x0b\x32\r.vega.Account\x12 \n\ttoAccount\x18\x02 \x03(\x0b\x32\r.vega.Account\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x04\x12\x11\n\tminAmount\x18\x04 \x01(\x04\x12\r\n\x05\x61sset\x18\x05 \x01(\t\x12\x11\n\treference\x18\x06 \x01(\t\"y\n\x0bLedgerEntry\x12\x13\n\x0b\x66romAccount\x18\x01 \x01(\t\x12\x11\n\ttoAccount\x18\x02 \x01(\t\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x04\x12\x11\n\treference\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\t\x12\x11\n\ttimestamp\x18\x06 \x01(\x03\"B\n\x0fTransferBalance\x12\x1e\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32\r.vega.Account\x12\x0f\n\x07\x62\x61lance\x18\x02 \x01(\x04\"a\n\x10TransferResponse\x12$\n\ttransfers\x18\x01 \x03(\x0b\x32\x11.vega.LedgerEntry\x12\'\n\x08\x62\x61lances\x18\x02 \x03(\x0b\x32\x15.vega.TransferBalance\"\xba\x01\n\x0cMarginLevels\x12\x19\n\x11maintenanceMargin\x18\x01 \x01(\x04\x12\x13\n\x0bsearchLevel\x18\x02 \x01(\x04\x12\x15\n\rinitialMargin\x18\x03 \x01(\x04\x12\x1e\n\x16\x63ollateralReleaseLevel\x18\x04 \x01(\x04\x12\x0f\n\x07partyID\x18\x05 \x01(\t\x12\x10\n\x08marketID\x18\x06 \x01(\t\x12\r\n\x05\x61sset\x18\x07 \x01(\t\x12\x11\n\ttimestamp\x18\x08 \x01(\x03\"\xf2\x01\n\nMarketData\x12\x11\n\tmarkPrice\x18\x01 \x01(\x04\x12\x14\n\x0c\x62\x65stBidPrice\x18\x02 \x01(\x04\x12\x15\n\rbestBidVolume\x18\x03 \x01(\x04\x12\x16\n\x0e\x62\x65stOfferPrice\x18\x04 \x01(\x04\x12\x17\n\x0f\x62\x65stOfferVolume\x18\x05 \x01(\x04\x12\x10\n\x08midPrice\x18\x06 \x01(\x04\x12\x0e\n\x06market\x18\x07 \x01(\t\x12\x11\n\ttimestamp\x18\x08 \x01(\x03\x12\x14\n\x0copenInterest\x18\t \x01(\x04\x12\x12\n\nauctionEnd\x18\n \x01(\x03\x12\x14\n\x0c\x61uctionStart\x18\x0b \x01(\x03\";\n\x0b\x45rrorDetail\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05inner\x18\x03 \x01(\t\"^\n\x0bTransaction\x12\x11\n\tinputData\x18\x01 \x01(\x0c\x12\r\n\x05nonce\x18\x02 \x01(\x04\x12\x12\n\x07\x61\x64\x64ress\x18\xe9\x07 \x01(\x0cH\x00\x12\x11\n\x06pubKey\x18\xea\x07 \x01(\x0cH\x00\x42\x06\n\x04\x66rom\"7\n\tSignature\x12\x0b\n\x03sig\x18\x01 \x01(\x0c\x12\x0c\n\x04\x61lgo\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\x04\"8\n\x0cSignedBundle\x12\n\n\x02tx\x18\x01 \x01(\x0c\x12\x1c\n\x03sig\x18\x02 \x01(\x0b\x32\x0f.vega.Signature\"O\n\rNodeSignature\x12\n\n\x02ID\x18\x01 \x01(\t\x12\x0b\n\x03sig\x18\x02 \x01(\x0c\x12%\n\x04kind\x18\x03 \x01(\x0e\x32\x17.vega.NodeSignatureKind*9\n\x04Side\x12\x14\n\x10SIDE_UNSPECIFIED\x10\x00\x12\x0c\n\x08SIDE_BUY\x10\x01\x12\r\n\tSIDE_SELL\x10\x02*\x98\x01\n\x08Interval\x12\x18\n\x14INTERVAL_UNSPECIFIED\x10\x00\x12\x10\n\x0cINTERVAL_I1M\x10<\x12\x11\n\x0cINTERVAL_I5M\x10\xac\x02\x12\x12\n\rINTERVAL_I15M\x10\x84\x07\x12\x11\n\x0cINTERVAL_I1H\x10\x90\x1c\x12\x12\n\x0cINTERVAL_I6H\x10\xe0\xa8\x01\x12\x12\n\x0cINTERVAL_I1D\x10\x80\xa3\x05*\xff\x05\n\nOrderError\x12\x14\n\x10ORDER_ERROR_NONE\x10\x00\x12!\n\x1dORDER_ERROR_INVALID_MARKET_ID\x10\x01\x12 \n\x1cORDER_ERROR_INVALID_ORDER_ID\x10\x02\x12\x1f\n\x1bORDER_ERROR_OUT_OF_SEQUENCE\x10\x03\x12&\n\"ORDER_ERROR_INVALID_REMAINING_SIZE\x10\x04\x12\x1c\n\x18ORDER_ERROR_TIME_FAILURE\x10\x05\x12\x1f\n\x1bORDER_ERROR_REMOVAL_FAILURE\x10\x06\x12+\n\'ORDER_ERROR_INVALID_EXPIRATION_DATETIME\x10\x07\x12\'\n#ORDER_ERROR_INVALID_ORDER_REFERENCE\x10\x08\x12 \n\x1cORDER_ERROR_EDIT_NOT_ALLOWED\x10\t\x12\x1d\n\x19ORDER_ERROR_AMEND_FAILURE\x10\n\x12\x19\n\x15ORDER_ERROR_NOT_FOUND\x10\x0b\x12 \n\x1cORDER_ERROR_INVALID_PARTY_ID\x10\x0c\x12\x1d\n\x19ORDER_ERROR_MARKET_CLOSED\x10\r\x12#\n\x1fORDER_ERROR_MARGIN_CHECK_FAILED\x10\x0e\x12\'\n#ORDER_ERROR_MISSING_GENERAL_ACCOUNT\x10\x0f\x12\x1e\n\x1aORDER_ERROR_INTERNAL_ERROR\x10\x10\x12\x1c\n\x18ORDER_ERROR_INVALID_SIZE\x10\x11\x12#\n\x1fORDER_ERROR_INVALID_PERSISTENCE\x10\x12\x12\x1c\n\x18ORDER_ERROR_INVALID_TYPE\x10\x13\x12\x1c\n\x18ORDER_ERROR_SELF_TRADING\x10\x14\x12.\n*ORDER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEES\x10\x15*\x82\x01\n\x0b\x43hainStatus\x12\x1c\n\x18\x43HAIN_STATUS_UNSPECIFIED\x10\x00\x12\x1d\n\x19\x43HAIN_STATUS_DISCONNECTED\x10\x01\x12\x1a\n\x16\x43HAIN_STATUS_REPLAYING\x10\x02\x12\x1a\n\x16\x43HAIN_STATUS_CONNECTED\x10\x03*\xfb\x01\n\x0b\x41\x63\x63ountType\x12\x1c\n\x18\x41\x43\x43OUNT_TYPE_UNSPECIFIED\x10\x00\x12\x1a\n\x16\x41\x43\x43OUNT_TYPE_INSURANCE\x10\x01\x12\x1b\n\x17\x41\x43\x43OUNT_TYPE_SETTLEMENT\x10\x02\x12\x17\n\x13\x41\x43\x43OUNT_TYPE_MARGIN\x10\x03\x12\x18\n\x14\x41\x43\x43OUNT_TYPE_GENERAL\x10\x04\x12$\n ACCOUNT_TYPE_FEES_INFRASTRUCTURE\x10\x05\x12\x1f\n\x1b\x41\x43\x43OUNT_TYPE_FEES_LIQUIDITY\x10\x06\x12\x1b\n\x17\x41\x43\x43OUNT_TYPE_FEES_MAKER\x10\x07*\xa4\x03\n\x0cTransferType\x12\x1d\n\x19TRANSFER_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12TRANSFER_TYPE_LOSS\x10\x01\x12\x15\n\x11TRANSFER_TYPE_WIN\x10\x02\x12\x17\n\x13TRANSFER_TYPE_CLOSE\x10\x03\x12\x1a\n\x16TRANSFER_TYPE_MTM_LOSS\x10\x04\x12\x19\n\x15TRANSFER_TYPE_MTM_WIN\x10\x05\x12\x1c\n\x18TRANSFER_TYPE_MARGIN_LOW\x10\x06\x12\x1d\n\x19TRANSFER_TYPE_MARGIN_HIGH\x10\x07\x12$\n TRANSFER_TYPE_MARGIN_CONFISCATED\x10\x08\x12\x1f\n\x1bTRANSFER_TYPE_MAKER_FEE_PAY\x10\t\x12#\n\x1fTRANSFER_TYPE_MAKER_FEE_RECEIVE\x10\n\x12(\n$TRANSFER_TYPE_INFRASTRUCTURE_FEE_PAY\x10\x0b\x12#\n\x1fTRANSFER_TYPE_LIQUIDITY_FEE_PAY\x10\x0c*\x85\x01\n\x11NodeSignatureKind\x12#\n\x1fNODE_SIGNATURE_KIND_UNSPECIFIED\x10\x00\x12!\n\x1dNODE_SIGNATURE_KIND_ASSET_NEW\x10\x01\x12(\n$NODE_SIGNATURE_KIND_ASSET_WITHDRAWAL\x10\x02\x42!Z\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
   ,
   dependencies=[github_dot_com_dot_mwitkow_dot_go__proto__validators_dot_validator__pb2.DESCRIPTOR,])
 
@@ -29,24 +30,28 @@ _SIDE = _descriptor.EnumDescriptor(
   full_name='vega.Side',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='SIDE_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='SIDE_BUY', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='SIDE_SELL', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5418,
-  serialized_end=5475,
+  serialized_start=5901,
+  serialized_end=5958,
 )
 _sym_db.RegisterEnumDescriptor(_SIDE)
 
@@ -56,40 +61,48 @@ _INTERVAL = _descriptor.EnumDescriptor(
   full_name='vega.Interval',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='INTERVAL_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='INTERVAL_I1M', index=1, number=60,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='INTERVAL_I5M', index=2, number=300,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='INTERVAL_I15M', index=3, number=900,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='INTERVAL_I1H', index=4, number=3600,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='INTERVAL_I6H', index=5, number=21600,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='INTERVAL_I1D', index=6, number=86400,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5478,
-  serialized_end=5630,
+  serialized_start=5961,
+  serialized_end=6113,
 )
 _sym_db.RegisterEnumDescriptor(_INTERVAL)
 
@@ -99,92 +112,123 @@ _ORDERERROR = _descriptor.EnumDescriptor(
   full_name='vega.OrderError',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_NONE', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_INVALID_MARKET_ID', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_INVALID_ORDER_ID', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_OUT_OF_SEQUENCE', index=3, number=3,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_INVALID_REMAINING_SIZE', index=4, number=4,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_TIME_FAILURE', index=5, number=5,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_REMOVAL_FAILURE', index=6, number=6,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_INVALID_EXPIRATION_DATETIME', index=7, number=7,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_INVALID_ORDER_REFERENCE', index=8, number=8,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_EDIT_NOT_ALLOWED', index=9, number=9,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_AMEND_FAILURE', index=10, number=10,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_NOT_FOUND', index=11, number=11,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_INVALID_PARTY_ID', index=12, number=12,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_MARKET_CLOSED', index=13, number=13,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_MARGIN_CHECK_FAILED', index=14, number=14,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_MISSING_GENERAL_ACCOUNT', index=15, number=15,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_INTERNAL_ERROR', index=16, number=16,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_INVALID_SIZE', index=17, number=17,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_INVALID_PERSISTENCE', index=18, number=18,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ORDER_ERROR_INVALID_TYPE', index=19, number=19,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ORDER_ERROR_SELF_TRADING', index=20, number=20,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ORDER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEES', index=21, number=21,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5633,
-  serialized_end=6322,
+  serialized_start=6116,
+  serialized_end=6883,
 )
 _sym_db.RegisterEnumDescriptor(_ORDERERROR)
 
@@ -194,28 +238,33 @@ _CHAINSTATUS = _descriptor.EnumDescriptor(
   full_name='vega.ChainStatus',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='CHAIN_STATUS_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='CHAIN_STATUS_DISCONNECTED', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='CHAIN_STATUS_REPLAYING', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='CHAIN_STATUS_CONNECTED', index=3, number=3,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6325,
-  serialized_end=6455,
+  serialized_start=6886,
+  serialized_end=7016,
 )
 _sym_db.RegisterEnumDescriptor(_CHAINSTATUS)
 
@@ -225,32 +274,53 @@ _ACCOUNTTYPE = _descriptor.EnumDescriptor(
   full_name='vega.AccountType',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='ACCOUNT_TYPE_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ACCOUNT_TYPE_INSURANCE', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ACCOUNT_TYPE_SETTLEMENT', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ACCOUNT_TYPE_MARGIN', index=3, number=3,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='ACCOUNT_TYPE_GENERAL', index=4, number=4,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ACCOUNT_TYPE_FEES_INFRASTRUCTURE', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ACCOUNT_TYPE_FEES_LIQUIDITY', index=6, number=6,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ACCOUNT_TYPE_FEES_MAKER', index=7, number=7,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6458,
-  serialized_end=6609,
+  serialized_start=7019,
+  serialized_end=7270,
 )
 _sym_db.RegisterEnumDescriptor(_ACCOUNTTYPE)
 
@@ -260,48 +330,78 @@ _TRANSFERTYPE = _descriptor.EnumDescriptor(
   full_name='vega.TransferType',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='TRANSFER_TYPE_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TRANSFER_TYPE_LOSS', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TRANSFER_TYPE_WIN', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TRANSFER_TYPE_CLOSE', index=3, number=3,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TRANSFER_TYPE_MTM_LOSS', index=4, number=4,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TRANSFER_TYPE_MTM_WIN', index=5, number=5,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TRANSFER_TYPE_MARGIN_LOW', index=6, number=6,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TRANSFER_TYPE_MARGIN_HIGH', index=7, number=7,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TRANSFER_TYPE_MARGIN_CONFISCATED', index=8, number=8,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='TRANSFER_TYPE_MAKER_FEE_PAY', index=9, number=9,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='TRANSFER_TYPE_MAKER_FEE_RECEIVE', index=10, number=10,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='TRANSFER_TYPE_INFRASTRUCTURE_FEE_PAY', index=11, number=11,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='TRANSFER_TYPE_LIQUIDITY_FEE_PAY', index=12, number=12,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6612,
-  serialized_end=6883,
+  serialized_start=7273,
+  serialized_end=7693,
 )
 _sym_db.RegisterEnumDescriptor(_TRANSFERTYPE)
 
@@ -311,24 +411,28 @@ _NODESIGNATUREKIND = _descriptor.EnumDescriptor(
   full_name='vega.NodeSignatureKind',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='NODE_SIGNATURE_KIND_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='NODE_SIGNATURE_KIND_ASSET_NEW', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='NODE_SIGNATURE_KIND_ASSET_WITHDRAWAL', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6886,
-  serialized_end=7019,
+  serialized_start=7696,
+  serialized_end=7829,
 )
 _sym_db.RegisterEnumDescriptor(_NODESIGNATUREKIND)
 
@@ -363,6 +467,8 @@ ORDER_ERROR_INTERNAL_ERROR = 16
 ORDER_ERROR_INVALID_SIZE = 17
 ORDER_ERROR_INVALID_PERSISTENCE = 18
 ORDER_ERROR_INVALID_TYPE = 19
+ORDER_ERROR_SELF_TRADING = 20
+ORDER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEES = 21
 CHAIN_STATUS_UNSPECIFIED = 0
 CHAIN_STATUS_DISCONNECTED = 1
 CHAIN_STATUS_REPLAYING = 2
@@ -372,6 +478,9 @@ ACCOUNT_TYPE_INSURANCE = 1
 ACCOUNT_TYPE_SETTLEMENT = 2
 ACCOUNT_TYPE_MARGIN = 3
 ACCOUNT_TYPE_GENERAL = 4
+ACCOUNT_TYPE_FEES_INFRASTRUCTURE = 5
+ACCOUNT_TYPE_FEES_LIQUIDITY = 6
+ACCOUNT_TYPE_FEES_MAKER = 7
 TRANSFER_TYPE_UNSPECIFIED = 0
 TRANSFER_TYPE_LOSS = 1
 TRANSFER_TYPE_WIN = 2
@@ -381,6 +490,10 @@ TRANSFER_TYPE_MTM_WIN = 5
 TRANSFER_TYPE_MARGIN_LOW = 6
 TRANSFER_TYPE_MARGIN_HIGH = 7
 TRANSFER_TYPE_MARGIN_CONFISCATED = 8
+TRANSFER_TYPE_MAKER_FEE_PAY = 9
+TRANSFER_TYPE_MAKER_FEE_RECEIVE = 10
+TRANSFER_TYPE_INFRASTRUCTURE_FEE_PAY = 11
+TRANSFER_TYPE_LIQUIDITY_FEE_PAY = 12
 NODE_SIGNATURE_KIND_UNSPECIFIED = 0
 NODE_SIGNATURE_KIND_ASSET_NEW = 1
 NODE_SIGNATURE_KIND_ASSET_WITHDRAWAL = 2
@@ -391,32 +504,38 @@ _ORDER_TIMEINFORCE = _descriptor.EnumDescriptor(
   full_name='vega.Order.TimeInForce',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='TIF_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TIF_GTC', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TIF_GTT', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TIF_IOC', index=3, number=3,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TIF_FOK', index=4, number=4,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=980,
-  serialized_end=1066,
+  serialized_start=972,
+  serialized_end=1058,
 )
 _sym_db.RegisterEnumDescriptor(_ORDER_TIMEINFORCE)
 
@@ -425,28 +544,33 @@ _ORDER_TYPE = _descriptor.EnumDescriptor(
   full_name='vega.Order.Type',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='TYPE_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TYPE_LIMIT', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TYPE_MARKET', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TYPE_NETWORK', index=3, number=3,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1068,
-  serialized_end=1147,
+  serialized_start=1060,
+  serialized_end=1139,
 )
 _sym_db.RegisterEnumDescriptor(_ORDER_TYPE)
 
@@ -455,44 +579,53 @@ _ORDER_STATUS = _descriptor.EnumDescriptor(
   full_name='vega.Order.Status',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='STATUS_INVALID', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='STATUS_ACTIVE', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='STATUS_EXPIRED', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='STATUS_CANCELLED', index=3, number=3,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='STATUS_STOPPED', index=4, number=4,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='STATUS_FILLED', index=5, number=5,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='STATUS_REJECTED', index=6, number=6,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='STATUS_PARTIALLY_FILLED', index=7, number=7,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1150,
-  serialized_end=1328,
+  serialized_start=1142,
+  serialized_end=1320,
 )
 _sym_db.RegisterEnumDescriptor(_ORDER_STATUS)
 
@@ -501,28 +634,33 @@ _TRADE_TYPE = _descriptor.EnumDescriptor(
   full_name='vega.Trade.Type',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='TYPE_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TYPE_DEFAULT', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TYPE_NETWORK_CLOSE_OUT_GOOD', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TYPE_NETWORK_CLOSE_OUT_BAD', index=3, number=3,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1732,
-  serialized_end=1843,
+  serialized_start=1976,
+  serialized_end=2087,
 )
 _sym_db.RegisterEnumDescriptor(_TRADE_TYPE)
 
@@ -533,6 +671,7 @@ _PRICE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='value', full_name='vega.Price.value', index=0,
@@ -540,7 +679,7 @@ _PRICE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -564,6 +703,7 @@ _TIMESTAMP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='value', full_name='vega.Timestamp.value', index=0,
@@ -571,7 +711,7 @@ _TIMESTAMP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -589,20 +729,21 @@ _TIMESTAMP = _descriptor.Descriptor(
 )
 
 
-_AMOUNT = _descriptor.Descriptor(
-  name='Amount',
-  full_name='vega.Amount',
+_PARTY = _descriptor.Descriptor(
+  name='Party',
+  full_name='vega.Party',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='vega.Amount.value', index=0,
+      name='id', full_name='vega.Party.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\002 \001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -616,38 +757,7 @@ _AMOUNT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=134,
-  serialized_end=157,
-)
-
-
-_PARTY = _descriptor.Descriptor(
-  name='Party',
-  full_name='vega.Party',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='vega.Party.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002 \001', file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=159,
-  serialized_end=186,
+  serialized_end=161,
 )
 
 
@@ -657,6 +767,7 @@ _RISKFACTOR = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='market', full_name='vega.RiskFactor.market', index=0,
@@ -664,21 +775,21 @@ _RISKFACTOR = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='short', full_name='vega.RiskFactor.short', index=1,
       number=2, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='long', full_name='vega.RiskFactor.long', index=2,
       number=3, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -691,8 +802,8 @@ _RISKFACTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=188,
-  serialized_end=245,
+  serialized_start=163,
+  serialized_end=220,
 )
 
 
@@ -702,6 +813,7 @@ _RISKRESULT_RISKFACTORSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='vega.RiskResult.RiskFactorsEntry.key', index=0,
@@ -709,14 +821,14 @@ _RISKRESULT_RISKFACTORSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='vega.RiskResult.RiskFactorsEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -729,8 +841,8 @@ _RISKRESULT_RISKFACTORSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=455,
-  serialized_end=523,
+  serialized_start=430,
+  serialized_end=498,
 )
 
 _RISKRESULT_PREDICTEDNEXTRISKFACTORSENTRY = _descriptor.Descriptor(
@@ -739,6 +851,7 @@ _RISKRESULT_PREDICTEDNEXTRISKFACTORSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='vega.RiskResult.PredictedNextRiskFactorsEntry.key', index=0,
@@ -746,14 +859,14 @@ _RISKRESULT_PREDICTEDNEXTRISKFACTORSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='vega.RiskResult.PredictedNextRiskFactorsEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -766,8 +879,8 @@ _RISKRESULT_PREDICTEDNEXTRISKFACTORSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=525,
-  serialized_end=606,
+  serialized_start=500,
+  serialized_end=581,
 )
 
 _RISKRESULT = _descriptor.Descriptor(
@@ -776,6 +889,7 @@ _RISKRESULT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='updatedTimestamp', full_name='vega.RiskResult.updatedTimestamp', index=0,
@@ -783,28 +897,28 @@ _RISKRESULT = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='riskFactors', full_name='vega.RiskResult.riskFactors', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='nextUpdateTimestamp', full_name='vega.RiskResult.nextUpdateTimestamp', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='predictedNextRiskFactors', full_name='vega.RiskResult.predictedNextRiskFactors', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -817,8 +931,8 @@ _RISKRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=248,
-  serialized_end=606,
+  serialized_start=223,
+  serialized_end=581,
 )
 
 
@@ -828,6 +942,7 @@ _ORDER = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='vega.Order.id', index=0,
@@ -835,112 +950,119 @@ _ORDER = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='marketID', full_name='vega.Order.marketID', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='partyID', full_name='vega.Order.partyID', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='side', full_name='vega.Order.side', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='price', full_name='vega.Order.price', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='size', full_name='vega.Order.size', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='remaining', full_name='vega.Order.remaining', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='timeInForce', full_name='vega.Order.timeInForce', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='type', full_name='vega.Order.type', index=8,
       number=9, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='createdAt', full_name='vega.Order.createdAt', index=9,
       number=10, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='status', full_name='vega.Order.status', index=10,
       number=11, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='expiresAt', full_name='vega.Order.expiresAt', index=11,
       number=12, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='reference', full_name='vega.Order.reference', index=12,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='reason', full_name='vega.Order.reason', index=13,
       number=14, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='updatedAt', full_name='vega.Order.updatedAt', index=14,
       number=15, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='version', full_name='vega.Order.version', index=15,
       number=16, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='batchID', full_name='vega.Order.batchID', index=16,
+      number=17, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -956,8 +1078,8 @@ _ORDER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=609,
-  serialized_end=1328,
+  serialized_start=584,
+  serialized_end=1320,
 )
 
 
@@ -967,6 +1089,7 @@ _ORDERCANCELLATIONCONFIRMATION = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='order', full_name='vega.OrderCancellationConfirmation.order', index=0,
@@ -974,7 +1097,7 @@ _ORDERCANCELLATIONCONFIRMATION = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -987,8 +1110,8 @@ _ORDERCANCELLATIONCONFIRMATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1330,
-  serialized_end=1389,
+  serialized_start=1322,
+  serialized_end=1381,
 )
 
 
@@ -998,6 +1121,7 @@ _ORDERCONFIRMATION = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='order', full_name='vega.OrderConfirmation.order', index=0,
@@ -1005,21 +1129,21 @@ _ORDERCONFIRMATION = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='trades', full_name='vega.OrderConfirmation.trades', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='passiveOrdersAffected', full_name='vega.OrderConfirmation.passiveOrdersAffected', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1032,8 +1156,68 @@ _ORDERCONFIRMATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1391,
-  serialized_end=1511,
+  serialized_start=1383,
+  serialized_end=1503,
+)
+
+
+_AUCTIONINDICATIVESTATE = _descriptor.Descriptor(
+  name='AuctionIndicativeState',
+  full_name='vega.AuctionIndicativeState',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='marketID', full_name='vega.AuctionIndicativeState.marketID', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='indicativePrice', full_name='vega.AuctionIndicativeState.indicativePrice', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='indicativeVolume', full_name='vega.AuctionIndicativeState.indicativeVolume', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='auctionStart', full_name='vega.AuctionIndicativeState.auctionStart', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='auctionEnd', full_name='vega.AuctionIndicativeState.auctionEnd', index=4,
+      number=5, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1506,
+  serialized_end=1641,
 )
 
 
@@ -1043,6 +1227,7 @@ _TRADE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='vega.Trade.id', index=0,
@@ -1050,77 +1235,105 @@ _TRADE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='marketID', full_name='vega.Trade.marketID', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='price', full_name='vega.Trade.price', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='size', full_name='vega.Trade.size', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='buyer', full_name='vega.Trade.buyer', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='seller', full_name='vega.Trade.seller', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='aggressor', full_name='vega.Trade.aggressor', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='buyOrder', full_name='vega.Trade.buyOrder', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='sellOrder', full_name='vega.Trade.sellOrder', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='timestamp', full_name='vega.Trade.timestamp', index=9,
       number=10, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='type', full_name='vega.Trade.type', index=10,
       number=11, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='buyerFee', full_name='vega.Trade.buyerFee', index=11,
+      number=12, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sellerFee', full_name='vega.Trade.sellerFee', index=12,
+      number=13, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='buyerAuctionBatch', full_name='vega.Trade.buyerAuctionBatch', index=13,
+      number=14, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sellerAuctionBatch', full_name='vega.Trade.sellerAuctionBatch', index=14,
+      number=15, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1134,8 +1347,54 @@ _TRADE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1514,
-  serialized_end=1843,
+  serialized_start=1644,
+  serialized_end=2087,
+)
+
+
+_FEE = _descriptor.Descriptor(
+  name='Fee',
+  full_name='vega.Fee',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='makerFee', full_name='vega.Fee.makerFee', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='infrastructureFee', full_name='vega.Fee.infrastructureFee', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='liquidityFee', full_name='vega.Fee.liquidityFee', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2089,
+  serialized_end=2161,
 )
 
 
@@ -1145,6 +1404,7 @@ _TRADESET = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='trades', full_name='vega.TradeSet.trades', index=0,
@@ -1152,7 +1412,7 @@ _TRADESET = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1165,8 +1425,8 @@ _TRADESET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1845,
-  serialized_end=1884,
+  serialized_start=2163,
+  serialized_end=2202,
 )
 
 
@@ -1176,6 +1436,7 @@ _CANDLE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='timestamp', full_name='vega.Candle.timestamp', index=0,
@@ -1183,56 +1444,56 @@ _CANDLE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='datetime', full_name='vega.Candle.datetime', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='high', full_name='vega.Candle.high', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='low', full_name='vega.Candle.low', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='open', full_name='vega.Candle.open', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='close', full_name='vega.Candle.close', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='volume', full_name='vega.Candle.volume', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='interval', full_name='vega.Candle.interval', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1245,8 +1506,8 @@ _CANDLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1887,
-  serialized_end=2038,
+  serialized_start=2205,
+  serialized_end=2356,
 )
 
 
@@ -1256,6 +1517,7 @@ _PRICELEVEL = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='price', full_name='vega.PriceLevel.price', index=0,
@@ -1263,28 +1525,28 @@ _PRICELEVEL = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='numberOfOrders', full_name='vega.PriceLevel.numberOfOrders', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='volume', full_name='vega.PriceLevel.volume', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='cumulativeVolume', full_name='vega.PriceLevel.cumulativeVolume', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1297,8 +1559,8 @@ _PRICELEVEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2040,
-  serialized_end=2133,
+  serialized_start=2358,
+  serialized_end=2451,
 )
 
 
@@ -1308,6 +1570,7 @@ _MARKETDEPTH = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='marketID', full_name='vega.MarketDepth.marketID', index=0,
@@ -1315,21 +1578,21 @@ _MARKETDEPTH = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='buy', full_name='vega.MarketDepth.buy', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='sell', full_name='vega.MarketDepth.sell', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1342,8 +1605,8 @@ _MARKETDEPTH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2135,
-  serialized_end=2229,
+  serialized_start=2453,
+  serialized_end=2547,
 )
 
 
@@ -1353,6 +1616,7 @@ _POSITION = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='marketID', full_name='vega.Position.marketID', index=0,
@@ -1360,42 +1624,42 @@ _POSITION = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='partyID', full_name='vega.Position.partyID', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='openVolume', full_name='vega.Position.openVolume', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='realisedPNL', full_name='vega.Position.realisedPNL', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='unrealisedPNL', full_name='vega.Position.unrealisedPNL', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='averageEntryPrice', full_name='vega.Position.averageEntryPrice', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1408,8 +1672,8 @@ _POSITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2232,
-  serialized_end=2368,
+  serialized_start=2550,
+  serialized_end=2686,
 )
 
 
@@ -1419,6 +1683,7 @@ _POSITIONTRADE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='volume', full_name='vega.PositionTrade.volume', index=0,
@@ -1426,14 +1691,14 @@ _POSITIONTRADE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='price', full_name='vega.PositionTrade.price', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1446,8 +1711,8 @@ _POSITIONTRADE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2370,
-  serialized_end=2416,
+  serialized_start=2688,
+  serialized_end=2734,
 )
 
 
@@ -1457,6 +1722,7 @@ _STATISTICS = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='blockHeight', full_name='vega.Statistics.blockHeight', index=0,
@@ -1464,217 +1730,217 @@ _STATISTICS = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='backlogLength', full_name='vega.Statistics.backlogLength', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='totalPeers', full_name='vega.Statistics.totalPeers', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='genesisTime', full_name='vega.Statistics.genesisTime', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='currentTime', full_name='vega.Statistics.currentTime', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='vegaTime', full_name='vega.Statistics.vegaTime', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='status', full_name='vega.Statistics.status', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='txPerBlock', full_name='vega.Statistics.txPerBlock', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='averageTxBytes', full_name='vega.Statistics.averageTxBytes', index=8,
       number=9, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='averageOrdersPerBlock', full_name='vega.Statistics.averageOrdersPerBlock', index=9,
       number=10, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tradesPerSecond', full_name='vega.Statistics.tradesPerSecond', index=10,
       number=11, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='ordersPerSecond', full_name='vega.Statistics.ordersPerSecond', index=11,
       number=12, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='totalMarkets', full_name='vega.Statistics.totalMarkets', index=12,
       number=13, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='totalAmendOrder', full_name='vega.Statistics.totalAmendOrder', index=13,
       number=16, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='totalCancelOrder', full_name='vega.Statistics.totalCancelOrder', index=14,
       number=17, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='totalCreateOrder', full_name='vega.Statistics.totalCreateOrder', index=15,
       number=18, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='totalOrders', full_name='vega.Statistics.totalOrders', index=16,
       number=19, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='totalTrades', full_name='vega.Statistics.totalTrades', index=17,
       number=20, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='orderSubscriptions', full_name='vega.Statistics.orderSubscriptions', index=18,
       number=21, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tradeSubscriptions', full_name='vega.Statistics.tradeSubscriptions', index=19,
       number=22, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='candleSubscriptions', full_name='vega.Statistics.candleSubscriptions', index=20,
       number=23, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='marketDepthSubscriptions', full_name='vega.Statistics.marketDepthSubscriptions', index=21,
       number=24, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='positionsSubscriptions', full_name='vega.Statistics.positionsSubscriptions', index=22,
       number=25, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='accountSubscriptions', full_name='vega.Statistics.accountSubscriptions', index=23,
       number=26, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='marketDataSubscriptions', full_name='vega.Statistics.marketDataSubscriptions', index=24,
       number=27, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='appVersionHash', full_name='vega.Statistics.appVersionHash', index=25,
       number=28, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='appVersion', full_name='vega.Statistics.appVersion', index=26,
       number=29, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='chainVersion', full_name='vega.Statistics.chainVersion', index=27,
       number=30, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='blockDuration', full_name='vega.Statistics.blockDuration', index=28,
       number=31, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='uptime', full_name='vega.Statistics.uptime', index=29,
       number=32, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='chainID', full_name='vega.Statistics.chainID', index=30,
       number=33, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1687,8 +1953,8 @@ _STATISTICS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2419,
-  serialized_end=3192,
+  serialized_start=2737,
+  serialized_end=3510,
 )
 
 
@@ -1698,6 +1964,7 @@ _NOTIFYTRADERACCOUNT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='traderID', full_name='vega.NotifyTraderAccount.traderID', index=0,
@@ -1705,14 +1972,14 @@ _NOTIFYTRADERACCOUNT = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='amount', full_name='vega.NotifyTraderAccount.amount', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1725,8 +1992,8 @@ _NOTIFYTRADERACCOUNT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3194,
-  serialized_end=3249,
+  serialized_start=3512,
+  serialized_end=3567,
 )
 
 
@@ -1736,6 +2003,7 @@ _WITHDRAW = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='partyID', full_name='vega.Withdraw.partyID', index=0,
@@ -1743,21 +2011,21 @@ _WITHDRAW = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='amount', full_name='vega.Withdraw.amount', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='asset', full_name='vega.Withdraw.asset', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1770,8 +2038,8 @@ _WITHDRAW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3251,
-  serialized_end=3309,
+  serialized_start=3569,
+  serialized_end=3627,
 )
 
 
@@ -1781,6 +2049,7 @@ _ORDERAMENDMENT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='orderID', full_name='vega.OrderAmendment.orderID', index=0,
@@ -1788,49 +2057,49 @@ _ORDERAMENDMENT = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='partyID', full_name='vega.OrderAmendment.partyID', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='marketID', full_name='vega.OrderAmendment.marketID', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='price', full_name='vega.OrderAmendment.price', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='sizeDelta', full_name='vega.OrderAmendment.sizeDelta', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='expiresAt', full_name='vega.OrderAmendment.expiresAt', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='timeInForce', full_name='vega.OrderAmendment.timeInForce', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1843,8 +2112,8 @@ _ORDERAMENDMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3312,
-  serialized_end=3525,
+  serialized_start=3630,
+  serialized_end=3843,
 )
 
 
@@ -1854,6 +2123,7 @@ _ORDERSUBMISSION = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='vega.OrderSubmission.id', index=0,
@@ -1861,70 +2131,70 @@ _ORDERSUBMISSION = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\000', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\002X\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='marketID', full_name='vega.OrderSubmission.marketID', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='partyID', full_name='vega.OrderSubmission.partyID', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='price', full_name='vega.OrderSubmission.price', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='size', full_name='vega.OrderSubmission.size', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002\020\000', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\002\020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='side', full_name='vega.OrderSubmission.side', index=5,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\003\210\001\001', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\003\210\001\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='timeInForce', full_name='vega.OrderSubmission.timeInForce', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\003\210\001\001', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\003\210\001\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='expiresAt', full_name='vega.OrderSubmission.expiresAt', index=7,
       number=8, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='type', full_name='vega.OrderSubmission.type', index=8,
       number=9, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\003\210\001\001', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\003\210\001\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='reference', full_name='vega.OrderSubmission.reference', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1937,8 +2207,8 @@ _ORDERSUBMISSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3528,
-  serialized_end=3822,
+  serialized_start=3846,
+  serialized_end=4140,
 )
 
 
@@ -1948,6 +2218,7 @@ _ORDERCANCELLATION = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='orderID', full_name='vega.OrderCancellation.orderID', index=0,
@@ -1955,21 +2226,21 @@ _ORDERCANCELLATION = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='marketID', full_name='vega.OrderCancellation.marketID', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='partyID', full_name='vega.OrderCancellation.partyID', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1982,8 +2253,8 @@ _ORDERCANCELLATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3824,
-  serialized_end=3919,
+  serialized_start=4142,
+  serialized_end=4237,
 )
 
 
@@ -1993,6 +2264,7 @@ _NODEREGISTRATION = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='pubKey', full_name='vega.NodeRegistration.pubKey', index=0,
@@ -2000,14 +2272,14 @@ _NODEREGISTRATION = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='chainPubKey', full_name='vega.NodeRegistration.chainPubKey', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2020,8 +2292,8 @@ _NODEREGISTRATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3921,
-  serialized_end=3992,
+  serialized_start=4239,
+  serialized_end=4310,
 )
 
 
@@ -2031,6 +2303,7 @@ _NODEVOTE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='pubKey', full_name='vega.NodeVote.pubKey', index=0,
@@ -2038,14 +2311,14 @@ _NODEVOTE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='reference', full_name='vega.NodeVote.reference', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR),
+      serialized_options=b'\342\337\037\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2058,8 +2331,8 @@ _NODEVOTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3994,
-  serialized_end=4055,
+  serialized_start=4312,
+  serialized_end=4373,
 )
 
 
@@ -2069,6 +2342,7 @@ _ACCOUNT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='vega.Account.id', index=0,
@@ -2076,42 +2350,42 @@ _ACCOUNT = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='owner', full_name='vega.Account.owner', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='balance', full_name='vega.Account.balance', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='asset', full_name='vega.Account.asset', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='marketID', full_name='vega.Account.marketID', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='type', full_name='vega.Account.type', index=5,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2124,8 +2398,8 @@ _ACCOUNT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4057,
-  serialized_end=4176,
+  serialized_start=4375,
+  serialized_end=4494,
 )
 
 
@@ -2135,6 +2409,7 @@ _FINANCIALAMOUNT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='amount', full_name='vega.FinancialAmount.amount', index=0,
@@ -2142,14 +2417,14 @@ _FINANCIALAMOUNT = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='asset', full_name='vega.FinancialAmount.asset', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2162,8 +2437,8 @@ _FINANCIALAMOUNT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4178,
-  serialized_end=4226,
+  serialized_start=4496,
+  serialized_end=4544,
 )
 
 
@@ -2173,6 +2448,7 @@ _TRANSFER = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='owner', full_name='vega.Transfer.owner', index=0,
@@ -2180,28 +2456,28 @@ _TRANSFER = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='amount', full_name='vega.Transfer.amount', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='type', full_name='vega.Transfer.type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='minAmount', full_name='vega.Transfer.minAmount', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2214,8 +2490,8 @@ _TRANSFER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4228,
-  serialized_end=4345,
+  serialized_start=4546,
+  serialized_end=4663,
 )
 
 
@@ -2225,6 +2501,7 @@ _TRANSFERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='fromAccount', full_name='vega.TransferRequest.fromAccount', index=0,
@@ -2232,42 +2509,42 @@ _TRANSFERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='toAccount', full_name='vega.TransferRequest.toAccount', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='amount', full_name='vega.TransferRequest.amount', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='minAmount', full_name='vega.TransferRequest.minAmount', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='asset', full_name='vega.TransferRequest.asset', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='reference', full_name='vega.TransferRequest.reference', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2280,8 +2557,8 @@ _TRANSFERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4348,
-  serialized_end=4504,
+  serialized_start=4666,
+  serialized_end=4822,
 )
 
 
@@ -2291,6 +2568,7 @@ _LEDGERENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='fromAccount', full_name='vega.LedgerEntry.fromAccount', index=0,
@@ -2298,42 +2576,42 @@ _LEDGERENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='toAccount', full_name='vega.LedgerEntry.toAccount', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='amount', full_name='vega.LedgerEntry.amount', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='reference', full_name='vega.LedgerEntry.reference', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='type', full_name='vega.LedgerEntry.type', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='timestamp', full_name='vega.LedgerEntry.timestamp', index=5,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2346,8 +2624,8 @@ _LEDGERENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4506,
-  serialized_end=4627,
+  serialized_start=4824,
+  serialized_end=4945,
 )
 
 
@@ -2357,6 +2635,7 @@ _TRANSFERBALANCE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='account', full_name='vega.TransferBalance.account', index=0,
@@ -2364,14 +2643,14 @@ _TRANSFERBALANCE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='balance', full_name='vega.TransferBalance.balance', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2384,8 +2663,8 @@ _TRANSFERBALANCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4629,
-  serialized_end=4695,
+  serialized_start=4947,
+  serialized_end=5013,
 )
 
 
@@ -2395,6 +2674,7 @@ _TRANSFERRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='transfers', full_name='vega.TransferResponse.transfers', index=0,
@@ -2402,14 +2682,14 @@ _TRANSFERRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='balances', full_name='vega.TransferResponse.balances', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2422,8 +2702,8 @@ _TRANSFERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4697,
-  serialized_end=4794,
+  serialized_start=5015,
+  serialized_end=5112,
 )
 
 
@@ -2433,6 +2713,7 @@ _MARGINLEVELS = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='maintenanceMargin', full_name='vega.MarginLevels.maintenanceMargin', index=0,
@@ -2440,56 +2721,56 @@ _MARGINLEVELS = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='searchLevel', full_name='vega.MarginLevels.searchLevel', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='initialMargin', full_name='vega.MarginLevels.initialMargin', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='collateralReleaseLevel', full_name='vega.MarginLevels.collateralReleaseLevel', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='partyID', full_name='vega.MarginLevels.partyID', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='marketID', full_name='vega.MarginLevels.marketID', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='asset', full_name='vega.MarginLevels.asset', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='timestamp', full_name='vega.MarginLevels.timestamp', index=7,
       number=8, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2502,8 +2783,8 @@ _MARGINLEVELS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4797,
-  serialized_end=4983,
+  serialized_start=5115,
+  serialized_end=5301,
 )
 
 
@@ -2513,6 +2794,7 @@ _MARKETDATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='markPrice', full_name='vega.MarketData.markPrice', index=0,
@@ -2520,63 +2802,77 @@ _MARKETDATA = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='bestBidPrice', full_name='vega.MarketData.bestBidPrice', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='bestBidVolume', full_name='vega.MarketData.bestBidVolume', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='bestOfferPrice', full_name='vega.MarketData.bestOfferPrice', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='bestOfferVolume', full_name='vega.MarketData.bestOfferVolume', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='midPrice', full_name='vega.MarketData.midPrice', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='market', full_name='vega.MarketData.market', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='timestamp', full_name='vega.MarketData.timestamp', index=7,
       number=8, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='openInterest', full_name='vega.MarketData.openInterest', index=8,
       number=9, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='auctionEnd', full_name='vega.MarketData.auctionEnd', index=9,
+      number=10, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='auctionStart', full_name='vega.MarketData.auctionStart', index=10,
+      number=11, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2589,8 +2885,8 @@ _MARKETDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4986,
-  serialized_end=5186,
+  serialized_start=5304,
+  serialized_end=5546,
 )
 
 
@@ -2600,6 +2896,7 @@ _ERRORDETAIL = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='code', full_name='vega.ErrorDetail.code', index=0,
@@ -2607,21 +2904,21 @@ _ERRORDETAIL = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='message', full_name='vega.ErrorDetail.message', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='inner', full_name='vega.ErrorDetail.inner', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2634,46 +2931,47 @@ _ERRORDETAIL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5188,
-  serialized_end=5247,
+  serialized_start=5548,
+  serialized_end=5607,
 )
 
 
-_SIGNEDBUNDLE = _descriptor.Descriptor(
-  name='SignedBundle',
-  full_name='vega.SignedBundle',
+_TRANSACTION = _descriptor.Descriptor(
+  name='Transaction',
+  full_name='vega.Transaction',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='data', full_name='vega.SignedBundle.data', index=0,
+      name='inputData', full_name='vega.Transaction.inputData', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sig', full_name='vega.SignedBundle.sig', index=1,
-      number=2, type=12, cpp_type=9, label=1,
+      name='nonce', full_name='vega.Transaction.nonce', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='address', full_name='vega.Transaction.address', index=2,
+      number=1001, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='address', full_name='vega.SignedBundle.address', index=2,
-      number=101, type=12, cpp_type=9, label=1,
+      name='pubKey', full_name='vega.Transaction.pubKey', index=3,
+      number=1002, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='pubKey', full_name='vega.SignedBundle.pubKey', index=3,
-      number=102, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2686,42 +2984,45 @@ _SIGNEDBUNDLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='auth', full_name='vega.SignedBundle.auth',
-      index=0, containing_type=None, fields=[]),
+      name='from', full_name='vega.Transaction.from',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
-  serialized_start=5249,
-  serialized_end=5335,
+  serialized_start=5609,
+  serialized_end=5703,
 )
 
 
-_NODESIGNATURE = _descriptor.Descriptor(
-  name='NodeSignature',
-  full_name='vega.NodeSignature',
+_SIGNATURE = _descriptor.Descriptor(
+  name='Signature',
+  full_name='vega.Signature',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ID', full_name='vega.NodeSignature.ID', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='sig', full_name='vega.NodeSignature.sig', index=1,
-      number=2, type=12, cpp_type=9, label=1,
+      name='sig', full_name='vega.Signature.sig', index=0,
+      number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='kind', full_name='vega.NodeSignature.kind', index=2,
-      number=3, type=14, cpp_type=8, label=1,
+      name='algo', full_name='vega.Signature.algo', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='version', full_name='vega.Signature.version', index=2,
+      number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2734,8 +3035,93 @@ _NODESIGNATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5337,
-  serialized_end=5416,
+  serialized_start=5705,
+  serialized_end=5760,
+)
+
+
+_SIGNEDBUNDLE = _descriptor.Descriptor(
+  name='SignedBundle',
+  full_name='vega.SignedBundle',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='tx', full_name='vega.SignedBundle.tx', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sig', full_name='vega.SignedBundle.sig', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5762,
+  serialized_end=5818,
+)
+
+
+_NODESIGNATURE = _descriptor.Descriptor(
+  name='NodeSignature',
+  full_name='vega.NodeSignature',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ID', full_name='vega.NodeSignature.ID', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sig', full_name='vega.NodeSignature.sig', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='kind', full_name='vega.NodeSignature.kind', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5820,
+  serialized_end=5899,
 )
 
 _RISKRESULT_RISKFACTORSENTRY.fields_by_name['value'].message_type = _RISKFACTOR
@@ -2758,6 +3144,8 @@ _ORDERCONFIRMATION.fields_by_name['trades'].message_type = _TRADE
 _ORDERCONFIRMATION.fields_by_name['passiveOrdersAffected'].message_type = _ORDER
 _TRADE.fields_by_name['aggressor'].enum_type = _SIDE
 _TRADE.fields_by_name['type'].enum_type = _TRADE_TYPE
+_TRADE.fields_by_name['buyerFee'].message_type = _FEE
+_TRADE.fields_by_name['sellerFee'].message_type = _FEE
 _TRADE_TYPE.containing_type = _TRADE
 _TRADESET.fields_by_name['trades'].message_type = _TRADE
 _CANDLE.fields_by_name['interval'].enum_type = _INTERVAL
@@ -2778,23 +3166,25 @@ _TRANSFERREQUEST.fields_by_name['toAccount'].message_type = _ACCOUNT
 _TRANSFERBALANCE.fields_by_name['account'].message_type = _ACCOUNT
 _TRANSFERRESPONSE.fields_by_name['transfers'].message_type = _LEDGERENTRY
 _TRANSFERRESPONSE.fields_by_name['balances'].message_type = _TRANSFERBALANCE
-_SIGNEDBUNDLE.oneofs_by_name['auth'].fields.append(
-  _SIGNEDBUNDLE.fields_by_name['address'])
-_SIGNEDBUNDLE.fields_by_name['address'].containing_oneof = _SIGNEDBUNDLE.oneofs_by_name['auth']
-_SIGNEDBUNDLE.oneofs_by_name['auth'].fields.append(
-  _SIGNEDBUNDLE.fields_by_name['pubKey'])
-_SIGNEDBUNDLE.fields_by_name['pubKey'].containing_oneof = _SIGNEDBUNDLE.oneofs_by_name['auth']
+_TRANSACTION.oneofs_by_name['from'].fields.append(
+  _TRANSACTION.fields_by_name['address'])
+_TRANSACTION.fields_by_name['address'].containing_oneof = _TRANSACTION.oneofs_by_name['from']
+_TRANSACTION.oneofs_by_name['from'].fields.append(
+  _TRANSACTION.fields_by_name['pubKey'])
+_TRANSACTION.fields_by_name['pubKey'].containing_oneof = _TRANSACTION.oneofs_by_name['from']
+_SIGNEDBUNDLE.fields_by_name['sig'].message_type = _SIGNATURE
 _NODESIGNATURE.fields_by_name['kind'].enum_type = _NODESIGNATUREKIND
 DESCRIPTOR.message_types_by_name['Price'] = _PRICE
 DESCRIPTOR.message_types_by_name['Timestamp'] = _TIMESTAMP
-DESCRIPTOR.message_types_by_name['Amount'] = _AMOUNT
 DESCRIPTOR.message_types_by_name['Party'] = _PARTY
 DESCRIPTOR.message_types_by_name['RiskFactor'] = _RISKFACTOR
 DESCRIPTOR.message_types_by_name['RiskResult'] = _RISKRESULT
 DESCRIPTOR.message_types_by_name['Order'] = _ORDER
 DESCRIPTOR.message_types_by_name['OrderCancellationConfirmation'] = _ORDERCANCELLATIONCONFIRMATION
 DESCRIPTOR.message_types_by_name['OrderConfirmation'] = _ORDERCONFIRMATION
+DESCRIPTOR.message_types_by_name['AuctionIndicativeState'] = _AUCTIONINDICATIVESTATE
 DESCRIPTOR.message_types_by_name['Trade'] = _TRADE
+DESCRIPTOR.message_types_by_name['Fee'] = _FEE
 DESCRIPTOR.message_types_by_name['TradeSet'] = _TRADESET
 DESCRIPTOR.message_types_by_name['Candle'] = _CANDLE
 DESCRIPTOR.message_types_by_name['PriceLevel'] = _PRICELEVEL
@@ -2819,6 +3209,8 @@ DESCRIPTOR.message_types_by_name['TransferResponse'] = _TRANSFERRESPONSE
 DESCRIPTOR.message_types_by_name['MarginLevels'] = _MARGINLEVELS
 DESCRIPTOR.message_types_by_name['MarketData'] = _MARKETDATA
 DESCRIPTOR.message_types_by_name['ErrorDetail'] = _ERRORDETAIL
+DESCRIPTOR.message_types_by_name['Transaction'] = _TRANSACTION
+DESCRIPTOR.message_types_by_name['Signature'] = _SIGNATURE
 DESCRIPTOR.message_types_by_name['SignedBundle'] = _SIGNEDBUNDLE
 DESCRIPTOR.message_types_by_name['NodeSignature'] = _NODESIGNATURE
 DESCRIPTOR.enum_types_by_name['Side'] = _SIDE
@@ -2843,13 +3235,6 @@ Timestamp = _reflection.GeneratedProtocolMessageType('Timestamp', (_message.Mess
   # @@protoc_insertion_point(class_scope:vega.Timestamp)
   })
 _sym_db.RegisterMessage(Timestamp)
-
-Amount = _reflection.GeneratedProtocolMessageType('Amount', (_message.Message,), {
-  'DESCRIPTOR' : _AMOUNT,
-  '__module__' : 'proto.vega_pb2'
-  # @@protoc_insertion_point(class_scope:vega.Amount)
-  })
-_sym_db.RegisterMessage(Amount)
 
 Party = _reflection.GeneratedProtocolMessageType('Party', (_message.Message,), {
   'DESCRIPTOR' : _PARTY,
@@ -2909,12 +3294,26 @@ OrderConfirmation = _reflection.GeneratedProtocolMessageType('OrderConfirmation'
   })
 _sym_db.RegisterMessage(OrderConfirmation)
 
+AuctionIndicativeState = _reflection.GeneratedProtocolMessageType('AuctionIndicativeState', (_message.Message,), {
+  'DESCRIPTOR' : _AUCTIONINDICATIVESTATE,
+  '__module__' : 'proto.vega_pb2'
+  # @@protoc_insertion_point(class_scope:vega.AuctionIndicativeState)
+  })
+_sym_db.RegisterMessage(AuctionIndicativeState)
+
 Trade = _reflection.GeneratedProtocolMessageType('Trade', (_message.Message,), {
   'DESCRIPTOR' : _TRADE,
   '__module__' : 'proto.vega_pb2'
   # @@protoc_insertion_point(class_scope:vega.Trade)
   })
 _sym_db.RegisterMessage(Trade)
+
+Fee = _reflection.GeneratedProtocolMessageType('Fee', (_message.Message,), {
+  'DESCRIPTOR' : _FEE,
+  '__module__' : 'proto.vega_pb2'
+  # @@protoc_insertion_point(class_scope:vega.Fee)
+  })
+_sym_db.RegisterMessage(Fee)
 
 TradeSet = _reflection.GeneratedProtocolMessageType('TradeSet', (_message.Message,), {
   'DESCRIPTOR' : _TRADESET,
@@ -3083,6 +3482,20 @@ ErrorDetail = _reflection.GeneratedProtocolMessageType('ErrorDetail', (_message.
   # @@protoc_insertion_point(class_scope:vega.ErrorDetail)
   })
 _sym_db.RegisterMessage(ErrorDetail)
+
+Transaction = _reflection.GeneratedProtocolMessageType('Transaction', (_message.Message,), {
+  'DESCRIPTOR' : _TRANSACTION,
+  '__module__' : 'proto.vega_pb2'
+  # @@protoc_insertion_point(class_scope:vega.Transaction)
+  })
+_sym_db.RegisterMessage(Transaction)
+
+Signature = _reflection.GeneratedProtocolMessageType('Signature', (_message.Message,), {
+  'DESCRIPTOR' : _SIGNATURE,
+  '__module__' : 'proto.vega_pb2'
+  # @@protoc_insertion_point(class_scope:vega.Signature)
+  })
+_sym_db.RegisterMessage(Signature)
 
 SignedBundle = _reflection.GeneratedProtocolMessageType('SignedBundle', (_message.Message,), {
   'DESCRIPTOR' : _SIGNEDBUNDLE,

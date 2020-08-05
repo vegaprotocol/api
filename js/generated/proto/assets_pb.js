@@ -27,7 +27,7 @@ goog.exportSymbol('proto.vega.ERC20', null, global);
  * @constructor
  */
 proto.vega.Asset = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.vega.Asset.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.vega.Asset, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -122,32 +122,6 @@ if (goog.DEBUG && !COMPILED) {
   proto.vega.DevAssets.displayName = 'proto.vega.DevAssets';
 }
 
-/**
- * Oneof group definitions for this message. Each group defines the field
- * numbers belonging to that group. When of these fields' value is set, all
- * other fields in the group are cleared. During deserialization, if multiple
- * fields are encountered for a group, only the last value seen will be kept.
- * @private {!Array<!Array<number>>}
- * @const
- */
-proto.vega.Asset.oneofGroups_ = [[101,102]];
-
-/**
- * @enum {number}
- */
-proto.vega.Asset.SourceCase = {
-  SOURCE_NOT_SET: 0,
-  BUILTINASSET: 101,
-  ERC20: 102
-};
-
-/**
- * @return {proto.vega.Asset.SourceCase}
- */
-proto.vega.Asset.prototype.getSourceCase = function() {
-  return /** @type {proto.vega.Asset.SourceCase} */(jspb.Message.computeOneofCase(this, proto.vega.Asset.oneofGroups_[0]));
-};
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -182,8 +156,7 @@ proto.vega.Asset.toObject = function(includeInstance, msg) {
     symbol: jspb.Message.getFieldWithDefault(msg, 3, ""),
     totalsupply: jspb.Message.getFieldWithDefault(msg, 4, ""),
     decimals: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    builtinasset: (f = msg.getBuiltinasset()) && proto.vega.BuiltinAsset.toObject(includeInstance, f),
-    erc20: (f = msg.getErc20()) && proto.vega.ERC20.toObject(includeInstance, f)
+    source: (f = msg.getSource()) && proto.vega.AssetSource.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -240,15 +213,10 @@ proto.vega.Asset.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readUint64());
       msg.setDecimals(value);
       break;
-    case 101:
-      var value = new proto.vega.BuiltinAsset;
-      reader.readMessage(value,proto.vega.BuiltinAsset.deserializeBinaryFromReader);
-      msg.setBuiltinasset(value);
-      break;
-    case 102:
-      var value = new proto.vega.ERC20;
-      reader.readMessage(value,proto.vega.ERC20.deserializeBinaryFromReader);
-      msg.setErc20(value);
+    case 7:
+      var value = new proto.vega.AssetSource;
+      reader.readMessage(value,proto.vega.AssetSource.deserializeBinaryFromReader);
+      msg.setSource(value);
       break;
     default:
       reader.skipField();
@@ -314,20 +282,12 @@ proto.vega.Asset.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getBuiltinasset();
+  f = message.getSource();
   if (f != null) {
     writer.writeMessage(
-      101,
+      7,
       f,
-      proto.vega.BuiltinAsset.serializeBinaryToWriter
-    );
-  }
-  f = message.getErc20();
-  if (f != null) {
-    writer.writeMessage(
-      102,
-      f,
-      proto.vega.ERC20.serializeBinaryToWriter
+      proto.vega.AssetSource.serializeBinaryToWriter
     );
   }
 };
@@ -409,26 +369,26 @@ proto.vega.Asset.prototype.setDecimals = function(value) {
 
 
 /**
- * optional BuiltinAsset builtinAsset = 101;
- * @return {?proto.vega.BuiltinAsset}
+ * optional AssetSource source = 7;
+ * @return {?proto.vega.AssetSource}
  */
-proto.vega.Asset.prototype.getBuiltinasset = function() {
-  return /** @type{?proto.vega.BuiltinAsset} */ (
-    jspb.Message.getWrapperField(this, proto.vega.BuiltinAsset, 101));
+proto.vega.Asset.prototype.getSource = function() {
+  return /** @type{?proto.vega.AssetSource} */ (
+    jspb.Message.getWrapperField(this, proto.vega.AssetSource, 7));
 };
 
 
-/** @param {?proto.vega.BuiltinAsset|undefined} value */
-proto.vega.Asset.prototype.setBuiltinasset = function(value) {
-  jspb.Message.setOneofWrapperField(this, 101, proto.vega.Asset.oneofGroups_[0], value);
+/** @param {?proto.vega.AssetSource|undefined} value */
+proto.vega.Asset.prototype.setSource = function(value) {
+  jspb.Message.setWrapperField(this, 7, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
  */
-proto.vega.Asset.prototype.clearBuiltinasset = function() {
-  this.setBuiltinasset(undefined);
+proto.vega.Asset.prototype.clearSource = function() {
+  this.setSource(undefined);
 };
 
 
@@ -436,41 +396,8 @@ proto.vega.Asset.prototype.clearBuiltinasset = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.Asset.prototype.hasBuiltinasset = function() {
-  return jspb.Message.getField(this, 101) != null;
-};
-
-
-/**
- * optional ERC20 erc20 = 102;
- * @return {?proto.vega.ERC20}
- */
-proto.vega.Asset.prototype.getErc20 = function() {
-  return /** @type{?proto.vega.ERC20} */ (
-    jspb.Message.getWrapperField(this, proto.vega.ERC20, 102));
-};
-
-
-/** @param {?proto.vega.ERC20|undefined} value */
-proto.vega.Asset.prototype.setErc20 = function(value) {
-  jspb.Message.setOneofWrapperField(this, 102, proto.vega.Asset.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- */
-proto.vega.Asset.prototype.clearErc20 = function() {
-  this.setErc20(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.vega.Asset.prototype.hasErc20 = function() {
-  return jspb.Message.getField(this, 102) != null;
+proto.vega.Asset.prototype.hasSource = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

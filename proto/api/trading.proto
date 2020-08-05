@@ -50,6 +50,8 @@ service trading {
 message PropagateChainEventRequest {
   // The event
   vega.ChainEvent evt = 1;
+  string pubKey = 2;
+  bytes signature = 3;
 }
 
 // The response for a new event sent to vega
@@ -118,6 +120,9 @@ service trading_data {
 
   // Get a list of Accounts by Party
   rpc PartyAccounts(PartyAccountsRequest) returns (PartyAccountsResponse);
+
+  // Get the list of infrastructure fees accounts filter eventually by assets
+ rpc FeeInfrastructureAccounts(FeeInfrastructureAccountsRequest) returns (FeeInfrastructureAccountsResponse);
 
   // Candles
 
@@ -644,6 +649,21 @@ message MarketAccountsRequest {
 }
 
 message MarketAccountsResponse {
+  repeated vega.Account accounts = 1;
+}
+
+// Request for the infrastructure fees accounts
+message FeeInfrastructureAccountsRequest {
+  // an empty string to return all accounts
+  // an asset ID to return a single infrastructure fee
+  // fee account for a given asset
+  string asset = 1;
+}
+
+// Response for the infrastructure fees accounts
+message FeeInfrastructureAccountsResponse {
+  // A list of infrastructure fee accounts for all
+  // or a specific asset
   repeated vega.Account accounts = 1;
 }
 

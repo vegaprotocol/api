@@ -46,7 +46,7 @@ struct TableStruct_proto_2fvega_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[38]
+  static const ::google::protobuf::internal::ParseTable schema[41]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -57,15 +57,18 @@ namespace vega {
 class Account;
 class AccountDefaultTypeInternal;
 extern AccountDefaultTypeInternal _Account_default_instance_;
-class Amount;
-class AmountDefaultTypeInternal;
-extern AmountDefaultTypeInternal _Amount_default_instance_;
+class AuctionIndicativeState;
+class AuctionIndicativeStateDefaultTypeInternal;
+extern AuctionIndicativeStateDefaultTypeInternal _AuctionIndicativeState_default_instance_;
 class Candle;
 class CandleDefaultTypeInternal;
 extern CandleDefaultTypeInternal _Candle_default_instance_;
 class ErrorDetail;
 class ErrorDetailDefaultTypeInternal;
 extern ErrorDetailDefaultTypeInternal _ErrorDetail_default_instance_;
+class Fee;
+class FeeDefaultTypeInternal;
+extern FeeDefaultTypeInternal _Fee_default_instance_;
 class FinancialAmount;
 class FinancialAmountDefaultTypeInternal;
 extern FinancialAmountDefaultTypeInternal _FinancialAmount_default_instance_;
@@ -138,6 +141,9 @@ extern RiskResult_PredictedNextRiskFactorsEntry_DoNotUseDefaultTypeInternal _Ris
 class RiskResult_RiskFactorsEntry_DoNotUse;
 class RiskResult_RiskFactorsEntry_DoNotUseDefaultTypeInternal;
 extern RiskResult_RiskFactorsEntry_DoNotUseDefaultTypeInternal _RiskResult_RiskFactorsEntry_DoNotUse_default_instance_;
+class Signature;
+class SignatureDefaultTypeInternal;
+extern SignatureDefaultTypeInternal _Signature_default_instance_;
 class SignedBundle;
 class SignedBundleDefaultTypeInternal;
 extern SignedBundleDefaultTypeInternal _SignedBundle_default_instance_;
@@ -153,6 +159,9 @@ extern TradeDefaultTypeInternal _Trade_default_instance_;
 class TradeSet;
 class TradeSetDefaultTypeInternal;
 extern TradeSetDefaultTypeInternal _TradeSet_default_instance_;
+class Transaction;
+class TransactionDefaultTypeInternal;
+extern TransactionDefaultTypeInternal _Transaction_default_instance_;
 class Transfer;
 class TransferDefaultTypeInternal;
 extern TransferDefaultTypeInternal _Transfer_default_instance_;
@@ -172,9 +181,10 @@ extern WithdrawDefaultTypeInternal _Withdraw_default_instance_;
 namespace google {
 namespace protobuf {
 template<> ::vega::Account* Arena::CreateMaybeMessage<::vega::Account>(Arena*);
-template<> ::vega::Amount* Arena::CreateMaybeMessage<::vega::Amount>(Arena*);
+template<> ::vega::AuctionIndicativeState* Arena::CreateMaybeMessage<::vega::AuctionIndicativeState>(Arena*);
 template<> ::vega::Candle* Arena::CreateMaybeMessage<::vega::Candle>(Arena*);
 template<> ::vega::ErrorDetail* Arena::CreateMaybeMessage<::vega::ErrorDetail>(Arena*);
+template<> ::vega::Fee* Arena::CreateMaybeMessage<::vega::Fee>(Arena*);
 template<> ::vega::FinancialAmount* Arena::CreateMaybeMessage<::vega::FinancialAmount>(Arena*);
 template<> ::vega::LedgerEntry* Arena::CreateMaybeMessage<::vega::LedgerEntry>(Arena*);
 template<> ::vega::MarginLevels* Arena::CreateMaybeMessage<::vega::MarginLevels>(Arena*);
@@ -199,11 +209,13 @@ template<> ::vega::RiskFactor* Arena::CreateMaybeMessage<::vega::RiskFactor>(Are
 template<> ::vega::RiskResult* Arena::CreateMaybeMessage<::vega::RiskResult>(Arena*);
 template<> ::vega::RiskResult_PredictedNextRiskFactorsEntry_DoNotUse* Arena::CreateMaybeMessage<::vega::RiskResult_PredictedNextRiskFactorsEntry_DoNotUse>(Arena*);
 template<> ::vega::RiskResult_RiskFactorsEntry_DoNotUse* Arena::CreateMaybeMessage<::vega::RiskResult_RiskFactorsEntry_DoNotUse>(Arena*);
+template<> ::vega::Signature* Arena::CreateMaybeMessage<::vega::Signature>(Arena*);
 template<> ::vega::SignedBundle* Arena::CreateMaybeMessage<::vega::SignedBundle>(Arena*);
 template<> ::vega::Statistics* Arena::CreateMaybeMessage<::vega::Statistics>(Arena*);
 template<> ::vega::Timestamp* Arena::CreateMaybeMessage<::vega::Timestamp>(Arena*);
 template<> ::vega::Trade* Arena::CreateMaybeMessage<::vega::Trade>(Arena*);
 template<> ::vega::TradeSet* Arena::CreateMaybeMessage<::vega::TradeSet>(Arena*);
+template<> ::vega::Transaction* Arena::CreateMaybeMessage<::vega::Transaction>(Arena*);
 template<> ::vega::Transfer* Arena::CreateMaybeMessage<::vega::Transfer>(Arena*);
 template<> ::vega::TransferBalance* Arena::CreateMaybeMessage<::vega::TransferBalance>(Arena*);
 template<> ::vega::TransferRequest* Arena::CreateMaybeMessage<::vega::TransferRequest>(Arena*);
@@ -379,12 +391,14 @@ enum OrderError {
   ORDER_ERROR_INVALID_SIZE = 17,
   ORDER_ERROR_INVALID_PERSISTENCE = 18,
   ORDER_ERROR_INVALID_TYPE = 19,
+  ORDER_ERROR_SELF_TRADING = 20,
+  ORDER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEES = 21,
   OrderError_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   OrderError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool OrderError_IsValid(int value);
 const OrderError OrderError_MIN = ORDER_ERROR_NONE;
-const OrderError OrderError_MAX = ORDER_ERROR_INVALID_TYPE;
+const OrderError OrderError_MAX = ORDER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEES;
 const int OrderError_ARRAYSIZE = OrderError_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* OrderError_descriptor();
@@ -426,12 +440,15 @@ enum AccountType {
   ACCOUNT_TYPE_SETTLEMENT = 2,
   ACCOUNT_TYPE_MARGIN = 3,
   ACCOUNT_TYPE_GENERAL = 4,
+  ACCOUNT_TYPE_FEES_INFRASTRUCTURE = 5,
+  ACCOUNT_TYPE_FEES_LIQUIDITY = 6,
+  ACCOUNT_TYPE_FEES_MAKER = 7,
   AccountType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   AccountType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool AccountType_IsValid(int value);
 const AccountType AccountType_MIN = ACCOUNT_TYPE_UNSPECIFIED;
-const AccountType AccountType_MAX = ACCOUNT_TYPE_GENERAL;
+const AccountType AccountType_MAX = ACCOUNT_TYPE_FEES_MAKER;
 const int AccountType_ARRAYSIZE = AccountType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* AccountType_descriptor();
@@ -454,12 +471,16 @@ enum TransferType {
   TRANSFER_TYPE_MARGIN_LOW = 6,
   TRANSFER_TYPE_MARGIN_HIGH = 7,
   TRANSFER_TYPE_MARGIN_CONFISCATED = 8,
+  TRANSFER_TYPE_MAKER_FEE_PAY = 9,
+  TRANSFER_TYPE_MAKER_FEE_RECEIVE = 10,
+  TRANSFER_TYPE_INFRASTRUCTURE_FEE_PAY = 11,
+  TRANSFER_TYPE_LIQUIDITY_FEE_PAY = 12,
   TransferType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   TransferType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool TransferType_IsValid(int value);
 const TransferType TransferType_MIN = TRANSFER_TYPE_UNSPECIFIED;
-const TransferType TransferType_MAX = TRANSFER_TYPE_MARGIN_CONFISCATED;
+const TransferType TransferType_MAX = TRANSFER_TYPE_LIQUIDITY_FEE_PAY;
 const int TransferType_ARRAYSIZE = TransferType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* TransferType_descriptor();
@@ -720,126 +741,6 @@ class Timestamp :
 };
 // -------------------------------------------------------------------
 
-class Amount :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.Amount) */ {
- public:
-  Amount();
-  virtual ~Amount();
-
-  Amount(const Amount& from);
-
-  inline Amount& operator=(const Amount& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  Amount(Amount&& from) noexcept
-    : Amount() {
-    *this = ::std::move(from);
-  }
-
-  inline Amount& operator=(Amount&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const Amount& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Amount* internal_default_instance() {
-    return reinterpret_cast<const Amount*>(
-               &_Amount_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    2;
-
-  void Swap(Amount* other);
-  friend void swap(Amount& a, Amount& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Amount* New() const final {
-    return CreateMaybeMessage<Amount>(nullptr);
-  }
-
-  Amount* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Amount>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Amount& from);
-  void MergeFrom(const Amount& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Amount* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string value = 1;
-  void clear_value();
-  static const int kValueFieldNumber = 1;
-  const ::std::string& value() const;
-  void set_value(const ::std::string& value);
-  #if LANG_CXX11
-  void set_value(::std::string&& value);
-  #endif
-  void set_value(const char* value);
-  void set_value(const char* value, size_t size);
-  ::std::string* mutable_value();
-  ::std::string* release_value();
-  void set_allocated_value(::std::string* value);
-
-  // @@protoc_insertion_point(class_scope:vega.Amount)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr value_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_proto_2fvega_2eproto;
-};
-// -------------------------------------------------------------------
-
 class Party :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.Party) */ {
  public:
@@ -878,7 +779,7 @@ class Party :
                &_Party_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    2;
 
   void Swap(Party* other);
   friend void swap(Party& a, Party& b) {
@@ -998,7 +899,7 @@ class RiskFactor :
                &_RiskFactor_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    3;
 
   void Swap(RiskFactor* other);
   friend void swap(RiskFactor& a, RiskFactor& b) {
@@ -1180,7 +1081,7 @@ class RiskResult :
                &_RiskResult_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    6;
 
   void Swap(RiskResult* other);
   friend void swap(RiskResult& a, RiskResult& b) {
@@ -1330,7 +1231,7 @@ class Order :
                &_Order_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   void Swap(Order* other);
   friend void swap(Order& a, Order& b) {
@@ -1609,6 +1510,12 @@ class Order :
   ::google::protobuf::uint64 version() const;
   void set_version(::google::protobuf::uint64 value);
 
+  // uint64 batchID = 17;
+  void clear_batchid();
+  static const int kBatchIDFieldNumber = 17;
+  ::google::protobuf::uint64 batchid() const;
+  void set_batchid(::google::protobuf::uint64 value);
+
   // .vega.OrderError reason = 14;
   void clear_reason();
   static const int kReasonFieldNumber = 14;
@@ -1635,6 +1542,7 @@ class Order :
   ::google::protobuf::int64 expiresat_;
   ::google::protobuf::int64 updatedat_;
   ::google::protobuf::uint64 version_;
+  ::google::protobuf::uint64 batchid_;
   int reason_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fvega_2eproto;
@@ -1679,7 +1587,7 @@ class OrderCancellationConfirmation :
                &_OrderCancellationConfirmation_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    8;
 
   void Swap(OrderCancellationConfirmation* other);
   friend void swap(OrderCancellationConfirmation& a, OrderCancellationConfirmation& b) {
@@ -1794,7 +1702,7 @@ class OrderConfirmation :
                &_OrderConfirmation_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    9;
 
   void Swap(OrderConfirmation* other);
   friend void swap(OrderConfirmation& a, OrderConfirmation& b) {
@@ -1892,6 +1800,154 @@ class OrderConfirmation :
   ::google::protobuf::RepeatedPtrField< ::vega::Trade > trades_;
   ::google::protobuf::RepeatedPtrField< ::vega::Order > passiveordersaffected_;
   ::vega::Order* order_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fvega_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AuctionIndicativeState :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.AuctionIndicativeState) */ {
+ public:
+  AuctionIndicativeState();
+  virtual ~AuctionIndicativeState();
+
+  AuctionIndicativeState(const AuctionIndicativeState& from);
+
+  inline AuctionIndicativeState& operator=(const AuctionIndicativeState& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  AuctionIndicativeState(AuctionIndicativeState&& from) noexcept
+    : AuctionIndicativeState() {
+    *this = ::std::move(from);
+  }
+
+  inline AuctionIndicativeState& operator=(AuctionIndicativeState&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const AuctionIndicativeState& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AuctionIndicativeState* internal_default_instance() {
+    return reinterpret_cast<const AuctionIndicativeState*>(
+               &_AuctionIndicativeState_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  void Swap(AuctionIndicativeState* other);
+  friend void swap(AuctionIndicativeState& a, AuctionIndicativeState& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AuctionIndicativeState* New() const final {
+    return CreateMaybeMessage<AuctionIndicativeState>(nullptr);
+  }
+
+  AuctionIndicativeState* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AuctionIndicativeState>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const AuctionIndicativeState& from);
+  void MergeFrom(const AuctionIndicativeState& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AuctionIndicativeState* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string marketID = 1;
+  void clear_marketid();
+  static const int kMarketIDFieldNumber = 1;
+  const ::std::string& marketid() const;
+  void set_marketid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_marketid(::std::string&& value);
+  #endif
+  void set_marketid(const char* value);
+  void set_marketid(const char* value, size_t size);
+  ::std::string* mutable_marketid();
+  ::std::string* release_marketid();
+  void set_allocated_marketid(::std::string* marketid);
+
+  // uint64 indicativePrice = 2;
+  void clear_indicativeprice();
+  static const int kIndicativePriceFieldNumber = 2;
+  ::google::protobuf::uint64 indicativeprice() const;
+  void set_indicativeprice(::google::protobuf::uint64 value);
+
+  // uint64 indicativeVolume = 3;
+  void clear_indicativevolume();
+  static const int kIndicativeVolumeFieldNumber = 3;
+  ::google::protobuf::uint64 indicativevolume() const;
+  void set_indicativevolume(::google::protobuf::uint64 value);
+
+  // int64 auctionStart = 4;
+  void clear_auctionstart();
+  static const int kAuctionStartFieldNumber = 4;
+  ::google::protobuf::int64 auctionstart() const;
+  void set_auctionstart(::google::protobuf::int64 value);
+
+  // int64 auctionEnd = 5;
+  void clear_auctionend();
+  static const int kAuctionEndFieldNumber = 5;
+  ::google::protobuf::int64 auctionend() const;
+  void set_auctionend(::google::protobuf::int64 value);
+
+  // @@protoc_insertion_point(class_scope:vega.AuctionIndicativeState)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr marketid_;
+  ::google::protobuf::uint64 indicativeprice_;
+  ::google::protobuf::uint64 indicativevolume_;
+  ::google::protobuf::int64 auctionstart_;
+  ::google::protobuf::int64 auctionend_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
@@ -2106,6 +2162,24 @@ class Trade :
   ::std::string* release_sellorder();
   void set_allocated_sellorder(::std::string* sellorder);
 
+  // .vega.Fee buyerFee = 12;
+  bool has_buyerfee() const;
+  void clear_buyerfee();
+  static const int kBuyerFeeFieldNumber = 12;
+  const ::vega::Fee& buyerfee() const;
+  ::vega::Fee* release_buyerfee();
+  ::vega::Fee* mutable_buyerfee();
+  void set_allocated_buyerfee(::vega::Fee* buyerfee);
+
+  // .vega.Fee sellerFee = 13;
+  bool has_sellerfee() const;
+  void clear_sellerfee();
+  static const int kSellerFeeFieldNumber = 13;
+  const ::vega::Fee& sellerfee() const;
+  ::vega::Fee* release_sellerfee();
+  ::vega::Fee* mutable_sellerfee();
+  void set_allocated_sellerfee(::vega::Fee* sellerfee);
+
   // uint64 price = 3;
   void clear_price();
   static const int kPriceFieldNumber = 3;
@@ -2136,6 +2210,18 @@ class Trade :
   ::google::protobuf::int64 timestamp() const;
   void set_timestamp(::google::protobuf::int64 value);
 
+  // uint64 buyerAuctionBatch = 14;
+  void clear_buyerauctionbatch();
+  static const int kBuyerAuctionBatchFieldNumber = 14;
+  ::google::protobuf::uint64 buyerauctionbatch() const;
+  void set_buyerauctionbatch(::google::protobuf::uint64 value);
+
+  // uint64 sellerAuctionBatch = 15;
+  void clear_sellerauctionbatch();
+  static const int kSellerAuctionBatchFieldNumber = 15;
+  ::google::protobuf::uint64 sellerauctionbatch() const;
+  void set_sellerauctionbatch(::google::protobuf::uint64 value);
+
   // @@protoc_insertion_point(class_scope:vega.Trade)
  private:
   class HasBitSetters;
@@ -2147,11 +2233,141 @@ class Trade :
   ::google::protobuf::internal::ArenaStringPtr seller_;
   ::google::protobuf::internal::ArenaStringPtr buyorder_;
   ::google::protobuf::internal::ArenaStringPtr sellorder_;
+  ::vega::Fee* buyerfee_;
+  ::vega::Fee* sellerfee_;
   ::google::protobuf::uint64 price_;
   ::google::protobuf::uint64 size_;
   int aggressor_;
   int type_;
   ::google::protobuf::int64 timestamp_;
+  ::google::protobuf::uint64 buyerauctionbatch_;
+  ::google::protobuf::uint64 sellerauctionbatch_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fvega_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Fee :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.Fee) */ {
+ public:
+  Fee();
+  virtual ~Fee();
+
+  Fee(const Fee& from);
+
+  inline Fee& operator=(const Fee& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Fee(Fee&& from) noexcept
+    : Fee() {
+    *this = ::std::move(from);
+  }
+
+  inline Fee& operator=(Fee&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Fee& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Fee* internal_default_instance() {
+    return reinterpret_cast<const Fee*>(
+               &_Fee_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  void Swap(Fee* other);
+  friend void swap(Fee& a, Fee& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Fee* New() const final {
+    return CreateMaybeMessage<Fee>(nullptr);
+  }
+
+  Fee* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Fee>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Fee& from);
+  void MergeFrom(const Fee& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Fee* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // uint64 makerFee = 1;
+  void clear_makerfee();
+  static const int kMakerFeeFieldNumber = 1;
+  ::google::protobuf::uint64 makerfee() const;
+  void set_makerfee(::google::protobuf::uint64 value);
+
+  // uint64 infrastructureFee = 2;
+  void clear_infrastructurefee();
+  static const int kInfrastructureFeeFieldNumber = 2;
+  ::google::protobuf::uint64 infrastructurefee() const;
+  void set_infrastructurefee(::google::protobuf::uint64 value);
+
+  // uint64 liquidityFee = 3;
+  void clear_liquidityfee();
+  static const int kLiquidityFeeFieldNumber = 3;
+  ::google::protobuf::uint64 liquidityfee() const;
+  void set_liquidityfee(::google::protobuf::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:vega.Fee)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::uint64 makerfee_;
+  ::google::protobuf::uint64 infrastructurefee_;
+  ::google::protobuf::uint64 liquidityfee_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
@@ -2195,7 +2411,7 @@ class TradeSet :
                &_TradeSet_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   void Swap(TradeSet* other);
   friend void swap(TradeSet& a, TradeSet& b) {
@@ -2313,7 +2529,7 @@ class Candle :
                &_Candle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   void Swap(Candle* other);
   friend void swap(Candle& a, Candle& b) {
@@ -2482,7 +2698,7 @@ class PriceLevel :
                &_PriceLevel_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   void Swap(PriceLevel* other);
   friend void swap(PriceLevel& a, PriceLevel& b) {
@@ -2615,7 +2831,7 @@ class MarketDepth :
                &_MarketDepth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   void Swap(MarketDepth* other);
   friend void swap(MarketDepth& a, MarketDepth& b) {
@@ -2761,7 +2977,7 @@ class Position :
                &_Position_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   void Swap(Position* other);
   friend void swap(Position& a, Position& b) {
@@ -2924,7 +3140,7 @@ class PositionTrade :
                &_PositionTrade_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   void Swap(PositionTrade* other);
   friend void swap(PositionTrade& a, PositionTrade& b) {
@@ -3043,7 +3259,7 @@ class Statistics :
                &_Statistics_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   void Swap(Statistics* other);
   friend void swap(Statistics& a, Statistics& b) {
@@ -3429,7 +3645,7 @@ class NotifyTraderAccount :
                &_NotifyTraderAccount_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   void Swap(NotifyTraderAccount* other);
   friend void swap(NotifyTraderAccount& a, NotifyTraderAccount& b) {
@@ -3556,7 +3772,7 @@ class Withdraw :
                &_Withdraw_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   void Swap(Withdraw* other);
   friend void swap(Withdraw& a, Withdraw& b) {
@@ -3698,7 +3914,7 @@ class OrderAmendment :
                &_OrderAmendment_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   void Swap(OrderAmendment* other);
   friend void swap(OrderAmendment& a, OrderAmendment& b) {
@@ -3882,7 +4098,7 @@ class OrderSubmission :
                &_OrderSubmission_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   void Swap(OrderSubmission* other);
   friend void swap(OrderSubmission& a, OrderSubmission& b) {
@@ -4089,7 +4305,7 @@ class OrderCancellation :
                &_OrderCancellation_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   void Swap(OrderCancellation* other);
   friend void swap(OrderCancellation& a, OrderCancellation& b) {
@@ -4239,7 +4455,7 @@ class NodeRegistration :
                &_NodeRegistration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   void Swap(NodeRegistration* other);
   friend void swap(NodeRegistration& a, NodeRegistration& b) {
@@ -4374,7 +4590,7 @@ class NodeVote :
                &_NodeVote_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   void Swap(NodeVote* other);
   friend void swap(NodeVote& a, NodeVote& b) {
@@ -4509,7 +4725,7 @@ class Account :
                &_Account_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   void Swap(Account* other);
   friend void swap(Account& a, Account& b) {
@@ -4688,7 +4904,7 @@ class FinancialAmount :
                &_FinancialAmount_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   void Swap(FinancialAmount* other);
   friend void swap(FinancialAmount& a, FinancialAmount& b) {
@@ -4815,7 +5031,7 @@ class Transfer :
                &_Transfer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   void Swap(Transfer* other);
   friend void swap(Transfer& a, Transfer& b) {
@@ -4959,7 +5175,7 @@ class TransferRequest :
                &_TransferRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    30;
 
   void Swap(TransferRequest* other);
   friend void swap(TransferRequest& a, TransferRequest& b) {
@@ -5134,7 +5350,7 @@ class LedgerEntry :
                &_LedgerEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    31;
 
   void Swap(LedgerEntry* other);
   friend void swap(LedgerEntry& a, LedgerEntry& b) {
@@ -5313,7 +5529,7 @@ class TransferBalance :
                &_TransferBalance_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    32;
 
   void Swap(TransferBalance* other);
   friend void swap(TransferBalance& a, TransferBalance& b) {
@@ -5435,7 +5651,7 @@ class TransferResponse :
                &_TransferResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    33;
 
   void Swap(TransferResponse* other);
   friend void swap(TransferResponse& a, TransferResponse& b) {
@@ -5566,7 +5782,7 @@ class MarginLevels :
                &_MarginLevels_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    34;
 
   void Swap(MarginLevels* other);
   friend void swap(MarginLevels& a, MarginLevels& b) {
@@ -5751,7 +5967,7 @@ class MarketData :
                &_MarketData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    35;
 
   void Swap(MarketData* other);
   friend void swap(MarketData& a, MarketData& b) {
@@ -5870,6 +6086,18 @@ class MarketData :
   ::google::protobuf::uint64 openinterest() const;
   void set_openinterest(::google::protobuf::uint64 value);
 
+  // int64 auctionEnd = 10;
+  void clear_auctionend();
+  static const int kAuctionEndFieldNumber = 10;
+  ::google::protobuf::int64 auctionend() const;
+  void set_auctionend(::google::protobuf::int64 value);
+
+  // int64 auctionStart = 11;
+  void clear_auctionstart();
+  static const int kAuctionStartFieldNumber = 11;
+  ::google::protobuf::int64 auctionstart() const;
+  void set_auctionstart(::google::protobuf::int64 value);
+
   // @@protoc_insertion_point(class_scope:vega.MarketData)
  private:
   class HasBitSetters;
@@ -5884,6 +6112,8 @@ class MarketData :
   ::google::protobuf::uint64 midprice_;
   ::google::protobuf::int64 timestamp_;
   ::google::protobuf::uint64 openinterest_;
+  ::google::protobuf::int64 auctionend_;
+  ::google::protobuf::int64 auctionstart_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
@@ -5927,7 +6157,7 @@ class ErrorDetail :
                &_ErrorDetail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    36;
 
   void Swap(ErrorDetail* other);
   friend void swap(ErrorDetail& a, ErrorDetail& b) {
@@ -6031,6 +6261,329 @@ class ErrorDetail :
 };
 // -------------------------------------------------------------------
 
+class Transaction :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.Transaction) */ {
+ public:
+  Transaction();
+  virtual ~Transaction();
+
+  Transaction(const Transaction& from);
+
+  inline Transaction& operator=(const Transaction& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Transaction(Transaction&& from) noexcept
+    : Transaction() {
+    *this = ::std::move(from);
+  }
+
+  inline Transaction& operator=(Transaction&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Transaction& default_instance();
+
+  enum FromCase {
+    kAddress = 1001,
+    kPubKey = 1002,
+    FROM_NOT_SET = 0,
+  };
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Transaction* internal_default_instance() {
+    return reinterpret_cast<const Transaction*>(
+               &_Transaction_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    37;
+
+  void Swap(Transaction* other);
+  friend void swap(Transaction& a, Transaction& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Transaction* New() const final {
+    return CreateMaybeMessage<Transaction>(nullptr);
+  }
+
+  Transaction* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Transaction>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Transaction& from);
+  void MergeFrom(const Transaction& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Transaction* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // bytes inputData = 1;
+  void clear_inputdata();
+  static const int kInputDataFieldNumber = 1;
+  const ::std::string& inputdata() const;
+  void set_inputdata(const ::std::string& value);
+  #if LANG_CXX11
+  void set_inputdata(::std::string&& value);
+  #endif
+  void set_inputdata(const char* value);
+  void set_inputdata(const void* value, size_t size);
+  ::std::string* mutable_inputdata();
+  ::std::string* release_inputdata();
+  void set_allocated_inputdata(::std::string* inputdata);
+
+  // uint64 nonce = 2;
+  void clear_nonce();
+  static const int kNonceFieldNumber = 2;
+  ::google::protobuf::uint64 nonce() const;
+  void set_nonce(::google::protobuf::uint64 value);
+
+  // bytes address = 1001;
+  private:
+  bool has_address() const;
+  public:
+  void clear_address();
+  static const int kAddressFieldNumber = 1001;
+  const ::std::string& address() const;
+  void set_address(const ::std::string& value);
+  #if LANG_CXX11
+  void set_address(::std::string&& value);
+  #endif
+  void set_address(const char* value);
+  void set_address(const void* value, size_t size);
+  ::std::string* mutable_address();
+  ::std::string* release_address();
+  void set_allocated_address(::std::string* address);
+
+  // bytes pubKey = 1002;
+  private:
+  bool has_pubkey() const;
+  public:
+  void clear_pubkey();
+  static const int kPubKeyFieldNumber = 1002;
+  const ::std::string& pubkey() const;
+  void set_pubkey(const ::std::string& value);
+  #if LANG_CXX11
+  void set_pubkey(::std::string&& value);
+  #endif
+  void set_pubkey(const char* value);
+  void set_pubkey(const void* value, size_t size);
+  ::std::string* mutable_pubkey();
+  ::std::string* release_pubkey();
+  void set_allocated_pubkey(::std::string* pubkey);
+
+  void clear_from();
+  FromCase from_case() const;
+  // @@protoc_insertion_point(class_scope:vega.Transaction)
+ private:
+  class HasBitSetters;
+  void set_has_address();
+  void set_has_pubkey();
+
+  inline bool has_from() const;
+  inline void clear_has_from();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr inputdata_;
+  ::google::protobuf::uint64 nonce_;
+  union FromUnion {
+    FromUnion() {}
+    ::google::protobuf::internal::ArenaStringPtr address_;
+    ::google::protobuf::internal::ArenaStringPtr pubkey_;
+  } from_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
+  friend struct ::TableStruct_proto_2fvega_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Signature :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.Signature) */ {
+ public:
+  Signature();
+  virtual ~Signature();
+
+  Signature(const Signature& from);
+
+  inline Signature& operator=(const Signature& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Signature(Signature&& from) noexcept
+    : Signature() {
+    *this = ::std::move(from);
+  }
+
+  inline Signature& operator=(Signature&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Signature& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Signature* internal_default_instance() {
+    return reinterpret_cast<const Signature*>(
+               &_Signature_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    38;
+
+  void Swap(Signature* other);
+  friend void swap(Signature& a, Signature& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Signature* New() const final {
+    return CreateMaybeMessage<Signature>(nullptr);
+  }
+
+  Signature* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Signature>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Signature& from);
+  void MergeFrom(const Signature& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Signature* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // bytes sig = 1;
+  void clear_sig();
+  static const int kSigFieldNumber = 1;
+  const ::std::string& sig() const;
+  void set_sig(const ::std::string& value);
+  #if LANG_CXX11
+  void set_sig(::std::string&& value);
+  #endif
+  void set_sig(const char* value);
+  void set_sig(const void* value, size_t size);
+  ::std::string* mutable_sig();
+  ::std::string* release_sig();
+  void set_allocated_sig(::std::string* sig);
+
+  // string algo = 2;
+  void clear_algo();
+  static const int kAlgoFieldNumber = 2;
+  const ::std::string& algo() const;
+  void set_algo(const ::std::string& value);
+  #if LANG_CXX11
+  void set_algo(::std::string&& value);
+  #endif
+  void set_algo(const char* value);
+  void set_algo(const char* value, size_t size);
+  ::std::string* mutable_algo();
+  ::std::string* release_algo();
+  void set_allocated_algo(::std::string* algo);
+
+  // uint64 version = 3;
+  void clear_version();
+  static const int kVersionFieldNumber = 3;
+  ::google::protobuf::uint64 version() const;
+  void set_version(::google::protobuf::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:vega.Signature)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr sig_;
+  ::google::protobuf::internal::ArenaStringPtr algo_;
+  ::google::protobuf::uint64 version_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fvega_2eproto;
+};
+// -------------------------------------------------------------------
+
 class SignedBundle :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.SignedBundle) */ {
  public:
@@ -6063,19 +6616,13 @@ class SignedBundle :
   }
   static const SignedBundle& default_instance();
 
-  enum AuthCase {
-    kAddress = 101,
-    kPubKey = 102,
-    AUTH_NOT_SET = 0,
-  };
-
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const SignedBundle* internal_default_instance() {
     return reinterpret_cast<const SignedBundle*>(
                &_SignedBundle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    39;
 
   void Swap(SignedBundle* other);
   friend void swap(SignedBundle& a, SignedBundle& b) {
@@ -6132,90 +6679,37 @@ class SignedBundle :
 
   // accessors -------------------------------------------------------
 
-  // bytes data = 1;
-  void clear_data();
-  static const int kDataFieldNumber = 1;
-  const ::std::string& data() const;
-  void set_data(const ::std::string& value);
+  // bytes tx = 1;
+  void clear_tx();
+  static const int kTxFieldNumber = 1;
+  const ::std::string& tx() const;
+  void set_tx(const ::std::string& value);
   #if LANG_CXX11
-  void set_data(::std::string&& value);
+  void set_tx(::std::string&& value);
   #endif
-  void set_data(const char* value);
-  void set_data(const void* value, size_t size);
-  ::std::string* mutable_data();
-  ::std::string* release_data();
-  void set_allocated_data(::std::string* data);
+  void set_tx(const char* value);
+  void set_tx(const void* value, size_t size);
+  ::std::string* mutable_tx();
+  ::std::string* release_tx();
+  void set_allocated_tx(::std::string* tx);
 
-  // bytes sig = 2;
+  // .vega.Signature sig = 2;
+  bool has_sig() const;
   void clear_sig();
   static const int kSigFieldNumber = 2;
-  const ::std::string& sig() const;
-  void set_sig(const ::std::string& value);
-  #if LANG_CXX11
-  void set_sig(::std::string&& value);
-  #endif
-  void set_sig(const char* value);
-  void set_sig(const void* value, size_t size);
-  ::std::string* mutable_sig();
-  ::std::string* release_sig();
-  void set_allocated_sig(::std::string* sig);
+  const ::vega::Signature& sig() const;
+  ::vega::Signature* release_sig();
+  ::vega::Signature* mutable_sig();
+  void set_allocated_sig(::vega::Signature* sig);
 
-  // bytes address = 101;
-  private:
-  bool has_address() const;
-  public:
-  void clear_address();
-  static const int kAddressFieldNumber = 101;
-  const ::std::string& address() const;
-  void set_address(const ::std::string& value);
-  #if LANG_CXX11
-  void set_address(::std::string&& value);
-  #endif
-  void set_address(const char* value);
-  void set_address(const void* value, size_t size);
-  ::std::string* mutable_address();
-  ::std::string* release_address();
-  void set_allocated_address(::std::string* address);
-
-  // bytes pubKey = 102;
-  private:
-  bool has_pubkey() const;
-  public:
-  void clear_pubkey();
-  static const int kPubKeyFieldNumber = 102;
-  const ::std::string& pubkey() const;
-  void set_pubkey(const ::std::string& value);
-  #if LANG_CXX11
-  void set_pubkey(::std::string&& value);
-  #endif
-  void set_pubkey(const char* value);
-  void set_pubkey(const void* value, size_t size);
-  ::std::string* mutable_pubkey();
-  ::std::string* release_pubkey();
-  void set_allocated_pubkey(::std::string* pubkey);
-
-  void clear_auth();
-  AuthCase auth_case() const;
   // @@protoc_insertion_point(class_scope:vega.SignedBundle)
  private:
   class HasBitSetters;
-  void set_has_address();
-  void set_has_pubkey();
-
-  inline bool has_auth() const;
-  inline void clear_has_auth();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr data_;
-  ::google::protobuf::internal::ArenaStringPtr sig_;
-  union AuthUnion {
-    AuthUnion() {}
-    ::google::protobuf::internal::ArenaStringPtr address_;
-    ::google::protobuf::internal::ArenaStringPtr pubkey_;
-  } auth_;
+  ::google::protobuf::internal::ArenaStringPtr tx_;
+  ::vega::Signature* sig_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  ::google::protobuf::uint32 _oneof_case_[1];
-
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
 // -------------------------------------------------------------------
@@ -6258,7 +6752,7 @@ class NodeSignature :
                &_NodeSignature_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    40;
 
   void Swap(NodeSignature* other);
   friend void swap(NodeSignature& a, NodeSignature& b) {
@@ -6401,63 +6895,6 @@ inline void Timestamp::set_value(::google::protobuf::int64 value) {
 
   value_ = value;
   // @@protoc_insertion_point(field_set:vega.Timestamp.value)
-}
-
-// -------------------------------------------------------------------
-
-// Amount
-
-// string value = 1;
-inline void Amount::clear_value() {
-  value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Amount::value() const {
-  // @@protoc_insertion_point(field_get:vega.Amount.value)
-  return value_.GetNoArena();
-}
-inline void Amount::set_value(const ::std::string& value) {
-
-  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.Amount.value)
-}
-#if LANG_CXX11
-inline void Amount::set_value(::std::string&& value) {
-
-  value_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.Amount.value)
-}
-#endif
-inline void Amount::set_value(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.Amount.value)
-}
-inline void Amount::set_value(const char* value, size_t size) {
-
-  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.Amount.value)
-}
-inline ::std::string* Amount::mutable_value() {
-
-  // @@protoc_insertion_point(field_mutable:vega.Amount.value)
-  return value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Amount::release_value() {
-  // @@protoc_insertion_point(field_release:vega.Amount.value)
-
-  return value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Amount::set_allocated_value(::std::string* value) {
-  if (value != nullptr) {
-
-  } else {
-
-  }
-  value_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set_allocated:vega.Amount.value)
 }
 
 // -------------------------------------------------------------------
@@ -7058,6 +7495,20 @@ inline void Order::set_version(::google::protobuf::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.Order.version)
 }
 
+// uint64 batchID = 17;
+inline void Order::clear_batchid() {
+  batchid_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 Order::batchid() const {
+  // @@protoc_insertion_point(field_get:vega.Order.batchID)
+  return batchid_;
+}
+inline void Order::set_batchid(::google::protobuf::uint64 value) {
+
+  batchid_ = value;
+  // @@protoc_insertion_point(field_set:vega.Order.batchID)
+}
+
 // -------------------------------------------------------------------
 
 // OrderCancellationConfirmation
@@ -7226,6 +7677,119 @@ inline const ::google::protobuf::RepeatedPtrField< ::vega::Order >&
 OrderConfirmation::passiveordersaffected() const {
   // @@protoc_insertion_point(field_list:vega.OrderConfirmation.passiveOrdersAffected)
   return passiveordersaffected_;
+}
+
+// -------------------------------------------------------------------
+
+// AuctionIndicativeState
+
+// string marketID = 1;
+inline void AuctionIndicativeState::clear_marketid() {
+  marketid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& AuctionIndicativeState::marketid() const {
+  // @@protoc_insertion_point(field_get:vega.AuctionIndicativeState.marketID)
+  return marketid_.GetNoArena();
+}
+inline void AuctionIndicativeState::set_marketid(const ::std::string& value) {
+
+  marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.AuctionIndicativeState.marketID)
+}
+#if LANG_CXX11
+inline void AuctionIndicativeState::set_marketid(::std::string&& value) {
+
+  marketid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.AuctionIndicativeState.marketID)
+}
+#endif
+inline void AuctionIndicativeState::set_marketid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.AuctionIndicativeState.marketID)
+}
+inline void AuctionIndicativeState::set_marketid(const char* value, size_t size) {
+
+  marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.AuctionIndicativeState.marketID)
+}
+inline ::std::string* AuctionIndicativeState::mutable_marketid() {
+
+  // @@protoc_insertion_point(field_mutable:vega.AuctionIndicativeState.marketID)
+  return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AuctionIndicativeState::release_marketid() {
+  // @@protoc_insertion_point(field_release:vega.AuctionIndicativeState.marketID)
+
+  return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AuctionIndicativeState::set_allocated_marketid(::std::string* marketid) {
+  if (marketid != nullptr) {
+
+  } else {
+
+  }
+  marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
+  // @@protoc_insertion_point(field_set_allocated:vega.AuctionIndicativeState.marketID)
+}
+
+// uint64 indicativePrice = 2;
+inline void AuctionIndicativeState::clear_indicativeprice() {
+  indicativeprice_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 AuctionIndicativeState::indicativeprice() const {
+  // @@protoc_insertion_point(field_get:vega.AuctionIndicativeState.indicativePrice)
+  return indicativeprice_;
+}
+inline void AuctionIndicativeState::set_indicativeprice(::google::protobuf::uint64 value) {
+
+  indicativeprice_ = value;
+  // @@protoc_insertion_point(field_set:vega.AuctionIndicativeState.indicativePrice)
+}
+
+// uint64 indicativeVolume = 3;
+inline void AuctionIndicativeState::clear_indicativevolume() {
+  indicativevolume_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 AuctionIndicativeState::indicativevolume() const {
+  // @@protoc_insertion_point(field_get:vega.AuctionIndicativeState.indicativeVolume)
+  return indicativevolume_;
+}
+inline void AuctionIndicativeState::set_indicativevolume(::google::protobuf::uint64 value) {
+
+  indicativevolume_ = value;
+  // @@protoc_insertion_point(field_set:vega.AuctionIndicativeState.indicativeVolume)
+}
+
+// int64 auctionStart = 4;
+inline void AuctionIndicativeState::clear_auctionstart() {
+  auctionstart_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 AuctionIndicativeState::auctionstart() const {
+  // @@protoc_insertion_point(field_get:vega.AuctionIndicativeState.auctionStart)
+  return auctionstart_;
+}
+inline void AuctionIndicativeState::set_auctionstart(::google::protobuf::int64 value) {
+
+  auctionstart_ = value;
+  // @@protoc_insertion_point(field_set:vega.AuctionIndicativeState.auctionStart)
+}
+
+// int64 auctionEnd = 5;
+inline void AuctionIndicativeState::clear_auctionend() {
+  auctionend_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 AuctionIndicativeState::auctionend() const {
+  // @@protoc_insertion_point(field_get:vega.AuctionIndicativeState.auctionEnd)
+  return auctionend_;
+}
+inline void AuctionIndicativeState::set_auctionend(::google::protobuf::int64 value) {
+
+  auctionend_ = value;
+  // @@protoc_insertion_point(field_set:vega.AuctionIndicativeState.auctionEnd)
 }
 
 // -------------------------------------------------------------------
@@ -7618,6 +8182,182 @@ inline void Trade::set_type(::vega::Trade_Type value) {
 
   type_ = value;
   // @@protoc_insertion_point(field_set:vega.Trade.type)
+}
+
+// .vega.Fee buyerFee = 12;
+inline bool Trade::has_buyerfee() const {
+  return this != internal_default_instance() && buyerfee_ != nullptr;
+}
+inline void Trade::clear_buyerfee() {
+  if (GetArenaNoVirtual() == nullptr && buyerfee_ != nullptr) {
+    delete buyerfee_;
+  }
+  buyerfee_ = nullptr;
+}
+inline const ::vega::Fee& Trade::buyerfee() const {
+  const ::vega::Fee* p = buyerfee_;
+  // @@protoc_insertion_point(field_get:vega.Trade.buyerFee)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::Fee*>(
+      &::vega::_Fee_default_instance_);
+}
+inline ::vega::Fee* Trade::release_buyerfee() {
+  // @@protoc_insertion_point(field_release:vega.Trade.buyerFee)
+
+  ::vega::Fee* temp = buyerfee_;
+  buyerfee_ = nullptr;
+  return temp;
+}
+inline ::vega::Fee* Trade::mutable_buyerfee() {
+
+  if (buyerfee_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::Fee>(GetArenaNoVirtual());
+    buyerfee_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:vega.Trade.buyerFee)
+  return buyerfee_;
+}
+inline void Trade::set_allocated_buyerfee(::vega::Fee* buyerfee) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete buyerfee_;
+  }
+  if (buyerfee) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      buyerfee = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, buyerfee, submessage_arena);
+    }
+
+  } else {
+
+  }
+  buyerfee_ = buyerfee;
+  // @@protoc_insertion_point(field_set_allocated:vega.Trade.buyerFee)
+}
+
+// .vega.Fee sellerFee = 13;
+inline bool Trade::has_sellerfee() const {
+  return this != internal_default_instance() && sellerfee_ != nullptr;
+}
+inline void Trade::clear_sellerfee() {
+  if (GetArenaNoVirtual() == nullptr && sellerfee_ != nullptr) {
+    delete sellerfee_;
+  }
+  sellerfee_ = nullptr;
+}
+inline const ::vega::Fee& Trade::sellerfee() const {
+  const ::vega::Fee* p = sellerfee_;
+  // @@protoc_insertion_point(field_get:vega.Trade.sellerFee)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::Fee*>(
+      &::vega::_Fee_default_instance_);
+}
+inline ::vega::Fee* Trade::release_sellerfee() {
+  // @@protoc_insertion_point(field_release:vega.Trade.sellerFee)
+
+  ::vega::Fee* temp = sellerfee_;
+  sellerfee_ = nullptr;
+  return temp;
+}
+inline ::vega::Fee* Trade::mutable_sellerfee() {
+
+  if (sellerfee_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::Fee>(GetArenaNoVirtual());
+    sellerfee_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:vega.Trade.sellerFee)
+  return sellerfee_;
+}
+inline void Trade::set_allocated_sellerfee(::vega::Fee* sellerfee) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete sellerfee_;
+  }
+  if (sellerfee) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      sellerfee = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, sellerfee, submessage_arena);
+    }
+
+  } else {
+
+  }
+  sellerfee_ = sellerfee;
+  // @@protoc_insertion_point(field_set_allocated:vega.Trade.sellerFee)
+}
+
+// uint64 buyerAuctionBatch = 14;
+inline void Trade::clear_buyerauctionbatch() {
+  buyerauctionbatch_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 Trade::buyerauctionbatch() const {
+  // @@protoc_insertion_point(field_get:vega.Trade.buyerAuctionBatch)
+  return buyerauctionbatch_;
+}
+inline void Trade::set_buyerauctionbatch(::google::protobuf::uint64 value) {
+
+  buyerauctionbatch_ = value;
+  // @@protoc_insertion_point(field_set:vega.Trade.buyerAuctionBatch)
+}
+
+// uint64 sellerAuctionBatch = 15;
+inline void Trade::clear_sellerauctionbatch() {
+  sellerauctionbatch_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 Trade::sellerauctionbatch() const {
+  // @@protoc_insertion_point(field_get:vega.Trade.sellerAuctionBatch)
+  return sellerauctionbatch_;
+}
+inline void Trade::set_sellerauctionbatch(::google::protobuf::uint64 value) {
+
+  sellerauctionbatch_ = value;
+  // @@protoc_insertion_point(field_set:vega.Trade.sellerAuctionBatch)
+}
+
+// -------------------------------------------------------------------
+
+// Fee
+
+// uint64 makerFee = 1;
+inline void Fee::clear_makerfee() {
+  makerfee_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 Fee::makerfee() const {
+  // @@protoc_insertion_point(field_get:vega.Fee.makerFee)
+  return makerfee_;
+}
+inline void Fee::set_makerfee(::google::protobuf::uint64 value) {
+
+  makerfee_ = value;
+  // @@protoc_insertion_point(field_set:vega.Fee.makerFee)
+}
+
+// uint64 infrastructureFee = 2;
+inline void Fee::clear_infrastructurefee() {
+  infrastructurefee_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 Fee::infrastructurefee() const {
+  // @@protoc_insertion_point(field_get:vega.Fee.infrastructureFee)
+  return infrastructurefee_;
+}
+inline void Fee::set_infrastructurefee(::google::protobuf::uint64 value) {
+
+  infrastructurefee_ = value;
+  // @@protoc_insertion_point(field_set:vega.Fee.infrastructureFee)
+}
+
+// uint64 liquidityFee = 3;
+inline void Fee::clear_liquidityfee() {
+  liquidityfee_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 Fee::liquidityfee() const {
+  // @@protoc_insertion_point(field_get:vega.Fee.liquidityFee)
+  return liquidityfee_;
+}
+inline void Fee::set_liquidityfee(::google::protobuf::uint64 value) {
+
+  liquidityfee_ = value;
+  // @@protoc_insertion_point(field_set:vega.Fee.liquidityFee)
 }
 
 // -------------------------------------------------------------------
@@ -11533,6 +12273,34 @@ inline void MarketData::set_openinterest(::google::protobuf::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.MarketData.openInterest)
 }
 
+// int64 auctionEnd = 10;
+inline void MarketData::clear_auctionend() {
+  auctionend_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 MarketData::auctionend() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.auctionEnd)
+  return auctionend_;
+}
+inline void MarketData::set_auctionend(::google::protobuf::int64 value) {
+
+  auctionend_ = value;
+  // @@protoc_insertion_point(field_set:vega.MarketData.auctionEnd)
+}
+
+// int64 auctionStart = 11;
+inline void MarketData::clear_auctionstart() {
+  auctionstart_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 MarketData::auctionstart() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.auctionStart)
+  return auctionstart_;
+}
+inline void MarketData::set_auctionstart(::google::protobuf::int64 value) {
+
+  auctionstart_ = value;
+  // @@protoc_insertion_point(field_set:vega.MarketData.auctionStart)
+}
+
 // -------------------------------------------------------------------
 
 // ErrorDetail
@@ -11659,307 +12427,500 @@ inline void ErrorDetail::set_allocated_inner(::std::string* inner) {
 
 // -------------------------------------------------------------------
 
-// SignedBundle
+// Transaction
 
-// bytes data = 1;
-inline void SignedBundle::clear_data() {
-  data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// bytes inputData = 1;
+inline void Transaction::clear_inputdata() {
+  inputdata_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& SignedBundle::data() const {
-  // @@protoc_insertion_point(field_get:vega.SignedBundle.data)
-  return data_.GetNoArena();
+inline const ::std::string& Transaction::inputdata() const {
+  // @@protoc_insertion_point(field_get:vega.Transaction.inputData)
+  return inputdata_.GetNoArena();
 }
-inline void SignedBundle::set_data(const ::std::string& value) {
+inline void Transaction::set_inputdata(const ::std::string& value) {
 
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.SignedBundle.data)
+  inputdata_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.Transaction.inputData)
 }
 #if LANG_CXX11
-inline void SignedBundle::set_data(::std::string&& value) {
+inline void Transaction::set_inputdata(::std::string&& value) {
 
-  data_.SetNoArena(
+  inputdata_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.SignedBundle.data)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Transaction.inputData)
 }
 #endif
-inline void SignedBundle::set_data(const char* value) {
+inline void Transaction::set_inputdata(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.SignedBundle.data)
+  inputdata_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.Transaction.inputData)
 }
-inline void SignedBundle::set_data(const void* value, size_t size) {
+inline void Transaction::set_inputdata(const void* value, size_t size) {
 
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  inputdata_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.SignedBundle.data)
+  // @@protoc_insertion_point(field_set_pointer:vega.Transaction.inputData)
 }
-inline ::std::string* SignedBundle::mutable_data() {
+inline ::std::string* Transaction::mutable_inputdata() {
 
-  // @@protoc_insertion_point(field_mutable:vega.SignedBundle.data)
-  return data_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:vega.Transaction.inputData)
+  return inputdata_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* SignedBundle::release_data() {
-  // @@protoc_insertion_point(field_release:vega.SignedBundle.data)
+inline ::std::string* Transaction::release_inputdata() {
+  // @@protoc_insertion_point(field_release:vega.Transaction.inputData)
 
-  return data_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return inputdata_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void SignedBundle::set_allocated_data(::std::string* data) {
-  if (data != nullptr) {
+inline void Transaction::set_allocated_inputdata(::std::string* inputdata) {
+  if (inputdata != nullptr) {
 
   } else {
 
   }
-  data_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), data);
-  // @@protoc_insertion_point(field_set_allocated:vega.SignedBundle.data)
+  inputdata_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), inputdata);
+  // @@protoc_insertion_point(field_set_allocated:vega.Transaction.inputData)
 }
 
-// bytes sig = 2;
-inline void SignedBundle::clear_sig() {
-  sig_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// uint64 nonce = 2;
+inline void Transaction::clear_nonce() {
+  nonce_ = PROTOBUF_ULONGLONG(0);
 }
-inline const ::std::string& SignedBundle::sig() const {
-  // @@protoc_insertion_point(field_get:vega.SignedBundle.sig)
-  return sig_.GetNoArena();
+inline ::google::protobuf::uint64 Transaction::nonce() const {
+  // @@protoc_insertion_point(field_get:vega.Transaction.nonce)
+  return nonce_;
 }
-inline void SignedBundle::set_sig(const ::std::string& value) {
+inline void Transaction::set_nonce(::google::protobuf::uint64 value) {
 
-  sig_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.SignedBundle.sig)
+  nonce_ = value;
+  // @@protoc_insertion_point(field_set:vega.Transaction.nonce)
+}
+
+// bytes address = 1001;
+inline bool Transaction::has_address() const {
+  return from_case() == kAddress;
+}
+inline void Transaction::set_has_address() {
+  _oneof_case_[0] = kAddress;
+}
+inline void Transaction::clear_address() {
+  if (has_address()) {
+    from_.address_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_from();
+  }
+}
+inline const ::std::string& Transaction::address() const {
+  // @@protoc_insertion_point(field_get:vega.Transaction.address)
+  if (has_address()) {
+    return from_.address_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void Transaction::set_address(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:vega.Transaction.address)
+  if (!has_address()) {
+    clear_from();
+    set_has_address();
+    from_.address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  from_.address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.Transaction.address)
 }
 #if LANG_CXX11
-inline void SignedBundle::set_sig(::std::string&& value) {
+inline void Transaction::set_address(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:vega.Transaction.address)
+  if (!has_address()) {
+    clear_from();
+    set_has_address();
+    from_.address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  from_.address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.Transaction.address)
+}
+#endif
+inline void Transaction::set_address(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!has_address()) {
+    clear_from();
+    set_has_address();
+    from_.address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  from_.address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.Transaction.address)
+}
+inline void Transaction::set_address(const void* value, size_t size) {
+  if (!has_address()) {
+    clear_from();
+    set_has_address();
+    from_.address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  from_.address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.Transaction.address)
+}
+inline ::std::string* Transaction::mutable_address() {
+  if (!has_address()) {
+    clear_from();
+    set_has_address();
+    from_.address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:vega.Transaction.address)
+  return from_.address_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Transaction::release_address() {
+  // @@protoc_insertion_point(field_release:vega.Transaction.address)
+  if (has_address()) {
+    clear_has_from();
+    return from_.address_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void Transaction::set_allocated_address(::std::string* address) {
+  if (has_from()) {
+    clear_from();
+  }
+  if (address != nullptr) {
+    set_has_address();
+    from_.address_.UnsafeSetDefault(address);
+  }
+  // @@protoc_insertion_point(field_set_allocated:vega.Transaction.address)
+}
+
+// bytes pubKey = 1002;
+inline bool Transaction::has_pubkey() const {
+  return from_case() == kPubKey;
+}
+inline void Transaction::set_has_pubkey() {
+  _oneof_case_[0] = kPubKey;
+}
+inline void Transaction::clear_pubkey() {
+  if (has_pubkey()) {
+    from_.pubkey_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_from();
+  }
+}
+inline const ::std::string& Transaction::pubkey() const {
+  // @@protoc_insertion_point(field_get:vega.Transaction.pubKey)
+  if (has_pubkey()) {
+    return from_.pubkey_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void Transaction::set_pubkey(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:vega.Transaction.pubKey)
+  if (!has_pubkey()) {
+    clear_from();
+    set_has_pubkey();
+    from_.pubkey_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  from_.pubkey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.Transaction.pubKey)
+}
+#if LANG_CXX11
+inline void Transaction::set_pubkey(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:vega.Transaction.pubKey)
+  if (!has_pubkey()) {
+    clear_from();
+    set_has_pubkey();
+    from_.pubkey_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  from_.pubkey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.Transaction.pubKey)
+}
+#endif
+inline void Transaction::set_pubkey(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!has_pubkey()) {
+    clear_from();
+    set_has_pubkey();
+    from_.pubkey_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  from_.pubkey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.Transaction.pubKey)
+}
+inline void Transaction::set_pubkey(const void* value, size_t size) {
+  if (!has_pubkey()) {
+    clear_from();
+    set_has_pubkey();
+    from_.pubkey_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  from_.pubkey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.Transaction.pubKey)
+}
+inline ::std::string* Transaction::mutable_pubkey() {
+  if (!has_pubkey()) {
+    clear_from();
+    set_has_pubkey();
+    from_.pubkey_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:vega.Transaction.pubKey)
+  return from_.pubkey_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Transaction::release_pubkey() {
+  // @@protoc_insertion_point(field_release:vega.Transaction.pubKey)
+  if (has_pubkey()) {
+    clear_has_from();
+    return from_.pubkey_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void Transaction::set_allocated_pubkey(::std::string* pubkey) {
+  if (has_from()) {
+    clear_from();
+  }
+  if (pubkey != nullptr) {
+    set_has_pubkey();
+    from_.pubkey_.UnsafeSetDefault(pubkey);
+  }
+  // @@protoc_insertion_point(field_set_allocated:vega.Transaction.pubKey)
+}
+
+inline bool Transaction::has_from() const {
+  return from_case() != FROM_NOT_SET;
+}
+inline void Transaction::clear_has_from() {
+  _oneof_case_[0] = FROM_NOT_SET;
+}
+inline Transaction::FromCase Transaction::from_case() const {
+  return Transaction::FromCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// Signature
+
+// bytes sig = 1;
+inline void Signature::clear_sig() {
+  sig_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Signature::sig() const {
+  // @@protoc_insertion_point(field_get:vega.Signature.sig)
+  return sig_.GetNoArena();
+}
+inline void Signature::set_sig(const ::std::string& value) {
+
+  sig_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.Signature.sig)
+}
+#if LANG_CXX11
+inline void Signature::set_sig(::std::string&& value) {
 
   sig_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.SignedBundle.sig)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Signature.sig)
 }
 #endif
-inline void SignedBundle::set_sig(const char* value) {
+inline void Signature::set_sig(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
   sig_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.SignedBundle.sig)
+  // @@protoc_insertion_point(field_set_char:vega.Signature.sig)
 }
-inline void SignedBundle::set_sig(const void* value, size_t size) {
+inline void Signature::set_sig(const void* value, size_t size) {
 
   sig_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.SignedBundle.sig)
+  // @@protoc_insertion_point(field_set_pointer:vega.Signature.sig)
 }
-inline ::std::string* SignedBundle::mutable_sig() {
+inline ::std::string* Signature::mutable_sig() {
 
-  // @@protoc_insertion_point(field_mutable:vega.SignedBundle.sig)
+  // @@protoc_insertion_point(field_mutable:vega.Signature.sig)
   return sig_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* SignedBundle::release_sig() {
-  // @@protoc_insertion_point(field_release:vega.SignedBundle.sig)
+inline ::std::string* Signature::release_sig() {
+  // @@protoc_insertion_point(field_release:vega.Signature.sig)
 
   return sig_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void SignedBundle::set_allocated_sig(::std::string* sig) {
+inline void Signature::set_allocated_sig(::std::string* sig) {
   if (sig != nullptr) {
 
   } else {
 
   }
   sig_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), sig);
+  // @@protoc_insertion_point(field_set_allocated:vega.Signature.sig)
+}
+
+// string algo = 2;
+inline void Signature::clear_algo() {
+  algo_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Signature::algo() const {
+  // @@protoc_insertion_point(field_get:vega.Signature.algo)
+  return algo_.GetNoArena();
+}
+inline void Signature::set_algo(const ::std::string& value) {
+
+  algo_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.Signature.algo)
+}
+#if LANG_CXX11
+inline void Signature::set_algo(::std::string&& value) {
+
+  algo_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.Signature.algo)
+}
+#endif
+inline void Signature::set_algo(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  algo_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.Signature.algo)
+}
+inline void Signature::set_algo(const char* value, size_t size) {
+
+  algo_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.Signature.algo)
+}
+inline ::std::string* Signature::mutable_algo() {
+
+  // @@protoc_insertion_point(field_mutable:vega.Signature.algo)
+  return algo_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Signature::release_algo() {
+  // @@protoc_insertion_point(field_release:vega.Signature.algo)
+
+  return algo_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Signature::set_allocated_algo(::std::string* algo) {
+  if (algo != nullptr) {
+
+  } else {
+
+  }
+  algo_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), algo);
+  // @@protoc_insertion_point(field_set_allocated:vega.Signature.algo)
+}
+
+// uint64 version = 3;
+inline void Signature::clear_version() {
+  version_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 Signature::version() const {
+  // @@protoc_insertion_point(field_get:vega.Signature.version)
+  return version_;
+}
+inline void Signature::set_version(::google::protobuf::uint64 value) {
+
+  version_ = value;
+  // @@protoc_insertion_point(field_set:vega.Signature.version)
+}
+
+// -------------------------------------------------------------------
+
+// SignedBundle
+
+// bytes tx = 1;
+inline void SignedBundle::clear_tx() {
+  tx_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SignedBundle::tx() const {
+  // @@protoc_insertion_point(field_get:vega.SignedBundle.tx)
+  return tx_.GetNoArena();
+}
+inline void SignedBundle::set_tx(const ::std::string& value) {
+
+  tx_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.SignedBundle.tx)
+}
+#if LANG_CXX11
+inline void SignedBundle::set_tx(::std::string&& value) {
+
+  tx_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.SignedBundle.tx)
+}
+#endif
+inline void SignedBundle::set_tx(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  tx_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.SignedBundle.tx)
+}
+inline void SignedBundle::set_tx(const void* value, size_t size) {
+
+  tx_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.SignedBundle.tx)
+}
+inline ::std::string* SignedBundle::mutable_tx() {
+
+  // @@protoc_insertion_point(field_mutable:vega.SignedBundle.tx)
+  return tx_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SignedBundle::release_tx() {
+  // @@protoc_insertion_point(field_release:vega.SignedBundle.tx)
+
+  return tx_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SignedBundle::set_allocated_tx(::std::string* tx) {
+  if (tx != nullptr) {
+
+  } else {
+
+  }
+  tx_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), tx);
+  // @@protoc_insertion_point(field_set_allocated:vega.SignedBundle.tx)
+}
+
+// .vega.Signature sig = 2;
+inline bool SignedBundle::has_sig() const {
+  return this != internal_default_instance() && sig_ != nullptr;
+}
+inline void SignedBundle::clear_sig() {
+  if (GetArenaNoVirtual() == nullptr && sig_ != nullptr) {
+    delete sig_;
+  }
+  sig_ = nullptr;
+}
+inline const ::vega::Signature& SignedBundle::sig() const {
+  const ::vega::Signature* p = sig_;
+  // @@protoc_insertion_point(field_get:vega.SignedBundle.sig)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::Signature*>(
+      &::vega::_Signature_default_instance_);
+}
+inline ::vega::Signature* SignedBundle::release_sig() {
+  // @@protoc_insertion_point(field_release:vega.SignedBundle.sig)
+
+  ::vega::Signature* temp = sig_;
+  sig_ = nullptr;
+  return temp;
+}
+inline ::vega::Signature* SignedBundle::mutable_sig() {
+
+  if (sig_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::Signature>(GetArenaNoVirtual());
+    sig_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:vega.SignedBundle.sig)
+  return sig_;
+}
+inline void SignedBundle::set_allocated_sig(::vega::Signature* sig) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete sig_;
+  }
+  if (sig) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      sig = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, sig, submessage_arena);
+    }
+
+  } else {
+
+  }
+  sig_ = sig;
   // @@protoc_insertion_point(field_set_allocated:vega.SignedBundle.sig)
 }
 
-// bytes address = 101;
-inline bool SignedBundle::has_address() const {
-  return auth_case() == kAddress;
-}
-inline void SignedBundle::set_has_address() {
-  _oneof_case_[0] = kAddress;
-}
-inline void SignedBundle::clear_address() {
-  if (has_address()) {
-    auth_.address_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    clear_has_auth();
-  }
-}
-inline const ::std::string& SignedBundle::address() const {
-  // @@protoc_insertion_point(field_get:vega.SignedBundle.address)
-  if (has_address()) {
-    return auth_.address_.GetNoArena();
-  }
-  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
-}
-inline void SignedBundle::set_address(const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:vega.SignedBundle.address)
-  if (!has_address()) {
-    clear_auth();
-    set_has_address();
-    auth_.address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  auth_.address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.SignedBundle.address)
-}
-#if LANG_CXX11
-inline void SignedBundle::set_address(::std::string&& value) {
-  // @@protoc_insertion_point(field_set:vega.SignedBundle.address)
-  if (!has_address()) {
-    clear_auth();
-    set_has_address();
-    auth_.address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  auth_.address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.SignedBundle.address)
-}
-#endif
-inline void SignedBundle::set_address(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  if (!has_address()) {
-    clear_auth();
-    set_has_address();
-    auth_.address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  auth_.address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.SignedBundle.address)
-}
-inline void SignedBundle::set_address(const void* value, size_t size) {
-  if (!has_address()) {
-    clear_auth();
-    set_has_address();
-    auth_.address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  auth_.address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
-      reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.SignedBundle.address)
-}
-inline ::std::string* SignedBundle::mutable_address() {
-  if (!has_address()) {
-    clear_auth();
-    set_has_address();
-    auth_.address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_mutable:vega.SignedBundle.address)
-  return auth_.address_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SignedBundle::release_address() {
-  // @@protoc_insertion_point(field_release:vega.SignedBundle.address)
-  if (has_address()) {
-    clear_has_auth();
-    return auth_.address_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  } else {
-    return nullptr;
-  }
-}
-inline void SignedBundle::set_allocated_address(::std::string* address) {
-  if (has_auth()) {
-    clear_auth();
-  }
-  if (address != nullptr) {
-    set_has_address();
-    auth_.address_.UnsafeSetDefault(address);
-  }
-  // @@protoc_insertion_point(field_set_allocated:vega.SignedBundle.address)
-}
-
-// bytes pubKey = 102;
-inline bool SignedBundle::has_pubkey() const {
-  return auth_case() == kPubKey;
-}
-inline void SignedBundle::set_has_pubkey() {
-  _oneof_case_[0] = kPubKey;
-}
-inline void SignedBundle::clear_pubkey() {
-  if (has_pubkey()) {
-    auth_.pubkey_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    clear_has_auth();
-  }
-}
-inline const ::std::string& SignedBundle::pubkey() const {
-  // @@protoc_insertion_point(field_get:vega.SignedBundle.pubKey)
-  if (has_pubkey()) {
-    return auth_.pubkey_.GetNoArena();
-  }
-  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
-}
-inline void SignedBundle::set_pubkey(const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:vega.SignedBundle.pubKey)
-  if (!has_pubkey()) {
-    clear_auth();
-    set_has_pubkey();
-    auth_.pubkey_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  auth_.pubkey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.SignedBundle.pubKey)
-}
-#if LANG_CXX11
-inline void SignedBundle::set_pubkey(::std::string&& value) {
-  // @@protoc_insertion_point(field_set:vega.SignedBundle.pubKey)
-  if (!has_pubkey()) {
-    clear_auth();
-    set_has_pubkey();
-    auth_.pubkey_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  auth_.pubkey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.SignedBundle.pubKey)
-}
-#endif
-inline void SignedBundle::set_pubkey(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  if (!has_pubkey()) {
-    clear_auth();
-    set_has_pubkey();
-    auth_.pubkey_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  auth_.pubkey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.SignedBundle.pubKey)
-}
-inline void SignedBundle::set_pubkey(const void* value, size_t size) {
-  if (!has_pubkey()) {
-    clear_auth();
-    set_has_pubkey();
-    auth_.pubkey_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  auth_.pubkey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
-      reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.SignedBundle.pubKey)
-}
-inline ::std::string* SignedBundle::mutable_pubkey() {
-  if (!has_pubkey()) {
-    clear_auth();
-    set_has_pubkey();
-    auth_.pubkey_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_mutable:vega.SignedBundle.pubKey)
-  return auth_.pubkey_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SignedBundle::release_pubkey() {
-  // @@protoc_insertion_point(field_release:vega.SignedBundle.pubKey)
-  if (has_pubkey()) {
-    clear_has_auth();
-    return auth_.pubkey_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  } else {
-    return nullptr;
-  }
-}
-inline void SignedBundle::set_allocated_pubkey(::std::string* pubkey) {
-  if (has_auth()) {
-    clear_auth();
-  }
-  if (pubkey != nullptr) {
-    set_has_pubkey();
-    auth_.pubkey_.UnsafeSetDefault(pubkey);
-  }
-  // @@protoc_insertion_point(field_set_allocated:vega.SignedBundle.pubKey)
-}
-
-inline bool SignedBundle::has_auth() const {
-  return auth_case() != AUTH_NOT_SET;
-}
-inline void SignedBundle::clear_has_auth() {
-  _oneof_case_[0] = AUTH_NOT_SET;
-}
-inline SignedBundle::AuthCase SignedBundle::auth_case() const {
-  return SignedBundle::AuthCase(_oneof_case_[0]);
-}
 // -------------------------------------------------------------------
 
 // NodeSignature
@@ -12087,6 +13048,12 @@ inline void NodeSignature::set_kind(::vega::NodeSignatureKind value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

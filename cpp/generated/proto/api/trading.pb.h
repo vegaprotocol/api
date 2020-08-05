@@ -48,7 +48,7 @@ struct TableStruct_proto_2fapi_2ftrading_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[99]
+  static const ::google::protobuf::internal::ParseTable schema[101]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -86,6 +86,12 @@ extern CandlesResponseDefaultTypeInternal _CandlesResponse_default_instance_;
 class CandlesSubscribeRequest;
 class CandlesSubscribeRequestDefaultTypeInternal;
 extern CandlesSubscribeRequestDefaultTypeInternal _CandlesSubscribeRequest_default_instance_;
+class FeeInfrastructureAccountsRequest;
+class FeeInfrastructureAccountsRequestDefaultTypeInternal;
+extern FeeInfrastructureAccountsRequestDefaultTypeInternal _FeeInfrastructureAccountsRequest_default_instance_;
+class FeeInfrastructureAccountsResponse;
+class FeeInfrastructureAccountsResponseDefaultTypeInternal;
+extern FeeInfrastructureAccountsResponseDefaultTypeInternal _FeeInfrastructureAccountsResponse_default_instance_;
 class GetNetworkParametersProposalsRequest;
 class GetNetworkParametersProposalsRequestDefaultTypeInternal;
 extern GetNetworkParametersProposalsRequestDefaultTypeInternal _GetNetworkParametersProposalsRequest_default_instance_;
@@ -366,6 +372,8 @@ template<> ::api::CancelOrderRequest* Arena::CreateMaybeMessage<::api::CancelOrd
 template<> ::api::CandlesRequest* Arena::CreateMaybeMessage<::api::CandlesRequest>(Arena*);
 template<> ::api::CandlesResponse* Arena::CreateMaybeMessage<::api::CandlesResponse>(Arena*);
 template<> ::api::CandlesSubscribeRequest* Arena::CreateMaybeMessage<::api::CandlesSubscribeRequest>(Arena*);
+template<> ::api::FeeInfrastructureAccountsRequest* Arena::CreateMaybeMessage<::api::FeeInfrastructureAccountsRequest>(Arena*);
+template<> ::api::FeeInfrastructureAccountsResponse* Arena::CreateMaybeMessage<::api::FeeInfrastructureAccountsResponse>(Arena*);
 template<> ::api::GetNetworkParametersProposalsRequest* Arena::CreateMaybeMessage<::api::GetNetworkParametersProposalsRequest>(Arena*);
 template<> ::api::GetNetworkParametersProposalsResponse* Arena::CreateMaybeMessage<::api::GetNetworkParametersProposalsResponse>(Arena*);
 template<> ::api::GetNewAssetProposalsRequest* Arena::CreateMaybeMessage<::api::GetNewAssetProposalsRequest>(Arena*);
@@ -556,6 +564,34 @@ class PropagateChainEventRequest :
 
   // accessors -------------------------------------------------------
 
+  // string pubKey = 2;
+  void clear_pubkey();
+  static const int kPubKeyFieldNumber = 2;
+  const ::std::string& pubkey() const;
+  void set_pubkey(const ::std::string& value);
+  #if LANG_CXX11
+  void set_pubkey(::std::string&& value);
+  #endif
+  void set_pubkey(const char* value);
+  void set_pubkey(const char* value, size_t size);
+  ::std::string* mutable_pubkey();
+  ::std::string* release_pubkey();
+  void set_allocated_pubkey(::std::string* pubkey);
+
+  // bytes signature = 3;
+  void clear_signature();
+  static const int kSignatureFieldNumber = 3;
+  const ::std::string& signature() const;
+  void set_signature(const ::std::string& value);
+  #if LANG_CXX11
+  void set_signature(::std::string&& value);
+  #endif
+  void set_signature(const char* value);
+  void set_signature(const void* value, size_t size);
+  ::std::string* mutable_signature();
+  ::std::string* release_signature();
+  void set_allocated_signature(::std::string* signature);
+
   // .vega.ChainEvent evt = 1;
   bool has_evt() const;
   void clear_evt();
@@ -570,6 +606,8 @@ class PropagateChainEventRequest :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr pubkey_;
+  ::google::protobuf::internal::ArenaStringPtr signature_;
   ::vega::ChainEvent* evt_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
@@ -11509,6 +11547,244 @@ class MarketAccountsResponse :
 };
 // -------------------------------------------------------------------
 
+class FeeInfrastructureAccountsRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.FeeInfrastructureAccountsRequest) */ {
+ public:
+  FeeInfrastructureAccountsRequest();
+  virtual ~FeeInfrastructureAccountsRequest();
+
+  FeeInfrastructureAccountsRequest(const FeeInfrastructureAccountsRequest& from);
+
+  inline FeeInfrastructureAccountsRequest& operator=(const FeeInfrastructureAccountsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  FeeInfrastructureAccountsRequest(FeeInfrastructureAccountsRequest&& from) noexcept
+    : FeeInfrastructureAccountsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline FeeInfrastructureAccountsRequest& operator=(FeeInfrastructureAccountsRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const FeeInfrastructureAccountsRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const FeeInfrastructureAccountsRequest* internal_default_instance() {
+    return reinterpret_cast<const FeeInfrastructureAccountsRequest*>(
+               &_FeeInfrastructureAccountsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    91;
+
+  void Swap(FeeInfrastructureAccountsRequest* other);
+  friend void swap(FeeInfrastructureAccountsRequest& a, FeeInfrastructureAccountsRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline FeeInfrastructureAccountsRequest* New() const final {
+    return CreateMaybeMessage<FeeInfrastructureAccountsRequest>(nullptr);
+  }
+
+  FeeInfrastructureAccountsRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<FeeInfrastructureAccountsRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const FeeInfrastructureAccountsRequest& from);
+  void MergeFrom(const FeeInfrastructureAccountsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FeeInfrastructureAccountsRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string asset = 1;
+  void clear_asset();
+  static const int kAssetFieldNumber = 1;
+  const ::std::string& asset() const;
+  void set_asset(const ::std::string& value);
+  #if LANG_CXX11
+  void set_asset(::std::string&& value);
+  #endif
+  void set_asset(const char* value);
+  void set_asset(const char* value, size_t size);
+  ::std::string* mutable_asset();
+  ::std::string* release_asset();
+  void set_allocated_asset(::std::string* asset);
+
+  // @@protoc_insertion_point(class_scope:api.FeeInfrastructureAccountsRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr asset_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FeeInfrastructureAccountsResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.FeeInfrastructureAccountsResponse) */ {
+ public:
+  FeeInfrastructureAccountsResponse();
+  virtual ~FeeInfrastructureAccountsResponse();
+
+  FeeInfrastructureAccountsResponse(const FeeInfrastructureAccountsResponse& from);
+
+  inline FeeInfrastructureAccountsResponse& operator=(const FeeInfrastructureAccountsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  FeeInfrastructureAccountsResponse(FeeInfrastructureAccountsResponse&& from) noexcept
+    : FeeInfrastructureAccountsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline FeeInfrastructureAccountsResponse& operator=(FeeInfrastructureAccountsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const FeeInfrastructureAccountsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const FeeInfrastructureAccountsResponse* internal_default_instance() {
+    return reinterpret_cast<const FeeInfrastructureAccountsResponse*>(
+               &_FeeInfrastructureAccountsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    92;
+
+  void Swap(FeeInfrastructureAccountsResponse* other);
+  friend void swap(FeeInfrastructureAccountsResponse& a, FeeInfrastructureAccountsResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline FeeInfrastructureAccountsResponse* New() const final {
+    return CreateMaybeMessage<FeeInfrastructureAccountsResponse>(nullptr);
+  }
+
+  FeeInfrastructureAccountsResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<FeeInfrastructureAccountsResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const FeeInfrastructureAccountsResponse& from);
+  void MergeFrom(const FeeInfrastructureAccountsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FeeInfrastructureAccountsResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .vega.Account accounts = 1;
+  int accounts_size() const;
+  void clear_accounts();
+  static const int kAccountsFieldNumber = 1;
+  ::vega::Account* mutable_accounts(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::Account >*
+      mutable_accounts();
+  const ::vega::Account& accounts(int index) const;
+  ::vega::Account* add_accounts();
+  const ::google::protobuf::RepeatedPtrField< ::vega::Account >&
+      accounts() const;
+
+  // @@protoc_insertion_point(class_scope:api.FeeInfrastructureAccountsResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::vega::Account > accounts_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
 class PrepareProposalRequest :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.PrepareProposalRequest) */ {
  public:
@@ -11547,7 +11823,7 @@ class PrepareProposalRequest :
                &_PrepareProposalRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    91;
+    93;
 
   void Swap(PrepareProposalRequest* other);
   friend void swap(PrepareProposalRequest& a, PrepareProposalRequest& b) {
@@ -11692,7 +11968,7 @@ class PrepareProposalResponse :
                &_PrepareProposalResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    92;
+    94;
 
   void Swap(PrepareProposalResponse* other);
   friend void swap(PrepareProposalResponse& a, PrepareProposalResponse& b) {
@@ -11822,7 +12098,7 @@ class PrepareVoteRequest :
                &_PrepareVoteRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    93;
+    95;
 
   void Swap(PrepareVoteRequest* other);
   friend void swap(PrepareVoteRequest& a, PrepareVoteRequest& b) {
@@ -11937,7 +12213,7 @@ class PrepareVoteResponse :
                &_PrepareVoteResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    94;
+    96;
 
   void Swap(PrepareVoteResponse* other);
   friend void swap(PrepareVoteResponse& a, PrepareVoteResponse& b) {
@@ -12067,7 +12343,7 @@ class OrderByIDRequest :
                &_OrderByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    95;
+    97;
 
   void Swap(OrderByIDRequest* other);
   friend void swap(OrderByIDRequest& a, OrderByIDRequest& b) {
@@ -12194,7 +12470,7 @@ class OrderByReferenceIDRequest :
                &_OrderByReferenceIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    96;
+    98;
 
   void Swap(OrderByReferenceIDRequest* other);
   friend void swap(OrderByReferenceIDRequest& a, OrderByReferenceIDRequest& b) {
@@ -12314,7 +12590,7 @@ class OrderVersionsByIDRequest :
                &_OrderVersionsByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    97;
+    99;
 
   void Swap(OrderVersionsByIDRequest* other);
   friend void swap(OrderVersionsByIDRequest& a, OrderVersionsByIDRequest& b) {
@@ -12444,7 +12720,7 @@ class OrderVersionsResponse :
                &_OrderVersionsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    98;
+    100;
 
   void Swap(OrderVersionsResponse* other);
   friend void swap(OrderVersionsResponse& a, OrderVersionsResponse& b) {
@@ -12576,6 +12852,112 @@ inline void PropagateChainEventRequest::set_allocated_evt(::vega::ChainEvent* ev
   }
   evt_ = evt;
   // @@protoc_insertion_point(field_set_allocated:api.PropagateChainEventRequest.evt)
+}
+
+// string pubKey = 2;
+inline void PropagateChainEventRequest::clear_pubkey() {
+  pubkey_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& PropagateChainEventRequest::pubkey() const {
+  // @@protoc_insertion_point(field_get:api.PropagateChainEventRequest.pubKey)
+  return pubkey_.GetNoArena();
+}
+inline void PropagateChainEventRequest::set_pubkey(const ::std::string& value) {
+
+  pubkey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.PropagateChainEventRequest.pubKey)
+}
+#if LANG_CXX11
+inline void PropagateChainEventRequest::set_pubkey(::std::string&& value) {
+
+  pubkey_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.PropagateChainEventRequest.pubKey)
+}
+#endif
+inline void PropagateChainEventRequest::set_pubkey(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  pubkey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.PropagateChainEventRequest.pubKey)
+}
+inline void PropagateChainEventRequest::set_pubkey(const char* value, size_t size) {
+
+  pubkey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.PropagateChainEventRequest.pubKey)
+}
+inline ::std::string* PropagateChainEventRequest::mutable_pubkey() {
+
+  // @@protoc_insertion_point(field_mutable:api.PropagateChainEventRequest.pubKey)
+  return pubkey_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* PropagateChainEventRequest::release_pubkey() {
+  // @@protoc_insertion_point(field_release:api.PropagateChainEventRequest.pubKey)
+
+  return pubkey_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void PropagateChainEventRequest::set_allocated_pubkey(::std::string* pubkey) {
+  if (pubkey != nullptr) {
+
+  } else {
+
+  }
+  pubkey_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), pubkey);
+  // @@protoc_insertion_point(field_set_allocated:api.PropagateChainEventRequest.pubKey)
+}
+
+// bytes signature = 3;
+inline void PropagateChainEventRequest::clear_signature() {
+  signature_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& PropagateChainEventRequest::signature() const {
+  // @@protoc_insertion_point(field_get:api.PropagateChainEventRequest.signature)
+  return signature_.GetNoArena();
+}
+inline void PropagateChainEventRequest::set_signature(const ::std::string& value) {
+
+  signature_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.PropagateChainEventRequest.signature)
+}
+#if LANG_CXX11
+inline void PropagateChainEventRequest::set_signature(::std::string&& value) {
+
+  signature_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.PropagateChainEventRequest.signature)
+}
+#endif
+inline void PropagateChainEventRequest::set_signature(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  signature_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.PropagateChainEventRequest.signature)
+}
+inline void PropagateChainEventRequest::set_signature(const void* value, size_t size) {
+
+  signature_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.PropagateChainEventRequest.signature)
+}
+inline ::std::string* PropagateChainEventRequest::mutable_signature() {
+
+  // @@protoc_insertion_point(field_mutable:api.PropagateChainEventRequest.signature)
+  return signature_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* PropagateChainEventRequest::release_signature() {
+  // @@protoc_insertion_point(field_release:api.PropagateChainEventRequest.signature)
+
+  return signature_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void PropagateChainEventRequest::set_allocated_signature(::std::string* signature) {
+  if (signature != nullptr) {
+
+  } else {
+
+  }
+  signature_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), signature);
+  // @@protoc_insertion_point(field_set_allocated:api.PropagateChainEventRequest.signature)
 }
 
 // -------------------------------------------------------------------
@@ -17838,6 +18220,94 @@ MarketAccountsResponse::accounts() const {
 
 // -------------------------------------------------------------------
 
+// FeeInfrastructureAccountsRequest
+
+// string asset = 1;
+inline void FeeInfrastructureAccountsRequest::clear_asset() {
+  asset_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& FeeInfrastructureAccountsRequest::asset() const {
+  // @@protoc_insertion_point(field_get:api.FeeInfrastructureAccountsRequest.asset)
+  return asset_.GetNoArena();
+}
+inline void FeeInfrastructureAccountsRequest::set_asset(const ::std::string& value) {
+
+  asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.FeeInfrastructureAccountsRequest.asset)
+}
+#if LANG_CXX11
+inline void FeeInfrastructureAccountsRequest::set_asset(::std::string&& value) {
+
+  asset_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.FeeInfrastructureAccountsRequest.asset)
+}
+#endif
+inline void FeeInfrastructureAccountsRequest::set_asset(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.FeeInfrastructureAccountsRequest.asset)
+}
+inline void FeeInfrastructureAccountsRequest::set_asset(const char* value, size_t size) {
+
+  asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.FeeInfrastructureAccountsRequest.asset)
+}
+inline ::std::string* FeeInfrastructureAccountsRequest::mutable_asset() {
+
+  // @@protoc_insertion_point(field_mutable:api.FeeInfrastructureAccountsRequest.asset)
+  return asset_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* FeeInfrastructureAccountsRequest::release_asset() {
+  // @@protoc_insertion_point(field_release:api.FeeInfrastructureAccountsRequest.asset)
+
+  return asset_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void FeeInfrastructureAccountsRequest::set_allocated_asset(::std::string* asset) {
+  if (asset != nullptr) {
+
+  } else {
+
+  }
+  asset_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), asset);
+  // @@protoc_insertion_point(field_set_allocated:api.FeeInfrastructureAccountsRequest.asset)
+}
+
+// -------------------------------------------------------------------
+
+// FeeInfrastructureAccountsResponse
+
+// repeated .vega.Account accounts = 1;
+inline int FeeInfrastructureAccountsResponse::accounts_size() const {
+  return accounts_.size();
+}
+inline ::vega::Account* FeeInfrastructureAccountsResponse::mutable_accounts(int index) {
+  // @@protoc_insertion_point(field_mutable:api.FeeInfrastructureAccountsResponse.accounts)
+  return accounts_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::Account >*
+FeeInfrastructureAccountsResponse::mutable_accounts() {
+  // @@protoc_insertion_point(field_mutable_list:api.FeeInfrastructureAccountsResponse.accounts)
+  return &accounts_;
+}
+inline const ::vega::Account& FeeInfrastructureAccountsResponse::accounts(int index) const {
+  // @@protoc_insertion_point(field_get:api.FeeInfrastructureAccountsResponse.accounts)
+  return accounts_.Get(index);
+}
+inline ::vega::Account* FeeInfrastructureAccountsResponse::add_accounts() {
+  // @@protoc_insertion_point(field_add:api.FeeInfrastructureAccountsResponse.accounts)
+  return accounts_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::Account >&
+FeeInfrastructureAccountsResponse::accounts() const {
+  // @@protoc_insertion_point(field_list:api.FeeInfrastructureAccountsResponse.accounts)
+  return accounts_;
+}
+
+// -------------------------------------------------------------------
+
 // PrepareProposalRequest
 
 // string partyID = 1 [(.validator.field) = {
@@ -18514,6 +18984,10 @@ OrderVersionsResponse::orders() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

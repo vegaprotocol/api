@@ -110,12 +110,6 @@ class Asset :
   }
   static const Asset& default_instance();
 
-  enum SourceCase {
-    kBuiltinAsset = 101,
-    kErc20 = 102,
-    SOURCE_NOT_SET = 0,
-  };
-
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const Asset* internal_default_instance() {
     return reinterpret_cast<const Asset*>(
@@ -235,55 +229,33 @@ class Asset :
   ::std::string* release_totalsupply();
   void set_allocated_totalsupply(::std::string* totalsupply);
 
+  // .vega.AssetSource source = 7;
+  bool has_source() const;
+  void clear_source();
+  static const int kSourceFieldNumber = 7;
+  const ::vega::AssetSource& source() const;
+  ::vega::AssetSource* release_source();
+  ::vega::AssetSource* mutable_source();
+  void set_allocated_source(::vega::AssetSource* source);
+
   // uint64 decimals = 5;
   void clear_decimals();
   static const int kDecimalsFieldNumber = 5;
   ::google::protobuf::uint64 decimals() const;
   void set_decimals(::google::protobuf::uint64 value);
 
-  // .vega.BuiltinAsset builtinAsset = 101;
-  bool has_builtinasset() const;
-  void clear_builtinasset();
-  static const int kBuiltinAssetFieldNumber = 101;
-  const ::vega::BuiltinAsset& builtinasset() const;
-  ::vega::BuiltinAsset* release_builtinasset();
-  ::vega::BuiltinAsset* mutable_builtinasset();
-  void set_allocated_builtinasset(::vega::BuiltinAsset* builtinasset);
-
-  // .vega.ERC20 erc20 = 102;
-  bool has_erc20() const;
-  void clear_erc20();
-  static const int kErc20FieldNumber = 102;
-  const ::vega::ERC20& erc20() const;
-  ::vega::ERC20* release_erc20();
-  ::vega::ERC20* mutable_erc20();
-  void set_allocated_erc20(::vega::ERC20* erc20);
-
-  void clear_source();
-  SourceCase source_case() const;
   // @@protoc_insertion_point(class_scope:vega.Asset)
  private:
   class HasBitSetters;
-  void set_has_builtinasset();
-  void set_has_erc20();
-
-  inline bool has_source() const;
-  inline void clear_has_source();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr symbol_;
   ::google::protobuf::internal::ArenaStringPtr totalsupply_;
+  ::vega::AssetSource* source_;
   ::google::protobuf::uint64 decimals_;
-  union SourceUnion {
-    SourceUnion() {}
-    ::vega::BuiltinAsset* builtinasset_;
-    ::vega::ERC20* erc20_;
-  } source_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  ::google::protobuf::uint32 _oneof_case_[1];
-
   friend struct ::TableStruct_proto_2fassets_2eproto;
 };
 // -------------------------------------------------------------------
@@ -1061,97 +1033,57 @@ inline void Asset::set_decimals(::google::protobuf::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.Asset.decimals)
 }
 
-// .vega.BuiltinAsset builtinAsset = 101;
-inline bool Asset::has_builtinasset() const {
-  return source_case() == kBuiltinAsset;
-}
-inline void Asset::set_has_builtinasset() {
-  _oneof_case_[0] = kBuiltinAsset;
-}
-inline void Asset::clear_builtinasset() {
-  if (has_builtinasset()) {
-    delete source_.builtinasset_;
-    clear_has_source();
-  }
-}
-inline ::vega::BuiltinAsset* Asset::release_builtinasset() {
-  // @@protoc_insertion_point(field_release:vega.Asset.builtinAsset)
-  if (has_builtinasset()) {
-    clear_has_source();
-      ::vega::BuiltinAsset* temp = source_.builtinasset_;
-    source_.builtinasset_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::vega::BuiltinAsset& Asset::builtinasset() const {
-  // @@protoc_insertion_point(field_get:vega.Asset.builtinAsset)
-  return has_builtinasset()
-      ? *source_.builtinasset_
-      : *reinterpret_cast< ::vega::BuiltinAsset*>(&::vega::_BuiltinAsset_default_instance_);
-}
-inline ::vega::BuiltinAsset* Asset::mutable_builtinasset() {
-  if (!has_builtinasset()) {
-    clear_source();
-    set_has_builtinasset();
-    source_.builtinasset_ = CreateMaybeMessage< ::vega::BuiltinAsset >(
-        GetArenaNoVirtual());
-  }
-  // @@protoc_insertion_point(field_mutable:vega.Asset.builtinAsset)
-  return source_.builtinasset_;
-}
-
-// .vega.ERC20 erc20 = 102;
-inline bool Asset::has_erc20() const {
-  return source_case() == kErc20;
-}
-inline void Asset::set_has_erc20() {
-  _oneof_case_[0] = kErc20;
-}
-inline void Asset::clear_erc20() {
-  if (has_erc20()) {
-    delete source_.erc20_;
-    clear_has_source();
-  }
-}
-inline ::vega::ERC20* Asset::release_erc20() {
-  // @@protoc_insertion_point(field_release:vega.Asset.erc20)
-  if (has_erc20()) {
-    clear_has_source();
-      ::vega::ERC20* temp = source_.erc20_;
-    source_.erc20_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::vega::ERC20& Asset::erc20() const {
-  // @@protoc_insertion_point(field_get:vega.Asset.erc20)
-  return has_erc20()
-      ? *source_.erc20_
-      : *reinterpret_cast< ::vega::ERC20*>(&::vega::_ERC20_default_instance_);
-}
-inline ::vega::ERC20* Asset::mutable_erc20() {
-  if (!has_erc20()) {
-    clear_source();
-    set_has_erc20();
-    source_.erc20_ = CreateMaybeMessage< ::vega::ERC20 >(
-        GetArenaNoVirtual());
-  }
-  // @@protoc_insertion_point(field_mutable:vega.Asset.erc20)
-  return source_.erc20_;
-}
-
+// .vega.AssetSource source = 7;
 inline bool Asset::has_source() const {
-  return source_case() != SOURCE_NOT_SET;
+  return this != internal_default_instance() && source_ != nullptr;
 }
-inline void Asset::clear_has_source() {
-  _oneof_case_[0] = SOURCE_NOT_SET;
+inline void Asset::clear_source() {
+  if (GetArenaNoVirtual() == nullptr && source_ != nullptr) {
+    delete source_;
+  }
+  source_ = nullptr;
 }
-inline Asset::SourceCase Asset::source_case() const {
-  return Asset::SourceCase(_oneof_case_[0]);
+inline const ::vega::AssetSource& Asset::source() const {
+  const ::vega::AssetSource* p = source_;
+  // @@protoc_insertion_point(field_get:vega.Asset.source)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::AssetSource*>(
+      &::vega::_AssetSource_default_instance_);
 }
+inline ::vega::AssetSource* Asset::release_source() {
+  // @@protoc_insertion_point(field_release:vega.Asset.source)
+
+  ::vega::AssetSource* temp = source_;
+  source_ = nullptr;
+  return temp;
+}
+inline ::vega::AssetSource* Asset::mutable_source() {
+
+  if (source_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::AssetSource>(GetArenaNoVirtual());
+    source_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:vega.Asset.source)
+  return source_;
+}
+inline void Asset::set_allocated_source(::vega::AssetSource* source) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete source_;
+  }
+  if (source) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      source = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, source, submessage_arena);
+    }
+
+  } else {
+
+  }
+  source_ = source;
+  // @@protoc_insertion_point(field_set_allocated:vega.Asset.source)
+}
+
 // -------------------------------------------------------------------
 
 // AssetSource
