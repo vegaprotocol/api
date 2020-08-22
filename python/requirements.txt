@@ -17,7 +17,7 @@ grpcio-tools==1.30.0
 idna==2.10
 importlib-metadata==1.7.0
 jeepney==0.4.3
-keyring==21.3.0
+keyring==21.3.1
 mccabe==0.6.1
 more-itertools==8.4.0
 mypy==0.782
