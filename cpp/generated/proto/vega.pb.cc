@@ -111,10 +111,6 @@ class StatisticsDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Statistics> _instance;
 } _Statistics_default_instance_;
-class NotifyTraderAccountDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<NotifyTraderAccount> _instance;
-} _NotifyTraderAccount_default_instance_;
 class WithdrawDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Withdraw> _instance;
@@ -486,20 +482,6 @@ static void InitDefaultsStatistics_proto_2fvega_2eproto() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_Statistics_proto_2fvega_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsStatistics_proto_2fvega_2eproto}, {}};
 
-static void InitDefaultsNotifyTraderAccount_proto_2fvega_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::vega::_NotifyTraderAccount_default_instance_;
-    new (ptr) ::vega::NotifyTraderAccount();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::vega::NotifyTraderAccount::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_NotifyTraderAccount_proto_2fvega_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsNotifyTraderAccount_proto_2fvega_2eproto}, {}};
-
 static void InitDefaultsWithdraw_proto_2fvega_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -809,7 +791,6 @@ void InitDefaults_proto_2fvega_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_Position_proto_2fvega_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PositionTrade_proto_2fvega_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Statistics_proto_2fvega_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_NotifyTraderAccount_proto_2fvega_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Withdraw_proto_2fvega_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_OrderAmendment_proto_2fvega_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_OrderSubmission_proto_2fvega_2eproto.base);
@@ -832,8 +813,8 @@ void InitDefaults_proto_2fvega_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_NodeSignature_proto_2fvega_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_proto_2fvega_2eproto[41];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_proto_2fvega_2eproto[11];
+::google::protobuf::Metadata file_level_metadata_proto_2fvega_2eproto[40];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_proto_2fvega_2eproto[12];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_proto_2fvega_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_proto_2fvega_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -1055,13 +1036,6 @@ const ::google::protobuf::uint32 TableStruct_proto_2fvega_2eproto::offsets[] PRO
   PROTOBUF_FIELD_OFFSET(::vega::Statistics, uptime_),
   PROTOBUF_FIELD_OFFSET(::vega::Statistics, chainid_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::NotifyTraderAccount, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::NotifyTraderAccount, traderid_),
-  PROTOBUF_FIELD_OFFSET(::vega::NotifyTraderAccount, amount_),
-  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::Withdraw, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -1273,27 +1247,26 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 163, -1, sizeof(::vega::Position)},
   { 174, -1, sizeof(::vega::PositionTrade)},
   { 181, -1, sizeof(::vega::Statistics)},
-  { 217, -1, sizeof(::vega::NotifyTraderAccount)},
-  { 224, -1, sizeof(::vega::Withdraw)},
-  { 232, -1, sizeof(::vega::OrderAmendment)},
-  { 244, -1, sizeof(::vega::OrderSubmission)},
-  { 259, -1, sizeof(::vega::OrderCancellation)},
-  { 267, -1, sizeof(::vega::NodeRegistration)},
-  { 274, -1, sizeof(::vega::NodeVote)},
-  { 281, -1, sizeof(::vega::Account)},
-  { 292, -1, sizeof(::vega::FinancialAmount)},
-  { 299, -1, sizeof(::vega::Transfer)},
-  { 308, -1, sizeof(::vega::TransferRequest)},
-  { 319, -1, sizeof(::vega::LedgerEntry)},
-  { 330, -1, sizeof(::vega::TransferBalance)},
-  { 337, -1, sizeof(::vega::TransferResponse)},
-  { 344, -1, sizeof(::vega::MarginLevels)},
-  { 357, -1, sizeof(::vega::MarketData)},
-  { 373, -1, sizeof(::vega::ErrorDetail)},
-  { 381, -1, sizeof(::vega::Transaction)},
-  { 391, -1, sizeof(::vega::Signature)},
-  { 399, -1, sizeof(::vega::SignedBundle)},
-  { 406, -1, sizeof(::vega::NodeSignature)},
+  { 217, -1, sizeof(::vega::Withdraw)},
+  { 225, -1, sizeof(::vega::OrderAmendment)},
+  { 237, -1, sizeof(::vega::OrderSubmission)},
+  { 252, -1, sizeof(::vega::OrderCancellation)},
+  { 260, -1, sizeof(::vega::NodeRegistration)},
+  { 267, -1, sizeof(::vega::NodeVote)},
+  { 274, -1, sizeof(::vega::Account)},
+  { 285, -1, sizeof(::vega::FinancialAmount)},
+  { 292, -1, sizeof(::vega::Transfer)},
+  { 301, -1, sizeof(::vega::TransferRequest)},
+  { 312, -1, sizeof(::vega::LedgerEntry)},
+  { 323, -1, sizeof(::vega::TransferBalance)},
+  { 330, -1, sizeof(::vega::TransferResponse)},
+  { 337, -1, sizeof(::vega::MarginLevels)},
+  { 350, -1, sizeof(::vega::MarketData)},
+  { 366, -1, sizeof(::vega::ErrorDetail)},
+  { 374, -1, sizeof(::vega::Transaction)},
+  { 384, -1, sizeof(::vega::Signature)},
+  { 392, -1, sizeof(::vega::SignedBundle)},
+  { 399, -1, sizeof(::vega::NodeSignature)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -1317,7 +1290,6 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_Position_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_PositionTrade_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_Statistics_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_NotifyTraderAccount_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_Withdraw_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_OrderAmendment_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_OrderSubmission_default_instance_),
@@ -1343,7 +1315,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_proto_2fvega_2eproto = {
   {}, AddDescriptors_proto_2fvega_2eproto, "proto/vega.proto", schemas,
   file_default_instances, TableStruct_proto_2fvega_2eproto::offsets,
-  file_level_metadata_proto_2fvega_2eproto, 41, file_level_enum_descriptors_proto_2fvega_2eproto, file_level_service_descriptors_proto_2fvega_2eproto,
+  file_level_metadata_proto_2fvega_2eproto, 40, file_level_enum_descriptors_proto_2fvega_2eproto, file_level_service_descriptors_proto_2fvega_2eproto,
 };
 
 const char descriptor_table_protodef_proto_2fvega_2eproto[] =
@@ -1361,7 +1333,7 @@ const char descriptor_table_protodef_proto_2fvega_2eproto[] =
   "orsEntry\022\013\n\003key\030\001 \001(\t\022\037\n\005value\030\002 \001(\0132\020.v"
   "ega.RiskFactor:\0028\001\032Q\n\035PredictedNextRiskF"
   "actorsEntry\022\013\n\003key\030\001 \001(\t\022\037\n\005value\030\002 \001(\0132"
-  "\020.vega.RiskFactor:\0028\001\"\340\005\n\005Order\022\n\n\002id\030\001 "
+  "\020.vega.RiskFactor:\0028\001\"\372\005\n\005Order\022\n\n\002id\030\001 "
   "\001(\t\022\020\n\010marketID\030\002 \001(\t\022\017\n\007partyID\030\003 \001(\t\022\030"
   "\n\004side\030\004 \001(\0162\n.vega.Side\022\r\n\005price\030\005 \001(\004\022"
   "\014\n\004size\030\006 \001(\004\022\021\n\tremaining\030\007 \001(\004\022,\n\013time"
@@ -1371,184 +1343,187 @@ const char descriptor_table_protodef_proto_2fvega_2eproto[] =
   "tatus\022\021\n\texpiresAt\030\014 \001(\003\022\021\n\treference\030\r "
   "\001(\t\022 \n\006reason\030\016 \001(\0162\020.vega.OrderError\022\021\n"
   "\tupdatedAt\030\017 \001(\003\022\017\n\007version\030\020 \001(\004\022\017\n\007bat"
-  "chID\030\021 \001(\004\"V\n\013TimeInForce\022\023\n\017TIF_UNSPECI"
+  "chID\030\021 \001(\004\"p\n\013TimeInForce\022\023\n\017TIF_UNSPECI"
   "FIED\020\000\022\013\n\007TIF_GTC\020\001\022\013\n\007TIF_GTT\020\002\022\013\n\007TIF_"
-  "IOC\020\003\022\013\n\007TIF_FOK\020\004\"O\n\004Type\022\024\n\020TYPE_UNSPE"
-  "CIFIED\020\000\022\016\n\nTYPE_LIMIT\020\001\022\017\n\013TYPE_MARKET\020"
-  "\002\022\020\n\014TYPE_NETWORK\020\003\"\262\001\n\006Status\022\022\n\016STATUS"
-  "_INVALID\020\000\022\021\n\rSTATUS_ACTIVE\020\001\022\022\n\016STATUS_"
-  "EXPIRED\020\002\022\024\n\020STATUS_CANCELLED\020\003\022\022\n\016STATU"
-  "S_STOPPED\020\004\022\021\n\rSTATUS_FILLED\020\005\022\023\n\017STATUS"
-  "_REJECTED\020\006\022\033\n\027STATUS_PARTIALLY_FILLED\020\007"
-  "\";\n\035OrderCancellationConfirmation\022\032\n\005ord"
-  "er\030\001 \001(\0132\013.vega.Order\"x\n\021OrderConfirmati"
-  "on\022\032\n\005order\030\001 \001(\0132\013.vega.Order\022\033\n\006trades"
-  "\030\002 \003(\0132\013.vega.Trade\022*\n\025passiveOrdersAffe"
-  "cted\030\003 \003(\0132\013.vega.Order\"\207\001\n\026AuctionIndic"
-  "ativeState\022\020\n\010marketID\030\001 \001(\t\022\027\n\017indicati"
-  "vePrice\030\002 \001(\004\022\030\n\020indicativeVolume\030\003 \001(\004\022"
-  "\024\n\014auctionStart\030\004 \001(\003\022\022\n\nauctionEnd\030\005 \001("
-  "\003\"\273\003\n\005Trade\022\n\n\002id\030\001 \001(\t\022\020\n\010marketID\030\002 \001("
-  "\t\022\r\n\005price\030\003 \001(\004\022\014\n\004size\030\004 \001(\004\022\r\n\005buyer\030"
-  "\005 \001(\t\022\016\n\006seller\030\006 \001(\t\022\035\n\taggressor\030\007 \001(\016"
-  "2\n.vega.Side\022\020\n\010buyOrder\030\010 \001(\t\022\021\n\tsellOr"
-  "der\030\t \001(\t\022\021\n\ttimestamp\030\n \001(\003\022\036\n\004type\030\013 \001"
-  "(\0162\020.vega.Trade.Type\022\033\n\010buyerFee\030\014 \001(\0132\t"
-  ".vega.Fee\022\034\n\tsellerFee\030\r \001(\0132\t.vega.Fee\022"
-  "\031\n\021buyerAuctionBatch\030\016 \001(\004\022\032\n\022sellerAuct"
-  "ionBatch\030\017 \001(\004\"o\n\004Type\022\024\n\020TYPE_UNSPECIFI"
-  "ED\020\000\022\020\n\014TYPE_DEFAULT\020\001\022\037\n\033TYPE_NETWORK_C"
-  "LOSE_OUT_GOOD\020\002\022\036\n\032TYPE_NETWORK_CLOSE_OU"
-  "T_BAD\020\003\"H\n\003Fee\022\020\n\010makerFee\030\001 \001(\004\022\031\n\021infr"
-  "astructureFee\030\002 \001(\004\022\024\n\014liquidityFee\030\003 \001("
-  "\004\"\'\n\010TradeSet\022\033\n\006trades\030\001 \003(\0132\013.vega.Tra"
-  "de\"\227\001\n\006Candle\022\021\n\ttimestamp\030\001 \001(\003\022\020\n\010date"
-  "time\030\002 \001(\t\022\014\n\004high\030\003 \001(\004\022\013\n\003low\030\004 \001(\004\022\014\n"
-  "\004open\030\005 \001(\004\022\r\n\005close\030\006 \001(\004\022\016\n\006volume\030\007 \001"
-  "(\004\022 \n\010interval\030\010 \001(\0162\016.vega.Interval\"]\n\n"
-  "PriceLevel\022\r\n\005price\030\001 \001(\004\022\026\n\016numberOfOrd"
-  "ers\030\002 \001(\004\022\016\n\006volume\030\003 \001(\004\022\030\n\020cumulativeV"
-  "olume\030\004 \001(\004\"^\n\013MarketDepth\022\020\n\010marketID\030\001"
-  " \001(\t\022\035\n\003buy\030\002 \003(\0132\020.vega.PriceLevel\022\036\n\004s"
-  "ell\030\003 \003(\0132\020.vega.PriceLevel\"\210\001\n\010Position"
-  "\022\020\n\010marketID\030\001 \001(\t\022\017\n\007partyID\030\002 \001(\t\022\022\n\no"
-  "penVolume\030\003 \001(\003\022\023\n\013realisedPNL\030\004 \001(\003\022\025\n\r"
-  "unrealisedPNL\030\005 \001(\003\022\031\n\021averageEntryPrice"
-  "\030\006 \001(\004\".\n\rPositionTrade\022\016\n\006volume\030\001 \001(\003\022"
-  "\r\n\005price\030\002 \001(\004\"\205\006\n\nStatistics\022\023\n\013blockHe"
-  "ight\030\001 \001(\004\022\025\n\rbacklogLength\030\002 \001(\004\022\022\n\ntot"
-  "alPeers\030\003 \001(\004\022\023\n\013genesisTime\030\004 \001(\t\022\023\n\013cu"
-  "rrentTime\030\005 \001(\t\022\020\n\010vegaTime\030\006 \001(\t\022!\n\006sta"
-  "tus\030\007 \001(\0162\021.vega.ChainStatus\022\022\n\ntxPerBlo"
-  "ck\030\010 \001(\004\022\026\n\016averageTxBytes\030\t \001(\004\022\035\n\025aver"
-  "ageOrdersPerBlock\030\n \001(\004\022\027\n\017tradesPerSeco"
-  "nd\030\013 \001(\004\022\027\n\017ordersPerSecond\030\014 \001(\004\022\024\n\014tot"
-  "alMarkets\030\r \001(\004\022\027\n\017totalAmendOrder\030\020 \001(\004"
-  "\022\030\n\020totalCancelOrder\030\021 \001(\004\022\030\n\020totalCreat"
-  "eOrder\030\022 \001(\004\022\023\n\013totalOrders\030\023 \001(\004\022\023\n\013tot"
-  "alTrades\030\024 \001(\004\022\032\n\022orderSubscriptions\030\025 \001"
-  "(\r\022\032\n\022tradeSubscriptions\030\026 \001(\r\022\033\n\023candle"
-  "Subscriptions\030\027 \001(\r\022 \n\030marketDepthSubscr"
-  "iptions\030\030 \001(\r\022\036\n\026positionsSubscriptions\030"
-  "\031 \001(\r\022\034\n\024accountSubscriptions\030\032 \001(\r\022\037\n\027m"
-  "arketDataSubscriptions\030\033 \001(\r\022\026\n\016appVersi"
-  "onHash\030\034 \001(\t\022\022\n\nappVersion\030\035 \001(\t\022\024\n\014chai"
-  "nVersion\030\036 \001(\t\022\025\n\rblockDuration\030\037 \001(\004\022\016\n"
-  "\006uptime\030  \001(\t\022\017\n\007chainID\030! \001(\t\"7\n\023Notify"
-  "TraderAccount\022\020\n\010traderID\030\001 \001(\t\022\016\n\006amoun"
-  "t\030\002 \001(\004\":\n\010Withdraw\022\017\n\007partyID\030\001 \001(\t\022\016\n\006"
-  "amount\030\002 \001(\004\022\r\n\005asset\030\003 \001(\t\"\325\001\n\016OrderAme"
-  "ndment\022\027\n\007orderID\030\001 \001(\tB\006\342\337\037\002X\001\022\027\n\007party"
-  "ID\030\002 \001(\tB\006\342\337\037\002X\001\022\020\n\010marketID\030\003 \001(\t\022\032\n\005pr"
-  "ice\030\004 \001(\0132\013.vega.Price\022\021\n\tsizeDelta\030\005 \001("
-  "\003\022\"\n\texpiresAt\030\006 \001(\0132\017.vega.Timestamp\022,\n"
-  "\013timeInForce\030\007 \001(\0162\027.vega.Order.TimeInFo"
-  "rce\"\246\002\n\017OrderSubmission\022\022\n\002id\030\001 \001(\tB\006\342\337\037"
-  "\002X\000\022\030\n\010marketID\030\002 \001(\tB\006\342\337\037\002X\001\022\027\n\007partyID"
-  "\030\003 \001(\tB\006\342\337\037\002X\001\022\r\n\005price\030\004 \001(\004\022\024\n\004size\030\005 "
-  "\001(\004B\006\342\337\037\002\020\000\022!\n\004side\030\006 \001(\0162\n.vega.SideB\007\342"
-  "\337\037\003\210\001\001\0225\n\013timeInForce\030\007 \001(\0162\027.vega.Order"
-  ".TimeInForceB\007\342\337\037\003\210\001\001\022\021\n\texpiresAt\030\010 \001(\003"
-  "\022\'\n\004type\030\t \001(\0162\020.vega.Order.TypeB\007\342\337\037\003\210\001"
-  "\001\022\021\n\treference\030\n \001(\t\"_\n\021OrderCancellatio"
-  "n\022\027\n\007orderID\030\001 \001(\tB\006\342\337\037\002X\001\022\030\n\010marketID\030\002"
-  " \001(\tB\006\342\337\037\002X\001\022\027\n\007partyID\030\003 \001(\tB\006\342\337\037\002X\001\"G\n"
-  "\020NodeRegistration\022\026\n\006pubKey\030\001 \001(\014B\006\342\337\037\002X"
-  "\001\022\033\n\013chainPubKey\030\002 \001(\014B\006\342\337\037\002X\001\"=\n\010NodeVo"
-  "te\022\026\n\006pubKey\030\001 \001(\014B\006\342\337\037\002X\001\022\031\n\treference\030"
-  "\002 \001(\tB\006\342\337\037\002X\001\"w\n\007Account\022\n\n\002id\030\001 \001(\t\022\r\n\005"
-  "owner\030\002 \001(\t\022\017\n\007balance\030\003 \001(\004\022\r\n\005asset\030\004 "
-  "\001(\t\022\020\n\010marketID\030\005 \001(\t\022\037\n\004type\030\006 \001(\0162\021.ve"
-  "ga.AccountType\"0\n\017FinancialAmount\022\016\n\006amo"
-  "unt\030\001 \001(\003\022\r\n\005asset\030\002 \001(\t\"u\n\010Transfer\022\r\n\005"
-  "owner\030\001 \001(\t\022%\n\006amount\030\002 \001(\0132\025.vega.Finan"
-  "cialAmount\022 \n\004type\030\003 \001(\0162\022.vega.Transfer"
-  "Type\022\021\n\tminAmount\030\004 \001(\003\"\234\001\n\017TransferRequ"
-  "est\022\"\n\013fromAccount\030\001 \003(\0132\r.vega.Account\022"
-  " \n\ttoAccount\030\002 \003(\0132\r.vega.Account\022\016\n\006amo"
-  "unt\030\003 \001(\004\022\021\n\tminAmount\030\004 \001(\004\022\r\n\005asset\030\005 "
-  "\001(\t\022\021\n\treference\030\006 \001(\t\"y\n\013LedgerEntry\022\023\n"
-  "\013fromAccount\030\001 \001(\t\022\021\n\ttoAccount\030\002 \001(\t\022\016\n"
-  "\006amount\030\003 \001(\004\022\021\n\treference\030\004 \001(\t\022\014\n\004type"
-  "\030\005 \001(\t\022\021\n\ttimestamp\030\006 \001(\003\"B\n\017TransferBal"
-  "ance\022\036\n\007account\030\001 \001(\0132\r.vega.Account\022\017\n\007"
-  "balance\030\002 \001(\004\"a\n\020TransferResponse\022$\n\ttra"
-  "nsfers\030\001 \003(\0132\021.vega.LedgerEntry\022\'\n\010balan"
-  "ces\030\002 \003(\0132\025.vega.TransferBalance\"\272\001\n\014Mar"
-  "ginLevels\022\031\n\021maintenanceMargin\030\001 \001(\004\022\023\n\013"
-  "searchLevel\030\002 \001(\004\022\025\n\rinitialMargin\030\003 \001(\004"
-  "\022\036\n\026collateralReleaseLevel\030\004 \001(\004\022\017\n\007part"
-  "yID\030\005 \001(\t\022\020\n\010marketID\030\006 \001(\t\022\r\n\005asset\030\007 \001"
-  "(\t\022\021\n\ttimestamp\030\010 \001(\003\"\362\001\n\nMarketData\022\021\n\t"
-  "markPrice\030\001 \001(\004\022\024\n\014bestBidPrice\030\002 \001(\004\022\025\n"
-  "\rbestBidVolume\030\003 \001(\004\022\026\n\016bestOfferPrice\030\004"
-  " \001(\004\022\027\n\017bestOfferVolume\030\005 \001(\004\022\020\n\010midPric"
-  "e\030\006 \001(\004\022\016\n\006market\030\007 \001(\t\022\021\n\ttimestamp\030\010 \001"
-  "(\003\022\024\n\014openInterest\030\t \001(\004\022\022\n\nauctionEnd\030\n"
-  " \001(\003\022\024\n\014auctionStart\030\013 \001(\003\";\n\013ErrorDetai"
-  "l\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\r\n\005inne"
-  "r\030\003 \001(\t\"^\n\013Transaction\022\021\n\tinputData\030\001 \001("
-  "\014\022\r\n\005nonce\030\002 \001(\004\022\022\n\007address\030\351\007 \001(\014H\000\022\021\n\006"
-  "pubKey\030\352\007 \001(\014H\000B\006\n\004from\"7\n\tSignature\022\013\n\003"
-  "sig\030\001 \001(\014\022\014\n\004algo\030\002 \001(\t\022\017\n\007version\030\003 \001(\004"
-  "\"8\n\014SignedBundle\022\n\n\002tx\030\001 \001(\014\022\034\n\003sig\030\002 \001("
-  "\0132\017.vega.Signature\"O\n\rNodeSignature\022\n\n\002I"
-  "D\030\001 \001(\t\022\013\n\003sig\030\002 \001(\014\022%\n\004kind\030\003 \001(\0162\027.veg"
-  "a.NodeSignatureKind*9\n\004Side\022\024\n\020SIDE_UNSP"
-  "ECIFIED\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n\tSIDE_SELL\020\002*\230"
-  "\001\n\010Interval\022\030\n\024INTERVAL_UNSPECIFIED\020\000\022\020\n"
-  "\014INTERVAL_I1M\020<\022\021\n\014INTERVAL_I5M\020\254\002\022\022\n\rIN"
-  "TERVAL_I15M\020\204\007\022\021\n\014INTERVAL_I1H\020\220\034\022\022\n\014INT"
-  "ERVAL_I6H\020\340\250\001\022\022\n\014INTERVAL_I1D\020\200\243\005*\377\005\n\nOr"
-  "derError\022\024\n\020ORDER_ERROR_NONE\020\000\022!\n\035ORDER_"
-  "ERROR_INVALID_MARKET_ID\020\001\022 \n\034ORDER_ERROR"
-  "_INVALID_ORDER_ID\020\002\022\037\n\033ORDER_ERROR_OUT_O"
-  "F_SEQUENCE\020\003\022&\n\"ORDER_ERROR_INVALID_REMA"
-  "INING_SIZE\020\004\022\034\n\030ORDER_ERROR_TIME_FAILURE"
-  "\020\005\022\037\n\033ORDER_ERROR_REMOVAL_FAILURE\020\006\022+\n\'O"
-  "RDER_ERROR_INVALID_EXPIRATION_DATETIME\020\007"
-  "\022\'\n#ORDER_ERROR_INVALID_ORDER_REFERENCE\020"
-  "\010\022 \n\034ORDER_ERROR_EDIT_NOT_ALLOWED\020\t\022\035\n\031O"
-  "RDER_ERROR_AMEND_FAILURE\020\n\022\031\n\025ORDER_ERRO"
-  "R_NOT_FOUND\020\013\022 \n\034ORDER_ERROR_INVALID_PAR"
-  "TY_ID\020\014\022\035\n\031ORDER_ERROR_MARKET_CLOSED\020\r\022#"
-  "\n\037ORDER_ERROR_MARGIN_CHECK_FAILED\020\016\022\'\n#O"
-  "RDER_ERROR_MISSING_GENERAL_ACCOUNT\020\017\022\036\n\032"
-  "ORDER_ERROR_INTERNAL_ERROR\020\020\022\034\n\030ORDER_ER"
-  "ROR_INVALID_SIZE\020\021\022#\n\037ORDER_ERROR_INVALI"
-  "D_PERSISTENCE\020\022\022\034\n\030ORDER_ERROR_INVALID_T"
-  "YPE\020\023\022\034\n\030ORDER_ERROR_SELF_TRADING\020\024\022.\n*O"
-  "RDER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEE"
-  "S\020\025*\202\001\n\013ChainStatus\022\034\n\030CHAIN_STATUS_UNSP"
-  "ECIFIED\020\000\022\035\n\031CHAIN_STATUS_DISCONNECTED\020\001"
-  "\022\032\n\026CHAIN_STATUS_REPLAYING\020\002\022\032\n\026CHAIN_ST"
-  "ATUS_CONNECTED\020\003*\373\001\n\013AccountType\022\034\n\030ACCO"
-  "UNT_TYPE_UNSPECIFIED\020\000\022\032\n\026ACCOUNT_TYPE_I"
-  "NSURANCE\020\001\022\033\n\027ACCOUNT_TYPE_SETTLEMENT\020\002\022"
-  "\027\n\023ACCOUNT_TYPE_MARGIN\020\003\022\030\n\024ACCOUNT_TYPE"
-  "_GENERAL\020\004\022$\n ACCOUNT_TYPE_FEES_INFRASTR"
-  "UCTURE\020\005\022\037\n\033ACCOUNT_TYPE_FEES_LIQUIDITY\020"
-  "\006\022\033\n\027ACCOUNT_TYPE_FEES_MAKER\020\007*\244\003\n\014Trans"
-  "ferType\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\026"
-  "\n\022TRANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSFER_TYPE_"
-  "WIN\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032\n\026TRANSF"
-  "ER_TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_TYPE_MTM_"
-  "WIN\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_LOW\020\006\022\035\n\031T"
-  "RANSFER_TYPE_MARGIN_HIGH\020\007\022$\n TRANSFER_T"
-  "YPE_MARGIN_CONFISCATED\020\010\022\037\n\033TRANSFER_TYP"
-  "E_MAKER_FEE_PAY\020\t\022#\n\037TRANSFER_TYPE_MAKER"
-  "_FEE_RECEIVE\020\n\022(\n$TRANSFER_TYPE_INFRASTR"
-  "UCTURE_FEE_PAY\020\013\022#\n\037TRANSFER_TYPE_LIQUID"
-  "ITY_FEE_PAY\020\014*\205\001\n\021NodeSignatureKind\022#\n\037N"
-  "ODE_SIGNATURE_KIND_UNSPECIFIED\020\000\022!\n\035NODE"
-  "_SIGNATURE_KIND_ASSET_NEW\020\001\022(\n$NODE_SIGN"
-  "ATURE_KIND_ASSET_WITHDRAWAL\020\002B!Z\037code.ve"
-  "gaprotocol.io/vega/protob\006proto3"
+  "IOC\020\003\022\013\n\007TIF_FOK\020\004\022\013\n\007TIF_GFA\020\005\022\013\n\007TIF_G"
+  "FN\020\006\"O\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\016\n\nTY"
+  "PE_LIMIT\020\001\022\017\n\013TYPE_MARKET\020\002\022\020\n\014TYPE_NETW"
+  "ORK\020\003\"\262\001\n\006Status\022\022\n\016STATUS_INVALID\020\000\022\021\n\r"
+  "STATUS_ACTIVE\020\001\022\022\n\016STATUS_EXPIRED\020\002\022\024\n\020S"
+  "TATUS_CANCELLED\020\003\022\022\n\016STATUS_STOPPED\020\004\022\021\n"
+  "\rSTATUS_FILLED\020\005\022\023\n\017STATUS_REJECTED\020\006\022\033\n"
+  "\027STATUS_PARTIALLY_FILLED\020\007\";\n\035OrderCance"
+  "llationConfirmation\022\032\n\005order\030\001 \001(\0132\013.veg"
+  "a.Order\"x\n\021OrderConfirmation\022\032\n\005order\030\001 "
+  "\001(\0132\013.vega.Order\022\033\n\006trades\030\002 \003(\0132\013.vega."
+  "Trade\022*\n\025passiveOrdersAffected\030\003 \003(\0132\013.v"
+  "ega.Order\"\207\001\n\026AuctionIndicativeState\022\020\n\010"
+  "marketID\030\001 \001(\t\022\027\n\017indicativePrice\030\002 \001(\004\022"
+  "\030\n\020indicativeVolume\030\003 \001(\004\022\024\n\014auctionStar"
+  "t\030\004 \001(\003\022\022\n\nauctionEnd\030\005 \001(\003\"\273\003\n\005Trade\022\n\n"
+  "\002id\030\001 \001(\t\022\020\n\010marketID\030\002 \001(\t\022\r\n\005price\030\003 \001"
+  "(\004\022\014\n\004size\030\004 \001(\004\022\r\n\005buyer\030\005 \001(\t\022\016\n\006selle"
+  "r\030\006 \001(\t\022\035\n\taggressor\030\007 \001(\0162\n.vega.Side\022\020"
+  "\n\010buyOrder\030\010 \001(\t\022\021\n\tsellOrder\030\t \001(\t\022\021\n\tt"
+  "imestamp\030\n \001(\003\022\036\n\004type\030\013 \001(\0162\020.vega.Trad"
+  "e.Type\022\033\n\010buyerFee\030\014 \001(\0132\t.vega.Fee\022\034\n\ts"
+  "ellerFee\030\r \001(\0132\t.vega.Fee\022\031\n\021buyerAuctio"
+  "nBatch\030\016 \001(\004\022\032\n\022sellerAuctionBatch\030\017 \001(\004"
+  "\"o\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\020\n\014TYPE_D"
+  "EFAULT\020\001\022\037\n\033TYPE_NETWORK_CLOSE_OUT_GOOD\020"
+  "\002\022\036\n\032TYPE_NETWORK_CLOSE_OUT_BAD\020\003\"H\n\003Fee"
+  "\022\020\n\010makerFee\030\001 \001(\004\022\031\n\021infrastructureFee\030"
+  "\002 \001(\004\022\024\n\014liquidityFee\030\003 \001(\004\"\'\n\010TradeSet\022"
+  "\033\n\006trades\030\001 \003(\0132\013.vega.Trade\"\227\001\n\006Candle\022"
+  "\021\n\ttimestamp\030\001 \001(\003\022\020\n\010datetime\030\002 \001(\t\022\014\n\004"
+  "high\030\003 \001(\004\022\013\n\003low\030\004 \001(\004\022\014\n\004open\030\005 \001(\004\022\r\n"
+  "\005close\030\006 \001(\004\022\016\n\006volume\030\007 \001(\004\022 \n\010interval"
+  "\030\010 \001(\0162\016.vega.Interval\"]\n\nPriceLevel\022\r\n\005"
+  "price\030\001 \001(\004\022\026\n\016numberOfOrders\030\002 \001(\004\022\016\n\006v"
+  "olume\030\003 \001(\004\022\030\n\020cumulativeVolume\030\004 \001(\004\"^\n"
+  "\013MarketDepth\022\020\n\010marketID\030\001 \001(\t\022\035\n\003buy\030\002 "
+  "\003(\0132\020.vega.PriceLevel\022\036\n\004sell\030\003 \003(\0132\020.ve"
+  "ga.PriceLevel\"\210\001\n\010Position\022\020\n\010marketID\030\001"
+  " \001(\t\022\017\n\007partyID\030\002 \001(\t\022\022\n\nopenVolume\030\003 \001("
+  "\003\022\023\n\013realisedPNL\030\004 \001(\003\022\025\n\runrealisedPNL\030"
+  "\005 \001(\003\022\031\n\021averageEntryPrice\030\006 \001(\004\".\n\rPosi"
+  "tionTrade\022\016\n\006volume\030\001 \001(\003\022\r\n\005price\030\002 \001(\004"
+  "\"\205\006\n\nStatistics\022\023\n\013blockHeight\030\001 \001(\004\022\025\n\r"
+  "backlogLength\030\002 \001(\004\022\022\n\ntotalPeers\030\003 \001(\004\022"
+  "\023\n\013genesisTime\030\004 \001(\t\022\023\n\013currentTime\030\005 \001("
+  "\t\022\020\n\010vegaTime\030\006 \001(\t\022!\n\006status\030\007 \001(\0162\021.ve"
+  "ga.ChainStatus\022\022\n\ntxPerBlock\030\010 \001(\004\022\026\n\016av"
+  "erageTxBytes\030\t \001(\004\022\035\n\025averageOrdersPerBl"
+  "ock\030\n \001(\004\022\027\n\017tradesPerSecond\030\013 \001(\004\022\027\n\017or"
+  "dersPerSecond\030\014 \001(\004\022\024\n\014totalMarkets\030\r \001("
+  "\004\022\027\n\017totalAmendOrder\030\020 \001(\004\022\030\n\020totalCance"
+  "lOrder\030\021 \001(\004\022\030\n\020totalCreateOrder\030\022 \001(\004\022\023"
+  "\n\013totalOrders\030\023 \001(\004\022\023\n\013totalTrades\030\024 \001(\004"
+  "\022\032\n\022orderSubscriptions\030\025 \001(\r\022\032\n\022tradeSub"
+  "scriptions\030\026 \001(\r\022\033\n\023candleSubscriptions\030"
+  "\027 \001(\r\022 \n\030marketDepthSubscriptions\030\030 \001(\r\022"
+  "\036\n\026positionsSubscriptions\030\031 \001(\r\022\034\n\024accou"
+  "ntSubscriptions\030\032 \001(\r\022\037\n\027marketDataSubsc"
+  "riptions\030\033 \001(\r\022\026\n\016appVersionHash\030\034 \001(\t\022\022"
+  "\n\nappVersion\030\035 \001(\t\022\024\n\014chainVersion\030\036 \001(\t"
+  "\022\025\n\rblockDuration\030\037 \001(\004\022\016\n\006uptime\030  \001(\t\022"
+  "\017\n\007chainID\030! \001(\t\":\n\010Withdraw\022\017\n\007partyID\030"
+  "\001 \001(\t\022\016\n\006amount\030\002 \001(\004\022\r\n\005asset\030\003 \001(\t\"\325\001\n"
+  "\016OrderAmendment\022\027\n\007orderID\030\001 \001(\tB\006\342\337\037\002X\001"
+  "\022\027\n\007partyID\030\002 \001(\tB\006\342\337\037\002X\001\022\020\n\010marketID\030\003 "
+  "\001(\t\022\032\n\005price\030\004 \001(\0132\013.vega.Price\022\021\n\tsizeD"
+  "elta\030\005 \001(\003\022\"\n\texpiresAt\030\006 \001(\0132\017.vega.Tim"
+  "estamp\022,\n\013timeInForce\030\007 \001(\0162\027.vega.Order"
+  ".TimeInForce\"\246\002\n\017OrderSubmission\022\022\n\002id\030\001"
+  " \001(\tB\006\342\337\037\002X\000\022\030\n\010marketID\030\002 \001(\tB\006\342\337\037\002X\001\022\027"
+  "\n\007partyID\030\003 \001(\tB\006\342\337\037\002X\001\022\r\n\005price\030\004 \001(\004\022\024"
+  "\n\004size\030\005 \001(\004B\006\342\337\037\002\020\000\022!\n\004side\030\006 \001(\0162\n.veg"
+  "a.SideB\007\342\337\037\003\210\001\001\0225\n\013timeInForce\030\007 \001(\0162\027.v"
+  "ega.Order.TimeInForceB\007\342\337\037\003\210\001\001\022\021\n\texpire"
+  "sAt\030\010 \001(\003\022\'\n\004type\030\t \001(\0162\020.vega.Order.Typ"
+  "eB\007\342\337\037\003\210\001\001\022\021\n\treference\030\n \001(\t\"_\n\021OrderCa"
+  "ncellation\022\027\n\007orderID\030\001 \001(\tB\006\342\337\037\002X\001\022\030\n\010m"
+  "arketID\030\002 \001(\tB\006\342\337\037\002X\001\022\027\n\007partyID\030\003 \001(\tB\006"
+  "\342\337\037\002X\001\"G\n\020NodeRegistration\022\026\n\006pubKey\030\001 \001"
+  "(\014B\006\342\337\037\002X\001\022\033\n\013chainPubKey\030\002 \001(\014B\006\342\337\037\002X\001\""
+  "=\n\010NodeVote\022\026\n\006pubKey\030\001 \001(\014B\006\342\337\037\002X\001\022\031\n\tr"
+  "eference\030\002 \001(\tB\006\342\337\037\002X\001\"w\n\007Account\022\n\n\002id\030"
+  "\001 \001(\t\022\r\n\005owner\030\002 \001(\t\022\017\n\007balance\030\003 \001(\004\022\r\n"
+  "\005asset\030\004 \001(\t\022\020\n\010marketID\030\005 \001(\t\022\037\n\004type\030\006"
+  " \001(\0162\021.vega.AccountType\"0\n\017FinancialAmou"
+  "nt\022\016\n\006amount\030\001 \001(\003\022\r\n\005asset\030\002 \001(\t\"u\n\010Tra"
+  "nsfer\022\r\n\005owner\030\001 \001(\t\022%\n\006amount\030\002 \001(\0132\025.v"
+  "ega.FinancialAmount\022 \n\004type\030\003 \001(\0162\022.vega"
+  ".TransferType\022\021\n\tminAmount\030\004 \001(\003\"\234\001\n\017Tra"
+  "nsferRequest\022\"\n\013fromAccount\030\001 \003(\0132\r.vega"
+  ".Account\022 \n\ttoAccount\030\002 \003(\0132\r.vega.Accou"
+  "nt\022\016\n\006amount\030\003 \001(\004\022\021\n\tminAmount\030\004 \001(\004\022\r\n"
+  "\005asset\030\005 \001(\t\022\021\n\treference\030\006 \001(\t\"y\n\013Ledge"
+  "rEntry\022\023\n\013fromAccount\030\001 \001(\t\022\021\n\ttoAccount"
+  "\030\002 \001(\t\022\016\n\006amount\030\003 \001(\004\022\021\n\treference\030\004 \001("
+  "\t\022\014\n\004type\030\005 \001(\t\022\021\n\ttimestamp\030\006 \001(\003\"B\n\017Tr"
+  "ansferBalance\022\036\n\007account\030\001 \001(\0132\r.vega.Ac"
+  "count\022\017\n\007balance\030\002 \001(\004\"a\n\020TransferRespon"
+  "se\022$\n\ttransfers\030\001 \003(\0132\021.vega.LedgerEntry"
+  "\022\'\n\010balances\030\002 \003(\0132\025.vega.TransferBalanc"
+  "e\"\272\001\n\014MarginLevels\022\031\n\021maintenanceMargin\030"
+  "\001 \001(\004\022\023\n\013searchLevel\030\002 \001(\004\022\025\n\rinitialMar"
+  "gin\030\003 \001(\004\022\036\n\026collateralReleaseLevel\030\004 \001("
+  "\004\022\017\n\007partyID\030\005 \001(\t\022\020\n\010marketID\030\006 \001(\t\022\r\n\005"
+  "asset\030\007 \001(\t\022\021\n\ttimestamp\030\010 \001(\003\"\362\001\n\nMarke"
+  "tData\022\021\n\tmarkPrice\030\001 \001(\004\022\024\n\014bestBidPrice"
+  "\030\002 \001(\004\022\025\n\rbestBidVolume\030\003 \001(\004\022\026\n\016bestOff"
+  "erPrice\030\004 \001(\004\022\027\n\017bestOfferVolume\030\005 \001(\004\022\020"
+  "\n\010midPrice\030\006 \001(\004\022\016\n\006market\030\007 \001(\t\022\021\n\ttime"
+  "stamp\030\010 \001(\003\022\024\n\014openInterest\030\t \001(\004\022\022\n\nauc"
+  "tionEnd\030\n \001(\003\022\024\n\014auctionStart\030\013 \001(\003\";\n\013E"
+  "rrorDetail\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001("
+  "\t\022\r\n\005inner\030\003 \001(\t\"^\n\013Transaction\022\021\n\tinput"
+  "Data\030\001 \001(\014\022\r\n\005nonce\030\002 \001(\004\022\022\n\007address\030\351\007 "
+  "\001(\014H\000\022\021\n\006pubKey\030\352\007 \001(\014H\000B\006\n\004from\"7\n\tSign"
+  "ature\022\013\n\003sig\030\001 \001(\014\022\014\n\004algo\030\002 \001(\t\022\017\n\007vers"
+  "ion\030\003 \001(\004\"8\n\014SignedBundle\022\n\n\002tx\030\001 \001(\014\022\034\n"
+  "\003sig\030\002 \001(\0132\017.vega.Signature\"O\n\rNodeSigna"
+  "ture\022\n\n\002ID\030\001 \001(\t\022\013\n\003sig\030\002 \001(\014\022%\n\004kind\030\003 "
+  "\001(\0162\027.vega.NodeSignatureKind*9\n\004Side\022\024\n\020"
+  "SIDE_UNSPECIFIED\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n\tSIDE"
+  "_SELL\020\002*\230\001\n\010Interval\022\030\n\024INTERVAL_UNSPECI"
+  "FIED\020\000\022\020\n\014INTERVAL_I1M\020<\022\021\n\014INTERVAL_I5M"
+  "\020\254\002\022\022\n\rINTERVAL_I15M\020\204\007\022\021\n\014INTERVAL_I1H\020"
+  "\220\034\022\022\n\014INTERVAL_I6H\020\340\250\001\022\022\n\014INTERVAL_I1D\020\200"
+  "\243\005*b\n\013MarketState\022\034\n\030MARKET_STATE_UNSPEC"
+  "IFIED\020\000\022\033\n\027MARKET_STATE_CONTINUOUS\020\001\022\030\n\024"
+  "MARKET_STATE_AUCTION\020\002*\246\006\n\nOrderError\022\024\n"
+  "\020ORDER_ERROR_NONE\020\000\022!\n\035ORDER_ERROR_INVAL"
+  "ID_MARKET_ID\020\001\022 \n\034ORDER_ERROR_INVALID_OR"
+  "DER_ID\020\002\022\037\n\033ORDER_ERROR_OUT_OF_SEQUENCE\020"
+  "\003\022&\n\"ORDER_ERROR_INVALID_REMAINING_SIZE\020"
+  "\004\022\034\n\030ORDER_ERROR_TIME_FAILURE\020\005\022\037\n\033ORDER"
+  "_ERROR_REMOVAL_FAILURE\020\006\022+\n\'ORDER_ERROR_"
+  "INVALID_EXPIRATION_DATETIME\020\007\022\'\n#ORDER_E"
+  "RROR_INVALID_ORDER_REFERENCE\020\010\022 \n\034ORDER_"
+  "ERROR_EDIT_NOT_ALLOWED\020\t\022\035\n\031ORDER_ERROR_"
+  "AMEND_FAILURE\020\n\022\031\n\025ORDER_ERROR_NOT_FOUND"
+  "\020\013\022 \n\034ORDER_ERROR_INVALID_PARTY_ID\020\014\022\035\n\031"
+  "ORDER_ERROR_MARKET_CLOSED\020\r\022#\n\037ORDER_ERR"
+  "OR_MARGIN_CHECK_FAILED\020\016\022\'\n#ORDER_ERROR_"
+  "MISSING_GENERAL_ACCOUNT\020\017\022\036\n\032ORDER_ERROR"
+  "_INTERNAL_ERROR\020\020\022\034\n\030ORDER_ERROR_INVALID"
+  "_SIZE\020\021\022#\n\037ORDER_ERROR_INVALID_PERSISTEN"
+  "CE\020\022\022\034\n\030ORDER_ERROR_INVALID_TYPE\020\023\022\034\n\030OR"
+  "DER_ERROR_SELF_TRADING\020\024\022.\n*ORDER_ERROR_"
+  "INSUFFICIENT_FUNDS_TO_PAY_FEES\020\025\022%\n!ORDE"
+  "R_ERROR_INCORRECT_MARKET_TYPE\020\026*\202\001\n\013Chai"
+  "nStatus\022\034\n\030CHAIN_STATUS_UNSPECIFIED\020\000\022\035\n"
+  "\031CHAIN_STATUS_DISCONNECTED\020\001\022\032\n\026CHAIN_ST"
+  "ATUS_REPLAYING\020\002\022\032\n\026CHAIN_STATUS_CONNECT"
+  "ED\020\003*\373\001\n\013AccountType\022\034\n\030ACCOUNT_TYPE_UNS"
+  "PECIFIED\020\000\022\032\n\026ACCOUNT_TYPE_INSURANCE\020\001\022\033"
+  "\n\027ACCOUNT_TYPE_SETTLEMENT\020\002\022\027\n\023ACCOUNT_T"
+  "YPE_MARGIN\020\003\022\030\n\024ACCOUNT_TYPE_GENERAL\020\004\022$"
+  "\n ACCOUNT_TYPE_FEES_INFRASTRUCTURE\020\005\022\037\n\033"
+  "ACCOUNT_TYPE_FEES_LIQUIDITY\020\006\022\033\n\027ACCOUNT"
+  "_TYPE_FEES_MAKER\020\007*\244\003\n\014TransferType\022\035\n\031T"
+  "RANSFER_TYPE_UNSPECIFIED\020\000\022\026\n\022TRANSFER_T"
+  "YPE_LOSS\020\001\022\025\n\021TRANSFER_TYPE_WIN\020\002\022\027\n\023TRA"
+  "NSFER_TYPE_CLOSE\020\003\022\032\n\026TRANSFER_TYPE_MTM_"
+  "LOSS\020\004\022\031\n\025TRANSFER_TYPE_MTM_WIN\020\005\022\034\n\030TRA"
+  "NSFER_TYPE_MARGIN_LOW\020\006\022\035\n\031TRANSFER_TYPE"
+  "_MARGIN_HIGH\020\007\022$\n TRANSFER_TYPE_MARGIN_C"
+  "ONFISCATED\020\010\022\037\n\033TRANSFER_TYPE_MAKER_FEE_"
+  "PAY\020\t\022#\n\037TRANSFER_TYPE_MAKER_FEE_RECEIVE"
+  "\020\n\022(\n$TRANSFER_TYPE_INFRASTRUCTURE_FEE_P"
+  "AY\020\013\022#\n\037TRANSFER_TYPE_LIQUIDITY_FEE_PAY\020"
+  "\014*\205\001\n\021NodeSignatureKind\022#\n\037NODE_SIGNATUR"
+  "E_KIND_UNSPECIFIED\020\000\022!\n\035NODE_SIGNATURE_K"
+  "IND_ASSET_NEW\020\001\022(\n$NODE_SIGNATURE_KIND_A"
+  "SSET_WITHDRAWAL\020\002B!Z\037code.vegaprotocol.i"
+  "o/vega/protob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fvega_2eproto = {
   false, InitDefaults_proto_2fvega_2eproto, 
   descriptor_table_protodef_proto_2fvega_2eproto,
-  "proto/vega.proto", &assign_descriptors_table_proto_2fvega_2eproto, 7872,
+  "proto/vega.proto", &assign_descriptors_table_proto_2fvega_2eproto, 7980,
 };
 
 void AddDescriptors_proto_2fvega_2eproto() {
@@ -1573,6 +1548,8 @@ bool Order_TimeInForce_IsValid(int value) {
     case 2:
     case 3:
     case 4:
+    case 5:
+    case 6:
       return true;
     default:
       return false;
@@ -1585,6 +1562,8 @@ const Order_TimeInForce Order::TIF_GTC;
 const Order_TimeInForce Order::TIF_GTT;
 const Order_TimeInForce Order::TIF_IOC;
 const Order_TimeInForce Order::TIF_FOK;
+const Order_TimeInForce Order::TIF_GFA;
+const Order_TimeInForce Order::TIF_GFN;
 const Order_TimeInForce Order::TimeInForce_MIN;
 const Order_TimeInForce Order::TimeInForce_MAX;
 const int Order::TimeInForce_ARRAYSIZE;
@@ -1706,9 +1685,24 @@ bool Interval_IsValid(int value) {
   }
 }
 
-const ::google::protobuf::EnumDescriptor* OrderError_descriptor() {
+const ::google::protobuf::EnumDescriptor* MarketState_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_proto_2fvega_2eproto);
   return file_level_enum_descriptors_proto_2fvega_2eproto[6];
+}
+bool MarketState_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::google::protobuf::EnumDescriptor* OrderError_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_proto_2fvega_2eproto);
+  return file_level_enum_descriptors_proto_2fvega_2eproto[7];
 }
 bool OrderError_IsValid(int value) {
   switch (value) {
@@ -1734,6 +1728,7 @@ bool OrderError_IsValid(int value) {
     case 19:
     case 20:
     case 21:
+    case 22:
       return true;
     default:
       return false;
@@ -1742,7 +1737,7 @@ bool OrderError_IsValid(int value) {
 
 const ::google::protobuf::EnumDescriptor* ChainStatus_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_proto_2fvega_2eproto);
-  return file_level_enum_descriptors_proto_2fvega_2eproto[7];
+  return file_level_enum_descriptors_proto_2fvega_2eproto[8];
 }
 bool ChainStatus_IsValid(int value) {
   switch (value) {
@@ -1758,7 +1753,7 @@ bool ChainStatus_IsValid(int value) {
 
 const ::google::protobuf::EnumDescriptor* AccountType_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_proto_2fvega_2eproto);
-  return file_level_enum_descriptors_proto_2fvega_2eproto[8];
+  return file_level_enum_descriptors_proto_2fvega_2eproto[9];
 }
 bool AccountType_IsValid(int value) {
   switch (value) {
@@ -1778,7 +1773,7 @@ bool AccountType_IsValid(int value) {
 
 const ::google::protobuf::EnumDescriptor* TransferType_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_proto_2fvega_2eproto);
-  return file_level_enum_descriptors_proto_2fvega_2eproto[9];
+  return file_level_enum_descriptors_proto_2fvega_2eproto[10];
 }
 bool TransferType_IsValid(int value) {
   switch (value) {
@@ -1803,7 +1798,7 @@ bool TransferType_IsValid(int value) {
 
 const ::google::protobuf::EnumDescriptor* NodeSignatureKind_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_proto_2fvega_2eproto);
-  return file_level_enum_descriptors_proto_2fvega_2eproto[10];
+  return file_level_enum_descriptors_proto_2fvega_2eproto[11];
 }
 bool NodeSignatureKind_IsValid(int value) {
   switch (value) {
@@ -11749,348 +11744,6 @@ void Statistics::InternalSwap(Statistics* other) {
 
 // ===================================================================
 
-void NotifyTraderAccount::InitAsDefaultInstance() {
-}
-class NotifyTraderAccount::HasBitSetters {
- public:
-};
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int NotifyTraderAccount::kTraderIDFieldNumber;
-const int NotifyTraderAccount::kAmountFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-NotifyTraderAccount::NotifyTraderAccount()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:vega.NotifyTraderAccount)
-}
-NotifyTraderAccount::NotifyTraderAccount(const NotifyTraderAccount& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  traderid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.traderid().size() > 0) {
-    traderid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.traderid_);
-  }
-  amount_ = from.amount_;
-  // @@protoc_insertion_point(copy_constructor:vega.NotifyTraderAccount)
-}
-
-void NotifyTraderAccount::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_NotifyTraderAccount_proto_2fvega_2eproto.base);
-  traderid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  amount_ = PROTOBUF_ULONGLONG(0);
-}
-
-NotifyTraderAccount::~NotifyTraderAccount() {
-  // @@protoc_insertion_point(destructor:vega.NotifyTraderAccount)
-  SharedDtor();
-}
-
-void NotifyTraderAccount::SharedDtor() {
-  traderid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-
-void NotifyTraderAccount::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const NotifyTraderAccount& NotifyTraderAccount::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_NotifyTraderAccount_proto_2fvega_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void NotifyTraderAccount::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.NotifyTraderAccount)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  traderid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  amount_ = PROTOBUF_ULONGLONG(0);
-  _internal_metadata_.Clear();
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* NotifyTraderAccount::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<NotifyTraderAccount*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-    switch (tag >> 3) {
-      // string traderID = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("vega.NotifyTraderAccount.traderID");
-        object = msg->mutable_traderid();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // uint64 amount = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
-        msg->set_amount(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
-        }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
-      }
-    }  // switch
-  }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool NotifyTraderAccount::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:vega.NotifyTraderAccount)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string traderID = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_traderid()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->traderid().data(), static_cast<int>(this->traderid().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "vega.NotifyTraderAccount.traderID"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // uint64 amount = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &amount_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:vega.NotifyTraderAccount)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:vega.NotifyTraderAccount)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void NotifyTraderAccount::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:vega.NotifyTraderAccount)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string traderID = 1;
-  if (this->traderid().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->traderid().data(), static_cast<int>(this->traderid().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "vega.NotifyTraderAccount.traderID");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->traderid(), output);
-  }
-
-  // uint64 amount = 2;
-  if (this->amount() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(2, this->amount(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:vega.NotifyTraderAccount)
-}
-
-::google::protobuf::uint8* NotifyTraderAccount::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.NotifyTraderAccount)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string traderID = 1;
-  if (this->traderid().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->traderid().data(), static_cast<int>(this->traderid().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "vega.NotifyTraderAccount.traderID");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->traderid(), target);
-  }
-
-  // uint64 amount = 2;
-  if (this->amount() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(2, this->amount(), target);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.NotifyTraderAccount)
-  return target;
-}
-
-size_t NotifyTraderAccount::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.NotifyTraderAccount)
-  size_t total_size = 0;
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string traderID = 1;
-  if (this->traderid().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->traderid());
-  }
-
-  // uint64 amount = 2;
-  if (this->amount() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->amount());
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void NotifyTraderAccount::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.NotifyTraderAccount)
-  GOOGLE_DCHECK_NE(&from, this);
-  const NotifyTraderAccount* source =
-      ::google::protobuf::DynamicCastToGenerated<NotifyTraderAccount>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.NotifyTraderAccount)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.NotifyTraderAccount)
-    MergeFrom(*source);
-  }
-}
-
-void NotifyTraderAccount::MergeFrom(const NotifyTraderAccount& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.NotifyTraderAccount)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.traderid().size() > 0) {
-
-    traderid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.traderid_);
-  }
-  if (from.amount() != 0) {
-    set_amount(from.amount());
-  }
-}
-
-void NotifyTraderAccount::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.NotifyTraderAccount)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void NotifyTraderAccount::CopyFrom(const NotifyTraderAccount& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.NotifyTraderAccount)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool NotifyTraderAccount::IsInitialized() const {
-  return true;
-}
-
-void NotifyTraderAccount::Swap(NotifyTraderAccount* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void NotifyTraderAccount::InternalSwap(NotifyTraderAccount* other) {
-  using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  traderid_.Swap(&other->traderid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(amount_, other->amount_);
-}
-
-::google::protobuf::Metadata NotifyTraderAccount::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_proto_2fvega_2eproto);
-  return ::file_level_metadata_proto_2fvega_2eproto[kIndexInFileMessages];
-}
-
-
-// ===================================================================
-
 void Withdraw::InitAsDefaultInstance() {
 }
 class Withdraw::HasBitSetters {
@@ -21892,9 +21545,6 @@ template<> PROTOBUF_NOINLINE ::vega::PositionTrade* Arena::CreateMaybeMessage< :
 }
 template<> PROTOBUF_NOINLINE ::vega::Statistics* Arena::CreateMaybeMessage< ::vega::Statistics >(Arena* arena) {
   return Arena::CreateInternal< ::vega::Statistics >(arena);
-}
-template<> PROTOBUF_NOINLINE ::vega::NotifyTraderAccount* Arena::CreateMaybeMessage< ::vega::NotifyTraderAccount >(Arena* arena) {
-  return Arena::CreateInternal< ::vega::NotifyTraderAccount >(arena);
 }
 template<> PROTOBUF_NOINLINE ::vega::Withdraw* Arena::CreateMaybeMessage< ::vega::Withdraw >(Arena* arena) {
   return Arena::CreateInternal< ::vega::Withdraw >(arena);

@@ -652,7 +652,8 @@ proto.vega.BuiltinAsset.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     symbol: jspb.Message.getFieldWithDefault(msg, 2, ""),
     totalsupply: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    decimals: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    decimals: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    maxfaucetamountmint: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -704,6 +705,10 @@ proto.vega.BuiltinAsset.deserializeBinaryFromReader = function(msg, reader) {
     case 4:
       var value = /** @type {number} */ (reader.readUint64());
       msg.setDecimals(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMaxfaucetamountmint(value);
       break;
     default:
       reader.skipField();
@@ -759,6 +764,13 @@ proto.vega.BuiltinAsset.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeUint64(
       4,
+      f
+    );
+  }
+  f = message.getMaxfaucetamountmint();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -822,6 +834,21 @@ proto.vega.BuiltinAsset.prototype.getDecimals = function() {
 /** @param {number} value */
 proto.vega.BuiltinAsset.prototype.setDecimals = function(value) {
   jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional string maxFaucetAmountMint = 5;
+ * @return {string}
+ */
+proto.vega.BuiltinAsset.prototype.getMaxfaucetamountmint = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/** @param {string} value */
+proto.vega.BuiltinAsset.prototype.setMaxfaucetamountmint = function(value) {
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

@@ -77,6 +77,20 @@ message RiskResult {
   map<string, RiskFactor> predictedNextRiskFactors = 4;
 }
 
+// Market Status
+// What mode is the market currently running in
+enum MarketState {
+  // Default value, this is invalid
+  MARKET_STATE_UNSPECIFIED = 0;
+
+  // Normal trading
+  MARKET_STATE_CONTINUOUS = 1;
+
+  // Auction trading
+  MARKET_STATE_AUCTION = 2;
+}
+
+
 message Order {
 
   // Order Time in Force
@@ -97,6 +111,12 @@ message Order {
 
     // fill or kill
     TIF_FOK = 4;
+
+    // good for auction
+    TIF_GFA = 5;
+
+    // good for normal
+    TIF_GFN = 6;
 
     // Note: If adding an enum value, add a matching entry in:
     //       - gateway/graphql/helpers_enum.go
@@ -277,6 +297,7 @@ enum OrderError {
 
   // Order was submitted, but the party did not have enough collateral to cover the fees for the order
   ORDER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEES = 21;
+  ORDER_ERROR_INCORRECT_MARKET_TYPE = 22;
 
   // Note: If adding an enum value, add a matching entry in:
   //       - proto/errors.go (func Error)
@@ -430,11 +451,6 @@ enum ChainStatus {
   CHAIN_STATUS_CONNECTED = 3;
 
   // Note: ChainStatus does not exist in GraphQL.
-}
-
-message NotifyTraderAccount {
-  string traderID = 1;
-  uint64 amount = 2;
 }
 
 message Withdraw {

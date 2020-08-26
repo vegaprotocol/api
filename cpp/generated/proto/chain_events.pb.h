@@ -2653,6 +2653,12 @@ class ChainEvent :
   ::std::string* release_txid();
   void set_allocated_txid(::std::string* txid);
 
+  // uint64 nonce = 2;
+  void clear_nonce();
+  static const int kNonceFieldNumber = 2;
+  ::google::protobuf::uint64 nonce() const;
+  void set_nonce(::google::protobuf::uint64 value);
+
   // .vega.BuiltinAssetEvent builtin = 1001;
   bool has_builtin() const;
   void clear_builtin();
@@ -2704,6 +2710,7 @@ class ChainEvent :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr txid_;
+  ::google::protobuf::uint64 nonce_;
   union EventUnion {
     EventUnion() {}
     ::vega::BuiltinAssetEvent* builtin_;
@@ -4788,6 +4795,20 @@ inline void ChainEvent::set_allocated_txid(::std::string* txid) {
   }
   txid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), txid);
   // @@protoc_insertion_point(field_set_allocated:vega.ChainEvent.txID)
+}
+
+// uint64 nonce = 2;
+inline void ChainEvent::clear_nonce() {
+  nonce_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 ChainEvent::nonce() const {
+  // @@protoc_insertion_point(field_get:vega.ChainEvent.nonce)
+  return nonce_;
+}
+inline void ChainEvent::set_nonce(::google::protobuf::uint64 value) {
+
+  nonce_ = value;
+  // @@protoc_insertion_point(field_set:vega.ChainEvent.nonce)
 }
 
 // .vega.BuiltinAssetEvent builtin = 1001;

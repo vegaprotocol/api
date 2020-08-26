@@ -1,5 +1,5 @@
 import base64
-import binascii
+import time
 from google.protobuf.empty_pb2 import Empty
 
 import vegaapiclient as vac
@@ -7,31 +7,55 @@ import vegaapiclient as vac
 from .fixtures import (  # noqa: F401
     trading,
     tradingdata,
+    faucetclient,
     walletclient,
+    walletClientWalletKeypair,
     walletname,
     walletpassphrase,
-    walletClientWalletKeypair,
 )
 
 
-def test_SubmitOrder(trading, tradingdata, walletClientWalletKeypair):  # noqa: F811
-    (
-        walletclient,
-        walletname,
-        passphrase,
-        pubKey,  # noqa: F811
-    ) = walletClientWalletKeypair
+def test_SubmitOrder(
+    trading, tradingdata, walletClientWalletKeypair, faucetclient  # noqa: F811
+):
+    (walletclient, _, _, pubKey) = walletClientWalletKeypair  # noqa: F811
 
-    # Get free money for the pubKey
-    request = vac.api.trading.NotifyTraderAccountRequest(
-        notif=vac.vega.NotifyTraderAccount(traderID=pubKey, amount=10000000)
-    )
-    response = trading.NotifyTraderAccount(request)
-    assert response.submitted
-
+    # Get a market
     markets = tradingdata.Markets(Empty()).markets
     assert len(markets) > 0
     market = markets[0]
+
+    # Mint some tokens in the market's settlement token
+    amt = 10
+    assetID = market.tradableInstrument.instrument.future.asset
+    print(f"{pubKey}: Minting {amt} {assetID}")
+    mintresponse = faucetclient.mint(amt, assetID, pubKey)
+    assert mintresponse.status_code == 200
+    assert mintresponse.json()["success"]
+
+    # Wait until funds are in accounts
+    x = 0
+    maxwait = 20  # seconds
+    while True:
+        request = vac.api.trading.PartyAccountsRequest(
+            partyID=pubKey,
+            marketID=market.id,
+            type=vac.vega.AccountType.ACCOUNT_TYPE_GENERAL,
+            asset=assetID,
+        )
+        response = tradingdata.PartyAccounts(request)
+        n = len(response.accounts)
+        print(f"Account count: {n}")
+        if n > 0:
+            print(f"Accounts: {response.accounts}")
+        if n == 1 and response.accounts[0].balance == amt:
+            break
+        if x >= maxwait:
+            assert (
+                False
+            ), f"Failed to see {amt} {assetID} in {pubKey}'s general account"
+        time.sleep(1)
+        x += 1
 
     # Prepare the SubmitOrder
     now = int(tradingdata.GetVegaTime(Empty()).timestamp)
@@ -65,7 +89,7 @@ def test_SubmitOrder(trading, tradingdata, walletClientWalletKeypair):  # noqa: 
                 algo=signedTx["sig"]["algo"],
                 version=signedTx["sig"]["version"],
             ),
-       )
+        )
     )
     response = trading.SubmitTransaction(request)
     assert response.success

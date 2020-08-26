@@ -46,7 +46,7 @@ struct TableStruct_proto_2fvega_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[41]
+  static const ::google::protobuf::internal::ParseTable schema[40]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -93,9 +93,6 @@ extern NodeSignatureDefaultTypeInternal _NodeSignature_default_instance_;
 class NodeVote;
 class NodeVoteDefaultTypeInternal;
 extern NodeVoteDefaultTypeInternal _NodeVote_default_instance_;
-class NotifyTraderAccount;
-class NotifyTraderAccountDefaultTypeInternal;
-extern NotifyTraderAccountDefaultTypeInternal _NotifyTraderAccount_default_instance_;
 class Order;
 class OrderDefaultTypeInternal;
 extern OrderDefaultTypeInternal _Order_default_instance_;
@@ -193,7 +190,6 @@ template<> ::vega::MarketDepth* Arena::CreateMaybeMessage<::vega::MarketDepth>(A
 template<> ::vega::NodeRegistration* Arena::CreateMaybeMessage<::vega::NodeRegistration>(Arena*);
 template<> ::vega::NodeSignature* Arena::CreateMaybeMessage<::vega::NodeSignature>(Arena*);
 template<> ::vega::NodeVote* Arena::CreateMaybeMessage<::vega::NodeVote>(Arena*);
-template<> ::vega::NotifyTraderAccount* Arena::CreateMaybeMessage<::vega::NotifyTraderAccount>(Arena*);
 template<> ::vega::Order* Arena::CreateMaybeMessage<::vega::Order>(Arena*);
 template<> ::vega::OrderAmendment* Arena::CreateMaybeMessage<::vega::OrderAmendment>(Arena*);
 template<> ::vega::OrderCancellation* Arena::CreateMaybeMessage<::vega::OrderCancellation>(Arena*);
@@ -231,12 +227,14 @@ enum Order_TimeInForce {
   Order_TimeInForce_TIF_GTT = 2,
   Order_TimeInForce_TIF_IOC = 3,
   Order_TimeInForce_TIF_FOK = 4,
+  Order_TimeInForce_TIF_GFA = 5,
+  Order_TimeInForce_TIF_GFN = 6,
   Order_TimeInForce_Order_TimeInForce_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   Order_TimeInForce_Order_TimeInForce_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool Order_TimeInForce_IsValid(int value);
 const Order_TimeInForce Order_TimeInForce_TimeInForce_MIN = Order_TimeInForce_TIF_UNSPECIFIED;
-const Order_TimeInForce Order_TimeInForce_TimeInForce_MAX = Order_TimeInForce_TIF_FOK;
+const Order_TimeInForce Order_TimeInForce_TimeInForce_MAX = Order_TimeInForce_TIF_GFN;
 const int Order_TimeInForce_TimeInForce_ARRAYSIZE = Order_TimeInForce_TimeInForce_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Order_TimeInForce_descriptor();
@@ -370,6 +368,28 @@ inline bool Interval_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<Interval>(
     Interval_descriptor(), name, value);
 }
+enum MarketState {
+  MARKET_STATE_UNSPECIFIED = 0,
+  MARKET_STATE_CONTINUOUS = 1,
+  MARKET_STATE_AUCTION = 2,
+  MarketState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  MarketState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool MarketState_IsValid(int value);
+const MarketState MarketState_MIN = MARKET_STATE_UNSPECIFIED;
+const MarketState MarketState_MAX = MARKET_STATE_AUCTION;
+const int MarketState_ARRAYSIZE = MarketState_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* MarketState_descriptor();
+inline const ::std::string& MarketState_Name(MarketState value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    MarketState_descriptor(), value);
+}
+inline bool MarketState_Parse(
+    const ::std::string& name, MarketState* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<MarketState>(
+    MarketState_descriptor(), name, value);
+}
 enum OrderError {
   ORDER_ERROR_NONE = 0,
   ORDER_ERROR_INVALID_MARKET_ID = 1,
@@ -393,12 +413,13 @@ enum OrderError {
   ORDER_ERROR_INVALID_TYPE = 19,
   ORDER_ERROR_SELF_TRADING = 20,
   ORDER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEES = 21,
+  ORDER_ERROR_INCORRECT_MARKET_TYPE = 22,
   OrderError_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   OrderError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool OrderError_IsValid(int value);
 const OrderError OrderError_MIN = ORDER_ERROR_NONE;
-const OrderError OrderError_MAX = ORDER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEES;
+const OrderError OrderError_MAX = ORDER_ERROR_INCORRECT_MARKET_TYPE;
 const int OrderError_ARRAYSIZE = OrderError_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* OrderError_descriptor();
@@ -1297,6 +1318,10 @@ class Order :
     Order_TimeInForce_TIF_IOC;
   static const TimeInForce TIF_FOK =
     Order_TimeInForce_TIF_FOK;
+  static const TimeInForce TIF_GFA =
+    Order_TimeInForce_TIF_GFA;
+  static const TimeInForce TIF_GFN =
+    Order_TimeInForce_TIF_GFN;
   static inline bool TimeInForce_IsValid(int value) {
     return Order_TimeInForce_IsValid(value);
   }
@@ -3607,133 +3632,6 @@ class Statistics :
 };
 // -------------------------------------------------------------------
 
-class NotifyTraderAccount :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.NotifyTraderAccount) */ {
- public:
-  NotifyTraderAccount();
-  virtual ~NotifyTraderAccount();
-
-  NotifyTraderAccount(const NotifyTraderAccount& from);
-
-  inline NotifyTraderAccount& operator=(const NotifyTraderAccount& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  NotifyTraderAccount(NotifyTraderAccount&& from) noexcept
-    : NotifyTraderAccount() {
-    *this = ::std::move(from);
-  }
-
-  inline NotifyTraderAccount& operator=(NotifyTraderAccount&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const NotifyTraderAccount& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const NotifyTraderAccount* internal_default_instance() {
-    return reinterpret_cast<const NotifyTraderAccount*>(
-               &_NotifyTraderAccount_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    20;
-
-  void Swap(NotifyTraderAccount* other);
-  friend void swap(NotifyTraderAccount& a, NotifyTraderAccount& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline NotifyTraderAccount* New() const final {
-    return CreateMaybeMessage<NotifyTraderAccount>(nullptr);
-  }
-
-  NotifyTraderAccount* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<NotifyTraderAccount>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const NotifyTraderAccount& from);
-  void MergeFrom(const NotifyTraderAccount& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(NotifyTraderAccount* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string traderID = 1;
-  void clear_traderid();
-  static const int kTraderIDFieldNumber = 1;
-  const ::std::string& traderid() const;
-  void set_traderid(const ::std::string& value);
-  #if LANG_CXX11
-  void set_traderid(::std::string&& value);
-  #endif
-  void set_traderid(const char* value);
-  void set_traderid(const char* value, size_t size);
-  ::std::string* mutable_traderid();
-  ::std::string* release_traderid();
-  void set_allocated_traderid(::std::string* traderid);
-
-  // uint64 amount = 2;
-  void clear_amount();
-  static const int kAmountFieldNumber = 2;
-  ::google::protobuf::uint64 amount() const;
-  void set_amount(::google::protobuf::uint64 value);
-
-  // @@protoc_insertion_point(class_scope:vega.NotifyTraderAccount)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr traderid_;
-  ::google::protobuf::uint64 amount_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_proto_2fvega_2eproto;
-};
-// -------------------------------------------------------------------
-
 class Withdraw :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.Withdraw) */ {
  public:
@@ -3772,7 +3670,7 @@ class Withdraw :
                &_Withdraw_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    20;
 
   void Swap(Withdraw* other);
   friend void swap(Withdraw& a, Withdraw& b) {
@@ -3914,7 +3812,7 @@ class OrderAmendment :
                &_OrderAmendment_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    21;
 
   void Swap(OrderAmendment* other);
   friend void swap(OrderAmendment& a, OrderAmendment& b) {
@@ -4098,7 +3996,7 @@ class OrderSubmission :
                &_OrderSubmission_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    22;
 
   void Swap(OrderSubmission* other);
   friend void swap(OrderSubmission& a, OrderSubmission& b) {
@@ -4305,7 +4203,7 @@ class OrderCancellation :
                &_OrderCancellation_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    23;
 
   void Swap(OrderCancellation* other);
   friend void swap(OrderCancellation& a, OrderCancellation& b) {
@@ -4455,7 +4353,7 @@ class NodeRegistration :
                &_NodeRegistration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    24;
 
   void Swap(NodeRegistration* other);
   friend void swap(NodeRegistration& a, NodeRegistration& b) {
@@ -4590,7 +4488,7 @@ class NodeVote :
                &_NodeVote_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    25;
 
   void Swap(NodeVote* other);
   friend void swap(NodeVote& a, NodeVote& b) {
@@ -4725,7 +4623,7 @@ class Account :
                &_Account_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    26;
 
   void Swap(Account* other);
   friend void swap(Account& a, Account& b) {
@@ -4904,7 +4802,7 @@ class FinancialAmount :
                &_FinancialAmount_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    27;
 
   void Swap(FinancialAmount* other);
   friend void swap(FinancialAmount& a, FinancialAmount& b) {
@@ -5031,7 +4929,7 @@ class Transfer :
                &_Transfer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    28;
 
   void Swap(Transfer* other);
   friend void swap(Transfer& a, Transfer& b) {
@@ -5175,7 +5073,7 @@ class TransferRequest :
                &_TransferRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    29;
 
   void Swap(TransferRequest* other);
   friend void swap(TransferRequest& a, TransferRequest& b) {
@@ -5350,7 +5248,7 @@ class LedgerEntry :
                &_LedgerEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    30;
 
   void Swap(LedgerEntry* other);
   friend void swap(LedgerEntry& a, LedgerEntry& b) {
@@ -5529,7 +5427,7 @@ class TransferBalance :
                &_TransferBalance_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    31;
 
   void Swap(TransferBalance* other);
   friend void swap(TransferBalance& a, TransferBalance& b) {
@@ -5651,7 +5549,7 @@ class TransferResponse :
                &_TransferResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    32;
 
   void Swap(TransferResponse* other);
   friend void swap(TransferResponse& a, TransferResponse& b) {
@@ -5782,7 +5680,7 @@ class MarginLevels :
                &_MarginLevels_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    33;
 
   void Swap(MarginLevels* other);
   friend void swap(MarginLevels& a, MarginLevels& b) {
@@ -5967,7 +5865,7 @@ class MarketData :
                &_MarketData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    34;
 
   void Swap(MarketData* other);
   friend void swap(MarketData& a, MarketData& b) {
@@ -6157,7 +6055,7 @@ class ErrorDetail :
                &_ErrorDetail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    35;
 
   void Swap(ErrorDetail* other);
   friend void swap(ErrorDetail& a, ErrorDetail& b) {
@@ -6305,7 +6203,7 @@ class Transaction :
                &_Transaction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    36;
 
   void Swap(Transaction* other);
   friend void swap(Transaction& a, Transaction& b) {
@@ -6480,7 +6378,7 @@ class Signature :
                &_Signature_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    37;
 
   void Swap(Signature* other);
   friend void swap(Signature& a, Signature& b) {
@@ -6622,7 +6520,7 @@ class SignedBundle :
                &_SignedBundle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    38;
 
   void Swap(SignedBundle* other);
   friend void swap(SignedBundle& a, SignedBundle& b) {
@@ -6752,7 +6650,7 @@ class NodeSignature :
                &_NodeSignature_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    39;
 
   void Swap(NodeSignature* other);
   friend void swap(NodeSignature& a, NodeSignature& b) {
@@ -9672,77 +9570,6 @@ inline void Statistics::set_allocated_chainid(::std::string* chainid) {
   }
   chainid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), chainid);
   // @@protoc_insertion_point(field_set_allocated:vega.Statistics.chainID)
-}
-
-// -------------------------------------------------------------------
-
-// NotifyTraderAccount
-
-// string traderID = 1;
-inline void NotifyTraderAccount::clear_traderid() {
-  traderid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& NotifyTraderAccount::traderid() const {
-  // @@protoc_insertion_point(field_get:vega.NotifyTraderAccount.traderID)
-  return traderid_.GetNoArena();
-}
-inline void NotifyTraderAccount::set_traderid(const ::std::string& value) {
-
-  traderid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.NotifyTraderAccount.traderID)
-}
-#if LANG_CXX11
-inline void NotifyTraderAccount::set_traderid(::std::string&& value) {
-
-  traderid_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.NotifyTraderAccount.traderID)
-}
-#endif
-inline void NotifyTraderAccount::set_traderid(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  traderid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.NotifyTraderAccount.traderID)
-}
-inline void NotifyTraderAccount::set_traderid(const char* value, size_t size) {
-
-  traderid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.NotifyTraderAccount.traderID)
-}
-inline ::std::string* NotifyTraderAccount::mutable_traderid() {
-
-  // @@protoc_insertion_point(field_mutable:vega.NotifyTraderAccount.traderID)
-  return traderid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* NotifyTraderAccount::release_traderid() {
-  // @@protoc_insertion_point(field_release:vega.NotifyTraderAccount.traderID)
-
-  return traderid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void NotifyTraderAccount::set_allocated_traderid(::std::string* traderid) {
-  if (traderid != nullptr) {
-
-  } else {
-
-  }
-  traderid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), traderid);
-  // @@protoc_insertion_point(field_set_allocated:vega.NotifyTraderAccount.traderID)
-}
-
-// uint64 amount = 2;
-inline void NotifyTraderAccount::clear_amount() {
-  amount_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::google::protobuf::uint64 NotifyTraderAccount::amount() const {
-  // @@protoc_insertion_point(field_get:vega.NotifyTraderAccount.amount)
-  return amount_;
-}
-inline void NotifyTraderAccount::set_amount(::google::protobuf::uint64 value) {
-
-  amount_ = value;
-  // @@protoc_insertion_point(field_set:vega.NotifyTraderAccount.amount)
 }
 
 // -------------------------------------------------------------------
@@ -13126,8 +12953,6 @@ inline void NodeSignature::set_kind(::vega::NodeSignatureKind value) {
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -13165,6 +12990,11 @@ template <> struct is_proto_enum< ::vega::Interval> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::vega::Interval>() {
   return ::vega::Interval_descriptor();
+}
+template <> struct is_proto_enum< ::vega::MarketState> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::vega::MarketState>() {
+  return ::vega::MarketState_descriptor();
 }
 template <> struct is_proto_enum< ::vega::OrderError> : ::std::true_type {};
 template <>

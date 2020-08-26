@@ -558,6 +558,7 @@ const ::google::protobuf::uint32 TableStruct_proto_2fchain_5fevents_2eproto::off
   PROTOBUF_FIELD_OFFSET(::vega::ChainEvent, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::ChainEvent, txid_),
+  PROTOBUF_FIELD_OFFSET(::vega::ChainEvent, nonce_),
   offsetof(::vega::ChainEventDefaultTypeInternal, builtin_),
   offsetof(::vega::ChainEventDefaultTypeInternal, erc20_),
   offsetof(::vega::ChainEventDefaultTypeInternal, btc_),
@@ -652,18 +653,18 @@ const char descriptor_table_protodef_proto_2fchain_5fevents_2eproto[] =
   "d\030\001 \001(\0132\020.vega.Identifier\"v\n\016ValidatorEv"
   "ent\022\020\n\010sourceID\030\001 \001(\t\022\"\n\003add\030\351\007 \001(\0132\022.ve"
   "ga.AddValidatorH\000\022$\n\002rm\030\352\007 \001(\0132\025.vega.Re"
-  "moveValidatorH\000B\010\n\006action\"\300\001\n\nChainEvent"
-  "\022\014\n\004txID\030\001 \001(\t\022+\n\007builtin\030\351\007 \001(\0132\027.vega."
-  "BuiltinAssetEventH\000\022\"\n\005erc20\030\352\007 \001(\0132\020.ve"
-  "ga.ERC20EventH\000\022\036\n\003btc\030\353\007 \001(\0132\016.vega.BTC"
-  "EventH\000\022*\n\tvalidator\030\354\007 \001(\0132\024.vega.Valid"
-  "atorEventH\000B\007\n\005eventB!Z\037code.vegaprotoco"
-  "l.io/vega/protob\006proto3"
+  "moveValidatorH\000B\010\n\006action\"\317\001\n\nChainEvent"
+  "\022\014\n\004txID\030\001 \001(\t\022\r\n\005nonce\030\002 \001(\004\022+\n\007builtin"
+  "\030\351\007 \001(\0132\027.vega.BuiltinAssetEventH\000\022\"\n\005er"
+  "c20\030\352\007 \001(\0132\020.vega.ERC20EventH\000\022\036\n\003btc\030\353\007"
+  " \001(\0132\016.vega.BTCEventH\000\022*\n\tvalidator\030\354\007 \001"
+  "(\0132\024.vega.ValidatorEventH\000B\007\n\005eventB!Z\037c"
+  "ode.vegaprotocol.io/vega/protob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fchain_5fevents_2eproto = {
   false, InitDefaults_proto_2fchain_5fevents_2eproto, 
   descriptor_table_protodef_proto_2fchain_5fevents_2eproto,
-  "proto/chain_events.proto", &assign_descriptors_table_proto_2fchain_5fevents_2eproto, 1823,
+  "proto/chain_events.proto", &assign_descriptors_table_proto_2fchain_5fevents_2eproto, 1838,
 };
 
 void AddDescriptors_proto_2fchain_5fevents_2eproto() {
@@ -7750,6 +7751,7 @@ void ChainEvent::set_allocated_validator(::vega::ValidatorEvent* validator) {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ChainEvent::kTxIDFieldNumber;
+const int ChainEvent::kNonceFieldNumber;
 const int ChainEvent::kBuiltinFieldNumber;
 const int ChainEvent::kErc20FieldNumber;
 const int ChainEvent::kBtcFieldNumber;
@@ -7769,6 +7771,7 @@ ChainEvent::ChainEvent(const ChainEvent& from)
   if (from.txid().size() > 0) {
     txid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.txid_);
   }
+  nonce_ = from.nonce_;
   clear_has_event();
   switch (from.event_case()) {
     case kBuiltin: {
@@ -7798,6 +7801,7 @@ void ChainEvent::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ChainEvent_proto_2fchain_5fevents_2eproto.base);
   txid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  nonce_ = PROTOBUF_ULONGLONG(0);
   clear_has_event();
 }
 
@@ -7856,6 +7860,7 @@ void ChainEvent::Clear() {
   (void) cached_has_bits;
 
   txid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  nonce_ = PROTOBUF_ULONGLONG(0);
   clear_event();
   _internal_metadata_.Clear();
 }
@@ -7887,6 +7892,13 @@ const char* ChainEvent::_InternalParse(const char* begin, const char* end, void*
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
+        break;
+      }
+      // uint64 nonce = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        msg->set_nonce(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       // .vega.BuiltinAssetEvent builtin = 1001;
@@ -7990,6 +8002,19 @@ bool ChainEvent::MergePartialFromCodedStream(
         break;
       }
 
+      // uint64 nonce = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &nonce_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // .vega.BuiltinAssetEvent builtin = 1001;
       case 1001: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (8010 & 0xFF)) {
@@ -8071,6 +8096,11 @@ void ChainEvent::SerializeWithCachedSizes(
       1, this->txid(), output);
   }
 
+  // uint64 nonce = 2;
+  if (this->nonce() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(2, this->nonce(), output);
+  }
+
   // .vega.BuiltinAssetEvent builtin = 1001;
   if (has_builtin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -8117,6 +8147,11 @@ void ChainEvent::SerializeWithCachedSizes(
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->txid(), target);
+  }
+
+  // uint64 nonce = 2;
+  if (this->nonce() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(2, this->nonce(), target);
   }
 
   // .vega.BuiltinAssetEvent builtin = 1001;
@@ -8173,6 +8208,13 @@ size_t ChainEvent::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->txid());
+  }
+
+  // uint64 nonce = 2;
+  if (this->nonce() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt64Size(
+        this->nonce());
   }
 
   switch (event_case()) {
@@ -8239,6 +8281,9 @@ void ChainEvent::MergeFrom(const ChainEvent& from) {
 
     txid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.txid_);
   }
+  if (from.nonce() != 0) {
+    set_nonce(from.nonce());
+  }
   switch (from.event_case()) {
     case kBuiltin: {
       mutable_builtin()->::vega::BuiltinAssetEvent::MergeFrom(from.builtin());
@@ -8289,6 +8334,7 @@ void ChainEvent::InternalSwap(ChainEvent* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   txid_.Swap(&other->txid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(nonce_, other->nonce_);
   swap(event_, other->event_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }

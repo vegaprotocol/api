@@ -540,6 +540,20 @@ class BuiltinAsset :
   ::std::string* release_totalsupply();
   void set_allocated_totalsupply(::std::string* totalsupply);
 
+  // string maxFaucetAmountMint = 5;
+  void clear_maxfaucetamountmint();
+  static const int kMaxFaucetAmountMintFieldNumber = 5;
+  const ::std::string& maxfaucetamountmint() const;
+  void set_maxfaucetamountmint(const ::std::string& value);
+  #if LANG_CXX11
+  void set_maxfaucetamountmint(::std::string&& value);
+  #endif
+  void set_maxfaucetamountmint(const char* value);
+  void set_maxfaucetamountmint(const char* value, size_t size);
+  ::std::string* mutable_maxfaucetamountmint();
+  ::std::string* release_maxfaucetamountmint();
+  void set_allocated_maxfaucetamountmint(::std::string* maxfaucetamountmint);
+
   // uint64 decimals = 4;
   void clear_decimals();
   static const int kDecimalsFieldNumber = 4;
@@ -554,6 +568,7 @@ class BuiltinAsset :
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr symbol_;
   ::google::protobuf::internal::ArenaStringPtr totalsupply_;
+  ::google::protobuf::internal::ArenaStringPtr maxfaucetamountmint_;
   ::google::protobuf::uint64 decimals_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fassets_2eproto;
@@ -1354,6 +1369,59 @@ inline void BuiltinAsset::set_decimals(::google::protobuf::uint64 value) {
 
   decimals_ = value;
   // @@protoc_insertion_point(field_set:vega.BuiltinAsset.decimals)
+}
+
+// string maxFaucetAmountMint = 5;
+inline void BuiltinAsset::clear_maxfaucetamountmint() {
+  maxfaucetamountmint_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& BuiltinAsset::maxfaucetamountmint() const {
+  // @@protoc_insertion_point(field_get:vega.BuiltinAsset.maxFaucetAmountMint)
+  return maxfaucetamountmint_.GetNoArena();
+}
+inline void BuiltinAsset::set_maxfaucetamountmint(const ::std::string& value) {
+
+  maxfaucetamountmint_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.BuiltinAsset.maxFaucetAmountMint)
+}
+#if LANG_CXX11
+inline void BuiltinAsset::set_maxfaucetamountmint(::std::string&& value) {
+
+  maxfaucetamountmint_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAsset.maxFaucetAmountMint)
+}
+#endif
+inline void BuiltinAsset::set_maxfaucetamountmint(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  maxfaucetamountmint_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.BuiltinAsset.maxFaucetAmountMint)
+}
+inline void BuiltinAsset::set_maxfaucetamountmint(const char* value, size_t size) {
+
+  maxfaucetamountmint_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAsset.maxFaucetAmountMint)
+}
+inline ::std::string* BuiltinAsset::mutable_maxfaucetamountmint() {
+
+  // @@protoc_insertion_point(field_mutable:vega.BuiltinAsset.maxFaucetAmountMint)
+  return maxfaucetamountmint_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* BuiltinAsset::release_maxfaucetamountmint() {
+  // @@protoc_insertion_point(field_release:vega.BuiltinAsset.maxFaucetAmountMint)
+
+  return maxfaucetamountmint_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void BuiltinAsset::set_allocated_maxfaucetamountmint(::std::string* maxfaucetamountmint) {
+  if (maxfaucetamountmint != nullptr) {
+
+  } else {
+
+  }
+  maxfaucetamountmint_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), maxfaucetamountmint);
+  // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAsset.maxFaucetAmountMint)
 }
 
 // -------------------------------------------------------------------

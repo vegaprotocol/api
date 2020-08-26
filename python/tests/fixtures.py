@@ -28,6 +28,16 @@ def tradingdata():
 
 
 @pytest.fixture(scope="module")
+def faucetclient():
+    """
+    Provide a FaucetClient, connected to $FAUCETSERVER.
+    """
+    faucetserver = os.getenv("FAUCETSERVER")
+    assert faucetserver is not None and faucetserver != ""
+    return vac.FaucetClient(faucetserver)
+
+
+@pytest.fixture(scope="module")
 def walletclient():
     """
     Provide a WalletClient, connected to $WALLETSERVER.

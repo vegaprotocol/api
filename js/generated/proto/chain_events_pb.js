@@ -3705,6 +3705,7 @@ proto.vega.ChainEvent.prototype.toObject = function(opt_includeInstance) {
 proto.vega.ChainEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
     txid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    nonce: jspb.Message.getFieldWithDefault(msg, 2, 0),
     builtin: (f = msg.getBuiltin()) && proto.vega.BuiltinAssetEvent.toObject(includeInstance, f),
     erc20: (f = msg.getErc20()) && proto.vega.ERC20Event.toObject(includeInstance, f),
     btc: (f = msg.getBtc()) && proto.vega.BTCEvent.toObject(includeInstance, f),
@@ -3748,6 +3749,10 @@ proto.vega.ChainEvent.deserializeBinaryFromReader = function(msg, reader) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setTxid(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setNonce(value);
       break;
     case 1001:
       var value = new proto.vega.BuiltinAssetEvent;
@@ -3805,6 +3810,13 @@ proto.vega.ChainEvent.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getNonce();
+  if (f !== 0) {
+    writer.writeUint64(
+      2,
+      f
+    );
+  }
   f = message.getBuiltin();
   if (f != null) {
     writer.writeMessage(
@@ -3852,6 +3864,21 @@ proto.vega.ChainEvent.prototype.getTxid = function() {
 /** @param {string} value */
 proto.vega.ChainEvent.prototype.setTxid = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional uint64 nonce = 2;
+ * @return {number}
+ */
+proto.vega.ChainEvent.prototype.getNonce = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/** @param {number} value */
+proto.vega.ChainEvent.prototype.setNonce = function(value) {
+  jspb.Message.setProto3IntField(this, 2, value);
 };
 
 

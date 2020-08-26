@@ -1,5 +1,6 @@
 from .vegatradingclient import VegaTradingClient
 from .vegatradingdataclient import VegaTradingDataClient
+from .faucetclient import FaucetClient
 from .walletclient import WalletClient
 from .generated.proto import (
     api,
@@ -14,6 +15,7 @@ from .generated.proto import (
 __all__ = [
     "VegaTradingClient",
     "VegaTradingDataClient",
+    "FaucetClient",
     "WalletClient",
     "api",
     "governance",

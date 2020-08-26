@@ -32,15 +32,10 @@ class tradingStub(object):
                 request_serializer=proto_dot_api_dot_trading__pb2.AmendOrderRequest.SerializeToString,
                 response_deserializer=proto_dot_api_dot_trading__pb2.PrepareAmendOrderResponse.FromString,
                 )
-        self.NotifyTraderAccount = channel.unary_unary(
-                '/api.trading/NotifyTraderAccount',
-                request_serializer=proto_dot_api_dot_trading__pb2.NotifyTraderAccountRequest.SerializeToString,
-                response_deserializer=proto_dot_api_dot_trading__pb2.NotifyTraderAccountResponse.FromString,
-                )
-        self.Withdraw = channel.unary_unary(
-                '/api.trading/Withdraw',
-                request_serializer=proto_dot_api_dot_trading__pb2.WithdrawRequest.SerializeToString,
-                response_deserializer=proto_dot_api_dot_trading__pb2.WithdrawResponse.FromString,
+        self.PrepareWithdraw = channel.unary_unary(
+                '/api.trading/PrepareWithdraw',
+                request_serializer=proto_dot_api_dot_trading__pb2.PrepareWithdrawRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.PrepareWithdrawResponse.FromString,
                 )
         self.SubmitTransaction = channel.unary_unary(
                 '/api.trading/SubmitTransaction',
@@ -88,14 +83,7 @@ class tradingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def NotifyTraderAccount(self, request, context):
-        """Request balance increase
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Withdraw(self, request, context):
+    def PrepareWithdraw(self, request, context):
         """Request withdrawal
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -150,15 +138,10 @@ def add_tradingServicer_to_server(servicer, server):
                     request_deserializer=proto_dot_api_dot_trading__pb2.AmendOrderRequest.FromString,
                     response_serializer=proto_dot_api_dot_trading__pb2.PrepareAmendOrderResponse.SerializeToString,
             ),
-            'NotifyTraderAccount': grpc.unary_unary_rpc_method_handler(
-                    servicer.NotifyTraderAccount,
-                    request_deserializer=proto_dot_api_dot_trading__pb2.NotifyTraderAccountRequest.FromString,
-                    response_serializer=proto_dot_api_dot_trading__pb2.NotifyTraderAccountResponse.SerializeToString,
-            ),
-            'Withdraw': grpc.unary_unary_rpc_method_handler(
-                    servicer.Withdraw,
-                    request_deserializer=proto_dot_api_dot_trading__pb2.WithdrawRequest.FromString,
-                    response_serializer=proto_dot_api_dot_trading__pb2.WithdrawResponse.SerializeToString,
+            'PrepareWithdraw': grpc.unary_unary_rpc_method_handler(
+                    servicer.PrepareWithdraw,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.PrepareWithdrawRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.PrepareWithdrawResponse.SerializeToString,
             ),
             'SubmitTransaction': grpc.unary_unary_rpc_method_handler(
                     servicer.SubmitTransaction,
@@ -239,7 +222,7 @@ class trading(object):
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def NotifyTraderAccount(request,
+    def PrepareWithdraw(request,
             target,
             options=(),
             channel_credentials=None,
@@ -248,25 +231,9 @@ class trading(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading/NotifyTraderAccount',
-            proto_dot_api_dot_trading__pb2.NotifyTraderAccountRequest.SerializeToString,
-            proto_dot_api_dot_trading__pb2.NotifyTraderAccountResponse.FromString,
-            options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def Withdraw(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading/Withdraw',
-            proto_dot_api_dot_trading__pb2.WithdrawRequest.SerializeToString,
-            proto_dot_api_dot_trading__pb2.WithdrawResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/api.trading/PrepareWithdraw',
+            proto_dot_api_dot_trading__pb2.PrepareWithdrawRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.PrepareWithdrawResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 

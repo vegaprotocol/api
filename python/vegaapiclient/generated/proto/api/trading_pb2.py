@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z#code.vegaprotocol.io/vega/proto/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17proto/api/trading.proto\x12\x03\x61pi\x1a\x10proto/vega.proto\x1a\x13proto/markets.proto\x1a\x16proto/governance.proto\x1a\x18proto/chain_events.proto\x1a\x12proto/assets.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\"^\n\x1aPropagateChainEventRequest\x12\x1d\n\x03\x65vt\x18\x01 \x01(\x0b\x32\x10.vega.ChainEvent\x12\x0e\n\x06pubKey\x18\x02 \x01(\t\x12\x11\n\tsignature\x18\x03 \x01(\x0c\".\n\x1bPropagateChainEventResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\":\n\x18SubmitTransactionRequest\x12\x1e\n\x02tx\x18\x01 \x01(\x0b\x32\x12.vega.SignedBundle\",\n\x19SubmitTransactionResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"3\n\x0fWithdrawRequest\x12 \n\x08withdraw\x18\x01 \x01(\x0b\x32\x0e.vega.Withdraw\"#\n\x10WithdrawResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"F\n\x1aNotifyTraderAccountRequest\x12(\n\x05notif\x18\x01 \x01(\x0b\x32\x19.vega.NotifyTraderAccount\"0\n\x1bNotifyTraderAccountResponse\x12\x11\n\tsubmitted\x18\x01 \x01(\x08\"<\n\x1aPrepareSubmitOrderResponse\x12\x0c\n\x04\x62lob\x18\x01 \x01(\x0c\x12\x10\n\x08submitID\x18\x02 \x01(\t\"*\n\x1aPrepareCancelOrderResponse\x12\x0c\n\x04\x62lob\x18\x01 \x01(\x0c\")\n\x19PrepareAmendOrderResponse\x12\x0c\n\x04\x62lob\x18\x01 \x01(\x0c\"?\n\x12SubmitOrderRequest\x12)\n\nsubmission\x18\x01 \x01(\x0b\x32\x15.vega.OrderSubmission\"C\n\x12\x43\x61ncelOrderRequest\x12-\n\x0c\x63\x61ncellation\x18\x01 \x01(\x0b\x32\x17.vega.OrderCancellation\"<\n\x11\x41mendOrderRequest\x12\'\n\tamendment\x18\x01 \x01(\x0b\x32\x14.vega.OrderAmendment\"\x0f\n\rAssetsRequest\"-\n\x0e\x41ssetsResponse\x12\x1b\n\x06\x61ssets\x18\x01 \x03(\x0b\x32\x0b.vega.Asset\"\x1e\n\x10\x41ssetByIDRequest\x12\n\n\x02ID\x18\x01 \x01(\t\"/\n\x11\x41ssetByIDResponse\x12\x1a\n\x05\x61sset\x18\x01 \x01(\x0b\x32\x0b.vega.Asset\"/\n!GetNodeSignaturesAggregateRequest\x12\n\n\x02ID\x18\x01 \x01(\t\"M\n\"GetNodeSignaturesAggregateResponse\x12\'\n\nsignatures\x18\x01 \x03(\x0b\x32\x13.vega.NodeSignature\"<\n\x15OptionalProposalState\x12#\n\x05value\x18\x01 \x01(\x0e\x32\x14.vega.Proposal.State\"H\n\x13GetProposalsRequest\x12\x31\n\rselectInState\x18\x01 \x01(\x0b\x32\x1a.api.OptionalProposalState\":\n\x14GetProposalsResponse\x12\"\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceData\"h\n\x1aGetProposalsByPartyRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x31\n\rselectInState\x18\x02 \x01(\x0b\x32\x1a.api.OptionalProposalState\"A\n\x1bGetProposalsByPartyResponse\x12\"\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceData\"1\n\x16GetVotesByPartyRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"4\n\x17GetVotesByPartyResponse\x12\x19\n\x05votes\x18\x01 \x03(\x0b\x32\n.vega.Vote\"Q\n\x1cGetNewMarketProposalsRequest\x12\x31\n\rselectInState\x18\x01 \x01(\x0b\x32\x1a.api.OptionalProposalState\"C\n\x1dGetNewMarketProposalsResponse\x12\"\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceData\"n\n\x1fGetUpdateMarketProposalsRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x31\n\rselectInState\x18\x02 \x01(\x0b\x32\x1a.api.OptionalProposalState\"F\n GetUpdateMarketProposalsResponse\x12\"\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceData\"Y\n$GetNetworkParametersProposalsRequest\x12\x31\n\rselectInState\x18\x01 \x01(\x0b\x32\x1a.api.OptionalProposalState\"K\n%GetNetworkParametersProposalsResponse\x12\"\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceData\"P\n\x1bGetNewAssetProposalsRequest\x12\x31\n\rselectInState\x18\x01 \x01(\x0b\x32\x1a.api.OptionalProposalState\"B\n\x1cGetNewAssetProposalsResponse\x12\"\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceData\"4\n\x16GetProposalByIDRequest\x12\x1a\n\nproposalID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"=\n\x17GetProposalByIDResponse\x12\"\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x14.vega.GovernanceData\":\n\x1dGetProposalByReferenceRequest\x12\x19\n\tReference\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"D\n\x1eGetProposalByReferenceResponse\x12\"\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x14.vega.GovernanceData\"7\n\x1cObservePartyProposalsRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"9\n\x1bObserveProposalVotesRequest\x12\x1a\n\nproposalID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"3\n\x18ObservePartyVotesRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"I\n\x1cMarginLevelsSubscribeRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x10\n\x08marketID\x18\x02 \x01(\t\"@\n\x13MarginLevelsRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x10\n\x08marketID\x18\x02 \x01(\t\"@\n\x14MarginLevelsResponse\x12(\n\x0cmarginLevels\x18\x01 \x03(\x0b\x32\x12.vega.MarginLevels\"/\n\x1bMarketsDataSubscribeRequest\x12\x10\n\x08marketID\x18\x01 \x01(\t\"1\n\x15MarketDataByIDRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\">\n\x16MarketDataByIDResponse\x12$\n\nmarketData\x18\x01 \x01(\x0b\x32\x10.vega.MarketData\"<\n\x13MarketsDataResponse\x12%\n\x0bmarketsData\x18\x01 \x03(\x0b\x32\x10.vega.MarketData\",\n\x10LastTradeRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"/\n\x11LastTradeResponse\x12\x1a\n\x05trade\x18\x01 \x01(\x0b\x32\x0b.vega.Trade\"-\n\x11MarketByIDRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"2\n\x12MarketByIDResponse\x12\x1c\n\x06market\x18\x01 \x01(\x0b\x32\x0c.vega.Market\"+\n\x10PartyByIDRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"/\n\x11PartyByIDResponse\x12\x1a\n\x05party\x18\x01 \x01(\x0b\x32\x0b.vega.Party\"/\n\x0fPartiesResponse\x12\x1c\n\x07parties\x18\x01 \x03(\x0b\x32\x0b.vega.Party\"^\n\x14TradesByPartyRequest\x12\x0f\n\x07partyID\x18\x01 \x01(\t\x12\x10\n\x08marketID\x18\x02 \x01(\t\x12#\n\npagination\x18\x03 \x01(\x0b\x32\x0f.api.Pagination\"4\n\x15TradesByPartyResponse\x12\x1b\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.Trade\"\'\n\x14TradesByOrderRequest\x12\x0f\n\x07orderID\x18\x01 \x01(\t\"4\n\x15TradesByOrderResponse\x12\x1b\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.Trade\"m\n\x18\x41\x63\x63ountsSubscribeRequest\x12\x10\n\x08marketID\x18\x01 \x01(\t\x12\x0f\n\x07partyID\x18\x02 \x01(\t\x12\r\n\x05\x61sset\x18\x03 \x01(\t\x12\x1f\n\x04type\x18\x04 \x01(\x0e\x32\x11.vega.AccountType\";\n\x16OrdersSubscribeRequest\x12\x10\n\x08marketID\x18\x01 \x01(\t\x12\x0f\n\x07partyID\x18\x02 \x01(\t\";\n\x16TradesSubscribeRequest\x12\x10\n\x08marketID\x18\x01 \x01(\t\x12\x0f\n\x07partyID\x18\x02 \x01(\t\"U\n\x17\x43\x61ndlesSubscribeRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12 \n\x08interval\x18\x02 \x01(\x0e\x32\x0e.vega.Interval\"7\n\x1bMarketDepthSubscribeRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\",\n\x19PositionsSubscribeRequest\x12\x0f\n\x07partyID\x18\x01 \x01(\t\"V\n\x15OrdersByMarketRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12#\n\npagination\x18\x02 \x01(\x0b\x32\x0f.api.Pagination\"5\n\x16OrdersByMarketResponse\x12\x1b\n\x06orders\x18\x01 \x03(\x0b\x32\x0b.vega.Order\"T\n\x14OrdersByPartyRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12#\n\npagination\x18\x02 \x01(\x0b\x32\x0f.api.Pagination\"4\n\x15OrdersByPartyResponse\x12\x1b\n\x06orders\x18\x01 \x03(\x0b\x32\x0b.vega.Order\"N\n\x19OrderByMarketAndIdRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x17\n\x07orderID\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"8\n\x1aOrderByMarketAndIdResponse\x12\x1a\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.Order\"4\n\x17OrderByReferenceRequest\x12\x19\n\treference\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"6\n\x18OrderByReferenceResponse\x12\x1a\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.Order\"0\n\x0fMarketsResponse\x12\x1d\n\x07markets\x18\x01 \x03(\x0b\x32\x0c.vega.Market\"l\n\x0e\x43\x61ndlesRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x1e\n\x0esinceTimestamp\x18\x02 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00\x12 \n\x08interval\x18\x03 \x01(\x0e\x32\x0e.vega.Interval\"0\n\x0f\x43\x61ndlesResponse\x12\x1d\n\x07\x63\x61ndles\x18\x01 \x03(\x0b\x32\x0c.vega.Candle\"@\n\x12MarketDepthRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x10\n\x08maxDepth\x18\x02 \x01(\x04\"\x86\x01\n\x13MarketDepthResponse\x12\x10\n\x08marketID\x18\x01 \x01(\t\x12\x1d\n\x03\x62uy\x18\x02 \x03(\x0b\x32\x10.vega.PriceLevel\x12\x1e\n\x04sell\x18\x03 \x03(\x0b\x32\x10.vega.PriceLevel\x12\x1e\n\tlastTrade\x18\x04 \x01(\x0b\x32\x0b.vega.Trade\"V\n\x15TradesByMarketRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12#\n\npagination\x18\x02 \x01(\x0b\x32\x0f.api.Pagination\"5\n\x16TradesByMarketResponse\x12\x1b\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.Trade\"D\n\x17PositionsByPartyRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x10\n\x08marketID\x18\x02 \x01(\t\"=\n\x18PositionsByPartyResponse\x12!\n\tpositions\x18\x01 \x03(\x0b\x32\x0e.vega.Position\"%\n\x10VegaTimeResponse\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\"=\n\nPagination\x12\x0c\n\x04skip\x18\x01 \x01(\x04\x12\r\n\x05limit\x18\x02 \x01(\x04\x12\x12\n\ndescending\x18\x03 \x01(\x08\"+\n\x0cOrdersStream\x12\x1b\n\x06orders\x18\x01 \x03(\x0b\x32\x0b.vega.Order\"+\n\x0cTradesStream\x12\x1b\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.Trade\"i\n\x14PartyAccountsRequest\x12\x0f\n\x07partyID\x18\x01 \x01(\t\x12\x10\n\x08marketID\x18\x02 \x01(\t\x12\x1f\n\x04type\x18\x03 \x01(\x0e\x32\x11.vega.AccountType\x12\r\n\x05\x61sset\x18\x04 \x01(\t\"8\n\x15PartyAccountsResponse\x12\x1f\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\r.vega.Account\"8\n\x15MarketAccountsRequest\x12\x10\n\x08marketID\x18\x01 \x01(\t\x12\r\n\x05\x61sset\x18\x02 \x01(\t\"9\n\x16MarketAccountsResponse\x12\x1f\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\r.vega.Account\"1\n FeeInfrastructureAccountsRequest\x12\r\n\x05\x61sset\x18\x01 \x01(\t\"D\n!FeeInfrastructureAccountsResponse\x12\x1f\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\r.vega.Account\"s\n\x16PrepareProposalRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x11\n\treference\x18\x02 \x01(\t\x12-\n\x08proposal\x18\x03 \x01(\x0b\x32\x13.vega.ProposalTermsB\x06\xe2\xdf\x1f\x02 \x01\"P\n\x17PrepareProposalResponse\x12\x0c\n\x04\x62lob\x18\x01 \x01(\x0c\x12\'\n\x0fpendingProposal\x18\x02 \x01(\x0b\x32\x0e.vega.Proposal\"6\n\x12PrepareVoteRequest\x12 \n\x04vote\x18\x01 \x01(\x0b\x32\n.vega.VoteB\x06\xe2\xdf\x1f\x02 \x01\"=\n\x13PrepareVoteResponse\x12\x0c\n\x04\x62lob\x18\x01 \x01(\x0c\x12\x18\n\x04vote\x18\x02 \x01(\x0b\x32\n.vega.Vote\"<\n\x10OrderByIDRequest\x12\x17\n\x07orderID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02 \x01\x12\x0f\n\x07version\x18\x02 \x01(\x04\"8\n\x19OrderByReferenceIDRequest\x12\x1b\n\x0breferenceID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02 \x01\"X\n\x18OrderVersionsByIDRequest\x12\x17\n\x07orderID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02 \x01\x12#\n\npagination\x18\x02 \x01(\x0b\x32\x0f.api.Pagination\"4\n\x15OrderVersionsResponse\x12\x1b\n\x06orders\x18\x01 \x03(\x0b\x32\x0b.vega.Order2\xc7\x05\n\x07trading\x12N\n\x12PrepareSubmitOrder\x12\x17.api.SubmitOrderRequest\x1a\x1f.api.PrepareSubmitOrderResponse\x12N\n\x12PrepareCancelOrder\x12\x17.api.CancelOrderRequest\x1a\x1f.api.PrepareCancelOrderResponse\x12K\n\x11PrepareAmendOrder\x12\x16.api.AmendOrderRequest\x1a\x1e.api.PrepareAmendOrderResponse\x12X\n\x13NotifyTraderAccount\x12\x1f.api.NotifyTraderAccountRequest\x1a .api.NotifyTraderAccountResponse\x12\x37\n\x08Withdraw\x12\x14.api.WithdrawRequest\x1a\x15.api.WithdrawResponse\x12R\n\x11SubmitTransaction\x12\x1d.api.SubmitTransactionRequest\x1a\x1e.api.SubmitTransactionResponse\x12L\n\x0fPrepareProposal\x12\x1b.api.PrepareProposalRequest\x1a\x1c.api.PrepareProposalResponse\x12@\n\x0bPrepareVote\x12\x17.api.PrepareVoteRequest\x1a\x18.api.PrepareVoteResponse\x12X\n\x13PropagateChainEvent\x12\x1f.api.PropagateChainEventRequest\x1a .api.PropagateChainEventResponse2\xf5\x1d\n\x0ctrading_data\x12I\n\x0eMarketAccounts\x12\x1a.api.MarketAccountsRequest\x1a\x1b.api.MarketAccountsResponse\x12\x46\n\rPartyAccounts\x12\x19.api.PartyAccountsRequest\x1a\x1a.api.PartyAccountsResponse\x12j\n\x19\x46\x65\x65InfrastructureAccounts\x12%.api.FeeInfrastructureAccountsRequest\x1a&.api.FeeInfrastructureAccountsResponse\x12\x34\n\x07\x43\x61ndles\x12\x13.api.CandlesRequest\x1a\x14.api.CandlesResponse\x12I\n\x0eMarketDataByID\x12\x1a.api.MarketDataByIDRequest\x1a\x1b.api.MarketDataByIDResponse\x12?\n\x0bMarketsData\x12\x16.google.protobuf.Empty\x1a\x18.api.MarketsDataResponse\x12=\n\nMarketByID\x12\x16.api.MarketByIDRequest\x1a\x17.api.MarketByIDResponse\x12@\n\x0bMarketDepth\x12\x17.api.MarketDepthRequest\x1a\x18.api.MarketDepthResponse\x12\x37\n\x07Markets\x12\x16.google.protobuf.Empty\x1a\x14.api.MarketsResponse\x12U\n\x12OrderByMarketAndID\x12\x1e.api.OrderByMarketAndIdRequest\x1a\x1f.api.OrderByMarketAndIdResponse\x12O\n\x10OrderByReference\x12\x1c.api.OrderByReferenceRequest\x1a\x1d.api.OrderByReferenceResponse\x12I\n\x0eOrdersByMarket\x12\x1a.api.OrdersByMarketRequest\x1a\x1b.api.OrdersByMarketResponse\x12\x46\n\rOrdersByParty\x12\x19.api.OrdersByPartyRequest\x1a\x1a.api.OrdersByPartyResponse\x12/\n\tOrderByID\x12\x15.api.OrderByIDRequest\x1a\x0b.vega.Order\x12\x41\n\x12OrderByReferenceID\x12\x1e.api.OrderByReferenceIDRequest\x1a\x0b.vega.Order\x12N\n\x11OrderVersionsByID\x12\x1d.api.OrderVersionsByIDRequest\x1a\x1a.api.OrderVersionsResponse\x12\x43\n\x0cMarginLevels\x12\x18.api.MarginLevelsRequest\x1a\x19.api.MarginLevelsResponse\x12\x37\n\x07Parties\x12\x16.google.protobuf.Empty\x1a\x14.api.PartiesResponse\x12:\n\tPartyByID\x12\x15.api.PartyByIDRequest\x1a\x16.api.PartyByIDResponse\x12O\n\x10PositionsByParty\x12\x1c.api.PositionsByPartyRequest\x1a\x1d.api.PositionsByPartyResponse\x12:\n\tLastTrade\x12\x15.api.LastTradeRequest\x1a\x16.api.LastTradeResponse\x12I\n\x0eTradesByMarket\x12\x1a.api.TradesByMarketRequest\x1a\x1b.api.TradesByMarketResponse\x12\x46\n\rTradesByOrder\x12\x19.api.TradesByOrderRequest\x1a\x1a.api.TradesByOrderResponse\x12\x46\n\rTradesByParty\x12\x19.api.TradesByPartyRequest\x1a\x1a.api.TradesByPartyResponse\x12\x43\n\x0cGetProposals\x12\x18.api.GetProposalsRequest\x1a\x19.api.GetProposalsResponse\x12X\n\x13GetProposalsByParty\x12\x1f.api.GetProposalsByPartyRequest\x1a .api.GetProposalsByPartyResponse\x12L\n\x0fGetVotesByParty\x12\x1b.api.GetVotesByPartyRequest\x1a\x1c.api.GetVotesByPartyResponse\x12^\n\x15GetNewMarketProposals\x12!.api.GetNewMarketProposalsRequest\x1a\".api.GetNewMarketProposalsResponse\x12g\n\x18GetUpdateMarketProposals\x12$.api.GetUpdateMarketProposalsRequest\x1a%.api.GetUpdateMarketProposalsResponse\x12v\n\x1dGetNetworkParametersProposals\x12).api.GetNetworkParametersProposalsRequest\x1a*.api.GetNetworkParametersProposalsResponse\x12[\n\x14GetNewAssetProposals\x12 .api.GetNewAssetProposalsRequest\x1a!.api.GetNewAssetProposalsResponse\x12L\n\x0fGetProposalByID\x12\x1b.api.GetProposalByIDRequest\x1a\x1c.api.GetProposalByIDResponse\x12\x61\n\x16GetProposalByReference\x12\".api.GetProposalByReferenceRequest\x1a#.api.GetProposalByReferenceResponse\x12\x43\n\x11ObserveGovernance\x12\x16.google.protobuf.Empty\x1a\x14.vega.GovernanceData0\x01\x12R\n\x15ObservePartyProposals\x12!.api.ObservePartyProposalsRequest\x1a\x14.vega.GovernanceData0\x01\x12@\n\x11ObservePartyVotes\x12\x1d.api.ObservePartyVotesRequest\x1a\n.vega.Vote0\x01\x12\x46\n\x14ObserveProposalVotes\x12 .api.ObserveProposalVotesRequest\x1a\n.vega.Vote0\x01\x12\x36\n\nStatistics\x12\x16.google.protobuf.Empty\x1a\x10.vega.Statistics\x12<\n\x0bGetVegaTime\x12\x16.google.protobuf.Empty\x1a\x15.api.VegaTimeResponse\x12\x43\n\x11\x41\x63\x63ountsSubscribe\x12\x1d.api.AccountsSubscribeRequest\x1a\r.vega.Account0\x01\x12@\n\x10\x43\x61ndlesSubscribe\x12\x1c.api.CandlesSubscribeRequest\x1a\x0c.vega.Candle0\x01\x12P\n\x15MarginLevelsSubscribe\x12!.api.MarginLevelsSubscribeRequest\x1a\x12.vega.MarginLevels0\x01\x12M\n\x14MarketDepthSubscribe\x12 .api.MarketDepthSubscribeRequest\x1a\x11.vega.MarketDepth0\x01\x12L\n\x14MarketsDataSubscribe\x12 .api.MarketsDataSubscribeRequest\x1a\x10.vega.MarketData0\x01\x12\x43\n\x0fOrdersSubscribe\x12\x1b.api.OrdersSubscribeRequest\x1a\x11.api.OrdersStream0\x01\x12\x46\n\x12PositionsSubscribe\x12\x1e.api.PositionsSubscribeRequest\x1a\x0e.vega.Position0\x01\x12\x43\n\x0fTradesSubscribe\x12\x1b.api.TradesSubscribeRequest\x1a\x11.api.TradesStream0\x01\x12N\n\x1aTransferResponsesSubscribe\x12\x16.google.protobuf.Empty\x1a\x16.vega.TransferResponse0\x01\x12m\n\x1aGetNodeSignaturesAggregate\x12&.api.GetNodeSignaturesAggregateRequest\x1a\'.api.GetNodeSignaturesAggregateResponse\x12:\n\tAssetByID\x12\x15.api.AssetByIDRequest\x1a\x16.api.AssetByIDResponse\x12\x31\n\x06\x41ssets\x12\x12.api.AssetsRequest\x1a\x13.api.AssetsResponseB%Z#code.vegaprotocol.io/vega/proto/apib\x06proto3'
+  serialized_pb=b'\n\x17proto/api/trading.proto\x12\x03\x61pi\x1a\x10proto/vega.proto\x1a\x13proto/markets.proto\x1a\x16proto/governance.proto\x1a\x18proto/chain_events.proto\x1a\x12proto/assets.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\"^\n\x1aPropagateChainEventRequest\x12\x1d\n\x03\x65vt\x18\x01 \x01(\x0b\x32\x10.vega.ChainEvent\x12\x0e\n\x06pubKey\x18\x02 \x01(\t\x12\x11\n\tsignature\x18\x03 \x01(\x0c\".\n\x1bPropagateChainEventResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\":\n\x18SubmitTransactionRequest\x12\x1e\n\x02tx\x18\x01 \x01(\x0b\x32\x12.vega.SignedBundle\",\n\x19SubmitTransactionResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\":\n\x16PrepareWithdrawRequest\x12 \n\x08withdraw\x18\x01 \x01(\x0b\x32\x0e.vega.Withdraw\"\'\n\x17PrepareWithdrawResponse\x12\x0c\n\x04\x62lob\x18\x01 \x01(\x0c\"<\n\x1aPrepareSubmitOrderResponse\x12\x0c\n\x04\x62lob\x18\x01 \x01(\x0c\x12\x10\n\x08submitID\x18\x02 \x01(\t\"*\n\x1aPrepareCancelOrderResponse\x12\x0c\n\x04\x62lob\x18\x01 \x01(\x0c\")\n\x19PrepareAmendOrderResponse\x12\x0c\n\x04\x62lob\x18\x01 \x01(\x0c\"?\n\x12SubmitOrderRequest\x12)\n\nsubmission\x18\x01 \x01(\x0b\x32\x15.vega.OrderSubmission\"C\n\x12\x43\x61ncelOrderRequest\x12-\n\x0c\x63\x61ncellation\x18\x01 \x01(\x0b\x32\x17.vega.OrderCancellation\"<\n\x11\x41mendOrderRequest\x12\'\n\tamendment\x18\x01 \x01(\x0b\x32\x14.vega.OrderAmendment\"\x0f\n\rAssetsRequest\"-\n\x0e\x41ssetsResponse\x12\x1b\n\x06\x61ssets\x18\x01 \x03(\x0b\x32\x0b.vega.Asset\"\x1e\n\x10\x41ssetByIDRequest\x12\n\n\x02ID\x18\x01 \x01(\t\"/\n\x11\x41ssetByIDResponse\x12\x1a\n\x05\x61sset\x18\x01 \x01(\x0b\x32\x0b.vega.Asset\"/\n!GetNodeSignaturesAggregateRequest\x12\n\n\x02ID\x18\x01 \x01(\t\"M\n\"GetNodeSignaturesAggregateResponse\x12\'\n\nsignatures\x18\x01 \x03(\x0b\x32\x13.vega.NodeSignature\"<\n\x15OptionalProposalState\x12#\n\x05value\x18\x01 \x01(\x0e\x32\x14.vega.Proposal.State\"H\n\x13GetProposalsRequest\x12\x31\n\rselectInState\x18\x01 \x01(\x0b\x32\x1a.api.OptionalProposalState\":\n\x14GetProposalsResponse\x12\"\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceData\"h\n\x1aGetProposalsByPartyRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x31\n\rselectInState\x18\x02 \x01(\x0b\x32\x1a.api.OptionalProposalState\"A\n\x1bGetProposalsByPartyResponse\x12\"\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceData\"1\n\x16GetVotesByPartyRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"4\n\x17GetVotesByPartyResponse\x12\x19\n\x05votes\x18\x01 \x03(\x0b\x32\n.vega.Vote\"Q\n\x1cGetNewMarketProposalsRequest\x12\x31\n\rselectInState\x18\x01 \x01(\x0b\x32\x1a.api.OptionalProposalState\"C\n\x1dGetNewMarketProposalsResponse\x12\"\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceData\"n\n\x1fGetUpdateMarketProposalsRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x31\n\rselectInState\x18\x02 \x01(\x0b\x32\x1a.api.OptionalProposalState\"F\n GetUpdateMarketProposalsResponse\x12\"\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceData\"Y\n$GetNetworkParametersProposalsRequest\x12\x31\n\rselectInState\x18\x01 \x01(\x0b\x32\x1a.api.OptionalProposalState\"K\n%GetNetworkParametersProposalsResponse\x12\"\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceData\"P\n\x1bGetNewAssetProposalsRequest\x12\x31\n\rselectInState\x18\x01 \x01(\x0b\x32\x1a.api.OptionalProposalState\"B\n\x1cGetNewAssetProposalsResponse\x12\"\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceData\"4\n\x16GetProposalByIDRequest\x12\x1a\n\nproposalID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"=\n\x17GetProposalByIDResponse\x12\"\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x14.vega.GovernanceData\":\n\x1dGetProposalByReferenceRequest\x12\x19\n\tReference\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"D\n\x1eGetProposalByReferenceResponse\x12\"\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x14.vega.GovernanceData\"7\n\x1cObservePartyProposalsRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"9\n\x1bObserveProposalVotesRequest\x12\x1a\n\nproposalID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"3\n\x18ObservePartyVotesRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"I\n\x1cMarginLevelsSubscribeRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x10\n\x08marketID\x18\x02 \x01(\t\"@\n\x13MarginLevelsRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x10\n\x08marketID\x18\x02 \x01(\t\"@\n\x14MarginLevelsResponse\x12(\n\x0cmarginLevels\x18\x01 \x03(\x0b\x32\x12.vega.MarginLevels\"/\n\x1bMarketsDataSubscribeRequest\x12\x10\n\x08marketID\x18\x01 \x01(\t\"1\n\x15MarketDataByIDRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\">\n\x16MarketDataByIDResponse\x12$\n\nmarketData\x18\x01 \x01(\x0b\x32\x10.vega.MarketData\"<\n\x13MarketsDataResponse\x12%\n\x0bmarketsData\x18\x01 \x03(\x0b\x32\x10.vega.MarketData\",\n\x10LastTradeRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"/\n\x11LastTradeResponse\x12\x1a\n\x05trade\x18\x01 \x01(\x0b\x32\x0b.vega.Trade\"-\n\x11MarketByIDRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"2\n\x12MarketByIDResponse\x12\x1c\n\x06market\x18\x01 \x01(\x0b\x32\x0c.vega.Market\"+\n\x10PartyByIDRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"/\n\x11PartyByIDResponse\x12\x1a\n\x05party\x18\x01 \x01(\x0b\x32\x0b.vega.Party\"/\n\x0fPartiesResponse\x12\x1c\n\x07parties\x18\x01 \x03(\x0b\x32\x0b.vega.Party\"^\n\x14TradesByPartyRequest\x12\x0f\n\x07partyID\x18\x01 \x01(\t\x12\x10\n\x08marketID\x18\x02 \x01(\t\x12#\n\npagination\x18\x03 \x01(\x0b\x32\x0f.api.Pagination\"4\n\x15TradesByPartyResponse\x12\x1b\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.Trade\"\'\n\x14TradesByOrderRequest\x12\x0f\n\x07orderID\x18\x01 \x01(\t\"4\n\x15TradesByOrderResponse\x12\x1b\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.Trade\"m\n\x18\x41\x63\x63ountsSubscribeRequest\x12\x10\n\x08marketID\x18\x01 \x01(\t\x12\x0f\n\x07partyID\x18\x02 \x01(\t\x12\r\n\x05\x61sset\x18\x03 \x01(\t\x12\x1f\n\x04type\x18\x04 \x01(\x0e\x32\x11.vega.AccountType\";\n\x16OrdersSubscribeRequest\x12\x10\n\x08marketID\x18\x01 \x01(\t\x12\x0f\n\x07partyID\x18\x02 \x01(\t\";\n\x16TradesSubscribeRequest\x12\x10\n\x08marketID\x18\x01 \x01(\t\x12\x0f\n\x07partyID\x18\x02 \x01(\t\"U\n\x17\x43\x61ndlesSubscribeRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12 \n\x08interval\x18\x02 \x01(\x0e\x32\x0e.vega.Interval\"7\n\x1bMarketDepthSubscribeRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\",\n\x19PositionsSubscribeRequest\x12\x0f\n\x07partyID\x18\x01 \x01(\t\"V\n\x15OrdersByMarketRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12#\n\npagination\x18\x02 \x01(\x0b\x32\x0f.api.Pagination\"5\n\x16OrdersByMarketResponse\x12\x1b\n\x06orders\x18\x01 \x03(\x0b\x32\x0b.vega.Order\"T\n\x14OrdersByPartyRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12#\n\npagination\x18\x02 \x01(\x0b\x32\x0f.api.Pagination\"4\n\x15OrdersByPartyResponse\x12\x1b\n\x06orders\x18\x01 \x03(\x0b\x32\x0b.vega.Order\"N\n\x19OrderByMarketAndIdRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x17\n\x07orderID\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"8\n\x1aOrderByMarketAndIdResponse\x12\x1a\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.Order\"4\n\x17OrderByReferenceRequest\x12\x19\n\treference\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\"6\n\x18OrderByReferenceResponse\x12\x1a\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.Order\"0\n\x0fMarketsResponse\x12\x1d\n\x07markets\x18\x01 \x03(\x0b\x32\x0c.vega.Market\"l\n\x0e\x43\x61ndlesRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x1e\n\x0esinceTimestamp\x18\x02 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00\x12 \n\x08interval\x18\x03 \x01(\x0e\x32\x0e.vega.Interval\"0\n\x0f\x43\x61ndlesResponse\x12\x1d\n\x07\x63\x61ndles\x18\x01 \x03(\x0b\x32\x0c.vega.Candle\"@\n\x12MarketDepthRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x10\n\x08maxDepth\x18\x02 \x01(\x04\"\x86\x01\n\x13MarketDepthResponse\x12\x10\n\x08marketID\x18\x01 \x01(\t\x12\x1d\n\x03\x62uy\x18\x02 \x03(\x0b\x32\x10.vega.PriceLevel\x12\x1e\n\x04sell\x18\x03 \x03(\x0b\x32\x10.vega.PriceLevel\x12\x1e\n\tlastTrade\x18\x04 \x01(\x0b\x32\x0b.vega.Trade\"V\n\x15TradesByMarketRequest\x12\x18\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12#\n\npagination\x18\x02 \x01(\x0b\x32\x0f.api.Pagination\"5\n\x16TradesByMarketResponse\x12\x1b\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.Trade\"D\n\x17PositionsByPartyRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x10\n\x08marketID\x18\x02 \x01(\t\"=\n\x18PositionsByPartyResponse\x12!\n\tpositions\x18\x01 \x03(\x0b\x32\x0e.vega.Position\"%\n\x10VegaTimeResponse\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\"=\n\nPagination\x12\x0c\n\x04skip\x18\x01 \x01(\x04\x12\r\n\x05limit\x18\x02 \x01(\x04\x12\x12\n\ndescending\x18\x03 \x01(\x08\"+\n\x0cOrdersStream\x12\x1b\n\x06orders\x18\x01 \x03(\x0b\x32\x0b.vega.Order\"+\n\x0cTradesStream\x12\x1b\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.Trade\"i\n\x14PartyAccountsRequest\x12\x0f\n\x07partyID\x18\x01 \x01(\t\x12\x10\n\x08marketID\x18\x02 \x01(\t\x12\x1f\n\x04type\x18\x03 \x01(\x0e\x32\x11.vega.AccountType\x12\r\n\x05\x61sset\x18\x04 \x01(\t\"8\n\x15PartyAccountsResponse\x12\x1f\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\r.vega.Account\"8\n\x15MarketAccountsRequest\x12\x10\n\x08marketID\x18\x01 \x01(\t\x12\r\n\x05\x61sset\x18\x02 \x01(\t\"9\n\x16MarketAccountsResponse\x12\x1f\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\r.vega.Account\"1\n FeeInfrastructureAccountsRequest\x12\r\n\x05\x61sset\x18\x01 \x01(\t\"D\n!FeeInfrastructureAccountsResponse\x12\x1f\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\r.vega.Account\"s\n\x16PrepareProposalRequest\x12\x17\n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01\x12\x11\n\treference\x18\x02 \x01(\t\x12-\n\x08proposal\x18\x03 \x01(\x0b\x32\x13.vega.ProposalTermsB\x06\xe2\xdf\x1f\x02 \x01\"P\n\x17PrepareProposalResponse\x12\x0c\n\x04\x62lob\x18\x01 \x01(\x0c\x12\'\n\x0fpendingProposal\x18\x02 \x01(\x0b\x32\x0e.vega.Proposal\"6\n\x12PrepareVoteRequest\x12 \n\x04vote\x18\x01 \x01(\x0b\x32\n.vega.VoteB\x06\xe2\xdf\x1f\x02 \x01\"=\n\x13PrepareVoteResponse\x12\x0c\n\x04\x62lob\x18\x01 \x01(\x0c\x12\x18\n\x04vote\x18\x02 \x01(\x0b\x32\n.vega.Vote\"<\n\x10OrderByIDRequest\x12\x17\n\x07orderID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02 \x01\x12\x0f\n\x07version\x18\x02 \x01(\x04\"8\n\x19OrderByReferenceIDRequest\x12\x1b\n\x0breferenceID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02 \x01\"X\n\x18OrderVersionsByIDRequest\x12\x17\n\x07orderID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02 \x01\x12#\n\npagination\x18\x02 \x01(\x0b\x32\x0f.api.Pagination\"4\n\x15OrderVersionsResponse\x12\x1b\n\x06orders\x18\x01 \x03(\x0b\x32\x0b.vega.Order2\x82\x05\n\x07trading\x12N\n\x12PrepareSubmitOrder\x12\x17.api.SubmitOrderRequest\x1a\x1f.api.PrepareSubmitOrderResponse\x12N\n\x12PrepareCancelOrder\x12\x17.api.CancelOrderRequest\x1a\x1f.api.PrepareCancelOrderResponse\x12K\n\x11PrepareAmendOrder\x12\x16.api.AmendOrderRequest\x1a\x1e.api.PrepareAmendOrderResponse\x12L\n\x0fPrepareWithdraw\x12\x1b.api.PrepareWithdrawRequest\x1a\x1c.api.PrepareWithdrawResponse\x12R\n\x11SubmitTransaction\x12\x1d.api.SubmitTransactionRequest\x1a\x1e.api.SubmitTransactionResponse\x12L\n\x0fPrepareProposal\x12\x1b.api.PrepareProposalRequest\x1a\x1c.api.PrepareProposalResponse\x12@\n\x0bPrepareVote\x12\x17.api.PrepareVoteRequest\x1a\x18.api.PrepareVoteResponse\x12X\n\x13PropagateChainEvent\x12\x1f.api.PropagateChainEventRequest\x1a .api.PropagateChainEventResponse2\xf5\x1d\n\x0ctrading_data\x12I\n\x0eMarketAccounts\x12\x1a.api.MarketAccountsRequest\x1a\x1b.api.MarketAccountsResponse\x12\x46\n\rPartyAccounts\x12\x19.api.PartyAccountsRequest\x1a\x1a.api.PartyAccountsResponse\x12j\n\x19\x46\x65\x65InfrastructureAccounts\x12%.api.FeeInfrastructureAccountsRequest\x1a&.api.FeeInfrastructureAccountsResponse\x12\x34\n\x07\x43\x61ndles\x12\x13.api.CandlesRequest\x1a\x14.api.CandlesResponse\x12I\n\x0eMarketDataByID\x12\x1a.api.MarketDataByIDRequest\x1a\x1b.api.MarketDataByIDResponse\x12?\n\x0bMarketsData\x12\x16.google.protobuf.Empty\x1a\x18.api.MarketsDataResponse\x12=\n\nMarketByID\x12\x16.api.MarketByIDRequest\x1a\x17.api.MarketByIDResponse\x12@\n\x0bMarketDepth\x12\x17.api.MarketDepthRequest\x1a\x18.api.MarketDepthResponse\x12\x37\n\x07Markets\x12\x16.google.protobuf.Empty\x1a\x14.api.MarketsResponse\x12U\n\x12OrderByMarketAndID\x12\x1e.api.OrderByMarketAndIdRequest\x1a\x1f.api.OrderByMarketAndIdResponse\x12O\n\x10OrderByReference\x12\x1c.api.OrderByReferenceRequest\x1a\x1d.api.OrderByReferenceResponse\x12I\n\x0eOrdersByMarket\x12\x1a.api.OrdersByMarketRequest\x1a\x1b.api.OrdersByMarketResponse\x12\x46\n\rOrdersByParty\x12\x19.api.OrdersByPartyRequest\x1a\x1a.api.OrdersByPartyResponse\x12/\n\tOrderByID\x12\x15.api.OrderByIDRequest\x1a\x0b.vega.Order\x12\x41\n\x12OrderByReferenceID\x12\x1e.api.OrderByReferenceIDRequest\x1a\x0b.vega.Order\x12N\n\x11OrderVersionsByID\x12\x1d.api.OrderVersionsByIDRequest\x1a\x1a.api.OrderVersionsResponse\x12\x43\n\x0cMarginLevels\x12\x18.api.MarginLevelsRequest\x1a\x19.api.MarginLevelsResponse\x12\x37\n\x07Parties\x12\x16.google.protobuf.Empty\x1a\x14.api.PartiesResponse\x12:\n\tPartyByID\x12\x15.api.PartyByIDRequest\x1a\x16.api.PartyByIDResponse\x12O\n\x10PositionsByParty\x12\x1c.api.PositionsByPartyRequest\x1a\x1d.api.PositionsByPartyResponse\x12:\n\tLastTrade\x12\x15.api.LastTradeRequest\x1a\x16.api.LastTradeResponse\x12I\n\x0eTradesByMarket\x12\x1a.api.TradesByMarketRequest\x1a\x1b.api.TradesByMarketResponse\x12\x46\n\rTradesByOrder\x12\x19.api.TradesByOrderRequest\x1a\x1a.api.TradesByOrderResponse\x12\x46\n\rTradesByParty\x12\x19.api.TradesByPartyRequest\x1a\x1a.api.TradesByPartyResponse\x12\x43\n\x0cGetProposals\x12\x18.api.GetProposalsRequest\x1a\x19.api.GetProposalsResponse\x12X\n\x13GetProposalsByParty\x12\x1f.api.GetProposalsByPartyRequest\x1a .api.GetProposalsByPartyResponse\x12L\n\x0fGetVotesByParty\x12\x1b.api.GetVotesByPartyRequest\x1a\x1c.api.GetVotesByPartyResponse\x12^\n\x15GetNewMarketProposals\x12!.api.GetNewMarketProposalsRequest\x1a\".api.GetNewMarketProposalsResponse\x12g\n\x18GetUpdateMarketProposals\x12$.api.GetUpdateMarketProposalsRequest\x1a%.api.GetUpdateMarketProposalsResponse\x12v\n\x1dGetNetworkParametersProposals\x12).api.GetNetworkParametersProposalsRequest\x1a*.api.GetNetworkParametersProposalsResponse\x12[\n\x14GetNewAssetProposals\x12 .api.GetNewAssetProposalsRequest\x1a!.api.GetNewAssetProposalsResponse\x12L\n\x0fGetProposalByID\x12\x1b.api.GetProposalByIDRequest\x1a\x1c.api.GetProposalByIDResponse\x12\x61\n\x16GetProposalByReference\x12\".api.GetProposalByReferenceRequest\x1a#.api.GetProposalByReferenceResponse\x12\x43\n\x11ObserveGovernance\x12\x16.google.protobuf.Empty\x1a\x14.vega.GovernanceData0\x01\x12R\n\x15ObservePartyProposals\x12!.api.ObservePartyProposalsRequest\x1a\x14.vega.GovernanceData0\x01\x12@\n\x11ObservePartyVotes\x12\x1d.api.ObservePartyVotesRequest\x1a\n.vega.Vote0\x01\x12\x46\n\x14ObserveProposalVotes\x12 .api.ObserveProposalVotesRequest\x1a\n.vega.Vote0\x01\x12\x36\n\nStatistics\x12\x16.google.protobuf.Empty\x1a\x10.vega.Statistics\x12<\n\x0bGetVegaTime\x12\x16.google.protobuf.Empty\x1a\x15.api.VegaTimeResponse\x12\x43\n\x11\x41\x63\x63ountsSubscribe\x12\x1d.api.AccountsSubscribeRequest\x1a\r.vega.Account0\x01\x12@\n\x10\x43\x61ndlesSubscribe\x12\x1c.api.CandlesSubscribeRequest\x1a\x0c.vega.Candle0\x01\x12P\n\x15MarginLevelsSubscribe\x12!.api.MarginLevelsSubscribeRequest\x1a\x12.vega.MarginLevels0\x01\x12M\n\x14MarketDepthSubscribe\x12 .api.MarketDepthSubscribeRequest\x1a\x11.vega.MarketDepth0\x01\x12L\n\x14MarketsDataSubscribe\x12 .api.MarketsDataSubscribeRequest\x1a\x10.vega.MarketData0\x01\x12\x43\n\x0fOrdersSubscribe\x12\x1b.api.OrdersSubscribeRequest\x1a\x11.api.OrdersStream0\x01\x12\x46\n\x12PositionsSubscribe\x12\x1e.api.PositionsSubscribeRequest\x1a\x0e.vega.Position0\x01\x12\x43\n\x0fTradesSubscribe\x12\x1b.api.TradesSubscribeRequest\x1a\x11.api.TradesStream0\x01\x12N\n\x1aTransferResponsesSubscribe\x12\x16.google.protobuf.Empty\x1a\x16.vega.TransferResponse0\x01\x12m\n\x1aGetNodeSignaturesAggregate\x12&.api.GetNodeSignaturesAggregateRequest\x1a\'.api.GetNodeSignaturesAggregateResponse\x12:\n\tAssetByID\x12\x15.api.AssetByIDRequest\x1a\x16.api.AssetByIDResponse\x12\x31\n\x06\x41ssets\x12\x12.api.AssetsRequest\x1a\x13.api.AssetsResponseB%Z#code.vegaprotocol.io/vega/proto/apib\x06proto3'
   ,
   dependencies=[proto_dot_vega__pb2.DESCRIPTOR,proto_dot_markets__pb2.DESCRIPTOR,proto_dot_governance__pb2.DESCRIPTOR,proto_dot_chain__events__pb2.DESCRIPTOR,proto_dot_assets__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,github_dot_com_dot_mwitkow_dot_go__proto__validators_dot_validator__pb2.DESCRIPTOR,])
 
@@ -175,16 +175,16 @@ _SUBMITTRANSACTIONRESPONSE = _descriptor.Descriptor(
 )
 
 
-_WITHDRAWREQUEST = _descriptor.Descriptor(
-  name='WithdrawRequest',
-  full_name='api.WithdrawRequest',
+_PREPAREWITHDRAWREQUEST = _descriptor.Descriptor(
+  name='PrepareWithdrawRequest',
+  full_name='api.PrepareWithdrawRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='withdraw', full_name='api.WithdrawRequest.withdraw', index=0,
+      name='withdraw', full_name='api.PrepareWithdrawRequest.withdraw', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -203,22 +203,22 @@ _WITHDRAWREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=476,
-  serialized_end=527,
+  serialized_end=534,
 )
 
 
-_WITHDRAWRESPONSE = _descriptor.Descriptor(
-  name='WithdrawResponse',
-  full_name='api.WithdrawResponse',
+_PREPAREWITHDRAWRESPONSE = _descriptor.Descriptor(
+  name='PrepareWithdrawResponse',
+  full_name='api.PrepareWithdrawResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='success', full_name='api.WithdrawResponse.success', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='blob', full_name='api.PrepareWithdrawResponse.blob', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -234,72 +234,8 @@ _WITHDRAWRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=529,
-  serialized_end=564,
-)
-
-
-_NOTIFYTRADERACCOUNTREQUEST = _descriptor.Descriptor(
-  name='NotifyTraderAccountRequest',
-  full_name='api.NotifyTraderAccountRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='notif', full_name='api.NotifyTraderAccountRequest.notif', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=566,
-  serialized_end=636,
-)
-
-
-_NOTIFYTRADERACCOUNTRESPONSE = _descriptor.Descriptor(
-  name='NotifyTraderAccountResponse',
-  full_name='api.NotifyTraderAccountResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='submitted', full_name='api.NotifyTraderAccountResponse.submitted', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=638,
-  serialized_end=686,
+  serialized_start=536,
+  serialized_end=575,
 )
 
 
@@ -337,8 +273,8 @@ _PREPARESUBMITORDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=688,
-  serialized_end=748,
+  serialized_start=577,
+  serialized_end=637,
 )
 
 
@@ -369,8 +305,8 @@ _PREPARECANCELORDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=750,
-  serialized_end=792,
+  serialized_start=639,
+  serialized_end=681,
 )
 
 
@@ -401,8 +337,8 @@ _PREPAREAMENDORDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=794,
-  serialized_end=835,
+  serialized_start=683,
+  serialized_end=724,
 )
 
 
@@ -433,8 +369,8 @@ _SUBMITORDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=837,
-  serialized_end=900,
+  serialized_start=726,
+  serialized_end=789,
 )
 
 
@@ -465,8 +401,8 @@ _CANCELORDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=902,
-  serialized_end=969,
+  serialized_start=791,
+  serialized_end=858,
 )
 
 
@@ -497,8 +433,8 @@ _AMENDORDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=971,
-  serialized_end=1031,
+  serialized_start=860,
+  serialized_end=920,
 )
 
 
@@ -522,8 +458,8 @@ _ASSETSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1033,
-  serialized_end=1048,
+  serialized_start=922,
+  serialized_end=937,
 )
 
 
@@ -554,8 +490,8 @@ _ASSETSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1050,
-  serialized_end=1095,
+  serialized_start=939,
+  serialized_end=984,
 )
 
 
@@ -586,8 +522,8 @@ _ASSETBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1097,
-  serialized_end=1127,
+  serialized_start=986,
+  serialized_end=1016,
 )
 
 
@@ -618,8 +554,8 @@ _ASSETBYIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1129,
-  serialized_end=1176,
+  serialized_start=1018,
+  serialized_end=1065,
 )
 
 
@@ -650,8 +586,8 @@ _GETNODESIGNATURESAGGREGATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1178,
-  serialized_end=1225,
+  serialized_start=1067,
+  serialized_end=1114,
 )
 
 
@@ -682,8 +618,8 @@ _GETNODESIGNATURESAGGREGATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1227,
-  serialized_end=1304,
+  serialized_start=1116,
+  serialized_end=1193,
 )
 
 
@@ -714,8 +650,8 @@ _OPTIONALPROPOSALSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1306,
-  serialized_end=1366,
+  serialized_start=1195,
+  serialized_end=1255,
 )
 
 
@@ -746,8 +682,8 @@ _GETPROPOSALSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1368,
-  serialized_end=1440,
+  serialized_start=1257,
+  serialized_end=1329,
 )
 
 
@@ -778,8 +714,8 @@ _GETPROPOSALSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1442,
-  serialized_end=1500,
+  serialized_start=1331,
+  serialized_end=1389,
 )
 
 
@@ -817,8 +753,8 @@ _GETPROPOSALSBYPARTYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1502,
-  serialized_end=1606,
+  serialized_start=1391,
+  serialized_end=1495,
 )
 
 
@@ -849,8 +785,8 @@ _GETPROPOSALSBYPARTYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1608,
-  serialized_end=1673,
+  serialized_start=1497,
+  serialized_end=1562,
 )
 
 
@@ -881,8 +817,8 @@ _GETVOTESBYPARTYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1675,
-  serialized_end=1724,
+  serialized_start=1564,
+  serialized_end=1613,
 )
 
 
@@ -913,8 +849,8 @@ _GETVOTESBYPARTYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1726,
-  serialized_end=1778,
+  serialized_start=1615,
+  serialized_end=1667,
 )
 
 
@@ -945,8 +881,8 @@ _GETNEWMARKETPROPOSALSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1780,
-  serialized_end=1861,
+  serialized_start=1669,
+  serialized_end=1750,
 )
 
 
@@ -977,8 +913,8 @@ _GETNEWMARKETPROPOSALSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1863,
-  serialized_end=1930,
+  serialized_start=1752,
+  serialized_end=1819,
 )
 
 
@@ -1016,8 +952,8 @@ _GETUPDATEMARKETPROPOSALSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1932,
-  serialized_end=2042,
+  serialized_start=1821,
+  serialized_end=1931,
 )
 
 
@@ -1048,8 +984,8 @@ _GETUPDATEMARKETPROPOSALSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2044,
-  serialized_end=2114,
+  serialized_start=1933,
+  serialized_end=2003,
 )
 
 
@@ -1080,8 +1016,8 @@ _GETNETWORKPARAMETERSPROPOSALSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2116,
-  serialized_end=2205,
+  serialized_start=2005,
+  serialized_end=2094,
 )
 
 
@@ -1112,8 +1048,8 @@ _GETNETWORKPARAMETERSPROPOSALSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2207,
-  serialized_end=2282,
+  serialized_start=2096,
+  serialized_end=2171,
 )
 
 
@@ -1144,8 +1080,8 @@ _GETNEWASSETPROPOSALSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2284,
-  serialized_end=2364,
+  serialized_start=2173,
+  serialized_end=2253,
 )
 
 
@@ -1176,8 +1112,8 @@ _GETNEWASSETPROPOSALSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2366,
-  serialized_end=2432,
+  serialized_start=2255,
+  serialized_end=2321,
 )
 
 
@@ -1208,8 +1144,8 @@ _GETPROPOSALBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2434,
-  serialized_end=2486,
+  serialized_start=2323,
+  serialized_end=2375,
 )
 
 
@@ -1240,8 +1176,8 @@ _GETPROPOSALBYIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2488,
-  serialized_end=2549,
+  serialized_start=2377,
+  serialized_end=2438,
 )
 
 
@@ -1272,8 +1208,8 @@ _GETPROPOSALBYREFERENCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2551,
-  serialized_end=2609,
+  serialized_start=2440,
+  serialized_end=2498,
 )
 
 
@@ -1304,8 +1240,8 @@ _GETPROPOSALBYREFERENCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2611,
-  serialized_end=2679,
+  serialized_start=2500,
+  serialized_end=2568,
 )
 
 
@@ -1336,8 +1272,8 @@ _OBSERVEPARTYPROPOSALSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2681,
-  serialized_end=2736,
+  serialized_start=2570,
+  serialized_end=2625,
 )
 
 
@@ -1368,8 +1304,8 @@ _OBSERVEPROPOSALVOTESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2738,
-  serialized_end=2795,
+  serialized_start=2627,
+  serialized_end=2684,
 )
 
 
@@ -1400,8 +1336,8 @@ _OBSERVEPARTYVOTESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2797,
-  serialized_end=2848,
+  serialized_start=2686,
+  serialized_end=2737,
 )
 
 
@@ -1439,8 +1375,8 @@ _MARGINLEVELSSUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2850,
-  serialized_end=2923,
+  serialized_start=2739,
+  serialized_end=2812,
 )
 
 
@@ -1478,8 +1414,8 @@ _MARGINLEVELSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2925,
-  serialized_end=2989,
+  serialized_start=2814,
+  serialized_end=2878,
 )
 
 
@@ -1510,8 +1446,8 @@ _MARGINLEVELSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2991,
-  serialized_end=3055,
+  serialized_start=2880,
+  serialized_end=2944,
 )
 
 
@@ -1542,8 +1478,8 @@ _MARKETSDATASUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3057,
-  serialized_end=3104,
+  serialized_start=2946,
+  serialized_end=2993,
 )
 
 
@@ -1574,8 +1510,8 @@ _MARKETDATABYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3106,
-  serialized_end=3155,
+  serialized_start=2995,
+  serialized_end=3044,
 )
 
 
@@ -1606,8 +1542,8 @@ _MARKETDATABYIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3157,
-  serialized_end=3219,
+  serialized_start=3046,
+  serialized_end=3108,
 )
 
 
@@ -1638,8 +1574,8 @@ _MARKETSDATARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3221,
-  serialized_end=3281,
+  serialized_start=3110,
+  serialized_end=3170,
 )
 
 
@@ -1670,8 +1606,8 @@ _LASTTRADEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3283,
-  serialized_end=3327,
+  serialized_start=3172,
+  serialized_end=3216,
 )
 
 
@@ -1702,8 +1638,8 @@ _LASTTRADERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3329,
-  serialized_end=3376,
+  serialized_start=3218,
+  serialized_end=3265,
 )
 
 
@@ -1734,8 +1670,8 @@ _MARKETBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3378,
-  serialized_end=3423,
+  serialized_start=3267,
+  serialized_end=3312,
 )
 
 
@@ -1766,8 +1702,8 @@ _MARKETBYIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3425,
-  serialized_end=3475,
+  serialized_start=3314,
+  serialized_end=3364,
 )
 
 
@@ -1798,8 +1734,8 @@ _PARTYBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3477,
-  serialized_end=3520,
+  serialized_start=3366,
+  serialized_end=3409,
 )
 
 
@@ -1830,8 +1766,8 @@ _PARTYBYIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3522,
-  serialized_end=3569,
+  serialized_start=3411,
+  serialized_end=3458,
 )
 
 
@@ -1862,8 +1798,8 @@ _PARTIESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3571,
-  serialized_end=3618,
+  serialized_start=3460,
+  serialized_end=3507,
 )
 
 
@@ -1908,8 +1844,8 @@ _TRADESBYPARTYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3620,
-  serialized_end=3714,
+  serialized_start=3509,
+  serialized_end=3603,
 )
 
 
@@ -1940,8 +1876,8 @@ _TRADESBYPARTYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3716,
-  serialized_end=3768,
+  serialized_start=3605,
+  serialized_end=3657,
 )
 
 
@@ -1972,8 +1908,8 @@ _TRADESBYORDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3770,
-  serialized_end=3809,
+  serialized_start=3659,
+  serialized_end=3698,
 )
 
 
@@ -2004,8 +1940,8 @@ _TRADESBYORDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3811,
-  serialized_end=3863,
+  serialized_start=3700,
+  serialized_end=3752,
 )
 
 
@@ -2057,8 +1993,8 @@ _ACCOUNTSSUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3865,
-  serialized_end=3974,
+  serialized_start=3754,
+  serialized_end=3863,
 )
 
 
@@ -2096,8 +2032,8 @@ _ORDERSSUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3976,
-  serialized_end=4035,
+  serialized_start=3865,
+  serialized_end=3924,
 )
 
 
@@ -2135,8 +2071,8 @@ _TRADESSUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4037,
-  serialized_end=4096,
+  serialized_start=3926,
+  serialized_end=3985,
 )
 
 
@@ -2174,8 +2110,8 @@ _CANDLESSUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4098,
-  serialized_end=4183,
+  serialized_start=3987,
+  serialized_end=4072,
 )
 
 
@@ -2206,8 +2142,8 @@ _MARKETDEPTHSUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4185,
-  serialized_end=4240,
+  serialized_start=4074,
+  serialized_end=4129,
 )
 
 
@@ -2238,8 +2174,8 @@ _POSITIONSSUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4242,
-  serialized_end=4286,
+  serialized_start=4131,
+  serialized_end=4175,
 )
 
 
@@ -2277,8 +2213,8 @@ _ORDERSBYMARKETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4288,
-  serialized_end=4374,
+  serialized_start=4177,
+  serialized_end=4263,
 )
 
 
@@ -2309,8 +2245,8 @@ _ORDERSBYMARKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4376,
-  serialized_end=4429,
+  serialized_start=4265,
+  serialized_end=4318,
 )
 
 
@@ -2348,8 +2284,8 @@ _ORDERSBYPARTYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4431,
-  serialized_end=4515,
+  serialized_start=4320,
+  serialized_end=4404,
 )
 
 
@@ -2380,8 +2316,8 @@ _ORDERSBYPARTYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4517,
-  serialized_end=4569,
+  serialized_start=4406,
+  serialized_end=4458,
 )
 
 
@@ -2419,8 +2355,8 @@ _ORDERBYMARKETANDIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4571,
-  serialized_end=4649,
+  serialized_start=4460,
+  serialized_end=4538,
 )
 
 
@@ -2451,8 +2387,8 @@ _ORDERBYMARKETANDIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4651,
-  serialized_end=4707,
+  serialized_start=4540,
+  serialized_end=4596,
 )
 
 
@@ -2483,8 +2419,8 @@ _ORDERBYREFERENCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4709,
-  serialized_end=4761,
+  serialized_start=4598,
+  serialized_end=4650,
 )
 
 
@@ -2515,8 +2451,8 @@ _ORDERBYREFERENCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4763,
-  serialized_end=4817,
+  serialized_start=4652,
+  serialized_end=4706,
 )
 
 
@@ -2547,8 +2483,8 @@ _MARKETSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4819,
-  serialized_end=4867,
+  serialized_start=4708,
+  serialized_end=4756,
 )
 
 
@@ -2593,8 +2529,8 @@ _CANDLESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4869,
-  serialized_end=4977,
+  serialized_start=4758,
+  serialized_end=4866,
 )
 
 
@@ -2625,8 +2561,8 @@ _CANDLESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4979,
-  serialized_end=5027,
+  serialized_start=4868,
+  serialized_end=4916,
 )
 
 
@@ -2664,8 +2600,8 @@ _MARKETDEPTHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5029,
-  serialized_end=5093,
+  serialized_start=4918,
+  serialized_end=4982,
 )
 
 
@@ -2717,8 +2653,8 @@ _MARKETDEPTHRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5096,
-  serialized_end=5230,
+  serialized_start=4985,
+  serialized_end=5119,
 )
 
 
@@ -2756,8 +2692,8 @@ _TRADESBYMARKETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5232,
-  serialized_end=5318,
+  serialized_start=5121,
+  serialized_end=5207,
 )
 
 
@@ -2788,8 +2724,8 @@ _TRADESBYMARKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5320,
-  serialized_end=5373,
+  serialized_start=5209,
+  serialized_end=5262,
 )
 
 
@@ -2827,8 +2763,8 @@ _POSITIONSBYPARTYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5375,
-  serialized_end=5443,
+  serialized_start=5264,
+  serialized_end=5332,
 )
 
 
@@ -2859,8 +2795,8 @@ _POSITIONSBYPARTYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5445,
-  serialized_end=5506,
+  serialized_start=5334,
+  serialized_end=5395,
 )
 
 
@@ -2891,8 +2827,8 @@ _VEGATIMERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5508,
-  serialized_end=5545,
+  serialized_start=5397,
+  serialized_end=5434,
 )
 
 
@@ -2937,8 +2873,8 @@ _PAGINATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5547,
-  serialized_end=5608,
+  serialized_start=5436,
+  serialized_end=5497,
 )
 
 
@@ -2969,8 +2905,8 @@ _ORDERSSTREAM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5610,
-  serialized_end=5653,
+  serialized_start=5499,
+  serialized_end=5542,
 )
 
 
@@ -3001,8 +2937,8 @@ _TRADESSTREAM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5655,
-  serialized_end=5698,
+  serialized_start=5544,
+  serialized_end=5587,
 )
 
 
@@ -3054,8 +2990,8 @@ _PARTYACCOUNTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5700,
-  serialized_end=5805,
+  serialized_start=5589,
+  serialized_end=5694,
 )
 
 
@@ -3086,8 +3022,8 @@ _PARTYACCOUNTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5807,
-  serialized_end=5863,
+  serialized_start=5696,
+  serialized_end=5752,
 )
 
 
@@ -3125,8 +3061,8 @@ _MARKETACCOUNTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5865,
-  serialized_end=5921,
+  serialized_start=5754,
+  serialized_end=5810,
 )
 
 
@@ -3157,8 +3093,8 @@ _MARKETACCOUNTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5923,
-  serialized_end=5980,
+  serialized_start=5812,
+  serialized_end=5869,
 )
 
 
@@ -3189,8 +3125,8 @@ _FEEINFRASTRUCTUREACCOUNTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5982,
-  serialized_end=6031,
+  serialized_start=5871,
+  serialized_end=5920,
 )
 
 
@@ -3221,8 +3157,8 @@ _FEEINFRASTRUCTUREACCOUNTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6033,
-  serialized_end=6101,
+  serialized_start=5922,
+  serialized_end=5990,
 )
 
 
@@ -3267,8 +3203,8 @@ _PREPAREPROPOSALREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6103,
-  serialized_end=6218,
+  serialized_start=5992,
+  serialized_end=6107,
 )
 
 
@@ -3306,8 +3242,8 @@ _PREPAREPROPOSALRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6220,
-  serialized_end=6300,
+  serialized_start=6109,
+  serialized_end=6189,
 )
 
 
@@ -3338,8 +3274,8 @@ _PREPAREVOTEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6302,
-  serialized_end=6356,
+  serialized_start=6191,
+  serialized_end=6245,
 )
 
 
@@ -3377,8 +3313,8 @@ _PREPAREVOTERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6358,
-  serialized_end=6419,
+  serialized_start=6247,
+  serialized_end=6308,
 )
 
 
@@ -3416,8 +3352,8 @@ _ORDERBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6421,
-  serialized_end=6481,
+  serialized_start=6310,
+  serialized_end=6370,
 )
 
 
@@ -3448,8 +3384,8 @@ _ORDERBYREFERENCEIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6483,
-  serialized_end=6539,
+  serialized_start=6372,
+  serialized_end=6428,
 )
 
 
@@ -3487,8 +3423,8 @@ _ORDERVERSIONSBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6541,
-  serialized_end=6629,
+  serialized_start=6430,
+  serialized_end=6518,
 )
 
 
@@ -3519,14 +3455,13 @@ _ORDERVERSIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6631,
-  serialized_end=6683,
+  serialized_start=6520,
+  serialized_end=6572,
 )
 
 _PROPAGATECHAINEVENTREQUEST.fields_by_name['evt'].message_type = proto_dot_chain__events__pb2._CHAINEVENT
 _SUBMITTRANSACTIONREQUEST.fields_by_name['tx'].message_type = proto_dot_vega__pb2._SIGNEDBUNDLE
-_WITHDRAWREQUEST.fields_by_name['withdraw'].message_type = proto_dot_vega__pb2._WITHDRAW
-_NOTIFYTRADERACCOUNTREQUEST.fields_by_name['notif'].message_type = proto_dot_vega__pb2._NOTIFYTRADERACCOUNT
+_PREPAREWITHDRAWREQUEST.fields_by_name['withdraw'].message_type = proto_dot_vega__pb2._WITHDRAW
 _SUBMITORDERREQUEST.fields_by_name['submission'].message_type = proto_dot_vega__pb2._ORDERSUBMISSION
 _CANCELORDERREQUEST.fields_by_name['cancellation'].message_type = proto_dot_vega__pb2._ORDERCANCELLATION
 _AMENDORDERREQUEST.fields_by_name['amendment'].message_type = proto_dot_vega__pb2._ORDERAMENDMENT
@@ -3592,10 +3527,8 @@ DESCRIPTOR.message_types_by_name['PropagateChainEventRequest'] = _PROPAGATECHAIN
 DESCRIPTOR.message_types_by_name['PropagateChainEventResponse'] = _PROPAGATECHAINEVENTRESPONSE
 DESCRIPTOR.message_types_by_name['SubmitTransactionRequest'] = _SUBMITTRANSACTIONREQUEST
 DESCRIPTOR.message_types_by_name['SubmitTransactionResponse'] = _SUBMITTRANSACTIONRESPONSE
-DESCRIPTOR.message_types_by_name['WithdrawRequest'] = _WITHDRAWREQUEST
-DESCRIPTOR.message_types_by_name['WithdrawResponse'] = _WITHDRAWRESPONSE
-DESCRIPTOR.message_types_by_name['NotifyTraderAccountRequest'] = _NOTIFYTRADERACCOUNTREQUEST
-DESCRIPTOR.message_types_by_name['NotifyTraderAccountResponse'] = _NOTIFYTRADERACCOUNTRESPONSE
+DESCRIPTOR.message_types_by_name['PrepareWithdrawRequest'] = _PREPAREWITHDRAWREQUEST
+DESCRIPTOR.message_types_by_name['PrepareWithdrawResponse'] = _PREPAREWITHDRAWRESPONSE
 DESCRIPTOR.message_types_by_name['PrepareSubmitOrderResponse'] = _PREPARESUBMITORDERRESPONSE
 DESCRIPTOR.message_types_by_name['PrepareCancelOrderResponse'] = _PREPARECANCELORDERRESPONSE
 DESCRIPTOR.message_types_by_name['PrepareAmendOrderResponse'] = _PREPAREAMENDORDERRESPONSE
@@ -3719,33 +3652,19 @@ SubmitTransactionResponse = _reflection.GeneratedProtocolMessageType('SubmitTran
   })
 _sym_db.RegisterMessage(SubmitTransactionResponse)
 
-WithdrawRequest = _reflection.GeneratedProtocolMessageType('WithdrawRequest', (_message.Message,), {
-  'DESCRIPTOR' : _WITHDRAWREQUEST,
+PrepareWithdrawRequest = _reflection.GeneratedProtocolMessageType('PrepareWithdrawRequest', (_message.Message,), {
+  'DESCRIPTOR' : _PREPAREWITHDRAWREQUEST,
   '__module__' : 'proto.api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.WithdrawRequest)
+  # @@protoc_insertion_point(class_scope:api.PrepareWithdrawRequest)
   })
-_sym_db.RegisterMessage(WithdrawRequest)
+_sym_db.RegisterMessage(PrepareWithdrawRequest)
 
-WithdrawResponse = _reflection.GeneratedProtocolMessageType('WithdrawResponse', (_message.Message,), {
-  'DESCRIPTOR' : _WITHDRAWRESPONSE,
+PrepareWithdrawResponse = _reflection.GeneratedProtocolMessageType('PrepareWithdrawResponse', (_message.Message,), {
+  'DESCRIPTOR' : _PREPAREWITHDRAWRESPONSE,
   '__module__' : 'proto.api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.WithdrawResponse)
+  # @@protoc_insertion_point(class_scope:api.PrepareWithdrawResponse)
   })
-_sym_db.RegisterMessage(WithdrawResponse)
-
-NotifyTraderAccountRequest = _reflection.GeneratedProtocolMessageType('NotifyTraderAccountRequest', (_message.Message,), {
-  'DESCRIPTOR' : _NOTIFYTRADERACCOUNTREQUEST,
-  '__module__' : 'proto.api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.NotifyTraderAccountRequest)
-  })
-_sym_db.RegisterMessage(NotifyTraderAccountRequest)
-
-NotifyTraderAccountResponse = _reflection.GeneratedProtocolMessageType('NotifyTraderAccountResponse', (_message.Message,), {
-  'DESCRIPTOR' : _NOTIFYTRADERACCOUNTRESPONSE,
-  '__module__' : 'proto.api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.NotifyTraderAccountResponse)
-  })
-_sym_db.RegisterMessage(NotifyTraderAccountResponse)
+_sym_db.RegisterMessage(PrepareWithdrawResponse)
 
 PrepareSubmitOrderResponse = _reflection.GeneratedProtocolMessageType('PrepareSubmitOrderResponse', (_message.Message,), {
   'DESCRIPTOR' : _PREPARESUBMITORDERRESPONSE,
@@ -4440,8 +4359,8 @@ _TRADING = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=6686,
-  serialized_end=7397,
+  serialized_start=6575,
+  serialized_end=7217,
   methods=[
   _descriptor.MethodDescriptor(
     name='PrepareSubmitOrder',
@@ -4474,29 +4393,19 @@ _TRADING = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='NotifyTraderAccount',
-    full_name='api.trading.NotifyTraderAccount',
+    name='PrepareWithdraw',
+    full_name='api.trading.PrepareWithdraw',
     index=3,
     containing_service=None,
-    input_type=_NOTIFYTRADERACCOUNTREQUEST,
-    output_type=_NOTIFYTRADERACCOUNTRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Withdraw',
-    full_name='api.trading.Withdraw',
-    index=4,
-    containing_service=None,
-    input_type=_WITHDRAWREQUEST,
-    output_type=_WITHDRAWRESPONSE,
+    input_type=_PREPAREWITHDRAWREQUEST,
+    output_type=_PREPAREWITHDRAWRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='SubmitTransaction',
     full_name='api.trading.SubmitTransaction',
-    index=5,
+    index=4,
     containing_service=None,
     input_type=_SUBMITTRANSACTIONREQUEST,
     output_type=_SUBMITTRANSACTIONRESPONSE,
@@ -4506,7 +4415,7 @@ _TRADING = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='PrepareProposal',
     full_name='api.trading.PrepareProposal',
-    index=6,
+    index=5,
     containing_service=None,
     input_type=_PREPAREPROPOSALREQUEST,
     output_type=_PREPAREPROPOSALRESPONSE,
@@ -4516,7 +4425,7 @@ _TRADING = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='PrepareVote',
     full_name='api.trading.PrepareVote',
-    index=7,
+    index=6,
     containing_service=None,
     input_type=_PREPAREVOTEREQUEST,
     output_type=_PREPAREVOTERESPONSE,
@@ -4526,7 +4435,7 @@ _TRADING = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='PropagateChainEvent',
     full_name='api.trading.PropagateChainEvent',
-    index=8,
+    index=7,
     containing_service=None,
     input_type=_PROPAGATECHAINEVENTREQUEST,
     output_type=_PROPAGATECHAINEVENTRESPONSE,
@@ -4546,8 +4455,8 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   index=1,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=7400,
-  serialized_end=11229,
+  serialized_start=7220,
+  serialized_end=11049,
   methods=[
   _descriptor.MethodDescriptor(
     name='MarketAccounts',
