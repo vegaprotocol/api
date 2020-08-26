@@ -24,15 +24,11 @@ service trading {
   // Amend an Order
   rpc PrepareAmendOrder(AmendOrderRequest) returns (PrepareAmendOrderResponse);
 
-  // Request balance increase
-  rpc NotifyTraderAccount(NotifyTraderAccountRequest) returns (NotifyTraderAccountResponse);
-
   // Request withdrawal
-  rpc Withdraw(WithdrawRequest) returns (WithdrawResponse);
+  rpc PrepareWithdraw(PrepareWithdrawRequest) returns (PrepareWithdrawResponse);
 
   // Submit a signed transaction
   rpc SubmitTransaction(SubmitTransactionRequest) returns (SubmitTransactionResponse);
-
 
   // Governance
 
@@ -68,20 +64,12 @@ message SubmitTransactionResponse {
   bool success = 1;
 }
 
-message WithdrawRequest {
+message PrepareWithdrawRequest {
   vega.Withdraw withdraw = 1;
 }
 
-message WithdrawResponse {
-  bool success = 1;
-}
-
-message NotifyTraderAccountRequest {
-  vega.NotifyTraderAccount notif = 1;
-}
-
-message NotifyTraderAccountResponse {
-  bool submitted = 1;
+message PrepareWithdrawResponse {
+  bytes blob = 1;
 }
 
 message PrepareSubmitOrderResponse {

@@ -158,6 +158,7 @@ const ::google::protobuf::uint32 TableStruct_proto_2fassets_2eproto::offsets[] P
   PROTOBUF_FIELD_OFFSET(::vega::BuiltinAsset, symbol_),
   PROTOBUF_FIELD_OFFSET(::vega::BuiltinAsset, totalsupply_),
   PROTOBUF_FIELD_OFFSET(::vega::BuiltinAsset, decimals_),
+  PROTOBUF_FIELD_OFFSET(::vega::BuiltinAsset, maxfaucetamountmint_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::ERC20, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -175,8 +176,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 0, -1, sizeof(::vega::Asset)},
   { 11, -1, sizeof(::vega::AssetSource)},
   { 19, -1, sizeof(::vega::BuiltinAsset)},
-  { 28, -1, sizeof(::vega::ERC20)},
-  { 34, -1, sizeof(::vega::DevAssets)},
+  { 29, -1, sizeof(::vega::ERC20)},
+  { 35, -1, sizeof(::vega::DevAssets)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -200,17 +201,18 @@ const char descriptor_table_protodef_proto_2fassets_2eproto[] =
   "source\030\007 \001(\0132\021.vega.AssetSource\"a\n\013Asset"
   "Source\022*\n\014builtinAsset\030\001 \001(\0132\022.vega.Buil"
   "tinAssetH\000\022\034\n\005erc20\030\002 \001(\0132\013.vega.ERC20H\000"
-  "B\010\n\006source\"S\n\014BuiltinAsset\022\014\n\004name\030\001 \001(\t"
+  "B\010\n\006source\"p\n\014BuiltinAsset\022\014\n\004name\030\001 \001(\t"
   "\022\016\n\006symbol\030\002 \001(\t\022\023\n\013totalSupply\030\003 \001(\t\022\020\n"
-  "\010decimals\030\004 \001(\004\" \n\005ERC20\022\027\n\017contractAddr"
-  "ess\030\001 \001(\t\"/\n\tDevAssets\022\"\n\007sources\030\001 \003(\0132"
-  "\021.vega.AssetSourceB!Z\037code.vegaprotocol."
-  "io/vega/protob\006proto3"
+  "\010decimals\030\004 \001(\004\022\033\n\023maxFaucetAmountMint\030\005"
+  " \001(\t\" \n\005ERC20\022\027\n\017contractAddress\030\001 \001(\t\"/"
+  "\n\tDevAssets\022\"\n\007sources\030\001 \003(\0132\021.vega.Asse"
+  "tSourceB!Z\037code.vegaprotocol.io/vega/pro"
+  "tob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fassets_2eproto = {
   false, InitDefaults_proto_2fassets_2eproto, 
   descriptor_table_protodef_proto_2fassets_2eproto,
-  "proto/assets.proto", &assign_descriptors_table_proto_2fassets_2eproto, 461,
+  "proto/assets.proto", &assign_descriptors_table_proto_2fassets_2eproto, 490,
 };
 
 void AddDescriptors_proto_2fassets_2eproto() {
@@ -1276,6 +1278,7 @@ const int BuiltinAsset::kNameFieldNumber;
 const int BuiltinAsset::kSymbolFieldNumber;
 const int BuiltinAsset::kTotalSupplyFieldNumber;
 const int BuiltinAsset::kDecimalsFieldNumber;
+const int BuiltinAsset::kMaxFaucetAmountMintFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 BuiltinAsset::BuiltinAsset()
@@ -1299,6 +1302,10 @@ BuiltinAsset::BuiltinAsset(const BuiltinAsset& from)
   if (from.totalsupply().size() > 0) {
     totalsupply_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.totalsupply_);
   }
+  maxfaucetamountmint_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.maxfaucetamountmint().size() > 0) {
+    maxfaucetamountmint_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.maxfaucetamountmint_);
+  }
   decimals_ = from.decimals_;
   // @@protoc_insertion_point(copy_constructor:vega.BuiltinAsset)
 }
@@ -1309,6 +1316,7 @@ void BuiltinAsset::SharedCtor() {
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   symbol_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   totalsupply_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  maxfaucetamountmint_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   decimals_ = PROTOBUF_ULONGLONG(0);
 }
 
@@ -1321,6 +1329,7 @@ void BuiltinAsset::SharedDtor() {
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   symbol_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   totalsupply_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  maxfaucetamountmint_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void BuiltinAsset::SetCachedSize(int size) const {
@@ -1341,6 +1350,7 @@ void BuiltinAsset::Clear() {
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   symbol_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   totalsupply_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  maxfaucetamountmint_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   decimals_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear();
 }
@@ -1411,6 +1421,22 @@ const char* BuiltinAsset::_InternalParse(const char* begin, const char* end, voi
         if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
         msg->set_decimals(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // string maxFaucetAmountMint = 5;
+      case 5: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("vega.BuiltinAsset.maxFaucetAmountMint");
+        object = msg->mutable_maxfaucetamountmint();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
         break;
       }
       default: {
@@ -1505,6 +1531,21 @@ bool BuiltinAsset::MergePartialFromCodedStream(
         break;
       }
 
+      // string maxFaucetAmountMint = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_maxfaucetamountmint()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->maxfaucetamountmint().data(), static_cast<int>(this->maxfaucetamountmint().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "vega.BuiltinAsset.maxFaucetAmountMint"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1567,6 +1608,16 @@ void BuiltinAsset::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt64(4, this->decimals(), output);
   }
 
+  // string maxFaucetAmountMint = 5;
+  if (this->maxfaucetamountmint().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->maxfaucetamountmint().data(), static_cast<int>(this->maxfaucetamountmint().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "vega.BuiltinAsset.maxFaucetAmountMint");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->maxfaucetamountmint(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1618,6 +1669,17 @@ void BuiltinAsset::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(4, this->decimals(), target);
   }
 
+  // string maxFaucetAmountMint = 5;
+  if (this->maxfaucetamountmint().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->maxfaucetamountmint().data(), static_cast<int>(this->maxfaucetamountmint().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "vega.BuiltinAsset.maxFaucetAmountMint");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->maxfaucetamountmint(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -1658,6 +1720,13 @@ size_t BuiltinAsset::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->totalsupply());
+  }
+
+  // string maxFaucetAmountMint = 5;
+  if (this->maxfaucetamountmint().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->maxfaucetamountmint());
   }
 
   // uint64 decimals = 4;
@@ -1706,6 +1775,10 @@ void BuiltinAsset::MergeFrom(const BuiltinAsset& from) {
 
     totalsupply_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.totalsupply_);
   }
+  if (from.maxfaucetamountmint().size() > 0) {
+
+    maxfaucetamountmint_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.maxfaucetamountmint_);
+  }
   if (from.decimals() != 0) {
     set_decimals(from.decimals());
   }
@@ -1741,6 +1814,8 @@ void BuiltinAsset::InternalSwap(BuiltinAsset* other) {
   symbol_.Swap(&other->symbol_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   totalsupply_.Swap(&other->totalsupply_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  maxfaucetamountmint_.Swap(&other->maxfaucetamountmint_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(decimals_, other->decimals_);
 }
