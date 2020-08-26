@@ -39,6 +39,7 @@ jobs:
     - name: Test with pytest
       env:
         GRPC_NODE: ${{ secrets.GRPC_NODE }}
+        FAUCETSERVER: ${{ secrets.FAUCETSERVER }}
         WALLETSERVER: ${{ secrets.WALLETSERVER }}
       run: |
         cd python
@@ -47,6 +48,7 @@ jobs:
     - name: Coverage with pytest
       env:
         GRPC_NODE: ${{ secrets.GRPC_NODE }}
+        FAUCETSERVER: ${{ secrets.FAUCETSERVER }}
         WALLETSERVER: ${{ secrets.WALLETSERVER }}
       run: |
         cd python
