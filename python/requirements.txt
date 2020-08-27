@@ -7,7 +7,7 @@ cffi==1.14.1
 chardet==3.0.4
 click==7.1.2
 coverage==5.2.1
-cryptography==3.0
+cryptography==3.1
 docutils==0.16
 entrypoints==0.3
 flake8==3.8.3
