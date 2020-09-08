@@ -542,111 +542,6 @@ class FeeFactorsConfiguration :
 };
 // -------------------------------------------------------------------
 
-class UpdateMarket :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.UpdateMarket) */ {
- public:
-  UpdateMarket();
-  virtual ~UpdateMarket();
-
-  UpdateMarket(const UpdateMarket& from);
-
-  inline UpdateMarket& operator=(const UpdateMarket& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  UpdateMarket(UpdateMarket&& from) noexcept
-    : UpdateMarket() {
-    *this = ::std::move(from);
-  }
-
-  inline UpdateMarket& operator=(UpdateMarket&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const UpdateMarket& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const UpdateMarket* internal_default_instance() {
-    return reinterpret_cast<const UpdateMarket*>(
-               &_UpdateMarket_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    2;
-
-  void Swap(UpdateMarket* other);
-  friend void swap(UpdateMarket& a, UpdateMarket& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline UpdateMarket* New() const final {
-    return CreateMaybeMessage<UpdateMarket>(nullptr);
-  }
-
-  UpdateMarket* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<UpdateMarket>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const UpdateMarket& from);
-  void MergeFrom(const UpdateMarket& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(UpdateMarket* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:vega.UpdateMarket)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_proto_2fgovernance_2eproto;
-};
-// -------------------------------------------------------------------
-
 class FutureProduct :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.FutureProduct) */ {
  public:
@@ -685,7 +580,7 @@ class FutureProduct :
                &_FutureProduct_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    2;
 
   void Swap(FutureProduct* other);
   friend void swap(FutureProduct& a, FutureProduct& b) {
@@ -825,7 +720,7 @@ class InstrumentConfiguration :
                &_InstrumentConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    3;
 
   void Swap(InstrumentConfiguration* other);
   friend void swap(InstrumentConfiguration& a, InstrumentConfiguration& b) {
@@ -1023,7 +918,7 @@ class NewMarketConfiguration :
                &_NewMarketConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    4;
 
   void Swap(NewMarketConfiguration* other);
   friend void swap(NewMarketConfiguration& a, NewMarketConfiguration& b) {
@@ -1237,7 +1132,7 @@ class NewMarket :
                &_NewMarket_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   void Swap(NewMarket* other);
   friend void swap(NewMarket& a, NewMarket& b) {
@@ -1309,6 +1204,111 @@ class NewMarket :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::vega::NewMarketConfiguration* changes_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fgovernance_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdateMarket :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.UpdateMarket) */ {
+ public:
+  UpdateMarket();
+  virtual ~UpdateMarket();
+
+  UpdateMarket(const UpdateMarket& from);
+
+  inline UpdateMarket& operator=(const UpdateMarket& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  UpdateMarket(UpdateMarket&& from) noexcept
+    : UpdateMarket() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateMarket& operator=(UpdateMarket&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const UpdateMarket& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const UpdateMarket* internal_default_instance() {
+    return reinterpret_cast<const UpdateMarket*>(
+               &_UpdateMarket_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  void Swap(UpdateMarket* other);
+  friend void swap(UpdateMarket& a, UpdateMarket& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateMarket* New() const final {
+    return CreateMaybeMessage<UpdateMarket>(nullptr);
+  }
+
+  UpdateMarket* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateMarket>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const UpdateMarket& from);
+  void MergeFrom(const UpdateMarket& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateMarket* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:vega.UpdateMarket)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fgovernance_2eproto;
 };
@@ -2730,10 +2730,6 @@ inline void FeeFactorsConfiguration::set_allocated_liquidityfee(::std::string* l
 
 // -------------------------------------------------------------------
 
-// UpdateMarket
-
-// -------------------------------------------------------------------
-
 // FutureProduct
 
 // string maturity = 1 [(.validator.field) = {
@@ -3472,6 +3468,10 @@ inline void NewMarket::set_allocated_changes(::vega::NewMarketConfiguration* cha
   changes_ = changes;
   // @@protoc_insertion_point(field_set_allocated:vega.NewMarket.changes)
 }
+
+// -------------------------------------------------------------------
+
+// UpdateMarket
 
 // -------------------------------------------------------------------
 

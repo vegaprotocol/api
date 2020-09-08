@@ -48,7 +48,7 @@ struct TableStruct_proto_2fapi_2ftrading_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[99]
+  static const ::google::protobuf::internal::ParseTable schema[100]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -86,6 +86,12 @@ extern CandlesResponseDefaultTypeInternal _CandlesResponse_default_instance_;
 class CandlesSubscribeRequest;
 class CandlesSubscribeRequestDefaultTypeInternal;
 extern CandlesSubscribeRequestDefaultTypeInternal _CandlesSubscribeRequest_default_instance_;
+class EstimateFeeRequest;
+class EstimateFeeRequestDefaultTypeInternal;
+extern EstimateFeeRequestDefaultTypeInternal _EstimateFeeRequest_default_instance_;
+class EstimateFeeResponse;
+class EstimateFeeResponseDefaultTypeInternal;
+extern EstimateFeeResponseDefaultTypeInternal _EstimateFeeResponse_default_instance_;
 class FeeInfrastructureAccountsRequest;
 class FeeInfrastructureAccountsRequestDefaultTypeInternal;
 extern FeeInfrastructureAccountsRequestDefaultTypeInternal _FeeInfrastructureAccountsRequest_default_instance_;
@@ -224,9 +230,6 @@ extern OrderByMarketAndIdRequestDefaultTypeInternal _OrderByMarketAndIdRequest_d
 class OrderByMarketAndIdResponse;
 class OrderByMarketAndIdResponseDefaultTypeInternal;
 extern OrderByMarketAndIdResponseDefaultTypeInternal _OrderByMarketAndIdResponse_default_instance_;
-class OrderByReferenceIDRequest;
-class OrderByReferenceIDRequestDefaultTypeInternal;
-extern OrderByReferenceIDRequestDefaultTypeInternal _OrderByReferenceIDRequest_default_instance_;
 class OrderByReferenceRequest;
 class OrderByReferenceRequestDefaultTypeInternal;
 extern OrderByReferenceRequestDefaultTypeInternal _OrderByReferenceRequest_default_instance_;
@@ -366,6 +369,8 @@ template<> ::api::CancelOrderRequest* Arena::CreateMaybeMessage<::api::CancelOrd
 template<> ::api::CandlesRequest* Arena::CreateMaybeMessage<::api::CandlesRequest>(Arena*);
 template<> ::api::CandlesResponse* Arena::CreateMaybeMessage<::api::CandlesResponse>(Arena*);
 template<> ::api::CandlesSubscribeRequest* Arena::CreateMaybeMessage<::api::CandlesSubscribeRequest>(Arena*);
+template<> ::api::EstimateFeeRequest* Arena::CreateMaybeMessage<::api::EstimateFeeRequest>(Arena*);
+template<> ::api::EstimateFeeResponse* Arena::CreateMaybeMessage<::api::EstimateFeeResponse>(Arena*);
 template<> ::api::FeeInfrastructureAccountsRequest* Arena::CreateMaybeMessage<::api::FeeInfrastructureAccountsRequest>(Arena*);
 template<> ::api::FeeInfrastructureAccountsResponse* Arena::CreateMaybeMessage<::api::FeeInfrastructureAccountsResponse>(Arena*);
 template<> ::api::GetNetworkParametersProposalsRequest* Arena::CreateMaybeMessage<::api::GetNetworkParametersProposalsRequest>(Arena*);
@@ -412,7 +417,6 @@ template<> ::api::OptionalProposalState* Arena::CreateMaybeMessage<::api::Option
 template<> ::api::OrderByIDRequest* Arena::CreateMaybeMessage<::api::OrderByIDRequest>(Arena*);
 template<> ::api::OrderByMarketAndIdRequest* Arena::CreateMaybeMessage<::api::OrderByMarketAndIdRequest>(Arena*);
 template<> ::api::OrderByMarketAndIdResponse* Arena::CreateMaybeMessage<::api::OrderByMarketAndIdResponse>(Arena*);
-template<> ::api::OrderByReferenceIDRequest* Arena::CreateMaybeMessage<::api::OrderByReferenceIDRequest>(Arena*);
 template<> ::api::OrderByReferenceRequest* Arena::CreateMaybeMessage<::api::OrderByReferenceRequest>(Arena*);
 template<> ::api::OrderByReferenceResponse* Arena::CreateMaybeMessage<::api::OrderByReferenceResponse>(Arena*);
 template<> ::api::OrderVersionsByIDRequest* Arena::CreateMaybeMessage<::api::OrderVersionsByIDRequest>(Arena*);
@@ -2218,7 +2222,7 @@ class AssetByIDRequest :
 
   // accessors -------------------------------------------------------
 
-  // string ID = 1;
+  // string ID = 1 [(.validator.field) = {
   void clear_id();
   static const int kIDFieldNumber = 1;
   const ::std::string& id() const;
@@ -2453,7 +2457,7 @@ class GetNodeSignaturesAggregateRequest :
 
   // accessors -------------------------------------------------------
 
-  // string ID = 1;
+  // string ID = 1 [(.validator.field) = {
   void clear_id();
   static const int kIDFieldNumber = 1;
   const ::std::string& id() const;
@@ -12205,126 +12209,6 @@ class OrderByIDRequest :
 };
 // -------------------------------------------------------------------
 
-class OrderByReferenceIDRequest :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.OrderByReferenceIDRequest) */ {
- public:
-  OrderByReferenceIDRequest();
-  virtual ~OrderByReferenceIDRequest();
-
-  OrderByReferenceIDRequest(const OrderByReferenceIDRequest& from);
-
-  inline OrderByReferenceIDRequest& operator=(const OrderByReferenceIDRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  OrderByReferenceIDRequest(OrderByReferenceIDRequest&& from) noexcept
-    : OrderByReferenceIDRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline OrderByReferenceIDRequest& operator=(OrderByReferenceIDRequest&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const OrderByReferenceIDRequest& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const OrderByReferenceIDRequest* internal_default_instance() {
-    return reinterpret_cast<const OrderByReferenceIDRequest*>(
-               &_OrderByReferenceIDRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    96;
-
-  void Swap(OrderByReferenceIDRequest* other);
-  friend void swap(OrderByReferenceIDRequest& a, OrderByReferenceIDRequest& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline OrderByReferenceIDRequest* New() const final {
-    return CreateMaybeMessage<OrderByReferenceIDRequest>(nullptr);
-  }
-
-  OrderByReferenceIDRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<OrderByReferenceIDRequest>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const OrderByReferenceIDRequest& from);
-  void MergeFrom(const OrderByReferenceIDRequest& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(OrderByReferenceIDRequest* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string referenceID = 1 [(.validator.field) = {
-  void clear_referenceid();
-  static const int kReferenceIDFieldNumber = 1;
-  const ::std::string& referenceid() const;
-  void set_referenceid(const ::std::string& value);
-  #if LANG_CXX11
-  void set_referenceid(::std::string&& value);
-  #endif
-  void set_referenceid(const char* value);
-  void set_referenceid(const char* value, size_t size);
-  ::std::string* mutable_referenceid();
-  ::std::string* release_referenceid();
-  void set_allocated_referenceid(::std::string* referenceid);
-
-  // @@protoc_insertion_point(class_scope:api.OrderByReferenceIDRequest)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr referenceid_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
-};
-// -------------------------------------------------------------------
-
 class OrderVersionsByIDRequest :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.OrderVersionsByIDRequest) */ {
  public:
@@ -12363,7 +12247,7 @@ class OrderVersionsByIDRequest :
                &_OrderVersionsByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    97;
+    96;
 
   void Swap(OrderVersionsByIDRequest* other);
   friend void swap(OrderVersionsByIDRequest& a, OrderVersionsByIDRequest& b) {
@@ -12493,7 +12377,7 @@ class OrderVersionsResponse :
                &_OrderVersionsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    98;
+    97;
 
   void Swap(OrderVersionsResponse* other);
   friend void swap(OrderVersionsResponse& a, OrderVersionsResponse& b) {
@@ -12568,6 +12452,236 @@ class OrderVersionsResponse :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::vega::Order > orders_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class EstimateFeeRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.EstimateFeeRequest) */ {
+ public:
+  EstimateFeeRequest();
+  virtual ~EstimateFeeRequest();
+
+  EstimateFeeRequest(const EstimateFeeRequest& from);
+
+  inline EstimateFeeRequest& operator=(const EstimateFeeRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  EstimateFeeRequest(EstimateFeeRequest&& from) noexcept
+    : EstimateFeeRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline EstimateFeeRequest& operator=(EstimateFeeRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const EstimateFeeRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const EstimateFeeRequest* internal_default_instance() {
+    return reinterpret_cast<const EstimateFeeRequest*>(
+               &_EstimateFeeRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    98;
+
+  void Swap(EstimateFeeRequest* other);
+  friend void swap(EstimateFeeRequest& a, EstimateFeeRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline EstimateFeeRequest* New() const final {
+    return CreateMaybeMessage<EstimateFeeRequest>(nullptr);
+  }
+
+  EstimateFeeRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<EstimateFeeRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const EstimateFeeRequest& from);
+  void MergeFrom(const EstimateFeeRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(EstimateFeeRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .vega.Order order = 1;
+  bool has_order() const;
+  void clear_order();
+  static const int kOrderFieldNumber = 1;
+  const ::vega::Order& order() const;
+  ::vega::Order* release_order();
+  ::vega::Order* mutable_order();
+  void set_allocated_order(::vega::Order* order);
+
+  // @@protoc_insertion_point(class_scope:api.EstimateFeeRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::vega::Order* order_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class EstimateFeeResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.EstimateFeeResponse) */ {
+ public:
+  EstimateFeeResponse();
+  virtual ~EstimateFeeResponse();
+
+  EstimateFeeResponse(const EstimateFeeResponse& from);
+
+  inline EstimateFeeResponse& operator=(const EstimateFeeResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  EstimateFeeResponse(EstimateFeeResponse&& from) noexcept
+    : EstimateFeeResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline EstimateFeeResponse& operator=(EstimateFeeResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const EstimateFeeResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const EstimateFeeResponse* internal_default_instance() {
+    return reinterpret_cast<const EstimateFeeResponse*>(
+               &_EstimateFeeResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    99;
+
+  void Swap(EstimateFeeResponse* other);
+  friend void swap(EstimateFeeResponse& a, EstimateFeeResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline EstimateFeeResponse* New() const final {
+    return CreateMaybeMessage<EstimateFeeResponse>(nullptr);
+  }
+
+  EstimateFeeResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<EstimateFeeResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const EstimateFeeResponse& from);
+  void MergeFrom(const EstimateFeeResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(EstimateFeeResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .vega.Fee fee = 2;
+  bool has_fee() const;
+  void clear_fee();
+  static const int kFeeFieldNumber = 2;
+  const ::vega::Fee& fee() const;
+  ::vega::Fee* release_fee();
+  ::vega::Fee* mutable_fee();
+  void set_allocated_fee(::vega::Fee* fee);
+
+  // @@protoc_insertion_point(class_scope:api.EstimateFeeResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::vega::Fee* fee_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
@@ -13334,7 +13448,7 @@ AssetsResponse::assets() const {
 
 // AssetByIDRequest
 
-// string ID = 1;
+// string ID = 1 [(.validator.field) = {
 inline void AssetByIDRequest::clear_id() {
   id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -13440,7 +13554,7 @@ inline void AssetByIDResponse::set_allocated_asset(::vega::Asset* asset) {
 
 // GetNodeSignaturesAggregateRequest
 
-// string ID = 1;
+// string ID = 1 [(.validator.field) = {
 inline void GetNodeSignaturesAggregateRequest::clear_id() {
   id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -18532,63 +18646,6 @@ inline void OrderByIDRequest::set_version(::google::protobuf::uint64 value) {
 
 // -------------------------------------------------------------------
 
-// OrderByReferenceIDRequest
-
-// string referenceID = 1 [(.validator.field) = {
-inline void OrderByReferenceIDRequest::clear_referenceid() {
-  referenceid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& OrderByReferenceIDRequest::referenceid() const {
-  // @@protoc_insertion_point(field_get:api.OrderByReferenceIDRequest.referenceID)
-  return referenceid_.GetNoArena();
-}
-inline void OrderByReferenceIDRequest::set_referenceid(const ::std::string& value) {
-
-  referenceid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.OrderByReferenceIDRequest.referenceID)
-}
-#if LANG_CXX11
-inline void OrderByReferenceIDRequest::set_referenceid(::std::string&& value) {
-
-  referenceid_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.OrderByReferenceIDRequest.referenceID)
-}
-#endif
-inline void OrderByReferenceIDRequest::set_referenceid(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  referenceid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.OrderByReferenceIDRequest.referenceID)
-}
-inline void OrderByReferenceIDRequest::set_referenceid(const char* value, size_t size) {
-
-  referenceid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.OrderByReferenceIDRequest.referenceID)
-}
-inline ::std::string* OrderByReferenceIDRequest::mutable_referenceid() {
-
-  // @@protoc_insertion_point(field_mutable:api.OrderByReferenceIDRequest.referenceID)
-  return referenceid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* OrderByReferenceIDRequest::release_referenceid() {
-  // @@protoc_insertion_point(field_release:api.OrderByReferenceIDRequest.referenceID)
-
-  return referenceid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void OrderByReferenceIDRequest::set_allocated_referenceid(::std::string* referenceid) {
-  if (referenceid != nullptr) {
-
-  } else {
-
-  }
-  referenceid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), referenceid);
-  // @@protoc_insertion_point(field_set_allocated:api.OrderByReferenceIDRequest.referenceID)
-}
-
-// -------------------------------------------------------------------
-
 // OrderVersionsByIDRequest
 
 // string orderID = 1 [(.validator.field) = {
@@ -18726,9 +18783,109 @@ OrderVersionsResponse::orders() const {
   return orders_;
 }
 
+// -------------------------------------------------------------------
+
+// EstimateFeeRequest
+
+// .vega.Order order = 1;
+inline bool EstimateFeeRequest::has_order() const {
+  return this != internal_default_instance() && order_ != nullptr;
+}
+inline const ::vega::Order& EstimateFeeRequest::order() const {
+  const ::vega::Order* p = order_;
+  // @@protoc_insertion_point(field_get:api.EstimateFeeRequest.order)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::Order*>(
+      &::vega::_Order_default_instance_);
+}
+inline ::vega::Order* EstimateFeeRequest::release_order() {
+  // @@protoc_insertion_point(field_release:api.EstimateFeeRequest.order)
+
+  ::vega::Order* temp = order_;
+  order_ = nullptr;
+  return temp;
+}
+inline ::vega::Order* EstimateFeeRequest::mutable_order() {
+
+  if (order_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::Order>(GetArenaNoVirtual());
+    order_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.EstimateFeeRequest.order)
+  return order_;
+}
+inline void EstimateFeeRequest::set_allocated_order(::vega::Order* order) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(order_);
+  }
+  if (order) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      order = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, order, submessage_arena);
+    }
+
+  } else {
+
+  }
+  order_ = order;
+  // @@protoc_insertion_point(field_set_allocated:api.EstimateFeeRequest.order)
+}
+
+// -------------------------------------------------------------------
+
+// EstimateFeeResponse
+
+// .vega.Fee fee = 2;
+inline bool EstimateFeeResponse::has_fee() const {
+  return this != internal_default_instance() && fee_ != nullptr;
+}
+inline const ::vega::Fee& EstimateFeeResponse::fee() const {
+  const ::vega::Fee* p = fee_;
+  // @@protoc_insertion_point(field_get:api.EstimateFeeResponse.fee)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::Fee*>(
+      &::vega::_Fee_default_instance_);
+}
+inline ::vega::Fee* EstimateFeeResponse::release_fee() {
+  // @@protoc_insertion_point(field_release:api.EstimateFeeResponse.fee)
+
+  ::vega::Fee* temp = fee_;
+  fee_ = nullptr;
+  return temp;
+}
+inline ::vega::Fee* EstimateFeeResponse::mutable_fee() {
+
+  if (fee_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::Fee>(GetArenaNoVirtual());
+    fee_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.EstimateFeeResponse.fee)
+  return fee_;
+}
+inline void EstimateFeeResponse::set_allocated_fee(::vega::Fee* fee) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(fee_);
+  }
+  if (fee) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      fee = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, fee, submessage_arena);
+    }
+
+  } else {
+
+  }
+  fee_ = fee;
+  // @@protoc_insertion_point(field_set_allocated:api.EstimateFeeResponse.fee)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -1,5 +1,7 @@
 # Makefile
 
+SHELL := /usr/bin/env bash
+
 .PHONY: default
 default:
 	@echo "Please select a target:"
@@ -60,14 +62,15 @@ PYTHON_GENERATED_DIR := python/vegaapiclient/generated
 .PHONY: proto-python
 proto-python:
 	@mkdir -p "$(PYTHON_GENERATED_DIR)"
-	@find proto \
+	@cd python && make venv && cd .. && source /tmp/venv-api-clients/bin/activate && \
+	find proto \
 		-name '*.proto' | \
 		xargs python3 -m grpc_tools.protoc \
 		-I. \
 		-Iexternal \
 		--python_out="$(PYTHON_GENERATED_DIR)" \
-		--grpc_python_out="$(PYTHON_GENERATED_DIR)"
-	@find external/github.com/mwitkow \
+		--grpc_python_out="$(PYTHON_GENERATED_DIR)" && \
+	find external/github.com/mwitkow \
 		-name '*.proto' | \
 		xargs python3 -m grpc_tools.protoc \
 		-Iexternal \
@@ -80,7 +83,7 @@ proto-python:
 		-e 's#^from proto import#from .. import#' \
 		-e 's#^from proto.api import#from . import#' \
 		"$(PYTHON_GENERATED_DIR)/proto/api"/*.py
-	@echo 'from . import trading_pb2 as trading\nfrom . import trading_pb2_grpc as trading_grpc\n\n__all__ = ["trading", "trading_grpc"]' \
+	@echo -e 'from . import trading_pb2 as trading\nfrom . import trading_pb2_grpc as trading_grpc\n\n__all__ = ["trading", "trading_grpc"]' \
 		>"$(PYTHON_GENERATED_DIR)/proto/api/__init__.py"
 	@touch "$(PYTHON_GENERATED_DIR)/__init__.py" "$(PYTHON_GENERATED_DIR)/proto/__init__.py"
 	@mv "$(PYTHON_GENERATED_DIR)/github/com/mwitkow/go_proto_validators/validator_pb2.py" "$(PYTHON_GENERATED_DIR)/proto/mwitkow_goprotovalidators_validator_pb2.py"
@@ -107,4 +110,4 @@ test-javascript:
 
 .PHONY: test
 test-python:
-	@cd python && make test
+	@cd python && make venv && source /tmp/venv-api-clients/bin/activate && make test
