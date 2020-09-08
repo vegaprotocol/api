@@ -464,12 +464,13 @@ enum AccountType {
   ACCOUNT_TYPE_FEES_INFRASTRUCTURE = 5,
   ACCOUNT_TYPE_FEES_LIQUIDITY = 6,
   ACCOUNT_TYPE_FEES_MAKER = 7,
+  ACCOUNT_TYPE_LOCK_WITHDRAW = 8,
   AccountType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   AccountType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool AccountType_IsValid(int value);
 const AccountType AccountType_MIN = ACCOUNT_TYPE_UNSPECIFIED;
-const AccountType AccountType_MAX = ACCOUNT_TYPE_FEES_MAKER;
+const AccountType AccountType_MAX = ACCOUNT_TYPE_LOCK_WITHDRAW;
 const int AccountType_ARRAYSIZE = AccountType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* AccountType_descriptor();

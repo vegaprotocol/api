@@ -70,21 +70,21 @@ class tradingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def PrepareCancelOrder(self, request, context):
-        """Cancel an Order
+        """Prepare a cancel order request
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def PrepareAmendOrder(self, request, context):
-        """Amend an Order
+        """Prepare an amend order request
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def PrepareWithdraw(self, request, context):
-        """Request withdrawal
+        """Request a withdrawal
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -98,23 +98,21 @@ class tradingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def PrepareProposal(self, request, context):
-        """Governance
-
-        Prepare proposal that can be sent out to the chain (via SubmitTransaction)
+        """Prepare a governance proposal
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def PrepareVote(self, request, context):
-        """Prepare a vote to be put on the chain (via SubmitTransaction)
+        """Prepare a governance vote
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def PropagateChainEvent(self, request, context):
-        """chain events
+        """Propagate a chain event
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -179,6 +177,7 @@ class trading(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -187,7 +186,7 @@ class trading(object):
             proto_dot_api_dot_trading__pb2.SubmitOrderRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.PrepareSubmitOrderResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def PrepareCancelOrder(request,
@@ -195,6 +194,7 @@ class trading(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -203,7 +203,7 @@ class trading(object):
             proto_dot_api_dot_trading__pb2.CancelOrderRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.PrepareCancelOrderResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def PrepareAmendOrder(request,
@@ -211,6 +211,7 @@ class trading(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -219,7 +220,7 @@ class trading(object):
             proto_dot_api_dot_trading__pb2.AmendOrderRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.PrepareAmendOrderResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def PrepareWithdraw(request,
@@ -227,6 +228,7 @@ class trading(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -235,7 +237,7 @@ class trading(object):
             proto_dot_api_dot_trading__pb2.PrepareWithdrawRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.PrepareWithdrawResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def SubmitTransaction(request,
@@ -243,6 +245,7 @@ class trading(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -251,7 +254,7 @@ class trading(object):
             proto_dot_api_dot_trading__pb2.SubmitTransactionRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.SubmitTransactionResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def PrepareProposal(request,
@@ -259,6 +262,7 @@ class trading(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -267,7 +271,7 @@ class trading(object):
             proto_dot_api_dot_trading__pb2.PrepareProposalRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.PrepareProposalResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def PrepareVote(request,
@@ -275,6 +279,7 @@ class trading(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -283,7 +288,7 @@ class trading(object):
             proto_dot_api_dot_trading__pb2.PrepareVoteRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.PrepareVoteResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def PropagateChainEvent(request,
@@ -291,6 +296,7 @@ class trading(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -299,7 +305,7 @@ class trading(object):
             proto_dot_api_dot_trading__pb2.PropagateChainEventRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.PropagateChainEventResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
 
 class trading_dataStub(object):
@@ -379,11 +385,6 @@ class trading_dataStub(object):
         self.OrderByID = channel.unary_unary(
                 '/api.trading_data/OrderByID',
                 request_serializer=proto_dot_api_dot_trading__pb2.OrderByIDRequest.SerializeToString,
-                response_deserializer=proto_dot_vega__pb2.Order.FromString,
-                )
-        self.OrderByReferenceID = channel.unary_unary(
-                '/api.trading_data/OrderByReferenceID',
-                request_serializer=proto_dot_api_dot_trading__pb2.OrderByReferenceIDRequest.SerializeToString,
                 response_deserializer=proto_dot_vega__pb2.Order.FromString,
                 )
         self.OrderVersionsByID = channel.unary_unary(
@@ -566,13 +567,18 @@ class trading_dataStub(object):
                 request_serializer=proto_dot_api_dot_trading__pb2.AssetsRequest.SerializeToString,
                 response_deserializer=proto_dot_api_dot_trading__pb2.AssetsResponse.FromString,
                 )
+        self.EstimateFee = channel.unary_unary(
+                '/api.trading_data/EstimateFee',
+                request_serializer=proto_dot_api_dot_trading__pb2.EstimateFeeRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.EstimateFeeResponse.FromString,
+                )
 
 
 class trading_dataServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def MarketAccounts(self, request, context):
-        """Accounts
+        """-- Accounts --
 
         Get a list of Accounts by Market
         """
@@ -595,7 +601,7 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Candles(self, request, context):
-        """Candles
+        """-- Candles --
 
         Get a list of Candles by Market
         """
@@ -604,7 +610,7 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def MarketDataByID(self, request, context):
-        """Market Data
+        """-- Market Data --
 
         Get Market Data by MarketID
         """
@@ -620,7 +626,7 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def MarketByID(self, request, context):
-        """Markets
+        """-- Markets --
 
         Get a Market by ID
         """
@@ -643,7 +649,7 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def OrderByMarketAndID(self, request, context):
-        """Orders
+        """-- Orders --
 
         Get an Order by Market and OrderID
         """
@@ -679,13 +685,6 @@ class trading_dataServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def OrderByReferenceID(self, request, context):
-        """Get a specific order by referenceID
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def OrderVersionsByID(self, request, context):
         """Get all versions of the order by its orderID
         """
@@ -694,7 +693,7 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def MarginLevels(self, request, context):
-        """Parties
+        """-- Parties --
 
         Get Margin Levels by PartyID
         """
@@ -717,7 +716,7 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def PositionsByParty(self, request, context):
-        """Positions
+        """-- Positions --
 
         Get a list of Positions by Party
         """
@@ -726,7 +725,7 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def LastTrade(self, request, context):
-        """Trades
+        """-- Trades --
 
         Get latest Trade
         """
@@ -756,7 +755,7 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetProposals(self, request, context):
-        """Governance
+        """-- Governance --
 
         Get governance data (proposals and votes) for all proposals
         """
@@ -849,7 +848,7 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Statistics(self, request, context):
-        """Misc
+        """-- Misc --
 
         Get Statistics
         """
@@ -928,21 +927,28 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetNodeSignaturesAggregate(self, request, context):
-        """Get an aggregate of signature from all the node of the network
+        """Get an aggregate of signatures from all the nodes of the network.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def AssetByID(self, request, context):
-        """Get an asset by its ID
+        """Get an asset by its identifier.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Assets(self, request, context):
-        """Get the list of all assets in vega
+        """Get a list of all assets on Vega.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def EstimateFee(self, request, context):
+        """Get an estimate for the fee to be paid for a given order
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1019,11 +1025,6 @@ def add_trading_dataServicer_to_server(servicer, server):
             'OrderByID': grpc.unary_unary_rpc_method_handler(
                     servicer.OrderByID,
                     request_deserializer=proto_dot_api_dot_trading__pb2.OrderByIDRequest.FromString,
-                    response_serializer=proto_dot_vega__pb2.Order.SerializeToString,
-            ),
-            'OrderByReferenceID': grpc.unary_unary_rpc_method_handler(
-                    servicer.OrderByReferenceID,
-                    request_deserializer=proto_dot_api_dot_trading__pb2.OrderByReferenceIDRequest.FromString,
                     response_serializer=proto_dot_vega__pb2.Order.SerializeToString,
             ),
             'OrderVersionsByID': grpc.unary_unary_rpc_method_handler(
@@ -1206,6 +1207,11 @@ def add_trading_dataServicer_to_server(servicer, server):
                     request_deserializer=proto_dot_api_dot_trading__pb2.AssetsRequest.FromString,
                     response_serializer=proto_dot_api_dot_trading__pb2.AssetsResponse.SerializeToString,
             ),
+            'EstimateFee': grpc.unary_unary_rpc_method_handler(
+                    servicer.EstimateFee,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.EstimateFeeRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.EstimateFeeResponse.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'api.trading_data', rpc_method_handlers)
@@ -1222,6 +1228,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1230,7 +1237,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.MarketAccountsRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.MarketAccountsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def PartyAccounts(request,
@@ -1238,6 +1245,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1246,7 +1254,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.PartyAccountsRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.PartyAccountsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def FeeInfrastructureAccounts(request,
@@ -1254,6 +1262,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1262,7 +1271,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.FeeInfrastructureAccountsRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.FeeInfrastructureAccountsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Candles(request,
@@ -1270,6 +1279,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1278,7 +1288,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.CandlesRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.CandlesResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def MarketDataByID(request,
@@ -1286,6 +1296,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1294,7 +1305,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.MarketDataByIDRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.MarketDataByIDResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def MarketsData(request,
@@ -1302,6 +1313,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1310,7 +1322,7 @@ class trading_data(object):
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             proto_dot_api_dot_trading__pb2.MarketsDataResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def MarketByID(request,
@@ -1318,6 +1330,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1326,7 +1339,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.MarketByIDRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.MarketByIDResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def MarketDepth(request,
@@ -1334,6 +1347,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1342,7 +1356,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.MarketDepthRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.MarketDepthResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Markets(request,
@@ -1350,6 +1364,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1358,7 +1373,7 @@ class trading_data(object):
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             proto_dot_api_dot_trading__pb2.MarketsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def OrderByMarketAndID(request,
@@ -1366,6 +1381,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1374,7 +1390,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.OrderByMarketAndIdRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.OrderByMarketAndIdResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def OrderByReference(request,
@@ -1382,6 +1398,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1390,7 +1407,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.OrderByReferenceRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.OrderByReferenceResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def OrdersByMarket(request,
@@ -1398,6 +1415,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1406,7 +1424,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.OrdersByMarketRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.OrdersByMarketResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def OrdersByParty(request,
@@ -1414,6 +1432,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1422,7 +1441,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.OrdersByPartyRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.OrdersByPartyResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def OrderByID(request,
@@ -1430,6 +1449,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1438,23 +1458,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.OrderByIDRequest.SerializeToString,
             proto_dot_vega__pb2.Order.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def OrderByReferenceID(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/OrderByReferenceID',
-            proto_dot_api_dot_trading__pb2.OrderByReferenceIDRequest.SerializeToString,
-            proto_dot_vega__pb2.Order.FromString,
-            options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def OrderVersionsByID(request,
@@ -1462,6 +1466,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1470,7 +1475,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.OrderVersionsByIDRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.OrderVersionsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def MarginLevels(request,
@@ -1478,6 +1483,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1486,7 +1492,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.MarginLevelsRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.MarginLevelsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Parties(request,
@@ -1494,6 +1500,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1502,7 +1509,7 @@ class trading_data(object):
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             proto_dot_api_dot_trading__pb2.PartiesResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def PartyByID(request,
@@ -1510,6 +1517,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1518,7 +1526,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.PartyByIDRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.PartyByIDResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def PositionsByParty(request,
@@ -1526,6 +1534,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1534,7 +1543,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.PositionsByPartyRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.PositionsByPartyResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def LastTrade(request,
@@ -1542,6 +1551,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1550,7 +1560,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.LastTradeRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.LastTradeResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def TradesByMarket(request,
@@ -1558,6 +1568,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1566,7 +1577,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.TradesByMarketRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.TradesByMarketResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def TradesByOrder(request,
@@ -1574,6 +1585,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1582,7 +1594,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.TradesByOrderRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.TradesByOrderResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def TradesByParty(request,
@@ -1590,6 +1602,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1598,7 +1611,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.TradesByPartyRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.TradesByPartyResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetProposals(request,
@@ -1606,6 +1619,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1614,7 +1628,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.GetProposalsRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.GetProposalsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetProposalsByParty(request,
@@ -1622,6 +1636,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1630,7 +1645,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.GetProposalsByPartyRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.GetProposalsByPartyResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetVotesByParty(request,
@@ -1638,6 +1653,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1646,7 +1662,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.GetVotesByPartyRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.GetVotesByPartyResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetNewMarketProposals(request,
@@ -1654,6 +1670,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1662,7 +1679,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.GetNewMarketProposalsRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.GetNewMarketProposalsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetUpdateMarketProposals(request,
@@ -1670,6 +1687,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1678,7 +1696,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.GetUpdateMarketProposalsRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.GetUpdateMarketProposalsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetNetworkParametersProposals(request,
@@ -1686,6 +1704,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1694,7 +1713,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.GetNetworkParametersProposalsRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.GetNetworkParametersProposalsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetNewAssetProposals(request,
@@ -1702,6 +1721,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1710,7 +1730,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.GetNewAssetProposalsRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.GetNewAssetProposalsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetProposalByID(request,
@@ -1718,6 +1738,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1726,7 +1747,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.GetProposalByIDRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.GetProposalByIDResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetProposalByReference(request,
@@ -1734,6 +1755,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1742,7 +1764,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.GetProposalByReferenceRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.GetProposalByReferenceResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ObserveGovernance(request,
@@ -1750,6 +1772,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1758,7 +1781,7 @@ class trading_data(object):
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             proto_dot_governance__pb2.GovernanceData.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ObservePartyProposals(request,
@@ -1766,6 +1789,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1774,7 +1798,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.ObservePartyProposalsRequest.SerializeToString,
             proto_dot_governance__pb2.GovernanceData.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ObservePartyVotes(request,
@@ -1782,6 +1806,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1790,7 +1815,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.ObservePartyVotesRequest.SerializeToString,
             proto_dot_governance__pb2.Vote.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ObserveProposalVotes(request,
@@ -1798,6 +1823,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1806,7 +1832,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.ObserveProposalVotesRequest.SerializeToString,
             proto_dot_governance__pb2.Vote.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Statistics(request,
@@ -1814,6 +1840,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1822,7 +1849,7 @@ class trading_data(object):
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             proto_dot_vega__pb2.Statistics.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetVegaTime(request,
@@ -1830,6 +1857,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1838,7 +1866,7 @@ class trading_data(object):
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             proto_dot_api_dot_trading__pb2.VegaTimeResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def AccountsSubscribe(request,
@@ -1846,6 +1874,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1854,7 +1883,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.AccountsSubscribeRequest.SerializeToString,
             proto_dot_vega__pb2.Account.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CandlesSubscribe(request,
@@ -1862,6 +1891,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1870,7 +1900,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.CandlesSubscribeRequest.SerializeToString,
             proto_dot_vega__pb2.Candle.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def MarginLevelsSubscribe(request,
@@ -1878,6 +1908,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1886,7 +1917,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.MarginLevelsSubscribeRequest.SerializeToString,
             proto_dot_vega__pb2.MarginLevels.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def MarketDepthSubscribe(request,
@@ -1894,6 +1925,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1902,7 +1934,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.MarketDepthSubscribeRequest.SerializeToString,
             proto_dot_vega__pb2.MarketDepth.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def MarketsDataSubscribe(request,
@@ -1910,6 +1942,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1918,7 +1951,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.MarketsDataSubscribeRequest.SerializeToString,
             proto_dot_vega__pb2.MarketData.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def OrdersSubscribe(request,
@@ -1926,6 +1959,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1934,7 +1968,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.OrdersSubscribeRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.OrdersStream.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def PositionsSubscribe(request,
@@ -1942,6 +1976,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1950,7 +1985,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.PositionsSubscribeRequest.SerializeToString,
             proto_dot_vega__pb2.Position.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def TradesSubscribe(request,
@@ -1958,6 +1993,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1966,7 +2002,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.TradesSubscribeRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.TradesStream.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def TransferResponsesSubscribe(request,
@@ -1974,6 +2010,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1982,7 +2019,7 @@ class trading_data(object):
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             proto_dot_vega__pb2.TransferResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetNodeSignaturesAggregate(request,
@@ -1990,6 +2027,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -1998,7 +2036,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.GetNodeSignaturesAggregateRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.GetNodeSignaturesAggregateResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def AssetByID(request,
@@ -2006,6 +2044,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -2014,7 +2053,7 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.AssetByIDRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.AssetByIDResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Assets(request,
@@ -2022,6 +2061,7 @@ class trading_data(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -2030,4 +2070,21 @@ class trading_data(object):
             proto_dot_api_dot_trading__pb2.AssetsRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.AssetsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def EstimateFee(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.trading_data/EstimateFee',
+            proto_dot_api_dot_trading__pb2.EstimateFeeRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.EstimateFeeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
