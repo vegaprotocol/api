@@ -60,6 +60,7 @@ test: varcheck
 .PHONY: varcheck
 varcheck:
 	@if test -z "$$GRPC_NODE" ; then echo "Please set GRPC_NODE (e.g. node.xx.vega.zzz:1111)." ; exit 1 ; fi
+	@if test -z "$$FAUCETSERVER" ; then echo "Please set FAUCETSERVER (e.g. https://faucet.xx.vega.zzz)." ; exit 1 ; fi
 	@if test -z "$$WALLETSERVER" ; then echo "Please set WALLETSERVER (e.g. https://wallet.xx.vega.zzz)." ; exit 1 ; fi
 
 .PHONY: venv
