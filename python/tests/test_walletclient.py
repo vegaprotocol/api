@@ -71,7 +71,7 @@ def test_walletclient(
     # Sign tx
     blob = b"abc123"
     tx = base64.b64encode(blob).decode("ascii")
-    r = walletclient.signtx(tx, k["pub"])
+    r = walletclient.signtx(tx, k["pub"], False)
     assert r.status_code == 200
     j = r.json()
     assert "signedTx" in j, "Bad response: {}".format(j)
