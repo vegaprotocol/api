@@ -75,7 +75,7 @@ def test_SubmitOrder(
     blob = response.blob
 
     # Sign the tx
-    r = walletclient.signtx(base64.b64encode(blob).decode("ascii"), pubKey)
+    r = walletclient.signtx(base64.b64encode(blob).decode("ascii"), pubKey, False)
     assert r.status_code == 200
     signedTx = r.json()["signedTx"]
 
