@@ -92,7 +92,7 @@ class WalletClient(object):
         url = "{}/api/v1/keys".format(self.url)
         return self._httpsession.post(url, headers=self._header(), json=req)
 
-    def signtx(self, tx, pubKey) -> requests.Response:
+    def signtx(self, tx, pubKey, propagate) -> requests.Response:
         """
         Sign a transaction.
 
@@ -101,7 +101,7 @@ class WalletClient(object):
 
         pubKey must be a hex-encoded string.
         """
-        req = {"tx": tx, "pubKey": pubKey, "propagate": False}
+        req = {"tx": tx, "pubKey": pubKey, "propagate": propagate}
         url = "{}/api/v1/messages".format(self.url)
         return self._httpsession.post(url, headers=self._header(), json=req)
 
