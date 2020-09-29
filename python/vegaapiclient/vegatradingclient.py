@@ -3,8 +3,8 @@ import grpc
 from typing import Any, Callable
 
 from .walletclient import WalletClient
-from .generated.proto import vega_pb2_grpc as vega_grpc
-from .generated.proto.api import trading_pb2_grpc as trading_grpc
+import vegaapiclient.generated.vega_grpc as vega_grpc
+import vegaapiclient.generated.api.trading_grpc as trading_grpc
 
 
 class VegaTradingClient(object):
