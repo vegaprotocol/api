@@ -43,7 +43,7 @@ class VegaTradingClient(object):
         blob_base64 = base64.b64encode(response.blob).decode("ascii")
 
         # Sign the transaction
-        response = walletclient.signtx(blob_base64, pubkey)
+        response = walletclient.signtx(blob_base64, pubkey, False)
         if response.status_code != 200:
             raise Exception(
                 "Error: Wallet failed to sign transaction: HTTP {} {}".format(
