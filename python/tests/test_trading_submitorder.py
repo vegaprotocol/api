@@ -35,7 +35,7 @@ def test_SubmitOrder(
 
     # Wait until funds are in accounts
     x = 0
-    maxwait = 20  # seconds
+    maxwait = 300  # seconds
     while True:
         request = vac.api.trading.PartyAccountsRequest(
             partyID=pubKey,
@@ -49,6 +49,9 @@ def test_SubmitOrder(
         if n > 0:
             print(f"Accounts: {response.accounts}")
         if n == 1 and response.accounts[0].balance == amt:
+            # Log time taken
+            # with open("/tmp/log", "a") as fh:
+            #     fh.write(f"{x}\n")
             break
         if x >= maxwait:
             assert (
