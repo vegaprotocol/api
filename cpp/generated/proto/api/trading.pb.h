@@ -36,6 +36,7 @@
 #include "proto/governance.pb.h"
 #include "proto/chain_events.pb.h"
 #include "proto/assets.pb.h"
+#include "proto/events.pb.h"
 #include <google/protobuf/empty.pb.h>
 #include "github.com/mwitkow/go-proto-validators/validator.pb.h"
 // @@protoc_insertion_point(includes)
@@ -48,7 +49,7 @@ struct TableStruct_proto_2fapi_2ftrading_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[100]
+  static const ::google::protobuf::internal::ParseTable schema[112]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -86,6 +87,24 @@ extern CandlesResponseDefaultTypeInternal _CandlesResponse_default_instance_;
 class CandlesSubscribeRequest;
 class CandlesSubscribeRequestDefaultTypeInternal;
 extern CandlesSubscribeRequestDefaultTypeInternal _CandlesSubscribeRequest_default_instance_;
+class DepositRequest;
+class DepositRequestDefaultTypeInternal;
+extern DepositRequestDefaultTypeInternal _DepositRequest_default_instance_;
+class DepositResponse;
+class DepositResponseDefaultTypeInternal;
+extern DepositResponseDefaultTypeInternal _DepositResponse_default_instance_;
+class DepositsRequest;
+class DepositsRequestDefaultTypeInternal;
+extern DepositsRequestDefaultTypeInternal _DepositsRequest_default_instance_;
+class DepositsResponse;
+class DepositsResponseDefaultTypeInternal;
+extern DepositsResponseDefaultTypeInternal _DepositsResponse_default_instance_;
+class ERC20WithdrawalApprovalRequest;
+class ERC20WithdrawalApprovalRequestDefaultTypeInternal;
+extern ERC20WithdrawalApprovalRequestDefaultTypeInternal _ERC20WithdrawalApprovalRequest_default_instance_;
+class ERC20WithdrawalApprovalResponse;
+class ERC20WithdrawalApprovalResponseDefaultTypeInternal;
+extern ERC20WithdrawalApprovalResponseDefaultTypeInternal _ERC20WithdrawalApprovalResponse_default_instance_;
 class EstimateFeeRequest;
 class EstimateFeeRequestDefaultTypeInternal;
 extern EstimateFeeRequestDefaultTypeInternal _EstimateFeeRequest_default_instance_;
@@ -209,6 +228,12 @@ extern MarketsDataSubscribeRequestDefaultTypeInternal _MarketsDataSubscribeReque
 class MarketsResponse;
 class MarketsResponseDefaultTypeInternal;
 extern MarketsResponseDefaultTypeInternal _MarketsResponse_default_instance_;
+class ObserveEventsRequest;
+class ObserveEventsRequestDefaultTypeInternal;
+extern ObserveEventsRequestDefaultTypeInternal _ObserveEventsRequest_default_instance_;
+class ObserveEventsResponse;
+class ObserveEventsResponseDefaultTypeInternal;
+extern ObserveEventsResponseDefaultTypeInternal _ObserveEventsResponse_default_instance_;
 class ObservePartyProposalsRequest;
 class ObservePartyProposalsRequestDefaultTypeInternal;
 extern ObservePartyProposalsRequestDefaultTypeInternal _ObservePartyProposalsRequest_default_instance_;
@@ -356,6 +381,18 @@ extern TradesSubscribeRequestDefaultTypeInternal _TradesSubscribeRequest_default
 class VegaTimeResponse;
 class VegaTimeResponseDefaultTypeInternal;
 extern VegaTimeResponseDefaultTypeInternal _VegaTimeResponse_default_instance_;
+class WithdrawalRequest;
+class WithdrawalRequestDefaultTypeInternal;
+extern WithdrawalRequestDefaultTypeInternal _WithdrawalRequest_default_instance_;
+class WithdrawalResponse;
+class WithdrawalResponseDefaultTypeInternal;
+extern WithdrawalResponseDefaultTypeInternal _WithdrawalResponse_default_instance_;
+class WithdrawalsRequest;
+class WithdrawalsRequestDefaultTypeInternal;
+extern WithdrawalsRequestDefaultTypeInternal _WithdrawalsRequest_default_instance_;
+class WithdrawalsResponse;
+class WithdrawalsResponseDefaultTypeInternal;
+extern WithdrawalsResponseDefaultTypeInternal _WithdrawalsResponse_default_instance_;
 }  // namespace api
 namespace google {
 namespace protobuf {
@@ -369,6 +406,12 @@ template<> ::api::CancelOrderRequest* Arena::CreateMaybeMessage<::api::CancelOrd
 template<> ::api::CandlesRequest* Arena::CreateMaybeMessage<::api::CandlesRequest>(Arena*);
 template<> ::api::CandlesResponse* Arena::CreateMaybeMessage<::api::CandlesResponse>(Arena*);
 template<> ::api::CandlesSubscribeRequest* Arena::CreateMaybeMessage<::api::CandlesSubscribeRequest>(Arena*);
+template<> ::api::DepositRequest* Arena::CreateMaybeMessage<::api::DepositRequest>(Arena*);
+template<> ::api::DepositResponse* Arena::CreateMaybeMessage<::api::DepositResponse>(Arena*);
+template<> ::api::DepositsRequest* Arena::CreateMaybeMessage<::api::DepositsRequest>(Arena*);
+template<> ::api::DepositsResponse* Arena::CreateMaybeMessage<::api::DepositsResponse>(Arena*);
+template<> ::api::ERC20WithdrawalApprovalRequest* Arena::CreateMaybeMessage<::api::ERC20WithdrawalApprovalRequest>(Arena*);
+template<> ::api::ERC20WithdrawalApprovalResponse* Arena::CreateMaybeMessage<::api::ERC20WithdrawalApprovalResponse>(Arena*);
 template<> ::api::EstimateFeeRequest* Arena::CreateMaybeMessage<::api::EstimateFeeRequest>(Arena*);
 template<> ::api::EstimateFeeResponse* Arena::CreateMaybeMessage<::api::EstimateFeeResponse>(Arena*);
 template<> ::api::FeeInfrastructureAccountsRequest* Arena::CreateMaybeMessage<::api::FeeInfrastructureAccountsRequest>(Arena*);
@@ -410,6 +453,8 @@ template<> ::api::MarketDepthSubscribeRequest* Arena::CreateMaybeMessage<::api::
 template<> ::api::MarketsDataResponse* Arena::CreateMaybeMessage<::api::MarketsDataResponse>(Arena*);
 template<> ::api::MarketsDataSubscribeRequest* Arena::CreateMaybeMessage<::api::MarketsDataSubscribeRequest>(Arena*);
 template<> ::api::MarketsResponse* Arena::CreateMaybeMessage<::api::MarketsResponse>(Arena*);
+template<> ::api::ObserveEventsRequest* Arena::CreateMaybeMessage<::api::ObserveEventsRequest>(Arena*);
+template<> ::api::ObserveEventsResponse* Arena::CreateMaybeMessage<::api::ObserveEventsResponse>(Arena*);
 template<> ::api::ObservePartyProposalsRequest* Arena::CreateMaybeMessage<::api::ObservePartyProposalsRequest>(Arena*);
 template<> ::api::ObservePartyVotesRequest* Arena::CreateMaybeMessage<::api::ObservePartyVotesRequest>(Arena*);
 template<> ::api::ObserveProposalVotesRequest* Arena::CreateMaybeMessage<::api::ObserveProposalVotesRequest>(Arena*);
@@ -459,6 +504,10 @@ template<> ::api::TradesByPartyResponse* Arena::CreateMaybeMessage<::api::Trades
 template<> ::api::TradesStream* Arena::CreateMaybeMessage<::api::TradesStream>(Arena*);
 template<> ::api::TradesSubscribeRequest* Arena::CreateMaybeMessage<::api::TradesSubscribeRequest>(Arena*);
 template<> ::api::VegaTimeResponse* Arena::CreateMaybeMessage<::api::VegaTimeResponse>(Arena*);
+template<> ::api::WithdrawalRequest* Arena::CreateMaybeMessage<::api::WithdrawalRequest>(Arena*);
+template<> ::api::WithdrawalResponse* Arena::CreateMaybeMessage<::api::WithdrawalResponse>(Arena*);
+template<> ::api::WithdrawalsRequest* Arena::CreateMaybeMessage<::api::WithdrawalsRequest>(Arena*);
+template<> ::api::WithdrawalsResponse* Arena::CreateMaybeMessage<::api::WithdrawalsResponse>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace api {
@@ -1044,21 +1093,21 @@ class PrepareWithdrawRequest :
 
   // accessors -------------------------------------------------------
 
-  // .vega.Withdraw withdraw = 1;
+  // .vega.WithdrawSubmission withdraw = 1;
   bool has_withdraw() const;
   void clear_withdraw();
   static const int kWithdrawFieldNumber = 1;
-  const ::vega::Withdraw& withdraw() const;
-  ::vega::Withdraw* release_withdraw();
-  ::vega::Withdraw* mutable_withdraw();
-  void set_allocated_withdraw(::vega::Withdraw* withdraw);
+  const ::vega::WithdrawSubmission& withdraw() const;
+  ::vega::WithdrawSubmission* release_withdraw();
+  ::vega::WithdrawSubmission* mutable_withdraw();
+  void set_allocated_withdraw(::vega::WithdrawSubmission* withdraw);
 
   // @@protoc_insertion_point(class_scope:api.PrepareWithdrawRequest)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::vega::Withdraw* withdraw_;
+  ::vega::WithdrawSubmission* withdraw_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
@@ -12685,6 +12734,1509 @@ class EstimateFeeResponse :
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ObserveEventsRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.ObserveEventsRequest) */ {
+ public:
+  ObserveEventsRequest();
+  virtual ~ObserveEventsRequest();
+
+  ObserveEventsRequest(const ObserveEventsRequest& from);
+
+  inline ObserveEventsRequest& operator=(const ObserveEventsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ObserveEventsRequest(ObserveEventsRequest&& from) noexcept
+    : ObserveEventsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ObserveEventsRequest& operator=(ObserveEventsRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ObserveEventsRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ObserveEventsRequest* internal_default_instance() {
+    return reinterpret_cast<const ObserveEventsRequest*>(
+               &_ObserveEventsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    100;
+
+  void Swap(ObserveEventsRequest* other);
+  friend void swap(ObserveEventsRequest& a, ObserveEventsRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ObserveEventsRequest* New() const final {
+    return CreateMaybeMessage<ObserveEventsRequest>(nullptr);
+  }
+
+  ObserveEventsRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ObserveEventsRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ObserveEventsRequest& from);
+  void MergeFrom(const ObserveEventsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ObserveEventsRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .vega.BusEventType type = 1;
+  int type_size() const;
+  void clear_type();
+  static const int kTypeFieldNumber = 1;
+  ::vega::BusEventType type(int index) const;
+  void set_type(int index, ::vega::BusEventType value);
+  void add_type(::vega::BusEventType value);
+  const ::google::protobuf::RepeatedField<int>& type() const;
+  ::google::protobuf::RepeatedField<int>* mutable_type();
+
+  // string marketID = 2;
+  void clear_marketid();
+  static const int kMarketIDFieldNumber = 2;
+  const ::std::string& marketid() const;
+  void set_marketid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_marketid(::std::string&& value);
+  #endif
+  void set_marketid(const char* value);
+  void set_marketid(const char* value, size_t size);
+  ::std::string* mutable_marketid();
+  ::std::string* release_marketid();
+  void set_allocated_marketid(::std::string* marketid);
+
+  // string partyID = 3;
+  void clear_partyid();
+  static const int kPartyIDFieldNumber = 3;
+  const ::std::string& partyid() const;
+  void set_partyid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_partyid(::std::string&& value);
+  #endif
+  void set_partyid(const char* value);
+  void set_partyid(const char* value, size_t size);
+  ::std::string* mutable_partyid();
+  ::std::string* release_partyid();
+  void set_allocated_partyid(::std::string* partyid);
+
+  // @@protoc_insertion_point(class_scope:api.ObserveEventsRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedField<int> type_;
+  mutable std::atomic<int> _type_cached_byte_size_;
+  ::google::protobuf::internal::ArenaStringPtr marketid_;
+  ::google::protobuf::internal::ArenaStringPtr partyid_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ObserveEventsResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.ObserveEventsResponse) */ {
+ public:
+  ObserveEventsResponse();
+  virtual ~ObserveEventsResponse();
+
+  ObserveEventsResponse(const ObserveEventsResponse& from);
+
+  inline ObserveEventsResponse& operator=(const ObserveEventsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ObserveEventsResponse(ObserveEventsResponse&& from) noexcept
+    : ObserveEventsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ObserveEventsResponse& operator=(ObserveEventsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ObserveEventsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ObserveEventsResponse* internal_default_instance() {
+    return reinterpret_cast<const ObserveEventsResponse*>(
+               &_ObserveEventsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    101;
+
+  void Swap(ObserveEventsResponse* other);
+  friend void swap(ObserveEventsResponse& a, ObserveEventsResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ObserveEventsResponse* New() const final {
+    return CreateMaybeMessage<ObserveEventsResponse>(nullptr);
+  }
+
+  ObserveEventsResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ObserveEventsResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ObserveEventsResponse& from);
+  void MergeFrom(const ObserveEventsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ObserveEventsResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .vega.BusEvent events = 1;
+  int events_size() const;
+  void clear_events();
+  static const int kEventsFieldNumber = 1;
+  ::vega::BusEvent* mutable_events(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::BusEvent >*
+      mutable_events();
+  const ::vega::BusEvent& events(int index) const;
+  ::vega::BusEvent* add_events();
+  const ::google::protobuf::RepeatedPtrField< ::vega::BusEvent >&
+      events() const;
+
+  // @@protoc_insertion_point(class_scope:api.ObserveEventsResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::vega::BusEvent > events_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class WithdrawalsRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.WithdrawalsRequest) */ {
+ public:
+  WithdrawalsRequest();
+  virtual ~WithdrawalsRequest();
+
+  WithdrawalsRequest(const WithdrawalsRequest& from);
+
+  inline WithdrawalsRequest& operator=(const WithdrawalsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  WithdrawalsRequest(WithdrawalsRequest&& from) noexcept
+    : WithdrawalsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline WithdrawalsRequest& operator=(WithdrawalsRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const WithdrawalsRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const WithdrawalsRequest* internal_default_instance() {
+    return reinterpret_cast<const WithdrawalsRequest*>(
+               &_WithdrawalsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    102;
+
+  void Swap(WithdrawalsRequest* other);
+  friend void swap(WithdrawalsRequest& a, WithdrawalsRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline WithdrawalsRequest* New() const final {
+    return CreateMaybeMessage<WithdrawalsRequest>(nullptr);
+  }
+
+  WithdrawalsRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<WithdrawalsRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const WithdrawalsRequest& from);
+  void MergeFrom(const WithdrawalsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(WithdrawalsRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string partyID = 1 [(.validator.field) = {
+  void clear_partyid();
+  static const int kPartyIDFieldNumber = 1;
+  const ::std::string& partyid() const;
+  void set_partyid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_partyid(::std::string&& value);
+  #endif
+  void set_partyid(const char* value);
+  void set_partyid(const char* value, size_t size);
+  ::std::string* mutable_partyid();
+  ::std::string* release_partyid();
+  void set_allocated_partyid(::std::string* partyid);
+
+  // @@protoc_insertion_point(class_scope:api.WithdrawalsRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr partyid_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class WithdrawalsResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.WithdrawalsResponse) */ {
+ public:
+  WithdrawalsResponse();
+  virtual ~WithdrawalsResponse();
+
+  WithdrawalsResponse(const WithdrawalsResponse& from);
+
+  inline WithdrawalsResponse& operator=(const WithdrawalsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  WithdrawalsResponse(WithdrawalsResponse&& from) noexcept
+    : WithdrawalsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline WithdrawalsResponse& operator=(WithdrawalsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const WithdrawalsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const WithdrawalsResponse* internal_default_instance() {
+    return reinterpret_cast<const WithdrawalsResponse*>(
+               &_WithdrawalsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    103;
+
+  void Swap(WithdrawalsResponse* other);
+  friend void swap(WithdrawalsResponse& a, WithdrawalsResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline WithdrawalsResponse* New() const final {
+    return CreateMaybeMessage<WithdrawalsResponse>(nullptr);
+  }
+
+  WithdrawalsResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<WithdrawalsResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const WithdrawalsResponse& from);
+  void MergeFrom(const WithdrawalsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(WithdrawalsResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .vega.Withdrawal withdrawals = 1;
+  int withdrawals_size() const;
+  void clear_withdrawals();
+  static const int kWithdrawalsFieldNumber = 1;
+  ::vega::Withdrawal* mutable_withdrawals(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::Withdrawal >*
+      mutable_withdrawals();
+  const ::vega::Withdrawal& withdrawals(int index) const;
+  ::vega::Withdrawal* add_withdrawals();
+  const ::google::protobuf::RepeatedPtrField< ::vega::Withdrawal >&
+      withdrawals() const;
+
+  // @@protoc_insertion_point(class_scope:api.WithdrawalsResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::vega::Withdrawal > withdrawals_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class WithdrawalRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.WithdrawalRequest) */ {
+ public:
+  WithdrawalRequest();
+  virtual ~WithdrawalRequest();
+
+  WithdrawalRequest(const WithdrawalRequest& from);
+
+  inline WithdrawalRequest& operator=(const WithdrawalRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  WithdrawalRequest(WithdrawalRequest&& from) noexcept
+    : WithdrawalRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline WithdrawalRequest& operator=(WithdrawalRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const WithdrawalRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const WithdrawalRequest* internal_default_instance() {
+    return reinterpret_cast<const WithdrawalRequest*>(
+               &_WithdrawalRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    104;
+
+  void Swap(WithdrawalRequest* other);
+  friend void swap(WithdrawalRequest& a, WithdrawalRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline WithdrawalRequest* New() const final {
+    return CreateMaybeMessage<WithdrawalRequest>(nullptr);
+  }
+
+  WithdrawalRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<WithdrawalRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const WithdrawalRequest& from);
+  void MergeFrom(const WithdrawalRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(WithdrawalRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string ID = 1 [(.validator.field) = {
+  void clear_id();
+  static const int kIDFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // @@protoc_insertion_point(class_scope:api.WithdrawalRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class WithdrawalResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.WithdrawalResponse) */ {
+ public:
+  WithdrawalResponse();
+  virtual ~WithdrawalResponse();
+
+  WithdrawalResponse(const WithdrawalResponse& from);
+
+  inline WithdrawalResponse& operator=(const WithdrawalResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  WithdrawalResponse(WithdrawalResponse&& from) noexcept
+    : WithdrawalResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline WithdrawalResponse& operator=(WithdrawalResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const WithdrawalResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const WithdrawalResponse* internal_default_instance() {
+    return reinterpret_cast<const WithdrawalResponse*>(
+               &_WithdrawalResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    105;
+
+  void Swap(WithdrawalResponse* other);
+  friend void swap(WithdrawalResponse& a, WithdrawalResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline WithdrawalResponse* New() const final {
+    return CreateMaybeMessage<WithdrawalResponse>(nullptr);
+  }
+
+  WithdrawalResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<WithdrawalResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const WithdrawalResponse& from);
+  void MergeFrom(const WithdrawalResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(WithdrawalResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .vega.Withdrawal withdrawal = 1;
+  bool has_withdrawal() const;
+  void clear_withdrawal();
+  static const int kWithdrawalFieldNumber = 1;
+  const ::vega::Withdrawal& withdrawal() const;
+  ::vega::Withdrawal* release_withdrawal();
+  ::vega::Withdrawal* mutable_withdrawal();
+  void set_allocated_withdrawal(::vega::Withdrawal* withdrawal);
+
+  // @@protoc_insertion_point(class_scope:api.WithdrawalResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::vega::Withdrawal* withdrawal_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ERC20WithdrawalApprovalRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.ERC20WithdrawalApprovalRequest) */ {
+ public:
+  ERC20WithdrawalApprovalRequest();
+  virtual ~ERC20WithdrawalApprovalRequest();
+
+  ERC20WithdrawalApprovalRequest(const ERC20WithdrawalApprovalRequest& from);
+
+  inline ERC20WithdrawalApprovalRequest& operator=(const ERC20WithdrawalApprovalRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ERC20WithdrawalApprovalRequest(ERC20WithdrawalApprovalRequest&& from) noexcept
+    : ERC20WithdrawalApprovalRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ERC20WithdrawalApprovalRequest& operator=(ERC20WithdrawalApprovalRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ERC20WithdrawalApprovalRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ERC20WithdrawalApprovalRequest* internal_default_instance() {
+    return reinterpret_cast<const ERC20WithdrawalApprovalRequest*>(
+               &_ERC20WithdrawalApprovalRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    106;
+
+  void Swap(ERC20WithdrawalApprovalRequest* other);
+  friend void swap(ERC20WithdrawalApprovalRequest& a, ERC20WithdrawalApprovalRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ERC20WithdrawalApprovalRequest* New() const final {
+    return CreateMaybeMessage<ERC20WithdrawalApprovalRequest>(nullptr);
+  }
+
+  ERC20WithdrawalApprovalRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ERC20WithdrawalApprovalRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ERC20WithdrawalApprovalRequest& from);
+  void MergeFrom(const ERC20WithdrawalApprovalRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ERC20WithdrawalApprovalRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string withdrawalID = 1 [(.validator.field) = {
+  void clear_withdrawalid();
+  static const int kWithdrawalIDFieldNumber = 1;
+  const ::std::string& withdrawalid() const;
+  void set_withdrawalid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_withdrawalid(::std::string&& value);
+  #endif
+  void set_withdrawalid(const char* value);
+  void set_withdrawalid(const char* value, size_t size);
+  ::std::string* mutable_withdrawalid();
+  ::std::string* release_withdrawalid();
+  void set_allocated_withdrawalid(::std::string* withdrawalid);
+
+  // @@protoc_insertion_point(class_scope:api.ERC20WithdrawalApprovalRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr withdrawalid_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ERC20WithdrawalApprovalResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.ERC20WithdrawalApprovalResponse) */ {
+ public:
+  ERC20WithdrawalApprovalResponse();
+  virtual ~ERC20WithdrawalApprovalResponse();
+
+  ERC20WithdrawalApprovalResponse(const ERC20WithdrawalApprovalResponse& from);
+
+  inline ERC20WithdrawalApprovalResponse& operator=(const ERC20WithdrawalApprovalResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ERC20WithdrawalApprovalResponse(ERC20WithdrawalApprovalResponse&& from) noexcept
+    : ERC20WithdrawalApprovalResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ERC20WithdrawalApprovalResponse& operator=(ERC20WithdrawalApprovalResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ERC20WithdrawalApprovalResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ERC20WithdrawalApprovalResponse* internal_default_instance() {
+    return reinterpret_cast<const ERC20WithdrawalApprovalResponse*>(
+               &_ERC20WithdrawalApprovalResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    107;
+
+  void Swap(ERC20WithdrawalApprovalResponse* other);
+  friend void swap(ERC20WithdrawalApprovalResponse& a, ERC20WithdrawalApprovalResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ERC20WithdrawalApprovalResponse* New() const final {
+    return CreateMaybeMessage<ERC20WithdrawalApprovalResponse>(nullptr);
+  }
+
+  ERC20WithdrawalApprovalResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ERC20WithdrawalApprovalResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ERC20WithdrawalApprovalResponse& from);
+  void MergeFrom(const ERC20WithdrawalApprovalResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ERC20WithdrawalApprovalResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string assetSource = 1;
+  void clear_assetsource();
+  static const int kAssetSourceFieldNumber = 1;
+  const ::std::string& assetsource() const;
+  void set_assetsource(const ::std::string& value);
+  #if LANG_CXX11
+  void set_assetsource(::std::string&& value);
+  #endif
+  void set_assetsource(const char* value);
+  void set_assetsource(const char* value, size_t size);
+  ::std::string* mutable_assetsource();
+  ::std::string* release_assetsource();
+  void set_allocated_assetsource(::std::string* assetsource);
+
+  // string amount = 2;
+  void clear_amount();
+  static const int kAmountFieldNumber = 2;
+  const ::std::string& amount() const;
+  void set_amount(const ::std::string& value);
+  #if LANG_CXX11
+  void set_amount(::std::string&& value);
+  #endif
+  void set_amount(const char* value);
+  void set_amount(const char* value, size_t size);
+  ::std::string* mutable_amount();
+  ::std::string* release_amount();
+  void set_allocated_amount(::std::string* amount);
+
+  // string nonce = 4;
+  void clear_nonce();
+  static const int kNonceFieldNumber = 4;
+  const ::std::string& nonce() const;
+  void set_nonce(const ::std::string& value);
+  #if LANG_CXX11
+  void set_nonce(::std::string&& value);
+  #endif
+  void set_nonce(const char* value);
+  void set_nonce(const char* value, size_t size);
+  ::std::string* mutable_nonce();
+  ::std::string* release_nonce();
+  void set_allocated_nonce(::std::string* nonce);
+
+  // string signatures = 5;
+  void clear_signatures();
+  static const int kSignaturesFieldNumber = 5;
+  const ::std::string& signatures() const;
+  void set_signatures(const ::std::string& value);
+  #if LANG_CXX11
+  void set_signatures(::std::string&& value);
+  #endif
+  void set_signatures(const char* value);
+  void set_signatures(const char* value, size_t size);
+  ::std::string* mutable_signatures();
+  ::std::string* release_signatures();
+  void set_allocated_signatures(::std::string* signatures);
+
+  // int64 expiry = 3;
+  void clear_expiry();
+  static const int kExpiryFieldNumber = 3;
+  ::google::protobuf::int64 expiry() const;
+  void set_expiry(::google::protobuf::int64 value);
+
+  // @@protoc_insertion_point(class_scope:api.ERC20WithdrawalApprovalResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr assetsource_;
+  ::google::protobuf::internal::ArenaStringPtr amount_;
+  ::google::protobuf::internal::ArenaStringPtr nonce_;
+  ::google::protobuf::internal::ArenaStringPtr signatures_;
+  ::google::protobuf::int64 expiry_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DepositsRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.DepositsRequest) */ {
+ public:
+  DepositsRequest();
+  virtual ~DepositsRequest();
+
+  DepositsRequest(const DepositsRequest& from);
+
+  inline DepositsRequest& operator=(const DepositsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  DepositsRequest(DepositsRequest&& from) noexcept
+    : DepositsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline DepositsRequest& operator=(DepositsRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const DepositsRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DepositsRequest* internal_default_instance() {
+    return reinterpret_cast<const DepositsRequest*>(
+               &_DepositsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    108;
+
+  void Swap(DepositsRequest* other);
+  friend void swap(DepositsRequest& a, DepositsRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DepositsRequest* New() const final {
+    return CreateMaybeMessage<DepositsRequest>(nullptr);
+  }
+
+  DepositsRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DepositsRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const DepositsRequest& from);
+  void MergeFrom(const DepositsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DepositsRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string partyID = 1 [(.validator.field) = {
+  void clear_partyid();
+  static const int kPartyIDFieldNumber = 1;
+  const ::std::string& partyid() const;
+  void set_partyid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_partyid(::std::string&& value);
+  #endif
+  void set_partyid(const char* value);
+  void set_partyid(const char* value, size_t size);
+  ::std::string* mutable_partyid();
+  ::std::string* release_partyid();
+  void set_allocated_partyid(::std::string* partyid);
+
+  // @@protoc_insertion_point(class_scope:api.DepositsRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr partyid_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DepositsResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.DepositsResponse) */ {
+ public:
+  DepositsResponse();
+  virtual ~DepositsResponse();
+
+  DepositsResponse(const DepositsResponse& from);
+
+  inline DepositsResponse& operator=(const DepositsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  DepositsResponse(DepositsResponse&& from) noexcept
+    : DepositsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline DepositsResponse& operator=(DepositsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const DepositsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DepositsResponse* internal_default_instance() {
+    return reinterpret_cast<const DepositsResponse*>(
+               &_DepositsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    109;
+
+  void Swap(DepositsResponse* other);
+  friend void swap(DepositsResponse& a, DepositsResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DepositsResponse* New() const final {
+    return CreateMaybeMessage<DepositsResponse>(nullptr);
+  }
+
+  DepositsResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DepositsResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const DepositsResponse& from);
+  void MergeFrom(const DepositsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DepositsResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .vega.Deposit deposits = 1;
+  int deposits_size() const;
+  void clear_deposits();
+  static const int kDepositsFieldNumber = 1;
+  ::vega::Deposit* mutable_deposits(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::Deposit >*
+      mutable_deposits();
+  const ::vega::Deposit& deposits(int index) const;
+  ::vega::Deposit* add_deposits();
+  const ::google::protobuf::RepeatedPtrField< ::vega::Deposit >&
+      deposits() const;
+
+  // @@protoc_insertion_point(class_scope:api.DepositsResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::vega::Deposit > deposits_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DepositRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.DepositRequest) */ {
+ public:
+  DepositRequest();
+  virtual ~DepositRequest();
+
+  DepositRequest(const DepositRequest& from);
+
+  inline DepositRequest& operator=(const DepositRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  DepositRequest(DepositRequest&& from) noexcept
+    : DepositRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline DepositRequest& operator=(DepositRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const DepositRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DepositRequest* internal_default_instance() {
+    return reinterpret_cast<const DepositRequest*>(
+               &_DepositRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    110;
+
+  void Swap(DepositRequest* other);
+  friend void swap(DepositRequest& a, DepositRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DepositRequest* New() const final {
+    return CreateMaybeMessage<DepositRequest>(nullptr);
+  }
+
+  DepositRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DepositRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const DepositRequest& from);
+  void MergeFrom(const DepositRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DepositRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string ID = 1 [(.validator.field) = {
+  void clear_id();
+  static const int kIDFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // @@protoc_insertion_point(class_scope:api.DepositRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DepositResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.DepositResponse) */ {
+ public:
+  DepositResponse();
+  virtual ~DepositResponse();
+
+  DepositResponse(const DepositResponse& from);
+
+  inline DepositResponse& operator=(const DepositResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  DepositResponse(DepositResponse&& from) noexcept
+    : DepositResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline DepositResponse& operator=(DepositResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const DepositResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DepositResponse* internal_default_instance() {
+    return reinterpret_cast<const DepositResponse*>(
+               &_DepositResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    111;
+
+  void Swap(DepositResponse* other);
+  friend void swap(DepositResponse& a, DepositResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DepositResponse* New() const final {
+    return CreateMaybeMessage<DepositResponse>(nullptr);
+  }
+
+  DepositResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DepositResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const DepositResponse& from);
+  void MergeFrom(const DepositResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DepositResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .vega.Deposit deposit = 1;
+  bool has_deposit() const;
+  void clear_deposit();
+  static const int kDepositFieldNumber = 1;
+  const ::vega::Deposit& deposit() const;
+  ::vega::Deposit* release_deposit();
+  ::vega::Deposit* mutable_deposit();
+  void set_allocated_deposit(::vega::Deposit* deposit);
+
+  // @@protoc_insertion_point(class_scope:api.DepositResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::vega::Deposit* deposit_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
 // ===================================================================
 
 
@@ -12936,33 +14488,33 @@ inline void SubmitTransactionResponse::set_success(bool value) {
 
 // PrepareWithdrawRequest
 
-// .vega.Withdraw withdraw = 1;
+// .vega.WithdrawSubmission withdraw = 1;
 inline bool PrepareWithdrawRequest::has_withdraw() const {
   return this != internal_default_instance() && withdraw_ != nullptr;
 }
-inline const ::vega::Withdraw& PrepareWithdrawRequest::withdraw() const {
-  const ::vega::Withdraw* p = withdraw_;
+inline const ::vega::WithdrawSubmission& PrepareWithdrawRequest::withdraw() const {
+  const ::vega::WithdrawSubmission* p = withdraw_;
   // @@protoc_insertion_point(field_get:api.PrepareWithdrawRequest.withdraw)
-  return p != nullptr ? *p : *reinterpret_cast<const ::vega::Withdraw*>(
-      &::vega::_Withdraw_default_instance_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::WithdrawSubmission*>(
+      &::vega::_WithdrawSubmission_default_instance_);
 }
-inline ::vega::Withdraw* PrepareWithdrawRequest::release_withdraw() {
+inline ::vega::WithdrawSubmission* PrepareWithdrawRequest::release_withdraw() {
   // @@protoc_insertion_point(field_release:api.PrepareWithdrawRequest.withdraw)
 
-  ::vega::Withdraw* temp = withdraw_;
+  ::vega::WithdrawSubmission* temp = withdraw_;
   withdraw_ = nullptr;
   return temp;
 }
-inline ::vega::Withdraw* PrepareWithdrawRequest::mutable_withdraw() {
+inline ::vega::WithdrawSubmission* PrepareWithdrawRequest::mutable_withdraw() {
 
   if (withdraw_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::Withdraw>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::vega::WithdrawSubmission>(GetArenaNoVirtual());
     withdraw_ = p;
   }
   // @@protoc_insertion_point(field_mutable:api.PrepareWithdrawRequest.withdraw)
   return withdraw_;
 }
-inline void PrepareWithdrawRequest::set_allocated_withdraw(::vega::Withdraw* withdraw) {
+inline void PrepareWithdrawRequest::set_allocated_withdraw(::vega::WithdrawSubmission* withdraw) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(withdraw_);
@@ -18881,9 +20433,879 @@ inline void EstimateFeeResponse::set_allocated_fee(::vega::Fee* fee) {
   // @@protoc_insertion_point(field_set_allocated:api.EstimateFeeResponse.fee)
 }
 
+// -------------------------------------------------------------------
+
+// ObserveEventsRequest
+
+// repeated .vega.BusEventType type = 1;
+inline int ObserveEventsRequest::type_size() const {
+  return type_.size();
+}
+inline void ObserveEventsRequest::clear_type() {
+  type_.Clear();
+}
+inline ::vega::BusEventType ObserveEventsRequest::type(int index) const {
+  // @@protoc_insertion_point(field_get:api.ObserveEventsRequest.type)
+  return static_cast< ::vega::BusEventType >(type_.Get(index));
+}
+inline void ObserveEventsRequest::set_type(int index, ::vega::BusEventType value) {
+  type_.Set(index, value);
+  // @@protoc_insertion_point(field_set:api.ObserveEventsRequest.type)
+}
+inline void ObserveEventsRequest::add_type(::vega::BusEventType value) {
+  type_.Add(value);
+  // @@protoc_insertion_point(field_add:api.ObserveEventsRequest.type)
+}
+inline const ::google::protobuf::RepeatedField<int>&
+ObserveEventsRequest::type() const {
+  // @@protoc_insertion_point(field_list:api.ObserveEventsRequest.type)
+  return type_;
+}
+inline ::google::protobuf::RepeatedField<int>*
+ObserveEventsRequest::mutable_type() {
+  // @@protoc_insertion_point(field_mutable_list:api.ObserveEventsRequest.type)
+  return &type_;
+}
+
+// string marketID = 2;
+inline void ObserveEventsRequest::clear_marketid() {
+  marketid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ObserveEventsRequest::marketid() const {
+  // @@protoc_insertion_point(field_get:api.ObserveEventsRequest.marketID)
+  return marketid_.GetNoArena();
+}
+inline void ObserveEventsRequest::set_marketid(const ::std::string& value) {
+
+  marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.ObserveEventsRequest.marketID)
+}
+#if LANG_CXX11
+inline void ObserveEventsRequest::set_marketid(::std::string&& value) {
+
+  marketid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.ObserveEventsRequest.marketID)
+}
+#endif
+inline void ObserveEventsRequest::set_marketid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.ObserveEventsRequest.marketID)
+}
+inline void ObserveEventsRequest::set_marketid(const char* value, size_t size) {
+
+  marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.ObserveEventsRequest.marketID)
+}
+inline ::std::string* ObserveEventsRequest::mutable_marketid() {
+
+  // @@protoc_insertion_point(field_mutable:api.ObserveEventsRequest.marketID)
+  return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ObserveEventsRequest::release_marketid() {
+  // @@protoc_insertion_point(field_release:api.ObserveEventsRequest.marketID)
+
+  return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ObserveEventsRequest::set_allocated_marketid(::std::string* marketid) {
+  if (marketid != nullptr) {
+
+  } else {
+
+  }
+  marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
+  // @@protoc_insertion_point(field_set_allocated:api.ObserveEventsRequest.marketID)
+}
+
+// string partyID = 3;
+inline void ObserveEventsRequest::clear_partyid() {
+  partyid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ObserveEventsRequest::partyid() const {
+  // @@protoc_insertion_point(field_get:api.ObserveEventsRequest.partyID)
+  return partyid_.GetNoArena();
+}
+inline void ObserveEventsRequest::set_partyid(const ::std::string& value) {
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.ObserveEventsRequest.partyID)
+}
+#if LANG_CXX11
+inline void ObserveEventsRequest::set_partyid(::std::string&& value) {
+
+  partyid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.ObserveEventsRequest.partyID)
+}
+#endif
+inline void ObserveEventsRequest::set_partyid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.ObserveEventsRequest.partyID)
+}
+inline void ObserveEventsRequest::set_partyid(const char* value, size_t size) {
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.ObserveEventsRequest.partyID)
+}
+inline ::std::string* ObserveEventsRequest::mutable_partyid() {
+
+  // @@protoc_insertion_point(field_mutable:api.ObserveEventsRequest.partyID)
+  return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ObserveEventsRequest::release_partyid() {
+  // @@protoc_insertion_point(field_release:api.ObserveEventsRequest.partyID)
+
+  return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ObserveEventsRequest::set_allocated_partyid(::std::string* partyid) {
+  if (partyid != nullptr) {
+
+  } else {
+
+  }
+  partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
+  // @@protoc_insertion_point(field_set_allocated:api.ObserveEventsRequest.partyID)
+}
+
+// -------------------------------------------------------------------
+
+// ObserveEventsResponse
+
+// repeated .vega.BusEvent events = 1;
+inline int ObserveEventsResponse::events_size() const {
+  return events_.size();
+}
+inline ::vega::BusEvent* ObserveEventsResponse::mutable_events(int index) {
+  // @@protoc_insertion_point(field_mutable:api.ObserveEventsResponse.events)
+  return events_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::BusEvent >*
+ObserveEventsResponse::mutable_events() {
+  // @@protoc_insertion_point(field_mutable_list:api.ObserveEventsResponse.events)
+  return &events_;
+}
+inline const ::vega::BusEvent& ObserveEventsResponse::events(int index) const {
+  // @@protoc_insertion_point(field_get:api.ObserveEventsResponse.events)
+  return events_.Get(index);
+}
+inline ::vega::BusEvent* ObserveEventsResponse::add_events() {
+  // @@protoc_insertion_point(field_add:api.ObserveEventsResponse.events)
+  return events_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::BusEvent >&
+ObserveEventsResponse::events() const {
+  // @@protoc_insertion_point(field_list:api.ObserveEventsResponse.events)
+  return events_;
+}
+
+// -------------------------------------------------------------------
+
+// WithdrawalsRequest
+
+// string partyID = 1 [(.validator.field) = {
+inline void WithdrawalsRequest::clear_partyid() {
+  partyid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& WithdrawalsRequest::partyid() const {
+  // @@protoc_insertion_point(field_get:api.WithdrawalsRequest.partyID)
+  return partyid_.GetNoArena();
+}
+inline void WithdrawalsRequest::set_partyid(const ::std::string& value) {
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.WithdrawalsRequest.partyID)
+}
+#if LANG_CXX11
+inline void WithdrawalsRequest::set_partyid(::std::string&& value) {
+
+  partyid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.WithdrawalsRequest.partyID)
+}
+#endif
+inline void WithdrawalsRequest::set_partyid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.WithdrawalsRequest.partyID)
+}
+inline void WithdrawalsRequest::set_partyid(const char* value, size_t size) {
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.WithdrawalsRequest.partyID)
+}
+inline ::std::string* WithdrawalsRequest::mutable_partyid() {
+
+  // @@protoc_insertion_point(field_mutable:api.WithdrawalsRequest.partyID)
+  return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* WithdrawalsRequest::release_partyid() {
+  // @@protoc_insertion_point(field_release:api.WithdrawalsRequest.partyID)
+
+  return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void WithdrawalsRequest::set_allocated_partyid(::std::string* partyid) {
+  if (partyid != nullptr) {
+
+  } else {
+
+  }
+  partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
+  // @@protoc_insertion_point(field_set_allocated:api.WithdrawalsRequest.partyID)
+}
+
+// -------------------------------------------------------------------
+
+// WithdrawalsResponse
+
+// repeated .vega.Withdrawal withdrawals = 1;
+inline int WithdrawalsResponse::withdrawals_size() const {
+  return withdrawals_.size();
+}
+inline ::vega::Withdrawal* WithdrawalsResponse::mutable_withdrawals(int index) {
+  // @@protoc_insertion_point(field_mutable:api.WithdrawalsResponse.withdrawals)
+  return withdrawals_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::Withdrawal >*
+WithdrawalsResponse::mutable_withdrawals() {
+  // @@protoc_insertion_point(field_mutable_list:api.WithdrawalsResponse.withdrawals)
+  return &withdrawals_;
+}
+inline const ::vega::Withdrawal& WithdrawalsResponse::withdrawals(int index) const {
+  // @@protoc_insertion_point(field_get:api.WithdrawalsResponse.withdrawals)
+  return withdrawals_.Get(index);
+}
+inline ::vega::Withdrawal* WithdrawalsResponse::add_withdrawals() {
+  // @@protoc_insertion_point(field_add:api.WithdrawalsResponse.withdrawals)
+  return withdrawals_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::Withdrawal >&
+WithdrawalsResponse::withdrawals() const {
+  // @@protoc_insertion_point(field_list:api.WithdrawalsResponse.withdrawals)
+  return withdrawals_;
+}
+
+// -------------------------------------------------------------------
+
+// WithdrawalRequest
+
+// string ID = 1 [(.validator.field) = {
+inline void WithdrawalRequest::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& WithdrawalRequest::id() const {
+  // @@protoc_insertion_point(field_get:api.WithdrawalRequest.ID)
+  return id_.GetNoArena();
+}
+inline void WithdrawalRequest::set_id(const ::std::string& value) {
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.WithdrawalRequest.ID)
+}
+#if LANG_CXX11
+inline void WithdrawalRequest::set_id(::std::string&& value) {
+
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.WithdrawalRequest.ID)
+}
+#endif
+inline void WithdrawalRequest::set_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.WithdrawalRequest.ID)
+}
+inline void WithdrawalRequest::set_id(const char* value, size_t size) {
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.WithdrawalRequest.ID)
+}
+inline ::std::string* WithdrawalRequest::mutable_id() {
+
+  // @@protoc_insertion_point(field_mutable:api.WithdrawalRequest.ID)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* WithdrawalRequest::release_id() {
+  // @@protoc_insertion_point(field_release:api.WithdrawalRequest.ID)
+
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void WithdrawalRequest::set_allocated_id(::std::string* id) {
+  if (id != nullptr) {
+
+  } else {
+
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.WithdrawalRequest.ID)
+}
+
+// -------------------------------------------------------------------
+
+// WithdrawalResponse
+
+// .vega.Withdrawal withdrawal = 1;
+inline bool WithdrawalResponse::has_withdrawal() const {
+  return this != internal_default_instance() && withdrawal_ != nullptr;
+}
+inline const ::vega::Withdrawal& WithdrawalResponse::withdrawal() const {
+  const ::vega::Withdrawal* p = withdrawal_;
+  // @@protoc_insertion_point(field_get:api.WithdrawalResponse.withdrawal)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::Withdrawal*>(
+      &::vega::_Withdrawal_default_instance_);
+}
+inline ::vega::Withdrawal* WithdrawalResponse::release_withdrawal() {
+  // @@protoc_insertion_point(field_release:api.WithdrawalResponse.withdrawal)
+
+  ::vega::Withdrawal* temp = withdrawal_;
+  withdrawal_ = nullptr;
+  return temp;
+}
+inline ::vega::Withdrawal* WithdrawalResponse::mutable_withdrawal() {
+
+  if (withdrawal_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::Withdrawal>(GetArenaNoVirtual());
+    withdrawal_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.WithdrawalResponse.withdrawal)
+  return withdrawal_;
+}
+inline void WithdrawalResponse::set_allocated_withdrawal(::vega::Withdrawal* withdrawal) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(withdrawal_);
+  }
+  if (withdrawal) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      withdrawal = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, withdrawal, submessage_arena);
+    }
+
+  } else {
+
+  }
+  withdrawal_ = withdrawal;
+  // @@protoc_insertion_point(field_set_allocated:api.WithdrawalResponse.withdrawal)
+}
+
+// -------------------------------------------------------------------
+
+// ERC20WithdrawalApprovalRequest
+
+// string withdrawalID = 1 [(.validator.field) = {
+inline void ERC20WithdrawalApprovalRequest::clear_withdrawalid() {
+  withdrawalid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ERC20WithdrawalApprovalRequest::withdrawalid() const {
+  // @@protoc_insertion_point(field_get:api.ERC20WithdrawalApprovalRequest.withdrawalID)
+  return withdrawalid_.GetNoArena();
+}
+inline void ERC20WithdrawalApprovalRequest::set_withdrawalid(const ::std::string& value) {
+
+  withdrawalid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.ERC20WithdrawalApprovalRequest.withdrawalID)
+}
+#if LANG_CXX11
+inline void ERC20WithdrawalApprovalRequest::set_withdrawalid(::std::string&& value) {
+
+  withdrawalid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.ERC20WithdrawalApprovalRequest.withdrawalID)
+}
+#endif
+inline void ERC20WithdrawalApprovalRequest::set_withdrawalid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  withdrawalid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.ERC20WithdrawalApprovalRequest.withdrawalID)
+}
+inline void ERC20WithdrawalApprovalRequest::set_withdrawalid(const char* value, size_t size) {
+
+  withdrawalid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.ERC20WithdrawalApprovalRequest.withdrawalID)
+}
+inline ::std::string* ERC20WithdrawalApprovalRequest::mutable_withdrawalid() {
+
+  // @@protoc_insertion_point(field_mutable:api.ERC20WithdrawalApprovalRequest.withdrawalID)
+  return withdrawalid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ERC20WithdrawalApprovalRequest::release_withdrawalid() {
+  // @@protoc_insertion_point(field_release:api.ERC20WithdrawalApprovalRequest.withdrawalID)
+
+  return withdrawalid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ERC20WithdrawalApprovalRequest::set_allocated_withdrawalid(::std::string* withdrawalid) {
+  if (withdrawalid != nullptr) {
+
+  } else {
+
+  }
+  withdrawalid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), withdrawalid);
+  // @@protoc_insertion_point(field_set_allocated:api.ERC20WithdrawalApprovalRequest.withdrawalID)
+}
+
+// -------------------------------------------------------------------
+
+// ERC20WithdrawalApprovalResponse
+
+// string assetSource = 1;
+inline void ERC20WithdrawalApprovalResponse::clear_assetsource() {
+  assetsource_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ERC20WithdrawalApprovalResponse::assetsource() const {
+  // @@protoc_insertion_point(field_get:api.ERC20WithdrawalApprovalResponse.assetSource)
+  return assetsource_.GetNoArena();
+}
+inline void ERC20WithdrawalApprovalResponse::set_assetsource(const ::std::string& value) {
+
+  assetsource_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.ERC20WithdrawalApprovalResponse.assetSource)
+}
+#if LANG_CXX11
+inline void ERC20WithdrawalApprovalResponse::set_assetsource(::std::string&& value) {
+
+  assetsource_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.ERC20WithdrawalApprovalResponse.assetSource)
+}
+#endif
+inline void ERC20WithdrawalApprovalResponse::set_assetsource(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  assetsource_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.ERC20WithdrawalApprovalResponse.assetSource)
+}
+inline void ERC20WithdrawalApprovalResponse::set_assetsource(const char* value, size_t size) {
+
+  assetsource_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.ERC20WithdrawalApprovalResponse.assetSource)
+}
+inline ::std::string* ERC20WithdrawalApprovalResponse::mutable_assetsource() {
+
+  // @@protoc_insertion_point(field_mutable:api.ERC20WithdrawalApprovalResponse.assetSource)
+  return assetsource_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ERC20WithdrawalApprovalResponse::release_assetsource() {
+  // @@protoc_insertion_point(field_release:api.ERC20WithdrawalApprovalResponse.assetSource)
+
+  return assetsource_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ERC20WithdrawalApprovalResponse::set_allocated_assetsource(::std::string* assetsource) {
+  if (assetsource != nullptr) {
+
+  } else {
+
+  }
+  assetsource_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), assetsource);
+  // @@protoc_insertion_point(field_set_allocated:api.ERC20WithdrawalApprovalResponse.assetSource)
+}
+
+// string amount = 2;
+inline void ERC20WithdrawalApprovalResponse::clear_amount() {
+  amount_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ERC20WithdrawalApprovalResponse::amount() const {
+  // @@protoc_insertion_point(field_get:api.ERC20WithdrawalApprovalResponse.amount)
+  return amount_.GetNoArena();
+}
+inline void ERC20WithdrawalApprovalResponse::set_amount(const ::std::string& value) {
+
+  amount_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.ERC20WithdrawalApprovalResponse.amount)
+}
+#if LANG_CXX11
+inline void ERC20WithdrawalApprovalResponse::set_amount(::std::string&& value) {
+
+  amount_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.ERC20WithdrawalApprovalResponse.amount)
+}
+#endif
+inline void ERC20WithdrawalApprovalResponse::set_amount(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  amount_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.ERC20WithdrawalApprovalResponse.amount)
+}
+inline void ERC20WithdrawalApprovalResponse::set_amount(const char* value, size_t size) {
+
+  amount_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.ERC20WithdrawalApprovalResponse.amount)
+}
+inline ::std::string* ERC20WithdrawalApprovalResponse::mutable_amount() {
+
+  // @@protoc_insertion_point(field_mutable:api.ERC20WithdrawalApprovalResponse.amount)
+  return amount_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ERC20WithdrawalApprovalResponse::release_amount() {
+  // @@protoc_insertion_point(field_release:api.ERC20WithdrawalApprovalResponse.amount)
+
+  return amount_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ERC20WithdrawalApprovalResponse::set_allocated_amount(::std::string* amount) {
+  if (amount != nullptr) {
+
+  } else {
+
+  }
+  amount_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), amount);
+  // @@protoc_insertion_point(field_set_allocated:api.ERC20WithdrawalApprovalResponse.amount)
+}
+
+// int64 expiry = 3;
+inline void ERC20WithdrawalApprovalResponse::clear_expiry() {
+  expiry_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 ERC20WithdrawalApprovalResponse::expiry() const {
+  // @@protoc_insertion_point(field_get:api.ERC20WithdrawalApprovalResponse.expiry)
+  return expiry_;
+}
+inline void ERC20WithdrawalApprovalResponse::set_expiry(::google::protobuf::int64 value) {
+
+  expiry_ = value;
+  // @@protoc_insertion_point(field_set:api.ERC20WithdrawalApprovalResponse.expiry)
+}
+
+// string nonce = 4;
+inline void ERC20WithdrawalApprovalResponse::clear_nonce() {
+  nonce_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ERC20WithdrawalApprovalResponse::nonce() const {
+  // @@protoc_insertion_point(field_get:api.ERC20WithdrawalApprovalResponse.nonce)
+  return nonce_.GetNoArena();
+}
+inline void ERC20WithdrawalApprovalResponse::set_nonce(const ::std::string& value) {
+
+  nonce_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.ERC20WithdrawalApprovalResponse.nonce)
+}
+#if LANG_CXX11
+inline void ERC20WithdrawalApprovalResponse::set_nonce(::std::string&& value) {
+
+  nonce_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.ERC20WithdrawalApprovalResponse.nonce)
+}
+#endif
+inline void ERC20WithdrawalApprovalResponse::set_nonce(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  nonce_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.ERC20WithdrawalApprovalResponse.nonce)
+}
+inline void ERC20WithdrawalApprovalResponse::set_nonce(const char* value, size_t size) {
+
+  nonce_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.ERC20WithdrawalApprovalResponse.nonce)
+}
+inline ::std::string* ERC20WithdrawalApprovalResponse::mutable_nonce() {
+
+  // @@protoc_insertion_point(field_mutable:api.ERC20WithdrawalApprovalResponse.nonce)
+  return nonce_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ERC20WithdrawalApprovalResponse::release_nonce() {
+  // @@protoc_insertion_point(field_release:api.ERC20WithdrawalApprovalResponse.nonce)
+
+  return nonce_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ERC20WithdrawalApprovalResponse::set_allocated_nonce(::std::string* nonce) {
+  if (nonce != nullptr) {
+
+  } else {
+
+  }
+  nonce_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), nonce);
+  // @@protoc_insertion_point(field_set_allocated:api.ERC20WithdrawalApprovalResponse.nonce)
+}
+
+// string signatures = 5;
+inline void ERC20WithdrawalApprovalResponse::clear_signatures() {
+  signatures_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ERC20WithdrawalApprovalResponse::signatures() const {
+  // @@protoc_insertion_point(field_get:api.ERC20WithdrawalApprovalResponse.signatures)
+  return signatures_.GetNoArena();
+}
+inline void ERC20WithdrawalApprovalResponse::set_signatures(const ::std::string& value) {
+
+  signatures_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.ERC20WithdrawalApprovalResponse.signatures)
+}
+#if LANG_CXX11
+inline void ERC20WithdrawalApprovalResponse::set_signatures(::std::string&& value) {
+
+  signatures_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.ERC20WithdrawalApprovalResponse.signatures)
+}
+#endif
+inline void ERC20WithdrawalApprovalResponse::set_signatures(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  signatures_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.ERC20WithdrawalApprovalResponse.signatures)
+}
+inline void ERC20WithdrawalApprovalResponse::set_signatures(const char* value, size_t size) {
+
+  signatures_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.ERC20WithdrawalApprovalResponse.signatures)
+}
+inline ::std::string* ERC20WithdrawalApprovalResponse::mutable_signatures() {
+
+  // @@protoc_insertion_point(field_mutable:api.ERC20WithdrawalApprovalResponse.signatures)
+  return signatures_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ERC20WithdrawalApprovalResponse::release_signatures() {
+  // @@protoc_insertion_point(field_release:api.ERC20WithdrawalApprovalResponse.signatures)
+
+  return signatures_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ERC20WithdrawalApprovalResponse::set_allocated_signatures(::std::string* signatures) {
+  if (signatures != nullptr) {
+
+  } else {
+
+  }
+  signatures_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), signatures);
+  // @@protoc_insertion_point(field_set_allocated:api.ERC20WithdrawalApprovalResponse.signatures)
+}
+
+// -------------------------------------------------------------------
+
+// DepositsRequest
+
+// string partyID = 1 [(.validator.field) = {
+inline void DepositsRequest::clear_partyid() {
+  partyid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& DepositsRequest::partyid() const {
+  // @@protoc_insertion_point(field_get:api.DepositsRequest.partyID)
+  return partyid_.GetNoArena();
+}
+inline void DepositsRequest::set_partyid(const ::std::string& value) {
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.DepositsRequest.partyID)
+}
+#if LANG_CXX11
+inline void DepositsRequest::set_partyid(::std::string&& value) {
+
+  partyid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.DepositsRequest.partyID)
+}
+#endif
+inline void DepositsRequest::set_partyid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.DepositsRequest.partyID)
+}
+inline void DepositsRequest::set_partyid(const char* value, size_t size) {
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.DepositsRequest.partyID)
+}
+inline ::std::string* DepositsRequest::mutable_partyid() {
+
+  // @@protoc_insertion_point(field_mutable:api.DepositsRequest.partyID)
+  return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* DepositsRequest::release_partyid() {
+  // @@protoc_insertion_point(field_release:api.DepositsRequest.partyID)
+
+  return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void DepositsRequest::set_allocated_partyid(::std::string* partyid) {
+  if (partyid != nullptr) {
+
+  } else {
+
+  }
+  partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
+  // @@protoc_insertion_point(field_set_allocated:api.DepositsRequest.partyID)
+}
+
+// -------------------------------------------------------------------
+
+// DepositsResponse
+
+// repeated .vega.Deposit deposits = 1;
+inline int DepositsResponse::deposits_size() const {
+  return deposits_.size();
+}
+inline ::vega::Deposit* DepositsResponse::mutable_deposits(int index) {
+  // @@protoc_insertion_point(field_mutable:api.DepositsResponse.deposits)
+  return deposits_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::Deposit >*
+DepositsResponse::mutable_deposits() {
+  // @@protoc_insertion_point(field_mutable_list:api.DepositsResponse.deposits)
+  return &deposits_;
+}
+inline const ::vega::Deposit& DepositsResponse::deposits(int index) const {
+  // @@protoc_insertion_point(field_get:api.DepositsResponse.deposits)
+  return deposits_.Get(index);
+}
+inline ::vega::Deposit* DepositsResponse::add_deposits() {
+  // @@protoc_insertion_point(field_add:api.DepositsResponse.deposits)
+  return deposits_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::Deposit >&
+DepositsResponse::deposits() const {
+  // @@protoc_insertion_point(field_list:api.DepositsResponse.deposits)
+  return deposits_;
+}
+
+// -------------------------------------------------------------------
+
+// DepositRequest
+
+// string ID = 1 [(.validator.field) = {
+inline void DepositRequest::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& DepositRequest::id() const {
+  // @@protoc_insertion_point(field_get:api.DepositRequest.ID)
+  return id_.GetNoArena();
+}
+inline void DepositRequest::set_id(const ::std::string& value) {
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.DepositRequest.ID)
+}
+#if LANG_CXX11
+inline void DepositRequest::set_id(::std::string&& value) {
+
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.DepositRequest.ID)
+}
+#endif
+inline void DepositRequest::set_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.DepositRequest.ID)
+}
+inline void DepositRequest::set_id(const char* value, size_t size) {
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.DepositRequest.ID)
+}
+inline ::std::string* DepositRequest::mutable_id() {
+
+  // @@protoc_insertion_point(field_mutable:api.DepositRequest.ID)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* DepositRequest::release_id() {
+  // @@protoc_insertion_point(field_release:api.DepositRequest.ID)
+
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void DepositRequest::set_allocated_id(::std::string* id) {
+  if (id != nullptr) {
+
+  } else {
+
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.DepositRequest.ID)
+}
+
+// -------------------------------------------------------------------
+
+// DepositResponse
+
+// .vega.Deposit deposit = 1;
+inline bool DepositResponse::has_deposit() const {
+  return this != internal_default_instance() && deposit_ != nullptr;
+}
+inline const ::vega::Deposit& DepositResponse::deposit() const {
+  const ::vega::Deposit* p = deposit_;
+  // @@protoc_insertion_point(field_get:api.DepositResponse.deposit)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::Deposit*>(
+      &::vega::_Deposit_default_instance_);
+}
+inline ::vega::Deposit* DepositResponse::release_deposit() {
+  // @@protoc_insertion_point(field_release:api.DepositResponse.deposit)
+
+  ::vega::Deposit* temp = deposit_;
+  deposit_ = nullptr;
+  return temp;
+}
+inline ::vega::Deposit* DepositResponse::mutable_deposit() {
+
+  if (deposit_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::Deposit>(GetArenaNoVirtual());
+    deposit_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.DepositResponse.deposit)
+  return deposit_;
+}
+inline void DepositResponse::set_allocated_deposit(::vega::Deposit* deposit) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(deposit_);
+  }
+  if (deposit) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      deposit = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, deposit, submessage_arena);
+    }
+
+  } else {
+
+  }
+  deposit_ = deposit;
+  // @@protoc_insertion_point(field_set_allocated:api.DepositResponse.deposit)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

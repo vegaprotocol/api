@@ -497,6 +497,11 @@ class trading_dataStub(object):
                 request_serializer=proto_dot_api_dot_trading__pb2.ObserveProposalVotesRequest.SerializeToString,
                 response_deserializer=proto_dot_governance__pb2.Vote.FromString,
                 )
+        self.ObserveEventBus = channel.unary_stream(
+                '/api.trading_data/ObserveEventBus',
+                request_serializer=proto_dot_api_dot_trading__pb2.ObserveEventsRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.ObserveEventsResponse.FromString,
+                )
         self.Statistics = channel.unary_unary(
                 '/api.trading_data/Statistics',
                 request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
@@ -571,6 +576,31 @@ class trading_dataStub(object):
                 '/api.trading_data/EstimateFee',
                 request_serializer=proto_dot_api_dot_trading__pb2.EstimateFeeRequest.SerializeToString,
                 response_deserializer=proto_dot_api_dot_trading__pb2.EstimateFeeResponse.FromString,
+                )
+        self.ERC20WithdrawalApproval = channel.unary_unary(
+                '/api.trading_data/ERC20WithdrawalApproval',
+                request_serializer=proto_dot_api_dot_trading__pb2.ERC20WithdrawalApprovalRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.ERC20WithdrawalApprovalResponse.FromString,
+                )
+        self.Withdrawal = channel.unary_unary(
+                '/api.trading_data/Withdrawal',
+                request_serializer=proto_dot_api_dot_trading__pb2.WithdrawalRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.WithdrawalResponse.FromString,
+                )
+        self.Withdrawals = channel.unary_unary(
+                '/api.trading_data/Withdrawals',
+                request_serializer=proto_dot_api_dot_trading__pb2.WithdrawalsRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.WithdrawalsResponse.FromString,
+                )
+        self.Deposit = channel.unary_unary(
+                '/api.trading_data/Deposit',
+                request_serializer=proto_dot_api_dot_trading__pb2.DepositRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.DepositResponse.FromString,
+                )
+        self.Deposits = channel.unary_unary(
+                '/api.trading_data/Deposits',
+                request_serializer=proto_dot_api_dot_trading__pb2.DepositsRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.DepositsResponse.FromString,
                 )
 
 
@@ -847,6 +877,13 @@ class trading_dataServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ObserveEventBus(self, request, context):
+        """Subscribe to a stream of events from the core
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Statistics(self, request, context):
         """-- Misc --
 
@@ -949,6 +986,42 @@ class trading_dataServicer(object):
 
     def EstimateFee(self, request, context):
         """Get an estimate for the fee to be paid for a given order
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ERC20WithdrawalApproval(self, request, context):
+        """Get the bundle approval for an ERC20 withdrawal
+        these data are being used to bundle the call to the smart contract on the ethereum bridge
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Withdrawal(self, request, context):
+        """Get a withdrawal by its ID
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Withdrawals(self, request, context):
+        """Get withdrawals for a party
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Deposit(self, request, context):
+        """Get a deposit by its ID
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Deposits(self, request, context):
+        """Get withdrawals for a party
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1137,6 +1210,11 @@ def add_trading_dataServicer_to_server(servicer, server):
                     request_deserializer=proto_dot_api_dot_trading__pb2.ObserveProposalVotesRequest.FromString,
                     response_serializer=proto_dot_governance__pb2.Vote.SerializeToString,
             ),
+            'ObserveEventBus': grpc.unary_stream_rpc_method_handler(
+                    servicer.ObserveEventBus,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.ObserveEventsRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.ObserveEventsResponse.SerializeToString,
+            ),
             'Statistics': grpc.unary_unary_rpc_method_handler(
                     servicer.Statistics,
                     request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
@@ -1211,6 +1289,31 @@ def add_trading_dataServicer_to_server(servicer, server):
                     servicer.EstimateFee,
                     request_deserializer=proto_dot_api_dot_trading__pb2.EstimateFeeRequest.FromString,
                     response_serializer=proto_dot_api_dot_trading__pb2.EstimateFeeResponse.SerializeToString,
+            ),
+            'ERC20WithdrawalApproval': grpc.unary_unary_rpc_method_handler(
+                    servicer.ERC20WithdrawalApproval,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.ERC20WithdrawalApprovalRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.ERC20WithdrawalApprovalResponse.SerializeToString,
+            ),
+            'Withdrawal': grpc.unary_unary_rpc_method_handler(
+                    servicer.Withdrawal,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.WithdrawalRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.WithdrawalResponse.SerializeToString,
+            ),
+            'Withdrawals': grpc.unary_unary_rpc_method_handler(
+                    servicer.Withdrawals,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.WithdrawalsRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.WithdrawalsResponse.SerializeToString,
+            ),
+            'Deposit': grpc.unary_unary_rpc_method_handler(
+                    servicer.Deposit,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.DepositRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.DepositResponse.SerializeToString,
+            ),
+            'Deposits': grpc.unary_unary_rpc_method_handler(
+                    servicer.Deposits,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.DepositsRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.DepositsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1835,6 +1938,23 @@ class trading_data(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def ObserveEventBus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/api.trading_data/ObserveEventBus',
+            proto_dot_api_dot_trading__pb2.ObserveEventsRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.ObserveEventsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def Statistics(request,
             target,
             options=(),
@@ -2086,5 +2206,90 @@ class trading_data(object):
         return grpc.experimental.unary_unary(request, target, '/api.trading_data/EstimateFee',
             proto_dot_api_dot_trading__pb2.EstimateFeeRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.EstimateFeeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ERC20WithdrawalApproval(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.trading_data/ERC20WithdrawalApproval',
+            proto_dot_api_dot_trading__pb2.ERC20WithdrawalApprovalRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.ERC20WithdrawalApprovalResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Withdrawal(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.trading_data/Withdrawal',
+            proto_dot_api_dot_trading__pb2.WithdrawalRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.WithdrawalResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Withdrawals(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.trading_data/Withdrawals',
+            proto_dot_api_dot_trading__pb2.WithdrawalsRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.WithdrawalsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Deposit(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.trading_data/Deposit',
+            proto_dot_api_dot_trading__pb2.DepositRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.DepositResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Deposits(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.trading_data/Deposits',
+            proto_dot_api_dot_trading__pb2.DepositsRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.DepositsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

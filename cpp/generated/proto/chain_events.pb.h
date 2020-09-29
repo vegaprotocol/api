@@ -1056,23 +1056,9 @@ class ERC20Withdrawal :
   ::std::string* release_vegaassetid();
   void set_allocated_vegaassetid(::std::string* vegaassetid);
 
-  // string sourcePartyId = 2;
-  void clear_sourcepartyid();
-  static const int kSourcePartyIdFieldNumber = 2;
-  const ::std::string& sourcepartyid() const;
-  void set_sourcepartyid(const ::std::string& value);
-  #if LANG_CXX11
-  void set_sourcepartyid(::std::string&& value);
-  #endif
-  void set_sourcepartyid(const char* value);
-  void set_sourcepartyid(const char* value, size_t size);
-  ::std::string* mutable_sourcepartyid();
-  ::std::string* release_sourcepartyid();
-  void set_allocated_sourcepartyid(::std::string* sourcepartyid);
-
-  // string targetEthereumAddress = 3;
+  // string targetEthereumAddress = 2;
   void clear_targetethereumaddress();
-  static const int kTargetEthereumAddressFieldNumber = 3;
+  static const int kTargetEthereumAddressFieldNumber = 2;
   const ::std::string& targetethereumaddress() const;
   void set_targetethereumaddress(const ::std::string& value);
   #if LANG_CXX11
@@ -1084,9 +1070,9 @@ class ERC20Withdrawal :
   ::std::string* release_targetethereumaddress();
   void set_allocated_targetethereumaddress(::std::string* targetethereumaddress);
 
-  // string referenceNonce = 4;
+  // string referenceNonce = 3;
   void clear_referencenonce();
-  static const int kReferenceNonceFieldNumber = 4;
+  static const int kReferenceNonceFieldNumber = 3;
   const ::std::string& referencenonce() const;
   void set_referencenonce(const ::std::string& value);
   #if LANG_CXX11
@@ -1104,7 +1090,6 @@ class ERC20Withdrawal :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr vegaassetid_;
-  ::google::protobuf::internal::ArenaStringPtr sourcepartyid_;
   ::google::protobuf::internal::ArenaStringPtr targetethereumaddress_;
   ::google::protobuf::internal::ArenaStringPtr referencenonce_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -3407,60 +3392,7 @@ inline void ERC20Withdrawal::set_allocated_vegaassetid(::std::string* vegaasseti
   // @@protoc_insertion_point(field_set_allocated:vega.ERC20Withdrawal.vegaAssetID)
 }
 
-// string sourcePartyId = 2;
-inline void ERC20Withdrawal::clear_sourcepartyid() {
-  sourcepartyid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& ERC20Withdrawal::sourcepartyid() const {
-  // @@protoc_insertion_point(field_get:vega.ERC20Withdrawal.sourcePartyId)
-  return sourcepartyid_.GetNoArena();
-}
-inline void ERC20Withdrawal::set_sourcepartyid(const ::std::string& value) {
-
-  sourcepartyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.ERC20Withdrawal.sourcePartyId)
-}
-#if LANG_CXX11
-inline void ERC20Withdrawal::set_sourcepartyid(::std::string&& value) {
-
-  sourcepartyid_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20Withdrawal.sourcePartyId)
-}
-#endif
-inline void ERC20Withdrawal::set_sourcepartyid(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  sourcepartyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.ERC20Withdrawal.sourcePartyId)
-}
-inline void ERC20Withdrawal::set_sourcepartyid(const char* value, size_t size) {
-
-  sourcepartyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.ERC20Withdrawal.sourcePartyId)
-}
-inline ::std::string* ERC20Withdrawal::mutable_sourcepartyid() {
-
-  // @@protoc_insertion_point(field_mutable:vega.ERC20Withdrawal.sourcePartyId)
-  return sourcepartyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* ERC20Withdrawal::release_sourcepartyid() {
-  // @@protoc_insertion_point(field_release:vega.ERC20Withdrawal.sourcePartyId)
-
-  return sourcepartyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void ERC20Withdrawal::set_allocated_sourcepartyid(::std::string* sourcepartyid) {
-  if (sourcepartyid != nullptr) {
-
-  } else {
-
-  }
-  sourcepartyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), sourcepartyid);
-  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Withdrawal.sourcePartyId)
-}
-
-// string targetEthereumAddress = 3;
+// string targetEthereumAddress = 2;
 inline void ERC20Withdrawal::clear_targetethereumaddress() {
   targetethereumaddress_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -3513,7 +3445,7 @@ inline void ERC20Withdrawal::set_allocated_targetethereumaddress(::std::string* 
   // @@protoc_insertion_point(field_set_allocated:vega.ERC20Withdrawal.targetEthereumAddress)
 }
 
-// string referenceNonce = 4;
+// string referenceNonce = 3;
 inline void ERC20Withdrawal::clear_referencenonce() {
   referencenonce_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\037code.vegaprotocol.io/vega/proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x18proto/chain_events.proto\x12\x04vega\"K\n\x13\x42uiltinAssetDeposit\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x0f\n\x07partyID\x18\x02 \x01(\t\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x04\"N\n\x16\x42uiltinAssetWithdrawal\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x0f\n\x07partyID\x18\x02 \x01(\t\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x04\"\x81\x01\n\x11\x42uiltinAssetEvent\x12-\n\x07\x64\x65posit\x18\xe9\x07 \x01(\x0b\x32\x19.vega.BuiltinAssetDepositH\x00\x12\x33\n\nwithdrawal\x18\xea\x07 \x01(\x0b\x32\x1c.vega.BuiltinAssetWithdrawalH\x00\x42\x08\n\x06\x61\x63tion\"%\n\x0e\x45RC20AssetList\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\"\'\n\x10\x45RC20AssetDelist\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\"Y\n\x0c\x45RC20Deposit\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x1d\n\x15sourceEthereumAddress\x18\x02 \x01(\t\x12\x15\n\rtargetPartyID\x18\x03 \x01(\t\"t\n\x0f\x45RC20Withdrawal\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x15\n\rsourcePartyId\x18\x02 \x01(\t\x12\x1d\n\x15targetEthereumAddress\x18\x03 \x01(\t\x12\x16\n\x0ereferenceNonce\x18\x04 \x01(\t\"\xe6\x01\n\nERC20Event\x12\r\n\x05index\x18\x01 \x01(\x04\x12\r\n\x05\x62lock\x18\x02 \x01(\x04\x12*\n\tassetList\x18\xe9\x07 \x01(\x0b\x32\x14.vega.ERC20AssetListH\x00\x12.\n\x0b\x61ssetDelist\x18\xea\x07 \x01(\x0b\x32\x16.vega.ERC20AssetDelistH\x00\x12&\n\x07\x64\x65posit\x18\xeb\x07 \x01(\x0b\x32\x12.vega.ERC20DepositH\x00\x12,\n\nwithdrawal\x18\xec\x07 \x01(\x0b\x32\x15.vega.ERC20WithdrawalH\x00\x42\x08\n\x06\x61\x63tion\"R\n\nBTCDeposit\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x18\n\x10sourceBTCAddress\x18\x02 \x01(\t\x12\x15\n\rtargetPartyId\x18\x03 \x01(\t\"m\n\rBTCWithdrawal\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x15\n\rsourcePartyId\x18\x02 \x01(\t\x12\x18\n\x10targetBTCAddress\x18\x03 \x01(\t\x12\x16\n\x0ereferenceNonce\x18\x04 \x01(\t\"\x84\x01\n\x08\x42TCEvent\x12\r\n\x05index\x18\x01 \x01(\x04\x12\r\n\x05\x62lock\x18\x02 \x01(\x04\x12$\n\x07\x64\x65posit\x18\xe9\x07 \x01(\x0b\x32\x10.vega.BTCDepositH\x00\x12*\n\nwithdrawal\x18\xea\x07 \x01(\x0b\x32\x13.vega.BTCWithdrawalH\x00\x42\x08\n\x06\x61\x63tion\"\"\n\x0f\x45thereumAddress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"!\n\x0e\x42itcoinAddress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"|\n\nIdentifier\x12\x30\n\x0f\x65thereumAddress\x18\x01 \x01(\x0b\x32\x15.vega.EthereumAddressH\x00\x12.\n\x0e\x62itcoinAddress\x18\x02 \x01(\x0b\x32\x14.vega.BitcoinAddressH\x00\x42\x0c\n\nidentifier\",\n\x0c\x41\x64\x64Validator\x12\x1c\n\x02id\x18\x01 \x01(\x0b\x32\x10.vega.Identifier\"/\n\x0fRemoveValidator\x12\x1c\n\x02id\x18\x01 \x01(\x0b\x32\x10.vega.Identifier\"v\n\x0eValidatorEvent\x12\x10\n\x08sourceID\x18\x01 \x01(\t\x12\"\n\x03\x61\x64\x64\x18\xe9\x07 \x01(\x0b\x32\x12.vega.AddValidatorH\x00\x12$\n\x02rm\x18\xea\x07 \x01(\x0b\x32\x15.vega.RemoveValidatorH\x00\x42\x08\n\x06\x61\x63tion\"\xcf\x01\n\nChainEvent\x12\x0c\n\x04txID\x18\x01 \x01(\t\x12\r\n\x05nonce\x18\x02 \x01(\x04\x12+\n\x07\x62uiltin\x18\xe9\x07 \x01(\x0b\x32\x17.vega.BuiltinAssetEventH\x00\x12\"\n\x05\x65rc20\x18\xea\x07 \x01(\x0b\x32\x10.vega.ERC20EventH\x00\x12\x1e\n\x03\x62tc\x18\xeb\x07 \x01(\x0b\x32\x0e.vega.BTCEventH\x00\x12*\n\tvalidator\x18\xec\x07 \x01(\x0b\x32\x14.vega.ValidatorEventH\x00\x42\x07\n\x05\x65ventB!Z\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
+  serialized_pb=b'\n\x18proto/chain_events.proto\x12\x04vega\"K\n\x13\x42uiltinAssetDeposit\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x0f\n\x07partyID\x18\x02 \x01(\t\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x04\"N\n\x16\x42uiltinAssetWithdrawal\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x0f\n\x07partyID\x18\x02 \x01(\t\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x04\"\x81\x01\n\x11\x42uiltinAssetEvent\x12-\n\x07\x64\x65posit\x18\xe9\x07 \x01(\x0b\x32\x19.vega.BuiltinAssetDepositH\x00\x12\x33\n\nwithdrawal\x18\xea\x07 \x01(\x0b\x32\x1c.vega.BuiltinAssetWithdrawalH\x00\x42\x08\n\x06\x61\x63tion\"%\n\x0e\x45RC20AssetList\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\"\'\n\x10\x45RC20AssetDelist\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\"Y\n\x0c\x45RC20Deposit\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x1d\n\x15sourceEthereumAddress\x18\x02 \x01(\t\x12\x15\n\rtargetPartyID\x18\x03 \x01(\t\"]\n\x0f\x45RC20Withdrawal\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x1d\n\x15targetEthereumAddress\x18\x02 \x01(\t\x12\x16\n\x0ereferenceNonce\x18\x03 \x01(\t\"\xe6\x01\n\nERC20Event\x12\r\n\x05index\x18\x01 \x01(\x04\x12\r\n\x05\x62lock\x18\x02 \x01(\x04\x12*\n\tassetList\x18\xe9\x07 \x01(\x0b\x32\x14.vega.ERC20AssetListH\x00\x12.\n\x0b\x61ssetDelist\x18\xea\x07 \x01(\x0b\x32\x16.vega.ERC20AssetDelistH\x00\x12&\n\x07\x64\x65posit\x18\xeb\x07 \x01(\x0b\x32\x12.vega.ERC20DepositH\x00\x12,\n\nwithdrawal\x18\xec\x07 \x01(\x0b\x32\x15.vega.ERC20WithdrawalH\x00\x42\x08\n\x06\x61\x63tion\"R\n\nBTCDeposit\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x18\n\x10sourceBTCAddress\x18\x02 \x01(\t\x12\x15\n\rtargetPartyId\x18\x03 \x01(\t\"m\n\rBTCWithdrawal\x12\x13\n\x0bvegaAssetID\x18\x01 \x01(\t\x12\x15\n\rsourcePartyId\x18\x02 \x01(\t\x12\x18\n\x10targetBTCAddress\x18\x03 \x01(\t\x12\x16\n\x0ereferenceNonce\x18\x04 \x01(\t\"\x84\x01\n\x08\x42TCEvent\x12\r\n\x05index\x18\x01 \x01(\x04\x12\r\n\x05\x62lock\x18\x02 \x01(\x04\x12$\n\x07\x64\x65posit\x18\xe9\x07 \x01(\x0b\x32\x10.vega.BTCDepositH\x00\x12*\n\nwithdrawal\x18\xea\x07 \x01(\x0b\x32\x13.vega.BTCWithdrawalH\x00\x42\x08\n\x06\x61\x63tion\"\"\n\x0f\x45thereumAddress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"!\n\x0e\x42itcoinAddress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"|\n\nIdentifier\x12\x30\n\x0f\x65thereumAddress\x18\x01 \x01(\x0b\x32\x15.vega.EthereumAddressH\x00\x12.\n\x0e\x62itcoinAddress\x18\x02 \x01(\x0b\x32\x14.vega.BitcoinAddressH\x00\x42\x0c\n\nidentifier\",\n\x0c\x41\x64\x64Validator\x12\x1c\n\x02id\x18\x01 \x01(\x0b\x32\x10.vega.Identifier\"/\n\x0fRemoveValidator\x12\x1c\n\x02id\x18\x01 \x01(\x0b\x32\x10.vega.Identifier\"v\n\x0eValidatorEvent\x12\x10\n\x08sourceID\x18\x01 \x01(\t\x12\"\n\x03\x61\x64\x64\x18\xe9\x07 \x01(\x0b\x32\x12.vega.AddValidatorH\x00\x12$\n\x02rm\x18\xea\x07 \x01(\x0b\x32\x15.vega.RemoveValidatorH\x00\x42\x08\n\x06\x61\x63tion\"\xcf\x01\n\nChainEvent\x12\x0c\n\x04txID\x18\x01 \x01(\t\x12\r\n\x05nonce\x18\x02 \x01(\x04\x12+\n\x07\x62uiltin\x18\xe9\x07 \x01(\x0b\x32\x17.vega.BuiltinAssetEventH\x00\x12\"\n\x05\x65rc20\x18\xea\x07 \x01(\x0b\x32\x10.vega.ERC20EventH\x00\x12\x1e\n\x03\x62tc\x18\xeb\x07 \x01(\x0b\x32\x0e.vega.BTCEventH\x00\x12*\n\tvalidator\x18\xec\x07 \x01(\x0b\x32\x14.vega.ValidatorEventH\x00\x42\x07\n\x05\x65ventB!Z\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
 )
 
 
@@ -287,22 +287,15 @@ _ERC20WITHDRAWAL = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sourcePartyId', full_name='vega.ERC20Withdrawal.sourcePartyId', index=1,
+      name='targetEthereumAddress', full_name='vega.ERC20Withdrawal.targetEthereumAddress', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='targetEthereumAddress', full_name='vega.ERC20Withdrawal.targetEthereumAddress', index=2,
+      name='referenceNonce', full_name='vega.ERC20Withdrawal.referenceNonce', index=2,
       number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='referenceNonce', full_name='vega.ERC20Withdrawal.referenceNonce', index=3,
-      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -320,7 +313,7 @@ _ERC20WITHDRAWAL = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=494,
-  serialized_end=610,
+  serialized_end=587,
 )
 
 
@@ -391,8 +384,8 @@ _ERC20EVENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=613,
-  serialized_end=843,
+  serialized_start=590,
+  serialized_end=820,
 )
 
 
@@ -437,8 +430,8 @@ _BTCDEPOSIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=845,
-  serialized_end=927,
+  serialized_start=822,
+  serialized_end=904,
 )
 
 
@@ -490,8 +483,8 @@ _BTCWITHDRAWAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=929,
-  serialized_end=1038,
+  serialized_start=906,
+  serialized_end=1015,
 )
 
 
@@ -548,8 +541,8 @@ _BTCEVENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1041,
-  serialized_end=1173,
+  serialized_start=1018,
+  serialized_end=1150,
 )
 
 
@@ -580,8 +573,8 @@ _ETHEREUMADDRESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1175,
-  serialized_end=1209,
+  serialized_start=1152,
+  serialized_end=1186,
 )
 
 
@@ -612,8 +605,8 @@ _BITCOINADDRESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1211,
-  serialized_end=1244,
+  serialized_start=1188,
+  serialized_end=1221,
 )
 
 
@@ -656,8 +649,8 @@ _IDENTIFIER = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1246,
-  serialized_end=1370,
+  serialized_start=1223,
+  serialized_end=1347,
 )
 
 
@@ -688,8 +681,8 @@ _ADDVALIDATOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1372,
-  serialized_end=1416,
+  serialized_start=1349,
+  serialized_end=1393,
 )
 
 
@@ -720,8 +713,8 @@ _REMOVEVALIDATOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1418,
-  serialized_end=1465,
+  serialized_start=1395,
+  serialized_end=1442,
 )
 
 
@@ -771,8 +764,8 @@ _VALIDATOREVENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1467,
-  serialized_end=1585,
+  serialized_start=1444,
+  serialized_end=1562,
 )
 
 
@@ -843,8 +836,8 @@ _CHAINEVENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1588,
-  serialized_end=1795,
+  serialized_start=1565,
+  serialized_end=1772,
 )
 
 _BUILTINASSETEVENT.fields_by_name['deposit'].message_type = _BUILTINASSETDEPOSIT

@@ -469,7 +469,6 @@ const ::google::protobuf::uint32 TableStruct_proto_2fchain_5fevents_2eproto::off
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::ERC20Withdrawal, vegaassetid_),
-  PROTOBUF_FIELD_OFFSET(::vega::ERC20Withdrawal, sourcepartyid_),
   PROTOBUF_FIELD_OFFSET(::vega::ERC20Withdrawal, targetethereumaddress_),
   PROTOBUF_FIELD_OFFSET(::vega::ERC20Withdrawal, referencenonce_),
   ~0u,  // no _has_bits_
@@ -573,17 +572,17 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 30, -1, sizeof(::vega::ERC20AssetDelist)},
   { 36, -1, sizeof(::vega::ERC20Deposit)},
   { 44, -1, sizeof(::vega::ERC20Withdrawal)},
-  { 53, -1, sizeof(::vega::ERC20Event)},
-  { 65, -1, sizeof(::vega::BTCDeposit)},
-  { 73, -1, sizeof(::vega::BTCWithdrawal)},
-  { 82, -1, sizeof(::vega::BTCEvent)},
-  { 92, -1, sizeof(::vega::EthereumAddress)},
-  { 98, -1, sizeof(::vega::BitcoinAddress)},
-  { 104, -1, sizeof(::vega::Identifier)},
-  { 112, -1, sizeof(::vega::AddValidator)},
-  { 118, -1, sizeof(::vega::RemoveValidator)},
-  { 124, -1, sizeof(::vega::ValidatorEvent)},
-  { 133, -1, sizeof(::vega::ChainEvent)},
+  { 52, -1, sizeof(::vega::ERC20Event)},
+  { 64, -1, sizeof(::vega::BTCDeposit)},
+  { 72, -1, sizeof(::vega::BTCWithdrawal)},
+  { 81, -1, sizeof(::vega::BTCEvent)},
+  { 91, -1, sizeof(::vega::EthereumAddress)},
+  { 97, -1, sizeof(::vega::BitcoinAddress)},
+  { 103, -1, sizeof(::vega::Identifier)},
+  { 111, -1, sizeof(::vega::AddValidator)},
+  { 117, -1, sizeof(::vega::RemoveValidator)},
+  { 123, -1, sizeof(::vega::ValidatorEvent)},
+  { 132, -1, sizeof(::vega::ChainEvent)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -626,45 +625,45 @@ const char descriptor_table_protodef_proto_2fchain_5fevents_2eproto[] =
   "\"\'\n\020ERC20AssetDelist\022\023\n\013vegaAssetID\030\001 \001("
   "\t\"Y\n\014ERC20Deposit\022\023\n\013vegaAssetID\030\001 \001(\t\022\035"
   "\n\025sourceEthereumAddress\030\002 \001(\t\022\025\n\rtargetP"
-  "artyID\030\003 \001(\t\"t\n\017ERC20Withdrawal\022\023\n\013vegaA"
-  "ssetID\030\001 \001(\t\022\025\n\rsourcePartyId\030\002 \001(\t\022\035\n\025t"
-  "argetEthereumAddress\030\003 \001(\t\022\026\n\016referenceN"
-  "once\030\004 \001(\t\"\346\001\n\nERC20Event\022\r\n\005index\030\001 \001(\004"
-  "\022\r\n\005block\030\002 \001(\004\022*\n\tassetList\030\351\007 \001(\0132\024.ve"
-  "ga.ERC20AssetListH\000\022.\n\013assetDelist\030\352\007 \001("
-  "\0132\026.vega.ERC20AssetDelistH\000\022&\n\007deposit\030\353"
-  "\007 \001(\0132\022.vega.ERC20DepositH\000\022,\n\nwithdrawa"
-  "l\030\354\007 \001(\0132\025.vega.ERC20WithdrawalH\000B\010\n\006act"
-  "ion\"R\n\nBTCDeposit\022\023\n\013vegaAssetID\030\001 \001(\t\022\030"
-  "\n\020sourceBTCAddress\030\002 \001(\t\022\025\n\rtargetPartyI"
-  "d\030\003 \001(\t\"m\n\rBTCWithdrawal\022\023\n\013vegaAssetID\030"
-  "\001 \001(\t\022\025\n\rsourcePartyId\030\002 \001(\t\022\030\n\020targetBT"
-  "CAddress\030\003 \001(\t\022\026\n\016referenceNonce\030\004 \001(\t\"\204"
-  "\001\n\010BTCEvent\022\r\n\005index\030\001 \001(\004\022\r\n\005block\030\002 \001("
-  "\004\022$\n\007deposit\030\351\007 \001(\0132\020.vega.BTCDepositH\000\022"
-  "*\n\nwithdrawal\030\352\007 \001(\0132\023.vega.BTCWithdrawa"
-  "lH\000B\010\n\006action\"\"\n\017EthereumAddress\022\017\n\007addr"
-  "ess\030\001 \001(\t\"!\n\016BitcoinAddress\022\017\n\007address\030\001"
-  " \001(\t\"|\n\nIdentifier\0220\n\017ethereumAddress\030\001 "
-  "\001(\0132\025.vega.EthereumAddressH\000\022.\n\016bitcoinA"
-  "ddress\030\002 \001(\0132\024.vega.BitcoinAddressH\000B\014\n\n"
-  "identifier\",\n\014AddValidator\022\034\n\002id\030\001 \001(\0132\020"
-  ".vega.Identifier\"/\n\017RemoveValidator\022\034\n\002i"
-  "d\030\001 \001(\0132\020.vega.Identifier\"v\n\016ValidatorEv"
-  "ent\022\020\n\010sourceID\030\001 \001(\t\022\"\n\003add\030\351\007 \001(\0132\022.ve"
-  "ga.AddValidatorH\000\022$\n\002rm\030\352\007 \001(\0132\025.vega.Re"
-  "moveValidatorH\000B\010\n\006action\"\317\001\n\nChainEvent"
-  "\022\014\n\004txID\030\001 \001(\t\022\r\n\005nonce\030\002 \001(\004\022+\n\007builtin"
-  "\030\351\007 \001(\0132\027.vega.BuiltinAssetEventH\000\022\"\n\005er"
-  "c20\030\352\007 \001(\0132\020.vega.ERC20EventH\000\022\036\n\003btc\030\353\007"
-  " \001(\0132\016.vega.BTCEventH\000\022*\n\tvalidator\030\354\007 \001"
-  "(\0132\024.vega.ValidatorEventH\000B\007\n\005eventB!Z\037c"
-  "ode.vegaprotocol.io/vega/protob\006proto3"
+  "artyID\030\003 \001(\t\"]\n\017ERC20Withdrawal\022\023\n\013vegaA"
+  "ssetID\030\001 \001(\t\022\035\n\025targetEthereumAddress\030\002 "
+  "\001(\t\022\026\n\016referenceNonce\030\003 \001(\t\"\346\001\n\nERC20Eve"
+  "nt\022\r\n\005index\030\001 \001(\004\022\r\n\005block\030\002 \001(\004\022*\n\tasse"
+  "tList\030\351\007 \001(\0132\024.vega.ERC20AssetListH\000\022.\n\013"
+  "assetDelist\030\352\007 \001(\0132\026.vega.ERC20AssetDeli"
+  "stH\000\022&\n\007deposit\030\353\007 \001(\0132\022.vega.ERC20Depos"
+  "itH\000\022,\n\nwithdrawal\030\354\007 \001(\0132\025.vega.ERC20Wi"
+  "thdrawalH\000B\010\n\006action\"R\n\nBTCDeposit\022\023\n\013ve"
+  "gaAssetID\030\001 \001(\t\022\030\n\020sourceBTCAddress\030\002 \001("
+  "\t\022\025\n\rtargetPartyId\030\003 \001(\t\"m\n\rBTCWithdrawa"
+  "l\022\023\n\013vegaAssetID\030\001 \001(\t\022\025\n\rsourcePartyId\030"
+  "\002 \001(\t\022\030\n\020targetBTCAddress\030\003 \001(\t\022\026\n\016refer"
+  "enceNonce\030\004 \001(\t\"\204\001\n\010BTCEvent\022\r\n\005index\030\001 "
+  "\001(\004\022\r\n\005block\030\002 \001(\004\022$\n\007deposit\030\351\007 \001(\0132\020.v"
+  "ega.BTCDepositH\000\022*\n\nwithdrawal\030\352\007 \001(\0132\023."
+  "vega.BTCWithdrawalH\000B\010\n\006action\"\"\n\017Ethere"
+  "umAddress\022\017\n\007address\030\001 \001(\t\"!\n\016BitcoinAdd"
+  "ress\022\017\n\007address\030\001 \001(\t\"|\n\nIdentifier\0220\n\017e"
+  "thereumAddress\030\001 \001(\0132\025.vega.EthereumAddr"
+  "essH\000\022.\n\016bitcoinAddress\030\002 \001(\0132\024.vega.Bit"
+  "coinAddressH\000B\014\n\nidentifier\",\n\014AddValida"
+  "tor\022\034\n\002id\030\001 \001(\0132\020.vega.Identifier\"/\n\017Rem"
+  "oveValidator\022\034\n\002id\030\001 \001(\0132\020.vega.Identifi"
+  "er\"v\n\016ValidatorEvent\022\020\n\010sourceID\030\001 \001(\t\022\""
+  "\n\003add\030\351\007 \001(\0132\022.vega.AddValidatorH\000\022$\n\002rm"
+  "\030\352\007 \001(\0132\025.vega.RemoveValidatorH\000B\010\n\006acti"
+  "on\"\317\001\n\nChainEvent\022\014\n\004txID\030\001 \001(\t\022\r\n\005nonce"
+  "\030\002 \001(\004\022+\n\007builtin\030\351\007 \001(\0132\027.vega.BuiltinA"
+  "ssetEventH\000\022\"\n\005erc20\030\352\007 \001(\0132\020.vega.ERC20"
+  "EventH\000\022\036\n\003btc\030\353\007 \001(\0132\016.vega.BTCEventH\000\022"
+  "*\n\tvalidator\030\354\007 \001(\0132\024.vega.ValidatorEven"
+  "tH\000B\007\n\005eventB!Z\037code.vegaprotocol.io/veg"
+  "a/protob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fchain_5fevents_2eproto = {
   false, InitDefaults_proto_2fchain_5fevents_2eproto, 
   descriptor_table_protodef_proto_2fchain_5fevents_2eproto,
-  "proto/chain_events.proto", &assign_descriptors_table_proto_2fchain_5fevents_2eproto, 1838,
+  "proto/chain_events.proto", &assign_descriptors_table_proto_2fchain_5fevents_2eproto, 1815,
 };
 
 void AddDescriptors_proto_2fchain_5fevents_2eproto() {
@@ -2965,7 +2964,6 @@ class ERC20Withdrawal::HasBitSetters {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ERC20Withdrawal::kVegaAssetIDFieldNumber;
-const int ERC20Withdrawal::kSourcePartyIdFieldNumber;
 const int ERC20Withdrawal::kTargetEthereumAddressFieldNumber;
 const int ERC20Withdrawal::kReferenceNonceFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -2983,10 +2981,6 @@ ERC20Withdrawal::ERC20Withdrawal(const ERC20Withdrawal& from)
   if (from.vegaassetid().size() > 0) {
     vegaassetid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.vegaassetid_);
   }
-  sourcepartyid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.sourcepartyid().size() > 0) {
-    sourcepartyid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.sourcepartyid_);
-  }
   targetethereumaddress_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.targetethereumaddress().size() > 0) {
     targetethereumaddress_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.targetethereumaddress_);
@@ -3002,7 +2996,6 @@ void ERC20Withdrawal::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ERC20Withdrawal_proto_2fchain_5fevents_2eproto.base);
   vegaassetid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  sourcepartyid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   targetethereumaddress_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   referencenonce_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -3014,7 +3007,6 @@ ERC20Withdrawal::~ERC20Withdrawal() {
 
 void ERC20Withdrawal::SharedDtor() {
   vegaassetid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  sourcepartyid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   targetethereumaddress_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   referencenonce_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -3035,7 +3027,6 @@ void ERC20Withdrawal::Clear() {
   (void) cached_has_bits;
 
   vegaassetid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  sourcepartyid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   targetethereumaddress_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   referencenonce_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
@@ -3070,25 +3061,9 @@ const char* ERC20Withdrawal::_InternalParse(const char* begin, const char* end, 
         ptr += size;
         break;
       }
-      // string sourcePartyId = 2;
+      // string targetEthereumAddress = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("vega.ERC20Withdrawal.sourcePartyId");
-        object = msg->mutable_sourcepartyid();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string targetEthereumAddress = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("vega.ERC20Withdrawal.targetEthereumAddress");
@@ -3102,9 +3077,9 @@ const char* ERC20Withdrawal::_InternalParse(const char* begin, const char* end, 
         ptr += size;
         break;
       }
-      // string referenceNonce = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+      // string referenceNonce = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("vega.ERC20Withdrawal.referenceNonce");
@@ -3167,24 +3142,9 @@ bool ERC20Withdrawal::MergePartialFromCodedStream(
         break;
       }
 
-      // string sourcePartyId = 2;
+      // string targetEthereumAddress = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_sourcepartyid()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->sourcepartyid().data(), static_cast<int>(this->sourcepartyid().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "vega.ERC20Withdrawal.sourcePartyId"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string targetEthereumAddress = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_targetethereumaddress()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -3197,9 +3157,9 @@ bool ERC20Withdrawal::MergePartialFromCodedStream(
         break;
       }
 
-      // string referenceNonce = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+      // string referenceNonce = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_referencenonce()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -3249,34 +3209,24 @@ void ERC20Withdrawal::SerializeWithCachedSizes(
       1, this->vegaassetid(), output);
   }
 
-  // string sourcePartyId = 2;
-  if (this->sourcepartyid().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->sourcepartyid().data(), static_cast<int>(this->sourcepartyid().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "vega.ERC20Withdrawal.sourcePartyId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->sourcepartyid(), output);
-  }
-
-  // string targetEthereumAddress = 3;
+  // string targetEthereumAddress = 2;
   if (this->targetethereumaddress().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->targetethereumaddress().data(), static_cast<int>(this->targetethereumaddress().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "vega.ERC20Withdrawal.targetEthereumAddress");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->targetethereumaddress(), output);
+      2, this->targetethereumaddress(), output);
   }
 
-  // string referenceNonce = 4;
+  // string referenceNonce = 3;
   if (this->referencenonce().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->referencenonce().data(), static_cast<int>(this->referencenonce().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "vega.ERC20Withdrawal.referenceNonce");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->referencenonce(), output);
+      3, this->referencenonce(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3303,18 +3253,7 @@ void ERC20Withdrawal::SerializeWithCachedSizes(
         1, this->vegaassetid(), target);
   }
 
-  // string sourcePartyId = 2;
-  if (this->sourcepartyid().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->sourcepartyid().data(), static_cast<int>(this->sourcepartyid().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "vega.ERC20Withdrawal.sourcePartyId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->sourcepartyid(), target);
-  }
-
-  // string targetEthereumAddress = 3;
+  // string targetEthereumAddress = 2;
   if (this->targetethereumaddress().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->targetethereumaddress().data(), static_cast<int>(this->targetethereumaddress().length()),
@@ -3322,10 +3261,10 @@ void ERC20Withdrawal::SerializeWithCachedSizes(
       "vega.ERC20Withdrawal.targetEthereumAddress");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->targetethereumaddress(), target);
+        2, this->targetethereumaddress(), target);
   }
 
-  // string referenceNonce = 4;
+  // string referenceNonce = 3;
   if (this->referencenonce().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->referencenonce().data(), static_cast<int>(this->referencenonce().length()),
@@ -3333,7 +3272,7 @@ void ERC20Withdrawal::SerializeWithCachedSizes(
       "vega.ERC20Withdrawal.referenceNonce");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->referencenonce(), target);
+        3, this->referencenonce(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3364,21 +3303,14 @@ size_t ERC20Withdrawal::ByteSizeLong() const {
         this->vegaassetid());
   }
 
-  // string sourcePartyId = 2;
-  if (this->sourcepartyid().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->sourcepartyid());
-  }
-
-  // string targetEthereumAddress = 3;
+  // string targetEthereumAddress = 2;
   if (this->targetethereumaddress().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->targetethereumaddress());
   }
 
-  // string referenceNonce = 4;
+  // string referenceNonce = 3;
   if (this->referencenonce().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -3416,10 +3348,6 @@ void ERC20Withdrawal::MergeFrom(const ERC20Withdrawal& from) {
 
     vegaassetid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.vegaassetid_);
   }
-  if (from.sourcepartyid().size() > 0) {
-
-    sourcepartyid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.sourcepartyid_);
-  }
   if (from.targetethereumaddress().size() > 0) {
 
     targetethereumaddress_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.targetethereumaddress_);
@@ -3456,8 +3384,6 @@ void ERC20Withdrawal::InternalSwap(ERC20Withdrawal* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   vegaassetid_.Swap(&other->vegaassetid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  sourcepartyid_.Swap(&other->sourcepartyid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   targetethereumaddress_.Swap(&other->targetethereumaddress_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());

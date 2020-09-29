@@ -46,7 +46,7 @@ struct TableStruct_proto_2fvega_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[40]
+  static const ::google::protobuf::internal::ParseTable schema[45]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -63,6 +63,12 @@ extern AuctionIndicativeStateDefaultTypeInternal _AuctionIndicativeState_default
 class Candle;
 class CandleDefaultTypeInternal;
 extern CandleDefaultTypeInternal _Candle_default_instance_;
+class Deposit;
+class DepositDefaultTypeInternal;
+extern DepositDefaultTypeInternal _Deposit_default_instance_;
+class Erc20WithdrawExt;
+class Erc20WithdrawExtDefaultTypeInternal;
+extern Erc20WithdrawExtDefaultTypeInternal _Erc20WithdrawExt_default_instance_;
 class ErrorDetail;
 class ErrorDetailDefaultTypeInternal;
 extern ErrorDetailDefaultTypeInternal _ErrorDetail_default_instance_;
@@ -84,6 +90,9 @@ extern MarketDataDefaultTypeInternal _MarketData_default_instance_;
 class MarketDepth;
 class MarketDepthDefaultTypeInternal;
 extern MarketDepthDefaultTypeInternal _MarketDepth_default_instance_;
+class MarketDepthUpdate;
+class MarketDepthUpdateDefaultTypeInternal;
+extern MarketDepthUpdateDefaultTypeInternal _MarketDepthUpdate_default_instance_;
 class NodeRegistration;
 class NodeRegistrationDefaultTypeInternal;
 extern NodeRegistrationDefaultTypeInternal _NodeRegistration_default_instance_;
@@ -171,15 +180,23 @@ extern TransferRequestDefaultTypeInternal _TransferRequest_default_instance_;
 class TransferResponse;
 class TransferResponseDefaultTypeInternal;
 extern TransferResponseDefaultTypeInternal _TransferResponse_default_instance_;
-class Withdraw;
-class WithdrawDefaultTypeInternal;
-extern WithdrawDefaultTypeInternal _Withdraw_default_instance_;
+class WithdrawExt;
+class WithdrawExtDefaultTypeInternal;
+extern WithdrawExtDefaultTypeInternal _WithdrawExt_default_instance_;
+class WithdrawSubmission;
+class WithdrawSubmissionDefaultTypeInternal;
+extern WithdrawSubmissionDefaultTypeInternal _WithdrawSubmission_default_instance_;
+class Withdrawal;
+class WithdrawalDefaultTypeInternal;
+extern WithdrawalDefaultTypeInternal _Withdrawal_default_instance_;
 }  // namespace vega
 namespace google {
 namespace protobuf {
 template<> ::vega::Account* Arena::CreateMaybeMessage<::vega::Account>(Arena*);
 template<> ::vega::AuctionIndicativeState* Arena::CreateMaybeMessage<::vega::AuctionIndicativeState>(Arena*);
 template<> ::vega::Candle* Arena::CreateMaybeMessage<::vega::Candle>(Arena*);
+template<> ::vega::Deposit* Arena::CreateMaybeMessage<::vega::Deposit>(Arena*);
+template<> ::vega::Erc20WithdrawExt* Arena::CreateMaybeMessage<::vega::Erc20WithdrawExt>(Arena*);
 template<> ::vega::ErrorDetail* Arena::CreateMaybeMessage<::vega::ErrorDetail>(Arena*);
 template<> ::vega::Fee* Arena::CreateMaybeMessage<::vega::Fee>(Arena*);
 template<> ::vega::FinancialAmount* Arena::CreateMaybeMessage<::vega::FinancialAmount>(Arena*);
@@ -187,6 +204,7 @@ template<> ::vega::LedgerEntry* Arena::CreateMaybeMessage<::vega::LedgerEntry>(A
 template<> ::vega::MarginLevels* Arena::CreateMaybeMessage<::vega::MarginLevels>(Arena*);
 template<> ::vega::MarketData* Arena::CreateMaybeMessage<::vega::MarketData>(Arena*);
 template<> ::vega::MarketDepth* Arena::CreateMaybeMessage<::vega::MarketDepth>(Arena*);
+template<> ::vega::MarketDepthUpdate* Arena::CreateMaybeMessage<::vega::MarketDepthUpdate>(Arena*);
 template<> ::vega::NodeRegistration* Arena::CreateMaybeMessage<::vega::NodeRegistration>(Arena*);
 template<> ::vega::NodeSignature* Arena::CreateMaybeMessage<::vega::NodeSignature>(Arena*);
 template<> ::vega::NodeVote* Arena::CreateMaybeMessage<::vega::NodeVote>(Arena*);
@@ -216,7 +234,9 @@ template<> ::vega::Transfer* Arena::CreateMaybeMessage<::vega::Transfer>(Arena*)
 template<> ::vega::TransferBalance* Arena::CreateMaybeMessage<::vega::TransferBalance>(Arena*);
 template<> ::vega::TransferRequest* Arena::CreateMaybeMessage<::vega::TransferRequest>(Arena*);
 template<> ::vega::TransferResponse* Arena::CreateMaybeMessage<::vega::TransferResponse>(Arena*);
-template<> ::vega::Withdraw* Arena::CreateMaybeMessage<::vega::Withdraw>(Arena*);
+template<> ::vega::WithdrawExt* Arena::CreateMaybeMessage<::vega::WithdrawExt>(Arena*);
+template<> ::vega::WithdrawSubmission* Arena::CreateMaybeMessage<::vega::WithdrawSubmission>(Arena*);
+template<> ::vega::Withdrawal* Arena::CreateMaybeMessage<::vega::Withdrawal>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace vega {
@@ -320,6 +340,52 @@ inline bool Trade_Type_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<Trade_Type>(
     Trade_Type_descriptor(), name, value);
 }
+enum Deposit_Status {
+  Deposit_Status_DEPOSIT_STATUS_UNSPECIFIED = 0,
+  Deposit_Status_DEPOSIT_STATUS_OPEN = 1,
+  Deposit_Status_DEPOSIT_STATUS_CANCELLED = 2,
+  Deposit_Status_DEPOSIT_STATUS_FINALIZED = 3,
+  Deposit_Status_Deposit_Status_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  Deposit_Status_Deposit_Status_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool Deposit_Status_IsValid(int value);
+const Deposit_Status Deposit_Status_Status_MIN = Deposit_Status_DEPOSIT_STATUS_UNSPECIFIED;
+const Deposit_Status Deposit_Status_Status_MAX = Deposit_Status_DEPOSIT_STATUS_FINALIZED;
+const int Deposit_Status_Status_ARRAYSIZE = Deposit_Status_Status_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* Deposit_Status_descriptor();
+inline const ::std::string& Deposit_Status_Name(Deposit_Status value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    Deposit_Status_descriptor(), value);
+}
+inline bool Deposit_Status_Parse(
+    const ::std::string& name, Deposit_Status* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Deposit_Status>(
+    Deposit_Status_descriptor(), name, value);
+}
+enum Withdrawal_Status {
+  Withdrawal_Status_WITHDRAWAL_STATUS_UNSPECIFIED = 0,
+  Withdrawal_Status_WITHDRAWAL_STATUS_OPEN = 1,
+  Withdrawal_Status_WITHDRAWAL_STATUS_CANCELLED = 2,
+  Withdrawal_Status_WITHDRAWAL_STATUS_FINALIZED = 3,
+  Withdrawal_Status_Withdrawal_Status_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  Withdrawal_Status_Withdrawal_Status_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool Withdrawal_Status_IsValid(int value);
+const Withdrawal_Status Withdrawal_Status_Status_MIN = Withdrawal_Status_WITHDRAWAL_STATUS_UNSPECIFIED;
+const Withdrawal_Status Withdrawal_Status_Status_MAX = Withdrawal_Status_WITHDRAWAL_STATUS_FINALIZED;
+const int Withdrawal_Status_Status_ARRAYSIZE = Withdrawal_Status_Status_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* Withdrawal_Status_descriptor();
+inline const ::std::string& Withdrawal_Status_Name(Withdrawal_Status value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    Withdrawal_Status_descriptor(), value);
+}
+inline bool Withdrawal_Status_Parse(
+    const ::std::string& name, Withdrawal_Status* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Withdrawal_Status>(
+    Withdrawal_Status_descriptor(), name, value);
+}
 enum Side {
   SIDE_UNSPECIFIED = 0,
   SIDE_BUY = 1,
@@ -414,12 +480,13 @@ enum OrderError {
   ORDER_ERROR_SELF_TRADING = 20,
   ORDER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEES = 21,
   ORDER_ERROR_INCORRECT_MARKET_TYPE = 22,
+  ORDER_ERROR_INVALID_TIME_IN_FORCE = 23,
   OrderError_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   OrderError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool OrderError_IsValid(int value);
 const OrderError OrderError_MIN = ORDER_ERROR_NONE;
-const OrderError OrderError_MAX = ORDER_ERROR_INCORRECT_MARKET_TYPE;
+const OrderError OrderError_MAX = ORDER_ERROR_INVALID_TIME_IN_FORCE;
 const int OrderError_ARRAYSIZE = OrderError_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* OrderError_descriptor();
@@ -2799,12 +2866,6 @@ class PriceLevel :
   ::google::protobuf::uint64 volume() const;
   void set_volume(::google::protobuf::uint64 value);
 
-  // uint64 cumulativeVolume = 4;
-  void clear_cumulativevolume();
-  static const int kCumulativeVolumeFieldNumber = 4;
-  ::google::protobuf::uint64 cumulativevolume() const;
-  void set_cumulativevolume(::google::protobuf::uint64 value);
-
   // @@protoc_insertion_point(class_scope:vega.PriceLevel)
  private:
   class HasBitSetters;
@@ -2813,7 +2874,6 @@ class PriceLevel :
   ::google::protobuf::uint64 price_;
   ::google::protobuf::uint64 numberoforders_;
   ::google::protobuf::uint64 volume_;
-  ::google::protobuf::uint64 cumulativevolume_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
@@ -2952,6 +3012,12 @@ class MarketDepth :
   ::std::string* release_marketid();
   void set_allocated_marketid(::std::string* marketid);
 
+  // uint64 sequenceNumber = 4;
+  void clear_sequencenumber();
+  static const int kSequenceNumberFieldNumber = 4;
+  ::google::protobuf::uint64 sequencenumber() const;
+  void set_sequencenumber(::google::protobuf::uint64 value);
+
   // @@protoc_insertion_point(class_scope:vega.MarketDepth)
  private:
   class HasBitSetters;
@@ -2960,6 +3026,160 @@ class MarketDepth :
   ::google::protobuf::RepeatedPtrField< ::vega::PriceLevel > buy_;
   ::google::protobuf::RepeatedPtrField< ::vega::PriceLevel > sell_;
   ::google::protobuf::internal::ArenaStringPtr marketid_;
+  ::google::protobuf::uint64 sequencenumber_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fvega_2eproto;
+};
+// -------------------------------------------------------------------
+
+class MarketDepthUpdate :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.MarketDepthUpdate) */ {
+ public:
+  MarketDepthUpdate();
+  virtual ~MarketDepthUpdate();
+
+  MarketDepthUpdate(const MarketDepthUpdate& from);
+
+  inline MarketDepthUpdate& operator=(const MarketDepthUpdate& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  MarketDepthUpdate(MarketDepthUpdate&& from) noexcept
+    : MarketDepthUpdate() {
+    *this = ::std::move(from);
+  }
+
+  inline MarketDepthUpdate& operator=(MarketDepthUpdate&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const MarketDepthUpdate& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const MarketDepthUpdate* internal_default_instance() {
+    return reinterpret_cast<const MarketDepthUpdate*>(
+               &_MarketDepthUpdate_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  void Swap(MarketDepthUpdate* other);
+  friend void swap(MarketDepthUpdate& a, MarketDepthUpdate& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline MarketDepthUpdate* New() const final {
+    return CreateMaybeMessage<MarketDepthUpdate>(nullptr);
+  }
+
+  MarketDepthUpdate* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<MarketDepthUpdate>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const MarketDepthUpdate& from);
+  void MergeFrom(const MarketDepthUpdate& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MarketDepthUpdate* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .vega.PriceLevel buy = 2;
+  int buy_size() const;
+  void clear_buy();
+  static const int kBuyFieldNumber = 2;
+  ::vega::PriceLevel* mutable_buy(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::PriceLevel >*
+      mutable_buy();
+  const ::vega::PriceLevel& buy(int index) const;
+  ::vega::PriceLevel* add_buy();
+  const ::google::protobuf::RepeatedPtrField< ::vega::PriceLevel >&
+      buy() const;
+
+  // repeated .vega.PriceLevel sell = 3;
+  int sell_size() const;
+  void clear_sell();
+  static const int kSellFieldNumber = 3;
+  ::vega::PriceLevel* mutable_sell(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::PriceLevel >*
+      mutable_sell();
+  const ::vega::PriceLevel& sell(int index) const;
+  ::vega::PriceLevel* add_sell();
+  const ::google::protobuf::RepeatedPtrField< ::vega::PriceLevel >&
+      sell() const;
+
+  // string marketID = 1;
+  void clear_marketid();
+  static const int kMarketIDFieldNumber = 1;
+  const ::std::string& marketid() const;
+  void set_marketid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_marketid(::std::string&& value);
+  #endif
+  void set_marketid(const char* value);
+  void set_marketid(const char* value, size_t size);
+  ::std::string* mutable_marketid();
+  ::std::string* release_marketid();
+  void set_allocated_marketid(::std::string* marketid);
+
+  // uint64 sequenceNumber = 4;
+  void clear_sequencenumber();
+  static const int kSequenceNumberFieldNumber = 4;
+  ::google::protobuf::uint64 sequencenumber() const;
+  void set_sequencenumber(::google::protobuf::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:vega.MarketDepthUpdate)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::vega::PriceLevel > buy_;
+  ::google::protobuf::RepeatedPtrField< ::vega::PriceLevel > sell_;
+  ::google::protobuf::internal::ArenaStringPtr marketid_;
+  ::google::protobuf::uint64 sequencenumber_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
@@ -3003,7 +3223,7 @@ class Position :
                &_Position_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   void Swap(Position* other);
   friend void swap(Position& a, Position& b) {
@@ -3112,6 +3332,12 @@ class Position :
   ::google::protobuf::uint64 averageentryprice() const;
   void set_averageentryprice(::google::protobuf::uint64 value);
 
+  // int64 updatedAt = 7;
+  void clear_updatedat();
+  static const int kUpdatedAtFieldNumber = 7;
+  ::google::protobuf::int64 updatedat() const;
+  void set_updatedat(::google::protobuf::int64 value);
+
   // @@protoc_insertion_point(class_scope:vega.Position)
  private:
   class HasBitSetters;
@@ -3123,6 +3349,7 @@ class Position :
   ::google::protobuf::int64 realisedpnl_;
   ::google::protobuf::int64 unrealisedpnl_;
   ::google::protobuf::uint64 averageentryprice_;
+  ::google::protobuf::int64 updatedat_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
@@ -3166,7 +3393,7 @@ class PositionTrade :
                &_PositionTrade_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   void Swap(PositionTrade* other);
   friend void swap(PositionTrade& a, PositionTrade& b) {
@@ -3285,7 +3512,7 @@ class Statistics :
                &_Statistics_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   void Swap(Statistics* other);
   friend void swap(Statistics& a, Statistics& b) {
@@ -3633,25 +3860,25 @@ class Statistics :
 };
 // -------------------------------------------------------------------
 
-class Withdraw :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.Withdraw) */ {
+class Deposit :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.Deposit) */ {
  public:
-  Withdraw();
-  virtual ~Withdraw();
+  Deposit();
+  virtual ~Deposit();
 
-  Withdraw(const Withdraw& from);
+  Deposit(const Deposit& from);
 
-  inline Withdraw& operator=(const Withdraw& from) {
+  inline Deposit& operator=(const Deposit& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  Withdraw(Withdraw&& from) noexcept
-    : Withdraw() {
+  Deposit(Deposit&& from) noexcept
+    : Deposit() {
     *this = ::std::move(from);
   }
 
-  inline Withdraw& operator=(Withdraw&& from) noexcept {
+  inline Deposit& operator=(Deposit&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -3663,34 +3890,34 @@ class Withdraw :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const Withdraw& default_instance();
+  static const Deposit& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Withdraw* internal_default_instance() {
-    return reinterpret_cast<const Withdraw*>(
-               &_Withdraw_default_instance_);
+  static inline const Deposit* internal_default_instance() {
+    return reinterpret_cast<const Deposit*>(
+               &_Deposit_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
-  void Swap(Withdraw* other);
-  friend void swap(Withdraw& a, Withdraw& b) {
+  void Swap(Deposit* other);
+  friend void swap(Deposit& a, Deposit& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Withdraw* New() const final {
-    return CreateMaybeMessage<Withdraw>(nullptr);
+  inline Deposit* New() const final {
+    return CreateMaybeMessage<Deposit>(nullptr);
   }
 
-  Withdraw* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Withdraw>(arena);
+  Deposit* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Deposit>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Withdraw& from);
-  void MergeFrom(const Withdraw& from);
+  void CopyFrom(const Deposit& from);
+  void MergeFrom(const Deposit& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -3712,7 +3939,493 @@ class Withdraw :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Withdraw* other);
+  void InternalSwap(Deposit* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef Deposit_Status Status;
+  static const Status DEPOSIT_STATUS_UNSPECIFIED =
+    Deposit_Status_DEPOSIT_STATUS_UNSPECIFIED;
+  static const Status DEPOSIT_STATUS_OPEN =
+    Deposit_Status_DEPOSIT_STATUS_OPEN;
+  static const Status DEPOSIT_STATUS_CANCELLED =
+    Deposit_Status_DEPOSIT_STATUS_CANCELLED;
+  static const Status DEPOSIT_STATUS_FINALIZED =
+    Deposit_Status_DEPOSIT_STATUS_FINALIZED;
+  static inline bool Status_IsValid(int value) {
+    return Deposit_Status_IsValid(value);
+  }
+  static const Status Status_MIN =
+    Deposit_Status_Status_MIN;
+  static const Status Status_MAX =
+    Deposit_Status_Status_MAX;
+  static const int Status_ARRAYSIZE =
+    Deposit_Status_Status_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Status_descriptor() {
+    return Deposit_Status_descriptor();
+  }
+  static inline const ::std::string& Status_Name(Status value) {
+    return Deposit_Status_Name(value);
+  }
+  static inline bool Status_Parse(const ::std::string& name,
+      Status* value) {
+    return Deposit_Status_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // string partyID = 3;
+  void clear_partyid();
+  static const int kPartyIDFieldNumber = 3;
+  const ::std::string& partyid() const;
+  void set_partyid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_partyid(::std::string&& value);
+  #endif
+  void set_partyid(const char* value);
+  void set_partyid(const char* value, size_t size);
+  ::std::string* mutable_partyid();
+  ::std::string* release_partyid();
+  void set_allocated_partyid(::std::string* partyid);
+
+  // string asset = 4;
+  void clear_asset();
+  static const int kAssetFieldNumber = 4;
+  const ::std::string& asset() const;
+  void set_asset(const ::std::string& value);
+  #if LANG_CXX11
+  void set_asset(::std::string&& value);
+  #endif
+  void set_asset(const char* value);
+  void set_asset(const char* value, size_t size);
+  ::std::string* mutable_asset();
+  ::std::string* release_asset();
+  void set_allocated_asset(::std::string* asset);
+
+  // string amount = 5;
+  void clear_amount();
+  static const int kAmountFieldNumber = 5;
+  const ::std::string& amount() const;
+  void set_amount(const ::std::string& value);
+  #if LANG_CXX11
+  void set_amount(::std::string&& value);
+  #endif
+  void set_amount(const char* value);
+  void set_amount(const char* value, size_t size);
+  ::std::string* mutable_amount();
+  ::std::string* release_amount();
+  void set_allocated_amount(::std::string* amount);
+
+  // string txHash = 6;
+  void clear_txhash();
+  static const int kTxHashFieldNumber = 6;
+  const ::std::string& txhash() const;
+  void set_txhash(const ::std::string& value);
+  #if LANG_CXX11
+  void set_txhash(::std::string&& value);
+  #endif
+  void set_txhash(const char* value);
+  void set_txhash(const char* value, size_t size);
+  ::std::string* mutable_txhash();
+  ::std::string* release_txhash();
+  void set_allocated_txhash(::std::string* txhash);
+
+  // int64 creditedTimestamp = 7;
+  void clear_creditedtimestamp();
+  static const int kCreditedTimestampFieldNumber = 7;
+  ::google::protobuf::int64 creditedtimestamp() const;
+  void set_creditedtimestamp(::google::protobuf::int64 value);
+
+  // int64 createdTimestamp = 8;
+  void clear_createdtimestamp();
+  static const int kCreatedTimestampFieldNumber = 8;
+  ::google::protobuf::int64 createdtimestamp() const;
+  void set_createdtimestamp(::google::protobuf::int64 value);
+
+  // .vega.Deposit.Status status = 2;
+  void clear_status();
+  static const int kStatusFieldNumber = 2;
+  ::vega::Deposit_Status status() const;
+  void set_status(::vega::Deposit_Status value);
+
+  // @@protoc_insertion_point(class_scope:vega.Deposit)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  ::google::protobuf::internal::ArenaStringPtr partyid_;
+  ::google::protobuf::internal::ArenaStringPtr asset_;
+  ::google::protobuf::internal::ArenaStringPtr amount_;
+  ::google::protobuf::internal::ArenaStringPtr txhash_;
+  ::google::protobuf::int64 creditedtimestamp_;
+  ::google::protobuf::int64 createdtimestamp_;
+  int status_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fvega_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Withdrawal :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.Withdrawal) */ {
+ public:
+  Withdrawal();
+  virtual ~Withdrawal();
+
+  Withdrawal(const Withdrawal& from);
+
+  inline Withdrawal& operator=(const Withdrawal& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Withdrawal(Withdrawal&& from) noexcept
+    : Withdrawal() {
+    *this = ::std::move(from);
+  }
+
+  inline Withdrawal& operator=(Withdrawal&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Withdrawal& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Withdrawal* internal_default_instance() {
+    return reinterpret_cast<const Withdrawal*>(
+               &_Withdrawal_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  void Swap(Withdrawal* other);
+  friend void swap(Withdrawal& a, Withdrawal& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Withdrawal* New() const final {
+    return CreateMaybeMessage<Withdrawal>(nullptr);
+  }
+
+  Withdrawal* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Withdrawal>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Withdrawal& from);
+  void MergeFrom(const Withdrawal& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Withdrawal* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef Withdrawal_Status Status;
+  static const Status WITHDRAWAL_STATUS_UNSPECIFIED =
+    Withdrawal_Status_WITHDRAWAL_STATUS_UNSPECIFIED;
+  static const Status WITHDRAWAL_STATUS_OPEN =
+    Withdrawal_Status_WITHDRAWAL_STATUS_OPEN;
+  static const Status WITHDRAWAL_STATUS_CANCELLED =
+    Withdrawal_Status_WITHDRAWAL_STATUS_CANCELLED;
+  static const Status WITHDRAWAL_STATUS_FINALIZED =
+    Withdrawal_Status_WITHDRAWAL_STATUS_FINALIZED;
+  static inline bool Status_IsValid(int value) {
+    return Withdrawal_Status_IsValid(value);
+  }
+  static const Status Status_MIN =
+    Withdrawal_Status_Status_MIN;
+  static const Status Status_MAX =
+    Withdrawal_Status_Status_MAX;
+  static const int Status_ARRAYSIZE =
+    Withdrawal_Status_Status_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Status_descriptor() {
+    return Withdrawal_Status_descriptor();
+  }
+  static inline const ::std::string& Status_Name(Status value) {
+    return Withdrawal_Status_Name(value);
+  }
+  static inline bool Status_Parse(const ::std::string& name,
+      Status* value) {
+    return Withdrawal_Status_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // string partyID = 2;
+  void clear_partyid();
+  static const int kPartyIDFieldNumber = 2;
+  const ::std::string& partyid() const;
+  void set_partyid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_partyid(::std::string&& value);
+  #endif
+  void set_partyid(const char* value);
+  void set_partyid(const char* value, size_t size);
+  ::std::string* mutable_partyid();
+  ::std::string* release_partyid();
+  void set_allocated_partyid(::std::string* partyid);
+
+  // string asset = 4;
+  void clear_asset();
+  static const int kAssetFieldNumber = 4;
+  const ::std::string& asset() const;
+  void set_asset(const ::std::string& value);
+  #if LANG_CXX11
+  void set_asset(::std::string&& value);
+  #endif
+  void set_asset(const char* value);
+  void set_asset(const char* value, size_t size);
+  ::std::string* mutable_asset();
+  ::std::string* release_asset();
+  void set_allocated_asset(::std::string* asset);
+
+  // string ref = 6;
+  void clear_ref();
+  static const int kRefFieldNumber = 6;
+  const ::std::string& ref() const;
+  void set_ref(const ::std::string& value);
+  #if LANG_CXX11
+  void set_ref(::std::string&& value);
+  #endif
+  void set_ref(const char* value);
+  void set_ref(const char* value, size_t size);
+  ::std::string* mutable_ref();
+  ::std::string* release_ref();
+  void set_allocated_ref(::std::string* ref);
+
+  // string txHash = 8;
+  void clear_txhash();
+  static const int kTxHashFieldNumber = 8;
+  const ::std::string& txhash() const;
+  void set_txhash(const ::std::string& value);
+  #if LANG_CXX11
+  void set_txhash(::std::string&& value);
+  #endif
+  void set_txhash(const char* value);
+  void set_txhash(const char* value, size_t size);
+  ::std::string* mutable_txhash();
+  ::std::string* release_txhash();
+  void set_allocated_txhash(::std::string* txhash);
+
+  // .vega.WithdrawExt ext = 11;
+  bool has_ext() const;
+  void clear_ext();
+  static const int kExtFieldNumber = 11;
+  const ::vega::WithdrawExt& ext() const;
+  ::vega::WithdrawExt* release_ext();
+  ::vega::WithdrawExt* mutable_ext();
+  void set_allocated_ext(::vega::WithdrawExt* ext);
+
+  // uint64 amount = 3;
+  void clear_amount();
+  static const int kAmountFieldNumber = 3;
+  ::google::protobuf::uint64 amount() const;
+  void set_amount(::google::protobuf::uint64 value);
+
+  // int64 expiry = 7;
+  void clear_expiry();
+  static const int kExpiryFieldNumber = 7;
+  ::google::protobuf::int64 expiry() const;
+  void set_expiry(::google::protobuf::int64 value);
+
+  // int64 createdTimestamp = 9;
+  void clear_createdtimestamp();
+  static const int kCreatedTimestampFieldNumber = 9;
+  ::google::protobuf::int64 createdtimestamp() const;
+  void set_createdtimestamp(::google::protobuf::int64 value);
+
+  // int64 withdrawnTimestamp = 10;
+  void clear_withdrawntimestamp();
+  static const int kWithdrawnTimestampFieldNumber = 10;
+  ::google::protobuf::int64 withdrawntimestamp() const;
+  void set_withdrawntimestamp(::google::protobuf::int64 value);
+
+  // .vega.Withdrawal.Status status = 5;
+  void clear_status();
+  static const int kStatusFieldNumber = 5;
+  ::vega::Withdrawal_Status status() const;
+  void set_status(::vega::Withdrawal_Status value);
+
+  // @@protoc_insertion_point(class_scope:vega.Withdrawal)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  ::google::protobuf::internal::ArenaStringPtr partyid_;
+  ::google::protobuf::internal::ArenaStringPtr asset_;
+  ::google::protobuf::internal::ArenaStringPtr ref_;
+  ::google::protobuf::internal::ArenaStringPtr txhash_;
+  ::vega::WithdrawExt* ext_;
+  ::google::protobuf::uint64 amount_;
+  ::google::protobuf::int64 expiry_;
+  ::google::protobuf::int64 createdtimestamp_;
+  ::google::protobuf::int64 withdrawntimestamp_;
+  int status_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fvega_2eproto;
+};
+// -------------------------------------------------------------------
+
+class WithdrawSubmission :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.WithdrawSubmission) */ {
+ public:
+  WithdrawSubmission();
+  virtual ~WithdrawSubmission();
+
+  WithdrawSubmission(const WithdrawSubmission& from);
+
+  inline WithdrawSubmission& operator=(const WithdrawSubmission& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  WithdrawSubmission(WithdrawSubmission&& from) noexcept
+    : WithdrawSubmission() {
+    *this = ::std::move(from);
+  }
+
+  inline WithdrawSubmission& operator=(WithdrawSubmission&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const WithdrawSubmission& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const WithdrawSubmission* internal_default_instance() {
+    return reinterpret_cast<const WithdrawSubmission*>(
+               &_WithdrawSubmission_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  void Swap(WithdrawSubmission* other);
+  friend void swap(WithdrawSubmission& a, WithdrawSubmission& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline WithdrawSubmission* New() const final {
+    return CreateMaybeMessage<WithdrawSubmission>(nullptr);
+  }
+
+  WithdrawSubmission* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<WithdrawSubmission>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const WithdrawSubmission& from);
+  void MergeFrom(const WithdrawSubmission& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(WithdrawSubmission* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -3756,20 +4469,281 @@ class Withdraw :
   ::std::string* release_asset();
   void set_allocated_asset(::std::string* asset);
 
+  // .vega.WithdrawExt ext = 4;
+  bool has_ext() const;
+  void clear_ext();
+  static const int kExtFieldNumber = 4;
+  const ::vega::WithdrawExt& ext() const;
+  ::vega::WithdrawExt* release_ext();
+  ::vega::WithdrawExt* mutable_ext();
+  void set_allocated_ext(::vega::WithdrawExt* ext);
+
   // uint64 amount = 2;
   void clear_amount();
   static const int kAmountFieldNumber = 2;
   ::google::protobuf::uint64 amount() const;
   void set_amount(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:vega.Withdraw)
+  // @@protoc_insertion_point(class_scope:vega.WithdrawSubmission)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr partyid_;
   ::google::protobuf::internal::ArenaStringPtr asset_;
+  ::vega::WithdrawExt* ext_;
   ::google::protobuf::uint64 amount_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fvega_2eproto;
+};
+// -------------------------------------------------------------------
+
+class WithdrawExt :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.WithdrawExt) */ {
+ public:
+  WithdrawExt();
+  virtual ~WithdrawExt();
+
+  WithdrawExt(const WithdrawExt& from);
+
+  inline WithdrawExt& operator=(const WithdrawExt& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  WithdrawExt(WithdrawExt&& from) noexcept
+    : WithdrawExt() {
+    *this = ::std::move(from);
+  }
+
+  inline WithdrawExt& operator=(WithdrawExt&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const WithdrawExt& default_instance();
+
+  enum ExtCase {
+    kErc20 = 1,
+    EXT_NOT_SET = 0,
+  };
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const WithdrawExt* internal_default_instance() {
+    return reinterpret_cast<const WithdrawExt*>(
+               &_WithdrawExt_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  void Swap(WithdrawExt* other);
+  friend void swap(WithdrawExt& a, WithdrawExt& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline WithdrawExt* New() const final {
+    return CreateMaybeMessage<WithdrawExt>(nullptr);
+  }
+
+  WithdrawExt* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<WithdrawExt>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const WithdrawExt& from);
+  void MergeFrom(const WithdrawExt& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(WithdrawExt* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .vega.Erc20WithdrawExt erc20 = 1;
+  bool has_erc20() const;
+  void clear_erc20();
+  static const int kErc20FieldNumber = 1;
+  const ::vega::Erc20WithdrawExt& erc20() const;
+  ::vega::Erc20WithdrawExt* release_erc20();
+  ::vega::Erc20WithdrawExt* mutable_erc20();
+  void set_allocated_erc20(::vega::Erc20WithdrawExt* erc20);
+
+  void clear_ext();
+  ExtCase ext_case() const;
+  // @@protoc_insertion_point(class_scope:vega.WithdrawExt)
+ private:
+  class HasBitSetters;
+  void set_has_erc20();
+
+  inline bool has_ext() const;
+  inline void clear_has_ext();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  union ExtUnion {
+    ExtUnion() {}
+    ::vega::Erc20WithdrawExt* erc20_;
+  } ext_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
+  friend struct ::TableStruct_proto_2fvega_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Erc20WithdrawExt :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.Erc20WithdrawExt) */ {
+ public:
+  Erc20WithdrawExt();
+  virtual ~Erc20WithdrawExt();
+
+  Erc20WithdrawExt(const Erc20WithdrawExt& from);
+
+  inline Erc20WithdrawExt& operator=(const Erc20WithdrawExt& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Erc20WithdrawExt(Erc20WithdrawExt&& from) noexcept
+    : Erc20WithdrawExt() {
+    *this = ::std::move(from);
+  }
+
+  inline Erc20WithdrawExt& operator=(Erc20WithdrawExt&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Erc20WithdrawExt& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Erc20WithdrawExt* internal_default_instance() {
+    return reinterpret_cast<const Erc20WithdrawExt*>(
+               &_Erc20WithdrawExt_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  void Swap(Erc20WithdrawExt* other);
+  friend void swap(Erc20WithdrawExt& a, Erc20WithdrawExt& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Erc20WithdrawExt* New() const final {
+    return CreateMaybeMessage<Erc20WithdrawExt>(nullptr);
+  }
+
+  Erc20WithdrawExt* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Erc20WithdrawExt>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Erc20WithdrawExt& from);
+  void MergeFrom(const Erc20WithdrawExt& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Erc20WithdrawExt* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string receiverAddress = 1;
+  void clear_receiveraddress();
+  static const int kReceiverAddressFieldNumber = 1;
+  const ::std::string& receiveraddress() const;
+  void set_receiveraddress(const ::std::string& value);
+  #if LANG_CXX11
+  void set_receiveraddress(::std::string&& value);
+  #endif
+  void set_receiveraddress(const char* value);
+  void set_receiveraddress(const char* value, size_t size);
+  ::std::string* mutable_receiveraddress();
+  ::std::string* release_receiveraddress();
+  void set_allocated_receiveraddress(::std::string* receiveraddress);
+
+  // @@protoc_insertion_point(class_scope:vega.Erc20WithdrawExt)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr receiveraddress_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
@@ -3813,7 +4787,7 @@ class OrderAmendment :
                &_OrderAmendment_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    26;
 
   void Swap(OrderAmendment* other);
   friend void swap(OrderAmendment& a, OrderAmendment& b) {
@@ -3997,7 +4971,7 @@ class OrderSubmission :
                &_OrderSubmission_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    27;
 
   void Swap(OrderSubmission* other);
   friend void swap(OrderSubmission& a, OrderSubmission& b) {
@@ -4204,7 +5178,7 @@ class OrderCancellation :
                &_OrderCancellation_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    28;
 
   void Swap(OrderCancellation* other);
   friend void swap(OrderCancellation& a, OrderCancellation& b) {
@@ -4261,7 +5235,7 @@ class OrderCancellation :
 
   // accessors -------------------------------------------------------
 
-  // string orderID = 1 [(.validator.field) = {
+  // string orderID = 1;
   void clear_orderid();
   static const int kOrderIDFieldNumber = 1;
   const ::std::string& orderid() const;
@@ -4275,7 +5249,7 @@ class OrderCancellation :
   ::std::string* release_orderid();
   void set_allocated_orderid(::std::string* orderid);
 
-  // string marketID = 2 [(.validator.field) = {
+  // string marketID = 2;
   void clear_marketid();
   static const int kMarketIDFieldNumber = 2;
   const ::std::string& marketid() const;
@@ -4354,7 +5328,7 @@ class NodeRegistration :
                &_NodeRegistration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    29;
 
   void Swap(NodeRegistration* other);
   friend void swap(NodeRegistration& a, NodeRegistration& b) {
@@ -4489,7 +5463,7 @@ class NodeVote :
                &_NodeVote_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    30;
 
   void Swap(NodeVote* other);
   friend void swap(NodeVote& a, NodeVote& b) {
@@ -4624,7 +5598,7 @@ class Account :
                &_Account_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    31;
 
   void Swap(Account* other);
   friend void swap(Account& a, Account& b) {
@@ -4803,7 +5777,7 @@ class FinancialAmount :
                &_FinancialAmount_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    32;
 
   void Swap(FinancialAmount* other);
   friend void swap(FinancialAmount& a, FinancialAmount& b) {
@@ -4930,7 +5904,7 @@ class Transfer :
                &_Transfer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    33;
 
   void Swap(Transfer* other);
   friend void swap(Transfer& a, Transfer& b) {
@@ -5074,7 +6048,7 @@ class TransferRequest :
                &_TransferRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    34;
 
   void Swap(TransferRequest* other);
   friend void swap(TransferRequest& a, TransferRequest& b) {
@@ -5249,7 +6223,7 @@ class LedgerEntry :
                &_LedgerEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    35;
 
   void Swap(LedgerEntry* other);
   friend void swap(LedgerEntry& a, LedgerEntry& b) {
@@ -5428,7 +6402,7 @@ class TransferBalance :
                &_TransferBalance_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    36;
 
   void Swap(TransferBalance* other);
   friend void swap(TransferBalance& a, TransferBalance& b) {
@@ -5550,7 +6524,7 @@ class TransferResponse :
                &_TransferResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    37;
 
   void Swap(TransferResponse* other);
   friend void swap(TransferResponse& a, TransferResponse& b) {
@@ -5681,7 +6655,7 @@ class MarginLevels :
                &_MarginLevels_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    38;
 
   void Swap(MarginLevels* other);
   friend void swap(MarginLevels& a, MarginLevels& b) {
@@ -5866,7 +6840,7 @@ class MarketData :
                &_MarketData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    39;
 
   void Swap(MarketData* other);
   friend void swap(MarketData& a, MarketData& b) {
@@ -5997,6 +6971,24 @@ class MarketData :
   ::google::protobuf::int64 auctionstart() const;
   void set_auctionstart(::google::protobuf::int64 value);
 
+  // uint64 indicativePrice = 12;
+  void clear_indicativeprice();
+  static const int kIndicativePriceFieldNumber = 12;
+  ::google::protobuf::uint64 indicativeprice() const;
+  void set_indicativeprice(::google::protobuf::uint64 value);
+
+  // uint64 indicativeVolume = 13;
+  void clear_indicativevolume();
+  static const int kIndicativeVolumeFieldNumber = 13;
+  ::google::protobuf::uint64 indicativevolume() const;
+  void set_indicativevolume(::google::protobuf::uint64 value);
+
+  // .vega.MarketState marketState = 14;
+  void clear_marketstate();
+  static const int kMarketStateFieldNumber = 14;
+  ::vega::MarketState marketstate() const;
+  void set_marketstate(::vega::MarketState value);
+
   // @@protoc_insertion_point(class_scope:vega.MarketData)
  private:
   class HasBitSetters;
@@ -6013,6 +7005,9 @@ class MarketData :
   ::google::protobuf::uint64 openinterest_;
   ::google::protobuf::int64 auctionend_;
   ::google::protobuf::int64 auctionstart_;
+  ::google::protobuf::uint64 indicativeprice_;
+  ::google::protobuf::uint64 indicativevolume_;
+  int marketstate_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
@@ -6056,7 +7051,7 @@ class ErrorDetail :
                &_ErrorDetail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    40;
 
   void Swap(ErrorDetail* other);
   friend void swap(ErrorDetail& a, ErrorDetail& b) {
@@ -6204,7 +7199,7 @@ class Transaction :
                &_Transaction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    41;
 
   void Swap(Transaction* other);
   friend void swap(Transaction& a, Transaction& b) {
@@ -6379,7 +7374,7 @@ class Signature :
                &_Signature_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    42;
 
   void Swap(Signature* other);
   friend void swap(Signature& a, Signature& b) {
@@ -6521,7 +7516,7 @@ class SignedBundle :
                &_SignedBundle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    43;
 
   void Swap(SignedBundle* other);
   friend void swap(SignedBundle& a, SignedBundle& b) {
@@ -6651,7 +7646,7 @@ class NodeSignature :
                &_NodeSignature_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    44;
 
   void Swap(NodeSignature* other);
   friend void swap(NodeSignature& a, NodeSignature& b) {
@@ -8494,20 +9489,6 @@ inline void PriceLevel::set_volume(::google::protobuf::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.PriceLevel.volume)
 }
 
-// uint64 cumulativeVolume = 4;
-inline void PriceLevel::clear_cumulativevolume() {
-  cumulativevolume_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::google::protobuf::uint64 PriceLevel::cumulativevolume() const {
-  // @@protoc_insertion_point(field_get:vega.PriceLevel.cumulativeVolume)
-  return cumulativevolume_;
-}
-inline void PriceLevel::set_cumulativevolume(::google::protobuf::uint64 value) {
-
-  cumulativevolume_ = value;
-  // @@protoc_insertion_point(field_set:vega.PriceLevel.cumulativeVolume)
-}
-
 // -------------------------------------------------------------------
 
 // MarketDepth
@@ -8623,6 +9604,151 @@ inline const ::google::protobuf::RepeatedPtrField< ::vega::PriceLevel >&
 MarketDepth::sell() const {
   // @@protoc_insertion_point(field_list:vega.MarketDepth.sell)
   return sell_;
+}
+
+// uint64 sequenceNumber = 4;
+inline void MarketDepth::clear_sequencenumber() {
+  sequencenumber_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 MarketDepth::sequencenumber() const {
+  // @@protoc_insertion_point(field_get:vega.MarketDepth.sequenceNumber)
+  return sequencenumber_;
+}
+inline void MarketDepth::set_sequencenumber(::google::protobuf::uint64 value) {
+
+  sequencenumber_ = value;
+  // @@protoc_insertion_point(field_set:vega.MarketDepth.sequenceNumber)
+}
+
+// -------------------------------------------------------------------
+
+// MarketDepthUpdate
+
+// string marketID = 1;
+inline void MarketDepthUpdate::clear_marketid() {
+  marketid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& MarketDepthUpdate::marketid() const {
+  // @@protoc_insertion_point(field_get:vega.MarketDepthUpdate.marketID)
+  return marketid_.GetNoArena();
+}
+inline void MarketDepthUpdate::set_marketid(const ::std::string& value) {
+
+  marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.MarketDepthUpdate.marketID)
+}
+#if LANG_CXX11
+inline void MarketDepthUpdate::set_marketid(::std::string&& value) {
+
+  marketid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.MarketDepthUpdate.marketID)
+}
+#endif
+inline void MarketDepthUpdate::set_marketid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.MarketDepthUpdate.marketID)
+}
+inline void MarketDepthUpdate::set_marketid(const char* value, size_t size) {
+
+  marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.MarketDepthUpdate.marketID)
+}
+inline ::std::string* MarketDepthUpdate::mutable_marketid() {
+
+  // @@protoc_insertion_point(field_mutable:vega.MarketDepthUpdate.marketID)
+  return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* MarketDepthUpdate::release_marketid() {
+  // @@protoc_insertion_point(field_release:vega.MarketDepthUpdate.marketID)
+
+  return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void MarketDepthUpdate::set_allocated_marketid(::std::string* marketid) {
+  if (marketid != nullptr) {
+
+  } else {
+
+  }
+  marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
+  // @@protoc_insertion_point(field_set_allocated:vega.MarketDepthUpdate.marketID)
+}
+
+// repeated .vega.PriceLevel buy = 2;
+inline int MarketDepthUpdate::buy_size() const {
+  return buy_.size();
+}
+inline void MarketDepthUpdate::clear_buy() {
+  buy_.Clear();
+}
+inline ::vega::PriceLevel* MarketDepthUpdate::mutable_buy(int index) {
+  // @@protoc_insertion_point(field_mutable:vega.MarketDepthUpdate.buy)
+  return buy_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::PriceLevel >*
+MarketDepthUpdate::mutable_buy() {
+  // @@protoc_insertion_point(field_mutable_list:vega.MarketDepthUpdate.buy)
+  return &buy_;
+}
+inline const ::vega::PriceLevel& MarketDepthUpdate::buy(int index) const {
+  // @@protoc_insertion_point(field_get:vega.MarketDepthUpdate.buy)
+  return buy_.Get(index);
+}
+inline ::vega::PriceLevel* MarketDepthUpdate::add_buy() {
+  // @@protoc_insertion_point(field_add:vega.MarketDepthUpdate.buy)
+  return buy_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::PriceLevel >&
+MarketDepthUpdate::buy() const {
+  // @@protoc_insertion_point(field_list:vega.MarketDepthUpdate.buy)
+  return buy_;
+}
+
+// repeated .vega.PriceLevel sell = 3;
+inline int MarketDepthUpdate::sell_size() const {
+  return sell_.size();
+}
+inline void MarketDepthUpdate::clear_sell() {
+  sell_.Clear();
+}
+inline ::vega::PriceLevel* MarketDepthUpdate::mutable_sell(int index) {
+  // @@protoc_insertion_point(field_mutable:vega.MarketDepthUpdate.sell)
+  return sell_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::PriceLevel >*
+MarketDepthUpdate::mutable_sell() {
+  // @@protoc_insertion_point(field_mutable_list:vega.MarketDepthUpdate.sell)
+  return &sell_;
+}
+inline const ::vega::PriceLevel& MarketDepthUpdate::sell(int index) const {
+  // @@protoc_insertion_point(field_get:vega.MarketDepthUpdate.sell)
+  return sell_.Get(index);
+}
+inline ::vega::PriceLevel* MarketDepthUpdate::add_sell() {
+  // @@protoc_insertion_point(field_add:vega.MarketDepthUpdate.sell)
+  return sell_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::PriceLevel >&
+MarketDepthUpdate::sell() const {
+  // @@protoc_insertion_point(field_list:vega.MarketDepthUpdate.sell)
+  return sell_;
+}
+
+// uint64 sequenceNumber = 4;
+inline void MarketDepthUpdate::clear_sequencenumber() {
+  sequencenumber_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 MarketDepthUpdate::sequencenumber() const {
+  // @@protoc_insertion_point(field_get:vega.MarketDepthUpdate.sequenceNumber)
+  return sequencenumber_;
+}
+inline void MarketDepthUpdate::set_sequencenumber(::google::protobuf::uint64 value) {
+
+  sequencenumber_ = value;
+  // @@protoc_insertion_point(field_set:vega.MarketDepthUpdate.sequenceNumber)
 }
 
 // -------------------------------------------------------------------
@@ -8789,6 +9915,20 @@ inline void Position::set_averageentryprice(::google::protobuf::uint64 value) {
 
   averageentryprice_ = value;
   // @@protoc_insertion_point(field_set:vega.Position.averageEntryPrice)
+}
+
+// int64 updatedAt = 7;
+inline void Position::clear_updatedat() {
+  updatedat_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 Position::updatedat() const {
+  // @@protoc_insertion_point(field_get:vega.Position.updatedAt)
+  return updatedat_;
+}
+inline void Position::set_updatedat(::google::protobuf::int64 value) {
+
+  updatedat_ = value;
+  // @@protoc_insertion_point(field_set:vega.Position.updatedAt)
 }
 
 // -------------------------------------------------------------------
@@ -9575,126 +10715,989 @@ inline void Statistics::set_allocated_chainid(::std::string* chainid) {
 
 // -------------------------------------------------------------------
 
-// Withdraw
+// Deposit
 
-// string partyID = 1;
-inline void Withdraw::clear_partyid() {
-  partyid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string id = 1;
+inline void Deposit::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Withdraw::partyid() const {
-  // @@protoc_insertion_point(field_get:vega.Withdraw.partyID)
-  return partyid_.GetNoArena();
+inline const ::std::string& Deposit::id() const {
+  // @@protoc_insertion_point(field_get:vega.Deposit.id)
+  return id_.GetNoArena();
 }
-inline void Withdraw::set_partyid(const ::std::string& value) {
+inline void Deposit::set_id(const ::std::string& value) {
 
-  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.Withdraw.partyID)
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.Deposit.id)
 }
 #if LANG_CXX11
-inline void Withdraw::set_partyid(::std::string&& value) {
+inline void Deposit::set_id(::std::string&& value) {
+
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.Deposit.id)
+}
+#endif
+inline void Deposit::set_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.Deposit.id)
+}
+inline void Deposit::set_id(const char* value, size_t size) {
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.Deposit.id)
+}
+inline ::std::string* Deposit::mutable_id() {
+
+  // @@protoc_insertion_point(field_mutable:vega.Deposit.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Deposit::release_id() {
+  // @@protoc_insertion_point(field_release:vega.Deposit.id)
+
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Deposit::set_allocated_id(::std::string* id) {
+  if (id != nullptr) {
+
+  } else {
+
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:vega.Deposit.id)
+}
+
+// .vega.Deposit.Status status = 2;
+inline void Deposit::clear_status() {
+  status_ = 0;
+}
+inline ::vega::Deposit_Status Deposit::status() const {
+  // @@protoc_insertion_point(field_get:vega.Deposit.status)
+  return static_cast< ::vega::Deposit_Status >(status_);
+}
+inline void Deposit::set_status(::vega::Deposit_Status value) {
+
+  status_ = value;
+  // @@protoc_insertion_point(field_set:vega.Deposit.status)
+}
+
+// string partyID = 3;
+inline void Deposit::clear_partyid() {
+  partyid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Deposit::partyid() const {
+  // @@protoc_insertion_point(field_get:vega.Deposit.partyID)
+  return partyid_.GetNoArena();
+}
+inline void Deposit::set_partyid(const ::std::string& value) {
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.Deposit.partyID)
+}
+#if LANG_CXX11
+inline void Deposit::set_partyid(::std::string&& value) {
 
   partyid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.Withdraw.partyID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Deposit.partyID)
 }
 #endif
-inline void Withdraw::set_partyid(const char* value) {
+inline void Deposit::set_partyid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.Withdraw.partyID)
+  // @@protoc_insertion_point(field_set_char:vega.Deposit.partyID)
 }
-inline void Withdraw::set_partyid(const char* value, size_t size) {
+inline void Deposit::set_partyid(const char* value, size_t size) {
 
   partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.Withdraw.partyID)
+  // @@protoc_insertion_point(field_set_pointer:vega.Deposit.partyID)
 }
-inline ::std::string* Withdraw::mutable_partyid() {
+inline ::std::string* Deposit::mutable_partyid() {
 
-  // @@protoc_insertion_point(field_mutable:vega.Withdraw.partyID)
+  // @@protoc_insertion_point(field_mutable:vega.Deposit.partyID)
   return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Withdraw::release_partyid() {
-  // @@protoc_insertion_point(field_release:vega.Withdraw.partyID)
+inline ::std::string* Deposit::release_partyid() {
+  // @@protoc_insertion_point(field_release:vega.Deposit.partyID)
 
   return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Withdraw::set_allocated_partyid(::std::string* partyid) {
+inline void Deposit::set_allocated_partyid(::std::string* partyid) {
   if (partyid != nullptr) {
 
   } else {
 
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
-  // @@protoc_insertion_point(field_set_allocated:vega.Withdraw.partyID)
+  // @@protoc_insertion_point(field_set_allocated:vega.Deposit.partyID)
 }
 
-// uint64 amount = 2;
-inline void Withdraw::clear_amount() {
-  amount_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::google::protobuf::uint64 Withdraw::amount() const {
-  // @@protoc_insertion_point(field_get:vega.Withdraw.amount)
-  return amount_;
-}
-inline void Withdraw::set_amount(::google::protobuf::uint64 value) {
-
-  amount_ = value;
-  // @@protoc_insertion_point(field_set:vega.Withdraw.amount)
-}
-
-// string asset = 3;
-inline void Withdraw::clear_asset() {
+// string asset = 4;
+inline void Deposit::clear_asset() {
   asset_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Withdraw::asset() const {
-  // @@protoc_insertion_point(field_get:vega.Withdraw.asset)
+inline const ::std::string& Deposit::asset() const {
+  // @@protoc_insertion_point(field_get:vega.Deposit.asset)
   return asset_.GetNoArena();
 }
-inline void Withdraw::set_asset(const ::std::string& value) {
+inline void Deposit::set_asset(const ::std::string& value) {
 
   asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.Withdraw.asset)
+  // @@protoc_insertion_point(field_set:vega.Deposit.asset)
 }
 #if LANG_CXX11
-inline void Withdraw::set_asset(::std::string&& value) {
+inline void Deposit::set_asset(::std::string&& value) {
 
   asset_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.Withdraw.asset)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Deposit.asset)
 }
 #endif
-inline void Withdraw::set_asset(const char* value) {
+inline void Deposit::set_asset(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
   asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.Withdraw.asset)
+  // @@protoc_insertion_point(field_set_char:vega.Deposit.asset)
 }
-inline void Withdraw::set_asset(const char* value, size_t size) {
+inline void Deposit::set_asset(const char* value, size_t size) {
 
   asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.Withdraw.asset)
+  // @@protoc_insertion_point(field_set_pointer:vega.Deposit.asset)
 }
-inline ::std::string* Withdraw::mutable_asset() {
+inline ::std::string* Deposit::mutable_asset() {
 
-  // @@protoc_insertion_point(field_mutable:vega.Withdraw.asset)
+  // @@protoc_insertion_point(field_mutable:vega.Deposit.asset)
   return asset_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Withdraw::release_asset() {
-  // @@protoc_insertion_point(field_release:vega.Withdraw.asset)
+inline ::std::string* Deposit::release_asset() {
+  // @@protoc_insertion_point(field_release:vega.Deposit.asset)
 
   return asset_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Withdraw::set_allocated_asset(::std::string* asset) {
+inline void Deposit::set_allocated_asset(::std::string* asset) {
   if (asset != nullptr) {
 
   } else {
 
   }
   asset_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), asset);
-  // @@protoc_insertion_point(field_set_allocated:vega.Withdraw.asset)
+  // @@protoc_insertion_point(field_set_allocated:vega.Deposit.asset)
+}
+
+// string amount = 5;
+inline void Deposit::clear_amount() {
+  amount_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Deposit::amount() const {
+  // @@protoc_insertion_point(field_get:vega.Deposit.amount)
+  return amount_.GetNoArena();
+}
+inline void Deposit::set_amount(const ::std::string& value) {
+
+  amount_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.Deposit.amount)
+}
+#if LANG_CXX11
+inline void Deposit::set_amount(::std::string&& value) {
+
+  amount_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.Deposit.amount)
+}
+#endif
+inline void Deposit::set_amount(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  amount_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.Deposit.amount)
+}
+inline void Deposit::set_amount(const char* value, size_t size) {
+
+  amount_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.Deposit.amount)
+}
+inline ::std::string* Deposit::mutable_amount() {
+
+  // @@protoc_insertion_point(field_mutable:vega.Deposit.amount)
+  return amount_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Deposit::release_amount() {
+  // @@protoc_insertion_point(field_release:vega.Deposit.amount)
+
+  return amount_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Deposit::set_allocated_amount(::std::string* amount) {
+  if (amount != nullptr) {
+
+  } else {
+
+  }
+  amount_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), amount);
+  // @@protoc_insertion_point(field_set_allocated:vega.Deposit.amount)
+}
+
+// string txHash = 6;
+inline void Deposit::clear_txhash() {
+  txhash_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Deposit::txhash() const {
+  // @@protoc_insertion_point(field_get:vega.Deposit.txHash)
+  return txhash_.GetNoArena();
+}
+inline void Deposit::set_txhash(const ::std::string& value) {
+
+  txhash_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.Deposit.txHash)
+}
+#if LANG_CXX11
+inline void Deposit::set_txhash(::std::string&& value) {
+
+  txhash_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.Deposit.txHash)
+}
+#endif
+inline void Deposit::set_txhash(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  txhash_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.Deposit.txHash)
+}
+inline void Deposit::set_txhash(const char* value, size_t size) {
+
+  txhash_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.Deposit.txHash)
+}
+inline ::std::string* Deposit::mutable_txhash() {
+
+  // @@protoc_insertion_point(field_mutable:vega.Deposit.txHash)
+  return txhash_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Deposit::release_txhash() {
+  // @@protoc_insertion_point(field_release:vega.Deposit.txHash)
+
+  return txhash_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Deposit::set_allocated_txhash(::std::string* txhash) {
+  if (txhash != nullptr) {
+
+  } else {
+
+  }
+  txhash_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), txhash);
+  // @@protoc_insertion_point(field_set_allocated:vega.Deposit.txHash)
+}
+
+// int64 creditedTimestamp = 7;
+inline void Deposit::clear_creditedtimestamp() {
+  creditedtimestamp_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 Deposit::creditedtimestamp() const {
+  // @@protoc_insertion_point(field_get:vega.Deposit.creditedTimestamp)
+  return creditedtimestamp_;
+}
+inline void Deposit::set_creditedtimestamp(::google::protobuf::int64 value) {
+
+  creditedtimestamp_ = value;
+  // @@protoc_insertion_point(field_set:vega.Deposit.creditedTimestamp)
+}
+
+// int64 createdTimestamp = 8;
+inline void Deposit::clear_createdtimestamp() {
+  createdtimestamp_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 Deposit::createdtimestamp() const {
+  // @@protoc_insertion_point(field_get:vega.Deposit.createdTimestamp)
+  return createdtimestamp_;
+}
+inline void Deposit::set_createdtimestamp(::google::protobuf::int64 value) {
+
+  createdtimestamp_ = value;
+  // @@protoc_insertion_point(field_set:vega.Deposit.createdTimestamp)
+}
+
+// -------------------------------------------------------------------
+
+// Withdrawal
+
+// string id = 1;
+inline void Withdrawal::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Withdrawal::id() const {
+  // @@protoc_insertion_point(field_get:vega.Withdrawal.id)
+  return id_.GetNoArena();
+}
+inline void Withdrawal::set_id(const ::std::string& value) {
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.Withdrawal.id)
+}
+#if LANG_CXX11
+inline void Withdrawal::set_id(::std::string&& value) {
+
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.Withdrawal.id)
+}
+#endif
+inline void Withdrawal::set_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.Withdrawal.id)
+}
+inline void Withdrawal::set_id(const char* value, size_t size) {
+
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.Withdrawal.id)
+}
+inline ::std::string* Withdrawal::mutable_id() {
+
+  // @@protoc_insertion_point(field_mutable:vega.Withdrawal.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Withdrawal::release_id() {
+  // @@protoc_insertion_point(field_release:vega.Withdrawal.id)
+
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Withdrawal::set_allocated_id(::std::string* id) {
+  if (id != nullptr) {
+
+  } else {
+
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:vega.Withdrawal.id)
+}
+
+// string partyID = 2;
+inline void Withdrawal::clear_partyid() {
+  partyid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Withdrawal::partyid() const {
+  // @@protoc_insertion_point(field_get:vega.Withdrawal.partyID)
+  return partyid_.GetNoArena();
+}
+inline void Withdrawal::set_partyid(const ::std::string& value) {
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.Withdrawal.partyID)
+}
+#if LANG_CXX11
+inline void Withdrawal::set_partyid(::std::string&& value) {
+
+  partyid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.Withdrawal.partyID)
+}
+#endif
+inline void Withdrawal::set_partyid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.Withdrawal.partyID)
+}
+inline void Withdrawal::set_partyid(const char* value, size_t size) {
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.Withdrawal.partyID)
+}
+inline ::std::string* Withdrawal::mutable_partyid() {
+
+  // @@protoc_insertion_point(field_mutable:vega.Withdrawal.partyID)
+  return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Withdrawal::release_partyid() {
+  // @@protoc_insertion_point(field_release:vega.Withdrawal.partyID)
+
+  return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Withdrawal::set_allocated_partyid(::std::string* partyid) {
+  if (partyid != nullptr) {
+
+  } else {
+
+  }
+  partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
+  // @@protoc_insertion_point(field_set_allocated:vega.Withdrawal.partyID)
+}
+
+// uint64 amount = 3;
+inline void Withdrawal::clear_amount() {
+  amount_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 Withdrawal::amount() const {
+  // @@protoc_insertion_point(field_get:vega.Withdrawal.amount)
+  return amount_;
+}
+inline void Withdrawal::set_amount(::google::protobuf::uint64 value) {
+
+  amount_ = value;
+  // @@protoc_insertion_point(field_set:vega.Withdrawal.amount)
+}
+
+// string asset = 4;
+inline void Withdrawal::clear_asset() {
+  asset_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Withdrawal::asset() const {
+  // @@protoc_insertion_point(field_get:vega.Withdrawal.asset)
+  return asset_.GetNoArena();
+}
+inline void Withdrawal::set_asset(const ::std::string& value) {
+
+  asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.Withdrawal.asset)
+}
+#if LANG_CXX11
+inline void Withdrawal::set_asset(::std::string&& value) {
+
+  asset_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.Withdrawal.asset)
+}
+#endif
+inline void Withdrawal::set_asset(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.Withdrawal.asset)
+}
+inline void Withdrawal::set_asset(const char* value, size_t size) {
+
+  asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.Withdrawal.asset)
+}
+inline ::std::string* Withdrawal::mutable_asset() {
+
+  // @@protoc_insertion_point(field_mutable:vega.Withdrawal.asset)
+  return asset_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Withdrawal::release_asset() {
+  // @@protoc_insertion_point(field_release:vega.Withdrawal.asset)
+
+  return asset_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Withdrawal::set_allocated_asset(::std::string* asset) {
+  if (asset != nullptr) {
+
+  } else {
+
+  }
+  asset_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), asset);
+  // @@protoc_insertion_point(field_set_allocated:vega.Withdrawal.asset)
+}
+
+// .vega.Withdrawal.Status status = 5;
+inline void Withdrawal::clear_status() {
+  status_ = 0;
+}
+inline ::vega::Withdrawal_Status Withdrawal::status() const {
+  // @@protoc_insertion_point(field_get:vega.Withdrawal.status)
+  return static_cast< ::vega::Withdrawal_Status >(status_);
+}
+inline void Withdrawal::set_status(::vega::Withdrawal_Status value) {
+
+  status_ = value;
+  // @@protoc_insertion_point(field_set:vega.Withdrawal.status)
+}
+
+// string ref = 6;
+inline void Withdrawal::clear_ref() {
+  ref_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Withdrawal::ref() const {
+  // @@protoc_insertion_point(field_get:vega.Withdrawal.ref)
+  return ref_.GetNoArena();
+}
+inline void Withdrawal::set_ref(const ::std::string& value) {
+
+  ref_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.Withdrawal.ref)
+}
+#if LANG_CXX11
+inline void Withdrawal::set_ref(::std::string&& value) {
+
+  ref_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.Withdrawal.ref)
+}
+#endif
+inline void Withdrawal::set_ref(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  ref_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.Withdrawal.ref)
+}
+inline void Withdrawal::set_ref(const char* value, size_t size) {
+
+  ref_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.Withdrawal.ref)
+}
+inline ::std::string* Withdrawal::mutable_ref() {
+
+  // @@protoc_insertion_point(field_mutable:vega.Withdrawal.ref)
+  return ref_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Withdrawal::release_ref() {
+  // @@protoc_insertion_point(field_release:vega.Withdrawal.ref)
+
+  return ref_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Withdrawal::set_allocated_ref(::std::string* ref) {
+  if (ref != nullptr) {
+
+  } else {
+
+  }
+  ref_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ref);
+  // @@protoc_insertion_point(field_set_allocated:vega.Withdrawal.ref)
+}
+
+// int64 expiry = 7;
+inline void Withdrawal::clear_expiry() {
+  expiry_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 Withdrawal::expiry() const {
+  // @@protoc_insertion_point(field_get:vega.Withdrawal.expiry)
+  return expiry_;
+}
+inline void Withdrawal::set_expiry(::google::protobuf::int64 value) {
+
+  expiry_ = value;
+  // @@protoc_insertion_point(field_set:vega.Withdrawal.expiry)
+}
+
+// string txHash = 8;
+inline void Withdrawal::clear_txhash() {
+  txhash_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Withdrawal::txhash() const {
+  // @@protoc_insertion_point(field_get:vega.Withdrawal.txHash)
+  return txhash_.GetNoArena();
+}
+inline void Withdrawal::set_txhash(const ::std::string& value) {
+
+  txhash_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.Withdrawal.txHash)
+}
+#if LANG_CXX11
+inline void Withdrawal::set_txhash(::std::string&& value) {
+
+  txhash_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.Withdrawal.txHash)
+}
+#endif
+inline void Withdrawal::set_txhash(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  txhash_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.Withdrawal.txHash)
+}
+inline void Withdrawal::set_txhash(const char* value, size_t size) {
+
+  txhash_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.Withdrawal.txHash)
+}
+inline ::std::string* Withdrawal::mutable_txhash() {
+
+  // @@protoc_insertion_point(field_mutable:vega.Withdrawal.txHash)
+  return txhash_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Withdrawal::release_txhash() {
+  // @@protoc_insertion_point(field_release:vega.Withdrawal.txHash)
+
+  return txhash_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Withdrawal::set_allocated_txhash(::std::string* txhash) {
+  if (txhash != nullptr) {
+
+  } else {
+
+  }
+  txhash_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), txhash);
+  // @@protoc_insertion_point(field_set_allocated:vega.Withdrawal.txHash)
+}
+
+// int64 createdTimestamp = 9;
+inline void Withdrawal::clear_createdtimestamp() {
+  createdtimestamp_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 Withdrawal::createdtimestamp() const {
+  // @@protoc_insertion_point(field_get:vega.Withdrawal.createdTimestamp)
+  return createdtimestamp_;
+}
+inline void Withdrawal::set_createdtimestamp(::google::protobuf::int64 value) {
+
+  createdtimestamp_ = value;
+  // @@protoc_insertion_point(field_set:vega.Withdrawal.createdTimestamp)
+}
+
+// int64 withdrawnTimestamp = 10;
+inline void Withdrawal::clear_withdrawntimestamp() {
+  withdrawntimestamp_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 Withdrawal::withdrawntimestamp() const {
+  // @@protoc_insertion_point(field_get:vega.Withdrawal.withdrawnTimestamp)
+  return withdrawntimestamp_;
+}
+inline void Withdrawal::set_withdrawntimestamp(::google::protobuf::int64 value) {
+
+  withdrawntimestamp_ = value;
+  // @@protoc_insertion_point(field_set:vega.Withdrawal.withdrawnTimestamp)
+}
+
+// .vega.WithdrawExt ext = 11;
+inline bool Withdrawal::has_ext() const {
+  return this != internal_default_instance() && ext_ != nullptr;
+}
+inline void Withdrawal::clear_ext() {
+  if (GetArenaNoVirtual() == nullptr && ext_ != nullptr) {
+    delete ext_;
+  }
+  ext_ = nullptr;
+}
+inline const ::vega::WithdrawExt& Withdrawal::ext() const {
+  const ::vega::WithdrawExt* p = ext_;
+  // @@protoc_insertion_point(field_get:vega.Withdrawal.ext)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::WithdrawExt*>(
+      &::vega::_WithdrawExt_default_instance_);
+}
+inline ::vega::WithdrawExt* Withdrawal::release_ext() {
+  // @@protoc_insertion_point(field_release:vega.Withdrawal.ext)
+
+  ::vega::WithdrawExt* temp = ext_;
+  ext_ = nullptr;
+  return temp;
+}
+inline ::vega::WithdrawExt* Withdrawal::mutable_ext() {
+
+  if (ext_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::WithdrawExt>(GetArenaNoVirtual());
+    ext_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:vega.Withdrawal.ext)
+  return ext_;
+}
+inline void Withdrawal::set_allocated_ext(::vega::WithdrawExt* ext) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete ext_;
+  }
+  if (ext) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      ext = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, ext, submessage_arena);
+    }
+
+  } else {
+
+  }
+  ext_ = ext;
+  // @@protoc_insertion_point(field_set_allocated:vega.Withdrawal.ext)
+}
+
+// -------------------------------------------------------------------
+
+// WithdrawSubmission
+
+// string partyID = 1;
+inline void WithdrawSubmission::clear_partyid() {
+  partyid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& WithdrawSubmission::partyid() const {
+  // @@protoc_insertion_point(field_get:vega.WithdrawSubmission.partyID)
+  return partyid_.GetNoArena();
+}
+inline void WithdrawSubmission::set_partyid(const ::std::string& value) {
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.WithdrawSubmission.partyID)
+}
+#if LANG_CXX11
+inline void WithdrawSubmission::set_partyid(::std::string&& value) {
+
+  partyid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.WithdrawSubmission.partyID)
+}
+#endif
+inline void WithdrawSubmission::set_partyid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.WithdrawSubmission.partyID)
+}
+inline void WithdrawSubmission::set_partyid(const char* value, size_t size) {
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.WithdrawSubmission.partyID)
+}
+inline ::std::string* WithdrawSubmission::mutable_partyid() {
+
+  // @@protoc_insertion_point(field_mutable:vega.WithdrawSubmission.partyID)
+  return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* WithdrawSubmission::release_partyid() {
+  // @@protoc_insertion_point(field_release:vega.WithdrawSubmission.partyID)
+
+  return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void WithdrawSubmission::set_allocated_partyid(::std::string* partyid) {
+  if (partyid != nullptr) {
+
+  } else {
+
+  }
+  partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
+  // @@protoc_insertion_point(field_set_allocated:vega.WithdrawSubmission.partyID)
+}
+
+// uint64 amount = 2;
+inline void WithdrawSubmission::clear_amount() {
+  amount_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 WithdrawSubmission::amount() const {
+  // @@protoc_insertion_point(field_get:vega.WithdrawSubmission.amount)
+  return amount_;
+}
+inline void WithdrawSubmission::set_amount(::google::protobuf::uint64 value) {
+
+  amount_ = value;
+  // @@protoc_insertion_point(field_set:vega.WithdrawSubmission.amount)
+}
+
+// string asset = 3;
+inline void WithdrawSubmission::clear_asset() {
+  asset_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& WithdrawSubmission::asset() const {
+  // @@protoc_insertion_point(field_get:vega.WithdrawSubmission.asset)
+  return asset_.GetNoArena();
+}
+inline void WithdrawSubmission::set_asset(const ::std::string& value) {
+
+  asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.WithdrawSubmission.asset)
+}
+#if LANG_CXX11
+inline void WithdrawSubmission::set_asset(::std::string&& value) {
+
+  asset_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.WithdrawSubmission.asset)
+}
+#endif
+inline void WithdrawSubmission::set_asset(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.WithdrawSubmission.asset)
+}
+inline void WithdrawSubmission::set_asset(const char* value, size_t size) {
+
+  asset_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.WithdrawSubmission.asset)
+}
+inline ::std::string* WithdrawSubmission::mutable_asset() {
+
+  // @@protoc_insertion_point(field_mutable:vega.WithdrawSubmission.asset)
+  return asset_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* WithdrawSubmission::release_asset() {
+  // @@protoc_insertion_point(field_release:vega.WithdrawSubmission.asset)
+
+  return asset_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void WithdrawSubmission::set_allocated_asset(::std::string* asset) {
+  if (asset != nullptr) {
+
+  } else {
+
+  }
+  asset_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), asset);
+  // @@protoc_insertion_point(field_set_allocated:vega.WithdrawSubmission.asset)
+}
+
+// .vega.WithdrawExt ext = 4;
+inline bool WithdrawSubmission::has_ext() const {
+  return this != internal_default_instance() && ext_ != nullptr;
+}
+inline void WithdrawSubmission::clear_ext() {
+  if (GetArenaNoVirtual() == nullptr && ext_ != nullptr) {
+    delete ext_;
+  }
+  ext_ = nullptr;
+}
+inline const ::vega::WithdrawExt& WithdrawSubmission::ext() const {
+  const ::vega::WithdrawExt* p = ext_;
+  // @@protoc_insertion_point(field_get:vega.WithdrawSubmission.ext)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::WithdrawExt*>(
+      &::vega::_WithdrawExt_default_instance_);
+}
+inline ::vega::WithdrawExt* WithdrawSubmission::release_ext() {
+  // @@protoc_insertion_point(field_release:vega.WithdrawSubmission.ext)
+
+  ::vega::WithdrawExt* temp = ext_;
+  ext_ = nullptr;
+  return temp;
+}
+inline ::vega::WithdrawExt* WithdrawSubmission::mutable_ext() {
+
+  if (ext_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::WithdrawExt>(GetArenaNoVirtual());
+    ext_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:vega.WithdrawSubmission.ext)
+  return ext_;
+}
+inline void WithdrawSubmission::set_allocated_ext(::vega::WithdrawExt* ext) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete ext_;
+  }
+  if (ext) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      ext = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, ext, submessage_arena);
+    }
+
+  } else {
+
+  }
+  ext_ = ext;
+  // @@protoc_insertion_point(field_set_allocated:vega.WithdrawSubmission.ext)
+}
+
+// -------------------------------------------------------------------
+
+// WithdrawExt
+
+// .vega.Erc20WithdrawExt erc20 = 1;
+inline bool WithdrawExt::has_erc20() const {
+  return ext_case() == kErc20;
+}
+inline void WithdrawExt::set_has_erc20() {
+  _oneof_case_[0] = kErc20;
+}
+inline void WithdrawExt::clear_erc20() {
+  if (has_erc20()) {
+    delete ext_.erc20_;
+    clear_has_ext();
+  }
+}
+inline ::vega::Erc20WithdrawExt* WithdrawExt::release_erc20() {
+  // @@protoc_insertion_point(field_release:vega.WithdrawExt.erc20)
+  if (has_erc20()) {
+    clear_has_ext();
+      ::vega::Erc20WithdrawExt* temp = ext_.erc20_;
+    ext_.erc20_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::Erc20WithdrawExt& WithdrawExt::erc20() const {
+  // @@protoc_insertion_point(field_get:vega.WithdrawExt.erc20)
+  return has_erc20()
+      ? *ext_.erc20_
+      : *reinterpret_cast< ::vega::Erc20WithdrawExt*>(&::vega::_Erc20WithdrawExt_default_instance_);
+}
+inline ::vega::Erc20WithdrawExt* WithdrawExt::mutable_erc20() {
+  if (!has_erc20()) {
+    clear_ext();
+    set_has_erc20();
+    ext_.erc20_ = CreateMaybeMessage< ::vega::Erc20WithdrawExt >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:vega.WithdrawExt.erc20)
+  return ext_.erc20_;
+}
+
+inline bool WithdrawExt::has_ext() const {
+  return ext_case() != EXT_NOT_SET;
+}
+inline void WithdrawExt::clear_has_ext() {
+  _oneof_case_[0] = EXT_NOT_SET;
+}
+inline WithdrawExt::ExtCase WithdrawExt::ext_case() const {
+  return WithdrawExt::ExtCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// Erc20WithdrawExt
+
+// string receiverAddress = 1;
+inline void Erc20WithdrawExt::clear_receiveraddress() {
+  receiveraddress_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Erc20WithdrawExt::receiveraddress() const {
+  // @@protoc_insertion_point(field_get:vega.Erc20WithdrawExt.receiverAddress)
+  return receiveraddress_.GetNoArena();
+}
+inline void Erc20WithdrawExt::set_receiveraddress(const ::std::string& value) {
+
+  receiveraddress_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.Erc20WithdrawExt.receiverAddress)
+}
+#if LANG_CXX11
+inline void Erc20WithdrawExt::set_receiveraddress(::std::string&& value) {
+
+  receiveraddress_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.Erc20WithdrawExt.receiverAddress)
+}
+#endif
+inline void Erc20WithdrawExt::set_receiveraddress(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  receiveraddress_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.Erc20WithdrawExt.receiverAddress)
+}
+inline void Erc20WithdrawExt::set_receiveraddress(const char* value, size_t size) {
+
+  receiveraddress_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.Erc20WithdrawExt.receiverAddress)
+}
+inline ::std::string* Erc20WithdrawExt::mutable_receiveraddress() {
+
+  // @@protoc_insertion_point(field_mutable:vega.Erc20WithdrawExt.receiverAddress)
+  return receiveraddress_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Erc20WithdrawExt::release_receiveraddress() {
+  // @@protoc_insertion_point(field_release:vega.Erc20WithdrawExt.receiverAddress)
+
+  return receiveraddress_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Erc20WithdrawExt::set_allocated_receiveraddress(::std::string* receiveraddress) {
+  if (receiveraddress != nullptr) {
+
+  } else {
+
+  }
+  receiveraddress_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), receiveraddress);
+  // @@protoc_insertion_point(field_set_allocated:vega.Erc20WithdrawExt.receiverAddress)
 }
 
 // -------------------------------------------------------------------
@@ -10294,7 +12297,7 @@ inline void OrderSubmission::set_allocated_reference(::std::string* reference) {
 
 // OrderCancellation
 
-// string orderID = 1 [(.validator.field) = {
+// string orderID = 1;
 inline void OrderCancellation::clear_orderid() {
   orderid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -10347,7 +12350,7 @@ inline void OrderCancellation::set_allocated_orderid(::std::string* orderid) {
   // @@protoc_insertion_point(field_set_allocated:vega.OrderCancellation.orderID)
 }
 
-// string marketID = 2 [(.validator.field) = {
+// string marketID = 2;
 inline void OrderCancellation::clear_marketid() {
   marketid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -12129,6 +14132,48 @@ inline void MarketData::set_auctionstart(::google::protobuf::int64 value) {
   // @@protoc_insertion_point(field_set:vega.MarketData.auctionStart)
 }
 
+// uint64 indicativePrice = 12;
+inline void MarketData::clear_indicativeprice() {
+  indicativeprice_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 MarketData::indicativeprice() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.indicativePrice)
+  return indicativeprice_;
+}
+inline void MarketData::set_indicativeprice(::google::protobuf::uint64 value) {
+
+  indicativeprice_ = value;
+  // @@protoc_insertion_point(field_set:vega.MarketData.indicativePrice)
+}
+
+// uint64 indicativeVolume = 13;
+inline void MarketData::clear_indicativevolume() {
+  indicativevolume_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 MarketData::indicativevolume() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.indicativeVolume)
+  return indicativevolume_;
+}
+inline void MarketData::set_indicativevolume(::google::protobuf::uint64 value) {
+
+  indicativevolume_ = value;
+  // @@protoc_insertion_point(field_set:vega.MarketData.indicativeVolume)
+}
+
+// .vega.MarketState marketState = 14;
+inline void MarketData::clear_marketstate() {
+  marketstate_ = 0;
+}
+inline ::vega::MarketState MarketData::marketstate() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.marketState)
+  return static_cast< ::vega::MarketState >(marketstate_);
+}
+inline void MarketData::set_marketstate(::vega::MarketState value) {
+
+  marketstate_ = value;
+  // @@protoc_insertion_point(field_set:vega.MarketData.marketState)
+}
+
 // -------------------------------------------------------------------
 
 // ErrorDetail
@@ -12954,6 +14999,16 @@ inline void NodeSignature::set_kind(::vega::NodeSignatureKind value) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -12981,6 +15036,16 @@ template <> struct is_proto_enum< ::vega::Trade_Type> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::vega::Trade_Type>() {
   return ::vega::Trade_Type_descriptor();
+}
+template <> struct is_proto_enum< ::vega::Deposit_Status> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::vega::Deposit_Status>() {
+  return ::vega::Deposit_Status_descriptor();
+}
+template <> struct is_proto_enum< ::vega::Withdrawal_Status> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::vega::Withdrawal_Status>() {
+  return ::vega::Withdrawal_Status_descriptor();
 }
 template <> struct is_proto_enum< ::vega::Side> : ::std::true_type {};
 template <>

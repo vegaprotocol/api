@@ -1443,9 +1443,8 @@ proto.vega.ERC20Withdrawal.prototype.toObject = function(opt_includeInstance) {
 proto.vega.ERC20Withdrawal.toObject = function(includeInstance, msg) {
   var f, obj = {
     vegaassetid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sourcepartyid: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    targetethereumaddress: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    referencenonce: jspb.Message.getFieldWithDefault(msg, 4, "")
+    targetethereumaddress: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    referencenonce: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1488,13 +1487,9 @@ proto.vega.ERC20Withdrawal.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSourcepartyid(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
       msg.setTargetethereumaddress(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setReferencenonce(value);
       break;
@@ -1534,24 +1529,17 @@ proto.vega.ERC20Withdrawal.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getSourcepartyid();
+  f = message.getTargetethereumaddress();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getTargetethereumaddress();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getReferencenonce();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      3,
       f
     );
   }
@@ -1574,47 +1562,32 @@ proto.vega.ERC20Withdrawal.prototype.setVegaassetid = function(value) {
 
 
 /**
- * optional string sourcePartyId = 2;
+ * optional string targetEthereumAddress = 2;
  * @return {string}
  */
-proto.vega.ERC20Withdrawal.prototype.getSourcepartyid = function() {
+proto.vega.ERC20Withdrawal.prototype.getTargetethereumaddress = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.vega.ERC20Withdrawal.prototype.setSourcepartyid = function(value) {
+proto.vega.ERC20Withdrawal.prototype.setTargetethereumaddress = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string targetEthereumAddress = 3;
+ * optional string referenceNonce = 3;
  * @return {string}
  */
-proto.vega.ERC20Withdrawal.prototype.getTargetethereumaddress = function() {
+proto.vega.ERC20Withdrawal.prototype.getReferencenonce = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.vega.ERC20Withdrawal.prototype.setTargetethereumaddress = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string referenceNonce = 4;
- * @return {string}
- */
-proto.vega.ERC20Withdrawal.prototype.getReferencenonce = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/** @param {string} value */
 proto.vega.ERC20Withdrawal.prototype.setReferencenonce = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
