@@ -2,9 +2,15 @@ import base64
 import grpc
 from typing import Any, Callable
 
+from .generated.proto import (
+    vega_pb2 as vega,
+    vega_pb2_grpc as vega_grpc,
+)
+from .generated.proto.api import (
+    trading_pb2 as trading,
+    trading_pb2_grpc as trading_grpc,
+)
 from .walletclient import WalletClient
-import vegaapiclient.generated.vega_grpc as vega_grpc
-import vegaapiclient.generated.api.trading_grpc as trading_grpc
 
 
 class VegaTradingClient(object):
@@ -55,10 +61,10 @@ class VegaTradingClient(object):
         signedTx = response.json()["signedTx"]
 
         # Submit the signed transaction
-        request = trading_grpc.SubmitTransactionRequest(
-            tx=vega_grpc.SignedBundle(
+        request = trading.SubmitTransactionRequest(
+            tx=vega.SignedBundle(
                 tx=base64.b64decode(signedTx["tx"]),
-                sig=vega_grpc.Signature(
+                sig=vega.Signature(
                     sig=base64.b64decode(signedTx["sig"]["sig"]),
                     algo="vega/ed25519",
                     version=1,
