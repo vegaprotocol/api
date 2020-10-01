@@ -95,6 +95,7 @@ proto-python:
 		-e 's#^from github.com.mwitkow.go_proto_validators import validator_pb2 as#from .. import mwitkow_goprotovalidators_validator_pb2 as#' \
 		"$(PYTHON_GENERATED_DIR)/proto/api"/*.py
 	@rm -rf "$(PYTHON_GENERATED_DIR)/github" "$(PYTHON_GENERATED_DIR)/github.com"
+	@cd python && python3 generate_init.py >"vegaapiclient/__init__.py"
 
 .PHONY: test
 test: test-cpp test-javascript test-python
