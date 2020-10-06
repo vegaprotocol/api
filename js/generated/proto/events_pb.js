@@ -2069,7 +2069,7 @@ proto.vega.AuctionEvent.prototype.setEnd = function(value) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.vega.BusEvent.oneofGroups_ = [[101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,1001]];
+proto.vega.BusEvent.oneofGroups_ = [[101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,1001]];
 
 /**
  * @enum {number}
@@ -2097,6 +2097,7 @@ proto.vega.BusEvent.EventCase = {
   WITHDRAWAL: 119,
   DEPOSIT: 120,
   AUCTION: 121,
+  RISKFACTOR: 122,
   MARKET: 1001
 };
 
@@ -2137,7 +2138,8 @@ proto.vega.BusEvent.prototype.toObject = function(opt_includeInstance) {
 proto.vega.BusEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    block: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    type: jspb.Message.getFieldWithDefault(msg, 3, 0),
     timeupdate: (f = msg.getTimeupdate()) && proto.vega.TimeUpdate.toObject(includeInstance, f),
     transferresponses: (f = msg.getTransferresponses()) && proto.vega.TransferResponses.toObject(includeInstance, f),
     positionresolution: (f = msg.getPositionresolution()) && proto.vega.PositionResolution.toObject(includeInstance, f),
@@ -2159,6 +2161,7 @@ proto.vega.BusEvent.toObject = function(includeInstance, msg) {
     withdrawal: (f = msg.getWithdrawal()) && proto_vega_pb.Withdrawal.toObject(includeInstance, f),
     deposit: (f = msg.getDeposit()) && proto_vega_pb.Deposit.toObject(includeInstance, f),
     auction: (f = msg.getAuction()) && proto.vega.AuctionEvent.toObject(includeInstance, f),
+    riskfactor: (f = msg.getRiskfactor()) && proto_vega_pb.RiskFactor.toObject(includeInstance, f),
     market: (f = msg.getMarket()) && proto.vega.MarketEvent.toObject(includeInstance, f)
   };
 
@@ -2201,6 +2204,10 @@ proto.vega.BusEvent.deserializeBinaryFromReader = function(msg, reader) {
       msg.setId(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBlock(value);
+      break;
+    case 3:
       var value = /** @type {!proto.vega.BusEventType} */ (reader.readEnum());
       msg.setType(value);
       break;
@@ -2309,6 +2316,11 @@ proto.vega.BusEvent.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,proto.vega.AuctionEvent.deserializeBinaryFromReader);
       msg.setAuction(value);
       break;
+    case 122:
+      var value = new proto_vega_pb.RiskFactor;
+      reader.readMessage(value,proto_vega_pb.RiskFactor.deserializeBinaryFromReader);
+      msg.setRiskfactor(value);
+      break;
     case 1001:
       var value = new proto.vega.MarketEvent;
       reader.readMessage(value,proto.vega.MarketEvent.deserializeBinaryFromReader);
@@ -2350,10 +2362,17 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getBlock();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getType();
   if (f !== 0.0) {
     writer.writeEnum(
-      2,
+      3,
       f
     );
   }
@@ -2525,6 +2544,14 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       proto.vega.AuctionEvent.serializeBinaryToWriter
     );
   }
+  f = message.getRiskfactor();
+  if (f != null) {
+    writer.writeMessage(
+      122,
+      f,
+      proto_vega_pb.RiskFactor.serializeBinaryToWriter
+    );
+  }
   f = message.getMarket();
   if (f != null) {
     writer.writeMessage(
@@ -2552,17 +2579,32 @@ proto.vega.BusEvent.prototype.setId = function(value) {
 
 
 /**
- * optional BusEventType type = 2;
+ * optional string block = 2;
+ * @return {string}
+ */
+proto.vega.BusEvent.prototype.getBlock = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.vega.BusEvent.prototype.setBlock = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional BusEventType type = 3;
  * @return {!proto.vega.BusEventType}
  */
 proto.vega.BusEvent.prototype.getType = function() {
-  return /** @type {!proto.vega.BusEventType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {!proto.vega.BusEventType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /** @param {!proto.vega.BusEventType} value */
 proto.vega.BusEvent.prototype.setType = function(value) {
-  jspb.Message.setProto3EnumField(this, 2, value);
+  jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -3260,6 +3302,39 @@ proto.vega.BusEvent.prototype.hasAuction = function() {
 
 
 /**
+ * optional RiskFactor riskFactor = 122;
+ * @return {?proto.vega.RiskFactor}
+ */
+proto.vega.BusEvent.prototype.getRiskfactor = function() {
+  return /** @type{?proto.vega.RiskFactor} */ (
+    jspb.Message.getWrapperField(this, proto_vega_pb.RiskFactor, 122));
+};
+
+
+/** @param {?proto.vega.RiskFactor|undefined} value */
+proto.vega.BusEvent.prototype.setRiskfactor = function(value) {
+  jspb.Message.setOneofWrapperField(this, 122, proto.vega.BusEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ */
+proto.vega.BusEvent.prototype.clearRiskfactor = function() {
+  this.setRiskfactor(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.BusEvent.prototype.hasRiskfactor = function() {
+  return jspb.Message.getField(this, 122) != null;
+};
+
+
+/**
  * optional MarketEvent market = 1001;
  * @return {?proto.vega.MarketEvent}
  */
@@ -3319,6 +3394,7 @@ proto.vega.BusEventType = {
   BUS_EVENT_TYPE_WITHDRAWAL: 20,
   BUS_EVENT_TYPE_DEPOSIT: 21,
   BUS_EVENT_TYPE_AUCTION: 22,
+  BUS_EVENT_TYPE_RISK_FACTOR: 23,
   BUS_EVENT_TYPE_MARKET: 101
 };
 

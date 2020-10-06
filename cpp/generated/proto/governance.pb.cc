@@ -610,7 +610,7 @@ const char descriptor_table_protodef_proto_2fgovernance_2eproto[] =
   "a.Vote.ValueB\007\342\337\037\003\210\001\001\022\032\n\nproposalID\030\003 \001("
   "\tB\006\342\337\037\002X\001\022\021\n\ttimestamp\030\004 \001(\003\";\n\005Value\022\025\n"
   "\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALUE_NO\020\001\022\r\n\tVA"
-  "LUE_YES\020\002*\377\005\n\rProposalError\022\036\n\032PROPOSAL_"
+  "LUE_YES\020\002*\246\006\n\rProposalError\022\036\n\032PROPOSAL_"
   "ERROR_UNSPECIFIED\020\000\022&\n\"PROPOSAL_ERROR_CL"
   "OSE_TIME_TOO_SOON\020\001\022&\n\"PROPOSAL_ERROR_CL"
   "OSE_TIME_TOO_LATE\020\002\022&\n\"PROPOSAL_ERROR_EN"
@@ -629,13 +629,14 @@ const char descriptor_table_protodef_proto_2fgovernance_2eproto[] =
   "ET_FIELD\020\016\0221\n-PROPOSAL_ERROR_MISSING_ERC"
   "20_CONTRACT_ADDRESS\020\017\022 \n\034PROPOSAL_ERROR_"
   "INVALID_ASSET\020\020\022*\n&PROPOSAL_ERROR_INCOMP"
-  "ATIBLE_TIMESTAMPS\020\021B!Z\037code.vegaprotocol"
-  ".io/vega/protob\006proto3"
+  "ATIBLE_TIMESTAMPS\020\021\022%\n!PROPOSAL_ERROR_NO"
+  "_RISK_PARAMETERS\020\022B!Z\037code.vegaprotocol."
+  "io/vega/protob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fgovernance_2eproto = {
   false, InitDefaults_proto_2fgovernance_2eproto, 
   descriptor_table_protodef_proto_2fgovernance_2eproto,
-  "proto/governance.proto", &assign_descriptors_table_proto_2fgovernance_2eproto, 3422,
+  "proto/governance.proto", &assign_descriptors_table_proto_2fgovernance_2eproto, 3461,
 };
 
 void AddDescriptors_proto_2fgovernance_2eproto() {
@@ -731,6 +732,7 @@ bool ProposalError_IsValid(int value) {
     case 15:
     case 16:
     case 17:
+    case 18:
       return true;
     default:
       return false;

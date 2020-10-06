@@ -129,6 +129,7 @@ enum BusEventType {
   BUS_EVENT_TYPE_WITHDRAWAL = 20,
   BUS_EVENT_TYPE_DEPOSIT = 21,
   BUS_EVENT_TYPE_AUCTION = 22,
+  BUS_EVENT_TYPE_RISK_FACTOR = 23,
   BUS_EVENT_TYPE_MARKET = 101,
   BusEventType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   BusEventType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
@@ -1550,6 +1551,7 @@ class BusEvent :
     kWithdrawal = 119,
     kDeposit = 120,
     kAuction = 121,
+    kRiskFactor = 122,
     kMarket = 1001,
     EVENT_NOT_SET = 0,
   };
@@ -1631,9 +1633,23 @@ class BusEvent :
   ::std::string* release_id();
   void set_allocated_id(::std::string* id);
 
-  // .vega.BusEventType type = 2;
+  // string block = 2;
+  void clear_block();
+  static const int kBlockFieldNumber = 2;
+  const ::std::string& block() const;
+  void set_block(const ::std::string& value);
+  #if LANG_CXX11
+  void set_block(::std::string&& value);
+  #endif
+  void set_block(const char* value);
+  void set_block(const char* value, size_t size);
+  ::std::string* mutable_block();
+  ::std::string* release_block();
+  void set_allocated_block(::std::string* block);
+
+  // .vega.BusEventType type = 3;
   void clear_type();
-  static const int kTypeFieldNumber = 2;
+  static const int kTypeFieldNumber = 3;
   ::vega::BusEventType type() const;
   void set_type(::vega::BusEventType value);
 
@@ -1826,6 +1842,15 @@ class BusEvent :
   ::vega::AuctionEvent* mutable_auction();
   void set_allocated_auction(::vega::AuctionEvent* auction);
 
+  // .vega.RiskFactor riskFactor = 122;
+  bool has_riskfactor() const;
+  void clear_riskfactor();
+  static const int kRiskFactorFieldNumber = 122;
+  const ::vega::RiskFactor& riskfactor() const;
+  ::vega::RiskFactor* release_riskfactor();
+  ::vega::RiskFactor* mutable_riskfactor();
+  void set_allocated_riskfactor(::vega::RiskFactor* riskfactor);
+
   // .vega.MarketEvent market = 1001;
   bool has_market() const;
   void clear_market();
@@ -1861,6 +1886,7 @@ class BusEvent :
   void set_has_withdrawal();
   void set_has_deposit();
   void set_has_auction();
+  void set_has_riskfactor();
   void set_has_market();
 
   inline bool has_event() const;
@@ -1868,6 +1894,7 @@ class BusEvent :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr id_;
+  ::google::protobuf::internal::ArenaStringPtr block_;
   int type_;
   union EventUnion {
     EventUnion() {}
@@ -1892,6 +1919,7 @@ class BusEvent :
     ::vega::Withdrawal* withdrawal_;
     ::vega::Deposit* deposit_;
     ::vega::AuctionEvent* auction_;
+    ::vega::RiskFactor* riskfactor_;
     ::vega::MarketEvent* market_;
   } event_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -2853,7 +2881,60 @@ inline void BusEvent::set_allocated_id(::std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:vega.BusEvent.ID)
 }
 
-// .vega.BusEventType type = 2;
+// string block = 2;
+inline void BusEvent::clear_block() {
+  block_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& BusEvent::block() const {
+  // @@protoc_insertion_point(field_get:vega.BusEvent.block)
+  return block_.GetNoArena();
+}
+inline void BusEvent::set_block(const ::std::string& value) {
+
+  block_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.BusEvent.block)
+}
+#if LANG_CXX11
+inline void BusEvent::set_block(::std::string&& value) {
+
+  block_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.BusEvent.block)
+}
+#endif
+inline void BusEvent::set_block(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  block_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.BusEvent.block)
+}
+inline void BusEvent::set_block(const char* value, size_t size) {
+
+  block_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.BusEvent.block)
+}
+inline ::std::string* BusEvent::mutable_block() {
+
+  // @@protoc_insertion_point(field_mutable:vega.BusEvent.block)
+  return block_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* BusEvent::release_block() {
+  // @@protoc_insertion_point(field_release:vega.BusEvent.block)
+
+  return block_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void BusEvent::set_allocated_block(::std::string* block) {
+  if (block != nullptr) {
+
+  } else {
+
+  }
+  block_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), block);
+  // @@protoc_insertion_point(field_set_allocated:vega.BusEvent.block)
+}
+
+// .vega.BusEventType type = 3;
 inline void BusEvent::clear_type() {
   type_ = 0;
 }
@@ -3648,6 +3729,41 @@ inline ::vega::AuctionEvent* BusEvent::mutable_auction() {
   }
   // @@protoc_insertion_point(field_mutable:vega.BusEvent.auction)
   return event_.auction_;
+}
+
+// .vega.RiskFactor riskFactor = 122;
+inline bool BusEvent::has_riskfactor() const {
+  return event_case() == kRiskFactor;
+}
+inline void BusEvent::set_has_riskfactor() {
+  _oneof_case_[0] = kRiskFactor;
+}
+inline ::vega::RiskFactor* BusEvent::release_riskfactor() {
+  // @@protoc_insertion_point(field_release:vega.BusEvent.riskFactor)
+  if (has_riskfactor()) {
+    clear_has_event();
+      ::vega::RiskFactor* temp = event_.riskfactor_;
+    event_.riskfactor_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::RiskFactor& BusEvent::riskfactor() const {
+  // @@protoc_insertion_point(field_get:vega.BusEvent.riskFactor)
+  return has_riskfactor()
+      ? *event_.riskfactor_
+      : *reinterpret_cast< ::vega::RiskFactor*>(&::vega::_RiskFactor_default_instance_);
+}
+inline ::vega::RiskFactor* BusEvent::mutable_riskfactor() {
+  if (!has_riskfactor()) {
+    clear_event();
+    set_has_riskfactor();
+    event_.riskfactor_ = CreateMaybeMessage< ::vega::RiskFactor >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:vega.BusEvent.riskFactor)
+  return event_.riskfactor_;
 }
 
 // .vega.MarketEvent market = 1001;

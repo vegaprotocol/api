@@ -49,7 +49,7 @@ struct TableStruct_proto_2fapi_2ftrading_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[112]
+  static const ::google::protobuf::internal::ParseTable schema[115]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -111,6 +111,12 @@ extern EstimateFeeRequestDefaultTypeInternal _EstimateFeeRequest_default_instanc
 class EstimateFeeResponse;
 class EstimateFeeResponseDefaultTypeInternal;
 extern EstimateFeeResponseDefaultTypeInternal _EstimateFeeResponse_default_instance_;
+class EstimateMarginRequest;
+class EstimateMarginRequestDefaultTypeInternal;
+extern EstimateMarginRequestDefaultTypeInternal _EstimateMarginRequest_default_instance_;
+class EstimateMarginResponse;
+class EstimateMarginResponseDefaultTypeInternal;
+extern EstimateMarginResponseDefaultTypeInternal _EstimateMarginResponse_default_instance_;
 class FeeInfrastructureAccountsRequest;
 class FeeInfrastructureAccountsRequestDefaultTypeInternal;
 extern FeeInfrastructureAccountsRequestDefaultTypeInternal _FeeInfrastructureAccountsRequest_default_instance_;
@@ -228,6 +234,9 @@ extern MarketsDataSubscribeRequestDefaultTypeInternal _MarketsDataSubscribeReque
 class MarketsResponse;
 class MarketsResponseDefaultTypeInternal;
 extern MarketsResponseDefaultTypeInternal _MarketsResponse_default_instance_;
+class ObserveEventBatch;
+class ObserveEventBatchDefaultTypeInternal;
+extern ObserveEventBatchDefaultTypeInternal _ObserveEventBatch_default_instance_;
 class ObserveEventsRequest;
 class ObserveEventsRequestDefaultTypeInternal;
 extern ObserveEventsRequestDefaultTypeInternal _ObserveEventsRequest_default_instance_;
@@ -414,6 +423,8 @@ template<> ::api::ERC20WithdrawalApprovalRequest* Arena::CreateMaybeMessage<::ap
 template<> ::api::ERC20WithdrawalApprovalResponse* Arena::CreateMaybeMessage<::api::ERC20WithdrawalApprovalResponse>(Arena*);
 template<> ::api::EstimateFeeRequest* Arena::CreateMaybeMessage<::api::EstimateFeeRequest>(Arena*);
 template<> ::api::EstimateFeeResponse* Arena::CreateMaybeMessage<::api::EstimateFeeResponse>(Arena*);
+template<> ::api::EstimateMarginRequest* Arena::CreateMaybeMessage<::api::EstimateMarginRequest>(Arena*);
+template<> ::api::EstimateMarginResponse* Arena::CreateMaybeMessage<::api::EstimateMarginResponse>(Arena*);
 template<> ::api::FeeInfrastructureAccountsRequest* Arena::CreateMaybeMessage<::api::FeeInfrastructureAccountsRequest>(Arena*);
 template<> ::api::FeeInfrastructureAccountsResponse* Arena::CreateMaybeMessage<::api::FeeInfrastructureAccountsResponse>(Arena*);
 template<> ::api::GetNetworkParametersProposalsRequest* Arena::CreateMaybeMessage<::api::GetNetworkParametersProposalsRequest>(Arena*);
@@ -453,6 +464,7 @@ template<> ::api::MarketDepthSubscribeRequest* Arena::CreateMaybeMessage<::api::
 template<> ::api::MarketsDataResponse* Arena::CreateMaybeMessage<::api::MarketsDataResponse>(Arena*);
 template<> ::api::MarketsDataSubscribeRequest* Arena::CreateMaybeMessage<::api::MarketsDataSubscribeRequest>(Arena*);
 template<> ::api::MarketsResponse* Arena::CreateMaybeMessage<::api::MarketsResponse>(Arena*);
+template<> ::api::ObserveEventBatch* Arena::CreateMaybeMessage<::api::ObserveEventBatch>(Arena*);
 template<> ::api::ObserveEventsRequest* Arena::CreateMaybeMessage<::api::ObserveEventsRequest>(Arena*);
 template<> ::api::ObserveEventsResponse* Arena::CreateMaybeMessage<::api::ObserveEventsResponse>(Arena*);
 template<> ::api::ObservePartyProposalsRequest* Arena::CreateMaybeMessage<::api::ObservePartyProposalsRequest>(Arena*);
@@ -12736,6 +12748,236 @@ class EstimateFeeResponse :
 };
 // -------------------------------------------------------------------
 
+class EstimateMarginRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.EstimateMarginRequest) */ {
+ public:
+  EstimateMarginRequest();
+  virtual ~EstimateMarginRequest();
+
+  EstimateMarginRequest(const EstimateMarginRequest& from);
+
+  inline EstimateMarginRequest& operator=(const EstimateMarginRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  EstimateMarginRequest(EstimateMarginRequest&& from) noexcept
+    : EstimateMarginRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline EstimateMarginRequest& operator=(EstimateMarginRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const EstimateMarginRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const EstimateMarginRequest* internal_default_instance() {
+    return reinterpret_cast<const EstimateMarginRequest*>(
+               &_EstimateMarginRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    100;
+
+  void Swap(EstimateMarginRequest* other);
+  friend void swap(EstimateMarginRequest& a, EstimateMarginRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline EstimateMarginRequest* New() const final {
+    return CreateMaybeMessage<EstimateMarginRequest>(nullptr);
+  }
+
+  EstimateMarginRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<EstimateMarginRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const EstimateMarginRequest& from);
+  void MergeFrom(const EstimateMarginRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(EstimateMarginRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .vega.Order order = 1;
+  bool has_order() const;
+  void clear_order();
+  static const int kOrderFieldNumber = 1;
+  const ::vega::Order& order() const;
+  ::vega::Order* release_order();
+  ::vega::Order* mutable_order();
+  void set_allocated_order(::vega::Order* order);
+
+  // @@protoc_insertion_point(class_scope:api.EstimateMarginRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::vega::Order* order_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class EstimateMarginResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.EstimateMarginResponse) */ {
+ public:
+  EstimateMarginResponse();
+  virtual ~EstimateMarginResponse();
+
+  EstimateMarginResponse(const EstimateMarginResponse& from);
+
+  inline EstimateMarginResponse& operator=(const EstimateMarginResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  EstimateMarginResponse(EstimateMarginResponse&& from) noexcept
+    : EstimateMarginResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline EstimateMarginResponse& operator=(EstimateMarginResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const EstimateMarginResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const EstimateMarginResponse* internal_default_instance() {
+    return reinterpret_cast<const EstimateMarginResponse*>(
+               &_EstimateMarginResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    101;
+
+  void Swap(EstimateMarginResponse* other);
+  friend void swap(EstimateMarginResponse& a, EstimateMarginResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline EstimateMarginResponse* New() const final {
+    return CreateMaybeMessage<EstimateMarginResponse>(nullptr);
+  }
+
+  EstimateMarginResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<EstimateMarginResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const EstimateMarginResponse& from);
+  void MergeFrom(const EstimateMarginResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(EstimateMarginResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .vega.MarginLevels marginLevels = 2;
+  bool has_marginlevels() const;
+  void clear_marginlevels();
+  static const int kMarginLevelsFieldNumber = 2;
+  const ::vega::MarginLevels& marginlevels() const;
+  ::vega::MarginLevels* release_marginlevels();
+  ::vega::MarginLevels* mutable_marginlevels();
+  void set_allocated_marginlevels(::vega::MarginLevels* marginlevels);
+
+  // @@protoc_insertion_point(class_scope:api.EstimateMarginResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::vega::MarginLevels* marginlevels_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
 class ObserveEventsRequest :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.ObserveEventsRequest) */ {
  public:
@@ -12774,7 +13016,7 @@ class ObserveEventsRequest :
                &_ObserveEventsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    100;
+    102;
 
   void Swap(ObserveEventsRequest* other);
   friend void swap(ObserveEventsRequest& a, ObserveEventsRequest& b) {
@@ -12869,6 +13111,12 @@ class ObserveEventsRequest :
   ::std::string* release_partyid();
   void set_allocated_partyid(::std::string* partyid);
 
+  // int64 batchSize = 4;
+  void clear_batchsize();
+  static const int kBatchSizeFieldNumber = 4;
+  ::google::protobuf::int64 batchsize() const;
+  void set_batchsize(::google::protobuf::int64 value);
+
   // @@protoc_insertion_point(class_scope:api.ObserveEventsRequest)
  private:
   class HasBitSetters;
@@ -12878,6 +13126,119 @@ class ObserveEventsRequest :
   mutable std::atomic<int> _type_cached_byte_size_;
   ::google::protobuf::internal::ArenaStringPtr marketid_;
   ::google::protobuf::internal::ArenaStringPtr partyid_;
+  ::google::protobuf::int64 batchsize_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ObserveEventBatch :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.ObserveEventBatch) */ {
+ public:
+  ObserveEventBatch();
+  virtual ~ObserveEventBatch();
+
+  ObserveEventBatch(const ObserveEventBatch& from);
+
+  inline ObserveEventBatch& operator=(const ObserveEventBatch& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ObserveEventBatch(ObserveEventBatch&& from) noexcept
+    : ObserveEventBatch() {
+    *this = ::std::move(from);
+  }
+
+  inline ObserveEventBatch& operator=(ObserveEventBatch&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ObserveEventBatch& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ObserveEventBatch* internal_default_instance() {
+    return reinterpret_cast<const ObserveEventBatch*>(
+               &_ObserveEventBatch_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    103;
+
+  void Swap(ObserveEventBatch* other);
+  friend void swap(ObserveEventBatch& a, ObserveEventBatch& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ObserveEventBatch* New() const final {
+    return CreateMaybeMessage<ObserveEventBatch>(nullptr);
+  }
+
+  ObserveEventBatch* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ObserveEventBatch>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ObserveEventBatch& from);
+  void MergeFrom(const ObserveEventBatch& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ObserveEventBatch* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int64 batchSize = 1;
+  void clear_batchsize();
+  static const int kBatchSizeFieldNumber = 1;
+  ::google::protobuf::int64 batchsize() const;
+  void set_batchsize(::google::protobuf::int64 value);
+
+  // @@protoc_insertion_point(class_scope:api.ObserveEventBatch)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int64 batchsize_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
@@ -12921,7 +13282,7 @@ class ObserveEventsResponse :
                &_ObserveEventsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    101;
+    104;
 
   void Swap(ObserveEventsResponse* other);
   friend void swap(ObserveEventsResponse& a, ObserveEventsResponse& b) {
@@ -13039,7 +13400,7 @@ class WithdrawalsRequest :
                &_WithdrawalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    102;
+    105;
 
   void Swap(WithdrawalsRequest* other);
   friend void swap(WithdrawalsRequest& a, WithdrawalsRequest& b) {
@@ -13159,7 +13520,7 @@ class WithdrawalsResponse :
                &_WithdrawalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    103;
+    106;
 
   void Swap(WithdrawalsResponse* other);
   friend void swap(WithdrawalsResponse& a, WithdrawalsResponse& b) {
@@ -13277,7 +13638,7 @@ class WithdrawalRequest :
                &_WithdrawalRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    104;
+    107;
 
   void Swap(WithdrawalRequest* other);
   friend void swap(WithdrawalRequest& a, WithdrawalRequest& b) {
@@ -13397,7 +13758,7 @@ class WithdrawalResponse :
                &_WithdrawalResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    105;
+    108;
 
   void Swap(WithdrawalResponse* other);
   friend void swap(WithdrawalResponse& a, WithdrawalResponse& b) {
@@ -13512,7 +13873,7 @@ class ERC20WithdrawalApprovalRequest :
                &_ERC20WithdrawalApprovalRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    106;
+    109;
 
   void Swap(ERC20WithdrawalApprovalRequest* other);
   friend void swap(ERC20WithdrawalApprovalRequest& a, ERC20WithdrawalApprovalRequest& b) {
@@ -13632,7 +13993,7 @@ class ERC20WithdrawalApprovalResponse :
                &_ERC20WithdrawalApprovalResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    107;
+    110;
 
   void Swap(ERC20WithdrawalApprovalResponse* other);
   friend void swap(ERC20WithdrawalApprovalResponse& a, ERC20WithdrawalApprovalResponse& b) {
@@ -13804,7 +14165,7 @@ class DepositsRequest :
                &_DepositsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    108;
+    111;
 
   void Swap(DepositsRequest* other);
   friend void swap(DepositsRequest& a, DepositsRequest& b) {
@@ -13924,7 +14285,7 @@ class DepositsResponse :
                &_DepositsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    109;
+    112;
 
   void Swap(DepositsResponse* other);
   friend void swap(DepositsResponse& a, DepositsResponse& b) {
@@ -14042,7 +14403,7 @@ class DepositRequest :
                &_DepositRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    110;
+    113;
 
   void Swap(DepositRequest* other);
   friend void swap(DepositRequest& a, DepositRequest& b) {
@@ -14162,7 +14523,7 @@ class DepositResponse :
                &_DepositResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    111;
+    114;
 
   void Swap(DepositResponse* other);
   friend void swap(DepositResponse& a, DepositResponse& b) {
@@ -20435,6 +20796,104 @@ inline void EstimateFeeResponse::set_allocated_fee(::vega::Fee* fee) {
 
 // -------------------------------------------------------------------
 
+// EstimateMarginRequest
+
+// .vega.Order order = 1;
+inline bool EstimateMarginRequest::has_order() const {
+  return this != internal_default_instance() && order_ != nullptr;
+}
+inline const ::vega::Order& EstimateMarginRequest::order() const {
+  const ::vega::Order* p = order_;
+  // @@protoc_insertion_point(field_get:api.EstimateMarginRequest.order)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::Order*>(
+      &::vega::_Order_default_instance_);
+}
+inline ::vega::Order* EstimateMarginRequest::release_order() {
+  // @@protoc_insertion_point(field_release:api.EstimateMarginRequest.order)
+
+  ::vega::Order* temp = order_;
+  order_ = nullptr;
+  return temp;
+}
+inline ::vega::Order* EstimateMarginRequest::mutable_order() {
+
+  if (order_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::Order>(GetArenaNoVirtual());
+    order_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.EstimateMarginRequest.order)
+  return order_;
+}
+inline void EstimateMarginRequest::set_allocated_order(::vega::Order* order) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(order_);
+  }
+  if (order) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      order = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, order, submessage_arena);
+    }
+
+  } else {
+
+  }
+  order_ = order;
+  // @@protoc_insertion_point(field_set_allocated:api.EstimateMarginRequest.order)
+}
+
+// -------------------------------------------------------------------
+
+// EstimateMarginResponse
+
+// .vega.MarginLevels marginLevels = 2;
+inline bool EstimateMarginResponse::has_marginlevels() const {
+  return this != internal_default_instance() && marginlevels_ != nullptr;
+}
+inline const ::vega::MarginLevels& EstimateMarginResponse::marginlevels() const {
+  const ::vega::MarginLevels* p = marginlevels_;
+  // @@protoc_insertion_point(field_get:api.EstimateMarginResponse.marginLevels)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::MarginLevels*>(
+      &::vega::_MarginLevels_default_instance_);
+}
+inline ::vega::MarginLevels* EstimateMarginResponse::release_marginlevels() {
+  // @@protoc_insertion_point(field_release:api.EstimateMarginResponse.marginLevels)
+
+  ::vega::MarginLevels* temp = marginlevels_;
+  marginlevels_ = nullptr;
+  return temp;
+}
+inline ::vega::MarginLevels* EstimateMarginResponse::mutable_marginlevels() {
+
+  if (marginlevels_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::MarginLevels>(GetArenaNoVirtual());
+    marginlevels_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.EstimateMarginResponse.marginLevels)
+  return marginlevels_;
+}
+inline void EstimateMarginResponse::set_allocated_marginlevels(::vega::MarginLevels* marginlevels) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(marginlevels_);
+  }
+  if (marginlevels) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      marginlevels = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, marginlevels, submessage_arena);
+    }
+
+  } else {
+
+  }
+  marginlevels_ = marginlevels;
+  // @@protoc_insertion_point(field_set_allocated:api.EstimateMarginResponse.marginLevels)
+}
+
+// -------------------------------------------------------------------
+
 // ObserveEventsRequest
 
 // repeated .vega.BusEventType type = 1;
@@ -20571,6 +21030,38 @@ inline void ObserveEventsRequest::set_allocated_partyid(::std::string* partyid) 
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.ObserveEventsRequest.partyID)
+}
+
+// int64 batchSize = 4;
+inline void ObserveEventsRequest::clear_batchsize() {
+  batchsize_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 ObserveEventsRequest::batchsize() const {
+  // @@protoc_insertion_point(field_get:api.ObserveEventsRequest.batchSize)
+  return batchsize_;
+}
+inline void ObserveEventsRequest::set_batchsize(::google::protobuf::int64 value) {
+
+  batchsize_ = value;
+  // @@protoc_insertion_point(field_set:api.ObserveEventsRequest.batchSize)
+}
+
+// -------------------------------------------------------------------
+
+// ObserveEventBatch
+
+// int64 batchSize = 1;
+inline void ObserveEventBatch::clear_batchsize() {
+  batchsize_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 ObserveEventBatch::batchsize() const {
+  // @@protoc_insertion_point(field_get:api.ObserveEventBatch.batchSize)
+  return batchsize_;
+}
+inline void ObserveEventBatch::set_batchsize(::google::protobuf::int64 value) {
+
+  batchsize_ = value;
+  // @@protoc_insertion_point(field_set:api.ObserveEventBatch.batchSize)
 }
 
 // -------------------------------------------------------------------
@@ -21282,6 +21773,12 @@ inline void DepositResponse::set_allocated_deposit(::vega::Deposit* deposit) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
