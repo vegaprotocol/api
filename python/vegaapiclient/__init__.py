@@ -1,4 +1,3 @@
-from .blockchain import CommandByte, CommandString
 from .vegatradingclient import VegaTradingClient
 from .vegatradingdataclient import VegaTradingDataClient
 from .faucetclient import FaucetClient
@@ -22,8 +21,6 @@ from .generated.proto import (
 __all__ = [
     "VegaTradingClient",
     "VegaTradingDataClient",
-    "CommandByte",
-    "CommandString",
     "FaucetClient",
     "WalletClient",
     "api",
