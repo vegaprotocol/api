@@ -1,7 +1,9 @@
 import base64
 import grpc
+import uuid
 from typing import Any, Callable
 
+from .blockchain import CommandByte
 from .generated.proto import (
     vega_pb2 as vega,
     vega_pb2_grpc as vega_grpc,
@@ -29,6 +31,26 @@ class VegaTradingClient(object):
             grpc.channel_ready_future(channel).result(timeout=10)
 
         self._trading = trading_grpc.tradingStub(channel)
+
+    def PrepareSubmitOrder(self, request: Any, contact_node=False) -> Any:
+        """
+        PrepareSubmitOrder prepares the SubmitOrder request in one of two ways:
+        - contact_node=False (default): do it in Python
+        - contact_node=True: use the Vega node
+        """
+
+        if contact_node:
+            # use the Vega node
+            return self._trading.PrepareSubmitOrder(request)
+
+        # do it in Python
+        blob = bytes(str(uuid.uuid4()), "utf-8")
+        blob += CommandByte.SubmitOrder.value
+        blob += request.SerializeToString()
+        return trading.PrepareSubmitOrderResponse(
+            blob=blob,
+            submitID=request.submission.reference,
+        )
 
     def prepare_sign_submit_tx(
         self,

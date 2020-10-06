@@ -1,5 +1,6 @@
 import base64
 import time
+import uuid
 from google.protobuf.empty_pb2 import Empty
 
 import vegaapiclient as vac
@@ -13,6 +14,7 @@ from .fixtures import (  # noqa: F401
     walletname,
     walletpassphrase,
 )
+from .helpers import check_response
 
 
 def test_SubmitOrder(
@@ -72,14 +74,17 @@ def test_SubmitOrder(
             size=1,
             timeInForce=vac.vega.Order.TimeInForce.TIF_GTT,
             type=vac.vega.Order.Type.TYPE_LIMIT,
+            reference=str(uuid.uuid4()),
         )
     )
-    response = trading.PrepareSubmitOrder(request)
-    blob = response.blob
+    # Either: Prepare the SubmitOrder using the Vega node
+    # blob = trading.PrepareSubmitOrder(request, contact_node=True).blob
+    # Or: Prepare the SubmitOrder ourselves
+    blob = trading.PrepareSubmitOrder(request, contact_node=False).blob
 
     # Sign the tx
     r = walletclient.signtx(base64.b64encode(blob).decode("ascii"), pubKey, False)
-    assert r.status_code == 200
+    check_response(r)
     signedTx = r.json()["signedTx"]
 
     # Submit the signed transaction
