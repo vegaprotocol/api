@@ -12,6 +12,7 @@ preproto:
 	@if test -z "$(VEGACORE)" ; then echo "Please set VEGACORE" ; exit 1 ; fi
 	@mkdir -p proto && find "$(VEGACORE)"/proto -maxdepth 1 -name '*.proto' -exec cp '{}' proto/ ';'
 	@mkdir -p proto/api && find "$(VEGACORE)"/proto/api -maxdepth 1 -name '*.proto' -exec cp '{}' proto/api/ ';'
+	@mkdir -p proto/tm && find "$(VEGACORE)"/proto/tm -maxdepth 1 -name '*.proto' -exec cp '{}' proto/tm/ ';'
 	@find proto -name '*.proto' -print0 | xargs -0 sed --in-place -re 's#^[ \\t]+$$##'
 	@(cd "$(VEGACORE)" && git describe --tags) >proto/from.txt
 
@@ -85,6 +86,8 @@ proto-python:
 		"$(PYTHON_GENERATED_DIR)/proto/api"/*.py
 	@echo -e 'from . import trading_pb2 as trading\nfrom . import trading_pb2_grpc as trading_grpc\n\n__all__ = ["trading", "trading_grpc"]' \
 		>"$(PYTHON_GENERATED_DIR)/proto/api/__init__.py"
+	@echo -e 'from . import replay_pb2 as replay\nfrom . import replay_pb2_grpc as replay_grpc\n\n__all__ = ["replay", "replay_grpc"]' \
+		>"$(PYTHON_GENERATED_DIR)/proto/tm/__init__.py"
 	@touch "$(PYTHON_GENERATED_DIR)/__init__.py" "$(PYTHON_GENERATED_DIR)/proto/__init__.py"
 	@mv "$(PYTHON_GENERATED_DIR)/github/com/mwitkow/go_proto_validators/validator_pb2.py" "$(PYTHON_GENERATED_DIR)/proto/mwitkow_goprotovalidators_validator_pb2.py"
 	@mv "$(PYTHON_GENERATED_DIR)/github.com/mwitkow/go_proto_validators/validator_pb2_grpc.py" "$(PYTHON_GENERATED_DIR)/proto/mwitkow_goprotovalidators_validator_pb2_grpc.py"
