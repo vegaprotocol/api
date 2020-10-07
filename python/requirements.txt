@@ -1,6 +1,6 @@
 appdirs==1.4.4
 attrs==20.2.0
-black==19.10b0
+black==20.8b1
 bleach==3.2.1
 CacheControl==0.12.6
 certifi==2020.6.20
@@ -12,7 +12,7 @@ contextlib2==0.6.0.post1
 coverage==5.3
 cryptography==3.1.1
 distlib==0.3.1
-distro==1.4.0
+distro==1.5.0
 docutils==0.16
 entrypoints==0.3
 flake8==3.8.4
@@ -47,7 +47,7 @@ pycparser==2.20
 pyflakes==2.2.0
 Pygments==2.7.1
 pyparsing==2.4.7
-pytest==6.1.0
+pytest==6.1.1
 pytest-cov==2.10.1
 pytoml==0.1.21
 readme-renderer==26.0
@@ -59,11 +59,11 @@ rfc3986==1.4.0
 SecretStorage==3.1.2
 six==1.15.0
 toml==0.10.1
-tqdm==4.50.0
+tqdm==4.50.1
 twine==3.2.0
 typed-ast==1.4.1
 typing-extensions==3.7.4.3
 urllib3==1.25.10
 wcwidth==0.2.5
 webencodings==0.5.1
-zipp==3.2.0
+zipp==3.3.0
