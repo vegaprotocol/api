@@ -54,6 +54,7 @@ class VegaTradingClient(object):
         # do it in Python
         blob = bytes(str(uuid.uuid4()), "utf-8")
         blob += CommandByte.SubmitOrder.value
+        request.submission.reference = str(uuid.uuid4())
         blob += request.SerializeToString()
         return trading.PrepareSubmitOrderResponse(
             blob=blob,
