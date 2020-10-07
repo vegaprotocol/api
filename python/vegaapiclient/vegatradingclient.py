@@ -32,11 +32,19 @@ class VegaTradingClient(object):
 
         self._trading = trading_grpc.tradingStub(channel)
 
-    def PrepareSubmitOrder(self, request: Any, contact_node=False) -> Any:
+    def PrepareSubmitOrder(self, request: Any, contact_node=True) -> Any:
         """
         PrepareSubmitOrder prepares the SubmitOrder request in one of two ways:
-        - contact_node=False (default): do it in Python
-        - contact_node=True: use the Vega node
+
+        - contact_node=True (default)
+            Use the Vega node's PrepareSubmitOrder gRPC endpoint.
+            Latency is higher due to the network round trip.
+            Some validation is done by the Vega node.
+
+        - contact_node=False:
+            Prepare the SubmitOrder request in Python.
+            Latency is lower due to the lack of network round trip.
+            Only very simple validation is done (e.g. data types).
         """
 
         if contact_node:
