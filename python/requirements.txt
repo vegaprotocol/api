@@ -22,7 +22,7 @@ grpcio-tools==1.32.0
 html5lib==1.1
 idna==2.10
 importlib-metadata==2.0.0
-iniconfig==1.0.1
+iniconfig==1.1.1
 ipaddr==2.2.0
 jeepney==0.4.3
 Jinja2==2.11.2
