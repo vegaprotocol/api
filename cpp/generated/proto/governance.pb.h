@@ -191,13 +191,12 @@ enum ProposalError {
   PROPOSAL_ERROR_MISSING_ERC20_CONTRACT_ADDRESS = 15,
   PROPOSAL_ERROR_INVALID_ASSET = 16,
   PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS = 17,
-  PROPOSAL_ERROR_NO_RISK_PARAMETERS = 18,
   ProposalError_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   ProposalError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool ProposalError_IsValid(int value);
 const ProposalError ProposalError_MIN = PROPOSAL_ERROR_UNSPECIFIED;
-const ProposalError ProposalError_MAX = PROPOSAL_ERROR_NO_RISK_PARAMETERS;
+const ProposalError ProposalError_MAX = PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS;
 const int ProposalError_ARRAYSIZE = ProposalError_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* ProposalError_descriptor();

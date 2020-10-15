@@ -153,12 +153,8 @@ message GovernanceData {
   // All "no" votes against the proposal above.
   repeated Vote no = 3;
   // All latest YES votes by party (guaranteed to be unique).
-  // key (string) is the party ID (public key)
-  // value (Vote) is the vote cast by the given party
   map<string, Vote> yesParty = 4;
-  // All latest NO votes by party (guaranteed to be unique).
-  // key (string) is the party ID (public key)
-  // value (Vote) is the vote cast by the given party
+  // All latest NO votes by party (unique).
   map<string, Vote> noParty = 5;
 }
 
@@ -250,8 +246,6 @@ enum ProposalError {
   PROPOSAL_ERROR_INVALID_ASSET = 16;
   // Proposal terms timestamps are not compatible (Validation < Closing < Enactment).
   PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS = 17;
-  // No risk parameteres were specified
-  PROPOSAL_ERROR_NO_RISK_PARAMETERS = 18;
 }
 
 // Governance vote.

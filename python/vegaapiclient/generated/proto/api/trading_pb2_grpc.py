@@ -577,11 +577,6 @@ class trading_dataStub(object):
                 request_serializer=proto_dot_api_dot_trading__pb2.EstimateFeeRequest.SerializeToString,
                 response_deserializer=proto_dot_api_dot_trading__pb2.EstimateFeeResponse.FromString,
                 )
-        self.EstimateMargin = channel.unary_unary(
-                '/api.trading_data/EstimateMargin',
-                request_serializer=proto_dot_api_dot_trading__pb2.EstimateMarginRequest.SerializeToString,
-                response_deserializer=proto_dot_api_dot_trading__pb2.EstimateMarginResponse.FromString,
-                )
         self.ERC20WithdrawalApproval = channel.unary_unary(
                 '/api.trading_data/ERC20WithdrawalApproval',
                 request_serializer=proto_dot_api_dot_trading__pb2.ERC20WithdrawalApprovalRequest.SerializeToString,
@@ -996,13 +991,6 @@ class trading_dataServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def EstimateMargin(self, request, context):
-        """Get an estimate for the margin required for a new order
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def ERC20WithdrawalApproval(self, request, context):
         """Get the bundle approval for an ERC20 withdrawal
         these data are being used to bundle the call to the smart contract on the ethereum bridge
@@ -1301,11 +1289,6 @@ def add_trading_dataServicer_to_server(servicer, server):
                     servicer.EstimateFee,
                     request_deserializer=proto_dot_api_dot_trading__pb2.EstimateFeeRequest.FromString,
                     response_serializer=proto_dot_api_dot_trading__pb2.EstimateFeeResponse.SerializeToString,
-            ),
-            'EstimateMargin': grpc.unary_unary_rpc_method_handler(
-                    servicer.EstimateMargin,
-                    request_deserializer=proto_dot_api_dot_trading__pb2.EstimateMarginRequest.FromString,
-                    response_serializer=proto_dot_api_dot_trading__pb2.EstimateMarginResponse.SerializeToString,
             ),
             'ERC20WithdrawalApproval': grpc.unary_unary_rpc_method_handler(
                     servicer.ERC20WithdrawalApproval,
@@ -2223,23 +2206,6 @@ class trading_data(object):
         return grpc.experimental.unary_unary(request, target, '/api.trading_data/EstimateFee',
             proto_dot_api_dot_trading__pb2.EstimateFeeRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.EstimateFeeResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def EstimateMargin(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/EstimateMargin',
-            proto_dot_api_dot_trading__pb2.EstimateMarginRequest.SerializeToString,
-            proto_dot_api_dot_trading__pb2.EstimateMarginResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
