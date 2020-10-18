@@ -36,7 +36,7 @@ mypy==0.782
 mypy-extensions==0.4.3
 packaging==20.4
 pathspec==0.8.0
-pep517==0.8.2
+pep517==0.9.1
 pkginfo==1.5.0.1
 pluggy==0.13.1
 progress==1.5
