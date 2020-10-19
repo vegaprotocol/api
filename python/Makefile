@@ -53,7 +53,7 @@ mypy:
 
 .PHONY: pipenv_install
 pipenv_install:
-	@pipenv --bare install 1>/dev/null 2>&1
+	@pipenv --bare install # 1>/dev/null 2>&1
 
 .PHONY: test
 test: | varcheck pipenv_install
