@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 grpcio-tools = "*"
+pytest = "*"
+pytest-cov = "*"
 
 [dev-packages]
 

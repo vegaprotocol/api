@@ -1,9 +1,9 @@
-name: Python Release to production PyPI
+name: Python Release to test PyPI
 
 on:
   push:
     tags:
-      - "v*"
+      - "v*-pre*"
 
 jobs:
 
@@ -18,10 +18,10 @@ jobs:
       with:
         python-version: 3.8
 
-    - name: Push release to production PyPI
+    - name: Push release to test PyPI
       env:
         TWINE_USERNAME: __token__
-        TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+        TWINE_PASSWORD: ${{ secrets.TWINE_TEST_PASSWORD }}
       run: |
         cd python
         github_tag="${GITHUB_REF/refs\/tags\//}"
@@ -33,4 +33,4 @@ jobs:
           exit 1
         fi
         command -v twine 1>/dev/null || pip install twine
-        make dist
+        make dist_test

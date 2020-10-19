@@ -63,7 +63,7 @@ PYTHON_GENERATED_DIR := python/vegaapiclient/generated
 .PHONY: proto-python
 proto-python:
 	@mkdir -p "$(PYTHON_GENERATED_DIR)"
-	@pipenv install && \
+	@pipenv --bare install 1>/dev/null 2>&1 && \
 	find proto \
 		-name '*.proto' | \
 		xargs pipenv run python3 pyproto.py \
@@ -113,4 +113,4 @@ test-javascript:
 
 .PHONY: test
 test-python:
-	@cd python && make venv && source /tmp/venv-api-clients/bin/activate && make test
+	@cd python && make test
