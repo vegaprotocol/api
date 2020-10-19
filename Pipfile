@@ -4,11 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-grpcio = "*"
 grpcio-tools = "*"
+pytest = "*"
+pytest-cov = "*"
+requests = "*"
+importlib-metadata = "*"
 
 [dev-packages]
-pytest = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3"

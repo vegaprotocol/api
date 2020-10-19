@@ -3,6 +3,9 @@ name: Javascript tests
 on:
   push:
     branches: [ master ]
+    paths-ignore:
+      - "cpp/**"
+      - "python/**"
   pull_request:
     branches: [ master ]
     paths-ignore:

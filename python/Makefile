@@ -1,7 +1,6 @@
 # Makefile
 
 GENERATED_DIR := vegaapiclient/generated
-VENV := /tmp/venv-api-clients
 
 .PHONY: default
 default:
@@ -13,7 +12,6 @@ default:
 	@echo "- dist_test:  build and upload to test-PyPI"
 	@echo "- mypy:       run mypy"
 	@echo "- test:       run pytest"
-	@echo "- venv:       Create a python virtualenv and install requirements"
 	@echo "- clean:      remove the generated dir"
 
 .PHONY: black
@@ -25,8 +23,8 @@ blackcheck:
 	@black --exclude generated --check vegaapiclient/ tests/
 
 .PHONY: coverage
-coverage: varcheck
-	@env PYTHONPATH=. pytest --cov=vegaapiclient --cov-report=term --cov-report=html:coverage tests/
+coverage: | varcheck pipenv_install
+	@pipenv run env PYTHONPATH=. pytest --cov=vegaapiclient --cov-report=term --cov-report=html:coverage tests/
 
 .PHONY: dist
 dist:
@@ -46,28 +44,26 @@ dist_test:
 	fi
 	@rm -rf dist && mkdir dist
 	@python3 setup.py sdist bdist_wheel
-	@twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+	@echo twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
 .PHONY: mypy
 mypy:
 	@env MYPYPATH=. mypy --ignore-missing-imports . | grep -vE '(^Found|/generated/|: note: )' ; \
 	code="$$?" ; test "$$code" -ne 0
 
+.PHONY: pipenv_install
+pipenv_install:
+	@pipenv --bare install # 1>/dev/null 2>&1
+
 .PHONY: test
-test: varcheck
-	@env PYTHONPATH=. pytest tests/
+test: | varcheck pipenv_install
+	@pipenv run env PYTHONPATH=. pytest tests/
 
 .PHONY: varcheck
 varcheck:
 	@if test -z "$$GRPC_NODE" ; then echo "Please set GRPC_NODE (e.g. node.xx.vega.zzz:1111)." ; exit 1 ; fi
 	@if test -z "$$FAUCETSERVER" ; then echo "Please set FAUCETSERVER (e.g. https://faucet.xx.vega.zzz)." ; exit 1 ; fi
 	@if test -z "$$WALLETSERVER" ; then echo "Please set WALLETSERVER (e.g. https://wallet.xx.vega.zzz)." ; exit 1 ; fi
-
-.PHONY: venv
-venv:
-	@test -d "$(VENV)" || virtualenv -p /usr/bin/python3 "$(VENV)"
-	@. "$(VENV)/bin/activate" && \
-	pip install -r requirements.txt 1>/dev/null
 
 .PHONY: clean
 clean:

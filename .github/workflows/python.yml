@@ -3,6 +3,9 @@ name: Python tests
 on:
   push:
     branches: [ master ]
+    paths-ignore:
+      - "cpp/**"
+      - "js/**"
   pull_request:
     branches: [ master ]
     paths-ignore:
@@ -25,15 +28,10 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        cd python
-        pip install -r requirements.txt
-
     - name: Lint with black
       run: |
         cd python
+        command -v black 1>/dev/null || pip install black
         make black
 
     - name: Test with pytest
@@ -43,6 +41,7 @@ jobs:
         WALLETSERVER: ${{ secrets.WALLETSERVER }}
       run: |
         cd python
+        command -v pipenv 1>/dev/null || pip install pipenv
         make test
 
     - name: Coverage with pytest
@@ -57,4 +56,5 @@ jobs:
     - name: Type-check with mypy
       run: |
         cd python
+        command -v mypy 1>/dev/null || pip install mypy
         make mypy

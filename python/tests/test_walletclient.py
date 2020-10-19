@@ -9,19 +9,13 @@ from .fixtures import walletclient, walletname, walletpassphrase  # noqa: F401
 def random_metadata() -> List[Dict[str, str]]:
     return [
         {
-            "key": "".join(
-                random.choice(string.ascii_uppercase) for i in range(10)
-            ),
-            "value": "".join(
-                random.choice(string.ascii_lowercase) for i in range(10)
-            ),
+            "key": "".join(random.choice(string.ascii_uppercase) for i in range(10)),
+            "value": "".join(random.choice(string.ascii_lowercase) for i in range(10)),
         }
     ]
 
 
-def test_walletclient(
-    walletclient, walletname, walletpassphrase  # noqa: F811
-):
+def test_walletclient(walletclient, walletname, walletpassphrase):  # noqa: F811
     wname = walletname
     wpass = walletpassphrase
 
