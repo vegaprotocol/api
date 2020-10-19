@@ -63,17 +63,17 @@ PYTHON_GENERATED_DIR := python/vegaapiclient/generated
 .PHONY: proto-python
 proto-python:
 	@mkdir -p "$(PYTHON_GENERATED_DIR)"
-	@cd python && make venv && cd .. && source /tmp/venv-api-clients/bin/activate && \
+	@pipenv install && \
 	find proto \
 		-name '*.proto' | \
-		xargs python3 -m grpc_tools.protoc \
+		xargs pipenv run python3 pyproto.py \
 		-I. \
 		-Iexternal \
 		--python_out="$(PYTHON_GENERATED_DIR)" \
 		--grpc_python_out="$(PYTHON_GENERATED_DIR)" && \
 	find external/github.com/mwitkow \
 		-name '*.proto' | \
-		xargs python3 -m grpc_tools.protoc \
+		xargs pipenv run python3 pyproto.py \
 		-Iexternal \
 		--python_out="$(PYTHON_GENERATED_DIR)" \
 		--grpc_python_out="$(PYTHON_GENERATED_DIR)"
@@ -102,7 +102,6 @@ proto-python:
 
 .PHONY: test
 test: test-cpp test-javascript test-python
-	##
 
 .PHONY: test-cpp
 test-cpp:
