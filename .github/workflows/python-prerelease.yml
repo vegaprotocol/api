@@ -3,7 +3,7 @@ name: Python Release to test PyPI
 on:
   push:
     tags:
-      - "v*-pre*"
+      - "v[0-9]+.[0-9]+.[0-9]+-pre[0-9]+"
 
 jobs:
 
