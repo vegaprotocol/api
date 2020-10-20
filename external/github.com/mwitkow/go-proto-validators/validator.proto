@@ -8,6 +8,7 @@
 
 syntax = "proto2";
 package validator;
+option java_package = "com.github.mwitkow.go_proto_validators";
 
 import "google/protobuf/descriptor.proto";
 

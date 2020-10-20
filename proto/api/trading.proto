@@ -10,6 +10,7 @@ import "proto/assets.proto";
 import "proto/events.proto";
 
 package api;
+option java_package = "io.vegaprotocol.vega.api";
 
 import "google/protobuf/empty.proto";
 import "github.com/mwitkow/go-proto-validators/validator.proto";
