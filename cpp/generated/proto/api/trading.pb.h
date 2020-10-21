@@ -49,7 +49,7 @@ struct TableStruct_proto_2fapi_2ftrading_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[112]
+  static const ::google::protobuf::internal::ParseTable schema[117]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -111,6 +111,12 @@ extern EstimateFeeRequestDefaultTypeInternal _EstimateFeeRequest_default_instanc
 class EstimateFeeResponse;
 class EstimateFeeResponseDefaultTypeInternal;
 extern EstimateFeeResponseDefaultTypeInternal _EstimateFeeResponse_default_instance_;
+class EstimateMarginRequest;
+class EstimateMarginRequestDefaultTypeInternal;
+extern EstimateMarginRequestDefaultTypeInternal _EstimateMarginRequest_default_instance_;
+class EstimateMarginResponse;
+class EstimateMarginResponseDefaultTypeInternal;
+extern EstimateMarginResponseDefaultTypeInternal _EstimateMarginResponse_default_instance_;
 class FeeInfrastructureAccountsRequest;
 class FeeInfrastructureAccountsRequestDefaultTypeInternal;
 extern FeeInfrastructureAccountsRequestDefaultTypeInternal _FeeInfrastructureAccountsRequest_default_instance_;
@@ -219,6 +225,9 @@ extern MarketDepthResponseDefaultTypeInternal _MarketDepthResponse_default_insta
 class MarketDepthSubscribeRequest;
 class MarketDepthSubscribeRequestDefaultTypeInternal;
 extern MarketDepthSubscribeRequestDefaultTypeInternal _MarketDepthSubscribeRequest_default_instance_;
+class MarketDepthUpdatesSubscribeRequest;
+class MarketDepthUpdatesSubscribeRequestDefaultTypeInternal;
+extern MarketDepthUpdatesSubscribeRequestDefaultTypeInternal _MarketDepthUpdatesSubscribeRequest_default_instance_;
 class MarketsDataResponse;
 class MarketsDataResponseDefaultTypeInternal;
 extern MarketsDataResponseDefaultTypeInternal _MarketsDataResponse_default_instance_;
@@ -228,6 +237,12 @@ extern MarketsDataSubscribeRequestDefaultTypeInternal _MarketsDataSubscribeReque
 class MarketsResponse;
 class MarketsResponseDefaultTypeInternal;
 extern MarketsResponseDefaultTypeInternal _MarketsResponse_default_instance_;
+class NetworkParametersRequest;
+class NetworkParametersRequestDefaultTypeInternal;
+extern NetworkParametersRequestDefaultTypeInternal _NetworkParametersRequest_default_instance_;
+class NetworkParametersResponse;
+class NetworkParametersResponseDefaultTypeInternal;
+extern NetworkParametersResponseDefaultTypeInternal _NetworkParametersResponse_default_instance_;
 class ObserveEventsRequest;
 class ObserveEventsRequestDefaultTypeInternal;
 extern ObserveEventsRequestDefaultTypeInternal _ObserveEventsRequest_default_instance_;
@@ -414,6 +429,8 @@ template<> ::api::ERC20WithdrawalApprovalRequest* Arena::CreateMaybeMessage<::ap
 template<> ::api::ERC20WithdrawalApprovalResponse* Arena::CreateMaybeMessage<::api::ERC20WithdrawalApprovalResponse>(Arena*);
 template<> ::api::EstimateFeeRequest* Arena::CreateMaybeMessage<::api::EstimateFeeRequest>(Arena*);
 template<> ::api::EstimateFeeResponse* Arena::CreateMaybeMessage<::api::EstimateFeeResponse>(Arena*);
+template<> ::api::EstimateMarginRequest* Arena::CreateMaybeMessage<::api::EstimateMarginRequest>(Arena*);
+template<> ::api::EstimateMarginResponse* Arena::CreateMaybeMessage<::api::EstimateMarginResponse>(Arena*);
 template<> ::api::FeeInfrastructureAccountsRequest* Arena::CreateMaybeMessage<::api::FeeInfrastructureAccountsRequest>(Arena*);
 template<> ::api::FeeInfrastructureAccountsResponse* Arena::CreateMaybeMessage<::api::FeeInfrastructureAccountsResponse>(Arena*);
 template<> ::api::GetNetworkParametersProposalsRequest* Arena::CreateMaybeMessage<::api::GetNetworkParametersProposalsRequest>(Arena*);
@@ -450,9 +467,12 @@ template<> ::api::MarketDataByIDResponse* Arena::CreateMaybeMessage<::api::Marke
 template<> ::api::MarketDepthRequest* Arena::CreateMaybeMessage<::api::MarketDepthRequest>(Arena*);
 template<> ::api::MarketDepthResponse* Arena::CreateMaybeMessage<::api::MarketDepthResponse>(Arena*);
 template<> ::api::MarketDepthSubscribeRequest* Arena::CreateMaybeMessage<::api::MarketDepthSubscribeRequest>(Arena*);
+template<> ::api::MarketDepthUpdatesSubscribeRequest* Arena::CreateMaybeMessage<::api::MarketDepthUpdatesSubscribeRequest>(Arena*);
 template<> ::api::MarketsDataResponse* Arena::CreateMaybeMessage<::api::MarketsDataResponse>(Arena*);
 template<> ::api::MarketsDataSubscribeRequest* Arena::CreateMaybeMessage<::api::MarketsDataSubscribeRequest>(Arena*);
 template<> ::api::MarketsResponse* Arena::CreateMaybeMessage<::api::MarketsResponse>(Arena*);
+template<> ::api::NetworkParametersRequest* Arena::CreateMaybeMessage<::api::NetworkParametersRequest>(Arena*);
+template<> ::api::NetworkParametersResponse* Arena::CreateMaybeMessage<::api::NetworkParametersResponse>(Arena*);
 template<> ::api::ObserveEventsRequest* Arena::CreateMaybeMessage<::api::ObserveEventsRequest>(Arena*);
 template<> ::api::ObserveEventsResponse* Arena::CreateMaybeMessage<::api::ObserveEventsResponse>(Arena*);
 template<> ::api::ObservePartyProposalsRequest* Arena::CreateMaybeMessage<::api::ObservePartyProposalsRequest>(Arena*);
@@ -8116,6 +8136,126 @@ class MarketDepthSubscribeRequest :
 };
 // -------------------------------------------------------------------
 
+class MarketDepthUpdatesSubscribeRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.MarketDepthUpdatesSubscribeRequest) */ {
+ public:
+  MarketDepthUpdatesSubscribeRequest();
+  virtual ~MarketDepthUpdatesSubscribeRequest();
+
+  MarketDepthUpdatesSubscribeRequest(const MarketDepthUpdatesSubscribeRequest& from);
+
+  inline MarketDepthUpdatesSubscribeRequest& operator=(const MarketDepthUpdatesSubscribeRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  MarketDepthUpdatesSubscribeRequest(MarketDepthUpdatesSubscribeRequest&& from) noexcept
+    : MarketDepthUpdatesSubscribeRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline MarketDepthUpdatesSubscribeRequest& operator=(MarketDepthUpdatesSubscribeRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const MarketDepthUpdatesSubscribeRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const MarketDepthUpdatesSubscribeRequest* internal_default_instance() {
+    return reinterpret_cast<const MarketDepthUpdatesSubscribeRequest*>(
+               &_MarketDepthUpdatesSubscribeRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    63;
+
+  void Swap(MarketDepthUpdatesSubscribeRequest* other);
+  friend void swap(MarketDepthUpdatesSubscribeRequest& a, MarketDepthUpdatesSubscribeRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline MarketDepthUpdatesSubscribeRequest* New() const final {
+    return CreateMaybeMessage<MarketDepthUpdatesSubscribeRequest>(nullptr);
+  }
+
+  MarketDepthUpdatesSubscribeRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<MarketDepthUpdatesSubscribeRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const MarketDepthUpdatesSubscribeRequest& from);
+  void MergeFrom(const MarketDepthUpdatesSubscribeRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MarketDepthUpdatesSubscribeRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string marketID = 1 [(.validator.field) = {
+  void clear_marketid();
+  static const int kMarketIDFieldNumber = 1;
+  const ::std::string& marketid() const;
+  void set_marketid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_marketid(::std::string&& value);
+  #endif
+  void set_marketid(const char* value);
+  void set_marketid(const char* value, size_t size);
+  ::std::string* mutable_marketid();
+  ::std::string* release_marketid();
+  void set_allocated_marketid(::std::string* marketid);
+
+  // @@protoc_insertion_point(class_scope:api.MarketDepthUpdatesSubscribeRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr marketid_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
 class PositionsSubscribeRequest :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.PositionsSubscribeRequest) */ {
  public:
@@ -8154,7 +8294,7 @@ class PositionsSubscribeRequest :
                &_PositionsSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    64;
 
   void Swap(PositionsSubscribeRequest* other);
   friend void swap(PositionsSubscribeRequest& a, PositionsSubscribeRequest& b) {
@@ -8225,12 +8365,27 @@ class PositionsSubscribeRequest :
   ::std::string* release_partyid();
   void set_allocated_partyid(::std::string* partyid);
 
+  // string marketID = 2;
+  void clear_marketid();
+  static const int kMarketIDFieldNumber = 2;
+  const ::std::string& marketid() const;
+  void set_marketid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_marketid(::std::string&& value);
+  #endif
+  void set_marketid(const char* value);
+  void set_marketid(const char* value, size_t size);
+  ::std::string* mutable_marketid();
+  ::std::string* release_marketid();
+  void set_allocated_marketid(::std::string* marketid);
+
   // @@protoc_insertion_point(class_scope:api.PositionsSubscribeRequest)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr partyid_;
+  ::google::protobuf::internal::ArenaStringPtr marketid_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
@@ -8274,7 +8429,7 @@ class OrdersByMarketRequest :
                &_OrdersByMarketRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    65;
 
   void Swap(OrdersByMarketRequest* other);
   friend void swap(OrdersByMarketRequest& a, OrdersByMarketRequest& b) {
@@ -8404,7 +8559,7 @@ class OrdersByMarketResponse :
                &_OrdersByMarketResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    66;
 
   void Swap(OrdersByMarketResponse* other);
   friend void swap(OrdersByMarketResponse& a, OrdersByMarketResponse& b) {
@@ -8522,7 +8677,7 @@ class OrdersByPartyRequest :
                &_OrdersByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    67;
 
   void Swap(OrdersByPartyRequest* other);
   friend void swap(OrdersByPartyRequest& a, OrdersByPartyRequest& b) {
@@ -8652,7 +8807,7 @@ class OrdersByPartyResponse :
                &_OrdersByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    68;
 
   void Swap(OrdersByPartyResponse* other);
   friend void swap(OrdersByPartyResponse& a, OrdersByPartyResponse& b) {
@@ -8770,7 +8925,7 @@ class OrderByMarketAndIdRequest :
                &_OrderByMarketAndIdRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    69;
 
   void Swap(OrderByMarketAndIdRequest* other);
   friend void swap(OrderByMarketAndIdRequest& a, OrderByMarketAndIdRequest& b) {
@@ -8905,7 +9060,7 @@ class OrderByMarketAndIdResponse :
                &_OrderByMarketAndIdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    70;
 
   void Swap(OrderByMarketAndIdResponse* other);
   friend void swap(OrderByMarketAndIdResponse& a, OrderByMarketAndIdResponse& b) {
@@ -9020,7 +9175,7 @@ class OrderByReferenceRequest :
                &_OrderByReferenceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    71;
 
   void Swap(OrderByReferenceRequest* other);
   friend void swap(OrderByReferenceRequest& a, OrderByReferenceRequest& b) {
@@ -9140,7 +9295,7 @@ class OrderByReferenceResponse :
                &_OrderByReferenceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    72;
 
   void Swap(OrderByReferenceResponse* other);
   friend void swap(OrderByReferenceResponse& a, OrderByReferenceResponse& b) {
@@ -9255,7 +9410,7 @@ class MarketsResponse :
                &_MarketsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    73;
 
   void Swap(MarketsResponse* other);
   friend void swap(MarketsResponse& a, MarketsResponse& b) {
@@ -9373,7 +9528,7 @@ class CandlesRequest :
                &_CandlesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    74;
 
   void Swap(CandlesRequest* other);
   friend void swap(CandlesRequest& a, CandlesRequest& b) {
@@ -9507,7 +9662,7 @@ class CandlesResponse :
                &_CandlesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    75;
 
   void Swap(CandlesResponse* other);
   friend void swap(CandlesResponse& a, CandlesResponse& b) {
@@ -9625,7 +9780,7 @@ class MarketDepthRequest :
                &_MarketDepthRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    76;
 
   void Swap(MarketDepthRequest* other);
   friend void swap(MarketDepthRequest& a, MarketDepthRequest& b) {
@@ -9752,7 +9907,7 @@ class MarketDepthResponse :
                &_MarketDepthResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    77;
 
   void Swap(MarketDepthResponse* other);
   friend void swap(MarketDepthResponse& a, MarketDepthResponse& b) {
@@ -9856,6 +10011,12 @@ class MarketDepthResponse :
   ::vega::Trade* mutable_lasttrade();
   void set_allocated_lasttrade(::vega::Trade* lasttrade);
 
+  // uint64 sequenceNumber = 5;
+  void clear_sequencenumber();
+  static const int kSequenceNumberFieldNumber = 5;
+  ::google::protobuf::uint64 sequencenumber() const;
+  void set_sequencenumber(::google::protobuf::uint64 value);
+
   // @@protoc_insertion_point(class_scope:api.MarketDepthResponse)
  private:
   class HasBitSetters;
@@ -9865,6 +10026,7 @@ class MarketDepthResponse :
   ::google::protobuf::RepeatedPtrField< ::vega::PriceLevel > sell_;
   ::google::protobuf::internal::ArenaStringPtr marketid_;
   ::vega::Trade* lasttrade_;
+  ::google::protobuf::uint64 sequencenumber_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
@@ -9908,7 +10070,7 @@ class TradesByMarketRequest :
                &_TradesByMarketRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    78;
 
   void Swap(TradesByMarketRequest* other);
   friend void swap(TradesByMarketRequest& a, TradesByMarketRequest& b) {
@@ -10038,7 +10200,7 @@ class TradesByMarketResponse :
                &_TradesByMarketResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    79;
 
   void Swap(TradesByMarketResponse* other);
   friend void swap(TradesByMarketResponse& a, TradesByMarketResponse& b) {
@@ -10156,7 +10318,7 @@ class PositionsByPartyRequest :
                &_PositionsByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    80;
 
   void Swap(PositionsByPartyRequest* other);
   friend void swap(PositionsByPartyRequest& a, PositionsByPartyRequest& b) {
@@ -10291,7 +10453,7 @@ class PositionsByPartyResponse :
                &_PositionsByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    81;
 
   void Swap(PositionsByPartyResponse* other);
   friend void swap(PositionsByPartyResponse& a, PositionsByPartyResponse& b) {
@@ -10409,7 +10571,7 @@ class VegaTimeResponse :
                &_VegaTimeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    81;
+    82;
 
   void Swap(VegaTimeResponse* other);
   friend void swap(VegaTimeResponse& a, VegaTimeResponse& b) {
@@ -10521,7 +10683,7 @@ class Pagination :
                &_Pagination_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    82;
+    83;
 
   void Swap(Pagination* other);
   friend void swap(Pagination& a, Pagination& b) {
@@ -10647,7 +10809,7 @@ class OrdersStream :
                &_OrdersStream_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    83;
+    84;
 
   void Swap(OrdersStream* other);
   friend void swap(OrdersStream& a, OrdersStream& b) {
@@ -10765,7 +10927,7 @@ class TradesStream :
                &_TradesStream_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    84;
+    85;
 
   void Swap(TradesStream* other);
   friend void swap(TradesStream& a, TradesStream& b) {
@@ -10883,7 +11045,7 @@ class PartyAccountsRequest :
                &_PartyAccountsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    85;
+    86;
 
   void Swap(PartyAccountsRequest* other);
   friend void swap(PartyAccountsRequest& a, PartyAccountsRequest& b) {
@@ -11040,7 +11202,7 @@ class PartyAccountsResponse :
                &_PartyAccountsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    86;
+    87;
 
   void Swap(PartyAccountsResponse* other);
   friend void swap(PartyAccountsResponse& a, PartyAccountsResponse& b) {
@@ -11158,7 +11320,7 @@ class MarketAccountsRequest :
                &_MarketAccountsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    87;
+    88;
 
   void Swap(MarketAccountsRequest* other);
   friend void swap(MarketAccountsRequest& a, MarketAccountsRequest& b) {
@@ -11293,7 +11455,7 @@ class MarketAccountsResponse :
                &_MarketAccountsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    88;
+    89;
 
   void Swap(MarketAccountsResponse* other);
   friend void swap(MarketAccountsResponse& a, MarketAccountsResponse& b) {
@@ -11411,7 +11573,7 @@ class FeeInfrastructureAccountsRequest :
                &_FeeInfrastructureAccountsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    89;
+    90;
 
   void Swap(FeeInfrastructureAccountsRequest* other);
   friend void swap(FeeInfrastructureAccountsRequest& a, FeeInfrastructureAccountsRequest& b) {
@@ -11531,7 +11693,7 @@ class FeeInfrastructureAccountsResponse :
                &_FeeInfrastructureAccountsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    90;
+    91;
 
   void Swap(FeeInfrastructureAccountsResponse* other);
   friend void swap(FeeInfrastructureAccountsResponse& a, FeeInfrastructureAccountsResponse& b) {
@@ -11649,7 +11811,7 @@ class PrepareProposalRequest :
                &_PrepareProposalRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    91;
+    92;
 
   void Swap(PrepareProposalRequest* other);
   friend void swap(PrepareProposalRequest& a, PrepareProposalRequest& b) {
@@ -11794,7 +11956,7 @@ class PrepareProposalResponse :
                &_PrepareProposalResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    92;
+    93;
 
   void Swap(PrepareProposalResponse* other);
   friend void swap(PrepareProposalResponse& a, PrepareProposalResponse& b) {
@@ -11924,7 +12086,7 @@ class PrepareVoteRequest :
                &_PrepareVoteRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    93;
+    94;
 
   void Swap(PrepareVoteRequest* other);
   friend void swap(PrepareVoteRequest& a, PrepareVoteRequest& b) {
@@ -12039,7 +12201,7 @@ class PrepareVoteResponse :
                &_PrepareVoteResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    94;
+    95;
 
   void Swap(PrepareVoteResponse* other);
   friend void swap(PrepareVoteResponse& a, PrepareVoteResponse& b) {
@@ -12169,7 +12331,7 @@ class OrderByIDRequest :
                &_OrderByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    95;
+    96;
 
   void Swap(OrderByIDRequest* other);
   friend void swap(OrderByIDRequest& a, OrderByIDRequest& b) {
@@ -12296,7 +12458,7 @@ class OrderVersionsByIDRequest :
                &_OrderVersionsByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    96;
+    97;
 
   void Swap(OrderVersionsByIDRequest* other);
   friend void swap(OrderVersionsByIDRequest& a, OrderVersionsByIDRequest& b) {
@@ -12426,7 +12588,7 @@ class OrderVersionsResponse :
                &_OrderVersionsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    97;
+    98;
 
   void Swap(OrderVersionsResponse* other);
   friend void swap(OrderVersionsResponse& a, OrderVersionsResponse& b) {
@@ -12544,7 +12706,7 @@ class EstimateFeeRequest :
                &_EstimateFeeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    98;
+    99;
 
   void Swap(EstimateFeeRequest* other);
   friend void swap(EstimateFeeRequest& a, EstimateFeeRequest& b) {
@@ -12659,7 +12821,7 @@ class EstimateFeeResponse :
                &_EstimateFeeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    99;
+    100;
 
   void Swap(EstimateFeeResponse* other);
   friend void swap(EstimateFeeResponse& a, EstimateFeeResponse& b) {
@@ -12736,6 +12898,236 @@ class EstimateFeeResponse :
 };
 // -------------------------------------------------------------------
 
+class EstimateMarginRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.EstimateMarginRequest) */ {
+ public:
+  EstimateMarginRequest();
+  virtual ~EstimateMarginRequest();
+
+  EstimateMarginRequest(const EstimateMarginRequest& from);
+
+  inline EstimateMarginRequest& operator=(const EstimateMarginRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  EstimateMarginRequest(EstimateMarginRequest&& from) noexcept
+    : EstimateMarginRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline EstimateMarginRequest& operator=(EstimateMarginRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const EstimateMarginRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const EstimateMarginRequest* internal_default_instance() {
+    return reinterpret_cast<const EstimateMarginRequest*>(
+               &_EstimateMarginRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    101;
+
+  void Swap(EstimateMarginRequest* other);
+  friend void swap(EstimateMarginRequest& a, EstimateMarginRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline EstimateMarginRequest* New() const final {
+    return CreateMaybeMessage<EstimateMarginRequest>(nullptr);
+  }
+
+  EstimateMarginRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<EstimateMarginRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const EstimateMarginRequest& from);
+  void MergeFrom(const EstimateMarginRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(EstimateMarginRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .vega.Order order = 1;
+  bool has_order() const;
+  void clear_order();
+  static const int kOrderFieldNumber = 1;
+  const ::vega::Order& order() const;
+  ::vega::Order* release_order();
+  ::vega::Order* mutable_order();
+  void set_allocated_order(::vega::Order* order);
+
+  // @@protoc_insertion_point(class_scope:api.EstimateMarginRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::vega::Order* order_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class EstimateMarginResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.EstimateMarginResponse) */ {
+ public:
+  EstimateMarginResponse();
+  virtual ~EstimateMarginResponse();
+
+  EstimateMarginResponse(const EstimateMarginResponse& from);
+
+  inline EstimateMarginResponse& operator=(const EstimateMarginResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  EstimateMarginResponse(EstimateMarginResponse&& from) noexcept
+    : EstimateMarginResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline EstimateMarginResponse& operator=(EstimateMarginResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const EstimateMarginResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const EstimateMarginResponse* internal_default_instance() {
+    return reinterpret_cast<const EstimateMarginResponse*>(
+               &_EstimateMarginResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    102;
+
+  void Swap(EstimateMarginResponse* other);
+  friend void swap(EstimateMarginResponse& a, EstimateMarginResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline EstimateMarginResponse* New() const final {
+    return CreateMaybeMessage<EstimateMarginResponse>(nullptr);
+  }
+
+  EstimateMarginResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<EstimateMarginResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const EstimateMarginResponse& from);
+  void MergeFrom(const EstimateMarginResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(EstimateMarginResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .vega.MarginLevels marginLevels = 2;
+  bool has_marginlevels() const;
+  void clear_marginlevels();
+  static const int kMarginLevelsFieldNumber = 2;
+  const ::vega::MarginLevels& marginlevels() const;
+  ::vega::MarginLevels* release_marginlevels();
+  ::vega::MarginLevels* mutable_marginlevels();
+  void set_allocated_marginlevels(::vega::MarginLevels* marginlevels);
+
+  // @@protoc_insertion_point(class_scope:api.EstimateMarginResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::vega::MarginLevels* marginlevels_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
 class ObserveEventsRequest :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.ObserveEventsRequest) */ {
  public:
@@ -12774,7 +13166,7 @@ class ObserveEventsRequest :
                &_ObserveEventsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    100;
+    103;
 
   void Swap(ObserveEventsRequest* other);
   friend void swap(ObserveEventsRequest& a, ObserveEventsRequest& b) {
@@ -12869,6 +13261,12 @@ class ObserveEventsRequest :
   ::std::string* release_partyid();
   void set_allocated_partyid(::std::string* partyid);
 
+  // int64 batchSize = 4;
+  void clear_batchsize();
+  static const int kBatchSizeFieldNumber = 4;
+  ::google::protobuf::int64 batchsize() const;
+  void set_batchsize(::google::protobuf::int64 value);
+
   // @@protoc_insertion_point(class_scope:api.ObserveEventsRequest)
  private:
   class HasBitSetters;
@@ -12878,6 +13276,7 @@ class ObserveEventsRequest :
   mutable std::atomic<int> _type_cached_byte_size_;
   ::google::protobuf::internal::ArenaStringPtr marketid_;
   ::google::protobuf::internal::ArenaStringPtr partyid_;
+  ::google::protobuf::int64 batchsize_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
@@ -12921,7 +13320,7 @@ class ObserveEventsResponse :
                &_ObserveEventsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    101;
+    104;
 
   void Swap(ObserveEventsResponse* other);
   friend void swap(ObserveEventsResponse& a, ObserveEventsResponse& b) {
@@ -13039,7 +13438,7 @@ class WithdrawalsRequest :
                &_WithdrawalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    102;
+    105;
 
   void Swap(WithdrawalsRequest* other);
   friend void swap(WithdrawalsRequest& a, WithdrawalsRequest& b) {
@@ -13159,7 +13558,7 @@ class WithdrawalsResponse :
                &_WithdrawalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    103;
+    106;
 
   void Swap(WithdrawalsResponse* other);
   friend void swap(WithdrawalsResponse& a, WithdrawalsResponse& b) {
@@ -13277,7 +13676,7 @@ class WithdrawalRequest :
                &_WithdrawalRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    104;
+    107;
 
   void Swap(WithdrawalRequest* other);
   friend void swap(WithdrawalRequest& a, WithdrawalRequest& b) {
@@ -13397,7 +13796,7 @@ class WithdrawalResponse :
                &_WithdrawalResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    105;
+    108;
 
   void Swap(WithdrawalResponse* other);
   friend void swap(WithdrawalResponse& a, WithdrawalResponse& b) {
@@ -13512,7 +13911,7 @@ class ERC20WithdrawalApprovalRequest :
                &_ERC20WithdrawalApprovalRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    106;
+    109;
 
   void Swap(ERC20WithdrawalApprovalRequest* other);
   friend void swap(ERC20WithdrawalApprovalRequest& a, ERC20WithdrawalApprovalRequest& b) {
@@ -13632,7 +14031,7 @@ class ERC20WithdrawalApprovalResponse :
                &_ERC20WithdrawalApprovalResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    107;
+    110;
 
   void Swap(ERC20WithdrawalApprovalResponse* other);
   friend void swap(ERC20WithdrawalApprovalResponse& a, ERC20WithdrawalApprovalResponse& b) {
@@ -13804,7 +14203,7 @@ class DepositsRequest :
                &_DepositsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    108;
+    111;
 
   void Swap(DepositsRequest* other);
   friend void swap(DepositsRequest& a, DepositsRequest& b) {
@@ -13924,7 +14323,7 @@ class DepositsResponse :
                &_DepositsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    109;
+    112;
 
   void Swap(DepositsResponse* other);
   friend void swap(DepositsResponse& a, DepositsResponse& b) {
@@ -14042,7 +14441,7 @@ class DepositRequest :
                &_DepositRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    110;
+    113;
 
   void Swap(DepositRequest* other);
   friend void swap(DepositRequest& a, DepositRequest& b) {
@@ -14162,7 +14561,7 @@ class DepositResponse :
                &_DepositResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    111;
+    114;
 
   void Swap(DepositResponse* other);
   friend void swap(DepositResponse& a, DepositResponse& b) {
@@ -14234,6 +14633,229 @@ class DepositResponse :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::vega::Deposit* deposit_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class NetworkParametersRequest :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.NetworkParametersRequest) */ {
+ public:
+  NetworkParametersRequest();
+  virtual ~NetworkParametersRequest();
+
+  NetworkParametersRequest(const NetworkParametersRequest& from);
+
+  inline NetworkParametersRequest& operator=(const NetworkParametersRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  NetworkParametersRequest(NetworkParametersRequest&& from) noexcept
+    : NetworkParametersRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline NetworkParametersRequest& operator=(NetworkParametersRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const NetworkParametersRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const NetworkParametersRequest* internal_default_instance() {
+    return reinterpret_cast<const NetworkParametersRequest*>(
+               &_NetworkParametersRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    115;
+
+  void Swap(NetworkParametersRequest* other);
+  friend void swap(NetworkParametersRequest& a, NetworkParametersRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline NetworkParametersRequest* New() const final {
+    return CreateMaybeMessage<NetworkParametersRequest>(nullptr);
+  }
+
+  NetworkParametersRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<NetworkParametersRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const NetworkParametersRequest& from);
+  void MergeFrom(const NetworkParametersRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(NetworkParametersRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:api.NetworkParametersRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class NetworkParametersResponse :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.NetworkParametersResponse) */ {
+ public:
+  NetworkParametersResponse();
+  virtual ~NetworkParametersResponse();
+
+  NetworkParametersResponse(const NetworkParametersResponse& from);
+
+  inline NetworkParametersResponse& operator=(const NetworkParametersResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  NetworkParametersResponse(NetworkParametersResponse&& from) noexcept
+    : NetworkParametersResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline NetworkParametersResponse& operator=(NetworkParametersResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const NetworkParametersResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const NetworkParametersResponse* internal_default_instance() {
+    return reinterpret_cast<const NetworkParametersResponse*>(
+               &_NetworkParametersResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    116;
+
+  void Swap(NetworkParametersResponse* other);
+  friend void swap(NetworkParametersResponse& a, NetworkParametersResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline NetworkParametersResponse* New() const final {
+    return CreateMaybeMessage<NetworkParametersResponse>(nullptr);
+  }
+
+  NetworkParametersResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<NetworkParametersResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const NetworkParametersResponse& from);
+  void MergeFrom(const NetworkParametersResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(NetworkParametersResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .vega.NetworkParameter networkParameters = 1;
+  int networkparameters_size() const;
+  void clear_networkparameters();
+  static const int kNetworkParametersFieldNumber = 1;
+  ::vega::NetworkParameter* mutable_networkparameters(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::NetworkParameter >*
+      mutable_networkparameters();
+  const ::vega::NetworkParameter& networkparameters(int index) const;
+  ::vega::NetworkParameter* add_networkparameters();
+  const ::google::protobuf::RepeatedPtrField< ::vega::NetworkParameter >&
+      networkparameters() const;
+
+  // @@protoc_insertion_point(class_scope:api.NetworkParametersResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::vega::NetworkParameter > networkparameters_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
@@ -17902,6 +18524,63 @@ inline void MarketDepthSubscribeRequest::set_allocated_marketid(::std::string* m
 
 // -------------------------------------------------------------------
 
+// MarketDepthUpdatesSubscribeRequest
+
+// string marketID = 1 [(.validator.field) = {
+inline void MarketDepthUpdatesSubscribeRequest::clear_marketid() {
+  marketid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& MarketDepthUpdatesSubscribeRequest::marketid() const {
+  // @@protoc_insertion_point(field_get:api.MarketDepthUpdatesSubscribeRequest.marketID)
+  return marketid_.GetNoArena();
+}
+inline void MarketDepthUpdatesSubscribeRequest::set_marketid(const ::std::string& value) {
+
+  marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.MarketDepthUpdatesSubscribeRequest.marketID)
+}
+#if LANG_CXX11
+inline void MarketDepthUpdatesSubscribeRequest::set_marketid(::std::string&& value) {
+
+  marketid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.MarketDepthUpdatesSubscribeRequest.marketID)
+}
+#endif
+inline void MarketDepthUpdatesSubscribeRequest::set_marketid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.MarketDepthUpdatesSubscribeRequest.marketID)
+}
+inline void MarketDepthUpdatesSubscribeRequest::set_marketid(const char* value, size_t size) {
+
+  marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.MarketDepthUpdatesSubscribeRequest.marketID)
+}
+inline ::std::string* MarketDepthUpdatesSubscribeRequest::mutable_marketid() {
+
+  // @@protoc_insertion_point(field_mutable:api.MarketDepthUpdatesSubscribeRequest.marketID)
+  return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* MarketDepthUpdatesSubscribeRequest::release_marketid() {
+  // @@protoc_insertion_point(field_release:api.MarketDepthUpdatesSubscribeRequest.marketID)
+
+  return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void MarketDepthUpdatesSubscribeRequest::set_allocated_marketid(::std::string* marketid) {
+  if (marketid != nullptr) {
+
+  } else {
+
+  }
+  marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
+  // @@protoc_insertion_point(field_set_allocated:api.MarketDepthUpdatesSubscribeRequest.marketID)
+}
+
+// -------------------------------------------------------------------
+
 // PositionsSubscribeRequest
 
 // string partyID = 1;
@@ -17955,6 +18634,59 @@ inline void PositionsSubscribeRequest::set_allocated_partyid(::std::string* part
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.PositionsSubscribeRequest.partyID)
+}
+
+// string marketID = 2;
+inline void PositionsSubscribeRequest::clear_marketid() {
+  marketid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& PositionsSubscribeRequest::marketid() const {
+  // @@protoc_insertion_point(field_get:api.PositionsSubscribeRequest.marketID)
+  return marketid_.GetNoArena();
+}
+inline void PositionsSubscribeRequest::set_marketid(const ::std::string& value) {
+
+  marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.PositionsSubscribeRequest.marketID)
+}
+#if LANG_CXX11
+inline void PositionsSubscribeRequest::set_marketid(::std::string&& value) {
+
+  marketid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.PositionsSubscribeRequest.marketID)
+}
+#endif
+inline void PositionsSubscribeRequest::set_marketid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.PositionsSubscribeRequest.marketID)
+}
+inline void PositionsSubscribeRequest::set_marketid(const char* value, size_t size) {
+
+  marketid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.PositionsSubscribeRequest.marketID)
+}
+inline ::std::string* PositionsSubscribeRequest::mutable_marketid() {
+
+  // @@protoc_insertion_point(field_mutable:api.PositionsSubscribeRequest.marketID)
+  return marketid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* PositionsSubscribeRequest::release_marketid() {
+  // @@protoc_insertion_point(field_release:api.PositionsSubscribeRequest.marketID)
+
+  return marketid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void PositionsSubscribeRequest::set_allocated_marketid(::std::string* marketid) {
+  if (marketid != nullptr) {
+
+  } else {
+
+  }
+  marketid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketid);
+  // @@protoc_insertion_point(field_set_allocated:api.PositionsSubscribeRequest.marketID)
 }
 
 // -------------------------------------------------------------------
@@ -18872,6 +19604,20 @@ inline void MarketDepthResponse::set_allocated_lasttrade(::vega::Trade* lasttrad
   }
   lasttrade_ = lasttrade;
   // @@protoc_insertion_point(field_set_allocated:api.MarketDepthResponse.lastTrade)
+}
+
+// uint64 sequenceNumber = 5;
+inline void MarketDepthResponse::clear_sequencenumber() {
+  sequencenumber_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 MarketDepthResponse::sequencenumber() const {
+  // @@protoc_insertion_point(field_get:api.MarketDepthResponse.sequenceNumber)
+  return sequencenumber_;
+}
+inline void MarketDepthResponse::set_sequencenumber(::google::protobuf::uint64 value) {
+
+  sequencenumber_ = value;
+  // @@protoc_insertion_point(field_set:api.MarketDepthResponse.sequenceNumber)
 }
 
 // -------------------------------------------------------------------
@@ -20435,6 +21181,104 @@ inline void EstimateFeeResponse::set_allocated_fee(::vega::Fee* fee) {
 
 // -------------------------------------------------------------------
 
+// EstimateMarginRequest
+
+// .vega.Order order = 1;
+inline bool EstimateMarginRequest::has_order() const {
+  return this != internal_default_instance() && order_ != nullptr;
+}
+inline const ::vega::Order& EstimateMarginRequest::order() const {
+  const ::vega::Order* p = order_;
+  // @@protoc_insertion_point(field_get:api.EstimateMarginRequest.order)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::Order*>(
+      &::vega::_Order_default_instance_);
+}
+inline ::vega::Order* EstimateMarginRequest::release_order() {
+  // @@protoc_insertion_point(field_release:api.EstimateMarginRequest.order)
+
+  ::vega::Order* temp = order_;
+  order_ = nullptr;
+  return temp;
+}
+inline ::vega::Order* EstimateMarginRequest::mutable_order() {
+
+  if (order_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::Order>(GetArenaNoVirtual());
+    order_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.EstimateMarginRequest.order)
+  return order_;
+}
+inline void EstimateMarginRequest::set_allocated_order(::vega::Order* order) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(order_);
+  }
+  if (order) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      order = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, order, submessage_arena);
+    }
+
+  } else {
+
+  }
+  order_ = order;
+  // @@protoc_insertion_point(field_set_allocated:api.EstimateMarginRequest.order)
+}
+
+// -------------------------------------------------------------------
+
+// EstimateMarginResponse
+
+// .vega.MarginLevels marginLevels = 2;
+inline bool EstimateMarginResponse::has_marginlevels() const {
+  return this != internal_default_instance() && marginlevels_ != nullptr;
+}
+inline const ::vega::MarginLevels& EstimateMarginResponse::marginlevels() const {
+  const ::vega::MarginLevels* p = marginlevels_;
+  // @@protoc_insertion_point(field_get:api.EstimateMarginResponse.marginLevels)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::MarginLevels*>(
+      &::vega::_MarginLevels_default_instance_);
+}
+inline ::vega::MarginLevels* EstimateMarginResponse::release_marginlevels() {
+  // @@protoc_insertion_point(field_release:api.EstimateMarginResponse.marginLevels)
+
+  ::vega::MarginLevels* temp = marginlevels_;
+  marginlevels_ = nullptr;
+  return temp;
+}
+inline ::vega::MarginLevels* EstimateMarginResponse::mutable_marginlevels() {
+
+  if (marginlevels_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::MarginLevels>(GetArenaNoVirtual());
+    marginlevels_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.EstimateMarginResponse.marginLevels)
+  return marginlevels_;
+}
+inline void EstimateMarginResponse::set_allocated_marginlevels(::vega::MarginLevels* marginlevels) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(marginlevels_);
+  }
+  if (marginlevels) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      marginlevels = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, marginlevels, submessage_arena);
+    }
+
+  } else {
+
+  }
+  marginlevels_ = marginlevels;
+  // @@protoc_insertion_point(field_set_allocated:api.EstimateMarginResponse.marginLevels)
+}
+
+// -------------------------------------------------------------------
+
 // ObserveEventsRequest
 
 // repeated .vega.BusEventType type = 1;
@@ -20571,6 +21415,20 @@ inline void ObserveEventsRequest::set_allocated_partyid(::std::string* partyid) 
   }
   partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
   // @@protoc_insertion_point(field_set_allocated:api.ObserveEventsRequest.partyID)
+}
+
+// int64 batchSize = 4;
+inline void ObserveEventsRequest::clear_batchsize() {
+  batchsize_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 ObserveEventsRequest::batchsize() const {
+  // @@protoc_insertion_point(field_get:api.ObserveEventsRequest.batchSize)
+  return batchsize_;
+}
+inline void ObserveEventsRequest::set_batchsize(::google::protobuf::int64 value) {
+
+  batchsize_ = value;
+  // @@protoc_insertion_point(field_set:api.ObserveEventsRequest.batchSize)
 }
 
 // -------------------------------------------------------------------
@@ -21279,9 +22137,54 @@ inline void DepositResponse::set_allocated_deposit(::vega::Deposit* deposit) {
   // @@protoc_insertion_point(field_set_allocated:api.DepositResponse.deposit)
 }
 
+// -------------------------------------------------------------------
+
+// NetworkParametersRequest
+
+// -------------------------------------------------------------------
+
+// NetworkParametersResponse
+
+// repeated .vega.NetworkParameter networkParameters = 1;
+inline int NetworkParametersResponse::networkparameters_size() const {
+  return networkparameters_.size();
+}
+inline ::vega::NetworkParameter* NetworkParametersResponse::mutable_networkparameters(int index) {
+  // @@protoc_insertion_point(field_mutable:api.NetworkParametersResponse.networkParameters)
+  return networkparameters_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::NetworkParameter >*
+NetworkParametersResponse::mutable_networkparameters() {
+  // @@protoc_insertion_point(field_mutable_list:api.NetworkParametersResponse.networkParameters)
+  return &networkparameters_;
+}
+inline const ::vega::NetworkParameter& NetworkParametersResponse::networkparameters(int index) const {
+  // @@protoc_insertion_point(field_get:api.NetworkParametersResponse.networkParameters)
+  return networkparameters_.Get(index);
+}
+inline ::vega::NetworkParameter* NetworkParametersResponse::add_networkparameters() {
+  // @@protoc_insertion_point(field_add:api.NetworkParametersResponse.networkParameters)
+  return networkparameters_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::NetworkParameter >&
+NetworkParametersResponse::networkparameters() const {
+  // @@protoc_insertion_point(field_list:api.NetworkParametersResponse.networkParameters)
+  return networkparameters_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
