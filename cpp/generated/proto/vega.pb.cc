@@ -1766,13 +1766,14 @@ const char descriptor_table_protodef_proto_2fvega_2eproto[] =
   "FEE_PAY\020\014*\205\001\n\021NodeSignatureKind\022#\n\037NODE_"
   "SIGNATURE_KIND_UNSPECIFIED\020\000\022!\n\035NODE_SIG"
   "NATURE_KIND_ASSET_NEW\020\001\022(\n$NODE_SIGNATUR"
-  "E_KIND_ASSET_WITHDRAWAL\020\002B!Z\037code.vegapr"
-  "otocol.io/vega/protob\006proto3"
+  "E_KIND_ASSET_WITHDRAWAL\020\002B7\n\024io.vegaprot"
+  "ocol.vegaZ\037code.vegaprotocol.io/vega/pro"
+  "tob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fvega_2eproto = {
   false, InitDefaults_proto_2fvega_2eproto, 
   descriptor_table_protodef_proto_2fvega_2eproto,
-  "proto/vega.proto", &assign_descriptors_table_proto_2fvega_2eproto, 9988,
+  "proto/vega.proto", &assign_descriptors_table_proto_2fvega_2eproto, 10010,
 };
 
 void AddDescriptors_proto_2fvega_2eproto() {

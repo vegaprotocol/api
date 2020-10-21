@@ -657,13 +657,13 @@ const char descriptor_table_protodef_proto_2fchain_5fevents_2eproto[] =
   "ssetEventH\000\022\"\n\005erc20\030\352\007 \001(\0132\020.vega.ERC20"
   "EventH\000\022\036\n\003btc\030\353\007 \001(\0132\016.vega.BTCEventH\000\022"
   "*\n\tvalidator\030\354\007 \001(\0132\024.vega.ValidatorEven"
-  "tH\000B\007\n\005eventB!Z\037code.vegaprotocol.io/veg"
-  "a/protob\006proto3"
+  "tH\000B\007\n\005eventB7\n\024io.vegaprotocol.vegaZ\037co"
+  "de.vegaprotocol.io/vega/protob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fchain_5fevents_2eproto = {
   false, InitDefaults_proto_2fchain_5fevents_2eproto, 
   descriptor_table_protodef_proto_2fchain_5fevents_2eproto,
-  "proto/chain_events.proto", &assign_descriptors_table_proto_2fchain_5fevents_2eproto, 1815,
+  "proto/chain_events.proto", &assign_descriptors_table_proto_2fchain_5fevents_2eproto, 1837,
 };
 
 void AddDescriptors_proto_2fchain_5fevents_2eproto() {
