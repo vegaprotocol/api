@@ -497,7 +497,7 @@ class trading_dataStub(object):
                 request_serializer=proto_dot_api_dot_trading__pb2.ObserveProposalVotesRequest.SerializeToString,
                 response_deserializer=proto_dot_governance__pb2.Vote.FromString,
                 )
-        self.ObserveEventBus = channel.unary_stream(
+        self.ObserveEventBus = channel.stream_stream(
                 '/api.trading_data/ObserveEventBus',
                 request_serializer=proto_dot_api_dot_trading__pb2.ObserveEventsRequest.SerializeToString,
                 response_deserializer=proto_dot_api_dot_trading__pb2.ObserveEventsResponse.FromString,
@@ -531,6 +531,11 @@ class trading_dataStub(object):
                 '/api.trading_data/MarketDepthSubscribe',
                 request_serializer=proto_dot_api_dot_trading__pb2.MarketDepthSubscribeRequest.SerializeToString,
                 response_deserializer=proto_dot_vega__pb2.MarketDepth.FromString,
+                )
+        self.MarketDepthUpdatesSubscribe = channel.unary_stream(
+                '/api.trading_data/MarketDepthUpdatesSubscribe',
+                request_serializer=proto_dot_api_dot_trading__pb2.MarketDepthUpdatesSubscribeRequest.SerializeToString,
+                response_deserializer=proto_dot_vega__pb2.MarketDepthUpdate.FromString,
                 )
         self.MarketsDataSubscribe = channel.unary_stream(
                 '/api.trading_data/MarketsDataSubscribe',
@@ -577,6 +582,11 @@ class trading_dataStub(object):
                 request_serializer=proto_dot_api_dot_trading__pb2.EstimateFeeRequest.SerializeToString,
                 response_deserializer=proto_dot_api_dot_trading__pb2.EstimateFeeResponse.FromString,
                 )
+        self.EstimateMargin = channel.unary_unary(
+                '/api.trading_data/EstimateMargin',
+                request_serializer=proto_dot_api_dot_trading__pb2.EstimateMarginRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.EstimateMarginResponse.FromString,
+                )
         self.ERC20WithdrawalApproval = channel.unary_unary(
                 '/api.trading_data/ERC20WithdrawalApproval',
                 request_serializer=proto_dot_api_dot_trading__pb2.ERC20WithdrawalApprovalRequest.SerializeToString,
@@ -601,6 +611,11 @@ class trading_dataStub(object):
                 '/api.trading_data/Deposits',
                 request_serializer=proto_dot_api_dot_trading__pb2.DepositsRequest.SerializeToString,
                 response_deserializer=proto_dot_api_dot_trading__pb2.DepositsResponse.FromString,
+                )
+        self.NetworkParameters = channel.unary_unary(
+                '/api.trading_data/NetworkParameters',
+                request_serializer=proto_dot_api_dot_trading__pb2.NetworkParametersRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.NetworkParametersResponse.FromString,
                 )
 
 
@@ -877,7 +892,7 @@ class trading_dataServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ObserveEventBus(self, request, context):
+    def ObserveEventBus(self, request_iterator, context):
         """Subscribe to a stream of events from the core
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -923,6 +938,13 @@ class trading_dataServicer(object):
 
     def MarketDepthSubscribe(self, request, context):
         """Subscribe to a stream of Market Depth
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def MarketDepthUpdatesSubscribe(self, request, context):
+        """Subscribe to a stream of Market Depth PriceLevel Updates
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -991,6 +1013,13 @@ class trading_dataServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def EstimateMargin(self, request, context):
+        """Get an estimate for the margin required for a new order
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ERC20WithdrawalApproval(self, request, context):
         """Get the bundle approval for an ERC20 withdrawal
         these data are being used to bundle the call to the smart contract on the ethereum bridge
@@ -1022,6 +1051,13 @@ class trading_dataServicer(object):
 
     def Deposits(self, request, context):
         """Get withdrawals for a party
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def NetworkParameters(self, request, context):
+        """Get the network parameters
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1210,7 +1246,7 @@ def add_trading_dataServicer_to_server(servicer, server):
                     request_deserializer=proto_dot_api_dot_trading__pb2.ObserveProposalVotesRequest.FromString,
                     response_serializer=proto_dot_governance__pb2.Vote.SerializeToString,
             ),
-            'ObserveEventBus': grpc.unary_stream_rpc_method_handler(
+            'ObserveEventBus': grpc.stream_stream_rpc_method_handler(
                     servicer.ObserveEventBus,
                     request_deserializer=proto_dot_api_dot_trading__pb2.ObserveEventsRequest.FromString,
                     response_serializer=proto_dot_api_dot_trading__pb2.ObserveEventsResponse.SerializeToString,
@@ -1244,6 +1280,11 @@ def add_trading_dataServicer_to_server(servicer, server):
                     servicer.MarketDepthSubscribe,
                     request_deserializer=proto_dot_api_dot_trading__pb2.MarketDepthSubscribeRequest.FromString,
                     response_serializer=proto_dot_vega__pb2.MarketDepth.SerializeToString,
+            ),
+            'MarketDepthUpdatesSubscribe': grpc.unary_stream_rpc_method_handler(
+                    servicer.MarketDepthUpdatesSubscribe,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.MarketDepthUpdatesSubscribeRequest.FromString,
+                    response_serializer=proto_dot_vega__pb2.MarketDepthUpdate.SerializeToString,
             ),
             'MarketsDataSubscribe': grpc.unary_stream_rpc_method_handler(
                     servicer.MarketsDataSubscribe,
@@ -1290,6 +1331,11 @@ def add_trading_dataServicer_to_server(servicer, server):
                     request_deserializer=proto_dot_api_dot_trading__pb2.EstimateFeeRequest.FromString,
                     response_serializer=proto_dot_api_dot_trading__pb2.EstimateFeeResponse.SerializeToString,
             ),
+            'EstimateMargin': grpc.unary_unary_rpc_method_handler(
+                    servicer.EstimateMargin,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.EstimateMarginRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.EstimateMarginResponse.SerializeToString,
+            ),
             'ERC20WithdrawalApproval': grpc.unary_unary_rpc_method_handler(
                     servicer.ERC20WithdrawalApproval,
                     request_deserializer=proto_dot_api_dot_trading__pb2.ERC20WithdrawalApprovalRequest.FromString,
@@ -1314,6 +1360,11 @@ def add_trading_dataServicer_to_server(servicer, server):
                     servicer.Deposits,
                     request_deserializer=proto_dot_api_dot_trading__pb2.DepositsRequest.FromString,
                     response_serializer=proto_dot_api_dot_trading__pb2.DepositsResponse.SerializeToString,
+            ),
+            'NetworkParameters': grpc.unary_unary_rpc_method_handler(
+                    servicer.NetworkParameters,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.NetworkParametersRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.NetworkParametersResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1938,7 +1989,7 @@ class trading_data(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ObserveEventBus(request,
+    def ObserveEventBus(request_iterator,
             target,
             options=(),
             channel_credentials=None,
@@ -1948,7 +1999,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/api.trading_data/ObserveEventBus',
+        return grpc.experimental.stream_stream(request_iterator, target, '/api.trading_data/ObserveEventBus',
             proto_dot_api_dot_trading__pb2.ObserveEventsRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.ObserveEventsResponse.FromString,
             options, channel_credentials,
@@ -2053,6 +2104,23 @@ class trading_data(object):
         return grpc.experimental.unary_stream(request, target, '/api.trading_data/MarketDepthSubscribe',
             proto_dot_api_dot_trading__pb2.MarketDepthSubscribeRequest.SerializeToString,
             proto_dot_vega__pb2.MarketDepth.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def MarketDepthUpdatesSubscribe(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/api.trading_data/MarketDepthUpdatesSubscribe',
+            proto_dot_api_dot_trading__pb2.MarketDepthUpdatesSubscribeRequest.SerializeToString,
+            proto_dot_vega__pb2.MarketDepthUpdate.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2210,6 +2278,23 @@ class trading_data(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def EstimateMargin(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.trading_data/EstimateMargin',
+            proto_dot_api_dot_trading__pb2.EstimateMarginRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.EstimateMarginResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def ERC20WithdrawalApproval(request,
             target,
             options=(),
@@ -2291,5 +2376,22 @@ class trading_data(object):
         return grpc.experimental.unary_unary(request, target, '/api.trading_data/Deposits',
             proto_dot_api_dot_trading__pb2.DepositsRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.DepositsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def NetworkParameters(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.trading_data/NetworkParameters',
+            proto_dot_api_dot_trading__pb2.NetworkParametersRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.NetworkParametersResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
