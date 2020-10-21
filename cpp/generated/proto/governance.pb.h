@@ -37,6 +37,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "github.com/mwitkow/go-proto-validators/validator.pb.h"
 #include "proto/markets.pb.h"
+#include "proto/vega.pb.h"
 #include "proto/assets.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -48,7 +49,7 @@ struct TableStruct_proto_2fgovernance_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[15]
+  static const ::google::protobuf::internal::ParseTable schema[13]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -56,9 +57,6 @@ struct TableStruct_proto_2fgovernance_2eproto {
 };
 void AddDescriptors_proto_2fgovernance_2eproto();
 namespace vega {
-class FeeFactorsConfiguration;
-class FeeFactorsConfigurationDefaultTypeInternal;
-extern FeeFactorsConfigurationDefaultTypeInternal _FeeFactorsConfiguration_default_instance_;
 class FutureProduct;
 class FutureProductDefaultTypeInternal;
 extern FutureProductDefaultTypeInternal _FutureProduct_default_instance_;
@@ -74,9 +72,6 @@ extern GovernanceData_YesPartyEntry_DoNotUseDefaultTypeInternal _GovernanceData_
 class InstrumentConfiguration;
 class InstrumentConfigurationDefaultTypeInternal;
 extern InstrumentConfigurationDefaultTypeInternal _InstrumentConfiguration_default_instance_;
-class NetworkConfiguration;
-class NetworkConfigurationDefaultTypeInternal;
-extern NetworkConfigurationDefaultTypeInternal _NetworkConfiguration_default_instance_;
 class NewAsset;
 class NewAssetDefaultTypeInternal;
 extern NewAssetDefaultTypeInternal _NewAsset_default_instance_;
@@ -95,29 +90,27 @@ extern ProposalTermsDefaultTypeInternal _ProposalTerms_default_instance_;
 class UpdateMarket;
 class UpdateMarketDefaultTypeInternal;
 extern UpdateMarketDefaultTypeInternal _UpdateMarket_default_instance_;
-class UpdateNetwork;
-class UpdateNetworkDefaultTypeInternal;
-extern UpdateNetworkDefaultTypeInternal _UpdateNetwork_default_instance_;
+class UpdateNetworkParameter;
+class UpdateNetworkParameterDefaultTypeInternal;
+extern UpdateNetworkParameterDefaultTypeInternal _UpdateNetworkParameter_default_instance_;
 class Vote;
 class VoteDefaultTypeInternal;
 extern VoteDefaultTypeInternal _Vote_default_instance_;
 }  // namespace vega
 namespace google {
 namespace protobuf {
-template<> ::vega::FeeFactorsConfiguration* Arena::CreateMaybeMessage<::vega::FeeFactorsConfiguration>(Arena*);
 template<> ::vega::FutureProduct* Arena::CreateMaybeMessage<::vega::FutureProduct>(Arena*);
 template<> ::vega::GovernanceData* Arena::CreateMaybeMessage<::vega::GovernanceData>(Arena*);
 template<> ::vega::GovernanceData_NoPartyEntry_DoNotUse* Arena::CreateMaybeMessage<::vega::GovernanceData_NoPartyEntry_DoNotUse>(Arena*);
 template<> ::vega::GovernanceData_YesPartyEntry_DoNotUse* Arena::CreateMaybeMessage<::vega::GovernanceData_YesPartyEntry_DoNotUse>(Arena*);
 template<> ::vega::InstrumentConfiguration* Arena::CreateMaybeMessage<::vega::InstrumentConfiguration>(Arena*);
-template<> ::vega::NetworkConfiguration* Arena::CreateMaybeMessage<::vega::NetworkConfiguration>(Arena*);
 template<> ::vega::NewAsset* Arena::CreateMaybeMessage<::vega::NewAsset>(Arena*);
 template<> ::vega::NewMarket* Arena::CreateMaybeMessage<::vega::NewMarket>(Arena*);
 template<> ::vega::NewMarketConfiguration* Arena::CreateMaybeMessage<::vega::NewMarketConfiguration>(Arena*);
 template<> ::vega::Proposal* Arena::CreateMaybeMessage<::vega::Proposal>(Arena*);
 template<> ::vega::ProposalTerms* Arena::CreateMaybeMessage<::vega::ProposalTerms>(Arena*);
 template<> ::vega::UpdateMarket* Arena::CreateMaybeMessage<::vega::UpdateMarket>(Arena*);
-template<> ::vega::UpdateNetwork* Arena::CreateMaybeMessage<::vega::UpdateNetwork>(Arena*);
+template<> ::vega::UpdateNetworkParameter* Arena::CreateMaybeMessage<::vega::UpdateNetworkParameter>(Arena*);
 template<> ::vega::Vote* Arena::CreateMaybeMessage<::vega::Vote>(Arena*);
 }  // namespace protobuf
 }  // namespace google
@@ -191,12 +184,18 @@ enum ProposalError {
   PROPOSAL_ERROR_MISSING_ERC20_CONTRACT_ADDRESS = 15,
   PROPOSAL_ERROR_INVALID_ASSET = 16,
   PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS = 17,
+  PROPOSAL_ERROR_NO_RISK_PARAMETERS = 18,
+  PROPOSAL_ERROR_NETWORK_PARAMETER_INVALID_KEY = 19,
+  PROPOSAL_ERROR_NETWORK_PARAMETER_INVALID_VALUE = 20,
+  PROPOSAL_ERROR_NETWORK_PARAMETER_VALIDATION_FAILED = 21,
+  PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_SMALL = 22,
+  PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE = 23,
   ProposalError_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   ProposalError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool ProposalError_IsValid(int value);
 const ProposalError ProposalError_MIN = PROPOSAL_ERROR_UNSPECIFIED;
-const ProposalError ProposalError_MAX = PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS;
+const ProposalError ProposalError_MAX = PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE;
 const int ProposalError_ARRAYSIZE = ProposalError_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* ProposalError_descriptor();
@@ -210,337 +209,6 @@ inline bool ProposalError_Parse(
     ProposalError_descriptor(), name, value);
 }
 // ===================================================================
-
-class NetworkConfiguration :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.NetworkConfiguration) */ {
- public:
-  NetworkConfiguration();
-  virtual ~NetworkConfiguration();
-
-  NetworkConfiguration(const NetworkConfiguration& from);
-
-  inline NetworkConfiguration& operator=(const NetworkConfiguration& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  NetworkConfiguration(NetworkConfiguration&& from) noexcept
-    : NetworkConfiguration() {
-    *this = ::std::move(from);
-  }
-
-  inline NetworkConfiguration& operator=(NetworkConfiguration&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const NetworkConfiguration& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const NetworkConfiguration* internal_default_instance() {
-    return reinterpret_cast<const NetworkConfiguration*>(
-               &_NetworkConfiguration_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    0;
-
-  void Swap(NetworkConfiguration* other);
-  friend void swap(NetworkConfiguration& a, NetworkConfiguration& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline NetworkConfiguration* New() const final {
-    return CreateMaybeMessage<NetworkConfiguration>(nullptr);
-  }
-
-  NetworkConfiguration* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<NetworkConfiguration>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const NetworkConfiguration& from);
-  void MergeFrom(const NetworkConfiguration& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(NetworkConfiguration* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .vega.ScalingFactors marginConfiguration = 9;
-  bool has_marginconfiguration() const;
-  void clear_marginconfiguration();
-  static const int kMarginConfigurationFieldNumber = 9;
-  const ::vega::ScalingFactors& marginconfiguration() const;
-  ::vega::ScalingFactors* release_marginconfiguration();
-  ::vega::ScalingFactors* mutable_marginconfiguration();
-  void set_allocated_marginconfiguration(::vega::ScalingFactors* marginconfiguration);
-
-  // .vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;
-  bool has_feefactorsconfiguration() const;
-  void clear_feefactorsconfiguration();
-  static const int kFeeFactorsConfigurationFieldNumber = 10;
-  const ::vega::FeeFactorsConfiguration& feefactorsconfiguration() const;
-  ::vega::FeeFactorsConfiguration* release_feefactorsconfiguration();
-  ::vega::FeeFactorsConfiguration* mutable_feefactorsconfiguration();
-  void set_allocated_feefactorsconfiguration(::vega::FeeFactorsConfiguration* feefactorsconfiguration);
-
-  // int64 minCloseInSeconds = 1;
-  void clear_mincloseinseconds();
-  static const int kMinCloseInSecondsFieldNumber = 1;
-  ::google::protobuf::int64 mincloseinseconds() const;
-  void set_mincloseinseconds(::google::protobuf::int64 value);
-
-  // int64 maxCloseInSeconds = 2;
-  void clear_maxcloseinseconds();
-  static const int kMaxCloseInSecondsFieldNumber = 2;
-  ::google::protobuf::int64 maxcloseinseconds() const;
-  void set_maxcloseinseconds(::google::protobuf::int64 value);
-
-  // int64 minEnactInSeconds = 3;
-  void clear_minenactinseconds();
-  static const int kMinEnactInSecondsFieldNumber = 3;
-  ::google::protobuf::int64 minenactinseconds() const;
-  void set_minenactinseconds(::google::protobuf::int64 value);
-
-  // int64 maxEnactInSeconds = 4;
-  void clear_maxenactinseconds();
-  static const int kMaxEnactInSecondsFieldNumber = 4;
-  ::google::protobuf::int64 maxenactinseconds() const;
-  void set_maxenactinseconds(::google::protobuf::int64 value);
-
-  // float requiredParticipation = 5;
-  void clear_requiredparticipation();
-  static const int kRequiredParticipationFieldNumber = 5;
-  float requiredparticipation() const;
-  void set_requiredparticipation(float value);
-
-  // float requiredMajority = 6;
-  void clear_requiredmajority();
-  static const int kRequiredMajorityFieldNumber = 6;
-  float requiredmajority() const;
-  void set_requiredmajority(float value);
-
-  // float minProposerBalance = 7;
-  void clear_minproposerbalance();
-  static const int kMinProposerBalanceFieldNumber = 7;
-  float minproposerbalance() const;
-  void set_minproposerbalance(float value);
-
-  // float minVoterBalance = 8;
-  void clear_minvoterbalance();
-  static const int kMinVoterBalanceFieldNumber = 8;
-  float minvoterbalance() const;
-  void set_minvoterbalance(float value);
-
-  // @@protoc_insertion_point(class_scope:vega.NetworkConfiguration)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::vega::ScalingFactors* marginconfiguration_;
-  ::vega::FeeFactorsConfiguration* feefactorsconfiguration_;
-  ::google::protobuf::int64 mincloseinseconds_;
-  ::google::protobuf::int64 maxcloseinseconds_;
-  ::google::protobuf::int64 minenactinseconds_;
-  ::google::protobuf::int64 maxenactinseconds_;
-  float requiredparticipation_;
-  float requiredmajority_;
-  float minproposerbalance_;
-  float minvoterbalance_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_proto_2fgovernance_2eproto;
-};
-// -------------------------------------------------------------------
-
-class FeeFactorsConfiguration :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.FeeFactorsConfiguration) */ {
- public:
-  FeeFactorsConfiguration();
-  virtual ~FeeFactorsConfiguration();
-
-  FeeFactorsConfiguration(const FeeFactorsConfiguration& from);
-
-  inline FeeFactorsConfiguration& operator=(const FeeFactorsConfiguration& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  FeeFactorsConfiguration(FeeFactorsConfiguration&& from) noexcept
-    : FeeFactorsConfiguration() {
-    *this = ::std::move(from);
-  }
-
-  inline FeeFactorsConfiguration& operator=(FeeFactorsConfiguration&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const FeeFactorsConfiguration& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const FeeFactorsConfiguration* internal_default_instance() {
-    return reinterpret_cast<const FeeFactorsConfiguration*>(
-               &_FeeFactorsConfiguration_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    1;
-
-  void Swap(FeeFactorsConfiguration* other);
-  friend void swap(FeeFactorsConfiguration& a, FeeFactorsConfiguration& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline FeeFactorsConfiguration* New() const final {
-    return CreateMaybeMessage<FeeFactorsConfiguration>(nullptr);
-  }
-
-  FeeFactorsConfiguration* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<FeeFactorsConfiguration>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const FeeFactorsConfiguration& from);
-  void MergeFrom(const FeeFactorsConfiguration& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(FeeFactorsConfiguration* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string infrastructureFee = 1;
-  void clear_infrastructurefee();
-  static const int kInfrastructureFeeFieldNumber = 1;
-  const ::std::string& infrastructurefee() const;
-  void set_infrastructurefee(const ::std::string& value);
-  #if LANG_CXX11
-  void set_infrastructurefee(::std::string&& value);
-  #endif
-  void set_infrastructurefee(const char* value);
-  void set_infrastructurefee(const char* value, size_t size);
-  ::std::string* mutable_infrastructurefee();
-  ::std::string* release_infrastructurefee();
-  void set_allocated_infrastructurefee(::std::string* infrastructurefee);
-
-  // string makerFee = 2;
-  void clear_makerfee();
-  static const int kMakerFeeFieldNumber = 2;
-  const ::std::string& makerfee() const;
-  void set_makerfee(const ::std::string& value);
-  #if LANG_CXX11
-  void set_makerfee(::std::string&& value);
-  #endif
-  void set_makerfee(const char* value);
-  void set_makerfee(const char* value, size_t size);
-  ::std::string* mutable_makerfee();
-  ::std::string* release_makerfee();
-  void set_allocated_makerfee(::std::string* makerfee);
-
-  // string liquidityFee = 3;
-  void clear_liquidityfee();
-  static const int kLiquidityFeeFieldNumber = 3;
-  const ::std::string& liquidityfee() const;
-  void set_liquidityfee(const ::std::string& value);
-  #if LANG_CXX11
-  void set_liquidityfee(::std::string&& value);
-  #endif
-  void set_liquidityfee(const char* value);
-  void set_liquidityfee(const char* value, size_t size);
-  ::std::string* mutable_liquidityfee();
-  ::std::string* release_liquidityfee();
-  void set_allocated_liquidityfee(::std::string* liquidityfee);
-
-  // @@protoc_insertion_point(class_scope:vega.FeeFactorsConfiguration)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr infrastructurefee_;
-  ::google::protobuf::internal::ArenaStringPtr makerfee_;
-  ::google::protobuf::internal::ArenaStringPtr liquidityfee_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_proto_2fgovernance_2eproto;
-};
-// -------------------------------------------------------------------
 
 class FutureProduct :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.FutureProduct) */ {
@@ -580,7 +248,7 @@ class FutureProduct :
                &_FutureProduct_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    0;
 
   void Swap(FutureProduct* other);
   friend void swap(FutureProduct& a, FutureProduct& b) {
@@ -720,7 +388,7 @@ class InstrumentConfiguration :
                &_InstrumentConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    1;
 
   void Swap(InstrumentConfiguration* other);
   friend void swap(InstrumentConfiguration& a, InstrumentConfiguration& b) {
@@ -918,7 +586,7 @@ class NewMarketConfiguration :
                &_NewMarketConfiguration_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    2;
 
   void Swap(NewMarketConfiguration* other);
   friend void swap(NewMarketConfiguration& a, NewMarketConfiguration& b) {
@@ -1006,6 +674,15 @@ class NewMarketConfiguration :
   ::vega::InstrumentConfiguration* mutable_instrument();
   void set_allocated_instrument(::vega::InstrumentConfiguration* instrument);
 
+  // .vega.PriceMonitoringSettings priceMonitoringSettings = 5;
+  bool has_pricemonitoringsettings() const;
+  void clear_pricemonitoringsettings();
+  static const int kPriceMonitoringSettingsFieldNumber = 5;
+  const ::vega::PriceMonitoringSettings& pricemonitoringsettings() const;
+  ::vega::PriceMonitoringSettings* release_pricemonitoringsettings();
+  ::vega::PriceMonitoringSettings* mutable_pricemonitoringsettings();
+  void set_allocated_pricemonitoringsettings(::vega::PriceMonitoringSettings* pricemonitoringsettings);
+
   // uint64 decimalPlaces = 2 [(.validator.field) = {
   void clear_decimalplaces();
   static const int kDecimalPlacesFieldNumber = 2;
@@ -1075,6 +752,7 @@ class NewMarketConfiguration :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField<::std::string> metadata_;
   ::vega::InstrumentConfiguration* instrument_;
+  ::vega::PriceMonitoringSettings* pricemonitoringsettings_;
   ::google::protobuf::uint64 decimalplaces_;
   ::google::protobuf::int64 openingauctionduration_;
   union RiskParametersUnion {
@@ -1132,7 +810,7 @@ class NewMarket :
                &_NewMarket_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    3;
 
   void Swap(NewMarket* other);
   friend void swap(NewMarket& a, NewMarket& b) {
@@ -1247,7 +925,7 @@ class UpdateMarket :
                &_UpdateMarket_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    4;
 
   void Swap(UpdateMarket* other);
   friend void swap(UpdateMarket& a, UpdateMarket& b) {
@@ -1314,25 +992,25 @@ class UpdateMarket :
 };
 // -------------------------------------------------------------------
 
-class UpdateNetwork :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.UpdateNetwork) */ {
+class UpdateNetworkParameter :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.UpdateNetworkParameter) */ {
  public:
-  UpdateNetwork();
-  virtual ~UpdateNetwork();
+  UpdateNetworkParameter();
+  virtual ~UpdateNetworkParameter();
 
-  UpdateNetwork(const UpdateNetwork& from);
+  UpdateNetworkParameter(const UpdateNetworkParameter& from);
 
-  inline UpdateNetwork& operator=(const UpdateNetwork& from) {
+  inline UpdateNetworkParameter& operator=(const UpdateNetworkParameter& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  UpdateNetwork(UpdateNetwork&& from) noexcept
-    : UpdateNetwork() {
+  UpdateNetworkParameter(UpdateNetworkParameter&& from) noexcept
+    : UpdateNetworkParameter() {
     *this = ::std::move(from);
   }
 
-  inline UpdateNetwork& operator=(UpdateNetwork&& from) noexcept {
+  inline UpdateNetworkParameter& operator=(UpdateNetworkParameter&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1344,34 +1022,34 @@ class UpdateNetwork :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const UpdateNetwork& default_instance();
+  static const UpdateNetworkParameter& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const UpdateNetwork* internal_default_instance() {
-    return reinterpret_cast<const UpdateNetwork*>(
-               &_UpdateNetwork_default_instance_);
+  static inline const UpdateNetworkParameter* internal_default_instance() {
+    return reinterpret_cast<const UpdateNetworkParameter*>(
+               &_UpdateNetworkParameter_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    5;
 
-  void Swap(UpdateNetwork* other);
-  friend void swap(UpdateNetwork& a, UpdateNetwork& b) {
+  void Swap(UpdateNetworkParameter* other);
+  friend void swap(UpdateNetworkParameter& a, UpdateNetworkParameter& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline UpdateNetwork* New() const final {
-    return CreateMaybeMessage<UpdateNetwork>(nullptr);
+  inline UpdateNetworkParameter* New() const final {
+    return CreateMaybeMessage<UpdateNetworkParameter>(nullptr);
   }
 
-  UpdateNetwork* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<UpdateNetwork>(arena);
+  UpdateNetworkParameter* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateNetworkParameter>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const UpdateNetwork& from);
-  void MergeFrom(const UpdateNetwork& from);
+  void CopyFrom(const UpdateNetworkParameter& from);
+  void MergeFrom(const UpdateNetworkParameter& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1393,7 +1071,7 @@ class UpdateNetwork :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(UpdateNetwork* other);
+  void InternalSwap(UpdateNetworkParameter* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -1409,21 +1087,21 @@ class UpdateNetwork :
 
   // accessors -------------------------------------------------------
 
-  // .vega.NetworkConfiguration changes = 1 [(.validator.field) = {
+  // .vega.NetworkParameter changes = 1 [(.validator.field) = {
   bool has_changes() const;
   void clear_changes();
   static const int kChangesFieldNumber = 1;
-  const ::vega::NetworkConfiguration& changes() const;
-  ::vega::NetworkConfiguration* release_changes();
-  ::vega::NetworkConfiguration* mutable_changes();
-  void set_allocated_changes(::vega::NetworkConfiguration* changes);
+  const ::vega::NetworkParameter& changes() const;
+  ::vega::NetworkParameter* release_changes();
+  ::vega::NetworkParameter* mutable_changes();
+  void set_allocated_changes(::vega::NetworkParameter* changes);
 
-  // @@protoc_insertion_point(class_scope:vega.UpdateNetwork)
+  // @@protoc_insertion_point(class_scope:vega.UpdateNetworkParameter)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::vega::NetworkConfiguration* changes_;
+  ::vega::NetworkParameter* changes_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fgovernance_2eproto;
 };
@@ -1467,7 +1145,7 @@ class NewAsset :
                &_NewAsset_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    6;
 
   void Swap(NewAsset* other);
   friend void swap(NewAsset& a, NewAsset& b) {
@@ -1579,7 +1257,7 @@ class ProposalTerms :
   enum ChangeCase {
     kUpdateMarket = 101,
     kNewMarket = 102,
-    kUpdateNetwork = 103,
+    kUpdateNetworkParameter = 103,
     kNewAsset = 104,
     CHANGE_NOT_SET = 0,
   };
@@ -1590,7 +1268,7 @@ class ProposalTerms :
                &_ProposalTerms_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    7;
 
   void Swap(ProposalTerms* other);
   friend void swap(ProposalTerms& a, ProposalTerms& b) {
@@ -1683,14 +1361,14 @@ class ProposalTerms :
   ::vega::NewMarket* mutable_newmarket();
   void set_allocated_newmarket(::vega::NewMarket* newmarket);
 
-  // .vega.UpdateNetwork updateNetwork = 103;
-  bool has_updatenetwork() const;
-  void clear_updatenetwork();
-  static const int kUpdateNetworkFieldNumber = 103;
-  const ::vega::UpdateNetwork& updatenetwork() const;
-  ::vega::UpdateNetwork* release_updatenetwork();
-  ::vega::UpdateNetwork* mutable_updatenetwork();
-  void set_allocated_updatenetwork(::vega::UpdateNetwork* updatenetwork);
+  // .vega.UpdateNetworkParameter updateNetworkParameter = 103;
+  bool has_updatenetworkparameter() const;
+  void clear_updatenetworkparameter();
+  static const int kUpdateNetworkParameterFieldNumber = 103;
+  const ::vega::UpdateNetworkParameter& updatenetworkparameter() const;
+  ::vega::UpdateNetworkParameter* release_updatenetworkparameter();
+  ::vega::UpdateNetworkParameter* mutable_updatenetworkparameter();
+  void set_allocated_updatenetworkparameter(::vega::UpdateNetworkParameter* updatenetworkparameter);
 
   // .vega.NewAsset newAsset = 104;
   bool has_newasset() const;
@@ -1708,7 +1386,7 @@ class ProposalTerms :
   class HasBitSetters;
   void set_has_updatemarket();
   void set_has_newmarket();
-  void set_has_updatenetwork();
+  void set_has_updatenetworkparameter();
   void set_has_newasset();
 
   inline bool has_change() const;
@@ -1722,7 +1400,7 @@ class ProposalTerms :
     ChangeUnion() {}
     ::vega::UpdateMarket* updatemarket_;
     ::vega::NewMarket* newmarket_;
-    ::vega::UpdateNetwork* updatenetwork_;
+    ::vega::UpdateNetworkParameter* updatenetworkparameter_;
     ::vega::NewAsset* newasset_;
   } change_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -1818,7 +1496,7 @@ class GovernanceData :
                &_GovernanceData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    10;
 
   void Swap(GovernanceData* other);
   friend void swap(GovernanceData& a, GovernanceData& b) {
@@ -1990,7 +1668,7 @@ class Proposal :
                &_Proposal_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    11;
 
   void Swap(Proposal* other);
   friend void swap(Proposal& a, Proposal& b) {
@@ -2209,7 +1887,7 @@ class Vote :
                &_Vote_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    12;
 
   void Swap(Vote* other);
   friend void swap(Vote& a, Vote& b) {
@@ -2355,381 +2033,6 @@ class Vote :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// NetworkConfiguration
-
-// int64 minCloseInSeconds = 1;
-inline void NetworkConfiguration::clear_mincloseinseconds() {
-  mincloseinseconds_ = PROTOBUF_LONGLONG(0);
-}
-inline ::google::protobuf::int64 NetworkConfiguration::mincloseinseconds() const {
-  // @@protoc_insertion_point(field_get:vega.NetworkConfiguration.minCloseInSeconds)
-  return mincloseinseconds_;
-}
-inline void NetworkConfiguration::set_mincloseinseconds(::google::protobuf::int64 value) {
-
-  mincloseinseconds_ = value;
-  // @@protoc_insertion_point(field_set:vega.NetworkConfiguration.minCloseInSeconds)
-}
-
-// int64 maxCloseInSeconds = 2;
-inline void NetworkConfiguration::clear_maxcloseinseconds() {
-  maxcloseinseconds_ = PROTOBUF_LONGLONG(0);
-}
-inline ::google::protobuf::int64 NetworkConfiguration::maxcloseinseconds() const {
-  // @@protoc_insertion_point(field_get:vega.NetworkConfiguration.maxCloseInSeconds)
-  return maxcloseinseconds_;
-}
-inline void NetworkConfiguration::set_maxcloseinseconds(::google::protobuf::int64 value) {
-
-  maxcloseinseconds_ = value;
-  // @@protoc_insertion_point(field_set:vega.NetworkConfiguration.maxCloseInSeconds)
-}
-
-// int64 minEnactInSeconds = 3;
-inline void NetworkConfiguration::clear_minenactinseconds() {
-  minenactinseconds_ = PROTOBUF_LONGLONG(0);
-}
-inline ::google::protobuf::int64 NetworkConfiguration::minenactinseconds() const {
-  // @@protoc_insertion_point(field_get:vega.NetworkConfiguration.minEnactInSeconds)
-  return minenactinseconds_;
-}
-inline void NetworkConfiguration::set_minenactinseconds(::google::protobuf::int64 value) {
-
-  minenactinseconds_ = value;
-  // @@protoc_insertion_point(field_set:vega.NetworkConfiguration.minEnactInSeconds)
-}
-
-// int64 maxEnactInSeconds = 4;
-inline void NetworkConfiguration::clear_maxenactinseconds() {
-  maxenactinseconds_ = PROTOBUF_LONGLONG(0);
-}
-inline ::google::protobuf::int64 NetworkConfiguration::maxenactinseconds() const {
-  // @@protoc_insertion_point(field_get:vega.NetworkConfiguration.maxEnactInSeconds)
-  return maxenactinseconds_;
-}
-inline void NetworkConfiguration::set_maxenactinseconds(::google::protobuf::int64 value) {
-
-  maxenactinseconds_ = value;
-  // @@protoc_insertion_point(field_set:vega.NetworkConfiguration.maxEnactInSeconds)
-}
-
-// float requiredParticipation = 5;
-inline void NetworkConfiguration::clear_requiredparticipation() {
-  requiredparticipation_ = 0;
-}
-inline float NetworkConfiguration::requiredparticipation() const {
-  // @@protoc_insertion_point(field_get:vega.NetworkConfiguration.requiredParticipation)
-  return requiredparticipation_;
-}
-inline void NetworkConfiguration::set_requiredparticipation(float value) {
-
-  requiredparticipation_ = value;
-  // @@protoc_insertion_point(field_set:vega.NetworkConfiguration.requiredParticipation)
-}
-
-// float requiredMajority = 6;
-inline void NetworkConfiguration::clear_requiredmajority() {
-  requiredmajority_ = 0;
-}
-inline float NetworkConfiguration::requiredmajority() const {
-  // @@protoc_insertion_point(field_get:vega.NetworkConfiguration.requiredMajority)
-  return requiredmajority_;
-}
-inline void NetworkConfiguration::set_requiredmajority(float value) {
-
-  requiredmajority_ = value;
-  // @@protoc_insertion_point(field_set:vega.NetworkConfiguration.requiredMajority)
-}
-
-// float minProposerBalance = 7;
-inline void NetworkConfiguration::clear_minproposerbalance() {
-  minproposerbalance_ = 0;
-}
-inline float NetworkConfiguration::minproposerbalance() const {
-  // @@protoc_insertion_point(field_get:vega.NetworkConfiguration.minProposerBalance)
-  return minproposerbalance_;
-}
-inline void NetworkConfiguration::set_minproposerbalance(float value) {
-
-  minproposerbalance_ = value;
-  // @@protoc_insertion_point(field_set:vega.NetworkConfiguration.minProposerBalance)
-}
-
-// float minVoterBalance = 8;
-inline void NetworkConfiguration::clear_minvoterbalance() {
-  minvoterbalance_ = 0;
-}
-inline float NetworkConfiguration::minvoterbalance() const {
-  // @@protoc_insertion_point(field_get:vega.NetworkConfiguration.minVoterBalance)
-  return minvoterbalance_;
-}
-inline void NetworkConfiguration::set_minvoterbalance(float value) {
-
-  minvoterbalance_ = value;
-  // @@protoc_insertion_point(field_set:vega.NetworkConfiguration.minVoterBalance)
-}
-
-// .vega.ScalingFactors marginConfiguration = 9;
-inline bool NetworkConfiguration::has_marginconfiguration() const {
-  return this != internal_default_instance() && marginconfiguration_ != nullptr;
-}
-inline const ::vega::ScalingFactors& NetworkConfiguration::marginconfiguration() const {
-  const ::vega::ScalingFactors* p = marginconfiguration_;
-  // @@protoc_insertion_point(field_get:vega.NetworkConfiguration.marginConfiguration)
-  return p != nullptr ? *p : *reinterpret_cast<const ::vega::ScalingFactors*>(
-      &::vega::_ScalingFactors_default_instance_);
-}
-inline ::vega::ScalingFactors* NetworkConfiguration::release_marginconfiguration() {
-  // @@protoc_insertion_point(field_release:vega.NetworkConfiguration.marginConfiguration)
-
-  ::vega::ScalingFactors* temp = marginconfiguration_;
-  marginconfiguration_ = nullptr;
-  return temp;
-}
-inline ::vega::ScalingFactors* NetworkConfiguration::mutable_marginconfiguration() {
-
-  if (marginconfiguration_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::ScalingFactors>(GetArenaNoVirtual());
-    marginconfiguration_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:vega.NetworkConfiguration.marginConfiguration)
-  return marginconfiguration_;
-}
-inline void NetworkConfiguration::set_allocated_marginconfiguration(::vega::ScalingFactors* marginconfiguration) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(marginconfiguration_);
-  }
-  if (marginconfiguration) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      marginconfiguration = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, marginconfiguration, submessage_arena);
-    }
-
-  } else {
-
-  }
-  marginconfiguration_ = marginconfiguration;
-  // @@protoc_insertion_point(field_set_allocated:vega.NetworkConfiguration.marginConfiguration)
-}
-
-// .vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;
-inline bool NetworkConfiguration::has_feefactorsconfiguration() const {
-  return this != internal_default_instance() && feefactorsconfiguration_ != nullptr;
-}
-inline void NetworkConfiguration::clear_feefactorsconfiguration() {
-  if (GetArenaNoVirtual() == nullptr && feefactorsconfiguration_ != nullptr) {
-    delete feefactorsconfiguration_;
-  }
-  feefactorsconfiguration_ = nullptr;
-}
-inline const ::vega::FeeFactorsConfiguration& NetworkConfiguration::feefactorsconfiguration() const {
-  const ::vega::FeeFactorsConfiguration* p = feefactorsconfiguration_;
-  // @@protoc_insertion_point(field_get:vega.NetworkConfiguration.feeFactorsConfiguration)
-  return p != nullptr ? *p : *reinterpret_cast<const ::vega::FeeFactorsConfiguration*>(
-      &::vega::_FeeFactorsConfiguration_default_instance_);
-}
-inline ::vega::FeeFactorsConfiguration* NetworkConfiguration::release_feefactorsconfiguration() {
-  // @@protoc_insertion_point(field_release:vega.NetworkConfiguration.feeFactorsConfiguration)
-
-  ::vega::FeeFactorsConfiguration* temp = feefactorsconfiguration_;
-  feefactorsconfiguration_ = nullptr;
-  return temp;
-}
-inline ::vega::FeeFactorsConfiguration* NetworkConfiguration::mutable_feefactorsconfiguration() {
-
-  if (feefactorsconfiguration_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::FeeFactorsConfiguration>(GetArenaNoVirtual());
-    feefactorsconfiguration_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:vega.NetworkConfiguration.feeFactorsConfiguration)
-  return feefactorsconfiguration_;
-}
-inline void NetworkConfiguration::set_allocated_feefactorsconfiguration(::vega::FeeFactorsConfiguration* feefactorsconfiguration) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete feefactorsconfiguration_;
-  }
-  if (feefactorsconfiguration) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      feefactorsconfiguration = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, feefactorsconfiguration, submessage_arena);
-    }
-
-  } else {
-
-  }
-  feefactorsconfiguration_ = feefactorsconfiguration;
-  // @@protoc_insertion_point(field_set_allocated:vega.NetworkConfiguration.feeFactorsConfiguration)
-}
-
-// -------------------------------------------------------------------
-
-// FeeFactorsConfiguration
-
-// string infrastructureFee = 1;
-inline void FeeFactorsConfiguration::clear_infrastructurefee() {
-  infrastructurefee_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& FeeFactorsConfiguration::infrastructurefee() const {
-  // @@protoc_insertion_point(field_get:vega.FeeFactorsConfiguration.infrastructureFee)
-  return infrastructurefee_.GetNoArena();
-}
-inline void FeeFactorsConfiguration::set_infrastructurefee(const ::std::string& value) {
-
-  infrastructurefee_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.FeeFactorsConfiguration.infrastructureFee)
-}
-#if LANG_CXX11
-inline void FeeFactorsConfiguration::set_infrastructurefee(::std::string&& value) {
-
-  infrastructurefee_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.FeeFactorsConfiguration.infrastructureFee)
-}
-#endif
-inline void FeeFactorsConfiguration::set_infrastructurefee(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  infrastructurefee_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.FeeFactorsConfiguration.infrastructureFee)
-}
-inline void FeeFactorsConfiguration::set_infrastructurefee(const char* value, size_t size) {
-
-  infrastructurefee_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.FeeFactorsConfiguration.infrastructureFee)
-}
-inline ::std::string* FeeFactorsConfiguration::mutable_infrastructurefee() {
-
-  // @@protoc_insertion_point(field_mutable:vega.FeeFactorsConfiguration.infrastructureFee)
-  return infrastructurefee_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* FeeFactorsConfiguration::release_infrastructurefee() {
-  // @@protoc_insertion_point(field_release:vega.FeeFactorsConfiguration.infrastructureFee)
-
-  return infrastructurefee_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void FeeFactorsConfiguration::set_allocated_infrastructurefee(::std::string* infrastructurefee) {
-  if (infrastructurefee != nullptr) {
-
-  } else {
-
-  }
-  infrastructurefee_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), infrastructurefee);
-  // @@protoc_insertion_point(field_set_allocated:vega.FeeFactorsConfiguration.infrastructureFee)
-}
-
-// string makerFee = 2;
-inline void FeeFactorsConfiguration::clear_makerfee() {
-  makerfee_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& FeeFactorsConfiguration::makerfee() const {
-  // @@protoc_insertion_point(field_get:vega.FeeFactorsConfiguration.makerFee)
-  return makerfee_.GetNoArena();
-}
-inline void FeeFactorsConfiguration::set_makerfee(const ::std::string& value) {
-
-  makerfee_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.FeeFactorsConfiguration.makerFee)
-}
-#if LANG_CXX11
-inline void FeeFactorsConfiguration::set_makerfee(::std::string&& value) {
-
-  makerfee_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.FeeFactorsConfiguration.makerFee)
-}
-#endif
-inline void FeeFactorsConfiguration::set_makerfee(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  makerfee_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.FeeFactorsConfiguration.makerFee)
-}
-inline void FeeFactorsConfiguration::set_makerfee(const char* value, size_t size) {
-
-  makerfee_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.FeeFactorsConfiguration.makerFee)
-}
-inline ::std::string* FeeFactorsConfiguration::mutable_makerfee() {
-
-  // @@protoc_insertion_point(field_mutable:vega.FeeFactorsConfiguration.makerFee)
-  return makerfee_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* FeeFactorsConfiguration::release_makerfee() {
-  // @@protoc_insertion_point(field_release:vega.FeeFactorsConfiguration.makerFee)
-
-  return makerfee_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void FeeFactorsConfiguration::set_allocated_makerfee(::std::string* makerfee) {
-  if (makerfee != nullptr) {
-
-  } else {
-
-  }
-  makerfee_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), makerfee);
-  // @@protoc_insertion_point(field_set_allocated:vega.FeeFactorsConfiguration.makerFee)
-}
-
-// string liquidityFee = 3;
-inline void FeeFactorsConfiguration::clear_liquidityfee() {
-  liquidityfee_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& FeeFactorsConfiguration::liquidityfee() const {
-  // @@protoc_insertion_point(field_get:vega.FeeFactorsConfiguration.liquidityFee)
-  return liquidityfee_.GetNoArena();
-}
-inline void FeeFactorsConfiguration::set_liquidityfee(const ::std::string& value) {
-
-  liquidityfee_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.FeeFactorsConfiguration.liquidityFee)
-}
-#if LANG_CXX11
-inline void FeeFactorsConfiguration::set_liquidityfee(::std::string&& value) {
-
-  liquidityfee_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.FeeFactorsConfiguration.liquidityFee)
-}
-#endif
-inline void FeeFactorsConfiguration::set_liquidityfee(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  liquidityfee_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.FeeFactorsConfiguration.liquidityFee)
-}
-inline void FeeFactorsConfiguration::set_liquidityfee(const char* value, size_t size) {
-
-  liquidityfee_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.FeeFactorsConfiguration.liquidityFee)
-}
-inline ::std::string* FeeFactorsConfiguration::mutable_liquidityfee() {
-
-  // @@protoc_insertion_point(field_mutable:vega.FeeFactorsConfiguration.liquidityFee)
-  return liquidityfee_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* FeeFactorsConfiguration::release_liquidityfee() {
-  // @@protoc_insertion_point(field_release:vega.FeeFactorsConfiguration.liquidityFee)
-
-  return liquidityfee_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void FeeFactorsConfiguration::set_allocated_liquidityfee(::std::string* liquidityfee) {
-  if (liquidityfee != nullptr) {
-
-  } else {
-
-  }
-  liquidityfee_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), liquidityfee);
-  // @@protoc_insertion_point(field_set_allocated:vega.FeeFactorsConfiguration.liquidityFee)
-}
-
-// -------------------------------------------------------------------
-
 // FutureProduct
 
 // string maturity = 1 [(.validator.field) = {
@@ -3256,6 +2559,51 @@ inline void NewMarketConfiguration::set_openingauctionduration(::google::protobu
   // @@protoc_insertion_point(field_set:vega.NewMarketConfiguration.openingAuctionDuration)
 }
 
+// .vega.PriceMonitoringSettings priceMonitoringSettings = 5;
+inline bool NewMarketConfiguration::has_pricemonitoringsettings() const {
+  return this != internal_default_instance() && pricemonitoringsettings_ != nullptr;
+}
+inline const ::vega::PriceMonitoringSettings& NewMarketConfiguration::pricemonitoringsettings() const {
+  const ::vega::PriceMonitoringSettings* p = pricemonitoringsettings_;
+  // @@protoc_insertion_point(field_get:vega.NewMarketConfiguration.priceMonitoringSettings)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::PriceMonitoringSettings*>(
+      &::vega::_PriceMonitoringSettings_default_instance_);
+}
+inline ::vega::PriceMonitoringSettings* NewMarketConfiguration::release_pricemonitoringsettings() {
+  // @@protoc_insertion_point(field_release:vega.NewMarketConfiguration.priceMonitoringSettings)
+
+  ::vega::PriceMonitoringSettings* temp = pricemonitoringsettings_;
+  pricemonitoringsettings_ = nullptr;
+  return temp;
+}
+inline ::vega::PriceMonitoringSettings* NewMarketConfiguration::mutable_pricemonitoringsettings() {
+
+  if (pricemonitoringsettings_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::PriceMonitoringSettings>(GetArenaNoVirtual());
+    pricemonitoringsettings_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:vega.NewMarketConfiguration.priceMonitoringSettings)
+  return pricemonitoringsettings_;
+}
+inline void NewMarketConfiguration::set_allocated_pricemonitoringsettings(::vega::PriceMonitoringSettings* pricemonitoringsettings) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(pricemonitoringsettings_);
+  }
+  if (pricemonitoringsettings) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      pricemonitoringsettings = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, pricemonitoringsettings, submessage_arena);
+    }
+
+  } else {
+
+  }
+  pricemonitoringsettings_ = pricemonitoringsettings;
+  // @@protoc_insertion_point(field_set_allocated:vega.NewMarketConfiguration.priceMonitoringSettings)
+}
+
 // .vega.SimpleModelParams simple = 100;
 inline bool NewMarketConfiguration::has_simple() const {
   return riskParameters_case() == kSimple;
@@ -3475,44 +2823,38 @@ inline void NewMarket::set_allocated_changes(::vega::NewMarketConfiguration* cha
 
 // -------------------------------------------------------------------
 
-// UpdateNetwork
+// UpdateNetworkParameter
 
-// .vega.NetworkConfiguration changes = 1 [(.validator.field) = {
-inline bool UpdateNetwork::has_changes() const {
+// .vega.NetworkParameter changes = 1 [(.validator.field) = {
+inline bool UpdateNetworkParameter::has_changes() const {
   return this != internal_default_instance() && changes_ != nullptr;
 }
-inline void UpdateNetwork::clear_changes() {
-  if (GetArenaNoVirtual() == nullptr && changes_ != nullptr) {
-    delete changes_;
-  }
-  changes_ = nullptr;
+inline const ::vega::NetworkParameter& UpdateNetworkParameter::changes() const {
+  const ::vega::NetworkParameter* p = changes_;
+  // @@protoc_insertion_point(field_get:vega.UpdateNetworkParameter.changes)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::NetworkParameter*>(
+      &::vega::_NetworkParameter_default_instance_);
 }
-inline const ::vega::NetworkConfiguration& UpdateNetwork::changes() const {
-  const ::vega::NetworkConfiguration* p = changes_;
-  // @@protoc_insertion_point(field_get:vega.UpdateNetwork.changes)
-  return p != nullptr ? *p : *reinterpret_cast<const ::vega::NetworkConfiguration*>(
-      &::vega::_NetworkConfiguration_default_instance_);
-}
-inline ::vega::NetworkConfiguration* UpdateNetwork::release_changes() {
-  // @@protoc_insertion_point(field_release:vega.UpdateNetwork.changes)
+inline ::vega::NetworkParameter* UpdateNetworkParameter::release_changes() {
+  // @@protoc_insertion_point(field_release:vega.UpdateNetworkParameter.changes)
 
-  ::vega::NetworkConfiguration* temp = changes_;
+  ::vega::NetworkParameter* temp = changes_;
   changes_ = nullptr;
   return temp;
 }
-inline ::vega::NetworkConfiguration* UpdateNetwork::mutable_changes() {
+inline ::vega::NetworkParameter* UpdateNetworkParameter::mutable_changes() {
 
   if (changes_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::NetworkConfiguration>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::vega::NetworkParameter>(GetArenaNoVirtual());
     changes_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:vega.UpdateNetwork.changes)
+  // @@protoc_insertion_point(field_mutable:vega.UpdateNetworkParameter.changes)
   return changes_;
 }
-inline void UpdateNetwork::set_allocated_changes(::vega::NetworkConfiguration* changes) {
+inline void UpdateNetworkParameter::set_allocated_changes(::vega::NetworkParameter* changes) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete changes_;
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(changes_);
   }
   if (changes) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
@@ -3525,7 +2867,7 @@ inline void UpdateNetwork::set_allocated_changes(::vega::NetworkConfiguration* c
 
   }
   changes_ = changes;
-  // @@protoc_insertion_point(field_set_allocated:vega.UpdateNetwork.changes)
+  // @@protoc_insertion_point(field_set_allocated:vega.UpdateNetworkParameter.changes)
 }
 
 // -------------------------------------------------------------------
@@ -3705,45 +3047,45 @@ inline ::vega::NewMarket* ProposalTerms::mutable_newmarket() {
   return change_.newmarket_;
 }
 
-// .vega.UpdateNetwork updateNetwork = 103;
-inline bool ProposalTerms::has_updatenetwork() const {
-  return change_case() == kUpdateNetwork;
+// .vega.UpdateNetworkParameter updateNetworkParameter = 103;
+inline bool ProposalTerms::has_updatenetworkparameter() const {
+  return change_case() == kUpdateNetworkParameter;
 }
-inline void ProposalTerms::set_has_updatenetwork() {
-  _oneof_case_[0] = kUpdateNetwork;
+inline void ProposalTerms::set_has_updatenetworkparameter() {
+  _oneof_case_[0] = kUpdateNetworkParameter;
 }
-inline void ProposalTerms::clear_updatenetwork() {
-  if (has_updatenetwork()) {
-    delete change_.updatenetwork_;
+inline void ProposalTerms::clear_updatenetworkparameter() {
+  if (has_updatenetworkparameter()) {
+    delete change_.updatenetworkparameter_;
     clear_has_change();
   }
 }
-inline ::vega::UpdateNetwork* ProposalTerms::release_updatenetwork() {
-  // @@protoc_insertion_point(field_release:vega.ProposalTerms.updateNetwork)
-  if (has_updatenetwork()) {
+inline ::vega::UpdateNetworkParameter* ProposalTerms::release_updatenetworkparameter() {
+  // @@protoc_insertion_point(field_release:vega.ProposalTerms.updateNetworkParameter)
+  if (has_updatenetworkparameter()) {
     clear_has_change();
-      ::vega::UpdateNetwork* temp = change_.updatenetwork_;
-    change_.updatenetwork_ = nullptr;
+      ::vega::UpdateNetworkParameter* temp = change_.updatenetworkparameter_;
+    change_.updatenetworkparameter_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::vega::UpdateNetwork& ProposalTerms::updatenetwork() const {
-  // @@protoc_insertion_point(field_get:vega.ProposalTerms.updateNetwork)
-  return has_updatenetwork()
-      ? *change_.updatenetwork_
-      : *reinterpret_cast< ::vega::UpdateNetwork*>(&::vega::_UpdateNetwork_default_instance_);
+inline const ::vega::UpdateNetworkParameter& ProposalTerms::updatenetworkparameter() const {
+  // @@protoc_insertion_point(field_get:vega.ProposalTerms.updateNetworkParameter)
+  return has_updatenetworkparameter()
+      ? *change_.updatenetworkparameter_
+      : *reinterpret_cast< ::vega::UpdateNetworkParameter*>(&::vega::_UpdateNetworkParameter_default_instance_);
 }
-inline ::vega::UpdateNetwork* ProposalTerms::mutable_updatenetwork() {
-  if (!has_updatenetwork()) {
+inline ::vega::UpdateNetworkParameter* ProposalTerms::mutable_updatenetworkparameter() {
+  if (!has_updatenetworkparameter()) {
     clear_change();
-    set_has_updatenetwork();
-    change_.updatenetwork_ = CreateMaybeMessage< ::vega::UpdateNetwork >(
+    set_has_updatenetworkparameter();
+    change_.updatenetworkparameter_ = CreateMaybeMessage< ::vega::UpdateNetworkParameter >(
         GetArenaNoVirtual());
   }
-  // @@protoc_insertion_point(field_mutable:vega.ProposalTerms.updateNetwork)
-  return change_.updatenetwork_;
+  // @@protoc_insertion_point(field_mutable:vega.ProposalTerms.updateNetworkParameter)
+  return change_.updatenetworkparameter_;
 }
 
 // .vega.NewAsset newAsset = 104;
@@ -4348,10 +3690,6 @@ inline void Vote::set_timestamp(::google::protobuf::int64 value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

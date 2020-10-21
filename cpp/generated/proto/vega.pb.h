@@ -46,7 +46,7 @@ struct TableStruct_proto_2fvega_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[45]
+  static const ::google::protobuf::internal::ParseTable schema[46]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -93,6 +93,9 @@ extern MarketDepthDefaultTypeInternal _MarketDepth_default_instance_;
 class MarketDepthUpdate;
 class MarketDepthUpdateDefaultTypeInternal;
 extern MarketDepthUpdateDefaultTypeInternal _MarketDepthUpdate_default_instance_;
+class NetworkParameter;
+class NetworkParameterDefaultTypeInternal;
+extern NetworkParameterDefaultTypeInternal _NetworkParameter_default_instance_;
 class NodeRegistration;
 class NodeRegistrationDefaultTypeInternal;
 extern NodeRegistrationDefaultTypeInternal _NodeRegistration_default_instance_;
@@ -205,6 +208,7 @@ template<> ::vega::MarginLevels* Arena::CreateMaybeMessage<::vega::MarginLevels>
 template<> ::vega::MarketData* Arena::CreateMaybeMessage<::vega::MarketData>(Arena*);
 template<> ::vega::MarketDepth* Arena::CreateMaybeMessage<::vega::MarketDepth>(Arena*);
 template<> ::vega::MarketDepthUpdate* Arena::CreateMaybeMessage<::vega::MarketDepthUpdate>(Arena*);
+template<> ::vega::NetworkParameter* Arena::CreateMaybeMessage<::vega::NetworkParameter>(Arena*);
 template<> ::vega::NodeRegistration* Arena::CreateMaybeMessage<::vega::NodeRegistration>(Arena*);
 template<> ::vega::NodeSignature* Arena::CreateMaybeMessage<::vega::NodeSignature>(Arena*);
 template<> ::vega::NodeVote* Arena::CreateMaybeMessage<::vega::NodeVote>(Arena*);
@@ -437,13 +441,15 @@ inline bool Interval_Parse(
 enum MarketState {
   MARKET_STATE_UNSPECIFIED = 0,
   MARKET_STATE_CONTINUOUS = 1,
-  MARKET_STATE_AUCTION = 2,
+  MARKET_STATE_BATCH_AUCTION = 2,
+  MARKET_STATE_OPENING_AUCTION = 3,
+  MARKET_STATE_MONITORING_AUCTION = 4,
   MarketState_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   MarketState_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool MarketState_IsValid(int value);
 const MarketState MarketState_MIN = MARKET_STATE_UNSPECIFIED;
-const MarketState MarketState_MAX = MARKET_STATE_AUCTION;
+const MarketState MarketState_MAX = MARKET_STATE_MONITORING_AUCTION;
 const int MarketState_ARRAYSIZE = MarketState_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* MarketState_descriptor();
@@ -455,6 +461,30 @@ inline bool MarketState_Parse(
     const ::std::string& name, MarketState* value) {
   return ::google::protobuf::internal::ParseNamedEnum<MarketState>(
     MarketState_descriptor(), name, value);
+}
+enum AuctionTrigger {
+  AUCTION_TRIGGER_UNSPECIFIED = 0,
+  AUCTION_TRIGGER_BATCH = 1,
+  AUCTION_TRIGGER_OPENING = 2,
+  AUCTION_TRIGGER_PRICE = 3,
+  AUCTION_TRIGGER_LIQUIDITY = 4,
+  AuctionTrigger_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  AuctionTrigger_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool AuctionTrigger_IsValid(int value);
+const AuctionTrigger AuctionTrigger_MIN = AUCTION_TRIGGER_UNSPECIFIED;
+const AuctionTrigger AuctionTrigger_MAX = AUCTION_TRIGGER_LIQUIDITY;
+const int AuctionTrigger_ARRAYSIZE = AuctionTrigger_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* AuctionTrigger_descriptor();
+inline const ::std::string& AuctionTrigger_Name(AuctionTrigger value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    AuctionTrigger_descriptor(), value);
+}
+inline bool AuctionTrigger_Parse(
+    const ::std::string& name, AuctionTrigger* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<AuctionTrigger>(
+    AuctionTrigger_descriptor(), name, value);
 }
 enum OrderError {
   ORDER_ERROR_NONE = 0,
@@ -481,12 +511,22 @@ enum OrderError {
   ORDER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEES = 21,
   ORDER_ERROR_INCORRECT_MARKET_TYPE = 22,
   ORDER_ERROR_INVALID_TIME_IN_FORCE = 23,
+  ORDER_ERROR_GFN_ORDER_DURING_AN_AUCTION = 24,
+  ORDER_ERROR_GFA_ORDER_DURING_CONTINUOUS_TRADING = 25,
+  ORDER_ERROR_CANNOT_AMEND_TO_GTT_WITHOUT_EXPIRYAT = 26,
+  ORDER_ERROR_EXPIRYAT_BEFORE_CREATEDAT = 27,
+  ORDER_ERROR_CANNOT_HAVE_GTC_AND_EXPIRYAT = 28,
+  ORDER_ERROR_CANNOT_AMEND_TO_FOK_OR_IOC = 29,
+  ORDER_ERROR_CANNOT_AMEND_TO_GFA_OR_GFN = 30,
+  ORDER_ERROR_CANNOT_AMEND_FROM_GFA_OR_GFN = 31,
+  ORDER_ERROR_CANNOT_SEND_IOC_ORDER_DURING_AUCTION = 32,
+  ORDER_ERROR_CANNOT_SEND_FOK_ORDER_DURING_AUCTION = 33,
   OrderError_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   OrderError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool OrderError_IsValid(int value);
 const OrderError OrderError_MIN = ORDER_ERROR_NONE;
-const OrderError OrderError_MAX = ORDER_ERROR_INVALID_TIME_IN_FORCE;
+const OrderError OrderError_MAX = ORDER_ERROR_CANNOT_SEND_FOK_ORDER_DURING_AUCTION;
 const int OrderError_ARRAYSIZE = OrderError_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* OrderError_descriptor();
@@ -3819,6 +3859,12 @@ class Statistics :
   ::google::protobuf::uint64 blockduration() const;
   void set_blockduration(::google::protobuf::uint64 value);
 
+  // uint32 marketDepthUpdatesSubscriptions = 34;
+  void clear_marketdepthupdatessubscriptions();
+  static const int kMarketDepthUpdatesSubscriptionsFieldNumber = 34;
+  ::google::protobuf::uint32 marketdepthupdatessubscriptions() const;
+  void set_marketdepthupdatessubscriptions(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:vega.Statistics)
  private:
   class HasBitSetters;
@@ -3855,6 +3901,7 @@ class Statistics :
   ::google::protobuf::uint32 accountsubscriptions_;
   ::google::protobuf::uint32 marketdatasubscriptions_;
   ::google::protobuf::uint64 blockduration_;
+  ::google::protobuf::uint32 marketdepthupdatessubscriptions_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
@@ -6989,6 +7036,12 @@ class MarketData :
   ::vega::MarketState marketstate() const;
   void set_marketstate(::vega::MarketState value);
 
+  // .vega.AuctionTrigger trigger = 15;
+  void clear_trigger();
+  static const int kTriggerFieldNumber = 15;
+  ::vega::AuctionTrigger trigger() const;
+  void set_trigger(::vega::AuctionTrigger value);
+
   // @@protoc_insertion_point(class_scope:vega.MarketData)
  private:
   class HasBitSetters;
@@ -7008,6 +7061,7 @@ class MarketData :
   ::google::protobuf::uint64 indicativeprice_;
   ::google::protobuf::uint64 indicativevolume_;
   int marketstate_;
+  int trigger_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
@@ -7276,6 +7330,12 @@ class Transaction :
   ::google::protobuf::uint64 nonce() const;
   void set_nonce(::google::protobuf::uint64 value);
 
+  // uint64 blockHeight = 3;
+  void clear_blockheight();
+  static const int kBlockHeightFieldNumber = 3;
+  ::google::protobuf::uint64 blockheight() const;
+  void set_blockheight(::google::protobuf::uint64 value);
+
   // bytes address = 1001;
   private:
   bool has_address() const;
@@ -7324,6 +7384,7 @@ class Transaction :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr inputdata_;
   ::google::protobuf::uint64 nonce_;
+  ::google::protobuf::uint64 blockheight_;
   union FromUnion {
     FromUnion() {}
     ::google::protobuf::internal::ArenaStringPtr address_;
@@ -7745,6 +7806,141 @@ class NodeSignature :
   ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr sig_;
   int kind_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fvega_2eproto;
+};
+// -------------------------------------------------------------------
+
+class NetworkParameter :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.NetworkParameter) */ {
+ public:
+  NetworkParameter();
+  virtual ~NetworkParameter();
+
+  NetworkParameter(const NetworkParameter& from);
+
+  inline NetworkParameter& operator=(const NetworkParameter& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  NetworkParameter(NetworkParameter&& from) noexcept
+    : NetworkParameter() {
+    *this = ::std::move(from);
+  }
+
+  inline NetworkParameter& operator=(NetworkParameter&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const NetworkParameter& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const NetworkParameter* internal_default_instance() {
+    return reinterpret_cast<const NetworkParameter*>(
+               &_NetworkParameter_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    45;
+
+  void Swap(NetworkParameter* other);
+  friend void swap(NetworkParameter& a, NetworkParameter& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline NetworkParameter* New() const final {
+    return CreateMaybeMessage<NetworkParameter>(nullptr);
+  }
+
+  NetworkParameter* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<NetworkParameter>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const NetworkParameter& from);
+  void MergeFrom(const NetworkParameter& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(NetworkParameter* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string Key = 1;
+  void clear_key();
+  static const int kKeyFieldNumber = 1;
+  const ::std::string& key() const;
+  void set_key(const ::std::string& value);
+  #if LANG_CXX11
+  void set_key(::std::string&& value);
+  #endif
+  void set_key(const char* value);
+  void set_key(const char* value, size_t size);
+  ::std::string* mutable_key();
+  ::std::string* release_key();
+  void set_allocated_key(::std::string* key);
+
+  // string Value = 2;
+  void clear_value();
+  static const int kValueFieldNumber = 2;
+  const ::std::string& value() const;
+  void set_value(const ::std::string& value);
+  #if LANG_CXX11
+  void set_value(::std::string&& value);
+  #endif
+  void set_value(const char* value);
+  void set_value(const char* value, size_t size);
+  ::std::string* mutable_value();
+  ::std::string* release_value();
+  void set_allocated_value(::std::string* value);
+
+  // @@protoc_insertion_point(class_scope:vega.NetworkParameter)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr key_;
+  ::google::protobuf::internal::ArenaStringPtr value_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
@@ -10711,6 +10907,20 @@ inline void Statistics::set_allocated_chainid(::std::string* chainid) {
   }
   chainid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), chainid);
   // @@protoc_insertion_point(field_set_allocated:vega.Statistics.chainID)
+}
+
+// uint32 marketDepthUpdatesSubscriptions = 34;
+inline void Statistics::clear_marketdepthupdatessubscriptions() {
+  marketdepthupdatessubscriptions_ = 0u;
+}
+inline ::google::protobuf::uint32 Statistics::marketdepthupdatessubscriptions() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.marketDepthUpdatesSubscriptions)
+  return marketdepthupdatessubscriptions_;
+}
+inline void Statistics::set_marketdepthupdatessubscriptions(::google::protobuf::uint32 value) {
+
+  marketdepthupdatessubscriptions_ = value;
+  // @@protoc_insertion_point(field_set:vega.Statistics.marketDepthUpdatesSubscriptions)
 }
 
 // -------------------------------------------------------------------
@@ -14174,6 +14384,20 @@ inline void MarketData::set_marketstate(::vega::MarketState value) {
   // @@protoc_insertion_point(field_set:vega.MarketData.marketState)
 }
 
+// .vega.AuctionTrigger trigger = 15;
+inline void MarketData::clear_trigger() {
+  trigger_ = 0;
+}
+inline ::vega::AuctionTrigger MarketData::trigger() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.trigger)
+  return static_cast< ::vega::AuctionTrigger >(trigger_);
+}
+inline void MarketData::set_trigger(::vega::AuctionTrigger value) {
+
+  trigger_ = value;
+  // @@protoc_insertion_point(field_set:vega.MarketData.trigger)
+}
+
 // -------------------------------------------------------------------
 
 // ErrorDetail
@@ -14367,6 +14591,20 @@ inline void Transaction::set_nonce(::google::protobuf::uint64 value) {
 
   nonce_ = value;
   // @@protoc_insertion_point(field_set:vega.Transaction.nonce)
+}
+
+// uint64 blockHeight = 3;
+inline void Transaction::clear_blockheight() {
+  blockheight_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 Transaction::blockheight() const {
+  // @@protoc_insertion_point(field_get:vega.Transaction.blockHeight)
+  return blockheight_;
+}
+inline void Transaction::set_blockheight(::google::protobuf::uint64 value) {
+
+  blockheight_ = value;
+  // @@protoc_insertion_point(field_set:vega.Transaction.blockHeight)
 }
 
 // bytes address = 1001;
@@ -14918,9 +15156,121 @@ inline void NodeSignature::set_kind(::vega::NodeSignatureKind value) {
   // @@protoc_insertion_point(field_set:vega.NodeSignature.kind)
 }
 
+// -------------------------------------------------------------------
+
+// NetworkParameter
+
+// string Key = 1;
+inline void NetworkParameter::clear_key() {
+  key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& NetworkParameter::key() const {
+  // @@protoc_insertion_point(field_get:vega.NetworkParameter.Key)
+  return key_.GetNoArena();
+}
+inline void NetworkParameter::set_key(const ::std::string& value) {
+
+  key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.NetworkParameter.Key)
+}
+#if LANG_CXX11
+inline void NetworkParameter::set_key(::std::string&& value) {
+
+  key_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.NetworkParameter.Key)
+}
+#endif
+inline void NetworkParameter::set_key(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.NetworkParameter.Key)
+}
+inline void NetworkParameter::set_key(const char* value, size_t size) {
+
+  key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.NetworkParameter.Key)
+}
+inline ::std::string* NetworkParameter::mutable_key() {
+
+  // @@protoc_insertion_point(field_mutable:vega.NetworkParameter.Key)
+  return key_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* NetworkParameter::release_key() {
+  // @@protoc_insertion_point(field_release:vega.NetworkParameter.Key)
+
+  return key_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void NetworkParameter::set_allocated_key(::std::string* key) {
+  if (key != nullptr) {
+
+  } else {
+
+  }
+  key_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), key);
+  // @@protoc_insertion_point(field_set_allocated:vega.NetworkParameter.Key)
+}
+
+// string Value = 2;
+inline void NetworkParameter::clear_value() {
+  value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& NetworkParameter::value() const {
+  // @@protoc_insertion_point(field_get:vega.NetworkParameter.Value)
+  return value_.GetNoArena();
+}
+inline void NetworkParameter::set_value(const ::std::string& value) {
+
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.NetworkParameter.Value)
+}
+#if LANG_CXX11
+inline void NetworkParameter::set_value(::std::string&& value) {
+
+  value_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.NetworkParameter.Value)
+}
+#endif
+inline void NetworkParameter::set_value(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.NetworkParameter.Value)
+}
+inline void NetworkParameter::set_value(const char* value, size_t size) {
+
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.NetworkParameter.Value)
+}
+inline ::std::string* NetworkParameter::mutable_value() {
+
+  // @@protoc_insertion_point(field_mutable:vega.NetworkParameter.Value)
+  return value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* NetworkParameter::release_value() {
+  // @@protoc_insertion_point(field_release:vega.NetworkParameter.Value)
+
+  return value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void NetworkParameter::set_allocated_value(::std::string* value) {
+  if (value != nullptr) {
+
+  } else {
+
+  }
+  value_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set_allocated:vega.NetworkParameter.Value)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -15061,6 +15411,11 @@ template <> struct is_proto_enum< ::vega::MarketState> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::vega::MarketState>() {
   return ::vega::MarketState_descriptor();
+}
+template <> struct is_proto_enum< ::vega::AuctionTrigger> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::vega::AuctionTrigger>() {
+  return ::vega::AuctionTrigger_descriptor();
 }
 template <> struct is_proto_enum< ::vega::OrderError> : ::std::true_type {};
 template <>
