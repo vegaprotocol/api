@@ -558,7 +558,7 @@ public final class Validator {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -578,7 +578,7 @@ public final class Validator {
         getRegexBytes() {
       java.lang.Object ref = regex_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         regex_ = b;
@@ -681,7 +681,7 @@ public final class Validator {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -701,7 +701,7 @@ public final class Validator {
         getHumanErrorBytes() {
       java.lang.Object ref = humanError_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         humanError_ = b;
@@ -1838,7 +1838,7 @@ public final class Validator {
           getRegexBytes() {
         java.lang.Object ref = regex_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           regex_ = b;
@@ -2082,7 +2082,7 @@ public final class Validator {
           getHumanErrorBytes() {
         java.lang.Object ref = humanError_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           humanError_ = b;
@@ -3423,12 +3423,12 @@ public final class Validator {
         com.github.mwitkow.go_proto_validators.Validator.OneofValidator.getDefaultInstance());
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_validator_FieldValidator_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_validator_FieldValidator_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_validator_OneofValidator_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_validator_OneofValidator_fieldAccessorTable;
 

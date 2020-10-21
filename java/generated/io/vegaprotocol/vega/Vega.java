@@ -379,12 +379,28 @@ public final class Vega {
     MARKET_STATE_CONTINUOUS(1),
     /**
      * <pre>
-     * Auction trading
+     * Auction trading (FBA)
      * </pre>
      *
-     * <code>MARKET_STATE_AUCTION = 2;</code>
+     * <code>MARKET_STATE_BATCH_AUCTION = 2;</code>
      */
-    MARKET_STATE_AUCTION(2),
+    MARKET_STATE_BATCH_AUCTION(2),
+    /**
+     * <pre>
+     * Opening auction
+     * </pre>
+     *
+     * <code>MARKET_STATE_OPENING_AUCTION = 3;</code>
+     */
+    MARKET_STATE_OPENING_AUCTION(3),
+    /**
+     * <pre>
+     * Auction triggered by monitoring
+     * </pre>
+     *
+     * <code>MARKET_STATE_MONITORING_AUCTION = 4;</code>
+     */
+    MARKET_STATE_MONITORING_AUCTION(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -406,12 +422,28 @@ public final class Vega {
     public static final int MARKET_STATE_CONTINUOUS_VALUE = 1;
     /**
      * <pre>
-     * Auction trading
+     * Auction trading (FBA)
      * </pre>
      *
-     * <code>MARKET_STATE_AUCTION = 2;</code>
+     * <code>MARKET_STATE_BATCH_AUCTION = 2;</code>
      */
-    public static final int MARKET_STATE_AUCTION_VALUE = 2;
+    public static final int MARKET_STATE_BATCH_AUCTION_VALUE = 2;
+    /**
+     * <pre>
+     * Opening auction
+     * </pre>
+     *
+     * <code>MARKET_STATE_OPENING_AUCTION = 3;</code>
+     */
+    public static final int MARKET_STATE_OPENING_AUCTION_VALUE = 3;
+    /**
+     * <pre>
+     * Auction triggered by monitoring
+     * </pre>
+     *
+     * <code>MARKET_STATE_MONITORING_AUCTION = 4;</code>
+     */
+    public static final int MARKET_STATE_MONITORING_AUCTION_VALUE = 4;
 
 
     public final int getNumber() {
@@ -434,7 +466,9 @@ public final class Vega {
       switch (value) {
         case 0: return MARKET_STATE_UNSPECIFIED;
         case 1: return MARKET_STATE_CONTINUOUS;
-        case 2: return MARKET_STATE_AUCTION;
+        case 2: return MARKET_STATE_BATCH_AUCTION;
+        case 3: return MARKET_STATE_OPENING_AUCTION;
+        case 4: return MARKET_STATE_MONITORING_AUCTION;
         default: return null;
       }
     }
@@ -485,6 +519,175 @@ public final class Vega {
     }
 
     // @@protoc_insertion_point(enum_scope:vega.MarketState)
+  }
+
+  /**
+   * <pre>
+   * What triggered an auction (if any)
+   * </pre>
+   *
+   * Protobuf enum {@code vega.AuctionTrigger}
+   */
+  public enum AuctionTrigger
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * No auction triggered
+     * </pre>
+     *
+     * <code>AUCTION_TRIGGER_UNSPECIFIED = 0;</code>
+     */
+    AUCTION_TRIGGER_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * Batch auction
+     * </pre>
+     *
+     * <code>AUCTION_TRIGGER_BATCH = 1;</code>
+     */
+    AUCTION_TRIGGER_BATCH(1),
+    /**
+     * <pre>
+     * Opening auction
+     * </pre>
+     *
+     * <code>AUCTION_TRIGGER_OPENING = 2;</code>
+     */
+    AUCTION_TRIGGER_OPENING(2),
+    /**
+     * <pre>
+     * Price monitoring trigger
+     * </pre>
+     *
+     * <code>AUCTION_TRIGGER_PRICE = 3;</code>
+     */
+    AUCTION_TRIGGER_PRICE(3),
+    /**
+     * <pre>
+     * liquidity monitoring trigger
+     * </pre>
+     *
+     * <code>AUCTION_TRIGGER_LIQUIDITY = 4;</code>
+     */
+    AUCTION_TRIGGER_LIQUIDITY(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * No auction triggered
+     * </pre>
+     *
+     * <code>AUCTION_TRIGGER_UNSPECIFIED = 0;</code>
+     */
+    public static final int AUCTION_TRIGGER_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * Batch auction
+     * </pre>
+     *
+     * <code>AUCTION_TRIGGER_BATCH = 1;</code>
+     */
+    public static final int AUCTION_TRIGGER_BATCH_VALUE = 1;
+    /**
+     * <pre>
+     * Opening auction
+     * </pre>
+     *
+     * <code>AUCTION_TRIGGER_OPENING = 2;</code>
+     */
+    public static final int AUCTION_TRIGGER_OPENING_VALUE = 2;
+    /**
+     * <pre>
+     * Price monitoring trigger
+     * </pre>
+     *
+     * <code>AUCTION_TRIGGER_PRICE = 3;</code>
+     */
+    public static final int AUCTION_TRIGGER_PRICE_VALUE = 3;
+    /**
+     * <pre>
+     * liquidity monitoring trigger
+     * </pre>
+     *
+     * <code>AUCTION_TRIGGER_LIQUIDITY = 4;</code>
+     */
+    public static final int AUCTION_TRIGGER_LIQUIDITY_VALUE = 4;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AuctionTrigger valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static AuctionTrigger forNumber(int value) {
+      switch (value) {
+        case 0: return AUCTION_TRIGGER_UNSPECIFIED;
+        case 1: return AUCTION_TRIGGER_BATCH;
+        case 2: return AUCTION_TRIGGER_OPENING;
+        case 3: return AUCTION_TRIGGER_PRICE;
+        case 4: return AUCTION_TRIGGER_LIQUIDITY;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AuctionTrigger>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        AuctionTrigger> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<AuctionTrigger>() {
+            public AuctionTrigger findValueByNumber(int number) {
+              return AuctionTrigger.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final AuctionTrigger[] VALUES = values();
+
+    public static AuctionTrigger valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AuctionTrigger(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:vega.AuctionTrigger)
   }
 
   /**
@@ -690,6 +893,86 @@ public final class Vega {
      * <code>ORDER_ERROR_INVALID_TIME_IN_FORCE = 23;</code>
      */
     ORDER_ERROR_INVALID_TIME_IN_FORCE(23),
+    /**
+     * <pre>
+     * A GFN order has got to the market when it is in auction mode
+     * </pre>
+     *
+     * <code>ORDER_ERROR_GFN_ORDER_DURING_AN_AUCTION = 24;</code>
+     */
+    ORDER_ERROR_GFN_ORDER_DURING_AN_AUCTION(24),
+    /**
+     * <pre>
+     * A GFA order has got to the market when it is in continuous trading mode
+     * </pre>
+     *
+     * <code>ORDER_ERROR_GFA_ORDER_DURING_CONTINUOUS_TRADING = 25;</code>
+     */
+    ORDER_ERROR_GFA_ORDER_DURING_CONTINUOUS_TRADING(25),
+    /**
+     * <pre>
+     * Attempt to amend order to GTT without ExpiryAt
+     * </pre>
+     *
+     * <code>ORDER_ERROR_CANNOT_AMEND_TO_GTT_WITHOUT_EXPIRYAT = 26;</code>
+     */
+    ORDER_ERROR_CANNOT_AMEND_TO_GTT_WITHOUT_EXPIRYAT(26),
+    /**
+     * <pre>
+     * Attempt to amend ExpiryAt to a value before CreatedAt
+     * </pre>
+     *
+     * <code>ORDER_ERROR_EXPIRYAT_BEFORE_CREATEDAT = 27;</code>
+     */
+    ORDER_ERROR_EXPIRYAT_BEFORE_CREATEDAT(27),
+    /**
+     * <pre>
+     * Attempt to amend to GTC without an ExpiryAt value
+     * </pre>
+     *
+     * <code>ORDER_ERROR_CANNOT_HAVE_GTC_AND_EXPIRYAT = 28;</code>
+     */
+    ORDER_ERROR_CANNOT_HAVE_GTC_AND_EXPIRYAT(28),
+    /**
+     * <pre>
+     * Amending to FOK or IOC is invalid
+     * </pre>
+     *
+     * <code>ORDER_ERROR_CANNOT_AMEND_TO_FOK_OR_IOC = 29;</code>
+     */
+    ORDER_ERROR_CANNOT_AMEND_TO_FOK_OR_IOC(29),
+    /**
+     * <pre>
+     * Amending to GFA or GFN is invalid
+     * </pre>
+     *
+     * <code>ORDER_ERROR_CANNOT_AMEND_TO_GFA_OR_GFN = 30;</code>
+     */
+    ORDER_ERROR_CANNOT_AMEND_TO_GFA_OR_GFN(30),
+    /**
+     * <pre>
+     * Amending from GFA or GFN is invalid
+     * </pre>
+     *
+     * <code>ORDER_ERROR_CANNOT_AMEND_FROM_GFA_OR_GFN = 31;</code>
+     */
+    ORDER_ERROR_CANNOT_AMEND_FROM_GFA_OR_GFN(31),
+    /**
+     * <pre>
+     * IOC orders are not allowed during auction
+     * </pre>
+     *
+     * <code>ORDER_ERROR_CANNOT_SEND_IOC_ORDER_DURING_AUCTION = 32;</code>
+     */
+    ORDER_ERROR_CANNOT_SEND_IOC_ORDER_DURING_AUCTION(32),
+    /**
+     * <pre>
+     * FOK orders are not allowed during auction
+     * </pre>
+     *
+     * <code>ORDER_ERROR_CANNOT_SEND_FOK_ORDER_DURING_AUCTION = 33;</code>
+     */
+    ORDER_ERROR_CANNOT_SEND_FOK_ORDER_DURING_AUCTION(33),
     UNRECOGNIZED(-1),
     ;
 
@@ -886,6 +1169,86 @@ public final class Vega {
      * <code>ORDER_ERROR_INVALID_TIME_IN_FORCE = 23;</code>
      */
     public static final int ORDER_ERROR_INVALID_TIME_IN_FORCE_VALUE = 23;
+    /**
+     * <pre>
+     * A GFN order has got to the market when it is in auction mode
+     * </pre>
+     *
+     * <code>ORDER_ERROR_GFN_ORDER_DURING_AN_AUCTION = 24;</code>
+     */
+    public static final int ORDER_ERROR_GFN_ORDER_DURING_AN_AUCTION_VALUE = 24;
+    /**
+     * <pre>
+     * A GFA order has got to the market when it is in continuous trading mode
+     * </pre>
+     *
+     * <code>ORDER_ERROR_GFA_ORDER_DURING_CONTINUOUS_TRADING = 25;</code>
+     */
+    public static final int ORDER_ERROR_GFA_ORDER_DURING_CONTINUOUS_TRADING_VALUE = 25;
+    /**
+     * <pre>
+     * Attempt to amend order to GTT without ExpiryAt
+     * </pre>
+     *
+     * <code>ORDER_ERROR_CANNOT_AMEND_TO_GTT_WITHOUT_EXPIRYAT = 26;</code>
+     */
+    public static final int ORDER_ERROR_CANNOT_AMEND_TO_GTT_WITHOUT_EXPIRYAT_VALUE = 26;
+    /**
+     * <pre>
+     * Attempt to amend ExpiryAt to a value before CreatedAt
+     * </pre>
+     *
+     * <code>ORDER_ERROR_EXPIRYAT_BEFORE_CREATEDAT = 27;</code>
+     */
+    public static final int ORDER_ERROR_EXPIRYAT_BEFORE_CREATEDAT_VALUE = 27;
+    /**
+     * <pre>
+     * Attempt to amend to GTC without an ExpiryAt value
+     * </pre>
+     *
+     * <code>ORDER_ERROR_CANNOT_HAVE_GTC_AND_EXPIRYAT = 28;</code>
+     */
+    public static final int ORDER_ERROR_CANNOT_HAVE_GTC_AND_EXPIRYAT_VALUE = 28;
+    /**
+     * <pre>
+     * Amending to FOK or IOC is invalid
+     * </pre>
+     *
+     * <code>ORDER_ERROR_CANNOT_AMEND_TO_FOK_OR_IOC = 29;</code>
+     */
+    public static final int ORDER_ERROR_CANNOT_AMEND_TO_FOK_OR_IOC_VALUE = 29;
+    /**
+     * <pre>
+     * Amending to GFA or GFN is invalid
+     * </pre>
+     *
+     * <code>ORDER_ERROR_CANNOT_AMEND_TO_GFA_OR_GFN = 30;</code>
+     */
+    public static final int ORDER_ERROR_CANNOT_AMEND_TO_GFA_OR_GFN_VALUE = 30;
+    /**
+     * <pre>
+     * Amending from GFA or GFN is invalid
+     * </pre>
+     *
+     * <code>ORDER_ERROR_CANNOT_AMEND_FROM_GFA_OR_GFN = 31;</code>
+     */
+    public static final int ORDER_ERROR_CANNOT_AMEND_FROM_GFA_OR_GFN_VALUE = 31;
+    /**
+     * <pre>
+     * IOC orders are not allowed during auction
+     * </pre>
+     *
+     * <code>ORDER_ERROR_CANNOT_SEND_IOC_ORDER_DURING_AUCTION = 32;</code>
+     */
+    public static final int ORDER_ERROR_CANNOT_SEND_IOC_ORDER_DURING_AUCTION_VALUE = 32;
+    /**
+     * <pre>
+     * FOK orders are not allowed during auction
+     * </pre>
+     *
+     * <code>ORDER_ERROR_CANNOT_SEND_FOK_ORDER_DURING_AUCTION = 33;</code>
+     */
+    public static final int ORDER_ERROR_CANNOT_SEND_FOK_ORDER_DURING_AUCTION_VALUE = 33;
 
 
     public final int getNumber() {
@@ -930,6 +1293,16 @@ public final class Vega {
         case 21: return ORDER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEES;
         case 22: return ORDER_ERROR_INCORRECT_MARKET_TYPE;
         case 23: return ORDER_ERROR_INVALID_TIME_IN_FORCE;
+        case 24: return ORDER_ERROR_GFN_ORDER_DURING_AN_AUCTION;
+        case 25: return ORDER_ERROR_GFA_ORDER_DURING_CONTINUOUS_TRADING;
+        case 26: return ORDER_ERROR_CANNOT_AMEND_TO_GTT_WITHOUT_EXPIRYAT;
+        case 27: return ORDER_ERROR_EXPIRYAT_BEFORE_CREATEDAT;
+        case 28: return ORDER_ERROR_CANNOT_HAVE_GTC_AND_EXPIRYAT;
+        case 29: return ORDER_ERROR_CANNOT_AMEND_TO_FOK_OR_IOC;
+        case 30: return ORDER_ERROR_CANNOT_AMEND_TO_GFA_OR_GFN;
+        case 31: return ORDER_ERROR_CANNOT_AMEND_FROM_GFA_OR_GFN;
+        case 32: return ORDER_ERROR_CANNOT_SEND_IOC_ORDER_DURING_AUCTION;
+        case 33: return ORDER_ERROR_CANNOT_SEND_FOK_ORDER_DURING_AUCTION;
         default: return null;
       }
     }
@@ -956,7 +1329,7 @@ public final class Vega {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(3);
+      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(4);
     }
 
     private static final OrderError[] VALUES = values();
@@ -1108,7 +1481,7 @@ public final class Vega {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(4);
+      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(5);
     }
 
     private static final ChainStatus[] VALUES = values();
@@ -1361,7 +1734,7 @@ public final class Vega {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(5);
+      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(6);
     }
 
     private static final AccountType[] VALUES = values();
@@ -1666,7 +2039,7 @@ public final class Vega {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(6);
+      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(7);
     }
 
     private static final TransferType[] VALUES = values();
@@ -1801,7 +2174,7 @@ public final class Vega {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(7);
+      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(8);
     }
 
     private static final NodeSignatureKind[] VALUES = values();
@@ -2950,7 +3323,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -2968,7 +3341,7 @@ public final class Vega {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -3315,7 +3688,7 @@ public final class Vega {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -3571,7 +3944,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         market_ = s;
@@ -3589,7 +3962,7 @@ public final class Vega {
         getMarketBytes() {
       java.lang.Object ref = market_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         market_ = b;
@@ -4000,7 +4373,7 @@ public final class Vega {
           getMarketBytes() {
         java.lang.Object ref = market_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           market_ = b;
@@ -4461,7 +4834,7 @@ public final class Vega {
           java.lang.String, io.vegaprotocol.vega.Vega.RiskFactor> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, io.vegaprotocol.vega.Vega.RiskFactor>newDefaultInstance(
-                  io.vegaprotocol.vega.Vega.internal_static_vega_RiskResult_RiskFactorsEntry_descriptor, 
+                  io.vegaprotocol.vega.Vega.internal_static_vega_RiskResult_RiskFactorsEntry_descriptor,
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
@@ -4566,7 +4939,7 @@ public final class Vega {
           java.lang.String, io.vegaprotocol.vega.Vega.RiskFactor> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, io.vegaprotocol.vega.Vega.RiskFactor>newDefaultInstance(
-                  io.vegaprotocol.vega.Vega.internal_static_vega_RiskResult_PredictedNextRiskFactorsEntry_descriptor, 
+                  io.vegaprotocol.vega.Vega.internal_static_vega_RiskResult_PredictedNextRiskFactorsEntry_descriptor,
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
@@ -6506,7 +6879,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -6524,7 +6897,7 @@ public final class Vega {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -6548,7 +6921,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         marketID_ = s;
@@ -6566,7 +6939,7 @@ public final class Vega {
         getMarketIDBytes() {
       java.lang.Object ref = marketID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         marketID_ = b;
@@ -6590,7 +6963,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         partyID_ = s;
@@ -6608,7 +6981,7 @@ public final class Vega {
         getPartyIDBytes() {
       java.lang.Object ref = partyID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         partyID_ = b;
@@ -6805,7 +7178,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         reference_ = s;
@@ -6824,7 +7197,7 @@ public final class Vega {
         getReferenceBytes() {
       java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         reference_ = b;
@@ -7514,7 +7887,7 @@ public final class Vega {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -7603,7 +7976,7 @@ public final class Vega {
           getMarketIDBytes() {
         java.lang.Object ref = marketID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           marketID_ = b;
@@ -7692,7 +8065,7 @@ public final class Vega {
           getPartyIDBytes() {
         java.lang.Object ref = partyID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           partyID_ = b;
@@ -8252,7 +8625,7 @@ public final class Vega {
           getReferenceBytes() {
         java.lang.Object ref = reference_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           reference_ = b;
@@ -9164,7 +9537,7 @@ public final class Vega {
        * <code>.vega.Order order = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Order, io.vegaprotocol.vega.Vega.Order.Builder, io.vegaprotocol.vega.Vega.OrderOrBuilder> 
+          io.vegaprotocol.vega.Vega.Order, io.vegaprotocol.vega.Vega.Order.Builder, io.vegaprotocol.vega.Vega.OrderOrBuilder>
           getOrderFieldBuilder() {
         if (orderBuilder_ == null) {
           orderBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -9265,7 +9638,7 @@ public final class Vega {
      *
      * <code>repeated .vega.Trade trades = 2;</code>
      */
-    java.util.List<io.vegaprotocol.vega.Vega.Trade> 
+    java.util.List<io.vegaprotocol.vega.Vega.Trade>
         getTradesList();
     /**
      * <pre>
@@ -9290,7 +9663,7 @@ public final class Vega {
      *
      * <code>repeated .vega.Trade trades = 2;</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Vega.TradeOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.Vega.TradeOrBuilder>
         getTradesOrBuilderList();
     /**
      * <pre>
@@ -9309,7 +9682,7 @@ public final class Vega {
      *
      * <code>repeated .vega.Order passiveOrdersAffected = 3;</code>
      */
-    java.util.List<io.vegaprotocol.vega.Vega.Order> 
+    java.util.List<io.vegaprotocol.vega.Vega.Order>
         getPassiveOrdersAffectedList();
     /**
      * <pre>
@@ -9334,7 +9707,7 @@ public final class Vega {
      *
      * <code>repeated .vega.Order passiveOrdersAffected = 3;</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Vega.OrderOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.Vega.OrderOrBuilder>
         getPassiveOrdersAffectedOrBuilderList();
     /**
      * <pre>
@@ -9513,7 +9886,7 @@ public final class Vega {
      *
      * <code>repeated .vega.Trade trades = 2;</code>
      */
-    public java.util.List<? extends io.vegaprotocol.vega.Vega.TradeOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.TradeOrBuilder>
         getTradesOrBuilderList() {
       return trades_;
     }
@@ -9568,7 +9941,7 @@ public final class Vega {
      *
      * <code>repeated .vega.Order passiveOrdersAffected = 3;</code>
      */
-    public java.util.List<? extends io.vegaprotocol.vega.Vega.OrderOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.OrderOrBuilder>
         getPassiveOrdersAffectedOrBuilderList() {
       return passiveOrdersAffected_;
     }
@@ -9973,7 +10346,7 @@ public final class Vega {
               tradesBuilder_ = null;
               trades_ = other.trades_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              tradesBuilder_ = 
+              tradesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTradesFieldBuilder() : null;
             } else {
@@ -9999,7 +10372,7 @@ public final class Vega {
               passiveOrdersAffectedBuilder_ = null;
               passiveOrdersAffected_ = other.passiveOrdersAffected_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              passiveOrdersAffectedBuilder_ = 
+              passiveOrdersAffectedBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPassiveOrdersAffectedFieldBuilder() : null;
             } else {
@@ -10177,7 +10550,7 @@ public final class Vega {
        * <code>.vega.Order order = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Order, io.vegaprotocol.vega.Vega.Order.Builder, io.vegaprotocol.vega.Vega.OrderOrBuilder> 
+          io.vegaprotocol.vega.Vega.Order, io.vegaprotocol.vega.Vega.Order.Builder, io.vegaprotocol.vega.Vega.OrderOrBuilder>
           getOrderFieldBuilder() {
         if (orderBuilder_ == null) {
           orderBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -10445,7 +10818,7 @@ public final class Vega {
        *
        * <code>repeated .vega.Trade trades = 2;</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Vega.TradeOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.TradeOrBuilder>
            getTradesOrBuilderList() {
         if (tradesBuilder_ != null) {
           return tradesBuilder_.getMessageOrBuilderList();
@@ -10483,12 +10856,12 @@ public final class Vega {
        *
        * <code>repeated .vega.Trade trades = 2;</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Vega.Trade.Builder> 
+      public java.util.List<io.vegaprotocol.vega.Vega.Trade.Builder>
            getTradesBuilderList() {
         return getTradesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Trade, io.vegaprotocol.vega.Vega.Trade.Builder, io.vegaprotocol.vega.Vega.TradeOrBuilder> 
+          io.vegaprotocol.vega.Vega.Trade, io.vegaprotocol.vega.Vega.Trade.Builder, io.vegaprotocol.vega.Vega.TradeOrBuilder>
           getTradesFieldBuilder() {
         if (tradesBuilder_ == null) {
           tradesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -10757,7 +11130,7 @@ public final class Vega {
        *
        * <code>repeated .vega.Order passiveOrdersAffected = 3;</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Vega.OrderOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.OrderOrBuilder>
            getPassiveOrdersAffectedOrBuilderList() {
         if (passiveOrdersAffectedBuilder_ != null) {
           return passiveOrdersAffectedBuilder_.getMessageOrBuilderList();
@@ -10795,12 +11168,12 @@ public final class Vega {
        *
        * <code>repeated .vega.Order passiveOrdersAffected = 3;</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Vega.Order.Builder> 
+      public java.util.List<io.vegaprotocol.vega.Vega.Order.Builder>
            getPassiveOrdersAffectedBuilderList() {
         return getPassiveOrdersAffectedFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Order, io.vegaprotocol.vega.Vega.Order.Builder, io.vegaprotocol.vega.Vega.OrderOrBuilder> 
+          io.vegaprotocol.vega.Vega.Order, io.vegaprotocol.vega.Vega.Order.Builder, io.vegaprotocol.vega.Vega.OrderOrBuilder>
           getPassiveOrdersAffectedFieldBuilder() {
         if (passiveOrdersAffectedBuilder_ == null) {
           passiveOrdersAffectedBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -11040,7 +11413,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         marketID_ = s;
@@ -11058,7 +11431,7 @@ public final class Vega {
         getMarketIDBytes() {
       java.lang.Object ref = marketID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         marketID_ = b;
@@ -11529,7 +11902,7 @@ public final class Vega {
           getMarketIDBytes() {
         java.lang.Object ref = marketID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           marketID_ = b;
@@ -12386,7 +12759,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -12404,7 +12777,7 @@ public final class Vega {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -12428,7 +12801,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         marketID_ = s;
@@ -12446,7 +12819,7 @@ public final class Vega {
         getMarketIDBytes() {
       java.lang.Object ref = marketID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         marketID_ = b;
@@ -12497,7 +12870,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         buyer_ = s;
@@ -12515,7 +12888,7 @@ public final class Vega {
         getBuyerBytes() {
       java.lang.Object ref = buyer_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         buyer_ = b;
@@ -12539,7 +12912,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         seller_ = s;
@@ -12557,7 +12930,7 @@ public final class Vega {
         getSellerBytes() {
       java.lang.Object ref = seller_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         seller_ = b;
@@ -12606,7 +12979,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         buyOrder_ = s;
@@ -12624,7 +12997,7 @@ public final class Vega {
         getBuyOrderBytes() {
       java.lang.Object ref = buyOrder_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         buyOrder_ = b;
@@ -12648,7 +13021,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         sellOrder_ = s;
@@ -12666,7 +13039,7 @@ public final class Vega {
         getSellOrderBytes() {
       java.lang.Object ref = sellOrder_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         sellOrder_ = b;
@@ -13411,7 +13784,7 @@ public final class Vega {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -13500,7 +13873,7 @@ public final class Vega {
           getMarketIDBytes() {
         java.lang.Object ref = marketID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           marketID_ = b;
@@ -13668,7 +14041,7 @@ public final class Vega {
           getBuyerBytes() {
         java.lang.Object ref = buyer_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           buyer_ = b;
@@ -13757,7 +14130,7 @@ public final class Vega {
           getSellerBytes() {
         java.lang.Object ref = seller_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           seller_ = b;
@@ -13911,7 +14284,7 @@ public final class Vega {
           getBuyOrderBytes() {
         java.lang.Object ref = buyOrder_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           buyOrder_ = b;
@@ -14000,7 +14373,7 @@ public final class Vega {
           getSellOrderBytes() {
         java.lang.Object ref = sellOrder_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           sellOrder_ = b;
@@ -14304,7 +14677,7 @@ public final class Vega {
        * <code>.vega.Fee buyerFee = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Fee, io.vegaprotocol.vega.Vega.Fee.Builder, io.vegaprotocol.vega.Vega.FeeOrBuilder> 
+          io.vegaprotocol.vega.Vega.Fee, io.vegaprotocol.vega.Vega.Fee.Builder, io.vegaprotocol.vega.Vega.FeeOrBuilder>
           getBuyerFeeFieldBuilder() {
         if (buyerFeeBuilder_ == null) {
           buyerFeeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -14457,7 +14830,7 @@ public final class Vega {
        * <code>.vega.Fee sellerFee = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Fee, io.vegaprotocol.vega.Vega.Fee.Builder, io.vegaprotocol.vega.Vega.FeeOrBuilder> 
+          io.vegaprotocol.vega.Vega.Fee, io.vegaprotocol.vega.Vega.Fee.Builder, io.vegaprotocol.vega.Vega.FeeOrBuilder>
           getSellerFeeFieldBuilder() {
         if (sellerFeeBuilder_ == null) {
           sellerFeeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -15278,7 +15651,7 @@ public final class Vega {
      *
      * <code>repeated .vega.Trade trades = 1;</code>
      */
-    java.util.List<io.vegaprotocol.vega.Vega.Trade> 
+    java.util.List<io.vegaprotocol.vega.Vega.Trade>
         getTradesList();
     /**
      * <pre>
@@ -15303,7 +15676,7 @@ public final class Vega {
      *
      * <code>repeated .vega.Trade trades = 1;</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Vega.TradeOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.Vega.TradeOrBuilder>
         getTradesOrBuilderList();
     /**
      * <pre>
@@ -15418,7 +15791,7 @@ public final class Vega {
      *
      * <code>repeated .vega.Trade trades = 1;</code>
      */
-    public java.util.List<? extends io.vegaprotocol.vega.Vega.TradeOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.TradeOrBuilder>
         getTradesOrBuilderList() {
       return trades_;
     }
@@ -15758,7 +16131,7 @@ public final class Vega {
               tradesBuilder_ = null;
               trades_ = other.trades_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              tradesBuilder_ = 
+              tradesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTradesFieldBuilder() : null;
             } else {
@@ -16051,7 +16424,7 @@ public final class Vega {
        *
        * <code>repeated .vega.Trade trades = 1;</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Vega.TradeOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.TradeOrBuilder>
            getTradesOrBuilderList() {
         if (tradesBuilder_ != null) {
           return tradesBuilder_.getMessageOrBuilderList();
@@ -16089,12 +16462,12 @@ public final class Vega {
        *
        * <code>repeated .vega.Trade trades = 1;</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Vega.Trade.Builder> 
+      public java.util.List<io.vegaprotocol.vega.Vega.Trade.Builder>
            getTradesBuilderList() {
         return getTradesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Trade, io.vegaprotocol.vega.Vega.Trade.Builder, io.vegaprotocol.vega.Vega.TradeOrBuilder> 
+          io.vegaprotocol.vega.Vega.Trade, io.vegaprotocol.vega.Vega.Trade.Builder, io.vegaprotocol.vega.Vega.TradeOrBuilder>
           getTradesFieldBuilder() {
         if (tradesBuilder_ == null) {
           tradesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -16402,7 +16775,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         datetime_ = s;
@@ -16420,7 +16793,7 @@ public final class Vega {
         getDatetimeBytes() {
       java.lang.Object ref = datetime_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         datetime_ = b;
@@ -17023,7 +17396,7 @@ public final class Vega {
           getDatetimeBytes() {
         java.lang.Object ref = datetime_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           datetime_ = b;
@@ -18091,7 +18464,7 @@ public final class Vega {
      *
      * <code>repeated .vega.PriceLevel buy = 2;</code>
      */
-    java.util.List<io.vegaprotocol.vega.Vega.PriceLevel> 
+    java.util.List<io.vegaprotocol.vega.Vega.PriceLevel>
         getBuyList();
     /**
      * <pre>
@@ -18116,7 +18489,7 @@ public final class Vega {
      *
      * <code>repeated .vega.PriceLevel buy = 2;</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder>
         getBuyOrBuilderList();
     /**
      * <pre>
@@ -18135,7 +18508,7 @@ public final class Vega {
      *
      * <code>repeated .vega.PriceLevel sell = 3;</code>
      */
-    java.util.List<io.vegaprotocol.vega.Vega.PriceLevel> 
+    java.util.List<io.vegaprotocol.vega.Vega.PriceLevel>
         getSellList();
     /**
      * <pre>
@@ -18160,7 +18533,7 @@ public final class Vega {
      *
      * <code>repeated .vega.PriceLevel sell = 3;</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder>
         getSellOrBuilderList();
     /**
      * <pre>
@@ -18309,7 +18682,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         marketID_ = s;
@@ -18327,7 +18700,7 @@ public final class Vega {
         getMarketIDBytes() {
       java.lang.Object ref = marketID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         marketID_ = b;
@@ -18356,7 +18729,7 @@ public final class Vega {
      *
      * <code>repeated .vega.PriceLevel buy = 2;</code>
      */
-    public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder>
         getBuyOrBuilderList() {
       return buy_;
     }
@@ -18411,7 +18784,7 @@ public final class Vega {
      *
      * <code>repeated .vega.PriceLevel sell = 3;</code>
      */
-    public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder>
         getSellOrBuilderList() {
       return sell_;
     }
@@ -18831,7 +19204,7 @@ public final class Vega {
               buyBuilder_ = null;
               buy_ = other.buy_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              buyBuilder_ = 
+              buyBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBuyFieldBuilder() : null;
             } else {
@@ -18857,7 +19230,7 @@ public final class Vega {
               sellBuilder_ = null;
               sell_ = other.sell_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              sellBuilder_ = 
+              sellBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSellFieldBuilder() : null;
             } else {
@@ -18929,7 +19302,7 @@ public final class Vega {
           getMarketIDBytes() {
         java.lang.Object ref = marketID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           marketID_ = b;
@@ -19242,7 +19615,7 @@ public final class Vega {
        *
        * <code>repeated .vega.PriceLevel buy = 2;</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder>
            getBuyOrBuilderList() {
         if (buyBuilder_ != null) {
           return buyBuilder_.getMessageOrBuilderList();
@@ -19280,12 +19653,12 @@ public final class Vega {
        *
        * <code>repeated .vega.PriceLevel buy = 2;</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Vega.PriceLevel.Builder> 
+      public java.util.List<io.vegaprotocol.vega.Vega.PriceLevel.Builder>
            getBuyBuilderList() {
         return getBuyFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.PriceLevel, io.vegaprotocol.vega.Vega.PriceLevel.Builder, io.vegaprotocol.vega.Vega.PriceLevelOrBuilder> 
+          io.vegaprotocol.vega.Vega.PriceLevel, io.vegaprotocol.vega.Vega.PriceLevel.Builder, io.vegaprotocol.vega.Vega.PriceLevelOrBuilder>
           getBuyFieldBuilder() {
         if (buyBuilder_ == null) {
           buyBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -19554,7 +19927,7 @@ public final class Vega {
        *
        * <code>repeated .vega.PriceLevel sell = 3;</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder>
            getSellOrBuilderList() {
         if (sellBuilder_ != null) {
           return sellBuilder_.getMessageOrBuilderList();
@@ -19592,12 +19965,12 @@ public final class Vega {
        *
        * <code>repeated .vega.PriceLevel sell = 3;</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Vega.PriceLevel.Builder> 
+      public java.util.List<io.vegaprotocol.vega.Vega.PriceLevel.Builder>
            getSellBuilderList() {
         return getSellFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.PriceLevel, io.vegaprotocol.vega.Vega.PriceLevel.Builder, io.vegaprotocol.vega.Vega.PriceLevelOrBuilder> 
+          io.vegaprotocol.vega.Vega.PriceLevel, io.vegaprotocol.vega.Vega.PriceLevel.Builder, io.vegaprotocol.vega.Vega.PriceLevelOrBuilder>
           getSellFieldBuilder() {
         if (sellBuilder_ == null) {
           sellBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -19730,7 +20103,7 @@ public final class Vega {
      *
      * <code>repeated .vega.PriceLevel buy = 2;</code>
      */
-    java.util.List<io.vegaprotocol.vega.Vega.PriceLevel> 
+    java.util.List<io.vegaprotocol.vega.Vega.PriceLevel>
         getBuyList();
     /**
      * <pre>
@@ -19755,7 +20128,7 @@ public final class Vega {
      *
      * <code>repeated .vega.PriceLevel buy = 2;</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder>
         getBuyOrBuilderList();
     /**
      * <pre>
@@ -19774,7 +20147,7 @@ public final class Vega {
      *
      * <code>repeated .vega.PriceLevel sell = 3;</code>
      */
-    java.util.List<io.vegaprotocol.vega.Vega.PriceLevel> 
+    java.util.List<io.vegaprotocol.vega.Vega.PriceLevel>
         getSellList();
     /**
      * <pre>
@@ -19799,7 +20172,7 @@ public final class Vega {
      *
      * <code>repeated .vega.PriceLevel sell = 3;</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder>
         getSellOrBuilderList();
     /**
      * <pre>
@@ -19948,7 +20321,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         marketID_ = s;
@@ -19966,7 +20339,7 @@ public final class Vega {
         getMarketIDBytes() {
       java.lang.Object ref = marketID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         marketID_ = b;
@@ -19995,7 +20368,7 @@ public final class Vega {
      *
      * <code>repeated .vega.PriceLevel buy = 2;</code>
      */
-    public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder>
         getBuyOrBuilderList() {
       return buy_;
     }
@@ -20050,7 +20423,7 @@ public final class Vega {
      *
      * <code>repeated .vega.PriceLevel sell = 3;</code>
      */
-    public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder>
         getSellOrBuilderList() {
       return sell_;
     }
@@ -20470,7 +20843,7 @@ public final class Vega {
               buyBuilder_ = null;
               buy_ = other.buy_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              buyBuilder_ = 
+              buyBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBuyFieldBuilder() : null;
             } else {
@@ -20496,7 +20869,7 @@ public final class Vega {
               sellBuilder_ = null;
               sell_ = other.sell_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              sellBuilder_ = 
+              sellBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSellFieldBuilder() : null;
             } else {
@@ -20568,7 +20941,7 @@ public final class Vega {
           getMarketIDBytes() {
         java.lang.Object ref = marketID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           marketID_ = b;
@@ -20881,7 +21254,7 @@ public final class Vega {
        *
        * <code>repeated .vega.PriceLevel buy = 2;</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder>
            getBuyOrBuilderList() {
         if (buyBuilder_ != null) {
           return buyBuilder_.getMessageOrBuilderList();
@@ -20919,12 +21292,12 @@ public final class Vega {
        *
        * <code>repeated .vega.PriceLevel buy = 2;</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Vega.PriceLevel.Builder> 
+      public java.util.List<io.vegaprotocol.vega.Vega.PriceLevel.Builder>
            getBuyBuilderList() {
         return getBuyFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.PriceLevel, io.vegaprotocol.vega.Vega.PriceLevel.Builder, io.vegaprotocol.vega.Vega.PriceLevelOrBuilder> 
+          io.vegaprotocol.vega.Vega.PriceLevel, io.vegaprotocol.vega.Vega.PriceLevel.Builder, io.vegaprotocol.vega.Vega.PriceLevelOrBuilder>
           getBuyFieldBuilder() {
         if (buyBuilder_ == null) {
           buyBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -21193,7 +21566,7 @@ public final class Vega {
        *
        * <code>repeated .vega.PriceLevel sell = 3;</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceLevelOrBuilder>
            getSellOrBuilderList() {
         if (sellBuilder_ != null) {
           return sellBuilder_.getMessageOrBuilderList();
@@ -21231,12 +21604,12 @@ public final class Vega {
        *
        * <code>repeated .vega.PriceLevel sell = 3;</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Vega.PriceLevel.Builder> 
+      public java.util.List<io.vegaprotocol.vega.Vega.PriceLevel.Builder>
            getSellBuilderList() {
         return getSellFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.PriceLevel, io.vegaprotocol.vega.Vega.PriceLevel.Builder, io.vegaprotocol.vega.Vega.PriceLevelOrBuilder> 
+          io.vegaprotocol.vega.Vega.PriceLevel, io.vegaprotocol.vega.Vega.PriceLevel.Builder, io.vegaprotocol.vega.Vega.PriceLevelOrBuilder>
           getSellFieldBuilder() {
         if (sellBuilder_ == null) {
           sellBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -21554,7 +21927,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         marketID_ = s;
@@ -21572,7 +21945,7 @@ public final class Vega {
         getMarketIDBytes() {
       java.lang.Object ref = marketID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         marketID_ = b;
@@ -21596,7 +21969,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         partyID_ = s;
@@ -21614,7 +21987,7 @@ public final class Vega {
         getPartyIDBytes() {
       java.lang.Object ref = partyID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         partyID_ = b;
@@ -22134,7 +22507,7 @@ public final class Vega {
           getMarketIDBytes() {
         java.lang.Object ref = marketID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           marketID_ = b;
@@ -22223,7 +22596,7 @@ public final class Vega {
           getPartyIDBytes() {
         java.lang.Object ref = partyID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           partyID_ = b;
@@ -23473,6 +23846,15 @@ public final class Vega {
      */
     com.google.protobuf.ByteString
         getChainIDBytes();
+
+    /**
+     * <pre>
+     * Current number of stream subscribers to market depth update data.
+     * </pre>
+     *
+     * <code>uint32 marketDepthUpdatesSubscriptions = 34;</code>
+     */
+    int getMarketDepthUpdatesSubscriptions();
   }
   /**
    * <pre>
@@ -23690,6 +24072,11 @@ public final class Vega {
               chainID_ = s;
               break;
             }
+            case 272: {
+
+              marketDepthUpdatesSubscriptions_ = input.readUInt32();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -23775,7 +24162,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         genesisTime_ = s;
@@ -23793,7 +24180,7 @@ public final class Vega {
         getGenesisTimeBytes() {
       java.lang.Object ref = genesisTime_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         genesisTime_ = b;
@@ -23817,7 +24204,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         currentTime_ = s;
@@ -23835,7 +24222,7 @@ public final class Vega {
         getCurrentTimeBytes() {
       java.lang.Object ref = currentTime_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         currentTime_ = b;
@@ -23859,7 +24246,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         vegaTime_ = s;
@@ -23877,7 +24264,7 @@ public final class Vega {
         getVegaTimeBytes() {
       java.lang.Object ref = vegaTime_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         vegaTime_ = b;
@@ -24162,7 +24549,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         appVersionHash_ = s;
@@ -24180,7 +24567,7 @@ public final class Vega {
         getAppVersionHashBytes() {
       java.lang.Object ref = appVersionHash_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         appVersionHash_ = b;
@@ -24204,7 +24591,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         appVersion_ = s;
@@ -24222,7 +24609,7 @@ public final class Vega {
         getAppVersionBytes() {
       java.lang.Object ref = appVersion_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         appVersion_ = b;
@@ -24246,7 +24633,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         chainVersion_ = s;
@@ -24264,7 +24651,7 @@ public final class Vega {
         getChainVersionBytes() {
       java.lang.Object ref = chainVersion_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         chainVersion_ = b;
@@ -24301,7 +24688,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         uptime_ = s;
@@ -24319,7 +24706,7 @@ public final class Vega {
         getUptimeBytes() {
       java.lang.Object ref = uptime_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         uptime_ = b;
@@ -24343,7 +24730,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         chainID_ = s;
@@ -24361,7 +24748,7 @@ public final class Vega {
         getChainIDBytes() {
       java.lang.Object ref = chainID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         chainID_ = b;
@@ -24369,6 +24756,19 @@ public final class Vega {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int MARKETDEPTHUPDATESSUBSCRIPTIONS_FIELD_NUMBER = 34;
+    private int marketDepthUpdatesSubscriptions_;
+    /**
+     * <pre>
+     * Current number of stream subscribers to market depth update data.
+     * </pre>
+     *
+     * <code>uint32 marketDepthUpdatesSubscriptions = 34;</code>
+     */
+    public int getMarketDepthUpdatesSubscriptions() {
+      return marketDepthUpdatesSubscriptions_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -24477,6 +24877,9 @@ public final class Vega {
       }
       if (!getChainIDBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 33, chainID_);
+      }
+      if (marketDepthUpdatesSubscriptions_ != 0) {
+        output.writeUInt32(34, marketDepthUpdatesSubscriptions_);
       }
       unknownFields.writeTo(output);
     }
@@ -24603,6 +25006,10 @@ public final class Vega {
       if (!getChainIDBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(33, chainID_);
       }
+      if (marketDepthUpdatesSubscriptions_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(34, marketDepthUpdatesSubscriptions_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -24679,6 +25086,8 @@ public final class Vega {
           .equals(other.getUptime())) return false;
       if (!getChainID()
           .equals(other.getChainID())) return false;
+      if (getMarketDepthUpdatesSubscriptions()
+          != other.getMarketDepthUpdatesSubscriptions()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -24767,6 +25176,8 @@ public final class Vega {
       hash = (53 * hash) + getUptime().hashCode();
       hash = (37 * hash) + CHAINID_FIELD_NUMBER;
       hash = (53 * hash) + getChainID().hashCode();
+      hash = (37 * hash) + MARKETDEPTHUPDATESSUBSCRIPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getMarketDepthUpdatesSubscriptions();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -24966,6 +25377,8 @@ public final class Vega {
 
         chainID_ = "";
 
+        marketDepthUpdatesSubscriptions_ = 0;
+
         return this;
       }
 
@@ -25023,6 +25436,7 @@ public final class Vega {
         result.blockDuration_ = blockDuration_;
         result.uptime_ = uptime_;
         result.chainID_ = chainID_;
+        result.marketDepthUpdatesSubscriptions_ = marketDepthUpdatesSubscriptions_;
         onBuilt();
         return result;
       }
@@ -25171,6 +25585,9 @@ public final class Vega {
         if (!other.getChainID().isEmpty()) {
           chainID_ = other.chainID_;
           onChanged();
+        }
+        if (other.getMarketDepthUpdatesSubscriptions() != 0) {
+          setMarketDepthUpdatesSubscriptions(other.getMarketDepthUpdatesSubscriptions());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -25346,7 +25763,7 @@ public final class Vega {
           getGenesisTimeBytes() {
         java.lang.Object ref = genesisTime_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           genesisTime_ = b;
@@ -25435,7 +25852,7 @@ public final class Vega {
           getCurrentTimeBytes() {
         java.lang.Object ref = currentTime_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           currentTime_ = b;
@@ -25524,7 +25941,7 @@ public final class Vega {
           getVegaTimeBytes() {
         java.lang.Object ref = vegaTime_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           vegaTime_ = b;
@@ -26367,7 +26784,7 @@ public final class Vega {
           getAppVersionHashBytes() {
         java.lang.Object ref = appVersionHash_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           appVersionHash_ = b;
@@ -26456,7 +26873,7 @@ public final class Vega {
           getAppVersionBytes() {
         java.lang.Object ref = appVersion_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           appVersion_ = b;
@@ -26545,7 +26962,7 @@ public final class Vega {
           getChainVersionBytes() {
         java.lang.Object ref = chainVersion_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           chainVersion_ = b;
@@ -26672,7 +27089,7 @@ public final class Vega {
           getUptimeBytes() {
         java.lang.Object ref = uptime_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           uptime_ = b;
@@ -26761,7 +27178,7 @@ public final class Vega {
           getChainIDBytes() {
         java.lang.Object ref = chainID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           chainID_ = b;
@@ -26815,6 +27232,44 @@ public final class Vega {
   checkByteStringIsUtf8(value);
 
         chainID_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int marketDepthUpdatesSubscriptions_ ;
+      /**
+       * <pre>
+       * Current number of stream subscribers to market depth update data.
+       * </pre>
+       *
+       * <code>uint32 marketDepthUpdatesSubscriptions = 34;</code>
+       */
+      public int getMarketDepthUpdatesSubscriptions() {
+        return marketDepthUpdatesSubscriptions_;
+      }
+      /**
+       * <pre>
+       * Current number of stream subscribers to market depth update data.
+       * </pre>
+       *
+       * <code>uint32 marketDepthUpdatesSubscriptions = 34;</code>
+       */
+      public Builder setMarketDepthUpdatesSubscriptions(int value) {
+
+        marketDepthUpdatesSubscriptions_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Current number of stream subscribers to market depth update data.
+       * </pre>
+       *
+       * <code>uint32 marketDepthUpdatesSubscriptions = 34;</code>
+       */
+      public Builder clearMarketDepthUpdatesSubscriptions() {
+
+        marketDepthUpdatesSubscriptions_ = 0;
         onChanged();
         return this;
       }
@@ -27293,7 +27748,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -27311,7 +27766,7 @@ public final class Vega {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -27360,7 +27815,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         partyID_ = s;
@@ -27378,7 +27833,7 @@ public final class Vega {
         getPartyIDBytes() {
       java.lang.Object ref = partyID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         partyID_ = b;
@@ -27402,7 +27857,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         asset_ = s;
@@ -27420,7 +27875,7 @@ public final class Vega {
         getAssetBytes() {
       java.lang.Object ref = asset_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         asset_ = b;
@@ -27444,7 +27899,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         amount_ = s;
@@ -27462,7 +27917,7 @@ public final class Vega {
         getAmountBytes() {
       java.lang.Object ref = amount_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         amount_ = b;
@@ -27486,7 +27941,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         txHash_ = s;
@@ -27504,7 +27959,7 @@ public final class Vega {
         getTxHashBytes() {
       java.lang.Object ref = txHash_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         txHash_ = b;
@@ -27997,7 +28452,7 @@ public final class Vega {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -28151,7 +28606,7 @@ public final class Vega {
           getPartyIDBytes() {
         java.lang.Object ref = partyID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           partyID_ = b;
@@ -28240,7 +28695,7 @@ public final class Vega {
           getAssetBytes() {
         java.lang.Object ref = asset_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           asset_ = b;
@@ -28329,7 +28784,7 @@ public final class Vega {
           getAmountBytes() {
         java.lang.Object ref = amount_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           amount_ = b;
@@ -28418,7 +28873,7 @@ public final class Vega {
           getTxHashBytes() {
         java.lang.Object ref = txHash_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           txHash_ = b;
@@ -29096,7 +29551,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -29114,7 +29569,7 @@ public final class Vega {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -29138,7 +29593,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         partyID_ = s;
@@ -29156,7 +29611,7 @@ public final class Vega {
         getPartyIDBytes() {
       java.lang.Object ref = partyID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         partyID_ = b;
@@ -29193,7 +29648,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         asset_ = s;
@@ -29211,7 +29666,7 @@ public final class Vega {
         getAssetBytes() {
       java.lang.Object ref = asset_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         asset_ = b;
@@ -29261,7 +29716,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         ref_ = s;
@@ -29280,7 +29735,7 @@ public final class Vega {
         getRefBytes() {
       java.lang.Object ref = ref_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         ref_ = b;
@@ -29317,7 +29772,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         txHash_ = s;
@@ -29335,7 +29790,7 @@ public final class Vega {
         getTxHashBytes() {
       java.lang.Object ref = txHash_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         txHash_ = b;
@@ -29927,7 +30382,7 @@ public final class Vega {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -30016,7 +30471,7 @@ public final class Vega {
           getPartyIDBytes() {
         java.lang.Object ref = partyID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           partyID_ = b;
@@ -30143,7 +30598,7 @@ public final class Vega {
           getAssetBytes() {
         java.lang.Object ref = asset_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           asset_ = b;
@@ -30299,7 +30754,7 @@ public final class Vega {
           getRefBytes() {
         java.lang.Object ref = ref_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           ref_ = b;
@@ -30429,7 +30884,7 @@ public final class Vega {
           getTxHashBytes() {
         java.lang.Object ref = txHash_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           txHash_ = b;
@@ -30703,7 +31158,7 @@ public final class Vega {
        * <code>.vega.WithdrawExt ext = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.WithdrawExt, io.vegaprotocol.vega.Vega.WithdrawExt.Builder, io.vegaprotocol.vega.Vega.WithdrawExtOrBuilder> 
+          io.vegaprotocol.vega.Vega.WithdrawExt, io.vegaprotocol.vega.Vega.WithdrawExt.Builder, io.vegaprotocol.vega.Vega.WithdrawExtOrBuilder>
           getExtFieldBuilder() {
         if (extBuilder_ == null) {
           extBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -30963,7 +31418,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         partyID_ = s;
@@ -30981,7 +31436,7 @@ public final class Vega {
         getPartyIDBytes() {
       java.lang.Object ref = partyID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         partyID_ = b;
@@ -31018,7 +31473,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         asset_ = s;
@@ -31036,7 +31491,7 @@ public final class Vega {
         getAssetBytes() {
       java.lang.Object ref = asset_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         asset_ = b;
@@ -31481,7 +31936,7 @@ public final class Vega {
           getPartyIDBytes() {
         java.lang.Object ref = partyID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           partyID_ = b;
@@ -31608,7 +32063,7 @@ public final class Vega {
           getAssetBytes() {
         java.lang.Object ref = asset_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           asset_ = b;
@@ -31806,7 +32261,7 @@ public final class Vega {
        * <code>.vega.WithdrawExt ext = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.WithdrawExt, io.vegaprotocol.vega.Vega.WithdrawExt.Builder, io.vegaprotocol.vega.Vega.WithdrawExtOrBuilder> 
+          io.vegaprotocol.vega.Vega.WithdrawExt, io.vegaprotocol.vega.Vega.WithdrawExt.Builder, io.vegaprotocol.vega.Vega.WithdrawExtOrBuilder>
           getExtFieldBuilder() {
         if (extBuilder_ == null) {
           extBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -32498,7 +32953,7 @@ public final class Vega {
        * <code>.vega.Erc20WithdrawExt erc20 = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Erc20WithdrawExt, io.vegaprotocol.vega.Vega.Erc20WithdrawExt.Builder, io.vegaprotocol.vega.Vega.Erc20WithdrawExtOrBuilder> 
+          io.vegaprotocol.vega.Vega.Erc20WithdrawExt, io.vegaprotocol.vega.Vega.Erc20WithdrawExt.Builder, io.vegaprotocol.vega.Vega.Erc20WithdrawExtOrBuilder>
           getErc20FieldBuilder() {
         if (erc20Builder_ == null) {
           if (!(extCase_ == 1)) {
@@ -32686,7 +33141,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         receiverAddress_ = s;
@@ -32704,7 +33159,7 @@ public final class Vega {
         getReceiverAddressBytes() {
       java.lang.Object ref = receiverAddress_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         receiverAddress_ = b;
@@ -33051,7 +33506,7 @@ public final class Vega {
           getReceiverAddressBytes() {
         java.lang.Object ref = receiverAddress_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           receiverAddress_ = b;
@@ -33451,7 +33906,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         orderID_ = s;
@@ -33469,7 +33924,7 @@ public final class Vega {
         getOrderIDBytes() {
       java.lang.Object ref = orderID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         orderID_ = b;
@@ -33493,7 +33948,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         partyID_ = s;
@@ -33511,7 +33966,7 @@ public final class Vega {
         getPartyIDBytes() {
       java.lang.Object ref = partyID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         partyID_ = b;
@@ -33535,7 +33990,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         marketID_ = s;
@@ -33553,7 +34008,7 @@ public final class Vega {
         getMarketIDBytes() {
       java.lang.Object ref = marketID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         marketID_ = b;
@@ -34140,7 +34595,7 @@ public final class Vega {
           getOrderIDBytes() {
         java.lang.Object ref = orderID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           orderID_ = b;
@@ -34229,7 +34684,7 @@ public final class Vega {
           getPartyIDBytes() {
         java.lang.Object ref = partyID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           partyID_ = b;
@@ -34318,7 +34773,7 @@ public final class Vega {
           getMarketIDBytes() {
         java.lang.Object ref = marketID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           marketID_ = b;
@@ -34516,7 +34971,7 @@ public final class Vega {
        * <code>.vega.Price price = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Price, io.vegaprotocol.vega.Vega.Price.Builder, io.vegaprotocol.vega.Vega.PriceOrBuilder> 
+          io.vegaprotocol.vega.Vega.Price, io.vegaprotocol.vega.Vega.Price.Builder, io.vegaprotocol.vega.Vega.PriceOrBuilder>
           getPriceFieldBuilder() {
         if (priceBuilder_ == null) {
           priceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -34725,7 +35180,7 @@ public final class Vega {
        * <code>.vega.Timestamp expiresAt = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Timestamp, io.vegaprotocol.vega.Vega.Timestamp.Builder, io.vegaprotocol.vega.Vega.TimestampOrBuilder> 
+          io.vegaprotocol.vega.Vega.Timestamp, io.vegaprotocol.vega.Vega.Timestamp.Builder, io.vegaprotocol.vega.Vega.TimestampOrBuilder>
           getExpiresAtFieldBuilder() {
         if (expiresAtBuilder_ == null) {
           expiresAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -35175,7 +35630,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -35193,7 +35648,7 @@ public final class Vega {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -35217,7 +35672,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         marketID_ = s;
@@ -35235,7 +35690,7 @@ public final class Vega {
         getMarketIDBytes() {
       java.lang.Object ref = marketID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         marketID_ = b;
@@ -35259,7 +35714,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         partyID_ = s;
@@ -35277,7 +35732,7 @@ public final class Vega {
         getPartyIDBytes() {
       java.lang.Object ref = partyID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         partyID_ = b;
@@ -35422,7 +35877,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         reference_ = s;
@@ -35441,7 +35896,7 @@ public final class Vega {
         getReferenceBytes() {
       java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         reference_ = b;
@@ -35941,7 +36396,7 @@ public final class Vega {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -36030,7 +36485,7 @@ public final class Vega {
           getMarketIDBytes() {
         java.lang.Object ref = marketID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           marketID_ = b;
@@ -36119,7 +36574,7 @@ public final class Vega {
           getPartyIDBytes() {
         java.lang.Object ref = partyID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           partyID_ = b;
@@ -36536,7 +36991,7 @@ public final class Vega {
           getReferenceBytes() {
         java.lang.Object ref = reference_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           reference_ = b;
@@ -36817,7 +37272,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         orderID_ = s;
@@ -36835,7 +37290,7 @@ public final class Vega {
         getOrderIDBytes() {
       java.lang.Object ref = orderID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         orderID_ = b;
@@ -36859,7 +37314,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         marketID_ = s;
@@ -36877,7 +37332,7 @@ public final class Vega {
         getMarketIDBytes() {
       java.lang.Object ref = marketID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         marketID_ = b;
@@ -36901,7 +37356,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         partyID_ = s;
@@ -36919,7 +37374,7 @@ public final class Vega {
         getPartyIDBytes() {
       java.lang.Object ref = partyID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         partyID_ = b;
@@ -37300,7 +37755,7 @@ public final class Vega {
           getOrderIDBytes() {
         java.lang.Object ref = orderID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           orderID_ = b;
@@ -37389,7 +37844,7 @@ public final class Vega {
           getMarketIDBytes() {
         java.lang.Object ref = marketID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           marketID_ = b;
@@ -37478,7 +37933,7 @@ public final class Vega {
           getPartyIDBytes() {
         java.lang.Object ref = partyID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           partyID_ = b;
@@ -38327,7 +38782,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         reference_ = s;
@@ -38345,7 +38800,7 @@ public final class Vega {
         getReferenceBytes() {
       java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         reference_ = b;
@@ -38751,7 +39206,7 @@ public final class Vega {
           getReferenceBytes() {
         java.lang.Object ref = reference_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           reference_ = b;
@@ -39095,7 +39550,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -39113,7 +39568,7 @@ public final class Vega {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -39138,7 +39593,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         owner_ = s;
@@ -39157,7 +39612,7 @@ public final class Vega {
         getOwnerBytes() {
       java.lang.Object ref = owner_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         owner_ = b;
@@ -39195,7 +39650,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         asset_ = s;
@@ -39213,7 +39668,7 @@ public final class Vega {
         getAssetBytes() {
       java.lang.Object ref = asset_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         asset_ = b;
@@ -39237,7 +39692,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         marketID_ = s;
@@ -39255,7 +39710,7 @@ public final class Vega {
         getMarketIDBytes() {
       java.lang.Object ref = marketID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         marketID_ = b;
@@ -39712,7 +40167,7 @@ public final class Vega {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -39803,7 +40258,7 @@ public final class Vega {
           getOwnerBytes() {
         java.lang.Object ref = owner_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           owner_ = b;
@@ -39936,7 +40391,7 @@ public final class Vega {
           getAssetBytes() {
         java.lang.Object ref = asset_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           asset_ = b;
@@ -40025,7 +40480,7 @@ public final class Vega {
           getMarketIDBytes() {
         java.lang.Object ref = marketID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           marketID_ = b;
@@ -40345,7 +40800,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         asset_ = s;
@@ -40363,7 +40818,7 @@ public final class Vega {
         getAssetBytes() {
       java.lang.Object ref = asset_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         asset_ = b;
@@ -40766,7 +41221,7 @@ public final class Vega {
           getAssetBytes() {
         java.lang.Object ref = asset_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           asset_ = b;
@@ -41070,7 +41525,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         owner_ = s;
@@ -41088,7 +41543,7 @@ public final class Vega {
         getOwnerBytes() {
       java.lang.Object ref = owner_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         owner_ = b;
@@ -41570,7 +42025,7 @@ public final class Vega {
           getOwnerBytes() {
         java.lang.Object ref = owner_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           owner_ = b;
@@ -41768,7 +42223,7 @@ public final class Vega {
        * <code>.vega.FinancialAmount amount = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.FinancialAmount, io.vegaprotocol.vega.Vega.FinancialAmount.Builder, io.vegaprotocol.vega.Vega.FinancialAmountOrBuilder> 
+          io.vegaprotocol.vega.Vega.FinancialAmount, io.vegaprotocol.vega.Vega.FinancialAmount.Builder, io.vegaprotocol.vega.Vega.FinancialAmountOrBuilder>
           getAmountFieldBuilder() {
         if (amountBuilder_ == null) {
           amountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -41947,7 +42402,7 @@ public final class Vega {
      *
      * <code>repeated .vega.Account fromAccount = 1;</code>
      */
-    java.util.List<io.vegaprotocol.vega.Vega.Account> 
+    java.util.List<io.vegaprotocol.vega.Vega.Account>
         getFromAccountList();
     /**
      * <pre>
@@ -41972,7 +42427,7 @@ public final class Vega {
      *
      * <code>repeated .vega.Account fromAccount = 1;</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Vega.AccountOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.Vega.AccountOrBuilder>
         getFromAccountOrBuilderList();
     /**
      * <pre>
@@ -41991,7 +42446,7 @@ public final class Vega {
      *
      * <code>repeated .vega.Account toAccount = 2;</code>
      */
-    java.util.List<io.vegaprotocol.vega.Vega.Account> 
+    java.util.List<io.vegaprotocol.vega.Vega.Account>
         getToAccountList();
     /**
      * <pre>
@@ -42016,7 +42471,7 @@ public final class Vega {
      *
      * <code>repeated .vega.Account toAccount = 2;</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Vega.AccountOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.Vega.AccountOrBuilder>
         getToAccountOrBuilderList();
     /**
      * <pre>
@@ -42227,7 +42682,7 @@ public final class Vega {
      *
      * <code>repeated .vega.Account fromAccount = 1;</code>
      */
-    public java.util.List<? extends io.vegaprotocol.vega.Vega.AccountOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.AccountOrBuilder>
         getFromAccountOrBuilderList() {
       return fromAccount_;
     }
@@ -42282,7 +42737,7 @@ public final class Vega {
      *
      * <code>repeated .vega.Account toAccount = 2;</code>
      */
-    public java.util.List<? extends io.vegaprotocol.vega.Vega.AccountOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.AccountOrBuilder>
         getToAccountOrBuilderList() {
       return toAccount_;
     }
@@ -42358,7 +42813,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         asset_ = s;
@@ -42376,7 +42831,7 @@ public final class Vega {
         getAssetBytes() {
       java.lang.Object ref = asset_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         asset_ = b;
@@ -42400,7 +42855,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         reference_ = s;
@@ -42418,7 +42873,7 @@ public final class Vega {
         getReferenceBytes() {
       java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         reference_ = b;
@@ -42823,7 +43278,7 @@ public final class Vega {
               fromAccountBuilder_ = null;
               fromAccount_ = other.fromAccount_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              fromAccountBuilder_ = 
+              fromAccountBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getFromAccountFieldBuilder() : null;
             } else {
@@ -42849,7 +43304,7 @@ public final class Vega {
               toAccountBuilder_ = null;
               toAccount_ = other.toAccount_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              toAccountBuilder_ = 
+              toAccountBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getToAccountFieldBuilder() : null;
             } else {
@@ -43156,7 +43611,7 @@ public final class Vega {
        *
        * <code>repeated .vega.Account fromAccount = 1;</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Vega.AccountOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.AccountOrBuilder>
            getFromAccountOrBuilderList() {
         if (fromAccountBuilder_ != null) {
           return fromAccountBuilder_.getMessageOrBuilderList();
@@ -43194,12 +43649,12 @@ public final class Vega {
        *
        * <code>repeated .vega.Account fromAccount = 1;</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Vega.Account.Builder> 
+      public java.util.List<io.vegaprotocol.vega.Vega.Account.Builder>
            getFromAccountBuilderList() {
         return getFromAccountFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Account, io.vegaprotocol.vega.Vega.Account.Builder, io.vegaprotocol.vega.Vega.AccountOrBuilder> 
+          io.vegaprotocol.vega.Vega.Account, io.vegaprotocol.vega.Vega.Account.Builder, io.vegaprotocol.vega.Vega.AccountOrBuilder>
           getFromAccountFieldBuilder() {
         if (fromAccountBuilder_ == null) {
           fromAccountBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -43468,7 +43923,7 @@ public final class Vega {
        *
        * <code>repeated .vega.Account toAccount = 2;</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Vega.AccountOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.AccountOrBuilder>
            getToAccountOrBuilderList() {
         if (toAccountBuilder_ != null) {
           return toAccountBuilder_.getMessageOrBuilderList();
@@ -43506,12 +43961,12 @@ public final class Vega {
        *
        * <code>repeated .vega.Account toAccount = 2;</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Vega.Account.Builder> 
+      public java.util.List<io.vegaprotocol.vega.Vega.Account.Builder>
            getToAccountBuilderList() {
         return getToAccountFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Account, io.vegaprotocol.vega.Vega.Account.Builder, io.vegaprotocol.vega.Vega.AccountOrBuilder> 
+          io.vegaprotocol.vega.Vega.Account, io.vegaprotocol.vega.Vega.Account.Builder, io.vegaprotocol.vega.Vega.AccountOrBuilder>
           getToAccountFieldBuilder() {
         if (toAccountBuilder_ == null) {
           toAccountBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -43632,7 +44087,7 @@ public final class Vega {
           getAssetBytes() {
         java.lang.Object ref = asset_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           asset_ = b;
@@ -43721,7 +44176,7 @@ public final class Vega {
           getReferenceBytes() {
         java.lang.Object ref = reference_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           reference_ = b;
@@ -44053,7 +44508,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         fromAccount_ = s;
@@ -44071,7 +44526,7 @@ public final class Vega {
         getFromAccountBytes() {
       java.lang.Object ref = fromAccount_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         fromAccount_ = b;
@@ -44095,7 +44550,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         toAccount_ = s;
@@ -44113,7 +44568,7 @@ public final class Vega {
         getToAccountBytes() {
       java.lang.Object ref = toAccount_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         toAccount_ = b;
@@ -44150,7 +44605,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         reference_ = s;
@@ -44168,7 +44623,7 @@ public final class Vega {
         getReferenceBytes() {
       java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         reference_ = b;
@@ -44192,7 +44647,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         type_ = s;
@@ -44210,7 +44665,7 @@ public final class Vega {
         getTypeBytes() {
       java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         type_ = b;
@@ -44658,7 +45113,7 @@ public final class Vega {
           getFromAccountBytes() {
         java.lang.Object ref = fromAccount_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           fromAccount_ = b;
@@ -44747,7 +45202,7 @@ public final class Vega {
           getToAccountBytes() {
         java.lang.Object ref = toAccount_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           toAccount_ = b;
@@ -44874,7 +45329,7 @@ public final class Vega {
           getReferenceBytes() {
         java.lang.Object ref = reference_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           reference_ = b;
@@ -44963,7 +45418,7 @@ public final class Vega {
           getTypeBytes() {
         java.lang.Object ref = type_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           type_ = b;
@@ -45768,7 +46223,7 @@ public final class Vega {
        * <code>.vega.Account account = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Account, io.vegaprotocol.vega.Vega.Account.Builder, io.vegaprotocol.vega.Vega.AccountOrBuilder> 
+          io.vegaprotocol.vega.Vega.Account, io.vegaprotocol.vega.Vega.Account.Builder, io.vegaprotocol.vega.Vega.AccountOrBuilder>
           getAccountFieldBuilder() {
         if (accountBuilder_ == null) {
           accountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -45882,7 +46337,7 @@ public final class Vega {
      *
      * <code>repeated .vega.LedgerEntry transfers = 1;</code>
      */
-    java.util.List<io.vegaprotocol.vega.Vega.LedgerEntry> 
+    java.util.List<io.vegaprotocol.vega.Vega.LedgerEntry>
         getTransfersList();
     /**
      * <pre>
@@ -45907,7 +46362,7 @@ public final class Vega {
      *
      * <code>repeated .vega.LedgerEntry transfers = 1;</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Vega.LedgerEntryOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.Vega.LedgerEntryOrBuilder>
         getTransfersOrBuilderList();
     /**
      * <pre>
@@ -45926,7 +46381,7 @@ public final class Vega {
      *
      * <code>repeated .vega.TransferBalance balances = 2;</code>
      */
-    java.util.List<io.vegaprotocol.vega.Vega.TransferBalance> 
+    java.util.List<io.vegaprotocol.vega.Vega.TransferBalance>
         getBalancesList();
     /**
      * <pre>
@@ -45951,7 +46406,7 @@ public final class Vega {
      *
      * <code>repeated .vega.TransferBalance balances = 2;</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Vega.TransferBalanceOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.Vega.TransferBalanceOrBuilder>
         getBalancesOrBuilderList();
     /**
      * <pre>
@@ -46083,7 +46538,7 @@ public final class Vega {
      *
      * <code>repeated .vega.LedgerEntry transfers = 1;</code>
      */
-    public java.util.List<? extends io.vegaprotocol.vega.Vega.LedgerEntryOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.LedgerEntryOrBuilder>
         getTransfersOrBuilderList() {
       return transfers_;
     }
@@ -46138,7 +46593,7 @@ public final class Vega {
      *
      * <code>repeated .vega.TransferBalance balances = 2;</code>
      */
-    public java.util.List<? extends io.vegaprotocol.vega.Vega.TransferBalanceOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.TransferBalanceOrBuilder>
         getBalancesOrBuilderList() {
       return balances_;
     }
@@ -46511,7 +46966,7 @@ public final class Vega {
               transfersBuilder_ = null;
               transfers_ = other.transfers_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              transfersBuilder_ = 
+              transfersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTransfersFieldBuilder() : null;
             } else {
@@ -46537,7 +46992,7 @@ public final class Vega {
               balancesBuilder_ = null;
               balances_ = other.balances_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              balancesBuilder_ = 
+              balancesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBalancesFieldBuilder() : null;
             } else {
@@ -46830,7 +47285,7 @@ public final class Vega {
        *
        * <code>repeated .vega.LedgerEntry transfers = 1;</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Vega.LedgerEntryOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.LedgerEntryOrBuilder>
            getTransfersOrBuilderList() {
         if (transfersBuilder_ != null) {
           return transfersBuilder_.getMessageOrBuilderList();
@@ -46868,12 +47323,12 @@ public final class Vega {
        *
        * <code>repeated .vega.LedgerEntry transfers = 1;</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Vega.LedgerEntry.Builder> 
+      public java.util.List<io.vegaprotocol.vega.Vega.LedgerEntry.Builder>
            getTransfersBuilderList() {
         return getTransfersFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.LedgerEntry, io.vegaprotocol.vega.Vega.LedgerEntry.Builder, io.vegaprotocol.vega.Vega.LedgerEntryOrBuilder> 
+          io.vegaprotocol.vega.Vega.LedgerEntry, io.vegaprotocol.vega.Vega.LedgerEntry.Builder, io.vegaprotocol.vega.Vega.LedgerEntryOrBuilder>
           getTransfersFieldBuilder() {
         if (transfersBuilder_ == null) {
           transfersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -47142,7 +47597,7 @@ public final class Vega {
        *
        * <code>repeated .vega.TransferBalance balances = 2;</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Vega.TransferBalanceOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.TransferBalanceOrBuilder>
            getBalancesOrBuilderList() {
         if (balancesBuilder_ != null) {
           return balancesBuilder_.getMessageOrBuilderList();
@@ -47180,12 +47635,12 @@ public final class Vega {
        *
        * <code>repeated .vega.TransferBalance balances = 2;</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Vega.TransferBalance.Builder> 
+      public java.util.List<io.vegaprotocol.vega.Vega.TransferBalance.Builder>
            getBalancesBuilderList() {
         return getBalancesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.TransferBalance, io.vegaprotocol.vega.Vega.TransferBalance.Builder, io.vegaprotocol.vega.Vega.TransferBalanceOrBuilder> 
+          io.vegaprotocol.vega.Vega.TransferBalance, io.vegaprotocol.vega.Vega.TransferBalance.Builder, io.vegaprotocol.vega.Vega.TransferBalanceOrBuilder>
           getBalancesFieldBuilder() {
         if (balancesBuilder_ == null) {
           balancesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -47542,7 +47997,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         partyID_ = s;
@@ -47560,7 +48015,7 @@ public final class Vega {
         getPartyIDBytes() {
       java.lang.Object ref = partyID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         partyID_ = b;
@@ -47584,7 +48039,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         marketID_ = s;
@@ -47602,7 +48057,7 @@ public final class Vega {
         getMarketIDBytes() {
       java.lang.Object ref = marketID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         marketID_ = b;
@@ -47626,7 +48081,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         asset_ = s;
@@ -47644,7 +48099,7 @@ public final class Vega {
         getAssetBytes() {
       java.lang.Object ref = asset_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         asset_ = b;
@@ -48281,7 +48736,7 @@ public final class Vega {
           getPartyIDBytes() {
         java.lang.Object ref = partyID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           partyID_ = b;
@@ -48370,7 +48825,7 @@ public final class Vega {
           getMarketIDBytes() {
         java.lang.Object ref = marketID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           marketID_ = b;
@@ -48459,7 +48914,7 @@ public final class Vega {
           getAssetBytes() {
         java.lang.Object ref = asset_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           asset_ = b;
@@ -48761,6 +49216,23 @@ public final class Vega {
      * <code>.vega.MarketState marketState = 14;</code>
      */
     io.vegaprotocol.vega.Vega.MarketState getMarketState();
+
+    /**
+     * <pre>
+     * if the market is in auction state, this field indicates what triggered the auction
+     * </pre>
+     *
+     * <code>.vega.AuctionTrigger trigger = 15;</code>
+     */
+    int getTriggerValue();
+    /**
+     * <pre>
+     * if the market is in auction state, this field indicates what triggered the auction
+     * </pre>
+     *
+     * <code>.vega.AuctionTrigger trigger = 15;</code>
+     */
+    io.vegaprotocol.vega.Vega.AuctionTrigger getTrigger();
   }
   /**
    * <pre>
@@ -48781,6 +49253,7 @@ public final class Vega {
     private MarketData() {
       market_ = "";
       marketState_ = 0;
+      trigger_ = 0;
     }
 
     @java.lang.Override
@@ -48877,6 +49350,12 @@ public final class Vega {
               int rawValue = input.readEnum();
 
               marketState_ = rawValue;
+              break;
+            }
+            case 120: {
+              int rawValue = input.readEnum();
+
+              trigger_ = rawValue;
               break;
             }
             default: {
@@ -49007,7 +49486,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         market_ = s;
@@ -49025,7 +49504,7 @@ public final class Vega {
         getMarketBytes() {
       java.lang.Object ref = market_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         market_ = b;
@@ -49139,6 +49618,31 @@ public final class Vega {
       return result == null ? io.vegaprotocol.vega.Vega.MarketState.UNRECOGNIZED : result;
     }
 
+    public static final int TRIGGER_FIELD_NUMBER = 15;
+    private int trigger_;
+    /**
+     * <pre>
+     * if the market is in auction state, this field indicates what triggered the auction
+     * </pre>
+     *
+     * <code>.vega.AuctionTrigger trigger = 15;</code>
+     */
+    public int getTriggerValue() {
+      return trigger_;
+    }
+    /**
+     * <pre>
+     * if the market is in auction state, this field indicates what triggered the auction
+     * </pre>
+     *
+     * <code>.vega.AuctionTrigger trigger = 15;</code>
+     */
+    public io.vegaprotocol.vega.Vega.AuctionTrigger getTrigger() {
+      @SuppressWarnings("deprecation")
+      io.vegaprotocol.vega.Vega.AuctionTrigger result = io.vegaprotocol.vega.Vega.AuctionTrigger.valueOf(trigger_);
+      return result == null ? io.vegaprotocol.vega.Vega.AuctionTrigger.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -49194,6 +49698,9 @@ public final class Vega {
       }
       if (marketState_ != io.vegaprotocol.vega.Vega.MarketState.MARKET_STATE_UNSPECIFIED.getNumber()) {
         output.writeEnum(14, marketState_);
+      }
+      if (trigger_ != io.vegaprotocol.vega.Vega.AuctionTrigger.AUCTION_TRIGGER_UNSPECIFIED.getNumber()) {
+        output.writeEnum(15, trigger_);
       }
       unknownFields.writeTo(output);
     }
@@ -49259,6 +49766,10 @@ public final class Vega {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(14, marketState_);
       }
+      if (trigger_ != io.vegaprotocol.vega.Vega.AuctionTrigger.AUCTION_TRIGGER_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(15, trigger_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -49301,6 +49812,7 @@ public final class Vega {
       if (getIndicativeVolume()
           != other.getIndicativeVolume()) return false;
       if (marketState_ != other.marketState_) return false;
+      if (trigger_ != other.trigger_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -49352,6 +49864,8 @@ public final class Vega {
           getIndicativeVolume());
       hash = (37 * hash) + MARKETSTATE_FIELD_NUMBER;
       hash = (53 * hash) + marketState_;
+      hash = (37 * hash) + TRIGGER_FIELD_NUMBER;
+      hash = (53 * hash) + trigger_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -49517,6 +50031,8 @@ public final class Vega {
 
         marketState_ = 0;
 
+        trigger_ = 0;
+
         return this;
       }
 
@@ -49557,6 +50073,7 @@ public final class Vega {
         result.indicativePrice_ = indicativePrice_;
         result.indicativeVolume_ = indicativeVolume_;
         result.marketState_ = marketState_;
+        result.trigger_ = trigger_;
         onBuilt();
         return result;
       }
@@ -49647,6 +50164,9 @@ public final class Vega {
         }
         if (other.marketState_ != 0) {
           setMarketStateValue(other.getMarketStateValue());
+        }
+        if (other.trigger_ != 0) {
+          setTriggerValue(other.getTriggerValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -49948,7 +50468,7 @@ public final class Vega {
           getMarketBytes() {
         java.lang.Object ref = market_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           market_ = b;
@@ -50301,6 +50821,71 @@ public final class Vega {
         onChanged();
         return this;
       }
+
+      private int trigger_ = 0;
+      /**
+       * <pre>
+       * if the market is in auction state, this field indicates what triggered the auction
+       * </pre>
+       *
+       * <code>.vega.AuctionTrigger trigger = 15;</code>
+       */
+      public int getTriggerValue() {
+        return trigger_;
+      }
+      /**
+       * <pre>
+       * if the market is in auction state, this field indicates what triggered the auction
+       * </pre>
+       *
+       * <code>.vega.AuctionTrigger trigger = 15;</code>
+       */
+      public Builder setTriggerValue(int value) {
+        trigger_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * if the market is in auction state, this field indicates what triggered the auction
+       * </pre>
+       *
+       * <code>.vega.AuctionTrigger trigger = 15;</code>
+       */
+      public io.vegaprotocol.vega.Vega.AuctionTrigger getTrigger() {
+        @SuppressWarnings("deprecation")
+        io.vegaprotocol.vega.Vega.AuctionTrigger result = io.vegaprotocol.vega.Vega.AuctionTrigger.valueOf(trigger_);
+        return result == null ? io.vegaprotocol.vega.Vega.AuctionTrigger.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * if the market is in auction state, this field indicates what triggered the auction
+       * </pre>
+       *
+       * <code>.vega.AuctionTrigger trigger = 15;</code>
+       */
+      public Builder setTrigger(io.vegaprotocol.vega.Vega.AuctionTrigger value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        trigger_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * if the market is in auction state, this field indicates what triggered the auction
+       * </pre>
+       *
+       * <code>.vega.AuctionTrigger trigger = 15;</code>
+       */
+      public Builder clearTrigger() {
+
+        trigger_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -50524,7 +51109,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         message_ = s;
@@ -50542,7 +51127,7 @@ public final class Vega {
         getMessageBytes() {
       java.lang.Object ref = message_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         message_ = b;
@@ -50566,7 +51151,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         inner_ = s;
@@ -50584,7 +51169,7 @@ public final class Vega {
         getInnerBytes() {
       java.lang.Object ref = inner_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         inner_ = b;
@@ -51003,7 +51588,7 @@ public final class Vega {
           getMessageBytes() {
         java.lang.Object ref = message_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           message_ = b;
@@ -51092,7 +51677,7 @@ public final class Vega {
           getInnerBytes() {
         java.lang.Object ref = inner_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           inner_ = b;
@@ -51227,6 +51812,17 @@ public final class Vega {
 
     /**
      * <pre>
+     * The block height associated to the transaction.
+     * This should always be current height of the node at the time of sending the Tx.
+     * BlockHeight is used as a mechanism for replay protection.
+     * </pre>
+     *
+     * <code>uint64 blockHeight = 3;</code>
+     */
+    long getBlockHeight();
+
+    /**
+     * <pre>
      * The address of the sender.
      * </pre>
      *
@@ -51297,6 +51893,11 @@ public final class Vega {
             case 16: {
 
               nonce_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              blockHeight_ = input.readUInt64();
               break;
             }
             case 8010: {
@@ -51406,6 +52007,21 @@ public final class Vega {
       return nonce_;
     }
 
+    public static final int BLOCKHEIGHT_FIELD_NUMBER = 3;
+    private long blockHeight_;
+    /**
+     * <pre>
+     * The block height associated to the transaction.
+     * This should always be current height of the node at the time of sending the Tx.
+     * BlockHeight is used as a mechanism for replay protection.
+     * </pre>
+     *
+     * <code>uint64 blockHeight = 3;</code>
+     */
+    public long getBlockHeight() {
+      return blockHeight_;
+    }
+
     public static final int ADDRESS_FIELD_NUMBER = 1001;
     /**
      * <pre>
@@ -51456,6 +52072,9 @@ public final class Vega {
       if (nonce_ != 0L) {
         output.writeUInt64(2, nonce_);
       }
+      if (blockHeight_ != 0L) {
+        output.writeUInt64(3, blockHeight_);
+      }
       if (fromCase_ == 1001) {
         output.writeBytes(
             1001, (com.google.protobuf.ByteString) from_);
@@ -51480,6 +52099,10 @@ public final class Vega {
       if (nonce_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, nonce_);
+      }
+      if (blockHeight_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, blockHeight_);
       }
       if (fromCase_ == 1001) {
         size += com.google.protobuf.CodedOutputStream
@@ -51510,6 +52133,8 @@ public final class Vega {
           .equals(other.getInputData())) return false;
       if (getNonce()
           != other.getNonce()) return false;
+      if (getBlockHeight()
+          != other.getBlockHeight()) return false;
       if (!getFromCase().equals(other.getFromCase())) return false;
       switch (fromCase_) {
         case 1001:
@@ -51539,6 +52164,9 @@ public final class Vega {
       hash = (37 * hash) + NONCE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getNonce());
+      hash = (37 * hash) + BLOCKHEIGHT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBlockHeight());
       switch (fromCase_) {
         case 1001:
           hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
@@ -51692,6 +52320,8 @@ public final class Vega {
 
         nonce_ = 0L;
 
+        blockHeight_ = 0L;
+
         fromCase_ = 0;
         from_ = null;
         return this;
@@ -51722,6 +52352,7 @@ public final class Vega {
         io.vegaprotocol.vega.Vega.Transaction result = new io.vegaprotocol.vega.Vega.Transaction(this);
         result.inputData_ = inputData_;
         result.nonce_ = nonce_;
+        result.blockHeight_ = blockHeight_;
         if (fromCase_ == 1001) {
           result.from_ = from_;
         }
@@ -51782,6 +52413,9 @@ public final class Vega {
         }
         if (other.getNonce() != 0L) {
           setNonce(other.getNonce());
+        }
+        if (other.getBlockHeight() != 0L) {
+          setBlockHeight(other.getBlockHeight());
         }
         switch (other.getFromCase()) {
           case ADDRESS: {
@@ -51918,6 +52552,50 @@ public final class Vega {
       public Builder clearNonce() {
 
         nonce_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long blockHeight_ ;
+      /**
+       * <pre>
+       * The block height associated to the transaction.
+       * This should always be current height of the node at the time of sending the Tx.
+       * BlockHeight is used as a mechanism for replay protection.
+       * </pre>
+       *
+       * <code>uint64 blockHeight = 3;</code>
+       */
+      public long getBlockHeight() {
+        return blockHeight_;
+      }
+      /**
+       * <pre>
+       * The block height associated to the transaction.
+       * This should always be current height of the node at the time of sending the Tx.
+       * BlockHeight is used as a mechanism for replay protection.
+       * </pre>
+       *
+       * <code>uint64 blockHeight = 3;</code>
+       */
+      public Builder setBlockHeight(long value) {
+
+        blockHeight_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The block height associated to the transaction.
+       * This should always be current height of the node at the time of sending the Tx.
+       * BlockHeight is used as a mechanism for replay protection.
+       * </pre>
+       *
+       * <code>uint64 blockHeight = 3;</code>
+       */
+      public Builder clearBlockHeight() {
+
+        blockHeight_ = 0L;
         onChanged();
         return this;
       }
@@ -52225,7 +52903,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         algo_ = s;
@@ -52243,7 +52921,7 @@ public final class Vega {
         getAlgoBytes() {
       java.lang.Object ref = algo_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         algo_ = b;
@@ -52680,7 +53358,7 @@ public final class Vega {
           getAlgoBytes() {
         java.lang.Object ref = algo_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           algo_ = b;
@@ -53523,7 +54201,7 @@ public final class Vega {
        * <code>.vega.Signature sig = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Signature, io.vegaprotocol.vega.Vega.Signature.Builder, io.vegaprotocol.vega.Vega.SignatureOrBuilder> 
+          io.vegaprotocol.vega.Vega.Signature, io.vegaprotocol.vega.Vega.Signature.Builder, io.vegaprotocol.vega.Vega.SignatureOrBuilder>
           getSigFieldBuilder() {
         if (sigBuilder_ == null) {
           sigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -53745,7 +54423,7 @@ public final class Vega {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         iD_ = s;
@@ -53763,7 +54441,7 @@ public final class Vega {
         getIDBytes() {
       java.lang.Object ref = iD_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         iD_ = b;
@@ -54181,7 +54859,7 @@ public final class Vega {
           getIDBytes() {
         java.lang.Object ref = iD_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           iD_ = b;
@@ -54397,231 +55075,922 @@ public final class Vega {
 
   }
 
+  public interface NetworkParameterOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.NetworkParameter)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string Key = 1;</code>
+     */
+    java.lang.String getKey();
+    /**
+     * <code>string Key = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getKeyBytes();
+
+    /**
+     * <code>string Value = 2;</code>
+     */
+    java.lang.String getValue();
+    /**
+     * <code>string Value = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getValueBytes();
+  }
+  /**
+   * Protobuf type {@code vega.NetworkParameter}
+   */
+  public  static final class NetworkParameter extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.NetworkParameter)
+      NetworkParameterOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use NetworkParameter.newBuilder() to construct.
+    private NetworkParameter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private NetworkParameter() {
+      key_ = "";
+      value_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private NetworkParameter(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              key_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              value_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_NetworkParameter_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_NetworkParameter_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Vega.NetworkParameter.class, io.vegaprotocol.vega.Vega.NetworkParameter.Builder.class);
+    }
+
+    public static final int KEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object key_;
+    /**
+     * <code>string Key = 1;</code>
+     */
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string Key = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object value_;
+    /**
+     * <code>string Value = 2;</code>
+     */
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        value_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string Value = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
+      }
+      if (!getValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
+      }
+      if (!getValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Vega.NetworkParameter)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Vega.NetworkParameter other = (io.vegaprotocol.vega.Vega.NetworkParameter) obj;
+
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (!getValue()
+          .equals(other.getValue())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Vega.NetworkParameter parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.NetworkParameter parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.NetworkParameter parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.NetworkParameter parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.NetworkParameter parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.NetworkParameter parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.NetworkParameter parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.NetworkParameter parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.NetworkParameter parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.NetworkParameter parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.NetworkParameter parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.NetworkParameter parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Vega.NetworkParameter prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.NetworkParameter}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.NetworkParameter)
+        io.vegaprotocol.vega.Vega.NetworkParameterOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_NetworkParameter_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_NetworkParameter_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Vega.NetworkParameter.class, io.vegaprotocol.vega.Vega.NetworkParameter.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Vega.NetworkParameter.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        key_ = "";
+
+        value_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_NetworkParameter_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.NetworkParameter getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Vega.NetworkParameter.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.NetworkParameter build() {
+        io.vegaprotocol.vega.Vega.NetworkParameter result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.NetworkParameter buildPartial() {
+        io.vegaprotocol.vega.Vega.NetworkParameter result = new io.vegaprotocol.vega.Vega.NetworkParameter(this);
+        result.key_ = key_;
+        result.value_ = value_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Vega.NetworkParameter) {
+          return mergeFrom((io.vegaprotocol.vega.Vega.NetworkParameter)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Vega.NetworkParameter other) {
+        if (other == io.vegaprotocol.vega.Vega.NetworkParameter.getDefaultInstance()) return this;
+        if (!other.getKey().isEmpty()) {
+          key_ = other.key_;
+          onChanged();
+        }
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Vega.NetworkParameter parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Vega.NetworkParameter) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object key_ = "";
+      /**
+       * <code>string Key = 1;</code>
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string Key = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string Key = 1;</code>
+       */
+      public Builder setKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Key = 1;</code>
+       */
+      public Builder clearKey() {
+
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Key = 1;</code>
+       */
+      public Builder setKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        key_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object value_ = "";
+      /**
+       * <code>string Value = 2;</code>
+       */
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string Value = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string Value = 2;</code>
+       */
+      public Builder setValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Value = 2;</code>
+       */
+      public Builder clearValue() {
+
+        value_ = getDefaultInstance().getValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string Value = 2;</code>
+       */
+      public Builder setValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.NetworkParameter)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.NetworkParameter)
+    private static final io.vegaprotocol.vega.Vega.NetworkParameter DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.NetworkParameter();
+    }
+
+    public static io.vegaprotocol.vega.Vega.NetworkParameter getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NetworkParameter>
+        PARSER = new com.google.protobuf.AbstractParser<NetworkParameter>() {
+      @java.lang.Override
+      public NetworkParameter parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new NetworkParameter(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<NetworkParameter> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NetworkParameter> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.NetworkParameter getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Price_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Price_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Timestamp_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Timestamp_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Party_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Party_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_RiskFactor_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_RiskFactor_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_RiskResult_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_RiskResult_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_RiskResult_RiskFactorsEntry_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_RiskResult_RiskFactorsEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_RiskResult_PredictedNextRiskFactorsEntry_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_RiskResult_PredictedNextRiskFactorsEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Order_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Order_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_OrderCancellationConfirmation_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_OrderCancellationConfirmation_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_OrderConfirmation_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_OrderConfirmation_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_AuctionIndicativeState_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_AuctionIndicativeState_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Trade_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Trade_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Fee_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Fee_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_TradeSet_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_TradeSet_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Candle_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Candle_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_PriceLevel_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_PriceLevel_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_MarketDepth_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_MarketDepth_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_MarketDepthUpdate_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_MarketDepthUpdate_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Position_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Position_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_PositionTrade_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_PositionTrade_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Statistics_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Statistics_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Deposit_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Deposit_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Withdrawal_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Withdrawal_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_WithdrawSubmission_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_WithdrawSubmission_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_WithdrawExt_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_WithdrawExt_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Erc20WithdrawExt_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Erc20WithdrawExt_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_OrderAmendment_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_OrderAmendment_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_OrderSubmission_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_OrderSubmission_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_OrderCancellation_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_OrderCancellation_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_NodeRegistration_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_NodeRegistration_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_NodeVote_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_NodeVote_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Account_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Account_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_FinancialAmount_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_FinancialAmount_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Transfer_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Transfer_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_TransferRequest_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_TransferRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_LedgerEntry_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_LedgerEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_TransferBalance_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_TransferBalance_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_TransferResponse_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_TransferResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_MarginLevels_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_MarginLevels_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_MarketData_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_MarketData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_ErrorDetail_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_ErrorDetail_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Transaction_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Transaction_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Signature_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Signature_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_SignedBundle_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_SignedBundle_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_NodeSignature_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_NodeSignature_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_NetworkParameter_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_NetworkParameter_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -54703,7 +56072,7 @@ public final class Vega {
       "\003 \001(\003\022\023\n\013realisedPNL\030\004 \001(\003\022\025\n\runrealised" +
       "PNL\030\005 \001(\003\022\031\n\021averageEntryPrice\030\006 \001(\004\022\021\n\t" +
       "updatedAt\030\007 \001(\003\".\n\rPositionTrade\022\016\n\006volu" +
-      "me\030\001 \001(\003\022\r\n\005price\030\002 \001(\004\"\205\006\n\nStatistics\022\023" +
+      "me\030\001 \001(\003\022\r\n\005price\030\002 \001(\004\"\256\006\n\nStatistics\022\023" +
       "\n\013blockHeight\030\001 \001(\004\022\025\n\rbacklogLength\030\002 \001" +
       "(\004\022\022\n\ntotalPeers\030\003 \001(\004\022\023\n\013genesisTime\030\004 " +
       "\001(\t\022\023\n\013currentTime\030\005 \001(\t\022\020\n\010vegaTime\030\006 \001" +
@@ -54722,144 +56091,166 @@ public final class Vega {
       " \001(\r\022\037\n\027marketDataSubscriptions\030\033 \001(\r\022\026\n" +
       "\016appVersionHash\030\034 \001(\t\022\022\n\nappVersion\030\035 \001(" +
       "\t\022\024\n\014chainVersion\030\036 \001(\t\022\025\n\rblockDuration" +
-      "\030\037 \001(\004\022\016\n\006uptime\030  \001(\t\022\017\n\007chainID\030! \001(\t\"" +
-      "\257\002\n\007Deposit\022\n\n\002id\030\001 \001(\t\022$\n\006status\030\002 \001(\0162" +
-      "\024.vega.Deposit.Status\022\017\n\007partyID\030\003 \001(\t\022\r" +
-      "\n\005asset\030\004 \001(\t\022\016\n\006amount\030\005 \001(\t\022\016\n\006txHash\030" +
-      "\006 \001(\t\022\031\n\021creditedTimestamp\030\007 \001(\003\022\030\n\020crea" +
-      "tedTimestamp\030\010 \001(\003\"}\n\006Status\022\036\n\032DEPOSIT_" +
-      "STATUS_UNSPECIFIED\020\000\022\027\n\023DEPOSIT_STATUS_O" +
-      "PEN\020\001\022\034\n\030DEPOSIT_STATUS_CANCELLED\020\002\022\034\n\030D" +
-      "EPOSIT_STATUS_FINALIZED\020\003\"\200\003\n\nWithdrawal" +
-      "\022\n\n\002id\030\001 \001(\t\022\017\n\007partyID\030\002 \001(\t\022\016\n\006amount\030" +
-      "\003 \001(\004\022\r\n\005asset\030\004 \001(\t\022\'\n\006status\030\005 \001(\0162\027.v" +
-      "ega.Withdrawal.Status\022\013\n\003ref\030\006 \001(\t\022\016\n\006ex" +
-      "piry\030\007 \001(\003\022\016\n\006txHash\030\010 \001(\t\022\030\n\020createdTim" +
-      "estamp\030\t \001(\003\022\032\n\022withdrawnTimestamp\030\n \001(\003" +
-      "\022\036\n\003ext\030\013 \001(\0132\021.vega.WithdrawExt\"\211\001\n\006Sta" +
-      "tus\022!\n\035WITHDRAWAL_STATUS_UNSPECIFIED\020\000\022\032" +
-      "\n\026WITHDRAWAL_STATUS_OPEN\020\001\022\037\n\033WITHDRAWAL" +
-      "_STATUS_CANCELLED\020\002\022\037\n\033WITHDRAWAL_STATUS" +
-      "_FINALIZED\020\003\"d\n\022WithdrawSubmission\022\017\n\007pa" +
-      "rtyID\030\001 \001(\t\022\016\n\006amount\030\002 \001(\004\022\r\n\005asset\030\003 \001" +
-      "(\t\022\036\n\003ext\030\004 \001(\0132\021.vega.WithdrawExt\"=\n\013Wi" +
-      "thdrawExt\022\'\n\005erc20\030\001 \001(\0132\026.vega.Erc20Wit" +
-      "hdrawExtH\000B\005\n\003ext\"+\n\020Erc20WithdrawExt\022\027\n" +
-      "\017receiverAddress\030\001 \001(\t\"\325\001\n\016OrderAmendmen" +
-      "t\022\027\n\007orderID\030\001 \001(\tB\006\342\337\037\002X\001\022\027\n\007partyID\030\002 " +
-      "\001(\tB\006\342\337\037\002X\001\022\020\n\010marketID\030\003 \001(\t\022\032\n\005price\030\004" +
-      " \001(\0132\013.vega.Price\022\021\n\tsizeDelta\030\005 \001(\003\022\"\n\t" +
-      "expiresAt\030\006 \001(\0132\017.vega.Timestamp\022,\n\013time" +
-      "InForce\030\007 \001(\0162\027.vega.Order.TimeInForce\"\246" +
-      "\002\n\017OrderSubmission\022\022\n\002id\030\001 \001(\tB\006\342\337\037\002X\000\022\030" +
-      "\n\010marketID\030\002 \001(\tB\006\342\337\037\002X\001\022\027\n\007partyID\030\003 \001(" +
-      "\tB\006\342\337\037\002X\001\022\r\n\005price\030\004 \001(\004\022\024\n\004size\030\005 \001(\004B\006" +
-      "\342\337\037\002\020\000\022!\n\004side\030\006 \001(\0162\n.vega.SideB\007\342\337\037\003\210\001" +
-      "\001\0225\n\013timeInForce\030\007 \001(\0162\027.vega.Order.Time" +
-      "InForceB\007\342\337\037\003\210\001\001\022\021\n\texpiresAt\030\010 \001(\003\022\'\n\004t" +
-      "ype\030\t \001(\0162\020.vega.Order.TypeB\007\342\337\037\003\210\001\001\022\021\n\t" +
-      "reference\030\n \001(\t\"O\n\021OrderCancellation\022\017\n\007" +
-      "orderID\030\001 \001(\t\022\020\n\010marketID\030\002 \001(\t\022\027\n\007party" +
-      "ID\030\003 \001(\tB\006\342\337\037\002X\001\"G\n\020NodeRegistration\022\026\n\006" +
-      "pubKey\030\001 \001(\014B\006\342\337\037\002X\001\022\033\n\013chainPubKey\030\002 \001(" +
-      "\014B\006\342\337\037\002X\001\"=\n\010NodeVote\022\026\n\006pubKey\030\001 \001(\014B\006\342" +
-      "\337\037\002X\001\022\031\n\treference\030\002 \001(\tB\006\342\337\037\002X\001\"w\n\007Acco" +
-      "unt\022\n\n\002id\030\001 \001(\t\022\r\n\005owner\030\002 \001(\t\022\017\n\007balanc" +
-      "e\030\003 \001(\004\022\r\n\005asset\030\004 \001(\t\022\020\n\010marketID\030\005 \001(\t" +
-      "\022\037\n\004type\030\006 \001(\0162\021.vega.AccountType\"0\n\017Fin" +
-      "ancialAmount\022\016\n\006amount\030\001 \001(\003\022\r\n\005asset\030\002 " +
-      "\001(\t\"u\n\010Transfer\022\r\n\005owner\030\001 \001(\t\022%\n\006amount" +
-      "\030\002 \001(\0132\025.vega.FinancialAmount\022 \n\004type\030\003 " +
-      "\001(\0162\022.vega.TransferType\022\021\n\tminAmount\030\004 \001" +
-      "(\003\"\234\001\n\017TransferRequest\022\"\n\013fromAccount\030\001 " +
-      "\003(\0132\r.vega.Account\022 \n\ttoAccount\030\002 \003(\0132\r." +
-      "vega.Account\022\016\n\006amount\030\003 \001(\004\022\021\n\tminAmoun" +
-      "t\030\004 \001(\004\022\r\n\005asset\030\005 \001(\t\022\021\n\treference\030\006 \001(" +
-      "\t\"y\n\013LedgerEntry\022\023\n\013fromAccount\030\001 \001(\t\022\021\n" +
-      "\ttoAccount\030\002 \001(\t\022\016\n\006amount\030\003 \001(\004\022\021\n\trefe" +
-      "rence\030\004 \001(\t\022\014\n\004type\030\005 \001(\t\022\021\n\ttimestamp\030\006" +
-      " \001(\003\"B\n\017TransferBalance\022\036\n\007account\030\001 \001(\013" +
-      "2\r.vega.Account\022\017\n\007balance\030\002 \001(\004\"a\n\020Tran" +
-      "sferResponse\022$\n\ttransfers\030\001 \003(\0132\021.vega.L" +
-      "edgerEntry\022\'\n\010balances\030\002 \003(\0132\025.vega.Tran" +
-      "sferBalance\"\272\001\n\014MarginLevels\022\031\n\021maintena" +
-      "nceMargin\030\001 \001(\004\022\023\n\013searchLevel\030\002 \001(\004\022\025\n\r" +
-      "initialMargin\030\003 \001(\004\022\036\n\026collateralRelease" +
-      "Level\030\004 \001(\004\022\017\n\007partyID\030\005 \001(\t\022\020\n\010marketID" +
-      "\030\006 \001(\t\022\r\n\005asset\030\007 \001(\t\022\021\n\ttimestamp\030\010 \001(\003" +
-      "\"\315\002\n\nMarketData\022\021\n\tmarkPrice\030\001 \001(\004\022\024\n\014be" +
-      "stBidPrice\030\002 \001(\004\022\025\n\rbestBidVolume\030\003 \001(\004\022" +
-      "\026\n\016bestOfferPrice\030\004 \001(\004\022\027\n\017bestOfferVolu" +
-      "me\030\005 \001(\004\022\020\n\010midPrice\030\006 \001(\004\022\016\n\006market\030\007 \001" +
-      "(\t\022\021\n\ttimestamp\030\010 \001(\003\022\024\n\014openInterest\030\t " +
-      "\001(\004\022\022\n\nauctionEnd\030\n \001(\003\022\024\n\014auctionStart\030" +
-      "\013 \001(\003\022\027\n\017indicativePrice\030\014 \001(\004\022\030\n\020indica" +
-      "tiveVolume\030\r \001(\004\022&\n\013marketState\030\016 \001(\0162\021." +
-      "vega.MarketState\";\n\013ErrorDetail\022\014\n\004code\030" +
-      "\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\r\n\005inner\030\003 \001(\t\"^\n" +
+      "\030\037 \001(\004\022\016\n\006uptime\030  \001(\t\022\017\n\007chainID\030! \001(\t\022" +
+      "\'\n\037marketDepthUpdatesSubscriptions\030\" \001(\r" +
+      "\"\257\002\n\007Deposit\022\n\n\002id\030\001 \001(\t\022$\n\006status\030\002 \001(\016" +
+      "2\024.vega.Deposit.Status\022\017\n\007partyID\030\003 \001(\t\022" +
+      "\r\n\005asset\030\004 \001(\t\022\016\n\006amount\030\005 \001(\t\022\016\n\006txHash" +
+      "\030\006 \001(\t\022\031\n\021creditedTimestamp\030\007 \001(\003\022\030\n\020cre" +
+      "atedTimestamp\030\010 \001(\003\"}\n\006Status\022\036\n\032DEPOSIT" +
+      "_STATUS_UNSPECIFIED\020\000\022\027\n\023DEPOSIT_STATUS_" +
+      "OPEN\020\001\022\034\n\030DEPOSIT_STATUS_CANCELLED\020\002\022\034\n\030" +
+      "DEPOSIT_STATUS_FINALIZED\020\003\"\200\003\n\nWithdrawa" +
+      "l\022\n\n\002id\030\001 \001(\t\022\017\n\007partyID\030\002 \001(\t\022\016\n\006amount" +
+      "\030\003 \001(\004\022\r\n\005asset\030\004 \001(\t\022\'\n\006status\030\005 \001(\0162\027." +
+      "vega.Withdrawal.Status\022\013\n\003ref\030\006 \001(\t\022\016\n\006e" +
+      "xpiry\030\007 \001(\003\022\016\n\006txHash\030\010 \001(\t\022\030\n\020createdTi" +
+      "mestamp\030\t \001(\003\022\032\n\022withdrawnTimestamp\030\n \001(" +
+      "\003\022\036\n\003ext\030\013 \001(\0132\021.vega.WithdrawExt\"\211\001\n\006St" +
+      "atus\022!\n\035WITHDRAWAL_STATUS_UNSPECIFIED\020\000\022" +
+      "\032\n\026WITHDRAWAL_STATUS_OPEN\020\001\022\037\n\033WITHDRAWA" +
+      "L_STATUS_CANCELLED\020\002\022\037\n\033WITHDRAWAL_STATU" +
+      "S_FINALIZED\020\003\"d\n\022WithdrawSubmission\022\017\n\007p" +
+      "artyID\030\001 \001(\t\022\016\n\006amount\030\002 \001(\004\022\r\n\005asset\030\003 " +
+      "\001(\t\022\036\n\003ext\030\004 \001(\0132\021.vega.WithdrawExt\"=\n\013W" +
+      "ithdrawExt\022\'\n\005erc20\030\001 \001(\0132\026.vega.Erc20Wi" +
+      "thdrawExtH\000B\005\n\003ext\"+\n\020Erc20WithdrawExt\022\027" +
+      "\n\017receiverAddress\030\001 \001(\t\"\325\001\n\016OrderAmendme" +
+      "nt\022\027\n\007orderID\030\001 \001(\tB\006\342\337\037\002X\001\022\027\n\007partyID\030\002" +
+      " \001(\tB\006\342\337\037\002X\001\022\020\n\010marketID\030\003 \001(\t\022\032\n\005price\030" +
+      "\004 \001(\0132\013.vega.Price\022\021\n\tsizeDelta\030\005 \001(\003\022\"\n" +
+      "\texpiresAt\030\006 \001(\0132\017.vega.Timestamp\022,\n\013tim" +
+      "eInForce\030\007 \001(\0162\027.vega.Order.TimeInForce\"" +
+      "\246\002\n\017OrderSubmission\022\022\n\002id\030\001 \001(\tB\006\342\337\037\002X\000\022" +
+      "\030\n\010marketID\030\002 \001(\tB\006\342\337\037\002X\001\022\027\n\007partyID\030\003 \001" +
+      "(\tB\006\342\337\037\002X\001\022\r\n\005price\030\004 \001(\004\022\024\n\004size\030\005 \001(\004B" +
+      "\006\342\337\037\002\020\000\022!\n\004side\030\006 \001(\0162\n.vega.SideB\007\342\337\037\003\210" +
+      "\001\001\0225\n\013timeInForce\030\007 \001(\0162\027.vega.Order.Tim" +
+      "eInForceB\007\342\337\037\003\210\001\001\022\021\n\texpiresAt\030\010 \001(\003\022\'\n\004" +
+      "type\030\t \001(\0162\020.vega.Order.TypeB\007\342\337\037\003\210\001\001\022\021\n" +
+      "\treference\030\n \001(\t\"O\n\021OrderCancellation\022\017\n" +
+      "\007orderID\030\001 \001(\t\022\020\n\010marketID\030\002 \001(\t\022\027\n\007part" +
+      "yID\030\003 \001(\tB\006\342\337\037\002X\001\"G\n\020NodeRegistration\022\026\n" +
+      "\006pubKey\030\001 \001(\014B\006\342\337\037\002X\001\022\033\n\013chainPubKey\030\002 \001" +
+      "(\014B\006\342\337\037\002X\001\"=\n\010NodeVote\022\026\n\006pubKey\030\001 \001(\014B\006" +
+      "\342\337\037\002X\001\022\031\n\treference\030\002 \001(\tB\006\342\337\037\002X\001\"w\n\007Acc" +
+      "ount\022\n\n\002id\030\001 \001(\t\022\r\n\005owner\030\002 \001(\t\022\017\n\007balan" +
+      "ce\030\003 \001(\004\022\r\n\005asset\030\004 \001(\t\022\020\n\010marketID\030\005 \001(" +
+      "\t\022\037\n\004type\030\006 \001(\0162\021.vega.AccountType\"0\n\017Fi" +
+      "nancialAmount\022\016\n\006amount\030\001 \001(\003\022\r\n\005asset\030\002" +
+      " \001(\t\"u\n\010Transfer\022\r\n\005owner\030\001 \001(\t\022%\n\006amoun" +
+      "t\030\002 \001(\0132\025.vega.FinancialAmount\022 \n\004type\030\003" +
+      " \001(\0162\022.vega.TransferType\022\021\n\tminAmount\030\004 " +
+      "\001(\003\"\234\001\n\017TransferRequest\022\"\n\013fromAccount\030\001" +
+      " \003(\0132\r.vega.Account\022 \n\ttoAccount\030\002 \003(\0132\r" +
+      ".vega.Account\022\016\n\006amount\030\003 \001(\004\022\021\n\tminAmou" +
+      "nt\030\004 \001(\004\022\r\n\005asset\030\005 \001(\t\022\021\n\treference\030\006 \001" +
+      "(\t\"y\n\013LedgerEntry\022\023\n\013fromAccount\030\001 \001(\t\022\021" +
+      "\n\ttoAccount\030\002 \001(\t\022\016\n\006amount\030\003 \001(\004\022\021\n\tref" +
+      "erence\030\004 \001(\t\022\014\n\004type\030\005 \001(\t\022\021\n\ttimestamp\030" +
+      "\006 \001(\003\"B\n\017TransferBalance\022\036\n\007account\030\001 \001(" +
+      "\0132\r.vega.Account\022\017\n\007balance\030\002 \001(\004\"a\n\020Tra" +
+      "nsferResponse\022$\n\ttransfers\030\001 \003(\0132\021.vega." +
+      "LedgerEntry\022\'\n\010balances\030\002 \003(\0132\025.vega.Tra" +
+      "nsferBalance\"\272\001\n\014MarginLevels\022\031\n\021mainten" +
+      "anceMargin\030\001 \001(\004\022\023\n\013searchLevel\030\002 \001(\004\022\025\n" +
+      "\rinitialMargin\030\003 \001(\004\022\036\n\026collateralReleas" +
+      "eLevel\030\004 \001(\004\022\017\n\007partyID\030\005 \001(\t\022\020\n\010marketI" +
+      "D\030\006 \001(\t\022\r\n\005asset\030\007 \001(\t\022\021\n\ttimestamp\030\010 \001(" +
+      "\003\"\364\002\n\nMarketData\022\021\n\tmarkPrice\030\001 \001(\004\022\024\n\014b" +
+      "estBidPrice\030\002 \001(\004\022\025\n\rbestBidVolume\030\003 \001(\004" +
+      "\022\026\n\016bestOfferPrice\030\004 \001(\004\022\027\n\017bestOfferVol" +
+      "ume\030\005 \001(\004\022\020\n\010midPrice\030\006 \001(\004\022\016\n\006market\030\007 " +
+      "\001(\t\022\021\n\ttimestamp\030\010 \001(\003\022\024\n\014openInterest\030\t" +
+      " \001(\004\022\022\n\nauctionEnd\030\n \001(\003\022\024\n\014auctionStart" +
+      "\030\013 \001(\003\022\027\n\017indicativePrice\030\014 \001(\004\022\030\n\020indic" +
+      "ativeVolume\030\r \001(\004\022&\n\013marketState\030\016 \001(\0162\021" +
+      ".vega.MarketState\022%\n\007trigger\030\017 \001(\0162\024.veg" +
+      "a.AuctionTrigger\";\n\013ErrorDetail\022\014\n\004code\030" +
+      "\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\r\n\005inner\030\003 \001(\t\"s\n" +
       "\013Transaction\022\021\n\tinputData\030\001 \001(\014\022\r\n\005nonce" +
-      "\030\002 \001(\004\022\022\n\007address\030\351\007 \001(\014H\000\022\021\n\006pubKey\030\352\007 " +
-      "\001(\014H\000B\006\n\004from\"7\n\tSignature\022\013\n\003sig\030\001 \001(\014\022" +
-      "\014\n\004algo\030\002 \001(\t\022\017\n\007version\030\003 \001(\004\"8\n\014Signed" +
-      "Bundle\022\n\n\002tx\030\001 \001(\014\022\034\n\003sig\030\002 \001(\0132\017.vega.S" +
-      "ignature\"O\n\rNodeSignature\022\n\n\002ID\030\001 \001(\t\022\013\n" +
-      "\003sig\030\002 \001(\014\022%\n\004kind\030\003 \001(\0162\027.vega.NodeSign" +
-      "atureKind*9\n\004Side\022\024\n\020SIDE_UNSPECIFIED\020\000\022" +
-      "\014\n\010SIDE_BUY\020\001\022\r\n\tSIDE_SELL\020\002*\230\001\n\010Interva" +
-      "l\022\030\n\024INTERVAL_UNSPECIFIED\020\000\022\020\n\014INTERVAL_" +
-      "I1M\020<\022\021\n\014INTERVAL_I5M\020\254\002\022\022\n\rINTERVAL_I15" +
-      "M\020\204\007\022\021\n\014INTERVAL_I1H\020\220\034\022\022\n\014INTERVAL_I6H\020" +
-      "\340\250\001\022\022\n\014INTERVAL_I1D\020\200\243\005*b\n\013MarketState\022\034" +
-      "\n\030MARKET_STATE_UNSPECIFIED\020\000\022\033\n\027MARKET_S" +
-      "TATE_CONTINUOUS\020\001\022\030\n\024MARKET_STATE_AUCTIO" +
-      "N\020\002*\315\006\n\nOrderError\022\024\n\020ORDER_ERROR_NONE\020\000" +
-      "\022!\n\035ORDER_ERROR_INVALID_MARKET_ID\020\001\022 \n\034O" +
-      "RDER_ERROR_INVALID_ORDER_ID\020\002\022\037\n\033ORDER_E" +
-      "RROR_OUT_OF_SEQUENCE\020\003\022&\n\"ORDER_ERROR_IN" +
-      "VALID_REMAINING_SIZE\020\004\022\034\n\030ORDER_ERROR_TI" +
-      "ME_FAILURE\020\005\022\037\n\033ORDER_ERROR_REMOVAL_FAIL" +
-      "URE\020\006\022+\n\'ORDER_ERROR_INVALID_EXPIRATION_" +
-      "DATETIME\020\007\022\'\n#ORDER_ERROR_INVALID_ORDER_" +
-      "REFERENCE\020\010\022 \n\034ORDER_ERROR_EDIT_NOT_ALLO" +
-      "WED\020\t\022\035\n\031ORDER_ERROR_AMEND_FAILURE\020\n\022\031\n\025" +
-      "ORDER_ERROR_NOT_FOUND\020\013\022 \n\034ORDER_ERROR_I" +
-      "NVALID_PARTY_ID\020\014\022\035\n\031ORDER_ERROR_MARKET_" +
-      "CLOSED\020\r\022#\n\037ORDER_ERROR_MARGIN_CHECK_FAI" +
-      "LED\020\016\022\'\n#ORDER_ERROR_MISSING_GENERAL_ACC" +
-      "OUNT\020\017\022\036\n\032ORDER_ERROR_INTERNAL_ERROR\020\020\022\034" +
-      "\n\030ORDER_ERROR_INVALID_SIZE\020\021\022#\n\037ORDER_ER" +
-      "ROR_INVALID_PERSISTENCE\020\022\022\034\n\030ORDER_ERROR" +
-      "_INVALID_TYPE\020\023\022\034\n\030ORDER_ERROR_SELF_TRAD" +
-      "ING\020\024\022.\n*ORDER_ERROR_INSUFFICIENT_FUNDS_" +
-      "TO_PAY_FEES\020\025\022%\n!ORDER_ERROR_INCORRECT_M" +
-      "ARKET_TYPE\020\026\022%\n!ORDER_ERROR_INVALID_TIME" +
-      "_IN_FORCE\020\027*\202\001\n\013ChainStatus\022\034\n\030CHAIN_STA" +
-      "TUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_STATUS_DISCON" +
-      "NECTED\020\001\022\032\n\026CHAIN_STATUS_REPLAYING\020\002\022\032\n\026" +
-      "CHAIN_STATUS_CONNECTED\020\003*\233\002\n\013AccountType" +
-      "\022\034\n\030ACCOUNT_TYPE_UNSPECIFIED\020\000\022\032\n\026ACCOUN" +
-      "T_TYPE_INSURANCE\020\001\022\033\n\027ACCOUNT_TYPE_SETTL" +
-      "EMENT\020\002\022\027\n\023ACCOUNT_TYPE_MARGIN\020\003\022\030\n\024ACCO" +
-      "UNT_TYPE_GENERAL\020\004\022$\n ACCOUNT_TYPE_FEES_" +
-      "INFRASTRUCTURE\020\005\022\037\n\033ACCOUNT_TYPE_FEES_LI" +
-      "QUIDITY\020\006\022\033\n\027ACCOUNT_TYPE_FEES_MAKER\020\007\022\036" +
-      "\n\032ACCOUNT_TYPE_LOCK_WITHDRAW\020\010*\244\003\n\014Trans" +
-      "ferType\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\026" +
-      "\n\022TRANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSFER_TYPE_" +
-      "WIN\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032\n\026TRANSF" +
-      "ER_TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_TYPE_MTM_" +
-      "WIN\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_LOW\020\006\022\035\n\031T" +
-      "RANSFER_TYPE_MARGIN_HIGH\020\007\022$\n TRANSFER_T" +
-      "YPE_MARGIN_CONFISCATED\020\010\022\037\n\033TRANSFER_TYP" +
-      "E_MAKER_FEE_PAY\020\t\022#\n\037TRANSFER_TYPE_MAKER" +
-      "_FEE_RECEIVE\020\n\022(\n$TRANSFER_TYPE_INFRASTR" +
-      "UCTURE_FEE_PAY\020\013\022#\n\037TRANSFER_TYPE_LIQUID" +
-      "ITY_FEE_PAY\020\014*\205\001\n\021NodeSignatureKind\022#\n\037N" +
-      "ODE_SIGNATURE_KIND_UNSPECIFIED\020\000\022!\n\035NODE" +
-      "_SIGNATURE_KIND_ASSET_NEW\020\001\022(\n$NODE_SIGN" +
-      "ATURE_KIND_ASSET_WITHDRAWAL\020\002B7\n\024io.vega" +
-      "protocol.vegaZ\037code.vegaprotocol.io/vega" +
-      "/protob\006proto3"
+      "\030\002 \001(\004\022\023\n\013blockHeight\030\003 \001(\004\022\022\n\007address\030\351" +
+      "\007 \001(\014H\000\022\021\n\006pubKey\030\352\007 \001(\014H\000B\006\n\004from\"7\n\tSi" +
+      "gnature\022\013\n\003sig\030\001 \001(\014\022\014\n\004algo\030\002 \001(\t\022\017\n\007ve" +
+      "rsion\030\003 \001(\004\"8\n\014SignedBundle\022\n\n\002tx\030\001 \001(\014\022" +
+      "\034\n\003sig\030\002 \001(\0132\017.vega.Signature\"O\n\rNodeSig" +
+      "nature\022\n\n\002ID\030\001 \001(\t\022\013\n\003sig\030\002 \001(\014\022%\n\004kind\030" +
+      "\003 \001(\0162\027.vega.NodeSignatureKind\".\n\020Networ" +
+      "kParameter\022\013\n\003Key\030\001 \001(\t\022\r\n\005Value\030\002 \001(\t*9" +
+      "\n\004Side\022\024\n\020SIDE_UNSPECIFIED\020\000\022\014\n\010SIDE_BUY" +
+      "\020\001\022\r\n\tSIDE_SELL\020\002*\230\001\n\010Interval\022\030\n\024INTERV" +
+      "AL_UNSPECIFIED\020\000\022\020\n\014INTERVAL_I1M\020<\022\021\n\014IN" +
+      "TERVAL_I5M\020\254\002\022\022\n\rINTERVAL_I15M\020\204\007\022\021\n\014INT" +
+      "ERVAL_I1H\020\220\034\022\022\n\014INTERVAL_I6H\020\340\250\001\022\022\n\014INTE" +
+      "RVAL_I1D\020\200\243\005*\257\001\n\013MarketState\022\034\n\030MARKET_S" +
+      "TATE_UNSPECIFIED\020\000\022\033\n\027MARKET_STATE_CONTI" +
+      "NUOUS\020\001\022\036\n\032MARKET_STATE_BATCH_AUCTION\020\002\022" +
+      " \n\034MARKET_STATE_OPENING_AUCTION\020\003\022#\n\037MAR" +
+      "KET_STATE_MONITORING_AUCTION\020\004*\243\001\n\016Aucti" +
+      "onTrigger\022\037\n\033AUCTION_TRIGGER_UNSPECIFIED" +
+      "\020\000\022\031\n\025AUCTION_TRIGGER_BATCH\020\001\022\033\n\027AUCTION" +
+      "_TRIGGER_OPENING\020\002\022\031\n\025AUCTION_TRIGGER_PR" +
+      "ICE\020\003\022\035\n\031AUCTION_TRIGGER_LIQUIDITY\020\004*\260\n\n" +
+      "\nOrderError\022\024\n\020ORDER_ERROR_NONE\020\000\022!\n\035ORD" +
+      "ER_ERROR_INVALID_MARKET_ID\020\001\022 \n\034ORDER_ER" +
+      "ROR_INVALID_ORDER_ID\020\002\022\037\n\033ORDER_ERROR_OU" +
+      "T_OF_SEQUENCE\020\003\022&\n\"ORDER_ERROR_INVALID_R" +
+      "EMAINING_SIZE\020\004\022\034\n\030ORDER_ERROR_TIME_FAIL" +
+      "URE\020\005\022\037\n\033ORDER_ERROR_REMOVAL_FAILURE\020\006\022+" +
+      "\n\'ORDER_ERROR_INVALID_EXPIRATION_DATETIM" +
+      "E\020\007\022\'\n#ORDER_ERROR_INVALID_ORDER_REFEREN" +
+      "CE\020\010\022 \n\034ORDER_ERROR_EDIT_NOT_ALLOWED\020\t\022\035" +
+      "\n\031ORDER_ERROR_AMEND_FAILURE\020\n\022\031\n\025ORDER_E" +
+      "RROR_NOT_FOUND\020\013\022 \n\034ORDER_ERROR_INVALID_" +
+      "PARTY_ID\020\014\022\035\n\031ORDER_ERROR_MARKET_CLOSED\020" +
+      "\r\022#\n\037ORDER_ERROR_MARGIN_CHECK_FAILED\020\016\022\'" +
+      "\n#ORDER_ERROR_MISSING_GENERAL_ACCOUNT\020\017\022" +
+      "\036\n\032ORDER_ERROR_INTERNAL_ERROR\020\020\022\034\n\030ORDER" +
+      "_ERROR_INVALID_SIZE\020\021\022#\n\037ORDER_ERROR_INV" +
+      "ALID_PERSISTENCE\020\022\022\034\n\030ORDER_ERROR_INVALI" +
+      "D_TYPE\020\023\022\034\n\030ORDER_ERROR_SELF_TRADING\020\024\022." +
+      "\n*ORDER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_" +
+      "FEES\020\025\022%\n!ORDER_ERROR_INCORRECT_MARKET_T" +
+      "YPE\020\026\022%\n!ORDER_ERROR_INVALID_TIME_IN_FOR" +
+      "CE\020\027\022+\n\'ORDER_ERROR_GFN_ORDER_DURING_AN_" +
+      "AUCTION\020\030\0223\n/ORDER_ERROR_GFA_ORDER_DURIN" +
+      "G_CONTINUOUS_TRADING\020\031\0224\n0ORDER_ERROR_CA" +
+      "NNOT_AMEND_TO_GTT_WITHOUT_EXPIRYAT\020\032\022)\n%" +
+      "ORDER_ERROR_EXPIRYAT_BEFORE_CREATEDAT\020\033\022" +
+      ",\n(ORDER_ERROR_CANNOT_HAVE_GTC_AND_EXPIR" +
+      "YAT\020\034\022*\n&ORDER_ERROR_CANNOT_AMEND_TO_FOK" +
+      "_OR_IOC\020\035\022*\n&ORDER_ERROR_CANNOT_AMEND_TO" +
+      "_GFA_OR_GFN\020\036\022,\n(ORDER_ERROR_CANNOT_AMEN" +
+      "D_FROM_GFA_OR_GFN\020\037\0224\n0ORDER_ERROR_CANNO" +
+      "T_SEND_IOC_ORDER_DURING_AUCTION\020 \0224\n0ORD" +
+      "ER_ERROR_CANNOT_SEND_FOK_ORDER_DURING_AU" +
+      "CTION\020!*\202\001\n\013ChainStatus\022\034\n\030CHAIN_STATUS_" +
+      "UNSPECIFIED\020\000\022\035\n\031CHAIN_STATUS_DISCONNECT" +
+      "ED\020\001\022\032\n\026CHAIN_STATUS_REPLAYING\020\002\022\032\n\026CHAI" +
+      "N_STATUS_CONNECTED\020\003*\233\002\n\013AccountType\022\034\n\030" +
+      "ACCOUNT_TYPE_UNSPECIFIED\020\000\022\032\n\026ACCOUNT_TY" +
+      "PE_INSURANCE\020\001\022\033\n\027ACCOUNT_TYPE_SETTLEMEN" +
+      "T\020\002\022\027\n\023ACCOUNT_TYPE_MARGIN\020\003\022\030\n\024ACCOUNT_" +
+      "TYPE_GENERAL\020\004\022$\n ACCOUNT_TYPE_FEES_INFR" +
+      "ASTRUCTURE\020\005\022\037\n\033ACCOUNT_TYPE_FEES_LIQUID" +
+      "ITY\020\006\022\033\n\027ACCOUNT_TYPE_FEES_MAKER\020\007\022\036\n\032AC" +
+      "COUNT_TYPE_LOCK_WITHDRAW\020\010*\244\003\n\014TransferT" +
+      "ype\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\026\n\022TR" +
+      "ANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSFER_TYPE_WIN\020" +
+      "\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032\n\026TRANSFER_T" +
+      "YPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_TYPE_MTM_WIN\020" +
+      "\005\022\034\n\030TRANSFER_TYPE_MARGIN_LOW\020\006\022\035\n\031TRANS" +
+      "FER_TYPE_MARGIN_HIGH\020\007\022$\n TRANSFER_TYPE_" +
+      "MARGIN_CONFISCATED\020\010\022\037\n\033TRANSFER_TYPE_MA" +
+      "KER_FEE_PAY\020\t\022#\n\037TRANSFER_TYPE_MAKER_FEE" +
+      "_RECEIVE\020\n\022(\n$TRANSFER_TYPE_INFRASTRUCTU" +
+      "RE_FEE_PAY\020\013\022#\n\037TRANSFER_TYPE_LIQUIDITY_" +
+      "FEE_PAY\020\014*\205\001\n\021NodeSignatureKind\022#\n\037NODE_" +
+      "SIGNATURE_KIND_UNSPECIFIED\020\000\022!\n\035NODE_SIG" +
+      "NATURE_KIND_ASSET_NEW\020\001\022(\n$NODE_SIGNATUR" +
+      "E_KIND_ASSET_WITHDRAWAL\020\002B7\n\024io.vegaprot" +
+      "ocol.vegaZ\037code.vegaprotocol.io/vega/pro" +
+      "tob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -54999,7 +56390,7 @@ public final class Vega {
     internal_static_vega_Statistics_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Statistics_descriptor,
-        new java.lang.String[] { "BlockHeight", "BacklogLength", "TotalPeers", "GenesisTime", "CurrentTime", "VegaTime", "Status", "TxPerBlock", "AverageTxBytes", "AverageOrdersPerBlock", "TradesPerSecond", "OrdersPerSecond", "TotalMarkets", "TotalAmendOrder", "TotalCancelOrder", "TotalCreateOrder", "TotalOrders", "TotalTrades", "OrderSubscriptions", "TradeSubscriptions", "CandleSubscriptions", "MarketDepthSubscriptions", "PositionsSubscriptions", "AccountSubscriptions", "MarketDataSubscriptions", "AppVersionHash", "AppVersion", "ChainVersion", "BlockDuration", "Uptime", "ChainID", });
+        new java.lang.String[] { "BlockHeight", "BacklogLength", "TotalPeers", "GenesisTime", "CurrentTime", "VegaTime", "Status", "TxPerBlock", "AverageTxBytes", "AverageOrdersPerBlock", "TradesPerSecond", "OrdersPerSecond", "TotalMarkets", "TotalAmendOrder", "TotalCancelOrder", "TotalCreateOrder", "TotalOrders", "TotalTrades", "OrderSubscriptions", "TradeSubscriptions", "CandleSubscriptions", "MarketDepthSubscriptions", "PositionsSubscriptions", "AccountSubscriptions", "MarketDataSubscriptions", "AppVersionHash", "AppVersion", "ChainVersion", "BlockDuration", "Uptime", "ChainID", "MarketDepthUpdatesSubscriptions", });
     internal_static_vega_Deposit_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_vega_Deposit_fieldAccessorTable = new
@@ -55113,7 +56504,7 @@ public final class Vega {
     internal_static_vega_MarketData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_MarketData_descriptor,
-        new java.lang.String[] { "MarkPrice", "BestBidPrice", "BestBidVolume", "BestOfferPrice", "BestOfferVolume", "MidPrice", "Market", "Timestamp", "OpenInterest", "AuctionEnd", "AuctionStart", "IndicativePrice", "IndicativeVolume", "MarketState", });
+        new java.lang.String[] { "MarkPrice", "BestBidPrice", "BestBidVolume", "BestOfferPrice", "BestOfferVolume", "MidPrice", "Market", "Timestamp", "OpenInterest", "AuctionEnd", "AuctionStart", "IndicativePrice", "IndicativeVolume", "MarketState", "Trigger", });
     internal_static_vega_ErrorDetail_descriptor =
       getDescriptor().getMessageTypes().get(38);
     internal_static_vega_ErrorDetail_fieldAccessorTable = new
@@ -55125,7 +56516,7 @@ public final class Vega {
     internal_static_vega_Transaction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Transaction_descriptor,
-        new java.lang.String[] { "InputData", "Nonce", "Address", "PubKey", "From", });
+        new java.lang.String[] { "InputData", "Nonce", "BlockHeight", "Address", "PubKey", "From", });
     internal_static_vega_Signature_descriptor =
       getDescriptor().getMessageTypes().get(40);
     internal_static_vega_Signature_fieldAccessorTable = new
@@ -55144,6 +56535,12 @@ public final class Vega {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_NodeSignature_descriptor,
         new java.lang.String[] { "ID", "Sig", "Kind", });
+    internal_static_vega_NetworkParameter_descriptor =
+      getDescriptor().getMessageTypes().get(43);
+    internal_static_vega_NetworkParameter_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_NetworkParameter_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.github.mwitkow.go_proto_validators.Validator.field);

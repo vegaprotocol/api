@@ -527,13 +527,14 @@ const char descriptor_table_protodef_proto_2fevents_2eproto[] =
   "S_EVENT_TYPE_DEPOSIT\020\025\022\032\n\026BUS_EVENT_TYPE"
   "_AUCTION\020\026\022\036\n\032BUS_EVENT_TYPE_RISK_FACTOR"
   "\020\027\022$\n BUS_EVENT_TYPE_NETWORK_PARAMETER\020\030"
-  "\022\031\n\025BUS_EVENT_TYPE_MARKET\020eB!Z\037code.vega"
-  "protocol.io/vega/protob\006proto3"
+  "\022\031\n\025BUS_EVENT_TYPE_MARKET\020eB7\n\024io.vegapr"
+  "otocol.vegaZ\037code.vegaprotocol.io/vega/p"
+  "rotob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fevents_2eproto = {
   false, InitDefaults_proto_2fevents_2eproto, 
   descriptor_table_protodef_proto_2fevents_2eproto,
-  "proto/events.proto", &assign_descriptors_table_proto_2fevents_2eproto, 2790,
+  "proto/events.proto", &assign_descriptors_table_proto_2fevents_2eproto, 2812,
 };
 
 void AddDescriptors_proto_2fevents_2eproto() {

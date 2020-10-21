@@ -171,7 +171,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         vegaAssetID_ = s;
@@ -189,7 +189,7 @@ public final class ChainEvents {
         getVegaAssetIDBytes() {
       java.lang.Object ref = vegaAssetID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         vegaAssetID_ = b;
@@ -213,7 +213,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         partyID_ = s;
@@ -231,7 +231,7 @@ public final class ChainEvents {
         getPartyIDBytes() {
       java.lang.Object ref = partyID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         partyID_ = b;
@@ -626,7 +626,7 @@ public final class ChainEvents {
           getVegaAssetIDBytes() {
         java.lang.Object ref = vegaAssetID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           vegaAssetID_ = b;
@@ -715,7 +715,7 @@ public final class ChainEvents {
           getPartyIDBytes() {
         java.lang.Object ref = partyID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           partyID_ = b;
@@ -1020,7 +1020,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         vegaAssetID_ = s;
@@ -1038,7 +1038,7 @@ public final class ChainEvents {
         getVegaAssetIDBytes() {
       java.lang.Object ref = vegaAssetID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         vegaAssetID_ = b;
@@ -1062,7 +1062,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         partyID_ = s;
@@ -1080,7 +1080,7 @@ public final class ChainEvents {
         getPartyIDBytes() {
       java.lang.Object ref = partyID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         partyID_ = b;
@@ -1475,7 +1475,7 @@ public final class ChainEvents {
           getVegaAssetIDBytes() {
         java.lang.Object ref = vegaAssetID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           vegaAssetID_ = b;
@@ -1564,7 +1564,7 @@ public final class ChainEvents {
           getPartyIDBytes() {
         java.lang.Object ref = partyID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           partyID_ = b;
@@ -2512,7 +2512,7 @@ public final class ChainEvents {
        * <code>.vega.BuiltinAssetDeposit deposit = 1001;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.BuiltinAssetDeposit, io.vegaprotocol.vega.ChainEvents.BuiltinAssetDeposit.Builder, io.vegaprotocol.vega.ChainEvents.BuiltinAssetDepositOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.BuiltinAssetDeposit, io.vegaprotocol.vega.ChainEvents.BuiltinAssetDeposit.Builder, io.vegaprotocol.vega.ChainEvents.BuiltinAssetDepositOrBuilder>
           getDepositFieldBuilder() {
         if (depositBuilder_ == null) {
           if (!(actionCase_ == 1001)) {
@@ -2684,7 +2684,7 @@ public final class ChainEvents {
        * <code>.vega.BuiltinAssetWithdrawal withdrawal = 1002;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawal, io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawal.Builder, io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawalOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawal, io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawal.Builder, io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawalOrBuilder>
           getWithdrawalFieldBuilder() {
         if (withdrawalBuilder_ == null) {
           if (!(actionCase_ == 1002)) {
@@ -2872,7 +2872,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         vegaAssetID_ = s;
@@ -2890,7 +2890,7 @@ public final class ChainEvents {
         getVegaAssetIDBytes() {
       java.lang.Object ref = vegaAssetID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         vegaAssetID_ = b;
@@ -3237,7 +3237,7 @@ public final class ChainEvents {
           getVegaAssetIDBytes() {
         java.lang.Object ref = vegaAssetID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           vegaAssetID_ = b;
@@ -3465,7 +3465,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         vegaAssetID_ = s;
@@ -3483,7 +3483,7 @@ public final class ChainEvents {
         getVegaAssetIDBytes() {
       java.lang.Object ref = vegaAssetID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         vegaAssetID_ = b;
@@ -3830,7 +3830,7 @@ public final class ChainEvents {
           getVegaAssetIDBytes() {
         java.lang.Object ref = vegaAssetID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           vegaAssetID_ = b;
@@ -4108,7 +4108,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         vegaAssetID_ = s;
@@ -4126,7 +4126,7 @@ public final class ChainEvents {
         getVegaAssetIDBytes() {
       java.lang.Object ref = vegaAssetID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         vegaAssetID_ = b;
@@ -4150,7 +4150,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         sourceEthereumAddress_ = s;
@@ -4168,7 +4168,7 @@ public final class ChainEvents {
         getSourceEthereumAddressBytes() {
       java.lang.Object ref = sourceEthereumAddress_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         sourceEthereumAddress_ = b;
@@ -4192,7 +4192,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         targetPartyID_ = s;
@@ -4210,7 +4210,7 @@ public final class ChainEvents {
         getTargetPartyIDBytes() {
       java.lang.Object ref = targetPartyID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         targetPartyID_ = b;
@@ -4591,7 +4591,7 @@ public final class ChainEvents {
           getVegaAssetIDBytes() {
         java.lang.Object ref = vegaAssetID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           vegaAssetID_ = b;
@@ -4680,7 +4680,7 @@ public final class ChainEvents {
           getSourceEthereumAddressBytes() {
         java.lang.Object ref = sourceEthereumAddress_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           sourceEthereumAddress_ = b;
@@ -4769,7 +4769,7 @@ public final class ChainEvents {
           getTargetPartyIDBytes() {
         java.lang.Object ref = targetPartyID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           targetPartyID_ = b;
@@ -5047,7 +5047,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         vegaAssetID_ = s;
@@ -5065,7 +5065,7 @@ public final class ChainEvents {
         getVegaAssetIDBytes() {
       java.lang.Object ref = vegaAssetID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         vegaAssetID_ = b;
@@ -5089,7 +5089,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         targetEthereumAddress_ = s;
@@ -5107,7 +5107,7 @@ public final class ChainEvents {
         getTargetEthereumAddressBytes() {
       java.lang.Object ref = targetEthereumAddress_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         targetEthereumAddress_ = b;
@@ -5131,7 +5131,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         referenceNonce_ = s;
@@ -5149,7 +5149,7 @@ public final class ChainEvents {
         getReferenceNonceBytes() {
       java.lang.Object ref = referenceNonce_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         referenceNonce_ = b;
@@ -5530,7 +5530,7 @@ public final class ChainEvents {
           getVegaAssetIDBytes() {
         java.lang.Object ref = vegaAssetID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           vegaAssetID_ = b;
@@ -5619,7 +5619,7 @@ public final class ChainEvents {
           getTargetEthereumAddressBytes() {
         java.lang.Object ref = targetEthereumAddress_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           targetEthereumAddress_ = b;
@@ -5708,7 +5708,7 @@ public final class ChainEvents {
           getReferenceNonceBytes() {
         java.lang.Object ref = referenceNonce_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           referenceNonce_ = b;
@@ -6994,7 +6994,7 @@ public final class ChainEvents {
        * <code>.vega.ERC20AssetList assetList = 1001;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.ERC20AssetList, io.vegaprotocol.vega.ChainEvents.ERC20AssetList.Builder, io.vegaprotocol.vega.ChainEvents.ERC20AssetListOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.ERC20AssetList, io.vegaprotocol.vega.ChainEvents.ERC20AssetList.Builder, io.vegaprotocol.vega.ChainEvents.ERC20AssetListOrBuilder>
           getAssetListFieldBuilder() {
         if (assetListBuilder_ == null) {
           if (!(actionCase_ == 1001)) {
@@ -7166,7 +7166,7 @@ public final class ChainEvents {
        * <code>.vega.ERC20AssetDelist assetDelist = 1002;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist, io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist.Builder, io.vegaprotocol.vega.ChainEvents.ERC20AssetDelistOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist, io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist.Builder, io.vegaprotocol.vega.ChainEvents.ERC20AssetDelistOrBuilder>
           getAssetDelistFieldBuilder() {
         if (assetDelistBuilder_ == null) {
           if (!(actionCase_ == 1002)) {
@@ -7338,7 +7338,7 @@ public final class ChainEvents {
        * <code>.vega.ERC20Deposit deposit = 1003;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.ERC20Deposit, io.vegaprotocol.vega.ChainEvents.ERC20Deposit.Builder, io.vegaprotocol.vega.ChainEvents.ERC20DepositOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.ERC20Deposit, io.vegaprotocol.vega.ChainEvents.ERC20Deposit.Builder, io.vegaprotocol.vega.ChainEvents.ERC20DepositOrBuilder>
           getDepositFieldBuilder() {
         if (depositBuilder_ == null) {
           if (!(actionCase_ == 1003)) {
@@ -7510,7 +7510,7 @@ public final class ChainEvents {
        * <code>.vega.ERC20Withdrawal withdrawal = 1004;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.ERC20Withdrawal, io.vegaprotocol.vega.ChainEvents.ERC20Withdrawal.Builder, io.vegaprotocol.vega.ChainEvents.ERC20WithdrawalOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.ERC20Withdrawal, io.vegaprotocol.vega.ChainEvents.ERC20Withdrawal.Builder, io.vegaprotocol.vega.ChainEvents.ERC20WithdrawalOrBuilder>
           getWithdrawalFieldBuilder() {
         if (withdrawalBuilder_ == null) {
           if (!(actionCase_ == 1004)) {
@@ -7748,7 +7748,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         vegaAssetID_ = s;
@@ -7766,7 +7766,7 @@ public final class ChainEvents {
         getVegaAssetIDBytes() {
       java.lang.Object ref = vegaAssetID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         vegaAssetID_ = b;
@@ -7790,7 +7790,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         sourceBTCAddress_ = s;
@@ -7808,7 +7808,7 @@ public final class ChainEvents {
         getSourceBTCAddressBytes() {
       java.lang.Object ref = sourceBTCAddress_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         sourceBTCAddress_ = b;
@@ -7832,7 +7832,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         targetPartyId_ = s;
@@ -7850,7 +7850,7 @@ public final class ChainEvents {
         getTargetPartyIdBytes() {
       java.lang.Object ref = targetPartyId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         targetPartyId_ = b;
@@ -8231,7 +8231,7 @@ public final class ChainEvents {
           getVegaAssetIDBytes() {
         java.lang.Object ref = vegaAssetID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           vegaAssetID_ = b;
@@ -8320,7 +8320,7 @@ public final class ChainEvents {
           getSourceBTCAddressBytes() {
         java.lang.Object ref = sourceBTCAddress_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           sourceBTCAddress_ = b;
@@ -8409,7 +8409,7 @@ public final class ChainEvents {
           getTargetPartyIdBytes() {
         java.lang.Object ref = targetPartyId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           targetPartyId_ = b;
@@ -8712,7 +8712,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         vegaAssetID_ = s;
@@ -8730,7 +8730,7 @@ public final class ChainEvents {
         getVegaAssetIDBytes() {
       java.lang.Object ref = vegaAssetID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         vegaAssetID_ = b;
@@ -8754,7 +8754,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         sourcePartyId_ = s;
@@ -8772,7 +8772,7 @@ public final class ChainEvents {
         getSourcePartyIdBytes() {
       java.lang.Object ref = sourcePartyId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         sourcePartyId_ = b;
@@ -8796,7 +8796,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         targetBTCAddress_ = s;
@@ -8814,7 +8814,7 @@ public final class ChainEvents {
         getTargetBTCAddressBytes() {
       java.lang.Object ref = targetBTCAddress_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         targetBTCAddress_ = b;
@@ -8838,7 +8838,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         referenceNonce_ = s;
@@ -8856,7 +8856,7 @@ public final class ChainEvents {
         getReferenceNonceBytes() {
       java.lang.Object ref = referenceNonce_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         referenceNonce_ = b;
@@ -9254,7 +9254,7 @@ public final class ChainEvents {
           getVegaAssetIDBytes() {
         java.lang.Object ref = vegaAssetID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           vegaAssetID_ = b;
@@ -9343,7 +9343,7 @@ public final class ChainEvents {
           getSourcePartyIdBytes() {
         java.lang.Object ref = sourcePartyId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           sourcePartyId_ = b;
@@ -9432,7 +9432,7 @@ public final class ChainEvents {
           getTargetBTCAddressBytes() {
         java.lang.Object ref = targetBTCAddress_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           targetBTCAddress_ = b;
@@ -9521,7 +9521,7 @@ public final class ChainEvents {
           getReferenceNonceBytes() {
         java.lang.Object ref = referenceNonce_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           referenceNonce_ = b;
@@ -10597,7 +10597,7 @@ public final class ChainEvents {
        * <code>.vega.BTCDeposit deposit = 1001;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.BTCDeposit, io.vegaprotocol.vega.ChainEvents.BTCDeposit.Builder, io.vegaprotocol.vega.ChainEvents.BTCDepositOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.BTCDeposit, io.vegaprotocol.vega.ChainEvents.BTCDeposit.Builder, io.vegaprotocol.vega.ChainEvents.BTCDepositOrBuilder>
           getDepositFieldBuilder() {
         if (depositBuilder_ == null) {
           if (!(actionCase_ == 1001)) {
@@ -10769,7 +10769,7 @@ public final class ChainEvents {
        * <code>.vega.BTCWithdrawal withdrawal = 1002;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.BTCWithdrawal, io.vegaprotocol.vega.ChainEvents.BTCWithdrawal.Builder, io.vegaprotocol.vega.ChainEvents.BTCWithdrawalOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.BTCWithdrawal, io.vegaprotocol.vega.ChainEvents.BTCWithdrawal.Builder, io.vegaprotocol.vega.ChainEvents.BTCWithdrawalOrBuilder>
           getWithdrawalFieldBuilder() {
         if (withdrawalBuilder_ == null) {
           if (!(actionCase_ == 1002)) {
@@ -10957,7 +10957,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         address_ = s;
@@ -10975,7 +10975,7 @@ public final class ChainEvents {
         getAddressBytes() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         address_ = b;
@@ -11322,7 +11322,7 @@ public final class ChainEvents {
           getAddressBytes() {
         java.lang.Object ref = address_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           address_ = b;
@@ -11550,7 +11550,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         address_ = s;
@@ -11568,7 +11568,7 @@ public final class ChainEvents {
         getAddressBytes() {
       java.lang.Object ref = address_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         address_ = b;
@@ -11915,7 +11915,7 @@ public final class ChainEvents {
           getAddressBytes() {
         java.lang.Object ref = address_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           address_ = b;
@@ -12825,7 +12825,7 @@ public final class ChainEvents {
        * <code>.vega.EthereumAddress ethereumAddress = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.EthereumAddress, io.vegaprotocol.vega.ChainEvents.EthereumAddress.Builder, io.vegaprotocol.vega.ChainEvents.EthereumAddressOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.EthereumAddress, io.vegaprotocol.vega.ChainEvents.EthereumAddress.Builder, io.vegaprotocol.vega.ChainEvents.EthereumAddressOrBuilder>
           getEthereumAddressFieldBuilder() {
         if (ethereumAddressBuilder_ == null) {
           if (!(identifierCase_ == 1)) {
@@ -12997,7 +12997,7 @@ public final class ChainEvents {
        * <code>.vega.BitcoinAddress bitcoinAddress = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.BitcoinAddress, io.vegaprotocol.vega.ChainEvents.BitcoinAddress.Builder, io.vegaprotocol.vega.ChainEvents.BitcoinAddressOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.BitcoinAddress, io.vegaprotocol.vega.ChainEvents.BitcoinAddress.Builder, io.vegaprotocol.vega.ChainEvents.BitcoinAddressOrBuilder>
           getBitcoinAddressFieldBuilder() {
         if (bitcoinAddressBuilder_ == null) {
           if (!(identifierCase_ == 2)) {
@@ -13676,7 +13676,7 @@ public final class ChainEvents {
        * <code>.vega.Identifier id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.Identifier, io.vegaprotocol.vega.ChainEvents.Identifier.Builder, io.vegaprotocol.vega.ChainEvents.IdentifierOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.Identifier, io.vegaprotocol.vega.ChainEvents.Identifier.Builder, io.vegaprotocol.vega.ChainEvents.IdentifierOrBuilder>
           getIdFieldBuilder() {
         if (idBuilder_ == null) {
           idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -14350,7 +14350,7 @@ public final class ChainEvents {
        * <code>.vega.Identifier id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.Identifier, io.vegaprotocol.vega.ChainEvents.Identifier.Builder, io.vegaprotocol.vega.ChainEvents.IdentifierOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.Identifier, io.vegaprotocol.vega.ChainEvents.Identifier.Builder, io.vegaprotocol.vega.ChainEvents.IdentifierOrBuilder>
           getIdFieldBuilder() {
         if (idBuilder_ == null) {
           idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -14651,7 +14651,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         sourceID_ = s;
@@ -14669,7 +14669,7 @@ public final class ChainEvents {
         getSourceIDBytes() {
       java.lang.Object ref = sourceID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         sourceID_ = b;
@@ -15176,7 +15176,7 @@ public final class ChainEvents {
           getSourceIDBytes() {
         java.lang.Object ref = sourceID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           sourceID_ = b;
@@ -15388,7 +15388,7 @@ public final class ChainEvents {
        * <code>.vega.AddValidator add = 1001;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.AddValidator, io.vegaprotocol.vega.ChainEvents.AddValidator.Builder, io.vegaprotocol.vega.ChainEvents.AddValidatorOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.AddValidator, io.vegaprotocol.vega.ChainEvents.AddValidator.Builder, io.vegaprotocol.vega.ChainEvents.AddValidatorOrBuilder>
           getAddFieldBuilder() {
         if (addBuilder_ == null) {
           if (!(actionCase_ == 1001)) {
@@ -15560,7 +15560,7 @@ public final class ChainEvents {
        * <code>.vega.RemoveValidator rm = 1002;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.RemoveValidator, io.vegaprotocol.vega.ChainEvents.RemoveValidator.Builder, io.vegaprotocol.vega.ChainEvents.RemoveValidatorOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.RemoveValidator, io.vegaprotocol.vega.ChainEvents.RemoveValidator.Builder, io.vegaprotocol.vega.ChainEvents.RemoveValidatorOrBuilder>
           getRmFieldBuilder() {
         if (rmBuilder_ == null) {
           if (!(actionCase_ == 1002)) {
@@ -15962,7 +15962,7 @@ public final class ChainEvents {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         txID_ = s;
@@ -15980,7 +15980,7 @@ public final class ChainEvents {
         getTxIDBytes() {
       java.lang.Object ref = txID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         txID_ = b;
@@ -16646,7 +16646,7 @@ public final class ChainEvents {
           getTxIDBytes() {
         java.lang.Object ref = txID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           txID_ = b;
@@ -16896,7 +16896,7 @@ public final class ChainEvents {
        * <code>.vega.BuiltinAssetEvent builtin = 1001;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent, io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent.Builder, io.vegaprotocol.vega.ChainEvents.BuiltinAssetEventOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent, io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent.Builder, io.vegaprotocol.vega.ChainEvents.BuiltinAssetEventOrBuilder>
           getBuiltinFieldBuilder() {
         if (builtinBuilder_ == null) {
           if (!(eventCase_ == 1001)) {
@@ -17068,7 +17068,7 @@ public final class ChainEvents {
        * <code>.vega.ERC20Event erc20 = 1002;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.ERC20Event, io.vegaprotocol.vega.ChainEvents.ERC20Event.Builder, io.vegaprotocol.vega.ChainEvents.ERC20EventOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.ERC20Event, io.vegaprotocol.vega.ChainEvents.ERC20Event.Builder, io.vegaprotocol.vega.ChainEvents.ERC20EventOrBuilder>
           getErc20FieldBuilder() {
         if (erc20Builder_ == null) {
           if (!(eventCase_ == 1002)) {
@@ -17240,7 +17240,7 @@ public final class ChainEvents {
        * <code>.vega.BTCEvent btc = 1003;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.BTCEvent, io.vegaprotocol.vega.ChainEvents.BTCEvent.Builder, io.vegaprotocol.vega.ChainEvents.BTCEventOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.BTCEvent, io.vegaprotocol.vega.ChainEvents.BTCEvent.Builder, io.vegaprotocol.vega.ChainEvents.BTCEventOrBuilder>
           getBtcFieldBuilder() {
         if (btcBuilder_ == null) {
           if (!(eventCase_ == 1003)) {
@@ -17412,7 +17412,7 @@ public final class ChainEvents {
        * <code>.vega.ValidatorEvent validator = 1004;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.ValidatorEvent, io.vegaprotocol.vega.ChainEvents.ValidatorEvent.Builder, io.vegaprotocol.vega.ChainEvents.ValidatorEventOrBuilder> 
+          io.vegaprotocol.vega.ChainEvents.ValidatorEvent, io.vegaprotocol.vega.ChainEvents.ValidatorEvent.Builder, io.vegaprotocol.vega.ChainEvents.ValidatorEventOrBuilder>
           getValidatorFieldBuilder() {
         if (validatorBuilder_ == null) {
           if (!(eventCase_ == 1004)) {
@@ -17484,92 +17484,92 @@ public final class ChainEvents {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_BuiltinAssetDeposit_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_BuiltinAssetDeposit_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_BuiltinAssetWithdrawal_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_BuiltinAssetWithdrawal_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_BuiltinAssetEvent_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_BuiltinAssetEvent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_ERC20AssetList_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_ERC20AssetList_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_ERC20AssetDelist_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_ERC20AssetDelist_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_ERC20Deposit_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_ERC20Deposit_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_ERC20Withdrawal_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_ERC20Withdrawal_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_ERC20Event_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_ERC20Event_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_BTCDeposit_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_BTCDeposit_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_BTCWithdrawal_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_BTCWithdrawal_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_BTCEvent_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_BTCEvent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_EthereumAddress_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_EthereumAddress_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_BitcoinAddress_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_BitcoinAddress_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Identifier_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Identifier_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_AddValidator_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_AddValidator_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_RemoveValidator_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_RemoveValidator_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_ValidatorEvent_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_ValidatorEvent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_ChainEvent_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_ChainEvent_fieldAccessorTable;
 

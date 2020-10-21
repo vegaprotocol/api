@@ -167,6 +167,54 @@ public final class Governance {
      * <code>PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS = 17;</code>
      */
     PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS(17),
+    /**
+     * <pre>
+     * No risk parameteres were specified
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_NO_RISK_PARAMETERS = 18;</code>
+     */
+    PROPOSAL_ERROR_NO_RISK_PARAMETERS(18),
+    /**
+     * <pre>
+     * Invalid key in update network parameter proposal
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_NETWORK_PARAMETER_INVALID_KEY = 19;</code>
+     */
+    PROPOSAL_ERROR_NETWORK_PARAMETER_INVALID_KEY(19),
+    /**
+     * <pre>
+     * Invalid valid in update network parameter proposal
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_NETWORK_PARAMETER_INVALID_VALUE = 20;</code>
+     */
+    PROPOSAL_ERROR_NETWORK_PARAMETER_INVALID_VALUE(20),
+    /**
+     * <pre>
+     * Validation failed for network parameter proposal
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_NETWORK_PARAMETER_VALIDATION_FAILED = 21;</code>
+     */
+    PROPOSAL_ERROR_NETWORK_PARAMETER_VALIDATION_FAILED(21),
+    /**
+     * <pre>
+     * Opening auction duration is less than the network minimum opening auction time
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_SMALL = 22;</code>
+     */
+    PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_SMALL(22),
+    /**
+     * <pre>
+     * Opening auction duration is more than the network minimum opening auction time
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE = 23;</code>
+     */
+    PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE(23),
     UNRECOGNIZED(-1),
     ;
 
@@ -314,6 +362,54 @@ public final class Governance {
      * <code>PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS = 17;</code>
      */
     public static final int PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS_VALUE = 17;
+    /**
+     * <pre>
+     * No risk parameteres were specified
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_NO_RISK_PARAMETERS = 18;</code>
+     */
+    public static final int PROPOSAL_ERROR_NO_RISK_PARAMETERS_VALUE = 18;
+    /**
+     * <pre>
+     * Invalid key in update network parameter proposal
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_NETWORK_PARAMETER_INVALID_KEY = 19;</code>
+     */
+    public static final int PROPOSAL_ERROR_NETWORK_PARAMETER_INVALID_KEY_VALUE = 19;
+    /**
+     * <pre>
+     * Invalid valid in update network parameter proposal
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_NETWORK_PARAMETER_INVALID_VALUE = 20;</code>
+     */
+    public static final int PROPOSAL_ERROR_NETWORK_PARAMETER_INVALID_VALUE_VALUE = 20;
+    /**
+     * <pre>
+     * Validation failed for network parameter proposal
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_NETWORK_PARAMETER_VALIDATION_FAILED = 21;</code>
+     */
+    public static final int PROPOSAL_ERROR_NETWORK_PARAMETER_VALIDATION_FAILED_VALUE = 21;
+    /**
+     * <pre>
+     * Opening auction duration is less than the network minimum opening auction time
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_SMALL = 22;</code>
+     */
+    public static final int PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_SMALL_VALUE = 22;
+    /**
+     * <pre>
+     * Opening auction duration is more than the network minimum opening auction time
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE = 23;</code>
+     */
+    public static final int PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE_VALUE = 23;
 
 
     public final int getNumber() {
@@ -352,6 +448,12 @@ public final class Governance {
         case 15: return PROPOSAL_ERROR_MISSING_ERC20_CONTRACT_ADDRESS;
         case 16: return PROPOSAL_ERROR_INVALID_ASSET;
         case 17: return PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS;
+        case 18: return PROPOSAL_ERROR_NO_RISK_PARAMETERS;
+        case 19: return PROPOSAL_ERROR_NETWORK_PARAMETER_INVALID_KEY;
+        case 20: return PROPOSAL_ERROR_NETWORK_PARAMETER_INVALID_VALUE;
+        case 21: return PROPOSAL_ERROR_NETWORK_PARAMETER_VALIDATION_FAILED;
+        case 22: return PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_SMALL;
+        case 23: return PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE;
         default: return null;
       }
     }
@@ -402,2541 +504,6 @@ public final class Governance {
     }
 
     // @@protoc_insertion_point(enum_scope:vega.ProposalError)
-  }
-
-  public interface NetworkConfigurationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:vega.NetworkConfiguration)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Constrains minimum duration since submission (in seconds) when vote closing time is allowed to be set for a proposal.
-     * </pre>
-     *
-     * <code>int64 minCloseInSeconds = 1;</code>
-     */
-    long getMinCloseInSeconds();
-
-    /**
-     * <pre>
-     * Constrains maximum duration since submission (in seconds) when vote closing time is allowed to be set for a proposal.
-     * </pre>
-     *
-     * <code>int64 maxCloseInSeconds = 2;</code>
-     */
-    long getMaxCloseInSeconds();
-
-    /**
-     * <pre>
-     * Constrains minimum duration since submission (in seconds) when enactment is allowed to be set for a proposal.
-     * </pre>
-     *
-     * <code>int64 minEnactInSeconds = 3;</code>
-     */
-    long getMinEnactInSeconds();
-
-    /**
-     * <pre>
-     * Constrains maximum duration since submission (in seconds) when enactment is allowed to be set for a proposal.
-     * </pre>
-     *
-     * <code>int64 maxEnactInSeconds = 4;</code>
-     */
-    long getMaxEnactInSeconds();
-
-    /**
-     * <pre>
-     * Participation level required for any proposal to pass. Value from `0` to `1`.
-     * </pre>
-     *
-     * <code>float requiredParticipation = 5;</code>
-     */
-    float getRequiredParticipation();
-
-    /**
-     * <pre>
-     * Majority level required for any proposal to pass. Value from `0.5` to `1`.
-     * </pre>
-     *
-     * <code>float requiredMajority = 6;</code>
-     */
-    float getRequiredMajority();
-
-    /**
-     * <pre>
-     * Minimum balance required for a party to be able to submit a new proposal. Value greater than `0` to `1`.
-     * </pre>
-     *
-     * <code>float minProposerBalance = 7;</code>
-     */
-    float getMinProposerBalance();
-
-    /**
-     * <pre>
-     * Minimum balance required for a party to be able to cast a vote. Value greater than `0` to `1`.
-     * </pre>
-     *
-     * <code>float minVoterBalance = 8;</code>
-     */
-    float getMinVoterBalance();
-
-    /**
-     * <pre>
-     * Scaling factors for all markets created via governance.
-     * </pre>
-     *
-     * <code>.vega.ScalingFactors marginConfiguration = 9;</code>
-     */
-    boolean hasMarginConfiguration();
-    /**
-     * <pre>
-     * Scaling factors for all markets created via governance.
-     * </pre>
-     *
-     * <code>.vega.ScalingFactors marginConfiguration = 9;</code>
-     */
-    io.vegaprotocol.vega.Markets.ScalingFactors getMarginConfiguration();
-    /**
-     * <pre>
-     * Scaling factors for all markets created via governance.
-     * </pre>
-     *
-     * <code>.vega.ScalingFactors marginConfiguration = 9;</code>
-     */
-    io.vegaprotocol.vega.Markets.ScalingFactorsOrBuilder getMarginConfigurationOrBuilder();
-
-    /**
-     * <pre>
-     * FeeFactors which are not set via proposal.
-     * </pre>
-     *
-     * <code>.vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;</code>
-     */
-    boolean hasFeeFactorsConfiguration();
-    /**
-     * <pre>
-     * FeeFactors which are not set via proposal.
-     * </pre>
-     *
-     * <code>.vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;</code>
-     */
-    io.vegaprotocol.vega.Governance.FeeFactorsConfiguration getFeeFactorsConfiguration();
-    /**
-     * <pre>
-     * FeeFactors which are not set via proposal.
-     * </pre>
-     *
-     * <code>.vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;</code>
-     */
-    io.vegaprotocol.vega.Governance.FeeFactorsConfigurationOrBuilder getFeeFactorsConfigurationOrBuilder();
-  }
-  /**
-   * <pre>
-   * Network configuration options.
-   * </pre>
-   *
-   * Protobuf type {@code vega.NetworkConfiguration}
-   */
-  public  static final class NetworkConfiguration extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:vega.NetworkConfiguration)
-      NetworkConfigurationOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use NetworkConfiguration.newBuilder() to construct.
-    private NetworkConfiguration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private NetworkConfiguration() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private NetworkConfiguration(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              minCloseInSeconds_ = input.readInt64();
-              break;
-            }
-            case 16: {
-
-              maxCloseInSeconds_ = input.readInt64();
-              break;
-            }
-            case 24: {
-
-              minEnactInSeconds_ = input.readInt64();
-              break;
-            }
-            case 32: {
-
-              maxEnactInSeconds_ = input.readInt64();
-              break;
-            }
-            case 45: {
-
-              requiredParticipation_ = input.readFloat();
-              break;
-            }
-            case 53: {
-
-              requiredMajority_ = input.readFloat();
-              break;
-            }
-            case 61: {
-
-              minProposerBalance_ = input.readFloat();
-              break;
-            }
-            case 69: {
-
-              minVoterBalance_ = input.readFloat();
-              break;
-            }
-            case 74: {
-              io.vegaprotocol.vega.Markets.ScalingFactors.Builder subBuilder = null;
-              if (marginConfiguration_ != null) {
-                subBuilder = marginConfiguration_.toBuilder();
-              }
-              marginConfiguration_ = input.readMessage(io.vegaprotocol.vega.Markets.ScalingFactors.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(marginConfiguration_);
-                marginConfiguration_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 82: {
-              io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.Builder subBuilder = null;
-              if (feeFactorsConfiguration_ != null) {
-                subBuilder = feeFactorsConfiguration_.toBuilder();
-              }
-              feeFactorsConfiguration_ = input.readMessage(io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(feeFactorsConfiguration_);
-                feeFactorsConfiguration_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.vegaprotocol.vega.Governance.internal_static_vega_NetworkConfiguration_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.vegaprotocol.vega.Governance.internal_static_vega_NetworkConfiguration_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              io.vegaprotocol.vega.Governance.NetworkConfiguration.class, io.vegaprotocol.vega.Governance.NetworkConfiguration.Builder.class);
-    }
-
-    public static final int MINCLOSEINSECONDS_FIELD_NUMBER = 1;
-    private long minCloseInSeconds_;
-    /**
-     * <pre>
-     * Constrains minimum duration since submission (in seconds) when vote closing time is allowed to be set for a proposal.
-     * </pre>
-     *
-     * <code>int64 minCloseInSeconds = 1;</code>
-     */
-    public long getMinCloseInSeconds() {
-      return minCloseInSeconds_;
-    }
-
-    public static final int MAXCLOSEINSECONDS_FIELD_NUMBER = 2;
-    private long maxCloseInSeconds_;
-    /**
-     * <pre>
-     * Constrains maximum duration since submission (in seconds) when vote closing time is allowed to be set for a proposal.
-     * </pre>
-     *
-     * <code>int64 maxCloseInSeconds = 2;</code>
-     */
-    public long getMaxCloseInSeconds() {
-      return maxCloseInSeconds_;
-    }
-
-    public static final int MINENACTINSECONDS_FIELD_NUMBER = 3;
-    private long minEnactInSeconds_;
-    /**
-     * <pre>
-     * Constrains minimum duration since submission (in seconds) when enactment is allowed to be set for a proposal.
-     * </pre>
-     *
-     * <code>int64 minEnactInSeconds = 3;</code>
-     */
-    public long getMinEnactInSeconds() {
-      return minEnactInSeconds_;
-    }
-
-    public static final int MAXENACTINSECONDS_FIELD_NUMBER = 4;
-    private long maxEnactInSeconds_;
-    /**
-     * <pre>
-     * Constrains maximum duration since submission (in seconds) when enactment is allowed to be set for a proposal.
-     * </pre>
-     *
-     * <code>int64 maxEnactInSeconds = 4;</code>
-     */
-    public long getMaxEnactInSeconds() {
-      return maxEnactInSeconds_;
-    }
-
-    public static final int REQUIREDPARTICIPATION_FIELD_NUMBER = 5;
-    private float requiredParticipation_;
-    /**
-     * <pre>
-     * Participation level required for any proposal to pass. Value from `0` to `1`.
-     * </pre>
-     *
-     * <code>float requiredParticipation = 5;</code>
-     */
-    public float getRequiredParticipation() {
-      return requiredParticipation_;
-    }
-
-    public static final int REQUIREDMAJORITY_FIELD_NUMBER = 6;
-    private float requiredMajority_;
-    /**
-     * <pre>
-     * Majority level required for any proposal to pass. Value from `0.5` to `1`.
-     * </pre>
-     *
-     * <code>float requiredMajority = 6;</code>
-     */
-    public float getRequiredMajority() {
-      return requiredMajority_;
-    }
-
-    public static final int MINPROPOSERBALANCE_FIELD_NUMBER = 7;
-    private float minProposerBalance_;
-    /**
-     * <pre>
-     * Minimum balance required for a party to be able to submit a new proposal. Value greater than `0` to `1`.
-     * </pre>
-     *
-     * <code>float minProposerBalance = 7;</code>
-     */
-    public float getMinProposerBalance() {
-      return minProposerBalance_;
-    }
-
-    public static final int MINVOTERBALANCE_FIELD_NUMBER = 8;
-    private float minVoterBalance_;
-    /**
-     * <pre>
-     * Minimum balance required for a party to be able to cast a vote. Value greater than `0` to `1`.
-     * </pre>
-     *
-     * <code>float minVoterBalance = 8;</code>
-     */
-    public float getMinVoterBalance() {
-      return minVoterBalance_;
-    }
-
-    public static final int MARGINCONFIGURATION_FIELD_NUMBER = 9;
-    private io.vegaprotocol.vega.Markets.ScalingFactors marginConfiguration_;
-    /**
-     * <pre>
-     * Scaling factors for all markets created via governance.
-     * </pre>
-     *
-     * <code>.vega.ScalingFactors marginConfiguration = 9;</code>
-     */
-    public boolean hasMarginConfiguration() {
-      return marginConfiguration_ != null;
-    }
-    /**
-     * <pre>
-     * Scaling factors for all markets created via governance.
-     * </pre>
-     *
-     * <code>.vega.ScalingFactors marginConfiguration = 9;</code>
-     */
-    public io.vegaprotocol.vega.Markets.ScalingFactors getMarginConfiguration() {
-      return marginConfiguration_ == null ? io.vegaprotocol.vega.Markets.ScalingFactors.getDefaultInstance() : marginConfiguration_;
-    }
-    /**
-     * <pre>
-     * Scaling factors for all markets created via governance.
-     * </pre>
-     *
-     * <code>.vega.ScalingFactors marginConfiguration = 9;</code>
-     */
-    public io.vegaprotocol.vega.Markets.ScalingFactorsOrBuilder getMarginConfigurationOrBuilder() {
-      return getMarginConfiguration();
-    }
-
-    public static final int FEEFACTORSCONFIGURATION_FIELD_NUMBER = 10;
-    private io.vegaprotocol.vega.Governance.FeeFactorsConfiguration feeFactorsConfiguration_;
-    /**
-     * <pre>
-     * FeeFactors which are not set via proposal.
-     * </pre>
-     *
-     * <code>.vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;</code>
-     */
-    public boolean hasFeeFactorsConfiguration() {
-      return feeFactorsConfiguration_ != null;
-    }
-    /**
-     * <pre>
-     * FeeFactors which are not set via proposal.
-     * </pre>
-     *
-     * <code>.vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;</code>
-     */
-    public io.vegaprotocol.vega.Governance.FeeFactorsConfiguration getFeeFactorsConfiguration() {
-      return feeFactorsConfiguration_ == null ? io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.getDefaultInstance() : feeFactorsConfiguration_;
-    }
-    /**
-     * <pre>
-     * FeeFactors which are not set via proposal.
-     * </pre>
-     *
-     * <code>.vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;</code>
-     */
-    public io.vegaprotocol.vega.Governance.FeeFactorsConfigurationOrBuilder getFeeFactorsConfigurationOrBuilder() {
-      return getFeeFactorsConfiguration();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (minCloseInSeconds_ != 0L) {
-        output.writeInt64(1, minCloseInSeconds_);
-      }
-      if (maxCloseInSeconds_ != 0L) {
-        output.writeInt64(2, maxCloseInSeconds_);
-      }
-      if (minEnactInSeconds_ != 0L) {
-        output.writeInt64(3, minEnactInSeconds_);
-      }
-      if (maxEnactInSeconds_ != 0L) {
-        output.writeInt64(4, maxEnactInSeconds_);
-      }
-      if (requiredParticipation_ != 0F) {
-        output.writeFloat(5, requiredParticipation_);
-      }
-      if (requiredMajority_ != 0F) {
-        output.writeFloat(6, requiredMajority_);
-      }
-      if (minProposerBalance_ != 0F) {
-        output.writeFloat(7, minProposerBalance_);
-      }
-      if (minVoterBalance_ != 0F) {
-        output.writeFloat(8, minVoterBalance_);
-      }
-      if (marginConfiguration_ != null) {
-        output.writeMessage(9, getMarginConfiguration());
-      }
-      if (feeFactorsConfiguration_ != null) {
-        output.writeMessage(10, getFeeFactorsConfiguration());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (minCloseInSeconds_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, minCloseInSeconds_);
-      }
-      if (maxCloseInSeconds_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, maxCloseInSeconds_);
-      }
-      if (minEnactInSeconds_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, minEnactInSeconds_);
-      }
-      if (maxEnactInSeconds_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, maxEnactInSeconds_);
-      }
-      if (requiredParticipation_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(5, requiredParticipation_);
-      }
-      if (requiredMajority_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(6, requiredMajority_);
-      }
-      if (minProposerBalance_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(7, minProposerBalance_);
-      }
-      if (minVoterBalance_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(8, minVoterBalance_);
-      }
-      if (marginConfiguration_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getMarginConfiguration());
-      }
-      if (feeFactorsConfiguration_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getFeeFactorsConfiguration());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof io.vegaprotocol.vega.Governance.NetworkConfiguration)) {
-        return super.equals(obj);
-      }
-      io.vegaprotocol.vega.Governance.NetworkConfiguration other = (io.vegaprotocol.vega.Governance.NetworkConfiguration) obj;
-
-      if (getMinCloseInSeconds()
-          != other.getMinCloseInSeconds()) return false;
-      if (getMaxCloseInSeconds()
-          != other.getMaxCloseInSeconds()) return false;
-      if (getMinEnactInSeconds()
-          != other.getMinEnactInSeconds()) return false;
-      if (getMaxEnactInSeconds()
-          != other.getMaxEnactInSeconds()) return false;
-      if (java.lang.Float.floatToIntBits(getRequiredParticipation())
-          != java.lang.Float.floatToIntBits(
-              other.getRequiredParticipation())) return false;
-      if (java.lang.Float.floatToIntBits(getRequiredMajority())
-          != java.lang.Float.floatToIntBits(
-              other.getRequiredMajority())) return false;
-      if (java.lang.Float.floatToIntBits(getMinProposerBalance())
-          != java.lang.Float.floatToIntBits(
-              other.getMinProposerBalance())) return false;
-      if (java.lang.Float.floatToIntBits(getMinVoterBalance())
-          != java.lang.Float.floatToIntBits(
-              other.getMinVoterBalance())) return false;
-      if (hasMarginConfiguration() != other.hasMarginConfiguration()) return false;
-      if (hasMarginConfiguration()) {
-        if (!getMarginConfiguration()
-            .equals(other.getMarginConfiguration())) return false;
-      }
-      if (hasFeeFactorsConfiguration() != other.hasFeeFactorsConfiguration()) return false;
-      if (hasFeeFactorsConfiguration()) {
-        if (!getFeeFactorsConfiguration()
-            .equals(other.getFeeFactorsConfiguration())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MINCLOSEINSECONDS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMinCloseInSeconds());
-      hash = (37 * hash) + MAXCLOSEINSECONDS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMaxCloseInSeconds());
-      hash = (37 * hash) + MINENACTINSECONDS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMinEnactInSeconds());
-      hash = (37 * hash) + MAXENACTINSECONDS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMaxEnactInSeconds());
-      hash = (37 * hash) + REQUIREDPARTICIPATION_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getRequiredParticipation());
-      hash = (37 * hash) + REQUIREDMAJORITY_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getRequiredMajority());
-      hash = (37 * hash) + MINPROPOSERBALANCE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getMinProposerBalance());
-      hash = (37 * hash) + MINVOTERBALANCE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getMinVoterBalance());
-      if (hasMarginConfiguration()) {
-        hash = (37 * hash) + MARGINCONFIGURATION_FIELD_NUMBER;
-        hash = (53 * hash) + getMarginConfiguration().hashCode();
-      }
-      if (hasFeeFactorsConfiguration()) {
-        hash = (37 * hash) + FEEFACTORSCONFIGURATION_FIELD_NUMBER;
-        hash = (53 * hash) + getFeeFactorsConfiguration().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static io.vegaprotocol.vega.Governance.NetworkConfiguration parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Governance.NetworkConfiguration parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Governance.NetworkConfiguration parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Governance.NetworkConfiguration parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Governance.NetworkConfiguration parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Governance.NetworkConfiguration parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Governance.NetworkConfiguration parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Governance.NetworkConfiguration parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Governance.NetworkConfiguration parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Governance.NetworkConfiguration parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Governance.NetworkConfiguration parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Governance.NetworkConfiguration parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(io.vegaprotocol.vega.Governance.NetworkConfiguration prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Network configuration options.
-     * </pre>
-     *
-     * Protobuf type {@code vega.NetworkConfiguration}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:vega.NetworkConfiguration)
-        io.vegaprotocol.vega.Governance.NetworkConfigurationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.vegaprotocol.vega.Governance.internal_static_vega_NetworkConfiguration_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.vegaprotocol.vega.Governance.internal_static_vega_NetworkConfiguration_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                io.vegaprotocol.vega.Governance.NetworkConfiguration.class, io.vegaprotocol.vega.Governance.NetworkConfiguration.Builder.class);
-      }
-
-      // Construct using io.vegaprotocol.vega.Governance.NetworkConfiguration.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        minCloseInSeconds_ = 0L;
-
-        maxCloseInSeconds_ = 0L;
-
-        minEnactInSeconds_ = 0L;
-
-        maxEnactInSeconds_ = 0L;
-
-        requiredParticipation_ = 0F;
-
-        requiredMajority_ = 0F;
-
-        minProposerBalance_ = 0F;
-
-        minVoterBalance_ = 0F;
-
-        if (marginConfigurationBuilder_ == null) {
-          marginConfiguration_ = null;
-        } else {
-          marginConfiguration_ = null;
-          marginConfigurationBuilder_ = null;
-        }
-        if (feeFactorsConfigurationBuilder_ == null) {
-          feeFactorsConfiguration_ = null;
-        } else {
-          feeFactorsConfiguration_ = null;
-          feeFactorsConfigurationBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.vegaprotocol.vega.Governance.internal_static_vega_NetworkConfiguration_descriptor;
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Governance.NetworkConfiguration getDefaultInstanceForType() {
-        return io.vegaprotocol.vega.Governance.NetworkConfiguration.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Governance.NetworkConfiguration build() {
-        io.vegaprotocol.vega.Governance.NetworkConfiguration result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Governance.NetworkConfiguration buildPartial() {
-        io.vegaprotocol.vega.Governance.NetworkConfiguration result = new io.vegaprotocol.vega.Governance.NetworkConfiguration(this);
-        result.minCloseInSeconds_ = minCloseInSeconds_;
-        result.maxCloseInSeconds_ = maxCloseInSeconds_;
-        result.minEnactInSeconds_ = minEnactInSeconds_;
-        result.maxEnactInSeconds_ = maxEnactInSeconds_;
-        result.requiredParticipation_ = requiredParticipation_;
-        result.requiredMajority_ = requiredMajority_;
-        result.minProposerBalance_ = minProposerBalance_;
-        result.minVoterBalance_ = minVoterBalance_;
-        if (marginConfigurationBuilder_ == null) {
-          result.marginConfiguration_ = marginConfiguration_;
-        } else {
-          result.marginConfiguration_ = marginConfigurationBuilder_.build();
-        }
-        if (feeFactorsConfigurationBuilder_ == null) {
-          result.feeFactorsConfiguration_ = feeFactorsConfiguration_;
-        } else {
-          result.feeFactorsConfiguration_ = feeFactorsConfigurationBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.vegaprotocol.vega.Governance.NetworkConfiguration) {
-          return mergeFrom((io.vegaprotocol.vega.Governance.NetworkConfiguration)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(io.vegaprotocol.vega.Governance.NetworkConfiguration other) {
-        if (other == io.vegaprotocol.vega.Governance.NetworkConfiguration.getDefaultInstance()) return this;
-        if (other.getMinCloseInSeconds() != 0L) {
-          setMinCloseInSeconds(other.getMinCloseInSeconds());
-        }
-        if (other.getMaxCloseInSeconds() != 0L) {
-          setMaxCloseInSeconds(other.getMaxCloseInSeconds());
-        }
-        if (other.getMinEnactInSeconds() != 0L) {
-          setMinEnactInSeconds(other.getMinEnactInSeconds());
-        }
-        if (other.getMaxEnactInSeconds() != 0L) {
-          setMaxEnactInSeconds(other.getMaxEnactInSeconds());
-        }
-        if (other.getRequiredParticipation() != 0F) {
-          setRequiredParticipation(other.getRequiredParticipation());
-        }
-        if (other.getRequiredMajority() != 0F) {
-          setRequiredMajority(other.getRequiredMajority());
-        }
-        if (other.getMinProposerBalance() != 0F) {
-          setMinProposerBalance(other.getMinProposerBalance());
-        }
-        if (other.getMinVoterBalance() != 0F) {
-          setMinVoterBalance(other.getMinVoterBalance());
-        }
-        if (other.hasMarginConfiguration()) {
-          mergeMarginConfiguration(other.getMarginConfiguration());
-        }
-        if (other.hasFeeFactorsConfiguration()) {
-          mergeFeeFactorsConfiguration(other.getFeeFactorsConfiguration());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        io.vegaprotocol.vega.Governance.NetworkConfiguration parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.vegaprotocol.vega.Governance.NetworkConfiguration) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long minCloseInSeconds_ ;
-      /**
-       * <pre>
-       * Constrains minimum duration since submission (in seconds) when vote closing time is allowed to be set for a proposal.
-       * </pre>
-       *
-       * <code>int64 minCloseInSeconds = 1;</code>
-       */
-      public long getMinCloseInSeconds() {
-        return minCloseInSeconds_;
-      }
-      /**
-       * <pre>
-       * Constrains minimum duration since submission (in seconds) when vote closing time is allowed to be set for a proposal.
-       * </pre>
-       *
-       * <code>int64 minCloseInSeconds = 1;</code>
-       */
-      public Builder setMinCloseInSeconds(long value) {
-
-        minCloseInSeconds_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Constrains minimum duration since submission (in seconds) when vote closing time is allowed to be set for a proposal.
-       * </pre>
-       *
-       * <code>int64 minCloseInSeconds = 1;</code>
-       */
-      public Builder clearMinCloseInSeconds() {
-
-        minCloseInSeconds_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long maxCloseInSeconds_ ;
-      /**
-       * <pre>
-       * Constrains maximum duration since submission (in seconds) when vote closing time is allowed to be set for a proposal.
-       * </pre>
-       *
-       * <code>int64 maxCloseInSeconds = 2;</code>
-       */
-      public long getMaxCloseInSeconds() {
-        return maxCloseInSeconds_;
-      }
-      /**
-       * <pre>
-       * Constrains maximum duration since submission (in seconds) when vote closing time is allowed to be set for a proposal.
-       * </pre>
-       *
-       * <code>int64 maxCloseInSeconds = 2;</code>
-       */
-      public Builder setMaxCloseInSeconds(long value) {
-
-        maxCloseInSeconds_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Constrains maximum duration since submission (in seconds) when vote closing time is allowed to be set for a proposal.
-       * </pre>
-       *
-       * <code>int64 maxCloseInSeconds = 2;</code>
-       */
-      public Builder clearMaxCloseInSeconds() {
-
-        maxCloseInSeconds_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long minEnactInSeconds_ ;
-      /**
-       * <pre>
-       * Constrains minimum duration since submission (in seconds) when enactment is allowed to be set for a proposal.
-       * </pre>
-       *
-       * <code>int64 minEnactInSeconds = 3;</code>
-       */
-      public long getMinEnactInSeconds() {
-        return minEnactInSeconds_;
-      }
-      /**
-       * <pre>
-       * Constrains minimum duration since submission (in seconds) when enactment is allowed to be set for a proposal.
-       * </pre>
-       *
-       * <code>int64 minEnactInSeconds = 3;</code>
-       */
-      public Builder setMinEnactInSeconds(long value) {
-
-        minEnactInSeconds_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Constrains minimum duration since submission (in seconds) when enactment is allowed to be set for a proposal.
-       * </pre>
-       *
-       * <code>int64 minEnactInSeconds = 3;</code>
-       */
-      public Builder clearMinEnactInSeconds() {
-
-        minEnactInSeconds_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long maxEnactInSeconds_ ;
-      /**
-       * <pre>
-       * Constrains maximum duration since submission (in seconds) when enactment is allowed to be set for a proposal.
-       * </pre>
-       *
-       * <code>int64 maxEnactInSeconds = 4;</code>
-       */
-      public long getMaxEnactInSeconds() {
-        return maxEnactInSeconds_;
-      }
-      /**
-       * <pre>
-       * Constrains maximum duration since submission (in seconds) when enactment is allowed to be set for a proposal.
-       * </pre>
-       *
-       * <code>int64 maxEnactInSeconds = 4;</code>
-       */
-      public Builder setMaxEnactInSeconds(long value) {
-
-        maxEnactInSeconds_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Constrains maximum duration since submission (in seconds) when enactment is allowed to be set for a proposal.
-       * </pre>
-       *
-       * <code>int64 maxEnactInSeconds = 4;</code>
-       */
-      public Builder clearMaxEnactInSeconds() {
-
-        maxEnactInSeconds_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private float requiredParticipation_ ;
-      /**
-       * <pre>
-       * Participation level required for any proposal to pass. Value from `0` to `1`.
-       * </pre>
-       *
-       * <code>float requiredParticipation = 5;</code>
-       */
-      public float getRequiredParticipation() {
-        return requiredParticipation_;
-      }
-      /**
-       * <pre>
-       * Participation level required for any proposal to pass. Value from `0` to `1`.
-       * </pre>
-       *
-       * <code>float requiredParticipation = 5;</code>
-       */
-      public Builder setRequiredParticipation(float value) {
-
-        requiredParticipation_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Participation level required for any proposal to pass. Value from `0` to `1`.
-       * </pre>
-       *
-       * <code>float requiredParticipation = 5;</code>
-       */
-      public Builder clearRequiredParticipation() {
-
-        requiredParticipation_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float requiredMajority_ ;
-      /**
-       * <pre>
-       * Majority level required for any proposal to pass. Value from `0.5` to `1`.
-       * </pre>
-       *
-       * <code>float requiredMajority = 6;</code>
-       */
-      public float getRequiredMajority() {
-        return requiredMajority_;
-      }
-      /**
-       * <pre>
-       * Majority level required for any proposal to pass. Value from `0.5` to `1`.
-       * </pre>
-       *
-       * <code>float requiredMajority = 6;</code>
-       */
-      public Builder setRequiredMajority(float value) {
-
-        requiredMajority_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Majority level required for any proposal to pass. Value from `0.5` to `1`.
-       * </pre>
-       *
-       * <code>float requiredMajority = 6;</code>
-       */
-      public Builder clearRequiredMajority() {
-
-        requiredMajority_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float minProposerBalance_ ;
-      /**
-       * <pre>
-       * Minimum balance required for a party to be able to submit a new proposal. Value greater than `0` to `1`.
-       * </pre>
-       *
-       * <code>float minProposerBalance = 7;</code>
-       */
-      public float getMinProposerBalance() {
-        return minProposerBalance_;
-      }
-      /**
-       * <pre>
-       * Minimum balance required for a party to be able to submit a new proposal. Value greater than `0` to `1`.
-       * </pre>
-       *
-       * <code>float minProposerBalance = 7;</code>
-       */
-      public Builder setMinProposerBalance(float value) {
-
-        minProposerBalance_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Minimum balance required for a party to be able to submit a new proposal. Value greater than `0` to `1`.
-       * </pre>
-       *
-       * <code>float minProposerBalance = 7;</code>
-       */
-      public Builder clearMinProposerBalance() {
-
-        minProposerBalance_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float minVoterBalance_ ;
-      /**
-       * <pre>
-       * Minimum balance required for a party to be able to cast a vote. Value greater than `0` to `1`.
-       * </pre>
-       *
-       * <code>float minVoterBalance = 8;</code>
-       */
-      public float getMinVoterBalance() {
-        return minVoterBalance_;
-      }
-      /**
-       * <pre>
-       * Minimum balance required for a party to be able to cast a vote. Value greater than `0` to `1`.
-       * </pre>
-       *
-       * <code>float minVoterBalance = 8;</code>
-       */
-      public Builder setMinVoterBalance(float value) {
-
-        minVoterBalance_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Minimum balance required for a party to be able to cast a vote. Value greater than `0` to `1`.
-       * </pre>
-       *
-       * <code>float minVoterBalance = 8;</code>
-       */
-      public Builder clearMinVoterBalance() {
-
-        minVoterBalance_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private io.vegaprotocol.vega.Markets.ScalingFactors marginConfiguration_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.ScalingFactors, io.vegaprotocol.vega.Markets.ScalingFactors.Builder, io.vegaprotocol.vega.Markets.ScalingFactorsOrBuilder> marginConfigurationBuilder_;
-      /**
-       * <pre>
-       * Scaling factors for all markets created via governance.
-       * </pre>
-       *
-       * <code>.vega.ScalingFactors marginConfiguration = 9;</code>
-       */
-      public boolean hasMarginConfiguration() {
-        return marginConfigurationBuilder_ != null || marginConfiguration_ != null;
-      }
-      /**
-       * <pre>
-       * Scaling factors for all markets created via governance.
-       * </pre>
-       *
-       * <code>.vega.ScalingFactors marginConfiguration = 9;</code>
-       */
-      public io.vegaprotocol.vega.Markets.ScalingFactors getMarginConfiguration() {
-        if (marginConfigurationBuilder_ == null) {
-          return marginConfiguration_ == null ? io.vegaprotocol.vega.Markets.ScalingFactors.getDefaultInstance() : marginConfiguration_;
-        } else {
-          return marginConfigurationBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Scaling factors for all markets created via governance.
-       * </pre>
-       *
-       * <code>.vega.ScalingFactors marginConfiguration = 9;</code>
-       */
-      public Builder setMarginConfiguration(io.vegaprotocol.vega.Markets.ScalingFactors value) {
-        if (marginConfigurationBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          marginConfiguration_ = value;
-          onChanged();
-        } else {
-          marginConfigurationBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Scaling factors for all markets created via governance.
-       * </pre>
-       *
-       * <code>.vega.ScalingFactors marginConfiguration = 9;</code>
-       */
-      public Builder setMarginConfiguration(
-          io.vegaprotocol.vega.Markets.ScalingFactors.Builder builderForValue) {
-        if (marginConfigurationBuilder_ == null) {
-          marginConfiguration_ = builderForValue.build();
-          onChanged();
-        } else {
-          marginConfigurationBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Scaling factors for all markets created via governance.
-       * </pre>
-       *
-       * <code>.vega.ScalingFactors marginConfiguration = 9;</code>
-       */
-      public Builder mergeMarginConfiguration(io.vegaprotocol.vega.Markets.ScalingFactors value) {
-        if (marginConfigurationBuilder_ == null) {
-          if (marginConfiguration_ != null) {
-            marginConfiguration_ =
-              io.vegaprotocol.vega.Markets.ScalingFactors.newBuilder(marginConfiguration_).mergeFrom(value).buildPartial();
-          } else {
-            marginConfiguration_ = value;
-          }
-          onChanged();
-        } else {
-          marginConfigurationBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Scaling factors for all markets created via governance.
-       * </pre>
-       *
-       * <code>.vega.ScalingFactors marginConfiguration = 9;</code>
-       */
-      public Builder clearMarginConfiguration() {
-        if (marginConfigurationBuilder_ == null) {
-          marginConfiguration_ = null;
-          onChanged();
-        } else {
-          marginConfiguration_ = null;
-          marginConfigurationBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Scaling factors for all markets created via governance.
-       * </pre>
-       *
-       * <code>.vega.ScalingFactors marginConfiguration = 9;</code>
-       */
-      public io.vegaprotocol.vega.Markets.ScalingFactors.Builder getMarginConfigurationBuilder() {
-
-        onChanged();
-        return getMarginConfigurationFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Scaling factors for all markets created via governance.
-       * </pre>
-       *
-       * <code>.vega.ScalingFactors marginConfiguration = 9;</code>
-       */
-      public io.vegaprotocol.vega.Markets.ScalingFactorsOrBuilder getMarginConfigurationOrBuilder() {
-        if (marginConfigurationBuilder_ != null) {
-          return marginConfigurationBuilder_.getMessageOrBuilder();
-        } else {
-          return marginConfiguration_ == null ?
-              io.vegaprotocol.vega.Markets.ScalingFactors.getDefaultInstance() : marginConfiguration_;
-        }
-      }
-      /**
-       * <pre>
-       * Scaling factors for all markets created via governance.
-       * </pre>
-       *
-       * <code>.vega.ScalingFactors marginConfiguration = 9;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.ScalingFactors, io.vegaprotocol.vega.Markets.ScalingFactors.Builder, io.vegaprotocol.vega.Markets.ScalingFactorsOrBuilder> 
-          getMarginConfigurationFieldBuilder() {
-        if (marginConfigurationBuilder_ == null) {
-          marginConfigurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.vegaprotocol.vega.Markets.ScalingFactors, io.vegaprotocol.vega.Markets.ScalingFactors.Builder, io.vegaprotocol.vega.Markets.ScalingFactorsOrBuilder>(
-                  getMarginConfiguration(),
-                  getParentForChildren(),
-                  isClean());
-          marginConfiguration_ = null;
-        }
-        return marginConfigurationBuilder_;
-      }
-
-      private io.vegaprotocol.vega.Governance.FeeFactorsConfiguration feeFactorsConfiguration_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.FeeFactorsConfiguration, io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.Builder, io.vegaprotocol.vega.Governance.FeeFactorsConfigurationOrBuilder> feeFactorsConfigurationBuilder_;
-      /**
-       * <pre>
-       * FeeFactors which are not set via proposal.
-       * </pre>
-       *
-       * <code>.vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;</code>
-       */
-      public boolean hasFeeFactorsConfiguration() {
-        return feeFactorsConfigurationBuilder_ != null || feeFactorsConfiguration_ != null;
-      }
-      /**
-       * <pre>
-       * FeeFactors which are not set via proposal.
-       * </pre>
-       *
-       * <code>.vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;</code>
-       */
-      public io.vegaprotocol.vega.Governance.FeeFactorsConfiguration getFeeFactorsConfiguration() {
-        if (feeFactorsConfigurationBuilder_ == null) {
-          return feeFactorsConfiguration_ == null ? io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.getDefaultInstance() : feeFactorsConfiguration_;
-        } else {
-          return feeFactorsConfigurationBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * FeeFactors which are not set via proposal.
-       * </pre>
-       *
-       * <code>.vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;</code>
-       */
-      public Builder setFeeFactorsConfiguration(io.vegaprotocol.vega.Governance.FeeFactorsConfiguration value) {
-        if (feeFactorsConfigurationBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          feeFactorsConfiguration_ = value;
-          onChanged();
-        } else {
-          feeFactorsConfigurationBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * FeeFactors which are not set via proposal.
-       * </pre>
-       *
-       * <code>.vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;</code>
-       */
-      public Builder setFeeFactorsConfiguration(
-          io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.Builder builderForValue) {
-        if (feeFactorsConfigurationBuilder_ == null) {
-          feeFactorsConfiguration_ = builderForValue.build();
-          onChanged();
-        } else {
-          feeFactorsConfigurationBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * FeeFactors which are not set via proposal.
-       * </pre>
-       *
-       * <code>.vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;</code>
-       */
-      public Builder mergeFeeFactorsConfiguration(io.vegaprotocol.vega.Governance.FeeFactorsConfiguration value) {
-        if (feeFactorsConfigurationBuilder_ == null) {
-          if (feeFactorsConfiguration_ != null) {
-            feeFactorsConfiguration_ =
-              io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.newBuilder(feeFactorsConfiguration_).mergeFrom(value).buildPartial();
-          } else {
-            feeFactorsConfiguration_ = value;
-          }
-          onChanged();
-        } else {
-          feeFactorsConfigurationBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * FeeFactors which are not set via proposal.
-       * </pre>
-       *
-       * <code>.vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;</code>
-       */
-      public Builder clearFeeFactorsConfiguration() {
-        if (feeFactorsConfigurationBuilder_ == null) {
-          feeFactorsConfiguration_ = null;
-          onChanged();
-        } else {
-          feeFactorsConfiguration_ = null;
-          feeFactorsConfigurationBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * FeeFactors which are not set via proposal.
-       * </pre>
-       *
-       * <code>.vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;</code>
-       */
-      public io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.Builder getFeeFactorsConfigurationBuilder() {
-
-        onChanged();
-        return getFeeFactorsConfigurationFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * FeeFactors which are not set via proposal.
-       * </pre>
-       *
-       * <code>.vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;</code>
-       */
-      public io.vegaprotocol.vega.Governance.FeeFactorsConfigurationOrBuilder getFeeFactorsConfigurationOrBuilder() {
-        if (feeFactorsConfigurationBuilder_ != null) {
-          return feeFactorsConfigurationBuilder_.getMessageOrBuilder();
-        } else {
-          return feeFactorsConfiguration_ == null ?
-              io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.getDefaultInstance() : feeFactorsConfiguration_;
-        }
-      }
-      /**
-       * <pre>
-       * FeeFactors which are not set via proposal.
-       * </pre>
-       *
-       * <code>.vega.FeeFactorsConfiguration feeFactorsConfiguration = 10;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.FeeFactorsConfiguration, io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.Builder, io.vegaprotocol.vega.Governance.FeeFactorsConfigurationOrBuilder> 
-          getFeeFactorsConfigurationFieldBuilder() {
-        if (feeFactorsConfigurationBuilder_ == null) {
-          feeFactorsConfigurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.vegaprotocol.vega.Governance.FeeFactorsConfiguration, io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.Builder, io.vegaprotocol.vega.Governance.FeeFactorsConfigurationOrBuilder>(
-                  getFeeFactorsConfiguration(),
-                  getParentForChildren(),
-                  isClean());
-          feeFactorsConfiguration_ = null;
-        }
-        return feeFactorsConfigurationBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:vega.NetworkConfiguration)
-    }
-
-    // @@protoc_insertion_point(class_scope:vega.NetworkConfiguration)
-    private static final io.vegaprotocol.vega.Governance.NetworkConfiguration DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Governance.NetworkConfiguration();
-    }
-
-    public static io.vegaprotocol.vega.Governance.NetworkConfiguration getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<NetworkConfiguration>
-        PARSER = new com.google.protobuf.AbstractParser<NetworkConfiguration>() {
-      @java.lang.Override
-      public NetworkConfiguration parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new NetworkConfiguration(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<NetworkConfiguration> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<NetworkConfiguration> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public io.vegaprotocol.vega.Governance.NetworkConfiguration getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface FeeFactorsConfigurationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:vega.FeeFactorsConfiguration)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Infrastructure fee, needs to be a valid float.
-     * </pre>
-     *
-     * <code>string infrastructureFee = 1;</code>
-     */
-    java.lang.String getInfrastructureFee();
-    /**
-     * <pre>
-     * Infrastructure fee, needs to be a valid float.
-     * </pre>
-     *
-     * <code>string infrastructureFee = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getInfrastructureFeeBytes();
-
-    /**
-     * <pre>
-     * Maker fee, needs to be a valid float.
-     * </pre>
-     *
-     * <code>string makerFee = 2;</code>
-     */
-    java.lang.String getMakerFee();
-    /**
-     * <pre>
-     * Maker fee, needs to be a valid float.
-     * </pre>
-     *
-     * <code>string makerFee = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getMakerFeeBytes();
-
-    /**
-     * <pre>
-     * Liquidity fee, it needs to be a valid float.
-     * </pre>
-     *
-     * <code>string liquidityFee = 3;</code>
-     */
-    java.lang.String getLiquidityFee();
-    /**
-     * <pre>
-     * Liquidity fee, it needs to be a valid float.
-     * </pre>
-     *
-     * <code>string liquidityFee = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getLiquidityFeeBytes();
-  }
-  /**
-   * <pre>
-   * FeeFactors set at the network level.
-   * </pre>
-   *
-   * Protobuf type {@code vega.FeeFactorsConfiguration}
-   */
-  public  static final class FeeFactorsConfiguration extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:vega.FeeFactorsConfiguration)
-      FeeFactorsConfigurationOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use FeeFactorsConfiguration.newBuilder() to construct.
-    private FeeFactorsConfiguration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private FeeFactorsConfiguration() {
-      infrastructureFee_ = "";
-      makerFee_ = "";
-      liquidityFee_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private FeeFactorsConfiguration(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              infrastructureFee_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              makerFee_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              liquidityFee_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.vegaprotocol.vega.Governance.internal_static_vega_FeeFactorsConfiguration_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.vegaprotocol.vega.Governance.internal_static_vega_FeeFactorsConfiguration_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.class, io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.Builder.class);
-    }
-
-    public static final int INFRASTRUCTUREFEE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object infrastructureFee_;
-    /**
-     * <pre>
-     * Infrastructure fee, needs to be a valid float.
-     * </pre>
-     *
-     * <code>string infrastructureFee = 1;</code>
-     */
-    public java.lang.String getInfrastructureFee() {
-      java.lang.Object ref = infrastructureFee_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        infrastructureFee_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Infrastructure fee, needs to be a valid float.
-     * </pre>
-     *
-     * <code>string infrastructureFee = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getInfrastructureFeeBytes() {
-      java.lang.Object ref = infrastructureFee_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        infrastructureFee_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int MAKERFEE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object makerFee_;
-    /**
-     * <pre>
-     * Maker fee, needs to be a valid float.
-     * </pre>
-     *
-     * <code>string makerFee = 2;</code>
-     */
-    public java.lang.String getMakerFee() {
-      java.lang.Object ref = makerFee_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        makerFee_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Maker fee, needs to be a valid float.
-     * </pre>
-     *
-     * <code>string makerFee = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getMakerFeeBytes() {
-      java.lang.Object ref = makerFee_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        makerFee_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int LIQUIDITYFEE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object liquidityFee_;
-    /**
-     * <pre>
-     * Liquidity fee, it needs to be a valid float.
-     * </pre>
-     *
-     * <code>string liquidityFee = 3;</code>
-     */
-    public java.lang.String getLiquidityFee() {
-      java.lang.Object ref = liquidityFee_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        liquidityFee_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Liquidity fee, it needs to be a valid float.
-     * </pre>
-     *
-     * <code>string liquidityFee = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getLiquidityFeeBytes() {
-      java.lang.Object ref = liquidityFee_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        liquidityFee_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getInfrastructureFeeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, infrastructureFee_);
-      }
-      if (!getMakerFeeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, makerFee_);
-      }
-      if (!getLiquidityFeeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, liquidityFee_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getInfrastructureFeeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, infrastructureFee_);
-      }
-      if (!getMakerFeeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, makerFee_);
-      }
-      if (!getLiquidityFeeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, liquidityFee_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof io.vegaprotocol.vega.Governance.FeeFactorsConfiguration)) {
-        return super.equals(obj);
-      }
-      io.vegaprotocol.vega.Governance.FeeFactorsConfiguration other = (io.vegaprotocol.vega.Governance.FeeFactorsConfiguration) obj;
-
-      if (!getInfrastructureFee()
-          .equals(other.getInfrastructureFee())) return false;
-      if (!getMakerFee()
-          .equals(other.getMakerFee())) return false;
-      if (!getLiquidityFee()
-          .equals(other.getLiquidityFee())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INFRASTRUCTUREFEE_FIELD_NUMBER;
-      hash = (53 * hash) + getInfrastructureFee().hashCode();
-      hash = (37 * hash) + MAKERFEE_FIELD_NUMBER;
-      hash = (53 * hash) + getMakerFee().hashCode();
-      hash = (37 * hash) + LIQUIDITYFEE_FIELD_NUMBER;
-      hash = (53 * hash) + getLiquidityFee().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static io.vegaprotocol.vega.Governance.FeeFactorsConfiguration parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Governance.FeeFactorsConfiguration parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Governance.FeeFactorsConfiguration parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Governance.FeeFactorsConfiguration parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Governance.FeeFactorsConfiguration parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Governance.FeeFactorsConfiguration parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Governance.FeeFactorsConfiguration parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Governance.FeeFactorsConfiguration parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Governance.FeeFactorsConfiguration parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Governance.FeeFactorsConfiguration parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Governance.FeeFactorsConfiguration parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Governance.FeeFactorsConfiguration parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(io.vegaprotocol.vega.Governance.FeeFactorsConfiguration prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * FeeFactors set at the network level.
-     * </pre>
-     *
-     * Protobuf type {@code vega.FeeFactorsConfiguration}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:vega.FeeFactorsConfiguration)
-        io.vegaprotocol.vega.Governance.FeeFactorsConfigurationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.vegaprotocol.vega.Governance.internal_static_vega_FeeFactorsConfiguration_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.vegaprotocol.vega.Governance.internal_static_vega_FeeFactorsConfiguration_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.class, io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.Builder.class);
-      }
-
-      // Construct using io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        infrastructureFee_ = "";
-
-        makerFee_ = "";
-
-        liquidityFee_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.vegaprotocol.vega.Governance.internal_static_vega_FeeFactorsConfiguration_descriptor;
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Governance.FeeFactorsConfiguration getDefaultInstanceForType() {
-        return io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Governance.FeeFactorsConfiguration build() {
-        io.vegaprotocol.vega.Governance.FeeFactorsConfiguration result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Governance.FeeFactorsConfiguration buildPartial() {
-        io.vegaprotocol.vega.Governance.FeeFactorsConfiguration result = new io.vegaprotocol.vega.Governance.FeeFactorsConfiguration(this);
-        result.infrastructureFee_ = infrastructureFee_;
-        result.makerFee_ = makerFee_;
-        result.liquidityFee_ = liquidityFee_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.vegaprotocol.vega.Governance.FeeFactorsConfiguration) {
-          return mergeFrom((io.vegaprotocol.vega.Governance.FeeFactorsConfiguration)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(io.vegaprotocol.vega.Governance.FeeFactorsConfiguration other) {
-        if (other == io.vegaprotocol.vega.Governance.FeeFactorsConfiguration.getDefaultInstance()) return this;
-        if (!other.getInfrastructureFee().isEmpty()) {
-          infrastructureFee_ = other.infrastructureFee_;
-          onChanged();
-        }
-        if (!other.getMakerFee().isEmpty()) {
-          makerFee_ = other.makerFee_;
-          onChanged();
-        }
-        if (!other.getLiquidityFee().isEmpty()) {
-          liquidityFee_ = other.liquidityFee_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        io.vegaprotocol.vega.Governance.FeeFactorsConfiguration parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.vegaprotocol.vega.Governance.FeeFactorsConfiguration) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object infrastructureFee_ = "";
-      /**
-       * <pre>
-       * Infrastructure fee, needs to be a valid float.
-       * </pre>
-       *
-       * <code>string infrastructureFee = 1;</code>
-       */
-      public java.lang.String getInfrastructureFee() {
-        java.lang.Object ref = infrastructureFee_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          infrastructureFee_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Infrastructure fee, needs to be a valid float.
-       * </pre>
-       *
-       * <code>string infrastructureFee = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getInfrastructureFeeBytes() {
-        java.lang.Object ref = infrastructureFee_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          infrastructureFee_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Infrastructure fee, needs to be a valid float.
-       * </pre>
-       *
-       * <code>string infrastructureFee = 1;</code>
-       */
-      public Builder setInfrastructureFee(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        infrastructureFee_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Infrastructure fee, needs to be a valid float.
-       * </pre>
-       *
-       * <code>string infrastructureFee = 1;</code>
-       */
-      public Builder clearInfrastructureFee() {
-
-        infrastructureFee_ = getDefaultInstance().getInfrastructureFee();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Infrastructure fee, needs to be a valid float.
-       * </pre>
-       *
-       * <code>string infrastructureFee = 1;</code>
-       */
-      public Builder setInfrastructureFeeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        infrastructureFee_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object makerFee_ = "";
-      /**
-       * <pre>
-       * Maker fee, needs to be a valid float.
-       * </pre>
-       *
-       * <code>string makerFee = 2;</code>
-       */
-      public java.lang.String getMakerFee() {
-        java.lang.Object ref = makerFee_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          makerFee_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Maker fee, needs to be a valid float.
-       * </pre>
-       *
-       * <code>string makerFee = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getMakerFeeBytes() {
-        java.lang.Object ref = makerFee_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          makerFee_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Maker fee, needs to be a valid float.
-       * </pre>
-       *
-       * <code>string makerFee = 2;</code>
-       */
-      public Builder setMakerFee(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        makerFee_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Maker fee, needs to be a valid float.
-       * </pre>
-       *
-       * <code>string makerFee = 2;</code>
-       */
-      public Builder clearMakerFee() {
-
-        makerFee_ = getDefaultInstance().getMakerFee();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Maker fee, needs to be a valid float.
-       * </pre>
-       *
-       * <code>string makerFee = 2;</code>
-       */
-      public Builder setMakerFeeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        makerFee_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object liquidityFee_ = "";
-      /**
-       * <pre>
-       * Liquidity fee, it needs to be a valid float.
-       * </pre>
-       *
-       * <code>string liquidityFee = 3;</code>
-       */
-      public java.lang.String getLiquidityFee() {
-        java.lang.Object ref = liquidityFee_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          liquidityFee_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Liquidity fee, it needs to be a valid float.
-       * </pre>
-       *
-       * <code>string liquidityFee = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getLiquidityFeeBytes() {
-        java.lang.Object ref = liquidityFee_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          liquidityFee_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Liquidity fee, it needs to be a valid float.
-       * </pre>
-       *
-       * <code>string liquidityFee = 3;</code>
-       */
-      public Builder setLiquidityFee(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        liquidityFee_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Liquidity fee, it needs to be a valid float.
-       * </pre>
-       *
-       * <code>string liquidityFee = 3;</code>
-       */
-      public Builder clearLiquidityFee() {
-
-        liquidityFee_ = getDefaultInstance().getLiquidityFee();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Liquidity fee, it needs to be a valid float.
-       * </pre>
-       *
-       * <code>string liquidityFee = 3;</code>
-       */
-      public Builder setLiquidityFeeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        liquidityFee_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:vega.FeeFactorsConfiguration)
-    }
-
-    // @@protoc_insertion_point(class_scope:vega.FeeFactorsConfiguration)
-    private static final io.vegaprotocol.vega.Governance.FeeFactorsConfiguration DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Governance.FeeFactorsConfiguration();
-    }
-
-    public static io.vegaprotocol.vega.Governance.FeeFactorsConfiguration getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<FeeFactorsConfiguration>
-        PARSER = new com.google.protobuf.AbstractParser<FeeFactorsConfiguration>() {
-      @java.lang.Override
-      public FeeFactorsConfiguration parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FeeFactorsConfiguration(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<FeeFactorsConfiguration> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<FeeFactorsConfiguration> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public io.vegaprotocol.vega.Governance.FeeFactorsConfiguration getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
   public interface FutureProductOrBuilder extends
@@ -3082,7 +649,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         maturity_ = s;
@@ -3100,7 +667,7 @@ public final class Governance {
         getMaturityBytes() {
       java.lang.Object ref = maturity_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         maturity_ = b;
@@ -3124,7 +691,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         asset_ = s;
@@ -3142,7 +709,7 @@ public final class Governance {
         getAssetBytes() {
       java.lang.Object ref = asset_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         asset_ = b;
@@ -3506,7 +1073,7 @@ public final class Governance {
           getMaturityBytes() {
         java.lang.Object ref = maturity_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           maturity_ = b;
@@ -3595,7 +1162,7 @@ public final class Governance {
           getAssetBytes() {
         java.lang.Object ref = asset_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           asset_ = b;
@@ -3975,7 +1542,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
@@ -3993,7 +1560,7 @@ public final class Governance {
         getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         name_ = b;
@@ -4017,7 +1584,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         code_ = s;
@@ -4035,7 +1602,7 @@ public final class Governance {
         getCodeBytes() {
       java.lang.Object ref = code_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         code_ = b;
@@ -4059,7 +1626,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         baseName_ = s;
@@ -4077,7 +1644,7 @@ public final class Governance {
         getBaseNameBytes() {
       java.lang.Object ref = baseName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         baseName_ = b;
@@ -4101,7 +1668,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         quoteName_ = s;
@@ -4119,7 +1686,7 @@ public final class Governance {
         getQuoteNameBytes() {
       java.lang.Object ref = quoteName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         quoteName_ = b;
@@ -4613,7 +2180,7 @@ public final class Governance {
           getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           name_ = b;
@@ -4702,7 +2269,7 @@ public final class Governance {
           getCodeBytes() {
         java.lang.Object ref = code_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           code_ = b;
@@ -4791,7 +2358,7 @@ public final class Governance {
           getBaseNameBytes() {
         java.lang.Object ref = baseName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           baseName_ = b;
@@ -4880,7 +2447,7 @@ public final class Governance {
           getQuoteNameBytes() {
         java.lang.Object ref = quoteName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           quoteName_ = b;
@@ -5092,7 +2659,7 @@ public final class Governance {
        * <code>.vega.FutureProduct future = 100;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.FutureProduct, io.vegaprotocol.vega.Governance.FutureProduct.Builder, io.vegaprotocol.vega.Governance.FutureProductOrBuilder> 
+          io.vegaprotocol.vega.Governance.FutureProduct, io.vegaprotocol.vega.Governance.FutureProduct.Builder, io.vegaprotocol.vega.Governance.FutureProductOrBuilder>
           getFutureFieldBuilder() {
         if (futureBuilder_ == null) {
           if (!(productCase_ == 100)) {
@@ -5243,6 +2810,31 @@ public final class Governance {
      * <code>int64 openingAuctionDuration = 4;</code>
      */
     long getOpeningAuctionDuration();
+
+    /**
+     * <pre>
+     * price monitoring configuration
+     * </pre>
+     *
+     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+     */
+    boolean hasPriceMonitoringSettings();
+    /**
+     * <pre>
+     * price monitoring configuration
+     * </pre>
+     *
+     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+     */
+    io.vegaprotocol.vega.Markets.PriceMonitoringSettings getPriceMonitoringSettings();
+    /**
+     * <pre>
+     * price monitoring configuration
+     * </pre>
+     *
+     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+     */
+    io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder getPriceMonitoringSettingsOrBuilder();
 
     /**
      * <pre>
@@ -5422,6 +3014,19 @@ public final class Governance {
             case 32: {
 
               openingAuctionDuration_ = input.readInt64();
+              break;
+            }
+            case 42: {
+              io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder subBuilder = null;
+              if (priceMonitoringSettings_ != null) {
+                subBuilder = priceMonitoringSettings_.toBuilder();
+              }
+              priceMonitoringSettings_ = input.readMessage(io.vegaprotocol.vega.Markets.PriceMonitoringSettings.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(priceMonitoringSettings_);
+                priceMonitoringSettings_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             case 802: {
@@ -5696,6 +3301,39 @@ public final class Governance {
       return openingAuctionDuration_;
     }
 
+    public static final int PRICEMONITORINGSETTINGS_FIELD_NUMBER = 5;
+    private io.vegaprotocol.vega.Markets.PriceMonitoringSettings priceMonitoringSettings_;
+    /**
+     * <pre>
+     * price monitoring configuration
+     * </pre>
+     *
+     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+     */
+    public boolean hasPriceMonitoringSettings() {
+      return priceMonitoringSettings_ != null;
+    }
+    /**
+     * <pre>
+     * price monitoring configuration
+     * </pre>
+     *
+     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+     */
+    public io.vegaprotocol.vega.Markets.PriceMonitoringSettings getPriceMonitoringSettings() {
+      return priceMonitoringSettings_ == null ? io.vegaprotocol.vega.Markets.PriceMonitoringSettings.getDefaultInstance() : priceMonitoringSettings_;
+    }
+    /**
+     * <pre>
+     * price monitoring configuration
+     * </pre>
+     *
+     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+     */
+    public io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder getPriceMonitoringSettingsOrBuilder() {
+      return getPriceMonitoringSettings();
+    }
+
     public static final int SIMPLE_FIELD_NUMBER = 100;
     /**
      * <pre>
@@ -5874,6 +3512,9 @@ public final class Governance {
       if (openingAuctionDuration_ != 0L) {
         output.writeInt64(4, openingAuctionDuration_);
       }
+      if (priceMonitoringSettings_ != null) {
+        output.writeMessage(5, getPriceMonitoringSettings());
+      }
       if (riskParametersCase_ == 100) {
         output.writeMessage(100, (io.vegaprotocol.vega.Markets.SimpleModelParams) riskParameters_);
       }
@@ -5914,6 +3555,10 @@ public final class Governance {
       if (openingAuctionDuration_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, openingAuctionDuration_);
+      }
+      if (priceMonitoringSettings_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getPriceMonitoringSettings());
       }
       if (riskParametersCase_ == 100) {
         size += com.google.protobuf.CodedOutputStream
@@ -5957,6 +3602,11 @@ public final class Governance {
           .equals(other.getMetadataList())) return false;
       if (getOpeningAuctionDuration()
           != other.getOpeningAuctionDuration()) return false;
+      if (hasPriceMonitoringSettings() != other.hasPriceMonitoringSettings()) return false;
+      if (hasPriceMonitoringSettings()) {
+        if (!getPriceMonitoringSettings()
+            .equals(other.getPriceMonitoringSettings())) return false;
+      }
       if (!getRiskParametersCase().equals(other.getRiskParametersCase())) return false;
       switch (riskParametersCase_) {
         case 100:
@@ -6008,6 +3658,10 @@ public final class Governance {
       hash = (37 * hash) + OPENINGAUCTIONDURATION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getOpeningAuctionDuration());
+      if (hasPriceMonitoringSettings()) {
+        hash = (37 * hash) + PRICEMONITORINGSETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getPriceMonitoringSettings().hashCode();
+      }
       switch (riskParametersCase_) {
         case 100:
           hash = (37 * hash) + SIMPLE_FIELD_NUMBER;
@@ -6181,6 +3835,12 @@ public final class Governance {
         bitField0_ = (bitField0_ & ~0x00000004);
         openingAuctionDuration_ = 0L;
 
+        if (priceMonitoringSettingsBuilder_ == null) {
+          priceMonitoringSettings_ = null;
+        } else {
+          priceMonitoringSettings_ = null;
+          priceMonitoringSettingsBuilder_ = null;
+        }
         riskParametersCase_ = 0;
         riskParameters_ = null;
         tradingModeCase_ = 0;
@@ -6225,6 +3885,11 @@ public final class Governance {
         }
         result.metadata_ = metadata_;
         result.openingAuctionDuration_ = openingAuctionDuration_;
+        if (priceMonitoringSettingsBuilder_ == null) {
+          result.priceMonitoringSettings_ = priceMonitoringSettings_;
+        } else {
+          result.priceMonitoringSettings_ = priceMonitoringSettingsBuilder_.build();
+        }
         if (riskParametersCase_ == 100) {
           if (simpleBuilder_ == null) {
             result.riskParameters_ = riskParameters_;
@@ -6322,6 +3987,9 @@ public final class Governance {
         }
         if (other.getOpeningAuctionDuration() != 0L) {
           setOpeningAuctionDuration(other.getOpeningAuctionDuration());
+        }
+        if (other.hasPriceMonitoringSettings()) {
+          mergePriceMonitoringSettings(other.getPriceMonitoringSettings());
         }
         switch (other.getRiskParametersCase()) {
           case SIMPLE: {
@@ -6549,7 +4217,7 @@ public final class Governance {
        * <code>.vega.InstrumentConfiguration instrument = 1 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.InstrumentConfiguration, io.vegaprotocol.vega.Governance.InstrumentConfiguration.Builder, io.vegaprotocol.vega.Governance.InstrumentConfigurationOrBuilder> 
+          io.vegaprotocol.vega.Governance.InstrumentConfiguration, io.vegaprotocol.vega.Governance.InstrumentConfiguration.Builder, io.vegaprotocol.vega.Governance.InstrumentConfigurationOrBuilder>
           getInstrumentFieldBuilder() {
         if (instrumentBuilder_ == null) {
           instrumentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -6768,6 +4436,159 @@ public final class Governance {
         return this;
       }
 
+      private io.vegaprotocol.vega.Markets.PriceMonitoringSettings priceMonitoringSettings_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.PriceMonitoringSettings, io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder> priceMonitoringSettingsBuilder_;
+      /**
+       * <pre>
+       * price monitoring configuration
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       */
+      public boolean hasPriceMonitoringSettings() {
+        return priceMonitoringSettingsBuilder_ != null || priceMonitoringSettings_ != null;
+      }
+      /**
+       * <pre>
+       * price monitoring configuration
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       */
+      public io.vegaprotocol.vega.Markets.PriceMonitoringSettings getPriceMonitoringSettings() {
+        if (priceMonitoringSettingsBuilder_ == null) {
+          return priceMonitoringSettings_ == null ? io.vegaprotocol.vega.Markets.PriceMonitoringSettings.getDefaultInstance() : priceMonitoringSettings_;
+        } else {
+          return priceMonitoringSettingsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * price monitoring configuration
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       */
+      public Builder setPriceMonitoringSettings(io.vegaprotocol.vega.Markets.PriceMonitoringSettings value) {
+        if (priceMonitoringSettingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          priceMonitoringSettings_ = value;
+          onChanged();
+        } else {
+          priceMonitoringSettingsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * price monitoring configuration
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       */
+      public Builder setPriceMonitoringSettings(
+          io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder builderForValue) {
+        if (priceMonitoringSettingsBuilder_ == null) {
+          priceMonitoringSettings_ = builderForValue.build();
+          onChanged();
+        } else {
+          priceMonitoringSettingsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * price monitoring configuration
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       */
+      public Builder mergePriceMonitoringSettings(io.vegaprotocol.vega.Markets.PriceMonitoringSettings value) {
+        if (priceMonitoringSettingsBuilder_ == null) {
+          if (priceMonitoringSettings_ != null) {
+            priceMonitoringSettings_ =
+              io.vegaprotocol.vega.Markets.PriceMonitoringSettings.newBuilder(priceMonitoringSettings_).mergeFrom(value).buildPartial();
+          } else {
+            priceMonitoringSettings_ = value;
+          }
+          onChanged();
+        } else {
+          priceMonitoringSettingsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * price monitoring configuration
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       */
+      public Builder clearPriceMonitoringSettings() {
+        if (priceMonitoringSettingsBuilder_ == null) {
+          priceMonitoringSettings_ = null;
+          onChanged();
+        } else {
+          priceMonitoringSettings_ = null;
+          priceMonitoringSettingsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * price monitoring configuration
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       */
+      public io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder getPriceMonitoringSettingsBuilder() {
+
+        onChanged();
+        return getPriceMonitoringSettingsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * price monitoring configuration
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       */
+      public io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder getPriceMonitoringSettingsOrBuilder() {
+        if (priceMonitoringSettingsBuilder_ != null) {
+          return priceMonitoringSettingsBuilder_.getMessageOrBuilder();
+        } else {
+          return priceMonitoringSettings_ == null ?
+              io.vegaprotocol.vega.Markets.PriceMonitoringSettings.getDefaultInstance() : priceMonitoringSettings_;
+        }
+      }
+      /**
+       * <pre>
+       * price monitoring configuration
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.PriceMonitoringSettings, io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder>
+          getPriceMonitoringSettingsFieldBuilder() {
+        if (priceMonitoringSettingsBuilder_ == null) {
+          priceMonitoringSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Markets.PriceMonitoringSettings, io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder>(
+                  getPriceMonitoringSettings(),
+                  getParentForChildren(),
+                  isClean());
+          priceMonitoringSettings_ = null;
+        }
+        return priceMonitoringSettingsBuilder_;
+      }
+
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.SimpleModelParams, io.vegaprotocol.vega.Markets.SimpleModelParams.Builder, io.vegaprotocol.vega.Markets.SimpleModelParamsOrBuilder> simpleBuilder_;
       /**
@@ -6922,7 +4743,7 @@ public final class Governance {
        * <code>.vega.SimpleModelParams simple = 100;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.SimpleModelParams, io.vegaprotocol.vega.Markets.SimpleModelParams.Builder, io.vegaprotocol.vega.Markets.SimpleModelParamsOrBuilder> 
+          io.vegaprotocol.vega.Markets.SimpleModelParams, io.vegaprotocol.vega.Markets.SimpleModelParams.Builder, io.vegaprotocol.vega.Markets.SimpleModelParamsOrBuilder>
           getSimpleFieldBuilder() {
         if (simpleBuilder_ == null) {
           if (!(riskParametersCase_ == 100)) {
@@ -7094,7 +4915,7 @@ public final class Governance {
        * <code>.vega.LogNormalRiskModel logNormal = 101;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.LogNormalRiskModel, io.vegaprotocol.vega.Markets.LogNormalRiskModel.Builder, io.vegaprotocol.vega.Markets.LogNormalRiskModelOrBuilder> 
+          io.vegaprotocol.vega.Markets.LogNormalRiskModel, io.vegaprotocol.vega.Markets.LogNormalRiskModel.Builder, io.vegaprotocol.vega.Markets.LogNormalRiskModelOrBuilder>
           getLogNormalFieldBuilder() {
         if (logNormalBuilder_ == null) {
           if (!(riskParametersCase_ == 101)) {
@@ -7266,7 +5087,7 @@ public final class Governance {
        * <code>.vega.ContinuousTrading continuous = 200;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.ContinuousTrading, io.vegaprotocol.vega.Markets.ContinuousTrading.Builder, io.vegaprotocol.vega.Markets.ContinuousTradingOrBuilder> 
+          io.vegaprotocol.vega.Markets.ContinuousTrading, io.vegaprotocol.vega.Markets.ContinuousTrading.Builder, io.vegaprotocol.vega.Markets.ContinuousTradingOrBuilder>
           getContinuousFieldBuilder() {
         if (continuousBuilder_ == null) {
           if (!(tradingModeCase_ == 200)) {
@@ -7438,7 +5259,7 @@ public final class Governance {
        * <code>.vega.DiscreteTrading discrete = 201;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.DiscreteTrading, io.vegaprotocol.vega.Markets.DiscreteTrading.Builder, io.vegaprotocol.vega.Markets.DiscreteTradingOrBuilder> 
+          io.vegaprotocol.vega.Markets.DiscreteTrading, io.vegaprotocol.vega.Markets.DiscreteTrading.Builder, io.vegaprotocol.vega.Markets.DiscreteTradingOrBuilder>
           getDiscreteFieldBuilder() {
         if (discreteBuilder_ == null) {
           if (!(tradingModeCase_ == 201)) {
@@ -8117,7 +5938,7 @@ public final class Governance {
        * <code>.vega.NewMarketConfiguration changes = 1 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.NewMarketConfiguration, io.vegaprotocol.vega.Governance.NewMarketConfiguration.Builder, io.vegaprotocol.vega.Governance.NewMarketConfigurationOrBuilder> 
+          io.vegaprotocol.vega.Governance.NewMarketConfiguration, io.vegaprotocol.vega.Governance.NewMarketConfiguration.Builder, io.vegaprotocol.vega.Governance.NewMarketConfigurationOrBuilder>
           getChangesFieldBuilder() {
         if (changesBuilder_ == null) {
           changesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -8601,52 +6422,52 @@ public final class Governance {
 
   }
 
-  public interface UpdateNetworkOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:vega.UpdateNetwork)
+  public interface UpdateNetworkParameterOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.UpdateNetworkParameter)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * Configuration.
+     * The network parameter to update
      * </pre>
      *
-     * <code>.vega.NetworkConfiguration changes = 1 [(.validator.field) = { ... }</code>
+     * <code>.vega.NetworkParameter changes = 1 [(.validator.field) = { ... }</code>
      */
     boolean hasChanges();
     /**
      * <pre>
-     * Configuration.
+     * The network parameter to update
      * </pre>
      *
-     * <code>.vega.NetworkConfiguration changes = 1 [(.validator.field) = { ... }</code>
+     * <code>.vega.NetworkParameter changes = 1 [(.validator.field) = { ... }</code>
      */
-    io.vegaprotocol.vega.Governance.NetworkConfiguration getChanges();
+    io.vegaprotocol.vega.Vega.NetworkParameter getChanges();
     /**
      * <pre>
-     * Configuration.
+     * The network parameter to update
      * </pre>
      *
-     * <code>.vega.NetworkConfiguration changes = 1 [(.validator.field) = { ... }</code>
+     * <code>.vega.NetworkParameter changes = 1 [(.validator.field) = { ... }</code>
      */
-    io.vegaprotocol.vega.Governance.NetworkConfigurationOrBuilder getChangesOrBuilder();
+    io.vegaprotocol.vega.Vega.NetworkParameterOrBuilder getChangesOrBuilder();
   }
   /**
    * <pre>
    * Update network configuration on Vega.
    * </pre>
    *
-   * Protobuf type {@code vega.UpdateNetwork}
+   * Protobuf type {@code vega.UpdateNetworkParameter}
    */
-  public  static final class UpdateNetwork extends
+  public  static final class UpdateNetworkParameter extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:vega.UpdateNetwork)
-      UpdateNetworkOrBuilder {
+      // @@protoc_insertion_point(message_implements:vega.UpdateNetworkParameter)
+      UpdateNetworkParameterOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use UpdateNetwork.newBuilder() to construct.
-    private UpdateNetwork(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use UpdateNetworkParameter.newBuilder() to construct.
+    private UpdateNetworkParameter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private UpdateNetwork() {
+    private UpdateNetworkParameter() {
     }
 
     @java.lang.Override
@@ -8654,7 +6475,7 @@ public final class Governance {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UpdateNetwork(
+    private UpdateNetworkParameter(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8674,11 +6495,11 @@ public final class Governance {
               done = true;
               break;
             case 10: {
-              io.vegaprotocol.vega.Governance.NetworkConfiguration.Builder subBuilder = null;
+              io.vegaprotocol.vega.Vega.NetworkParameter.Builder subBuilder = null;
               if (changes_ != null) {
                 subBuilder = changes_.toBuilder();
               }
-              changes_ = input.readMessage(io.vegaprotocol.vega.Governance.NetworkConfiguration.parser(), extensionRegistry);
+              changes_ = input.readMessage(io.vegaprotocol.vega.Vega.NetworkParameter.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(changes_);
                 changes_ = subBuilder.buildPartial();
@@ -8707,47 +6528,47 @@ public final class Governance {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.vegaprotocol.vega.Governance.internal_static_vega_UpdateNetwork_descriptor;
+      return io.vegaprotocol.vega.Governance.internal_static_vega_UpdateNetworkParameter_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.vegaprotocol.vega.Governance.internal_static_vega_UpdateNetwork_fieldAccessorTable
+      return io.vegaprotocol.vega.Governance.internal_static_vega_UpdateNetworkParameter_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.vegaprotocol.vega.Governance.UpdateNetwork.class, io.vegaprotocol.vega.Governance.UpdateNetwork.Builder.class);
+              io.vegaprotocol.vega.Governance.UpdateNetworkParameter.class, io.vegaprotocol.vega.Governance.UpdateNetworkParameter.Builder.class);
     }
 
     public static final int CHANGES_FIELD_NUMBER = 1;
-    private io.vegaprotocol.vega.Governance.NetworkConfiguration changes_;
+    private io.vegaprotocol.vega.Vega.NetworkParameter changes_;
     /**
      * <pre>
-     * Configuration.
+     * The network parameter to update
      * </pre>
      *
-     * <code>.vega.NetworkConfiguration changes = 1 [(.validator.field) = { ... }</code>
+     * <code>.vega.NetworkParameter changes = 1 [(.validator.field) = { ... }</code>
      */
     public boolean hasChanges() {
       return changes_ != null;
     }
     /**
      * <pre>
-     * Configuration.
+     * The network parameter to update
      * </pre>
      *
-     * <code>.vega.NetworkConfiguration changes = 1 [(.validator.field) = { ... }</code>
+     * <code>.vega.NetworkParameter changes = 1 [(.validator.field) = { ... }</code>
      */
-    public io.vegaprotocol.vega.Governance.NetworkConfiguration getChanges() {
-      return changes_ == null ? io.vegaprotocol.vega.Governance.NetworkConfiguration.getDefaultInstance() : changes_;
+    public io.vegaprotocol.vega.Vega.NetworkParameter getChanges() {
+      return changes_ == null ? io.vegaprotocol.vega.Vega.NetworkParameter.getDefaultInstance() : changes_;
     }
     /**
      * <pre>
-     * Configuration.
+     * The network parameter to update
      * </pre>
      *
-     * <code>.vega.NetworkConfiguration changes = 1 [(.validator.field) = { ... }</code>
+     * <code>.vega.NetworkParameter changes = 1 [(.validator.field) = { ... }</code>
      */
-    public io.vegaprotocol.vega.Governance.NetworkConfigurationOrBuilder getChangesOrBuilder() {
+    public io.vegaprotocol.vega.Vega.NetworkParameterOrBuilder getChangesOrBuilder() {
       return getChanges();
     }
 
@@ -8791,10 +6612,10 @@ public final class Governance {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof io.vegaprotocol.vega.Governance.UpdateNetwork)) {
+      if (!(obj instanceof io.vegaprotocol.vega.Governance.UpdateNetworkParameter)) {
         return super.equals(obj);
       }
-      io.vegaprotocol.vega.Governance.UpdateNetwork other = (io.vegaprotocol.vega.Governance.UpdateNetwork) obj;
+      io.vegaprotocol.vega.Governance.UpdateNetworkParameter other = (io.vegaprotocol.vega.Governance.UpdateNetworkParameter) obj;
 
       if (hasChanges() != other.hasChanges()) return false;
       if (hasChanges()) {
@@ -8821,69 +6642,69 @@ public final class Governance {
       return hash;
     }
 
-    public static io.vegaprotocol.vega.Governance.UpdateNetwork parseFrom(
+    public static io.vegaprotocol.vega.Governance.UpdateNetworkParameter parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.Governance.UpdateNetwork parseFrom(
+    public static io.vegaprotocol.vega.Governance.UpdateNetworkParameter parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.Governance.UpdateNetwork parseFrom(
+    public static io.vegaprotocol.vega.Governance.UpdateNetworkParameter parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.Governance.UpdateNetwork parseFrom(
+    public static io.vegaprotocol.vega.Governance.UpdateNetworkParameter parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.Governance.UpdateNetwork parseFrom(byte[] data)
+    public static io.vegaprotocol.vega.Governance.UpdateNetworkParameter parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.Governance.UpdateNetwork parseFrom(
+    public static io.vegaprotocol.vega.Governance.UpdateNetworkParameter parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.Governance.UpdateNetwork parseFrom(java.io.InputStream input)
+    public static io.vegaprotocol.vega.Governance.UpdateNetworkParameter parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.Governance.UpdateNetwork parseFrom(
+    public static io.vegaprotocol.vega.Governance.UpdateNetworkParameter parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.Governance.UpdateNetwork parseDelimitedFrom(java.io.InputStream input)
+    public static io.vegaprotocol.vega.Governance.UpdateNetworkParameter parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.Governance.UpdateNetwork parseDelimitedFrom(
+    public static io.vegaprotocol.vega.Governance.UpdateNetworkParameter parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.Governance.UpdateNetwork parseFrom(
+    public static io.vegaprotocol.vega.Governance.UpdateNetworkParameter parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.Governance.UpdateNetwork parseFrom(
+    public static io.vegaprotocol.vega.Governance.UpdateNetworkParameter parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8896,7 +6717,7 @@ public final class Governance {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(io.vegaprotocol.vega.Governance.UpdateNetwork prototype) {
+    public static Builder newBuilder(io.vegaprotocol.vega.Governance.UpdateNetworkParameter prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -8916,26 +6737,26 @@ public final class Governance {
      * Update network configuration on Vega.
      * </pre>
      *
-     * Protobuf type {@code vega.UpdateNetwork}
+     * Protobuf type {@code vega.UpdateNetworkParameter}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:vega.UpdateNetwork)
-        io.vegaprotocol.vega.Governance.UpdateNetworkOrBuilder {
+        // @@protoc_insertion_point(builder_implements:vega.UpdateNetworkParameter)
+        io.vegaprotocol.vega.Governance.UpdateNetworkParameterOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return io.vegaprotocol.vega.Governance.internal_static_vega_UpdateNetwork_descriptor;
+        return io.vegaprotocol.vega.Governance.internal_static_vega_UpdateNetworkParameter_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.vegaprotocol.vega.Governance.internal_static_vega_UpdateNetwork_fieldAccessorTable
+        return io.vegaprotocol.vega.Governance.internal_static_vega_UpdateNetworkParameter_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.vegaprotocol.vega.Governance.UpdateNetwork.class, io.vegaprotocol.vega.Governance.UpdateNetwork.Builder.class);
+                io.vegaprotocol.vega.Governance.UpdateNetworkParameter.class, io.vegaprotocol.vega.Governance.UpdateNetworkParameter.Builder.class);
       }
 
-      // Construct using io.vegaprotocol.vega.Governance.UpdateNetwork.newBuilder()
+      // Construct using io.vegaprotocol.vega.Governance.UpdateNetworkParameter.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -8965,17 +6786,17 @@ public final class Governance {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return io.vegaprotocol.vega.Governance.internal_static_vega_UpdateNetwork_descriptor;
+        return io.vegaprotocol.vega.Governance.internal_static_vega_UpdateNetworkParameter_descriptor;
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.Governance.UpdateNetwork getDefaultInstanceForType() {
-        return io.vegaprotocol.vega.Governance.UpdateNetwork.getDefaultInstance();
+      public io.vegaprotocol.vega.Governance.UpdateNetworkParameter getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Governance.UpdateNetworkParameter.getDefaultInstance();
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.Governance.UpdateNetwork build() {
-        io.vegaprotocol.vega.Governance.UpdateNetwork result = buildPartial();
+      public io.vegaprotocol.vega.Governance.UpdateNetworkParameter build() {
+        io.vegaprotocol.vega.Governance.UpdateNetworkParameter result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -8983,8 +6804,8 @@ public final class Governance {
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.Governance.UpdateNetwork buildPartial() {
-        io.vegaprotocol.vega.Governance.UpdateNetwork result = new io.vegaprotocol.vega.Governance.UpdateNetwork(this);
+      public io.vegaprotocol.vega.Governance.UpdateNetworkParameter buildPartial() {
+        io.vegaprotocol.vega.Governance.UpdateNetworkParameter result = new io.vegaprotocol.vega.Governance.UpdateNetworkParameter(this);
         if (changesBuilder_ == null) {
           result.changes_ = changes_;
         } else {
@@ -9028,16 +6849,16 @@ public final class Governance {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.vegaprotocol.vega.Governance.UpdateNetwork) {
-          return mergeFrom((io.vegaprotocol.vega.Governance.UpdateNetwork)other);
+        if (other instanceof io.vegaprotocol.vega.Governance.UpdateNetworkParameter) {
+          return mergeFrom((io.vegaprotocol.vega.Governance.UpdateNetworkParameter)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(io.vegaprotocol.vega.Governance.UpdateNetwork other) {
-        if (other == io.vegaprotocol.vega.Governance.UpdateNetwork.getDefaultInstance()) return this;
+      public Builder mergeFrom(io.vegaprotocol.vega.Governance.UpdateNetworkParameter other) {
+        if (other == io.vegaprotocol.vega.Governance.UpdateNetworkParameter.getDefaultInstance()) return this;
         if (other.hasChanges()) {
           mergeChanges(other.getChanges());
         }
@@ -9056,11 +6877,11 @@ public final class Governance {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        io.vegaprotocol.vega.Governance.UpdateNetwork parsedMessage = null;
+        io.vegaprotocol.vega.Governance.UpdateNetworkParameter parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.vegaprotocol.vega.Governance.UpdateNetwork) e.getUnfinishedMessage();
+          parsedMessage = (io.vegaprotocol.vega.Governance.UpdateNetworkParameter) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -9070,41 +6891,41 @@ public final class Governance {
         return this;
       }
 
-      private io.vegaprotocol.vega.Governance.NetworkConfiguration changes_;
+      private io.vegaprotocol.vega.Vega.NetworkParameter changes_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.NetworkConfiguration, io.vegaprotocol.vega.Governance.NetworkConfiguration.Builder, io.vegaprotocol.vega.Governance.NetworkConfigurationOrBuilder> changesBuilder_;
+          io.vegaprotocol.vega.Vega.NetworkParameter, io.vegaprotocol.vega.Vega.NetworkParameter.Builder, io.vegaprotocol.vega.Vega.NetworkParameterOrBuilder> changesBuilder_;
       /**
        * <pre>
-       * Configuration.
+       * The network parameter to update
        * </pre>
        *
-       * <code>.vega.NetworkConfiguration changes = 1 [(.validator.field) = { ... }</code>
+       * <code>.vega.NetworkParameter changes = 1 [(.validator.field) = { ... }</code>
        */
       public boolean hasChanges() {
         return changesBuilder_ != null || changes_ != null;
       }
       /**
        * <pre>
-       * Configuration.
+       * The network parameter to update
        * </pre>
        *
-       * <code>.vega.NetworkConfiguration changes = 1 [(.validator.field) = { ... }</code>
+       * <code>.vega.NetworkParameter changes = 1 [(.validator.field) = { ... }</code>
        */
-      public io.vegaprotocol.vega.Governance.NetworkConfiguration getChanges() {
+      public io.vegaprotocol.vega.Vega.NetworkParameter getChanges() {
         if (changesBuilder_ == null) {
-          return changes_ == null ? io.vegaprotocol.vega.Governance.NetworkConfiguration.getDefaultInstance() : changes_;
+          return changes_ == null ? io.vegaprotocol.vega.Vega.NetworkParameter.getDefaultInstance() : changes_;
         } else {
           return changesBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * Configuration.
+       * The network parameter to update
        * </pre>
        *
-       * <code>.vega.NetworkConfiguration changes = 1 [(.validator.field) = { ... }</code>
+       * <code>.vega.NetworkParameter changes = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder setChanges(io.vegaprotocol.vega.Governance.NetworkConfiguration value) {
+      public Builder setChanges(io.vegaprotocol.vega.Vega.NetworkParameter value) {
         if (changesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9119,13 +6940,13 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Configuration.
+       * The network parameter to update
        * </pre>
        *
-       * <code>.vega.NetworkConfiguration changes = 1 [(.validator.field) = { ... }</code>
+       * <code>.vega.NetworkParameter changes = 1 [(.validator.field) = { ... }</code>
        */
       public Builder setChanges(
-          io.vegaprotocol.vega.Governance.NetworkConfiguration.Builder builderForValue) {
+          io.vegaprotocol.vega.Vega.NetworkParameter.Builder builderForValue) {
         if (changesBuilder_ == null) {
           changes_ = builderForValue.build();
           onChanged();
@@ -9137,16 +6958,16 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Configuration.
+       * The network parameter to update
        * </pre>
        *
-       * <code>.vega.NetworkConfiguration changes = 1 [(.validator.field) = { ... }</code>
+       * <code>.vega.NetworkParameter changes = 1 [(.validator.field) = { ... }</code>
        */
-      public Builder mergeChanges(io.vegaprotocol.vega.Governance.NetworkConfiguration value) {
+      public Builder mergeChanges(io.vegaprotocol.vega.Vega.NetworkParameter value) {
         if (changesBuilder_ == null) {
           if (changes_ != null) {
             changes_ =
-              io.vegaprotocol.vega.Governance.NetworkConfiguration.newBuilder(changes_).mergeFrom(value).buildPartial();
+              io.vegaprotocol.vega.Vega.NetworkParameter.newBuilder(changes_).mergeFrom(value).buildPartial();
           } else {
             changes_ = value;
           }
@@ -9159,10 +6980,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Configuration.
+       * The network parameter to update
        * </pre>
        *
-       * <code>.vega.NetworkConfiguration changes = 1 [(.validator.field) = { ... }</code>
+       * <code>.vega.NetworkParameter changes = 1 [(.validator.field) = { ... }</code>
        */
       public Builder clearChanges() {
         if (changesBuilder_ == null) {
@@ -9177,44 +6998,44 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Configuration.
+       * The network parameter to update
        * </pre>
        *
-       * <code>.vega.NetworkConfiguration changes = 1 [(.validator.field) = { ... }</code>
+       * <code>.vega.NetworkParameter changes = 1 [(.validator.field) = { ... }</code>
        */
-      public io.vegaprotocol.vega.Governance.NetworkConfiguration.Builder getChangesBuilder() {
+      public io.vegaprotocol.vega.Vega.NetworkParameter.Builder getChangesBuilder() {
 
         onChanged();
         return getChangesFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Configuration.
+       * The network parameter to update
        * </pre>
        *
-       * <code>.vega.NetworkConfiguration changes = 1 [(.validator.field) = { ... }</code>
+       * <code>.vega.NetworkParameter changes = 1 [(.validator.field) = { ... }</code>
        */
-      public io.vegaprotocol.vega.Governance.NetworkConfigurationOrBuilder getChangesOrBuilder() {
+      public io.vegaprotocol.vega.Vega.NetworkParameterOrBuilder getChangesOrBuilder() {
         if (changesBuilder_ != null) {
           return changesBuilder_.getMessageOrBuilder();
         } else {
           return changes_ == null ?
-              io.vegaprotocol.vega.Governance.NetworkConfiguration.getDefaultInstance() : changes_;
+              io.vegaprotocol.vega.Vega.NetworkParameter.getDefaultInstance() : changes_;
         }
       }
       /**
        * <pre>
-       * Configuration.
+       * The network parameter to update
        * </pre>
        *
-       * <code>.vega.NetworkConfiguration changes = 1 [(.validator.field) = { ... }</code>
+       * <code>.vega.NetworkParameter changes = 1 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.NetworkConfiguration, io.vegaprotocol.vega.Governance.NetworkConfiguration.Builder, io.vegaprotocol.vega.Governance.NetworkConfigurationOrBuilder> 
+          io.vegaprotocol.vega.Vega.NetworkParameter, io.vegaprotocol.vega.Vega.NetworkParameter.Builder, io.vegaprotocol.vega.Vega.NetworkParameterOrBuilder>
           getChangesFieldBuilder() {
         if (changesBuilder_ == null) {
           changesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.vegaprotocol.vega.Governance.NetworkConfiguration, io.vegaprotocol.vega.Governance.NetworkConfiguration.Builder, io.vegaprotocol.vega.Governance.NetworkConfigurationOrBuilder>(
+              io.vegaprotocol.vega.Vega.NetworkParameter, io.vegaprotocol.vega.Vega.NetworkParameter.Builder, io.vegaprotocol.vega.Vega.NetworkParameterOrBuilder>(
                   getChanges(),
                   getParentForChildren(),
                   isClean());
@@ -9235,41 +7056,41 @@ public final class Governance {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:vega.UpdateNetwork)
+      // @@protoc_insertion_point(builder_scope:vega.UpdateNetworkParameter)
     }
 
-    // @@protoc_insertion_point(class_scope:vega.UpdateNetwork)
-    private static final io.vegaprotocol.vega.Governance.UpdateNetwork DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:vega.UpdateNetworkParameter)
+    private static final io.vegaprotocol.vega.Governance.UpdateNetworkParameter DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Governance.UpdateNetwork();
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Governance.UpdateNetworkParameter();
     }
 
-    public static io.vegaprotocol.vega.Governance.UpdateNetwork getDefaultInstance() {
+    public static io.vegaprotocol.vega.Governance.UpdateNetworkParameter getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UpdateNetwork>
-        PARSER = new com.google.protobuf.AbstractParser<UpdateNetwork>() {
+    private static final com.google.protobuf.Parser<UpdateNetworkParameter>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateNetworkParameter>() {
       @java.lang.Override
-      public UpdateNetwork parsePartialFrom(
+      public UpdateNetworkParameter parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpdateNetwork(input, extensionRegistry);
+        return new UpdateNetworkParameter(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<UpdateNetwork> parser() {
+    public static com.google.protobuf.Parser<UpdateNetworkParameter> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UpdateNetwork> getParserForType() {
+    public com.google.protobuf.Parser<UpdateNetworkParameter> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public io.vegaprotocol.vega.Governance.UpdateNetwork getDefaultInstanceForType() {
+    public io.vegaprotocol.vega.Governance.UpdateNetworkParameter getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9884,7 +7705,7 @@ public final class Governance {
        * <code>.vega.AssetSource changes = 1 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Assets.AssetSource, io.vegaprotocol.vega.Assets.AssetSource.Builder, io.vegaprotocol.vega.Assets.AssetSourceOrBuilder> 
+          io.vegaprotocol.vega.Assets.AssetSource, io.vegaprotocol.vega.Assets.AssetSource.Builder, io.vegaprotocol.vega.Assets.AssetSourceOrBuilder>
           getChangesFieldBuilder() {
         if (changesBuilder_ == null) {
           changesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -10037,25 +7858,25 @@ public final class Governance {
      * Proposal change for updating Vega network parameters.
      * </pre>
      *
-     * <code>.vega.UpdateNetwork updateNetwork = 103;</code>
+     * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103;</code>
      */
-    boolean hasUpdateNetwork();
+    boolean hasUpdateNetworkParameter();
     /**
      * <pre>
      * Proposal change for updating Vega network parameters.
      * </pre>
      *
-     * <code>.vega.UpdateNetwork updateNetwork = 103;</code>
+     * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103;</code>
      */
-    io.vegaprotocol.vega.Governance.UpdateNetwork getUpdateNetwork();
+    io.vegaprotocol.vega.Governance.UpdateNetworkParameter getUpdateNetworkParameter();
     /**
      * <pre>
      * Proposal change for updating Vega network parameters.
      * </pre>
      *
-     * <code>.vega.UpdateNetwork updateNetwork = 103;</code>
+     * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103;</code>
      */
-    io.vegaprotocol.vega.Governance.UpdateNetworkOrBuilder getUpdateNetworkOrBuilder();
+    io.vegaprotocol.vega.Governance.UpdateNetworkParameterOrBuilder getUpdateNetworkParameterOrBuilder();
 
     /**
      * <pre>
@@ -10171,14 +7992,14 @@ public final class Governance {
               break;
             }
             case 826: {
-              io.vegaprotocol.vega.Governance.UpdateNetwork.Builder subBuilder = null;
+              io.vegaprotocol.vega.Governance.UpdateNetworkParameter.Builder subBuilder = null;
               if (changeCase_ == 103) {
-                subBuilder = ((io.vegaprotocol.vega.Governance.UpdateNetwork) change_).toBuilder();
+                subBuilder = ((io.vegaprotocol.vega.Governance.UpdateNetworkParameter) change_).toBuilder();
               }
               change_ =
-                  input.readMessage(io.vegaprotocol.vega.Governance.UpdateNetwork.parser(), extensionRegistry);
+                  input.readMessage(io.vegaprotocol.vega.Governance.UpdateNetworkParameter.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((io.vegaprotocol.vega.Governance.UpdateNetwork) change_);
+                subBuilder.mergeFrom((io.vegaprotocol.vega.Governance.UpdateNetworkParameter) change_);
                 change_ = subBuilder.buildPartial();
               }
               changeCase_ = 103;
@@ -10236,7 +8057,7 @@ public final class Governance {
         implements com.google.protobuf.Internal.EnumLite {
       UPDATEMARKET(101),
       NEWMARKET(102),
-      UPDATENETWORK(103),
+      UPDATENETWORKPARAMETER(103),
       NEWASSET(104),
       CHANGE_NOT_SET(0);
       private final int value;
@@ -10255,7 +8076,7 @@ public final class Governance {
         switch (value) {
           case 101: return UPDATEMARKET;
           case 102: return NEWMARKET;
-          case 103: return UPDATENETWORK;
+          case 103: return UPDATENETWORKPARAMETER;
           case 104: return NEWASSET;
           case 0: return CHANGE_NOT_SET;
           default: return null;
@@ -10389,15 +8210,15 @@ public final class Governance {
       return io.vegaprotocol.vega.Governance.NewMarket.getDefaultInstance();
     }
 
-    public static final int UPDATENETWORK_FIELD_NUMBER = 103;
+    public static final int UPDATENETWORKPARAMETER_FIELD_NUMBER = 103;
     /**
      * <pre>
      * Proposal change for updating Vega network parameters.
      * </pre>
      *
-     * <code>.vega.UpdateNetwork updateNetwork = 103;</code>
+     * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103;</code>
      */
-    public boolean hasUpdateNetwork() {
+    public boolean hasUpdateNetworkParameter() {
       return changeCase_ == 103;
     }
     /**
@@ -10405,26 +8226,26 @@ public final class Governance {
      * Proposal change for updating Vega network parameters.
      * </pre>
      *
-     * <code>.vega.UpdateNetwork updateNetwork = 103;</code>
+     * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103;</code>
      */
-    public io.vegaprotocol.vega.Governance.UpdateNetwork getUpdateNetwork() {
+    public io.vegaprotocol.vega.Governance.UpdateNetworkParameter getUpdateNetworkParameter() {
       if (changeCase_ == 103) {
-         return (io.vegaprotocol.vega.Governance.UpdateNetwork) change_;
+         return (io.vegaprotocol.vega.Governance.UpdateNetworkParameter) change_;
       }
-      return io.vegaprotocol.vega.Governance.UpdateNetwork.getDefaultInstance();
+      return io.vegaprotocol.vega.Governance.UpdateNetworkParameter.getDefaultInstance();
     }
     /**
      * <pre>
      * Proposal change for updating Vega network parameters.
      * </pre>
      *
-     * <code>.vega.UpdateNetwork updateNetwork = 103;</code>
+     * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103;</code>
      */
-    public io.vegaprotocol.vega.Governance.UpdateNetworkOrBuilder getUpdateNetworkOrBuilder() {
+    public io.vegaprotocol.vega.Governance.UpdateNetworkParameterOrBuilder getUpdateNetworkParameterOrBuilder() {
       if (changeCase_ == 103) {
-         return (io.vegaprotocol.vega.Governance.UpdateNetwork) change_;
+         return (io.vegaprotocol.vega.Governance.UpdateNetworkParameter) change_;
       }
-      return io.vegaprotocol.vega.Governance.UpdateNetwork.getDefaultInstance();
+      return io.vegaprotocol.vega.Governance.UpdateNetworkParameter.getDefaultInstance();
     }
 
     public static final int NEWASSET_FIELD_NUMBER = 104;
@@ -10495,7 +8316,7 @@ public final class Governance {
         output.writeMessage(102, (io.vegaprotocol.vega.Governance.NewMarket) change_);
       }
       if (changeCase_ == 103) {
-        output.writeMessage(103, (io.vegaprotocol.vega.Governance.UpdateNetwork) change_);
+        output.writeMessage(103, (io.vegaprotocol.vega.Governance.UpdateNetworkParameter) change_);
       }
       if (changeCase_ == 104) {
         output.writeMessage(104, (io.vegaprotocol.vega.Governance.NewAsset) change_);
@@ -10531,7 +8352,7 @@ public final class Governance {
       }
       if (changeCase_ == 103) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(103, (io.vegaprotocol.vega.Governance.UpdateNetwork) change_);
+          .computeMessageSize(103, (io.vegaprotocol.vega.Governance.UpdateNetworkParameter) change_);
       }
       if (changeCase_ == 104) {
         size += com.google.protobuf.CodedOutputStream
@@ -10569,8 +8390,8 @@ public final class Governance {
               .equals(other.getNewMarket())) return false;
           break;
         case 103:
-          if (!getUpdateNetwork()
-              .equals(other.getUpdateNetwork())) return false;
+          if (!getUpdateNetworkParameter()
+              .equals(other.getUpdateNetworkParameter())) return false;
           break;
         case 104:
           if (!getNewAsset()
@@ -10609,8 +8430,8 @@ public final class Governance {
           hash = (53 * hash) + getNewMarket().hashCode();
           break;
         case 103:
-          hash = (37 * hash) + UPDATENETWORK_FIELD_NUMBER;
-          hash = (53 * hash) + getUpdateNetwork().hashCode();
+          hash = (37 * hash) + UPDATENETWORKPARAMETER_FIELD_NUMBER;
+          hash = (53 * hash) + getUpdateNetworkParameter().hashCode();
           break;
         case 104:
           hash = (37 * hash) + NEWASSET_FIELD_NUMBER;
@@ -10808,10 +8629,10 @@ public final class Governance {
           }
         }
         if (changeCase_ == 103) {
-          if (updateNetworkBuilder_ == null) {
+          if (updateNetworkParameterBuilder_ == null) {
             result.change_ = change_;
           } else {
-            result.change_ = updateNetworkBuilder_.build();
+            result.change_ = updateNetworkParameterBuilder_.build();
           }
         }
         if (changeCase_ == 104) {
@@ -10888,8 +8709,8 @@ public final class Governance {
             mergeNewMarket(other.getNewMarket());
             break;
           }
-          case UPDATENETWORK: {
-            mergeUpdateNetwork(other.getUpdateNetwork());
+          case UPDATENETWORKPARAMETER: {
+            mergeUpdateNetworkParameter(other.getUpdateNetworkParameter());
             break;
           }
           case NEWASSET: {
@@ -11218,7 +9039,7 @@ public final class Governance {
        * <code>.vega.UpdateMarket updateMarket = 101;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.UpdateMarket, io.vegaprotocol.vega.Governance.UpdateMarket.Builder, io.vegaprotocol.vega.Governance.UpdateMarketOrBuilder> 
+          io.vegaprotocol.vega.Governance.UpdateMarket, io.vegaprotocol.vega.Governance.UpdateMarket.Builder, io.vegaprotocol.vega.Governance.UpdateMarketOrBuilder>
           getUpdateMarketFieldBuilder() {
         if (updateMarketBuilder_ == null) {
           if (!(changeCase_ == 101)) {
@@ -11390,7 +9211,7 @@ public final class Governance {
        * <code>.vega.NewMarket newMarket = 102;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.NewMarket, io.vegaprotocol.vega.Governance.NewMarket.Builder, io.vegaprotocol.vega.Governance.NewMarketOrBuilder> 
+          io.vegaprotocol.vega.Governance.NewMarket, io.vegaprotocol.vega.Governance.NewMarket.Builder, io.vegaprotocol.vega.Governance.NewMarketOrBuilder>
           getNewMarketFieldBuilder() {
         if (newMarketBuilder_ == null) {
           if (!(changeCase_ == 102)) {
@@ -11409,15 +9230,15 @@ public final class Governance {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.UpdateNetwork, io.vegaprotocol.vega.Governance.UpdateNetwork.Builder, io.vegaprotocol.vega.Governance.UpdateNetworkOrBuilder> updateNetworkBuilder_;
+          io.vegaprotocol.vega.Governance.UpdateNetworkParameter, io.vegaprotocol.vega.Governance.UpdateNetworkParameter.Builder, io.vegaprotocol.vega.Governance.UpdateNetworkParameterOrBuilder> updateNetworkParameterBuilder_;
       /**
        * <pre>
        * Proposal change for updating Vega network parameters.
        * </pre>
        *
-       * <code>.vega.UpdateNetwork updateNetwork = 103;</code>
+       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103;</code>
        */
-      public boolean hasUpdateNetwork() {
+      public boolean hasUpdateNetworkParameter() {
         return changeCase_ == 103;
       }
       /**
@@ -11425,19 +9246,19 @@ public final class Governance {
        * Proposal change for updating Vega network parameters.
        * </pre>
        *
-       * <code>.vega.UpdateNetwork updateNetwork = 103;</code>
+       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103;</code>
        */
-      public io.vegaprotocol.vega.Governance.UpdateNetwork getUpdateNetwork() {
-        if (updateNetworkBuilder_ == null) {
+      public io.vegaprotocol.vega.Governance.UpdateNetworkParameter getUpdateNetworkParameter() {
+        if (updateNetworkParameterBuilder_ == null) {
           if (changeCase_ == 103) {
-            return (io.vegaprotocol.vega.Governance.UpdateNetwork) change_;
+            return (io.vegaprotocol.vega.Governance.UpdateNetworkParameter) change_;
           }
-          return io.vegaprotocol.vega.Governance.UpdateNetwork.getDefaultInstance();
+          return io.vegaprotocol.vega.Governance.UpdateNetworkParameter.getDefaultInstance();
         } else {
           if (changeCase_ == 103) {
-            return updateNetworkBuilder_.getMessage();
+            return updateNetworkParameterBuilder_.getMessage();
           }
-          return io.vegaprotocol.vega.Governance.UpdateNetwork.getDefaultInstance();
+          return io.vegaprotocol.vega.Governance.UpdateNetworkParameter.getDefaultInstance();
         }
       }
       /**
@@ -11445,17 +9266,17 @@ public final class Governance {
        * Proposal change for updating Vega network parameters.
        * </pre>
        *
-       * <code>.vega.UpdateNetwork updateNetwork = 103;</code>
+       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103;</code>
        */
-      public Builder setUpdateNetwork(io.vegaprotocol.vega.Governance.UpdateNetwork value) {
-        if (updateNetworkBuilder_ == null) {
+      public Builder setUpdateNetworkParameter(io.vegaprotocol.vega.Governance.UpdateNetworkParameter value) {
+        if (updateNetworkParameterBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
           change_ = value;
           onChanged();
         } else {
-          updateNetworkBuilder_.setMessage(value);
+          updateNetworkParameterBuilder_.setMessage(value);
         }
         changeCase_ = 103;
         return this;
@@ -11465,15 +9286,15 @@ public final class Governance {
        * Proposal change for updating Vega network parameters.
        * </pre>
        *
-       * <code>.vega.UpdateNetwork updateNetwork = 103;</code>
+       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103;</code>
        */
-      public Builder setUpdateNetwork(
-          io.vegaprotocol.vega.Governance.UpdateNetwork.Builder builderForValue) {
-        if (updateNetworkBuilder_ == null) {
+      public Builder setUpdateNetworkParameter(
+          io.vegaprotocol.vega.Governance.UpdateNetworkParameter.Builder builderForValue) {
+        if (updateNetworkParameterBuilder_ == null) {
           change_ = builderForValue.build();
           onChanged();
         } else {
-          updateNetworkBuilder_.setMessage(builderForValue.build());
+          updateNetworkParameterBuilder_.setMessage(builderForValue.build());
         }
         changeCase_ = 103;
         return this;
@@ -11483,13 +9304,13 @@ public final class Governance {
        * Proposal change for updating Vega network parameters.
        * </pre>
        *
-       * <code>.vega.UpdateNetwork updateNetwork = 103;</code>
+       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103;</code>
        */
-      public Builder mergeUpdateNetwork(io.vegaprotocol.vega.Governance.UpdateNetwork value) {
-        if (updateNetworkBuilder_ == null) {
+      public Builder mergeUpdateNetworkParameter(io.vegaprotocol.vega.Governance.UpdateNetworkParameter value) {
+        if (updateNetworkParameterBuilder_ == null) {
           if (changeCase_ == 103 &&
-              change_ != io.vegaprotocol.vega.Governance.UpdateNetwork.getDefaultInstance()) {
-            change_ = io.vegaprotocol.vega.Governance.UpdateNetwork.newBuilder((io.vegaprotocol.vega.Governance.UpdateNetwork) change_)
+              change_ != io.vegaprotocol.vega.Governance.UpdateNetworkParameter.getDefaultInstance()) {
+            change_ = io.vegaprotocol.vega.Governance.UpdateNetworkParameter.newBuilder((io.vegaprotocol.vega.Governance.UpdateNetworkParameter) change_)
                 .mergeFrom(value).buildPartial();
           } else {
             change_ = value;
@@ -11497,9 +9318,9 @@ public final class Governance {
           onChanged();
         } else {
           if (changeCase_ == 103) {
-            updateNetworkBuilder_.mergeFrom(value);
+            updateNetworkParameterBuilder_.mergeFrom(value);
           }
-          updateNetworkBuilder_.setMessage(value);
+          updateNetworkParameterBuilder_.setMessage(value);
         }
         changeCase_ = 103;
         return this;
@@ -11509,10 +9330,10 @@ public final class Governance {
        * Proposal change for updating Vega network parameters.
        * </pre>
        *
-       * <code>.vega.UpdateNetwork updateNetwork = 103;</code>
+       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103;</code>
        */
-      public Builder clearUpdateNetwork() {
-        if (updateNetworkBuilder_ == null) {
+      public Builder clearUpdateNetworkParameter() {
+        if (updateNetworkParameterBuilder_ == null) {
           if (changeCase_ == 103) {
             changeCase_ = 0;
             change_ = null;
@@ -11523,7 +9344,7 @@ public final class Governance {
             changeCase_ = 0;
             change_ = null;
           }
-          updateNetworkBuilder_.clear();
+          updateNetworkParameterBuilder_.clear();
         }
         return this;
       }
@@ -11532,26 +9353,26 @@ public final class Governance {
        * Proposal change for updating Vega network parameters.
        * </pre>
        *
-       * <code>.vega.UpdateNetwork updateNetwork = 103;</code>
+       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103;</code>
        */
-      public io.vegaprotocol.vega.Governance.UpdateNetwork.Builder getUpdateNetworkBuilder() {
-        return getUpdateNetworkFieldBuilder().getBuilder();
+      public io.vegaprotocol.vega.Governance.UpdateNetworkParameter.Builder getUpdateNetworkParameterBuilder() {
+        return getUpdateNetworkParameterFieldBuilder().getBuilder();
       }
       /**
        * <pre>
        * Proposal change for updating Vega network parameters.
        * </pre>
        *
-       * <code>.vega.UpdateNetwork updateNetwork = 103;</code>
+       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103;</code>
        */
-      public io.vegaprotocol.vega.Governance.UpdateNetworkOrBuilder getUpdateNetworkOrBuilder() {
-        if ((changeCase_ == 103) && (updateNetworkBuilder_ != null)) {
-          return updateNetworkBuilder_.getMessageOrBuilder();
+      public io.vegaprotocol.vega.Governance.UpdateNetworkParameterOrBuilder getUpdateNetworkParameterOrBuilder() {
+        if ((changeCase_ == 103) && (updateNetworkParameterBuilder_ != null)) {
+          return updateNetworkParameterBuilder_.getMessageOrBuilder();
         } else {
           if (changeCase_ == 103) {
-            return (io.vegaprotocol.vega.Governance.UpdateNetwork) change_;
+            return (io.vegaprotocol.vega.Governance.UpdateNetworkParameter) change_;
           }
-          return io.vegaprotocol.vega.Governance.UpdateNetwork.getDefaultInstance();
+          return io.vegaprotocol.vega.Governance.UpdateNetworkParameter.getDefaultInstance();
         }
       }
       /**
@@ -11559,25 +9380,25 @@ public final class Governance {
        * Proposal change for updating Vega network parameters.
        * </pre>
        *
-       * <code>.vega.UpdateNetwork updateNetwork = 103;</code>
+       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.UpdateNetwork, io.vegaprotocol.vega.Governance.UpdateNetwork.Builder, io.vegaprotocol.vega.Governance.UpdateNetworkOrBuilder> 
-          getUpdateNetworkFieldBuilder() {
-        if (updateNetworkBuilder_ == null) {
+          io.vegaprotocol.vega.Governance.UpdateNetworkParameter, io.vegaprotocol.vega.Governance.UpdateNetworkParameter.Builder, io.vegaprotocol.vega.Governance.UpdateNetworkParameterOrBuilder>
+          getUpdateNetworkParameterFieldBuilder() {
+        if (updateNetworkParameterBuilder_ == null) {
           if (!(changeCase_ == 103)) {
-            change_ = io.vegaprotocol.vega.Governance.UpdateNetwork.getDefaultInstance();
+            change_ = io.vegaprotocol.vega.Governance.UpdateNetworkParameter.getDefaultInstance();
           }
-          updateNetworkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.vegaprotocol.vega.Governance.UpdateNetwork, io.vegaprotocol.vega.Governance.UpdateNetwork.Builder, io.vegaprotocol.vega.Governance.UpdateNetworkOrBuilder>(
-                  (io.vegaprotocol.vega.Governance.UpdateNetwork) change_,
+          updateNetworkParameterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Governance.UpdateNetworkParameter, io.vegaprotocol.vega.Governance.UpdateNetworkParameter.Builder, io.vegaprotocol.vega.Governance.UpdateNetworkParameterOrBuilder>(
+                  (io.vegaprotocol.vega.Governance.UpdateNetworkParameter) change_,
                   getParentForChildren(),
                   isClean());
           change_ = null;
         }
         changeCase_ = 103;
         onChanged();;
-        return updateNetworkBuilder_;
+        return updateNetworkParameterBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -11734,7 +9555,7 @@ public final class Governance {
        * <code>.vega.NewAsset newAsset = 104;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.NewAsset, io.vegaprotocol.vega.Governance.NewAsset.Builder, io.vegaprotocol.vega.Governance.NewAssetOrBuilder> 
+          io.vegaprotocol.vega.Governance.NewAsset, io.vegaprotocol.vega.Governance.NewAsset.Builder, io.vegaprotocol.vega.Governance.NewAssetOrBuilder>
           getNewAssetFieldBuilder() {
         if (newAssetBuilder_ == null) {
           if (!(changeCase_ == 104)) {
@@ -11840,7 +9661,7 @@ public final class Governance {
      *
      * <code>repeated .vega.Vote yes = 2;</code>
      */
-    java.util.List<io.vegaprotocol.vega.Governance.Vote> 
+    java.util.List<io.vegaprotocol.vega.Governance.Vote>
         getYesList();
     /**
      * <pre>
@@ -11865,7 +9686,7 @@ public final class Governance {
      *
      * <code>repeated .vega.Vote yes = 2;</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder>
         getYesOrBuilderList();
     /**
      * <pre>
@@ -11884,7 +9705,7 @@ public final class Governance {
      *
      * <code>repeated .vega.Vote no = 3;</code>
      */
-    java.util.List<io.vegaprotocol.vega.Governance.Vote> 
+    java.util.List<io.vegaprotocol.vega.Governance.Vote>
         getNoList();
     /**
      * <pre>
@@ -11909,7 +9730,7 @@ public final class Governance {
      *
      * <code>repeated .vega.Vote no = 3;</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder>
         getNoOrBuilderList();
     /**
      * <pre>
@@ -11924,6 +9745,8 @@ public final class Governance {
     /**
      * <pre>
      * All latest YES votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; yesParty = 4;</code>
@@ -11932,6 +9755,8 @@ public final class Governance {
     /**
      * <pre>
      * All latest YES votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; yesParty = 4;</code>
@@ -11947,6 +9772,8 @@ public final class Governance {
     /**
      * <pre>
      * All latest YES votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; yesParty = 4;</code>
@@ -11956,6 +9783,8 @@ public final class Governance {
     /**
      * <pre>
      * All latest YES votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; yesParty = 4;</code>
@@ -11967,6 +9796,8 @@ public final class Governance {
     /**
      * <pre>
      * All latest YES votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; yesParty = 4;</code>
@@ -11977,7 +9808,9 @@ public final class Governance {
 
     /**
      * <pre>
-     * All latest NO votes by party (unique).
+     * All latest NO votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; noParty = 5;</code>
@@ -11985,7 +9818,9 @@ public final class Governance {
     int getNoPartyCount();
     /**
      * <pre>
-     * All latest NO votes by party (unique).
+     * All latest NO votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; noParty = 5;</code>
@@ -12000,7 +9835,9 @@ public final class Governance {
     getNoParty();
     /**
      * <pre>
-     * All latest NO votes by party (unique).
+     * All latest NO votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; noParty = 5;</code>
@@ -12009,7 +9846,9 @@ public final class Governance {
     getNoPartyMap();
     /**
      * <pre>
-     * All latest NO votes by party (unique).
+     * All latest NO votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; noParty = 5;</code>
@@ -12020,7 +9859,9 @@ public final class Governance {
         io.vegaprotocol.vega.Governance.Vote defaultValue);
     /**
      * <pre>
-     * All latest NO votes by party (unique).
+     * All latest NO votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; noParty = 5;</code>
@@ -12236,7 +10077,7 @@ public final class Governance {
      *
      * <code>repeated .vega.Vote yes = 2;</code>
      */
-    public java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder>
         getYesOrBuilderList() {
       return yes_;
     }
@@ -12291,7 +10132,7 @@ public final class Governance {
      *
      * <code>repeated .vega.Vote no = 3;</code>
      */
-    public java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder>
         getNoOrBuilderList() {
       return no_;
     }
@@ -12333,7 +10174,7 @@ public final class Governance {
           java.lang.String, io.vegaprotocol.vega.Governance.Vote> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, io.vegaprotocol.vega.Governance.Vote>newDefaultInstance(
-                  io.vegaprotocol.vega.Governance.internal_static_vega_GovernanceData_YesPartyEntry_descriptor, 
+                  io.vegaprotocol.vega.Governance.internal_static_vega_GovernanceData_YesPartyEntry_descriptor,
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
@@ -12356,6 +10197,8 @@ public final class Governance {
     /**
      * <pre>
      * All latest YES votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; yesParty = 4;</code>
@@ -12376,6 +10219,8 @@ public final class Governance {
     /**
      * <pre>
      * All latest YES votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; yesParty = 4;</code>
@@ -12387,6 +10232,8 @@ public final class Governance {
     /**
      * <pre>
      * All latest YES votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; yesParty = 4;</code>
@@ -12403,6 +10250,8 @@ public final class Governance {
     /**
      * <pre>
      * All latest YES votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; yesParty = 4;</code>
@@ -12425,7 +10274,7 @@ public final class Governance {
           java.lang.String, io.vegaprotocol.vega.Governance.Vote> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, io.vegaprotocol.vega.Governance.Vote>newDefaultInstance(
-                  io.vegaprotocol.vega.Governance.internal_static_vega_GovernanceData_NoPartyEntry_descriptor, 
+                  io.vegaprotocol.vega.Governance.internal_static_vega_GovernanceData_NoPartyEntry_descriptor,
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
@@ -12447,7 +10296,9 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All latest NO votes by party (unique).
+     * All latest NO votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; noParty = 5;</code>
@@ -12467,7 +10318,9 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All latest NO votes by party (unique).
+     * All latest NO votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; noParty = 5;</code>
@@ -12478,7 +10331,9 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All latest NO votes by party (unique).
+     * All latest NO votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; noParty = 5;</code>
@@ -12494,7 +10349,9 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All latest NO votes by party (unique).
+     * All latest NO votes by party (guaranteed to be unique).
+     * key (string) is the party ID (public key)
+     * value (Vote) is the vote cast by the given party
      * </pre>
      *
      * <code>map&lt;string, .vega.Vote&gt; noParty = 5;</code>
@@ -12956,7 +10813,7 @@ public final class Governance {
               yesBuilder_ = null;
               yes_ = other.yes_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              yesBuilder_ = 
+              yesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getYesFieldBuilder() : null;
             } else {
@@ -12982,7 +10839,7 @@ public final class Governance {
               noBuilder_ = null;
               no_ = other.no_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              noBuilder_ = 
+              noBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getNoFieldBuilder() : null;
             } else {
@@ -13164,7 +11021,7 @@ public final class Governance {
        * <code>.vega.Proposal proposal = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.Proposal, io.vegaprotocol.vega.Governance.Proposal.Builder, io.vegaprotocol.vega.Governance.ProposalOrBuilder> 
+          io.vegaprotocol.vega.Governance.Proposal, io.vegaprotocol.vega.Governance.Proposal.Builder, io.vegaprotocol.vega.Governance.ProposalOrBuilder>
           getProposalFieldBuilder() {
         if (proposalBuilder_ == null) {
           proposalBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -13432,7 +11289,7 @@ public final class Governance {
        *
        * <code>repeated .vega.Vote yes = 2;</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder>
            getYesOrBuilderList() {
         if (yesBuilder_ != null) {
           return yesBuilder_.getMessageOrBuilderList();
@@ -13470,12 +11327,12 @@ public final class Governance {
        *
        * <code>repeated .vega.Vote yes = 2;</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Governance.Vote.Builder> 
+      public java.util.List<io.vegaprotocol.vega.Governance.Vote.Builder>
            getYesBuilderList() {
         return getYesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder> 
+          io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder>
           getYesFieldBuilder() {
         if (yesBuilder_ == null) {
           yesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -13744,7 +11601,7 @@ public final class Governance {
        *
        * <code>repeated .vega.Vote no = 3;</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder>
            getNoOrBuilderList() {
         if (noBuilder_ != null) {
           return noBuilder_.getMessageOrBuilderList();
@@ -13782,12 +11639,12 @@ public final class Governance {
        *
        * <code>repeated .vega.Vote no = 3;</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Governance.Vote.Builder> 
+      public java.util.List<io.vegaprotocol.vega.Governance.Vote.Builder>
            getNoBuilderList() {
         return getNoFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder> 
+          io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder>
           getNoFieldBuilder() {
         if (noBuilder_ == null) {
           noBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -13830,6 +11687,8 @@ public final class Governance {
       /**
        * <pre>
        * All latest YES votes by party (guaranteed to be unique).
+       * key (string) is the party ID (public key)
+       * value (Vote) is the vote cast by the given party
        * </pre>
        *
        * <code>map&lt;string, .vega.Vote&gt; yesParty = 4;</code>
@@ -13850,6 +11709,8 @@ public final class Governance {
       /**
        * <pre>
        * All latest YES votes by party (guaranteed to be unique).
+       * key (string) is the party ID (public key)
+       * value (Vote) is the vote cast by the given party
        * </pre>
        *
        * <code>map&lt;string, .vega.Vote&gt; yesParty = 4;</code>
@@ -13861,6 +11722,8 @@ public final class Governance {
       /**
        * <pre>
        * All latest YES votes by party (guaranteed to be unique).
+       * key (string) is the party ID (public key)
+       * value (Vote) is the vote cast by the given party
        * </pre>
        *
        * <code>map&lt;string, .vega.Vote&gt; yesParty = 4;</code>
@@ -13877,6 +11740,8 @@ public final class Governance {
       /**
        * <pre>
        * All latest YES votes by party (guaranteed to be unique).
+       * key (string) is the party ID (public key)
+       * value (Vote) is the vote cast by the given party
        * </pre>
        *
        * <code>map&lt;string, .vega.Vote&gt; yesParty = 4;</code>
@@ -13901,6 +11766,8 @@ public final class Governance {
       /**
        * <pre>
        * All latest YES votes by party (guaranteed to be unique).
+       * key (string) is the party ID (public key)
+       * value (Vote) is the vote cast by the given party
        * </pre>
        *
        * <code>map&lt;string, .vega.Vote&gt; yesParty = 4;</code>
@@ -13924,6 +11791,8 @@ public final class Governance {
       /**
        * <pre>
        * All latest YES votes by party (guaranteed to be unique).
+       * key (string) is the party ID (public key)
+       * value (Vote) is the vote cast by the given party
        * </pre>
        *
        * <code>map&lt;string, .vega.Vote&gt; yesParty = 4;</code>
@@ -13940,6 +11809,8 @@ public final class Governance {
       /**
        * <pre>
        * All latest YES votes by party (guaranteed to be unique).
+       * key (string) is the party ID (public key)
+       * value (Vote) is the vote cast by the given party
        * </pre>
        *
        * <code>map&lt;string, .vega.Vote&gt; yesParty = 4;</code>
@@ -13980,7 +11851,9 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest NO votes by party (unique).
+       * All latest NO votes by party (guaranteed to be unique).
+       * key (string) is the party ID (public key)
+       * value (Vote) is the vote cast by the given party
        * </pre>
        *
        * <code>map&lt;string, .vega.Vote&gt; noParty = 5;</code>
@@ -14000,7 +11873,9 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest NO votes by party (unique).
+       * All latest NO votes by party (guaranteed to be unique).
+       * key (string) is the party ID (public key)
+       * value (Vote) is the vote cast by the given party
        * </pre>
        *
        * <code>map&lt;string, .vega.Vote&gt; noParty = 5;</code>
@@ -14011,7 +11886,9 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest NO votes by party (unique).
+       * All latest NO votes by party (guaranteed to be unique).
+       * key (string) is the party ID (public key)
+       * value (Vote) is the vote cast by the given party
        * </pre>
        *
        * <code>map&lt;string, .vega.Vote&gt; noParty = 5;</code>
@@ -14027,7 +11904,9 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest NO votes by party (unique).
+       * All latest NO votes by party (guaranteed to be unique).
+       * key (string) is the party ID (public key)
+       * value (Vote) is the vote cast by the given party
        * </pre>
        *
        * <code>map&lt;string, .vega.Vote&gt; noParty = 5;</code>
@@ -14051,7 +11930,9 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest NO votes by party (unique).
+       * All latest NO votes by party (guaranteed to be unique).
+       * key (string) is the party ID (public key)
+       * value (Vote) is the vote cast by the given party
        * </pre>
        *
        * <code>map&lt;string, .vega.Vote&gt; noParty = 5;</code>
@@ -14074,7 +11955,9 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest NO votes by party (unique).
+       * All latest NO votes by party (guaranteed to be unique).
+       * key (string) is the party ID (public key)
+       * value (Vote) is the vote cast by the given party
        * </pre>
        *
        * <code>map&lt;string, .vega.Vote&gt; noParty = 5;</code>
@@ -14090,7 +11973,9 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest NO votes by party (unique).
+       * All latest NO votes by party (guaranteed to be unique).
+       * key (string) is the party ID (public key)
+       * value (Vote) is the vote cast by the given party
        * </pre>
        *
        * <code>map&lt;string, .vega.Vote&gt; noParty = 5;</code>
@@ -14649,7 +12534,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         iD_ = s;
@@ -14667,7 +12552,7 @@ public final class Governance {
         getIDBytes() {
       java.lang.Object ref = iD_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         iD_ = b;
@@ -14691,7 +12576,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         reference_ = s;
@@ -14709,7 +12594,7 @@ public final class Governance {
         getReferenceBytes() {
       java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         reference_ = b;
@@ -14733,7 +12618,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         partyID_ = s;
@@ -14751,7 +12636,7 @@ public final class Governance {
         getPartyIDBytes() {
       java.lang.Object ref = partyID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         partyID_ = b;
@@ -15308,7 +13193,7 @@ public final class Governance {
           getIDBytes() {
         java.lang.Object ref = iD_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           iD_ = b;
@@ -15397,7 +13282,7 @@ public final class Governance {
           getReferenceBytes() {
         java.lang.Object ref = reference_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           reference_ = b;
@@ -15486,7 +13371,7 @@ public final class Governance {
           getPartyIDBytes() {
         java.lang.Object ref = partyID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           partyID_ = b;
@@ -15787,7 +13672,7 @@ public final class Governance {
        * <code>.vega.ProposalTerms terms = 6 [(.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.ProposalTerms, io.vegaprotocol.vega.Governance.ProposalTerms.Builder, io.vegaprotocol.vega.Governance.ProposalTermsOrBuilder> 
+          io.vegaprotocol.vega.Governance.ProposalTerms, io.vegaprotocol.vega.Governance.ProposalTerms.Builder, io.vegaprotocol.vega.Governance.ProposalTermsOrBuilder>
           getTermsFieldBuilder() {
         if (termsBuilder_ == null) {
           termsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -16233,7 +14118,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         partyID_ = s;
@@ -16251,7 +14136,7 @@ public final class Governance {
         getPartyIDBytes() {
       java.lang.Object ref = partyID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         partyID_ = b;
@@ -16300,7 +14185,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         proposalID_ = s;
@@ -16318,7 +14203,7 @@ public final class Governance {
         getProposalIDBytes() {
       java.lang.Object ref = proposalID_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         proposalID_ = b;
@@ -16729,7 +14614,7 @@ public final class Governance {
           getPartyIDBytes() {
         java.lang.Object ref = partyID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           partyID_ = b;
@@ -16883,7 +14768,7 @@ public final class Governance {
           getProposalIDBytes() {
         java.lang.Object ref = proposalID_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           proposalID_ = b;
@@ -17032,78 +14917,68 @@ public final class Governance {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_vega_NetworkConfiguration_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_vega_NetworkConfiguration_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_vega_FeeFactorsConfiguration_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_vega_FeeFactorsConfiguration_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_FutureProduct_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_FutureProduct_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_InstrumentConfiguration_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_InstrumentConfiguration_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_NewMarketConfiguration_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_NewMarketConfiguration_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_NewMarket_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_NewMarket_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_UpdateMarket_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_UpdateMarket_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_vega_UpdateNetwork_descriptor;
-  private static final 
+    internal_static_vega_UpdateNetworkParameter_descriptor;
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_vega_UpdateNetwork_fieldAccessorTable;
+      internal_static_vega_UpdateNetworkParameter_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_NewAsset_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_NewAsset_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_ProposalTerms_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_ProposalTerms_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_GovernanceData_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_GovernanceData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_GovernanceData_YesPartyEntry_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_GovernanceData_YesPartyEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_GovernanceData_NoPartyEntry_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_GovernanceData_NoPartyEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Proposal_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Proposal_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Vote_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Vote_fieldAccessorTable;
 
@@ -17117,89 +14992,88 @@ public final class Governance {
     java.lang.String[] descriptorData = {
       "\n\026proto/governance.proto\022\004vega\0326github.c" +
       "om/mwitkow/go-proto-validators/validator" +
-      ".proto\032\023proto/markets.proto\032\022proto/asset" +
-      "s.proto\"\343\002\n\024NetworkConfiguration\022\031\n\021minC" +
-      "loseInSeconds\030\001 \001(\003\022\031\n\021maxCloseInSeconds" +
-      "\030\002 \001(\003\022\031\n\021minEnactInSeconds\030\003 \001(\003\022\031\n\021max" +
-      "EnactInSeconds\030\004 \001(\003\022\035\n\025requiredParticip" +
-      "ation\030\005 \001(\002\022\030\n\020requiredMajority\030\006 \001(\002\022\032\n" +
-      "\022minProposerBalance\030\007 \001(\002\022\027\n\017minVoterBal" +
-      "ance\030\010 \001(\002\0221\n\023marginConfiguration\030\t \001(\0132" +
-      "\024.vega.ScalingFactors\022>\n\027feeFactorsConfi" +
-      "guration\030\n \001(\0132\035.vega.FeeFactorsConfigur" +
-      "ation\"\\\n\027FeeFactorsConfiguration\022\031\n\021infr" +
-      "astructureFee\030\001 \001(\t\022\020\n\010makerFee\030\002 \001(\t\022\024\n" +
-      "\014liquidityFee\030\003 \001(\t\"@\n\rFutureProduct\022\030\n\010" +
-      "maturity\030\001 \001(\tB\006\342\337\037\002X\001\022\025\n\005asset\030\002 \001(\tB\006\342" +
-      "\337\037\002X\001\"\254\001\n\027InstrumentConfiguration\022\024\n\004nam" +
-      "e\030\001 \001(\tB\006\342\337\037\002X\001\022\024\n\004code\030\002 \001(\tB\006\342\337\037\002X\001\022\030\n" +
-      "\010baseName\030\003 \001(\tB\006\342\337\037\002X\001\022\031\n\tquoteName\030\004 \001" +
-      "(\tB\006\342\337\037\002X\001\022%\n\006future\030d \001(\0132\023.vega.Future" +
-      "ProductH\000B\t\n\007product\"\374\002\n\026NewMarketConfig" +
-      "uration\0229\n\ninstrument\030\001 \001(\0132\035.vega.Instr" +
-      "umentConfigurationB\006\342\337\037\002 \001\022\036\n\rdecimalPla" +
-      "ces\030\002 \001(\004B\007\342\337\037\003\030\226\001\022\020\n\010metadata\030\003 \003(\t\022\036\n\026" +
-      "openingAuctionDuration\030\004 \001(\003\022)\n\006simple\030d" +
-      " \001(\0132\027.vega.SimpleModelParamsH\000\022-\n\tlogNo" +
-      "rmal\030e \001(\0132\030.vega.LogNormalRiskModelH\000\022." +
-      "\n\ncontinuous\030\310\001 \001(\0132\027.vega.ContinuousTra" +
-      "dingH\001\022*\n\010discrete\030\311\001 \001(\0132\025.vega.Discret" +
-      "eTradingH\001B\020\n\016riskParametersB\r\n\013tradingM" +
-      "ode\"B\n\tNewMarket\0225\n\007changes\030\001 \001(\0132\034.vega" +
-      ".NewMarketConfigurationB\006\342\337\037\002 \001\"\016\n\014Updat" +
-      "eMarket\"D\n\rUpdateNetwork\0223\n\007changes\030\001 \001(" +
-      "\0132\032.vega.NetworkConfigurationB\006\342\337\037\002 \001\"6\n" +
-      "\010NewAsset\022*\n\007changes\030\001 \001(\0132\021.vega.AssetS" +
-      "ourceB\006\342\337\037\002 \001\"\240\002\n\rProposalTerms\022 \n\020closi" +
-      "ngTimestamp\030\001 \001(\003B\006\342\337\037\002\020\000\022\"\n\022enactmentTi" +
-      "mestamp\030\002 \001(\003B\006\342\337\037\002\020\000\022\033\n\023validationTimes" +
-      "tamp\030\003 \001(\003\022*\n\014updateMarket\030e \001(\0132\022.vega." +
-      "UpdateMarketH\000\022$\n\tnewMarket\030f \001(\0132\017.vega" +
-      ".NewMarketH\000\022,\n\rupdateNetwork\030g \001(\0132\023.ve" +
-      "ga.UpdateNetworkH\000\022\"\n\010newAsset\030h \001(\0132\016.v" +
-      "ega.NewAssetH\000B\010\n\006change\"\306\002\n\016GovernanceD" +
-      "ata\022 \n\010proposal\030\001 \001(\0132\016.vega.Proposal\022\027\n" +
-      "\003yes\030\002 \003(\0132\n.vega.Vote\022\026\n\002no\030\003 \003(\0132\n.veg" +
-      "a.Vote\0224\n\010yesParty\030\004 \003(\0132\".vega.Governan" +
-      "ceData.YesPartyEntry\0222\n\007noParty\030\005 \003(\0132!." +
-      "vega.GovernanceData.NoPartyEntry\032;\n\rYesP" +
-      "artyEntry\022\013\n\003key\030\001 \001(\t\022\031\n\005value\030\002 \001(\0132\n." +
-      "vega.Vote:\0028\001\032:\n\014NoPartyEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022\031\n\005value\030\002 \001(\0132\n.vega.Vote:\0028\001\"\205\003\n\010Pr" +
-      "oposal\022\n\n\002ID\030\001 \001(\t\022\021\n\treference\030\002 \001(\t\022\027\n" +
-      "\007partyID\030\003 \001(\tB\006\342\337\037\002X\001\022,\n\005state\030\004 \001(\0162\024." +
-      "vega.Proposal.StateB\007\342\337\037\003\210\001\001\022\021\n\ttimestam" +
-      "p\030\005 \001(\003\022*\n\005terms\030\006 \001(\0132\023.vega.ProposalTe" +
-      "rmsB\006\342\337\037\002 \001\022#\n\006reason\030\007 \001(\0162\023.vega.Propo" +
-      "salError\"\256\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020" +
-      "\000\022\020\n\014STATE_FAILED\020\001\022\016\n\nSTATE_OPEN\020\002\022\020\n\014S" +
-      "TATE_PASSED\020\003\022\022\n\016STATE_REJECTED\020\004\022\022\n\016STA" +
-      "TE_DECLINED\020\005\022\021\n\rSTATE_ENACTED\020\006\022\037\n\033STAT" +
-      "E_WAITING_FOR_NODE_VOTE\020\007\"\265\001\n\004Vote\022\027\n\007pa" +
-      "rtyID\030\001 \001(\tB\006\342\337\037\002X\001\022(\n\005value\030\002 \001(\0162\020.veg" +
-      "a.Vote.ValueB\007\342\337\037\003\210\001\001\022\032\n\nproposalID\030\003 \001(" +
-      "\tB\006\342\337\037\002X\001\022\021\n\ttimestamp\030\004 \001(\003\";\n\005Value\022\025\n" +
-      "\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALUE_NO\020\001\022\r\n\tVA" +
-      "LUE_YES\020\002*\377\005\n\rProposalError\022\036\n\032PROPOSAL_" +
-      "ERROR_UNSPECIFIED\020\000\022&\n\"PROPOSAL_ERROR_CL" +
-      "OSE_TIME_TOO_SOON\020\001\022&\n\"PROPOSAL_ERROR_CL" +
-      "OSE_TIME_TOO_LATE\020\002\022&\n\"PROPOSAL_ERROR_EN" +
-      "ACT_TIME_TOO_SOON\020\003\022&\n\"PROPOSAL_ERROR_EN" +
-      "ACT_TIME_TOO_LATE\020\004\022&\n\"PROPOSAL_ERROR_IN" +
-      "SUFFICIENT_TOKENS\020\005\022.\n*PROPOSAL_ERROR_IN" +
-      "VALID_INSTRUMENT_SECURITY\020\006\022\035\n\031PROPOSAL_" +
-      "ERROR_NO_PRODUCT\020\007\022&\n\"PROPOSAL_ERROR_UNS" +
-      "UPPORTED_PRODUCT\020\010\0223\n/PROPOSAL_ERROR_INV" +
-      "ALID_FUTURE_PRODUCT_TIMESTAMP\020\t\022-\n)PROPO" +
-      "SAL_ERROR_PRODUCT_MATURITY_IS_PASSED\020\n\022\"" +
-      "\n\036PROPOSAL_ERROR_NO_TRADING_MODE\020\013\022+\n\'PR" +
-      "OPOSAL_ERROR_UNSUPPORTED_TRADING_MODE\020\014\022" +
-      ")\n%PROPOSAL_ERROR_NODE_VALIDATION_FAILED" +
-      "\020\r\022.\n*PROPOSAL_ERROR_MISSING_BUILTIN_ASS" +
-      "ET_FIELD\020\016\0221\n-PROPOSAL_ERROR_MISSING_ERC" +
-      "20_CONTRACT_ADDRESS\020\017\022 \n\034PROPOSAL_ERROR_" +
-      "INVALID_ASSET\020\020\022*\n&PROPOSAL_ERROR_INCOMP" +
-      "ATIBLE_TIMESTAMPS\020\021B7\n\024io.vegaprotocol.v" +
+      ".proto\032\023proto/markets.proto\032\020proto/vega." +
+      "proto\032\022proto/assets.proto\"@\n\rFutureProdu" +
+      "ct\022\030\n\010maturity\030\001 \001(\tB\006\342\337\037\002X\001\022\025\n\005asset\030\002 " +
+      "\001(\tB\006\342\337\037\002X\001\"\254\001\n\027InstrumentConfiguration\022" +
+      "\024\n\004name\030\001 \001(\tB\006\342\337\037\002X\001\022\024\n\004code\030\002 \001(\tB\006\342\337\037" +
+      "\002X\001\022\030\n\010baseName\030\003 \001(\tB\006\342\337\037\002X\001\022\031\n\tquoteNa" +
+      "me\030\004 \001(\tB\006\342\337\037\002X\001\022%\n\006future\030d \001(\0132\023.vega." +
+      "FutureProductH\000B\t\n\007product\"\274\003\n\026NewMarket" +
+      "Configuration\0229\n\ninstrument\030\001 \001(\0132\035.vega" +
+      ".InstrumentConfigurationB\006\342\337\037\002 \001\022\036\n\rdeci" +
+      "malPlaces\030\002 \001(\004B\007\342\337\037\003\030\226\001\022\020\n\010metadata\030\003 \003" +
+      "(\t\022\036\n\026openingAuctionDuration\030\004 \001(\003\022>\n\027pr" +
+      "iceMonitoringSettings\030\005 \001(\0132\035.vega.Price" +
+      "MonitoringSettings\022)\n\006simple\030d \001(\0132\027.veg" +
+      "a.SimpleModelParamsH\000\022-\n\tlogNormal\030e \001(\013" +
+      "2\030.vega.LogNormalRiskModelH\000\022.\n\ncontinuo" +
+      "us\030\310\001 \001(\0132\027.vega.ContinuousTradingH\001\022*\n\010" +
+      "discrete\030\311\001 \001(\0132\025.vega.DiscreteTradingH\001" +
+      "B\020\n\016riskParametersB\r\n\013tradingMode\"B\n\tNew" +
+      "Market\0225\n\007changes\030\001 \001(\0132\034.vega.NewMarket" +
+      "ConfigurationB\006\342\337\037\002 \001\"\016\n\014UpdateMarket\"I\n" +
+      "\026UpdateNetworkParameter\022/\n\007changes\030\001 \001(\013" +
+      "2\026.vega.NetworkParameterB\006\342\337\037\002 \001\"6\n\010NewA" +
+      "sset\022*\n\007changes\030\001 \001(\0132\021.vega.AssetSource" +
+      "B\006\342\337\037\002 \001\"\262\002\n\rProposalTerms\022 \n\020closingTim" +
+      "estamp\030\001 \001(\003B\006\342\337\037\002\020\000\022\"\n\022enactmentTimesta" +
+      "mp\030\002 \001(\003B\006\342\337\037\002\020\000\022\033\n\023validationTimestamp\030" +
+      "\003 \001(\003\022*\n\014updateMarket\030e \001(\0132\022.vega.Updat" +
+      "eMarketH\000\022$\n\tnewMarket\030f \001(\0132\017.vega.NewM" +
+      "arketH\000\022>\n\026updateNetworkParameter\030g \001(\0132" +
+      "\034.vega.UpdateNetworkParameterH\000\022\"\n\010newAs" +
+      "set\030h \001(\0132\016.vega.NewAssetH\000B\010\n\006change\"\306\002" +
+      "\n\016GovernanceData\022 \n\010proposal\030\001 \001(\0132\016.veg" +
+      "a.Proposal\022\027\n\003yes\030\002 \003(\0132\n.vega.Vote\022\026\n\002n" +
+      "o\030\003 \003(\0132\n.vega.Vote\0224\n\010yesParty\030\004 \003(\0132\"." +
+      "vega.GovernanceData.YesPartyEntry\0222\n\007noP" +
+      "arty\030\005 \003(\0132!.vega.GovernanceData.NoParty" +
+      "Entry\032;\n\rYesPartyEntry\022\013\n\003key\030\001 \001(\t\022\031\n\005v" +
+      "alue\030\002 \001(\0132\n.vega.Vote:\0028\001\032:\n\014NoPartyEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022\031\n\005value\030\002 \001(\0132\n.vega.Vo" +
+      "te:\0028\001\"\205\003\n\010Proposal\022\n\n\002ID\030\001 \001(\t\022\021\n\trefer" +
+      "ence\030\002 \001(\t\022\027\n\007partyID\030\003 \001(\tB\006\342\337\037\002X\001\022,\n\005s" +
+      "tate\030\004 \001(\0162\024.vega.Proposal.StateB\007\342\337\037\003\210\001" +
+      "\001\022\021\n\ttimestamp\030\005 \001(\003\022*\n\005terms\030\006 \001(\0132\023.ve" +
+      "ga.ProposalTermsB\006\342\337\037\002 \001\022#\n\006reason\030\007 \001(\016" +
+      "2\023.vega.ProposalError\"\256\001\n\005State\022\025\n\021STATE" +
+      "_UNSPECIFIED\020\000\022\020\n\014STATE_FAILED\020\001\022\016\n\nSTAT" +
+      "E_OPEN\020\002\022\020\n\014STATE_PASSED\020\003\022\022\n\016STATE_REJE" +
+      "CTED\020\004\022\022\n\016STATE_DECLINED\020\005\022\021\n\rSTATE_ENAC" +
+      "TED\020\006\022\037\n\033STATE_WAITING_FOR_NODE_VOTE\020\007\"\265" +
+      "\001\n\004Vote\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\022(\n\005valu" +
+      "e\030\002 \001(\0162\020.vega.Vote.ValueB\007\342\337\037\003\210\001\001\022\032\n\npr" +
+      "oposalID\030\003 \001(\tB\006\342\337\037\002X\001\022\021\n\ttimestamp\030\004 \001(" +
+      "\003\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VAL" +
+      "UE_NO\020\001\022\r\n\tVALUE_YES\020\002*\262\010\n\rProposalError" +
+      "\022\036\n\032PROPOSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROP" +
+      "OSAL_ERROR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROP" +
+      "OSAL_ERROR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROP" +
+      "OSAL_ERROR_ENACT_TIME_TOO_SOON\020\003\022&\n\"PROP" +
+      "OSAL_ERROR_ENACT_TIME_TOO_LATE\020\004\022&\n\"PROP" +
+      "OSAL_ERROR_INSUFFICIENT_TOKENS\020\005\022.\n*PROP" +
+      "OSAL_ERROR_INVALID_INSTRUMENT_SECURITY\020\006" +
+      "\022\035\n\031PROPOSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PROPO" +
+      "SAL_ERROR_UNSUPPORTED_PRODUCT\020\010\0223\n/PROPO" +
+      "SAL_ERROR_INVALID_FUTURE_PRODUCT_TIMESTA" +
+      "MP\020\t\022-\n)PROPOSAL_ERROR_PRODUCT_MATURITY_" +
+      "IS_PASSED\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRADING" +
+      "_MODE\020\013\022+\n\'PROPOSAL_ERROR_UNSUPPORTED_TR" +
+      "ADING_MODE\020\014\022)\n%PROPOSAL_ERROR_NODE_VALI" +
+      "DATION_FAILED\020\r\022.\n*PROPOSAL_ERROR_MISSIN" +
+      "G_BUILTIN_ASSET_FIELD\020\016\0221\n-PROPOSAL_ERRO" +
+      "R_MISSING_ERC20_CONTRACT_ADDRESS\020\017\022 \n\034PR" +
+      "OPOSAL_ERROR_INVALID_ASSET\020\020\022*\n&PROPOSAL" +
+      "_ERROR_INCOMPATIBLE_TIMESTAMPS\020\021\022%\n!PROP" +
+      "OSAL_ERROR_NO_RISK_PARAMETERS\020\022\0220\n,PROPO" +
+      "SAL_ERROR_NETWORK_PARAMETER_INVALID_KEY\020" +
+      "\023\0222\n.PROPOSAL_ERROR_NETWORK_PARAMETER_IN" +
+      "VALID_VALUE\020\024\0226\n2PROPOSAL_ERROR_NETWORK_" +
+      "PARAMETER_VALIDATION_FAILED\020\025\0225\n1PROPOSA" +
+      "L_ERROR_OPENING_AUCTION_DURATION_TOO_SMA" +
+      "LL\020\026\0225\n1PROPOSAL_ERROR_OPENING_AUCTION_D" +
+      "URATION_TOO_LARGE\020\027B7\n\024io.vegaprotocol.v" +
       "egaZ\037code.vegaprotocol.io/vega/protob\006pr" +
       "oto3"
     };
@@ -17216,70 +15090,59 @@ public final class Governance {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.github.mwitkow.go_proto_validators.Validator.getDescriptor(),
           io.vegaprotocol.vega.Markets.getDescriptor(),
+          io.vegaprotocol.vega.Vega.getDescriptor(),
           io.vegaprotocol.vega.Assets.getDescriptor(),
         }, assigner);
-    internal_static_vega_NetworkConfiguration_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_vega_NetworkConfiguration_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_vega_NetworkConfiguration_descriptor,
-        new java.lang.String[] { "MinCloseInSeconds", "MaxCloseInSeconds", "MinEnactInSeconds", "MaxEnactInSeconds", "RequiredParticipation", "RequiredMajority", "MinProposerBalance", "MinVoterBalance", "MarginConfiguration", "FeeFactorsConfiguration", });
-    internal_static_vega_FeeFactorsConfiguration_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_vega_FeeFactorsConfiguration_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_vega_FeeFactorsConfiguration_descriptor,
-        new java.lang.String[] { "InfrastructureFee", "MakerFee", "LiquidityFee", });
     internal_static_vega_FutureProduct_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_vega_FutureProduct_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_FutureProduct_descriptor,
         new java.lang.String[] { "Maturity", "Asset", });
     internal_static_vega_InstrumentConfiguration_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_vega_InstrumentConfiguration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_InstrumentConfiguration_descriptor,
         new java.lang.String[] { "Name", "Code", "BaseName", "QuoteName", "Future", "Product", });
     internal_static_vega_NewMarketConfiguration_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_vega_NewMarketConfiguration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_NewMarketConfiguration_descriptor,
-        new java.lang.String[] { "Instrument", "DecimalPlaces", "Metadata", "OpeningAuctionDuration", "Simple", "LogNormal", "Continuous", "Discrete", "RiskParameters", "TradingMode", });
+        new java.lang.String[] { "Instrument", "DecimalPlaces", "Metadata", "OpeningAuctionDuration", "PriceMonitoringSettings", "Simple", "LogNormal", "Continuous", "Discrete", "RiskParameters", "TradingMode", });
     internal_static_vega_NewMarket_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_vega_NewMarket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_NewMarket_descriptor,
         new java.lang.String[] { "Changes", });
     internal_static_vega_UpdateMarket_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_vega_UpdateMarket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_UpdateMarket_descriptor,
         new java.lang.String[] { });
-    internal_static_vega_UpdateNetwork_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_vega_UpdateNetwork_fieldAccessorTable = new
+    internal_static_vega_UpdateNetworkParameter_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_vega_UpdateNetworkParameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_vega_UpdateNetwork_descriptor,
+        internal_static_vega_UpdateNetworkParameter_descriptor,
         new java.lang.String[] { "Changes", });
     internal_static_vega_NewAsset_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_vega_NewAsset_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_NewAsset_descriptor,
         new java.lang.String[] { "Changes", });
     internal_static_vega_ProposalTerms_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_vega_ProposalTerms_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_ProposalTerms_descriptor,
-        new java.lang.String[] { "ClosingTimestamp", "EnactmentTimestamp", "ValidationTimestamp", "UpdateMarket", "NewMarket", "UpdateNetwork", "NewAsset", "Change", });
+        new java.lang.String[] { "ClosingTimestamp", "EnactmentTimestamp", "ValidationTimestamp", "UpdateMarket", "NewMarket", "UpdateNetworkParameter", "NewAsset", "Change", });
     internal_static_vega_GovernanceData_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_vega_GovernanceData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_GovernanceData_descriptor,
@@ -17297,13 +15160,13 @@ public final class Governance {
         internal_static_vega_GovernanceData_NoPartyEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_vega_Proposal_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_vega_Proposal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Proposal_descriptor,
         new java.lang.String[] { "ID", "Reference", "PartyID", "State", "Timestamp", "Terms", "Reason", });
     internal_static_vega_Vote_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_vega_Vote_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Vote_descriptor,
@@ -17315,6 +15178,7 @@ public final class Governance {
         .internalUpdateFileDescriptor(descriptor, registry);
     com.github.mwitkow.go_proto_validators.Validator.getDescriptor();
     io.vegaprotocol.vega.Markets.getDescriptor();
+    io.vegaprotocol.vega.Vega.getDescriptor();
     io.vegaprotocol.vega.Assets.getDescriptor();
   }
 

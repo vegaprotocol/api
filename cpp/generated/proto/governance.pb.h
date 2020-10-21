@@ -1410,7 +1410,7 @@ class ProposalTerms :
 };
 // -------------------------------------------------------------------
 
-class GovernanceData_YesPartyEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<GovernanceData_YesPartyEntry_DoNotUse, 
+class GovernanceData_YesPartyEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<GovernanceData_YesPartyEntry_DoNotUse,
     ::std::string, ::vega::Vote,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
@@ -1419,7 +1419,7 @@ public:
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  typedef ::google::protobuf::internal::MapEntry<GovernanceData_YesPartyEntry_DoNotUse, 
+  typedef ::google::protobuf::internal::MapEntry<GovernanceData_YesPartyEntry_DoNotUse,
     ::std::string, ::vega::Vote,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
@@ -1434,7 +1434,7 @@ static bool _ParseMap(const char* begin, const char* end, void* object, ::google
 
 // -------------------------------------------------------------------
 
-class GovernanceData_NoPartyEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<GovernanceData_NoPartyEntry_DoNotUse, 
+class GovernanceData_NoPartyEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<GovernanceData_NoPartyEntry_DoNotUse,
     ::std::string, ::vega::Vote,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
@@ -1443,7 +1443,7 @@ public:
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  typedef ::google::protobuf::internal::MapEntry<GovernanceData_NoPartyEntry_DoNotUse, 
+  typedef ::google::protobuf::internal::MapEntry<GovernanceData_NoPartyEntry_DoNotUse,
     ::std::string, ::vega::Vote,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,

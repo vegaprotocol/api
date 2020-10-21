@@ -562,13 +562,14 @@ const char descriptor_table_protodef_proto_2fgovernance_2eproto[] =
   "PARAMETER_VALIDATION_FAILED\020\025\0225\n1PROPOSA"
   "L_ERROR_OPENING_AUCTION_DURATION_TOO_SMA"
   "LL\020\026\0225\n1PROPOSAL_ERROR_OPENING_AUCTION_D"
-  "URATION_TOO_LARGE\020\027B!Z\037code.vegaprotocol"
-  ".io/vega/protob\006proto3"
+  "URATION_TOO_LARGE\020\027B7\n\024io.vegaprotocol.v"
+  "egaZ\037code.vegaprotocol.io/vega/protob\006pr"
+  "oto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fgovernance_2eproto = {
   false, InitDefaults_proto_2fgovernance_2eproto, 
   descriptor_table_protodef_proto_2fgovernance_2eproto,
-  "proto/governance.proto", &assign_descriptors_table_proto_2fgovernance_2eproto, 3382,
+  "proto/governance.proto", &assign_descriptors_table_proto_2fgovernance_2eproto, 3404,
 };
 
 void AddDescriptors_proto_2fgovernance_2eproto() {

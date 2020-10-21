@@ -17,14 +17,14 @@ preproto:
 	@mkdir -p proto && find "$(VEGACORE)"/proto -maxdepth 1 -name '*.proto' -exec cp '{}' proto/ ';'
 	@mkdir -p proto/api && find "$(VEGACORE)"/proto/api -maxdepth 1 -name '*.proto' -exec cp '{}' proto/api/ ';'
 	@mkdir -p proto/tm && find "$(VEGACORE)"/proto/tm -maxdepth 1 -name '*.proto' -exec cp '{}' proto/tm/ ';'
-	@find proto -name '*.proto' -print0 | xargs -0 sed --in-place -re 's#^[ \\t]+$$##'
+	@find proto -name '*.proto' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
 	@(cd "$(VEGACORE)" && git describe --tags) >proto/from.txt
 	@find proto -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega";'
 	@find proto/api -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.api";'
 	@find proto/tm -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.tm";'
 
 .PHONY: proto
-proto: proto-cpp proto-javascript proto-python
+proto: proto-cpp proto-java proto-javascript proto-python
 
 CPP_GENERATED_DIR := cpp/generated
 
@@ -37,7 +37,7 @@ proto-cpp:
 		-I. \
 		-Iexternal \
 		--cpp_out="$(CPP_GENERATED_DIR)"
-	@find cpp/generated -name '*.pb.cc' -o -name '*.pb.h' -print0 | xargs -0 sed --in-place -re 's#^[ \\t]+$$##'
+	@find "$(CPP_GENERATED_DIR)" -name '*.pb.cc' -o -name '*.pb.h' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
 
 JAVA_GENERATED_DIR := java/generated
 JAVA_LIB_DIR := java/lib
@@ -64,8 +64,8 @@ proto-java:
 		-Iexternal \
 		--java_out="$(JAVA_GENERATED_DIR)" \
 		--java_out="$(JAVA_GENERATED_DIR)/mwitkow-go_proto_validators-source.jar"
-	@find java/generated -name '*.java' -print0 | xargs -0 sed --in-place -re 's#^[ \\t]+$$##'
-	@find java/generated -name '*.java' -print0 | xargs -0 javac -cp "java/generated:$(JAVA_LIB_DIR)/$(JAR_PROTOBUF)"
+	@find "$(JAVA_GENERATED_DIR)" -name '*.java' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
+	@find "$(JAVA_GENERATED_DIR)" -name '*.java' -print0 | xargs -0 javac -cp "$(JAVA_GENERATED_DIR):$(JAVA_LIB_DIR)/$(JAR_PROTOBUF)"
 	@echo -e 'Manifest-Version: 1.0\nCreated-by: $(shell java -version 2>&1 | awk '/^openjdk version/ {gsub(/"/, ""); print $$3}') (OpenJDK)\nMain-Class: n/a\nClass-Path: $(JAR_PROTOBUF)\nName: Vega\nSpecification-Title: Vega\nSpecification-Version: $(VEGA_VERSION)\nSpecification-Vendor: Vega\nImplementation-Title: Vega\nImplementation-Version: $(API_CLIENTS_VERSION)\nImplementation-Vendor: Vega' >"$(JAVA_GENERATED_DIR)/manifest.txt"
 	@cd "$(JAVA_GENERATED_DIR)" && jar cfm "vega-$(VEGA_VERSION)-api-$(API_CLIENTS_VERSION).jar" manifest.txt com io
 
@@ -93,7 +93,7 @@ proto-javascript:
 		-e 's#\.\./github.com#../external/github.com#' \
 		"$(JAVASCRIPT_GENERATED_DIR)/proto"/*.js
 	@(cd js; ./.generate_indexjs.sh >index.js)
-
+	@find js/generated -name '*.js' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
 
 PYTHON_GENERATED_DIR := python/vegaapiclient/generated
 
@@ -136,6 +136,7 @@ proto-python:
 		"$(PYTHON_GENERATED_DIR)/proto/api"/*.py
 	@rm -rf "$(PYTHON_GENERATED_DIR)/github" "$(PYTHON_GENERATED_DIR)/github.com"
 	@cd python && python3 generate_init.py >"vegaapiclient/__init__.py"
+	@find "$(PYTHON_GENERATED_DIR)" -name '*.py' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
 
 .PHONY: test
 test: test-cpp test-javascript test-python
