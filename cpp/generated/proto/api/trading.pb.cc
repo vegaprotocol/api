@@ -3663,13 +3663,14 @@ const char descriptor_table_protodef_proto_2fapi_2ftrading_2eproto[] =
   "\010Deposits\022\024.api.DepositsRequest\032\025.api.De"
   "positsResponse\022R\n\021NetworkParameters\022\035.ap"
   "i.NetworkParametersRequest\032\036.api.Network"
-  "ParametersResponseB%Z#code.vegaprotocol."
-  "io/vega/proto/apib\006proto3"
+  "ParametersResponseB\?\n\030io.vegaprotocol.ve"
+  "ga.apiZ#code.vegaprotocol.io/vega/proto/"
+  "apib\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fapi_2ftrading_2eproto = {
   false, InitDefaults_proto_2fapi_2ftrading_2eproto, 
   descriptor_table_protodef_proto_2fapi_2ftrading_2eproto,
-  "proto/api/trading.proto", &assign_descriptors_table_proto_2fapi_2ftrading_2eproto, 12945,
+  "proto/api/trading.proto", &assign_descriptors_table_proto_2fapi_2ftrading_2eproto, 12971,
 };
 
 void AddDescriptors_proto_2fapi_2ftrading_2eproto() {

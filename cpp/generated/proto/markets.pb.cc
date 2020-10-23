@@ -758,13 +758,13 @@ const char descriptor_table_protodef_proto_2fmarkets_2eproto[] =
   "sTradingH\000\022)\n\010discrete\030e \001(\0132\025.vega.Disc"
   "reteTradingH\000\022>\n\027priceMonitoringSettings"
   "\030\006 \001(\0132\035.vega.PriceMonitoringSettingsB\r\n"
-  "\013tradingModeB!Z\037code.vegaprotocol.io/veg"
-  "a/protob\006proto3"
+  "\013tradingModeB7\n\024io.vegaprotocol.vegaZ\037co"
+  "de.vegaprotocol.io/vega/protob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fmarkets_2eproto = {
   false, InitDefaults_proto_2fmarkets_2eproto, 
   descriptor_table_protodef_proto_2fmarkets_2eproto,
-  "proto/markets.proto", &assign_descriptors_table_proto_2fmarkets_2eproto, 2375,
+  "proto/markets.proto", &assign_descriptors_table_proto_2fmarkets_2eproto, 2397,
 };
 
 void AddDescriptors_proto_2fmarkets_2eproto() {

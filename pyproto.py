@@ -1,4 +1,4 @@
-import grpc_tools
+import grpc_tools.protoc as gtp
 import sys
 
 """
@@ -10,4 +10,4 @@ result in unpredictable behaviour
 """
 
 if __name__ == "__main__":
-    grpc_tools.protoc.main(sys.argv)
+    gtp.main(sys.argv)

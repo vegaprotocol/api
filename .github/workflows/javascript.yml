@@ -2,12 +2,16 @@ name: Javascript tests
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - develop
+      - master
     paths-ignore:
       - "cpp/**"
       - "python/**"
   pull_request:
-    branches: [ master ]
+    branches:
+      - develop
+      - master
     paths-ignore:
       - "cpp/**"
       - "python/**"

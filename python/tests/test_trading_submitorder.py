@@ -56,7 +56,9 @@ def test_SubmitOrder(
             #     fh.write(f"{x}\n")
             break
         if x >= maxwait:
-            assert False, f"Failed to see {amt} {assetID} in {pubKey}'s general account"
+            assert (
+                False
+            ), f"Failed to see {amt} {assetID} in {pubKey}'s general account"
         time.sleep(1)
         x += 1
 
@@ -81,7 +83,9 @@ def test_SubmitOrder(
     blob = trading.PrepareSubmitOrder(request, contact_node=False).blob
 
     # Sign the tx
-    r = walletclient.signtx(base64.b64encode(blob).decode("ascii"), pubKey, False)
+    r = walletclient.signtx(
+        base64.b64encode(blob).decode("ascii"), pubKey, False
+    )
     check_response(r)
     signedTx = r.json()["signedTx"]
 

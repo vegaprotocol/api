@@ -754,13 +754,13 @@ const char descriptor_table_protodef_proto_2ftm_2freplay_2eproto[] =
   "t\030\002 \001(\003\022\014\n\004time\030\003 \001(\003\"%\n\tPublicKey\022\021\n\007ed"
   "25519\030\001 \001(\014H\000B\005\n\003sum*H\n\014EvidenceType\022\013\n\007"
   "UNKNOWN\020\000\022\022\n\016DUPLICATE_VOTE\020\001\022\027\n\023LIGHT_C"
-  "LIENT_ATTACK\020\002B\036Z\034code.vegaprotocol.io/v"
-  "ega/tmb\006proto3"
+  "LIENT_ATTACK\020\002B7\n\027io.vegaprotocol.vega.t"
+  "mZ\034code.vegaprotocol.io/vega/tmb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2ftm_2freplay_2eproto = {
   false, InitDefaults_proto_2ftm_2freplay_2eproto, 
   descriptor_table_protodef_proto_2ftm_2freplay_2eproto,
-  "proto/tm/replay.proto", &assign_descriptors_table_proto_2ftm_2freplay_2eproto, 2174,
+  "proto/tm/replay.proto", &assign_descriptors_table_proto_2ftm_2freplay_2eproto, 2199,
 };
 
 void AddDescriptors_proto_2ftm_2freplay_2eproto() {

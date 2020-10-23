@@ -4,10 +4,7 @@ import uuid
 from typing import Any, Callable
 
 from .blockchain import CommandByte
-from .generated.proto import (
-    vega_pb2 as vega,
-    vega_pb2_grpc as vega_grpc,
-)
+from .generated.proto import vega_pb2 as vega
 from .generated.proto.api import (
     trading_pb2 as trading,
     trading_pb2_grpc as trading_grpc,

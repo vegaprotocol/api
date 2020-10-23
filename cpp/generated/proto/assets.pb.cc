@@ -206,13 +206,13 @@ const char descriptor_table_protodef_proto_2fassets_2eproto[] =
   "\010decimals\030\004 \001(\004\022\033\n\023maxFaucetAmountMint\030\005"
   " \001(\t\" \n\005ERC20\022\027\n\017contractAddress\030\001 \001(\t\"/"
   "\n\tDevAssets\022\"\n\007sources\030\001 \003(\0132\021.vega.Asse"
-  "tSourceB!Z\037code.vegaprotocol.io/vega/pro"
-  "tob\006proto3"
+  "tSourceB7\n\024io.vegaprotocol.vegaZ\037code.ve"
+  "gaprotocol.io/vega/protob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fassets_2eproto = {
   false, InitDefaults_proto_2fassets_2eproto, 
   descriptor_table_protodef_proto_2fassets_2eproto,
-  "proto/assets.proto", &assign_descriptors_table_proto_2fassets_2eproto, 490,
+  "proto/assets.proto", &assign_descriptors_table_proto_2fassets_2eproto, 512,
 };
 
 void AddDescriptors_proto_2fassets_2eproto() {

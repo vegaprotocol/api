@@ -1,0 +1,5 @@
+*.jar
+*.class
+classes
+generated/manifest.txt
+lib
