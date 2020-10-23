@@ -3,6 +3,7 @@
 from .vegatradingclient import VegaTradingClient
 from .vegatradingdataclient import VegaTradingDataClient
 from .faucetclient import FaucetClient
+from .helpers import grpc_error_detail
 from .walletclient import WalletClient
 from .generated.proto import (
     api,
@@ -26,6 +27,7 @@ __all__ = [
     "VegaTradingDataClient",
     "FaucetClient",
     "WalletClient",
+    "grpc_error_detail",
     "api",
     "tm",
     "assets",
