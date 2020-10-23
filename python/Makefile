@@ -46,6 +46,10 @@ dist_test:
 	@python3 setup.py sdist bdist_wheel
 	@echo twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
+.PHONY: flake8
+flake8:
+	@find tests/ vegaapiclient/ -name generated -prune -o -name '*.py' -print |xargs flake8
+
 .PHONY: mypy
 mypy:
 	@env MYPYPATH=. mypy --ignore-missing-imports . | grep -vE '(^Found|/generated/|: note: )' ; \

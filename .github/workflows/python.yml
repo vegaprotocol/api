@@ -32,6 +32,12 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
+    - name: Lint with flake8
+      run: |
+        cd python
+        command -v flake8 1>/dev/null || pip install flake8
+        make flake8
+
     - name: Lint with black
       run: |
         cd python
