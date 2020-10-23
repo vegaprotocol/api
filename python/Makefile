@@ -16,11 +16,11 @@ default:
 
 .PHONY: black
 black:
-	@black --exclude generated vegaapiclient/ tests/
+	@black --exclude generated -l 79 vegaapiclient/ tests/
 
 .PHONY: blackcheck
 blackcheck:
-	@black --exclude generated --check vegaapiclient/ tests/
+	@black --exclude generated -l 79 --check vegaapiclient/ tests/
 
 .PHONY: coverage
 coverage: | varcheck pipenv_install
