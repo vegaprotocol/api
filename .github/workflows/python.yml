@@ -2,12 +2,16 @@ name: Python tests
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - develop
+      - master
     paths-ignore:
       - "cpp/**"
       - "js/**"
   pull_request:
-    branches: [ master ]
+    branches:
+      - develop
+      - master
     paths-ignore:
       - "cpp/**"
       - "js/**"
@@ -27,6 +31,12 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
+
+    - name: Lint with flake8
+      run: |
+        cd python
+        command -v flake8 1>/dev/null || pip install flake8
+        make flake8
 
     - name: Lint with black
       run: |

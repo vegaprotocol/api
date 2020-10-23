@@ -16,11 +16,11 @@ default:
 
 .PHONY: black
 black:
-	@black --exclude generated vegaapiclient/ tests/
+	@black --exclude generated -l 79 vegaapiclient/ tests/
 
 .PHONY: blackcheck
 blackcheck:
-	@black --exclude generated --check vegaapiclient/ tests/
+	@black --exclude generated -l 79 --check vegaapiclient/ tests/
 
 .PHONY: coverage
 coverage: | varcheck pipenv_install
@@ -45,6 +45,10 @@ dist_test:
 	@rm -rf dist && mkdir dist
 	@python3 setup.py sdist bdist_wheel
 	@echo twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
+.PHONY: flake8
+flake8:
+	@find tests/ vegaapiclient/ -name generated -prune -o -name '*.py' -print |xargs flake8
 
 .PHONY: mypy
 mypy:
