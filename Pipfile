@@ -10,6 +10,7 @@ pytest-cov = "*"
 requests = "*"
 importlib-metadata = "*"
 jinja2 = "*"
+googleapis-common-protos = "*"
 
 [dev-packages]
 
