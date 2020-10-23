@@ -2,12 +2,16 @@ name: Python tests
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - develop
+      - master
     paths-ignore:
       - "cpp/**"
       - "js/**"
   pull_request:
-    branches: [ master ]
+    branches:
+      - develop
+      - master
     paths-ignore:
       - "cpp/**"
       - "js/**"
