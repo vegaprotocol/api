@@ -521,12 +521,13 @@ enum OrderError {
   ORDER_ERROR_CANNOT_AMEND_FROM_GFA_OR_GFN = 31,
   ORDER_ERROR_CANNOT_SEND_IOC_ORDER_DURING_AUCTION = 32,
   ORDER_ERROR_CANNOT_SEND_FOK_ORDER_DURING_AUCTION = 33,
+  ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE = 34,
   OrderError_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   OrderError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool OrderError_IsValid(int value);
 const OrderError OrderError_MIN = ORDER_ERROR_NONE;
-const OrderError OrderError_MAX = ORDER_ERROR_CANNOT_SEND_FOK_ORDER_DURING_AUCTION;
+const OrderError OrderError_MAX = ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE;
 const int OrderError_ARRAYSIZE = OrderError_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* OrderError_descriptor();
