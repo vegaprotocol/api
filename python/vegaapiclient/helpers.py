@@ -2,7 +2,6 @@ import grpc
 import itertools
 import json
 import re
-import yaml
 from typing import List
 
 import google.rpc.status_pb2 as goog_status
