@@ -2096,7 +2096,7 @@ proto.vega.AuctionEvent.prototype.setTrigger = function(value) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.vega.BusEvent.oneofGroups_ = [[101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,1001]];
+proto.vega.BusEvent.oneofGroups_ = [[101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,1001]];
 
 /**
  * @enum {number}
@@ -2126,6 +2126,7 @@ proto.vega.BusEvent.EventCase = {
   AUCTION: 121,
   RISKFACTOR: 122,
   NETWORKPARAMETER: 123,
+  LIQUIDITYPROVISION: 124,
   MARKET: 1001
 };
 
@@ -2191,6 +2192,7 @@ proto.vega.BusEvent.toObject = function(includeInstance, msg) {
     auction: (f = msg.getAuction()) && proto.vega.AuctionEvent.toObject(includeInstance, f),
     riskfactor: (f = msg.getRiskfactor()) && proto_vega_pb.RiskFactor.toObject(includeInstance, f),
     networkparameter: (f = msg.getNetworkparameter()) && proto_vega_pb.NetworkParameter.toObject(includeInstance, f),
+    liquidityprovision: (f = msg.getLiquidityprovision()) && proto_vega_pb.LiquidityProvision.toObject(includeInstance, f),
     market: (f = msg.getMarket()) && proto.vega.MarketEvent.toObject(includeInstance, f)
   };
 
@@ -2354,6 +2356,11 @@ proto.vega.BusEvent.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto_vega_pb.NetworkParameter;
       reader.readMessage(value,proto_vega_pb.NetworkParameter.deserializeBinaryFromReader);
       msg.setNetworkparameter(value);
+      break;
+    case 124:
+      var value = new proto_vega_pb.LiquidityProvision;
+      reader.readMessage(value,proto_vega_pb.LiquidityProvision.deserializeBinaryFromReader);
+      msg.setLiquidityprovision(value);
       break;
     case 1001:
       var value = new proto.vega.MarketEvent;
@@ -2592,6 +2599,14 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       123,
       f,
       proto_vega_pb.NetworkParameter.serializeBinaryToWriter
+    );
+  }
+  f = message.getLiquidityprovision();
+  if (f != null) {
+    writer.writeMessage(
+      124,
+      f,
+      proto_vega_pb.LiquidityProvision.serializeBinaryToWriter
     );
   }
   f = message.getMarket();
@@ -3410,6 +3425,39 @@ proto.vega.BusEvent.prototype.hasNetworkparameter = function() {
 
 
 /**
+ * optional LiquidityProvision liquidityProvision = 124;
+ * @return {?proto.vega.LiquidityProvision}
+ */
+proto.vega.BusEvent.prototype.getLiquidityprovision = function() {
+  return /** @type{?proto.vega.LiquidityProvision} */ (
+    jspb.Message.getWrapperField(this, proto_vega_pb.LiquidityProvision, 124));
+};
+
+
+/** @param {?proto.vega.LiquidityProvision|undefined} value */
+proto.vega.BusEvent.prototype.setLiquidityprovision = function(value) {
+  jspb.Message.setOneofWrapperField(this, 124, proto.vega.BusEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ */
+proto.vega.BusEvent.prototype.clearLiquidityprovision = function() {
+  this.setLiquidityprovision(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.BusEvent.prototype.hasLiquidityprovision = function() {
+  return jspb.Message.getField(this, 124) != null;
+};
+
+
+/**
  * optional MarketEvent market = 1001;
  * @return {?proto.vega.MarketEvent}
  */
@@ -3471,6 +3519,7 @@ proto.vega.BusEventType = {
   BUS_EVENT_TYPE_AUCTION: 22,
   BUS_EVENT_TYPE_RISK_FACTOR: 23,
   BUS_EVENT_TYPE_NETWORK_PARAMETER: 24,
+  BUS_EVENT_TYPE_LIQUIDITY_PROVISION: 25,
   BUS_EVENT_TYPE_MARKET: 101
 };
 

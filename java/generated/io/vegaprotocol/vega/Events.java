@@ -228,6 +228,14 @@ public final class Events {
     BUS_EVENT_TYPE_NETWORK_PARAMETER(24),
     /**
      * <pre>
+     * Event indicating a liquidity provision has been created or updated
+     * </pre>
+     *
+     * <code>BUS_EVENT_TYPE_LIQUIDITY_PROVISION = 25;</code>
+     */
+    BUS_EVENT_TYPE_LIQUIDITY_PROVISION(25),
+    /**
+     * <pre>
      * Event indicating a market related event, for example when a market opens
      * </pre>
      *
@@ -439,6 +447,14 @@ public final class Events {
     public static final int BUS_EVENT_TYPE_NETWORK_PARAMETER_VALUE = 24;
     /**
      * <pre>
+     * Event indicating a liquidity provision has been created or updated
+     * </pre>
+     *
+     * <code>BUS_EVENT_TYPE_LIQUIDITY_PROVISION = 25;</code>
+     */
+    public static final int BUS_EVENT_TYPE_LIQUIDITY_PROVISION_VALUE = 25;
+    /**
+     * <pre>
      * Event indicating a market related event, for example when a market opens
      * </pre>
      *
@@ -490,6 +506,7 @@ public final class Events {
         case 22: return BUS_EVENT_TYPE_AUCTION;
         case 23: return BUS_EVENT_TYPE_RISK_FACTOR;
         case 24: return BUS_EVENT_TYPE_NETWORK_PARAMETER;
+        case 25: return BUS_EVENT_TYPE_LIQUIDITY_PROVISION;
         case 101: return BUS_EVENT_TYPE_MARKET;
         default: return null;
       }
@@ -9647,6 +9664,31 @@ public final class Events {
 
     /**
      * <pre>
+     * LiquidityProvision  events
+     * </pre>
+     *
+     * <code>.vega.LiquidityProvision liquidityProvision = 124;</code>
+     */
+    boolean hasLiquidityProvision();
+    /**
+     * <pre>
+     * LiquidityProvision  events
+     * </pre>
+     *
+     * <code>.vega.LiquidityProvision liquidityProvision = 124;</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityProvision getLiquidityProvision();
+    /**
+     * <pre>
+     * LiquidityProvision  events
+     * </pre>
+     *
+     * <code>.vega.LiquidityProvision liquidityProvision = 124;</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder getLiquidityProvisionOrBuilder();
+
+    /**
+     * <pre>
      * Market tick events, see [MarketEvent](#vega.MarketEvent)
      * </pre>
      *
@@ -10058,6 +10100,20 @@ public final class Events {
               eventCase_ = 123;
               break;
             }
+            case 994: {
+              io.vegaprotocol.vega.Vega.LiquidityProvision.Builder subBuilder = null;
+              if (eventCase_ == 124) {
+                subBuilder = ((io.vegaprotocol.vega.Vega.LiquidityProvision) event_).toBuilder();
+              }
+              event_ =
+                  input.readMessage(io.vegaprotocol.vega.Vega.LiquidityProvision.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.Vega.LiquidityProvision) event_);
+                event_ = subBuilder.buildPartial();
+              }
+              eventCase_ = 124;
+              break;
+            }
             case 8010: {
               io.vegaprotocol.vega.Events.MarketEvent.Builder subBuilder = null;
               if (eventCase_ == 1001) {
@@ -10131,6 +10187,7 @@ public final class Events {
       AUCTION(121),
       RISKFACTOR(122),
       NETWORKPARAMETER(123),
+      LIQUIDITYPROVISION(124),
       MARKET(1001),
       EVENT_NOT_SET(0);
       private final int value;
@@ -10170,6 +10227,7 @@ public final class Events {
           case 121: return AUCTION;
           case 122: return RISKFACTOR;
           case 123: return NETWORKPARAMETER;
+          case 124: return LIQUIDITYPROVISION;
           case 1001: return MARKET;
           case 0: return EVENT_NOT_SET;
           default: return null;
@@ -11169,6 +11227,44 @@ public final class Events {
       return io.vegaprotocol.vega.Vega.NetworkParameter.getDefaultInstance();
     }
 
+    public static final int LIQUIDITYPROVISION_FIELD_NUMBER = 124;
+    /**
+     * <pre>
+     * LiquidityProvision  events
+     * </pre>
+     *
+     * <code>.vega.LiquidityProvision liquidityProvision = 124;</code>
+     */
+    public boolean hasLiquidityProvision() {
+      return eventCase_ == 124;
+    }
+    /**
+     * <pre>
+     * LiquidityProvision  events
+     * </pre>
+     *
+     * <code>.vega.LiquidityProvision liquidityProvision = 124;</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityProvision getLiquidityProvision() {
+      if (eventCase_ == 124) {
+         return (io.vegaprotocol.vega.Vega.LiquidityProvision) event_;
+      }
+      return io.vegaprotocol.vega.Vega.LiquidityProvision.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * LiquidityProvision  events
+     * </pre>
+     *
+     * <code>.vega.LiquidityProvision liquidityProvision = 124;</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder getLiquidityProvisionOrBuilder() {
+      if (eventCase_ == 124) {
+         return (io.vegaprotocol.vega.Vega.LiquidityProvision) event_;
+      }
+      return io.vegaprotocol.vega.Vega.LiquidityProvision.getDefaultInstance();
+    }
+
     public static final int MARKET_FIELD_NUMBER = 1001;
     /**
      * <pre>
@@ -11299,6 +11395,9 @@ public final class Events {
       if (eventCase_ == 123) {
         output.writeMessage(123, (io.vegaprotocol.vega.Vega.NetworkParameter) event_);
       }
+      if (eventCase_ == 124) {
+        output.writeMessage(124, (io.vegaprotocol.vega.Vega.LiquidityProvision) event_);
+      }
       if (eventCase_ == 1001) {
         output.writeMessage(1001, (io.vegaprotocol.vega.Events.MarketEvent) event_);
       }
@@ -11412,6 +11511,10 @@ public final class Events {
       if (eventCase_ == 123) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(123, (io.vegaprotocol.vega.Vega.NetworkParameter) event_);
+      }
+      if (eventCase_ == 124) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(124, (io.vegaprotocol.vega.Vega.LiquidityProvision) event_);
       }
       if (eventCase_ == 1001) {
         size += com.google.protobuf.CodedOutputStream
@@ -11531,6 +11634,10 @@ public final class Events {
           if (!getNetworkParameter()
               .equals(other.getNetworkParameter())) return false;
           break;
+        case 124:
+          if (!getLiquidityProvision()
+              .equals(other.getLiquidityProvision())) return false;
+          break;
         case 1001:
           if (!getMarket()
               .equals(other.getMarket())) return false;
@@ -11647,6 +11754,10 @@ public final class Events {
         case 123:
           hash = (37 * hash) + NETWORKPARAMETER_FIELD_NUMBER;
           hash = (53 * hash) + getNetworkParameter().hashCode();
+          break;
+        case 124:
+          hash = (37 * hash) + LIQUIDITYPROVISION_FIELD_NUMBER;
+          hash = (53 * hash) + getLiquidityProvision().hashCode();
           break;
         case 1001:
           hash = (37 * hash) + MARKET_FIELD_NUMBER;
@@ -11990,6 +12101,13 @@ public final class Events {
             result.event_ = networkParameterBuilder_.build();
           }
         }
+        if (eventCase_ == 124) {
+          if (liquidityProvisionBuilder_ == null) {
+            result.event_ = event_;
+          } else {
+            result.event_ = liquidityProvisionBuilder_.build();
+          }
+        }
         if (eventCase_ == 1001) {
           if (marketBuilder_ == null) {
             result.event_ = event_;
@@ -12148,6 +12266,10 @@ public final class Events {
           }
           case NETWORKPARAMETER: {
             mergeNetworkParameter(other.getNetworkParameter());
+            break;
+          }
+          case LIQUIDITYPROVISION: {
+            mergeLiquidityProvision(other.getLiquidityProvision());
             break;
           }
           case MARKET: {
@@ -16402,6 +16524,178 @@ public final class Events {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityProvision, io.vegaprotocol.vega.Vega.LiquidityProvision.Builder, io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder> liquidityProvisionBuilder_;
+      /**
+       * <pre>
+       * LiquidityProvision  events
+       * </pre>
+       *
+       * <code>.vega.LiquidityProvision liquidityProvision = 124;</code>
+       */
+      public boolean hasLiquidityProvision() {
+        return eventCase_ == 124;
+      }
+      /**
+       * <pre>
+       * LiquidityProvision  events
+       * </pre>
+       *
+       * <code>.vega.LiquidityProvision liquidityProvision = 124;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityProvision getLiquidityProvision() {
+        if (liquidityProvisionBuilder_ == null) {
+          if (eventCase_ == 124) {
+            return (io.vegaprotocol.vega.Vega.LiquidityProvision) event_;
+          }
+          return io.vegaprotocol.vega.Vega.LiquidityProvision.getDefaultInstance();
+        } else {
+          if (eventCase_ == 124) {
+            return liquidityProvisionBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.Vega.LiquidityProvision.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * LiquidityProvision  events
+       * </pre>
+       *
+       * <code>.vega.LiquidityProvision liquidityProvision = 124;</code>
+       */
+      public Builder setLiquidityProvision(io.vegaprotocol.vega.Vega.LiquidityProvision value) {
+        if (liquidityProvisionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          event_ = value;
+          onChanged();
+        } else {
+          liquidityProvisionBuilder_.setMessage(value);
+        }
+        eventCase_ = 124;
+        return this;
+      }
+      /**
+       * <pre>
+       * LiquidityProvision  events
+       * </pre>
+       *
+       * <code>.vega.LiquidityProvision liquidityProvision = 124;</code>
+       */
+      public Builder setLiquidityProvision(
+          io.vegaprotocol.vega.Vega.LiquidityProvision.Builder builderForValue) {
+        if (liquidityProvisionBuilder_ == null) {
+          event_ = builderForValue.build();
+          onChanged();
+        } else {
+          liquidityProvisionBuilder_.setMessage(builderForValue.build());
+        }
+        eventCase_ = 124;
+        return this;
+      }
+      /**
+       * <pre>
+       * LiquidityProvision  events
+       * </pre>
+       *
+       * <code>.vega.LiquidityProvision liquidityProvision = 124;</code>
+       */
+      public Builder mergeLiquidityProvision(io.vegaprotocol.vega.Vega.LiquidityProvision value) {
+        if (liquidityProvisionBuilder_ == null) {
+          if (eventCase_ == 124 &&
+              event_ != io.vegaprotocol.vega.Vega.LiquidityProvision.getDefaultInstance()) {
+            event_ = io.vegaprotocol.vega.Vega.LiquidityProvision.newBuilder((io.vegaprotocol.vega.Vega.LiquidityProvision) event_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            event_ = value;
+          }
+          onChanged();
+        } else {
+          if (eventCase_ == 124) {
+            liquidityProvisionBuilder_.mergeFrom(value);
+          }
+          liquidityProvisionBuilder_.setMessage(value);
+        }
+        eventCase_ = 124;
+        return this;
+      }
+      /**
+       * <pre>
+       * LiquidityProvision  events
+       * </pre>
+       *
+       * <code>.vega.LiquidityProvision liquidityProvision = 124;</code>
+       */
+      public Builder clearLiquidityProvision() {
+        if (liquidityProvisionBuilder_ == null) {
+          if (eventCase_ == 124) {
+            eventCase_ = 0;
+            event_ = null;
+            onChanged();
+          }
+        } else {
+          if (eventCase_ == 124) {
+            eventCase_ = 0;
+            event_ = null;
+          }
+          liquidityProvisionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * LiquidityProvision  events
+       * </pre>
+       *
+       * <code>.vega.LiquidityProvision liquidityProvision = 124;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityProvision.Builder getLiquidityProvisionBuilder() {
+        return getLiquidityProvisionFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * LiquidityProvision  events
+       * </pre>
+       *
+       * <code>.vega.LiquidityProvision liquidityProvision = 124;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder getLiquidityProvisionOrBuilder() {
+        if ((eventCase_ == 124) && (liquidityProvisionBuilder_ != null)) {
+          return liquidityProvisionBuilder_.getMessageOrBuilder();
+        } else {
+          if (eventCase_ == 124) {
+            return (io.vegaprotocol.vega.Vega.LiquidityProvision) event_;
+          }
+          return io.vegaprotocol.vega.Vega.LiquidityProvision.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * LiquidityProvision  events
+       * </pre>
+       *
+       * <code>.vega.LiquidityProvision liquidityProvision = 124;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityProvision, io.vegaprotocol.vega.Vega.LiquidityProvision.Builder, io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder>
+          getLiquidityProvisionFieldBuilder() {
+        if (liquidityProvisionBuilder_ == null) {
+          if (!(eventCase_ == 124)) {
+            event_ = io.vegaprotocol.vega.Vega.LiquidityProvision.getDefaultInstance();
+          }
+          liquidityProvisionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.LiquidityProvision, io.vegaprotocol.vega.Vega.LiquidityProvision.Builder, io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder>(
+                  (io.vegaprotocol.vega.Vega.LiquidityProvision) event_,
+                  getParentForChildren(),
+                  isClean());
+          event_ = null;
+        }
+        eventCase_ = 124;
+        onChanged();;
+        return liquidityProvisionBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Events.MarketEvent, io.vegaprotocol.vega.Events.MarketEvent.Builder, io.vegaprotocol.vega.Events.MarketEventOrBuilder> marketBuilder_;
       /**
        * <pre>
@@ -16710,7 +17004,7 @@ public final class Events {
       "uctionEvent\022\020\n\010marketID\030\001 \001(\t\022\026\n\016opening" +
       "Auction\030\002 \001(\010\022\r\n\005leave\030\003 \001(\010\022\r\n\005start\030\004 " +
       "\001(\003\022\013\n\003end\030\005 \001(\003\022%\n\007trigger\030\006 \001(\0162\024.vega" +
-      ".AuctionTrigger\"\236\010\n\010BusEvent\022\n\n\002ID\030\001 \001(\t" +
+      ".AuctionTrigger\"\326\010\n\010BusEvent\022\n\n\002ID\030\001 \001(\t" +
       "\022\r\n\005block\030\002 \001(\t\022 \n\004type\030\003 \001(\0162\022.vega.Bus" +
       "EventType\022&\n\ntimeUpdate\030e \001(\0132\020.vega.Tim" +
       "eUpdateH\000\0224\n\021transferResponses\030f \001(\0132\027.v" +
@@ -16735,31 +17029,33 @@ public final class Events {
       "vega.DepositH\000\022%\n\007auction\030y \001(\0132\022.vega.A" +
       "uctionEventH\000\022&\n\nriskFactor\030z \001(\0132\020.vega" +
       ".RiskFactorH\000\0222\n\020networkParameter\030{ \001(\0132" +
-      "\026.vega.NetworkParameterH\000\022$\n\006market\030\351\007 \001" +
-      "(\0132\021.vega.MarketEventH\000B\007\n\005event*\300\006\n\014Bus" +
-      "EventType\022\036\n\032BUS_EVENT_TYPE_UNSPECIFIED\020" +
-      "\000\022\026\n\022BUS_EVENT_TYPE_ALL\020\001\022\036\n\032BUS_EVENT_T" +
-      "YPE_TIME_UPDATE\020\002\022%\n!BUS_EVENT_TYPE_TRAN" +
-      "SFER_RESPONSES\020\003\022&\n\"BUS_EVENT_TYPE_POSIT" +
-      "ION_RESOLUTION\020\004\022\030\n\024BUS_EVENT_TYPE_ORDER" +
-      "\020\005\022\032\n\026BUS_EVENT_TYPE_ACCOUNT\020\006\022\030\n\024BUS_EV" +
-      "ENT_TYPE_PARTY\020\007\022\030\n\024BUS_EVENT_TYPE_TRADE" +
-      "\020\010\022 \n\034BUS_EVENT_TYPE_MARGIN_LEVELS\020\t\022\033\n\027" +
-      "BUS_EVENT_TYPE_PROPOSAL\020\n\022\027\n\023BUS_EVENT_T" +
-      "YPE_VOTE\020\013\022\036\n\032BUS_EVENT_TYPE_MARKET_DATA" +
-      "\020\014\022!\n\035BUS_EVENT_TYPE_NODE_SIGNATURE\020\r\022%\n" +
-      "!BUS_EVENT_TYPE_LOSS_SOCIALIZATION\020\016\022\"\n\036" +
-      "BUS_EVENT_TYPE_SETTLE_POSITION\020\017\022$\n BUS_" +
-      "EVENT_TYPE_SETTLE_DISTRESSED\020\020\022!\n\035BUS_EV" +
-      "ENT_TYPE_MARKET_CREATED\020\021\022\030\n\024BUS_EVENT_T" +
-      "YPE_ASSET\020\022\022\036\n\032BUS_EVENT_TYPE_MARKET_TIC" +
-      "K\020\023\022\035\n\031BUS_EVENT_TYPE_WITHDRAWAL\020\024\022\032\n\026BU" +
-      "S_EVENT_TYPE_DEPOSIT\020\025\022\032\n\026BUS_EVENT_TYPE" +
-      "_AUCTION\020\026\022\036\n\032BUS_EVENT_TYPE_RISK_FACTOR" +
-      "\020\027\022$\n BUS_EVENT_TYPE_NETWORK_PARAMETER\020\030" +
-      "\022\031\n\025BUS_EVENT_TYPE_MARKET\020eB7\n\024io.vegapr" +
-      "otocol.vegaZ\037code.vegaprotocol.io/vega/p" +
-      "rotob\006proto3"
+      "\026.vega.NetworkParameterH\000\0226\n\022liquidityPr" +
+      "ovision\030| \001(\0132\030.vega.LiquidityProvisionH" +
+      "\000\022$\n\006market\030\351\007 \001(\0132\021.vega.MarketEventH\000B" +
+      "\007\n\005event*\350\006\n\014BusEventType\022\036\n\032BUS_EVENT_T" +
+      "YPE_UNSPECIFIED\020\000\022\026\n\022BUS_EVENT_TYPE_ALL\020" +
+      "\001\022\036\n\032BUS_EVENT_TYPE_TIME_UPDATE\020\002\022%\n!BUS" +
+      "_EVENT_TYPE_TRANSFER_RESPONSES\020\003\022&\n\"BUS_" +
+      "EVENT_TYPE_POSITION_RESOLUTION\020\004\022\030\n\024BUS_" +
+      "EVENT_TYPE_ORDER\020\005\022\032\n\026BUS_EVENT_TYPE_ACC" +
+      "OUNT\020\006\022\030\n\024BUS_EVENT_TYPE_PARTY\020\007\022\030\n\024BUS_" +
+      "EVENT_TYPE_TRADE\020\010\022 \n\034BUS_EVENT_TYPE_MAR" +
+      "GIN_LEVELS\020\t\022\033\n\027BUS_EVENT_TYPE_PROPOSAL\020" +
+      "\n\022\027\n\023BUS_EVENT_TYPE_VOTE\020\013\022\036\n\032BUS_EVENT_" +
+      "TYPE_MARKET_DATA\020\014\022!\n\035BUS_EVENT_TYPE_NOD" +
+      "E_SIGNATURE\020\r\022%\n!BUS_EVENT_TYPE_LOSS_SOC" +
+      "IALIZATION\020\016\022\"\n\036BUS_EVENT_TYPE_SETTLE_PO" +
+      "SITION\020\017\022$\n BUS_EVENT_TYPE_SETTLE_DISTRE" +
+      "SSED\020\020\022!\n\035BUS_EVENT_TYPE_MARKET_CREATED\020" +
+      "\021\022\030\n\024BUS_EVENT_TYPE_ASSET\020\022\022\036\n\032BUS_EVENT" +
+      "_TYPE_MARKET_TICK\020\023\022\035\n\031BUS_EVENT_TYPE_WI" +
+      "THDRAWAL\020\024\022\032\n\026BUS_EVENT_TYPE_DEPOSIT\020\025\022\032" +
+      "\n\026BUS_EVENT_TYPE_AUCTION\020\026\022\036\n\032BUS_EVENT_" +
+      "TYPE_RISK_FACTOR\020\027\022$\n BUS_EVENT_TYPE_NET" +
+      "WORK_PARAMETER\020\030\022&\n\"BUS_EVENT_TYPE_LIQUI" +
+      "DITY_PROVISION\020\031\022\031\n\025BUS_EVENT_TYPE_MARKE" +
+      "T\020eB7\n\024io.vegaprotocol.vegaZ\037code.vegapr" +
+      "otocol.io/vega/protob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -16842,7 +17138,7 @@ public final class Events {
     internal_static_vega_BusEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_BusEvent_descriptor,
-        new java.lang.String[] { "ID", "Block", "Type", "TimeUpdate", "TransferResponses", "PositionResolution", "Order", "Account", "Party", "Trade", "MarginLevels", "Proposal", "Vote", "MarketData", "NodeSignature", "LossSocialization", "SettlePosition", "SettleDistressed", "MarketCreated", "Asset", "MarketTick", "Withdrawal", "Deposit", "Auction", "RiskFactor", "NetworkParameter", "Market", "Event", });
+        new java.lang.String[] { "ID", "Block", "Type", "TimeUpdate", "TransferResponses", "PositionResolution", "Order", "Account", "Party", "Trade", "MarginLevels", "Proposal", "Vote", "MarketData", "NodeSignature", "LossSocialization", "SettlePosition", "SettleDistressed", "MarketCreated", "Asset", "MarketTick", "Withdrawal", "Deposit", "Auction", "RiskFactor", "NetworkParameter", "LiquidityProvision", "Market", "Event", });
     io.vegaprotocol.vega.Markets.getDescriptor();
     io.vegaprotocol.vega.Assets.getDescriptor();
     io.vegaprotocol.vega.Governance.getDescriptor();

@@ -57,6 +57,11 @@ class tradingStub(object):
                 request_serializer=proto_dot_api_dot_trading__pb2.PropagateChainEventRequest.SerializeToString,
                 response_deserializer=proto_dot_api_dot_trading__pb2.PropagateChainEventResponse.FromString,
                 )
+        self.PrepareLiquidityProvision = channel.unary_unary(
+                '/api.trading/PrepareLiquidityProvision',
+                request_serializer=proto_dot_api_dot_trading__pb2.PrepareLiquidityProvisionRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.PrepareLiquidityProvisionResponse.FromString,
+                )
 
 
 class tradingServicer(object):
@@ -118,6 +123,12 @@ class tradingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PrepareLiquidityProvision(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_tradingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -160,6 +171,11 @@ def add_tradingServicer_to_server(servicer, server):
                     servicer.PropagateChainEvent,
                     request_deserializer=proto_dot_api_dot_trading__pb2.PropagateChainEventRequest.FromString,
                     response_serializer=proto_dot_api_dot_trading__pb2.PropagateChainEventResponse.SerializeToString,
+            ),
+            'PrepareLiquidityProvision': grpc.unary_unary_rpc_method_handler(
+                    servicer.PrepareLiquidityProvision,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.PrepareLiquidityProvisionRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.PrepareLiquidityProvisionResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -304,6 +320,23 @@ class trading(object):
         return grpc.experimental.unary_unary(request, target, '/api.trading/PropagateChainEvent',
             proto_dot_api_dot_trading__pb2.PropagateChainEventRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.PropagateChainEventResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PrepareLiquidityProvision(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.trading/PrepareLiquidityProvision',
+            proto_dot_api_dot_trading__pb2.PrepareLiquidityProvisionRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.PrepareLiquidityProvisionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -616,6 +649,11 @@ class trading_dataStub(object):
                 '/api.trading_data/NetworkParameters',
                 request_serializer=proto_dot_api_dot_trading__pb2.NetworkParametersRequest.SerializeToString,
                 response_deserializer=proto_dot_api_dot_trading__pb2.NetworkParametersResponse.FromString,
+                )
+        self.LiquidityProvisions = channel.unary_unary(
+                '/api.trading_data/LiquidityProvisions',
+                request_serializer=proto_dot_api_dot_trading__pb2.LiquidityProvisionsRequest.SerializeToString,
+                response_deserializer=proto_dot_api_dot_trading__pb2.LiquidityProvisionsResponse.FromString,
                 )
 
 
@@ -1063,6 +1101,13 @@ class trading_dataServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def LiquidityProvisions(self, request, context):
+        """Get the liquidity provision orders
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_trading_dataServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1365,6 +1410,11 @@ def add_trading_dataServicer_to_server(servicer, server):
                     servicer.NetworkParameters,
                     request_deserializer=proto_dot_api_dot_trading__pb2.NetworkParametersRequest.FromString,
                     response_serializer=proto_dot_api_dot_trading__pb2.NetworkParametersResponse.SerializeToString,
+            ),
+            'LiquidityProvisions': grpc.unary_unary_rpc_method_handler(
+                    servicer.LiquidityProvisions,
+                    request_deserializer=proto_dot_api_dot_trading__pb2.LiquidityProvisionsRequest.FromString,
+                    response_serializer=proto_dot_api_dot_trading__pb2.LiquidityProvisionsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2393,5 +2443,22 @@ class trading_data(object):
         return grpc.experimental.unary_unary(request, target, '/api.trading_data/NetworkParameters',
             proto_dot_api_dot_trading__pb2.NetworkParametersRequest.SerializeToString,
             proto_dot_api_dot_trading__pb2.NetworkParametersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def LiquidityProvisions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.trading_data/LiquidityProvisions',
+            proto_dot_api_dot_trading__pb2.LiquidityProvisionsRequest.SerializeToString,
+            proto_dot_api_dot_trading__pb2.LiquidityProvisionsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

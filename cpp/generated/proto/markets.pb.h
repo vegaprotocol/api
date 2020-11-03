@@ -30,9 +30,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/map.h>  // IWYU pragma: export
-#include <google/protobuf/map_entry.h>
-#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "github.com/mwitkow/go-proto-validators/validator.pb.h"
 // @@protoc_insertion_point(includes)
@@ -45,7 +42,7 @@ struct TableStruct_proto_2fmarkets_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[21]
+  static const ::google::protobuf::internal::ParseTable schema[19]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -65,12 +62,6 @@ extern DiscreteTradingDefaultTypeInternal _DiscreteTrading_default_instance_;
 class EthereumEvent;
 class EthereumEventDefaultTypeInternal;
 extern EthereumEventDefaultTypeInternal _EthereumEvent_default_instance_;
-class ExternalRiskModel;
-class ExternalRiskModelDefaultTypeInternal;
-extern ExternalRiskModelDefaultTypeInternal _ExternalRiskModel_default_instance_;
-class ExternalRiskModel_ConfigEntry_DoNotUse;
-class ExternalRiskModel_ConfigEntry_DoNotUseDefaultTypeInternal;
-extern ExternalRiskModel_ConfigEntry_DoNotUseDefaultTypeInternal _ExternalRiskModel_ConfigEntry_DoNotUse_default_instance_;
 class FeeFactors;
 class FeeFactorsDefaultTypeInternal;
 extern FeeFactorsDefaultTypeInternal _FeeFactors_default_instance_;
@@ -123,8 +114,6 @@ template<> ::vega::AuctionDuration* Arena::CreateMaybeMessage<::vega::AuctionDur
 template<> ::vega::ContinuousTrading* Arena::CreateMaybeMessage<::vega::ContinuousTrading>(Arena*);
 template<> ::vega::DiscreteTrading* Arena::CreateMaybeMessage<::vega::DiscreteTrading>(Arena*);
 template<> ::vega::EthereumEvent* Arena::CreateMaybeMessage<::vega::EthereumEvent>(Arena*);
-template<> ::vega::ExternalRiskModel* Arena::CreateMaybeMessage<::vega::ExternalRiskModel>(Arena*);
-template<> ::vega::ExternalRiskModel_ConfigEntry_DoNotUse* Arena::CreateMaybeMessage<::vega::ExternalRiskModel_ConfigEntry_DoNotUse>(Arena*);
 template<> ::vega::FeeFactors* Arena::CreateMaybeMessage<::vega::FeeFactors>(Arena*);
 template<> ::vega::Fees* Arena::CreateMaybeMessage<::vega::Fees>(Arena*);
 template<> ::vega::Future* Arena::CreateMaybeMessage<::vega::Future>(Arena*);
@@ -1669,181 +1658,6 @@ class SimpleModelParams :
 };
 // -------------------------------------------------------------------
 
-class ExternalRiskModel_ConfigEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<ExternalRiskModel_ConfigEntry_DoNotUse,
-    ::std::string, ::std::string,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    0 > {
-public:
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  typedef ::google::protobuf::internal::MapEntry<ExternalRiskModel_ConfigEntry_DoNotUse,
-    ::std::string, ::std::string,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    0 > SuperType;
-  ExternalRiskModel_ConfigEntry_DoNotUse();
-  ExternalRiskModel_ConfigEntry_DoNotUse(::google::protobuf::Arena* arena);
-  void MergeFrom(const ExternalRiskModel_ConfigEntry_DoNotUse& other);
-  static const ExternalRiskModel_ConfigEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const ExternalRiskModel_ConfigEntry_DoNotUse*>(&_ExternalRiskModel_ConfigEntry_DoNotUse_default_instance_); }
-  void MergeFrom(const ::google::protobuf::Message& other) final;
-  ::google::protobuf::Metadata GetMetadata() const;
-};
-
-// -------------------------------------------------------------------
-
-class ExternalRiskModel :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.ExternalRiskModel) */ {
- public:
-  ExternalRiskModel();
-  virtual ~ExternalRiskModel();
-
-  ExternalRiskModel(const ExternalRiskModel& from);
-
-  inline ExternalRiskModel& operator=(const ExternalRiskModel& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  ExternalRiskModel(ExternalRiskModel&& from) noexcept
-    : ExternalRiskModel() {
-    *this = ::std::move(from);
-  }
-
-  inline ExternalRiskModel& operator=(ExternalRiskModel&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const ExternalRiskModel& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const ExternalRiskModel* internal_default_instance() {
-    return reinterpret_cast<const ExternalRiskModel*>(
-               &_ExternalRiskModel_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    12;
-
-  void Swap(ExternalRiskModel* other);
-  friend void swap(ExternalRiskModel& a, ExternalRiskModel& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline ExternalRiskModel* New() const final {
-    return CreateMaybeMessage<ExternalRiskModel>(nullptr);
-  }
-
-  ExternalRiskModel* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<ExternalRiskModel>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const ExternalRiskModel& from);
-  void MergeFrom(const ExternalRiskModel& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(ExternalRiskModel* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-
-  // accessors -------------------------------------------------------
-
-  // map<string, string> config = 3;
-  int config_size() const;
-  void clear_config();
-  static const int kConfigFieldNumber = 3;
-  const ::google::protobuf::Map< ::std::string, ::std::string >&
-      config() const;
-  ::google::protobuf::Map< ::std::string, ::std::string >*
-      mutable_config();
-
-  // string name = 1;
-  void clear_name();
-  static const int kNameFieldNumber = 1;
-  const ::std::string& name() const;
-  void set_name(const ::std::string& value);
-  #if LANG_CXX11
-  void set_name(::std::string&& value);
-  #endif
-  void set_name(const char* value);
-  void set_name(const char* value, size_t size);
-  ::std::string* mutable_name();
-  ::std::string* release_name();
-  void set_allocated_name(::std::string* name);
-
-  // string socket = 2;
-  void clear_socket();
-  static const int kSocketFieldNumber = 2;
-  const ::std::string& socket() const;
-  void set_socket(const ::std::string& value);
-  #if LANG_CXX11
-  void set_socket(::std::string&& value);
-  #endif
-  void set_socket(const char* value);
-  void set_socket(const char* value, size_t size);
-  ::std::string* mutable_socket();
-  ::std::string* release_socket();
-  void set_allocated_socket(::std::string* socket);
-
-  // @@protoc_insertion_point(class_scope:vega.ExternalRiskModel)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::MapField<
-      ExternalRiskModel_ConfigEntry_DoNotUse,
-      ::std::string, ::std::string,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      0 > config_;
-  ::google::protobuf::internal::ArenaStringPtr name_;
-  ::google::protobuf::internal::ArenaStringPtr socket_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_proto_2fmarkets_2eproto;
-};
-// -------------------------------------------------------------------
-
 class ScalingFactors :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.ScalingFactors) */ {
  public:
@@ -1882,7 +1696,7 @@ class ScalingFactors :
                &_ScalingFactors_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    11;
 
   void Swap(ScalingFactors* other);
   friend void swap(ScalingFactors& a, ScalingFactors& b) {
@@ -2008,7 +1822,7 @@ class MarginCalculator :
                &_MarginCalculator_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    12;
 
   void Swap(MarginCalculator* other);
   friend void swap(MarginCalculator& a, MarginCalculator& b) {
@@ -2119,8 +1933,7 @@ class TradableInstrument :
 
   enum RiskModelCase {
     kLogNormalRiskModel = 100,
-    kExternalRiskModel = 101,
-    kSimpleRiskModel = 102,
+    kSimpleRiskModel = 101,
     RISKMODEL_NOT_SET = 0,
   };
 
@@ -2130,7 +1943,7 @@ class TradableInstrument :
                &_TradableInstrument_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    13;
 
   void Swap(TradableInstrument* other);
   friend void swap(TradableInstrument& a, TradableInstrument& b) {
@@ -2214,19 +2027,10 @@ class TradableInstrument :
   ::vega::LogNormalRiskModel* mutable_lognormalriskmodel();
   void set_allocated_lognormalriskmodel(::vega::LogNormalRiskModel* lognormalriskmodel);
 
-  // .vega.ExternalRiskModel externalRiskModel = 101;
-  bool has_externalriskmodel() const;
-  void clear_externalriskmodel();
-  static const int kExternalRiskModelFieldNumber = 101;
-  const ::vega::ExternalRiskModel& externalriskmodel() const;
-  ::vega::ExternalRiskModel* release_externalriskmodel();
-  ::vega::ExternalRiskModel* mutable_externalriskmodel();
-  void set_allocated_externalriskmodel(::vega::ExternalRiskModel* externalriskmodel);
-
-  // .vega.SimpleRiskModel simpleRiskModel = 102;
+  // .vega.SimpleRiskModel simpleRiskModel = 101;
   bool has_simpleriskmodel() const;
   void clear_simpleriskmodel();
-  static const int kSimpleRiskModelFieldNumber = 102;
+  static const int kSimpleRiskModelFieldNumber = 101;
   const ::vega::SimpleRiskModel& simpleriskmodel() const;
   ::vega::SimpleRiskModel* release_simpleriskmodel();
   ::vega::SimpleRiskModel* mutable_simpleriskmodel();
@@ -2238,7 +2042,6 @@ class TradableInstrument :
  private:
   class HasBitSetters;
   void set_has_lognormalriskmodel();
-  void set_has_externalriskmodel();
   void set_has_simpleriskmodel();
 
   inline bool has_riskModel() const;
@@ -2250,7 +2053,6 @@ class TradableInstrument :
   union RiskModelUnion {
     RiskModelUnion() {}
     ::vega::LogNormalRiskModel* lognormalriskmodel_;
-    ::vega::ExternalRiskModel* externalriskmodel_;
     ::vega::SimpleRiskModel* simpleriskmodel_;
   } riskModel_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -2298,7 +2100,7 @@ class FeeFactors :
                &_FeeFactors_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    14;
 
   void Swap(FeeFactors* other);
   friend void swap(FeeFactors& a, FeeFactors& b) {
@@ -2448,7 +2250,7 @@ class Fees :
                &_Fees_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    15;
 
   void Swap(Fees* other);
   friend void swap(Fees& a, Fees& b) {
@@ -2563,7 +2365,7 @@ class PriceMonitoringParameters :
                &_PriceMonitoringParameters_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    16;
 
   void Swap(PriceMonitoringParameters* other);
   friend void swap(PriceMonitoringParameters& a, PriceMonitoringParameters& b) {
@@ -2689,7 +2491,7 @@ class PriceMonitoringSettings :
                &_PriceMonitoringSettings_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    17;
 
   void Swap(PriceMonitoringSettings* other);
   friend void swap(PriceMonitoringSettings& a, PriceMonitoringSettings& b) {
@@ -2820,7 +2622,7 @@ class Market :
                &_Market_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    18;
 
   void Swap(Market* other);
   friend void swap(Market& a, Market& b) {
@@ -4133,136 +3935,6 @@ inline void SimpleModelParams::set_minmovedown(double value) {
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
-// ExternalRiskModel
-
-// string name = 1;
-inline void ExternalRiskModel::clear_name() {
-  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& ExternalRiskModel::name() const {
-  // @@protoc_insertion_point(field_get:vega.ExternalRiskModel.name)
-  return name_.GetNoArena();
-}
-inline void ExternalRiskModel::set_name(const ::std::string& value) {
-
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.ExternalRiskModel.name)
-}
-#if LANG_CXX11
-inline void ExternalRiskModel::set_name(::std::string&& value) {
-
-  name_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.ExternalRiskModel.name)
-}
-#endif
-inline void ExternalRiskModel::set_name(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.ExternalRiskModel.name)
-}
-inline void ExternalRiskModel::set_name(const char* value, size_t size) {
-
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.ExternalRiskModel.name)
-}
-inline ::std::string* ExternalRiskModel::mutable_name() {
-
-  // @@protoc_insertion_point(field_mutable:vega.ExternalRiskModel.name)
-  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* ExternalRiskModel::release_name() {
-  // @@protoc_insertion_point(field_release:vega.ExternalRiskModel.name)
-
-  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void ExternalRiskModel::set_allocated_name(::std::string* name) {
-  if (name != nullptr) {
-
-  } else {
-
-  }
-  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:vega.ExternalRiskModel.name)
-}
-
-// string socket = 2;
-inline void ExternalRiskModel::clear_socket() {
-  socket_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& ExternalRiskModel::socket() const {
-  // @@protoc_insertion_point(field_get:vega.ExternalRiskModel.socket)
-  return socket_.GetNoArena();
-}
-inline void ExternalRiskModel::set_socket(const ::std::string& value) {
-
-  socket_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.ExternalRiskModel.socket)
-}
-#if LANG_CXX11
-inline void ExternalRiskModel::set_socket(::std::string&& value) {
-
-  socket_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.ExternalRiskModel.socket)
-}
-#endif
-inline void ExternalRiskModel::set_socket(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  socket_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.ExternalRiskModel.socket)
-}
-inline void ExternalRiskModel::set_socket(const char* value, size_t size) {
-
-  socket_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.ExternalRiskModel.socket)
-}
-inline ::std::string* ExternalRiskModel::mutable_socket() {
-
-  // @@protoc_insertion_point(field_mutable:vega.ExternalRiskModel.socket)
-  return socket_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* ExternalRiskModel::release_socket() {
-  // @@protoc_insertion_point(field_release:vega.ExternalRiskModel.socket)
-
-  return socket_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void ExternalRiskModel::set_allocated_socket(::std::string* socket) {
-  if (socket != nullptr) {
-
-  } else {
-
-  }
-  socket_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), socket);
-  // @@protoc_insertion_point(field_set_allocated:vega.ExternalRiskModel.socket)
-}
-
-// map<string, string> config = 3;
-inline int ExternalRiskModel::config_size() const {
-  return config_.size();
-}
-inline void ExternalRiskModel::clear_config() {
-  config_.Clear();
-}
-inline const ::google::protobuf::Map< ::std::string, ::std::string >&
-ExternalRiskModel::config() const {
-  // @@protoc_insertion_point(field_map:vega.ExternalRiskModel.config)
-  return config_.GetMap();
-}
-inline ::google::protobuf::Map< ::std::string, ::std::string >*
-ExternalRiskModel::mutable_config() {
-  // @@protoc_insertion_point(field_mutable_map:vega.ExternalRiskModel.config)
-  return config_.MutableMap();
-}
-
-// -------------------------------------------------------------------
-
 // ScalingFactors
 
 // double searchLevel = 1;
@@ -4509,48 +4181,7 @@ inline ::vega::LogNormalRiskModel* TradableInstrument::mutable_lognormalriskmode
   return riskModel_.lognormalriskmodel_;
 }
 
-// .vega.ExternalRiskModel externalRiskModel = 101;
-inline bool TradableInstrument::has_externalriskmodel() const {
-  return riskModel_case() == kExternalRiskModel;
-}
-inline void TradableInstrument::set_has_externalriskmodel() {
-  _oneof_case_[0] = kExternalRiskModel;
-}
-inline void TradableInstrument::clear_externalriskmodel() {
-  if (has_externalriskmodel()) {
-    delete riskModel_.externalriskmodel_;
-    clear_has_riskModel();
-  }
-}
-inline ::vega::ExternalRiskModel* TradableInstrument::release_externalriskmodel() {
-  // @@protoc_insertion_point(field_release:vega.TradableInstrument.externalRiskModel)
-  if (has_externalriskmodel()) {
-    clear_has_riskModel();
-      ::vega::ExternalRiskModel* temp = riskModel_.externalriskmodel_;
-    riskModel_.externalriskmodel_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::vega::ExternalRiskModel& TradableInstrument::externalriskmodel() const {
-  // @@protoc_insertion_point(field_get:vega.TradableInstrument.externalRiskModel)
-  return has_externalriskmodel()
-      ? *riskModel_.externalriskmodel_
-      : *reinterpret_cast< ::vega::ExternalRiskModel*>(&::vega::_ExternalRiskModel_default_instance_);
-}
-inline ::vega::ExternalRiskModel* TradableInstrument::mutable_externalriskmodel() {
-  if (!has_externalriskmodel()) {
-    clear_riskModel();
-    set_has_externalriskmodel();
-    riskModel_.externalriskmodel_ = CreateMaybeMessage< ::vega::ExternalRiskModel >(
-        GetArenaNoVirtual());
-  }
-  // @@protoc_insertion_point(field_mutable:vega.TradableInstrument.externalRiskModel)
-  return riskModel_.externalriskmodel_;
-}
-
-// .vega.SimpleRiskModel simpleRiskModel = 102;
+// .vega.SimpleRiskModel simpleRiskModel = 101;
 inline bool TradableInstrument::has_simpleriskmodel() const {
   return riskModel_case() == kSimpleRiskModel;
 }
@@ -5281,10 +4912,6 @@ inline Market::TradingModeCase Market::tradingMode_case() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

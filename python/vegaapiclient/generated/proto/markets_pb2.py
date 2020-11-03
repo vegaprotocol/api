@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\024io.vegaprotocol.vegaZ\037code.vegaprotocol.io/vega/proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x13proto/markets.proto\x12\x04vega\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\"3\n\x0f\x41uctionDuration\x12\x10\n\x08\x64uration\x18\x01 \x01(\x03\x12\x0e\n\x06volume\x18\x02 \x01(\x04\"%\n\x11\x43ontinuousTrading\x12\x10\n\x08tickSize\x18\x01 \x01(\t\"H\n\x0f\x44iscreteTrading\x12#\n\ndurationNs\x18\x01 \x01(\x03\x42\x0f\xe2\xdf\x1f\x0b\x10\x00\x18\x80\x80\x88\xba\x90\xad\xcd\x04\x12\x10\n\x08tickSize\x18\x02 \x01(\t\"a\n\x06\x46uture\x12\x10\n\x08maturity\x18\x01 \x01(\t\x12\r\n\x05\x61sset\x18\x02 \x01(\t\x12,\n\rethereumEvent\x18\x64 \x01(\x0b\x32\x13.vega.EthereumEventH\x00\x42\x08\n\x06oracle\"A\n\rEthereumEvent\x12\x12\n\ncontractID\x18\x01 \x01(\t\x12\r\n\x05\x65vent\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\x04\"\"\n\x12InstrumentMetadata\x12\x0c\n\x04tags\x18\x01 \x03(\t\"\xca\x01\n\nInstrument\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x10\n\x08\x62\x61seName\x18\x04 \x01(\t\x12\x11\n\tquoteName\x18\x05 \x01(\t\x12*\n\x08metadata\x18\x06 \x01(\x0b\x32\x18.vega.InstrumentMetadata\x12\x18\n\x10initialMarkPrice\x18\x07 \x01(\x04\x12\x1e\n\x06\x66uture\x18\x64 \x01(\x0b\x32\x0c.vega.FutureH\x00\x42\t\n\x07product\"l\n\x12LogNormalRiskModel\x12\x1d\n\x15riskAversionParameter\x18\x01 \x01(\x01\x12\x0b\n\x03tau\x18\x02 \x01(\x01\x12*\n\x06params\x18\x03 \x01(\x0b\x32\x1a.vega.LogNormalModelParams\"<\n\x14LogNormalModelParams\x12\n\n\x02mu\x18\x01 \x01(\x01\x12\t\n\x01r\x18\x02 \x01(\x01\x12\r\n\x05sigma\x18\x03 \x01(\x01\":\n\x0fSimpleRiskModel\x12\'\n\x06params\x18\x01 \x01(\x0b\x32\x17.vega.SimpleModelParams\"\x82\x01\n\x11SimpleModelParams\x12\x12\n\nfactorLong\x18\x01 \x01(\x01\x12\x13\n\x0b\x66\x61\x63torShort\x18\x02 \x01(\x01\x12 \n\tmaxMoveUp\x18\x03 \x01(\x01\x42\r\xe2\xdf\x1f\tI\x00\x00\x00\x00\x00\x00\x00\x00\x12\"\n\x0bminMoveDown\x18\x04 \x01(\x01\x42\r\xe2\xdf\x1f\tQ\x00\x00\x00\x00\x00\x00\x00\x00\"\x95\x01\n\x11\x45xternalRiskModel\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0e\n\x06socket\x18\x02 \x01(\t\x12\x33\n\x06\x63onfig\x18\x03 \x03(\x0b\x32#.vega.ExternalRiskModel.ConfigEntry\x1a-\n\x0b\x43onfigEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"W\n\x0eScalingFactors\x12\x13\n\x0bsearchLevel\x18\x01 \x01(\x01\x12\x15\n\rinitialMargin\x18\x02 \x01(\x01\x12\x19\n\x11\x63ollateralRelease\x18\x03 \x01(\x01\"@\n\x10MarginCalculator\x12,\n\x0escalingFactors\x18\x01 \x01(\x0b\x32\x14.vega.ScalingFactors\"\x99\x02\n\x12TradableInstrument\x12$\n\ninstrument\x18\x01 \x01(\x0b\x32\x10.vega.Instrument\x12\x30\n\x10marginCalculator\x18\x02 \x01(\x0b\x32\x16.vega.MarginCalculator\x12\x36\n\x12logNormalRiskModel\x18\x64 \x01(\x0b\x32\x18.vega.LogNormalRiskModelH\x00\x12\x34\n\x11\x65xternalRiskModel\x18\x65 \x01(\x0b\x32\x17.vega.ExternalRiskModelH\x00\x12\x30\n\x0fsimpleRiskModel\x18\x66 \x01(\x0b\x32\x15.vega.SimpleRiskModelH\x00\x42\x0b\n\triskModel\"O\n\nFeeFactors\x12\x10\n\x08makerFee\x18\x01 \x01(\t\x12\x19\n\x11infrastructureFee\x18\x02 \x01(\t\x12\x14\n\x0cliquidityFee\x18\x03 \x01(\t\")\n\x04\x46\x65\x65s\x12!\n\x07\x66\x61\x63tors\x18\x01 \x01(\x0b\x32\x10.vega.FeeFactors\"\x83\x01\n\x19PriceMonitoringParameters\x12\x17\n\x07horizon\x18\x01 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00\x12+\n\x0bprobability\x18\x02 \x01(\x01\x42\x16\xe2\xdf\x1f\x12\x31\x00\x00\x00\x00\x00\x00\x00\x00\x39\x00\x00\x00\x00\x00\x00\xf0?\x12 \n\x10\x61uctionExtension\x18\x03 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00\"v\n\x17PriceMonitoringSettings\x12\x42\n\x19priceMonitoringParameters\x18\x01 \x03(\x0b\x32\x1f.vega.PriceMonitoringParameters\x12\x17\n\x0fupdateFrequency\x18\x02 \x01(\x03\"\xd3\x02\n\x06Market\x12\n\n\x02id\x18\x01 \x01(\t\x12\x34\n\x12tradableInstrument\x18\x02 \x01(\x0b\x32\x18.vega.TradableInstrument\x12\x15\n\rdecimalPlaces\x18\x03 \x01(\x04\x12\x18\n\x04\x66\x65\x65s\x18\x04 \x01(\x0b\x32\n.vega.Fees\x12-\n\x0eopeningAuction\x18\x05 \x01(\x0b\x32\x15.vega.AuctionDuration\x12-\n\ncontinuous\x18\x64 \x01(\x0b\x32\x17.vega.ContinuousTradingH\x00\x12)\n\x08\x64iscrete\x18\x65 \x01(\x0b\x32\x15.vega.DiscreteTradingH\x00\x12>\n\x17priceMonitoringSettings\x18\x06 \x01(\x0b\x32\x1d.vega.PriceMonitoringSettingsB\r\n\x0btradingModeB7\n\x14io.vegaprotocol.vegaZ\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
+  serialized_pb=b'\n\x13proto/markets.proto\x12\x04vega\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\"3\n\x0f\x41uctionDuration\x12\x10\n\x08\x64uration\x18\x01 \x01(\x03\x12\x0e\n\x06volume\x18\x02 \x01(\x04\"%\n\x11\x43ontinuousTrading\x12\x10\n\x08tickSize\x18\x01 \x01(\t\"H\n\x0f\x44iscreteTrading\x12#\n\ndurationNs\x18\x01 \x01(\x03\x42\x0f\xe2\xdf\x1f\x0b\x10\x00\x18\x80\x80\x88\xba\x90\xad\xcd\x04\x12\x10\n\x08tickSize\x18\x02 \x01(\t\"a\n\x06\x46uture\x12\x10\n\x08maturity\x18\x01 \x01(\t\x12\r\n\x05\x61sset\x18\x02 \x01(\t\x12,\n\rethereumEvent\x18\x64 \x01(\x0b\x32\x13.vega.EthereumEventH\x00\x42\x08\n\x06oracle\"A\n\rEthereumEvent\x12\x12\n\ncontractID\x18\x01 \x01(\t\x12\r\n\x05\x65vent\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\x04\"\"\n\x12InstrumentMetadata\x12\x0c\n\x04tags\x18\x01 \x03(\t\"\xca\x01\n\nInstrument\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x10\n\x08\x62\x61seName\x18\x04 \x01(\t\x12\x11\n\tquoteName\x18\x05 \x01(\t\x12*\n\x08metadata\x18\x06 \x01(\x0b\x32\x18.vega.InstrumentMetadata\x12\x18\n\x10initialMarkPrice\x18\x07 \x01(\x04\x12\x1e\n\x06\x66uture\x18\x64 \x01(\x0b\x32\x0c.vega.FutureH\x00\x42\t\n\x07product\"l\n\x12LogNormalRiskModel\x12\x1d\n\x15riskAversionParameter\x18\x01 \x01(\x01\x12\x0b\n\x03tau\x18\x02 \x01(\x01\x12*\n\x06params\x18\x03 \x01(\x0b\x32\x1a.vega.LogNormalModelParams\"<\n\x14LogNormalModelParams\x12\n\n\x02mu\x18\x01 \x01(\x01\x12\t\n\x01r\x18\x02 \x01(\x01\x12\r\n\x05sigma\x18\x03 \x01(\x01\":\n\x0fSimpleRiskModel\x12\'\n\x06params\x18\x01 \x01(\x0b\x32\x17.vega.SimpleModelParams\"\x82\x01\n\x11SimpleModelParams\x12\x12\n\nfactorLong\x18\x01 \x01(\x01\x12\x13\n\x0b\x66\x61\x63torShort\x18\x02 \x01(\x01\x12 \n\tmaxMoveUp\x18\x03 \x01(\x01\x42\r\xe2\xdf\x1f\tI\x00\x00\x00\x00\x00\x00\x00\x00\x12\"\n\x0bminMoveDown\x18\x04 \x01(\x01\x42\r\xe2\xdf\x1f\tQ\x00\x00\x00\x00\x00\x00\x00\x00\"W\n\x0eScalingFactors\x12\x13\n\x0bsearchLevel\x18\x01 \x01(\x01\x12\x15\n\rinitialMargin\x18\x02 \x01(\x01\x12\x19\n\x11\x63ollateralRelease\x18\x03 \x01(\x01\"@\n\x10MarginCalculator\x12,\n\x0escalingFactors\x18\x01 \x01(\x0b\x32\x14.vega.ScalingFactors\"\xe3\x01\n\x12TradableInstrument\x12$\n\ninstrument\x18\x01 \x01(\x0b\x32\x10.vega.Instrument\x12\x30\n\x10marginCalculator\x18\x02 \x01(\x0b\x32\x16.vega.MarginCalculator\x12\x36\n\x12logNormalRiskModel\x18\x64 \x01(\x0b\x32\x18.vega.LogNormalRiskModelH\x00\x12\x30\n\x0fsimpleRiskModel\x18\x65 \x01(\x0b\x32\x15.vega.SimpleRiskModelH\x00\x42\x0b\n\triskModel\"O\n\nFeeFactors\x12\x10\n\x08makerFee\x18\x01 \x01(\t\x12\x19\n\x11infrastructureFee\x18\x02 \x01(\t\x12\x14\n\x0cliquidityFee\x18\x03 \x01(\t\")\n\x04\x46\x65\x65s\x12!\n\x07\x66\x61\x63tors\x18\x01 \x01(\x0b\x32\x10.vega.FeeFactors\"\x83\x01\n\x19PriceMonitoringParameters\x12\x17\n\x07horizon\x18\x01 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00\x12+\n\x0bprobability\x18\x02 \x01(\x01\x42\x16\xe2\xdf\x1f\x12\x31\x00\x00\x00\x00\x00\x00\x00\x00\x39\x00\x00\x00\x00\x00\x00\xf0?\x12 \n\x10\x61uctionExtension\x18\x03 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00\"v\n\x17PriceMonitoringSettings\x12\x42\n\x19priceMonitoringParameters\x18\x01 \x03(\x0b\x32\x1f.vega.PriceMonitoringParameters\x12\x17\n\x0fupdateFrequency\x18\x02 \x01(\x03\"\xd3\x02\n\x06Market\x12\n\n\x02id\x18\x01 \x01(\t\x12\x34\n\x12tradableInstrument\x18\x02 \x01(\x0b\x32\x18.vega.TradableInstrument\x12\x15\n\rdecimalPlaces\x18\x03 \x01(\x04\x12\x18\n\x04\x66\x65\x65s\x18\x04 \x01(\x0b\x32\n.vega.Fees\x12-\n\x0eopeningAuction\x18\x05 \x01(\x0b\x32\x15.vega.AuctionDuration\x12-\n\ncontinuous\x18\x64 \x01(\x0b\x32\x17.vega.ContinuousTradingH\x00\x12)\n\x08\x64iscrete\x18\x65 \x01(\x0b\x32\x15.vega.DiscreteTradingH\x00\x12>\n\x17priceMonitoringSettings\x18\x06 \x01(\x0b\x32\x1d.vega.PriceMonitoringSettingsB\r\n\x0btradingModeB7\n\x14io.vegaprotocol.vegaZ\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
   ,
   dependencies=[github_dot_com_dot_mwitkow_dot_go__proto__validators_dot_validator__pb2.DESCRIPTOR,])
 
@@ -529,90 +529,6 @@ _SIMPLEMODELPARAMS = _descriptor.Descriptor(
 )
 
 
-_EXTERNALRISKMODEL_CONFIGENTRY = _descriptor.Descriptor(
-  name='ConfigEntry',
-  full_name='vega.ExternalRiskModel.ConfigEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='vega.ExternalRiskModel.ConfigEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='vega.ExternalRiskModel.ConfigEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1128,
-  serialized_end=1173,
-)
-
-_EXTERNALRISKMODEL = _descriptor.Descriptor(
-  name='ExternalRiskModel',
-  full_name='vega.ExternalRiskModel',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='name', full_name='vega.ExternalRiskModel.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='socket', full_name='vega.ExternalRiskModel.socket', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='config', full_name='vega.ExternalRiskModel.config', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_EXTERNALRISKMODEL_CONFIGENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1024,
-  serialized_end=1173,
-)
-
-
 _SCALINGFACTORS = _descriptor.Descriptor(
   name='ScalingFactors',
   full_name='vega.ScalingFactors',
@@ -654,8 +570,8 @@ _SCALINGFACTORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1175,
-  serialized_end=1262,
+  serialized_start=1023,
+  serialized_end=1110,
 )
 
 
@@ -686,8 +602,8 @@ _MARGINCALCULATOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1264,
-  serialized_end=1328,
+  serialized_start=1112,
+  serialized_end=1176,
 )
 
 
@@ -721,15 +637,8 @@ _TRADABLEINSTRUMENT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='externalRiskModel', full_name='vega.TradableInstrument.externalRiskModel', index=3,
+      name='simpleRiskModel', full_name='vega.TradableInstrument.simpleRiskModel', index=3,
       number=101, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='simpleRiskModel', full_name='vega.TradableInstrument.simpleRiskModel', index=4,
-      number=102, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -751,8 +660,8 @@ _TRADABLEINSTRUMENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1331,
-  serialized_end=1612,
+  serialized_start=1179,
+  serialized_end=1406,
 )
 
 
@@ -797,8 +706,8 @@ _FEEFACTORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1614,
-  serialized_end=1693,
+  serialized_start=1408,
+  serialized_end=1487,
 )
 
 
@@ -829,8 +738,8 @@ _FEES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1695,
-  serialized_end=1736,
+  serialized_start=1489,
+  serialized_end=1530,
 )
 
 
@@ -875,8 +784,8 @@ _PRICEMONITORINGPARAMETERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1739,
-  serialized_end=1870,
+  serialized_start=1533,
+  serialized_end=1664,
 )
 
 
@@ -914,8 +823,8 @@ _PRICEMONITORINGSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1872,
-  serialized_end=1990,
+  serialized_start=1666,
+  serialized_end=1784,
 )
 
 
@@ -1000,8 +909,8 @@ _MARKET = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1993,
-  serialized_end=2332,
+  serialized_start=1787,
+  serialized_end=2126,
 )
 
 _FUTURE.fields_by_name['ethereumEvent'].message_type = _ETHEREUMEVENT
@@ -1015,20 +924,14 @@ _INSTRUMENT.oneofs_by_name['product'].fields.append(
 _INSTRUMENT.fields_by_name['future'].containing_oneof = _INSTRUMENT.oneofs_by_name['product']
 _LOGNORMALRISKMODEL.fields_by_name['params'].message_type = _LOGNORMALMODELPARAMS
 _SIMPLERISKMODEL.fields_by_name['params'].message_type = _SIMPLEMODELPARAMS
-_EXTERNALRISKMODEL_CONFIGENTRY.containing_type = _EXTERNALRISKMODEL
-_EXTERNALRISKMODEL.fields_by_name['config'].message_type = _EXTERNALRISKMODEL_CONFIGENTRY
 _MARGINCALCULATOR.fields_by_name['scalingFactors'].message_type = _SCALINGFACTORS
 _TRADABLEINSTRUMENT.fields_by_name['instrument'].message_type = _INSTRUMENT
 _TRADABLEINSTRUMENT.fields_by_name['marginCalculator'].message_type = _MARGINCALCULATOR
 _TRADABLEINSTRUMENT.fields_by_name['logNormalRiskModel'].message_type = _LOGNORMALRISKMODEL
-_TRADABLEINSTRUMENT.fields_by_name['externalRiskModel'].message_type = _EXTERNALRISKMODEL
 _TRADABLEINSTRUMENT.fields_by_name['simpleRiskModel'].message_type = _SIMPLERISKMODEL
 _TRADABLEINSTRUMENT.oneofs_by_name['riskModel'].fields.append(
   _TRADABLEINSTRUMENT.fields_by_name['logNormalRiskModel'])
 _TRADABLEINSTRUMENT.fields_by_name['logNormalRiskModel'].containing_oneof = _TRADABLEINSTRUMENT.oneofs_by_name['riskModel']
-_TRADABLEINSTRUMENT.oneofs_by_name['riskModel'].fields.append(
-  _TRADABLEINSTRUMENT.fields_by_name['externalRiskModel'])
-_TRADABLEINSTRUMENT.fields_by_name['externalRiskModel'].containing_oneof = _TRADABLEINSTRUMENT.oneofs_by_name['riskModel']
 _TRADABLEINSTRUMENT.oneofs_by_name['riskModel'].fields.append(
   _TRADABLEINSTRUMENT.fields_by_name['simpleRiskModel'])
 _TRADABLEINSTRUMENT.fields_by_name['simpleRiskModel'].containing_oneof = _TRADABLEINSTRUMENT.oneofs_by_name['riskModel']
@@ -1057,7 +960,6 @@ DESCRIPTOR.message_types_by_name['LogNormalRiskModel'] = _LOGNORMALRISKMODEL
 DESCRIPTOR.message_types_by_name['LogNormalModelParams'] = _LOGNORMALMODELPARAMS
 DESCRIPTOR.message_types_by_name['SimpleRiskModel'] = _SIMPLERISKMODEL
 DESCRIPTOR.message_types_by_name['SimpleModelParams'] = _SIMPLEMODELPARAMS
-DESCRIPTOR.message_types_by_name['ExternalRiskModel'] = _EXTERNALRISKMODEL
 DESCRIPTOR.message_types_by_name['ScalingFactors'] = _SCALINGFACTORS
 DESCRIPTOR.message_types_by_name['MarginCalculator'] = _MARGINCALCULATOR
 DESCRIPTOR.message_types_by_name['TradableInstrument'] = _TRADABLEINSTRUMENT
@@ -1145,21 +1047,6 @@ SimpleModelParams = _reflection.GeneratedProtocolMessageType('SimpleModelParams'
   })
 _sym_db.RegisterMessage(SimpleModelParams)
 
-ExternalRiskModel = _reflection.GeneratedProtocolMessageType('ExternalRiskModel', (_message.Message,), {
-
-  'ConfigEntry' : _reflection.GeneratedProtocolMessageType('ConfigEntry', (_message.Message,), {
-    'DESCRIPTOR' : _EXTERNALRISKMODEL_CONFIGENTRY,
-    '__module__' : 'proto.markets_pb2'
-    # @@protoc_insertion_point(class_scope:vega.ExternalRiskModel.ConfigEntry)
-    })
-  ,
-  'DESCRIPTOR' : _EXTERNALRISKMODEL,
-  '__module__' : 'proto.markets_pb2'
-  # @@protoc_insertion_point(class_scope:vega.ExternalRiskModel)
-  })
-_sym_db.RegisterMessage(ExternalRiskModel)
-_sym_db.RegisterMessage(ExternalRiskModel.ConfigEntry)
-
 ScalingFactors = _reflection.GeneratedProtocolMessageType('ScalingFactors', (_message.Message,), {
   'DESCRIPTOR' : _SCALINGFACTORS,
   '__module__' : 'proto.markets_pb2'
@@ -1221,7 +1108,6 @@ DESCRIPTOR._options = None
 _DISCRETETRADING.fields_by_name['durationNs']._options = None
 _SIMPLEMODELPARAMS.fields_by_name['maxMoveUp']._options = None
 _SIMPLEMODELPARAMS.fields_by_name['minMoveDown']._options = None
-_EXTERNALRISKMODEL_CONFIGENTRY._options = None
 _PRICEMONITORINGPARAMETERS.fields_by_name['horizon']._options = None
 _PRICEMONITORINGPARAMETERS.fields_by_name['probability']._options = None
 _PRICEMONITORINGPARAMETERS.fields_by_name['auctionExtension']._options = None

@@ -692,6 +692,158 @@ public final class Vega {
 
   /**
    * <pre>
+   * Which price point is the pegged order linked to
+   * </pre>
+   *
+   * Protobuf enum {@code vega.PeggedReference}
+   */
+  public enum PeggedReference
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * No reference given
+     * </pre>
+     *
+     * <code>PEGGED_REFERENCE_UNSPECIFIED = 0;</code>
+     */
+    PEGGED_REFERENCE_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * MID price
+     * </pre>
+     *
+     * <code>PEGGED_REFERENCE_MID = 1;</code>
+     */
+    PEGGED_REFERENCE_MID(1),
+    /**
+     * <pre>
+     * BEST BID price
+     * </pre>
+     *
+     * <code>PEGGED_REFERENCE_BEST_BID = 2;</code>
+     */
+    PEGGED_REFERENCE_BEST_BID(2),
+    /**
+     * <pre>
+     * BEST BID price
+     * </pre>
+     *
+     * <code>PEGGED_REFERENCE_BEST_ASK = 3;</code>
+     */
+    PEGGED_REFERENCE_BEST_ASK(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * No reference given
+     * </pre>
+     *
+     * <code>PEGGED_REFERENCE_UNSPECIFIED = 0;</code>
+     */
+    public static final int PEGGED_REFERENCE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * MID price
+     * </pre>
+     *
+     * <code>PEGGED_REFERENCE_MID = 1;</code>
+     */
+    public static final int PEGGED_REFERENCE_MID_VALUE = 1;
+    /**
+     * <pre>
+     * BEST BID price
+     * </pre>
+     *
+     * <code>PEGGED_REFERENCE_BEST_BID = 2;</code>
+     */
+    public static final int PEGGED_REFERENCE_BEST_BID_VALUE = 2;
+    /**
+     * <pre>
+     * BEST BID price
+     * </pre>
+     *
+     * <code>PEGGED_REFERENCE_BEST_ASK = 3;</code>
+     */
+    public static final int PEGGED_REFERENCE_BEST_ASK_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PeggedReference valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static PeggedReference forNumber(int value) {
+      switch (value) {
+        case 0: return PEGGED_REFERENCE_UNSPECIFIED;
+        case 1: return PEGGED_REFERENCE_MID;
+        case 2: return PEGGED_REFERENCE_BEST_BID;
+        case 3: return PEGGED_REFERENCE_BEST_ASK;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PeggedReference>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        PeggedReference> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PeggedReference>() {
+            public PeggedReference findValueByNumber(int number) {
+              return PeggedReference.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(4);
+    }
+
+    private static final PeggedReference[] VALUES = values();
+
+    public static PeggedReference valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PeggedReference(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:vega.PeggedReference)
+  }
+
+  /**
+   * <pre>
    * OrderError codes are returned in the `[Order](#vega.Order).reason` field.
    * If there is an issue with an order during it's life-cycle, it will be marked with `status.ORDER_STATUS_REJECTED`.
    * </pre>
@@ -975,14 +1127,86 @@ public final class Vega {
     ORDER_ERROR_CANNOT_SEND_FOK_ORDER_DURING_AUCTION(33),
     /**
      * <pre>
+     * Pegged orders must be LIMIT orders
+     * </pre>
+     *
+     * <code>ORDER_ERROR_MUST_BE_LIMIT_ORDER = 34;</code>
+     */
+    ORDER_ERROR_MUST_BE_LIMIT_ORDER(34),
+    /**
+     * <pre>
+     * Pegged orders can only have TIF GTC or GTT
+     * </pre>
+     *
+     * <code>ORDER_ERROR_MUST_BE_GTT_OR_GTC = 35;</code>
+     */
+    ORDER_ERROR_MUST_BE_GTT_OR_GTC(35),
+    /**
+     * <pre>
+     * Pegged order must have a reference price
+     * </pre>
+     *
+     * <code>ORDER_ERROR_WITHOUT_REFERENCE_PRICE = 36;</code>
+     */
+    ORDER_ERROR_WITHOUT_REFERENCE_PRICE(36),
+    /**
+     * <pre>
+     * Buy pegged order cannot reference best ask price
+     * </pre>
+     *
+     * <code>ORDER_ERROR_BUY_CANNOT_REFERENCE_BEST_ASK_PRICE = 37;</code>
+     */
+    ORDER_ERROR_BUY_CANNOT_REFERENCE_BEST_ASK_PRICE(37),
+    /**
+     * <pre>
+     * Pegged order offset must be &lt;= 0
+     * </pre>
+     *
+     * <code>ORDER_ERROR_OFFSET_MUST_BE_LESS_OR_EQUAL_TO_ZERO = 38;</code>
+     */
+    ORDER_ERROR_OFFSET_MUST_BE_LESS_OR_EQUAL_TO_ZERO(38),
+    /**
+     * <pre>
+     * Pegged order offset must be &lt; 0
+     * </pre>
+     *
+     * <code>ORDER_ERROR_OFFSET_MUST_BE_LESS_THAN_ZERO = 39;</code>
+     */
+    ORDER_ERROR_OFFSET_MUST_BE_LESS_THAN_ZERO(39),
+    /**
+     * <pre>
+     * Pegged order offset must be &gt;= 0
+     * </pre>
+     *
+     * <code>ORDER_ERROR_OFFSET_MUST_BE_GREATER_OR_EQUAL_TO_ZERO = 40;</code>
+     */
+    ORDER_ERROR_OFFSET_MUST_BE_GREATER_OR_EQUAL_TO_ZERO(40),
+    /**
+     * <pre>
+     * Sell pegged order cannot reference best bid price
+     * </pre>
+     *
+     * <code>ORDER_ERROR_SELL_CANNOT_REFERENCE_BEST_BID_PRICE = 41;</code>
+     */
+    ORDER_ERROR_SELL_CANNOT_REFERENCE_BEST_BID_PRICE(41),
+    /**
+     * <pre>
+     * Pegged order offset must be &gt; zero
+     * </pre>
+     *
+     * <code>ORDER_ERROR_OFFSET_MUST_BE_GREATER_THAN_ZERO = 42;</code>
+     */
+    ORDER_ERROR_OFFSET_MUST_BE_GREATER_THAN_ZERO(42),
+    /**
+     * <pre>
      * The party have an insufficient balance, or don't have
      * a general account to submit the order (no deposits made
      * for the required asset).
      * </pre>
      *
-     * <code>ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE = 34;</code>
+     * <code>ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE = 43;</code>
      */
-    ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE(34),
+    ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE(43),
     UNRECOGNIZED(-1),
     ;
 
@@ -1261,14 +1485,86 @@ public final class Vega {
     public static final int ORDER_ERROR_CANNOT_SEND_FOK_ORDER_DURING_AUCTION_VALUE = 33;
     /**
      * <pre>
+     * Pegged orders must be LIMIT orders
+     * </pre>
+     *
+     * <code>ORDER_ERROR_MUST_BE_LIMIT_ORDER = 34;</code>
+     */
+    public static final int ORDER_ERROR_MUST_BE_LIMIT_ORDER_VALUE = 34;
+    /**
+     * <pre>
+     * Pegged orders can only have TIF GTC or GTT
+     * </pre>
+     *
+     * <code>ORDER_ERROR_MUST_BE_GTT_OR_GTC = 35;</code>
+     */
+    public static final int ORDER_ERROR_MUST_BE_GTT_OR_GTC_VALUE = 35;
+    /**
+     * <pre>
+     * Pegged order must have a reference price
+     * </pre>
+     *
+     * <code>ORDER_ERROR_WITHOUT_REFERENCE_PRICE = 36;</code>
+     */
+    public static final int ORDER_ERROR_WITHOUT_REFERENCE_PRICE_VALUE = 36;
+    /**
+     * <pre>
+     * Buy pegged order cannot reference best ask price
+     * </pre>
+     *
+     * <code>ORDER_ERROR_BUY_CANNOT_REFERENCE_BEST_ASK_PRICE = 37;</code>
+     */
+    public static final int ORDER_ERROR_BUY_CANNOT_REFERENCE_BEST_ASK_PRICE_VALUE = 37;
+    /**
+     * <pre>
+     * Pegged order offset must be &lt;= 0
+     * </pre>
+     *
+     * <code>ORDER_ERROR_OFFSET_MUST_BE_LESS_OR_EQUAL_TO_ZERO = 38;</code>
+     */
+    public static final int ORDER_ERROR_OFFSET_MUST_BE_LESS_OR_EQUAL_TO_ZERO_VALUE = 38;
+    /**
+     * <pre>
+     * Pegged order offset must be &lt; 0
+     * </pre>
+     *
+     * <code>ORDER_ERROR_OFFSET_MUST_BE_LESS_THAN_ZERO = 39;</code>
+     */
+    public static final int ORDER_ERROR_OFFSET_MUST_BE_LESS_THAN_ZERO_VALUE = 39;
+    /**
+     * <pre>
+     * Pegged order offset must be &gt;= 0
+     * </pre>
+     *
+     * <code>ORDER_ERROR_OFFSET_MUST_BE_GREATER_OR_EQUAL_TO_ZERO = 40;</code>
+     */
+    public static final int ORDER_ERROR_OFFSET_MUST_BE_GREATER_OR_EQUAL_TO_ZERO_VALUE = 40;
+    /**
+     * <pre>
+     * Sell pegged order cannot reference best bid price
+     * </pre>
+     *
+     * <code>ORDER_ERROR_SELL_CANNOT_REFERENCE_BEST_BID_PRICE = 41;</code>
+     */
+    public static final int ORDER_ERROR_SELL_CANNOT_REFERENCE_BEST_BID_PRICE_VALUE = 41;
+    /**
+     * <pre>
+     * Pegged order offset must be &gt; zero
+     * </pre>
+     *
+     * <code>ORDER_ERROR_OFFSET_MUST_BE_GREATER_THAN_ZERO = 42;</code>
+     */
+    public static final int ORDER_ERROR_OFFSET_MUST_BE_GREATER_THAN_ZERO_VALUE = 42;
+    /**
+     * <pre>
      * The party have an insufficient balance, or don't have
      * a general account to submit the order (no deposits made
      * for the required asset).
      * </pre>
      *
-     * <code>ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE = 34;</code>
+     * <code>ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE = 43;</code>
      */
-    public static final int ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE_VALUE = 34;
+    public static final int ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE_VALUE = 43;
 
 
     public final int getNumber() {
@@ -1323,7 +1619,16 @@ public final class Vega {
         case 31: return ORDER_ERROR_CANNOT_AMEND_FROM_GFA_OR_GFN;
         case 32: return ORDER_ERROR_CANNOT_SEND_IOC_ORDER_DURING_AUCTION;
         case 33: return ORDER_ERROR_CANNOT_SEND_FOK_ORDER_DURING_AUCTION;
-        case 34: return ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE;
+        case 34: return ORDER_ERROR_MUST_BE_LIMIT_ORDER;
+        case 35: return ORDER_ERROR_MUST_BE_GTT_OR_GTC;
+        case 36: return ORDER_ERROR_WITHOUT_REFERENCE_PRICE;
+        case 37: return ORDER_ERROR_BUY_CANNOT_REFERENCE_BEST_ASK_PRICE;
+        case 38: return ORDER_ERROR_OFFSET_MUST_BE_LESS_OR_EQUAL_TO_ZERO;
+        case 39: return ORDER_ERROR_OFFSET_MUST_BE_LESS_THAN_ZERO;
+        case 40: return ORDER_ERROR_OFFSET_MUST_BE_GREATER_OR_EQUAL_TO_ZERO;
+        case 41: return ORDER_ERROR_SELL_CANNOT_REFERENCE_BEST_BID_PRICE;
+        case 42: return ORDER_ERROR_OFFSET_MUST_BE_GREATER_THAN_ZERO;
+        case 43: return ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE;
         default: return null;
       }
     }
@@ -1350,7 +1655,7 @@ public final class Vega {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(4);
+      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(5);
     }
 
     private static final OrderError[] VALUES = values();
@@ -1502,7 +1807,7 @@ public final class Vega {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(5);
+      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(6);
     }
 
     private static final ChainStatus[] VALUES = values();
@@ -1617,6 +1922,14 @@ public final class Vega {
      * <code>ACCOUNT_TYPE_LOCK_WITHDRAW = 8;</code>
      */
     ACCOUNT_TYPE_LOCK_WITHDRAW(8),
+    /**
+     * <pre>
+     * This account is created to maintain liquidity providers funds commitments
+     * </pre>
+     *
+     * <code>ACCOUNT_TYPE_BOND = 9;</code>
+     */
+    ACCOUNT_TYPE_BOND(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -1700,6 +2013,14 @@ public final class Vega {
      * <code>ACCOUNT_TYPE_LOCK_WITHDRAW = 8;</code>
      */
     public static final int ACCOUNT_TYPE_LOCK_WITHDRAW_VALUE = 8;
+    /**
+     * <pre>
+     * This account is created to maintain liquidity providers funds commitments
+     * </pre>
+     *
+     * <code>ACCOUNT_TYPE_BOND = 9;</code>
+     */
+    public static final int ACCOUNT_TYPE_BOND_VALUE = 9;
 
 
     public final int getNumber() {
@@ -1729,6 +2050,7 @@ public final class Vega {
         case 6: return ACCOUNT_TYPE_FEES_LIQUIDITY;
         case 7: return ACCOUNT_TYPE_FEES_MAKER;
         case 8: return ACCOUNT_TYPE_LOCK_WITHDRAW;
+        case 9: return ACCOUNT_TYPE_BOND;
         default: return null;
       }
     }
@@ -1755,7 +2077,7 @@ public final class Vega {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(6);
+      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(7);
     }
 
     private static final AccountType[] VALUES = values();
@@ -2060,7 +2382,7 @@ public final class Vega {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(7);
+      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(8);
     }
 
     private static final TransferType[] VALUES = values();
@@ -2195,7 +2517,7 @@ public final class Vega {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(8);
+      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(9);
     }
 
     private static final NodeSignatureKind[] VALUES = values();
@@ -5885,6 +6207,631 @@ public final class Vega {
 
   }
 
+  public interface PeggedOrderOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.PeggedOrder)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Which price point are we linked to
+     * </pre>
+     *
+     * <code>.vega.PeggedReference reference = 1;</code>
+     */
+    int getReferenceValue();
+    /**
+     * <pre>
+     * Which price point are we linked to
+     * </pre>
+     *
+     * <code>.vega.PeggedReference reference = 1;</code>
+     */
+    io.vegaprotocol.vega.Vega.PeggedReference getReference();
+
+    /**
+     * <pre>
+     * Offset from the price reference
+     * </pre>
+     *
+     * <code>int64 offset = 2;</code>
+     */
+    long getOffset();
+  }
+  /**
+   * Protobuf type {@code vega.PeggedOrder}
+   */
+  public  static final class PeggedOrder extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.PeggedOrder)
+      PeggedOrderOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PeggedOrder.newBuilder() to construct.
+    private PeggedOrder(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PeggedOrder() {
+      reference_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PeggedOrder(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              reference_ = rawValue;
+              break;
+            }
+            case 16: {
+
+              offset_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_PeggedOrder_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_PeggedOrder_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Vega.PeggedOrder.class, io.vegaprotocol.vega.Vega.PeggedOrder.Builder.class);
+    }
+
+    public static final int REFERENCE_FIELD_NUMBER = 1;
+    private int reference_;
+    /**
+     * <pre>
+     * Which price point are we linked to
+     * </pre>
+     *
+     * <code>.vega.PeggedReference reference = 1;</code>
+     */
+    public int getReferenceValue() {
+      return reference_;
+    }
+    /**
+     * <pre>
+     * Which price point are we linked to
+     * </pre>
+     *
+     * <code>.vega.PeggedReference reference = 1;</code>
+     */
+    public io.vegaprotocol.vega.Vega.PeggedReference getReference() {
+      @SuppressWarnings("deprecation")
+      io.vegaprotocol.vega.Vega.PeggedReference result = io.vegaprotocol.vega.Vega.PeggedReference.valueOf(reference_);
+      return result == null ? io.vegaprotocol.vega.Vega.PeggedReference.UNRECOGNIZED : result;
+    }
+
+    public static final int OFFSET_FIELD_NUMBER = 2;
+    private long offset_;
+    /**
+     * <pre>
+     * Offset from the price reference
+     * </pre>
+     *
+     * <code>int64 offset = 2;</code>
+     */
+    public long getOffset() {
+      return offset_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (reference_ != io.vegaprotocol.vega.Vega.PeggedReference.PEGGED_REFERENCE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(1, reference_);
+      }
+      if (offset_ != 0L) {
+        output.writeInt64(2, offset_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (reference_ != io.vegaprotocol.vega.Vega.PeggedReference.PEGGED_REFERENCE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, reference_);
+      }
+      if (offset_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, offset_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Vega.PeggedOrder)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Vega.PeggedOrder other = (io.vegaprotocol.vega.Vega.PeggedOrder) obj;
+
+      if (reference_ != other.reference_) return false;
+      if (getOffset()
+          != other.getOffset()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
+      hash = (53 * hash) + reference_;
+      hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOffset());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Vega.PeggedOrder parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.PeggedOrder parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.PeggedOrder parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.PeggedOrder parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.PeggedOrder parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.PeggedOrder parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.PeggedOrder parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.PeggedOrder parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.PeggedOrder parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.PeggedOrder parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.PeggedOrder parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.PeggedOrder parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Vega.PeggedOrder prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.PeggedOrder}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.PeggedOrder)
+        io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_PeggedOrder_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_PeggedOrder_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Vega.PeggedOrder.class, io.vegaprotocol.vega.Vega.PeggedOrder.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Vega.PeggedOrder.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        reference_ = 0;
+
+        offset_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_PeggedOrder_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.PeggedOrder getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Vega.PeggedOrder.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.PeggedOrder build() {
+        io.vegaprotocol.vega.Vega.PeggedOrder result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.PeggedOrder buildPartial() {
+        io.vegaprotocol.vega.Vega.PeggedOrder result = new io.vegaprotocol.vega.Vega.PeggedOrder(this);
+        result.reference_ = reference_;
+        result.offset_ = offset_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Vega.PeggedOrder) {
+          return mergeFrom((io.vegaprotocol.vega.Vega.PeggedOrder)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Vega.PeggedOrder other) {
+        if (other == io.vegaprotocol.vega.Vega.PeggedOrder.getDefaultInstance()) return this;
+        if (other.reference_ != 0) {
+          setReferenceValue(other.getReferenceValue());
+        }
+        if (other.getOffset() != 0L) {
+          setOffset(other.getOffset());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Vega.PeggedOrder parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Vega.PeggedOrder) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int reference_ = 0;
+      /**
+       * <pre>
+       * Which price point are we linked to
+       * </pre>
+       *
+       * <code>.vega.PeggedReference reference = 1;</code>
+       */
+      public int getReferenceValue() {
+        return reference_;
+      }
+      /**
+       * <pre>
+       * Which price point are we linked to
+       * </pre>
+       *
+       * <code>.vega.PeggedReference reference = 1;</code>
+       */
+      public Builder setReferenceValue(int value) {
+        reference_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Which price point are we linked to
+       * </pre>
+       *
+       * <code>.vega.PeggedReference reference = 1;</code>
+       */
+      public io.vegaprotocol.vega.Vega.PeggedReference getReference() {
+        @SuppressWarnings("deprecation")
+        io.vegaprotocol.vega.Vega.PeggedReference result = io.vegaprotocol.vega.Vega.PeggedReference.valueOf(reference_);
+        return result == null ? io.vegaprotocol.vega.Vega.PeggedReference.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Which price point are we linked to
+       * </pre>
+       *
+       * <code>.vega.PeggedReference reference = 1;</code>
+       */
+      public Builder setReference(io.vegaprotocol.vega.Vega.PeggedReference value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        reference_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Which price point are we linked to
+       * </pre>
+       *
+       * <code>.vega.PeggedReference reference = 1;</code>
+       */
+      public Builder clearReference() {
+
+        reference_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long offset_ ;
+      /**
+       * <pre>
+       * Offset from the price reference
+       * </pre>
+       *
+       * <code>int64 offset = 2;</code>
+       */
+      public long getOffset() {
+        return offset_;
+      }
+      /**
+       * <pre>
+       * Offset from the price reference
+       * </pre>
+       *
+       * <code>int64 offset = 2;</code>
+       */
+      public Builder setOffset(long value) {
+
+        offset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Offset from the price reference
+       * </pre>
+       *
+       * <code>int64 offset = 2;</code>
+       */
+      public Builder clearOffset() {
+
+        offset_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.PeggedOrder)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.PeggedOrder)
+    private static final io.vegaprotocol.vega.Vega.PeggedOrder DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.PeggedOrder();
+    }
+
+    public static io.vegaprotocol.vega.Vega.PeggedOrder getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PeggedOrder>
+        PARSER = new com.google.protobuf.AbstractParser<PeggedOrder>() {
+      @java.lang.Override
+      public PeggedOrder parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PeggedOrder(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PeggedOrder> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PeggedOrder> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.PeggedOrder getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface OrderOrBuilder extends
       // @@protoc_insertion_point(interface_extends:vega.Order)
       com.google.protobuf.MessageOrBuilder {
@@ -6130,6 +7077,31 @@ public final class Vega {
      * <code>uint64 batchID = 17;</code>
      */
     long getBatchID();
+
+    /**
+     * <pre>
+     * If this order represents a pegged order, the details are supplied here
+     * </pre>
+     *
+     * <code>.vega.PeggedOrder peggedOrder = 18;</code>
+     */
+    boolean hasPeggedOrder();
+    /**
+     * <pre>
+     * If this order represents a pegged order, the details are supplied here
+     * </pre>
+     *
+     * <code>.vega.PeggedOrder peggedOrder = 18;</code>
+     */
+    io.vegaprotocol.vega.Vega.PeggedOrder getPeggedOrder();
+    /**
+     * <pre>
+     * If this order represents a pegged order, the details are supplied here
+     * </pre>
+     *
+     * <code>.vega.PeggedOrder peggedOrder = 18;</code>
+     */
+    io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder getPeggedOrderOrBuilder();
   }
   /**
    * <pre>
@@ -6275,6 +7247,19 @@ public final class Vega {
             case 136: {
 
               batchID_ = input.readUInt64();
+              break;
+            }
+            case 146: {
+              io.vegaprotocol.vega.Vega.PeggedOrder.Builder subBuilder = null;
+              if (peggedOrder_ != null) {
+                subBuilder = peggedOrder_.toBuilder();
+              }
+              peggedOrder_ = input.readMessage(io.vegaprotocol.vega.Vega.PeggedOrder.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(peggedOrder_);
+                peggedOrder_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -7296,6 +8281,39 @@ public final class Vega {
       return batchID_;
     }
 
+    public static final int PEGGEDORDER_FIELD_NUMBER = 18;
+    private io.vegaprotocol.vega.Vega.PeggedOrder peggedOrder_;
+    /**
+     * <pre>
+     * If this order represents a pegged order, the details are supplied here
+     * </pre>
+     *
+     * <code>.vega.PeggedOrder peggedOrder = 18;</code>
+     */
+    public boolean hasPeggedOrder() {
+      return peggedOrder_ != null;
+    }
+    /**
+     * <pre>
+     * If this order represents a pegged order, the details are supplied here
+     * </pre>
+     *
+     * <code>.vega.PeggedOrder peggedOrder = 18;</code>
+     */
+    public io.vegaprotocol.vega.Vega.PeggedOrder getPeggedOrder() {
+      return peggedOrder_ == null ? io.vegaprotocol.vega.Vega.PeggedOrder.getDefaultInstance() : peggedOrder_;
+    }
+    /**
+     * <pre>
+     * If this order represents a pegged order, the details are supplied here
+     * </pre>
+     *
+     * <code>.vega.PeggedOrder peggedOrder = 18;</code>
+     */
+    public io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder getPeggedOrderOrBuilder() {
+      return getPeggedOrder();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7360,6 +8378,9 @@ public final class Vega {
       }
       if (batchID_ != 0L) {
         output.writeUInt64(17, batchID_);
+      }
+      if (peggedOrder_ != null) {
+        output.writeMessage(18, getPeggedOrder());
       }
       unknownFields.writeTo(output);
     }
@@ -7434,6 +8455,10 @@ public final class Vega {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(17, batchID_);
       }
+      if (peggedOrder_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(18, getPeggedOrder());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -7478,6 +8503,11 @@ public final class Vega {
           != other.getVersion()) return false;
       if (getBatchID()
           != other.getBatchID()) return false;
+      if (hasPeggedOrder() != other.hasPeggedOrder()) return false;
+      if (hasPeggedOrder()) {
+        if (!getPeggedOrder()
+            .equals(other.getPeggedOrder())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7531,6 +8561,10 @@ public final class Vega {
       hash = (37 * hash) + BATCHID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getBatchID());
+      if (hasPeggedOrder()) {
+        hash = (37 * hash) + PEGGEDORDER_FIELD_NUMBER;
+        hash = (53 * hash) + getPeggedOrder().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7702,6 +8736,12 @@ public final class Vega {
 
         batchID_ = 0L;
 
+        if (peggedOrderBuilder_ == null) {
+          peggedOrder_ = null;
+        } else {
+          peggedOrder_ = null;
+          peggedOrderBuilder_ = null;
+        }
         return this;
       }
 
@@ -7745,6 +8785,11 @@ public final class Vega {
         result.updatedAt_ = updatedAt_;
         result.version_ = version_;
         result.batchID_ = batchID_;
+        if (peggedOrderBuilder_ == null) {
+          result.peggedOrder_ = peggedOrder_;
+        } else {
+          result.peggedOrder_ = peggedOrderBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -7847,6 +8892,9 @@ public final class Vega {
         }
         if (other.getBatchID() != 0L) {
           setBatchID(other.getBatchID());
+        }
+        if (other.hasPeggedOrder()) {
+          mergePeggedOrder(other.getPeggedOrder());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8895,6 +9943,159 @@ public final class Vega {
         batchID_ = 0L;
         onChanged();
         return this;
+      }
+
+      private io.vegaprotocol.vega.Vega.PeggedOrder peggedOrder_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.PeggedOrder, io.vegaprotocol.vega.Vega.PeggedOrder.Builder, io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder> peggedOrderBuilder_;
+      /**
+       * <pre>
+       * If this order represents a pegged order, the details are supplied here
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 18;</code>
+       */
+      public boolean hasPeggedOrder() {
+        return peggedOrderBuilder_ != null || peggedOrder_ != null;
+      }
+      /**
+       * <pre>
+       * If this order represents a pegged order, the details are supplied here
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 18;</code>
+       */
+      public io.vegaprotocol.vega.Vega.PeggedOrder getPeggedOrder() {
+        if (peggedOrderBuilder_ == null) {
+          return peggedOrder_ == null ? io.vegaprotocol.vega.Vega.PeggedOrder.getDefaultInstance() : peggedOrder_;
+        } else {
+          return peggedOrderBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * If this order represents a pegged order, the details are supplied here
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 18;</code>
+       */
+      public Builder setPeggedOrder(io.vegaprotocol.vega.Vega.PeggedOrder value) {
+        if (peggedOrderBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          peggedOrder_ = value;
+          onChanged();
+        } else {
+          peggedOrderBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * If this order represents a pegged order, the details are supplied here
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 18;</code>
+       */
+      public Builder setPeggedOrder(
+          io.vegaprotocol.vega.Vega.PeggedOrder.Builder builderForValue) {
+        if (peggedOrderBuilder_ == null) {
+          peggedOrder_ = builderForValue.build();
+          onChanged();
+        } else {
+          peggedOrderBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * If this order represents a pegged order, the details are supplied here
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 18;</code>
+       */
+      public Builder mergePeggedOrder(io.vegaprotocol.vega.Vega.PeggedOrder value) {
+        if (peggedOrderBuilder_ == null) {
+          if (peggedOrder_ != null) {
+            peggedOrder_ =
+              io.vegaprotocol.vega.Vega.PeggedOrder.newBuilder(peggedOrder_).mergeFrom(value).buildPartial();
+          } else {
+            peggedOrder_ = value;
+          }
+          onChanged();
+        } else {
+          peggedOrderBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * If this order represents a pegged order, the details are supplied here
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 18;</code>
+       */
+      public Builder clearPeggedOrder() {
+        if (peggedOrderBuilder_ == null) {
+          peggedOrder_ = null;
+          onChanged();
+        } else {
+          peggedOrder_ = null;
+          peggedOrderBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * If this order represents a pegged order, the details are supplied here
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 18;</code>
+       */
+      public io.vegaprotocol.vega.Vega.PeggedOrder.Builder getPeggedOrderBuilder() {
+
+        onChanged();
+        return getPeggedOrderFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * If this order represents a pegged order, the details are supplied here
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 18;</code>
+       */
+      public io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder getPeggedOrderOrBuilder() {
+        if (peggedOrderBuilder_ != null) {
+          return peggedOrderBuilder_.getMessageOrBuilder();
+        } else {
+          return peggedOrder_ == null ?
+              io.vegaprotocol.vega.Vega.PeggedOrder.getDefaultInstance() : peggedOrder_;
+        }
+      }
+      /**
+       * <pre>
+       * If this order represents a pegged order, the details are supplied here
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.PeggedOrder, io.vegaprotocol.vega.Vega.PeggedOrder.Builder, io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder>
+          getPeggedOrderFieldBuilder() {
+        if (peggedOrderBuilder_ == null) {
+          peggedOrderBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.PeggedOrder, io.vegaprotocol.vega.Vega.PeggedOrder.Builder, io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder>(
+                  getPeggedOrder(),
+                  getParentForChildren(),
+                  isClean());
+          peggedOrder_ = null;
+        }
+        return peggedOrderBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -35497,6 +36698,31 @@ public final class Vega {
      */
     com.google.protobuf.ByteString
         getReferenceBytes();
+
+    /**
+     * <pre>
+     * Pegged order details. If this sub message is supplied then the fields are used to configure a pegged order
+     * </pre>
+     *
+     * <code>.vega.PeggedOrder peggedOrder = 11;</code>
+     */
+    boolean hasPeggedOrder();
+    /**
+     * <pre>
+     * Pegged order details. If this sub message is supplied then the fields are used to configure a pegged order
+     * </pre>
+     *
+     * <code>.vega.PeggedOrder peggedOrder = 11;</code>
+     */
+    io.vegaprotocol.vega.Vega.PeggedOrder getPeggedOrder();
+    /**
+     * <pre>
+     * Pegged order details. If this sub message is supplied then the fields are used to configure a pegged order
+     * </pre>
+     *
+     * <code>.vega.PeggedOrder peggedOrder = 11;</code>
+     */
+    io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder getPeggedOrderOrBuilder();
   }
   /**
    * <pre>
@@ -35603,6 +36829,19 @@ public final class Vega {
               java.lang.String s = input.readStringRequireUtf8();
 
               reference_ = s;
+              break;
+            }
+            case 90: {
+              io.vegaprotocol.vega.Vega.PeggedOrder.Builder subBuilder = null;
+              if (peggedOrder_ != null) {
+                subBuilder = peggedOrder_.toBuilder();
+              }
+              peggedOrder_ = input.readMessage(io.vegaprotocol.vega.Vega.PeggedOrder.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(peggedOrder_);
+                peggedOrder_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -35927,6 +37166,39 @@ public final class Vega {
       }
     }
 
+    public static final int PEGGEDORDER_FIELD_NUMBER = 11;
+    private io.vegaprotocol.vega.Vega.PeggedOrder peggedOrder_;
+    /**
+     * <pre>
+     * Pegged order details. If this sub message is supplied then the fields are used to configure a pegged order
+     * </pre>
+     *
+     * <code>.vega.PeggedOrder peggedOrder = 11;</code>
+     */
+    public boolean hasPeggedOrder() {
+      return peggedOrder_ != null;
+    }
+    /**
+     * <pre>
+     * Pegged order details. If this sub message is supplied then the fields are used to configure a pegged order
+     * </pre>
+     *
+     * <code>.vega.PeggedOrder peggedOrder = 11;</code>
+     */
+    public io.vegaprotocol.vega.Vega.PeggedOrder getPeggedOrder() {
+      return peggedOrder_ == null ? io.vegaprotocol.vega.Vega.PeggedOrder.getDefaultInstance() : peggedOrder_;
+    }
+    /**
+     * <pre>
+     * Pegged order details. If this sub message is supplied then the fields are used to configure a pegged order
+     * </pre>
+     *
+     * <code>.vega.PeggedOrder peggedOrder = 11;</code>
+     */
+    public io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder getPeggedOrderOrBuilder() {
+      return getPeggedOrder();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -35970,6 +37242,9 @@ public final class Vega {
       }
       if (!getReferenceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, reference_);
+      }
+      if (peggedOrder_ != null) {
+        output.writeMessage(11, getPeggedOrder());
       }
       unknownFields.writeTo(output);
     }
@@ -36016,6 +37291,10 @@ public final class Vega {
       if (!getReferenceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, reference_);
       }
+      if (peggedOrder_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, getPeggedOrder());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -36048,6 +37327,11 @@ public final class Vega {
       if (type_ != other.type_) return false;
       if (!getReference()
           .equals(other.getReference())) return false;
+      if (hasPeggedOrder() != other.hasPeggedOrder()) return false;
+      if (hasPeggedOrder()) {
+        if (!getPeggedOrder()
+            .equals(other.getPeggedOrder())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -36082,6 +37366,10 @@ public final class Vega {
       hash = (53 * hash) + type_;
       hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
       hash = (53 * hash) + getReference().hashCode();
+      if (hasPeggedOrder()) {
+        hash = (37 * hash) + PEGGEDORDER_FIELD_NUMBER;
+        hash = (53 * hash) + getPeggedOrder().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -36239,6 +37527,12 @@ public final class Vega {
 
         reference_ = "";
 
+        if (peggedOrderBuilder_ == null) {
+          peggedOrder_ = null;
+        } else {
+          peggedOrder_ = null;
+          peggedOrderBuilder_ = null;
+        }
         return this;
       }
 
@@ -36275,6 +37569,11 @@ public final class Vega {
         result.expiresAt_ = expiresAt_;
         result.type_ = type_;
         result.reference_ = reference_;
+        if (peggedOrderBuilder_ == null) {
+          result.peggedOrder_ = peggedOrder_;
+        } else {
+          result.peggedOrder_ = peggedOrderBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -36356,6 +37655,9 @@ public final class Vega {
         if (!other.getReference().isEmpty()) {
           reference_ = other.reference_;
           onChanged();
+        }
+        if (other.hasPeggedOrder()) {
+          mergePeggedOrder(other.getPeggedOrder());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -37071,6 +38373,159 @@ public final class Vega {
         reference_ = value;
         onChanged();
         return this;
+      }
+
+      private io.vegaprotocol.vega.Vega.PeggedOrder peggedOrder_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.PeggedOrder, io.vegaprotocol.vega.Vega.PeggedOrder.Builder, io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder> peggedOrderBuilder_;
+      /**
+       * <pre>
+       * Pegged order details. If this sub message is supplied then the fields are used to configure a pegged order
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 11;</code>
+       */
+      public boolean hasPeggedOrder() {
+        return peggedOrderBuilder_ != null || peggedOrder_ != null;
+      }
+      /**
+       * <pre>
+       * Pegged order details. If this sub message is supplied then the fields are used to configure a pegged order
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 11;</code>
+       */
+      public io.vegaprotocol.vega.Vega.PeggedOrder getPeggedOrder() {
+        if (peggedOrderBuilder_ == null) {
+          return peggedOrder_ == null ? io.vegaprotocol.vega.Vega.PeggedOrder.getDefaultInstance() : peggedOrder_;
+        } else {
+          return peggedOrderBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Pegged order details. If this sub message is supplied then the fields are used to configure a pegged order
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 11;</code>
+       */
+      public Builder setPeggedOrder(io.vegaprotocol.vega.Vega.PeggedOrder value) {
+        if (peggedOrderBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          peggedOrder_ = value;
+          onChanged();
+        } else {
+          peggedOrderBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Pegged order details. If this sub message is supplied then the fields are used to configure a pegged order
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 11;</code>
+       */
+      public Builder setPeggedOrder(
+          io.vegaprotocol.vega.Vega.PeggedOrder.Builder builderForValue) {
+        if (peggedOrderBuilder_ == null) {
+          peggedOrder_ = builderForValue.build();
+          onChanged();
+        } else {
+          peggedOrderBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Pegged order details. If this sub message is supplied then the fields are used to configure a pegged order
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 11;</code>
+       */
+      public Builder mergePeggedOrder(io.vegaprotocol.vega.Vega.PeggedOrder value) {
+        if (peggedOrderBuilder_ == null) {
+          if (peggedOrder_ != null) {
+            peggedOrder_ =
+              io.vegaprotocol.vega.Vega.PeggedOrder.newBuilder(peggedOrder_).mergeFrom(value).buildPartial();
+          } else {
+            peggedOrder_ = value;
+          }
+          onChanged();
+        } else {
+          peggedOrderBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Pegged order details. If this sub message is supplied then the fields are used to configure a pegged order
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 11;</code>
+       */
+      public Builder clearPeggedOrder() {
+        if (peggedOrderBuilder_ == null) {
+          peggedOrder_ = null;
+          onChanged();
+        } else {
+          peggedOrder_ = null;
+          peggedOrderBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Pegged order details. If this sub message is supplied then the fields are used to configure a pegged order
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 11;</code>
+       */
+      public io.vegaprotocol.vega.Vega.PeggedOrder.Builder getPeggedOrderBuilder() {
+
+        onChanged();
+        return getPeggedOrderFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Pegged order details. If this sub message is supplied then the fields are used to configure a pegged order
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 11;</code>
+       */
+      public io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder getPeggedOrderOrBuilder() {
+        if (peggedOrderBuilder_ != null) {
+          return peggedOrderBuilder_.getMessageOrBuilder();
+        } else {
+          return peggedOrder_ == null ?
+              io.vegaprotocol.vega.Vega.PeggedOrder.getDefaultInstance() : peggedOrder_;
+        }
+      }
+      /**
+       * <pre>
+       * Pegged order details. If this sub message is supplied then the fields are used to configure a pegged order
+       * </pre>
+       *
+       * <code>.vega.PeggedOrder peggedOrder = 11;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.PeggedOrder, io.vegaprotocol.vega.Vega.PeggedOrder.Builder, io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder>
+          getPeggedOrderFieldBuilder() {
+        if (peggedOrderBuilder_ == null) {
+          peggedOrderBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.PeggedOrder, io.vegaprotocol.vega.Vega.PeggedOrder.Builder, io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder>(
+                  getPeggedOrder(),
+                  getParentForChildren(),
+                  isClean());
+          peggedOrder_ = null;
+        }
+        return peggedOrderBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -49254,6 +50709,42 @@ public final class Vega {
      * <code>.vega.AuctionTrigger trigger = 15;</code>
      */
     io.vegaprotocol.vega.Vega.AuctionTrigger getTrigger();
+
+    /**
+     * <pre>
+     * the targeted stake for the given market
+     * </pre>
+     *
+     * <code>string targetStake = 16;</code>
+     */
+    java.lang.String getTargetStake();
+    /**
+     * <pre>
+     * the targeted stake for the given market
+     * </pre>
+     *
+     * <code>string targetStake = 16;</code>
+     */
+    com.google.protobuf.ByteString
+        getTargetStakeBytes();
+
+    /**
+     * <pre>
+     * the available stake fo the given market
+     * </pre>
+     *
+     * <code>string suppliedStake = 17;</code>
+     */
+    java.lang.String getSuppliedStake();
+    /**
+     * <pre>
+     * the available stake fo the given market
+     * </pre>
+     *
+     * <code>string suppliedStake = 17;</code>
+     */
+    com.google.protobuf.ByteString
+        getSuppliedStakeBytes();
   }
   /**
    * <pre>
@@ -49275,6 +50766,8 @@ public final class Vega {
       market_ = "";
       marketState_ = 0;
       trigger_ = 0;
+      targetStake_ = "";
+      suppliedStake_ = "";
     }
 
     @java.lang.Override
@@ -49377,6 +50870,18 @@ public final class Vega {
               int rawValue = input.readEnum();
 
               trigger_ = rawValue;
+              break;
+            }
+            case 130: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              targetStake_ = s;
+              break;
+            }
+            case 138: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              suppliedStake_ = s;
               break;
             }
             default: {
@@ -49664,6 +51169,90 @@ public final class Vega {
       return result == null ? io.vegaprotocol.vega.Vega.AuctionTrigger.UNRECOGNIZED : result;
     }
 
+    public static final int TARGETSTAKE_FIELD_NUMBER = 16;
+    private volatile java.lang.Object targetStake_;
+    /**
+     * <pre>
+     * the targeted stake for the given market
+     * </pre>
+     *
+     * <code>string targetStake = 16;</code>
+     */
+    public java.lang.String getTargetStake() {
+      java.lang.Object ref = targetStake_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        targetStake_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * the targeted stake for the given market
+     * </pre>
+     *
+     * <code>string targetStake = 16;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTargetStakeBytes() {
+      java.lang.Object ref = targetStake_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        targetStake_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SUPPLIEDSTAKE_FIELD_NUMBER = 17;
+    private volatile java.lang.Object suppliedStake_;
+    /**
+     * <pre>
+     * the available stake fo the given market
+     * </pre>
+     *
+     * <code>string suppliedStake = 17;</code>
+     */
+    public java.lang.String getSuppliedStake() {
+      java.lang.Object ref = suppliedStake_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        suppliedStake_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * the available stake fo the given market
+     * </pre>
+     *
+     * <code>string suppliedStake = 17;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSuppliedStakeBytes() {
+      java.lang.Object ref = suppliedStake_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        suppliedStake_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -49722,6 +51311,12 @@ public final class Vega {
       }
       if (trigger_ != io.vegaprotocol.vega.Vega.AuctionTrigger.AUCTION_TRIGGER_UNSPECIFIED.getNumber()) {
         output.writeEnum(15, trigger_);
+      }
+      if (!getTargetStakeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, targetStake_);
+      }
+      if (!getSuppliedStakeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, suppliedStake_);
       }
       unknownFields.writeTo(output);
     }
@@ -49791,6 +51386,12 @@ public final class Vega {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(15, trigger_);
       }
+      if (!getTargetStakeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, targetStake_);
+      }
+      if (!getSuppliedStakeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, suppliedStake_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -49834,6 +51435,10 @@ public final class Vega {
           != other.getIndicativeVolume()) return false;
       if (marketState_ != other.marketState_) return false;
       if (trigger_ != other.trigger_) return false;
+      if (!getTargetStake()
+          .equals(other.getTargetStake())) return false;
+      if (!getSuppliedStake()
+          .equals(other.getSuppliedStake())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -49887,6 +51492,10 @@ public final class Vega {
       hash = (53 * hash) + marketState_;
       hash = (37 * hash) + TRIGGER_FIELD_NUMBER;
       hash = (53 * hash) + trigger_;
+      hash = (37 * hash) + TARGETSTAKE_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetStake().hashCode();
+      hash = (37 * hash) + SUPPLIEDSTAKE_FIELD_NUMBER;
+      hash = (53 * hash) + getSuppliedStake().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -50054,6 +51663,10 @@ public final class Vega {
 
         trigger_ = 0;
 
+        targetStake_ = "";
+
+        suppliedStake_ = "";
+
         return this;
       }
 
@@ -50095,6 +51708,8 @@ public final class Vega {
         result.indicativeVolume_ = indicativeVolume_;
         result.marketState_ = marketState_;
         result.trigger_ = trigger_;
+        result.targetStake_ = targetStake_;
+        result.suppliedStake_ = suppliedStake_;
         onBuilt();
         return result;
       }
@@ -50188,6 +51803,14 @@ public final class Vega {
         }
         if (other.trigger_ != 0) {
           setTriggerValue(other.getTriggerValue());
+        }
+        if (!other.getTargetStake().isEmpty()) {
+          targetStake_ = other.targetStake_;
+          onChanged();
+        }
+        if (!other.getSuppliedStake().isEmpty()) {
+          suppliedStake_ = other.suppliedStake_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -50904,6 +52527,184 @@ public final class Vega {
       public Builder clearTrigger() {
 
         trigger_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object targetStake_ = "";
+      /**
+       * <pre>
+       * the targeted stake for the given market
+       * </pre>
+       *
+       * <code>string targetStake = 16;</code>
+       */
+      public java.lang.String getTargetStake() {
+        java.lang.Object ref = targetStake_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          targetStake_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the targeted stake for the given market
+       * </pre>
+       *
+       * <code>string targetStake = 16;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTargetStakeBytes() {
+        java.lang.Object ref = targetStake_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          targetStake_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the targeted stake for the given market
+       * </pre>
+       *
+       * <code>string targetStake = 16;</code>
+       */
+      public Builder setTargetStake(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        targetStake_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the targeted stake for the given market
+       * </pre>
+       *
+       * <code>string targetStake = 16;</code>
+       */
+      public Builder clearTargetStake() {
+
+        targetStake_ = getDefaultInstance().getTargetStake();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the targeted stake for the given market
+       * </pre>
+       *
+       * <code>string targetStake = 16;</code>
+       */
+      public Builder setTargetStakeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        targetStake_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object suppliedStake_ = "";
+      /**
+       * <pre>
+       * the available stake fo the given market
+       * </pre>
+       *
+       * <code>string suppliedStake = 17;</code>
+       */
+      public java.lang.String getSuppliedStake() {
+        java.lang.Object ref = suppliedStake_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          suppliedStake_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the available stake fo the given market
+       * </pre>
+       *
+       * <code>string suppliedStake = 17;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSuppliedStakeBytes() {
+        java.lang.Object ref = suppliedStake_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          suppliedStake_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the available stake fo the given market
+       * </pre>
+       *
+       * <code>string suppliedStake = 17;</code>
+       */
+      public Builder setSuppliedStake(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        suppliedStake_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the available stake fo the given market
+       * </pre>
+       *
+       * <code>string suppliedStake = 17;</code>
+       */
+      public Builder clearSuppliedStake() {
+
+        suppliedStake_ = getDefaultInstance().getSuppliedStake();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the available stake fo the given market
+       * </pre>
+       *
+       * <code>string suppliedStake = 17;</code>
+       */
+      public Builder setSuppliedStakeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        suppliedStake_ = value;
         onChanged();
         return this;
       }
@@ -55782,6 +57583,6077 @@ public final class Vega {
 
   }
 
+  public interface LiquidityOrderOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.LiquidityOrder)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.vega.PeggedReference reference = 1;</code>
+     */
+    int getReferenceValue();
+    /**
+     * <code>.vega.PeggedReference reference = 1;</code>
+     */
+    io.vegaprotocol.vega.Vega.PeggedReference getReference();
+
+    /**
+     * <code>uint32 proportion = 2;</code>
+     */
+    int getProportion();
+
+    /**
+     * <code>int64 offset = 3;</code>
+     */
+    long getOffset();
+  }
+  /**
+   * Protobuf type {@code vega.LiquidityOrder}
+   */
+  public  static final class LiquidityOrder extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.LiquidityOrder)
+      LiquidityOrderOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LiquidityOrder.newBuilder() to construct.
+    private LiquidityOrder(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LiquidityOrder() {
+      reference_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LiquidityOrder(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              reference_ = rawValue;
+              break;
+            }
+            case 16: {
+
+              proportion_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              offset_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityOrder_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityOrder_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Vega.LiquidityOrder.class, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder.class);
+    }
+
+    public static final int REFERENCE_FIELD_NUMBER = 1;
+    private int reference_;
+    /**
+     * <code>.vega.PeggedReference reference = 1;</code>
+     */
+    public int getReferenceValue() {
+      return reference_;
+    }
+    /**
+     * <code>.vega.PeggedReference reference = 1;</code>
+     */
+    public io.vegaprotocol.vega.Vega.PeggedReference getReference() {
+      @SuppressWarnings("deprecation")
+      io.vegaprotocol.vega.Vega.PeggedReference result = io.vegaprotocol.vega.Vega.PeggedReference.valueOf(reference_);
+      return result == null ? io.vegaprotocol.vega.Vega.PeggedReference.UNRECOGNIZED : result;
+    }
+
+    public static final int PROPORTION_FIELD_NUMBER = 2;
+    private int proportion_;
+    /**
+     * <code>uint32 proportion = 2;</code>
+     */
+    public int getProportion() {
+      return proportion_;
+    }
+
+    public static final int OFFSET_FIELD_NUMBER = 3;
+    private long offset_;
+    /**
+     * <code>int64 offset = 3;</code>
+     */
+    public long getOffset() {
+      return offset_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (reference_ != io.vegaprotocol.vega.Vega.PeggedReference.PEGGED_REFERENCE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(1, reference_);
+      }
+      if (proportion_ != 0) {
+        output.writeUInt32(2, proportion_);
+      }
+      if (offset_ != 0L) {
+        output.writeInt64(3, offset_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (reference_ != io.vegaprotocol.vega.Vega.PeggedReference.PEGGED_REFERENCE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, reference_);
+      }
+      if (proportion_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, proportion_);
+      }
+      if (offset_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, offset_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Vega.LiquidityOrder)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Vega.LiquidityOrder other = (io.vegaprotocol.vega.Vega.LiquidityOrder) obj;
+
+      if (reference_ != other.reference_) return false;
+      if (getProportion()
+          != other.getProportion()) return false;
+      if (getOffset()
+          != other.getOffset()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
+      hash = (53 * hash) + reference_;
+      hash = (37 * hash) + PROPORTION_FIELD_NUMBER;
+      hash = (53 * hash) + getProportion();
+      hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOffset());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Vega.LiquidityOrder parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrder parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrder parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrder parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrder parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrder parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrder parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrder parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrder parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrder parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrder parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrder parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Vega.LiquidityOrder prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.LiquidityOrder}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.LiquidityOrder)
+        io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityOrder_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityOrder_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Vega.LiquidityOrder.class, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Vega.LiquidityOrder.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        reference_ = 0;
+
+        proportion_ = 0;
+
+        offset_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityOrder_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.LiquidityOrder getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Vega.LiquidityOrder.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.LiquidityOrder build() {
+        io.vegaprotocol.vega.Vega.LiquidityOrder result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.LiquidityOrder buildPartial() {
+        io.vegaprotocol.vega.Vega.LiquidityOrder result = new io.vegaprotocol.vega.Vega.LiquidityOrder(this);
+        result.reference_ = reference_;
+        result.proportion_ = proportion_;
+        result.offset_ = offset_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Vega.LiquidityOrder) {
+          return mergeFrom((io.vegaprotocol.vega.Vega.LiquidityOrder)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Vega.LiquidityOrder other) {
+        if (other == io.vegaprotocol.vega.Vega.LiquidityOrder.getDefaultInstance()) return this;
+        if (other.reference_ != 0) {
+          setReferenceValue(other.getReferenceValue());
+        }
+        if (other.getProportion() != 0) {
+          setProportion(other.getProportion());
+        }
+        if (other.getOffset() != 0L) {
+          setOffset(other.getOffset());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Vega.LiquidityOrder parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Vega.LiquidityOrder) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int reference_ = 0;
+      /**
+       * <code>.vega.PeggedReference reference = 1;</code>
+       */
+      public int getReferenceValue() {
+        return reference_;
+      }
+      /**
+       * <code>.vega.PeggedReference reference = 1;</code>
+       */
+      public Builder setReferenceValue(int value) {
+        reference_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.vega.PeggedReference reference = 1;</code>
+       */
+      public io.vegaprotocol.vega.Vega.PeggedReference getReference() {
+        @SuppressWarnings("deprecation")
+        io.vegaprotocol.vega.Vega.PeggedReference result = io.vegaprotocol.vega.Vega.PeggedReference.valueOf(reference_);
+        return result == null ? io.vegaprotocol.vega.Vega.PeggedReference.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.vega.PeggedReference reference = 1;</code>
+       */
+      public Builder setReference(io.vegaprotocol.vega.Vega.PeggedReference value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        reference_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.vega.PeggedReference reference = 1;</code>
+       */
+      public Builder clearReference() {
+
+        reference_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int proportion_ ;
+      /**
+       * <code>uint32 proportion = 2;</code>
+       */
+      public int getProportion() {
+        return proportion_;
+      }
+      /**
+       * <code>uint32 proportion = 2;</code>
+       */
+      public Builder setProportion(int value) {
+
+        proportion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 proportion = 2;</code>
+       */
+      public Builder clearProportion() {
+
+        proportion_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long offset_ ;
+      /**
+       * <code>int64 offset = 3;</code>
+       */
+      public long getOffset() {
+        return offset_;
+      }
+      /**
+       * <code>int64 offset = 3;</code>
+       */
+      public Builder setOffset(long value) {
+
+        offset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 offset = 3;</code>
+       */
+      public Builder clearOffset() {
+
+        offset_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.LiquidityOrder)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.LiquidityOrder)
+    private static final io.vegaprotocol.vega.Vega.LiquidityOrder DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.LiquidityOrder();
+    }
+
+    public static io.vegaprotocol.vega.Vega.LiquidityOrder getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LiquidityOrder>
+        PARSER = new com.google.protobuf.AbstractParser<LiquidityOrder>() {
+      @java.lang.Override
+      public LiquidityOrder parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LiquidityOrder(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LiquidityOrder> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LiquidityOrder> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.LiquidityOrder getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface LiquidityProvisionSubmissionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.LiquidityProvisionSubmission)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Market identifier for the order. Required field.
+     * </pre>
+     *
+     * <code>string marketID = 1 [(.validator.field) = { ... }</code>
+     */
+    java.lang.String getMarketID();
+    /**
+     * <pre>
+     * Market identifier for the order. Required field.
+     * </pre>
+     *
+     * <code>string marketID = 1 [(.validator.field) = { ... }</code>
+     */
+    com.google.protobuf.ByteString
+        getMarketIDBytes();
+
+    /**
+     * <pre>
+     * Specified as a unitless number that represents the amount of settlement asset of the market.
+     * </pre>
+     *
+     * <code>uint64 commitmentAmount = 2;</code>
+     */
+    long getCommitmentAmount();
+
+    /**
+     * <pre>
+     * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+     * </pre>
+     *
+     * <code>string fee = 3;</code>
+     */
+    java.lang.String getFee();
+    /**
+     * <pre>
+     * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+     * </pre>
+     *
+     * <code>string fee = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getFeeBytes();
+
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+     */
+    java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder>
+        getSellsList();
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityOrder getSells(int index);
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+     */
+    int getSellsCount();
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+     */
+    java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+        getSellsOrBuilderList();
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getSellsOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+     */
+    java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder>
+        getBuysList();
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityOrder getBuys(int index);
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+     */
+    int getBuysCount();
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+     */
+    java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+        getBuysOrBuilderList();
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getBuysOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code vega.LiquidityProvisionSubmission}
+   */
+  public  static final class LiquidityProvisionSubmission extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.LiquidityProvisionSubmission)
+      LiquidityProvisionSubmissionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LiquidityProvisionSubmission.newBuilder() to construct.
+    private LiquidityProvisionSubmission(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LiquidityProvisionSubmission() {
+      marketID_ = "";
+      fee_ = "";
+      sells_ = java.util.Collections.emptyList();
+      buys_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LiquidityProvisionSubmission(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              marketID_ = s;
+              break;
+            }
+            case 16: {
+
+              commitmentAmount_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fee_ = s;
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                sells_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.LiquidityOrder>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              sells_.add(
+                  input.readMessage(io.vegaprotocol.vega.Vega.LiquidityOrder.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                buys_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.LiquidityOrder>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              buys_.add(
+                  input.readMessage(io.vegaprotocol.vega.Vega.LiquidityOrder.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          sells_ = java.util.Collections.unmodifiableList(sells_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          buys_ = java.util.Collections.unmodifiableList(buys_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityProvisionSubmission_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityProvisionSubmission_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.class, io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int MARKETID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object marketID_;
+    /**
+     * <pre>
+     * Market identifier for the order. Required field.
+     * </pre>
+     *
+     * <code>string marketID = 1 [(.validator.field) = { ... }</code>
+     */
+    public java.lang.String getMarketID() {
+      java.lang.Object ref = marketID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        marketID_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Market identifier for the order. Required field.
+     * </pre>
+     *
+     * <code>string marketID = 1 [(.validator.field) = { ... }</code>
+     */
+    public com.google.protobuf.ByteString
+        getMarketIDBytes() {
+      java.lang.Object ref = marketID_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        marketID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COMMITMENTAMOUNT_FIELD_NUMBER = 2;
+    private long commitmentAmount_;
+    /**
+     * <pre>
+     * Specified as a unitless number that represents the amount of settlement asset of the market.
+     * </pre>
+     *
+     * <code>uint64 commitmentAmount = 2;</code>
+     */
+    public long getCommitmentAmount() {
+      return commitmentAmount_;
+    }
+
+    public static final int FEE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object fee_;
+    /**
+     * <pre>
+     * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+     * </pre>
+     *
+     * <code>string fee = 3;</code>
+     */
+    public java.lang.String getFee() {
+      java.lang.Object ref = fee_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fee_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+     * </pre>
+     *
+     * <code>string fee = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFeeBytes() {
+      java.lang.Object ref = fee_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fee_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SELLS_FIELD_NUMBER = 4;
+    private java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> sells_;
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+     */
+    public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> getSellsList() {
+      return sells_;
+    }
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+     */
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+        getSellsOrBuilderList() {
+      return sells_;
+    }
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+     */
+    public int getSellsCount() {
+      return sells_.size();
+    }
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityOrder getSells(int index) {
+      return sells_.get(index);
+    }
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getSellsOrBuilder(
+        int index) {
+      return sells_.get(index);
+    }
+
+    public static final int BUYS_FIELD_NUMBER = 5;
+    private java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> buys_;
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+     */
+    public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> getBuysList() {
+      return buys_;
+    }
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+     */
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+        getBuysOrBuilderList() {
+      return buys_;
+    }
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+     */
+    public int getBuysCount() {
+      return buys_.size();
+    }
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityOrder getBuys(int index) {
+      return buys_.get(index);
+    }
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getBuysOrBuilder(
+        int index) {
+      return buys_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMarketIDBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketID_);
+      }
+      if (commitmentAmount_ != 0L) {
+        output.writeUInt64(2, commitmentAmount_);
+      }
+      if (!getFeeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fee_);
+      }
+      for (int i = 0; i < sells_.size(); i++) {
+        output.writeMessage(4, sells_.get(i));
+      }
+      for (int i = 0; i < buys_.size(); i++) {
+        output.writeMessage(5, buys_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMarketIDBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketID_);
+      }
+      if (commitmentAmount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, commitmentAmount_);
+      }
+      if (!getFeeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, fee_);
+      }
+      for (int i = 0; i < sells_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, sells_.get(i));
+      }
+      for (int i = 0; i < buys_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, buys_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission other = (io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission) obj;
+
+      if (!getMarketID()
+          .equals(other.getMarketID())) return false;
+      if (getCommitmentAmount()
+          != other.getCommitmentAmount()) return false;
+      if (!getFee()
+          .equals(other.getFee())) return false;
+      if (!getSellsList()
+          .equals(other.getSellsList())) return false;
+      if (!getBuysList()
+          .equals(other.getBuysList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
+      hash = (53 * hash) + getMarketID().hashCode();
+      hash = (37 * hash) + COMMITMENTAMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCommitmentAmount());
+      hash = (37 * hash) + FEE_FIELD_NUMBER;
+      hash = (53 * hash) + getFee().hashCode();
+      if (getSellsCount() > 0) {
+        hash = (37 * hash) + SELLS_FIELD_NUMBER;
+        hash = (53 * hash) + getSellsList().hashCode();
+      }
+      if (getBuysCount() > 0) {
+        hash = (37 * hash) + BUYS_FIELD_NUMBER;
+        hash = (53 * hash) + getBuysList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.LiquidityProvisionSubmission}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.LiquidityProvisionSubmission)
+        io.vegaprotocol.vega.Vega.LiquidityProvisionSubmissionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityProvisionSubmission_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityProvisionSubmission_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.class, io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSellsFieldBuilder();
+          getBuysFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        marketID_ = "";
+
+        commitmentAmount_ = 0L;
+
+        fee_ = "";
+
+        if (sellsBuilder_ == null) {
+          sells_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          sellsBuilder_.clear();
+        }
+        if (buysBuilder_ == null) {
+          buys_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          buysBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityProvisionSubmission_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission build() {
+        io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission buildPartial() {
+        io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission result = new io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.marketID_ = marketID_;
+        result.commitmentAmount_ = commitmentAmount_;
+        result.fee_ = fee_;
+        if (sellsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            sells_ = java.util.Collections.unmodifiableList(sells_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.sells_ = sells_;
+        } else {
+          result.sells_ = sellsBuilder_.build();
+        }
+        if (buysBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)) {
+            buys_ = java.util.Collections.unmodifiableList(buys_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.buys_ = buys_;
+        } else {
+          result.buys_ = buysBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission) {
+          return mergeFrom((io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission other) {
+        if (other == io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.getDefaultInstance()) return this;
+        if (!other.getMarketID().isEmpty()) {
+          marketID_ = other.marketID_;
+          onChanged();
+        }
+        if (other.getCommitmentAmount() != 0L) {
+          setCommitmentAmount(other.getCommitmentAmount());
+        }
+        if (!other.getFee().isEmpty()) {
+          fee_ = other.fee_;
+          onChanged();
+        }
+        if (sellsBuilder_ == null) {
+          if (!other.sells_.isEmpty()) {
+            if (sells_.isEmpty()) {
+              sells_ = other.sells_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureSellsIsMutable();
+              sells_.addAll(other.sells_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.sells_.isEmpty()) {
+            if (sellsBuilder_.isEmpty()) {
+              sellsBuilder_.dispose();
+              sellsBuilder_ = null;
+              sells_ = other.sells_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              sellsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSellsFieldBuilder() : null;
+            } else {
+              sellsBuilder_.addAllMessages(other.sells_);
+            }
+          }
+        }
+        if (buysBuilder_ == null) {
+          if (!other.buys_.isEmpty()) {
+            if (buys_.isEmpty()) {
+              buys_ = other.buys_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureBuysIsMutable();
+              buys_.addAll(other.buys_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.buys_.isEmpty()) {
+            if (buysBuilder_.isEmpty()) {
+              buysBuilder_.dispose();
+              buysBuilder_ = null;
+              buys_ = other.buys_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              buysBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getBuysFieldBuilder() : null;
+            } else {
+              buysBuilder_.addAllMessages(other.buys_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object marketID_ = "";
+      /**
+       * <pre>
+       * Market identifier for the order. Required field.
+       * </pre>
+       *
+       * <code>string marketID = 1 [(.validator.field) = { ... }</code>
+       */
+      public java.lang.String getMarketID() {
+        java.lang.Object ref = marketID_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          marketID_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Market identifier for the order. Required field.
+       * </pre>
+       *
+       * <code>string marketID = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.google.protobuf.ByteString
+          getMarketIDBytes() {
+        java.lang.Object ref = marketID_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          marketID_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Market identifier for the order. Required field.
+       * </pre>
+       *
+       * <code>string marketID = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setMarketID(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        marketID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Market identifier for the order. Required field.
+       * </pre>
+       *
+       * <code>string marketID = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearMarketID() {
+
+        marketID_ = getDefaultInstance().getMarketID();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Market identifier for the order. Required field.
+       * </pre>
+       *
+       * <code>string marketID = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setMarketIDBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        marketID_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long commitmentAmount_ ;
+      /**
+       * <pre>
+       * Specified as a unitless number that represents the amount of settlement asset of the market.
+       * </pre>
+       *
+       * <code>uint64 commitmentAmount = 2;</code>
+       */
+      public long getCommitmentAmount() {
+        return commitmentAmount_;
+      }
+      /**
+       * <pre>
+       * Specified as a unitless number that represents the amount of settlement asset of the market.
+       * </pre>
+       *
+       * <code>uint64 commitmentAmount = 2;</code>
+       */
+      public Builder setCommitmentAmount(long value) {
+
+        commitmentAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Specified as a unitless number that represents the amount of settlement asset of the market.
+       * </pre>
+       *
+       * <code>uint64 commitmentAmount = 2;</code>
+       */
+      public Builder clearCommitmentAmount() {
+
+        commitmentAmount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object fee_ = "";
+      /**
+       * <pre>
+       * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+       * </pre>
+       *
+       * <code>string fee = 3;</code>
+       */
+      public java.lang.String getFee() {
+        java.lang.Object ref = fee_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fee_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+       * </pre>
+       *
+       * <code>string fee = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFeeBytes() {
+        java.lang.Object ref = fee_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fee_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+       * </pre>
+       *
+       * <code>string fee = 3;</code>
+       */
+      public Builder setFee(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        fee_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+       * </pre>
+       *
+       * <code>string fee = 3;</code>
+       */
+      public Builder clearFee() {
+
+        fee_ = getDefaultInstance().getFee();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+       * </pre>
+       *
+       * <code>string fee = 3;</code>
+       */
+      public Builder setFeeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        fee_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> sells_ =
+        java.util.Collections.emptyList();
+      private void ensureSellsIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          sells_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.LiquidityOrder>(sells_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> sellsBuilder_;
+
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> getSellsList() {
+        if (sellsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(sells_);
+        } else {
+          return sellsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public int getSellsCount() {
+        if (sellsBuilder_ == null) {
+          return sells_.size();
+        } else {
+          return sellsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrder getSells(int index) {
+        if (sellsBuilder_ == null) {
+          return sells_.get(index);
+        } else {
+          return sellsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public Builder setSells(
+          int index, io.vegaprotocol.vega.Vega.LiquidityOrder value) {
+        if (sellsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSellsIsMutable();
+          sells_.set(index, value);
+          onChanged();
+        } else {
+          sellsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public Builder setSells(
+          int index, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
+        if (sellsBuilder_ == null) {
+          ensureSellsIsMutable();
+          sells_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          sellsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public Builder addSells(io.vegaprotocol.vega.Vega.LiquidityOrder value) {
+        if (sellsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSellsIsMutable();
+          sells_.add(value);
+          onChanged();
+        } else {
+          sellsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public Builder addSells(
+          int index, io.vegaprotocol.vega.Vega.LiquidityOrder value) {
+        if (sellsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSellsIsMutable();
+          sells_.add(index, value);
+          onChanged();
+        } else {
+          sellsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public Builder addSells(
+          io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
+        if (sellsBuilder_ == null) {
+          ensureSellsIsMutable();
+          sells_.add(builderForValue.build());
+          onChanged();
+        } else {
+          sellsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public Builder addSells(
+          int index, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
+        if (sellsBuilder_ == null) {
+          ensureSellsIsMutable();
+          sells_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          sellsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public Builder addAllSells(
+          java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.LiquidityOrder> values) {
+        if (sellsBuilder_ == null) {
+          ensureSellsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, sells_);
+          onChanged();
+        } else {
+          sellsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public Builder clearSells() {
+        if (sellsBuilder_ == null) {
+          sells_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          sellsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public Builder removeSells(int index) {
+        if (sellsBuilder_ == null) {
+          ensureSellsIsMutable();
+          sells_.remove(index);
+          onChanged();
+        } else {
+          sellsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder getSellsBuilder(
+          int index) {
+        return getSellsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getSellsOrBuilder(
+          int index) {
+        if (sellsBuilder_ == null) {
+          return sells_.get(index);  } else {
+          return sellsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+           getSellsOrBuilderList() {
+        if (sellsBuilder_ != null) {
+          return sellsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(sells_);
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder addSellsBuilder() {
+        return getSellsFieldBuilder().addBuilder(
+            io.vegaprotocol.vega.Vega.LiquidityOrder.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder addSellsBuilder(
+          int index) {
+        return getSellsFieldBuilder().addBuilder(
+            index, io.vegaprotocol.vega.Vega.LiquidityOrder.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Sells = 4;</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder.Builder>
+           getSellsBuilderList() {
+        return getSellsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+          getSellsFieldBuilder() {
+        if (sellsBuilder_ == null) {
+          sellsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>(
+                  sells_,
+                  ((bitField0_ & 0x00000008) != 0),
+                  getParentForChildren(),
+                  isClean());
+          sells_ = null;
+        }
+        return sellsBuilder_;
+      }
+
+      private java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> buys_ =
+        java.util.Collections.emptyList();
+      private void ensureBuysIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          buys_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.LiquidityOrder>(buys_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> buysBuilder_;
+
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> getBuysList() {
+        if (buysBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(buys_);
+        } else {
+          return buysBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public int getBuysCount() {
+        if (buysBuilder_ == null) {
+          return buys_.size();
+        } else {
+          return buysBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrder getBuys(int index) {
+        if (buysBuilder_ == null) {
+          return buys_.get(index);
+        } else {
+          return buysBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public Builder setBuys(
+          int index, io.vegaprotocol.vega.Vega.LiquidityOrder value) {
+        if (buysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBuysIsMutable();
+          buys_.set(index, value);
+          onChanged();
+        } else {
+          buysBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public Builder setBuys(
+          int index, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
+        if (buysBuilder_ == null) {
+          ensureBuysIsMutable();
+          buys_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          buysBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public Builder addBuys(io.vegaprotocol.vega.Vega.LiquidityOrder value) {
+        if (buysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBuysIsMutable();
+          buys_.add(value);
+          onChanged();
+        } else {
+          buysBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public Builder addBuys(
+          int index, io.vegaprotocol.vega.Vega.LiquidityOrder value) {
+        if (buysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBuysIsMutable();
+          buys_.add(index, value);
+          onChanged();
+        } else {
+          buysBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public Builder addBuys(
+          io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
+        if (buysBuilder_ == null) {
+          ensureBuysIsMutable();
+          buys_.add(builderForValue.build());
+          onChanged();
+        } else {
+          buysBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public Builder addBuys(
+          int index, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
+        if (buysBuilder_ == null) {
+          ensureBuysIsMutable();
+          buys_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          buysBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public Builder addAllBuys(
+          java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.LiquidityOrder> values) {
+        if (buysBuilder_ == null) {
+          ensureBuysIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, buys_);
+          onChanged();
+        } else {
+          buysBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public Builder clearBuys() {
+        if (buysBuilder_ == null) {
+          buys_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          buysBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public Builder removeBuys(int index) {
+        if (buysBuilder_ == null) {
+          ensureBuysIsMutable();
+          buys_.remove(index);
+          onChanged();
+        } else {
+          buysBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder getBuysBuilder(
+          int index) {
+        return getBuysFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getBuysOrBuilder(
+          int index) {
+        if (buysBuilder_ == null) {
+          return buys_.get(index);  } else {
+          return buysBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+           getBuysOrBuilderList() {
+        if (buysBuilder_ != null) {
+          return buysBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(buys_);
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder addBuysBuilder() {
+        return getBuysFieldBuilder().addBuilder(
+            io.vegaprotocol.vega.Vega.LiquidityOrder.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder addBuysBuilder(
+          int index) {
+        return getBuysFieldBuilder().addBuilder(
+            index, io.vegaprotocol.vega.Vega.LiquidityOrder.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrder Buys = 5;</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder.Builder>
+           getBuysBuilderList() {
+        return getBuysFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+          getBuysFieldBuilder() {
+        if (buysBuilder_ == null) {
+          buysBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>(
+                  buys_,
+                  ((bitField0_ & 0x00000010) != 0),
+                  getParentForChildren(),
+                  isClean());
+          buys_ = null;
+        }
+        return buysBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.LiquidityProvisionSubmission)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.LiquidityProvisionSubmission)
+    private static final io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission();
+    }
+
+    public static io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LiquidityProvisionSubmission>
+        PARSER = new com.google.protobuf.AbstractParser<LiquidityProvisionSubmission>() {
+      @java.lang.Override
+      public LiquidityProvisionSubmission parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LiquidityProvisionSubmission(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LiquidityProvisionSubmission> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LiquidityProvisionSubmission> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface LiquidityOrderReferenceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.LiquidityOrderReference)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The ID of the pegged order generated by the core to fullfill this liquidityOrder
+     * </pre>
+     *
+     * <code>string orderID = 1;</code>
+     */
+    java.lang.String getOrderID();
+    /**
+     * <pre>
+     * The ID of the pegged order generated by the core to fullfill this liquidityOrder
+     * </pre>
+     *
+     * <code>string orderID = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getOrderIDBytes();
+
+    /**
+     * <pre>
+     * The liquidity order from the original submission
+     * </pre>
+     *
+     * <code>.vega.LiquidityOrder liquidityOrder = 2;</code>
+     */
+    boolean hasLiquidityOrder();
+    /**
+     * <pre>
+     * The liquidity order from the original submission
+     * </pre>
+     *
+     * <code>.vega.LiquidityOrder liquidityOrder = 2;</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityOrder getLiquidityOrder();
+    /**
+     * <pre>
+     * The liquidity order from the original submission
+     * </pre>
+     *
+     * <code>.vega.LiquidityOrder liquidityOrder = 2;</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getLiquidityOrderOrBuilder();
+  }
+  /**
+   * <pre>
+   * A pair of a liquidity order and the id of the generated order by the core
+   * </pre>
+   *
+   * Protobuf type {@code vega.LiquidityOrderReference}
+   */
+  public  static final class LiquidityOrderReference extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.LiquidityOrderReference)
+      LiquidityOrderReferenceOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LiquidityOrderReference.newBuilder() to construct.
+    private LiquidityOrderReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LiquidityOrderReference() {
+      orderID_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LiquidityOrderReference(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              orderID_ = s;
+              break;
+            }
+            case 18: {
+              io.vegaprotocol.vega.Vega.LiquidityOrder.Builder subBuilder = null;
+              if (liquidityOrder_ != null) {
+                subBuilder = liquidityOrder_.toBuilder();
+              }
+              liquidityOrder_ = input.readMessage(io.vegaprotocol.vega.Vega.LiquidityOrder.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(liquidityOrder_);
+                liquidityOrder_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityOrderReference_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityOrderReference_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Vega.LiquidityOrderReference.class, io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder.class);
+    }
+
+    public static final int ORDERID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object orderID_;
+    /**
+     * <pre>
+     * The ID of the pegged order generated by the core to fullfill this liquidityOrder
+     * </pre>
+     *
+     * <code>string orderID = 1;</code>
+     */
+    public java.lang.String getOrderID() {
+      java.lang.Object ref = orderID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderID_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The ID of the pegged order generated by the core to fullfill this liquidityOrder
+     * </pre>
+     *
+     * <code>string orderID = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOrderIDBytes() {
+      java.lang.Object ref = orderID_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        orderID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LIQUIDITYORDER_FIELD_NUMBER = 2;
+    private io.vegaprotocol.vega.Vega.LiquidityOrder liquidityOrder_;
+    /**
+     * <pre>
+     * The liquidity order from the original submission
+     * </pre>
+     *
+     * <code>.vega.LiquidityOrder liquidityOrder = 2;</code>
+     */
+    public boolean hasLiquidityOrder() {
+      return liquidityOrder_ != null;
+    }
+    /**
+     * <pre>
+     * The liquidity order from the original submission
+     * </pre>
+     *
+     * <code>.vega.LiquidityOrder liquidityOrder = 2;</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityOrder getLiquidityOrder() {
+      return liquidityOrder_ == null ? io.vegaprotocol.vega.Vega.LiquidityOrder.getDefaultInstance() : liquidityOrder_;
+    }
+    /**
+     * <pre>
+     * The liquidity order from the original submission
+     * </pre>
+     *
+     * <code>.vega.LiquidityOrder liquidityOrder = 2;</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getLiquidityOrderOrBuilder() {
+      return getLiquidityOrder();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getOrderIDBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, orderID_);
+      }
+      if (liquidityOrder_ != null) {
+        output.writeMessage(2, getLiquidityOrder());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getOrderIDBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, orderID_);
+      }
+      if (liquidityOrder_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getLiquidityOrder());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Vega.LiquidityOrderReference)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Vega.LiquidityOrderReference other = (io.vegaprotocol.vega.Vega.LiquidityOrderReference) obj;
+
+      if (!getOrderID()
+          .equals(other.getOrderID())) return false;
+      if (hasLiquidityOrder() != other.hasLiquidityOrder()) return false;
+      if (hasLiquidityOrder()) {
+        if (!getLiquidityOrder()
+            .equals(other.getLiquidityOrder())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ORDERID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrderID().hashCode();
+      if (hasLiquidityOrder()) {
+        hash = (37 * hash) + LIQUIDITYORDER_FIELD_NUMBER;
+        hash = (53 * hash) + getLiquidityOrder().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Vega.LiquidityOrderReference parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrderReference parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrderReference parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrderReference parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrderReference parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrderReference parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrderReference parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrderReference parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrderReference parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrderReference parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrderReference parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityOrderReference parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Vega.LiquidityOrderReference prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * A pair of a liquidity order and the id of the generated order by the core
+     * </pre>
+     *
+     * Protobuf type {@code vega.LiquidityOrderReference}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.LiquidityOrderReference)
+        io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityOrderReference_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityOrderReference_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Vega.LiquidityOrderReference.class, io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Vega.LiquidityOrderReference.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        orderID_ = "";
+
+        if (liquidityOrderBuilder_ == null) {
+          liquidityOrder_ = null;
+        } else {
+          liquidityOrder_ = null;
+          liquidityOrderBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityOrderReference_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.LiquidityOrderReference getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Vega.LiquidityOrderReference.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.LiquidityOrderReference build() {
+        io.vegaprotocol.vega.Vega.LiquidityOrderReference result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.LiquidityOrderReference buildPartial() {
+        io.vegaprotocol.vega.Vega.LiquidityOrderReference result = new io.vegaprotocol.vega.Vega.LiquidityOrderReference(this);
+        result.orderID_ = orderID_;
+        if (liquidityOrderBuilder_ == null) {
+          result.liquidityOrder_ = liquidityOrder_;
+        } else {
+          result.liquidityOrder_ = liquidityOrderBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Vega.LiquidityOrderReference) {
+          return mergeFrom((io.vegaprotocol.vega.Vega.LiquidityOrderReference)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Vega.LiquidityOrderReference other) {
+        if (other == io.vegaprotocol.vega.Vega.LiquidityOrderReference.getDefaultInstance()) return this;
+        if (!other.getOrderID().isEmpty()) {
+          orderID_ = other.orderID_;
+          onChanged();
+        }
+        if (other.hasLiquidityOrder()) {
+          mergeLiquidityOrder(other.getLiquidityOrder());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Vega.LiquidityOrderReference parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Vega.LiquidityOrderReference) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object orderID_ = "";
+      /**
+       * <pre>
+       * The ID of the pegged order generated by the core to fullfill this liquidityOrder
+       * </pre>
+       *
+       * <code>string orderID = 1;</code>
+       */
+      public java.lang.String getOrderID() {
+        java.lang.Object ref = orderID_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          orderID_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The ID of the pegged order generated by the core to fullfill this liquidityOrder
+       * </pre>
+       *
+       * <code>string orderID = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOrderIDBytes() {
+        java.lang.Object ref = orderID_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          orderID_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The ID of the pegged order generated by the core to fullfill this liquidityOrder
+       * </pre>
+       *
+       * <code>string orderID = 1;</code>
+       */
+      public Builder setOrderID(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        orderID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The ID of the pegged order generated by the core to fullfill this liquidityOrder
+       * </pre>
+       *
+       * <code>string orderID = 1;</code>
+       */
+      public Builder clearOrderID() {
+
+        orderID_ = getDefaultInstance().getOrderID();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The ID of the pegged order generated by the core to fullfill this liquidityOrder
+       * </pre>
+       *
+       * <code>string orderID = 1;</code>
+       */
+      public Builder setOrderIDBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        orderID_ = value;
+        onChanged();
+        return this;
+      }
+
+      private io.vegaprotocol.vega.Vega.LiquidityOrder liquidityOrder_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> liquidityOrderBuilder_;
+      /**
+       * <pre>
+       * The liquidity order from the original submission
+       * </pre>
+       *
+       * <code>.vega.LiquidityOrder liquidityOrder = 2;</code>
+       */
+      public boolean hasLiquidityOrder() {
+        return liquidityOrderBuilder_ != null || liquidityOrder_ != null;
+      }
+      /**
+       * <pre>
+       * The liquidity order from the original submission
+       * </pre>
+       *
+       * <code>.vega.LiquidityOrder liquidityOrder = 2;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrder getLiquidityOrder() {
+        if (liquidityOrderBuilder_ == null) {
+          return liquidityOrder_ == null ? io.vegaprotocol.vega.Vega.LiquidityOrder.getDefaultInstance() : liquidityOrder_;
+        } else {
+          return liquidityOrderBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The liquidity order from the original submission
+       * </pre>
+       *
+       * <code>.vega.LiquidityOrder liquidityOrder = 2;</code>
+       */
+      public Builder setLiquidityOrder(io.vegaprotocol.vega.Vega.LiquidityOrder value) {
+        if (liquidityOrderBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          liquidityOrder_ = value;
+          onChanged();
+        } else {
+          liquidityOrderBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The liquidity order from the original submission
+       * </pre>
+       *
+       * <code>.vega.LiquidityOrder liquidityOrder = 2;</code>
+       */
+      public Builder setLiquidityOrder(
+          io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
+        if (liquidityOrderBuilder_ == null) {
+          liquidityOrder_ = builderForValue.build();
+          onChanged();
+        } else {
+          liquidityOrderBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The liquidity order from the original submission
+       * </pre>
+       *
+       * <code>.vega.LiquidityOrder liquidityOrder = 2;</code>
+       */
+      public Builder mergeLiquidityOrder(io.vegaprotocol.vega.Vega.LiquidityOrder value) {
+        if (liquidityOrderBuilder_ == null) {
+          if (liquidityOrder_ != null) {
+            liquidityOrder_ =
+              io.vegaprotocol.vega.Vega.LiquidityOrder.newBuilder(liquidityOrder_).mergeFrom(value).buildPartial();
+          } else {
+            liquidityOrder_ = value;
+          }
+          onChanged();
+        } else {
+          liquidityOrderBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The liquidity order from the original submission
+       * </pre>
+       *
+       * <code>.vega.LiquidityOrder liquidityOrder = 2;</code>
+       */
+      public Builder clearLiquidityOrder() {
+        if (liquidityOrderBuilder_ == null) {
+          liquidityOrder_ = null;
+          onChanged();
+        } else {
+          liquidityOrder_ = null;
+          liquidityOrderBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The liquidity order from the original submission
+       * </pre>
+       *
+       * <code>.vega.LiquidityOrder liquidityOrder = 2;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder getLiquidityOrderBuilder() {
+
+        onChanged();
+        return getLiquidityOrderFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The liquidity order from the original submission
+       * </pre>
+       *
+       * <code>.vega.LiquidityOrder liquidityOrder = 2;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getLiquidityOrderOrBuilder() {
+        if (liquidityOrderBuilder_ != null) {
+          return liquidityOrderBuilder_.getMessageOrBuilder();
+        } else {
+          return liquidityOrder_ == null ?
+              io.vegaprotocol.vega.Vega.LiquidityOrder.getDefaultInstance() : liquidityOrder_;
+        }
+      }
+      /**
+       * <pre>
+       * The liquidity order from the original submission
+       * </pre>
+       *
+       * <code>.vega.LiquidityOrder liquidityOrder = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+          getLiquidityOrderFieldBuilder() {
+        if (liquidityOrderBuilder_ == null) {
+          liquidityOrderBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>(
+                  getLiquidityOrder(),
+                  getParentForChildren(),
+                  isClean());
+          liquidityOrder_ = null;
+        }
+        return liquidityOrderBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.LiquidityOrderReference)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.LiquidityOrderReference)
+    private static final io.vegaprotocol.vega.Vega.LiquidityOrderReference DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.LiquidityOrderReference();
+    }
+
+    public static io.vegaprotocol.vega.Vega.LiquidityOrderReference getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LiquidityOrderReference>
+        PARSER = new com.google.protobuf.AbstractParser<LiquidityOrderReference>() {
+      @java.lang.Override
+      public LiquidityOrderReference parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LiquidityOrderReference(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LiquidityOrderReference> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LiquidityOrderReference> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.LiquidityOrderReference getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface LiquidityProvisionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.LiquidityProvision)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * LiquidityProvision identifier
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * LiquidityProvision identifier
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * Party who created the provision
+     * </pre>
+     *
+     * <code>string partyID = 2;</code>
+     */
+    java.lang.String getPartyID();
+    /**
+     * <pre>
+     * Party who created the provision
+     * </pre>
+     *
+     * <code>string partyID = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getPartyIDBytes();
+
+    /**
+     * <pre>
+     * Timestamp for when the order was created at, in nanoseconds since the epoch.
+     * See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`.
+     * </pre>
+     *
+     * <code>int64 createdAt = 3;</code>
+     */
+    long getCreatedAt();
+
+    /**
+     * <pre>
+     * Timestamp for when the order was updated at, in nanoseconds since the epoch.
+     * See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`.
+     * </pre>
+     *
+     * <code>int64 updatedAt = 4;</code>
+     */
+    long getUpdatedAt();
+
+    /**
+     * <pre>
+     * Market identifier for the order. Required field.
+     * </pre>
+     *
+     * <code>string marketID = 5 [(.validator.field) = { ... }</code>
+     */
+    java.lang.String getMarketID();
+    /**
+     * <pre>
+     * Market identifier for the order. Required field.
+     * </pre>
+     *
+     * <code>string marketID = 5 [(.validator.field) = { ... }</code>
+     */
+    com.google.protobuf.ByteString
+        getMarketIDBytes();
+
+    /**
+     * <pre>
+     * Specified as a unitless number that represents the amount of settlement asset of the market.
+     * </pre>
+     *
+     * <code>uint64 commitmentAmount = 6;</code>
+     */
+    long getCommitmentAmount();
+
+    /**
+     * <pre>
+     * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+     * </pre>
+     *
+     * <code>string fee = 7;</code>
+     */
+    java.lang.String getFee();
+    /**
+     * <pre>
+     * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+     * </pre>
+     *
+     * <code>string fee = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getFeeBytes();
+
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+     */
+    java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrderReference>
+        getSellsList();
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityOrderReference getSells(int index);
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+     */
+    int getSellsCount();
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+     */
+    java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder>
+        getSellsOrBuilderList();
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder getSellsOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+     */
+    java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrderReference>
+        getBuysList();
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityOrderReference getBuys(int index);
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+     */
+    int getBuysCount();
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+     */
+    java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder>
+        getBuysOrBuilderList();
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder getBuysOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * version of this LiquidityProvision order
+     * </pre>
+     *
+     * <code>string version = 10;</code>
+     */
+    java.lang.String getVersion();
+    /**
+     * <pre>
+     * version of this LiquidityProvision order
+     * </pre>
+     *
+     * <code>string version = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getVersionBytes();
+
+    /**
+     * <pre>
+     * the status of this liquidity provision
+     * </pre>
+     *
+     * <code>.vega.LiquidityProvision.Status status = 11;</code>
+     */
+    int getStatusValue();
+    /**
+     * <pre>
+     * the status of this liquidity provision
+     * </pre>
+     *
+     * <code>.vega.LiquidityProvision.Status status = 11;</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityProvision.Status getStatus();
+  }
+  /**
+   * <pre>
+   * An Liquidity provider commitment
+   * </pre>
+   *
+   * Protobuf type {@code vega.LiquidityProvision}
+   */
+  public  static final class LiquidityProvision extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.LiquidityProvision)
+      LiquidityProvisionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LiquidityProvision.newBuilder() to construct.
+    private LiquidityProvision(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LiquidityProvision() {
+      id_ = "";
+      partyID_ = "";
+      marketID_ = "";
+      fee_ = "";
+      sells_ = java.util.Collections.emptyList();
+      buys_ = java.util.Collections.emptyList();
+      version_ = "";
+      status_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LiquidityProvision(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              partyID_ = s;
+              break;
+            }
+            case 24: {
+
+              createdAt_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              updatedAt_ = input.readInt64();
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              marketID_ = s;
+              break;
+            }
+            case 48: {
+
+              commitmentAmount_ = input.readUInt64();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fee_ = s;
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                sells_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.LiquidityOrderReference>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              sells_.add(
+                  input.readMessage(io.vegaprotocol.vega.Vega.LiquidityOrderReference.parser(), extensionRegistry));
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+                buys_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.LiquidityOrderReference>();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              buys_.add(
+                  input.readMessage(io.vegaprotocol.vega.Vega.LiquidityOrderReference.parser(), extensionRegistry));
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000080) != 0)) {
+          sells_ = java.util.Collections.unmodifiableList(sells_);
+        }
+        if (((mutable_bitField0_ & 0x00000100) != 0)) {
+          buys_ = java.util.Collections.unmodifiableList(buys_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityProvision_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityProvision_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Vega.LiquidityProvision.class, io.vegaprotocol.vega.Vega.LiquidityProvision.Builder.class);
+    }
+
+    /**
+     * <pre>
+     * the status of a liquidity provision order
+     * </pre>
+     *
+     * Protobuf enum {@code vega.LiquidityProvision.Status}
+     */
+    public enum Status
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       * The default value
+       * </pre>
+       *
+       * <code>LIQUIDITY_PROVISION_STATUS_UNSPECIFIED = 0;</code>
+       */
+      LIQUIDITY_PROVISION_STATUS_UNSPECIFIED(0),
+      /**
+       * <pre>
+       * The liquidity provision is active
+       * </pre>
+       *
+       * <code>LIQUIDITY_PROVISION_STATUS_ACTIVE = 1;</code>
+       */
+      LIQUIDITY_PROVISION_STATUS_ACTIVE(1),
+      /**
+       * <pre>
+       * The liquidity provision was stopped by the network
+       * </pre>
+       *
+       * <code>LIQUIDITY_PROVISION_STATUS_STOPPED = 2;</code>
+       */
+      LIQUIDITY_PROVISION_STATUS_STOPPED(2),
+      /**
+       * <pre>
+       * The liquidity provision was cancelled by the MM.
+       * </pre>
+       *
+       * <code>LIQUIDITY_PROVISION_STATUS_CANCELLED = 3;</code>
+       */
+      LIQUIDITY_PROVISION_STATUS_CANCELLED(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <pre>
+       * The default value
+       * </pre>
+       *
+       * <code>LIQUIDITY_PROVISION_STATUS_UNSPECIFIED = 0;</code>
+       */
+      public static final int LIQUIDITY_PROVISION_STATUS_UNSPECIFIED_VALUE = 0;
+      /**
+       * <pre>
+       * The liquidity provision is active
+       * </pre>
+       *
+       * <code>LIQUIDITY_PROVISION_STATUS_ACTIVE = 1;</code>
+       */
+      public static final int LIQUIDITY_PROVISION_STATUS_ACTIVE_VALUE = 1;
+      /**
+       * <pre>
+       * The liquidity provision was stopped by the network
+       * </pre>
+       *
+       * <code>LIQUIDITY_PROVISION_STATUS_STOPPED = 2;</code>
+       */
+      public static final int LIQUIDITY_PROVISION_STATUS_STOPPED_VALUE = 2;
+      /**
+       * <pre>
+       * The liquidity provision was cancelled by the MM.
+       * </pre>
+       *
+       * <code>LIQUIDITY_PROVISION_STATUS_CANCELLED = 3;</code>
+       */
+      public static final int LIQUIDITY_PROVISION_STATUS_CANCELLED_VALUE = 3;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Status valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Status forNumber(int value) {
+        switch (value) {
+          case 0: return LIQUIDITY_PROVISION_STATUS_UNSPECIFIED;
+          case 1: return LIQUIDITY_PROVISION_STATUS_ACTIVE;
+          case 2: return LIQUIDITY_PROVISION_STATUS_STOPPED;
+          case 3: return LIQUIDITY_PROVISION_STATUS_CANCELLED;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Status>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Status> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+              public Status findValueByNumber(int number) {
+                return Status.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.LiquidityProvision.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Status[] VALUES = values();
+
+      public static Status valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Status(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:vega.LiquidityProvision.Status)
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * LiquidityProvision identifier
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * LiquidityProvision identifier
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PARTYID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object partyID_;
+    /**
+     * <pre>
+     * Party who created the provision
+     * </pre>
+     *
+     * <code>string partyID = 2;</code>
+     */
+    public java.lang.String getPartyID() {
+      java.lang.Object ref = partyID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        partyID_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Party who created the provision
+     * </pre>
+     *
+     * <code>string partyID = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPartyIDBytes() {
+      java.lang.Object ref = partyID_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        partyID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATEDAT_FIELD_NUMBER = 3;
+    private long createdAt_;
+    /**
+     * <pre>
+     * Timestamp for when the order was created at, in nanoseconds since the epoch.
+     * See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`.
+     * </pre>
+     *
+     * <code>int64 createdAt = 3;</code>
+     */
+    public long getCreatedAt() {
+      return createdAt_;
+    }
+
+    public static final int UPDATEDAT_FIELD_NUMBER = 4;
+    private long updatedAt_;
+    /**
+     * <pre>
+     * Timestamp for when the order was updated at, in nanoseconds since the epoch.
+     * See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`.
+     * </pre>
+     *
+     * <code>int64 updatedAt = 4;</code>
+     */
+    public long getUpdatedAt() {
+      return updatedAt_;
+    }
+
+    public static final int MARKETID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object marketID_;
+    /**
+     * <pre>
+     * Market identifier for the order. Required field.
+     * </pre>
+     *
+     * <code>string marketID = 5 [(.validator.field) = { ... }</code>
+     */
+    public java.lang.String getMarketID() {
+      java.lang.Object ref = marketID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        marketID_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Market identifier for the order. Required field.
+     * </pre>
+     *
+     * <code>string marketID = 5 [(.validator.field) = { ... }</code>
+     */
+    public com.google.protobuf.ByteString
+        getMarketIDBytes() {
+      java.lang.Object ref = marketID_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        marketID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COMMITMENTAMOUNT_FIELD_NUMBER = 6;
+    private long commitmentAmount_;
+    /**
+     * <pre>
+     * Specified as a unitless number that represents the amount of settlement asset of the market.
+     * </pre>
+     *
+     * <code>uint64 commitmentAmount = 6;</code>
+     */
+    public long getCommitmentAmount() {
+      return commitmentAmount_;
+    }
+
+    public static final int FEE_FIELD_NUMBER = 7;
+    private volatile java.lang.Object fee_;
+    /**
+     * <pre>
+     * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+     * </pre>
+     *
+     * <code>string fee = 7;</code>
+     */
+    public java.lang.String getFee() {
+      java.lang.Object ref = fee_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fee_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+     * </pre>
+     *
+     * <code>string fee = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFeeBytes() {
+      java.lang.Object ref = fee_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fee_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SELLS_FIELD_NUMBER = 8;
+    private java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrderReference> sells_;
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+     */
+    public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrderReference> getSellsList() {
+      return sells_;
+    }
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+     */
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder>
+        getSellsOrBuilderList() {
+      return sells_;
+    }
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+     */
+    public int getSellsCount() {
+      return sells_.size();
+    }
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityOrderReference getSells(int index) {
+      return sells_.get(index);
+    }
+    /**
+     * <pre>
+     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder getSellsOrBuilder(
+        int index) {
+      return sells_.get(index);
+    }
+
+    public static final int BUYS_FIELD_NUMBER = 9;
+    private java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrderReference> buys_;
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+     */
+    public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrderReference> getBuysList() {
+      return buys_;
+    }
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+     */
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder>
+        getBuysOrBuilderList() {
+      return buys_;
+    }
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+     */
+    public int getBuysCount() {
+      return buys_.size();
+    }
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityOrderReference getBuys(int index) {
+      return buys_.get(index);
+    }
+    /**
+     * <pre>
+     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * </pre>
+     *
+     * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder getBuysOrBuilder(
+        int index) {
+      return buys_.get(index);
+    }
+
+    public static final int VERSION_FIELD_NUMBER = 10;
+    private volatile java.lang.Object version_;
+    /**
+     * <pre>
+     * version of this LiquidityProvision order
+     * </pre>
+     *
+     * <code>string version = 10;</code>
+     */
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * version of this LiquidityProvision order
+     * </pre>
+     *
+     * <code>string version = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 11;
+    private int status_;
+    /**
+     * <pre>
+     * the status of this liquidity provision
+     * </pre>
+     *
+     * <code>.vega.LiquidityProvision.Status status = 11;</code>
+     */
+    public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <pre>
+     * the status of this liquidity provision
+     * </pre>
+     *
+     * <code>.vega.LiquidityProvision.Status status = 11;</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityProvision.Status getStatus() {
+      @SuppressWarnings("deprecation")
+      io.vegaprotocol.vega.Vega.LiquidityProvision.Status result = io.vegaprotocol.vega.Vega.LiquidityProvision.Status.valueOf(status_);
+      return result == null ? io.vegaprotocol.vega.Vega.LiquidityProvision.Status.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (!getPartyIDBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partyID_);
+      }
+      if (createdAt_ != 0L) {
+        output.writeInt64(3, createdAt_);
+      }
+      if (updatedAt_ != 0L) {
+        output.writeInt64(4, updatedAt_);
+      }
+      if (!getMarketIDBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, marketID_);
+      }
+      if (commitmentAmount_ != 0L) {
+        output.writeUInt64(6, commitmentAmount_);
+      }
+      if (!getFeeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, fee_);
+      }
+      for (int i = 0; i < sells_.size(); i++) {
+        output.writeMessage(8, sells_.get(i));
+      }
+      for (int i = 0; i < buys_.size(); i++) {
+        output.writeMessage(9, buys_.get(i));
+      }
+      if (!getVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, version_);
+      }
+      if (status_ != io.vegaprotocol.vega.Vega.LiquidityProvision.Status.LIQUIDITY_PROVISION_STATUS_UNSPECIFIED.getNumber()) {
+        output.writeEnum(11, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!getPartyIDBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partyID_);
+      }
+      if (createdAt_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, createdAt_);
+      }
+      if (updatedAt_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, updatedAt_);
+      }
+      if (!getMarketIDBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, marketID_);
+      }
+      if (commitmentAmount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, commitmentAmount_);
+      }
+      if (!getFeeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, fee_);
+      }
+      for (int i = 0; i < sells_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, sells_.get(i));
+      }
+      for (int i = 0; i < buys_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, buys_.get(i));
+      }
+      if (!getVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, version_);
+      }
+      if (status_ != io.vegaprotocol.vega.Vega.LiquidityProvision.Status.LIQUIDITY_PROVISION_STATUS_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(11, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Vega.LiquidityProvision)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Vega.LiquidityProvision other = (io.vegaprotocol.vega.Vega.LiquidityProvision) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getPartyID()
+          .equals(other.getPartyID())) return false;
+      if (getCreatedAt()
+          != other.getCreatedAt()) return false;
+      if (getUpdatedAt()
+          != other.getUpdatedAt()) return false;
+      if (!getMarketID()
+          .equals(other.getMarketID())) return false;
+      if (getCommitmentAmount()
+          != other.getCommitmentAmount()) return false;
+      if (!getFee()
+          .equals(other.getFee())) return false;
+      if (!getSellsList()
+          .equals(other.getSellsList())) return false;
+      if (!getBuysList()
+          .equals(other.getBuysList())) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
+      if (status_ != other.status_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + PARTYID_FIELD_NUMBER;
+      hash = (53 * hash) + getPartyID().hashCode();
+      hash = (37 * hash) + CREATEDAT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCreatedAt());
+      hash = (37 * hash) + UPDATEDAT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUpdatedAt());
+      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
+      hash = (53 * hash) + getMarketID().hashCode();
+      hash = (37 * hash) + COMMITMENTAMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCommitmentAmount());
+      hash = (37 * hash) + FEE_FIELD_NUMBER;
+      hash = (53 * hash) + getFee().hashCode();
+      if (getSellsCount() > 0) {
+        hash = (37 * hash) + SELLS_FIELD_NUMBER;
+        hash = (53 * hash) + getSellsList().hashCode();
+      }
+      if (getBuysCount() > 0) {
+        hash = (37 * hash) + BUYS_FIELD_NUMBER;
+        hash = (53 * hash) + getBuysList().hashCode();
+      }
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Vega.LiquidityProvision parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvision parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvision parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvision parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvision parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvision parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvision parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvision parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvision parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvision parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvision parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.LiquidityProvision parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Vega.LiquidityProvision prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * An Liquidity provider commitment
+     * </pre>
+     *
+     * Protobuf type {@code vega.LiquidityProvision}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.LiquidityProvision)
+        io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityProvision_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityProvision_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Vega.LiquidityProvision.class, io.vegaprotocol.vega.Vega.LiquidityProvision.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Vega.LiquidityProvision.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSellsFieldBuilder();
+          getBuysFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        partyID_ = "";
+
+        createdAt_ = 0L;
+
+        updatedAt_ = 0L;
+
+        marketID_ = "";
+
+        commitmentAmount_ = 0L;
+
+        fee_ = "";
+
+        if (sellsBuilder_ == null) {
+          sells_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+        } else {
+          sellsBuilder_.clear();
+        }
+        if (buysBuilder_ == null) {
+          buys_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+        } else {
+          buysBuilder_.clear();
+        }
+        version_ = "";
+
+        status_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_LiquidityProvision_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.LiquidityProvision getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Vega.LiquidityProvision.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.LiquidityProvision build() {
+        io.vegaprotocol.vega.Vega.LiquidityProvision result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.LiquidityProvision buildPartial() {
+        io.vegaprotocol.vega.Vega.LiquidityProvision result = new io.vegaprotocol.vega.Vega.LiquidityProvision(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.id_ = id_;
+        result.partyID_ = partyID_;
+        result.createdAt_ = createdAt_;
+        result.updatedAt_ = updatedAt_;
+        result.marketID_ = marketID_;
+        result.commitmentAmount_ = commitmentAmount_;
+        result.fee_ = fee_;
+        if (sellsBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)) {
+            sells_ = java.util.Collections.unmodifiableList(sells_);
+            bitField0_ = (bitField0_ & ~0x00000080);
+          }
+          result.sells_ = sells_;
+        } else {
+          result.sells_ = sellsBuilder_.build();
+        }
+        if (buysBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) != 0)) {
+            buys_ = java.util.Collections.unmodifiableList(buys_);
+            bitField0_ = (bitField0_ & ~0x00000100);
+          }
+          result.buys_ = buys_;
+        } else {
+          result.buys_ = buysBuilder_.build();
+        }
+        result.version_ = version_;
+        result.status_ = status_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Vega.LiquidityProvision) {
+          return mergeFrom((io.vegaprotocol.vega.Vega.LiquidityProvision)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Vega.LiquidityProvision other) {
+        if (other == io.vegaprotocol.vega.Vega.LiquidityProvision.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getPartyID().isEmpty()) {
+          partyID_ = other.partyID_;
+          onChanged();
+        }
+        if (other.getCreatedAt() != 0L) {
+          setCreatedAt(other.getCreatedAt());
+        }
+        if (other.getUpdatedAt() != 0L) {
+          setUpdatedAt(other.getUpdatedAt());
+        }
+        if (!other.getMarketID().isEmpty()) {
+          marketID_ = other.marketID_;
+          onChanged();
+        }
+        if (other.getCommitmentAmount() != 0L) {
+          setCommitmentAmount(other.getCommitmentAmount());
+        }
+        if (!other.getFee().isEmpty()) {
+          fee_ = other.fee_;
+          onChanged();
+        }
+        if (sellsBuilder_ == null) {
+          if (!other.sells_.isEmpty()) {
+            if (sells_.isEmpty()) {
+              sells_ = other.sells_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+            } else {
+              ensureSellsIsMutable();
+              sells_.addAll(other.sells_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.sells_.isEmpty()) {
+            if (sellsBuilder_.isEmpty()) {
+              sellsBuilder_.dispose();
+              sellsBuilder_ = null;
+              sells_ = other.sells_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+              sellsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSellsFieldBuilder() : null;
+            } else {
+              sellsBuilder_.addAllMessages(other.sells_);
+            }
+          }
+        }
+        if (buysBuilder_ == null) {
+          if (!other.buys_.isEmpty()) {
+            if (buys_.isEmpty()) {
+              buys_ = other.buys_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+            } else {
+              ensureBuysIsMutable();
+              buys_.addAll(other.buys_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.buys_.isEmpty()) {
+            if (buysBuilder_.isEmpty()) {
+              buysBuilder_.dispose();
+              buysBuilder_ = null;
+              buys_ = other.buys_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+              buysBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getBuysFieldBuilder() : null;
+            } else {
+              buysBuilder_.addAllMessages(other.buys_);
+            }
+          }
+        }
+        if (!other.getVersion().isEmpty()) {
+          version_ = other.version_;
+          onChanged();
+        }
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Vega.LiquidityProvision parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Vega.LiquidityProvision) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * LiquidityProvision identifier
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * LiquidityProvision identifier
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * LiquidityProvision identifier
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * LiquidityProvision identifier
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       */
+      public Builder clearId() {
+
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * LiquidityProvision identifier
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object partyID_ = "";
+      /**
+       * <pre>
+       * Party who created the provision
+       * </pre>
+       *
+       * <code>string partyID = 2;</code>
+       */
+      public java.lang.String getPartyID() {
+        java.lang.Object ref = partyID_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          partyID_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Party who created the provision
+       * </pre>
+       *
+       * <code>string partyID = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPartyIDBytes() {
+        java.lang.Object ref = partyID_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          partyID_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Party who created the provision
+       * </pre>
+       *
+       * <code>string partyID = 2;</code>
+       */
+      public Builder setPartyID(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        partyID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Party who created the provision
+       * </pre>
+       *
+       * <code>string partyID = 2;</code>
+       */
+      public Builder clearPartyID() {
+
+        partyID_ = getDefaultInstance().getPartyID();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Party who created the provision
+       * </pre>
+       *
+       * <code>string partyID = 2;</code>
+       */
+      public Builder setPartyIDBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        partyID_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long createdAt_ ;
+      /**
+       * <pre>
+       * Timestamp for when the order was created at, in nanoseconds since the epoch.
+       * See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`.
+       * </pre>
+       *
+       * <code>int64 createdAt = 3;</code>
+       */
+      public long getCreatedAt() {
+        return createdAt_;
+      }
+      /**
+       * <pre>
+       * Timestamp for when the order was created at, in nanoseconds since the epoch.
+       * See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`.
+       * </pre>
+       *
+       * <code>int64 createdAt = 3;</code>
+       */
+      public Builder setCreatedAt(long value) {
+
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamp for when the order was created at, in nanoseconds since the epoch.
+       * See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`.
+       * </pre>
+       *
+       * <code>int64 createdAt = 3;</code>
+       */
+      public Builder clearCreatedAt() {
+
+        createdAt_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long updatedAt_ ;
+      /**
+       * <pre>
+       * Timestamp for when the order was updated at, in nanoseconds since the epoch.
+       * See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`.
+       * </pre>
+       *
+       * <code>int64 updatedAt = 4;</code>
+       */
+      public long getUpdatedAt() {
+        return updatedAt_;
+      }
+      /**
+       * <pre>
+       * Timestamp for when the order was updated at, in nanoseconds since the epoch.
+       * See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`.
+       * </pre>
+       *
+       * <code>int64 updatedAt = 4;</code>
+       */
+      public Builder setUpdatedAt(long value) {
+
+        updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamp for when the order was updated at, in nanoseconds since the epoch.
+       * See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`.
+       * </pre>
+       *
+       * <code>int64 updatedAt = 4;</code>
+       */
+      public Builder clearUpdatedAt() {
+
+        updatedAt_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object marketID_ = "";
+      /**
+       * <pre>
+       * Market identifier for the order. Required field.
+       * </pre>
+       *
+       * <code>string marketID = 5 [(.validator.field) = { ... }</code>
+       */
+      public java.lang.String getMarketID() {
+        java.lang.Object ref = marketID_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          marketID_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Market identifier for the order. Required field.
+       * </pre>
+       *
+       * <code>string marketID = 5 [(.validator.field) = { ... }</code>
+       */
+      public com.google.protobuf.ByteString
+          getMarketIDBytes() {
+        java.lang.Object ref = marketID_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          marketID_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Market identifier for the order. Required field.
+       * </pre>
+       *
+       * <code>string marketID = 5 [(.validator.field) = { ... }</code>
+       */
+      public Builder setMarketID(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        marketID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Market identifier for the order. Required field.
+       * </pre>
+       *
+       * <code>string marketID = 5 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearMarketID() {
+
+        marketID_ = getDefaultInstance().getMarketID();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Market identifier for the order. Required field.
+       * </pre>
+       *
+       * <code>string marketID = 5 [(.validator.field) = { ... }</code>
+       */
+      public Builder setMarketIDBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        marketID_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long commitmentAmount_ ;
+      /**
+       * <pre>
+       * Specified as a unitless number that represents the amount of settlement asset of the market.
+       * </pre>
+       *
+       * <code>uint64 commitmentAmount = 6;</code>
+       */
+      public long getCommitmentAmount() {
+        return commitmentAmount_;
+      }
+      /**
+       * <pre>
+       * Specified as a unitless number that represents the amount of settlement asset of the market.
+       * </pre>
+       *
+       * <code>uint64 commitmentAmount = 6;</code>
+       */
+      public Builder setCommitmentAmount(long value) {
+
+        commitmentAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Specified as a unitless number that represents the amount of settlement asset of the market.
+       * </pre>
+       *
+       * <code>uint64 commitmentAmount = 6;</code>
+       */
+      public Builder clearCommitmentAmount() {
+
+        commitmentAmount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object fee_ = "";
+      /**
+       * <pre>
+       * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+       * </pre>
+       *
+       * <code>string fee = 7;</code>
+       */
+      public java.lang.String getFee() {
+        java.lang.Object ref = fee_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fee_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+       * </pre>
+       *
+       * <code>string fee = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFeeBytes() {
+        java.lang.Object ref = fee_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fee_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+       * </pre>
+       *
+       * <code>string fee = 7;</code>
+       */
+      public Builder setFee(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        fee_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+       * </pre>
+       *
+       * <code>string fee = 7;</code>
+       */
+      public Builder clearFee() {
+
+        fee_ = getDefaultInstance().getFee();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+       * </pre>
+       *
+       * <code>string fee = 7;</code>
+       */
+      public Builder setFeeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        fee_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrderReference> sells_ =
+        java.util.Collections.emptyList();
+      private void ensureSellsIsMutable() {
+        if (!((bitField0_ & 0x00000080) != 0)) {
+          sells_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.LiquidityOrderReference>(sells_);
+          bitField0_ |= 0x00000080;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityOrderReference, io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder> sellsBuilder_;
+
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrderReference> getSellsList() {
+        if (sellsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(sells_);
+        } else {
+          return sellsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public int getSellsCount() {
+        if (sellsBuilder_ == null) {
+          return sells_.size();
+        } else {
+          return sellsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrderReference getSells(int index) {
+        if (sellsBuilder_ == null) {
+          return sells_.get(index);
+        } else {
+          return sellsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public Builder setSells(
+          int index, io.vegaprotocol.vega.Vega.LiquidityOrderReference value) {
+        if (sellsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSellsIsMutable();
+          sells_.set(index, value);
+          onChanged();
+        } else {
+          sellsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public Builder setSells(
+          int index, io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder builderForValue) {
+        if (sellsBuilder_ == null) {
+          ensureSellsIsMutable();
+          sells_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          sellsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public Builder addSells(io.vegaprotocol.vega.Vega.LiquidityOrderReference value) {
+        if (sellsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSellsIsMutable();
+          sells_.add(value);
+          onChanged();
+        } else {
+          sellsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public Builder addSells(
+          int index, io.vegaprotocol.vega.Vega.LiquidityOrderReference value) {
+        if (sellsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSellsIsMutable();
+          sells_.add(index, value);
+          onChanged();
+        } else {
+          sellsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public Builder addSells(
+          io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder builderForValue) {
+        if (sellsBuilder_ == null) {
+          ensureSellsIsMutable();
+          sells_.add(builderForValue.build());
+          onChanged();
+        } else {
+          sellsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public Builder addSells(
+          int index, io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder builderForValue) {
+        if (sellsBuilder_ == null) {
+          ensureSellsIsMutable();
+          sells_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          sellsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public Builder addAllSells(
+          java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.LiquidityOrderReference> values) {
+        if (sellsBuilder_ == null) {
+          ensureSellsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, sells_);
+          onChanged();
+        } else {
+          sellsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public Builder clearSells() {
+        if (sellsBuilder_ == null) {
+          sells_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+        } else {
+          sellsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public Builder removeSells(int index) {
+        if (sellsBuilder_ == null) {
+          ensureSellsIsMutable();
+          sells_.remove(index);
+          onChanged();
+        } else {
+          sellsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder getSellsBuilder(
+          int index) {
+        return getSellsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder getSellsOrBuilder(
+          int index) {
+        if (sellsBuilder_ == null) {
+          return sells_.get(index);  } else {
+          return sellsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder>
+           getSellsOrBuilderList() {
+        if (sellsBuilder_ != null) {
+          return sellsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(sells_);
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder addSellsBuilder() {
+        return getSellsFieldBuilder().addBuilder(
+            io.vegaprotocol.vega.Vega.LiquidityOrderReference.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder addSellsBuilder(
+          int index) {
+        return getSellsFieldBuilder().addBuilder(
+            index, io.vegaprotocol.vega.Vega.LiquidityOrderReference.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference sells = 8;</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder>
+           getSellsBuilderList() {
+        return getSellsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityOrderReference, io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder>
+          getSellsFieldBuilder() {
+        if (sellsBuilder_ == null) {
+          sellsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.LiquidityOrderReference, io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder>(
+                  sells_,
+                  ((bitField0_ & 0x00000080) != 0),
+                  getParentForChildren(),
+                  isClean());
+          sells_ = null;
+        }
+        return sellsBuilder_;
+      }
+
+      private java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrderReference> buys_ =
+        java.util.Collections.emptyList();
+      private void ensureBuysIsMutable() {
+        if (!((bitField0_ & 0x00000100) != 0)) {
+          buys_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.LiquidityOrderReference>(buys_);
+          bitField0_ |= 0x00000100;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityOrderReference, io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder> buysBuilder_;
+
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrderReference> getBuysList() {
+        if (buysBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(buys_);
+        } else {
+          return buysBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public int getBuysCount() {
+        if (buysBuilder_ == null) {
+          return buys_.size();
+        } else {
+          return buysBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrderReference getBuys(int index) {
+        if (buysBuilder_ == null) {
+          return buys_.get(index);
+        } else {
+          return buysBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public Builder setBuys(
+          int index, io.vegaprotocol.vega.Vega.LiquidityOrderReference value) {
+        if (buysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBuysIsMutable();
+          buys_.set(index, value);
+          onChanged();
+        } else {
+          buysBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public Builder setBuys(
+          int index, io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder builderForValue) {
+        if (buysBuilder_ == null) {
+          ensureBuysIsMutable();
+          buys_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          buysBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public Builder addBuys(io.vegaprotocol.vega.Vega.LiquidityOrderReference value) {
+        if (buysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBuysIsMutable();
+          buys_.add(value);
+          onChanged();
+        } else {
+          buysBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public Builder addBuys(
+          int index, io.vegaprotocol.vega.Vega.LiquidityOrderReference value) {
+        if (buysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBuysIsMutable();
+          buys_.add(index, value);
+          onChanged();
+        } else {
+          buysBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public Builder addBuys(
+          io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder builderForValue) {
+        if (buysBuilder_ == null) {
+          ensureBuysIsMutable();
+          buys_.add(builderForValue.build());
+          onChanged();
+        } else {
+          buysBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public Builder addBuys(
+          int index, io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder builderForValue) {
+        if (buysBuilder_ == null) {
+          ensureBuysIsMutable();
+          buys_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          buysBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public Builder addAllBuys(
+          java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.LiquidityOrderReference> values) {
+        if (buysBuilder_ == null) {
+          ensureBuysIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, buys_);
+          onChanged();
+        } else {
+          buysBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public Builder clearBuys() {
+        if (buysBuilder_ == null) {
+          buys_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+          onChanged();
+        } else {
+          buysBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public Builder removeBuys(int index) {
+        if (buysBuilder_ == null) {
+          ensureBuysIsMutable();
+          buys_.remove(index);
+          onChanged();
+        } else {
+          buysBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder getBuysBuilder(
+          int index) {
+        return getBuysFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder getBuysOrBuilder(
+          int index) {
+        if (buysBuilder_ == null) {
+          return buys_.get(index);  } else {
+          return buysBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder>
+           getBuysOrBuilderList() {
+        if (buysBuilder_ != null) {
+          return buysBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(buys_);
+        }
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder addBuysBuilder() {
+        return getBuysFieldBuilder().addBuilder(
+            io.vegaprotocol.vega.Vega.LiquidityOrderReference.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder addBuysBuilder(
+          int index) {
+        return getBuysFieldBuilder().addBuilder(
+            index, io.vegaprotocol.vega.Vega.LiquidityOrderReference.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * </pre>
+       *
+       * <code>repeated .vega.LiquidityOrderReference buys = 9;</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder>
+           getBuysBuilderList() {
+        return getBuysFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityOrderReference, io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder>
+          getBuysFieldBuilder() {
+        if (buysBuilder_ == null) {
+          buysBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.LiquidityOrderReference, io.vegaprotocol.vega.Vega.LiquidityOrderReference.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderReferenceOrBuilder>(
+                  buys_,
+                  ((bitField0_ & 0x00000100) != 0),
+                  getParentForChildren(),
+                  isClean());
+          buys_ = null;
+        }
+        return buysBuilder_;
+      }
+
+      private java.lang.Object version_ = "";
+      /**
+       * <pre>
+       * version of this LiquidityProvision order
+       * </pre>
+       *
+       * <code>string version = 10;</code>
+       */
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          version_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * version of this LiquidityProvision order
+       * </pre>
+       *
+       * <code>string version = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getVersionBytes() {
+        java.lang.Object ref = version_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          version_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * version of this LiquidityProvision order
+       * </pre>
+       *
+       * <code>string version = 10;</code>
+       */
+      public Builder setVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * version of this LiquidityProvision order
+       * </pre>
+       *
+       * <code>string version = 10;</code>
+       */
+      public Builder clearVersion() {
+
+        version_ = getDefaultInstance().getVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * version of this LiquidityProvision order
+       * </pre>
+       *
+       * <code>string version = 10;</code>
+       */
+      public Builder setVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        version_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int status_ = 0;
+      /**
+       * <pre>
+       * the status of this liquidity provision
+       * </pre>
+       *
+       * <code>.vega.LiquidityProvision.Status status = 11;</code>
+       */
+      public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <pre>
+       * the status of this liquidity provision
+       * </pre>
+       *
+       * <code>.vega.LiquidityProvision.Status status = 11;</code>
+       */
+      public Builder setStatusValue(int value) {
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the status of this liquidity provision
+       * </pre>
+       *
+       * <code>.vega.LiquidityProvision.Status status = 11;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityProvision.Status getStatus() {
+        @SuppressWarnings("deprecation")
+        io.vegaprotocol.vega.Vega.LiquidityProvision.Status result = io.vegaprotocol.vega.Vega.LiquidityProvision.Status.valueOf(status_);
+        return result == null ? io.vegaprotocol.vega.Vega.LiquidityProvision.Status.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * the status of this liquidity provision
+       * </pre>
+       *
+       * <code>.vega.LiquidityProvision.Status status = 11;</code>
+       */
+      public Builder setStatus(io.vegaprotocol.vega.Vega.LiquidityProvision.Status value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        status_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the status of this liquidity provision
+       * </pre>
+       *
+       * <code>.vega.LiquidityProvision.Status status = 11;</code>
+       */
+      public Builder clearStatus() {
+
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.LiquidityProvision)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.LiquidityProvision)
+    private static final io.vegaprotocol.vega.Vega.LiquidityProvision DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.LiquidityProvision();
+    }
+
+    public static io.vegaprotocol.vega.Vega.LiquidityProvision getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LiquidityProvision>
+        PARSER = new com.google.protobuf.AbstractParser<LiquidityProvision>() {
+      @java.lang.Override
+      public LiquidityProvision parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LiquidityProvision(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LiquidityProvision> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LiquidityProvision> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.LiquidityProvision getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Price_descriptor;
   private static final
@@ -55817,6 +63689,11 @@ public final class Vega {
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_RiskResult_PredictedNextRiskFactorsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_PeggedOrder_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_PeggedOrder_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Order_descriptor;
   private static final
@@ -56012,6 +63889,26 @@ public final class Vega {
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_NetworkParameter_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_LiquidityOrder_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_LiquidityOrder_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_LiquidityProvisionSubmission_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_LiquidityProvisionSubmission_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_LiquidityOrderReference_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_LiquidityOrderReference_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_LiquidityProvision_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_LiquidityProvision_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -56035,244 +63932,285 @@ public final class Vega {
       "orsEntry\022\013\n\003key\030\001 \001(\t\022\037\n\005value\030\002 \001(\0132\020.v" +
       "ega.RiskFactor:\0028\001\032Q\n\035PredictedNextRiskF" +
       "actorsEntry\022\013\n\003key\030\001 \001(\t\022\037\n\005value\030\002 \001(\0132" +
-      "\020.vega.RiskFactor:\0028\001\"\372\005\n\005Order\022\n\n\002id\030\001 " +
-      "\001(\t\022\020\n\010marketID\030\002 \001(\t\022\017\n\007partyID\030\003 \001(\t\022\030" +
-      "\n\004side\030\004 \001(\0162\n.vega.Side\022\r\n\005price\030\005 \001(\004\022" +
-      "\014\n\004size\030\006 \001(\004\022\021\n\tremaining\030\007 \001(\004\022,\n\013time" +
-      "InForce\030\010 \001(\0162\027.vega.Order.TimeInForce\022\036" +
-      "\n\004type\030\t \001(\0162\020.vega.Order.Type\022\021\n\tcreate" +
-      "dAt\030\n \001(\003\022\"\n\006status\030\013 \001(\0162\022.vega.Order.S" +
-      "tatus\022\021\n\texpiresAt\030\014 \001(\003\022\021\n\treference\030\r " +
-      "\001(\t\022 \n\006reason\030\016 \001(\0162\020.vega.OrderError\022\021\n" +
-      "\tupdatedAt\030\017 \001(\003\022\017\n\007version\030\020 \001(\004\022\017\n\007bat" +
-      "chID\030\021 \001(\004\"p\n\013TimeInForce\022\023\n\017TIF_UNSPECI" +
-      "FIED\020\000\022\013\n\007TIF_GTC\020\001\022\013\n\007TIF_GTT\020\002\022\013\n\007TIF_" +
-      "IOC\020\003\022\013\n\007TIF_FOK\020\004\022\013\n\007TIF_GFA\020\005\022\013\n\007TIF_G" +
-      "FN\020\006\"O\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\016\n\nTY" +
-      "PE_LIMIT\020\001\022\017\n\013TYPE_MARKET\020\002\022\020\n\014TYPE_NETW" +
-      "ORK\020\003\"\262\001\n\006Status\022\022\n\016STATUS_INVALID\020\000\022\021\n\r" +
-      "STATUS_ACTIVE\020\001\022\022\n\016STATUS_EXPIRED\020\002\022\024\n\020S" +
-      "TATUS_CANCELLED\020\003\022\022\n\016STATUS_STOPPED\020\004\022\021\n" +
-      "\rSTATUS_FILLED\020\005\022\023\n\017STATUS_REJECTED\020\006\022\033\n" +
-      "\027STATUS_PARTIALLY_FILLED\020\007\";\n\035OrderCance" +
-      "llationConfirmation\022\032\n\005order\030\001 \001(\0132\013.veg" +
-      "a.Order\"x\n\021OrderConfirmation\022\032\n\005order\030\001 " +
-      "\001(\0132\013.vega.Order\022\033\n\006trades\030\002 \003(\0132\013.vega." +
-      "Trade\022*\n\025passiveOrdersAffected\030\003 \003(\0132\013.v" +
-      "ega.Order\"\207\001\n\026AuctionIndicativeState\022\020\n\010" +
-      "marketID\030\001 \001(\t\022\027\n\017indicativePrice\030\002 \001(\004\022" +
-      "\030\n\020indicativeVolume\030\003 \001(\004\022\024\n\014auctionStar" +
-      "t\030\004 \001(\003\022\022\n\nauctionEnd\030\005 \001(\003\"\273\003\n\005Trade\022\n\n" +
-      "\002id\030\001 \001(\t\022\020\n\010marketID\030\002 \001(\t\022\r\n\005price\030\003 \001" +
-      "(\004\022\014\n\004size\030\004 \001(\004\022\r\n\005buyer\030\005 \001(\t\022\016\n\006selle" +
-      "r\030\006 \001(\t\022\035\n\taggressor\030\007 \001(\0162\n.vega.Side\022\020" +
-      "\n\010buyOrder\030\010 \001(\t\022\021\n\tsellOrder\030\t \001(\t\022\021\n\tt" +
-      "imestamp\030\n \001(\003\022\036\n\004type\030\013 \001(\0162\020.vega.Trad" +
-      "e.Type\022\033\n\010buyerFee\030\014 \001(\0132\t.vega.Fee\022\034\n\ts" +
-      "ellerFee\030\r \001(\0132\t.vega.Fee\022\031\n\021buyerAuctio" +
-      "nBatch\030\016 \001(\004\022\032\n\022sellerAuctionBatch\030\017 \001(\004" +
-      "\"o\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\020\n\014TYPE_D" +
-      "EFAULT\020\001\022\037\n\033TYPE_NETWORK_CLOSE_OUT_GOOD\020" +
-      "\002\022\036\n\032TYPE_NETWORK_CLOSE_OUT_BAD\020\003\"H\n\003Fee" +
-      "\022\020\n\010makerFee\030\001 \001(\004\022\031\n\021infrastructureFee\030" +
-      "\002 \001(\004\022\024\n\014liquidityFee\030\003 \001(\004\"\'\n\010TradeSet\022" +
-      "\033\n\006trades\030\001 \003(\0132\013.vega.Trade\"\227\001\n\006Candle\022" +
-      "\021\n\ttimestamp\030\001 \001(\003\022\020\n\010datetime\030\002 \001(\t\022\014\n\004" +
-      "high\030\003 \001(\004\022\013\n\003low\030\004 \001(\004\022\014\n\004open\030\005 \001(\004\022\r\n" +
-      "\005close\030\006 \001(\004\022\016\n\006volume\030\007 \001(\004\022 \n\010interval" +
-      "\030\010 \001(\0162\016.vega.Interval\"C\n\nPriceLevel\022\r\n\005" +
-      "price\030\001 \001(\004\022\026\n\016numberOfOrders\030\002 \001(\004\022\016\n\006v" +
-      "olume\030\003 \001(\004\"v\n\013MarketDepth\022\020\n\010marketID\030\001" +
-      " \001(\t\022\035\n\003buy\030\002 \003(\0132\020.vega.PriceLevel\022\036\n\004s" +
-      "ell\030\003 \003(\0132\020.vega.PriceLevel\022\026\n\016sequenceN" +
-      "umber\030\004 \001(\004\"|\n\021MarketDepthUpdate\022\020\n\010mark" +
-      "etID\030\001 \001(\t\022\035\n\003buy\030\002 \003(\0132\020.vega.PriceLeve" +
-      "l\022\036\n\004sell\030\003 \003(\0132\020.vega.PriceLevel\022\026\n\016seq" +
-      "uenceNumber\030\004 \001(\004\"\233\001\n\010Position\022\020\n\010market" +
-      "ID\030\001 \001(\t\022\017\n\007partyID\030\002 \001(\t\022\022\n\nopenVolume\030" +
-      "\003 \001(\003\022\023\n\013realisedPNL\030\004 \001(\003\022\025\n\runrealised" +
-      "PNL\030\005 \001(\003\022\031\n\021averageEntryPrice\030\006 \001(\004\022\021\n\t" +
-      "updatedAt\030\007 \001(\003\".\n\rPositionTrade\022\016\n\006volu" +
-      "me\030\001 \001(\003\022\r\n\005price\030\002 \001(\004\"\256\006\n\nStatistics\022\023" +
-      "\n\013blockHeight\030\001 \001(\004\022\025\n\rbacklogLength\030\002 \001" +
-      "(\004\022\022\n\ntotalPeers\030\003 \001(\004\022\023\n\013genesisTime\030\004 " +
-      "\001(\t\022\023\n\013currentTime\030\005 \001(\t\022\020\n\010vegaTime\030\006 \001" +
-      "(\t\022!\n\006status\030\007 \001(\0162\021.vega.ChainStatus\022\022\n" +
-      "\ntxPerBlock\030\010 \001(\004\022\026\n\016averageTxBytes\030\t \001(" +
-      "\004\022\035\n\025averageOrdersPerBlock\030\n \001(\004\022\027\n\017trad" +
-      "esPerSecond\030\013 \001(\004\022\027\n\017ordersPerSecond\030\014 \001" +
-      "(\004\022\024\n\014totalMarkets\030\r \001(\004\022\027\n\017totalAmendOr" +
-      "der\030\020 \001(\004\022\030\n\020totalCancelOrder\030\021 \001(\004\022\030\n\020t" +
-      "otalCreateOrder\030\022 \001(\004\022\023\n\013totalOrders\030\023 \001" +
-      "(\004\022\023\n\013totalTrades\030\024 \001(\004\022\032\n\022orderSubscrip" +
-      "tions\030\025 \001(\r\022\032\n\022tradeSubscriptions\030\026 \001(\r\022" +
-      "\033\n\023candleSubscriptions\030\027 \001(\r\022 \n\030marketDe" +
-      "pthSubscriptions\030\030 \001(\r\022\036\n\026positionsSubsc" +
-      "riptions\030\031 \001(\r\022\034\n\024accountSubscriptions\030\032" +
-      " \001(\r\022\037\n\027marketDataSubscriptions\030\033 \001(\r\022\026\n" +
-      "\016appVersionHash\030\034 \001(\t\022\022\n\nappVersion\030\035 \001(" +
-      "\t\022\024\n\014chainVersion\030\036 \001(\t\022\025\n\rblockDuration" +
-      "\030\037 \001(\004\022\016\n\006uptime\030  \001(\t\022\017\n\007chainID\030! \001(\t\022" +
-      "\'\n\037marketDepthUpdatesSubscriptions\030\" \001(\r" +
-      "\"\257\002\n\007Deposit\022\n\n\002id\030\001 \001(\t\022$\n\006status\030\002 \001(\016" +
-      "2\024.vega.Deposit.Status\022\017\n\007partyID\030\003 \001(\t\022" +
-      "\r\n\005asset\030\004 \001(\t\022\016\n\006amount\030\005 \001(\t\022\016\n\006txHash" +
-      "\030\006 \001(\t\022\031\n\021creditedTimestamp\030\007 \001(\003\022\030\n\020cre" +
-      "atedTimestamp\030\010 \001(\003\"}\n\006Status\022\036\n\032DEPOSIT" +
-      "_STATUS_UNSPECIFIED\020\000\022\027\n\023DEPOSIT_STATUS_" +
-      "OPEN\020\001\022\034\n\030DEPOSIT_STATUS_CANCELLED\020\002\022\034\n\030" +
-      "DEPOSIT_STATUS_FINALIZED\020\003\"\200\003\n\nWithdrawa" +
-      "l\022\n\n\002id\030\001 \001(\t\022\017\n\007partyID\030\002 \001(\t\022\016\n\006amount" +
-      "\030\003 \001(\004\022\r\n\005asset\030\004 \001(\t\022\'\n\006status\030\005 \001(\0162\027." +
-      "vega.Withdrawal.Status\022\013\n\003ref\030\006 \001(\t\022\016\n\006e" +
-      "xpiry\030\007 \001(\003\022\016\n\006txHash\030\010 \001(\t\022\030\n\020createdTi" +
-      "mestamp\030\t \001(\003\022\032\n\022withdrawnTimestamp\030\n \001(" +
-      "\003\022\036\n\003ext\030\013 \001(\0132\021.vega.WithdrawExt\"\211\001\n\006St" +
-      "atus\022!\n\035WITHDRAWAL_STATUS_UNSPECIFIED\020\000\022" +
-      "\032\n\026WITHDRAWAL_STATUS_OPEN\020\001\022\037\n\033WITHDRAWA" +
-      "L_STATUS_CANCELLED\020\002\022\037\n\033WITHDRAWAL_STATU" +
-      "S_FINALIZED\020\003\"d\n\022WithdrawSubmission\022\017\n\007p" +
-      "artyID\030\001 \001(\t\022\016\n\006amount\030\002 \001(\004\022\r\n\005asset\030\003 " +
-      "\001(\t\022\036\n\003ext\030\004 \001(\0132\021.vega.WithdrawExt\"=\n\013W" +
-      "ithdrawExt\022\'\n\005erc20\030\001 \001(\0132\026.vega.Erc20Wi" +
-      "thdrawExtH\000B\005\n\003ext\"+\n\020Erc20WithdrawExt\022\027" +
-      "\n\017receiverAddress\030\001 \001(\t\"\325\001\n\016OrderAmendme" +
-      "nt\022\027\n\007orderID\030\001 \001(\tB\006\342\337\037\002X\001\022\027\n\007partyID\030\002" +
-      " \001(\tB\006\342\337\037\002X\001\022\020\n\010marketID\030\003 \001(\t\022\032\n\005price\030" +
-      "\004 \001(\0132\013.vega.Price\022\021\n\tsizeDelta\030\005 \001(\003\022\"\n" +
-      "\texpiresAt\030\006 \001(\0132\017.vega.Timestamp\022,\n\013tim" +
-      "eInForce\030\007 \001(\0162\027.vega.Order.TimeInForce\"" +
-      "\246\002\n\017OrderSubmission\022\022\n\002id\030\001 \001(\tB\006\342\337\037\002X\000\022" +
-      "\030\n\010marketID\030\002 \001(\tB\006\342\337\037\002X\001\022\027\n\007partyID\030\003 \001" +
-      "(\tB\006\342\337\037\002X\001\022\r\n\005price\030\004 \001(\004\022\024\n\004size\030\005 \001(\004B" +
-      "\006\342\337\037\002\020\000\022!\n\004side\030\006 \001(\0162\n.vega.SideB\007\342\337\037\003\210" +
-      "\001\001\0225\n\013timeInForce\030\007 \001(\0162\027.vega.Order.Tim" +
-      "eInForceB\007\342\337\037\003\210\001\001\022\021\n\texpiresAt\030\010 \001(\003\022\'\n\004" +
-      "type\030\t \001(\0162\020.vega.Order.TypeB\007\342\337\037\003\210\001\001\022\021\n" +
-      "\treference\030\n \001(\t\"O\n\021OrderCancellation\022\017\n" +
-      "\007orderID\030\001 \001(\t\022\020\n\010marketID\030\002 \001(\t\022\027\n\007part" +
-      "yID\030\003 \001(\tB\006\342\337\037\002X\001\"G\n\020NodeRegistration\022\026\n" +
-      "\006pubKey\030\001 \001(\014B\006\342\337\037\002X\001\022\033\n\013chainPubKey\030\002 \001" +
-      "(\014B\006\342\337\037\002X\001\"=\n\010NodeVote\022\026\n\006pubKey\030\001 \001(\014B\006" +
-      "\342\337\037\002X\001\022\031\n\treference\030\002 \001(\tB\006\342\337\037\002X\001\"w\n\007Acc" +
-      "ount\022\n\n\002id\030\001 \001(\t\022\r\n\005owner\030\002 \001(\t\022\017\n\007balan" +
-      "ce\030\003 \001(\004\022\r\n\005asset\030\004 \001(\t\022\020\n\010marketID\030\005 \001(" +
-      "\t\022\037\n\004type\030\006 \001(\0162\021.vega.AccountType\"0\n\017Fi" +
-      "nancialAmount\022\016\n\006amount\030\001 \001(\003\022\r\n\005asset\030\002" +
-      " \001(\t\"u\n\010Transfer\022\r\n\005owner\030\001 \001(\t\022%\n\006amoun" +
-      "t\030\002 \001(\0132\025.vega.FinancialAmount\022 \n\004type\030\003" +
-      " \001(\0162\022.vega.TransferType\022\021\n\tminAmount\030\004 " +
-      "\001(\003\"\234\001\n\017TransferRequest\022\"\n\013fromAccount\030\001" +
-      " \003(\0132\r.vega.Account\022 \n\ttoAccount\030\002 \003(\0132\r" +
-      ".vega.Account\022\016\n\006amount\030\003 \001(\004\022\021\n\tminAmou" +
-      "nt\030\004 \001(\004\022\r\n\005asset\030\005 \001(\t\022\021\n\treference\030\006 \001" +
-      "(\t\"y\n\013LedgerEntry\022\023\n\013fromAccount\030\001 \001(\t\022\021" +
-      "\n\ttoAccount\030\002 \001(\t\022\016\n\006amount\030\003 \001(\004\022\021\n\tref" +
-      "erence\030\004 \001(\t\022\014\n\004type\030\005 \001(\t\022\021\n\ttimestamp\030" +
-      "\006 \001(\003\"B\n\017TransferBalance\022\036\n\007account\030\001 \001(" +
-      "\0132\r.vega.Account\022\017\n\007balance\030\002 \001(\004\"a\n\020Tra" +
-      "nsferResponse\022$\n\ttransfers\030\001 \003(\0132\021.vega." +
-      "LedgerEntry\022\'\n\010balances\030\002 \003(\0132\025.vega.Tra" +
-      "nsferBalance\"\272\001\n\014MarginLevels\022\031\n\021mainten" +
-      "anceMargin\030\001 \001(\004\022\023\n\013searchLevel\030\002 \001(\004\022\025\n" +
-      "\rinitialMargin\030\003 \001(\004\022\036\n\026collateralReleas" +
-      "eLevel\030\004 \001(\004\022\017\n\007partyID\030\005 \001(\t\022\020\n\010marketI" +
-      "D\030\006 \001(\t\022\r\n\005asset\030\007 \001(\t\022\021\n\ttimestamp\030\010 \001(" +
-      "\003\"\364\002\n\nMarketData\022\021\n\tmarkPrice\030\001 \001(\004\022\024\n\014b" +
-      "estBidPrice\030\002 \001(\004\022\025\n\rbestBidVolume\030\003 \001(\004" +
-      "\022\026\n\016bestOfferPrice\030\004 \001(\004\022\027\n\017bestOfferVol" +
-      "ume\030\005 \001(\004\022\020\n\010midPrice\030\006 \001(\004\022\016\n\006market\030\007 " +
-      "\001(\t\022\021\n\ttimestamp\030\010 \001(\003\022\024\n\014openInterest\030\t" +
-      " \001(\004\022\022\n\nauctionEnd\030\n \001(\003\022\024\n\014auctionStart" +
-      "\030\013 \001(\003\022\027\n\017indicativePrice\030\014 \001(\004\022\030\n\020indic" +
-      "ativeVolume\030\r \001(\004\022&\n\013marketState\030\016 \001(\0162\021" +
-      ".vega.MarketState\022%\n\007trigger\030\017 \001(\0162\024.veg" +
-      "a.AuctionTrigger\";\n\013ErrorDetail\022\014\n\004code\030" +
-      "\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\r\n\005inner\030\003 \001(\t\"s\n" +
-      "\013Transaction\022\021\n\tinputData\030\001 \001(\014\022\r\n\005nonce" +
-      "\030\002 \001(\004\022\023\n\013blockHeight\030\003 \001(\004\022\022\n\007address\030\351" +
-      "\007 \001(\014H\000\022\021\n\006pubKey\030\352\007 \001(\014H\000B\006\n\004from\"7\n\tSi" +
-      "gnature\022\013\n\003sig\030\001 \001(\014\022\014\n\004algo\030\002 \001(\t\022\017\n\007ve" +
-      "rsion\030\003 \001(\004\"8\n\014SignedBundle\022\n\n\002tx\030\001 \001(\014\022" +
-      "\034\n\003sig\030\002 \001(\0132\017.vega.Signature\"O\n\rNodeSig" +
-      "nature\022\n\n\002ID\030\001 \001(\t\022\013\n\003sig\030\002 \001(\014\022%\n\004kind\030" +
-      "\003 \001(\0162\027.vega.NodeSignatureKind\".\n\020Networ" +
-      "kParameter\022\013\n\003Key\030\001 \001(\t\022\r\n\005Value\030\002 \001(\t*9" +
-      "\n\004Side\022\024\n\020SIDE_UNSPECIFIED\020\000\022\014\n\010SIDE_BUY" +
-      "\020\001\022\r\n\tSIDE_SELL\020\002*\230\001\n\010Interval\022\030\n\024INTERV" +
-      "AL_UNSPECIFIED\020\000\022\020\n\014INTERVAL_I1M\020<\022\021\n\014IN" +
-      "TERVAL_I5M\020\254\002\022\022\n\rINTERVAL_I15M\020\204\007\022\021\n\014INT" +
-      "ERVAL_I1H\020\220\034\022\022\n\014INTERVAL_I6H\020\340\250\001\022\022\n\014INTE" +
-      "RVAL_I1D\020\200\243\005*\257\001\n\013MarketState\022\034\n\030MARKET_S" +
-      "TATE_UNSPECIFIED\020\000\022\033\n\027MARKET_STATE_CONTI" +
-      "NUOUS\020\001\022\036\n\032MARKET_STATE_BATCH_AUCTION\020\002\022" +
-      " \n\034MARKET_STATE_OPENING_AUCTION\020\003\022#\n\037MAR" +
-      "KET_STATE_MONITORING_AUCTION\020\004*\243\001\n\016Aucti" +
-      "onTrigger\022\037\n\033AUCTION_TRIGGER_UNSPECIFIED" +
-      "\020\000\022\031\n\025AUCTION_TRIGGER_BATCH\020\001\022\033\n\027AUCTION" +
-      "_TRIGGER_OPENING\020\002\022\031\n\025AUCTION_TRIGGER_PR" +
-      "ICE\020\003\022\035\n\031AUCTION_TRIGGER_LIQUIDITY\020\004*\334\n\n" +
-      "\nOrderError\022\024\n\020ORDER_ERROR_NONE\020\000\022!\n\035ORD" +
-      "ER_ERROR_INVALID_MARKET_ID\020\001\022 \n\034ORDER_ER" +
-      "ROR_INVALID_ORDER_ID\020\002\022\037\n\033ORDER_ERROR_OU" +
-      "T_OF_SEQUENCE\020\003\022&\n\"ORDER_ERROR_INVALID_R" +
-      "EMAINING_SIZE\020\004\022\034\n\030ORDER_ERROR_TIME_FAIL" +
-      "URE\020\005\022\037\n\033ORDER_ERROR_REMOVAL_FAILURE\020\006\022+" +
-      "\n\'ORDER_ERROR_INVALID_EXPIRATION_DATETIM" +
-      "E\020\007\022\'\n#ORDER_ERROR_INVALID_ORDER_REFEREN" +
-      "CE\020\010\022 \n\034ORDER_ERROR_EDIT_NOT_ALLOWED\020\t\022\035" +
-      "\n\031ORDER_ERROR_AMEND_FAILURE\020\n\022\031\n\025ORDER_E" +
-      "RROR_NOT_FOUND\020\013\022 \n\034ORDER_ERROR_INVALID_" +
-      "PARTY_ID\020\014\022\035\n\031ORDER_ERROR_MARKET_CLOSED\020" +
-      "\r\022#\n\037ORDER_ERROR_MARGIN_CHECK_FAILED\020\016\022\'" +
-      "\n#ORDER_ERROR_MISSING_GENERAL_ACCOUNT\020\017\022" +
-      "\036\n\032ORDER_ERROR_INTERNAL_ERROR\020\020\022\034\n\030ORDER" +
-      "_ERROR_INVALID_SIZE\020\021\022#\n\037ORDER_ERROR_INV" +
-      "ALID_PERSISTENCE\020\022\022\034\n\030ORDER_ERROR_INVALI" +
-      "D_TYPE\020\023\022\034\n\030ORDER_ERROR_SELF_TRADING\020\024\022." +
-      "\n*ORDER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_" +
-      "FEES\020\025\022%\n!ORDER_ERROR_INCORRECT_MARKET_T" +
-      "YPE\020\026\022%\n!ORDER_ERROR_INVALID_TIME_IN_FOR" +
-      "CE\020\027\022+\n\'ORDER_ERROR_GFN_ORDER_DURING_AN_" +
-      "AUCTION\020\030\0223\n/ORDER_ERROR_GFA_ORDER_DURIN" +
-      "G_CONTINUOUS_TRADING\020\031\0224\n0ORDER_ERROR_CA" +
-      "NNOT_AMEND_TO_GTT_WITHOUT_EXPIRYAT\020\032\022)\n%" +
-      "ORDER_ERROR_EXPIRYAT_BEFORE_CREATEDAT\020\033\022" +
-      ",\n(ORDER_ERROR_CANNOT_HAVE_GTC_AND_EXPIR" +
-      "YAT\020\034\022*\n&ORDER_ERROR_CANNOT_AMEND_TO_FOK" +
-      "_OR_IOC\020\035\022*\n&ORDER_ERROR_CANNOT_AMEND_TO" +
-      "_GFA_OR_GFN\020\036\022,\n(ORDER_ERROR_CANNOT_AMEN" +
-      "D_FROM_GFA_OR_GFN\020\037\0224\n0ORDER_ERROR_CANNO" +
-      "T_SEND_IOC_ORDER_DURING_AUCTION\020 \0224\n0ORD" +
-      "ER_ERROR_CANNOT_SEND_FOK_ORDER_DURING_AU" +
-      "CTION\020!\022*\n&ORDER_ERROR_INSUFFICIENT_ASSE" +
-      "T_BALANCE\020\"*\202\001\n\013ChainStatus\022\034\n\030CHAIN_STA" +
-      "TUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_STATUS_DISCON" +
-      "NECTED\020\001\022\032\n\026CHAIN_STATUS_REPLAYING\020\002\022\032\n\026" +
-      "CHAIN_STATUS_CONNECTED\020\003*\233\002\n\013AccountType" +
-      "\022\034\n\030ACCOUNT_TYPE_UNSPECIFIED\020\000\022\032\n\026ACCOUN" +
-      "T_TYPE_INSURANCE\020\001\022\033\n\027ACCOUNT_TYPE_SETTL" +
-      "EMENT\020\002\022\027\n\023ACCOUNT_TYPE_MARGIN\020\003\022\030\n\024ACCO" +
-      "UNT_TYPE_GENERAL\020\004\022$\n ACCOUNT_TYPE_FEES_" +
-      "INFRASTRUCTURE\020\005\022\037\n\033ACCOUNT_TYPE_FEES_LI" +
-      "QUIDITY\020\006\022\033\n\027ACCOUNT_TYPE_FEES_MAKER\020\007\022\036" +
-      "\n\032ACCOUNT_TYPE_LOCK_WITHDRAW\020\010*\244\003\n\014Trans" +
-      "ferType\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\026" +
-      "\n\022TRANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSFER_TYPE_" +
-      "WIN\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032\n\026TRANSF" +
-      "ER_TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_TYPE_MTM_" +
-      "WIN\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_LOW\020\006\022\035\n\031T" +
-      "RANSFER_TYPE_MARGIN_HIGH\020\007\022$\n TRANSFER_T" +
-      "YPE_MARGIN_CONFISCATED\020\010\022\037\n\033TRANSFER_TYP" +
-      "E_MAKER_FEE_PAY\020\t\022#\n\037TRANSFER_TYPE_MAKER" +
-      "_FEE_RECEIVE\020\n\022(\n$TRANSFER_TYPE_INFRASTR" +
-      "UCTURE_FEE_PAY\020\013\022#\n\037TRANSFER_TYPE_LIQUID" +
-      "ITY_FEE_PAY\020\014*\205\001\n\021NodeSignatureKind\022#\n\037N" +
-      "ODE_SIGNATURE_KIND_UNSPECIFIED\020\000\022!\n\035NODE" +
-      "_SIGNATURE_KIND_ASSET_NEW\020\001\022(\n$NODE_SIGN" +
-      "ATURE_KIND_ASSET_WITHDRAWAL\020\002B7\n\024io.vega" +
-      "protocol.vegaZ\037code.vegaprotocol.io/vega" +
-      "/protob\006proto3"
+      "\020.vega.RiskFactor:\0028\001\"G\n\013PeggedOrder\022(\n\t" +
+      "reference\030\001 \001(\0162\025.vega.PeggedReference\022\016" +
+      "\n\006offset\030\002 \001(\003\"\242\006\n\005Order\022\n\n\002id\030\001 \001(\t\022\020\n\010" +
+      "marketID\030\002 \001(\t\022\017\n\007partyID\030\003 \001(\t\022\030\n\004side\030" +
+      "\004 \001(\0162\n.vega.Side\022\r\n\005price\030\005 \001(\004\022\014\n\004size" +
+      "\030\006 \001(\004\022\021\n\tremaining\030\007 \001(\004\022,\n\013timeInForce" +
+      "\030\010 \001(\0162\027.vega.Order.TimeInForce\022\036\n\004type\030" +
+      "\t \001(\0162\020.vega.Order.Type\022\021\n\tcreatedAt\030\n \001" +
+      "(\003\022\"\n\006status\030\013 \001(\0162\022.vega.Order.Status\022\021" +
+      "\n\texpiresAt\030\014 \001(\003\022\021\n\treference\030\r \001(\t\022 \n\006" +
+      "reason\030\016 \001(\0162\020.vega.OrderError\022\021\n\tupdate" +
+      "dAt\030\017 \001(\003\022\017\n\007version\030\020 \001(\004\022\017\n\007batchID\030\021 " +
+      "\001(\004\022&\n\013peggedOrder\030\022 \001(\0132\021.vega.PeggedOr" +
+      "der\"p\n\013TimeInForce\022\023\n\017TIF_UNSPECIFIED\020\000\022" +
+      "\013\n\007TIF_GTC\020\001\022\013\n\007TIF_GTT\020\002\022\013\n\007TIF_IOC\020\003\022\013" +
+      "\n\007TIF_FOK\020\004\022\013\n\007TIF_GFA\020\005\022\013\n\007TIF_GFN\020\006\"O\n" +
+      "\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\016\n\nTYPE_LIMI" +
+      "T\020\001\022\017\n\013TYPE_MARKET\020\002\022\020\n\014TYPE_NETWORK\020\003\"\262" +
+      "\001\n\006Status\022\022\n\016STATUS_INVALID\020\000\022\021\n\rSTATUS_" +
+      "ACTIVE\020\001\022\022\n\016STATUS_EXPIRED\020\002\022\024\n\020STATUS_C" +
+      "ANCELLED\020\003\022\022\n\016STATUS_STOPPED\020\004\022\021\n\rSTATUS" +
+      "_FILLED\020\005\022\023\n\017STATUS_REJECTED\020\006\022\033\n\027STATUS" +
+      "_PARTIALLY_FILLED\020\007\";\n\035OrderCancellation" +
+      "Confirmation\022\032\n\005order\030\001 \001(\0132\013.vega.Order" +
+      "\"x\n\021OrderConfirmation\022\032\n\005order\030\001 \001(\0132\013.v" +
+      "ega.Order\022\033\n\006trades\030\002 \003(\0132\013.vega.Trade\022*" +
+      "\n\025passiveOrdersAffected\030\003 \003(\0132\013.vega.Ord" +
+      "er\"\207\001\n\026AuctionIndicativeState\022\020\n\010marketI" +
+      "D\030\001 \001(\t\022\027\n\017indicativePrice\030\002 \001(\004\022\030\n\020indi" +
+      "cativeVolume\030\003 \001(\004\022\024\n\014auctionStart\030\004 \001(\003" +
+      "\022\022\n\nauctionEnd\030\005 \001(\003\"\273\003\n\005Trade\022\n\n\002id\030\001 \001" +
+      "(\t\022\020\n\010marketID\030\002 \001(\t\022\r\n\005price\030\003 \001(\004\022\014\n\004s" +
+      "ize\030\004 \001(\004\022\r\n\005buyer\030\005 \001(\t\022\016\n\006seller\030\006 \001(\t" +
+      "\022\035\n\taggressor\030\007 \001(\0162\n.vega.Side\022\020\n\010buyOr" +
+      "der\030\010 \001(\t\022\021\n\tsellOrder\030\t \001(\t\022\021\n\ttimestam" +
+      "p\030\n \001(\003\022\036\n\004type\030\013 \001(\0162\020.vega.Trade.Type\022" +
+      "\033\n\010buyerFee\030\014 \001(\0132\t.vega.Fee\022\034\n\tsellerFe" +
+      "e\030\r \001(\0132\t.vega.Fee\022\031\n\021buyerAuctionBatch\030" +
+      "\016 \001(\004\022\032\n\022sellerAuctionBatch\030\017 \001(\004\"o\n\004Typ" +
+      "e\022\024\n\020TYPE_UNSPECIFIED\020\000\022\020\n\014TYPE_DEFAULT\020" +
+      "\001\022\037\n\033TYPE_NETWORK_CLOSE_OUT_GOOD\020\002\022\036\n\032TY" +
+      "PE_NETWORK_CLOSE_OUT_BAD\020\003\"H\n\003Fee\022\020\n\010mak" +
+      "erFee\030\001 \001(\004\022\031\n\021infrastructureFee\030\002 \001(\004\022\024" +
+      "\n\014liquidityFee\030\003 \001(\004\"\'\n\010TradeSet\022\033\n\006trad" +
+      "es\030\001 \003(\0132\013.vega.Trade\"\227\001\n\006Candle\022\021\n\ttime" +
+      "stamp\030\001 \001(\003\022\020\n\010datetime\030\002 \001(\t\022\014\n\004high\030\003 " +
+      "\001(\004\022\013\n\003low\030\004 \001(\004\022\014\n\004open\030\005 \001(\004\022\r\n\005close\030" +
+      "\006 \001(\004\022\016\n\006volume\030\007 \001(\004\022 \n\010interval\030\010 \001(\0162" +
+      "\016.vega.Interval\"C\n\nPriceLevel\022\r\n\005price\030\001" +
+      " \001(\004\022\026\n\016numberOfOrders\030\002 \001(\004\022\016\n\006volume\030\003" +
+      " \001(\004\"v\n\013MarketDepth\022\020\n\010marketID\030\001 \001(\t\022\035\n" +
+      "\003buy\030\002 \003(\0132\020.vega.PriceLevel\022\036\n\004sell\030\003 \003" +
+      "(\0132\020.vega.PriceLevel\022\026\n\016sequenceNumber\030\004" +
+      " \001(\004\"|\n\021MarketDepthUpdate\022\020\n\010marketID\030\001 " +
+      "\001(\t\022\035\n\003buy\030\002 \003(\0132\020.vega.PriceLevel\022\036\n\004se" +
+      "ll\030\003 \003(\0132\020.vega.PriceLevel\022\026\n\016sequenceNu" +
+      "mber\030\004 \001(\004\"\233\001\n\010Position\022\020\n\010marketID\030\001 \001(" +
+      "\t\022\017\n\007partyID\030\002 \001(\t\022\022\n\nopenVolume\030\003 \001(\003\022\023" +
+      "\n\013realisedPNL\030\004 \001(\003\022\025\n\runrealisedPNL\030\005 \001" +
+      "(\003\022\031\n\021averageEntryPrice\030\006 \001(\004\022\021\n\tupdated" +
+      "At\030\007 \001(\003\".\n\rPositionTrade\022\016\n\006volume\030\001 \001(" +
+      "\003\022\r\n\005price\030\002 \001(\004\"\256\006\n\nStatistics\022\023\n\013block" +
+      "Height\030\001 \001(\004\022\025\n\rbacklogLength\030\002 \001(\004\022\022\n\nt" +
+      "otalPeers\030\003 \001(\004\022\023\n\013genesisTime\030\004 \001(\t\022\023\n\013" +
+      "currentTime\030\005 \001(\t\022\020\n\010vegaTime\030\006 \001(\t\022!\n\006s" +
+      "tatus\030\007 \001(\0162\021.vega.ChainStatus\022\022\n\ntxPerB" +
+      "lock\030\010 \001(\004\022\026\n\016averageTxBytes\030\t \001(\004\022\035\n\025av" +
+      "erageOrdersPerBlock\030\n \001(\004\022\027\n\017tradesPerSe" +
+      "cond\030\013 \001(\004\022\027\n\017ordersPerSecond\030\014 \001(\004\022\024\n\014t" +
+      "otalMarkets\030\r \001(\004\022\027\n\017totalAmendOrder\030\020 \001" +
+      "(\004\022\030\n\020totalCancelOrder\030\021 \001(\004\022\030\n\020totalCre" +
+      "ateOrder\030\022 \001(\004\022\023\n\013totalOrders\030\023 \001(\004\022\023\n\013t" +
+      "otalTrades\030\024 \001(\004\022\032\n\022orderSubscriptions\030\025" +
+      " \001(\r\022\032\n\022tradeSubscriptions\030\026 \001(\r\022\033\n\023cand" +
+      "leSubscriptions\030\027 \001(\r\022 \n\030marketDepthSubs" +
+      "criptions\030\030 \001(\r\022\036\n\026positionsSubscription" +
+      "s\030\031 \001(\r\022\034\n\024accountSubscriptions\030\032 \001(\r\022\037\n" +
+      "\027marketDataSubscriptions\030\033 \001(\r\022\026\n\016appVer" +
+      "sionHash\030\034 \001(\t\022\022\n\nappVersion\030\035 \001(\t\022\024\n\014ch" +
+      "ainVersion\030\036 \001(\t\022\025\n\rblockDuration\030\037 \001(\004\022" +
+      "\016\n\006uptime\030  \001(\t\022\017\n\007chainID\030! \001(\t\022\'\n\037mark" +
+      "etDepthUpdatesSubscriptions\030\" \001(\r\"\257\002\n\007De" +
+      "posit\022\n\n\002id\030\001 \001(\t\022$\n\006status\030\002 \001(\0162\024.vega" +
+      ".Deposit.Status\022\017\n\007partyID\030\003 \001(\t\022\r\n\005asse" +
+      "t\030\004 \001(\t\022\016\n\006amount\030\005 \001(\t\022\016\n\006txHash\030\006 \001(\t\022" +
+      "\031\n\021creditedTimestamp\030\007 \001(\003\022\030\n\020createdTim" +
+      "estamp\030\010 \001(\003\"}\n\006Status\022\036\n\032DEPOSIT_STATUS" +
+      "_UNSPECIFIED\020\000\022\027\n\023DEPOSIT_STATUS_OPEN\020\001\022" +
+      "\034\n\030DEPOSIT_STATUS_CANCELLED\020\002\022\034\n\030DEPOSIT" +
+      "_STATUS_FINALIZED\020\003\"\200\003\n\nWithdrawal\022\n\n\002id" +
+      "\030\001 \001(\t\022\017\n\007partyID\030\002 \001(\t\022\016\n\006amount\030\003 \001(\004\022" +
+      "\r\n\005asset\030\004 \001(\t\022\'\n\006status\030\005 \001(\0162\027.vega.Wi" +
+      "thdrawal.Status\022\013\n\003ref\030\006 \001(\t\022\016\n\006expiry\030\007" +
+      " \001(\003\022\016\n\006txHash\030\010 \001(\t\022\030\n\020createdTimestamp" +
+      "\030\t \001(\003\022\032\n\022withdrawnTimestamp\030\n \001(\003\022\036\n\003ex" +
+      "t\030\013 \001(\0132\021.vega.WithdrawExt\"\211\001\n\006Status\022!\n" +
+      "\035WITHDRAWAL_STATUS_UNSPECIFIED\020\000\022\032\n\026WITH" +
+      "DRAWAL_STATUS_OPEN\020\001\022\037\n\033WITHDRAWAL_STATU" +
+      "S_CANCELLED\020\002\022\037\n\033WITHDRAWAL_STATUS_FINAL" +
+      "IZED\020\003\"d\n\022WithdrawSubmission\022\017\n\007partyID\030" +
+      "\001 \001(\t\022\016\n\006amount\030\002 \001(\004\022\r\n\005asset\030\003 \001(\t\022\036\n\003" +
+      "ext\030\004 \001(\0132\021.vega.WithdrawExt\"=\n\013Withdraw" +
+      "Ext\022\'\n\005erc20\030\001 \001(\0132\026.vega.Erc20WithdrawE" +
+      "xtH\000B\005\n\003ext\"+\n\020Erc20WithdrawExt\022\027\n\017recei" +
+      "verAddress\030\001 \001(\t\"\325\001\n\016OrderAmendment\022\027\n\007o" +
+      "rderID\030\001 \001(\tB\006\342\337\037\002X\001\022\027\n\007partyID\030\002 \001(\tB\006\342" +
+      "\337\037\002X\001\022\020\n\010marketID\030\003 \001(\t\022\032\n\005price\030\004 \001(\0132\013" +
+      ".vega.Price\022\021\n\tsizeDelta\030\005 \001(\003\022\"\n\texpire" +
+      "sAt\030\006 \001(\0132\017.vega.Timestamp\022,\n\013timeInForc" +
+      "e\030\007 \001(\0162\027.vega.Order.TimeInForce\"\316\002\n\017Ord" +
+      "erSubmission\022\022\n\002id\030\001 \001(\tB\006\342\337\037\002X\000\022\030\n\010mark" +
+      "etID\030\002 \001(\tB\006\342\337\037\002X\001\022\027\n\007partyID\030\003 \001(\tB\006\342\337\037" +
+      "\002X\001\022\r\n\005price\030\004 \001(\004\022\024\n\004size\030\005 \001(\004B\006\342\337\037\002\020\000" +
+      "\022!\n\004side\030\006 \001(\0162\n.vega.SideB\007\342\337\037\003\210\001\001\0225\n\013t" +
+      "imeInForce\030\007 \001(\0162\027.vega.Order.TimeInForc" +
+      "eB\007\342\337\037\003\210\001\001\022\021\n\texpiresAt\030\010 \001(\003\022\'\n\004type\030\t " +
+      "\001(\0162\020.vega.Order.TypeB\007\342\337\037\003\210\001\001\022\021\n\trefere" +
+      "nce\030\n \001(\t\022&\n\013peggedOrder\030\013 \001(\0132\021.vega.Pe" +
+      "ggedOrder\"O\n\021OrderCancellation\022\017\n\007orderI" +
+      "D\030\001 \001(\t\022\020\n\010marketID\030\002 \001(\t\022\027\n\007partyID\030\003 \001" +
+      "(\tB\006\342\337\037\002X\001\"G\n\020NodeRegistration\022\026\n\006pubKey" +
+      "\030\001 \001(\014B\006\342\337\037\002X\001\022\033\n\013chainPubKey\030\002 \001(\014B\006\342\337\037" +
+      "\002X\001\"=\n\010NodeVote\022\026\n\006pubKey\030\001 \001(\014B\006\342\337\037\002X\001\022" +
+      "\031\n\treference\030\002 \001(\tB\006\342\337\037\002X\001\"w\n\007Account\022\n\n" +
+      "\002id\030\001 \001(\t\022\r\n\005owner\030\002 \001(\t\022\017\n\007balance\030\003 \001(" +
+      "\004\022\r\n\005asset\030\004 \001(\t\022\020\n\010marketID\030\005 \001(\t\022\037\n\004ty" +
+      "pe\030\006 \001(\0162\021.vega.AccountType\"0\n\017Financial" +
+      "Amount\022\016\n\006amount\030\001 \001(\003\022\r\n\005asset\030\002 \001(\t\"u\n" +
+      "\010Transfer\022\r\n\005owner\030\001 \001(\t\022%\n\006amount\030\002 \001(\013" +
+      "2\025.vega.FinancialAmount\022 \n\004type\030\003 \001(\0162\022." +
+      "vega.TransferType\022\021\n\tminAmount\030\004 \001(\003\"\234\001\n" +
+      "\017TransferRequest\022\"\n\013fromAccount\030\001 \003(\0132\r." +
+      "vega.Account\022 \n\ttoAccount\030\002 \003(\0132\r.vega.A" +
+      "ccount\022\016\n\006amount\030\003 \001(\004\022\021\n\tminAmount\030\004 \001(" +
+      "\004\022\r\n\005asset\030\005 \001(\t\022\021\n\treference\030\006 \001(\t\"y\n\013L" +
+      "edgerEntry\022\023\n\013fromAccount\030\001 \001(\t\022\021\n\ttoAcc" +
+      "ount\030\002 \001(\t\022\016\n\006amount\030\003 \001(\004\022\021\n\treference\030" +
+      "\004 \001(\t\022\014\n\004type\030\005 \001(\t\022\021\n\ttimestamp\030\006 \001(\003\"B" +
+      "\n\017TransferBalance\022\036\n\007account\030\001 \001(\0132\r.veg" +
+      "a.Account\022\017\n\007balance\030\002 \001(\004\"a\n\020TransferRe" +
+      "sponse\022$\n\ttransfers\030\001 \003(\0132\021.vega.LedgerE" +
+      "ntry\022\'\n\010balances\030\002 \003(\0132\025.vega.TransferBa" +
+      "lance\"\272\001\n\014MarginLevels\022\031\n\021maintenanceMar" +
+      "gin\030\001 \001(\004\022\023\n\013searchLevel\030\002 \001(\004\022\025\n\rinitia" +
+      "lMargin\030\003 \001(\004\022\036\n\026collateralReleaseLevel\030" +
+      "\004 \001(\004\022\017\n\007partyID\030\005 \001(\t\022\020\n\010marketID\030\006 \001(\t" +
+      "\022\r\n\005asset\030\007 \001(\t\022\021\n\ttimestamp\030\010 \001(\003\"\240\003\n\nM" +
+      "arketData\022\021\n\tmarkPrice\030\001 \001(\004\022\024\n\014bestBidP" +
+      "rice\030\002 \001(\004\022\025\n\rbestBidVolume\030\003 \001(\004\022\026\n\016bes" +
+      "tOfferPrice\030\004 \001(\004\022\027\n\017bestOfferVolume\030\005 \001" +
+      "(\004\022\020\n\010midPrice\030\006 \001(\004\022\016\n\006market\030\007 \001(\t\022\021\n\t" +
+      "timestamp\030\010 \001(\003\022\024\n\014openInterest\030\t \001(\004\022\022\n" +
+      "\nauctionEnd\030\n \001(\003\022\024\n\014auctionStart\030\013 \001(\003\022" +
+      "\027\n\017indicativePrice\030\014 \001(\004\022\030\n\020indicativeVo" +
+      "lume\030\r \001(\004\022&\n\013marketState\030\016 \001(\0162\021.vega.M" +
+      "arketState\022%\n\007trigger\030\017 \001(\0162\024.vega.Aucti" +
+      "onTrigger\022\023\n\013targetStake\030\020 \001(\t\022\025\n\rsuppli" +
+      "edStake\030\021 \001(\t\";\n\013ErrorDetail\022\014\n\004code\030\001 \001" +
+      "(\005\022\017\n\007message\030\002 \001(\t\022\r\n\005inner\030\003 \001(\t\"s\n\013Tr" +
+      "ansaction\022\021\n\tinputData\030\001 \001(\014\022\r\n\005nonce\030\002 " +
+      "\001(\004\022\023\n\013blockHeight\030\003 \001(\004\022\022\n\007address\030\351\007 \001" +
+      "(\014H\000\022\021\n\006pubKey\030\352\007 \001(\014H\000B\006\n\004from\"7\n\tSigna" +
+      "ture\022\013\n\003sig\030\001 \001(\014\022\014\n\004algo\030\002 \001(\t\022\017\n\007versi" +
+      "on\030\003 \001(\004\"8\n\014SignedBundle\022\n\n\002tx\030\001 \001(\014\022\034\n\003" +
+      "sig\030\002 \001(\0132\017.vega.Signature\"O\n\rNodeSignat" +
+      "ure\022\n\n\002ID\030\001 \001(\t\022\013\n\003sig\030\002 \001(\014\022%\n\004kind\030\003 \001" +
+      "(\0162\027.vega.NodeSignatureKind\".\n\020NetworkPa" +
+      "rameter\022\013\n\003Key\030\001 \001(\t\022\r\n\005Value\030\002 \001(\t\"^\n\016L" +
+      "iquidityOrder\022(\n\treference\030\001 \001(\0162\025.vega." +
+      "PeggedReference\022\022\n\nproportion\030\002 \001(\r\022\016\n\006o" +
+      "ffset\030\003 \001(\003\"\250\001\n\034LiquidityProvisionSubmis" +
+      "sion\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037\002X\001\022\030\n\020commit" +
+      "mentAmount\030\002 \001(\004\022\013\n\003fee\030\003 \001(\t\022#\n\005Sells\030\004" +
+      " \003(\0132\024.vega.LiquidityOrder\022\"\n\004Buys\030\005 \003(\013" +
+      "2\024.vega.LiquidityOrder\"X\n\027LiquidityOrder" +
+      "Reference\022\017\n\007orderID\030\001 \001(\t\022,\n\016liquidityO" +
+      "rder\030\002 \001(\0132\024.vega.LiquidityOrder\"\345\003\n\022Liq" +
+      "uidityProvision\022\n\n\002id\030\001 \001(\t\022\017\n\007partyID\030\002" +
+      " \001(\t\022\021\n\tcreatedAt\030\003 \001(\003\022\021\n\tupdatedAt\030\004 \001" +
+      "(\003\022\030\n\010marketID\030\005 \001(\tB\006\342\337\037\002X\001\022\030\n\020commitme" +
+      "ntAmount\030\006 \001(\004\022\013\n\003fee\030\007 \001(\t\022,\n\005sells\030\010 \003" +
+      "(\0132\035.vega.LiquidityOrderReference\022+\n\004buy" +
+      "s\030\t \003(\0132\035.vega.LiquidityOrderReference\022\017" +
+      "\n\007version\030\n \001(\t\022/\n\006status\030\013 \001(\0162\037.vega.L" +
+      "iquidityProvision.Status\"\255\001\n\006Status\022*\n&L" +
+      "IQUIDITY_PROVISION_STATUS_UNSPECIFIED\020\000\022" +
+      "%\n!LIQUIDITY_PROVISION_STATUS_ACTIVE\020\001\022&" +
+      "\n\"LIQUIDITY_PROVISION_STATUS_STOPPED\020\002\022(" +
+      "\n$LIQUIDITY_PROVISION_STATUS_CANCELLED\020\003" +
+      "*9\n\004Side\022\024\n\020SIDE_UNSPECIFIED\020\000\022\014\n\010SIDE_B" +
+      "UY\020\001\022\r\n\tSIDE_SELL\020\002*\230\001\n\010Interval\022\030\n\024INTE" +
+      "RVAL_UNSPECIFIED\020\000\022\020\n\014INTERVAL_I1M\020<\022\021\n\014" +
+      "INTERVAL_I5M\020\254\002\022\022\n\rINTERVAL_I15M\020\204\007\022\021\n\014I" +
+      "NTERVAL_I1H\020\220\034\022\022\n\014INTERVAL_I6H\020\340\250\001\022\022\n\014IN" +
+      "TERVAL_I1D\020\200\243\005*\257\001\n\013MarketState\022\034\n\030MARKET" +
+      "_STATE_UNSPECIFIED\020\000\022\033\n\027MARKET_STATE_CON" +
+      "TINUOUS\020\001\022\036\n\032MARKET_STATE_BATCH_AUCTION\020" +
+      "\002\022 \n\034MARKET_STATE_OPENING_AUCTION\020\003\022#\n\037M" +
+      "ARKET_STATE_MONITORING_AUCTION\020\004*\243\001\n\016Auc" +
+      "tionTrigger\022\037\n\033AUCTION_TRIGGER_UNSPECIFI" +
+      "ED\020\000\022\031\n\025AUCTION_TRIGGER_BATCH\020\001\022\033\n\027AUCTI" +
+      "ON_TRIGGER_OPENING\020\002\022\031\n\025AUCTION_TRIGGER_" +
+      "PRICE\020\003\022\035\n\031AUCTION_TRIGGER_LIQUIDITY\020\004*\213" +
+      "\001\n\017PeggedReference\022 \n\034PEGGED_REFERENCE_U" +
+      "NSPECIFIED\020\000\022\030\n\024PEGGED_REFERENCE_MID\020\001\022\035" +
+      "\n\031PEGGED_REFERENCE_BEST_BID\020\002\022\035\n\031PEGGED_" +
+      "REFERENCE_BEST_ASK\020\003*\211\016\n\nOrderError\022\024\n\020O" +
+      "RDER_ERROR_NONE\020\000\022!\n\035ORDER_ERROR_INVALID" +
+      "_MARKET_ID\020\001\022 \n\034ORDER_ERROR_INVALID_ORDE" +
+      "R_ID\020\002\022\037\n\033ORDER_ERROR_OUT_OF_SEQUENCE\020\003\022" +
+      "&\n\"ORDER_ERROR_INVALID_REMAINING_SIZE\020\004\022" +
+      "\034\n\030ORDER_ERROR_TIME_FAILURE\020\005\022\037\n\033ORDER_E" +
+      "RROR_REMOVAL_FAILURE\020\006\022+\n\'ORDER_ERROR_IN" +
+      "VALID_EXPIRATION_DATETIME\020\007\022\'\n#ORDER_ERR" +
+      "OR_INVALID_ORDER_REFERENCE\020\010\022 \n\034ORDER_ER" +
+      "ROR_EDIT_NOT_ALLOWED\020\t\022\035\n\031ORDER_ERROR_AM" +
+      "END_FAILURE\020\n\022\031\n\025ORDER_ERROR_NOT_FOUND\020\013" +
+      "\022 \n\034ORDER_ERROR_INVALID_PARTY_ID\020\014\022\035\n\031OR" +
+      "DER_ERROR_MARKET_CLOSED\020\r\022#\n\037ORDER_ERROR" +
+      "_MARGIN_CHECK_FAILED\020\016\022\'\n#ORDER_ERROR_MI" +
+      "SSING_GENERAL_ACCOUNT\020\017\022\036\n\032ORDER_ERROR_I" +
+      "NTERNAL_ERROR\020\020\022\034\n\030ORDER_ERROR_INVALID_S" +
+      "IZE\020\021\022#\n\037ORDER_ERROR_INVALID_PERSISTENCE" +
+      "\020\022\022\034\n\030ORDER_ERROR_INVALID_TYPE\020\023\022\034\n\030ORDE" +
+      "R_ERROR_SELF_TRADING\020\024\022.\n*ORDER_ERROR_IN" +
+      "SUFFICIENT_FUNDS_TO_PAY_FEES\020\025\022%\n!ORDER_" +
+      "ERROR_INCORRECT_MARKET_TYPE\020\026\022%\n!ORDER_E" +
+      "RROR_INVALID_TIME_IN_FORCE\020\027\022+\n\'ORDER_ER" +
+      "ROR_GFN_ORDER_DURING_AN_AUCTION\020\030\0223\n/ORD" +
+      "ER_ERROR_GFA_ORDER_DURING_CONTINUOUS_TRA" +
+      "DING\020\031\0224\n0ORDER_ERROR_CANNOT_AMEND_TO_GT" +
+      "T_WITHOUT_EXPIRYAT\020\032\022)\n%ORDER_ERROR_EXPI" +
+      "RYAT_BEFORE_CREATEDAT\020\033\022,\n(ORDER_ERROR_C" +
+      "ANNOT_HAVE_GTC_AND_EXPIRYAT\020\034\022*\n&ORDER_E" +
+      "RROR_CANNOT_AMEND_TO_FOK_OR_IOC\020\035\022*\n&ORD" +
+      "ER_ERROR_CANNOT_AMEND_TO_GFA_OR_GFN\020\036\022,\n" +
+      "(ORDER_ERROR_CANNOT_AMEND_FROM_GFA_OR_GF" +
+      "N\020\037\0224\n0ORDER_ERROR_CANNOT_SEND_IOC_ORDER" +
+      "_DURING_AUCTION\020 \0224\n0ORDER_ERROR_CANNOT_" +
+      "SEND_FOK_ORDER_DURING_AUCTION\020!\022#\n\037ORDER" +
+      "_ERROR_MUST_BE_LIMIT_ORDER\020\"\022\"\n\036ORDER_ER" +
+      "ROR_MUST_BE_GTT_OR_GTC\020#\022\'\n#ORDER_ERROR_" +
+      "WITHOUT_REFERENCE_PRICE\020$\0223\n/ORDER_ERROR" +
+      "_BUY_CANNOT_REFERENCE_BEST_ASK_PRICE\020%\0224" +
+      "\n0ORDER_ERROR_OFFSET_MUST_BE_LESS_OR_EQU" +
+      "AL_TO_ZERO\020&\022-\n)ORDER_ERROR_OFFSET_MUST_" +
+      "BE_LESS_THAN_ZERO\020\'\0227\n3ORDER_ERROR_OFFSE" +
+      "T_MUST_BE_GREATER_OR_EQUAL_TO_ZERO\020(\0224\n0" +
+      "ORDER_ERROR_SELL_CANNOT_REFERENCE_BEST_B" +
+      "ID_PRICE\020)\0220\n,ORDER_ERROR_OFFSET_MUST_BE" +
+      "_GREATER_THAN_ZERO\020*\022*\n&ORDER_ERROR_INSU" +
+      "FFICIENT_ASSET_BALANCE\020+*\202\001\n\013ChainStatus" +
+      "\022\034\n\030CHAIN_STATUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_" +
+      "STATUS_DISCONNECTED\020\001\022\032\n\026CHAIN_STATUS_RE" +
+      "PLAYING\020\002\022\032\n\026CHAIN_STATUS_CONNECTED\020\003*\262\002" +
+      "\n\013AccountType\022\034\n\030ACCOUNT_TYPE_UNSPECIFIE" +
+      "D\020\000\022\032\n\026ACCOUNT_TYPE_INSURANCE\020\001\022\033\n\027ACCOU" +
+      "NT_TYPE_SETTLEMENT\020\002\022\027\n\023ACCOUNT_TYPE_MAR" +
+      "GIN\020\003\022\030\n\024ACCOUNT_TYPE_GENERAL\020\004\022$\n ACCOU" +
+      "NT_TYPE_FEES_INFRASTRUCTURE\020\005\022\037\n\033ACCOUNT" +
+      "_TYPE_FEES_LIQUIDITY\020\006\022\033\n\027ACCOUNT_TYPE_F" +
+      "EES_MAKER\020\007\022\036\n\032ACCOUNT_TYPE_LOCK_WITHDRA" +
+      "W\020\010\022\025\n\021ACCOUNT_TYPE_BOND\020\t*\244\003\n\014TransferT" +
+      "ype\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\026\n\022TR" +
+      "ANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSFER_TYPE_WIN\020" +
+      "\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032\n\026TRANSFER_T" +
+      "YPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_TYPE_MTM_WIN\020" +
+      "\005\022\034\n\030TRANSFER_TYPE_MARGIN_LOW\020\006\022\035\n\031TRANS" +
+      "FER_TYPE_MARGIN_HIGH\020\007\022$\n TRANSFER_TYPE_" +
+      "MARGIN_CONFISCATED\020\010\022\037\n\033TRANSFER_TYPE_MA" +
+      "KER_FEE_PAY\020\t\022#\n\037TRANSFER_TYPE_MAKER_FEE" +
+      "_RECEIVE\020\n\022(\n$TRANSFER_TYPE_INFRASTRUCTU" +
+      "RE_FEE_PAY\020\013\022#\n\037TRANSFER_TYPE_LIQUIDITY_" +
+      "FEE_PAY\020\014*\205\001\n\021NodeSignatureKind\022#\n\037NODE_" +
+      "SIGNATURE_KIND_UNSPECIFIED\020\000\022!\n\035NODE_SIG" +
+      "NATURE_KIND_ASSET_NEW\020\001\022(\n$NODE_SIGNATUR" +
+      "E_KIND_ASSET_WITHDRAWAL\020\002B7\n\024io.vegaprot" +
+      "ocol.vegaZ\037code.vegaprotocol.io/vega/pro" +
+      "tob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -56329,240 +64267,270 @@ public final class Vega {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_RiskResult_PredictedNextRiskFactorsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_vega_Order_descriptor =
+    internal_static_vega_PeggedOrder_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_vega_PeggedOrder_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_PeggedOrder_descriptor,
+        new java.lang.String[] { "Reference", "Offset", });
+    internal_static_vega_Order_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_vega_Order_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Order_descriptor,
-        new java.lang.String[] { "Id", "MarketID", "PartyID", "Side", "Price", "Size", "Remaining", "TimeInForce", "Type", "CreatedAt", "Status", "ExpiresAt", "Reference", "Reason", "UpdatedAt", "Version", "BatchID", });
+        new java.lang.String[] { "Id", "MarketID", "PartyID", "Side", "Price", "Size", "Remaining", "TimeInForce", "Type", "CreatedAt", "Status", "ExpiresAt", "Reference", "Reason", "UpdatedAt", "Version", "BatchID", "PeggedOrder", });
     internal_static_vega_OrderCancellationConfirmation_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_vega_OrderCancellationConfirmation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_OrderCancellationConfirmation_descriptor,
         new java.lang.String[] { "Order", });
     internal_static_vega_OrderConfirmation_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_vega_OrderConfirmation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_OrderConfirmation_descriptor,
         new java.lang.String[] { "Order", "Trades", "PassiveOrdersAffected", });
     internal_static_vega_AuctionIndicativeState_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_vega_AuctionIndicativeState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_AuctionIndicativeState_descriptor,
         new java.lang.String[] { "MarketID", "IndicativePrice", "IndicativeVolume", "AuctionStart", "AuctionEnd", });
     internal_static_vega_Trade_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_vega_Trade_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Trade_descriptor,
         new java.lang.String[] { "Id", "MarketID", "Price", "Size", "Buyer", "Seller", "Aggressor", "BuyOrder", "SellOrder", "Timestamp", "Type", "BuyerFee", "SellerFee", "BuyerAuctionBatch", "SellerAuctionBatch", });
     internal_static_vega_Fee_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_vega_Fee_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Fee_descriptor,
         new java.lang.String[] { "MakerFee", "InfrastructureFee", "LiquidityFee", });
     internal_static_vega_TradeSet_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_vega_TradeSet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_TradeSet_descriptor,
         new java.lang.String[] { "Trades", });
     internal_static_vega_Candle_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_vega_Candle_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Candle_descriptor,
         new java.lang.String[] { "Timestamp", "Datetime", "High", "Low", "Open", "Close", "Volume", "Interval", });
     internal_static_vega_PriceLevel_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_vega_PriceLevel_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_PriceLevel_descriptor,
         new java.lang.String[] { "Price", "NumberOfOrders", "Volume", });
     internal_static_vega_MarketDepth_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_vega_MarketDepth_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_MarketDepth_descriptor,
         new java.lang.String[] { "MarketID", "Buy", "Sell", "SequenceNumber", });
     internal_static_vega_MarketDepthUpdate_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_vega_MarketDepthUpdate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_MarketDepthUpdate_descriptor,
         new java.lang.String[] { "MarketID", "Buy", "Sell", "SequenceNumber", });
     internal_static_vega_Position_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_vega_Position_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Position_descriptor,
         new java.lang.String[] { "MarketID", "PartyID", "OpenVolume", "RealisedPNL", "UnrealisedPNL", "AverageEntryPrice", "UpdatedAt", });
     internal_static_vega_PositionTrade_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_vega_PositionTrade_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_PositionTrade_descriptor,
         new java.lang.String[] { "Volume", "Price", });
     internal_static_vega_Statistics_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_vega_Statistics_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Statistics_descriptor,
         new java.lang.String[] { "BlockHeight", "BacklogLength", "TotalPeers", "GenesisTime", "CurrentTime", "VegaTime", "Status", "TxPerBlock", "AverageTxBytes", "AverageOrdersPerBlock", "TradesPerSecond", "OrdersPerSecond", "TotalMarkets", "TotalAmendOrder", "TotalCancelOrder", "TotalCreateOrder", "TotalOrders", "TotalTrades", "OrderSubscriptions", "TradeSubscriptions", "CandleSubscriptions", "MarketDepthSubscriptions", "PositionsSubscriptions", "AccountSubscriptions", "MarketDataSubscriptions", "AppVersionHash", "AppVersion", "ChainVersion", "BlockDuration", "Uptime", "ChainID", "MarketDepthUpdatesSubscriptions", });
     internal_static_vega_Deposit_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_vega_Deposit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Deposit_descriptor,
         new java.lang.String[] { "Id", "Status", "PartyID", "Asset", "Amount", "TxHash", "CreditedTimestamp", "CreatedTimestamp", });
     internal_static_vega_Withdrawal_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_vega_Withdrawal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Withdrawal_descriptor,
         new java.lang.String[] { "Id", "PartyID", "Amount", "Asset", "Status", "Ref", "Expiry", "TxHash", "CreatedTimestamp", "WithdrawnTimestamp", "Ext", });
     internal_static_vega_WithdrawSubmission_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_vega_WithdrawSubmission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_WithdrawSubmission_descriptor,
         new java.lang.String[] { "PartyID", "Amount", "Asset", "Ext", });
     internal_static_vega_WithdrawExt_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_vega_WithdrawExt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_WithdrawExt_descriptor,
         new java.lang.String[] { "Erc20", "Ext", });
     internal_static_vega_Erc20WithdrawExt_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_vega_Erc20WithdrawExt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Erc20WithdrawExt_descriptor,
         new java.lang.String[] { "ReceiverAddress", });
     internal_static_vega_OrderAmendment_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_vega_OrderAmendment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_OrderAmendment_descriptor,
         new java.lang.String[] { "OrderID", "PartyID", "MarketID", "Price", "SizeDelta", "ExpiresAt", "TimeInForce", });
     internal_static_vega_OrderSubmission_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_vega_OrderSubmission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_OrderSubmission_descriptor,
-        new java.lang.String[] { "Id", "MarketID", "PartyID", "Price", "Size", "Side", "TimeInForce", "ExpiresAt", "Type", "Reference", });
+        new java.lang.String[] { "Id", "MarketID", "PartyID", "Price", "Size", "Side", "TimeInForce", "ExpiresAt", "Type", "Reference", "PeggedOrder", });
     internal_static_vega_OrderCancellation_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_vega_OrderCancellation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_OrderCancellation_descriptor,
         new java.lang.String[] { "OrderID", "MarketID", "PartyID", });
     internal_static_vega_NodeRegistration_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_vega_NodeRegistration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_NodeRegistration_descriptor,
         new java.lang.String[] { "PubKey", "ChainPubKey", });
     internal_static_vega_NodeVote_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_vega_NodeVote_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_NodeVote_descriptor,
         new java.lang.String[] { "PubKey", "Reference", });
     internal_static_vega_Account_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_vega_Account_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Account_descriptor,
         new java.lang.String[] { "Id", "Owner", "Balance", "Asset", "MarketID", "Type", });
     internal_static_vega_FinancialAmount_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_vega_FinancialAmount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_FinancialAmount_descriptor,
         new java.lang.String[] { "Amount", "Asset", });
     internal_static_vega_Transfer_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_vega_Transfer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Transfer_descriptor,
         new java.lang.String[] { "Owner", "Amount", "Type", "MinAmount", });
     internal_static_vega_TransferRequest_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_vega_TransferRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_TransferRequest_descriptor,
         new java.lang.String[] { "FromAccount", "ToAccount", "Amount", "MinAmount", "Asset", "Reference", });
     internal_static_vega_LedgerEntry_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_vega_LedgerEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_LedgerEntry_descriptor,
         new java.lang.String[] { "FromAccount", "ToAccount", "Amount", "Reference", "Type", "Timestamp", });
     internal_static_vega_TransferBalance_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_vega_TransferBalance_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_TransferBalance_descriptor,
         new java.lang.String[] { "Account", "Balance", });
     internal_static_vega_TransferResponse_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_vega_TransferResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_TransferResponse_descriptor,
         new java.lang.String[] { "Transfers", "Balances", });
     internal_static_vega_MarginLevels_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_vega_MarginLevels_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_MarginLevels_descriptor,
         new java.lang.String[] { "MaintenanceMargin", "SearchLevel", "InitialMargin", "CollateralReleaseLevel", "PartyID", "MarketID", "Asset", "Timestamp", });
     internal_static_vega_MarketData_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_vega_MarketData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_MarketData_descriptor,
-        new java.lang.String[] { "MarkPrice", "BestBidPrice", "BestBidVolume", "BestOfferPrice", "BestOfferVolume", "MidPrice", "Market", "Timestamp", "OpenInterest", "AuctionEnd", "AuctionStart", "IndicativePrice", "IndicativeVolume", "MarketState", "Trigger", });
+        new java.lang.String[] { "MarkPrice", "BestBidPrice", "BestBidVolume", "BestOfferPrice", "BestOfferVolume", "MidPrice", "Market", "Timestamp", "OpenInterest", "AuctionEnd", "AuctionStart", "IndicativePrice", "IndicativeVolume", "MarketState", "Trigger", "TargetStake", "SuppliedStake", });
     internal_static_vega_ErrorDetail_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_vega_ErrorDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_ErrorDetail_descriptor,
         new java.lang.String[] { "Code", "Message", "Inner", });
     internal_static_vega_Transaction_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_vega_Transaction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Transaction_descriptor,
         new java.lang.String[] { "InputData", "Nonce", "BlockHeight", "Address", "PubKey", "From", });
     internal_static_vega_Signature_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_vega_Signature_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Signature_descriptor,
         new java.lang.String[] { "Sig", "Algo", "Version", });
     internal_static_vega_SignedBundle_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_vega_SignedBundle_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_SignedBundle_descriptor,
         new java.lang.String[] { "Tx", "Sig", });
     internal_static_vega_NodeSignature_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_vega_NodeSignature_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_NodeSignature_descriptor,
         new java.lang.String[] { "ID", "Sig", "Kind", });
     internal_static_vega_NetworkParameter_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_vega_NetworkParameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_NetworkParameter_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    internal_static_vega_LiquidityOrder_descriptor =
+      getDescriptor().getMessageTypes().get(45);
+    internal_static_vega_LiquidityOrder_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_LiquidityOrder_descriptor,
+        new java.lang.String[] { "Reference", "Proportion", "Offset", });
+    internal_static_vega_LiquidityProvisionSubmission_descriptor =
+      getDescriptor().getMessageTypes().get(46);
+    internal_static_vega_LiquidityProvisionSubmission_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_LiquidityProvisionSubmission_descriptor,
+        new java.lang.String[] { "MarketID", "CommitmentAmount", "Fee", "Sells", "Buys", });
+    internal_static_vega_LiquidityOrderReference_descriptor =
+      getDescriptor().getMessageTypes().get(47);
+    internal_static_vega_LiquidityOrderReference_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_LiquidityOrderReference_descriptor,
+        new java.lang.String[] { "OrderID", "LiquidityOrder", });
+    internal_static_vega_LiquidityProvision_descriptor =
+      getDescriptor().getMessageTypes().get(48);
+    internal_static_vega_LiquidityProvision_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_LiquidityProvision_descriptor,
+        new java.lang.String[] { "Id", "PartyID", "CreatedAt", "UpdatedAt", "MarketID", "CommitmentAmount", "Fee", "Sells", "Buys", "Version", "Status", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.github.mwitkow.go_proto_validators.Validator.field);

@@ -72508,6 +72508,1090 @@ public final class Trading {
 
   }
 
+  public interface PrepareLiquidityProvisionRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.PrepareLiquidityProvisionRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.vega.LiquidityProvisionSubmission submission = 1 [(.validator.field) = { ... }</code>
+     */
+    boolean hasSubmission();
+    /**
+     * <code>.vega.LiquidityProvisionSubmission submission = 1 [(.validator.field) = { ... }</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission getSubmission();
+    /**
+     * <code>.vega.LiquidityProvisionSubmission submission = 1 [(.validator.field) = { ... }</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityProvisionSubmissionOrBuilder getSubmissionOrBuilder();
+  }
+  /**
+   * Protobuf type {@code api.PrepareLiquidityProvisionRequest}
+   */
+  public  static final class PrepareLiquidityProvisionRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.PrepareLiquidityProvisionRequest)
+      PrepareLiquidityProvisionRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PrepareLiquidityProvisionRequest.newBuilder() to construct.
+    private PrepareLiquidityProvisionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PrepareLiquidityProvisionRequest() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PrepareLiquidityProvisionRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.Builder subBuilder = null;
+              if (submission_ != null) {
+                subBuilder = submission_.toBuilder();
+              }
+              submission_ = input.readMessage(io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(submission_);
+                submission_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_PrepareLiquidityProvisionRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_PrepareLiquidityProvisionRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest.class, io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest.Builder.class);
+    }
+
+    public static final int SUBMISSION_FIELD_NUMBER = 1;
+    private io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission submission_;
+    /**
+     * <code>.vega.LiquidityProvisionSubmission submission = 1 [(.validator.field) = { ... }</code>
+     */
+    public boolean hasSubmission() {
+      return submission_ != null;
+    }
+    /**
+     * <code>.vega.LiquidityProvisionSubmission submission = 1 [(.validator.field) = { ... }</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission getSubmission() {
+      return submission_ == null ? io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.getDefaultInstance() : submission_;
+    }
+    /**
+     * <code>.vega.LiquidityProvisionSubmission submission = 1 [(.validator.field) = { ... }</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityProvisionSubmissionOrBuilder getSubmissionOrBuilder() {
+      return getSubmission();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (submission_ != null) {
+        output.writeMessage(1, getSubmission());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (submission_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getSubmission());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest other = (io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest) obj;
+
+      if (hasSubmission() != other.hasSubmission()) return false;
+      if (hasSubmission()) {
+        if (!getSubmission()
+            .equals(other.getSubmission())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasSubmission()) {
+        hash = (37 * hash) + SUBMISSION_FIELD_NUMBER;
+        hash = (53 * hash) + getSubmission().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.PrepareLiquidityProvisionRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.PrepareLiquidityProvisionRequest)
+        io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_PrepareLiquidityProvisionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_PrepareLiquidityProvisionRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest.class, io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (submissionBuilder_ == null) {
+          submission_ = null;
+        } else {
+          submission_ = null;
+          submissionBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_PrepareLiquidityProvisionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest build() {
+        io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest buildPartial() {
+        io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest result = new io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest(this);
+        if (submissionBuilder_ == null) {
+          result.submission_ = submission_;
+        } else {
+          result.submission_ = submissionBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest) {
+          return mergeFrom((io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest other) {
+        if (other == io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest.getDefaultInstance()) return this;
+        if (other.hasSubmission()) {
+          mergeSubmission(other.getSubmission());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission submission_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission, io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.Builder, io.vegaprotocol.vega.Vega.LiquidityProvisionSubmissionOrBuilder> submissionBuilder_;
+      /**
+       * <code>.vega.LiquidityProvisionSubmission submission = 1 [(.validator.field) = { ... }</code>
+       */
+      public boolean hasSubmission() {
+        return submissionBuilder_ != null || submission_ != null;
+      }
+      /**
+       * <code>.vega.LiquidityProvisionSubmission submission = 1 [(.validator.field) = { ... }</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission getSubmission() {
+        if (submissionBuilder_ == null) {
+          return submission_ == null ? io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.getDefaultInstance() : submission_;
+        } else {
+          return submissionBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.vega.LiquidityProvisionSubmission submission = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setSubmission(io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission value) {
+        if (submissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          submission_ = value;
+          onChanged();
+        } else {
+          submissionBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vega.LiquidityProvisionSubmission submission = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setSubmission(
+          io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.Builder builderForValue) {
+        if (submissionBuilder_ == null) {
+          submission_ = builderForValue.build();
+          onChanged();
+        } else {
+          submissionBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vega.LiquidityProvisionSubmission submission = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeSubmission(io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission value) {
+        if (submissionBuilder_ == null) {
+          if (submission_ != null) {
+            submission_ =
+              io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.newBuilder(submission_).mergeFrom(value).buildPartial();
+          } else {
+            submission_ = value;
+          }
+          onChanged();
+        } else {
+          submissionBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vega.LiquidityProvisionSubmission submission = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearSubmission() {
+        if (submissionBuilder_ == null) {
+          submission_ = null;
+          onChanged();
+        } else {
+          submission_ = null;
+          submissionBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vega.LiquidityProvisionSubmission submission = 1 [(.validator.field) = { ... }</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.Builder getSubmissionBuilder() {
+
+        onChanged();
+        return getSubmissionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.vega.LiquidityProvisionSubmission submission = 1 [(.validator.field) = { ... }</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityProvisionSubmissionOrBuilder getSubmissionOrBuilder() {
+        if (submissionBuilder_ != null) {
+          return submissionBuilder_.getMessageOrBuilder();
+        } else {
+          return submission_ == null ?
+              io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.getDefaultInstance() : submission_;
+        }
+      }
+      /**
+       * <code>.vega.LiquidityProvisionSubmission submission = 1 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission, io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.Builder, io.vegaprotocol.vega.Vega.LiquidityProvisionSubmissionOrBuilder>
+          getSubmissionFieldBuilder() {
+        if (submissionBuilder_ == null) {
+          submissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission, io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.Builder, io.vegaprotocol.vega.Vega.LiquidityProvisionSubmissionOrBuilder>(
+                  getSubmission(),
+                  getParentForChildren(),
+                  isClean());
+          submission_ = null;
+        }
+        return submissionBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.PrepareLiquidityProvisionRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.PrepareLiquidityProvisionRequest)
+    private static final io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest();
+    }
+
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PrepareLiquidityProvisionRequest>
+        PARSER = new com.google.protobuf.AbstractParser<PrepareLiquidityProvisionRequest>() {
+      @java.lang.Override
+      public PrepareLiquidityProvisionRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PrepareLiquidityProvisionRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PrepareLiquidityProvisionRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PrepareLiquidityProvisionRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PrepareLiquidityProvisionResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.PrepareLiquidityProvisionResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bytes blob = 1;</code>
+     */
+    com.google.protobuf.ByteString getBlob();
+  }
+  /**
+   * Protobuf type {@code api.PrepareLiquidityProvisionResponse}
+   */
+  public  static final class PrepareLiquidityProvisionResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.PrepareLiquidityProvisionResponse)
+      PrepareLiquidityProvisionResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PrepareLiquidityProvisionResponse.newBuilder() to construct.
+    private PrepareLiquidityProvisionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PrepareLiquidityProvisionResponse() {
+      blob_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PrepareLiquidityProvisionResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              blob_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_PrepareLiquidityProvisionResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_PrepareLiquidityProvisionResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse.class, io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse.Builder.class);
+    }
+
+    public static final int BLOB_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString blob_;
+    /**
+     * <code>bytes blob = 1;</code>
+     */
+    public com.google.protobuf.ByteString getBlob() {
+      return blob_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!blob_.isEmpty()) {
+        output.writeBytes(1, blob_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!blob_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, blob_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse other = (io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse) obj;
+
+      if (!getBlob()
+          .equals(other.getBlob())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BLOB_FIELD_NUMBER;
+      hash = (53 * hash) + getBlob().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.PrepareLiquidityProvisionResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.PrepareLiquidityProvisionResponse)
+        io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_PrepareLiquidityProvisionResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_PrepareLiquidityProvisionResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse.class, io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        blob_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_PrepareLiquidityProvisionResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse build() {
+        io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse buildPartial() {
+        io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse result = new io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse(this);
+        result.blob_ = blob_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse) {
+          return mergeFrom((io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse other) {
+        if (other == io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse.getDefaultInstance()) return this;
+        if (other.getBlob() != com.google.protobuf.ByteString.EMPTY) {
+          setBlob(other.getBlob());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString blob_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes blob = 1;</code>
+       */
+      public com.google.protobuf.ByteString getBlob() {
+        return blob_;
+      }
+      /**
+       * <code>bytes blob = 1;</code>
+       */
+      public Builder setBlob(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        blob_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes blob = 1;</code>
+       */
+      public Builder clearBlob() {
+
+        blob_ = getDefaultInstance().getBlob();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.PrepareLiquidityProvisionResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.PrepareLiquidityProvisionResponse)
+    private static final io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse();
+    }
+
+    public static io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PrepareLiquidityProvisionResponse>
+        PARSER = new com.google.protobuf.AbstractParser<PrepareLiquidityProvisionResponse>() {
+      @java.lang.Override
+      public PrepareLiquidityProvisionResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PrepareLiquidityProvisionResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PrepareLiquidityProvisionResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PrepareLiquidityProvisionResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.api.Trading.PrepareLiquidityProvisionResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface OrderByIDRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.OrderByIDRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -88370,6 +89454,1567 @@ public final class Trading {
 
   }
 
+  public interface LiquidityProvisionsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.LiquidityProvisionsRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * the market we want to get liquidity provision orders from
+     * </pre>
+     *
+     * <code>string market = 1;</code>
+     */
+    java.lang.String getMarket();
+    /**
+     * <pre>
+     * the market we want to get liquidity provision orders from
+     * </pre>
+     *
+     * <code>string market = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getMarketBytes();
+
+    /**
+     * <pre>
+     * the party which submitted the liquidity provision orders
+     * </pre>
+     *
+     * <code>string party = 2;</code>
+     */
+    java.lang.String getParty();
+    /**
+     * <pre>
+     * the party which submitted the liquidity provision orders
+     * </pre>
+     *
+     * <code>string party = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getPartyBytes();
+  }
+  /**
+   * <pre>
+   * A message requesting for the list
+   * of liquidity provisions orders for markets
+   * one of the 2 filters is required or both
+   * </pre>
+   *
+   * Protobuf type {@code api.LiquidityProvisionsRequest}
+   */
+  public  static final class LiquidityProvisionsRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.LiquidityProvisionsRequest)
+      LiquidityProvisionsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LiquidityProvisionsRequest.newBuilder() to construct.
+    private LiquidityProvisionsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LiquidityProvisionsRequest() {
+      market_ = "";
+      party_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LiquidityProvisionsRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              market_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              party_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_LiquidityProvisionsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_LiquidityProvisionsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest.class, io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest.Builder.class);
+    }
+
+    public static final int MARKET_FIELD_NUMBER = 1;
+    private volatile java.lang.Object market_;
+    /**
+     * <pre>
+     * the market we want to get liquidity provision orders from
+     * </pre>
+     *
+     * <code>string market = 1;</code>
+     */
+    public java.lang.String getMarket() {
+      java.lang.Object ref = market_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        market_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * the market we want to get liquidity provision orders from
+     * </pre>
+     *
+     * <code>string market = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMarketBytes() {
+      java.lang.Object ref = market_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        market_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PARTY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object party_;
+    /**
+     * <pre>
+     * the party which submitted the liquidity provision orders
+     * </pre>
+     *
+     * <code>string party = 2;</code>
+     */
+    public java.lang.String getParty() {
+      java.lang.Object ref = party_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        party_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * the party which submitted the liquidity provision orders
+     * </pre>
+     *
+     * <code>string party = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPartyBytes() {
+      java.lang.Object ref = party_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        party_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMarketBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, market_);
+      }
+      if (!getPartyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, party_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMarketBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, market_);
+      }
+      if (!getPartyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, party_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest other = (io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest) obj;
+
+      if (!getMarket()
+          .equals(other.getMarket())) return false;
+      if (!getParty()
+          .equals(other.getParty())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MARKET_FIELD_NUMBER;
+      hash = (53 * hash) + getMarket().hashCode();
+      hash = (37 * hash) + PARTY_FIELD_NUMBER;
+      hash = (53 * hash) + getParty().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * A message requesting for the list
+     * of liquidity provisions orders for markets
+     * one of the 2 filters is required or both
+     * </pre>
+     *
+     * Protobuf type {@code api.LiquidityProvisionsRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.LiquidityProvisionsRequest)
+        io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_LiquidityProvisionsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_LiquidityProvisionsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest.class, io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        market_ = "";
+
+        party_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_LiquidityProvisionsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest build() {
+        io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest buildPartial() {
+        io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest result = new io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest(this);
+        result.market_ = market_;
+        result.party_ = party_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest) {
+          return mergeFrom((io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest other) {
+        if (other == io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest.getDefaultInstance()) return this;
+        if (!other.getMarket().isEmpty()) {
+          market_ = other.market_;
+          onChanged();
+        }
+        if (!other.getParty().isEmpty()) {
+          party_ = other.party_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object market_ = "";
+      /**
+       * <pre>
+       * the market we want to get liquidity provision orders from
+       * </pre>
+       *
+       * <code>string market = 1;</code>
+       */
+      public java.lang.String getMarket() {
+        java.lang.Object ref = market_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          market_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the market we want to get liquidity provision orders from
+       * </pre>
+       *
+       * <code>string market = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMarketBytes() {
+        java.lang.Object ref = market_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          market_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the market we want to get liquidity provision orders from
+       * </pre>
+       *
+       * <code>string market = 1;</code>
+       */
+      public Builder setMarket(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        market_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the market we want to get liquidity provision orders from
+       * </pre>
+       *
+       * <code>string market = 1;</code>
+       */
+      public Builder clearMarket() {
+
+        market_ = getDefaultInstance().getMarket();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the market we want to get liquidity provision orders from
+       * </pre>
+       *
+       * <code>string market = 1;</code>
+       */
+      public Builder setMarketBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        market_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object party_ = "";
+      /**
+       * <pre>
+       * the party which submitted the liquidity provision orders
+       * </pre>
+       *
+       * <code>string party = 2;</code>
+       */
+      public java.lang.String getParty() {
+        java.lang.Object ref = party_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          party_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the party which submitted the liquidity provision orders
+       * </pre>
+       *
+       * <code>string party = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPartyBytes() {
+        java.lang.Object ref = party_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          party_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the party which submitted the liquidity provision orders
+       * </pre>
+       *
+       * <code>string party = 2;</code>
+       */
+      public Builder setParty(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        party_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the party which submitted the liquidity provision orders
+       * </pre>
+       *
+       * <code>string party = 2;</code>
+       */
+      public Builder clearParty() {
+
+        party_ = getDefaultInstance().getParty();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the party which submitted the liquidity provision orders
+       * </pre>
+       *
+       * <code>string party = 2;</code>
+       */
+      public Builder setPartyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        party_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.LiquidityProvisionsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.LiquidityProvisionsRequest)
+    private static final io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest();
+    }
+
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LiquidityProvisionsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<LiquidityProvisionsRequest>() {
+      @java.lang.Override
+      public LiquidityProvisionsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LiquidityProvisionsRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LiquidityProvisionsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LiquidityProvisionsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.api.Trading.LiquidityProvisionsRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface LiquidityProvisionsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.LiquidityProvisionsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+     */
+    java.util.List<io.vegaprotocol.vega.Vega.LiquidityProvision>
+        getLiquidityProvisionsList();
+    /**
+     * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityProvision getLiquidityProvisions(int index);
+    /**
+     * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+     */
+    int getLiquidityProvisionsCount();
+    /**
+     * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+     */
+    java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder>
+        getLiquidityProvisionsOrBuilderList();
+    /**
+     * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder getLiquidityProvisionsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * A response containing all of the
+   * vega liquidity provisions orders
+   * </pre>
+   *
+   * Protobuf type {@code api.LiquidityProvisionsResponse}
+   */
+  public  static final class LiquidityProvisionsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.LiquidityProvisionsResponse)
+      LiquidityProvisionsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LiquidityProvisionsResponse.newBuilder() to construct.
+    private LiquidityProvisionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LiquidityProvisionsResponse() {
+      liquidityProvisions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LiquidityProvisionsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                liquidityProvisions_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.LiquidityProvision>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              liquidityProvisions_.add(
+                  input.readMessage(io.vegaprotocol.vega.Vega.LiquidityProvision.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          liquidityProvisions_ = java.util.Collections.unmodifiableList(liquidityProvisions_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_LiquidityProvisionsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_LiquidityProvisionsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse.class, io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse.Builder.class);
+    }
+
+    public static final int LIQUIDITYPROVISIONS_FIELD_NUMBER = 1;
+    private java.util.List<io.vegaprotocol.vega.Vega.LiquidityProvision> liquidityProvisions_;
+    /**
+     * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+     */
+    public java.util.List<io.vegaprotocol.vega.Vega.LiquidityProvision> getLiquidityProvisionsList() {
+      return liquidityProvisions_;
+    }
+    /**
+     * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+     */
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder>
+        getLiquidityProvisionsOrBuilderList() {
+      return liquidityProvisions_;
+    }
+    /**
+     * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+     */
+    public int getLiquidityProvisionsCount() {
+      return liquidityProvisions_.size();
+    }
+    /**
+     * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityProvision getLiquidityProvisions(int index) {
+      return liquidityProvisions_.get(index);
+    }
+    /**
+     * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+     */
+    public io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder getLiquidityProvisionsOrBuilder(
+        int index) {
+      return liquidityProvisions_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < liquidityProvisions_.size(); i++) {
+        output.writeMessage(1, liquidityProvisions_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < liquidityProvisions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, liquidityProvisions_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse other = (io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse) obj;
+
+      if (!getLiquidityProvisionsList()
+          .equals(other.getLiquidityProvisionsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getLiquidityProvisionsCount() > 0) {
+        hash = (37 * hash) + LIQUIDITYPROVISIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getLiquidityProvisionsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * A response containing all of the
+     * vega liquidity provisions orders
+     * </pre>
+     *
+     * Protobuf type {@code api.LiquidityProvisionsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.LiquidityProvisionsResponse)
+        io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_LiquidityProvisionsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_LiquidityProvisionsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse.class, io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getLiquidityProvisionsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (liquidityProvisionsBuilder_ == null) {
+          liquidityProvisions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          liquidityProvisionsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_LiquidityProvisionsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse build() {
+        io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse buildPartial() {
+        io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse result = new io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (liquidityProvisionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            liquidityProvisions_ = java.util.Collections.unmodifiableList(liquidityProvisions_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.liquidityProvisions_ = liquidityProvisions_;
+        } else {
+          result.liquidityProvisions_ = liquidityProvisionsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse) {
+          return mergeFrom((io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse other) {
+        if (other == io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse.getDefaultInstance()) return this;
+        if (liquidityProvisionsBuilder_ == null) {
+          if (!other.liquidityProvisions_.isEmpty()) {
+            if (liquidityProvisions_.isEmpty()) {
+              liquidityProvisions_ = other.liquidityProvisions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureLiquidityProvisionsIsMutable();
+              liquidityProvisions_.addAll(other.liquidityProvisions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.liquidityProvisions_.isEmpty()) {
+            if (liquidityProvisionsBuilder_.isEmpty()) {
+              liquidityProvisionsBuilder_.dispose();
+              liquidityProvisionsBuilder_ = null;
+              liquidityProvisions_ = other.liquidityProvisions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              liquidityProvisionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getLiquidityProvisionsFieldBuilder() : null;
+            } else {
+              liquidityProvisionsBuilder_.addAllMessages(other.liquidityProvisions_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<io.vegaprotocol.vega.Vega.LiquidityProvision> liquidityProvisions_ =
+        java.util.Collections.emptyList();
+      private void ensureLiquidityProvisionsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          liquidityProvisions_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.LiquidityProvision>(liquidityProvisions_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityProvision, io.vegaprotocol.vega.Vega.LiquidityProvision.Builder, io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder> liquidityProvisionsBuilder_;
+
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityProvision> getLiquidityProvisionsList() {
+        if (liquidityProvisionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(liquidityProvisions_);
+        } else {
+          return liquidityProvisionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public int getLiquidityProvisionsCount() {
+        if (liquidityProvisionsBuilder_ == null) {
+          return liquidityProvisions_.size();
+        } else {
+          return liquidityProvisionsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityProvision getLiquidityProvisions(int index) {
+        if (liquidityProvisionsBuilder_ == null) {
+          return liquidityProvisions_.get(index);
+        } else {
+          return liquidityProvisionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public Builder setLiquidityProvisions(
+          int index, io.vegaprotocol.vega.Vega.LiquidityProvision value) {
+        if (liquidityProvisionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLiquidityProvisionsIsMutable();
+          liquidityProvisions_.set(index, value);
+          onChanged();
+        } else {
+          liquidityProvisionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public Builder setLiquidityProvisions(
+          int index, io.vegaprotocol.vega.Vega.LiquidityProvision.Builder builderForValue) {
+        if (liquidityProvisionsBuilder_ == null) {
+          ensureLiquidityProvisionsIsMutable();
+          liquidityProvisions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          liquidityProvisionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public Builder addLiquidityProvisions(io.vegaprotocol.vega.Vega.LiquidityProvision value) {
+        if (liquidityProvisionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLiquidityProvisionsIsMutable();
+          liquidityProvisions_.add(value);
+          onChanged();
+        } else {
+          liquidityProvisionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public Builder addLiquidityProvisions(
+          int index, io.vegaprotocol.vega.Vega.LiquidityProvision value) {
+        if (liquidityProvisionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLiquidityProvisionsIsMutable();
+          liquidityProvisions_.add(index, value);
+          onChanged();
+        } else {
+          liquidityProvisionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public Builder addLiquidityProvisions(
+          io.vegaprotocol.vega.Vega.LiquidityProvision.Builder builderForValue) {
+        if (liquidityProvisionsBuilder_ == null) {
+          ensureLiquidityProvisionsIsMutable();
+          liquidityProvisions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          liquidityProvisionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public Builder addLiquidityProvisions(
+          int index, io.vegaprotocol.vega.Vega.LiquidityProvision.Builder builderForValue) {
+        if (liquidityProvisionsBuilder_ == null) {
+          ensureLiquidityProvisionsIsMutable();
+          liquidityProvisions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          liquidityProvisionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public Builder addAllLiquidityProvisions(
+          java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.LiquidityProvision> values) {
+        if (liquidityProvisionsBuilder_ == null) {
+          ensureLiquidityProvisionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, liquidityProvisions_);
+          onChanged();
+        } else {
+          liquidityProvisionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public Builder clearLiquidityProvisions() {
+        if (liquidityProvisionsBuilder_ == null) {
+          liquidityProvisions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          liquidityProvisionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public Builder removeLiquidityProvisions(int index) {
+        if (liquidityProvisionsBuilder_ == null) {
+          ensureLiquidityProvisionsIsMutable();
+          liquidityProvisions_.remove(index);
+          onChanged();
+        } else {
+          liquidityProvisionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityProvision.Builder getLiquidityProvisionsBuilder(
+          int index) {
+        return getLiquidityProvisionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder getLiquidityProvisionsOrBuilder(
+          int index) {
+        if (liquidityProvisionsBuilder_ == null) {
+          return liquidityProvisions_.get(index);  } else {
+          return liquidityProvisionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder>
+           getLiquidityProvisionsOrBuilderList() {
+        if (liquidityProvisionsBuilder_ != null) {
+          return liquidityProvisionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(liquidityProvisions_);
+        }
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityProvision.Builder addLiquidityProvisionsBuilder() {
+        return getLiquidityProvisionsFieldBuilder().addBuilder(
+            io.vegaprotocol.vega.Vega.LiquidityProvision.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityProvision.Builder addLiquidityProvisionsBuilder(
+          int index) {
+        return getLiquidityProvisionsFieldBuilder().addBuilder(
+            index, io.vegaprotocol.vega.Vega.LiquidityProvision.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vega.LiquidityProvision liquidityProvisions = 1;</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityProvision.Builder>
+           getLiquidityProvisionsBuilderList() {
+        return getLiquidityProvisionsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityProvision, io.vegaprotocol.vega.Vega.LiquidityProvision.Builder, io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder>
+          getLiquidityProvisionsFieldBuilder() {
+        if (liquidityProvisionsBuilder_ == null) {
+          liquidityProvisionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.LiquidityProvision, io.vegaprotocol.vega.Vega.LiquidityProvision.Builder, io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder>(
+                  liquidityProvisions_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          liquidityProvisions_ = null;
+        }
+        return liquidityProvisionsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.LiquidityProvisionsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.LiquidityProvisionsResponse)
+    private static final io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse();
+    }
+
+    public static io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LiquidityProvisionsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<LiquidityProvisionsResponse>() {
+      @java.lang.Override
+      public LiquidityProvisionsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LiquidityProvisionsResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LiquidityProvisionsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LiquidityProvisionsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.api.Trading.LiquidityProvisionsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_PropagateChainEventRequest_descriptor;
   private static final
@@ -88851,6 +91496,16 @@ public final class Trading {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_PrepareVoteResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_PrepareLiquidityProvisionRequest_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_PrepareLiquidityProvisionRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_PrepareLiquidityProvisionResponse_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_PrepareLiquidityProvisionResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_OrderByIDRequest_descriptor;
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -88955,6 +91610,16 @@ public final class Trading {
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_NetworkParametersResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_LiquidityProvisionsRequest_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_LiquidityProvisionsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_LiquidityProvisionsResponse_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_LiquidityProvisionsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -89125,170 +91790,182 @@ public final class Trading {
       "\002 \001(\0132\016.vega.Proposal\"6\n\022PrepareVoteRequ" +
       "est\022 \n\004vote\030\001 \001(\0132\n.vega.VoteB\006\342\337\037\002 \001\"=\n" +
       "\023PrepareVoteResponse\022\014\n\004blob\030\001 \001(\014\022\030\n\004vo" +
-      "te\030\002 \001(\0132\n.vega.Vote\"<\n\020OrderByIDRequest" +
-      "\022\027\n\007orderID\030\001 \001(\tB\006\342\337\037\002 \001\022\017\n\007version\030\002 \001" +
-      "(\004\"X\n\030OrderVersionsByIDRequest\022\027\n\007orderI" +
-      "D\030\001 \001(\tB\006\342\337\037\002 \001\022#\n\npagination\030\002 \001(\0132\017.ap" +
-      "i.Pagination\"4\n\025OrderVersionsResponse\022\033\n" +
-      "\006orders\030\001 \003(\0132\013.vega.Order\"0\n\022EstimateFe" +
-      "eRequest\022\032\n\005order\030\001 \001(\0132\013.vega.Order\"-\n\023" +
-      "EstimateFeeResponse\022\026\n\003fee\030\002 \001(\0132\t.vega." +
-      "Fee\"3\n\025EstimateMarginRequest\022\032\n\005order\030\001 " +
-      "\001(\0132\013.vega.Order\"B\n\026EstimateMarginRespon" +
-      "se\022(\n\014marginLevels\030\002 \001(\0132\022.vega.MarginLe" +
-      "vels\"n\n\024ObserveEventsRequest\022 \n\004type\030\001 \003" +
-      "(\0162\022.vega.BusEventType\022\020\n\010marketID\030\002 \001(\t" +
-      "\022\017\n\007partyID\030\003 \001(\t\022\021\n\tbatchSize\030\004 \001(\003\"7\n\025" +
-      "ObserveEventsResponse\022\036\n\006events\030\001 \003(\0132\016." +
-      "vega.BusEvent\"-\n\022WithdrawalsRequest\022\027\n\007p" +
-      "artyID\030\001 \001(\tB\006\342\337\037\002X\001\"<\n\023WithdrawalsRespo" +
-      "nse\022%\n\013withdrawals\030\001 \003(\0132\020.vega.Withdraw" +
-      "al\"\'\n\021WithdrawalRequest\022\022\n\002ID\030\001 \001(\tB\006\342\337\037" +
-      "\002X\001\":\n\022WithdrawalResponse\022$\n\nwithdrawal\030" +
-      "\001 \001(\0132\020.vega.Withdrawal\">\n\036ERC20Withdraw" +
-      "alApprovalRequest\022\034\n\014withdrawalID\030\001 \001(\tB" +
-      "\006\342\337\037\002X\001\"y\n\037ERC20WithdrawalApprovalRespon" +
-      "se\022\023\n\013assetSource\030\001 \001(\t\022\016\n\006amount\030\002 \001(\t\022" +
-      "\016\n\006expiry\030\003 \001(\003\022\r\n\005nonce\030\004 \001(\t\022\022\n\nsignat" +
-      "ures\030\005 \001(\t\"*\n\017DepositsRequest\022\027\n\007partyID" +
-      "\030\001 \001(\tB\006\342\337\037\002X\001\"3\n\020DepositsResponse\022\037\n\010de" +
-      "posits\030\001 \003(\0132\r.vega.Deposit\"$\n\016DepositRe" +
-      "quest\022\022\n\002ID\030\001 \001(\tB\006\342\337\037\002X\001\"1\n\017DepositResp" +
-      "onse\022\036\n\007deposit\030\001 \001(\0132\r.vega.Deposit\"\032\n\030" +
-      "NetworkParametersRequest\"N\n\031NetworkParam" +
-      "etersResponse\0221\n\021networkParameters\030\001 \003(\013" +
-      "2\026.vega.NetworkParameter2\202\005\n\007trading\022N\n\022" +
-      "PrepareSubmitOrder\022\027.api.SubmitOrderRequ" +
-      "est\032\037.api.PrepareSubmitOrderResponse\022N\n\022" +
-      "PrepareCancelOrder\022\027.api.CancelOrderRequ" +
-      "est\032\037.api.PrepareCancelOrderResponse\022K\n\021" +
-      "PrepareAmendOrder\022\026.api.AmendOrderReques" +
-      "t\032\036.api.PrepareAmendOrderResponse\022L\n\017Pre" +
-      "pareWithdraw\022\033.api.PrepareWithdrawReques" +
-      "t\032\034.api.PrepareWithdrawResponse\022R\n\021Submi" +
-      "tTransaction\022\035.api.SubmitTransactionRequ" +
-      "est\032\036.api.SubmitTransactionResponse\022L\n\017P" +
-      "repareProposal\022\033.api.PrepareProposalRequ" +
-      "est\032\034.api.PrepareProposalResponse\022@\n\013Pre" +
-      "pareVote\022\027.api.PrepareVoteRequest\032\030.api." +
-      "PrepareVoteResponse\022X\n\023PropagateChainEve" +
-      "nt\022\037.api.PropagateChainEventRequest\032 .ap" +
-      "i.PropagateChainEventResponse2\232#\n\014tradin" +
-      "g_data\022I\n\016MarketAccounts\022\032.api.MarketAcc" +
-      "ountsRequest\032\033.api.MarketAccountsRespons" +
-      "e\022F\n\rPartyAccounts\022\031.api.PartyAccountsRe" +
-      "quest\032\032.api.PartyAccountsResponse\022j\n\031Fee" +
-      "InfrastructureAccounts\022%.api.FeeInfrastr" +
-      "uctureAccountsRequest\032&.api.FeeInfrastru" +
-      "ctureAccountsResponse\0224\n\007Candles\022\023.api.C" +
-      "andlesRequest\032\024.api.CandlesResponse\022I\n\016M" +
-      "arketDataByID\022\032.api.MarketDataByIDReques" +
-      "t\032\033.api.MarketDataByIDResponse\022?\n\013Market" +
-      "sData\022\026.google.protobuf.Empty\032\030.api.Mark" +
-      "etsDataResponse\022=\n\nMarketByID\022\026.api.Mark" +
-      "etByIDRequest\032\027.api.MarketByIDResponse\022@" +
-      "\n\013MarketDepth\022\027.api.MarketDepthRequest\032\030" +
-      ".api.MarketDepthResponse\0227\n\007Markets\022\026.go" +
-      "ogle.protobuf.Empty\032\024.api.MarketsRespons" +
-      "e\022U\n\022OrderByMarketAndID\022\036.api.OrderByMar" +
-      "ketAndIdRequest\032\037.api.OrderByMarketAndId" +
-      "Response\022O\n\020OrderByReference\022\034.api.Order" +
-      "ByReferenceRequest\032\035.api.OrderByReferenc" +
-      "eResponse\022I\n\016OrdersByMarket\022\032.api.Orders" +
-      "ByMarketRequest\032\033.api.OrdersByMarketResp" +
-      "onse\022F\n\rOrdersByParty\022\031.api.OrdersByPart" +
-      "yRequest\032\032.api.OrdersByPartyResponse\022/\n\t" +
-      "OrderByID\022\025.api.OrderByIDRequest\032\013.vega." +
-      "Order\022N\n\021OrderVersionsByID\022\035.api.OrderVe" +
-      "rsionsByIDRequest\032\032.api.OrderVersionsRes" +
-      "ponse\022C\n\014MarginLevels\022\030.api.MarginLevels" +
-      "Request\032\031.api.MarginLevelsResponse\0227\n\007Pa" +
-      "rties\022\026.google.protobuf.Empty\032\024.api.Part" +
-      "iesResponse\022:\n\tPartyByID\022\025.api.PartyByID" +
-      "Request\032\026.api.PartyByIDResponse\022O\n\020Posit" +
-      "ionsByParty\022\034.api.PositionsByPartyReques" +
-      "t\032\035.api.PositionsByPartyResponse\022:\n\tLast" +
-      "Trade\022\025.api.LastTradeRequest\032\026.api.LastT" +
-      "radeResponse\022I\n\016TradesByMarket\022\032.api.Tra" +
-      "desByMarketRequest\032\033.api.TradesByMarketR" +
-      "esponse\022F\n\rTradesByOrder\022\031.api.TradesByO" +
-      "rderRequest\032\032.api.TradesByOrderResponse\022" +
-      "F\n\rTradesByParty\022\031.api.TradesByPartyRequ" +
-      "est\032\032.api.TradesByPartyResponse\022C\n\014GetPr" +
-      "oposals\022\030.api.GetProposalsRequest\032\031.api." +
-      "GetProposalsResponse\022X\n\023GetProposalsByPa" +
-      "rty\022\037.api.GetProposalsByPartyRequest\032 .a" +
-      "pi.GetProposalsByPartyResponse\022L\n\017GetVot" +
-      "esByParty\022\033.api.GetVotesByPartyRequest\032\034" +
-      ".api.GetVotesByPartyResponse\022^\n\025GetNewMa" +
-      "rketProposals\022!.api.GetNewMarketProposal" +
-      "sRequest\032\".api.GetNewMarketProposalsResp" +
-      "onse\022g\n\030GetUpdateMarketProposals\022$.api.G" +
-      "etUpdateMarketProposalsRequest\032%.api.Get" +
-      "UpdateMarketProposalsResponse\022v\n\035GetNetw" +
-      "orkParametersProposals\022).api.GetNetworkP" +
-      "arametersProposalsRequest\032*.api.GetNetwo" +
-      "rkParametersProposalsResponse\022[\n\024GetNewA" +
-      "ssetProposals\022 .api.GetNewAssetProposals" +
-      "Request\032!.api.GetNewAssetProposalsRespon" +
-      "se\022L\n\017GetProposalByID\022\033.api.GetProposalB" +
-      "yIDRequest\032\034.api.GetProposalByIDResponse" +
-      "\022a\n\026GetProposalByReference\022\".api.GetProp" +
-      "osalByReferenceRequest\032#.api.GetProposal" +
-      "ByReferenceResponse\022C\n\021ObserveGovernance" +
-      "\022\026.google.protobuf.Empty\032\024.vega.Governan" +
-      "ceData0\001\022R\n\025ObservePartyProposals\022!.api." +
-      "ObservePartyProposalsRequest\032\024.vega.Gove" +
-      "rnanceData0\001\022@\n\021ObservePartyVotes\022\035.api." +
-      "ObservePartyVotesRequest\032\n.vega.Vote0\001\022F" +
-      "\n\024ObserveProposalVotes\022 .api.ObserveProp" +
-      "osalVotesRequest\032\n.vega.Vote0\001\022L\n\017Observ" +
-      "eEventBus\022\031.api.ObserveEventsRequest\032\032.a" +
-      "pi.ObserveEventsResponse(\0010\001\0226\n\nStatisti" +
-      "cs\022\026.google.protobuf.Empty\032\020.vega.Statis" +
-      "tics\022<\n\013GetVegaTime\022\026.google.protobuf.Em" +
-      "pty\032\025.api.VegaTimeResponse\022C\n\021AccountsSu" +
-      "bscribe\022\035.api.AccountsSubscribeRequest\032\r" +
-      ".vega.Account0\001\022@\n\020CandlesSubscribe\022\034.ap" +
-      "i.CandlesSubscribeRequest\032\014.vega.Candle0" +
-      "\001\022P\n\025MarginLevelsSubscribe\022!.api.MarginL" +
-      "evelsSubscribeRequest\032\022.vega.MarginLevel" +
-      "s0\001\022M\n\024MarketDepthSubscribe\022 .api.Market" +
-      "DepthSubscribeRequest\032\021.vega.MarketDepth" +
-      "0\001\022a\n\033MarketDepthUpdatesSubscribe\022\'.api." +
-      "MarketDepthUpdatesSubscribeRequest\032\027.veg" +
-      "a.MarketDepthUpdate0\001\022L\n\024MarketsDataSubs" +
-      "cribe\022 .api.MarketsDataSubscribeRequest\032" +
-      "\020.vega.MarketData0\001\022C\n\017OrdersSubscribe\022\033" +
-      ".api.OrdersSubscribeRequest\032\021.api.Orders" +
-      "Stream0\001\022F\n\022PositionsSubscribe\022\036.api.Pos" +
-      "itionsSubscribeRequest\032\016.vega.Position0\001" +
-      "\022C\n\017TradesSubscribe\022\033.api.TradesSubscrib" +
-      "eRequest\032\021.api.TradesStream0\001\022N\n\032Transfe" +
-      "rResponsesSubscribe\022\026.google.protobuf.Em" +
-      "pty\032\026.vega.TransferResponse0\001\022m\n\032GetNode" +
-      "SignaturesAggregate\022&.api.GetNodeSignatu" +
-      "resAggregateRequest\032\'.api.GetNodeSignatu" +
-      "resAggregateResponse\022:\n\tAssetByID\022\025.api." +
-      "AssetByIDRequest\032\026.api.AssetByIDResponse" +
-      "\0221\n\006Assets\022\022.api.AssetsRequest\032\023.api.Ass" +
-      "etsResponse\022@\n\013EstimateFee\022\027.api.Estimat" +
-      "eFeeRequest\032\030.api.EstimateFeeResponse\022I\n" +
-      "\016EstimateMargin\022\032.api.EstimateMarginRequ" +
-      "est\032\033.api.EstimateMarginResponse\022d\n\027ERC2" +
-      "0WithdrawalApproval\022#.api.ERC20Withdrawa" +
-      "lApprovalRequest\032$.api.ERC20WithdrawalAp" +
-      "provalResponse\022=\n\nWithdrawal\022\026.api.Withd" +
-      "rawalRequest\032\027.api.WithdrawalResponse\022@\n" +
-      "\013Withdrawals\022\027.api.WithdrawalsRequest\032\030." +
-      "api.WithdrawalsResponse\0224\n\007Deposit\022\023.api" +
-      ".DepositRequest\032\024.api.DepositResponse\0227\n" +
-      "\010Deposits\022\024.api.DepositsRequest\032\025.api.De" +
-      "positsResponse\022R\n\021NetworkParameters\022\035.ap" +
-      "i.NetworkParametersRequest\032\036.api.Network" +
-      "ParametersResponseB?\n\030io.vegaprotocol.ve" +
-      "ga.apiZ#code.vegaprotocol.io/vega/proto/" +
-      "apib\006proto3"
+      "te\030\002 \001(\0132\n.vega.Vote\"b\n PrepareLiquidity" +
+      "ProvisionRequest\022>\n\nsubmission\030\001 \001(\0132\".v" +
+      "ega.LiquidityProvisionSubmissionB\006\342\337\037\002 \001" +
+      "\"1\n!PrepareLiquidityProvisionResponse\022\014\n" +
+      "\004blob\030\001 \001(\014\"<\n\020OrderByIDRequest\022\027\n\007order" +
+      "ID\030\001 \001(\tB\006\342\337\037\002 \001\022\017\n\007version\030\002 \001(\004\"X\n\030Ord" +
+      "erVersionsByIDRequest\022\027\n\007orderID\030\001 \001(\tB\006" +
+      "\342\337\037\002 \001\022#\n\npagination\030\002 \001(\0132\017.api.Paginat" +
+      "ion\"4\n\025OrderVersionsResponse\022\033\n\006orders\030\001" +
+      " \003(\0132\013.vega.Order\"0\n\022EstimateFeeRequest\022" +
+      "\032\n\005order\030\001 \001(\0132\013.vega.Order\"-\n\023EstimateF" +
+      "eeResponse\022\026\n\003fee\030\002 \001(\0132\t.vega.Fee\"3\n\025Es" +
+      "timateMarginRequest\022\032\n\005order\030\001 \001(\0132\013.veg" +
+      "a.Order\"B\n\026EstimateMarginResponse\022(\n\014mar" +
+      "ginLevels\030\002 \001(\0132\022.vega.MarginLevels\"n\n\024O" +
+      "bserveEventsRequest\022 \n\004type\030\001 \003(\0162\022.vega" +
+      ".BusEventType\022\020\n\010marketID\030\002 \001(\t\022\017\n\007party" +
+      "ID\030\003 \001(\t\022\021\n\tbatchSize\030\004 \001(\003\"7\n\025ObserveEv" +
+      "entsResponse\022\036\n\006events\030\001 \003(\0132\016.vega.BusE" +
+      "vent\"-\n\022WithdrawalsRequest\022\027\n\007partyID\030\001 " +
+      "\001(\tB\006\342\337\037\002X\001\"<\n\023WithdrawalsResponse\022%\n\013wi" +
+      "thdrawals\030\001 \003(\0132\020.vega.Withdrawal\"\'\n\021Wit" +
+      "hdrawalRequest\022\022\n\002ID\030\001 \001(\tB\006\342\337\037\002X\001\":\n\022Wi" +
+      "thdrawalResponse\022$\n\nwithdrawal\030\001 \001(\0132\020.v" +
+      "ega.Withdrawal\">\n\036ERC20WithdrawalApprova" +
+      "lRequest\022\034\n\014withdrawalID\030\001 \001(\tB\006\342\337\037\002X\001\"y" +
+      "\n\037ERC20WithdrawalApprovalResponse\022\023\n\013ass" +
+      "etSource\030\001 \001(\t\022\016\n\006amount\030\002 \001(\t\022\016\n\006expiry" +
+      "\030\003 \001(\003\022\r\n\005nonce\030\004 \001(\t\022\022\n\nsignatures\030\005 \001(" +
+      "\t\"*\n\017DepositsRequest\022\027\n\007partyID\030\001 \001(\tB\006\342" +
+      "\337\037\002X\001\"3\n\020DepositsResponse\022\037\n\010deposits\030\001 " +
+      "\003(\0132\r.vega.Deposit\"$\n\016DepositRequest\022\022\n\002" +
+      "ID\030\001 \001(\tB\006\342\337\037\002X\001\"1\n\017DepositResponse\022\036\n\007d" +
+      "eposit\030\001 \001(\0132\r.vega.Deposit\"\032\n\030NetworkPa" +
+      "rametersRequest\"N\n\031NetworkParametersResp" +
+      "onse\0221\n\021networkParameters\030\001 \003(\0132\026.vega.N" +
+      "etworkParameter\";\n\032LiquidityProvisionsRe" +
+      "quest\022\016\n\006market\030\001 \001(\t\022\r\n\005party\030\002 \001(\t\"T\n\033" +
+      "LiquidityProvisionsResponse\0225\n\023liquidity" +
+      "Provisions\030\001 \003(\0132\030.vega.LiquidityProvisi" +
+      "on2\356\005\n\007trading\022N\n\022PrepareSubmitOrder\022\027.a" +
+      "pi.SubmitOrderRequest\032\037.api.PrepareSubmi" +
+      "tOrderResponse\022N\n\022PrepareCancelOrder\022\027.a" +
+      "pi.CancelOrderRequest\032\037.api.PrepareCance" +
+      "lOrderResponse\022K\n\021PrepareAmendOrder\022\026.ap" +
+      "i.AmendOrderRequest\032\036.api.PrepareAmendOr" +
+      "derResponse\022L\n\017PrepareWithdraw\022\033.api.Pre" +
+      "pareWithdrawRequest\032\034.api.PrepareWithdra" +
+      "wResponse\022R\n\021SubmitTransaction\022\035.api.Sub" +
+      "mitTransactionRequest\032\036.api.SubmitTransa" +
+      "ctionResponse\022L\n\017PrepareProposal\022\033.api.P" +
+      "repareProposalRequest\032\034.api.PreparePropo" +
+      "salResponse\022@\n\013PrepareVote\022\027.api.Prepare" +
+      "VoteRequest\032\030.api.PrepareVoteResponse\022X\n" +
+      "\023PropagateChainEvent\022\037.api.PropagateChai" +
+      "nEventRequest\032 .api.PropagateChainEventR" +
+      "esponse\022j\n\031PrepareLiquidityProvision\022%.a" +
+      "pi.PrepareLiquidityProvisionRequest\032&.ap" +
+      "i.PrepareLiquidityProvisionResponse2\364#\n\014" +
+      "trading_data\022I\n\016MarketAccounts\022\032.api.Mar" +
+      "ketAccountsRequest\032\033.api.MarketAccountsR" +
+      "esponse\022F\n\rPartyAccounts\022\031.api.PartyAcco" +
+      "untsRequest\032\032.api.PartyAccountsResponse\022" +
+      "j\n\031FeeInfrastructureAccounts\022%.api.FeeIn" +
+      "frastructureAccountsRequest\032&.api.FeeInf" +
+      "rastructureAccountsResponse\0224\n\007Candles\022\023" +
+      ".api.CandlesRequest\032\024.api.CandlesRespons" +
+      "e\022I\n\016MarketDataByID\022\032.api.MarketDataByID" +
+      "Request\032\033.api.MarketDataByIDResponse\022?\n\013" +
+      "MarketsData\022\026.google.protobuf.Empty\032\030.ap" +
+      "i.MarketsDataResponse\022=\n\nMarketByID\022\026.ap" +
+      "i.MarketByIDRequest\032\027.api.MarketByIDResp" +
+      "onse\022@\n\013MarketDepth\022\027.api.MarketDepthReq" +
+      "uest\032\030.api.MarketDepthResponse\0227\n\007Market" +
+      "s\022\026.google.protobuf.Empty\032\024.api.MarketsR" +
+      "esponse\022U\n\022OrderByMarketAndID\022\036.api.Orde" +
+      "rByMarketAndIdRequest\032\037.api.OrderByMarke" +
+      "tAndIdResponse\022O\n\020OrderByReference\022\034.api" +
+      ".OrderByReferenceRequest\032\035.api.OrderByRe" +
+      "ferenceResponse\022I\n\016OrdersByMarket\022\032.api." +
+      "OrdersByMarketRequest\032\033.api.OrdersByMark" +
+      "etResponse\022F\n\rOrdersByParty\022\031.api.Orders" +
+      "ByPartyRequest\032\032.api.OrdersByPartyRespon" +
+      "se\022/\n\tOrderByID\022\025.api.OrderByIDRequest\032\013" +
+      ".vega.Order\022N\n\021OrderVersionsByID\022\035.api.O" +
+      "rderVersionsByIDRequest\032\032.api.OrderVersi" +
+      "onsResponse\022C\n\014MarginLevels\022\030.api.Margin" +
+      "LevelsRequest\032\031.api.MarginLevelsResponse" +
+      "\0227\n\007Parties\022\026.google.protobuf.Empty\032\024.ap" +
+      "i.PartiesResponse\022:\n\tPartyByID\022\025.api.Par" +
+      "tyByIDRequest\032\026.api.PartyByIDResponse\022O\n" +
+      "\020PositionsByParty\022\034.api.PositionsByParty" +
+      "Request\032\035.api.PositionsByPartyResponse\022:" +
+      "\n\tLastTrade\022\025.api.LastTradeRequest\032\026.api" +
+      ".LastTradeResponse\022I\n\016TradesByMarket\022\032.a" +
+      "pi.TradesByMarketRequest\032\033.api.TradesByM" +
+      "arketResponse\022F\n\rTradesByOrder\022\031.api.Tra" +
+      "desByOrderRequest\032\032.api.TradesByOrderRes" +
+      "ponse\022F\n\rTradesByParty\022\031.api.TradesByPar" +
+      "tyRequest\032\032.api.TradesByPartyResponse\022C\n" +
+      "\014GetProposals\022\030.api.GetProposalsRequest\032" +
+      "\031.api.GetProposalsResponse\022X\n\023GetProposa" +
+      "lsByParty\022\037.api.GetProposalsByPartyReque" +
+      "st\032 .api.GetProposalsByPartyResponse\022L\n\017" +
+      "GetVotesByParty\022\033.api.GetVotesByPartyReq" +
+      "uest\032\034.api.GetVotesByPartyResponse\022^\n\025Ge" +
+      "tNewMarketProposals\022!.api.GetNewMarketPr" +
+      "oposalsRequest\032\".api.GetNewMarketProposa" +
+      "lsResponse\022g\n\030GetUpdateMarketProposals\022$" +
+      ".api.GetUpdateMarketProposalsRequest\032%.a" +
+      "pi.GetUpdateMarketProposalsResponse\022v\n\035G" +
+      "etNetworkParametersProposals\022).api.GetNe" +
+      "tworkParametersProposalsRequest\032*.api.Ge" +
+      "tNetworkParametersProposalsResponse\022[\n\024G" +
+      "etNewAssetProposals\022 .api.GetNewAssetPro" +
+      "posalsRequest\032!.api.GetNewAssetProposals" +
+      "Response\022L\n\017GetProposalByID\022\033.api.GetPro" +
+      "posalByIDRequest\032\034.api.GetProposalByIDRe" +
+      "sponse\022a\n\026GetProposalByReference\022\".api.G" +
+      "etProposalByReferenceRequest\032#.api.GetPr" +
+      "oposalByReferenceResponse\022C\n\021ObserveGove" +
+      "rnance\022\026.google.protobuf.Empty\032\024.vega.Go" +
+      "vernanceData0\001\022R\n\025ObservePartyProposals\022" +
+      "!.api.ObservePartyProposalsRequest\032\024.veg" +
+      "a.GovernanceData0\001\022@\n\021ObservePartyVotes\022" +
+      "\035.api.ObservePartyVotesRequest\032\n.vega.Vo" +
+      "te0\001\022F\n\024ObserveProposalVotes\022 .api.Obser" +
+      "veProposalVotesRequest\032\n.vega.Vote0\001\022L\n\017" +
+      "ObserveEventBus\022\031.api.ObserveEventsReque" +
+      "st\032\032.api.ObserveEventsResponse(\0010\001\0226\n\nSt" +
+      "atistics\022\026.google.protobuf.Empty\032\020.vega." +
+      "Statistics\022<\n\013GetVegaTime\022\026.google.proto" +
+      "buf.Empty\032\025.api.VegaTimeResponse\022C\n\021Acco" +
+      "untsSubscribe\022\035.api.AccountsSubscribeReq" +
+      "uest\032\r.vega.Account0\001\022@\n\020CandlesSubscrib" +
+      "e\022\034.api.CandlesSubscribeRequest\032\014.vega.C" +
+      "andle0\001\022P\n\025MarginLevelsSubscribe\022!.api.M" +
+      "arginLevelsSubscribeRequest\032\022.vega.Margi" +
+      "nLevels0\001\022M\n\024MarketDepthSubscribe\022 .api." +
+      "MarketDepthSubscribeRequest\032\021.vega.Marke" +
+      "tDepth0\001\022a\n\033MarketDepthUpdatesSubscribe\022" +
+      "\'.api.MarketDepthUpdatesSubscribeRequest" +
+      "\032\027.vega.MarketDepthUpdate0\001\022L\n\024MarketsDa" +
+      "taSubscribe\022 .api.MarketsDataSubscribeRe" +
+      "quest\032\020.vega.MarketData0\001\022C\n\017OrdersSubsc" +
+      "ribe\022\033.api.OrdersSubscribeRequest\032\021.api." +
+      "OrdersStream0\001\022F\n\022PositionsSubscribe\022\036.a" +
+      "pi.PositionsSubscribeRequest\032\016.vega.Posi" +
+      "tion0\001\022C\n\017TradesSubscribe\022\033.api.TradesSu" +
+      "bscribeRequest\032\021.api.TradesStream0\001\022N\n\032T" +
+      "ransferResponsesSubscribe\022\026.google.proto" +
+      "buf.Empty\032\026.vega.TransferResponse0\001\022m\n\032G" +
+      "etNodeSignaturesAggregate\022&.api.GetNodeS" +
+      "ignaturesAggregateRequest\032\'.api.GetNodeS" +
+      "ignaturesAggregateResponse\022:\n\tAssetByID\022" +
+      "\025.api.AssetByIDRequest\032\026.api.AssetByIDRe" +
+      "sponse\0221\n\006Assets\022\022.api.AssetsRequest\032\023.a" +
+      "pi.AssetsResponse\022@\n\013EstimateFee\022\027.api.E" +
+      "stimateFeeRequest\032\030.api.EstimateFeeRespo" +
+      "nse\022I\n\016EstimateMargin\022\032.api.EstimateMarg" +
+      "inRequest\032\033.api.EstimateMarginResponse\022d" +
+      "\n\027ERC20WithdrawalApproval\022#.api.ERC20Wit" +
+      "hdrawalApprovalRequest\032$.api.ERC20Withdr" +
+      "awalApprovalResponse\022=\n\nWithdrawal\022\026.api" +
+      ".WithdrawalRequest\032\027.api.WithdrawalRespo" +
+      "nse\022@\n\013Withdrawals\022\027.api.WithdrawalsRequ" +
+      "est\032\030.api.WithdrawalsResponse\0224\n\007Deposit" +
+      "\022\023.api.DepositRequest\032\024.api.DepositRespo" +
+      "nse\0227\n\010Deposits\022\024.api.DepositsRequest\032\025." +
+      "api.DepositsResponse\022R\n\021NetworkParameter" +
+      "s\022\035.api.NetworkParametersRequest\032\036.api.N" +
+      "etworkParametersResponse\022X\n\023LiquidityPro" +
+      "visions\022\037.api.LiquidityProvisionsRequest" +
+      "\032 .api.LiquidityProvisionsResponseB?\n\030io" +
+      ".vegaprotocol.vega.apiZ#code.vegaprotoco" +
+      "l.io/vega/proto/apib\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -89886,132 +92563,156 @@ public final class Trading {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_PrepareVoteResponse_descriptor,
         new java.lang.String[] { "Blob", "Vote", });
-    internal_static_api_OrderByIDRequest_descriptor =
+    internal_static_api_PrepareLiquidityProvisionRequest_descriptor =
       getDescriptor().getMessageTypes().get(96);
+    internal_static_api_PrepareLiquidityProvisionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_PrepareLiquidityProvisionRequest_descriptor,
+        new java.lang.String[] { "Submission", });
+    internal_static_api_PrepareLiquidityProvisionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(97);
+    internal_static_api_PrepareLiquidityProvisionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_PrepareLiquidityProvisionResponse_descriptor,
+        new java.lang.String[] { "Blob", });
+    internal_static_api_OrderByIDRequest_descriptor =
+      getDescriptor().getMessageTypes().get(98);
     internal_static_api_OrderByIDRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_OrderByIDRequest_descriptor,
         new java.lang.String[] { "OrderID", "Version", });
     internal_static_api_OrderVersionsByIDRequest_descriptor =
-      getDescriptor().getMessageTypes().get(97);
+      getDescriptor().getMessageTypes().get(99);
     internal_static_api_OrderVersionsByIDRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_OrderVersionsByIDRequest_descriptor,
         new java.lang.String[] { "OrderID", "Pagination", });
     internal_static_api_OrderVersionsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(98);
+      getDescriptor().getMessageTypes().get(100);
     internal_static_api_OrderVersionsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_OrderVersionsResponse_descriptor,
         new java.lang.String[] { "Orders", });
     internal_static_api_EstimateFeeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(99);
+      getDescriptor().getMessageTypes().get(101);
     internal_static_api_EstimateFeeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EstimateFeeRequest_descriptor,
         new java.lang.String[] { "Order", });
     internal_static_api_EstimateFeeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(100);
+      getDescriptor().getMessageTypes().get(102);
     internal_static_api_EstimateFeeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EstimateFeeResponse_descriptor,
         new java.lang.String[] { "Fee", });
     internal_static_api_EstimateMarginRequest_descriptor =
-      getDescriptor().getMessageTypes().get(101);
+      getDescriptor().getMessageTypes().get(103);
     internal_static_api_EstimateMarginRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EstimateMarginRequest_descriptor,
         new java.lang.String[] { "Order", });
     internal_static_api_EstimateMarginResponse_descriptor =
-      getDescriptor().getMessageTypes().get(102);
+      getDescriptor().getMessageTypes().get(104);
     internal_static_api_EstimateMarginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EstimateMarginResponse_descriptor,
         new java.lang.String[] { "MarginLevels", });
     internal_static_api_ObserveEventsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(103);
+      getDescriptor().getMessageTypes().get(105);
     internal_static_api_ObserveEventsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_ObserveEventsRequest_descriptor,
         new java.lang.String[] { "Type", "MarketID", "PartyID", "BatchSize", });
     internal_static_api_ObserveEventsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(104);
+      getDescriptor().getMessageTypes().get(106);
     internal_static_api_ObserveEventsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_ObserveEventsResponse_descriptor,
         new java.lang.String[] { "Events", });
     internal_static_api_WithdrawalsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(105);
+      getDescriptor().getMessageTypes().get(107);
     internal_static_api_WithdrawalsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_WithdrawalsRequest_descriptor,
         new java.lang.String[] { "PartyID", });
     internal_static_api_WithdrawalsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(106);
+      getDescriptor().getMessageTypes().get(108);
     internal_static_api_WithdrawalsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_WithdrawalsResponse_descriptor,
         new java.lang.String[] { "Withdrawals", });
     internal_static_api_WithdrawalRequest_descriptor =
-      getDescriptor().getMessageTypes().get(107);
+      getDescriptor().getMessageTypes().get(109);
     internal_static_api_WithdrawalRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_WithdrawalRequest_descriptor,
         new java.lang.String[] { "ID", });
     internal_static_api_WithdrawalResponse_descriptor =
-      getDescriptor().getMessageTypes().get(108);
+      getDescriptor().getMessageTypes().get(110);
     internal_static_api_WithdrawalResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_WithdrawalResponse_descriptor,
         new java.lang.String[] { "Withdrawal", });
     internal_static_api_ERC20WithdrawalApprovalRequest_descriptor =
-      getDescriptor().getMessageTypes().get(109);
+      getDescriptor().getMessageTypes().get(111);
     internal_static_api_ERC20WithdrawalApprovalRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_ERC20WithdrawalApprovalRequest_descriptor,
         new java.lang.String[] { "WithdrawalID", });
     internal_static_api_ERC20WithdrawalApprovalResponse_descriptor =
-      getDescriptor().getMessageTypes().get(110);
+      getDescriptor().getMessageTypes().get(112);
     internal_static_api_ERC20WithdrawalApprovalResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_ERC20WithdrawalApprovalResponse_descriptor,
         new java.lang.String[] { "AssetSource", "Amount", "Expiry", "Nonce", "Signatures", });
     internal_static_api_DepositsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(111);
+      getDescriptor().getMessageTypes().get(113);
     internal_static_api_DepositsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_DepositsRequest_descriptor,
         new java.lang.String[] { "PartyID", });
     internal_static_api_DepositsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(112);
+      getDescriptor().getMessageTypes().get(114);
     internal_static_api_DepositsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_DepositsResponse_descriptor,
         new java.lang.String[] { "Deposits", });
     internal_static_api_DepositRequest_descriptor =
-      getDescriptor().getMessageTypes().get(113);
+      getDescriptor().getMessageTypes().get(115);
     internal_static_api_DepositRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_DepositRequest_descriptor,
         new java.lang.String[] { "ID", });
     internal_static_api_DepositResponse_descriptor =
-      getDescriptor().getMessageTypes().get(114);
+      getDescriptor().getMessageTypes().get(116);
     internal_static_api_DepositResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_DepositResponse_descriptor,
         new java.lang.String[] { "Deposit", });
     internal_static_api_NetworkParametersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(115);
+      getDescriptor().getMessageTypes().get(117);
     internal_static_api_NetworkParametersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_NetworkParametersRequest_descriptor,
         new java.lang.String[] { });
     internal_static_api_NetworkParametersResponse_descriptor =
-      getDescriptor().getMessageTypes().get(116);
+      getDescriptor().getMessageTypes().get(118);
     internal_static_api_NetworkParametersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_NetworkParametersResponse_descriptor,
         new java.lang.String[] { "NetworkParameters", });
+    internal_static_api_LiquidityProvisionsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(119);
+    internal_static_api_LiquidityProvisionsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_LiquidityProvisionsRequest_descriptor,
+        new java.lang.String[] { "Market", "Party", });
+    internal_static_api_LiquidityProvisionsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(120);
+    internal_static_api_LiquidityProvisionsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_LiquidityProvisionsResponse_descriptor,
+        new java.lang.String[] { "LiquidityProvisions", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.github.mwitkow.go_proto_validators.Validator.field);
