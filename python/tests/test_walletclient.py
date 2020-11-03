@@ -1,9 +1,16 @@
 import base64
 import random
+import requests
 import string
 from typing import Dict, List
 
 from .fixtures import walletclient, walletname, walletpassphrase  # noqa: F401
+
+
+def check_response(r: requests.Response) -> None:
+    assert (
+        r.status_code == 200
+    ), f"{r.url} returned HTTP {r.status_code} {r.text}"
 
 
 def random_metadata() -> List[Dict[str, str]]:
@@ -27,27 +34,27 @@ def test_walletclient(
 
     # Create wallet
     r = walletclient.create(wname, wpass)
-    assert r.status_code == 200
+    check_response(r)
     j = r.json()
     assert "token" in j, "Bad response: {}".format(j)
 
     # Log out
     r = walletclient.logout()
-    assert r.status_code == 200
+    check_response(r)
     j = r.json()
     assert "success" in j, "Bad response: {}".format(j)
     assert j["success"] is True
 
     # Log in
     r = walletclient.login(wname, wpass)
-    assert r.status_code == 200
+    check_response(r)
     j = r.json()
     assert "token" in j, "Bad response: {}".format(j)
 
     # Generate keypair
     meta = random_metadata()
     r = walletclient.generatekey(wpass, meta)
-    assert r.status_code == 200
+    check_response(r)
     j = r.json()
     assert "key" in j, "Bad response: {}".format(j)
     k = j["key"]
@@ -55,14 +62,14 @@ def test_walletclient(
 
     # List keypairs
     r = walletclient.listkeys()
-    assert r.status_code == 200
+    check_response(r)
     j = r.json()
     assert "keys" in j, "Bad response: {}".format(j)
     assert len(j["keys"]) == 1
 
     # Get one keypair
     r = walletclient.getkey(k["pub"])
-    assert r.status_code == 200
+    check_response(r)
     j = r.json()
     assert "key" in j, "Bad response: {}".format(j)
     k2 = j["key"]
@@ -72,7 +79,7 @@ def test_walletclient(
     blob = b"abc123"
     tx = base64.b64encode(blob).decode("ascii")
     r = walletclient.signtx(tx, k["pub"], False)
-    assert r.status_code == 200
+    check_response(r)
     j = r.json()
     assert "signedTx" in j, "Bad response: {}".format(j)
     signedTx = j["signedTx"]
@@ -82,14 +89,14 @@ def test_walletclient(
     # Update key metadata
     meta2 = random_metadata()
     r = walletclient.updatekeymetadata(k["pub"], wpass, meta2)
-    assert r.status_code == 200
+    check_response(r)
     j = r.json()
     assert "success" in j, "Bad response: {}".format(j)
     assert j["success"] is True
 
     # Get one keypair, again
     r = walletclient.getkey(k["pub"])
-    assert r.status_code == 200
+    check_response(r)
     j = r.json()
     assert "key" in j, "Bad response: {}".format(j)
     k3 = j["key"]
@@ -97,7 +104,7 @@ def test_walletclient(
 
     # Taint key
     r = walletclient.taintkey(k["pub"], wpass)
-    assert r.status_code == 200, "Bad response: {}".format(r.text)
+    check_response(r)
     j = r.json()
     assert "success" in j, "Bad response: {}".format(j)
     assert j["success"] is True
