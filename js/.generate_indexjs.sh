@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
+protodir=./generated/proto
+
 requires="$(mktemp)"
 modexports="$(mktemp)"
 
-find ./generated/proto -maxdepth 1 -name '*_pb.js' | sort | while read -r pbjs
+# Handle top-level proto
+find "$protodir" -maxdepth 1 -name '*_pb.js' | sort | while read -r pbjs
 do
 	filename="$(basename "$pbjs")"
 	varname="${filename//_pb.js/}"
@@ -11,13 +14,18 @@ do
 	echo "  $varname: $varname," >>"$modexports"
 done
 
-modexports_api="$(mktemp)"
-find ./generated/proto/api -maxdepth 1 -name '*_pb.js' | sort | while read -r pbjs
-do
-	filename="$(basename "$pbjs")"
-	varname="${filename//_pb.js/}"
-	echo "var api_$varname = require('$pbjs')" >>"$requires"
-	echo "    $varname: api_$varname," >>"$modexports_api"
+# Handle proto subdirs
+find "$protodir" -name '*_pb.js' -print0 | xargs -0 dirname | sort -u | tail +2 | while read -r protosubdir ; do
+	echo "  $(basename "$protosubdir"): {" >>"$modexports"
+	find "$protosubdir" -maxdepth 1 -name '*_pb.js' | sort | while read -r pbjs
+	do
+		filename="$(basename "$pbjs")"
+		varname="${filename//_pb.js/}"
+		prefix="$(basename "$(dirname "$pbjs")")"
+		echo "var ${prefix}_${varname} = require('$pbjs')" >>"$requires"
+		echo "    $varname: ${prefix}_${varname}," >>"$modexports"
+	done
+	echo "  }," >>"$modexports"
 done
 
 cat <<EOF
@@ -27,10 +35,7 @@ $(cat "$requires")
 
 module.exports = {
 $(cat "$modexports")
-  api: {
-$(cat "$modexports_api")
-  },
 }
 EOF
 
-rm -f "$requires" "$modexports" "$modexports_api"
+rm -f "$requires" "$modexports"

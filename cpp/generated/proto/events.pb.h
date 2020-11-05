@@ -131,6 +131,7 @@ enum BusEventType {
   BUS_EVENT_TYPE_AUCTION = 22,
   BUS_EVENT_TYPE_RISK_FACTOR = 23,
   BUS_EVENT_TYPE_NETWORK_PARAMETER = 24,
+  BUS_EVENT_TYPE_LIQUIDITY_PROVISION = 25,
   BUS_EVENT_TYPE_MARKET = 101,
   BusEventType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   BusEventType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
@@ -1561,6 +1562,7 @@ class BusEvent :
     kAuction = 121,
     kRiskFactor = 122,
     kNetworkParameter = 123,
+    kLiquidityProvision = 124,
     kMarket = 1001,
     EVENT_NOT_SET = 0,
   };
@@ -1869,6 +1871,15 @@ class BusEvent :
   ::vega::NetworkParameter* mutable_networkparameter();
   void set_allocated_networkparameter(::vega::NetworkParameter* networkparameter);
 
+  // .vega.LiquidityProvision liquidityProvision = 124;
+  bool has_liquidityprovision() const;
+  void clear_liquidityprovision();
+  static const int kLiquidityProvisionFieldNumber = 124;
+  const ::vega::LiquidityProvision& liquidityprovision() const;
+  ::vega::LiquidityProvision* release_liquidityprovision();
+  ::vega::LiquidityProvision* mutable_liquidityprovision();
+  void set_allocated_liquidityprovision(::vega::LiquidityProvision* liquidityprovision);
+
   // .vega.MarketEvent market = 1001;
   bool has_market() const;
   void clear_market();
@@ -1906,6 +1917,7 @@ class BusEvent :
   void set_has_auction();
   void set_has_riskfactor();
   void set_has_networkparameter();
+  void set_has_liquidityprovision();
   void set_has_market();
 
   inline bool has_event() const;
@@ -1940,6 +1952,7 @@ class BusEvent :
     ::vega::AuctionEvent* auction_;
     ::vega::RiskFactor* riskfactor_;
     ::vega::NetworkParameter* networkparameter_;
+    ::vega::LiquidityProvision* liquidityprovision_;
     ::vega::MarketEvent* market_;
   } event_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -3833,6 +3846,41 @@ inline ::vega::NetworkParameter* BusEvent::mutable_networkparameter() {
   }
   // @@protoc_insertion_point(field_mutable:vega.BusEvent.networkParameter)
   return event_.networkparameter_;
+}
+
+// .vega.LiquidityProvision liquidityProvision = 124;
+inline bool BusEvent::has_liquidityprovision() const {
+  return event_case() == kLiquidityProvision;
+}
+inline void BusEvent::set_has_liquidityprovision() {
+  _oneof_case_[0] = kLiquidityProvision;
+}
+inline ::vega::LiquidityProvision* BusEvent::release_liquidityprovision() {
+  // @@protoc_insertion_point(field_release:vega.BusEvent.liquidityProvision)
+  if (has_liquidityprovision()) {
+    clear_has_event();
+      ::vega::LiquidityProvision* temp = event_.liquidityprovision_;
+    event_.liquidityprovision_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::LiquidityProvision& BusEvent::liquidityprovision() const {
+  // @@protoc_insertion_point(field_get:vega.BusEvent.liquidityProvision)
+  return has_liquidityprovision()
+      ? *event_.liquidityprovision_
+      : *reinterpret_cast< ::vega::LiquidityProvision*>(&::vega::_LiquidityProvision_default_instance_);
+}
+inline ::vega::LiquidityProvision* BusEvent::mutable_liquidityprovision() {
+  if (!has_liquidityprovision()) {
+    clear_event();
+    set_has_liquidityprovision();
+    event_.liquidityprovision_ = CreateMaybeMessage< ::vega::LiquidityProvision >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:vega.BusEvent.liquidityProvision)
+  return event_.liquidityprovision_;
 }
 
 // .vega.MarketEvent market = 1001;

@@ -1,6 +1,6 @@
 {
   "name": "@vegaprotocol/vega-grpc",
-  "version": "0.26.1",
+  "version": "0.27.0-pre3",
   "description": "A gRPC client for Vega Protocol",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,6 @@
     "tape": "5.0.1"
   },
   "dependencies": {
-    "google-protobuf": "^3.12.2"
+    "google-protobuf": "^3.13.0"
   }
 }

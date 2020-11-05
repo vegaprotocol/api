@@ -9431,1150 +9431,6 @@ public final class Markets {
 
   }
 
-  public interface ExternalRiskModelOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:vega.ExternalRiskModel)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Name.
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     */
-    java.lang.String getName();
-    /**
-     * <pre>
-     * Name.
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-
-    /**
-     * <pre>
-     * Local machine socket to connect to.
-     * </pre>
-     *
-     * <code>string socket = 2;</code>
-     */
-    java.lang.String getSocket();
-    /**
-     * <pre>
-     * Local machine socket to connect to.
-     * </pre>
-     *
-     * <code>string socket = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getSocketBytes();
-
-    /**
-     * <pre>
-     * Collection of configuration items.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 3;</code>
-     */
-    int getConfigCount();
-    /**
-     * <pre>
-     * Collection of configuration items.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 3;</code>
-     */
-    boolean containsConfig(
-        java.lang.String key);
-    /**
-     * Use {@link #getConfigMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getConfig();
-    /**
-     * <pre>
-     * Collection of configuration items.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 3;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getConfigMap();
-    /**
-     * <pre>
-     * Collection of configuration items.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 3;</code>
-     */
-
-    java.lang.String getConfigOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <pre>
-     * Collection of configuration items.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 3;</code>
-     */
-
-    java.lang.String getConfigOrThrow(
-        java.lang.String key);
-  }
-  /**
-   * <pre>
-   * Risk model for external modelling.
-   * Provided by external service via a Unix socket.
-   * </pre>
-   *
-   * Protobuf type {@code vega.ExternalRiskModel}
-   */
-  public  static final class ExternalRiskModel extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:vega.ExternalRiskModel)
-      ExternalRiskModelOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ExternalRiskModel.newBuilder() to construct.
-    private ExternalRiskModel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ExternalRiskModel() {
-      name_ = "";
-      socket_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ExternalRiskModel(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              socket_ = s;
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                config_ = com.google.protobuf.MapField.newMapField(
-                    ConfigDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              config__ = input.readMessage(
-                  ConfigDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              config_.getMutableMap().put(
-                  config__.getKey(), config__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.vegaprotocol.vega.Markets.internal_static_vega_ExternalRiskModel_descriptor;
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 3:
-          return internalGetConfig();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.vegaprotocol.vega.Markets.internal_static_vega_ExternalRiskModel_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              io.vegaprotocol.vega.Markets.ExternalRiskModel.class, io.vegaprotocol.vega.Markets.ExternalRiskModel.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
-    /**
-     * <pre>
-     * Name.
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Name.
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SOCKET_FIELD_NUMBER = 2;
-    private volatile java.lang.Object socket_;
-    /**
-     * <pre>
-     * Local machine socket to connect to.
-     * </pre>
-     *
-     * <code>string socket = 2;</code>
-     */
-    public java.lang.String getSocket() {
-      java.lang.Object ref = socket_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        socket_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Local machine socket to connect to.
-     * </pre>
-     *
-     * <code>string socket = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getSocketBytes() {
-      java.lang.Object ref = socket_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        socket_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CONFIG_FIELD_NUMBER = 3;
-    private static final class ConfigDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  io.vegaprotocol.vega.Markets.internal_static_vega_ExternalRiskModel_ConfigEntry_descriptor,
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> config_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetConfig() {
-      if (config_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ConfigDefaultEntryHolder.defaultEntry);
-      }
-      return config_;
-    }
-
-    public int getConfigCount() {
-      return internalGetConfig().getMap().size();
-    }
-    /**
-     * <pre>
-     * Collection of configuration items.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 3;</code>
-     */
-
-    public boolean containsConfig(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetConfig().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getConfigMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getConfig() {
-      return getConfigMap();
-    }
-    /**
-     * <pre>
-     * Collection of configuration items.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 3;</code>
-     */
-
-    public java.util.Map<java.lang.String, java.lang.String> getConfigMap() {
-      return internalGetConfig().getMap();
-    }
-    /**
-     * <pre>
-     * Collection of configuration items.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 3;</code>
-     */
-
-    public java.lang.String getConfigOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetConfig().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <pre>
-     * Collection of configuration items.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; config = 3;</code>
-     */
-
-    public java.lang.String getConfigOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetConfig().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-      }
-      if (!getSocketBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, socket_);
-      }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetConfig(),
-          ConfigDefaultEntryHolder.defaultEntry,
-          3);
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-      }
-      if (!getSocketBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, socket_);
-      }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetConfig().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        config__ = ConfigDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, config__);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof io.vegaprotocol.vega.Markets.ExternalRiskModel)) {
-        return super.equals(obj);
-      }
-      io.vegaprotocol.vega.Markets.ExternalRiskModel other = (io.vegaprotocol.vega.Markets.ExternalRiskModel) obj;
-
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (!getSocket()
-          .equals(other.getSocket())) return false;
-      if (!internalGetConfig().equals(
-          other.internalGetConfig())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + SOCKET_FIELD_NUMBER;
-      hash = (53 * hash) + getSocket().hashCode();
-      if (!internalGetConfig().getMap().isEmpty()) {
-        hash = (37 * hash) + CONFIG_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetConfig().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static io.vegaprotocol.vega.Markets.ExternalRiskModel parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Markets.ExternalRiskModel parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Markets.ExternalRiskModel parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Markets.ExternalRiskModel parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Markets.ExternalRiskModel parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Markets.ExternalRiskModel parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Markets.ExternalRiskModel parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Markets.ExternalRiskModel parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Markets.ExternalRiskModel parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Markets.ExternalRiskModel parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Markets.ExternalRiskModel parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Markets.ExternalRiskModel parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(io.vegaprotocol.vega.Markets.ExternalRiskModel prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Risk model for external modelling.
-     * Provided by external service via a Unix socket.
-     * </pre>
-     *
-     * Protobuf type {@code vega.ExternalRiskModel}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:vega.ExternalRiskModel)
-        io.vegaprotocol.vega.Markets.ExternalRiskModelOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.vegaprotocol.vega.Markets.internal_static_vega_ExternalRiskModel_descriptor;
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 3:
-            return internalGetConfig();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 3:
-            return internalGetMutableConfig();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.vegaprotocol.vega.Markets.internal_static_vega_ExternalRiskModel_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                io.vegaprotocol.vega.Markets.ExternalRiskModel.class, io.vegaprotocol.vega.Markets.ExternalRiskModel.Builder.class);
-      }
-
-      // Construct using io.vegaprotocol.vega.Markets.ExternalRiskModel.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        name_ = "";
-
-        socket_ = "";
-
-        internalGetMutableConfig().clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.vegaprotocol.vega.Markets.internal_static_vega_ExternalRiskModel_descriptor;
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Markets.ExternalRiskModel getDefaultInstanceForType() {
-        return io.vegaprotocol.vega.Markets.ExternalRiskModel.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Markets.ExternalRiskModel build() {
-        io.vegaprotocol.vega.Markets.ExternalRiskModel result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Markets.ExternalRiskModel buildPartial() {
-        io.vegaprotocol.vega.Markets.ExternalRiskModel result = new io.vegaprotocol.vega.Markets.ExternalRiskModel(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.name_ = name_;
-        result.socket_ = socket_;
-        result.config_ = internalGetConfig();
-        result.config_.makeImmutable();
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.vegaprotocol.vega.Markets.ExternalRiskModel) {
-          return mergeFrom((io.vegaprotocol.vega.Markets.ExternalRiskModel)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(io.vegaprotocol.vega.Markets.ExternalRiskModel other) {
-        if (other == io.vegaprotocol.vega.Markets.ExternalRiskModel.getDefaultInstance()) return this;
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          onChanged();
-        }
-        if (!other.getSocket().isEmpty()) {
-          socket_ = other.socket_;
-          onChanged();
-        }
-        internalGetMutableConfig().mergeFrom(
-            other.internalGetConfig());
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        io.vegaprotocol.vega.Markets.ExternalRiskModel parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.vegaprotocol.vega.Markets.ExternalRiskModel) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object name_ = "";
-      /**
-       * <pre>
-       * Name.
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Name.
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Name.
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Name.
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public Builder clearName() {
-
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Name.
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        name_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object socket_ = "";
-      /**
-       * <pre>
-       * Local machine socket to connect to.
-       * </pre>
-       *
-       * <code>string socket = 2;</code>
-       */
-      public java.lang.String getSocket() {
-        java.lang.Object ref = socket_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          socket_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Local machine socket to connect to.
-       * </pre>
-       *
-       * <code>string socket = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getSocketBytes() {
-        java.lang.Object ref = socket_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          socket_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Local machine socket to connect to.
-       * </pre>
-       *
-       * <code>string socket = 2;</code>
-       */
-      public Builder setSocket(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        socket_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Local machine socket to connect to.
-       * </pre>
-       *
-       * <code>string socket = 2;</code>
-       */
-      public Builder clearSocket() {
-
-        socket_ = getDefaultInstance().getSocket();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Local machine socket to connect to.
-       * </pre>
-       *
-       * <code>string socket = 2;</code>
-       */
-      public Builder setSocketBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        socket_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> config_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetConfig() {
-        if (config_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              ConfigDefaultEntryHolder.defaultEntry);
-        }
-        return config_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableConfig() {
-        onChanged();;
-        if (config_ == null) {
-          config_ = com.google.protobuf.MapField.newMapField(
-              ConfigDefaultEntryHolder.defaultEntry);
-        }
-        if (!config_.isMutable()) {
-          config_ = config_.copy();
-        }
-        return config_;
-      }
-
-      public int getConfigCount() {
-        return internalGetConfig().getMap().size();
-      }
-      /**
-       * <pre>
-       * Collection of configuration items.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; config = 3;</code>
-       */
-
-      public boolean containsConfig(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetConfig().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getConfigMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getConfig() {
-        return getConfigMap();
-      }
-      /**
-       * <pre>
-       * Collection of configuration items.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; config = 3;</code>
-       */
-
-      public java.util.Map<java.lang.String, java.lang.String> getConfigMap() {
-        return internalGetConfig().getMap();
-      }
-      /**
-       * <pre>
-       * Collection of configuration items.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; config = 3;</code>
-       */
-
-      public java.lang.String getConfigOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetConfig().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <pre>
-       * Collection of configuration items.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; config = 3;</code>
-       */
-
-      public java.lang.String getConfigOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetConfig().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearConfig() {
-        internalGetMutableConfig().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <pre>
-       * Collection of configuration items.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; config = 3;</code>
-       */
-
-      public Builder removeConfig(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableConfig().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableConfig() {
-        return internalGetMutableConfig().getMutableMap();
-      }
-      /**
-       * <pre>
-       * Collection of configuration items.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; config = 3;</code>
-       */
-      public Builder putConfig(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableConfig().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <pre>
-       * Collection of configuration items.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; config = 3;</code>
-       */
-
-      public Builder putAllConfig(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableConfig().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:vega.ExternalRiskModel)
-    }
-
-    // @@protoc_insertion_point(class_scope:vega.ExternalRiskModel)
-    private static final io.vegaprotocol.vega.Markets.ExternalRiskModel DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Markets.ExternalRiskModel();
-    }
-
-    public static io.vegaprotocol.vega.Markets.ExternalRiskModel getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ExternalRiskModel>
-        PARSER = new com.google.protobuf.AbstractParser<ExternalRiskModel>() {
-      @java.lang.Override
-      public ExternalRiskModel parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ExternalRiskModel(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ExternalRiskModel> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ExternalRiskModel> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public io.vegaprotocol.vega.Markets.ExternalRiskModel getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface ScalingFactorsOrBuilder extends
       // @@protoc_insertion_point(interface_extends:vega.ScalingFactors)
       com.google.protobuf.MessageOrBuilder {
@@ -12002,35 +10858,10 @@ public final class Markets {
 
     /**
      * <pre>
-     * External socket.
-     * </pre>
-     *
-     * <code>.vega.ExternalRiskModel externalRiskModel = 101;</code>
-     */
-    boolean hasExternalRiskModel();
-    /**
-     * <pre>
-     * External socket.
-     * </pre>
-     *
-     * <code>.vega.ExternalRiskModel externalRiskModel = 101;</code>
-     */
-    io.vegaprotocol.vega.Markets.ExternalRiskModel getExternalRiskModel();
-    /**
-     * <pre>
-     * External socket.
-     * </pre>
-     *
-     * <code>.vega.ExternalRiskModel externalRiskModel = 101;</code>
-     */
-    io.vegaprotocol.vega.Markets.ExternalRiskModelOrBuilder getExternalRiskModelOrBuilder();
-
-    /**
-     * <pre>
      * Simple.
      * </pre>
      *
-     * <code>.vega.SimpleRiskModel simpleRiskModel = 102;</code>
+     * <code>.vega.SimpleRiskModel simpleRiskModel = 101;</code>
      */
     boolean hasSimpleRiskModel();
     /**
@@ -12038,7 +10869,7 @@ public final class Markets {
      * Simple.
      * </pre>
      *
-     * <code>.vega.SimpleRiskModel simpleRiskModel = 102;</code>
+     * <code>.vega.SimpleRiskModel simpleRiskModel = 101;</code>
      */
     io.vegaprotocol.vega.Markets.SimpleRiskModel getSimpleRiskModel();
     /**
@@ -12046,7 +10877,7 @@ public final class Markets {
      * Simple.
      * </pre>
      *
-     * <code>.vega.SimpleRiskModel simpleRiskModel = 102;</code>
+     * <code>.vega.SimpleRiskModel simpleRiskModel = 101;</code>
      */
     io.vegaprotocol.vega.Markets.SimpleRiskModelOrBuilder getSimpleRiskModelOrBuilder();
 
@@ -12136,22 +10967,8 @@ public final class Markets {
               break;
             }
             case 810: {
-              io.vegaprotocol.vega.Markets.ExternalRiskModel.Builder subBuilder = null;
-              if (riskModelCase_ == 101) {
-                subBuilder = ((io.vegaprotocol.vega.Markets.ExternalRiskModel) riskModel_).toBuilder();
-              }
-              riskModel_ =
-                  input.readMessage(io.vegaprotocol.vega.Markets.ExternalRiskModel.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.vegaprotocol.vega.Markets.ExternalRiskModel) riskModel_);
-                riskModel_ = subBuilder.buildPartial();
-              }
-              riskModelCase_ = 101;
-              break;
-            }
-            case 818: {
               io.vegaprotocol.vega.Markets.SimpleRiskModel.Builder subBuilder = null;
-              if (riskModelCase_ == 102) {
+              if (riskModelCase_ == 101) {
                 subBuilder = ((io.vegaprotocol.vega.Markets.SimpleRiskModel) riskModel_).toBuilder();
               }
               riskModel_ =
@@ -12160,7 +10977,7 @@ public final class Markets {
                 subBuilder.mergeFrom((io.vegaprotocol.vega.Markets.SimpleRiskModel) riskModel_);
                 riskModel_ = subBuilder.buildPartial();
               }
-              riskModelCase_ = 102;
+              riskModelCase_ = 101;
               break;
             }
             default: {
@@ -12200,8 +11017,7 @@ public final class Markets {
     public enum RiskModelCase
         implements com.google.protobuf.Internal.EnumLite {
       LOGNORMALRISKMODEL(100),
-      EXTERNALRISKMODEL(101),
-      SIMPLERISKMODEL(102),
+      SIMPLERISKMODEL(101),
       RISKMODEL_NOT_SET(0);
       private final int value;
       private RiskModelCase(int value) {
@@ -12218,8 +11034,7 @@ public final class Markets {
       public static RiskModelCase forNumber(int value) {
         switch (value) {
           case 100: return LOGNORMALRISKMODEL;
-          case 101: return EXTERNALRISKMODEL;
-          case 102: return SIMPLERISKMODEL;
+          case 101: return SIMPLERISKMODEL;
           case 0: return RISKMODEL_NOT_SET;
           default: return null;
         }
@@ -12339,64 +11154,26 @@ public final class Markets {
       return io.vegaprotocol.vega.Markets.LogNormalRiskModel.getDefaultInstance();
     }
 
-    public static final int EXTERNALRISKMODEL_FIELD_NUMBER = 101;
+    public static final int SIMPLERISKMODEL_FIELD_NUMBER = 101;
     /**
      * <pre>
-     * External socket.
+     * Simple.
      * </pre>
      *
-     * <code>.vega.ExternalRiskModel externalRiskModel = 101;</code>
+     * <code>.vega.SimpleRiskModel simpleRiskModel = 101;</code>
      */
-    public boolean hasExternalRiskModel() {
+    public boolean hasSimpleRiskModel() {
       return riskModelCase_ == 101;
     }
     /**
      * <pre>
-     * External socket.
-     * </pre>
-     *
-     * <code>.vega.ExternalRiskModel externalRiskModel = 101;</code>
-     */
-    public io.vegaprotocol.vega.Markets.ExternalRiskModel getExternalRiskModel() {
-      if (riskModelCase_ == 101) {
-         return (io.vegaprotocol.vega.Markets.ExternalRiskModel) riskModel_;
-      }
-      return io.vegaprotocol.vega.Markets.ExternalRiskModel.getDefaultInstance();
-    }
-    /**
-     * <pre>
-     * External socket.
-     * </pre>
-     *
-     * <code>.vega.ExternalRiskModel externalRiskModel = 101;</code>
-     */
-    public io.vegaprotocol.vega.Markets.ExternalRiskModelOrBuilder getExternalRiskModelOrBuilder() {
-      if (riskModelCase_ == 101) {
-         return (io.vegaprotocol.vega.Markets.ExternalRiskModel) riskModel_;
-      }
-      return io.vegaprotocol.vega.Markets.ExternalRiskModel.getDefaultInstance();
-    }
-
-    public static final int SIMPLERISKMODEL_FIELD_NUMBER = 102;
-    /**
-     * <pre>
      * Simple.
      * </pre>
      *
-     * <code>.vega.SimpleRiskModel simpleRiskModel = 102;</code>
-     */
-    public boolean hasSimpleRiskModel() {
-      return riskModelCase_ == 102;
-    }
-    /**
-     * <pre>
-     * Simple.
-     * </pre>
-     *
-     * <code>.vega.SimpleRiskModel simpleRiskModel = 102;</code>
+     * <code>.vega.SimpleRiskModel simpleRiskModel = 101;</code>
      */
     public io.vegaprotocol.vega.Markets.SimpleRiskModel getSimpleRiskModel() {
-      if (riskModelCase_ == 102) {
+      if (riskModelCase_ == 101) {
          return (io.vegaprotocol.vega.Markets.SimpleRiskModel) riskModel_;
       }
       return io.vegaprotocol.vega.Markets.SimpleRiskModel.getDefaultInstance();
@@ -12406,10 +11183,10 @@ public final class Markets {
      * Simple.
      * </pre>
      *
-     * <code>.vega.SimpleRiskModel simpleRiskModel = 102;</code>
+     * <code>.vega.SimpleRiskModel simpleRiskModel = 101;</code>
      */
     public io.vegaprotocol.vega.Markets.SimpleRiskModelOrBuilder getSimpleRiskModelOrBuilder() {
-      if (riskModelCase_ == 102) {
+      if (riskModelCase_ == 101) {
          return (io.vegaprotocol.vega.Markets.SimpleRiskModel) riskModel_;
       }
       return io.vegaprotocol.vega.Markets.SimpleRiskModel.getDefaultInstance();
@@ -12439,10 +11216,7 @@ public final class Markets {
         output.writeMessage(100, (io.vegaprotocol.vega.Markets.LogNormalRiskModel) riskModel_);
       }
       if (riskModelCase_ == 101) {
-        output.writeMessage(101, (io.vegaprotocol.vega.Markets.ExternalRiskModel) riskModel_);
-      }
-      if (riskModelCase_ == 102) {
-        output.writeMessage(102, (io.vegaprotocol.vega.Markets.SimpleRiskModel) riskModel_);
+        output.writeMessage(101, (io.vegaprotocol.vega.Markets.SimpleRiskModel) riskModel_);
       }
       unknownFields.writeTo(output);
     }
@@ -12467,11 +11241,7 @@ public final class Markets {
       }
       if (riskModelCase_ == 101) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(101, (io.vegaprotocol.vega.Markets.ExternalRiskModel) riskModel_);
-      }
-      if (riskModelCase_ == 102) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(102, (io.vegaprotocol.vega.Markets.SimpleRiskModel) riskModel_);
+          .computeMessageSize(101, (io.vegaprotocol.vega.Markets.SimpleRiskModel) riskModel_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -12505,10 +11275,6 @@ public final class Markets {
               .equals(other.getLogNormalRiskModel())) return false;
           break;
         case 101:
-          if (!getExternalRiskModel()
-              .equals(other.getExternalRiskModel())) return false;
-          break;
-        case 102:
           if (!getSimpleRiskModel()
               .equals(other.getSimpleRiskModel())) return false;
           break;
@@ -12540,10 +11306,6 @@ public final class Markets {
           hash = (53 * hash) + getLogNormalRiskModel().hashCode();
           break;
         case 101:
-          hash = (37 * hash) + EXTERNALRISKMODEL_FIELD_NUMBER;
-          hash = (53 * hash) + getExternalRiskModel().hashCode();
-          break;
-        case 102:
           hash = (37 * hash) + SIMPLERISKMODEL_FIELD_NUMBER;
           hash = (53 * hash) + getSimpleRiskModel().hashCode();
           break;
@@ -12745,13 +11507,6 @@ public final class Markets {
           }
         }
         if (riskModelCase_ == 101) {
-          if (externalRiskModelBuilder_ == null) {
-            result.riskModel_ = riskModel_;
-          } else {
-            result.riskModel_ = externalRiskModelBuilder_.build();
-          }
-        }
-        if (riskModelCase_ == 102) {
           if (simpleRiskModelBuilder_ == null) {
             result.riskModel_ = riskModel_;
           } else {
@@ -12816,10 +11571,6 @@ public final class Markets {
         switch (other.getRiskModelCase()) {
           case LOGNORMALRISKMODEL: {
             mergeLogNormalRiskModel(other.getLogNormalRiskModel());
-            break;
-          }
-          case EXTERNALRISKMODEL: {
-            mergeExternalRiskModel(other.getExternalRiskModel());
             break;
           }
           case SIMPLERISKMODEL: {
@@ -13353,204 +12104,32 @@ public final class Markets {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.ExternalRiskModel, io.vegaprotocol.vega.Markets.ExternalRiskModel.Builder, io.vegaprotocol.vega.Markets.ExternalRiskModelOrBuilder> externalRiskModelBuilder_;
-      /**
-       * <pre>
-       * External socket.
-       * </pre>
-       *
-       * <code>.vega.ExternalRiskModel externalRiskModel = 101;</code>
-       */
-      public boolean hasExternalRiskModel() {
-        return riskModelCase_ == 101;
-      }
-      /**
-       * <pre>
-       * External socket.
-       * </pre>
-       *
-       * <code>.vega.ExternalRiskModel externalRiskModel = 101;</code>
-       */
-      public io.vegaprotocol.vega.Markets.ExternalRiskModel getExternalRiskModel() {
-        if (externalRiskModelBuilder_ == null) {
-          if (riskModelCase_ == 101) {
-            return (io.vegaprotocol.vega.Markets.ExternalRiskModel) riskModel_;
-          }
-          return io.vegaprotocol.vega.Markets.ExternalRiskModel.getDefaultInstance();
-        } else {
-          if (riskModelCase_ == 101) {
-            return externalRiskModelBuilder_.getMessage();
-          }
-          return io.vegaprotocol.vega.Markets.ExternalRiskModel.getDefaultInstance();
-        }
-      }
-      /**
-       * <pre>
-       * External socket.
-       * </pre>
-       *
-       * <code>.vega.ExternalRiskModel externalRiskModel = 101;</code>
-       */
-      public Builder setExternalRiskModel(io.vegaprotocol.vega.Markets.ExternalRiskModel value) {
-        if (externalRiskModelBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          riskModel_ = value;
-          onChanged();
-        } else {
-          externalRiskModelBuilder_.setMessage(value);
-        }
-        riskModelCase_ = 101;
-        return this;
-      }
-      /**
-       * <pre>
-       * External socket.
-       * </pre>
-       *
-       * <code>.vega.ExternalRiskModel externalRiskModel = 101;</code>
-       */
-      public Builder setExternalRiskModel(
-          io.vegaprotocol.vega.Markets.ExternalRiskModel.Builder builderForValue) {
-        if (externalRiskModelBuilder_ == null) {
-          riskModel_ = builderForValue.build();
-          onChanged();
-        } else {
-          externalRiskModelBuilder_.setMessage(builderForValue.build());
-        }
-        riskModelCase_ = 101;
-        return this;
-      }
-      /**
-       * <pre>
-       * External socket.
-       * </pre>
-       *
-       * <code>.vega.ExternalRiskModel externalRiskModel = 101;</code>
-       */
-      public Builder mergeExternalRiskModel(io.vegaprotocol.vega.Markets.ExternalRiskModel value) {
-        if (externalRiskModelBuilder_ == null) {
-          if (riskModelCase_ == 101 &&
-              riskModel_ != io.vegaprotocol.vega.Markets.ExternalRiskModel.getDefaultInstance()) {
-            riskModel_ = io.vegaprotocol.vega.Markets.ExternalRiskModel.newBuilder((io.vegaprotocol.vega.Markets.ExternalRiskModel) riskModel_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            riskModel_ = value;
-          }
-          onChanged();
-        } else {
-          if (riskModelCase_ == 101) {
-            externalRiskModelBuilder_.mergeFrom(value);
-          }
-          externalRiskModelBuilder_.setMessage(value);
-        }
-        riskModelCase_ = 101;
-        return this;
-      }
-      /**
-       * <pre>
-       * External socket.
-       * </pre>
-       *
-       * <code>.vega.ExternalRiskModel externalRiskModel = 101;</code>
-       */
-      public Builder clearExternalRiskModel() {
-        if (externalRiskModelBuilder_ == null) {
-          if (riskModelCase_ == 101) {
-            riskModelCase_ = 0;
-            riskModel_ = null;
-            onChanged();
-          }
-        } else {
-          if (riskModelCase_ == 101) {
-            riskModelCase_ = 0;
-            riskModel_ = null;
-          }
-          externalRiskModelBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * External socket.
-       * </pre>
-       *
-       * <code>.vega.ExternalRiskModel externalRiskModel = 101;</code>
-       */
-      public io.vegaprotocol.vega.Markets.ExternalRiskModel.Builder getExternalRiskModelBuilder() {
-        return getExternalRiskModelFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * External socket.
-       * </pre>
-       *
-       * <code>.vega.ExternalRiskModel externalRiskModel = 101;</code>
-       */
-      public io.vegaprotocol.vega.Markets.ExternalRiskModelOrBuilder getExternalRiskModelOrBuilder() {
-        if ((riskModelCase_ == 101) && (externalRiskModelBuilder_ != null)) {
-          return externalRiskModelBuilder_.getMessageOrBuilder();
-        } else {
-          if (riskModelCase_ == 101) {
-            return (io.vegaprotocol.vega.Markets.ExternalRiskModel) riskModel_;
-          }
-          return io.vegaprotocol.vega.Markets.ExternalRiskModel.getDefaultInstance();
-        }
-      }
-      /**
-       * <pre>
-       * External socket.
-       * </pre>
-       *
-       * <code>.vega.ExternalRiskModel externalRiskModel = 101;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.ExternalRiskModel, io.vegaprotocol.vega.Markets.ExternalRiskModel.Builder, io.vegaprotocol.vega.Markets.ExternalRiskModelOrBuilder>
-          getExternalRiskModelFieldBuilder() {
-        if (externalRiskModelBuilder_ == null) {
-          if (!(riskModelCase_ == 101)) {
-            riskModel_ = io.vegaprotocol.vega.Markets.ExternalRiskModel.getDefaultInstance();
-          }
-          externalRiskModelBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.vegaprotocol.vega.Markets.ExternalRiskModel, io.vegaprotocol.vega.Markets.ExternalRiskModel.Builder, io.vegaprotocol.vega.Markets.ExternalRiskModelOrBuilder>(
-                  (io.vegaprotocol.vega.Markets.ExternalRiskModel) riskModel_,
-                  getParentForChildren(),
-                  isClean());
-          riskModel_ = null;
-        }
-        riskModelCase_ = 101;
-        onChanged();;
-        return externalRiskModelBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.SimpleRiskModel, io.vegaprotocol.vega.Markets.SimpleRiskModel.Builder, io.vegaprotocol.vega.Markets.SimpleRiskModelOrBuilder> simpleRiskModelBuilder_;
       /**
        * <pre>
        * Simple.
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 102;</code>
+       * <code>.vega.SimpleRiskModel simpleRiskModel = 101;</code>
        */
       public boolean hasSimpleRiskModel() {
-        return riskModelCase_ == 102;
+        return riskModelCase_ == 101;
       }
       /**
        * <pre>
        * Simple.
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 102;</code>
+       * <code>.vega.SimpleRiskModel simpleRiskModel = 101;</code>
        */
       public io.vegaprotocol.vega.Markets.SimpleRiskModel getSimpleRiskModel() {
         if (simpleRiskModelBuilder_ == null) {
-          if (riskModelCase_ == 102) {
+          if (riskModelCase_ == 101) {
             return (io.vegaprotocol.vega.Markets.SimpleRiskModel) riskModel_;
           }
           return io.vegaprotocol.vega.Markets.SimpleRiskModel.getDefaultInstance();
         } else {
-          if (riskModelCase_ == 102) {
+          if (riskModelCase_ == 101) {
             return simpleRiskModelBuilder_.getMessage();
           }
           return io.vegaprotocol.vega.Markets.SimpleRiskModel.getDefaultInstance();
@@ -13561,7 +12140,7 @@ public final class Markets {
        * Simple.
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 102;</code>
+       * <code>.vega.SimpleRiskModel simpleRiskModel = 101;</code>
        */
       public Builder setSimpleRiskModel(io.vegaprotocol.vega.Markets.SimpleRiskModel value) {
         if (simpleRiskModelBuilder_ == null) {
@@ -13573,7 +12152,7 @@ public final class Markets {
         } else {
           simpleRiskModelBuilder_.setMessage(value);
         }
-        riskModelCase_ = 102;
+        riskModelCase_ = 101;
         return this;
       }
       /**
@@ -13581,7 +12160,7 @@ public final class Markets {
        * Simple.
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 102;</code>
+       * <code>.vega.SimpleRiskModel simpleRiskModel = 101;</code>
        */
       public Builder setSimpleRiskModel(
           io.vegaprotocol.vega.Markets.SimpleRiskModel.Builder builderForValue) {
@@ -13591,7 +12170,7 @@ public final class Markets {
         } else {
           simpleRiskModelBuilder_.setMessage(builderForValue.build());
         }
-        riskModelCase_ = 102;
+        riskModelCase_ = 101;
         return this;
       }
       /**
@@ -13599,11 +12178,11 @@ public final class Markets {
        * Simple.
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 102;</code>
+       * <code>.vega.SimpleRiskModel simpleRiskModel = 101;</code>
        */
       public Builder mergeSimpleRiskModel(io.vegaprotocol.vega.Markets.SimpleRiskModel value) {
         if (simpleRiskModelBuilder_ == null) {
-          if (riskModelCase_ == 102 &&
+          if (riskModelCase_ == 101 &&
               riskModel_ != io.vegaprotocol.vega.Markets.SimpleRiskModel.getDefaultInstance()) {
             riskModel_ = io.vegaprotocol.vega.Markets.SimpleRiskModel.newBuilder((io.vegaprotocol.vega.Markets.SimpleRiskModel) riskModel_)
                 .mergeFrom(value).buildPartial();
@@ -13612,12 +12191,12 @@ public final class Markets {
           }
           onChanged();
         } else {
-          if (riskModelCase_ == 102) {
+          if (riskModelCase_ == 101) {
             simpleRiskModelBuilder_.mergeFrom(value);
           }
           simpleRiskModelBuilder_.setMessage(value);
         }
-        riskModelCase_ = 102;
+        riskModelCase_ = 101;
         return this;
       }
       /**
@@ -13625,17 +12204,17 @@ public final class Markets {
        * Simple.
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 102;</code>
+       * <code>.vega.SimpleRiskModel simpleRiskModel = 101;</code>
        */
       public Builder clearSimpleRiskModel() {
         if (simpleRiskModelBuilder_ == null) {
-          if (riskModelCase_ == 102) {
+          if (riskModelCase_ == 101) {
             riskModelCase_ = 0;
             riskModel_ = null;
             onChanged();
           }
         } else {
-          if (riskModelCase_ == 102) {
+          if (riskModelCase_ == 101) {
             riskModelCase_ = 0;
             riskModel_ = null;
           }
@@ -13648,7 +12227,7 @@ public final class Markets {
        * Simple.
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 102;</code>
+       * <code>.vega.SimpleRiskModel simpleRiskModel = 101;</code>
        */
       public io.vegaprotocol.vega.Markets.SimpleRiskModel.Builder getSimpleRiskModelBuilder() {
         return getSimpleRiskModelFieldBuilder().getBuilder();
@@ -13658,13 +12237,13 @@ public final class Markets {
        * Simple.
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 102;</code>
+       * <code>.vega.SimpleRiskModel simpleRiskModel = 101;</code>
        */
       public io.vegaprotocol.vega.Markets.SimpleRiskModelOrBuilder getSimpleRiskModelOrBuilder() {
-        if ((riskModelCase_ == 102) && (simpleRiskModelBuilder_ != null)) {
+        if ((riskModelCase_ == 101) && (simpleRiskModelBuilder_ != null)) {
           return simpleRiskModelBuilder_.getMessageOrBuilder();
         } else {
-          if (riskModelCase_ == 102) {
+          if (riskModelCase_ == 101) {
             return (io.vegaprotocol.vega.Markets.SimpleRiskModel) riskModel_;
           }
           return io.vegaprotocol.vega.Markets.SimpleRiskModel.getDefaultInstance();
@@ -13675,13 +12254,13 @@ public final class Markets {
        * Simple.
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 102;</code>
+       * <code>.vega.SimpleRiskModel simpleRiskModel = 101;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.SimpleRiskModel, io.vegaprotocol.vega.Markets.SimpleRiskModel.Builder, io.vegaprotocol.vega.Markets.SimpleRiskModelOrBuilder>
           getSimpleRiskModelFieldBuilder() {
         if (simpleRiskModelBuilder_ == null) {
-          if (!(riskModelCase_ == 102)) {
+          if (!(riskModelCase_ == 101)) {
             riskModel_ = io.vegaprotocol.vega.Markets.SimpleRiskModel.getDefaultInstance();
           }
           simpleRiskModelBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -13691,7 +12270,7 @@ public final class Markets {
                   isClean());
           riskModel_ = null;
         }
-        riskModelCase_ = 102;
+        riskModelCase_ = 101;
         onChanged();;
         return simpleRiskModelBuilder_;
       }
@@ -19443,16 +18022,6 @@ public final class Markets {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_SimpleModelParams_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_vega_ExternalRiskModel_descriptor;
-  private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_vega_ExternalRiskModel_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_vega_ExternalRiskModel_ConfigEntry_descriptor;
-  private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_vega_ExternalRiskModel_ConfigEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_ScalingFactors_descriptor;
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -19526,41 +18095,36 @@ public final class Markets {
       "elParams\"\202\001\n\021SimpleModelParams\022\022\n\nfactor" +
       "Long\030\001 \001(\001\022\023\n\013factorShort\030\002 \001(\001\022 \n\tmaxMo" +
       "veUp\030\003 \001(\001B\r\342\337\037\tI\000\000\000\000\000\000\000\000\022\"\n\013minMoveDown" +
-      "\030\004 \001(\001B\r\342\337\037\tQ\000\000\000\000\000\000\000\000\"\225\001\n\021ExternalRiskMo" +
-      "del\022\014\n\004name\030\001 \001(\t\022\016\n\006socket\030\002 \001(\t\0223\n\006con" +
-      "fig\030\003 \003(\0132#.vega.ExternalRiskModel.Confi" +
-      "gEntry\032-\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
-      "lue\030\002 \001(\t:\0028\001\"W\n\016ScalingFactors\022\023\n\013searc" +
-      "hLevel\030\001 \001(\001\022\025\n\rinitialMargin\030\002 \001(\001\022\031\n\021c" +
-      "ollateralRelease\030\003 \001(\001\"@\n\020MarginCalculat" +
-      "or\022,\n\016scalingFactors\030\001 \001(\0132\024.vega.Scalin" +
-      "gFactors\"\231\002\n\022TradableInstrument\022$\n\ninstr" +
-      "ument\030\001 \001(\0132\020.vega.Instrument\0220\n\020marginC" +
-      "alculator\030\002 \001(\0132\026.vega.MarginCalculator\022" +
-      "6\n\022logNormalRiskModel\030d \001(\0132\030.vega.LogNo" +
-      "rmalRiskModelH\000\0224\n\021externalRiskModel\030e \001" +
-      "(\0132\027.vega.ExternalRiskModelH\000\0220\n\017simpleR" +
-      "iskModel\030f \001(\0132\025.vega.SimpleRiskModelH\000B" +
-      "\013\n\triskModel\"O\n\nFeeFactors\022\020\n\010makerFee\030\001" +
-      " \001(\t\022\031\n\021infrastructureFee\030\002 \001(\t\022\024\n\014liqui" +
-      "dityFee\030\003 \001(\t\")\n\004Fees\022!\n\007factors\030\001 \001(\0132\020" +
-      ".vega.FeeFactors\"\203\001\n\031PriceMonitoringPara" +
-      "meters\022\027\n\007horizon\030\001 \001(\003B\006\342\337\037\002\020\000\022+\n\013proba" +
-      "bility\030\002 \001(\001B\026\342\337\037\0221\000\000\000\000\000\000\000\0009\000\000\000\000\000\000\360?\022 \n\020" +
-      "auctionExtension\030\003 \001(\003B\006\342\337\037\002\020\000\"v\n\027PriceM" +
-      "onitoringSettings\022B\n\031priceMonitoringPara" +
-      "meters\030\001 \003(\0132\037.vega.PriceMonitoringParam" +
-      "eters\022\027\n\017updateFrequency\030\002 \001(\003\"\323\002\n\006Marke" +
-      "t\022\n\n\002id\030\001 \001(\t\0224\n\022tradableInstrument\030\002 \001(" +
-      "\0132\030.vega.TradableInstrument\022\025\n\rdecimalPl" +
-      "aces\030\003 \001(\004\022\030\n\004fees\030\004 \001(\0132\n.vega.Fees\022-\n\016" +
-      "openingAuction\030\005 \001(\0132\025.vega.AuctionDurat" +
-      "ion\022-\n\ncontinuous\030d \001(\0132\027.vega.Continuou" +
-      "sTradingH\000\022)\n\010discrete\030e \001(\0132\025.vega.Disc" +
-      "reteTradingH\000\022>\n\027priceMonitoringSettings" +
-      "\030\006 \001(\0132\035.vega.PriceMonitoringSettingsB\r\n" +
-      "\013tradingModeB7\n\024io.vegaprotocol.vegaZ\037co" +
-      "de.vegaprotocol.io/vega/protob\006proto3"
+      "\030\004 \001(\001B\r\342\337\037\tQ\000\000\000\000\000\000\000\000\"W\n\016ScalingFactors\022" +
+      "\023\n\013searchLevel\030\001 \001(\001\022\025\n\rinitialMargin\030\002 " +
+      "\001(\001\022\031\n\021collateralRelease\030\003 \001(\001\"@\n\020Margin" +
+      "Calculator\022,\n\016scalingFactors\030\001 \001(\0132\024.veg" +
+      "a.ScalingFactors\"\343\001\n\022TradableInstrument\022" +
+      "$\n\ninstrument\030\001 \001(\0132\020.vega.Instrument\0220\n" +
+      "\020marginCalculator\030\002 \001(\0132\026.vega.MarginCal" +
+      "culator\0226\n\022logNormalRiskModel\030d \001(\0132\030.ve" +
+      "ga.LogNormalRiskModelH\000\0220\n\017simpleRiskMod" +
+      "el\030e \001(\0132\025.vega.SimpleRiskModelH\000B\013\n\tris" +
+      "kModel\"O\n\nFeeFactors\022\020\n\010makerFee\030\001 \001(\t\022\031" +
+      "\n\021infrastructureFee\030\002 \001(\t\022\024\n\014liquidityFe" +
+      "e\030\003 \001(\t\")\n\004Fees\022!\n\007factors\030\001 \001(\0132\020.vega." +
+      "FeeFactors\"\203\001\n\031PriceMonitoringParameters" +
+      "\022\027\n\007horizon\030\001 \001(\003B\006\342\337\037\002\020\000\022+\n\013probability" +
+      "\030\002 \001(\001B\026\342\337\037\0221\000\000\000\000\000\000\000\0009\000\000\000\000\000\000\360?\022 \n\020auctio" +
+      "nExtension\030\003 \001(\003B\006\342\337\037\002\020\000\"v\n\027PriceMonitor" +
+      "ingSettings\022B\n\031priceMonitoringParameters" +
+      "\030\001 \003(\0132\037.vega.PriceMonitoringParameters\022" +
+      "\027\n\017updateFrequency\030\002 \001(\003\"\323\002\n\006Market\022\n\n\002i" +
+      "d\030\001 \001(\t\0224\n\022tradableInstrument\030\002 \001(\0132\030.ve" +
+      "ga.TradableInstrument\022\025\n\rdecimalPlaces\030\003" +
+      " \001(\004\022\030\n\004fees\030\004 \001(\0132\n.vega.Fees\022-\n\016openin" +
+      "gAuction\030\005 \001(\0132\025.vega.AuctionDuration\022-\n" +
+      "\ncontinuous\030d \001(\0132\027.vega.ContinuousTradi" +
+      "ngH\000\022)\n\010discrete\030e \001(\0132\025.vega.DiscreteTr" +
+      "adingH\000\022>\n\027priceMonitoringSettings\030\006 \001(\013" +
+      "2\035.vega.PriceMonitoringSettingsB\r\n\013tradi" +
+      "ngModeB7\n\024io.vegaprotocol.vegaZ\037code.veg" +
+      "aprotocol.io/vega/protob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -19641,62 +18205,50 @@ public final class Markets {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_SimpleModelParams_descriptor,
         new java.lang.String[] { "FactorLong", "FactorShort", "MaxMoveUp", "MinMoveDown", });
-    internal_static_vega_ExternalRiskModel_descriptor =
-      getDescriptor().getMessageTypes().get(11);
-    internal_static_vega_ExternalRiskModel_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_vega_ExternalRiskModel_descriptor,
-        new java.lang.String[] { "Name", "Socket", "Config", });
-    internal_static_vega_ExternalRiskModel_ConfigEntry_descriptor =
-      internal_static_vega_ExternalRiskModel_descriptor.getNestedTypes().get(0);
-    internal_static_vega_ExternalRiskModel_ConfigEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_vega_ExternalRiskModel_ConfigEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
     internal_static_vega_ScalingFactors_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_vega_ScalingFactors_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_ScalingFactors_descriptor,
         new java.lang.String[] { "SearchLevel", "InitialMargin", "CollateralRelease", });
     internal_static_vega_MarginCalculator_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_vega_MarginCalculator_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_MarginCalculator_descriptor,
         new java.lang.String[] { "ScalingFactors", });
     internal_static_vega_TradableInstrument_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_vega_TradableInstrument_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_TradableInstrument_descriptor,
-        new java.lang.String[] { "Instrument", "MarginCalculator", "LogNormalRiskModel", "ExternalRiskModel", "SimpleRiskModel", "RiskModel", });
+        new java.lang.String[] { "Instrument", "MarginCalculator", "LogNormalRiskModel", "SimpleRiskModel", "RiskModel", });
     internal_static_vega_FeeFactors_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_vega_FeeFactors_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_FeeFactors_descriptor,
         new java.lang.String[] { "MakerFee", "InfrastructureFee", "LiquidityFee", });
     internal_static_vega_Fees_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_vega_Fees_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Fees_descriptor,
         new java.lang.String[] { "Factors", });
     internal_static_vega_PriceMonitoringParameters_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_vega_PriceMonitoringParameters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_PriceMonitoringParameters_descriptor,
         new java.lang.String[] { "Horizon", "Probability", "AuctionExtension", });
     internal_static_vega_PriceMonitoringSettings_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_vega_PriceMonitoringSettings_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_PriceMonitoringSettings_descriptor,
         new java.lang.String[] { "PriceMonitoringParameters", "UpdateFrequency", });
     internal_static_vega_Market_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_vega_Market_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Market_descriptor,

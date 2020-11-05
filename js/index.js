@@ -7,6 +7,7 @@ var governance = require('./generated/proto/governance_pb.js')
 var markets = require('./generated/proto/markets_pb.js')
 var vega = require('./generated/proto/vega_pb.js')
 var api_trading = require('./generated/proto/api/trading_pb.js')
+var tm_replay = require('./generated/proto/tm/replay_pb.js')
 
 module.exports = {
   assets: assets,
@@ -17,5 +18,8 @@ module.exports = {
   vega: vega,
   api: {
     trading: api_trading,
+  },
+  tm: {
+    replay: tm_replay,
   },
 }

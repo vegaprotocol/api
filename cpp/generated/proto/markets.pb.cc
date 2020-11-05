@@ -20,14 +20,12 @@ extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::inte
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ContinuousTrading_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_DiscreteTrading_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_EthereumEvent_proto_2fmarkets_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ExternalRiskModel_ConfigEntry_DoNotUse_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FeeFactors_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_InstrumentMetadata_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_LogNormalModelParams_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_PriceMonitoringParameters_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ScalingFactors_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SimpleModelParams_proto_2fmarkets_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ExternalRiskModel_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Fees_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Future_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_LogNormalRiskModel_proto_2fmarkets_2eproto;
@@ -35,7 +33,7 @@ extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::inte
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_PriceMonitoringSettings_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SimpleRiskModel_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Instrument_proto_2fmarkets_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<5> scc_info_TradableInstrument_proto_2fmarkets_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_TradableInstrument_proto_2fmarkets_2eproto;
 namespace vega {
 class AuctionDurationDefaultTypeInternal {
  public:
@@ -83,14 +81,6 @@ class SimpleModelParamsDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<SimpleModelParams> _instance;
 } _SimpleModelParams_default_instance_;
-class ExternalRiskModel_ConfigEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ExternalRiskModel_ConfigEntry_DoNotUse> _instance;
-} _ExternalRiskModel_ConfigEntry_DoNotUse_default_instance_;
-class ExternalRiskModelDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ExternalRiskModel> _instance;
-} _ExternalRiskModel_default_instance_;
 class ScalingFactorsDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<ScalingFactors> _instance;
@@ -103,7 +93,6 @@ class TradableInstrumentDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<TradableInstrument> _instance;
   const ::vega::LogNormalRiskModel* lognormalriskmodel_;
-  const ::vega::ExternalRiskModel* externalriskmodel_;
   const ::vega::SimpleRiskModel* simpleriskmodel_;
 } _TradableInstrument_default_instance_;
 class FeeFactorsDefaultTypeInternal {
@@ -288,34 +277,6 @@ static void InitDefaultsSimpleModelParams_proto_2fmarkets_2eproto() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_SimpleModelParams_proto_2fmarkets_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSimpleModelParams_proto_2fmarkets_2eproto}, {}};
 
-static void InitDefaultsExternalRiskModel_ConfigEntry_DoNotUse_proto_2fmarkets_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::vega::_ExternalRiskModel_ConfigEntry_DoNotUse_default_instance_;
-    new (ptr) ::vega::ExternalRiskModel_ConfigEntry_DoNotUse();
-  }
-  ::vega::ExternalRiskModel_ConfigEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_ExternalRiskModel_ConfigEntry_DoNotUse_proto_2fmarkets_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsExternalRiskModel_ConfigEntry_DoNotUse_proto_2fmarkets_2eproto}, {}};
-
-static void InitDefaultsExternalRiskModel_proto_2fmarkets_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::vega::_ExternalRiskModel_default_instance_;
-    new (ptr) ::vega::ExternalRiskModel();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::vega::ExternalRiskModel::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_ExternalRiskModel_proto_2fmarkets_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsExternalRiskModel_proto_2fmarkets_2eproto}, {
-      &scc_info_ExternalRiskModel_ConfigEntry_DoNotUse_proto_2fmarkets_2eproto.base,}};
-
 static void InitDefaultsScalingFactors_proto_2fmarkets_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -356,12 +317,11 @@ static void InitDefaultsTradableInstrument_proto_2fmarkets_2eproto() {
   ::vega::TradableInstrument::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<5> scc_info_TradableInstrument_proto_2fmarkets_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 5, InitDefaultsTradableInstrument_proto_2fmarkets_2eproto}, {
+::google::protobuf::internal::SCCInfo<4> scc_info_TradableInstrument_proto_2fmarkets_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsTradableInstrument_proto_2fmarkets_2eproto}, {
       &scc_info_Instrument_proto_2fmarkets_2eproto.base,
       &scc_info_MarginCalculator_proto_2fmarkets_2eproto.base,
       &scc_info_LogNormalRiskModel_proto_2fmarkets_2eproto.base,
-      &scc_info_ExternalRiskModel_proto_2fmarkets_2eproto.base,
       &scc_info_SimpleRiskModel_proto_2fmarkets_2eproto.base,}};
 
 static void InitDefaultsFeeFactors_proto_2fmarkets_2eproto() {
@@ -454,8 +414,6 @@ void InitDefaults_proto_2fmarkets_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_LogNormalModelParams_proto_2fmarkets_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SimpleRiskModel_proto_2fmarkets_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SimpleModelParams_proto_2fmarkets_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_ExternalRiskModel_ConfigEntry_DoNotUse_proto_2fmarkets_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_ExternalRiskModel_proto_2fmarkets_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ScalingFactors_proto_2fmarkets_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_MarginCalculator_proto_2fmarkets_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_TradableInstrument_proto_2fmarkets_2eproto.base);
@@ -466,7 +424,7 @@ void InitDefaults_proto_2fmarkets_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_Market_proto_2fmarkets_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_proto_2fmarkets_2eproto[21];
+::google::protobuf::Metadata file_level_metadata_proto_2fmarkets_2eproto[19];
 constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_proto_2fmarkets_2eproto = nullptr;
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_proto_2fmarkets_2eproto = nullptr;
 
@@ -559,23 +517,6 @@ const ::google::protobuf::uint32 TableStruct_proto_2fmarkets_2eproto::offsets[] 
   PROTOBUF_FIELD_OFFSET(::vega::SimpleModelParams, factorshort_),
   PROTOBUF_FIELD_OFFSET(::vega::SimpleModelParams, maxmoveup_),
   PROTOBUF_FIELD_OFFSET(::vega::SimpleModelParams, minmovedown_),
-  PROTOBUF_FIELD_OFFSET(::vega::ExternalRiskModel_ConfigEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::vega::ExternalRiskModel_ConfigEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ExternalRiskModel_ConfigEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::vega::ExternalRiskModel_ConfigEntry_DoNotUse, value_),
-  0,
-  1,
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::ExternalRiskModel, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ExternalRiskModel, name_),
-  PROTOBUF_FIELD_OFFSET(::vega::ExternalRiskModel, socket_),
-  PROTOBUF_FIELD_OFFSET(::vega::ExternalRiskModel, config_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::ScalingFactors, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -598,7 +539,6 @@ const ::google::protobuf::uint32 TableStruct_proto_2fmarkets_2eproto::offsets[] 
   PROTOBUF_FIELD_OFFSET(::vega::TradableInstrument, instrument_),
   PROTOBUF_FIELD_OFFSET(::vega::TradableInstrument, margincalculator_),
   offsetof(::vega::TradableInstrumentDefaultTypeInternal, lognormalriskmodel_),
-  offsetof(::vega::TradableInstrumentDefaultTypeInternal, externalriskmodel_),
   offsetof(::vega::TradableInstrumentDefaultTypeInternal, simpleriskmodel_),
   PROTOBUF_FIELD_OFFSET(::vega::TradableInstrument, riskModel_),
   ~0u,  // no _has_bits_
@@ -657,16 +597,14 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 65, -1, sizeof(::vega::LogNormalModelParams)},
   { 73, -1, sizeof(::vega::SimpleRiskModel)},
   { 79, -1, sizeof(::vega::SimpleModelParams)},
-  { 88, 95, sizeof(::vega::ExternalRiskModel_ConfigEntry_DoNotUse)},
-  { 97, -1, sizeof(::vega::ExternalRiskModel)},
-  { 105, -1, sizeof(::vega::ScalingFactors)},
-  { 113, -1, sizeof(::vega::MarginCalculator)},
-  { 119, -1, sizeof(::vega::TradableInstrument)},
-  { 130, -1, sizeof(::vega::FeeFactors)},
-  { 138, -1, sizeof(::vega::Fees)},
-  { 144, -1, sizeof(::vega::PriceMonitoringParameters)},
-  { 152, -1, sizeof(::vega::PriceMonitoringSettings)},
-  { 159, -1, sizeof(::vega::Market)},
+  { 88, -1, sizeof(::vega::ScalingFactors)},
+  { 96, -1, sizeof(::vega::MarginCalculator)},
+  { 102, -1, sizeof(::vega::TradableInstrument)},
+  { 112, -1, sizeof(::vega::FeeFactors)},
+  { 120, -1, sizeof(::vega::Fees)},
+  { 126, -1, sizeof(::vega::PriceMonitoringParameters)},
+  { 134, -1, sizeof(::vega::PriceMonitoringSettings)},
+  { 141, -1, sizeof(::vega::Market)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -681,8 +619,6 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_LogNormalModelParams_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_SimpleRiskModel_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_SimpleModelParams_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_ExternalRiskModel_ConfigEntry_DoNotUse_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_ExternalRiskModel_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_ScalingFactors_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_MarginCalculator_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_TradableInstrument_default_instance_),
@@ -696,7 +632,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_proto_2fmarkets_2eproto = {
   {}, AddDescriptors_proto_2fmarkets_2eproto, "proto/markets.proto", schemas,
   file_default_instances, TableStruct_proto_2fmarkets_2eproto::offsets,
-  file_level_metadata_proto_2fmarkets_2eproto, 21, file_level_enum_descriptors_proto_2fmarkets_2eproto, file_level_service_descriptors_proto_2fmarkets_2eproto,
+  file_level_metadata_proto_2fmarkets_2eproto, 19, file_level_enum_descriptors_proto_2fmarkets_2eproto, file_level_service_descriptors_proto_2fmarkets_2eproto,
 };
 
 const char descriptor_table_protodef_proto_2fmarkets_2eproto[] =
@@ -725,46 +661,41 @@ const char descriptor_table_protodef_proto_2fmarkets_2eproto[] =
   "elParams\"\202\001\n\021SimpleModelParams\022\022\n\nfactor"
   "Long\030\001 \001(\001\022\023\n\013factorShort\030\002 \001(\001\022 \n\tmaxMo"
   "veUp\030\003 \001(\001B\r\342\337\037\tI\000\000\000\000\000\000\000\000\022\"\n\013minMoveDown"
-  "\030\004 \001(\001B\r\342\337\037\tQ\000\000\000\000\000\000\000\000\"\225\001\n\021ExternalRiskMo"
-  "del\022\014\n\004name\030\001 \001(\t\022\016\n\006socket\030\002 \001(\t\0223\n\006con"
-  "fig\030\003 \003(\0132#.vega.ExternalRiskModel.Confi"
-  "gEntry\032-\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
-  "lue\030\002 \001(\t:\0028\001\"W\n\016ScalingFactors\022\023\n\013searc"
-  "hLevel\030\001 \001(\001\022\025\n\rinitialMargin\030\002 \001(\001\022\031\n\021c"
-  "ollateralRelease\030\003 \001(\001\"@\n\020MarginCalculat"
-  "or\022,\n\016scalingFactors\030\001 \001(\0132\024.vega.Scalin"
-  "gFactors\"\231\002\n\022TradableInstrument\022$\n\ninstr"
-  "ument\030\001 \001(\0132\020.vega.Instrument\0220\n\020marginC"
-  "alculator\030\002 \001(\0132\026.vega.MarginCalculator\022"
-  "6\n\022logNormalRiskModel\030d \001(\0132\030.vega.LogNo"
-  "rmalRiskModelH\000\0224\n\021externalRiskModel\030e \001"
-  "(\0132\027.vega.ExternalRiskModelH\000\0220\n\017simpleR"
-  "iskModel\030f \001(\0132\025.vega.SimpleRiskModelH\000B"
-  "\013\n\triskModel\"O\n\nFeeFactors\022\020\n\010makerFee\030\001"
-  " \001(\t\022\031\n\021infrastructureFee\030\002 \001(\t\022\024\n\014liqui"
-  "dityFee\030\003 \001(\t\")\n\004Fees\022!\n\007factors\030\001 \001(\0132\020"
-  ".vega.FeeFactors\"\203\001\n\031PriceMonitoringPara"
-  "meters\022\027\n\007horizon\030\001 \001(\003B\006\342\337\037\002\020\000\022+\n\013proba"
-  "bility\030\002 \001(\001B\026\342\337\037\0221\000\000\000\000\000\000\000\0009\000\000\000\000\000\000\360\?\022 \n\020"
-  "auctionExtension\030\003 \001(\003B\006\342\337\037\002\020\000\"v\n\027PriceM"
-  "onitoringSettings\022B\n\031priceMonitoringPara"
-  "meters\030\001 \003(\0132\037.vega.PriceMonitoringParam"
-  "eters\022\027\n\017updateFrequency\030\002 \001(\003\"\323\002\n\006Marke"
-  "t\022\n\n\002id\030\001 \001(\t\0224\n\022tradableInstrument\030\002 \001("
-  "\0132\030.vega.TradableInstrument\022\025\n\rdecimalPl"
-  "aces\030\003 \001(\004\022\030\n\004fees\030\004 \001(\0132\n.vega.Fees\022-\n\016"
-  "openingAuction\030\005 \001(\0132\025.vega.AuctionDurat"
-  "ion\022-\n\ncontinuous\030d \001(\0132\027.vega.Continuou"
-  "sTradingH\000\022)\n\010discrete\030e \001(\0132\025.vega.Disc"
-  "reteTradingH\000\022>\n\027priceMonitoringSettings"
-  "\030\006 \001(\0132\035.vega.PriceMonitoringSettingsB\r\n"
-  "\013tradingModeB7\n\024io.vegaprotocol.vegaZ\037co"
-  "de.vegaprotocol.io/vega/protob\006proto3"
+  "\030\004 \001(\001B\r\342\337\037\tQ\000\000\000\000\000\000\000\000\"W\n\016ScalingFactors\022"
+  "\023\n\013searchLevel\030\001 \001(\001\022\025\n\rinitialMargin\030\002 "
+  "\001(\001\022\031\n\021collateralRelease\030\003 \001(\001\"@\n\020Margin"
+  "Calculator\022,\n\016scalingFactors\030\001 \001(\0132\024.veg"
+  "a.ScalingFactors\"\343\001\n\022TradableInstrument\022"
+  "$\n\ninstrument\030\001 \001(\0132\020.vega.Instrument\0220\n"
+  "\020marginCalculator\030\002 \001(\0132\026.vega.MarginCal"
+  "culator\0226\n\022logNormalRiskModel\030d \001(\0132\030.ve"
+  "ga.LogNormalRiskModelH\000\0220\n\017simpleRiskMod"
+  "el\030e \001(\0132\025.vega.SimpleRiskModelH\000B\013\n\tris"
+  "kModel\"O\n\nFeeFactors\022\020\n\010makerFee\030\001 \001(\t\022\031"
+  "\n\021infrastructureFee\030\002 \001(\t\022\024\n\014liquidityFe"
+  "e\030\003 \001(\t\")\n\004Fees\022!\n\007factors\030\001 \001(\0132\020.vega."
+  "FeeFactors\"\203\001\n\031PriceMonitoringParameters"
+  "\022\027\n\007horizon\030\001 \001(\003B\006\342\337\037\002\020\000\022+\n\013probability"
+  "\030\002 \001(\001B\026\342\337\037\0221\000\000\000\000\000\000\000\0009\000\000\000\000\000\000\360\?\022 \n\020auctio"
+  "nExtension\030\003 \001(\003B\006\342\337\037\002\020\000\"v\n\027PriceMonitor"
+  "ingSettings\022B\n\031priceMonitoringParameters"
+  "\030\001 \003(\0132\037.vega.PriceMonitoringParameters\022"
+  "\027\n\017updateFrequency\030\002 \001(\003\"\323\002\n\006Market\022\n\n\002i"
+  "d\030\001 \001(\t\0224\n\022tradableInstrument\030\002 \001(\0132\030.ve"
+  "ga.TradableInstrument\022\025\n\rdecimalPlaces\030\003"
+  " \001(\004\022\030\n\004fees\030\004 \001(\0132\n.vega.Fees\022-\n\016openin"
+  "gAuction\030\005 \001(\0132\025.vega.AuctionDuration\022-\n"
+  "\ncontinuous\030d \001(\0132\027.vega.ContinuousTradi"
+  "ngH\000\022)\n\010discrete\030e \001(\0132\025.vega.DiscreteTr"
+  "adingH\000\022>\n\027priceMonitoringSettings\030\006 \001(\013"
+  "2\035.vega.PriceMonitoringSettingsB\r\n\013tradi"
+  "ngModeB7\n\024io.vegaprotocol.vegaZ\037code.veg"
+  "aprotocol.io/vega/protob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fmarkets_2eproto = {
   false, InitDefaults_proto_2fmarkets_2eproto, 
   descriptor_table_protodef_proto_2fmarkets_2eproto,
-  "proto/markets.proto", &assign_descriptors_table_proto_2fmarkets_2eproto, 2397,
+  "proto/markets.proto", &assign_descriptors_table_proto_2fmarkets_2eproto, 2191,
 };
 
 void AddDescriptors_proto_2fmarkets_2eproto() {
@@ -5121,579 +5052,6 @@ void SimpleModelParams::InternalSwap(SimpleModelParams* other) {
 
 // ===================================================================
 
-ExternalRiskModel_ConfigEntry_DoNotUse::ExternalRiskModel_ConfigEntry_DoNotUse() {}
-ExternalRiskModel_ConfigEntry_DoNotUse::ExternalRiskModel_ConfigEntry_DoNotUse(::google::protobuf::Arena* arena)
-    : SuperType(arena) {}
-void ExternalRiskModel_ConfigEntry_DoNotUse::MergeFrom(const ExternalRiskModel_ConfigEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::google::protobuf::Metadata ExternalRiskModel_ConfigEntry_DoNotUse::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_proto_2fmarkets_2eproto);
-  return ::file_level_metadata_proto_2fmarkets_2eproto[11];
-}
-void ExternalRiskModel_ConfigEntry_DoNotUse::MergeFrom(
-    const ::google::protobuf::Message& other) {
-  ::google::protobuf::Message::MergeFrom(other);
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool ExternalRiskModel_ConfigEntry_DoNotUse::_ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx) {
-  using MF = ::google::protobuf::internal::MapField<
-      ExternalRiskModel_ConfigEntry_DoNotUse, EntryKeyType, EntryValueType,
-      kEntryKeyFieldType, kEntryValueFieldType,
-      kEntryDefaultEnumValue>;
-  auto mf = static_cast<MF*>(object);
-  Parser<MF, ::google::protobuf::Map<EntryKeyType, EntryValueType>> parser(mf);
-#define DO_(x) if (!(x)) return false
-  DO_(parser.ParseMap(begin, end));
-  DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-    parser.key().data(), static_cast<int>(parser.key().length()),
-    ::google::protobuf::internal::WireFormatLite::PARSE,
-    "vega.ExternalRiskModel.ConfigEntry.key"));
-  DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-    parser.value().data(), static_cast<int>(parser.value().length()),
-    ::google::protobuf::internal::WireFormatLite::PARSE,
-    "vega.ExternalRiskModel.ConfigEntry.value"));
-#undef DO_
-  return true;
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-
-// ===================================================================
-
-void ExternalRiskModel::InitAsDefaultInstance() {
-}
-class ExternalRiskModel::HasBitSetters {
- public:
-};
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ExternalRiskModel::kNameFieldNumber;
-const int ExternalRiskModel::kSocketFieldNumber;
-const int ExternalRiskModel::kConfigFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-ExternalRiskModel::ExternalRiskModel()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:vega.ExternalRiskModel)
-}
-ExternalRiskModel::ExternalRiskModel(const ExternalRiskModel& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  config_.MergeFrom(from.config_);
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.name().size() > 0) {
-    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
-  }
-  socket_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.socket().size() > 0) {
-    socket_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.socket_);
-  }
-  // @@protoc_insertion_point(copy_constructor:vega.ExternalRiskModel)
-}
-
-void ExternalRiskModel::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_ExternalRiskModel_proto_2fmarkets_2eproto.base);
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  socket_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-
-ExternalRiskModel::~ExternalRiskModel() {
-  // @@protoc_insertion_point(destructor:vega.ExternalRiskModel)
-  SharedDtor();
-}
-
-void ExternalRiskModel::SharedDtor() {
-  name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  socket_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-
-void ExternalRiskModel::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ExternalRiskModel& ExternalRiskModel::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_ExternalRiskModel_proto_2fmarkets_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void ExternalRiskModel::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.ExternalRiskModel)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  config_.Clear();
-  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  socket_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* ExternalRiskModel::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<ExternalRiskModel*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-    switch (tag >> 3) {
-      // string name = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("vega.ExternalRiskModel.name");
-        object = msg->mutable_name();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string socket = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("vega.ExternalRiskModel.socket");
-        object = msg->mutable_socket();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // map<string, string> config = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::google::protobuf::internal::SlowMapEntryParser;
-          auto parse_map = ::vega::ExternalRiskModel_ConfigEntry_DoNotUse::_ParseMap;
-          ctx->extra_parse_data().payload.clear();
-          ctx->extra_parse_data().parse_map = parse_map;
-          object = &msg->config_;
-          if (size > end - ptr) goto len_delim_till_end;
-          auto newend = ptr + size;
-          GOOGLE_PROTOBUF_PARSER_ASSERT(parse_map(ptr, newend, object, ctx));
-          ptr = newend;
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 26 && (ptr += 1));
-        break;
-      }
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
-        }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
-      }
-    }  // switch
-  }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool ExternalRiskModel::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:vega.ExternalRiskModel)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string name = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_name()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->name().data(), static_cast<int>(this->name().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "vega.ExternalRiskModel.name"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string socket = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_socket()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->socket().data(), static_cast<int>(this->socket().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "vega.ExternalRiskModel.socket"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // map<string, string> config = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          ExternalRiskModel_ConfigEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
-              ExternalRiskModel_ConfigEntry_DoNotUse,
-              ::std::string, ::std::string,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              0 >,
-            ::google::protobuf::Map< ::std::string, ::std::string > > parser(&config_);
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-              input, &parser));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.key().data(), static_cast<int>(parser.key().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "vega.ExternalRiskModel.ConfigEntry.key"));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.value().data(), static_cast<int>(parser.value().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "vega.ExternalRiskModel.ConfigEntry.value"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:vega.ExternalRiskModel)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:vega.ExternalRiskModel)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void ExternalRiskModel::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:vega.ExternalRiskModel)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string name = 1;
-  if (this->name().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), static_cast<int>(this->name().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "vega.ExternalRiskModel.name");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->name(), output);
-  }
-
-  // string socket = 2;
-  if (this->socket().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->socket().data(), static_cast<int>(this->socket().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "vega.ExternalRiskModel.socket");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->socket(), output);
-  }
-
-  // map<string, string> config = 3;
-  if (!this->config().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "vega.ExternalRiskModel.ConfigEntry.key");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "vega.ExternalRiskModel.ConfigEntry.value");
-      }
-    };
-
-    if (output->IsSerializationDeterministic() &&
-        this->config().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->config().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->config().begin();
-          it != this->config().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<ExternalRiskModel_ConfigEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(config_.NewEntryWrapper(items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(3, *entry, output);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      ::std::unique_ptr<ExternalRiskModel_ConfigEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->config().begin();
-          it != this->config().end(); ++it) {
-        entry.reset(config_.NewEntryWrapper(it->first, it->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(3, *entry, output);
-        Utf8Check::Check(&(*it));
-      }
-    }
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:vega.ExternalRiskModel)
-}
-
-::google::protobuf::uint8* ExternalRiskModel::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.ExternalRiskModel)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string name = 1;
-  if (this->name().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), static_cast<int>(this->name().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "vega.ExternalRiskModel.name");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->name(), target);
-  }
-
-  // string socket = 2;
-  if (this->socket().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->socket().data(), static_cast<int>(this->socket().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "vega.ExternalRiskModel.socket");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->socket(), target);
-  }
-
-  // map<string, string> config = 3;
-  if (!this->config().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "vega.ExternalRiskModel.ConfigEntry.key");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "vega.ExternalRiskModel.ConfigEntry.value");
-      }
-    };
-
-    if (false &&
-        this->config().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->config().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->config().begin();
-          it != this->config().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<ExternalRiskModel_ConfigEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(config_.NewEntryWrapper(items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(3, *entry, target);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      ::std::unique_ptr<ExternalRiskModel_ConfigEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->config().begin();
-          it != this->config().end(); ++it) {
-        entry.reset(config_.NewEntryWrapper(it->first, it->second));
-        target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(3, *entry, target);
-        Utf8Check::Check(&(*it));
-      }
-    }
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.ExternalRiskModel)
-  return target;
-}
-
-size_t ExternalRiskModel::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.ExternalRiskModel)
-  size_t total_size = 0;
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // map<string, string> config = 3;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->config_size());
-  {
-    ::std::unique_ptr<ExternalRiskModel_ConfigEntry_DoNotUse> entry;
-    for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-        it = this->config().begin();
-        it != this->config().end(); ++it) {
-      entry.reset(config_.NewEntryWrapper(it->first, it->second));
-      total_size += ::google::protobuf::internal::WireFormatLite::
-          MessageSizeNoVirtual(*entry);
-    }
-  }
-
-  // string name = 1;
-  if (this->name().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->name());
-  }
-
-  // string socket = 2;
-  if (this->socket().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->socket());
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void ExternalRiskModel::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.ExternalRiskModel)
-  GOOGLE_DCHECK_NE(&from, this);
-  const ExternalRiskModel* source =
-      ::google::protobuf::DynamicCastToGenerated<ExternalRiskModel>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.ExternalRiskModel)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.ExternalRiskModel)
-    MergeFrom(*source);
-  }
-}
-
-void ExternalRiskModel::MergeFrom(const ExternalRiskModel& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.ExternalRiskModel)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  config_.MergeFrom(from.config_);
-  if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
-  }
-  if (from.socket().size() > 0) {
-
-    socket_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.socket_);
-  }
-}
-
-void ExternalRiskModel::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.ExternalRiskModel)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void ExternalRiskModel::CopyFrom(const ExternalRiskModel& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.ExternalRiskModel)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool ExternalRiskModel::IsInitialized() const {
-  return true;
-}
-
-void ExternalRiskModel::Swap(ExternalRiskModel* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void ExternalRiskModel::InternalSwap(ExternalRiskModel* other) {
-  using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  config_.Swap(&other->config_);
-  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  socket_.Swap(&other->socket_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-}
-
-::google::protobuf::Metadata ExternalRiskModel::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_proto_2fmarkets_2eproto);
-  return ::file_level_metadata_proto_2fmarkets_2eproto[kIndexInFileMessages];
-}
-
-
-// ===================================================================
-
 void ScalingFactors::InitAsDefaultInstance() {
 }
 class ScalingFactors::HasBitSetters {
@@ -6332,8 +5690,6 @@ void TradableInstrument::InitAsDefaultInstance() {
       ::vega::MarginCalculator::internal_default_instance());
   ::vega::_TradableInstrument_default_instance_.lognormalriskmodel_ = const_cast< ::vega::LogNormalRiskModel*>(
       ::vega::LogNormalRiskModel::internal_default_instance());
-  ::vega::_TradableInstrument_default_instance_.externalriskmodel_ = const_cast< ::vega::ExternalRiskModel*>(
-      ::vega::ExternalRiskModel::internal_default_instance());
   ::vega::_TradableInstrument_default_instance_.simpleriskmodel_ = const_cast< ::vega::SimpleRiskModel*>(
       ::vega::SimpleRiskModel::internal_default_instance());
 }
@@ -6342,7 +5698,6 @@ class TradableInstrument::HasBitSetters {
   static const ::vega::Instrument& instrument(const TradableInstrument* msg);
   static const ::vega::MarginCalculator& margincalculator(const TradableInstrument* msg);
   static const ::vega::LogNormalRiskModel& lognormalriskmodel(const TradableInstrument* msg);
-  static const ::vega::ExternalRiskModel& externalriskmodel(const TradableInstrument* msg);
   static const ::vega::SimpleRiskModel& simpleriskmodel(const TradableInstrument* msg);
 };
 
@@ -6357,10 +5712,6 @@ TradableInstrument::HasBitSetters::margincalculator(const TradableInstrument* ms
 const ::vega::LogNormalRiskModel&
 TradableInstrument::HasBitSetters::lognormalriskmodel(const TradableInstrument* msg) {
   return *msg->riskModel_.lognormalriskmodel_;
-}
-const ::vega::ExternalRiskModel&
-TradableInstrument::HasBitSetters::externalriskmodel(const TradableInstrument* msg) {
-  return *msg->riskModel_.externalriskmodel_;
 }
 const ::vega::SimpleRiskModel&
 TradableInstrument::HasBitSetters::simpleriskmodel(const TradableInstrument* msg) {
@@ -6380,20 +5731,6 @@ void TradableInstrument::set_allocated_lognormalriskmodel(::vega::LogNormalRiskM
   }
   // @@protoc_insertion_point(field_set_allocated:vega.TradableInstrument.logNormalRiskModel)
 }
-void TradableInstrument::set_allocated_externalriskmodel(::vega::ExternalRiskModel* externalriskmodel) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  clear_riskModel();
-  if (externalriskmodel) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      externalriskmodel = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, externalriskmodel, submessage_arena);
-    }
-    set_has_externalriskmodel();
-    riskModel_.externalriskmodel_ = externalriskmodel;
-  }
-  // @@protoc_insertion_point(field_set_allocated:vega.TradableInstrument.externalRiskModel)
-}
 void TradableInstrument::set_allocated_simpleriskmodel(::vega::SimpleRiskModel* simpleriskmodel) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   clear_riskModel();
@@ -6412,7 +5749,6 @@ void TradableInstrument::set_allocated_simpleriskmodel(::vega::SimpleRiskModel* 
 const int TradableInstrument::kInstrumentFieldNumber;
 const int TradableInstrument::kMarginCalculatorFieldNumber;
 const int TradableInstrument::kLogNormalRiskModelFieldNumber;
-const int TradableInstrument::kExternalRiskModelFieldNumber;
 const int TradableInstrument::kSimpleRiskModelFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -6439,10 +5775,6 @@ TradableInstrument::TradableInstrument(const TradableInstrument& from)
   switch (from.riskModel_case()) {
     case kLogNormalRiskModel: {
       mutable_lognormalriskmodel()->::vega::LogNormalRiskModel::MergeFrom(from.lognormalriskmodel());
-      break;
-    }
-    case kExternalRiskModel: {
-      mutable_externalriskmodel()->::vega::ExternalRiskModel::MergeFrom(from.externalriskmodel());
       break;
     }
     case kSimpleRiskModel: {
@@ -6492,10 +5824,6 @@ void TradableInstrument::clear_riskModel() {
   switch (riskModel_case()) {
     case kLogNormalRiskModel: {
       delete riskModel_.lognormalriskmodel_;
-      break;
-    }
-    case kExternalRiskModel: {
-      delete riskModel_.externalriskmodel_;
       break;
     }
     case kSimpleRiskModel: {
@@ -6580,22 +5908,9 @@ const char* TradableInstrument::_InternalParse(const char* begin, const char* en
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .vega.ExternalRiskModel externalRiskModel = 101;
+      // .vega.SimpleRiskModel simpleRiskModel = 101;
       case 101: {
         if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::vega::ExternalRiskModel::_InternalParse;
-        object = msg->mutable_externalriskmodel();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // .vega.SimpleRiskModel simpleRiskModel = 102;
-      case 102: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::vega::SimpleRiskModel::_InternalParse;
@@ -6669,20 +5984,9 @@ bool TradableInstrument::MergePartialFromCodedStream(
         break;
       }
 
-      // .vega.ExternalRiskModel externalRiskModel = 101;
+      // .vega.SimpleRiskModel simpleRiskModel = 101;
       case 101: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (810 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_externalriskmodel()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .vega.SimpleRiskModel simpleRiskModel = 102;
-      case 102: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (818 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_simpleriskmodel()));
         } else {
@@ -6736,16 +6040,10 @@ void TradableInstrument::SerializeWithCachedSizes(
       100, HasBitSetters::lognormalriskmodel(this), output);
   }
 
-  // .vega.ExternalRiskModel externalRiskModel = 101;
-  if (has_externalriskmodel()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      101, HasBitSetters::externalriskmodel(this), output);
-  }
-
-  // .vega.SimpleRiskModel simpleRiskModel = 102;
+  // .vega.SimpleRiskModel simpleRiskModel = 101;
   if (has_simpleriskmodel()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      102, HasBitSetters::simpleriskmodel(this), output);
+      101, HasBitSetters::simpleriskmodel(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6782,18 +6080,11 @@ void TradableInstrument::SerializeWithCachedSizes(
         100, HasBitSetters::lognormalriskmodel(this), target);
   }
 
-  // .vega.ExternalRiskModel externalRiskModel = 101;
-  if (has_externalriskmodel()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        101, HasBitSetters::externalriskmodel(this), target);
-  }
-
-  // .vega.SimpleRiskModel simpleRiskModel = 102;
+  // .vega.SimpleRiskModel simpleRiskModel = 101;
   if (has_simpleriskmodel()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        102, HasBitSetters::simpleriskmodel(this), target);
+        101, HasBitSetters::simpleriskmodel(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6839,14 +6130,7 @@ size_t TradableInstrument::ByteSizeLong() const {
           *riskModel_.lognormalriskmodel_);
       break;
     }
-    // .vega.ExternalRiskModel externalRiskModel = 101;
-    case kExternalRiskModel: {
-      total_size += 2 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *riskModel_.externalriskmodel_);
-      break;
-    }
-    // .vega.SimpleRiskModel simpleRiskModel = 102;
+    // .vega.SimpleRiskModel simpleRiskModel = 101;
     case kSimpleRiskModel: {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -6893,10 +6177,6 @@ void TradableInstrument::MergeFrom(const TradableInstrument& from) {
   switch (from.riskModel_case()) {
     case kLogNormalRiskModel: {
       mutable_lognormalriskmodel()->::vega::LogNormalRiskModel::MergeFrom(from.lognormalriskmodel());
-      break;
-    }
-    case kExternalRiskModel: {
-      mutable_externalriskmodel()->::vega::ExternalRiskModel::MergeFrom(from.externalriskmodel());
       break;
     }
     case kSimpleRiskModel: {
@@ -9183,12 +8463,6 @@ template<> PROTOBUF_NOINLINE ::vega::SimpleRiskModel* Arena::CreateMaybeMessage<
 }
 template<> PROTOBUF_NOINLINE ::vega::SimpleModelParams* Arena::CreateMaybeMessage< ::vega::SimpleModelParams >(Arena* arena) {
   return Arena::CreateInternal< ::vega::SimpleModelParams >(arena);
-}
-template<> PROTOBUF_NOINLINE ::vega::ExternalRiskModel_ConfigEntry_DoNotUse* Arena::CreateMaybeMessage< ::vega::ExternalRiskModel_ConfigEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::vega::ExternalRiskModel_ConfigEntry_DoNotUse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::vega::ExternalRiskModel* Arena::CreateMaybeMessage< ::vega::ExternalRiskModel >(Arena* arena) {
-  return Arena::CreateInternal< ::vega::ExternalRiskModel >(arena);
 }
 template<> PROTOBUF_NOINLINE ::vega::ScalingFactors* Arena::CreateMaybeMessage< ::vega::ScalingFactors >(Arena* arena) {
   return Arena::CreateInternal< ::vega::ScalingFactors >(arena);
