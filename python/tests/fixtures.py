@@ -76,14 +76,18 @@ def walletClientWalletKeypair(walletclient) -> Tuple[Any, str, str, str]:
 
     # Use a traderbot bot for Staging.
     wname = "demo"
-    wpass = f"123"
+    wpass = "123"
 
     # Log in
     r = walletclient.login(wname, wpass)
-    assert r.status_code == 200, f"{r.url} returned HTTP {r.status_code} {r.text}"
+    assert (
+        r.status_code == 200
+    ), f"{r.url} returned HTTP {r.status_code} {r.text}"
 
     r = walletclient.listkeys()
-    assert r.status_code == 200, f"{r.url} returned HTTP {r.status_code} {r.text}"
+    assert (
+        r.status_code == 200
+    ), f"{r.url} returned HTTP {r.status_code} {r.text}"
     j = r.json()
     assert len(j["keys"]) > 0
     pubkey = j["keys"][0]["pub"]
