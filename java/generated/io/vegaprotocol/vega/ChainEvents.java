@@ -2778,7 +2778,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * An asset white-listing for an ERC20 token.
+   * An asset allowlisting for an ERC20 token.
    * </pre>
    *
    * Protobuf type {@code vega.ERC20AssetList}
@@ -3056,7 +3056,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * An asset white-listing for an ERC20 token.
+     * An asset allowlisting for an ERC20 token.
      * </pre>
      *
      * Protobuf type {@code vega.ERC20AssetList}
@@ -3371,7 +3371,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * An asset black-listing for an ERC20 token.
+   * An asset denylisting for an ERC20 token.
    * </pre>
    *
    * Protobuf type {@code vega.ERC20AssetDelist}
@@ -3649,7 +3649,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * An asset black-listing for an ERC20 token.
+     * An asset denylisting for an ERC20 token.
      * </pre>
      *
      * Protobuf type {@code vega.ERC20AssetDelist}

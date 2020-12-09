@@ -4854,7 +4854,7 @@ class GetProposalByReferenceRequest :
 
   // accessors -------------------------------------------------------
 
-  // string Reference = 1 [(.validator.field) = {
+  // string reference = 1 [(.validator.field) = {
   void clear_reference();
   static const int kReferenceFieldNumber = 1;
   const ::std::string& reference() const;
@@ -17229,46 +17229,46 @@ inline void GetProposalByIDResponse::set_allocated_data(::vega::GovernanceData* 
 
 // GetProposalByReferenceRequest
 
-// string Reference = 1 [(.validator.field) = {
+// string reference = 1 [(.validator.field) = {
 inline void GetProposalByReferenceRequest::clear_reference() {
   reference_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline const ::std::string& GetProposalByReferenceRequest::reference() const {
-  // @@protoc_insertion_point(field_get:api.GetProposalByReferenceRequest.Reference)
+  // @@protoc_insertion_point(field_get:api.GetProposalByReferenceRequest.reference)
   return reference_.GetNoArena();
 }
 inline void GetProposalByReferenceRequest::set_reference(const ::std::string& value) {
 
   reference_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.GetProposalByReferenceRequest.Reference)
+  // @@protoc_insertion_point(field_set:api.GetProposalByReferenceRequest.reference)
 }
 #if LANG_CXX11
 inline void GetProposalByReferenceRequest::set_reference(::std::string&& value) {
 
   reference_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.GetProposalByReferenceRequest.Reference)
+  // @@protoc_insertion_point(field_set_rvalue:api.GetProposalByReferenceRequest.reference)
 }
 #endif
 inline void GetProposalByReferenceRequest::set_reference(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
   reference_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.GetProposalByReferenceRequest.Reference)
+  // @@protoc_insertion_point(field_set_char:api.GetProposalByReferenceRequest.reference)
 }
 inline void GetProposalByReferenceRequest::set_reference(const char* value, size_t size) {
 
   reference_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.GetProposalByReferenceRequest.Reference)
+  // @@protoc_insertion_point(field_set_pointer:api.GetProposalByReferenceRequest.reference)
 }
 inline ::std::string* GetProposalByReferenceRequest::mutable_reference() {
 
-  // @@protoc_insertion_point(field_mutable:api.GetProposalByReferenceRequest.Reference)
+  // @@protoc_insertion_point(field_mutable:api.GetProposalByReferenceRequest.reference)
   return reference_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* GetProposalByReferenceRequest::release_reference() {
-  // @@protoc_insertion_point(field_release:api.GetProposalByReferenceRequest.Reference)
+  // @@protoc_insertion_point(field_release:api.GetProposalByReferenceRequest.reference)
 
   return reference_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -17279,7 +17279,7 @@ inline void GetProposalByReferenceRequest::set_allocated_reference(::std::string
 
   }
   reference_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), reference);
-  // @@protoc_insertion_point(field_set_allocated:api.GetProposalByReferenceRequest.Reference)
+  // @@protoc_insertion_point(field_set_allocated:api.GetProposalByReferenceRequest.reference)
 }
 
 // -------------------------------------------------------------------

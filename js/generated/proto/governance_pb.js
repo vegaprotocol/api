@@ -1030,7 +1030,7 @@ proto.vega.NewMarketConfiguration.prototype.setOpeningauctionduration = function
 
 
 /**
- * optional PriceMonitoringParameters PriceMonitoringParameters = 5;
+ * optional PriceMonitoringParameters priceMonitoringParameters = 5;
  * @return {?proto.vega.PriceMonitoringParameters}
  */
 proto.vega.NewMarketConfiguration.prototype.getPricemonitoringparameters = function() {

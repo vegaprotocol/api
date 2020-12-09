@@ -37,6 +37,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "github.com/mwitkow/go-proto-validators/validator.pb.h"
 #include <google/protobuf/wrappers.pb.h>
+#include "proto/markets.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto
@@ -47,7 +48,7 @@ struct TableStruct_proto_2fvega_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[51]
+  static const ::google::protobuf::internal::ParseTable schema[52]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -154,6 +155,9 @@ extern PriceDefaultTypeInternal _Price_default_instance_;
 class PriceLevel;
 class PriceLevelDefaultTypeInternal;
 extern PriceLevelDefaultTypeInternal _PriceLevel_default_instance_;
+class PriceMonitoringBounds;
+class PriceMonitoringBoundsDefaultTypeInternal;
+extern PriceMonitoringBoundsDefaultTypeInternal _PriceMonitoringBounds_default_instance_;
 class RiskFactor;
 class RiskFactorDefaultTypeInternal;
 extern RiskFactorDefaultTypeInternal _RiskFactor_default_instance_;
@@ -244,6 +248,7 @@ template<> ::vega::Position* Arena::CreateMaybeMessage<::vega::Position>(Arena*)
 template<> ::vega::PositionTrade* Arena::CreateMaybeMessage<::vega::PositionTrade>(Arena*);
 template<> ::vega::Price* Arena::CreateMaybeMessage<::vega::Price>(Arena*);
 template<> ::vega::PriceLevel* Arena::CreateMaybeMessage<::vega::PriceLevel>(Arena*);
+template<> ::vega::PriceMonitoringBounds* Arena::CreateMaybeMessage<::vega::PriceMonitoringBounds>(Arena*);
 template<> ::vega::RiskFactor* Arena::CreateMaybeMessage<::vega::RiskFactor>(Arena*);
 template<> ::vega::RiskResult* Arena::CreateMaybeMessage<::vega::RiskResult>(Arena*);
 template<> ::vega::RiskResult_PredictedNextRiskFactorsEntry_DoNotUse* Arena::CreateMaybeMessage<::vega::RiskResult_PredictedNextRiskFactorsEntry_DoNotUse>(Arena*);
@@ -686,12 +691,14 @@ enum TransferType {
   TRANSFER_TYPE_MAKER_FEE_RECEIVE = 10,
   TRANSFER_TYPE_INFRASTRUCTURE_FEE_PAY = 11,
   TRANSFER_TYPE_LIQUIDITY_FEE_PAY = 12,
+  TRANSFER_TYPE_BOND_LOW = 13,
+  TRANSFER_TYPE_BOND_HIGH = 14,
   TransferType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   TransferType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool TransferType_IsValid(int value);
 const TransferType TransferType_MIN = TRANSFER_TYPE_UNSPECIFIED;
-const TransferType TransferType_MAX = TRANSFER_TYPE_LIQUIDITY_FEE_PAY;
+const TransferType TransferType_MAX = TRANSFER_TYPE_BOND_HIGH;
 const int TransferType_ARRAYSIZE = TransferType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* TransferType_descriptor();
@@ -7184,6 +7191,18 @@ class MarketData :
 
   // accessors -------------------------------------------------------
 
+  // repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;
+  int pricemonitoringbounds_size() const;
+  void clear_pricemonitoringbounds();
+  static const int kPriceMonitoringBoundsFieldNumber = 23;
+  ::vega::PriceMonitoringBounds* mutable_pricemonitoringbounds(int index);
+  ::google::protobuf::RepeatedPtrField< ::vega::PriceMonitoringBounds >*
+      mutable_pricemonitoringbounds();
+  const ::vega::PriceMonitoringBounds& pricemonitoringbounds(int index) const;
+  ::vega::PriceMonitoringBounds* add_pricemonitoringbounds();
+  const ::google::protobuf::RepeatedPtrField< ::vega::PriceMonitoringBounds >&
+      pricemonitoringbounds() const;
+
   // string market = 12;
   void clear_market();
   static const int kMarketFieldNumber = 12;
@@ -7345,6 +7364,7 @@ class MarketData :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::vega::PriceMonitoringBounds > pricemonitoringbounds_;
   ::google::protobuf::internal::ArenaStringPtr market_;
   ::google::protobuf::internal::ArenaStringPtr targetstake_;
   ::google::protobuf::internal::ArenaStringPtr suppliedstake_;
@@ -7367,6 +7387,135 @@ class MarketData :
   ::google::protobuf::uint64 indicativevolume_;
   int marketstate_;
   int trigger_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_proto_2fvega_2eproto;
+};
+// -------------------------------------------------------------------
+
+class PriceMonitoringBounds :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.PriceMonitoringBounds) */ {
+ public:
+  PriceMonitoringBounds();
+  virtual ~PriceMonitoringBounds();
+
+  PriceMonitoringBounds(const PriceMonitoringBounds& from);
+
+  inline PriceMonitoringBounds& operator=(const PriceMonitoringBounds& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  PriceMonitoringBounds(PriceMonitoringBounds&& from) noexcept
+    : PriceMonitoringBounds() {
+    *this = ::std::move(from);
+  }
+
+  inline PriceMonitoringBounds& operator=(PriceMonitoringBounds&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const PriceMonitoringBounds& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PriceMonitoringBounds* internal_default_instance() {
+    return reinterpret_cast<const PriceMonitoringBounds*>(
+               &_PriceMonitoringBounds_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    41;
+
+  void Swap(PriceMonitoringBounds* other);
+  friend void swap(PriceMonitoringBounds& a, PriceMonitoringBounds& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PriceMonitoringBounds* New() const final {
+    return CreateMaybeMessage<PriceMonitoringBounds>(nullptr);
+  }
+
+  PriceMonitoringBounds* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PriceMonitoringBounds>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const PriceMonitoringBounds& from);
+  void MergeFrom(const PriceMonitoringBounds& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PriceMonitoringBounds* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .vega.PriceMonitoringTrigger trigger = 3;
+  bool has_trigger() const;
+  void clear_trigger();
+  static const int kTriggerFieldNumber = 3;
+  const ::vega::PriceMonitoringTrigger& trigger() const;
+  ::vega::PriceMonitoringTrigger* release_trigger();
+  ::vega::PriceMonitoringTrigger* mutable_trigger();
+  void set_allocated_trigger(::vega::PriceMonitoringTrigger* trigger);
+
+  // uint64 minValidPrice = 1;
+  void clear_minvalidprice();
+  static const int kMinValidPriceFieldNumber = 1;
+  ::google::protobuf::uint64 minvalidprice() const;
+  void set_minvalidprice(::google::protobuf::uint64 value);
+
+  // uint64 maxValidPrice = 2;
+  void clear_maxvalidprice();
+  static const int kMaxValidPriceFieldNumber = 2;
+  ::google::protobuf::uint64 maxvalidprice() const;
+  void set_maxvalidprice(::google::protobuf::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:vega.PriceMonitoringBounds)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::vega::PriceMonitoringTrigger* trigger_;
+  ::google::protobuf::uint64 minvalidprice_;
+  ::google::protobuf::uint64 maxvalidprice_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
@@ -7410,7 +7559,7 @@ class ErrorDetail :
                &_ErrorDetail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    42;
 
   void Swap(ErrorDetail* other);
   friend void swap(ErrorDetail& a, ErrorDetail& b) {
@@ -7558,7 +7707,7 @@ class Transaction :
                &_Transaction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    43;
 
   void Swap(Transaction* other);
   friend void swap(Transaction& a, Transaction& b) {
@@ -7740,7 +7889,7 @@ class Signature :
                &_Signature_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    44;
 
   void Swap(Signature* other);
   friend void swap(Signature& a, Signature& b) {
@@ -7882,7 +8031,7 @@ class SignedBundle :
                &_SignedBundle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    45;
 
   void Swap(SignedBundle* other);
   friend void swap(SignedBundle& a, SignedBundle& b) {
@@ -8012,7 +8161,7 @@ class NodeSignature :
                &_NodeSignature_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    46;
 
   void Swap(NodeSignature* other);
   friend void swap(NodeSignature& a, NodeSignature& b) {
@@ -8154,7 +8303,7 @@ class NetworkParameter :
                &_NetworkParameter_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    47;
 
   void Swap(NetworkParameter* other);
   friend void swap(NetworkParameter& a, NetworkParameter& b) {
@@ -8289,7 +8438,7 @@ class LiquidityOrder :
                &_LiquidityOrder_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    48;
 
   void Swap(LiquidityOrder* other);
   friend void swap(LiquidityOrder& a, LiquidityOrder& b) {
@@ -8415,7 +8564,7 @@ class LiquidityProvisionSubmission :
                &_LiquidityProvisionSubmission_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    49;
 
   void Swap(LiquidityProvisionSubmission* other);
   friend void swap(LiquidityProvisionSubmission& a, LiquidityProvisionSubmission& b) {
@@ -8583,7 +8732,7 @@ class LiquidityOrderReference :
                &_LiquidityOrderReference_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    50;
 
   void Swap(LiquidityOrderReference* other);
   friend void swap(LiquidityOrderReference& a, LiquidityOrderReference& b) {
@@ -8713,7 +8862,7 @@ class LiquidityProvision :
                &_LiquidityProvision_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    51;
 
   void Swap(LiquidityProvision* other);
   friend void swap(LiquidityProvision& a, LiquidityProvision& b) {
@@ -15763,6 +15912,113 @@ inline void MarketData::set_allocated_suppliedstake(::std::string* suppliedstake
   // @@protoc_insertion_point(field_set_allocated:vega.MarketData.suppliedStake)
 }
 
+// repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;
+inline int MarketData::pricemonitoringbounds_size() const {
+  return pricemonitoringbounds_.size();
+}
+inline void MarketData::clear_pricemonitoringbounds() {
+  pricemonitoringbounds_.Clear();
+}
+inline ::vega::PriceMonitoringBounds* MarketData::mutable_pricemonitoringbounds(int index) {
+  // @@protoc_insertion_point(field_mutable:vega.MarketData.priceMonitoringBounds)
+  return pricemonitoringbounds_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::vega::PriceMonitoringBounds >*
+MarketData::mutable_pricemonitoringbounds() {
+  // @@protoc_insertion_point(field_mutable_list:vega.MarketData.priceMonitoringBounds)
+  return &pricemonitoringbounds_;
+}
+inline const ::vega::PriceMonitoringBounds& MarketData::pricemonitoringbounds(int index) const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.priceMonitoringBounds)
+  return pricemonitoringbounds_.Get(index);
+}
+inline ::vega::PriceMonitoringBounds* MarketData::add_pricemonitoringbounds() {
+  // @@protoc_insertion_point(field_add:vega.MarketData.priceMonitoringBounds)
+  return pricemonitoringbounds_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::vega::PriceMonitoringBounds >&
+MarketData::pricemonitoringbounds() const {
+  // @@protoc_insertion_point(field_list:vega.MarketData.priceMonitoringBounds)
+  return pricemonitoringbounds_;
+}
+
+// -------------------------------------------------------------------
+
+// PriceMonitoringBounds
+
+// uint64 minValidPrice = 1;
+inline void PriceMonitoringBounds::clear_minvalidprice() {
+  minvalidprice_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 PriceMonitoringBounds::minvalidprice() const {
+  // @@protoc_insertion_point(field_get:vega.PriceMonitoringBounds.minValidPrice)
+  return minvalidprice_;
+}
+inline void PriceMonitoringBounds::set_minvalidprice(::google::protobuf::uint64 value) {
+
+  minvalidprice_ = value;
+  // @@protoc_insertion_point(field_set:vega.PriceMonitoringBounds.minValidPrice)
+}
+
+// uint64 maxValidPrice = 2;
+inline void PriceMonitoringBounds::clear_maxvalidprice() {
+  maxvalidprice_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 PriceMonitoringBounds::maxvalidprice() const {
+  // @@protoc_insertion_point(field_get:vega.PriceMonitoringBounds.maxValidPrice)
+  return maxvalidprice_;
+}
+inline void PriceMonitoringBounds::set_maxvalidprice(::google::protobuf::uint64 value) {
+
+  maxvalidprice_ = value;
+  // @@protoc_insertion_point(field_set:vega.PriceMonitoringBounds.maxValidPrice)
+}
+
+// .vega.PriceMonitoringTrigger trigger = 3;
+inline bool PriceMonitoringBounds::has_trigger() const {
+  return this != internal_default_instance() && trigger_ != nullptr;
+}
+inline const ::vega::PriceMonitoringTrigger& PriceMonitoringBounds::trigger() const {
+  const ::vega::PriceMonitoringTrigger* p = trigger_;
+  // @@protoc_insertion_point(field_get:vega.PriceMonitoringBounds.trigger)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::PriceMonitoringTrigger*>(
+      &::vega::_PriceMonitoringTrigger_default_instance_);
+}
+inline ::vega::PriceMonitoringTrigger* PriceMonitoringBounds::release_trigger() {
+  // @@protoc_insertion_point(field_release:vega.PriceMonitoringBounds.trigger)
+
+  ::vega::PriceMonitoringTrigger* temp = trigger_;
+  trigger_ = nullptr;
+  return temp;
+}
+inline ::vega::PriceMonitoringTrigger* PriceMonitoringBounds::mutable_trigger() {
+
+  if (trigger_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::PriceMonitoringTrigger>(GetArenaNoVirtual());
+    trigger_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:vega.PriceMonitoringBounds.trigger)
+  return trigger_;
+}
+inline void PriceMonitoringBounds::set_allocated_trigger(::vega::PriceMonitoringTrigger* trigger) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(trigger_);
+  }
+  if (trigger) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      trigger = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, trigger, submessage_arena);
+    }
+
+  } else {
+
+  }
+  trigger_ = trigger;
+  // @@protoc_insertion_point(field_set_allocated:vega.PriceMonitoringBounds.trigger)
+}
+
 // -------------------------------------------------------------------
 
 // ErrorDetail
@@ -17357,6 +17613,8 @@ inline void LiquidityProvision::set_status(::vega::LiquidityProvision_Status val
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

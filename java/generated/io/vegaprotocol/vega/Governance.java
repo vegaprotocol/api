@@ -2643,7 +2643,7 @@ public final class Governance {
      * price monitoring configuration
      * </pre>
      *
-     * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
+     * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 5;</code>
      */
     boolean hasPriceMonitoringParameters();
     /**
@@ -2651,7 +2651,7 @@ public final class Governance {
      * price monitoring configuration
      * </pre>
      *
-     * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
+     * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 5;</code>
      */
     io.vegaprotocol.vega.Markets.PriceMonitoringParameters getPriceMonitoringParameters();
     /**
@@ -2659,7 +2659,7 @@ public final class Governance {
      * price monitoring configuration
      * </pre>
      *
-     * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
+     * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 5;</code>
      */
     io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder getPriceMonitoringParametersOrBuilder();
 
@@ -3135,7 +3135,7 @@ public final class Governance {
      * price monitoring configuration
      * </pre>
      *
-     * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
+     * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 5;</code>
      */
     public boolean hasPriceMonitoringParameters() {
       return priceMonitoringParameters_ != null;
@@ -3145,7 +3145,7 @@ public final class Governance {
      * price monitoring configuration
      * </pre>
      *
-     * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
+     * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 5;</code>
      */
     public io.vegaprotocol.vega.Markets.PriceMonitoringParameters getPriceMonitoringParameters() {
       return priceMonitoringParameters_ == null ? io.vegaprotocol.vega.Markets.PriceMonitoringParameters.getDefaultInstance() : priceMonitoringParameters_;
@@ -3155,7 +3155,7 @@ public final class Governance {
      * price monitoring configuration
      * </pre>
      *
-     * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
+     * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 5;</code>
      */
     public io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder getPriceMonitoringParametersOrBuilder() {
       return getPriceMonitoringParameters();
@@ -4271,7 +4271,7 @@ public final class Governance {
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
+       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 5;</code>
        */
       public boolean hasPriceMonitoringParameters() {
         return priceMonitoringParametersBuilder_ != null || priceMonitoringParameters_ != null;
@@ -4281,7 +4281,7 @@ public final class Governance {
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
+       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 5;</code>
        */
       public io.vegaprotocol.vega.Markets.PriceMonitoringParameters getPriceMonitoringParameters() {
         if (priceMonitoringParametersBuilder_ == null) {
@@ -4295,7 +4295,7 @@ public final class Governance {
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
+       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 5;</code>
        */
       public Builder setPriceMonitoringParameters(io.vegaprotocol.vega.Markets.PriceMonitoringParameters value) {
         if (priceMonitoringParametersBuilder_ == null) {
@@ -4315,7 +4315,7 @@ public final class Governance {
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
+       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 5;</code>
        */
       public Builder setPriceMonitoringParameters(
           io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder builderForValue) {
@@ -4333,7 +4333,7 @@ public final class Governance {
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
+       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 5;</code>
        */
       public Builder mergePriceMonitoringParameters(io.vegaprotocol.vega.Markets.PriceMonitoringParameters value) {
         if (priceMonitoringParametersBuilder_ == null) {
@@ -4355,7 +4355,7 @@ public final class Governance {
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
+       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 5;</code>
        */
       public Builder clearPriceMonitoringParameters() {
         if (priceMonitoringParametersBuilder_ == null) {
@@ -4373,7 +4373,7 @@ public final class Governance {
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
+       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 5;</code>
        */
       public io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder getPriceMonitoringParametersBuilder() {
 
@@ -4385,7 +4385,7 @@ public final class Governance {
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
+       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 5;</code>
        */
       public io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder getPriceMonitoringParametersOrBuilder() {
         if (priceMonitoringParametersBuilder_ != null) {
@@ -4400,7 +4400,7 @@ public final class Governance {
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
+       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.PriceMonitoringParameters, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder>
@@ -14830,7 +14830,7 @@ public final class Governance {
       "t\030\001 \001(\0132\035.vega.InstrumentConfigurationB\006" +
       "\342\337\037\002 \001\022\036\n\rdecimalPlaces\030\002 \001(\004B\007\342\337\037\003\030\226\001\022\020" +
       "\n\010metadata\030\003 \003(\t\022\036\n\026openingAuctionDurati" +
-      "on\030\004 \001(\003\022B\n\031PriceMonitoringParameters\030\005 " +
+      "on\030\004 \001(\003\022B\n\031priceMonitoringParameters\030\005 " +
       "\001(\0132\037.vega.PriceMonitoringParameters\022)\n\006" +
       "simple\030d \001(\0132\027.vega.SimpleModelParamsH\000\022" +
       "-\n\tlogNormal\030e \001(\0132\030.vega.LogNormalRiskM" +

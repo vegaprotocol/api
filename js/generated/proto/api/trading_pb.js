@@ -7987,7 +7987,7 @@ proto.api.GetProposalByReferenceRequest.serializeBinaryToWriter = function(messa
 
 
 /**
- * optional string Reference = 1;
+ * optional string reference = 1;
  * @return {string}
  */
 proto.api.GetProposalByReferenceRequest.prototype.getReference = function() {

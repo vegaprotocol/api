@@ -24965,7 +24965,7 @@ public final class Trading {
      * Proposal reference. Required field.
      * </pre>
      *
-     * <code>string Reference = 1 [(.validator.field) = { ... }</code>
+     * <code>string reference = 1 [(.validator.field) = { ... }</code>
      */
     java.lang.String getReference();
     /**
@@ -24973,7 +24973,7 @@ public final class Trading {
      * Proposal reference. Required field.
      * </pre>
      *
-     * <code>string Reference = 1 [(.validator.field) = { ... }</code>
+     * <code>string reference = 1 [(.validator.field) = { ... }</code>
      */
     com.google.protobuf.ByteString
         getReferenceBytes();
@@ -25067,7 +25067,7 @@ public final class Trading {
      * Proposal reference. Required field.
      * </pre>
      *
-     * <code>string Reference = 1 [(.validator.field) = { ... }</code>
+     * <code>string reference = 1 [(.validator.field) = { ... }</code>
      */
     public java.lang.String getReference() {
       java.lang.Object ref = reference_;
@@ -25086,7 +25086,7 @@ public final class Trading {
      * Proposal reference. Required field.
      * </pre>
      *
-     * <code>string Reference = 1 [(.validator.field) = { ... }</code>
+     * <code>string reference = 1 [(.validator.field) = { ... }</code>
      */
     public com.google.protobuf.ByteString
         getReferenceBytes() {
@@ -25414,7 +25414,7 @@ public final class Trading {
        * Proposal reference. Required field.
        * </pre>
        *
-       * <code>string Reference = 1 [(.validator.field) = { ... }</code>
+       * <code>string reference = 1 [(.validator.field) = { ... }</code>
        */
       public java.lang.String getReference() {
         java.lang.Object ref = reference_;
@@ -25433,7 +25433,7 @@ public final class Trading {
        * Proposal reference. Required field.
        * </pre>
        *
-       * <code>string Reference = 1 [(.validator.field) = { ... }</code>
+       * <code>string reference = 1 [(.validator.field) = { ... }</code>
        */
       public com.google.protobuf.ByteString
           getReferenceBytes() {
@@ -25453,7 +25453,7 @@ public final class Trading {
        * Proposal reference. Required field.
        * </pre>
        *
-       * <code>string Reference = 1 [(.validator.field) = { ... }</code>
+       * <code>string reference = 1 [(.validator.field) = { ... }</code>
        */
       public Builder setReference(
           java.lang.String value) {
@@ -25470,7 +25470,7 @@ public final class Trading {
        * Proposal reference. Required field.
        * </pre>
        *
-       * <code>string Reference = 1 [(.validator.field) = { ... }</code>
+       * <code>string reference = 1 [(.validator.field) = { ... }</code>
        */
       public Builder clearReference() {
 
@@ -25483,7 +25483,7 @@ public final class Trading {
        * Proposal reference. Required field.
        * </pre>
        *
-       * <code>string Reference = 1 [(.validator.field) = { ... }</code>
+       * <code>string reference = 1 [(.validator.field) = { ... }</code>
        */
       public Builder setReferenceBytes(
           com.google.protobuf.ByteString value) {
@@ -91933,7 +91933,7 @@ public final class Trading {
       "st\022\032\n\nproposalID\030\001 \001(\tB\006\342\337\037\002X\001\"=\n\027GetPro" +
       "posalByIDResponse\022\"\n\004data\030\001 \001(\0132\024.vega.G" +
       "overnanceData\":\n\035GetProposalByReferenceR" +
-      "equest\022\031\n\tReference\030\001 \001(\tB\006\342\337\037\002X\001\"D\n\036Get" +
+      "equest\022\031\n\treference\030\001 \001(\tB\006\342\337\037\002X\001\"D\n\036Get" +
       "ProposalByReferenceResponse\022\"\n\004data\030\001 \001(" +
       "\0132\024.vega.GovernanceData\"7\n\034ObservePartyP" +
       "roposalsRequest\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001" +

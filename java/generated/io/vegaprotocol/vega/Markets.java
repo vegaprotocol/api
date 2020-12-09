@@ -16069,6 +16069,593 @@ public final class Markets {
 
   }
 
+  public interface TargetStakeParametersOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.TargetStakeParameters)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Specifies length of time window expressed in seconds for target stake calculation
+     * </pre>
+     *
+     * <code>int64 timeWindow = 1 [(.validator.field) = { ... }</code>
+     */
+    long getTimeWindow();
+
+    /**
+     * <pre>
+     * Specifies scaling factors used in target stake calculation
+     * </pre>
+     *
+     * <code>double scalingFactor = 2 [(.validator.field) = { ... }</code>
+     */
+    double getScalingFactor();
+  }
+  /**
+   * <pre>
+   * TargetStakeParameters contains parameters used in target stake calculation
+   * </pre>
+   *
+   * Protobuf type {@code vega.TargetStakeParameters}
+   */
+  public  static final class TargetStakeParameters extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.TargetStakeParameters)
+      TargetStakeParametersOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TargetStakeParameters.newBuilder() to construct.
+    private TargetStakeParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TargetStakeParameters() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TargetStakeParameters(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              timeWindow_ = input.readInt64();
+              break;
+            }
+            case 17: {
+
+              scalingFactor_ = input.readDouble();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Markets.internal_static_vega_TargetStakeParameters_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Markets.internal_static_vega_TargetStakeParameters_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Markets.TargetStakeParameters.class, io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder.class);
+    }
+
+    public static final int TIMEWINDOW_FIELD_NUMBER = 1;
+    private long timeWindow_;
+    /**
+     * <pre>
+     * Specifies length of time window expressed in seconds for target stake calculation
+     * </pre>
+     *
+     * <code>int64 timeWindow = 1 [(.validator.field) = { ... }</code>
+     */
+    public long getTimeWindow() {
+      return timeWindow_;
+    }
+
+    public static final int SCALINGFACTOR_FIELD_NUMBER = 2;
+    private double scalingFactor_;
+    /**
+     * <pre>
+     * Specifies scaling factors used in target stake calculation
+     * </pre>
+     *
+     * <code>double scalingFactor = 2 [(.validator.field) = { ... }</code>
+     */
+    public double getScalingFactor() {
+      return scalingFactor_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (timeWindow_ != 0L) {
+        output.writeInt64(1, timeWindow_);
+      }
+      if (scalingFactor_ != 0D) {
+        output.writeDouble(2, scalingFactor_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (timeWindow_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, timeWindow_);
+      }
+      if (scalingFactor_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, scalingFactor_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Markets.TargetStakeParameters)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Markets.TargetStakeParameters other = (io.vegaprotocol.vega.Markets.TargetStakeParameters) obj;
+
+      if (getTimeWindow()
+          != other.getTimeWindow()) return false;
+      if (java.lang.Double.doubleToLongBits(getScalingFactor())
+          != java.lang.Double.doubleToLongBits(
+              other.getScalingFactor())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TIMEWINDOW_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimeWindow());
+      hash = (37 * hash) + SCALINGFACTOR_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getScalingFactor()));
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Markets.TargetStakeParameters parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Markets.TargetStakeParameters parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.TargetStakeParameters parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Markets.TargetStakeParameters parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.TargetStakeParameters parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Markets.TargetStakeParameters parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.TargetStakeParameters parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Markets.TargetStakeParameters parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.TargetStakeParameters parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Markets.TargetStakeParameters parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.TargetStakeParameters parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Markets.TargetStakeParameters parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Markets.TargetStakeParameters prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * TargetStakeParameters contains parameters used in target stake calculation
+     * </pre>
+     *
+     * Protobuf type {@code vega.TargetStakeParameters}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.TargetStakeParameters)
+        io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Markets.internal_static_vega_TargetStakeParameters_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Markets.internal_static_vega_TargetStakeParameters_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Markets.TargetStakeParameters.class, io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Markets.TargetStakeParameters.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        timeWindow_ = 0L;
+
+        scalingFactor_ = 0D;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Markets.internal_static_vega_TargetStakeParameters_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Markets.TargetStakeParameters getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Markets.TargetStakeParameters.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Markets.TargetStakeParameters build() {
+        io.vegaprotocol.vega.Markets.TargetStakeParameters result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Markets.TargetStakeParameters buildPartial() {
+        io.vegaprotocol.vega.Markets.TargetStakeParameters result = new io.vegaprotocol.vega.Markets.TargetStakeParameters(this);
+        result.timeWindow_ = timeWindow_;
+        result.scalingFactor_ = scalingFactor_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Markets.TargetStakeParameters) {
+          return mergeFrom((io.vegaprotocol.vega.Markets.TargetStakeParameters)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Markets.TargetStakeParameters other) {
+        if (other == io.vegaprotocol.vega.Markets.TargetStakeParameters.getDefaultInstance()) return this;
+        if (other.getTimeWindow() != 0L) {
+          setTimeWindow(other.getTimeWindow());
+        }
+        if (other.getScalingFactor() != 0D) {
+          setScalingFactor(other.getScalingFactor());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Markets.TargetStakeParameters parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Markets.TargetStakeParameters) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long timeWindow_ ;
+      /**
+       * <pre>
+       * Specifies length of time window expressed in seconds for target stake calculation
+       * </pre>
+       *
+       * <code>int64 timeWindow = 1 [(.validator.field) = { ... }</code>
+       */
+      public long getTimeWindow() {
+        return timeWindow_;
+      }
+      /**
+       * <pre>
+       * Specifies length of time window expressed in seconds for target stake calculation
+       * </pre>
+       *
+       * <code>int64 timeWindow = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setTimeWindow(long value) {
+
+        timeWindow_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Specifies length of time window expressed in seconds for target stake calculation
+       * </pre>
+       *
+       * <code>int64 timeWindow = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearTimeWindow() {
+
+        timeWindow_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private double scalingFactor_ ;
+      /**
+       * <pre>
+       * Specifies scaling factors used in target stake calculation
+       * </pre>
+       *
+       * <code>double scalingFactor = 2 [(.validator.field) = { ... }</code>
+       */
+      public double getScalingFactor() {
+        return scalingFactor_;
+      }
+      /**
+       * <pre>
+       * Specifies scaling factors used in target stake calculation
+       * </pre>
+       *
+       * <code>double scalingFactor = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder setScalingFactor(double value) {
+
+        scalingFactor_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Specifies scaling factors used in target stake calculation
+       * </pre>
+       *
+       * <code>double scalingFactor = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearScalingFactor() {
+
+        scalingFactor_ = 0D;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.TargetStakeParameters)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.TargetStakeParameters)
+    private static final io.vegaprotocol.vega.Markets.TargetStakeParameters DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Markets.TargetStakeParameters();
+    }
+
+    public static io.vegaprotocol.vega.Markets.TargetStakeParameters getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TargetStakeParameters>
+        PARSER = new com.google.protobuf.AbstractParser<TargetStakeParameters>() {
+      @java.lang.Override
+      public TargetStakeParameters parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TargetStakeParameters(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TargetStakeParameters> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TargetStakeParameters> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Markets.TargetStakeParameters getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface MarketOrBuilder extends
       // @@protoc_insertion_point(interface_extends:vega.Market)
       com.google.protobuf.MessageOrBuilder {
@@ -16255,6 +16842,31 @@ public final class Markets {
      */
     io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder getPriceMonitoringSettingsOrBuilder();
 
+    /**
+     * <pre>
+     * TargetStakeParameters for the market
+     * </pre>
+     *
+     * <code>.vega.TargetStakeParameters targetStakeParameters = 7;</code>
+     */
+    boolean hasTargetStakeParameters();
+    /**
+     * <pre>
+     * TargetStakeParameters for the market
+     * </pre>
+     *
+     * <code>.vega.TargetStakeParameters targetStakeParameters = 7;</code>
+     */
+    io.vegaprotocol.vega.Markets.TargetStakeParameters getTargetStakeParameters();
+    /**
+     * <pre>
+     * TargetStakeParameters for the market
+     * </pre>
+     *
+     * <code>.vega.TargetStakeParameters targetStakeParameters = 7;</code>
+     */
+    io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder getTargetStakeParametersOrBuilder();
+
     public io.vegaprotocol.vega.Markets.Market.TradingModeCase getTradingModeCase();
   }
   /**
@@ -16360,6 +16972,19 @@ public final class Markets {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(priceMonitoringSettings_);
                 priceMonitoringSettings_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
+              io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder subBuilder = null;
+              if (targetStakeParameters_ != null) {
+                subBuilder = targetStakeParameters_.toBuilder();
+              }
+              targetStakeParameters_ = input.readMessage(io.vegaprotocol.vega.Markets.TargetStakeParameters.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetStakeParameters_);
+                targetStakeParameters_ = subBuilder.buildPartial();
               }
 
               break;
@@ -16730,6 +17355,39 @@ public final class Markets {
       return getPriceMonitoringSettings();
     }
 
+    public static final int TARGETSTAKEPARAMETERS_FIELD_NUMBER = 7;
+    private io.vegaprotocol.vega.Markets.TargetStakeParameters targetStakeParameters_;
+    /**
+     * <pre>
+     * TargetStakeParameters for the market
+     * </pre>
+     *
+     * <code>.vega.TargetStakeParameters targetStakeParameters = 7;</code>
+     */
+    public boolean hasTargetStakeParameters() {
+      return targetStakeParameters_ != null;
+    }
+    /**
+     * <pre>
+     * TargetStakeParameters for the market
+     * </pre>
+     *
+     * <code>.vega.TargetStakeParameters targetStakeParameters = 7;</code>
+     */
+    public io.vegaprotocol.vega.Markets.TargetStakeParameters getTargetStakeParameters() {
+      return targetStakeParameters_ == null ? io.vegaprotocol.vega.Markets.TargetStakeParameters.getDefaultInstance() : targetStakeParameters_;
+    }
+    /**
+     * <pre>
+     * TargetStakeParameters for the market
+     * </pre>
+     *
+     * <code>.vega.TargetStakeParameters targetStakeParameters = 7;</code>
+     */
+    public io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder getTargetStakeParametersOrBuilder() {
+      return getTargetStakeParameters();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -16761,6 +17419,9 @@ public final class Markets {
       }
       if (priceMonitoringSettings_ != null) {
         output.writeMessage(6, getPriceMonitoringSettings());
+      }
+      if (targetStakeParameters_ != null) {
+        output.writeMessage(7, getTargetStakeParameters());
       }
       if (tradingModeCase_ == 100) {
         output.writeMessage(100, (io.vegaprotocol.vega.Markets.ContinuousTrading) tradingMode_);
@@ -16799,6 +17460,10 @@ public final class Markets {
       if (priceMonitoringSettings_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getPriceMonitoringSettings());
+      }
+      if (targetStakeParameters_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getTargetStakeParameters());
       }
       if (tradingModeCase_ == 100) {
         size += com.google.protobuf.CodedOutputStream
@@ -16847,6 +17512,11 @@ public final class Markets {
         if (!getPriceMonitoringSettings()
             .equals(other.getPriceMonitoringSettings())) return false;
       }
+      if (hasTargetStakeParameters() != other.hasTargetStakeParameters()) return false;
+      if (hasTargetStakeParameters()) {
+        if (!getTargetStakeParameters()
+            .equals(other.getTargetStakeParameters())) return false;
+      }
       if (!getTradingModeCase().equals(other.getTradingModeCase())) return false;
       switch (tradingModeCase_) {
         case 100:
@@ -16891,6 +17561,10 @@ public final class Markets {
       if (hasPriceMonitoringSettings()) {
         hash = (37 * hash) + PRICEMONITORINGSETTINGS_FIELD_NUMBER;
         hash = (53 * hash) + getPriceMonitoringSettings().hashCode();
+      }
+      if (hasTargetStakeParameters()) {
+        hash = (37 * hash) + TARGETSTAKEPARAMETERS_FIELD_NUMBER;
+        hash = (53 * hash) + getTargetStakeParameters().hashCode();
       }
       switch (tradingModeCase_) {
         case 100:
@@ -17069,6 +17743,12 @@ public final class Markets {
           priceMonitoringSettings_ = null;
           priceMonitoringSettingsBuilder_ = null;
         }
+        if (targetStakeParametersBuilder_ == null) {
+          targetStakeParameters_ = null;
+        } else {
+          targetStakeParameters_ = null;
+          targetStakeParametersBuilder_ = null;
+        }
         tradingModeCase_ = 0;
         tradingMode_ = null;
         return this;
@@ -17132,6 +17812,11 @@ public final class Markets {
           result.priceMonitoringSettings_ = priceMonitoringSettings_;
         } else {
           result.priceMonitoringSettings_ = priceMonitoringSettingsBuilder_.build();
+        }
+        if (targetStakeParametersBuilder_ == null) {
+          result.targetStakeParameters_ = targetStakeParameters_;
+        } else {
+          result.targetStakeParameters_ = targetStakeParametersBuilder_.build();
         }
         result.tradingModeCase_ = tradingModeCase_;
         onBuilt();
@@ -17200,6 +17885,9 @@ public final class Markets {
         }
         if (other.hasPriceMonitoringSettings()) {
           mergePriceMonitoringSettings(other.getPriceMonitoringSettings());
+        }
+        if (other.hasTargetStakeParameters()) {
+          mergeTargetStakeParameters(other.getTargetStakeParameters());
         }
         switch (other.getTradingModeCase()) {
           case CONTINUOUS: {
@@ -18355,6 +19043,159 @@ public final class Markets {
         }
         return priceMonitoringSettingsBuilder_;
       }
+
+      private io.vegaprotocol.vega.Markets.TargetStakeParameters targetStakeParameters_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.TargetStakeParameters, io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder, io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder> targetStakeParametersBuilder_;
+      /**
+       * <pre>
+       * TargetStakeParameters for the market
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters targetStakeParameters = 7;</code>
+       */
+      public boolean hasTargetStakeParameters() {
+        return targetStakeParametersBuilder_ != null || targetStakeParameters_ != null;
+      }
+      /**
+       * <pre>
+       * TargetStakeParameters for the market
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters targetStakeParameters = 7;</code>
+       */
+      public io.vegaprotocol.vega.Markets.TargetStakeParameters getTargetStakeParameters() {
+        if (targetStakeParametersBuilder_ == null) {
+          return targetStakeParameters_ == null ? io.vegaprotocol.vega.Markets.TargetStakeParameters.getDefaultInstance() : targetStakeParameters_;
+        } else {
+          return targetStakeParametersBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * TargetStakeParameters for the market
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters targetStakeParameters = 7;</code>
+       */
+      public Builder setTargetStakeParameters(io.vegaprotocol.vega.Markets.TargetStakeParameters value) {
+        if (targetStakeParametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetStakeParameters_ = value;
+          onChanged();
+        } else {
+          targetStakeParametersBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * TargetStakeParameters for the market
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters targetStakeParameters = 7;</code>
+       */
+      public Builder setTargetStakeParameters(
+          io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder builderForValue) {
+        if (targetStakeParametersBuilder_ == null) {
+          targetStakeParameters_ = builderForValue.build();
+          onChanged();
+        } else {
+          targetStakeParametersBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * TargetStakeParameters for the market
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters targetStakeParameters = 7;</code>
+       */
+      public Builder mergeTargetStakeParameters(io.vegaprotocol.vega.Markets.TargetStakeParameters value) {
+        if (targetStakeParametersBuilder_ == null) {
+          if (targetStakeParameters_ != null) {
+            targetStakeParameters_ =
+              io.vegaprotocol.vega.Markets.TargetStakeParameters.newBuilder(targetStakeParameters_).mergeFrom(value).buildPartial();
+          } else {
+            targetStakeParameters_ = value;
+          }
+          onChanged();
+        } else {
+          targetStakeParametersBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * TargetStakeParameters for the market
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters targetStakeParameters = 7;</code>
+       */
+      public Builder clearTargetStakeParameters() {
+        if (targetStakeParametersBuilder_ == null) {
+          targetStakeParameters_ = null;
+          onChanged();
+        } else {
+          targetStakeParameters_ = null;
+          targetStakeParametersBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * TargetStakeParameters for the market
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters targetStakeParameters = 7;</code>
+       */
+      public io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder getTargetStakeParametersBuilder() {
+
+        onChanged();
+        return getTargetStakeParametersFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * TargetStakeParameters for the market
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters targetStakeParameters = 7;</code>
+       */
+      public io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder getTargetStakeParametersOrBuilder() {
+        if (targetStakeParametersBuilder_ != null) {
+          return targetStakeParametersBuilder_.getMessageOrBuilder();
+        } else {
+          return targetStakeParameters_ == null ?
+              io.vegaprotocol.vega.Markets.TargetStakeParameters.getDefaultInstance() : targetStakeParameters_;
+        }
+      }
+      /**
+       * <pre>
+       * TargetStakeParameters for the market
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters targetStakeParameters = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.TargetStakeParameters, io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder, io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder>
+          getTargetStakeParametersFieldBuilder() {
+        if (targetStakeParametersBuilder_ == null) {
+          targetStakeParametersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Markets.TargetStakeParameters, io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder, io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder>(
+                  getTargetStakeParameters(),
+                  getParentForChildren(),
+                  isClean());
+          targetStakeParameters_ = null;
+        }
+        return targetStakeParametersBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -18504,6 +19345,11 @@ public final class Markets {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_PriceMonitoringSettings_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_TargetStakeParameters_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_TargetStakeParameters_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Market_descriptor;
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -18564,17 +19410,20 @@ public final class Markets {
       "itoringTrigger\"g\n\027PriceMonitoringSetting" +
       "s\0223\n\nparameters\030\001 \001(\0132\037.vega.PriceMonito" +
       "ringParameters\022\027\n\017updateFrequency\030\002 \001(\003\"" +
-      "\323\002\n\006Market\022\n\n\002id\030\001 \001(\t\0224\n\022tradableInstru" +
-      "ment\030\002 \001(\0132\030.vega.TradableInstrument\022\025\n\r" +
-      "decimalPlaces\030\003 \001(\004\022\030\n\004fees\030\004 \001(\0132\n.vega" +
-      ".Fees\022-\n\016openingAuction\030\005 \001(\0132\025.vega.Auc" +
-      "tionDuration\022-\n\ncontinuous\030d \001(\0132\027.vega." +
-      "ContinuousTradingH\000\022)\n\010discrete\030e \001(\0132\025." +
-      "vega.DiscreteTradingH\000\022>\n\027priceMonitorin" +
-      "gSettings\030\006 \001(\0132\035.vega.PriceMonitoringSe" +
-      "ttingsB\r\n\013tradingModeB7\n\024io.vegaprotocol" +
-      ".vegaZ\037code.vegaprotocol.io/vega/protob\006" +
-      "proto3"
+      "Y\n\025TargetStakeParameters\022\032\n\ntimeWindow\030\001" +
+      " \001(\003B\006\342\337\037\002\020\000\022$\n\rscalingFactor\030\002 \001(\001B\r\342\337\037" +
+      "\t1\000\000\000\000\000\000\000\000\"\217\003\n\006Market\022\n\n\002id\030\001 \001(\t\0224\n\022tra" +
+      "dableInstrument\030\002 \001(\0132\030.vega.TradableIns" +
+      "trument\022\025\n\rdecimalPlaces\030\003 \001(\004\022\030\n\004fees\030\004" +
+      " \001(\0132\n.vega.Fees\022-\n\016openingAuction\030\005 \001(\013" +
+      "2\025.vega.AuctionDuration\022-\n\ncontinuous\030d " +
+      "\001(\0132\027.vega.ContinuousTradingH\000\022)\n\010discre" +
+      "te\030e \001(\0132\025.vega.DiscreteTradingH\000\022>\n\027pri" +
+      "ceMonitoringSettings\030\006 \001(\0132\035.vega.PriceM" +
+      "onitoringSettings\022:\n\025targetStakeParamete" +
+      "rs\030\007 \001(\0132\033.vega.TargetStakeParametersB\r\n" +
+      "\013tradingModeB7\n\024io.vegaprotocol.vegaZ\037co" +
+      "de.vegaprotocol.io/vega/protob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -18703,12 +19552,18 @@ public final class Markets {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_PriceMonitoringSettings_descriptor,
         new java.lang.String[] { "Parameters", "UpdateFrequency", });
-    internal_static_vega_Market_descriptor =
+    internal_static_vega_TargetStakeParameters_descriptor =
       getDescriptor().getMessageTypes().get(19);
+    internal_static_vega_TargetStakeParameters_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_TargetStakeParameters_descriptor,
+        new java.lang.String[] { "TimeWindow", "ScalingFactor", });
+    internal_static_vega_Market_descriptor =
+      getDescriptor().getMessageTypes().get(20);
     internal_static_vega_Market_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Market_descriptor,
-        new java.lang.String[] { "Id", "TradableInstrument", "DecimalPlaces", "Fees", "OpeningAuction", "Continuous", "Discrete", "PriceMonitoringSettings", "TradingMode", });
+        new java.lang.String[] { "Id", "TradableInstrument", "DecimalPlaces", "Fees", "OpeningAuction", "Continuous", "Discrete", "PriceMonitoringSettings", "TargetStakeParameters", "TradingMode", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.github.mwitkow.go_proto_validators.Validator.field);
