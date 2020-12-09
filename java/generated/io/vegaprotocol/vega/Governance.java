@@ -1314,28 +1314,10 @@ public final class Governance {
 
     /**
      * <pre>
-     * Base security used as the reference.
-     * </pre>
-     *
-     * <code>string baseName = 3 [(.validator.field) = { ... }</code>
-     */
-    java.lang.String getBaseName();
-    /**
-     * <pre>
-     * Base security used as the reference.
-     * </pre>
-     *
-     * <code>string baseName = 3 [(.validator.field) = { ... }</code>
-     */
-    com.google.protobuf.ByteString
-        getBaseNameBytes();
-
-    /**
-     * <pre>
      * Quote (secondary) security.
      * </pre>
      *
-     * <code>string quoteName = 4 [(.validator.field) = { ... }</code>
+     * <code>string quoteName = 3 [(.validator.field) = { ... }</code>
      */
     java.lang.String getQuoteName();
     /**
@@ -1343,7 +1325,7 @@ public final class Governance {
      * Quote (secondary) security.
      * </pre>
      *
-     * <code>string quoteName = 4 [(.validator.field) = { ... }</code>
+     * <code>string quoteName = 3 [(.validator.field) = { ... }</code>
      */
     com.google.protobuf.ByteString
         getQuoteNameBytes();
@@ -1394,7 +1376,6 @@ public final class Governance {
     private InstrumentConfiguration() {
       name_ = "";
       code_ = "";
-      baseName_ = "";
       quoteName_ = "";
     }
 
@@ -1435,12 +1416,6 @@ public final class Governance {
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              baseName_ = s;
-              break;
-            }
-            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
               quoteName_ = s;
@@ -1612,56 +1587,14 @@ public final class Governance {
       }
     }
 
-    public static final int BASENAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object baseName_;
-    /**
-     * <pre>
-     * Base security used as the reference.
-     * </pre>
-     *
-     * <code>string baseName = 3 [(.validator.field) = { ... }</code>
-     */
-    public java.lang.String getBaseName() {
-      java.lang.Object ref = baseName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        baseName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Base security used as the reference.
-     * </pre>
-     *
-     * <code>string baseName = 3 [(.validator.field) = { ... }</code>
-     */
-    public com.google.protobuf.ByteString
-        getBaseNameBytes() {
-      java.lang.Object ref = baseName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        baseName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int QUOTENAME_FIELD_NUMBER = 4;
+    public static final int QUOTENAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object quoteName_;
     /**
      * <pre>
      * Quote (secondary) security.
      * </pre>
      *
-     * <code>string quoteName = 4 [(.validator.field) = { ... }</code>
+     * <code>string quoteName = 3 [(.validator.field) = { ... }</code>
      */
     public java.lang.String getQuoteName() {
       java.lang.Object ref = quoteName_;
@@ -1680,7 +1613,7 @@ public final class Governance {
      * Quote (secondary) security.
      * </pre>
      *
-     * <code>string quoteName = 4 [(.validator.field) = { ... }</code>
+     * <code>string quoteName = 3 [(.validator.field) = { ... }</code>
      */
     public com.google.protobuf.ByteString
         getQuoteNameBytes() {
@@ -1754,11 +1687,8 @@ public final class Governance {
       if (!getCodeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, code_);
       }
-      if (!getBaseNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, baseName_);
-      }
       if (!getQuoteNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, quoteName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, quoteName_);
       }
       if (productCase_ == 100) {
         output.writeMessage(100, (io.vegaprotocol.vega.Governance.FutureProduct) product_);
@@ -1778,11 +1708,8 @@ public final class Governance {
       if (!getCodeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, code_);
       }
-      if (!getBaseNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, baseName_);
-      }
       if (!getQuoteNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, quoteName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, quoteName_);
       }
       if (productCase_ == 100) {
         size += com.google.protobuf.CodedOutputStream
@@ -1807,8 +1734,6 @@ public final class Governance {
           .equals(other.getName())) return false;
       if (!getCode()
           .equals(other.getCode())) return false;
-      if (!getBaseName()
-          .equals(other.getBaseName())) return false;
       if (!getQuoteName()
           .equals(other.getQuoteName())) return false;
       if (!getProductCase().equals(other.getProductCase())) return false;
@@ -1835,8 +1760,6 @@ public final class Governance {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + CODE_FIELD_NUMBER;
       hash = (53 * hash) + getCode().hashCode();
-      hash = (37 * hash) + BASENAME_FIELD_NUMBER;
-      hash = (53 * hash) + getBaseName().hashCode();
       hash = (37 * hash) + QUOTENAME_FIELD_NUMBER;
       hash = (53 * hash) + getQuoteName().hashCode();
       switch (productCase_) {
@@ -1988,8 +1911,6 @@ public final class Governance {
 
         code_ = "";
 
-        baseName_ = "";
-
         quoteName_ = "";
 
         productCase_ = 0;
@@ -2022,7 +1943,6 @@ public final class Governance {
         io.vegaprotocol.vega.Governance.InstrumentConfiguration result = new io.vegaprotocol.vega.Governance.InstrumentConfiguration(this);
         result.name_ = name_;
         result.code_ = code_;
-        result.baseName_ = baseName_;
         result.quoteName_ = quoteName_;
         if (productCase_ == 100) {
           if (futureBuilder_ == null) {
@@ -2086,10 +2006,6 @@ public final class Governance {
         }
         if (!other.getCode().isEmpty()) {
           code_ = other.code_;
-          onChanged();
-        }
-        if (!other.getBaseName().isEmpty()) {
-          baseName_ = other.baseName_;
           onChanged();
         }
         if (!other.getQuoteName().isEmpty()) {
@@ -2327,102 +2243,13 @@ public final class Governance {
         return this;
       }
 
-      private java.lang.Object baseName_ = "";
-      /**
-       * <pre>
-       * Base security used as the reference.
-       * </pre>
-       *
-       * <code>string baseName = 3 [(.validator.field) = { ... }</code>
-       */
-      public java.lang.String getBaseName() {
-        java.lang.Object ref = baseName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          baseName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Base security used as the reference.
-       * </pre>
-       *
-       * <code>string baseName = 3 [(.validator.field) = { ... }</code>
-       */
-      public com.google.protobuf.ByteString
-          getBaseNameBytes() {
-        java.lang.Object ref = baseName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          baseName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Base security used as the reference.
-       * </pre>
-       *
-       * <code>string baseName = 3 [(.validator.field) = { ... }</code>
-       */
-      public Builder setBaseName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        baseName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Base security used as the reference.
-       * </pre>
-       *
-       * <code>string baseName = 3 [(.validator.field) = { ... }</code>
-       */
-      public Builder clearBaseName() {
-
-        baseName_ = getDefaultInstance().getBaseName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Base security used as the reference.
-       * </pre>
-       *
-       * <code>string baseName = 3 [(.validator.field) = { ... }</code>
-       */
-      public Builder setBaseNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        baseName_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object quoteName_ = "";
       /**
        * <pre>
        * Quote (secondary) security.
        * </pre>
        *
-       * <code>string quoteName = 4 [(.validator.field) = { ... }</code>
+       * <code>string quoteName = 3 [(.validator.field) = { ... }</code>
        */
       public java.lang.String getQuoteName() {
         java.lang.Object ref = quoteName_;
@@ -2441,7 +2268,7 @@ public final class Governance {
        * Quote (secondary) security.
        * </pre>
        *
-       * <code>string quoteName = 4 [(.validator.field) = { ... }</code>
+       * <code>string quoteName = 3 [(.validator.field) = { ... }</code>
        */
       public com.google.protobuf.ByteString
           getQuoteNameBytes() {
@@ -2461,7 +2288,7 @@ public final class Governance {
        * Quote (secondary) security.
        * </pre>
        *
-       * <code>string quoteName = 4 [(.validator.field) = { ... }</code>
+       * <code>string quoteName = 3 [(.validator.field) = { ... }</code>
        */
       public Builder setQuoteName(
           java.lang.String value) {
@@ -2478,7 +2305,7 @@ public final class Governance {
        * Quote (secondary) security.
        * </pre>
        *
-       * <code>string quoteName = 4 [(.validator.field) = { ... }</code>
+       * <code>string quoteName = 3 [(.validator.field) = { ... }</code>
        */
       public Builder clearQuoteName() {
 
@@ -2491,7 +2318,7 @@ public final class Governance {
        * Quote (secondary) security.
        * </pre>
        *
-       * <code>string quoteName = 4 [(.validator.field) = { ... }</code>
+       * <code>string quoteName = 3 [(.validator.field) = { ... }</code>
        */
       public Builder setQuoteNameBytes(
           com.google.protobuf.ByteString value) {
@@ -2816,25 +2643,25 @@ public final class Governance {
      * price monitoring configuration
      * </pre>
      *
-     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+     * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
      */
-    boolean hasPriceMonitoringSettings();
+    boolean hasPriceMonitoringParameters();
     /**
      * <pre>
      * price monitoring configuration
      * </pre>
      *
-     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+     * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
      */
-    io.vegaprotocol.vega.Markets.PriceMonitoringSettings getPriceMonitoringSettings();
+    io.vegaprotocol.vega.Markets.PriceMonitoringParameters getPriceMonitoringParameters();
     /**
      * <pre>
      * price monitoring configuration
      * </pre>
      *
-     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+     * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
      */
-    io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder getPriceMonitoringSettingsOrBuilder();
+    io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder getPriceMonitoringParametersOrBuilder();
 
     /**
      * <pre>
@@ -3017,14 +2844,14 @@ public final class Governance {
               break;
             }
             case 42: {
-              io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder subBuilder = null;
-              if (priceMonitoringSettings_ != null) {
-                subBuilder = priceMonitoringSettings_.toBuilder();
+              io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder subBuilder = null;
+              if (priceMonitoringParameters_ != null) {
+                subBuilder = priceMonitoringParameters_.toBuilder();
               }
-              priceMonitoringSettings_ = input.readMessage(io.vegaprotocol.vega.Markets.PriceMonitoringSettings.parser(), extensionRegistry);
+              priceMonitoringParameters_ = input.readMessage(io.vegaprotocol.vega.Markets.PriceMonitoringParameters.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(priceMonitoringSettings_);
-                priceMonitoringSettings_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(priceMonitoringParameters_);
+                priceMonitoringParameters_ = subBuilder.buildPartial();
               }
 
               break;
@@ -3301,37 +3128,37 @@ public final class Governance {
       return openingAuctionDuration_;
     }
 
-    public static final int PRICEMONITORINGSETTINGS_FIELD_NUMBER = 5;
-    private io.vegaprotocol.vega.Markets.PriceMonitoringSettings priceMonitoringSettings_;
+    public static final int PRICEMONITORINGPARAMETERS_FIELD_NUMBER = 5;
+    private io.vegaprotocol.vega.Markets.PriceMonitoringParameters priceMonitoringParameters_;
     /**
      * <pre>
      * price monitoring configuration
      * </pre>
      *
-     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+     * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
      */
-    public boolean hasPriceMonitoringSettings() {
-      return priceMonitoringSettings_ != null;
+    public boolean hasPriceMonitoringParameters() {
+      return priceMonitoringParameters_ != null;
     }
     /**
      * <pre>
      * price monitoring configuration
      * </pre>
      *
-     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+     * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
      */
-    public io.vegaprotocol.vega.Markets.PriceMonitoringSettings getPriceMonitoringSettings() {
-      return priceMonitoringSettings_ == null ? io.vegaprotocol.vega.Markets.PriceMonitoringSettings.getDefaultInstance() : priceMonitoringSettings_;
+    public io.vegaprotocol.vega.Markets.PriceMonitoringParameters getPriceMonitoringParameters() {
+      return priceMonitoringParameters_ == null ? io.vegaprotocol.vega.Markets.PriceMonitoringParameters.getDefaultInstance() : priceMonitoringParameters_;
     }
     /**
      * <pre>
      * price monitoring configuration
      * </pre>
      *
-     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+     * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
      */
-    public io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder getPriceMonitoringSettingsOrBuilder() {
-      return getPriceMonitoringSettings();
+    public io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder getPriceMonitoringParametersOrBuilder() {
+      return getPriceMonitoringParameters();
     }
 
     public static final int SIMPLE_FIELD_NUMBER = 100;
@@ -3512,8 +3339,8 @@ public final class Governance {
       if (openingAuctionDuration_ != 0L) {
         output.writeInt64(4, openingAuctionDuration_);
       }
-      if (priceMonitoringSettings_ != null) {
-        output.writeMessage(5, getPriceMonitoringSettings());
+      if (priceMonitoringParameters_ != null) {
+        output.writeMessage(5, getPriceMonitoringParameters());
       }
       if (riskParametersCase_ == 100) {
         output.writeMessage(100, (io.vegaprotocol.vega.Markets.SimpleModelParams) riskParameters_);
@@ -3556,9 +3383,9 @@ public final class Governance {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, openingAuctionDuration_);
       }
-      if (priceMonitoringSettings_ != null) {
+      if (priceMonitoringParameters_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getPriceMonitoringSettings());
+          .computeMessageSize(5, getPriceMonitoringParameters());
       }
       if (riskParametersCase_ == 100) {
         size += com.google.protobuf.CodedOutputStream
@@ -3602,10 +3429,10 @@ public final class Governance {
           .equals(other.getMetadataList())) return false;
       if (getOpeningAuctionDuration()
           != other.getOpeningAuctionDuration()) return false;
-      if (hasPriceMonitoringSettings() != other.hasPriceMonitoringSettings()) return false;
-      if (hasPriceMonitoringSettings()) {
-        if (!getPriceMonitoringSettings()
-            .equals(other.getPriceMonitoringSettings())) return false;
+      if (hasPriceMonitoringParameters() != other.hasPriceMonitoringParameters()) return false;
+      if (hasPriceMonitoringParameters()) {
+        if (!getPriceMonitoringParameters()
+            .equals(other.getPriceMonitoringParameters())) return false;
       }
       if (!getRiskParametersCase().equals(other.getRiskParametersCase())) return false;
       switch (riskParametersCase_) {
@@ -3658,9 +3485,9 @@ public final class Governance {
       hash = (37 * hash) + OPENINGAUCTIONDURATION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getOpeningAuctionDuration());
-      if (hasPriceMonitoringSettings()) {
-        hash = (37 * hash) + PRICEMONITORINGSETTINGS_FIELD_NUMBER;
-        hash = (53 * hash) + getPriceMonitoringSettings().hashCode();
+      if (hasPriceMonitoringParameters()) {
+        hash = (37 * hash) + PRICEMONITORINGPARAMETERS_FIELD_NUMBER;
+        hash = (53 * hash) + getPriceMonitoringParameters().hashCode();
       }
       switch (riskParametersCase_) {
         case 100:
@@ -3835,11 +3662,11 @@ public final class Governance {
         bitField0_ = (bitField0_ & ~0x00000004);
         openingAuctionDuration_ = 0L;
 
-        if (priceMonitoringSettingsBuilder_ == null) {
-          priceMonitoringSettings_ = null;
+        if (priceMonitoringParametersBuilder_ == null) {
+          priceMonitoringParameters_ = null;
         } else {
-          priceMonitoringSettings_ = null;
-          priceMonitoringSettingsBuilder_ = null;
+          priceMonitoringParameters_ = null;
+          priceMonitoringParametersBuilder_ = null;
         }
         riskParametersCase_ = 0;
         riskParameters_ = null;
@@ -3885,10 +3712,10 @@ public final class Governance {
         }
         result.metadata_ = metadata_;
         result.openingAuctionDuration_ = openingAuctionDuration_;
-        if (priceMonitoringSettingsBuilder_ == null) {
-          result.priceMonitoringSettings_ = priceMonitoringSettings_;
+        if (priceMonitoringParametersBuilder_ == null) {
+          result.priceMonitoringParameters_ = priceMonitoringParameters_;
         } else {
-          result.priceMonitoringSettings_ = priceMonitoringSettingsBuilder_.build();
+          result.priceMonitoringParameters_ = priceMonitoringParametersBuilder_.build();
         }
         if (riskParametersCase_ == 100) {
           if (simpleBuilder_ == null) {
@@ -3988,8 +3815,8 @@ public final class Governance {
         if (other.getOpeningAuctionDuration() != 0L) {
           setOpeningAuctionDuration(other.getOpeningAuctionDuration());
         }
-        if (other.hasPriceMonitoringSettings()) {
-          mergePriceMonitoringSettings(other.getPriceMonitoringSettings());
+        if (other.hasPriceMonitoringParameters()) {
+          mergePriceMonitoringParameters(other.getPriceMonitoringParameters());
         }
         switch (other.getRiskParametersCase()) {
           case SIMPLE: {
@@ -4436,31 +4263,31 @@ public final class Governance {
         return this;
       }
 
-      private io.vegaprotocol.vega.Markets.PriceMonitoringSettings priceMonitoringSettings_;
+      private io.vegaprotocol.vega.Markets.PriceMonitoringParameters priceMonitoringParameters_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.PriceMonitoringSettings, io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder> priceMonitoringSettingsBuilder_;
+          io.vegaprotocol.vega.Markets.PriceMonitoringParameters, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder> priceMonitoringParametersBuilder_;
       /**
        * <pre>
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
        */
-      public boolean hasPriceMonitoringSettings() {
-        return priceMonitoringSettingsBuilder_ != null || priceMonitoringSettings_ != null;
+      public boolean hasPriceMonitoringParameters() {
+        return priceMonitoringParametersBuilder_ != null || priceMonitoringParameters_ != null;
       }
       /**
        * <pre>
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
        */
-      public io.vegaprotocol.vega.Markets.PriceMonitoringSettings getPriceMonitoringSettings() {
-        if (priceMonitoringSettingsBuilder_ == null) {
-          return priceMonitoringSettings_ == null ? io.vegaprotocol.vega.Markets.PriceMonitoringSettings.getDefaultInstance() : priceMonitoringSettings_;
+      public io.vegaprotocol.vega.Markets.PriceMonitoringParameters getPriceMonitoringParameters() {
+        if (priceMonitoringParametersBuilder_ == null) {
+          return priceMonitoringParameters_ == null ? io.vegaprotocol.vega.Markets.PriceMonitoringParameters.getDefaultInstance() : priceMonitoringParameters_;
         } else {
-          return priceMonitoringSettingsBuilder_.getMessage();
+          return priceMonitoringParametersBuilder_.getMessage();
         }
       }
       /**
@@ -4468,17 +4295,17 @@ public final class Governance {
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
        */
-      public Builder setPriceMonitoringSettings(io.vegaprotocol.vega.Markets.PriceMonitoringSettings value) {
-        if (priceMonitoringSettingsBuilder_ == null) {
+      public Builder setPriceMonitoringParameters(io.vegaprotocol.vega.Markets.PriceMonitoringParameters value) {
+        if (priceMonitoringParametersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          priceMonitoringSettings_ = value;
+          priceMonitoringParameters_ = value;
           onChanged();
         } else {
-          priceMonitoringSettingsBuilder_.setMessage(value);
+          priceMonitoringParametersBuilder_.setMessage(value);
         }
 
         return this;
@@ -4488,15 +4315,15 @@ public final class Governance {
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
        */
-      public Builder setPriceMonitoringSettings(
-          io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder builderForValue) {
-        if (priceMonitoringSettingsBuilder_ == null) {
-          priceMonitoringSettings_ = builderForValue.build();
+      public Builder setPriceMonitoringParameters(
+          io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder builderForValue) {
+        if (priceMonitoringParametersBuilder_ == null) {
+          priceMonitoringParameters_ = builderForValue.build();
           onChanged();
         } else {
-          priceMonitoringSettingsBuilder_.setMessage(builderForValue.build());
+          priceMonitoringParametersBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
@@ -4506,19 +4333,19 @@ public final class Governance {
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
        */
-      public Builder mergePriceMonitoringSettings(io.vegaprotocol.vega.Markets.PriceMonitoringSettings value) {
-        if (priceMonitoringSettingsBuilder_ == null) {
-          if (priceMonitoringSettings_ != null) {
-            priceMonitoringSettings_ =
-              io.vegaprotocol.vega.Markets.PriceMonitoringSettings.newBuilder(priceMonitoringSettings_).mergeFrom(value).buildPartial();
+      public Builder mergePriceMonitoringParameters(io.vegaprotocol.vega.Markets.PriceMonitoringParameters value) {
+        if (priceMonitoringParametersBuilder_ == null) {
+          if (priceMonitoringParameters_ != null) {
+            priceMonitoringParameters_ =
+              io.vegaprotocol.vega.Markets.PriceMonitoringParameters.newBuilder(priceMonitoringParameters_).mergeFrom(value).buildPartial();
           } else {
-            priceMonitoringSettings_ = value;
+            priceMonitoringParameters_ = value;
           }
           onChanged();
         } else {
-          priceMonitoringSettingsBuilder_.mergeFrom(value);
+          priceMonitoringParametersBuilder_.mergeFrom(value);
         }
 
         return this;
@@ -4528,15 +4355,15 @@ public final class Governance {
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
        */
-      public Builder clearPriceMonitoringSettings() {
-        if (priceMonitoringSettingsBuilder_ == null) {
-          priceMonitoringSettings_ = null;
+      public Builder clearPriceMonitoringParameters() {
+        if (priceMonitoringParametersBuilder_ == null) {
+          priceMonitoringParameters_ = null;
           onChanged();
         } else {
-          priceMonitoringSettings_ = null;
-          priceMonitoringSettingsBuilder_ = null;
+          priceMonitoringParameters_ = null;
+          priceMonitoringParametersBuilder_ = null;
         }
 
         return this;
@@ -4546,26 +4373,26 @@ public final class Governance {
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
        */
-      public io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder getPriceMonitoringSettingsBuilder() {
+      public io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder getPriceMonitoringParametersBuilder() {
 
         onChanged();
-        return getPriceMonitoringSettingsFieldBuilder().getBuilder();
+        return getPriceMonitoringParametersFieldBuilder().getBuilder();
       }
       /**
        * <pre>
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
        */
-      public io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder getPriceMonitoringSettingsOrBuilder() {
-        if (priceMonitoringSettingsBuilder_ != null) {
-          return priceMonitoringSettingsBuilder_.getMessageOrBuilder();
+      public io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder getPriceMonitoringParametersOrBuilder() {
+        if (priceMonitoringParametersBuilder_ != null) {
+          return priceMonitoringParametersBuilder_.getMessageOrBuilder();
         } else {
-          return priceMonitoringSettings_ == null ?
-              io.vegaprotocol.vega.Markets.PriceMonitoringSettings.getDefaultInstance() : priceMonitoringSettings_;
+          return priceMonitoringParameters_ == null ?
+              io.vegaprotocol.vega.Markets.PriceMonitoringParameters.getDefaultInstance() : priceMonitoringParameters_;
         }
       }
       /**
@@ -4573,20 +4400,20 @@ public final class Governance {
        * price monitoring configuration
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 5;</code>
+       * <code>.vega.PriceMonitoringParameters PriceMonitoringParameters = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.PriceMonitoringSettings, io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder>
-          getPriceMonitoringSettingsFieldBuilder() {
-        if (priceMonitoringSettingsBuilder_ == null) {
-          priceMonitoringSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.vegaprotocol.vega.Markets.PriceMonitoringSettings, io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder>(
-                  getPriceMonitoringSettings(),
+          io.vegaprotocol.vega.Markets.PriceMonitoringParameters, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder>
+          getPriceMonitoringParametersFieldBuilder() {
+        if (priceMonitoringParametersBuilder_ == null) {
+          priceMonitoringParametersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Markets.PriceMonitoringParameters, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder>(
+                  getPriceMonitoringParameters(),
                   getParentForChildren(),
                   isClean());
-          priceMonitoringSettings_ = null;
+          priceMonitoringParameters_ = null;
         }
-        return priceMonitoringSettingsBuilder_;
+        return priceMonitoringParametersBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -14995,87 +14822,86 @@ public final class Governance {
       ".proto\032\023proto/markets.proto\032\020proto/vega." +
       "proto\032\022proto/assets.proto\"@\n\rFutureProdu" +
       "ct\022\030\n\010maturity\030\001 \001(\tB\006\342\337\037\002X\001\022\025\n\005asset\030\002 " +
-      "\001(\tB\006\342\337\037\002X\001\"\254\001\n\027InstrumentConfiguration\022" +
+      "\001(\tB\006\342\337\037\002X\001\"\222\001\n\027InstrumentConfiguration\022" +
       "\024\n\004name\030\001 \001(\tB\006\342\337\037\002X\001\022\024\n\004code\030\002 \001(\tB\006\342\337\037" +
-      "\002X\001\022\030\n\010baseName\030\003 \001(\tB\006\342\337\037\002X\001\022\031\n\tquoteNa" +
-      "me\030\004 \001(\tB\006\342\337\037\002X\001\022%\n\006future\030d \001(\0132\023.vega." +
-      "FutureProductH\000B\t\n\007product\"\274\003\n\026NewMarket" +
-      "Configuration\0229\n\ninstrument\030\001 \001(\0132\035.vega" +
-      ".InstrumentConfigurationB\006\342\337\037\002 \001\022\036\n\rdeci" +
-      "malPlaces\030\002 \001(\004B\007\342\337\037\003\030\226\001\022\020\n\010metadata\030\003 \003" +
-      "(\t\022\036\n\026openingAuctionDuration\030\004 \001(\003\022>\n\027pr" +
-      "iceMonitoringSettings\030\005 \001(\0132\035.vega.Price" +
-      "MonitoringSettings\022)\n\006simple\030d \001(\0132\027.veg" +
-      "a.SimpleModelParamsH\000\022-\n\tlogNormal\030e \001(\013" +
-      "2\030.vega.LogNormalRiskModelH\000\022.\n\ncontinuo" +
-      "us\030\310\001 \001(\0132\027.vega.ContinuousTradingH\001\022*\n\010" +
-      "discrete\030\311\001 \001(\0132\025.vega.DiscreteTradingH\001" +
-      "B\020\n\016riskParametersB\r\n\013tradingMode\"B\n\tNew" +
-      "Market\0225\n\007changes\030\001 \001(\0132\034.vega.NewMarket" +
-      "ConfigurationB\006\342\337\037\002 \001\"\016\n\014UpdateMarket\"I\n" +
-      "\026UpdateNetworkParameter\022/\n\007changes\030\001 \001(\013" +
-      "2\026.vega.NetworkParameterB\006\342\337\037\002 \001\"6\n\010NewA" +
-      "sset\022*\n\007changes\030\001 \001(\0132\021.vega.AssetSource" +
-      "B\006\342\337\037\002 \001\"\262\002\n\rProposalTerms\022 \n\020closingTim" +
-      "estamp\030\001 \001(\003B\006\342\337\037\002\020\000\022\"\n\022enactmentTimesta" +
-      "mp\030\002 \001(\003B\006\342\337\037\002\020\000\022\033\n\023validationTimestamp\030" +
-      "\003 \001(\003\022*\n\014updateMarket\030e \001(\0132\022.vega.Updat" +
-      "eMarketH\000\022$\n\tnewMarket\030f \001(\0132\017.vega.NewM" +
-      "arketH\000\022>\n\026updateNetworkParameter\030g \001(\0132" +
-      "\034.vega.UpdateNetworkParameterH\000\022\"\n\010newAs" +
-      "set\030h \001(\0132\016.vega.NewAssetH\000B\010\n\006change\"\306\002" +
-      "\n\016GovernanceData\022 \n\010proposal\030\001 \001(\0132\016.veg" +
-      "a.Proposal\022\027\n\003yes\030\002 \003(\0132\n.vega.Vote\022\026\n\002n" +
-      "o\030\003 \003(\0132\n.vega.Vote\0224\n\010yesParty\030\004 \003(\0132\"." +
-      "vega.GovernanceData.YesPartyEntry\0222\n\007noP" +
-      "arty\030\005 \003(\0132!.vega.GovernanceData.NoParty" +
-      "Entry\032;\n\rYesPartyEntry\022\013\n\003key\030\001 \001(\t\022\031\n\005v" +
-      "alue\030\002 \001(\0132\n.vega.Vote:\0028\001\032:\n\014NoPartyEnt" +
-      "ry\022\013\n\003key\030\001 \001(\t\022\031\n\005value\030\002 \001(\0132\n.vega.Vo" +
-      "te:\0028\001\"\205\003\n\010Proposal\022\n\n\002ID\030\001 \001(\t\022\021\n\trefer" +
-      "ence\030\002 \001(\t\022\027\n\007partyID\030\003 \001(\tB\006\342\337\037\002X\001\022,\n\005s" +
-      "tate\030\004 \001(\0162\024.vega.Proposal.StateB\007\342\337\037\003\210\001" +
-      "\001\022\021\n\ttimestamp\030\005 \001(\003\022*\n\005terms\030\006 \001(\0132\023.ve" +
-      "ga.ProposalTermsB\006\342\337\037\002 \001\022#\n\006reason\030\007 \001(\016" +
-      "2\023.vega.ProposalError\"\256\001\n\005State\022\025\n\021STATE" +
-      "_UNSPECIFIED\020\000\022\020\n\014STATE_FAILED\020\001\022\016\n\nSTAT" +
-      "E_OPEN\020\002\022\020\n\014STATE_PASSED\020\003\022\022\n\016STATE_REJE" +
-      "CTED\020\004\022\022\n\016STATE_DECLINED\020\005\022\021\n\rSTATE_ENAC" +
-      "TED\020\006\022\037\n\033STATE_WAITING_FOR_NODE_VOTE\020\007\"\265" +
-      "\001\n\004Vote\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\022(\n\005valu" +
-      "e\030\002 \001(\0162\020.vega.Vote.ValueB\007\342\337\037\003\210\001\001\022\032\n\npr" +
-      "oposalID\030\003 \001(\tB\006\342\337\037\002X\001\022\021\n\ttimestamp\030\004 \001(" +
-      "\003\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VAL" +
-      "UE_NO\020\001\022\r\n\tVALUE_YES\020\002*\262\010\n\rProposalError" +
-      "\022\036\n\032PROPOSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROP" +
-      "OSAL_ERROR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROP" +
-      "OSAL_ERROR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROP" +
-      "OSAL_ERROR_ENACT_TIME_TOO_SOON\020\003\022&\n\"PROP" +
-      "OSAL_ERROR_ENACT_TIME_TOO_LATE\020\004\022&\n\"PROP" +
-      "OSAL_ERROR_INSUFFICIENT_TOKENS\020\005\022.\n*PROP" +
-      "OSAL_ERROR_INVALID_INSTRUMENT_SECURITY\020\006" +
-      "\022\035\n\031PROPOSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PROPO" +
-      "SAL_ERROR_UNSUPPORTED_PRODUCT\020\010\0223\n/PROPO" +
-      "SAL_ERROR_INVALID_FUTURE_PRODUCT_TIMESTA" +
-      "MP\020\t\022-\n)PROPOSAL_ERROR_PRODUCT_MATURITY_" +
-      "IS_PASSED\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRADING" +
-      "_MODE\020\013\022+\n\'PROPOSAL_ERROR_UNSUPPORTED_TR" +
-      "ADING_MODE\020\014\022)\n%PROPOSAL_ERROR_NODE_VALI" +
-      "DATION_FAILED\020\r\022.\n*PROPOSAL_ERROR_MISSIN" +
-      "G_BUILTIN_ASSET_FIELD\020\016\0221\n-PROPOSAL_ERRO" +
-      "R_MISSING_ERC20_CONTRACT_ADDRESS\020\017\022 \n\034PR" +
-      "OPOSAL_ERROR_INVALID_ASSET\020\020\022*\n&PROPOSAL" +
-      "_ERROR_INCOMPATIBLE_TIMESTAMPS\020\021\022%\n!PROP" +
-      "OSAL_ERROR_NO_RISK_PARAMETERS\020\022\0220\n,PROPO" +
-      "SAL_ERROR_NETWORK_PARAMETER_INVALID_KEY\020" +
-      "\023\0222\n.PROPOSAL_ERROR_NETWORK_PARAMETER_IN" +
-      "VALID_VALUE\020\024\0226\n2PROPOSAL_ERROR_NETWORK_" +
-      "PARAMETER_VALIDATION_FAILED\020\025\0225\n1PROPOSA" +
-      "L_ERROR_OPENING_AUCTION_DURATION_TOO_SMA" +
-      "LL\020\026\0225\n1PROPOSAL_ERROR_OPENING_AUCTION_D" +
-      "URATION_TOO_LARGE\020\027B7\n\024io.vegaprotocol.v" +
-      "egaZ\037code.vegaprotocol.io/vega/protob\006pr" +
-      "oto3"
+      "\002X\001\022\031\n\tquoteName\030\003 \001(\tB\006\342\337\037\002X\001\022%\n\006future" +
+      "\030d \001(\0132\023.vega.FutureProductH\000B\t\n\007product" +
+      "\"\300\003\n\026NewMarketConfiguration\0229\n\ninstrumen" +
+      "t\030\001 \001(\0132\035.vega.InstrumentConfigurationB\006" +
+      "\342\337\037\002 \001\022\036\n\rdecimalPlaces\030\002 \001(\004B\007\342\337\037\003\030\226\001\022\020" +
+      "\n\010metadata\030\003 \003(\t\022\036\n\026openingAuctionDurati" +
+      "on\030\004 \001(\003\022B\n\031PriceMonitoringParameters\030\005 " +
+      "\001(\0132\037.vega.PriceMonitoringParameters\022)\n\006" +
+      "simple\030d \001(\0132\027.vega.SimpleModelParamsH\000\022" +
+      "-\n\tlogNormal\030e \001(\0132\030.vega.LogNormalRiskM" +
+      "odelH\000\022.\n\ncontinuous\030\310\001 \001(\0132\027.vega.Conti" +
+      "nuousTradingH\001\022*\n\010discrete\030\311\001 \001(\0132\025.vega" +
+      ".DiscreteTradingH\001B\020\n\016riskParametersB\r\n\013" +
+      "tradingMode\"B\n\tNewMarket\0225\n\007changes\030\001 \001(" +
+      "\0132\034.vega.NewMarketConfigurationB\006\342\337\037\002 \001\"" +
+      "\016\n\014UpdateMarket\"I\n\026UpdateNetworkParamete" +
+      "r\022/\n\007changes\030\001 \001(\0132\026.vega.NetworkParamet" +
+      "erB\006\342\337\037\002 \001\"6\n\010NewAsset\022*\n\007changes\030\001 \001(\0132" +
+      "\021.vega.AssetSourceB\006\342\337\037\002 \001\"\262\002\n\rProposalT" +
+      "erms\022 \n\020closingTimestamp\030\001 \001(\003B\006\342\337\037\002\020\000\022\"" +
+      "\n\022enactmentTimestamp\030\002 \001(\003B\006\342\337\037\002\020\000\022\033\n\023va" +
+      "lidationTimestamp\030\003 \001(\003\022*\n\014updateMarket\030" +
+      "e \001(\0132\022.vega.UpdateMarketH\000\022$\n\tnewMarket" +
+      "\030f \001(\0132\017.vega.NewMarketH\000\022>\n\026updateNetwo" +
+      "rkParameter\030g \001(\0132\034.vega.UpdateNetworkPa" +
+      "rameterH\000\022\"\n\010newAsset\030h \001(\0132\016.vega.NewAs" +
+      "setH\000B\010\n\006change\"\306\002\n\016GovernanceData\022 \n\010pr" +
+      "oposal\030\001 \001(\0132\016.vega.Proposal\022\027\n\003yes\030\002 \003(" +
+      "\0132\n.vega.Vote\022\026\n\002no\030\003 \003(\0132\n.vega.Vote\0224\n" +
+      "\010yesParty\030\004 \003(\0132\".vega.GovernanceData.Ye" +
+      "sPartyEntry\0222\n\007noParty\030\005 \003(\0132!.vega.Gove" +
+      "rnanceData.NoPartyEntry\032;\n\rYesPartyEntry" +
+      "\022\013\n\003key\030\001 \001(\t\022\031\n\005value\030\002 \001(\0132\n.vega.Vote" +
+      ":\0028\001\032:\n\014NoPartyEntry\022\013\n\003key\030\001 \001(\t\022\031\n\005val" +
+      "ue\030\002 \001(\0132\n.vega.Vote:\0028\001\"\205\003\n\010Proposal\022\n\n" +
+      "\002ID\030\001 \001(\t\022\021\n\treference\030\002 \001(\t\022\027\n\007partyID\030" +
+      "\003 \001(\tB\006\342\337\037\002X\001\022,\n\005state\030\004 \001(\0162\024.vega.Prop" +
+      "osal.StateB\007\342\337\037\003\210\001\001\022\021\n\ttimestamp\030\005 \001(\003\022*" +
+      "\n\005terms\030\006 \001(\0132\023.vega.ProposalTermsB\006\342\337\037\002" +
+      " \001\022#\n\006reason\030\007 \001(\0162\023.vega.ProposalError\"" +
+      "\256\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014STAT" +
+      "E_FAILED\020\001\022\016\n\nSTATE_OPEN\020\002\022\020\n\014STATE_PASS" +
+      "ED\020\003\022\022\n\016STATE_REJECTED\020\004\022\022\n\016STATE_DECLIN" +
+      "ED\020\005\022\021\n\rSTATE_ENACTED\020\006\022\037\n\033STATE_WAITING" +
+      "_FOR_NODE_VOTE\020\007\"\265\001\n\004Vote\022\027\n\007partyID\030\001 \001" +
+      "(\tB\006\342\337\037\002X\001\022(\n\005value\030\002 \001(\0162\020.vega.Vote.Va" +
+      "lueB\007\342\337\037\003\210\001\001\022\032\n\nproposalID\030\003 \001(\tB\006\342\337\037\002X\001" +
+      "\022\021\n\ttimestamp\030\004 \001(\003\";\n\005Value\022\025\n\021VALUE_UN" +
+      "SPECIFIED\020\000\022\014\n\010VALUE_NO\020\001\022\r\n\tVALUE_YES\020\002" +
+      "*\262\010\n\rProposalError\022\036\n\032PROPOSAL_ERROR_UNS" +
+      "PECIFIED\020\000\022&\n\"PROPOSAL_ERROR_CLOSE_TIME_" +
+      "TOO_SOON\020\001\022&\n\"PROPOSAL_ERROR_CLOSE_TIME_" +
+      "TOO_LATE\020\002\022&\n\"PROPOSAL_ERROR_ENACT_TIME_" +
+      "TOO_SOON\020\003\022&\n\"PROPOSAL_ERROR_ENACT_TIME_" +
+      "TOO_LATE\020\004\022&\n\"PROPOSAL_ERROR_INSUFFICIEN" +
+      "T_TOKENS\020\005\022.\n*PROPOSAL_ERROR_INVALID_INS" +
+      "TRUMENT_SECURITY\020\006\022\035\n\031PROPOSAL_ERROR_NO_" +
+      "PRODUCT\020\007\022&\n\"PROPOSAL_ERROR_UNSUPPORTED_" +
+      "PRODUCT\020\010\0223\n/PROPOSAL_ERROR_INVALID_FUTU" +
+      "RE_PRODUCT_TIMESTAMP\020\t\022-\n)PROPOSAL_ERROR" +
+      "_PRODUCT_MATURITY_IS_PASSED\020\n\022\"\n\036PROPOSA" +
+      "L_ERROR_NO_TRADING_MODE\020\013\022+\n\'PROPOSAL_ER" +
+      "ROR_UNSUPPORTED_TRADING_MODE\020\014\022)\n%PROPOS" +
+      "AL_ERROR_NODE_VALIDATION_FAILED\020\r\022.\n*PRO" +
+      "POSAL_ERROR_MISSING_BUILTIN_ASSET_FIELD\020" +
+      "\016\0221\n-PROPOSAL_ERROR_MISSING_ERC20_CONTRA" +
+      "CT_ADDRESS\020\017\022 \n\034PROPOSAL_ERROR_INVALID_A" +
+      "SSET\020\020\022*\n&PROPOSAL_ERROR_INCOMPATIBLE_TI" +
+      "MESTAMPS\020\021\022%\n!PROPOSAL_ERROR_NO_RISK_PAR" +
+      "AMETERS\020\022\0220\n,PROPOSAL_ERROR_NETWORK_PARA" +
+      "METER_INVALID_KEY\020\023\0222\n.PROPOSAL_ERROR_NE" +
+      "TWORK_PARAMETER_INVALID_VALUE\020\024\0226\n2PROPO" +
+      "SAL_ERROR_NETWORK_PARAMETER_VALIDATION_F" +
+      "AILED\020\025\0225\n1PROPOSAL_ERROR_OPENING_AUCTIO" +
+      "N_DURATION_TOO_SMALL\020\026\0225\n1PROPOSAL_ERROR" +
+      "_OPENING_AUCTION_DURATION_TOO_LARGE\020\027B7\n" +
+      "\024io.vegaprotocol.vegaZ\037code.vegaprotocol" +
+      ".io/vega/protob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -15104,13 +14930,13 @@ public final class Governance {
     internal_static_vega_InstrumentConfiguration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_InstrumentConfiguration_descriptor,
-        new java.lang.String[] { "Name", "Code", "BaseName", "QuoteName", "Future", "Product", });
+        new java.lang.String[] { "Name", "Code", "QuoteName", "Future", "Product", });
     internal_static_vega_NewMarketConfiguration_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_vega_NewMarketConfiguration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_NewMarketConfiguration_descriptor,
-        new java.lang.String[] { "Instrument", "DecimalPlaces", "Metadata", "OpeningAuctionDuration", "PriceMonitoringSettings", "Simple", "LogNormal", "Continuous", "Discrete", "RiskParameters", "TradingMode", });
+        new java.lang.String[] { "Instrument", "DecimalPlaces", "Metadata", "OpeningAuctionDuration", "PriceMonitoringParameters", "Simple", "LogNormal", "Continuous", "Discrete", "RiskParameters", "TradingMode", });
     internal_static_vega_NewMarket_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_vega_NewMarket_fieldAccessorTable = new

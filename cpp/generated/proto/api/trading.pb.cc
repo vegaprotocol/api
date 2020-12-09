@@ -20,7 +20,7 @@ extern PROTOBUF_INTERNAL_EXPORT_proto_2fapi_2ftrading_2eproto ::google::protobuf
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fapi_2ftrading_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Pagination_proto_2fapi_2ftrading_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fassets_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Asset_proto_2fassets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fchain_5fevents_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_ChainEvent_proto_2fchain_5fevents_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fevents_2eproto ::google::protobuf::internal::SCCInfo<25> scc_info_BusEvent_proto_2fevents_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fevents_2eproto ::google::protobuf::internal::SCCInfo<26> scc_info_BusEvent_proto_2fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fgovernance_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Vote_proto_2fgovernance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fgovernance_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Proposal_proto_2fgovernance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fgovernance_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_GovernanceData_proto_2fgovernance_2eproto;
@@ -46,7 +46,7 @@ extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::interna
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Trade_proto_2fvega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_WithdrawSubmission_proto_2fvega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Withdrawal_proto_2fvega_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_OrderAmendment_proto_2fvega_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_OrderAmendment_proto_2fvega_2eproto;
 namespace api {
 class PropagateChainEventRequestDefaultTypeInternal {
  public:
@@ -2422,7 +2422,7 @@ void InitDefaults_proto_2fapi_2ftrading_2eproto() {
 }
 
 ::google::protobuf::Metadata file_level_metadata_proto_2fapi_2ftrading_2eproto[121];
-constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_proto_2fapi_2ftrading_2eproto = nullptr;
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_proto_2fapi_2ftrading_2eproto[1];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_proto_2fapi_2ftrading_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_proto_2fapi_2ftrading_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -2446,6 +2446,7 @@ const ::google::protobuf::uint32 TableStruct_proto_2fapi_2ftrading_2eproto::offs
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::api::SubmitTransactionRequest, tx_),
+  PROTOBUF_FIELD_OFFSET(::api::SubmitTransactionRequest, type_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::api::SubmitTransactionResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -3203,124 +3204,124 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 0, -1, sizeof(::api::PropagateChainEventRequest)},
   { 8, -1, sizeof(::api::PropagateChainEventResponse)},
   { 14, -1, sizeof(::api::SubmitTransactionRequest)},
-  { 20, -1, sizeof(::api::SubmitTransactionResponse)},
-  { 26, -1, sizeof(::api::PrepareWithdrawRequest)},
-  { 32, -1, sizeof(::api::PrepareWithdrawResponse)},
-  { 38, -1, sizeof(::api::PrepareSubmitOrderResponse)},
-  { 45, -1, sizeof(::api::PrepareCancelOrderResponse)},
-  { 51, -1, sizeof(::api::PrepareAmendOrderResponse)},
-  { 57, -1, sizeof(::api::SubmitOrderRequest)},
-  { 63, -1, sizeof(::api::CancelOrderRequest)},
-  { 69, -1, sizeof(::api::AmendOrderRequest)},
-  { 75, -1, sizeof(::api::AssetsRequest)},
-  { 80, -1, sizeof(::api::AssetsResponse)},
-  { 86, -1, sizeof(::api::AssetByIDRequest)},
-  { 92, -1, sizeof(::api::AssetByIDResponse)},
-  { 98, -1, sizeof(::api::GetNodeSignaturesAggregateRequest)},
-  { 104, -1, sizeof(::api::GetNodeSignaturesAggregateResponse)},
-  { 110, -1, sizeof(::api::OptionalProposalState)},
-  { 116, -1, sizeof(::api::GetProposalsRequest)},
-  { 122, -1, sizeof(::api::GetProposalsResponse)},
-  { 128, -1, sizeof(::api::GetProposalsByPartyRequest)},
-  { 135, -1, sizeof(::api::GetProposalsByPartyResponse)},
-  { 141, -1, sizeof(::api::GetVotesByPartyRequest)},
-  { 147, -1, sizeof(::api::GetVotesByPartyResponse)},
-  { 153, -1, sizeof(::api::GetNewMarketProposalsRequest)},
-  { 159, -1, sizeof(::api::GetNewMarketProposalsResponse)},
-  { 165, -1, sizeof(::api::GetUpdateMarketProposalsRequest)},
-  { 172, -1, sizeof(::api::GetUpdateMarketProposalsResponse)},
-  { 178, -1, sizeof(::api::GetNetworkParametersProposalsRequest)},
-  { 184, -1, sizeof(::api::GetNetworkParametersProposalsResponse)},
-  { 190, -1, sizeof(::api::GetNewAssetProposalsRequest)},
-  { 196, -1, sizeof(::api::GetNewAssetProposalsResponse)},
-  { 202, -1, sizeof(::api::GetProposalByIDRequest)},
-  { 208, -1, sizeof(::api::GetProposalByIDResponse)},
-  { 214, -1, sizeof(::api::GetProposalByReferenceRequest)},
-  { 220, -1, sizeof(::api::GetProposalByReferenceResponse)},
-  { 226, -1, sizeof(::api::ObservePartyProposalsRequest)},
-  { 232, -1, sizeof(::api::ObserveProposalVotesRequest)},
-  { 238, -1, sizeof(::api::ObservePartyVotesRequest)},
-  { 244, -1, sizeof(::api::MarginLevelsSubscribeRequest)},
-  { 251, -1, sizeof(::api::MarginLevelsRequest)},
-  { 258, -1, sizeof(::api::MarginLevelsResponse)},
-  { 264, -1, sizeof(::api::MarketsDataSubscribeRequest)},
-  { 270, -1, sizeof(::api::MarketDataByIDRequest)},
-  { 276, -1, sizeof(::api::MarketDataByIDResponse)},
-  { 282, -1, sizeof(::api::MarketsDataResponse)},
-  { 288, -1, sizeof(::api::LastTradeRequest)},
-  { 294, -1, sizeof(::api::LastTradeResponse)},
-  { 300, -1, sizeof(::api::MarketByIDRequest)},
-  { 306, -1, sizeof(::api::MarketByIDResponse)},
-  { 312, -1, sizeof(::api::PartyByIDRequest)},
-  { 318, -1, sizeof(::api::PartyByIDResponse)},
-  { 324, -1, sizeof(::api::PartiesResponse)},
-  { 330, -1, sizeof(::api::TradesByPartyRequest)},
-  { 338, -1, sizeof(::api::TradesByPartyResponse)},
-  { 344, -1, sizeof(::api::TradesByOrderRequest)},
-  { 350, -1, sizeof(::api::TradesByOrderResponse)},
-  { 356, -1, sizeof(::api::AccountsSubscribeRequest)},
-  { 365, -1, sizeof(::api::OrdersSubscribeRequest)},
-  { 372, -1, sizeof(::api::TradesSubscribeRequest)},
-  { 379, -1, sizeof(::api::CandlesSubscribeRequest)},
-  { 386, -1, sizeof(::api::MarketDepthSubscribeRequest)},
-  { 392, -1, sizeof(::api::MarketDepthUpdatesSubscribeRequest)},
-  { 398, -1, sizeof(::api::PositionsSubscribeRequest)},
-  { 405, -1, sizeof(::api::OrdersByMarketRequest)},
-  { 412, -1, sizeof(::api::OrdersByMarketResponse)},
-  { 418, -1, sizeof(::api::OrdersByPartyRequest)},
-  { 425, -1, sizeof(::api::OrdersByPartyResponse)},
-  { 431, -1, sizeof(::api::OrderByMarketAndIdRequest)},
-  { 438, -1, sizeof(::api::OrderByMarketAndIdResponse)},
-  { 444, -1, sizeof(::api::OrderByReferenceRequest)},
-  { 450, -1, sizeof(::api::OrderByReferenceResponse)},
-  { 456, -1, sizeof(::api::MarketsResponse)},
-  { 462, -1, sizeof(::api::CandlesRequest)},
-  { 470, -1, sizeof(::api::CandlesResponse)},
-  { 476, -1, sizeof(::api::MarketDepthRequest)},
-  { 483, -1, sizeof(::api::MarketDepthResponse)},
-  { 493, -1, sizeof(::api::TradesByMarketRequest)},
-  { 500, -1, sizeof(::api::TradesByMarketResponse)},
-  { 506, -1, sizeof(::api::PositionsByPartyRequest)},
-  { 513, -1, sizeof(::api::PositionsByPartyResponse)},
-  { 519, -1, sizeof(::api::VegaTimeResponse)},
-  { 525, -1, sizeof(::api::Pagination)},
-  { 533, -1, sizeof(::api::OrdersStream)},
-  { 539, -1, sizeof(::api::TradesStream)},
-  { 545, -1, sizeof(::api::PartyAccountsRequest)},
-  { 554, -1, sizeof(::api::PartyAccountsResponse)},
-  { 560, -1, sizeof(::api::MarketAccountsRequest)},
-  { 567, -1, sizeof(::api::MarketAccountsResponse)},
-  { 573, -1, sizeof(::api::FeeInfrastructureAccountsRequest)},
-  { 579, -1, sizeof(::api::FeeInfrastructureAccountsResponse)},
-  { 585, -1, sizeof(::api::PrepareProposalRequest)},
-  { 593, -1, sizeof(::api::PrepareProposalResponse)},
-  { 600, -1, sizeof(::api::PrepareVoteRequest)},
-  { 606, -1, sizeof(::api::PrepareVoteResponse)},
-  { 613, -1, sizeof(::api::PrepareLiquidityProvisionRequest)},
-  { 619, -1, sizeof(::api::PrepareLiquidityProvisionResponse)},
-  { 625, -1, sizeof(::api::OrderByIDRequest)},
-  { 632, -1, sizeof(::api::OrderVersionsByIDRequest)},
-  { 639, -1, sizeof(::api::OrderVersionsResponse)},
-  { 645, -1, sizeof(::api::EstimateFeeRequest)},
-  { 651, -1, sizeof(::api::EstimateFeeResponse)},
-  { 657, -1, sizeof(::api::EstimateMarginRequest)},
-  { 663, -1, sizeof(::api::EstimateMarginResponse)},
-  { 669, -1, sizeof(::api::ObserveEventsRequest)},
-  { 678, -1, sizeof(::api::ObserveEventsResponse)},
-  { 684, -1, sizeof(::api::WithdrawalsRequest)},
-  { 690, -1, sizeof(::api::WithdrawalsResponse)},
-  { 696, -1, sizeof(::api::WithdrawalRequest)},
-  { 702, -1, sizeof(::api::WithdrawalResponse)},
-  { 708, -1, sizeof(::api::ERC20WithdrawalApprovalRequest)},
-  { 714, -1, sizeof(::api::ERC20WithdrawalApprovalResponse)},
-  { 724, -1, sizeof(::api::DepositsRequest)},
-  { 730, -1, sizeof(::api::DepositsResponse)},
-  { 736, -1, sizeof(::api::DepositRequest)},
-  { 742, -1, sizeof(::api::DepositResponse)},
-  { 748, -1, sizeof(::api::NetworkParametersRequest)},
-  { 753, -1, sizeof(::api::NetworkParametersResponse)},
-  { 759, -1, sizeof(::api::LiquidityProvisionsRequest)},
-  { 766, -1, sizeof(::api::LiquidityProvisionsResponse)},
+  { 21, -1, sizeof(::api::SubmitTransactionResponse)},
+  { 27, -1, sizeof(::api::PrepareWithdrawRequest)},
+  { 33, -1, sizeof(::api::PrepareWithdrawResponse)},
+  { 39, -1, sizeof(::api::PrepareSubmitOrderResponse)},
+  { 46, -1, sizeof(::api::PrepareCancelOrderResponse)},
+  { 52, -1, sizeof(::api::PrepareAmendOrderResponse)},
+  { 58, -1, sizeof(::api::SubmitOrderRequest)},
+  { 64, -1, sizeof(::api::CancelOrderRequest)},
+  { 70, -1, sizeof(::api::AmendOrderRequest)},
+  { 76, -1, sizeof(::api::AssetsRequest)},
+  { 81, -1, sizeof(::api::AssetsResponse)},
+  { 87, -1, sizeof(::api::AssetByIDRequest)},
+  { 93, -1, sizeof(::api::AssetByIDResponse)},
+  { 99, -1, sizeof(::api::GetNodeSignaturesAggregateRequest)},
+  { 105, -1, sizeof(::api::GetNodeSignaturesAggregateResponse)},
+  { 111, -1, sizeof(::api::OptionalProposalState)},
+  { 117, -1, sizeof(::api::GetProposalsRequest)},
+  { 123, -1, sizeof(::api::GetProposalsResponse)},
+  { 129, -1, sizeof(::api::GetProposalsByPartyRequest)},
+  { 136, -1, sizeof(::api::GetProposalsByPartyResponse)},
+  { 142, -1, sizeof(::api::GetVotesByPartyRequest)},
+  { 148, -1, sizeof(::api::GetVotesByPartyResponse)},
+  { 154, -1, sizeof(::api::GetNewMarketProposalsRequest)},
+  { 160, -1, sizeof(::api::GetNewMarketProposalsResponse)},
+  { 166, -1, sizeof(::api::GetUpdateMarketProposalsRequest)},
+  { 173, -1, sizeof(::api::GetUpdateMarketProposalsResponse)},
+  { 179, -1, sizeof(::api::GetNetworkParametersProposalsRequest)},
+  { 185, -1, sizeof(::api::GetNetworkParametersProposalsResponse)},
+  { 191, -1, sizeof(::api::GetNewAssetProposalsRequest)},
+  { 197, -1, sizeof(::api::GetNewAssetProposalsResponse)},
+  { 203, -1, sizeof(::api::GetProposalByIDRequest)},
+  { 209, -1, sizeof(::api::GetProposalByIDResponse)},
+  { 215, -1, sizeof(::api::GetProposalByReferenceRequest)},
+  { 221, -1, sizeof(::api::GetProposalByReferenceResponse)},
+  { 227, -1, sizeof(::api::ObservePartyProposalsRequest)},
+  { 233, -1, sizeof(::api::ObserveProposalVotesRequest)},
+  { 239, -1, sizeof(::api::ObservePartyVotesRequest)},
+  { 245, -1, sizeof(::api::MarginLevelsSubscribeRequest)},
+  { 252, -1, sizeof(::api::MarginLevelsRequest)},
+  { 259, -1, sizeof(::api::MarginLevelsResponse)},
+  { 265, -1, sizeof(::api::MarketsDataSubscribeRequest)},
+  { 271, -1, sizeof(::api::MarketDataByIDRequest)},
+  { 277, -1, sizeof(::api::MarketDataByIDResponse)},
+  { 283, -1, sizeof(::api::MarketsDataResponse)},
+  { 289, -1, sizeof(::api::LastTradeRequest)},
+  { 295, -1, sizeof(::api::LastTradeResponse)},
+  { 301, -1, sizeof(::api::MarketByIDRequest)},
+  { 307, -1, sizeof(::api::MarketByIDResponse)},
+  { 313, -1, sizeof(::api::PartyByIDRequest)},
+  { 319, -1, sizeof(::api::PartyByIDResponse)},
+  { 325, -1, sizeof(::api::PartiesResponse)},
+  { 331, -1, sizeof(::api::TradesByPartyRequest)},
+  { 339, -1, sizeof(::api::TradesByPartyResponse)},
+  { 345, -1, sizeof(::api::TradesByOrderRequest)},
+  { 351, -1, sizeof(::api::TradesByOrderResponse)},
+  { 357, -1, sizeof(::api::AccountsSubscribeRequest)},
+  { 366, -1, sizeof(::api::OrdersSubscribeRequest)},
+  { 373, -1, sizeof(::api::TradesSubscribeRequest)},
+  { 380, -1, sizeof(::api::CandlesSubscribeRequest)},
+  { 387, -1, sizeof(::api::MarketDepthSubscribeRequest)},
+  { 393, -1, sizeof(::api::MarketDepthUpdatesSubscribeRequest)},
+  { 399, -1, sizeof(::api::PositionsSubscribeRequest)},
+  { 406, -1, sizeof(::api::OrdersByMarketRequest)},
+  { 413, -1, sizeof(::api::OrdersByMarketResponse)},
+  { 419, -1, sizeof(::api::OrdersByPartyRequest)},
+  { 426, -1, sizeof(::api::OrdersByPartyResponse)},
+  { 432, -1, sizeof(::api::OrderByMarketAndIdRequest)},
+  { 439, -1, sizeof(::api::OrderByMarketAndIdResponse)},
+  { 445, -1, sizeof(::api::OrderByReferenceRequest)},
+  { 451, -1, sizeof(::api::OrderByReferenceResponse)},
+  { 457, -1, sizeof(::api::MarketsResponse)},
+  { 463, -1, sizeof(::api::CandlesRequest)},
+  { 471, -1, sizeof(::api::CandlesResponse)},
+  { 477, -1, sizeof(::api::MarketDepthRequest)},
+  { 484, -1, sizeof(::api::MarketDepthResponse)},
+  { 494, -1, sizeof(::api::TradesByMarketRequest)},
+  { 501, -1, sizeof(::api::TradesByMarketResponse)},
+  { 507, -1, sizeof(::api::PositionsByPartyRequest)},
+  { 514, -1, sizeof(::api::PositionsByPartyResponse)},
+  { 520, -1, sizeof(::api::VegaTimeResponse)},
+  { 526, -1, sizeof(::api::Pagination)},
+  { 534, -1, sizeof(::api::OrdersStream)},
+  { 540, -1, sizeof(::api::TradesStream)},
+  { 546, -1, sizeof(::api::PartyAccountsRequest)},
+  { 555, -1, sizeof(::api::PartyAccountsResponse)},
+  { 561, -1, sizeof(::api::MarketAccountsRequest)},
+  { 568, -1, sizeof(::api::MarketAccountsResponse)},
+  { 574, -1, sizeof(::api::FeeInfrastructureAccountsRequest)},
+  { 580, -1, sizeof(::api::FeeInfrastructureAccountsResponse)},
+  { 586, -1, sizeof(::api::PrepareProposalRequest)},
+  { 594, -1, sizeof(::api::PrepareProposalResponse)},
+  { 601, -1, sizeof(::api::PrepareVoteRequest)},
+  { 607, -1, sizeof(::api::PrepareVoteResponse)},
+  { 614, -1, sizeof(::api::PrepareLiquidityProvisionRequest)},
+  { 620, -1, sizeof(::api::PrepareLiquidityProvisionResponse)},
+  { 626, -1, sizeof(::api::OrderByIDRequest)},
+  { 633, -1, sizeof(::api::OrderVersionsByIDRequest)},
+  { 640, -1, sizeof(::api::OrderVersionsResponse)},
+  { 646, -1, sizeof(::api::EstimateFeeRequest)},
+  { 652, -1, sizeof(::api::EstimateFeeResponse)},
+  { 658, -1, sizeof(::api::EstimateMarginRequest)},
+  { 664, -1, sizeof(::api::EstimateMarginResponse)},
+  { 670, -1, sizeof(::api::ObserveEventsRequest)},
+  { 679, -1, sizeof(::api::ObserveEventsResponse)},
+  { 685, -1, sizeof(::api::WithdrawalsRequest)},
+  { 691, -1, sizeof(::api::WithdrawalsResponse)},
+  { 697, -1, sizeof(::api::WithdrawalRequest)},
+  { 703, -1, sizeof(::api::WithdrawalResponse)},
+  { 709, -1, sizeof(::api::ERC20WithdrawalApprovalRequest)},
+  { 715, -1, sizeof(::api::ERC20WithdrawalApprovalResponse)},
+  { 725, -1, sizeof(::api::DepositsRequest)},
+  { 731, -1, sizeof(::api::DepositsResponse)},
+  { 737, -1, sizeof(::api::DepositRequest)},
+  { 743, -1, sizeof(::api::DepositResponse)},
+  { 749, -1, sizeof(::api::NetworkParametersRequest)},
+  { 754, -1, sizeof(::api::NetworkParametersResponse)},
+  { 760, -1, sizeof(::api::LiquidityProvisionsRequest)},
+  { 767, -1, sizeof(::api::LiquidityProvisionsResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -3463,339 +3464,342 @@ const char descriptor_table_protodef_proto_2fapi_2ftrading_2eproto[] =
   "roto\"^\n\032PropagateChainEventRequest\022\035\n\003ev"
   "t\030\001 \001(\0132\020.vega.ChainEvent\022\016\n\006pubKey\030\002 \001("
   "\t\022\021\n\tsignature\030\003 \001(\014\".\n\033PropagateChainEv"
-  "entResponse\022\017\n\007success\030\001 \001(\010\":\n\030SubmitTr"
-  "ansactionRequest\022\036\n\002tx\030\001 \001(\0132\022.vega.Sign"
-  "edBundle\",\n\031SubmitTransactionResponse\022\017\n"
-  "\007success\030\001 \001(\010\"D\n\026PrepareWithdrawRequest"
-  "\022*\n\010withdraw\030\001 \001(\0132\030.vega.WithdrawSubmis"
-  "sion\"\'\n\027PrepareWithdrawResponse\022\014\n\004blob\030"
-  "\001 \001(\014\"<\n\032PrepareSubmitOrderResponse\022\014\n\004b"
-  "lob\030\001 \001(\014\022\020\n\010submitID\030\002 \001(\t\"*\n\032PrepareCa"
-  "ncelOrderResponse\022\014\n\004blob\030\001 \001(\014\")\n\031Prepa"
-  "reAmendOrderResponse\022\014\n\004blob\030\001 \001(\014\"\?\n\022Su"
-  "bmitOrderRequest\022)\n\nsubmission\030\001 \001(\0132\025.v"
-  "ega.OrderSubmission\"C\n\022CancelOrderReques"
-  "t\022-\n\014cancellation\030\001 \001(\0132\027.vega.OrderCanc"
-  "ellation\"<\n\021AmendOrderRequest\022\'\n\tamendme"
-  "nt\030\001 \001(\0132\024.vega.OrderAmendment\"\017\n\rAssets"
-  "Request\"-\n\016AssetsResponse\022\033\n\006assets\030\001 \003("
-  "\0132\013.vega.Asset\"&\n\020AssetByIDRequest\022\022\n\002ID"
-  "\030\001 \001(\tB\006\342\337\037\002X\001\"/\n\021AssetByIDResponse\022\032\n\005a"
-  "sset\030\001 \001(\0132\013.vega.Asset\"7\n!GetNodeSignat"
-  "uresAggregateRequest\022\022\n\002ID\030\001 \001(\tB\006\342\337\037\002X\001"
-  "\"M\n\"GetNodeSignaturesAggregateResponse\022\'"
-  "\n\nsignatures\030\001 \003(\0132\023.vega.NodeSignature\""
-  "<\n\025OptionalProposalState\022#\n\005value\030\001 \001(\0162"
-  "\024.vega.Proposal.State\"H\n\023GetProposalsReq"
-  "uest\0221\n\rselectInState\030\001 \001(\0132\032.api.Option"
-  "alProposalState\":\n\024GetProposalsResponse\022"
-  "\"\n\004data\030\001 \003(\0132\024.vega.GovernanceData\"h\n\032G"
-  "etProposalsByPartyRequest\022\027\n\007partyID\030\001 \001"
-  "(\tB\006\342\337\037\002X\001\0221\n\rselectInState\030\002 \001(\0132\032.api."
-  "OptionalProposalState\"A\n\033GetProposalsByP"
-  "artyResponse\022\"\n\004data\030\001 \003(\0132\024.vega.Govern"
-  "anceData\"1\n\026GetVotesByPartyRequest\022\027\n\007pa"
-  "rtyID\030\001 \001(\tB\006\342\337\037\002X\001\"4\n\027GetVotesByPartyRe"
-  "sponse\022\031\n\005votes\030\001 \003(\0132\n.vega.Vote\"Q\n\034Get"
-  "NewMarketProposalsRequest\0221\n\rselectInSta"
-  "te\030\001 \001(\0132\032.api.OptionalProposalState\"C\n\035"
-  "GetNewMarketProposalsResponse\022\"\n\004data\030\001 "
-  "\003(\0132\024.vega.GovernanceData\"n\n\037GetUpdateMa"
-  "rketProposalsRequest\022\030\n\010marketID\030\001 \001(\tB\006"
-  "\342\337\037\002X\001\0221\n\rselectInState\030\002 \001(\0132\032.api.Opti"
-  "onalProposalState\"F\n GetUpdateMarketProp"
-  "osalsResponse\022\"\n\004data\030\001 \003(\0132\024.vega.Gover"
-  "nanceData\"Y\n$GetNetworkParametersProposa"
-  "lsRequest\0221\n\rselectInState\030\001 \001(\0132\032.api.O"
-  "ptionalProposalState\"K\n%GetNetworkParame"
-  "tersProposalsResponse\022\"\n\004data\030\001 \003(\0132\024.ve"
-  "ga.GovernanceData\"P\n\033GetNewAssetProposal"
-  "sRequest\0221\n\rselectInState\030\001 \001(\0132\032.api.Op"
-  "tionalProposalState\"B\n\034GetNewAssetPropos"
-  "alsResponse\022\"\n\004data\030\001 \003(\0132\024.vega.Governa"
-  "nceData\"4\n\026GetProposalByIDRequest\022\032\n\npro"
-  "posalID\030\001 \001(\tB\006\342\337\037\002X\001\"=\n\027GetProposalByID"
-  "Response\022\"\n\004data\030\001 \001(\0132\024.vega.Governance"
-  "Data\":\n\035GetProposalByReferenceRequest\022\031\n"
-  "\tReference\030\001 \001(\tB\006\342\337\037\002X\001\"D\n\036GetProposalB"
-  "yReferenceResponse\022\"\n\004data\030\001 \001(\0132\024.vega."
-  "GovernanceData\"7\n\034ObservePartyProposalsR"
-  "equest\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\"9\n\033Obser"
-  "veProposalVotesRequest\022\032\n\nproposalID\030\001 \001"
-  "(\tB\006\342\337\037\002X\001\"3\n\030ObservePartyVotesRequest\022\027"
-  "\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\"I\n\034MarginLevelsS"
-  "ubscribeRequest\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001"
-  "\022\020\n\010marketID\030\002 \001(\t\"@\n\023MarginLevelsReques"
-  "t\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\022\020\n\010marketID\030\002"
-  " \001(\t\"@\n\024MarginLevelsResponse\022(\n\014marginLe"
-  "vels\030\001 \003(\0132\022.vega.MarginLevels\"/\n\033Market"
-  "sDataSubscribeRequest\022\020\n\010marketID\030\001 \001(\t\""
-  "1\n\025MarketDataByIDRequest\022\030\n\010marketID\030\001 \001"
-  "(\tB\006\342\337\037\002X\001\">\n\026MarketDataByIDResponse\022$\n\n"
-  "marketData\030\001 \001(\0132\020.vega.MarketData\"<\n\023Ma"
-  "rketsDataResponse\022%\n\013marketsData\030\001 \003(\0132\020"
-  ".vega.MarketData\",\n\020LastTradeRequest\022\030\n\010"
-  "marketID\030\001 \001(\tB\006\342\337\037\002X\001\"/\n\021LastTradeRespo"
-  "nse\022\032\n\005trade\030\001 \001(\0132\013.vega.Trade\"-\n\021Marke"
-  "tByIDRequest\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037\002X\001\"2"
-  "\n\022MarketByIDResponse\022\034\n\006market\030\001 \001(\0132\014.v"
-  "ega.Market\"+\n\020PartyByIDRequest\022\027\n\007partyI"
-  "D\030\001 \001(\tB\006\342\337\037\002X\001\"/\n\021PartyByIDResponse\022\032\n\005"
-  "party\030\001 \001(\0132\013.vega.Party\"/\n\017PartiesRespo"
-  "nse\022\034\n\007parties\030\001 \003(\0132\013.vega.Party\"^\n\024Tra"
-  "desByPartyRequest\022\017\n\007partyID\030\001 \001(\t\022\020\n\010ma"
-  "rketID\030\002 \001(\t\022#\n\npagination\030\003 \001(\0132\017.api.P"
-  "agination\"4\n\025TradesByPartyResponse\022\033\n\006tr"
-  "ades\030\001 \003(\0132\013.vega.Trade\"\'\n\024TradesByOrder"
-  "Request\022\017\n\007orderID\030\001 \001(\t\"4\n\025TradesByOrde"
-  "rResponse\022\033\n\006trades\030\001 \003(\0132\013.vega.Trade\"m"
-  "\n\030AccountsSubscribeRequest\022\020\n\010marketID\030\001"
-  " \001(\t\022\017\n\007partyID\030\002 \001(\t\022\r\n\005asset\030\003 \001(\t\022\037\n\004"
-  "type\030\004 \001(\0162\021.vega.AccountType\";\n\026OrdersS"
-  "ubscribeRequest\022\020\n\010marketID\030\001 \001(\t\022\017\n\007par"
-  "tyID\030\002 \001(\t\";\n\026TradesSubscribeRequest\022\020\n\010"
-  "marketID\030\001 \001(\t\022\017\n\007partyID\030\002 \001(\t\"U\n\027Candl"
-  "esSubscribeRequest\022\030\n\010marketID\030\001 \001(\tB\006\342\337"
-  "\037\002X\001\022 \n\010interval\030\002 \001(\0162\016.vega.Interval\"7"
-  "\n\033MarketDepthSubscribeRequest\022\030\n\010marketI"
-  "D\030\001 \001(\tB\006\342\337\037\002X\001\">\n\"MarketDepthUpdatesSub"
-  "scribeRequest\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037\002X\001\""
-  ">\n\031PositionsSubscribeRequest\022\017\n\007partyID\030"
-  "\001 \001(\t\022\020\n\010marketID\030\002 \001(\t\"V\n\025OrdersByMarke"
-  "tRequest\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037\002X\001\022#\n\npa"
-  "gination\030\002 \001(\0132\017.api.Pagination\"5\n\026Order"
-  "sByMarketResponse\022\033\n\006orders\030\001 \003(\0132\013.vega"
-  ".Order\"T\n\024OrdersByPartyRequest\022\027\n\007partyI"
-  "D\030\001 \001(\tB\006\342\337\037\002X\001\022#\n\npagination\030\002 \001(\0132\017.ap"
-  "i.Pagination\"4\n\025OrdersByPartyResponse\022\033\n"
-  "\006orders\030\001 \003(\0132\013.vega.Order\"N\n\031OrderByMar"
-  "ketAndIdRequest\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037\002X"
-  "\001\022\027\n\007orderID\030\002 \001(\tB\006\342\337\037\002X\001\"8\n\032OrderByMar"
-  "ketAndIdResponse\022\032\n\005order\030\001 \001(\0132\013.vega.O"
-  "rder\"4\n\027OrderByReferenceRequest\022\031\n\trefer"
-  "ence\030\001 \001(\tB\006\342\337\037\002X\001\"6\n\030OrderByReferenceRe"
-  "sponse\022\032\n\005order\030\001 \001(\0132\013.vega.Order\"0\n\017Ma"
-  "rketsResponse\022\035\n\007markets\030\001 \003(\0132\014.vega.Ma"
-  "rket\"l\n\016CandlesRequest\022\030\n\010marketID\030\001 \001(\t"
-  "B\006\342\337\037\002X\001\022\036\n\016sinceTimestamp\030\002 \001(\003B\006\342\337\037\002\020\000"
-  "\022 \n\010interval\030\003 \001(\0162\016.vega.Interval\"0\n\017Ca"
-  "ndlesResponse\022\035\n\007candles\030\001 \003(\0132\014.vega.Ca"
-  "ndle\"@\n\022MarketDepthRequest\022\030\n\010marketID\030\001"
-  " \001(\tB\006\342\337\037\002X\001\022\020\n\010maxDepth\030\002 \001(\004\"\236\001\n\023Marke"
-  "tDepthResponse\022\020\n\010marketID\030\001 \001(\t\022\035\n\003buy\030"
-  "\002 \003(\0132\020.vega.PriceLevel\022\036\n\004sell\030\003 \003(\0132\020."
-  "vega.PriceLevel\022\036\n\tlastTrade\030\004 \001(\0132\013.veg"
-  "a.Trade\022\026\n\016sequenceNumber\030\005 \001(\004\"V\n\025Trade"
-  "sByMarketRequest\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037\002"
-  "X\001\022#\n\npagination\030\002 \001(\0132\017.api.Pagination\""
-  "5\n\026TradesByMarketResponse\022\033\n\006trades\030\001 \003("
-  "\0132\013.vega.Trade\"D\n\027PositionsByPartyReques"
-  "t\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\022\020\n\010marketID\030\002"
-  " \001(\t\"=\n\030PositionsByPartyResponse\022!\n\tposi"
-  "tions\030\001 \003(\0132\016.vega.Position\"%\n\020VegaTimeR"
-  "esponse\022\021\n\ttimestamp\030\001 \001(\003\"=\n\nPagination"
-  "\022\014\n\004skip\030\001 \001(\004\022\r\n\005limit\030\002 \001(\004\022\022\n\ndescend"
-  "ing\030\003 \001(\010\"+\n\014OrdersStream\022\033\n\006orders\030\001 \003("
-  "\0132\013.vega.Order\"+\n\014TradesStream\022\033\n\006trades"
-  "\030\001 \003(\0132\013.vega.Trade\"i\n\024PartyAccountsRequ"
-  "est\022\017\n\007partyID\030\001 \001(\t\022\020\n\010marketID\030\002 \001(\t\022\037"
-  "\n\004type\030\003 \001(\0162\021.vega.AccountType\022\r\n\005asset"
-  "\030\004 \001(\t\"8\n\025PartyAccountsResponse\022\037\n\010accou"
-  "nts\030\001 \003(\0132\r.vega.Account\"8\n\025MarketAccoun"
-  "tsRequest\022\020\n\010marketID\030\001 \001(\t\022\r\n\005asset\030\002 \001"
-  "(\t\"9\n\026MarketAccountsResponse\022\037\n\010accounts"
-  "\030\001 \003(\0132\r.vega.Account\"1\n FeeInfrastructu"
-  "reAccountsRequest\022\r\n\005asset\030\001 \001(\t\"D\n!FeeI"
-  "nfrastructureAccountsResponse\022\037\n\010account"
-  "s\030\001 \003(\0132\r.vega.Account\"s\n\026PrepareProposa"
-  "lRequest\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\022\021\n\tref"
-  "erence\030\002 \001(\t\022-\n\010proposal\030\003 \001(\0132\023.vega.Pr"
-  "oposalTermsB\006\342\337\037\002 \001\"P\n\027PrepareProposalRe"
-  "sponse\022\014\n\004blob\030\001 \001(\014\022\'\n\017pendingProposal\030"
-  "\002 \001(\0132\016.vega.Proposal\"6\n\022PrepareVoteRequ"
-  "est\022 \n\004vote\030\001 \001(\0132\n.vega.VoteB\006\342\337\037\002 \001\"=\n"
-  "\023PrepareVoteResponse\022\014\n\004blob\030\001 \001(\014\022\030\n\004vo"
-  "te\030\002 \001(\0132\n.vega.Vote\"b\n PrepareLiquidity"
-  "ProvisionRequest\022>\n\nsubmission\030\001 \001(\0132\".v"
-  "ega.LiquidityProvisionSubmissionB\006\342\337\037\002 \001"
-  "\"1\n!PrepareLiquidityProvisionResponse\022\014\n"
-  "\004blob\030\001 \001(\014\"<\n\020OrderByIDRequest\022\027\n\007order"
-  "ID\030\001 \001(\tB\006\342\337\037\002 \001\022\017\n\007version\030\002 \001(\004\"X\n\030Ord"
-  "erVersionsByIDRequest\022\027\n\007orderID\030\001 \001(\tB\006"
-  "\342\337\037\002 \001\022#\n\npagination\030\002 \001(\0132\017.api.Paginat"
-  "ion\"4\n\025OrderVersionsResponse\022\033\n\006orders\030\001"
-  " \003(\0132\013.vega.Order\"0\n\022EstimateFeeRequest\022"
-  "\032\n\005order\030\001 \001(\0132\013.vega.Order\"-\n\023EstimateF"
-  "eeResponse\022\026\n\003fee\030\002 \001(\0132\t.vega.Fee\"3\n\025Es"
-  "timateMarginRequest\022\032\n\005order\030\001 \001(\0132\013.veg"
-  "a.Order\"B\n\026EstimateMarginResponse\022(\n\014mar"
-  "ginLevels\030\002 \001(\0132\022.vega.MarginLevels\"n\n\024O"
-  "bserveEventsRequest\022 \n\004type\030\001 \003(\0162\022.vega"
-  ".BusEventType\022\020\n\010marketID\030\002 \001(\t\022\017\n\007party"
-  "ID\030\003 \001(\t\022\021\n\tbatchSize\030\004 \001(\003\"7\n\025ObserveEv"
-  "entsResponse\022\036\n\006events\030\001 \003(\0132\016.vega.BusE"
-  "vent\"-\n\022WithdrawalsRequest\022\027\n\007partyID\030\001 "
-  "\001(\tB\006\342\337\037\002X\001\"<\n\023WithdrawalsResponse\022%\n\013wi"
-  "thdrawals\030\001 \003(\0132\020.vega.Withdrawal\"\'\n\021Wit"
-  "hdrawalRequest\022\022\n\002ID\030\001 \001(\tB\006\342\337\037\002X\001\":\n\022Wi"
-  "thdrawalResponse\022$\n\nwithdrawal\030\001 \001(\0132\020.v"
-  "ega.Withdrawal\">\n\036ERC20WithdrawalApprova"
-  "lRequest\022\034\n\014withdrawalID\030\001 \001(\tB\006\342\337\037\002X\001\"y"
-  "\n\037ERC20WithdrawalApprovalResponse\022\023\n\013ass"
-  "etSource\030\001 \001(\t\022\016\n\006amount\030\002 \001(\t\022\016\n\006expiry"
-  "\030\003 \001(\003\022\r\n\005nonce\030\004 \001(\t\022\022\n\nsignatures\030\005 \001("
-  "\t\"*\n\017DepositsRequest\022\027\n\007partyID\030\001 \001(\tB\006\342"
-  "\337\037\002X\001\"3\n\020DepositsResponse\022\037\n\010deposits\030\001 "
-  "\003(\0132\r.vega.Deposit\"$\n\016DepositRequest\022\022\n\002"
-  "ID\030\001 \001(\tB\006\342\337\037\002X\001\"1\n\017DepositResponse\022\036\n\007d"
-  "eposit\030\001 \001(\0132\r.vega.Deposit\"\032\n\030NetworkPa"
-  "rametersRequest\"N\n\031NetworkParametersResp"
-  "onse\0221\n\021networkParameters\030\001 \003(\0132\026.vega.N"
-  "etworkParameter\";\n\032LiquidityProvisionsRe"
-  "quest\022\016\n\006market\030\001 \001(\t\022\r\n\005party\030\002 \001(\t\"T\n\033"
-  "LiquidityProvisionsResponse\0225\n\023liquidity"
-  "Provisions\030\001 \003(\0132\030.vega.LiquidityProvisi"
-  "on2\356\005\n\007trading\022N\n\022PrepareSubmitOrder\022\027.a"
-  "pi.SubmitOrderRequest\032\037.api.PrepareSubmi"
-  "tOrderResponse\022N\n\022PrepareCancelOrder\022\027.a"
-  "pi.CancelOrderRequest\032\037.api.PrepareCance"
-  "lOrderResponse\022K\n\021PrepareAmendOrder\022\026.ap"
-  "i.AmendOrderRequest\032\036.api.PrepareAmendOr"
-  "derResponse\022L\n\017PrepareWithdraw\022\033.api.Pre"
-  "pareWithdrawRequest\032\034.api.PrepareWithdra"
-  "wResponse\022R\n\021SubmitTransaction\022\035.api.Sub"
-  "mitTransactionRequest\032\036.api.SubmitTransa"
-  "ctionResponse\022L\n\017PrepareProposal\022\033.api.P"
-  "repareProposalRequest\032\034.api.PreparePropo"
-  "salResponse\022@\n\013PrepareVote\022\027.api.Prepare"
-  "VoteRequest\032\030.api.PrepareVoteResponse\022X\n"
-  "\023PropagateChainEvent\022\037.api.PropagateChai"
-  "nEventRequest\032 .api.PropagateChainEventR"
-  "esponse\022j\n\031PrepareLiquidityProvision\022%.a"
-  "pi.PrepareLiquidityProvisionRequest\032&.ap"
-  "i.PrepareLiquidityProvisionResponse2\364#\n\014"
-  "trading_data\022I\n\016MarketAccounts\022\032.api.Mar"
-  "ketAccountsRequest\032\033.api.MarketAccountsR"
-  "esponse\022F\n\rPartyAccounts\022\031.api.PartyAcco"
-  "untsRequest\032\032.api.PartyAccountsResponse\022"
-  "j\n\031FeeInfrastructureAccounts\022%.api.FeeIn"
-  "frastructureAccountsRequest\032&.api.FeeInf"
-  "rastructureAccountsResponse\0224\n\007Candles\022\023"
-  ".api.CandlesRequest\032\024.api.CandlesRespons"
-  "e\022I\n\016MarketDataByID\022\032.api.MarketDataByID"
-  "Request\032\033.api.MarketDataByIDResponse\022\?\n\013"
-  "MarketsData\022\026.google.protobuf.Empty\032\030.ap"
-  "i.MarketsDataResponse\022=\n\nMarketByID\022\026.ap"
-  "i.MarketByIDRequest\032\027.api.MarketByIDResp"
-  "onse\022@\n\013MarketDepth\022\027.api.MarketDepthReq"
-  "uest\032\030.api.MarketDepthResponse\0227\n\007Market"
-  "s\022\026.google.protobuf.Empty\032\024.api.MarketsR"
-  "esponse\022U\n\022OrderByMarketAndID\022\036.api.Orde"
-  "rByMarketAndIdRequest\032\037.api.OrderByMarke"
-  "tAndIdResponse\022O\n\020OrderByReference\022\034.api"
-  ".OrderByReferenceRequest\032\035.api.OrderByRe"
-  "ferenceResponse\022I\n\016OrdersByMarket\022\032.api."
-  "OrdersByMarketRequest\032\033.api.OrdersByMark"
-  "etResponse\022F\n\rOrdersByParty\022\031.api.Orders"
-  "ByPartyRequest\032\032.api.OrdersByPartyRespon"
-  "se\022/\n\tOrderByID\022\025.api.OrderByIDRequest\032\013"
-  ".vega.Order\022N\n\021OrderVersionsByID\022\035.api.O"
-  "rderVersionsByIDRequest\032\032.api.OrderVersi"
-  "onsResponse\022C\n\014MarginLevels\022\030.api.Margin"
-  "LevelsRequest\032\031.api.MarginLevelsResponse"
-  "\0227\n\007Parties\022\026.google.protobuf.Empty\032\024.ap"
-  "i.PartiesResponse\022:\n\tPartyByID\022\025.api.Par"
-  "tyByIDRequest\032\026.api.PartyByIDResponse\022O\n"
-  "\020PositionsByParty\022\034.api.PositionsByParty"
-  "Request\032\035.api.PositionsByPartyResponse\022:"
-  "\n\tLastTrade\022\025.api.LastTradeRequest\032\026.api"
-  ".LastTradeResponse\022I\n\016TradesByMarket\022\032.a"
-  "pi.TradesByMarketRequest\032\033.api.TradesByM"
-  "arketResponse\022F\n\rTradesByOrder\022\031.api.Tra"
-  "desByOrderRequest\032\032.api.TradesByOrderRes"
-  "ponse\022F\n\rTradesByParty\022\031.api.TradesByPar"
-  "tyRequest\032\032.api.TradesByPartyResponse\022C\n"
-  "\014GetProposals\022\030.api.GetProposalsRequest\032"
-  "\031.api.GetProposalsResponse\022X\n\023GetProposa"
-  "lsByParty\022\037.api.GetProposalsByPartyReque"
-  "st\032 .api.GetProposalsByPartyResponse\022L\n\017"
-  "GetVotesByParty\022\033.api.GetVotesByPartyReq"
-  "uest\032\034.api.GetVotesByPartyResponse\022^\n\025Ge"
-  "tNewMarketProposals\022!.api.GetNewMarketPr"
-  "oposalsRequest\032\".api.GetNewMarketProposa"
-  "lsResponse\022g\n\030GetUpdateMarketProposals\022$"
-  ".api.GetUpdateMarketProposalsRequest\032%.a"
-  "pi.GetUpdateMarketProposalsResponse\022v\n\035G"
-  "etNetworkParametersProposals\022).api.GetNe"
-  "tworkParametersProposalsRequest\032*.api.Ge"
-  "tNetworkParametersProposalsResponse\022[\n\024G"
-  "etNewAssetProposals\022 .api.GetNewAssetPro"
-  "posalsRequest\032!.api.GetNewAssetProposals"
-  "Response\022L\n\017GetProposalByID\022\033.api.GetPro"
-  "posalByIDRequest\032\034.api.GetProposalByIDRe"
-  "sponse\022a\n\026GetProposalByReference\022\".api.G"
-  "etProposalByReferenceRequest\032#.api.GetPr"
-  "oposalByReferenceResponse\022C\n\021ObserveGove"
-  "rnance\022\026.google.protobuf.Empty\032\024.vega.Go"
-  "vernanceData0\001\022R\n\025ObservePartyProposals\022"
-  "!.api.ObservePartyProposalsRequest\032\024.veg"
-  "a.GovernanceData0\001\022@\n\021ObservePartyVotes\022"
-  "\035.api.ObservePartyVotesRequest\032\n.vega.Vo"
-  "te0\001\022F\n\024ObserveProposalVotes\022 .api.Obser"
-  "veProposalVotesRequest\032\n.vega.Vote0\001\022L\n\017"
-  "ObserveEventBus\022\031.api.ObserveEventsReque"
-  "st\032\032.api.ObserveEventsResponse(\0010\001\0226\n\nSt"
-  "atistics\022\026.google.protobuf.Empty\032\020.vega."
-  "Statistics\022<\n\013GetVegaTime\022\026.google.proto"
-  "buf.Empty\032\025.api.VegaTimeResponse\022C\n\021Acco"
-  "untsSubscribe\022\035.api.AccountsSubscribeReq"
-  "uest\032\r.vega.Account0\001\022@\n\020CandlesSubscrib"
-  "e\022\034.api.CandlesSubscribeRequest\032\014.vega.C"
-  "andle0\001\022P\n\025MarginLevelsSubscribe\022!.api.M"
-  "arginLevelsSubscribeRequest\032\022.vega.Margi"
-  "nLevels0\001\022M\n\024MarketDepthSubscribe\022 .api."
-  "MarketDepthSubscribeRequest\032\021.vega.Marke"
-  "tDepth0\001\022a\n\033MarketDepthUpdatesSubscribe\022"
-  "\'.api.MarketDepthUpdatesSubscribeRequest"
-  "\032\027.vega.MarketDepthUpdate0\001\022L\n\024MarketsDa"
-  "taSubscribe\022 .api.MarketsDataSubscribeRe"
-  "quest\032\020.vega.MarketData0\001\022C\n\017OrdersSubsc"
-  "ribe\022\033.api.OrdersSubscribeRequest\032\021.api."
-  "OrdersStream0\001\022F\n\022PositionsSubscribe\022\036.a"
-  "pi.PositionsSubscribeRequest\032\016.vega.Posi"
-  "tion0\001\022C\n\017TradesSubscribe\022\033.api.TradesSu"
-  "bscribeRequest\032\021.api.TradesStream0\001\022N\n\032T"
-  "ransferResponsesSubscribe\022\026.google.proto"
-  "buf.Empty\032\026.vega.TransferResponse0\001\022m\n\032G"
-  "etNodeSignaturesAggregate\022&.api.GetNodeS"
-  "ignaturesAggregateRequest\032\'.api.GetNodeS"
-  "ignaturesAggregateResponse\022:\n\tAssetByID\022"
-  "\025.api.AssetByIDRequest\032\026.api.AssetByIDRe"
-  "sponse\0221\n\006Assets\022\022.api.AssetsRequest\032\023.a"
-  "pi.AssetsResponse\022@\n\013EstimateFee\022\027.api.E"
-  "stimateFeeRequest\032\030.api.EstimateFeeRespo"
-  "nse\022I\n\016EstimateMargin\022\032.api.EstimateMarg"
-  "inRequest\032\033.api.EstimateMarginResponse\022d"
-  "\n\027ERC20WithdrawalApproval\022#.api.ERC20Wit"
-  "hdrawalApprovalRequest\032$.api.ERC20Withdr"
-  "awalApprovalResponse\022=\n\nWithdrawal\022\026.api"
-  ".WithdrawalRequest\032\027.api.WithdrawalRespo"
-  "nse\022@\n\013Withdrawals\022\027.api.WithdrawalsRequ"
-  "est\032\030.api.WithdrawalsResponse\0224\n\007Deposit"
-  "\022\023.api.DepositRequest\032\024.api.DepositRespo"
-  "nse\0227\n\010Deposits\022\024.api.DepositsRequest\032\025."
-  "api.DepositsResponse\022R\n\021NetworkParameter"
-  "s\022\035.api.NetworkParametersRequest\032\036.api.N"
-  "etworkParametersResponse\022X\n\023LiquidityPro"
-  "visions\022\037.api.LiquidityProvisionsRequest"
-  "\032 .api.LiquidityProvisionsResponseB\?\n\030io"
-  ".vegaprotocol.vega.apiZ#code.vegaprotoco"
-  "l.io/vega/proto/apib\006proto3"
+  "entResponse\022\017\n\007success\030\001 \001(\010\"\272\001\n\030SubmitT"
+  "ransactionRequest\022\036\n\002tx\030\001 \001(\0132\022.vega.Sig"
+  "nedBundle\0220\n\004type\030\002 \001(\0162\".api.SubmitTran"
+  "sactionRequest.Type\"L\n\004Type\022\024\n\020TYPE_UNSP"
+  "ECIFIED\020\000\022\016\n\nTYPE_ASYNC\020\001\022\r\n\tTYPE_SYNC\020\002"
+  "\022\017\n\013TYPE_COMMIT\020\003\",\n\031SubmitTransactionRe"
+  "sponse\022\017\n\007success\030\001 \001(\010\"D\n\026PrepareWithdr"
+  "awRequest\022*\n\010withdraw\030\001 \001(\0132\030.vega.Withd"
+  "rawSubmission\"\'\n\027PrepareWithdrawResponse"
+  "\022\014\n\004blob\030\001 \001(\014\"<\n\032PrepareSubmitOrderResp"
+  "onse\022\014\n\004blob\030\001 \001(\014\022\020\n\010submitID\030\002 \001(\t\"*\n\032"
+  "PrepareCancelOrderResponse\022\014\n\004blob\030\001 \001(\014"
+  "\")\n\031PrepareAmendOrderResponse\022\014\n\004blob\030\001 "
+  "\001(\014\"\?\n\022SubmitOrderRequest\022)\n\nsubmission\030"
+  "\001 \001(\0132\025.vega.OrderSubmission\"C\n\022CancelOr"
+  "derRequest\022-\n\014cancellation\030\001 \001(\0132\027.vega."
+  "OrderCancellation\"<\n\021AmendOrderRequest\022\'"
+  "\n\tamendment\030\001 \001(\0132\024.vega.OrderAmendment\""
+  "\017\n\rAssetsRequest\"-\n\016AssetsResponse\022\033\n\006as"
+  "sets\030\001 \003(\0132\013.vega.Asset\"&\n\020AssetByIDRequ"
+  "est\022\022\n\002ID\030\001 \001(\tB\006\342\337\037\002X\001\"/\n\021AssetByIDResp"
+  "onse\022\032\n\005asset\030\001 \001(\0132\013.vega.Asset\"7\n!GetN"
+  "odeSignaturesAggregateRequest\022\022\n\002ID\030\001 \001("
+  "\tB\006\342\337\037\002X\001\"M\n\"GetNodeSignaturesAggregateR"
+  "esponse\022\'\n\nsignatures\030\001 \003(\0132\023.vega.NodeS"
+  "ignature\"<\n\025OptionalProposalState\022#\n\005val"
+  "ue\030\001 \001(\0162\024.vega.Proposal.State\"H\n\023GetPro"
+  "posalsRequest\0221\n\rselectInState\030\001 \001(\0132\032.a"
+  "pi.OptionalProposalState\":\n\024GetProposals"
+  "Response\022\"\n\004data\030\001 \003(\0132\024.vega.Governance"
+  "Data\"h\n\032GetProposalsByPartyRequest\022\027\n\007pa"
+  "rtyID\030\001 \001(\tB\006\342\337\037\002X\001\0221\n\rselectInState\030\002 \001"
+  "(\0132\032.api.OptionalProposalState\"A\n\033GetPro"
+  "posalsByPartyResponse\022\"\n\004data\030\001 \003(\0132\024.ve"
+  "ga.GovernanceData\"1\n\026GetVotesByPartyRequ"
+  "est\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\"4\n\027GetVotes"
+  "ByPartyResponse\022\031\n\005votes\030\001 \003(\0132\n.vega.Vo"
+  "te\"Q\n\034GetNewMarketProposalsRequest\0221\n\rse"
+  "lectInState\030\001 \001(\0132\032.api.OptionalProposal"
+  "State\"C\n\035GetNewMarketProposalsResponse\022\""
+  "\n\004data\030\001 \003(\0132\024.vega.GovernanceData\"n\n\037Ge"
+  "tUpdateMarketProposalsRequest\022\030\n\010marketI"
+  "D\030\001 \001(\tB\006\342\337\037\002X\001\0221\n\rselectInState\030\002 \001(\0132\032"
+  ".api.OptionalProposalState\"F\n GetUpdateM"
+  "arketProposalsResponse\022\"\n\004data\030\001 \003(\0132\024.v"
+  "ega.GovernanceData\"Y\n$GetNetworkParamete"
+  "rsProposalsRequest\0221\n\rselectInState\030\001 \001("
+  "\0132\032.api.OptionalProposalState\"K\n%GetNetw"
+  "orkParametersProposalsResponse\022\"\n\004data\030\001"
+  " \003(\0132\024.vega.GovernanceData\"P\n\033GetNewAsse"
+  "tProposalsRequest\0221\n\rselectInState\030\001 \001(\013"
+  "2\032.api.OptionalProposalState\"B\n\034GetNewAs"
+  "setProposalsResponse\022\"\n\004data\030\001 \003(\0132\024.veg"
+  "a.GovernanceData\"4\n\026GetProposalByIDReque"
+  "st\022\032\n\nproposalID\030\001 \001(\tB\006\342\337\037\002X\001\"=\n\027GetPro"
+  "posalByIDResponse\022\"\n\004data\030\001 \001(\0132\024.vega.G"
+  "overnanceData\":\n\035GetProposalByReferenceR"
+  "equest\022\031\n\tReference\030\001 \001(\tB\006\342\337\037\002X\001\"D\n\036Get"
+  "ProposalByReferenceResponse\022\"\n\004data\030\001 \001("
+  "\0132\024.vega.GovernanceData\"7\n\034ObservePartyP"
+  "roposalsRequest\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001"
+  "\"9\n\033ObserveProposalVotesRequest\022\032\n\npropo"
+  "salID\030\001 \001(\tB\006\342\337\037\002X\001\"3\n\030ObservePartyVotes"
+  "Request\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\"I\n\034Marg"
+  "inLevelsSubscribeRequest\022\027\n\007partyID\030\001 \001("
+  "\tB\006\342\337\037\002X\001\022\020\n\010marketID\030\002 \001(\t\"@\n\023MarginLev"
+  "elsRequest\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\022\020\n\010m"
+  "arketID\030\002 \001(\t\"@\n\024MarginLevelsResponse\022(\n"
+  "\014marginLevels\030\001 \003(\0132\022.vega.MarginLevels\""
+  "/\n\033MarketsDataSubscribeRequest\022\020\n\010market"
+  "ID\030\001 \001(\t\"1\n\025MarketDataByIDRequest\022\030\n\010mar"
+  "ketID\030\001 \001(\tB\006\342\337\037\002X\001\">\n\026MarketDataByIDRes"
+  "ponse\022$\n\nmarketData\030\001 \001(\0132\020.vega.MarketD"
+  "ata\"<\n\023MarketsDataResponse\022%\n\013marketsDat"
+  "a\030\001 \003(\0132\020.vega.MarketData\",\n\020LastTradeRe"
+  "quest\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037\002X\001\"/\n\021LastT"
+  "radeResponse\022\032\n\005trade\030\001 \001(\0132\013.vega.Trade"
+  "\"-\n\021MarketByIDRequest\022\030\n\010marketID\030\001 \001(\tB"
+  "\006\342\337\037\002X\001\"2\n\022MarketByIDResponse\022\034\n\006market\030"
+  "\001 \001(\0132\014.vega.Market\"+\n\020PartyByIDRequest\022"
+  "\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\"/\n\021PartyByIDRes"
+  "ponse\022\032\n\005party\030\001 \001(\0132\013.vega.Party\"/\n\017Par"
+  "tiesResponse\022\034\n\007parties\030\001 \003(\0132\013.vega.Par"
+  "ty\"^\n\024TradesByPartyRequest\022\017\n\007partyID\030\001 "
+  "\001(\t\022\020\n\010marketID\030\002 \001(\t\022#\n\npagination\030\003 \001("
+  "\0132\017.api.Pagination\"4\n\025TradesByPartyRespo"
+  "nse\022\033\n\006trades\030\001 \003(\0132\013.vega.Trade\"\'\n\024Trad"
+  "esByOrderRequest\022\017\n\007orderID\030\001 \001(\t\"4\n\025Tra"
+  "desByOrderResponse\022\033\n\006trades\030\001 \003(\0132\013.veg"
+  "a.Trade\"m\n\030AccountsSubscribeRequest\022\020\n\010m"
+  "arketID\030\001 \001(\t\022\017\n\007partyID\030\002 \001(\t\022\r\n\005asset\030"
+  "\003 \001(\t\022\037\n\004type\030\004 \001(\0162\021.vega.AccountType\";"
+  "\n\026OrdersSubscribeRequest\022\020\n\010marketID\030\001 \001"
+  "(\t\022\017\n\007partyID\030\002 \001(\t\";\n\026TradesSubscribeRe"
+  "quest\022\020\n\010marketID\030\001 \001(\t\022\017\n\007partyID\030\002 \001(\t"
+  "\"U\n\027CandlesSubscribeRequest\022\030\n\010marketID\030"
+  "\001 \001(\tB\006\342\337\037\002X\001\022 \n\010interval\030\002 \001(\0162\016.vega.I"
+  "nterval\"7\n\033MarketDepthSubscribeRequest\022\030"
+  "\n\010marketID\030\001 \001(\tB\006\342\337\037\002X\001\">\n\"MarketDepthU"
+  "pdatesSubscribeRequest\022\030\n\010marketID\030\001 \001(\t"
+  "B\006\342\337\037\002X\001\">\n\031PositionsSubscribeRequest\022\017\n"
+  "\007partyID\030\001 \001(\t\022\020\n\010marketID\030\002 \001(\t\"V\n\025Orde"
+  "rsByMarketRequest\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037"
+  "\002X\001\022#\n\npagination\030\002 \001(\0132\017.api.Pagination"
+  "\"5\n\026OrdersByMarketResponse\022\033\n\006orders\030\001 \003"
+  "(\0132\013.vega.Order\"T\n\024OrdersByPartyRequest\022"
+  "\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\022#\n\npagination\030\002"
+  " \001(\0132\017.api.Pagination\"4\n\025OrdersByPartyRe"
+  "sponse\022\033\n\006orders\030\001 \003(\0132\013.vega.Order\"N\n\031O"
+  "rderByMarketAndIdRequest\022\030\n\010marketID\030\001 \001"
+  "(\tB\006\342\337\037\002X\001\022\027\n\007orderID\030\002 \001(\tB\006\342\337\037\002X\001\"8\n\032O"
+  "rderByMarketAndIdResponse\022\032\n\005order\030\001 \001(\013"
+  "2\013.vega.Order\"4\n\027OrderByReferenceRequest"
+  "\022\031\n\treference\030\001 \001(\tB\006\342\337\037\002X\001\"6\n\030OrderByRe"
+  "ferenceResponse\022\032\n\005order\030\001 \001(\0132\013.vega.Or"
+  "der\"0\n\017MarketsResponse\022\035\n\007markets\030\001 \003(\0132"
+  "\014.vega.Market\"l\n\016CandlesRequest\022\030\n\010marke"
+  "tID\030\001 \001(\tB\006\342\337\037\002X\001\022\036\n\016sinceTimestamp\030\002 \001("
+  "\003B\006\342\337\037\002\020\000\022 \n\010interval\030\003 \001(\0162\016.vega.Inter"
+  "val\"0\n\017CandlesResponse\022\035\n\007candles\030\001 \003(\0132"
+  "\014.vega.Candle\"@\n\022MarketDepthRequest\022\030\n\010m"
+  "arketID\030\001 \001(\tB\006\342\337\037\002X\001\022\020\n\010maxDepth\030\002 \001(\004\""
+  "\236\001\n\023MarketDepthResponse\022\020\n\010marketID\030\001 \001("
+  "\t\022\035\n\003buy\030\002 \003(\0132\020.vega.PriceLevel\022\036\n\004sell"
+  "\030\003 \003(\0132\020.vega.PriceLevel\022\036\n\tlastTrade\030\004 "
+  "\001(\0132\013.vega.Trade\022\026\n\016sequenceNumber\030\005 \001(\004"
+  "\"V\n\025TradesByMarketRequest\022\030\n\010marketID\030\001 "
+  "\001(\tB\006\342\337\037\002X\001\022#\n\npagination\030\002 \001(\0132\017.api.Pa"
+  "gination\"5\n\026TradesByMarketResponse\022\033\n\006tr"
+  "ades\030\001 \003(\0132\013.vega.Trade\"D\n\027PositionsByPa"
+  "rtyRequest\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\022\020\n\010m"
+  "arketID\030\002 \001(\t\"=\n\030PositionsByPartyRespons"
+  "e\022!\n\tpositions\030\001 \003(\0132\016.vega.Position\"%\n\020"
+  "VegaTimeResponse\022\021\n\ttimestamp\030\001 \001(\003\"=\n\nP"
+  "agination\022\014\n\004skip\030\001 \001(\004\022\r\n\005limit\030\002 \001(\004\022\022"
+  "\n\ndescending\030\003 \001(\010\"+\n\014OrdersStream\022\033\n\006or"
+  "ders\030\001 \003(\0132\013.vega.Order\"+\n\014TradesStream\022"
+  "\033\n\006trades\030\001 \003(\0132\013.vega.Trade\"i\n\024PartyAcc"
+  "ountsRequest\022\017\n\007partyID\030\001 \001(\t\022\020\n\010marketI"
+  "D\030\002 \001(\t\022\037\n\004type\030\003 \001(\0162\021.vega.AccountType"
+  "\022\r\n\005asset\030\004 \001(\t\"8\n\025PartyAccountsResponse"
+  "\022\037\n\010accounts\030\001 \003(\0132\r.vega.Account\"8\n\025Mar"
+  "ketAccountsRequest\022\020\n\010marketID\030\001 \001(\t\022\r\n\005"
+  "asset\030\002 \001(\t\"9\n\026MarketAccountsResponse\022\037\n"
+  "\010accounts\030\001 \003(\0132\r.vega.Account\"1\n FeeInf"
+  "rastructureAccountsRequest\022\r\n\005asset\030\001 \001("
+  "\t\"D\n!FeeInfrastructureAccountsResponse\022\037"
+  "\n\010accounts\030\001 \003(\0132\r.vega.Account\"s\n\026Prepa"
+  "reProposalRequest\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002"
+  "X\001\022\021\n\treference\030\002 \001(\t\022-\n\010proposal\030\003 \001(\0132"
+  "\023.vega.ProposalTermsB\006\342\337\037\002 \001\"P\n\027PrepareP"
+  "roposalResponse\022\014\n\004blob\030\001 \001(\014\022\'\n\017pending"
+  "Proposal\030\002 \001(\0132\016.vega.Proposal\"6\n\022Prepar"
+  "eVoteRequest\022 \n\004vote\030\001 \001(\0132\n.vega.VoteB\006"
+  "\342\337\037\002 \001\"=\n\023PrepareVoteResponse\022\014\n\004blob\030\001 "
+  "\001(\014\022\030\n\004vote\030\002 \001(\0132\n.vega.Vote\"b\n Prepare"
+  "LiquidityProvisionRequest\022>\n\nsubmission\030"
+  "\001 \001(\0132\".vega.LiquidityProvisionSubmissio"
+  "nB\006\342\337\037\002 \001\"1\n!PrepareLiquidityProvisionRe"
+  "sponse\022\014\n\004blob\030\001 \001(\014\"<\n\020OrderByIDRequest"
+  "\022\027\n\007orderID\030\001 \001(\tB\006\342\337\037\002 \001\022\017\n\007version\030\002 \001"
+  "(\004\"X\n\030OrderVersionsByIDRequest\022\027\n\007orderI"
+  "D\030\001 \001(\tB\006\342\337\037\002 \001\022#\n\npagination\030\002 \001(\0132\017.ap"
+  "i.Pagination\"4\n\025OrderVersionsResponse\022\033\n"
+  "\006orders\030\001 \003(\0132\013.vega.Order\"0\n\022EstimateFe"
+  "eRequest\022\032\n\005order\030\001 \001(\0132\013.vega.Order\"-\n\023"
+  "EstimateFeeResponse\022\026\n\003fee\030\002 \001(\0132\t.vega."
+  "Fee\"3\n\025EstimateMarginRequest\022\032\n\005order\030\001 "
+  "\001(\0132\013.vega.Order\"B\n\026EstimateMarginRespon"
+  "se\022(\n\014marginLevels\030\002 \001(\0132\022.vega.MarginLe"
+  "vels\"n\n\024ObserveEventsRequest\022 \n\004type\030\001 \003"
+  "(\0162\022.vega.BusEventType\022\020\n\010marketID\030\002 \001(\t"
+  "\022\017\n\007partyID\030\003 \001(\t\022\021\n\tbatchSize\030\004 \001(\003\"7\n\025"
+  "ObserveEventsResponse\022\036\n\006events\030\001 \003(\0132\016."
+  "vega.BusEvent\"-\n\022WithdrawalsRequest\022\027\n\007p"
+  "artyID\030\001 \001(\tB\006\342\337\037\002X\001\"<\n\023WithdrawalsRespo"
+  "nse\022%\n\013withdrawals\030\001 \003(\0132\020.vega.Withdraw"
+  "al\"\'\n\021WithdrawalRequest\022\022\n\002ID\030\001 \001(\tB\006\342\337\037"
+  "\002X\001\":\n\022WithdrawalResponse\022$\n\nwithdrawal\030"
+  "\001 \001(\0132\020.vega.Withdrawal\">\n\036ERC20Withdraw"
+  "alApprovalRequest\022\034\n\014withdrawalID\030\001 \001(\tB"
+  "\006\342\337\037\002X\001\"y\n\037ERC20WithdrawalApprovalRespon"
+  "se\022\023\n\013assetSource\030\001 \001(\t\022\016\n\006amount\030\002 \001(\t\022"
+  "\016\n\006expiry\030\003 \001(\003\022\r\n\005nonce\030\004 \001(\t\022\022\n\nsignat"
+  "ures\030\005 \001(\t\"*\n\017DepositsRequest\022\027\n\007partyID"
+  "\030\001 \001(\tB\006\342\337\037\002X\001\"3\n\020DepositsResponse\022\037\n\010de"
+  "posits\030\001 \003(\0132\r.vega.Deposit\"$\n\016DepositRe"
+  "quest\022\022\n\002ID\030\001 \001(\tB\006\342\337\037\002X\001\"1\n\017DepositResp"
+  "onse\022\036\n\007deposit\030\001 \001(\0132\r.vega.Deposit\"\032\n\030"
+  "NetworkParametersRequest\"N\n\031NetworkParam"
+  "etersResponse\0221\n\021networkParameters\030\001 \003(\013"
+  "2\026.vega.NetworkParameter\";\n\032LiquidityPro"
+  "visionsRequest\022\016\n\006market\030\001 \001(\t\022\r\n\005party\030"
+  "\002 \001(\t\"T\n\033LiquidityProvisionsResponse\0225\n\023"
+  "liquidityProvisions\030\001 \003(\0132\030.vega.Liquidi"
+  "tyProvision2\356\005\n\007trading\022N\n\022PrepareSubmit"
+  "Order\022\027.api.SubmitOrderRequest\032\037.api.Pre"
+  "pareSubmitOrderResponse\022N\n\022PrepareCancel"
+  "Order\022\027.api.CancelOrderRequest\032\037.api.Pre"
+  "pareCancelOrderResponse\022K\n\021PrepareAmendO"
+  "rder\022\026.api.AmendOrderRequest\032\036.api.Prepa"
+  "reAmendOrderResponse\022L\n\017PrepareWithdraw\022"
+  "\033.api.PrepareWithdrawRequest\032\034.api.Prepa"
+  "reWithdrawResponse\022R\n\021SubmitTransaction\022"
+  "\035.api.SubmitTransactionRequest\032\036.api.Sub"
+  "mitTransactionResponse\022L\n\017PrepareProposa"
+  "l\022\033.api.PrepareProposalRequest\032\034.api.Pre"
+  "pareProposalResponse\022@\n\013PrepareVote\022\027.ap"
+  "i.PrepareVoteRequest\032\030.api.PrepareVoteRe"
+  "sponse\022X\n\023PropagateChainEvent\022\037.api.Prop"
+  "agateChainEventRequest\032 .api.PropagateCh"
+  "ainEventResponse\022j\n\031PrepareLiquidityProv"
+  "ision\022%.api.PrepareLiquidityProvisionReq"
+  "uest\032&.api.PrepareLiquidityProvisionResp"
+  "onse2\364#\n\014trading_data\022I\n\016MarketAccounts\022"
+  "\032.api.MarketAccountsRequest\032\033.api.Market"
+  "AccountsResponse\022F\n\rPartyAccounts\022\031.api."
+  "PartyAccountsRequest\032\032.api.PartyAccounts"
+  "Response\022j\n\031FeeInfrastructureAccounts\022%."
+  "api.FeeInfrastructureAccountsRequest\032&.a"
+  "pi.FeeInfrastructureAccountsResponse\0224\n\007"
+  "Candles\022\023.api.CandlesRequest\032\024.api.Candl"
+  "esResponse\022I\n\016MarketDataByID\022\032.api.Marke"
+  "tDataByIDRequest\032\033.api.MarketDataByIDRes"
+  "ponse\022\?\n\013MarketsData\022\026.google.protobuf.E"
+  "mpty\032\030.api.MarketsDataResponse\022=\n\nMarket"
+  "ByID\022\026.api.MarketByIDRequest\032\027.api.Marke"
+  "tByIDResponse\022@\n\013MarketDepth\022\027.api.Marke"
+  "tDepthRequest\032\030.api.MarketDepthResponse\022"
+  "7\n\007Markets\022\026.google.protobuf.Empty\032\024.api"
+  ".MarketsResponse\022U\n\022OrderByMarketAndID\022\036"
+  ".api.OrderByMarketAndIdRequest\032\037.api.Ord"
+  "erByMarketAndIdResponse\022O\n\020OrderByRefere"
+  "nce\022\034.api.OrderByReferenceRequest\032\035.api."
+  "OrderByReferenceResponse\022I\n\016OrdersByMark"
+  "et\022\032.api.OrdersByMarketRequest\032\033.api.Ord"
+  "ersByMarketResponse\022F\n\rOrdersByParty\022\031.a"
+  "pi.OrdersByPartyRequest\032\032.api.OrdersByPa"
+  "rtyResponse\022/\n\tOrderByID\022\025.api.OrderByID"
+  "Request\032\013.vega.Order\022N\n\021OrderVersionsByI"
+  "D\022\035.api.OrderVersionsByIDRequest\032\032.api.O"
+  "rderVersionsResponse\022C\n\014MarginLevels\022\030.a"
+  "pi.MarginLevelsRequest\032\031.api.MarginLevel"
+  "sResponse\0227\n\007Parties\022\026.google.protobuf.E"
+  "mpty\032\024.api.PartiesResponse\022:\n\tPartyByID\022"
+  "\025.api.PartyByIDRequest\032\026.api.PartyByIDRe"
+  "sponse\022O\n\020PositionsByParty\022\034.api.Positio"
+  "nsByPartyRequest\032\035.api.PositionsByPartyR"
+  "esponse\022:\n\tLastTrade\022\025.api.LastTradeRequ"
+  "est\032\026.api.LastTradeResponse\022I\n\016TradesByM"
+  "arket\022\032.api.TradesByMarketRequest\032\033.api."
+  "TradesByMarketResponse\022F\n\rTradesByOrder\022"
+  "\031.api.TradesByOrderRequest\032\032.api.TradesB"
+  "yOrderResponse\022F\n\rTradesByParty\022\031.api.Tr"
+  "adesByPartyRequest\032\032.api.TradesByPartyRe"
+  "sponse\022C\n\014GetProposals\022\030.api.GetProposal"
+  "sRequest\032\031.api.GetProposalsResponse\022X\n\023G"
+  "etProposalsByParty\022\037.api.GetProposalsByP"
+  "artyRequest\032 .api.GetProposalsByPartyRes"
+  "ponse\022L\n\017GetVotesByParty\022\033.api.GetVotesB"
+  "yPartyRequest\032\034.api.GetVotesByPartyRespo"
+  "nse\022^\n\025GetNewMarketProposals\022!.api.GetNe"
+  "wMarketProposalsRequest\032\".api.GetNewMark"
+  "etProposalsResponse\022g\n\030GetUpdateMarketPr"
+  "oposals\022$.api.GetUpdateMarketProposalsRe"
+  "quest\032%.api.GetUpdateMarketProposalsResp"
+  "onse\022v\n\035GetNetworkParametersProposals\022)."
+  "api.GetNetworkParametersProposalsRequest"
+  "\032*.api.GetNetworkParametersProposalsResp"
+  "onse\022[\n\024GetNewAssetProposals\022 .api.GetNe"
+  "wAssetProposalsRequest\032!.api.GetNewAsset"
+  "ProposalsResponse\022L\n\017GetProposalByID\022\033.a"
+  "pi.GetProposalByIDRequest\032\034.api.GetPropo"
+  "salByIDResponse\022a\n\026GetProposalByReferenc"
+  "e\022\".api.GetProposalByReferenceRequest\032#."
+  "api.GetProposalByReferenceResponse\022C\n\021Ob"
+  "serveGovernance\022\026.google.protobuf.Empty\032"
+  "\024.vega.GovernanceData0\001\022R\n\025ObservePartyP"
+  "roposals\022!.api.ObservePartyProposalsRequ"
+  "est\032\024.vega.GovernanceData0\001\022@\n\021ObservePa"
+  "rtyVotes\022\035.api.ObservePartyVotesRequest\032"
+  "\n.vega.Vote0\001\022F\n\024ObserveProposalVotes\022 ."
+  "api.ObserveProposalVotesRequest\032\n.vega.V"
+  "ote0\001\022L\n\017ObserveEventBus\022\031.api.ObserveEv"
+  "entsRequest\032\032.api.ObserveEventsResponse("
+  "\0010\001\0226\n\nStatistics\022\026.google.protobuf.Empt"
+  "y\032\020.vega.Statistics\022<\n\013GetVegaTime\022\026.goo"
+  "gle.protobuf.Empty\032\025.api.VegaTimeRespons"
+  "e\022C\n\021AccountsSubscribe\022\035.api.AccountsSub"
+  "scribeRequest\032\r.vega.Account0\001\022@\n\020Candle"
+  "sSubscribe\022\034.api.CandlesSubscribeRequest"
+  "\032\014.vega.Candle0\001\022P\n\025MarginLevelsSubscrib"
+  "e\022!.api.MarginLevelsSubscribeRequest\032\022.v"
+  "ega.MarginLevels0\001\022M\n\024MarketDepthSubscri"
+  "be\022 .api.MarketDepthSubscribeRequest\032\021.v"
+  "ega.MarketDepth0\001\022a\n\033MarketDepthUpdatesS"
+  "ubscribe\022\'.api.MarketDepthUpdatesSubscri"
+  "beRequest\032\027.vega.MarketDepthUpdate0\001\022L\n\024"
+  "MarketsDataSubscribe\022 .api.MarketsDataSu"
+  "bscribeRequest\032\020.vega.MarketData0\001\022C\n\017Or"
+  "dersSubscribe\022\033.api.OrdersSubscribeReque"
+  "st\032\021.api.OrdersStream0\001\022F\n\022PositionsSubs"
+  "cribe\022\036.api.PositionsSubscribeRequest\032\016."
+  "vega.Position0\001\022C\n\017TradesSubscribe\022\033.api"
+  ".TradesSubscribeRequest\032\021.api.TradesStre"
+  "am0\001\022N\n\032TransferResponsesSubscribe\022\026.goo"
+  "gle.protobuf.Empty\032\026.vega.TransferRespon"
+  "se0\001\022m\n\032GetNodeSignaturesAggregate\022&.api"
+  ".GetNodeSignaturesAggregateRequest\032\'.api"
+  ".GetNodeSignaturesAggregateResponse\022:\n\tA"
+  "ssetByID\022\025.api.AssetByIDRequest\032\026.api.As"
+  "setByIDResponse\0221\n\006Assets\022\022.api.AssetsRe"
+  "quest\032\023.api.AssetsResponse\022@\n\013EstimateFe"
+  "e\022\027.api.EstimateFeeRequest\032\030.api.Estimat"
+  "eFeeResponse\022I\n\016EstimateMargin\022\032.api.Est"
+  "imateMarginRequest\032\033.api.EstimateMarginR"
+  "esponse\022d\n\027ERC20WithdrawalApproval\022#.api"
+  ".ERC20WithdrawalApprovalRequest\032$.api.ER"
+  "C20WithdrawalApprovalResponse\022=\n\nWithdra"
+  "wal\022\026.api.WithdrawalRequest\032\027.api.Withdr"
+  "awalResponse\022@\n\013Withdrawals\022\027.api.Withdr"
+  "awalsRequest\032\030.api.WithdrawalsResponse\0224"
+  "\n\007Deposit\022\023.api.DepositRequest\032\024.api.Dep"
+  "ositResponse\0227\n\010Deposits\022\024.api.DepositsR"
+  "equest\032\025.api.DepositsResponse\022R\n\021Network"
+  "Parameters\022\035.api.NetworkParametersReques"
+  "t\032\036.api.NetworkParametersResponse\022X\n\023Liq"
+  "uidityProvisions\022\037.api.LiquidityProvisio"
+  "nsRequest\032 .api.LiquidityProvisionsRespo"
+  "nseB\?\n\030io.vegaprotocol.vega.apiZ#code.ve"
+  "gaprotocol.io/vega/proto/apib\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fapi_2ftrading_2eproto = {
   false, InitDefaults_proto_2fapi_2ftrading_2eproto, 
   descriptor_table_protodef_proto_2fapi_2ftrading_2eproto,
-  "proto/api/trading.proto", &assign_descriptors_table_proto_2fapi_2ftrading_2eproto, 13467,
+  "proto/api/trading.proto", &assign_descriptors_table_proto_2fapi_2ftrading_2eproto, 13596,
 };
 
 void AddDescriptors_proto_2fapi_2ftrading_2eproto() {
@@ -3816,6 +3820,31 @@ void AddDescriptors_proto_2fapi_2ftrading_2eproto() {
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_proto_2fapi_2ftrading_2eproto = []() { AddDescriptors_proto_2fapi_2ftrading_2eproto(); return true; }();
 namespace api {
+const ::google::protobuf::EnumDescriptor* SubmitTransactionRequest_Type_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_proto_2fapi_2ftrading_2eproto);
+  return file_level_enum_descriptors_proto_2fapi_2ftrading_2eproto[0];
+}
+bool SubmitTransactionRequest_Type_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const SubmitTransactionRequest_Type SubmitTransactionRequest::TYPE_UNSPECIFIED;
+const SubmitTransactionRequest_Type SubmitTransactionRequest::TYPE_ASYNC;
+const SubmitTransactionRequest_Type SubmitTransactionRequest::TYPE_SYNC;
+const SubmitTransactionRequest_Type SubmitTransactionRequest::TYPE_COMMIT;
+const SubmitTransactionRequest_Type SubmitTransactionRequest::Type_MIN;
+const SubmitTransactionRequest_Type SubmitTransactionRequest::Type_MAX;
+const int SubmitTransactionRequest::Type_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
@@ -4528,6 +4557,7 @@ void SubmitTransactionRequest::clear_tx() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SubmitTransactionRequest::kTxFieldNumber;
+const int SubmitTransactionRequest::kTypeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SubmitTransactionRequest::SubmitTransactionRequest()
@@ -4544,13 +4574,16 @@ SubmitTransactionRequest::SubmitTransactionRequest(const SubmitTransactionReques
   } else {
     tx_ = nullptr;
   }
+  type_ = from.type_;
   // @@protoc_insertion_point(copy_constructor:api.SubmitTransactionRequest)
 }
 
 void SubmitTransactionRequest::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_SubmitTransactionRequest_proto_2fapi_2ftrading_2eproto.base);
-  tx_ = nullptr;
+  ::memset(&tx_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&type_) -
+      reinterpret_cast<char*>(&tx_)) + sizeof(type_));
 }
 
 SubmitTransactionRequest::~SubmitTransactionRequest() {
@@ -4581,6 +4614,7 @@ void SubmitTransactionRequest::Clear() {
     delete tx_;
   }
   tx_ = nullptr;
+  type_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -4608,6 +4642,14 @@ const char* SubmitTransactionRequest::_InternalParse(const char* begin, const ch
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .api.SubmitTransactionRequest.Type type = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        msg->set_type(static_cast<::api::SubmitTransactionRequest_Type>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -4651,6 +4693,20 @@ bool SubmitTransactionRequest::MergePartialFromCodedStream(
         break;
       }
 
+      // .api.SubmitTransactionRequest.Type type = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_type(static_cast< ::api::SubmitTransactionRequest_Type >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -4684,6 +4740,12 @@ void SubmitTransactionRequest::SerializeWithCachedSizes(
       1, HasBitSetters::tx(this), output);
   }
 
+  // .api.SubmitTransactionRequest.Type type = 2;
+  if (this->type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->type(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -4702,6 +4764,12 @@ void SubmitTransactionRequest::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         1, HasBitSetters::tx(this), target);
+  }
+
+  // .api.SubmitTransactionRequest.Type type = 2;
+  if (this->type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->type(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -4730,6 +4798,12 @@ size_t SubmitTransactionRequest::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *tx_);
+  }
+
+  // .api.SubmitTransactionRequest.Type type = 2;
+  if (this->type() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -4762,6 +4836,9 @@ void SubmitTransactionRequest::MergeFrom(const SubmitTransactionRequest& from) {
   if (from.has_tx()) {
     mutable_tx()->::vega::SignedBundle::MergeFrom(from.tx());
   }
+  if (from.type() != 0) {
+    set_type(from.type());
+  }
 }
 
 void SubmitTransactionRequest::CopyFrom(const ::google::protobuf::Message& from) {
@@ -4790,6 +4867,7 @@ void SubmitTransactionRequest::InternalSwap(SubmitTransactionRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(tx_, other->tx_);
+  swap(type_, other->type_);
 }
 
 ::google::protobuf::Metadata SubmitTransactionRequest::GetMetadata() const {

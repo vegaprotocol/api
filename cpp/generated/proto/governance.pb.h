@@ -473,23 +473,9 @@ class InstrumentConfiguration :
   ::std::string* release_code();
   void set_allocated_code(::std::string* code);
 
-  // string baseName = 3 [(.validator.field) = {
-  void clear_basename();
-  static const int kBaseNameFieldNumber = 3;
-  const ::std::string& basename() const;
-  void set_basename(const ::std::string& value);
-  #if LANG_CXX11
-  void set_basename(::std::string&& value);
-  #endif
-  void set_basename(const char* value);
-  void set_basename(const char* value, size_t size);
-  ::std::string* mutable_basename();
-  ::std::string* release_basename();
-  void set_allocated_basename(::std::string* basename);
-
-  // string quoteName = 4 [(.validator.field) = {
+  // string quoteName = 3 [(.validator.field) = {
   void clear_quotename();
-  static const int kQuoteNameFieldNumber = 4;
+  static const int kQuoteNameFieldNumber = 3;
   const ::std::string& quotename() const;
   void set_quotename(const ::std::string& value);
   #if LANG_CXX11
@@ -523,7 +509,6 @@ class InstrumentConfiguration :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr code_;
-  ::google::protobuf::internal::ArenaStringPtr basename_;
   ::google::protobuf::internal::ArenaStringPtr quotename_;
   union ProductUnion {
     ProductUnion() {}
@@ -674,14 +659,14 @@ class NewMarketConfiguration :
   ::vega::InstrumentConfiguration* mutable_instrument();
   void set_allocated_instrument(::vega::InstrumentConfiguration* instrument);
 
-  // .vega.PriceMonitoringSettings priceMonitoringSettings = 5;
-  bool has_pricemonitoringsettings() const;
-  void clear_pricemonitoringsettings();
-  static const int kPriceMonitoringSettingsFieldNumber = 5;
-  const ::vega::PriceMonitoringSettings& pricemonitoringsettings() const;
-  ::vega::PriceMonitoringSettings* release_pricemonitoringsettings();
-  ::vega::PriceMonitoringSettings* mutable_pricemonitoringsettings();
-  void set_allocated_pricemonitoringsettings(::vega::PriceMonitoringSettings* pricemonitoringsettings);
+  // .vega.PriceMonitoringParameters PriceMonitoringParameters = 5;
+  bool has_pricemonitoringparameters() const;
+  void clear_pricemonitoringparameters();
+  static const int kPriceMonitoringParametersFieldNumber = 5;
+  const ::vega::PriceMonitoringParameters& pricemonitoringparameters() const;
+  ::vega::PriceMonitoringParameters* release_pricemonitoringparameters();
+  ::vega::PriceMonitoringParameters* mutable_pricemonitoringparameters();
+  void set_allocated_pricemonitoringparameters(::vega::PriceMonitoringParameters* pricemonitoringparameters);
 
   // uint64 decimalPlaces = 2 [(.validator.field) = {
   void clear_decimalplaces();
@@ -752,7 +737,7 @@ class NewMarketConfiguration :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField<::std::string> metadata_;
   ::vega::InstrumentConfiguration* instrument_;
-  ::vega::PriceMonitoringSettings* pricemonitoringsettings_;
+  ::vega::PriceMonitoringParameters* pricemonitoringparameters_;
   ::google::protobuf::uint64 decimalplaces_;
   ::google::protobuf::int64 openingauctionduration_;
   union RiskParametersUnion {
@@ -2251,60 +2236,7 @@ inline void InstrumentConfiguration::set_allocated_code(::std::string* code) {
   // @@protoc_insertion_point(field_set_allocated:vega.InstrumentConfiguration.code)
 }
 
-// string baseName = 3 [(.validator.field) = {
-inline void InstrumentConfiguration::clear_basename() {
-  basename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& InstrumentConfiguration::basename() const {
-  // @@protoc_insertion_point(field_get:vega.InstrumentConfiguration.baseName)
-  return basename_.GetNoArena();
-}
-inline void InstrumentConfiguration::set_basename(const ::std::string& value) {
-
-  basename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:vega.InstrumentConfiguration.baseName)
-}
-#if LANG_CXX11
-inline void InstrumentConfiguration::set_basename(::std::string&& value) {
-
-  basename_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:vega.InstrumentConfiguration.baseName)
-}
-#endif
-inline void InstrumentConfiguration::set_basename(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  basename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:vega.InstrumentConfiguration.baseName)
-}
-inline void InstrumentConfiguration::set_basename(const char* value, size_t size) {
-
-  basename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:vega.InstrumentConfiguration.baseName)
-}
-inline ::std::string* InstrumentConfiguration::mutable_basename() {
-
-  // @@protoc_insertion_point(field_mutable:vega.InstrumentConfiguration.baseName)
-  return basename_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* InstrumentConfiguration::release_basename() {
-  // @@protoc_insertion_point(field_release:vega.InstrumentConfiguration.baseName)
-
-  return basename_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void InstrumentConfiguration::set_allocated_basename(::std::string* basename) {
-  if (basename != nullptr) {
-
-  } else {
-
-  }
-  basename_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), basename);
-  // @@protoc_insertion_point(field_set_allocated:vega.InstrumentConfiguration.baseName)
-}
-
-// string quoteName = 4 [(.validator.field) = {
+// string quoteName = 3 [(.validator.field) = {
 inline void InstrumentConfiguration::clear_quotename() {
   quotename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -2559,49 +2491,49 @@ inline void NewMarketConfiguration::set_openingauctionduration(::google::protobu
   // @@protoc_insertion_point(field_set:vega.NewMarketConfiguration.openingAuctionDuration)
 }
 
-// .vega.PriceMonitoringSettings priceMonitoringSettings = 5;
-inline bool NewMarketConfiguration::has_pricemonitoringsettings() const {
-  return this != internal_default_instance() && pricemonitoringsettings_ != nullptr;
+// .vega.PriceMonitoringParameters PriceMonitoringParameters = 5;
+inline bool NewMarketConfiguration::has_pricemonitoringparameters() const {
+  return this != internal_default_instance() && pricemonitoringparameters_ != nullptr;
 }
-inline const ::vega::PriceMonitoringSettings& NewMarketConfiguration::pricemonitoringsettings() const {
-  const ::vega::PriceMonitoringSettings* p = pricemonitoringsettings_;
-  // @@protoc_insertion_point(field_get:vega.NewMarketConfiguration.priceMonitoringSettings)
-  return p != nullptr ? *p : *reinterpret_cast<const ::vega::PriceMonitoringSettings*>(
-      &::vega::_PriceMonitoringSettings_default_instance_);
+inline const ::vega::PriceMonitoringParameters& NewMarketConfiguration::pricemonitoringparameters() const {
+  const ::vega::PriceMonitoringParameters* p = pricemonitoringparameters_;
+  // @@protoc_insertion_point(field_get:vega.NewMarketConfiguration.PriceMonitoringParameters)
+  return p != nullptr ? *p : *reinterpret_cast<const ::vega::PriceMonitoringParameters*>(
+      &::vega::_PriceMonitoringParameters_default_instance_);
 }
-inline ::vega::PriceMonitoringSettings* NewMarketConfiguration::release_pricemonitoringsettings() {
-  // @@protoc_insertion_point(field_release:vega.NewMarketConfiguration.priceMonitoringSettings)
+inline ::vega::PriceMonitoringParameters* NewMarketConfiguration::release_pricemonitoringparameters() {
+  // @@protoc_insertion_point(field_release:vega.NewMarketConfiguration.PriceMonitoringParameters)
 
-  ::vega::PriceMonitoringSettings* temp = pricemonitoringsettings_;
-  pricemonitoringsettings_ = nullptr;
+  ::vega::PriceMonitoringParameters* temp = pricemonitoringparameters_;
+  pricemonitoringparameters_ = nullptr;
   return temp;
 }
-inline ::vega::PriceMonitoringSettings* NewMarketConfiguration::mutable_pricemonitoringsettings() {
+inline ::vega::PriceMonitoringParameters* NewMarketConfiguration::mutable_pricemonitoringparameters() {
 
-  if (pricemonitoringsettings_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::PriceMonitoringSettings>(GetArenaNoVirtual());
-    pricemonitoringsettings_ = p;
+  if (pricemonitoringparameters_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::PriceMonitoringParameters>(GetArenaNoVirtual());
+    pricemonitoringparameters_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:vega.NewMarketConfiguration.priceMonitoringSettings)
-  return pricemonitoringsettings_;
+  // @@protoc_insertion_point(field_mutable:vega.NewMarketConfiguration.PriceMonitoringParameters)
+  return pricemonitoringparameters_;
 }
-inline void NewMarketConfiguration::set_allocated_pricemonitoringsettings(::vega::PriceMonitoringSettings* pricemonitoringsettings) {
+inline void NewMarketConfiguration::set_allocated_pricemonitoringparameters(::vega::PriceMonitoringParameters* pricemonitoringparameters) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(pricemonitoringsettings_);
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(pricemonitoringparameters_);
   }
-  if (pricemonitoringsettings) {
+  if (pricemonitoringparameters) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      pricemonitoringsettings = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, pricemonitoringsettings, submessage_arena);
+      pricemonitoringparameters = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, pricemonitoringparameters, submessage_arena);
     }
 
   } else {
 
   }
-  pricemonitoringsettings_ = pricemonitoringsettings;
-  // @@protoc_insertion_point(field_set_allocated:vega.NewMarketConfiguration.priceMonitoringSettings)
+  pricemonitoringparameters_ = pricemonitoringparameters;
+  // @@protoc_insertion_point(field_set_allocated:vega.NewMarketConfiguration.PriceMonitoringParameters)
 }
 
 // .vega.SimpleModelParams simple = 100;

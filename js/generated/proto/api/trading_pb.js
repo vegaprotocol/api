@@ -134,6 +134,7 @@ goog.exportSymbol('proto.api.PropagateChainEventRequest', null, global);
 goog.exportSymbol('proto.api.PropagateChainEventResponse', null, global);
 goog.exportSymbol('proto.api.SubmitOrderRequest', null, global);
 goog.exportSymbol('proto.api.SubmitTransactionRequest', null, global);
+goog.exportSymbol('proto.api.SubmitTransactionRequest.Type', null, global);
 goog.exportSymbol('proto.api.SubmitTransactionResponse', null, global);
 goog.exportSymbol('proto.api.TradesByMarketRequest', null, global);
 goog.exportSymbol('proto.api.TradesByMarketResponse', null, global);
@@ -3069,7 +3070,8 @@ proto.api.SubmitTransactionRequest.prototype.toObject = function(opt_includeInst
  */
 proto.api.SubmitTransactionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tx: (f = msg.getTx()) && proto_vega_pb.SignedBundle.toObject(includeInstance, f)
+    tx: (f = msg.getTx()) && proto_vega_pb.SignedBundle.toObject(includeInstance, f),
+    type: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -3111,6 +3113,10 @@ proto.api.SubmitTransactionRequest.deserializeBinaryFromReader = function(msg, r
       reader.readMessage(value,proto_vega_pb.SignedBundle.deserializeBinaryFromReader);
       msg.setTx(value);
       break;
+    case 2:
+      var value = /** @type {!proto.api.SubmitTransactionRequest.Type} */ (reader.readEnum());
+      msg.setType(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3148,8 +3154,25 @@ proto.api.SubmitTransactionRequest.serializeBinaryToWriter = function(message, w
       proto_vega_pb.SignedBundle.serializeBinaryToWriter
     );
   }
+  f = message.getType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      2,
+      f
+    );
+  }
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.api.SubmitTransactionRequest.Type = {
+  TYPE_UNSPECIFIED: 0,
+  TYPE_ASYNC: 1,
+  TYPE_SYNC: 2,
+  TYPE_COMMIT: 3
+};
 
 /**
  * optional vega.SignedBundle tx = 1;
@@ -3181,6 +3204,21 @@ proto.api.SubmitTransactionRequest.prototype.clearTx = function() {
  */
 proto.api.SubmitTransactionRequest.prototype.hasTx = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Type type = 2;
+ * @return {!proto.api.SubmitTransactionRequest.Type}
+ */
+proto.api.SubmitTransactionRequest.prototype.getType = function() {
+  return /** @type {!proto.api.SubmitTransactionRequest.Type} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/** @param {!proto.api.SubmitTransactionRequest.Type} value */
+proto.api.SubmitTransactionRequest.prototype.setType = function(value) {
+  jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 

@@ -13,6 +13,8 @@ var global = Function('return this')();
 
 var github_com_mwitkow_go$proto$validators_validator_pb = require('../external/github.com/mwitkow/go-proto-validators/validator_pb.js');
 goog.object.extend(proto, github_com_mwitkow_go$proto$validators_validator_pb);
+var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
+goog.object.extend(proto, google_protobuf_wrappers_pb);
 goog.exportSymbol('proto.vega.Account', null, global);
 goog.exportSymbol('proto.vega.AccountType', null, global);
 goog.exportSymbol('proto.vega.AuctionIndicativeState', null, global);
@@ -2380,7 +2382,8 @@ proto.vega.Order.Status = {
   STATUS_STOPPED: 4,
   STATUS_FILLED: 5,
   STATUS_REJECTED: 6,
-  STATUS_PARTIALLY_FILLED: 7
+  STATUS_PARTIALLY_FILLED: 7,
+  STATUS_PARKED: 8
 };
 
 /**
@@ -7899,7 +7902,9 @@ proto.vega.OrderAmendment.toObject = function(includeInstance, msg) {
     price: (f = msg.getPrice()) && proto.vega.Price.toObject(includeInstance, f),
     sizedelta: jspb.Message.getFieldWithDefault(msg, 5, 0),
     expiresat: (f = msg.getExpiresat()) && proto.vega.Timestamp.toObject(includeInstance, f),
-    timeinforce: jspb.Message.getFieldWithDefault(msg, 7, 0)
+    timeinforce: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    peggedoffset: (f = msg.getPeggedoffset()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
+    peggedreference: jspb.Message.getFieldWithDefault(msg, 9, 0)
   };
 
   if (includeInstance) {
@@ -7965,6 +7970,15 @@ proto.vega.OrderAmendment.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = /** @type {!proto.vega.Order.TimeInForce} */ (reader.readEnum());
       msg.setTimeinforce(value);
+      break;
+    case 8:
+      var value = new google_protobuf_wrappers_pb.Int64Value;
+      reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
+      msg.setPeggedoffset(value);
+      break;
+    case 9:
+      var value = /** @type {!proto.vega.PeggedReference} */ (reader.readEnum());
+      msg.setPeggedreference(value);
       break;
     default:
       reader.skipField();
@@ -8043,6 +8057,21 @@ proto.vega.OrderAmendment.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0.0) {
     writer.writeEnum(
       7,
+      f
+    );
+  }
+  f = message.getPeggedoffset();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getPeggedreference();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      9,
       f
     );
   }
@@ -8187,6 +8216,54 @@ proto.vega.OrderAmendment.prototype.getTimeinforce = function() {
 /** @param {!proto.vega.Order.TimeInForce} value */
 proto.vega.OrderAmendment.prototype.setTimeinforce = function(value) {
   jspb.Message.setProto3EnumField(this, 7, value);
+};
+
+
+/**
+ * optional google.protobuf.Int64Value peggedOffset = 8;
+ * @return {?proto.google.protobuf.Int64Value}
+ */
+proto.vega.OrderAmendment.prototype.getPeggedoffset = function() {
+  return /** @type{?proto.google.protobuf.Int64Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 8));
+};
+
+
+/** @param {?proto.google.protobuf.Int64Value|undefined} value */
+proto.vega.OrderAmendment.prototype.setPeggedoffset = function(value) {
+  jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ */
+proto.vega.OrderAmendment.prototype.clearPeggedoffset = function() {
+  this.setPeggedoffset(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.OrderAmendment.prototype.hasPeggedoffset = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional PeggedReference peggedReference = 9;
+ * @return {!proto.vega.PeggedReference}
+ */
+proto.vega.OrderAmendment.prototype.getPeggedreference = function() {
+  return /** @type {!proto.vega.PeggedReference} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/** @param {!proto.vega.PeggedReference} value */
+proto.vega.OrderAmendment.prototype.setPeggedreference = function(value) {
+  jspb.Message.setProto3EnumField(this, 9, value);
 };
 
 
@@ -11093,18 +11170,23 @@ proto.vega.MarketData.toObject = function(includeInstance, msg) {
     bestbidvolume: jspb.Message.getFieldWithDefault(msg, 3, 0),
     bestofferprice: jspb.Message.getFieldWithDefault(msg, 4, 0),
     bestoffervolume: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    midprice: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    market: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    openinterest: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    auctionend: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    auctionstart: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    indicativeprice: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    indicativevolume: jspb.Message.getFieldWithDefault(msg, 13, 0),
-    marketstate: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    trigger: jspb.Message.getFieldWithDefault(msg, 15, 0),
-    targetstake: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    suppliedstake: jspb.Message.getFieldWithDefault(msg, 17, "")
+    beststaticbidprice: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    beststaticbidvolume: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    beststaticofferprice: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    beststaticoffervolume: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    midprice: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    staticmidprice: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    market: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    timestamp: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    openinterest: jspb.Message.getFieldWithDefault(msg, 14, 0),
+    auctionend: jspb.Message.getFieldWithDefault(msg, 15, 0),
+    auctionstart: jspb.Message.getFieldWithDefault(msg, 16, 0),
+    indicativeprice: jspb.Message.getFieldWithDefault(msg, 17, 0),
+    indicativevolume: jspb.Message.getFieldWithDefault(msg, 18, 0),
+    marketstate: jspb.Message.getFieldWithDefault(msg, 19, 0),
+    trigger: jspb.Message.getFieldWithDefault(msg, 20, 0),
+    targetstake: jspb.Message.getFieldWithDefault(msg, 21, ""),
+    suppliedstake: jspb.Message.getFieldWithDefault(msg, 22, "")
   };
 
   if (includeInstance) {
@@ -11163,49 +11245,69 @@ proto.vega.MarketData.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 6:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMidprice(value);
+      msg.setBeststaticbidprice(value);
       break;
     case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMarket(value);
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setBeststaticbidvolume(value);
       break;
     case 8:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setTimestamp(value);
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setBeststaticofferprice(value);
       break;
     case 9:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setOpeninterest(value);
+      msg.setBeststaticoffervolume(value);
       break;
     case 10:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setMidprice(value);
+      break;
+    case 11:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setStaticmidprice(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMarket(value);
+      break;
+    case 13:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTimestamp(value);
+      break;
+    case 14:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setOpeninterest(value);
+      break;
+    case 15:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setAuctionend(value);
       break;
-    case 11:
+    case 16:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setAuctionstart(value);
       break;
-    case 12:
+    case 17:
       var value = /** @type {number} */ (reader.readUint64());
       msg.setIndicativeprice(value);
       break;
-    case 13:
+    case 18:
       var value = /** @type {number} */ (reader.readUint64());
       msg.setIndicativevolume(value);
       break;
-    case 14:
+    case 19:
       var value = /** @type {!proto.vega.MarketState} */ (reader.readEnum());
       msg.setMarketstate(value);
       break;
-    case 15:
+    case 20:
       var value = /** @type {!proto.vega.AuctionTrigger} */ (reader.readEnum());
       msg.setTrigger(value);
       break;
-    case 16:
+    case 21:
       var value = /** @type {string} */ (reader.readString());
       msg.setTargetstake(value);
       break;
-    case 17:
+    case 22:
       var value = /** @type {string} */ (reader.readString());
       msg.setSuppliedstake(value);
       break;
@@ -11273,87 +11375,122 @@ proto.vega.MarketData.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getMidprice();
+  f = message.getBeststaticbidprice();
   if (f !== 0) {
     writer.writeUint64(
       6,
       f
     );
   }
-  f = message.getMarket();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getBeststaticbidvolume();
+  if (f !== 0) {
+    writer.writeUint64(
       7,
       f
     );
   }
-  f = message.getTimestamp();
+  f = message.getBeststaticofferprice();
   if (f !== 0) {
-    writer.writeInt64(
+    writer.writeUint64(
       8,
       f
     );
   }
-  f = message.getOpeninterest();
+  f = message.getBeststaticoffervolume();
   if (f !== 0) {
     writer.writeUint64(
       9,
       f
     );
   }
+  f = message.getMidprice();
+  if (f !== 0) {
+    writer.writeUint64(
+      10,
+      f
+    );
+  }
+  f = message.getStaticmidprice();
+  if (f !== 0) {
+    writer.writeUint64(
+      11,
+      f
+    );
+  }
+  f = message.getMarket();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getTimestamp();
+  if (f !== 0) {
+    writer.writeInt64(
+      13,
+      f
+    );
+  }
+  f = message.getOpeninterest();
+  if (f !== 0) {
+    writer.writeUint64(
+      14,
+      f
+    );
+  }
   f = message.getAuctionend();
   if (f !== 0) {
     writer.writeInt64(
-      10,
+      15,
       f
     );
   }
   f = message.getAuctionstart();
   if (f !== 0) {
     writer.writeInt64(
-      11,
+      16,
       f
     );
   }
   f = message.getIndicativeprice();
   if (f !== 0) {
     writer.writeUint64(
-      12,
+      17,
       f
     );
   }
   f = message.getIndicativevolume();
   if (f !== 0) {
     writer.writeUint64(
-      13,
+      18,
       f
     );
   }
   f = message.getMarketstate();
   if (f !== 0.0) {
     writer.writeEnum(
-      14,
+      19,
       f
     );
   }
   f = message.getTrigger();
   if (f !== 0.0) {
     writer.writeEnum(
-      15,
+      20,
       f
     );
   }
   f = message.getTargetstake();
   if (f.length > 0) {
     writer.writeString(
-      16,
+      21,
       f
     );
   }
   f = message.getSuppliedstake();
   if (f.length > 0) {
     writer.writeString(
-      17,
+      22,
       f
     );
   }
@@ -11436,182 +11573,257 @@ proto.vega.MarketData.prototype.setBestoffervolume = function(value) {
 
 
 /**
- * optional uint64 midPrice = 6;
+ * optional uint64 bestStaticBidPrice = 6;
  * @return {number}
  */
-proto.vega.MarketData.prototype.getMidprice = function() {
+proto.vega.MarketData.prototype.getBeststaticbidprice = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
 /** @param {number} value */
-proto.vega.MarketData.prototype.setMidprice = function(value) {
+proto.vega.MarketData.prototype.setBeststaticbidprice = function(value) {
   jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
 /**
- * optional string market = 7;
- * @return {string}
+ * optional uint64 bestStaticBidVolume = 7;
+ * @return {number}
  */
-proto.vega.MarketData.prototype.getMarket = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+proto.vega.MarketData.prototype.getBeststaticbidvolume = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
-/** @param {string} value */
-proto.vega.MarketData.prototype.setMarket = function(value) {
-  jspb.Message.setProto3StringField(this, 7, value);
+/** @param {number} value */
+proto.vega.MarketData.prototype.setBeststaticbidvolume = function(value) {
+  jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
 /**
- * optional int64 timestamp = 8;
+ * optional uint64 bestStaticOfferPrice = 8;
  * @return {number}
  */
-proto.vega.MarketData.prototype.getTimestamp = function() {
+proto.vega.MarketData.prototype.getBeststaticofferprice = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
 
 /** @param {number} value */
-proto.vega.MarketData.prototype.setTimestamp = function(value) {
+proto.vega.MarketData.prototype.setBeststaticofferprice = function(value) {
   jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
 /**
- * optional uint64 openInterest = 9;
+ * optional uint64 bestStaticOfferVolume = 9;
  * @return {number}
  */
-proto.vega.MarketData.prototype.getOpeninterest = function() {
+proto.vega.MarketData.prototype.getBeststaticoffervolume = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
 
 /** @param {number} value */
-proto.vega.MarketData.prototype.setOpeninterest = function(value) {
+proto.vega.MarketData.prototype.setBeststaticoffervolume = function(value) {
   jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
 /**
- * optional int64 auctionEnd = 10;
+ * optional uint64 midPrice = 10;
  * @return {number}
  */
-proto.vega.MarketData.prototype.getAuctionend = function() {
+proto.vega.MarketData.prototype.getMidprice = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
 
 /** @param {number} value */
-proto.vega.MarketData.prototype.setAuctionend = function(value) {
+proto.vega.MarketData.prototype.setMidprice = function(value) {
   jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
 /**
- * optional int64 auctionStart = 11;
+ * optional uint64 staticMidPrice = 11;
  * @return {number}
  */
-proto.vega.MarketData.prototype.getAuctionstart = function() {
+proto.vega.MarketData.prototype.getStaticmidprice = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
 /** @param {number} value */
-proto.vega.MarketData.prototype.setAuctionstart = function(value) {
+proto.vega.MarketData.prototype.setStaticmidprice = function(value) {
   jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
 /**
- * optional uint64 indicativePrice = 12;
- * @return {number}
+ * optional string market = 12;
+ * @return {string}
  */
-proto.vega.MarketData.prototype.getIndicativeprice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+proto.vega.MarketData.prototype.getMarket = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
 
-/** @param {number} value */
-proto.vega.MarketData.prototype.setIndicativeprice = function(value) {
-  jspb.Message.setProto3IntField(this, 12, value);
+/** @param {string} value */
+proto.vega.MarketData.prototype.setMarket = function(value) {
+  jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
 /**
- * optional uint64 indicativeVolume = 13;
+ * optional int64 timestamp = 13;
  * @return {number}
  */
-proto.vega.MarketData.prototype.getIndicativevolume = function() {
+proto.vega.MarketData.prototype.getTimestamp = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
 };
 
 
 /** @param {number} value */
-proto.vega.MarketData.prototype.setIndicativevolume = function(value) {
+proto.vega.MarketData.prototype.setTimestamp = function(value) {
   jspb.Message.setProto3IntField(this, 13, value);
 };
 
 
 /**
- * optional MarketState marketState = 14;
+ * optional uint64 openInterest = 14;
+ * @return {number}
+ */
+proto.vega.MarketData.prototype.getOpeninterest = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/** @param {number} value */
+proto.vega.MarketData.prototype.setOpeninterest = function(value) {
+  jspb.Message.setProto3IntField(this, 14, value);
+};
+
+
+/**
+ * optional int64 auctionEnd = 15;
+ * @return {number}
+ */
+proto.vega.MarketData.prototype.getAuctionend = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+};
+
+
+/** @param {number} value */
+proto.vega.MarketData.prototype.setAuctionend = function(value) {
+  jspb.Message.setProto3IntField(this, 15, value);
+};
+
+
+/**
+ * optional int64 auctionStart = 16;
+ * @return {number}
+ */
+proto.vega.MarketData.prototype.getAuctionstart = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
+};
+
+
+/** @param {number} value */
+proto.vega.MarketData.prototype.setAuctionstart = function(value) {
+  jspb.Message.setProto3IntField(this, 16, value);
+};
+
+
+/**
+ * optional uint64 indicativePrice = 17;
+ * @return {number}
+ */
+proto.vega.MarketData.prototype.getIndicativeprice = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
+};
+
+
+/** @param {number} value */
+proto.vega.MarketData.prototype.setIndicativeprice = function(value) {
+  jspb.Message.setProto3IntField(this, 17, value);
+};
+
+
+/**
+ * optional uint64 indicativeVolume = 18;
+ * @return {number}
+ */
+proto.vega.MarketData.prototype.getIndicativevolume = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
+};
+
+
+/** @param {number} value */
+proto.vega.MarketData.prototype.setIndicativevolume = function(value) {
+  jspb.Message.setProto3IntField(this, 18, value);
+};
+
+
+/**
+ * optional MarketState marketState = 19;
  * @return {!proto.vega.MarketState}
  */
 proto.vega.MarketData.prototype.getMarketstate = function() {
-  return /** @type {!proto.vega.MarketState} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+  return /** @type {!proto.vega.MarketState} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
 };
 
 
 /** @param {!proto.vega.MarketState} value */
 proto.vega.MarketData.prototype.setMarketstate = function(value) {
-  jspb.Message.setProto3EnumField(this, 14, value);
+  jspb.Message.setProto3EnumField(this, 19, value);
 };
 
 
 /**
- * optional AuctionTrigger trigger = 15;
+ * optional AuctionTrigger trigger = 20;
  * @return {!proto.vega.AuctionTrigger}
  */
 proto.vega.MarketData.prototype.getTrigger = function() {
-  return /** @type {!proto.vega.AuctionTrigger} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+  return /** @type {!proto.vega.AuctionTrigger} */ (jspb.Message.getFieldWithDefault(this, 20, 0));
 };
 
 
 /** @param {!proto.vega.AuctionTrigger} value */
 proto.vega.MarketData.prototype.setTrigger = function(value) {
-  jspb.Message.setProto3EnumField(this, 15, value);
+  jspb.Message.setProto3EnumField(this, 20, value);
 };
 
 
 /**
- * optional string targetStake = 16;
+ * optional string targetStake = 21;
  * @return {string}
  */
 proto.vega.MarketData.prototype.getTargetstake = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
 };
 
 
 /** @param {string} value */
 proto.vega.MarketData.prototype.setTargetstake = function(value) {
-  jspb.Message.setProto3StringField(this, 16, value);
+  jspb.Message.setProto3StringField(this, 21, value);
 };
 
 
 /**
- * optional string suppliedStake = 17;
+ * optional string suppliedStake = 22;
  * @return {string}
  */
 proto.vega.MarketData.prototype.getSuppliedstake = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
 };
 
 
 /** @param {string} value */
 proto.vega.MarketData.prototype.setSuppliedstake = function(value) {
-  jspb.Message.setProto3StringField(this, 17, value);
+  jspb.Message.setProto3StringField(this, 22, value);
 };
 
 
@@ -13798,7 +14010,8 @@ proto.vega.LiquidityProvision.Status = {
   LIQUIDITY_PROVISION_STATUS_UNSPECIFIED: 0,
   LIQUIDITY_PROVISION_STATUS_ACTIVE: 1,
   LIQUIDITY_PROVISION_STATUS_STOPPED: 2,
-  LIQUIDITY_PROVISION_STATUS_CANCELLED: 3
+  LIQUIDITY_PROVISION_STATUS_CANCELLED: 3,
+  LIQUIDITY_PROVISION_STATUS_REJECTED: 4
 };
 
 /**
@@ -14105,7 +14318,9 @@ proto.vega.OrderError = {
   ORDER_ERROR_OFFSET_MUST_BE_GREATER_OR_EQUAL_TO_ZERO: 40,
   ORDER_ERROR_SELL_CANNOT_REFERENCE_BEST_BID_PRICE: 41,
   ORDER_ERROR_OFFSET_MUST_BE_GREATER_THAN_ZERO: 42,
-  ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE: 43
+  ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE: 43,
+  ORDER_ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAILS_ON_NON_PEGGED_ORDER: 44,
+  ORDER_ERROR_UNABLE_TO_REPRICE_PEGGED_ORDER: 45
 };
 
 /**

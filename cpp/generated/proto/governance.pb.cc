@@ -33,7 +33,7 @@ extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::inte
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_DiscreteTrading_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SimpleModelParams_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_LogNormalRiskModel_proto_2fmarkets_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_PriceMonitoringSettings_proto_2fmarkets_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_PriceMonitoringParameters_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_NetworkParameter_proto_2fvega_2eproto;
 namespace vega {
 class FutureProductDefaultTypeInternal {
@@ -141,7 +141,7 @@ static void InitDefaultsNewMarketConfiguration_proto_2fgovernance_2eproto() {
 ::google::protobuf::internal::SCCInfo<6> scc_info_NewMarketConfiguration_proto_2fgovernance_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 6, InitDefaultsNewMarketConfiguration_proto_2fgovernance_2eproto}, {
       &scc_info_InstrumentConfiguration_proto_2fgovernance_2eproto.base,
-      &scc_info_PriceMonitoringSettings_proto_2fmarkets_2eproto.base,
+      &scc_info_PriceMonitoringParameters_proto_2fmarkets_2eproto.base,
       &scc_info_SimpleModelParams_proto_2fmarkets_2eproto.base,
       &scc_info_LogNormalRiskModel_proto_2fmarkets_2eproto.base,
       &scc_info_ContinuousTrading_proto_2fmarkets_2eproto.base,
@@ -334,7 +334,6 @@ const ::google::protobuf::uint32 TableStruct_proto_2fgovernance_2eproto::offsets
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::InstrumentConfiguration, name_),
   PROTOBUF_FIELD_OFFSET(::vega::InstrumentConfiguration, code_),
-  PROTOBUF_FIELD_OFFSET(::vega::InstrumentConfiguration, basename_),
   PROTOBUF_FIELD_OFFSET(::vega::InstrumentConfiguration, quotename_),
   offsetof(::vega::InstrumentConfigurationDefaultTypeInternal, future_),
   PROTOBUF_FIELD_OFFSET(::vega::InstrumentConfiguration, product_),
@@ -347,7 +346,7 @@ const ::google::protobuf::uint32 TableStruct_proto_2fgovernance_2eproto::offsets
   PROTOBUF_FIELD_OFFSET(::vega::NewMarketConfiguration, decimalplaces_),
   PROTOBUF_FIELD_OFFSET(::vega::NewMarketConfiguration, metadata_),
   PROTOBUF_FIELD_OFFSET(::vega::NewMarketConfiguration, openingauctionduration_),
-  PROTOBUF_FIELD_OFFSET(::vega::NewMarketConfiguration, pricemonitoringsettings_),
+  PROTOBUF_FIELD_OFFSET(::vega::NewMarketConfiguration, pricemonitoringparameters_),
   offsetof(::vega::NewMarketConfigurationDefaultTypeInternal, simple_),
   offsetof(::vega::NewMarketConfigurationDefaultTypeInternal, lognormal_),
   offsetof(::vega::NewMarketConfigurationDefaultTypeInternal, continuous_),
@@ -443,17 +442,17 @@ const ::google::protobuf::uint32 TableStruct_proto_2fgovernance_2eproto::offsets
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::FutureProduct)},
   { 7, -1, sizeof(::vega::InstrumentConfiguration)},
-  { 18, -1, sizeof(::vega::NewMarketConfiguration)},
-  { 34, -1, sizeof(::vega::NewMarket)},
-  { 40, -1, sizeof(::vega::UpdateMarket)},
-  { 45, -1, sizeof(::vega::UpdateNetworkParameter)},
-  { 51, -1, sizeof(::vega::NewAsset)},
-  { 57, -1, sizeof(::vega::ProposalTerms)},
-  { 70, 77, sizeof(::vega::GovernanceData_YesPartyEntry_DoNotUse)},
-  { 79, 86, sizeof(::vega::GovernanceData_NoPartyEntry_DoNotUse)},
-  { 88, -1, sizeof(::vega::GovernanceData)},
-  { 98, -1, sizeof(::vega::Proposal)},
-  { 110, -1, sizeof(::vega::Vote)},
+  { 17, -1, sizeof(::vega::NewMarketConfiguration)},
+  { 33, -1, sizeof(::vega::NewMarket)},
+  { 39, -1, sizeof(::vega::UpdateMarket)},
+  { 44, -1, sizeof(::vega::UpdateNetworkParameter)},
+  { 50, -1, sizeof(::vega::NewAsset)},
+  { 56, -1, sizeof(::vega::ProposalTerms)},
+  { 69, 76, sizeof(::vega::GovernanceData_YesPartyEntry_DoNotUse)},
+  { 78, 85, sizeof(::vega::GovernanceData_NoPartyEntry_DoNotUse)},
+  { 87, -1, sizeof(::vega::GovernanceData)},
+  { 97, -1, sizeof(::vega::Proposal)},
+  { 109, -1, sizeof(::vega::Vote)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -484,92 +483,91 @@ const char descriptor_table_protodef_proto_2fgovernance_2eproto[] =
   ".proto\032\023proto/markets.proto\032\020proto/vega."
   "proto\032\022proto/assets.proto\"@\n\rFutureProdu"
   "ct\022\030\n\010maturity\030\001 \001(\tB\006\342\337\037\002X\001\022\025\n\005asset\030\002 "
-  "\001(\tB\006\342\337\037\002X\001\"\254\001\n\027InstrumentConfiguration\022"
+  "\001(\tB\006\342\337\037\002X\001\"\222\001\n\027InstrumentConfiguration\022"
   "\024\n\004name\030\001 \001(\tB\006\342\337\037\002X\001\022\024\n\004code\030\002 \001(\tB\006\342\337\037"
-  "\002X\001\022\030\n\010baseName\030\003 \001(\tB\006\342\337\037\002X\001\022\031\n\tquoteNa"
-  "me\030\004 \001(\tB\006\342\337\037\002X\001\022%\n\006future\030d \001(\0132\023.vega."
-  "FutureProductH\000B\t\n\007product\"\274\003\n\026NewMarket"
-  "Configuration\0229\n\ninstrument\030\001 \001(\0132\035.vega"
-  ".InstrumentConfigurationB\006\342\337\037\002 \001\022\036\n\rdeci"
-  "malPlaces\030\002 \001(\004B\007\342\337\037\003\030\226\001\022\020\n\010metadata\030\003 \003"
-  "(\t\022\036\n\026openingAuctionDuration\030\004 \001(\003\022>\n\027pr"
-  "iceMonitoringSettings\030\005 \001(\0132\035.vega.Price"
-  "MonitoringSettings\022)\n\006simple\030d \001(\0132\027.veg"
-  "a.SimpleModelParamsH\000\022-\n\tlogNormal\030e \001(\013"
-  "2\030.vega.LogNormalRiskModelH\000\022.\n\ncontinuo"
-  "us\030\310\001 \001(\0132\027.vega.ContinuousTradingH\001\022*\n\010"
-  "discrete\030\311\001 \001(\0132\025.vega.DiscreteTradingH\001"
-  "B\020\n\016riskParametersB\r\n\013tradingMode\"B\n\tNew"
-  "Market\0225\n\007changes\030\001 \001(\0132\034.vega.NewMarket"
-  "ConfigurationB\006\342\337\037\002 \001\"\016\n\014UpdateMarket\"I\n"
-  "\026UpdateNetworkParameter\022/\n\007changes\030\001 \001(\013"
-  "2\026.vega.NetworkParameterB\006\342\337\037\002 \001\"6\n\010NewA"
-  "sset\022*\n\007changes\030\001 \001(\0132\021.vega.AssetSource"
-  "B\006\342\337\037\002 \001\"\262\002\n\rProposalTerms\022 \n\020closingTim"
-  "estamp\030\001 \001(\003B\006\342\337\037\002\020\000\022\"\n\022enactmentTimesta"
-  "mp\030\002 \001(\003B\006\342\337\037\002\020\000\022\033\n\023validationTimestamp\030"
-  "\003 \001(\003\022*\n\014updateMarket\030e \001(\0132\022.vega.Updat"
-  "eMarketH\000\022$\n\tnewMarket\030f \001(\0132\017.vega.NewM"
-  "arketH\000\022>\n\026updateNetworkParameter\030g \001(\0132"
-  "\034.vega.UpdateNetworkParameterH\000\022\"\n\010newAs"
-  "set\030h \001(\0132\016.vega.NewAssetH\000B\010\n\006change\"\306\002"
-  "\n\016GovernanceData\022 \n\010proposal\030\001 \001(\0132\016.veg"
-  "a.Proposal\022\027\n\003yes\030\002 \003(\0132\n.vega.Vote\022\026\n\002n"
-  "o\030\003 \003(\0132\n.vega.Vote\0224\n\010yesParty\030\004 \003(\0132\"."
-  "vega.GovernanceData.YesPartyEntry\0222\n\007noP"
-  "arty\030\005 \003(\0132!.vega.GovernanceData.NoParty"
-  "Entry\032;\n\rYesPartyEntry\022\013\n\003key\030\001 \001(\t\022\031\n\005v"
-  "alue\030\002 \001(\0132\n.vega.Vote:\0028\001\032:\n\014NoPartyEnt"
-  "ry\022\013\n\003key\030\001 \001(\t\022\031\n\005value\030\002 \001(\0132\n.vega.Vo"
-  "te:\0028\001\"\205\003\n\010Proposal\022\n\n\002ID\030\001 \001(\t\022\021\n\trefer"
-  "ence\030\002 \001(\t\022\027\n\007partyID\030\003 \001(\tB\006\342\337\037\002X\001\022,\n\005s"
-  "tate\030\004 \001(\0162\024.vega.Proposal.StateB\007\342\337\037\003\210\001"
-  "\001\022\021\n\ttimestamp\030\005 \001(\003\022*\n\005terms\030\006 \001(\0132\023.ve"
-  "ga.ProposalTermsB\006\342\337\037\002 \001\022#\n\006reason\030\007 \001(\016"
-  "2\023.vega.ProposalError\"\256\001\n\005State\022\025\n\021STATE"
-  "_UNSPECIFIED\020\000\022\020\n\014STATE_FAILED\020\001\022\016\n\nSTAT"
-  "E_OPEN\020\002\022\020\n\014STATE_PASSED\020\003\022\022\n\016STATE_REJE"
-  "CTED\020\004\022\022\n\016STATE_DECLINED\020\005\022\021\n\rSTATE_ENAC"
-  "TED\020\006\022\037\n\033STATE_WAITING_FOR_NODE_VOTE\020\007\"\265"
-  "\001\n\004Vote\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001\022(\n\005valu"
-  "e\030\002 \001(\0162\020.vega.Vote.ValueB\007\342\337\037\003\210\001\001\022\032\n\npr"
-  "oposalID\030\003 \001(\tB\006\342\337\037\002X\001\022\021\n\ttimestamp\030\004 \001("
-  "\003\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VAL"
-  "UE_NO\020\001\022\r\n\tVALUE_YES\020\002*\262\010\n\rProposalError"
-  "\022\036\n\032PROPOSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROP"
-  "OSAL_ERROR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROP"
-  "OSAL_ERROR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROP"
-  "OSAL_ERROR_ENACT_TIME_TOO_SOON\020\003\022&\n\"PROP"
-  "OSAL_ERROR_ENACT_TIME_TOO_LATE\020\004\022&\n\"PROP"
-  "OSAL_ERROR_INSUFFICIENT_TOKENS\020\005\022.\n*PROP"
-  "OSAL_ERROR_INVALID_INSTRUMENT_SECURITY\020\006"
-  "\022\035\n\031PROPOSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PROPO"
-  "SAL_ERROR_UNSUPPORTED_PRODUCT\020\010\0223\n/PROPO"
-  "SAL_ERROR_INVALID_FUTURE_PRODUCT_TIMESTA"
-  "MP\020\t\022-\n)PROPOSAL_ERROR_PRODUCT_MATURITY_"
-  "IS_PASSED\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRADING"
-  "_MODE\020\013\022+\n\'PROPOSAL_ERROR_UNSUPPORTED_TR"
-  "ADING_MODE\020\014\022)\n%PROPOSAL_ERROR_NODE_VALI"
-  "DATION_FAILED\020\r\022.\n*PROPOSAL_ERROR_MISSIN"
-  "G_BUILTIN_ASSET_FIELD\020\016\0221\n-PROPOSAL_ERRO"
-  "R_MISSING_ERC20_CONTRACT_ADDRESS\020\017\022 \n\034PR"
-  "OPOSAL_ERROR_INVALID_ASSET\020\020\022*\n&PROPOSAL"
-  "_ERROR_INCOMPATIBLE_TIMESTAMPS\020\021\022%\n!PROP"
-  "OSAL_ERROR_NO_RISK_PARAMETERS\020\022\0220\n,PROPO"
-  "SAL_ERROR_NETWORK_PARAMETER_INVALID_KEY\020"
-  "\023\0222\n.PROPOSAL_ERROR_NETWORK_PARAMETER_IN"
-  "VALID_VALUE\020\024\0226\n2PROPOSAL_ERROR_NETWORK_"
-  "PARAMETER_VALIDATION_FAILED\020\025\0225\n1PROPOSA"
-  "L_ERROR_OPENING_AUCTION_DURATION_TOO_SMA"
-  "LL\020\026\0225\n1PROPOSAL_ERROR_OPENING_AUCTION_D"
-  "URATION_TOO_LARGE\020\027B7\n\024io.vegaprotocol.v"
-  "egaZ\037code.vegaprotocol.io/vega/protob\006pr"
-  "oto3"
+  "\002X\001\022\031\n\tquoteName\030\003 \001(\tB\006\342\337\037\002X\001\022%\n\006future"
+  "\030d \001(\0132\023.vega.FutureProductH\000B\t\n\007product"
+  "\"\300\003\n\026NewMarketConfiguration\0229\n\ninstrumen"
+  "t\030\001 \001(\0132\035.vega.InstrumentConfigurationB\006"
+  "\342\337\037\002 \001\022\036\n\rdecimalPlaces\030\002 \001(\004B\007\342\337\037\003\030\226\001\022\020"
+  "\n\010metadata\030\003 \003(\t\022\036\n\026openingAuctionDurati"
+  "on\030\004 \001(\003\022B\n\031PriceMonitoringParameters\030\005 "
+  "\001(\0132\037.vega.PriceMonitoringParameters\022)\n\006"
+  "simple\030d \001(\0132\027.vega.SimpleModelParamsH\000\022"
+  "-\n\tlogNormal\030e \001(\0132\030.vega.LogNormalRiskM"
+  "odelH\000\022.\n\ncontinuous\030\310\001 \001(\0132\027.vega.Conti"
+  "nuousTradingH\001\022*\n\010discrete\030\311\001 \001(\0132\025.vega"
+  ".DiscreteTradingH\001B\020\n\016riskParametersB\r\n\013"
+  "tradingMode\"B\n\tNewMarket\0225\n\007changes\030\001 \001("
+  "\0132\034.vega.NewMarketConfigurationB\006\342\337\037\002 \001\""
+  "\016\n\014UpdateMarket\"I\n\026UpdateNetworkParamete"
+  "r\022/\n\007changes\030\001 \001(\0132\026.vega.NetworkParamet"
+  "erB\006\342\337\037\002 \001\"6\n\010NewAsset\022*\n\007changes\030\001 \001(\0132"
+  "\021.vega.AssetSourceB\006\342\337\037\002 \001\"\262\002\n\rProposalT"
+  "erms\022 \n\020closingTimestamp\030\001 \001(\003B\006\342\337\037\002\020\000\022\""
+  "\n\022enactmentTimestamp\030\002 \001(\003B\006\342\337\037\002\020\000\022\033\n\023va"
+  "lidationTimestamp\030\003 \001(\003\022*\n\014updateMarket\030"
+  "e \001(\0132\022.vega.UpdateMarketH\000\022$\n\tnewMarket"
+  "\030f \001(\0132\017.vega.NewMarketH\000\022>\n\026updateNetwo"
+  "rkParameter\030g \001(\0132\034.vega.UpdateNetworkPa"
+  "rameterH\000\022\"\n\010newAsset\030h \001(\0132\016.vega.NewAs"
+  "setH\000B\010\n\006change\"\306\002\n\016GovernanceData\022 \n\010pr"
+  "oposal\030\001 \001(\0132\016.vega.Proposal\022\027\n\003yes\030\002 \003("
+  "\0132\n.vega.Vote\022\026\n\002no\030\003 \003(\0132\n.vega.Vote\0224\n"
+  "\010yesParty\030\004 \003(\0132\".vega.GovernanceData.Ye"
+  "sPartyEntry\0222\n\007noParty\030\005 \003(\0132!.vega.Gove"
+  "rnanceData.NoPartyEntry\032;\n\rYesPartyEntry"
+  "\022\013\n\003key\030\001 \001(\t\022\031\n\005value\030\002 \001(\0132\n.vega.Vote"
+  ":\0028\001\032:\n\014NoPartyEntry\022\013\n\003key\030\001 \001(\t\022\031\n\005val"
+  "ue\030\002 \001(\0132\n.vega.Vote:\0028\001\"\205\003\n\010Proposal\022\n\n"
+  "\002ID\030\001 \001(\t\022\021\n\treference\030\002 \001(\t\022\027\n\007partyID\030"
+  "\003 \001(\tB\006\342\337\037\002X\001\022,\n\005state\030\004 \001(\0162\024.vega.Prop"
+  "osal.StateB\007\342\337\037\003\210\001\001\022\021\n\ttimestamp\030\005 \001(\003\022*"
+  "\n\005terms\030\006 \001(\0132\023.vega.ProposalTermsB\006\342\337\037\002"
+  " \001\022#\n\006reason\030\007 \001(\0162\023.vega.ProposalError\""
+  "\256\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014STAT"
+  "E_FAILED\020\001\022\016\n\nSTATE_OPEN\020\002\022\020\n\014STATE_PASS"
+  "ED\020\003\022\022\n\016STATE_REJECTED\020\004\022\022\n\016STATE_DECLIN"
+  "ED\020\005\022\021\n\rSTATE_ENACTED\020\006\022\037\n\033STATE_WAITING"
+  "_FOR_NODE_VOTE\020\007\"\265\001\n\004Vote\022\027\n\007partyID\030\001 \001"
+  "(\tB\006\342\337\037\002X\001\022(\n\005value\030\002 \001(\0162\020.vega.Vote.Va"
+  "lueB\007\342\337\037\003\210\001\001\022\032\n\nproposalID\030\003 \001(\tB\006\342\337\037\002X\001"
+  "\022\021\n\ttimestamp\030\004 \001(\003\";\n\005Value\022\025\n\021VALUE_UN"
+  "SPECIFIED\020\000\022\014\n\010VALUE_NO\020\001\022\r\n\tVALUE_YES\020\002"
+  "*\262\010\n\rProposalError\022\036\n\032PROPOSAL_ERROR_UNS"
+  "PECIFIED\020\000\022&\n\"PROPOSAL_ERROR_CLOSE_TIME_"
+  "TOO_SOON\020\001\022&\n\"PROPOSAL_ERROR_CLOSE_TIME_"
+  "TOO_LATE\020\002\022&\n\"PROPOSAL_ERROR_ENACT_TIME_"
+  "TOO_SOON\020\003\022&\n\"PROPOSAL_ERROR_ENACT_TIME_"
+  "TOO_LATE\020\004\022&\n\"PROPOSAL_ERROR_INSUFFICIEN"
+  "T_TOKENS\020\005\022.\n*PROPOSAL_ERROR_INVALID_INS"
+  "TRUMENT_SECURITY\020\006\022\035\n\031PROPOSAL_ERROR_NO_"
+  "PRODUCT\020\007\022&\n\"PROPOSAL_ERROR_UNSUPPORTED_"
+  "PRODUCT\020\010\0223\n/PROPOSAL_ERROR_INVALID_FUTU"
+  "RE_PRODUCT_TIMESTAMP\020\t\022-\n)PROPOSAL_ERROR"
+  "_PRODUCT_MATURITY_IS_PASSED\020\n\022\"\n\036PROPOSA"
+  "L_ERROR_NO_TRADING_MODE\020\013\022+\n\'PROPOSAL_ER"
+  "ROR_UNSUPPORTED_TRADING_MODE\020\014\022)\n%PROPOS"
+  "AL_ERROR_NODE_VALIDATION_FAILED\020\r\022.\n*PRO"
+  "POSAL_ERROR_MISSING_BUILTIN_ASSET_FIELD\020"
+  "\016\0221\n-PROPOSAL_ERROR_MISSING_ERC20_CONTRA"
+  "CT_ADDRESS\020\017\022 \n\034PROPOSAL_ERROR_INVALID_A"
+  "SSET\020\020\022*\n&PROPOSAL_ERROR_INCOMPATIBLE_TI"
+  "MESTAMPS\020\021\022%\n!PROPOSAL_ERROR_NO_RISK_PAR"
+  "AMETERS\020\022\0220\n,PROPOSAL_ERROR_NETWORK_PARA"
+  "METER_INVALID_KEY\020\023\0222\n.PROPOSAL_ERROR_NE"
+  "TWORK_PARAMETER_INVALID_VALUE\020\024\0226\n2PROPO"
+  "SAL_ERROR_NETWORK_PARAMETER_VALIDATION_F"
+  "AILED\020\025\0225\n1PROPOSAL_ERROR_OPENING_AUCTIO"
+  "N_DURATION_TOO_SMALL\020\026\0225\n1PROPOSAL_ERROR"
+  "_OPENING_AUCTION_DURATION_TOO_LARGE\020\027B7\n"
+  "\024io.vegaprotocol.vegaZ\037code.vegaprotocol"
+  ".io/vega/protob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fgovernance_2eproto = {
   false, InitDefaults_proto_2fgovernance_2eproto, 
   descriptor_table_protodef_proto_2fgovernance_2eproto,
-  "proto/governance.proto", &assign_descriptors_table_proto_2fgovernance_2eproto, 3404,
+  "proto/governance.proto", &assign_descriptors_table_proto_2fgovernance_2eproto, 3382,
 };
 
 void AddDescriptors_proto_2fgovernance_2eproto() {
@@ -1081,7 +1079,6 @@ void InstrumentConfiguration::set_allocated_future(::vega::FutureProduct* future
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int InstrumentConfiguration::kNameFieldNumber;
 const int InstrumentConfiguration::kCodeFieldNumber;
-const int InstrumentConfiguration::kBaseNameFieldNumber;
 const int InstrumentConfiguration::kQuoteNameFieldNumber;
 const int InstrumentConfiguration::kFutureFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -1102,10 +1099,6 @@ InstrumentConfiguration::InstrumentConfiguration(const InstrumentConfiguration& 
   code_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.code().size() > 0) {
     code_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.code_);
-  }
-  basename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.basename().size() > 0) {
-    basename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.basename_);
   }
   quotename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.quotename().size() > 0) {
@@ -1129,7 +1122,6 @@ void InstrumentConfiguration::SharedCtor() {
       &scc_info_InstrumentConfiguration_proto_2fgovernance_2eproto.base);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   code_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  basename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   quotename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   clear_has_product();
 }
@@ -1142,7 +1134,6 @@ InstrumentConfiguration::~InstrumentConfiguration() {
 void InstrumentConfiguration::SharedDtor() {
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   code_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  basename_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   quotename_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (has_product()) {
     clear_product();
@@ -1181,7 +1172,6 @@ void InstrumentConfiguration::Clear() {
 
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   code_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  basename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   quotename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   clear_product();
   _internal_metadata_.Clear();
@@ -1232,25 +1222,9 @@ const char* InstrumentConfiguration::_InternalParse(const char* begin, const cha
         ptr += size;
         break;
       }
-      // string baseName = 3 [(.validator.field) = {
+      // string quoteName = 3 [(.validator.field) = {
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("vega.InstrumentConfiguration.baseName");
-        object = msg->mutable_basename();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string quoteName = 4 [(.validator.field) = {
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("vega.InstrumentConfiguration.quoteName");
@@ -1341,24 +1315,9 @@ bool InstrumentConfiguration::MergePartialFromCodedStream(
         break;
       }
 
-      // string baseName = 3 [(.validator.field) = {
+      // string quoteName = 3 [(.validator.field) = {
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_basename()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->basename().data(), static_cast<int>(this->basename().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "vega.InstrumentConfiguration.baseName"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string quoteName = 4 [(.validator.field) = {
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_quotename()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1429,24 +1388,14 @@ void InstrumentConfiguration::SerializeWithCachedSizes(
       2, this->code(), output);
   }
 
-  // string baseName = 3 [(.validator.field) = {
-  if (this->basename().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->basename().data(), static_cast<int>(this->basename().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "vega.InstrumentConfiguration.baseName");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->basename(), output);
-  }
-
-  // string quoteName = 4 [(.validator.field) = {
+  // string quoteName = 3 [(.validator.field) = {
   if (this->quotename().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->quotename().data(), static_cast<int>(this->quotename().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "vega.InstrumentConfiguration.quoteName");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->quotename(), output);
+      3, this->quotename(), output);
   }
 
   // .vega.FutureProduct future = 100;
@@ -1490,18 +1439,7 @@ void InstrumentConfiguration::SerializeWithCachedSizes(
         2, this->code(), target);
   }
 
-  // string baseName = 3 [(.validator.field) = {
-  if (this->basename().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->basename().data(), static_cast<int>(this->basename().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "vega.InstrumentConfiguration.baseName");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->basename(), target);
-  }
-
-  // string quoteName = 4 [(.validator.field) = {
+  // string quoteName = 3 [(.validator.field) = {
   if (this->quotename().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->quotename().data(), static_cast<int>(this->quotename().length()),
@@ -1509,7 +1447,7 @@ void InstrumentConfiguration::SerializeWithCachedSizes(
       "vega.InstrumentConfiguration.quoteName");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->quotename(), target);
+        3, this->quotename(), target);
   }
 
   // .vega.FutureProduct future = 100;
@@ -1554,14 +1492,7 @@ size_t InstrumentConfiguration::ByteSizeLong() const {
         this->code());
   }
 
-  // string baseName = 3 [(.validator.field) = {
-  if (this->basename().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->basename());
-  }
-
-  // string quoteName = 4 [(.validator.field) = {
+  // string quoteName = 3 [(.validator.field) = {
   if (this->quotename().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -1615,10 +1546,6 @@ void InstrumentConfiguration::MergeFrom(const InstrumentConfiguration& from) {
 
     code_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.code_);
   }
-  if (from.basename().size() > 0) {
-
-    basename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.basename_);
-  }
   if (from.quotename().size() > 0) {
 
     quotename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.quotename_);
@@ -1663,8 +1590,6 @@ void InstrumentConfiguration::InternalSwap(InstrumentConfiguration* other) {
     GetArenaNoVirtual());
   code_.Swap(&other->code_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  basename_.Swap(&other->basename_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
   quotename_.Swap(&other->quotename_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(product_, other->product_);
@@ -1682,8 +1607,8 @@ void InstrumentConfiguration::InternalSwap(InstrumentConfiguration* other) {
 void NewMarketConfiguration::InitAsDefaultInstance() {
   ::vega::_NewMarketConfiguration_default_instance_._instance.get_mutable()->instrument_ = const_cast< ::vega::InstrumentConfiguration*>(
       ::vega::InstrumentConfiguration::internal_default_instance());
-  ::vega::_NewMarketConfiguration_default_instance_._instance.get_mutable()->pricemonitoringsettings_ = const_cast< ::vega::PriceMonitoringSettings*>(
-      ::vega::PriceMonitoringSettings::internal_default_instance());
+  ::vega::_NewMarketConfiguration_default_instance_._instance.get_mutable()->pricemonitoringparameters_ = const_cast< ::vega::PriceMonitoringParameters*>(
+      ::vega::PriceMonitoringParameters::internal_default_instance());
   ::vega::_NewMarketConfiguration_default_instance_.simple_ = const_cast< ::vega::SimpleModelParams*>(
       ::vega::SimpleModelParams::internal_default_instance());
   ::vega::_NewMarketConfiguration_default_instance_.lognormal_ = const_cast< ::vega::LogNormalRiskModel*>(
@@ -1696,7 +1621,7 @@ void NewMarketConfiguration::InitAsDefaultInstance() {
 class NewMarketConfiguration::HasBitSetters {
  public:
   static const ::vega::InstrumentConfiguration& instrument(const NewMarketConfiguration* msg);
-  static const ::vega::PriceMonitoringSettings& pricemonitoringsettings(const NewMarketConfiguration* msg);
+  static const ::vega::PriceMonitoringParameters& pricemonitoringparameters(const NewMarketConfiguration* msg);
   static const ::vega::SimpleModelParams& simple(const NewMarketConfiguration* msg);
   static const ::vega::LogNormalRiskModel& lognormal(const NewMarketConfiguration* msg);
   static const ::vega::ContinuousTrading& continuous(const NewMarketConfiguration* msg);
@@ -1707,9 +1632,9 @@ const ::vega::InstrumentConfiguration&
 NewMarketConfiguration::HasBitSetters::instrument(const NewMarketConfiguration* msg) {
   return *msg->instrument_;
 }
-const ::vega::PriceMonitoringSettings&
-NewMarketConfiguration::HasBitSetters::pricemonitoringsettings(const NewMarketConfiguration* msg) {
-  return *msg->pricemonitoringsettings_;
+const ::vega::PriceMonitoringParameters&
+NewMarketConfiguration::HasBitSetters::pricemonitoringparameters(const NewMarketConfiguration* msg) {
+  return *msg->pricemonitoringparameters_;
 }
 const ::vega::SimpleModelParams&
 NewMarketConfiguration::HasBitSetters::simple(const NewMarketConfiguration* msg) {
@@ -1727,11 +1652,11 @@ const ::vega::DiscreteTrading&
 NewMarketConfiguration::HasBitSetters::discrete(const NewMarketConfiguration* msg) {
   return *msg->tradingMode_.discrete_;
 }
-void NewMarketConfiguration::clear_pricemonitoringsettings() {
-  if (GetArenaNoVirtual() == nullptr && pricemonitoringsettings_ != nullptr) {
-    delete pricemonitoringsettings_;
+void NewMarketConfiguration::clear_pricemonitoringparameters() {
+  if (GetArenaNoVirtual() == nullptr && pricemonitoringparameters_ != nullptr) {
+    delete pricemonitoringparameters_;
   }
-  pricemonitoringsettings_ = nullptr;
+  pricemonitoringparameters_ = nullptr;
 }
 void NewMarketConfiguration::set_allocated_simple(::vega::SimpleModelParams* simple) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -1818,7 +1743,7 @@ const int NewMarketConfiguration::kInstrumentFieldNumber;
 const int NewMarketConfiguration::kDecimalPlacesFieldNumber;
 const int NewMarketConfiguration::kMetadataFieldNumber;
 const int NewMarketConfiguration::kOpeningAuctionDurationFieldNumber;
-const int NewMarketConfiguration::kPriceMonitoringSettingsFieldNumber;
+const int NewMarketConfiguration::kPriceMonitoringParametersFieldNumber;
 const int NewMarketConfiguration::kSimpleFieldNumber;
 const int NewMarketConfiguration::kLogNormalFieldNumber;
 const int NewMarketConfiguration::kContinuousFieldNumber;
@@ -1840,10 +1765,10 @@ NewMarketConfiguration::NewMarketConfiguration(const NewMarketConfiguration& fro
   } else {
     instrument_ = nullptr;
   }
-  if (from.has_pricemonitoringsettings()) {
-    pricemonitoringsettings_ = new ::vega::PriceMonitoringSettings(*from.pricemonitoringsettings_);
+  if (from.has_pricemonitoringparameters()) {
+    pricemonitoringparameters_ = new ::vega::PriceMonitoringParameters(*from.pricemonitoringparameters_);
   } else {
-    pricemonitoringsettings_ = nullptr;
+    pricemonitoringparameters_ = nullptr;
   }
   ::memcpy(&decimalplaces_, &from.decimalplaces_,
     static_cast<size_t>(reinterpret_cast<char*>(&openingauctionduration_) -
@@ -1896,7 +1821,7 @@ NewMarketConfiguration::~NewMarketConfiguration() {
 
 void NewMarketConfiguration::SharedDtor() {
   if (this != internal_default_instance()) delete instrument_;
-  if (this != internal_default_instance()) delete pricemonitoringsettings_;
+  if (this != internal_default_instance()) delete pricemonitoringparameters_;
   if (has_riskParameters()) {
     clear_riskParameters();
   }
@@ -1962,10 +1887,10 @@ void NewMarketConfiguration::Clear() {
     delete instrument_;
   }
   instrument_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && pricemonitoringsettings_ != nullptr) {
-    delete pricemonitoringsettings_;
+  if (GetArenaNoVirtual() == nullptr && pricemonitoringparameters_ != nullptr) {
+    delete pricemonitoringparameters_;
   }
-  pricemonitoringsettings_ = nullptr;
+  pricemonitoringparameters_ = nullptr;
   ::memset(&decimalplaces_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&openingauctionduration_) -
       reinterpret_cast<char*>(&decimalplaces_)) + sizeof(openingauctionduration_));
@@ -2033,13 +1958,13 @@ const char* NewMarketConfiguration::_InternalParse(const char* begin, const char
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // .vega.PriceMonitoringSettings priceMonitoringSettings = 5;
+      // .vega.PriceMonitoringParameters PriceMonitoringParameters = 5;
       case 5: {
         if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::vega::PriceMonitoringSettings::_InternalParse;
-        object = msg->mutable_pricemonitoringsettings();
+        parser_till_end = ::vega::PriceMonitoringParameters::_InternalParse;
+        object = msg->mutable_pricemonitoringparameters();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -2185,11 +2110,11 @@ bool NewMarketConfiguration::MergePartialFromCodedStream(
         break;
       }
 
-      // .vega.PriceMonitoringSettings priceMonitoringSettings = 5;
+      // .vega.PriceMonitoringParameters PriceMonitoringParameters = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_pricemonitoringsettings()));
+               input, mutable_pricemonitoringparameters()));
         } else {
           goto handle_unusual;
         }
@@ -2293,10 +2218,10 @@ void NewMarketConfiguration::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(4, this->openingauctionduration(), output);
   }
 
-  // .vega.PriceMonitoringSettings priceMonitoringSettings = 5;
-  if (this->has_pricemonitoringsettings()) {
+  // .vega.PriceMonitoringParameters PriceMonitoringParameters = 5;
+  if (this->has_pricemonitoringparameters()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, HasBitSetters::pricemonitoringsettings(this), output);
+      5, HasBitSetters::pricemonitoringparameters(this), output);
   }
 
   // .vega.SimpleModelParams simple = 100;
@@ -2363,11 +2288,11 @@ void NewMarketConfiguration::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(4, this->openingauctionduration(), target);
   }
 
-  // .vega.PriceMonitoringSettings priceMonitoringSettings = 5;
-  if (this->has_pricemonitoringsettings()) {
+  // .vega.PriceMonitoringParameters PriceMonitoringParameters = 5;
+  if (this->has_pricemonitoringparameters()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        5, HasBitSetters::pricemonitoringsettings(this), target);
+        5, HasBitSetters::pricemonitoringparameters(this), target);
   }
 
   // .vega.SimpleModelParams simple = 100;
@@ -2434,11 +2359,11 @@ size_t NewMarketConfiguration::ByteSizeLong() const {
         *instrument_);
   }
 
-  // .vega.PriceMonitoringSettings priceMonitoringSettings = 5;
-  if (this->has_pricemonitoringsettings()) {
+  // .vega.PriceMonitoringParameters PriceMonitoringParameters = 5;
+  if (this->has_pricemonitoringparameters()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *pricemonitoringsettings_);
+        *pricemonitoringparameters_);
   }
 
   // uint64 decimalPlaces = 2 [(.validator.field) = {
@@ -2524,8 +2449,8 @@ void NewMarketConfiguration::MergeFrom(const NewMarketConfiguration& from) {
   if (from.has_instrument()) {
     mutable_instrument()->::vega::InstrumentConfiguration::MergeFrom(from.instrument());
   }
-  if (from.has_pricemonitoringsettings()) {
-    mutable_pricemonitoringsettings()->::vega::PriceMonitoringSettings::MergeFrom(from.pricemonitoringsettings());
+  if (from.has_pricemonitoringparameters()) {
+    mutable_pricemonitoringparameters()->::vega::PriceMonitoringParameters::MergeFrom(from.pricemonitoringparameters());
   }
   if (from.decimalplaces() != 0) {
     set_decimalplaces(from.decimalplaces());
@@ -2588,7 +2513,7 @@ void NewMarketConfiguration::InternalSwap(NewMarketConfiguration* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   metadata_.InternalSwap(CastToBase(&other->metadata_));
   swap(instrument_, other->instrument_);
-  swap(pricemonitoringsettings_, other->pricemonitoringsettings_);
+  swap(pricemonitoringparameters_, other->pricemonitoringparameters_);
   swap(decimalplaces_, other->decimalplaces_);
   swap(openingauctionduration_, other->openingauctionduration_);
   swap(riskParameters_, other->riskParameters_);
