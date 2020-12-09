@@ -30,6 +30,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "proto/vega.pb.h"
 #include "proto/markets.pb.h"
@@ -548,6 +549,29 @@ template<> ::api::WithdrawalsResponse* Arena::CreateMaybeMessage<::api::Withdraw
 }  // namespace google
 namespace api {
 
+enum SubmitTransactionRequest_Type {
+  SubmitTransactionRequest_Type_TYPE_UNSPECIFIED = 0,
+  SubmitTransactionRequest_Type_TYPE_ASYNC = 1,
+  SubmitTransactionRequest_Type_TYPE_SYNC = 2,
+  SubmitTransactionRequest_Type_TYPE_COMMIT = 3,
+  SubmitTransactionRequest_Type_SubmitTransactionRequest_Type_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  SubmitTransactionRequest_Type_SubmitTransactionRequest_Type_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool SubmitTransactionRequest_Type_IsValid(int value);
+const SubmitTransactionRequest_Type SubmitTransactionRequest_Type_Type_MIN = SubmitTransactionRequest_Type_TYPE_UNSPECIFIED;
+const SubmitTransactionRequest_Type SubmitTransactionRequest_Type_Type_MAX = SubmitTransactionRequest_Type_TYPE_COMMIT;
+const int SubmitTransactionRequest_Type_Type_ARRAYSIZE = SubmitTransactionRequest_Type_Type_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* SubmitTransactionRequest_Type_descriptor();
+inline const ::std::string& SubmitTransactionRequest_Type_Name(SubmitTransactionRequest_Type value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    SubmitTransactionRequest_Type_descriptor(), value);
+}
+inline bool SubmitTransactionRequest_Type_Parse(
+    const ::std::string& name, SubmitTransactionRequest_Type* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<SubmitTransactionRequest_Type>(
+    SubmitTransactionRequest_Type_descriptor(), name, value);
+}
 // ===================================================================
 
 class PropagateChainEventRequest :
@@ -900,6 +924,36 @@ class SubmitTransactionRequest :
 
   // nested types ----------------------------------------------------
 
+  typedef SubmitTransactionRequest_Type Type;
+  static const Type TYPE_UNSPECIFIED =
+    SubmitTransactionRequest_Type_TYPE_UNSPECIFIED;
+  static const Type TYPE_ASYNC =
+    SubmitTransactionRequest_Type_TYPE_ASYNC;
+  static const Type TYPE_SYNC =
+    SubmitTransactionRequest_Type_TYPE_SYNC;
+  static const Type TYPE_COMMIT =
+    SubmitTransactionRequest_Type_TYPE_COMMIT;
+  static inline bool Type_IsValid(int value) {
+    return SubmitTransactionRequest_Type_IsValid(value);
+  }
+  static const Type Type_MIN =
+    SubmitTransactionRequest_Type_Type_MIN;
+  static const Type Type_MAX =
+    SubmitTransactionRequest_Type_Type_MAX;
+  static const int Type_ARRAYSIZE =
+    SubmitTransactionRequest_Type_Type_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Type_descriptor() {
+    return SubmitTransactionRequest_Type_descriptor();
+  }
+  static inline const ::std::string& Type_Name(Type value) {
+    return SubmitTransactionRequest_Type_Name(value);
+  }
+  static inline bool Type_Parse(const ::std::string& name,
+      Type* value) {
+    return SubmitTransactionRequest_Type_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   // .vega.SignedBundle tx = 1;
@@ -911,12 +965,19 @@ class SubmitTransactionRequest :
   ::vega::SignedBundle* mutable_tx();
   void set_allocated_tx(::vega::SignedBundle* tx);
 
+  // .api.SubmitTransactionRequest.Type type = 2;
+  void clear_type();
+  static const int kTypeFieldNumber = 2;
+  ::api::SubmitTransactionRequest_Type type() const;
+  void set_type(::api::SubmitTransactionRequest_Type value);
+
   // @@protoc_insertion_point(class_scope:api.SubmitTransactionRequest)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::vega::SignedBundle* tx_;
+  int type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fapi_2ftrading_2eproto;
 };
@@ -15592,6 +15653,20 @@ inline void SubmitTransactionRequest::set_allocated_tx(::vega::SignedBundle* tx)
   // @@protoc_insertion_point(field_set_allocated:api.SubmitTransactionRequest.tx)
 }
 
+// .api.SubmitTransactionRequest.Type type = 2;
+inline void SubmitTransactionRequest::clear_type() {
+  type_ = 0;
+}
+inline ::api::SubmitTransactionRequest_Type SubmitTransactionRequest::type() const {
+  // @@protoc_insertion_point(field_get:api.SubmitTransactionRequest.type)
+  return static_cast< ::api::SubmitTransactionRequest_Type >(type_);
+}
+inline void SubmitTransactionRequest::set_type(::api::SubmitTransactionRequest_Type value) {
+
+  type_ = value;
+  // @@protoc_insertion_point(field_set:api.SubmitTransactionRequest.type)
+}
+
 // -------------------------------------------------------------------
 
 // SubmitTransactionResponse
@@ -23170,6 +23245,18 @@ LiquidityProvisionsResponse::liquidityprovisions() const {
 // @@protoc_insertion_point(namespace_scope)
 
 }  // namespace api
+
+namespace google {
+namespace protobuf {
+
+template <> struct is_proto_enum< ::api::SubmitTransactionRequest_Type> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::api::SubmitTransactionRequest_Type>() {
+  return ::api::SubmitTransactionRequest_Type_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 

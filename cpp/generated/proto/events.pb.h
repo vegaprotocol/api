@@ -46,7 +46,7 @@ struct TableStruct_proto_2fevents_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[11]
+  static const ::google::protobuf::internal::ParseTable schema[12]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -87,6 +87,9 @@ extern TradeSettlementDefaultTypeInternal _TradeSettlement_default_instance_;
 class TransferResponses;
 class TransferResponsesDefaultTypeInternal;
 extern TransferResponsesDefaultTypeInternal _TransferResponses_default_instance_;
+class TxErrorEvent;
+class TxErrorEventDefaultTypeInternal;
+extern TxErrorEventDefaultTypeInternal _TxErrorEvent_default_instance_;
 }  // namespace vega
 namespace google {
 namespace protobuf {
@@ -101,6 +104,7 @@ template<> ::vega::SettlePosition* Arena::CreateMaybeMessage<::vega::SettlePosit
 template<> ::vega::TimeUpdate* Arena::CreateMaybeMessage<::vega::TimeUpdate>(Arena*);
 template<> ::vega::TradeSettlement* Arena::CreateMaybeMessage<::vega::TradeSettlement>(Arena*);
 template<> ::vega::TransferResponses* Arena::CreateMaybeMessage<::vega::TransferResponses>(Arena*);
+template<> ::vega::TxErrorEvent* Arena::CreateMaybeMessage<::vega::TxErrorEvent>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace vega {
@@ -133,12 +137,13 @@ enum BusEventType {
   BUS_EVENT_TYPE_NETWORK_PARAMETER = 24,
   BUS_EVENT_TYPE_LIQUIDITY_PROVISION = 25,
   BUS_EVENT_TYPE_MARKET = 101,
+  BUS_EVENT_TYPE_TX_ERROR = 201,
   BusEventType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   BusEventType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool BusEventType_IsValid(int value);
 const BusEventType BusEventType_MIN = BUS_EVENT_TYPE_UNSPECIFIED;
-const BusEventType BusEventType_MAX = BUS_EVENT_TYPE_MARKET;
+const BusEventType BusEventType_MAX = BUS_EVENT_TYPE_TX_ERROR;
 const int BusEventType_ARRAYSIZE = BusEventType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* BusEventType_descriptor();
@@ -288,6 +293,215 @@ class MarketEvent :
 };
 // -------------------------------------------------------------------
 
+class TxErrorEvent :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.TxErrorEvent) */ {
+ public:
+  TxErrorEvent();
+  virtual ~TxErrorEvent();
+
+  TxErrorEvent(const TxErrorEvent& from);
+
+  inline TxErrorEvent& operator=(const TxErrorEvent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  TxErrorEvent(TxErrorEvent&& from) noexcept
+    : TxErrorEvent() {
+    *this = ::std::move(from);
+  }
+
+  inline TxErrorEvent& operator=(TxErrorEvent&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const TxErrorEvent& default_instance();
+
+  enum TransactionCase {
+    kOrderSubmission = 101,
+    kOrderAmendment = 102,
+    kOrderCancellation = 103,
+    kProposal = 104,
+    kVote = 105,
+    TRANSACTION_NOT_SET = 0,
+  };
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const TxErrorEvent* internal_default_instance() {
+    return reinterpret_cast<const TxErrorEvent*>(
+               &_TxErrorEvent_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(TxErrorEvent* other);
+  friend void swap(TxErrorEvent& a, TxErrorEvent& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TxErrorEvent* New() const final {
+    return CreateMaybeMessage<TxErrorEvent>(nullptr);
+  }
+
+  TxErrorEvent* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<TxErrorEvent>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const TxErrorEvent& from);
+  void MergeFrom(const TxErrorEvent& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TxErrorEvent* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string PartyID = 1;
+  void clear_partyid();
+  static const int kPartyIDFieldNumber = 1;
+  const ::std::string& partyid() const;
+  void set_partyid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_partyid(::std::string&& value);
+  #endif
+  void set_partyid(const char* value);
+  void set_partyid(const char* value, size_t size);
+  ::std::string* mutable_partyid();
+  ::std::string* release_partyid();
+  void set_allocated_partyid(::std::string* partyid);
+
+  // string errMsg = 2;
+  void clear_errmsg();
+  static const int kErrMsgFieldNumber = 2;
+  const ::std::string& errmsg() const;
+  void set_errmsg(const ::std::string& value);
+  #if LANG_CXX11
+  void set_errmsg(::std::string&& value);
+  #endif
+  void set_errmsg(const char* value);
+  void set_errmsg(const char* value, size_t size);
+  ::std::string* mutable_errmsg();
+  ::std::string* release_errmsg();
+  void set_allocated_errmsg(::std::string* errmsg);
+
+  // .vega.OrderSubmission orderSubmission = 101;
+  bool has_ordersubmission() const;
+  void clear_ordersubmission();
+  static const int kOrderSubmissionFieldNumber = 101;
+  const ::vega::OrderSubmission& ordersubmission() const;
+  ::vega::OrderSubmission* release_ordersubmission();
+  ::vega::OrderSubmission* mutable_ordersubmission();
+  void set_allocated_ordersubmission(::vega::OrderSubmission* ordersubmission);
+
+  // .vega.OrderAmendment orderAmendment = 102;
+  bool has_orderamendment() const;
+  void clear_orderamendment();
+  static const int kOrderAmendmentFieldNumber = 102;
+  const ::vega::OrderAmendment& orderamendment() const;
+  ::vega::OrderAmendment* release_orderamendment();
+  ::vega::OrderAmendment* mutable_orderamendment();
+  void set_allocated_orderamendment(::vega::OrderAmendment* orderamendment);
+
+  // .vega.OrderCancellation orderCancellation = 103;
+  bool has_ordercancellation() const;
+  void clear_ordercancellation();
+  static const int kOrderCancellationFieldNumber = 103;
+  const ::vega::OrderCancellation& ordercancellation() const;
+  ::vega::OrderCancellation* release_ordercancellation();
+  ::vega::OrderCancellation* mutable_ordercancellation();
+  void set_allocated_ordercancellation(::vega::OrderCancellation* ordercancellation);
+
+  // .vega.Proposal proposal = 104;
+  bool has_proposal() const;
+  void clear_proposal();
+  static const int kProposalFieldNumber = 104;
+  const ::vega::Proposal& proposal() const;
+  ::vega::Proposal* release_proposal();
+  ::vega::Proposal* mutable_proposal();
+  void set_allocated_proposal(::vega::Proposal* proposal);
+
+  // .vega.Vote vote = 105;
+  bool has_vote() const;
+  void clear_vote();
+  static const int kVoteFieldNumber = 105;
+  const ::vega::Vote& vote() const;
+  ::vega::Vote* release_vote();
+  ::vega::Vote* mutable_vote();
+  void set_allocated_vote(::vega::Vote* vote);
+
+  void clear_transaction();
+  TransactionCase transaction_case() const;
+  // @@protoc_insertion_point(class_scope:vega.TxErrorEvent)
+ private:
+  class HasBitSetters;
+  void set_has_ordersubmission();
+  void set_has_orderamendment();
+  void set_has_ordercancellation();
+  void set_has_proposal();
+  void set_has_vote();
+
+  inline bool has_transaction() const;
+  inline void clear_has_transaction();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr partyid_;
+  ::google::protobuf::internal::ArenaStringPtr errmsg_;
+  union TransactionUnion {
+    TransactionUnion() {}
+    ::vega::OrderSubmission* ordersubmission_;
+    ::vega::OrderAmendment* orderamendment_;
+    ::vega::OrderCancellation* ordercancellation_;
+    ::vega::Proposal* proposal_;
+    ::vega::Vote* vote_;
+  } transaction_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
+  friend struct ::TableStruct_proto_2fevents_2eproto;
+};
+// -------------------------------------------------------------------
+
 class TimeUpdate :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:vega.TimeUpdate) */ {
  public:
@@ -326,7 +540,7 @@ class TimeUpdate :
                &_TimeUpdate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(TimeUpdate* other);
   friend void swap(TimeUpdate& a, TimeUpdate& b) {
@@ -438,7 +652,7 @@ class TransferResponses :
                &_TransferResponses_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(TransferResponses* other);
   friend void swap(TransferResponses& a, TransferResponses& b) {
@@ -556,7 +770,7 @@ class PositionResolution :
                &_PositionResolution_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(PositionResolution* other);
   friend void swap(PositionResolution& a, PositionResolution& b) {
@@ -697,7 +911,7 @@ class LossSocialization :
                &_LossSocialization_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(LossSocialization* other);
   friend void swap(LossSocialization& a, LossSocialization& b) {
@@ -839,7 +1053,7 @@ class TradeSettlement :
                &_TradeSettlement_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(TradeSettlement* other);
   friend void swap(TradeSettlement& a, TradeSettlement& b) {
@@ -958,7 +1172,7 @@ class SettlePosition :
                &_SettlePosition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(SettlePosition* other);
   friend void swap(SettlePosition& a, SettlePosition& b) {
@@ -1113,7 +1327,7 @@ class SettleDistressed :
                &_SettleDistressed_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(SettleDistressed* other);
   friend void swap(SettleDistressed& a, SettleDistressed& b) {
@@ -1262,7 +1476,7 @@ class MarketTick :
                &_MarketTick_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(MarketTick* other);
   friend void swap(MarketTick& a, MarketTick& b) {
@@ -1389,7 +1603,7 @@ class AuctionEvent :
                &_AuctionEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(AuctionEvent* other);
   friend void swap(AuctionEvent& a, AuctionEvent& b) {
@@ -1564,6 +1778,7 @@ class BusEvent :
     kNetworkParameter = 123,
     kLiquidityProvision = 124,
     kMarket = 1001,
+    kTxErrEvent = 2001,
     EVENT_NOT_SET = 0,
   };
 
@@ -1573,7 +1788,7 @@ class BusEvent :
                &_BusEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(BusEvent* other);
   friend void swap(BusEvent& a, BusEvent& b) {
@@ -1889,6 +2104,15 @@ class BusEvent :
   ::vega::MarketEvent* mutable_market();
   void set_allocated_market(::vega::MarketEvent* market);
 
+  // .vega.TxErrorEvent txErrEvent = 2001;
+  bool has_txerrevent() const;
+  void clear_txerrevent();
+  static const int kTxErrEventFieldNumber = 2001;
+  const ::vega::TxErrorEvent& txerrevent() const;
+  ::vega::TxErrorEvent* release_txerrevent();
+  ::vega::TxErrorEvent* mutable_txerrevent();
+  void set_allocated_txerrevent(::vega::TxErrorEvent* txerrevent);
+
   void clear_event();
   EventCase event_case() const;
   // @@protoc_insertion_point(class_scope:vega.BusEvent)
@@ -1919,6 +2143,7 @@ class BusEvent :
   void set_has_networkparameter();
   void set_has_liquidityprovision();
   void set_has_market();
+  void set_has_txerrevent();
 
   inline bool has_event() const;
   inline void clear_has_event();
@@ -1954,6 +2179,7 @@ class BusEvent :
     ::vega::NetworkParameter* networkparameter_;
     ::vega::LiquidityProvision* liquidityprovision_;
     ::vega::MarketEvent* market_;
+    ::vega::TxErrorEvent* txerrevent_;
   } event_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -2077,6 +2303,300 @@ inline void MarketEvent::set_allocated_payload(::std::string* payload) {
   // @@protoc_insertion_point(field_set_allocated:vega.MarketEvent.payload)
 }
 
+// -------------------------------------------------------------------
+
+// TxErrorEvent
+
+// string PartyID = 1;
+inline void TxErrorEvent::clear_partyid() {
+  partyid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& TxErrorEvent::partyid() const {
+  // @@protoc_insertion_point(field_get:vega.TxErrorEvent.PartyID)
+  return partyid_.GetNoArena();
+}
+inline void TxErrorEvent::set_partyid(const ::std::string& value) {
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.TxErrorEvent.PartyID)
+}
+#if LANG_CXX11
+inline void TxErrorEvent::set_partyid(::std::string&& value) {
+
+  partyid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.TxErrorEvent.PartyID)
+}
+#endif
+inline void TxErrorEvent::set_partyid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.TxErrorEvent.PartyID)
+}
+inline void TxErrorEvent::set_partyid(const char* value, size_t size) {
+
+  partyid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.TxErrorEvent.PartyID)
+}
+inline ::std::string* TxErrorEvent::mutable_partyid() {
+
+  // @@protoc_insertion_point(field_mutable:vega.TxErrorEvent.PartyID)
+  return partyid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* TxErrorEvent::release_partyid() {
+  // @@protoc_insertion_point(field_release:vega.TxErrorEvent.PartyID)
+
+  return partyid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void TxErrorEvent::set_allocated_partyid(::std::string* partyid) {
+  if (partyid != nullptr) {
+
+  } else {
+
+  }
+  partyid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), partyid);
+  // @@protoc_insertion_point(field_set_allocated:vega.TxErrorEvent.PartyID)
+}
+
+// string errMsg = 2;
+inline void TxErrorEvent::clear_errmsg() {
+  errmsg_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& TxErrorEvent::errmsg() const {
+  // @@protoc_insertion_point(field_get:vega.TxErrorEvent.errMsg)
+  return errmsg_.GetNoArena();
+}
+inline void TxErrorEvent::set_errmsg(const ::std::string& value) {
+
+  errmsg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:vega.TxErrorEvent.errMsg)
+}
+#if LANG_CXX11
+inline void TxErrorEvent::set_errmsg(::std::string&& value) {
+
+  errmsg_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:vega.TxErrorEvent.errMsg)
+}
+#endif
+inline void TxErrorEvent::set_errmsg(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  errmsg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:vega.TxErrorEvent.errMsg)
+}
+inline void TxErrorEvent::set_errmsg(const char* value, size_t size) {
+
+  errmsg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:vega.TxErrorEvent.errMsg)
+}
+inline ::std::string* TxErrorEvent::mutable_errmsg() {
+
+  // @@protoc_insertion_point(field_mutable:vega.TxErrorEvent.errMsg)
+  return errmsg_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* TxErrorEvent::release_errmsg() {
+  // @@protoc_insertion_point(field_release:vega.TxErrorEvent.errMsg)
+
+  return errmsg_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void TxErrorEvent::set_allocated_errmsg(::std::string* errmsg) {
+  if (errmsg != nullptr) {
+
+  } else {
+
+  }
+  errmsg_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), errmsg);
+  // @@protoc_insertion_point(field_set_allocated:vega.TxErrorEvent.errMsg)
+}
+
+// .vega.OrderSubmission orderSubmission = 101;
+inline bool TxErrorEvent::has_ordersubmission() const {
+  return transaction_case() == kOrderSubmission;
+}
+inline void TxErrorEvent::set_has_ordersubmission() {
+  _oneof_case_[0] = kOrderSubmission;
+}
+inline ::vega::OrderSubmission* TxErrorEvent::release_ordersubmission() {
+  // @@protoc_insertion_point(field_release:vega.TxErrorEvent.orderSubmission)
+  if (has_ordersubmission()) {
+    clear_has_transaction();
+      ::vega::OrderSubmission* temp = transaction_.ordersubmission_;
+    transaction_.ordersubmission_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::OrderSubmission& TxErrorEvent::ordersubmission() const {
+  // @@protoc_insertion_point(field_get:vega.TxErrorEvent.orderSubmission)
+  return has_ordersubmission()
+      ? *transaction_.ordersubmission_
+      : *reinterpret_cast< ::vega::OrderSubmission*>(&::vega::_OrderSubmission_default_instance_);
+}
+inline ::vega::OrderSubmission* TxErrorEvent::mutable_ordersubmission() {
+  if (!has_ordersubmission()) {
+    clear_transaction();
+    set_has_ordersubmission();
+    transaction_.ordersubmission_ = CreateMaybeMessage< ::vega::OrderSubmission >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:vega.TxErrorEvent.orderSubmission)
+  return transaction_.ordersubmission_;
+}
+
+// .vega.OrderAmendment orderAmendment = 102;
+inline bool TxErrorEvent::has_orderamendment() const {
+  return transaction_case() == kOrderAmendment;
+}
+inline void TxErrorEvent::set_has_orderamendment() {
+  _oneof_case_[0] = kOrderAmendment;
+}
+inline ::vega::OrderAmendment* TxErrorEvent::release_orderamendment() {
+  // @@protoc_insertion_point(field_release:vega.TxErrorEvent.orderAmendment)
+  if (has_orderamendment()) {
+    clear_has_transaction();
+      ::vega::OrderAmendment* temp = transaction_.orderamendment_;
+    transaction_.orderamendment_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::OrderAmendment& TxErrorEvent::orderamendment() const {
+  // @@protoc_insertion_point(field_get:vega.TxErrorEvent.orderAmendment)
+  return has_orderamendment()
+      ? *transaction_.orderamendment_
+      : *reinterpret_cast< ::vega::OrderAmendment*>(&::vega::_OrderAmendment_default_instance_);
+}
+inline ::vega::OrderAmendment* TxErrorEvent::mutable_orderamendment() {
+  if (!has_orderamendment()) {
+    clear_transaction();
+    set_has_orderamendment();
+    transaction_.orderamendment_ = CreateMaybeMessage< ::vega::OrderAmendment >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:vega.TxErrorEvent.orderAmendment)
+  return transaction_.orderamendment_;
+}
+
+// .vega.OrderCancellation orderCancellation = 103;
+inline bool TxErrorEvent::has_ordercancellation() const {
+  return transaction_case() == kOrderCancellation;
+}
+inline void TxErrorEvent::set_has_ordercancellation() {
+  _oneof_case_[0] = kOrderCancellation;
+}
+inline ::vega::OrderCancellation* TxErrorEvent::release_ordercancellation() {
+  // @@protoc_insertion_point(field_release:vega.TxErrorEvent.orderCancellation)
+  if (has_ordercancellation()) {
+    clear_has_transaction();
+      ::vega::OrderCancellation* temp = transaction_.ordercancellation_;
+    transaction_.ordercancellation_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::OrderCancellation& TxErrorEvent::ordercancellation() const {
+  // @@protoc_insertion_point(field_get:vega.TxErrorEvent.orderCancellation)
+  return has_ordercancellation()
+      ? *transaction_.ordercancellation_
+      : *reinterpret_cast< ::vega::OrderCancellation*>(&::vega::_OrderCancellation_default_instance_);
+}
+inline ::vega::OrderCancellation* TxErrorEvent::mutable_ordercancellation() {
+  if (!has_ordercancellation()) {
+    clear_transaction();
+    set_has_ordercancellation();
+    transaction_.ordercancellation_ = CreateMaybeMessage< ::vega::OrderCancellation >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:vega.TxErrorEvent.orderCancellation)
+  return transaction_.ordercancellation_;
+}
+
+// .vega.Proposal proposal = 104;
+inline bool TxErrorEvent::has_proposal() const {
+  return transaction_case() == kProposal;
+}
+inline void TxErrorEvent::set_has_proposal() {
+  _oneof_case_[0] = kProposal;
+}
+inline ::vega::Proposal* TxErrorEvent::release_proposal() {
+  // @@protoc_insertion_point(field_release:vega.TxErrorEvent.proposal)
+  if (has_proposal()) {
+    clear_has_transaction();
+      ::vega::Proposal* temp = transaction_.proposal_;
+    transaction_.proposal_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::Proposal& TxErrorEvent::proposal() const {
+  // @@protoc_insertion_point(field_get:vega.TxErrorEvent.proposal)
+  return has_proposal()
+      ? *transaction_.proposal_
+      : *reinterpret_cast< ::vega::Proposal*>(&::vega::_Proposal_default_instance_);
+}
+inline ::vega::Proposal* TxErrorEvent::mutable_proposal() {
+  if (!has_proposal()) {
+    clear_transaction();
+    set_has_proposal();
+    transaction_.proposal_ = CreateMaybeMessage< ::vega::Proposal >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:vega.TxErrorEvent.proposal)
+  return transaction_.proposal_;
+}
+
+// .vega.Vote vote = 105;
+inline bool TxErrorEvent::has_vote() const {
+  return transaction_case() == kVote;
+}
+inline void TxErrorEvent::set_has_vote() {
+  _oneof_case_[0] = kVote;
+}
+inline ::vega::Vote* TxErrorEvent::release_vote() {
+  // @@protoc_insertion_point(field_release:vega.TxErrorEvent.vote)
+  if (has_vote()) {
+    clear_has_transaction();
+      ::vega::Vote* temp = transaction_.vote_;
+    transaction_.vote_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::Vote& TxErrorEvent::vote() const {
+  // @@protoc_insertion_point(field_get:vega.TxErrorEvent.vote)
+  return has_vote()
+      ? *transaction_.vote_
+      : *reinterpret_cast< ::vega::Vote*>(&::vega::_Vote_default_instance_);
+}
+inline ::vega::Vote* TxErrorEvent::mutable_vote() {
+  if (!has_vote()) {
+    clear_transaction();
+    set_has_vote();
+    transaction_.vote_ = CreateMaybeMessage< ::vega::Vote >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:vega.TxErrorEvent.vote)
+  return transaction_.vote_;
+}
+
+inline bool TxErrorEvent::has_transaction() const {
+  return transaction_case() != TRANSACTION_NOT_SET;
+}
+inline void TxErrorEvent::clear_has_transaction() {
+  _oneof_case_[0] = TRANSACTION_NOT_SET;
+}
+inline TxErrorEvent::TransactionCase TxErrorEvent::transaction_case() const {
+  return TxErrorEvent::TransactionCase(_oneof_case_[0]);
+}
 // -------------------------------------------------------------------
 
 // TimeUpdate
@@ -3924,6 +4444,47 @@ inline ::vega::MarketEvent* BusEvent::mutable_market() {
   return event_.market_;
 }
 
+// .vega.TxErrorEvent txErrEvent = 2001;
+inline bool BusEvent::has_txerrevent() const {
+  return event_case() == kTxErrEvent;
+}
+inline void BusEvent::set_has_txerrevent() {
+  _oneof_case_[0] = kTxErrEvent;
+}
+inline void BusEvent::clear_txerrevent() {
+  if (has_txerrevent()) {
+    delete event_.txerrevent_;
+    clear_has_event();
+  }
+}
+inline ::vega::TxErrorEvent* BusEvent::release_txerrevent() {
+  // @@protoc_insertion_point(field_release:vega.BusEvent.txErrEvent)
+  if (has_txerrevent()) {
+    clear_has_event();
+      ::vega::TxErrorEvent* temp = event_.txerrevent_;
+    event_.txerrevent_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::TxErrorEvent& BusEvent::txerrevent() const {
+  // @@protoc_insertion_point(field_get:vega.BusEvent.txErrEvent)
+  return has_txerrevent()
+      ? *event_.txerrevent_
+      : *reinterpret_cast< ::vega::TxErrorEvent*>(&::vega::_TxErrorEvent_default_instance_);
+}
+inline ::vega::TxErrorEvent* BusEvent::mutable_txerrevent() {
+  if (!has_txerrevent()) {
+    clear_event();
+    set_has_txerrevent();
+    event_.txerrevent_ = CreateMaybeMessage< ::vega::TxErrorEvent >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:vega.BusEvent.txErrEvent)
+  return event_.txerrevent_;
+}
+
 inline bool BusEvent::has_event() const {
   return event_case() != EVENT_NOT_SET;
 }
@@ -3936,6 +4497,8 @@ inline BusEvent::EventCase BusEvent::event_case() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

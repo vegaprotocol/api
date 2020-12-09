@@ -473,8 +473,7 @@ proto.vega.InstrumentConfiguration.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     code: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    basename: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    quotename: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    quotename: jspb.Message.getFieldWithDefault(msg, 3, ""),
     future: (f = msg.getFuture()) && proto.vega.FutureProduct.toObject(includeInstance, f)
   };
 
@@ -521,10 +520,6 @@ proto.vega.InstrumentConfiguration.deserializeBinaryFromReader = function(msg, r
       msg.setCode(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setBasename(value);
-      break;
-    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setQuotename(value);
       break;
@@ -576,17 +571,10 @@ proto.vega.InstrumentConfiguration.serializeBinaryToWriter = function(message, w
       f
     );
   }
-  f = message.getBasename();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getQuotename();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      3,
       f
     );
   }
@@ -632,32 +620,17 @@ proto.vega.InstrumentConfiguration.prototype.setCode = function(value) {
 
 
 /**
- * optional string baseName = 3;
+ * optional string quoteName = 3;
  * @return {string}
  */
-proto.vega.InstrumentConfiguration.prototype.getBasename = function() {
+proto.vega.InstrumentConfiguration.prototype.getQuotename = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.vega.InstrumentConfiguration.prototype.setBasename = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string quoteName = 4;
- * @return {string}
- */
-proto.vega.InstrumentConfiguration.prototype.getQuotename = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/** @param {string} value */
 proto.vega.InstrumentConfiguration.prototype.setQuotename = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -777,7 +750,7 @@ proto.vega.NewMarketConfiguration.toObject = function(includeInstance, msg) {
     decimalplaces: jspb.Message.getFieldWithDefault(msg, 2, 0),
     metadataList: jspb.Message.getRepeatedField(msg, 3),
     openingauctionduration: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    pricemonitoringsettings: (f = msg.getPricemonitoringsettings()) && proto_markets_pb.PriceMonitoringSettings.toObject(includeInstance, f),
+    pricemonitoringparameters: (f = msg.getPricemonitoringparameters()) && proto_markets_pb.PriceMonitoringParameters.toObject(includeInstance, f),
     simple: (f = msg.getSimple()) && proto_markets_pb.SimpleModelParams.toObject(includeInstance, f),
     lognormal: (f = msg.getLognormal()) && proto_markets_pb.LogNormalRiskModel.toObject(includeInstance, f),
     continuous: (f = msg.getContinuous()) && proto_markets_pb.ContinuousTrading.toObject(includeInstance, f),
@@ -836,9 +809,9 @@ proto.vega.NewMarketConfiguration.deserializeBinaryFromReader = function(msg, re
       msg.setOpeningauctionduration(value);
       break;
     case 5:
-      var value = new proto_markets_pb.PriceMonitoringSettings;
-      reader.readMessage(value,proto_markets_pb.PriceMonitoringSettings.deserializeBinaryFromReader);
-      msg.setPricemonitoringsettings(value);
+      var value = new proto_markets_pb.PriceMonitoringParameters;
+      reader.readMessage(value,proto_markets_pb.PriceMonitoringParameters.deserializeBinaryFromReader);
+      msg.setPricemonitoringparameters(value);
       break;
     case 100:
       var value = new proto_markets_pb.SimpleModelParams;
@@ -918,12 +891,12 @@ proto.vega.NewMarketConfiguration.serializeBinaryToWriter = function(message, wr
       f
     );
   }
-  f = message.getPricemonitoringsettings();
+  f = message.getPricemonitoringparameters();
   if (f != null) {
     writer.writeMessage(
       5,
       f,
-      proto_markets_pb.PriceMonitoringSettings.serializeBinaryToWriter
+      proto_markets_pb.PriceMonitoringParameters.serializeBinaryToWriter
     );
   }
   f = message.getSimple();
@@ -1057,17 +1030,17 @@ proto.vega.NewMarketConfiguration.prototype.setOpeningauctionduration = function
 
 
 /**
- * optional PriceMonitoringSettings priceMonitoringSettings = 5;
- * @return {?proto.vega.PriceMonitoringSettings}
+ * optional PriceMonitoringParameters PriceMonitoringParameters = 5;
+ * @return {?proto.vega.PriceMonitoringParameters}
  */
-proto.vega.NewMarketConfiguration.prototype.getPricemonitoringsettings = function() {
-  return /** @type{?proto.vega.PriceMonitoringSettings} */ (
-    jspb.Message.getWrapperField(this, proto_markets_pb.PriceMonitoringSettings, 5));
+proto.vega.NewMarketConfiguration.prototype.getPricemonitoringparameters = function() {
+  return /** @type{?proto.vega.PriceMonitoringParameters} */ (
+    jspb.Message.getWrapperField(this, proto_markets_pb.PriceMonitoringParameters, 5));
 };
 
 
-/** @param {?proto.vega.PriceMonitoringSettings|undefined} value */
-proto.vega.NewMarketConfiguration.prototype.setPricemonitoringsettings = function(value) {
+/** @param {?proto.vega.PriceMonitoringParameters|undefined} value */
+proto.vega.NewMarketConfiguration.prototype.setPricemonitoringparameters = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -1075,8 +1048,8 @@ proto.vega.NewMarketConfiguration.prototype.setPricemonitoringsettings = functio
 /**
  * Clears the message field making it undefined.
  */
-proto.vega.NewMarketConfiguration.prototype.clearPricemonitoringsettings = function() {
-  this.setPricemonitoringsettings(undefined);
+proto.vega.NewMarketConfiguration.prototype.clearPricemonitoringparameters = function() {
+  this.setPricemonitoringparameters(undefined);
 };
 
 
@@ -1084,7 +1057,7 @@ proto.vega.NewMarketConfiguration.prototype.clearPricemonitoringsettings = funct
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.NewMarketConfiguration.prototype.hasPricemonitoringsettings = function() {
+proto.vega.NewMarketConfiguration.prototype.hasPricemonitoringparameters = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 

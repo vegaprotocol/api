@@ -725,7 +725,7 @@ public final class Vega {
     PEGGED_REFERENCE_BEST_BID(2),
     /**
      * <pre>
-     * BEST BID price
+     * BEST ASK price
      * </pre>
      *
      * <code>PEGGED_REFERENCE_BEST_ASK = 3;</code>
@@ -760,7 +760,7 @@ public final class Vega {
     public static final int PEGGED_REFERENCE_BEST_BID_VALUE = 2;
     /**
      * <pre>
-     * BEST BID price
+     * BEST ASK price
      * </pre>
      *
      * <code>PEGGED_REFERENCE_BEST_ASK = 3;</code>
@@ -1207,6 +1207,22 @@ public final class Vega {
      * <code>ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE = 43;</code>
      */
     ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE(43),
+    /**
+     * <pre>
+     * Cannot amend a non pegged orders details
+     * </pre>
+     *
+     * <code>ORDER_ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAILS_ON_NON_PEGGED_ORDER = 44;</code>
+     */
+    ORDER_ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAILS_ON_NON_PEGGED_ORDER(44),
+    /**
+     * <pre>
+     * We are unable to reprice a pegged order because a market price is unavailable
+     * </pre>
+     *
+     * <code>ORDER_ERROR_UNABLE_TO_REPRICE_PEGGED_ORDER = 45;</code>
+     */
+    ORDER_ERROR_UNABLE_TO_REPRICE_PEGGED_ORDER(45),
     UNRECOGNIZED(-1),
     ;
 
@@ -1565,6 +1581,22 @@ public final class Vega {
      * <code>ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE = 43;</code>
      */
     public static final int ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE_VALUE = 43;
+    /**
+     * <pre>
+     * Cannot amend a non pegged orders details
+     * </pre>
+     *
+     * <code>ORDER_ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAILS_ON_NON_PEGGED_ORDER = 44;</code>
+     */
+    public static final int ORDER_ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAILS_ON_NON_PEGGED_ORDER_VALUE = 44;
+    /**
+     * <pre>
+     * We are unable to reprice a pegged order because a market price is unavailable
+     * </pre>
+     *
+     * <code>ORDER_ERROR_UNABLE_TO_REPRICE_PEGGED_ORDER = 45;</code>
+     */
+    public static final int ORDER_ERROR_UNABLE_TO_REPRICE_PEGGED_ORDER_VALUE = 45;
 
 
     public final int getNumber() {
@@ -1629,6 +1661,8 @@ public final class Vega {
         case 41: return ORDER_ERROR_SELL_CANNOT_REFERENCE_BEST_BID_PRICE;
         case 42: return ORDER_ERROR_OFFSET_MUST_BE_GREATER_THAN_ZERO;
         case 43: return ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE;
+        case 44: return ORDER_ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAILS_ON_NON_PEGGED_ORDER;
+        case 45: return ORDER_ERROR_UNABLE_TO_REPRICE_PEGGED_ORDER;
         default: return null;
       }
     }
@@ -7724,6 +7758,14 @@ public final class Vega {
        * <code>STATUS_PARTIALLY_FILLED = 7;</code>
        */
       STATUS_PARTIALLY_FILLED(7),
+      /**
+       * <pre>
+       * The order ha been removed from the book and has been parked, applies to pegged order only
+       * </pre>
+       *
+       * <code>STATUS_PARKED = 8;</code>
+       */
+      STATUS_PARKED(8),
       UNRECOGNIZED(-1),
       ;
 
@@ -7791,6 +7833,14 @@ public final class Vega {
        * <code>STATUS_PARTIALLY_FILLED = 7;</code>
        */
       public static final int STATUS_PARTIALLY_FILLED_VALUE = 7;
+      /**
+       * <pre>
+       * The order ha been removed from the book and has been parked, applies to pegged order only
+       * </pre>
+       *
+       * <code>STATUS_PARKED = 8;</code>
+       */
+      public static final int STATUS_PARKED_VALUE = 8;
 
 
       public final int getNumber() {
@@ -7819,6 +7869,7 @@ public final class Vega {
           case 5: return STATUS_FILLED;
           case 6: return STATUS_REJECTED;
           case 7: return STATUS_PARTIALLY_FILLED;
+          case 8: return STATUS_PARKED;
           default: return null;
         }
       }
@@ -34979,6 +35030,50 @@ public final class Vega {
      * <code>.vega.Order.TimeInForce timeInForce = 7;</code>
      */
     io.vegaprotocol.vega.Vega.Order.TimeInForce getTimeInForce();
+
+    /**
+     * <pre>
+     * Amend the pegged order offset for the order
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value peggedOffset = 8;</code>
+     */
+    boolean hasPeggedOffset();
+    /**
+     * <pre>
+     * Amend the pegged order offset for the order
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value peggedOffset = 8;</code>
+     */
+    com.google.protobuf.Int64Value getPeggedOffset();
+    /**
+     * <pre>
+     * Amend the pegged order offset for the order
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value peggedOffset = 8;</code>
+     */
+    com.google.protobuf.Int64ValueOrBuilder getPeggedOffsetOrBuilder();
+
+    /**
+     * <pre>
+     * Amend the pegged order reference for the order
+     * See [`PeggedReference`](#api.PeggedReference).
+     * </pre>
+     *
+     * <code>.vega.PeggedReference peggedReference = 9;</code>
+     */
+    int getPeggedReferenceValue();
+    /**
+     * <pre>
+     * Amend the pegged order reference for the order
+     * See [`PeggedReference`](#api.PeggedReference).
+     * </pre>
+     *
+     * <code>.vega.PeggedReference peggedReference = 9;</code>
+     */
+    io.vegaprotocol.vega.Vega.PeggedReference getPeggedReference();
   }
   /**
    * <pre>
@@ -35001,6 +35096,7 @@ public final class Vega {
       partyID_ = "";
       marketID_ = "";
       timeInForce_ = 0;
+      peggedReference_ = 0;
     }
 
     @java.lang.Override
@@ -35080,6 +35176,25 @@ public final class Vega {
               int rawValue = input.readEnum();
 
               timeInForce_ = rawValue;
+              break;
+            }
+            case 66: {
+              com.google.protobuf.Int64Value.Builder subBuilder = null;
+              if (peggedOffset_ != null) {
+                subBuilder = peggedOffset_.toBuilder();
+              }
+              peggedOffset_ = input.readMessage(com.google.protobuf.Int64Value.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(peggedOffset_);
+                peggedOffset_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              peggedReference_ = rawValue;
               break;
             }
             default: {
@@ -35352,6 +35467,66 @@ public final class Vega {
       return result == null ? io.vegaprotocol.vega.Vega.Order.TimeInForce.UNRECOGNIZED : result;
     }
 
+    public static final int PEGGEDOFFSET_FIELD_NUMBER = 8;
+    private com.google.protobuf.Int64Value peggedOffset_;
+    /**
+     * <pre>
+     * Amend the pegged order offset for the order
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value peggedOffset = 8;</code>
+     */
+    public boolean hasPeggedOffset() {
+      return peggedOffset_ != null;
+    }
+    /**
+     * <pre>
+     * Amend the pegged order offset for the order
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value peggedOffset = 8;</code>
+     */
+    public com.google.protobuf.Int64Value getPeggedOffset() {
+      return peggedOffset_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : peggedOffset_;
+    }
+    /**
+     * <pre>
+     * Amend the pegged order offset for the order
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value peggedOffset = 8;</code>
+     */
+    public com.google.protobuf.Int64ValueOrBuilder getPeggedOffsetOrBuilder() {
+      return getPeggedOffset();
+    }
+
+    public static final int PEGGEDREFERENCE_FIELD_NUMBER = 9;
+    private int peggedReference_;
+    /**
+     * <pre>
+     * Amend the pegged order reference for the order
+     * See [`PeggedReference`](#api.PeggedReference).
+     * </pre>
+     *
+     * <code>.vega.PeggedReference peggedReference = 9;</code>
+     */
+    public int getPeggedReferenceValue() {
+      return peggedReference_;
+    }
+    /**
+     * <pre>
+     * Amend the pegged order reference for the order
+     * See [`PeggedReference`](#api.PeggedReference).
+     * </pre>
+     *
+     * <code>.vega.PeggedReference peggedReference = 9;</code>
+     */
+    public io.vegaprotocol.vega.Vega.PeggedReference getPeggedReference() {
+      @SuppressWarnings("deprecation")
+      io.vegaprotocol.vega.Vega.PeggedReference result = io.vegaprotocol.vega.Vega.PeggedReference.valueOf(peggedReference_);
+      return result == null ? io.vegaprotocol.vega.Vega.PeggedReference.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -35387,6 +35562,12 @@ public final class Vega {
       if (timeInForce_ != io.vegaprotocol.vega.Vega.Order.TimeInForce.TIF_UNSPECIFIED.getNumber()) {
         output.writeEnum(7, timeInForce_);
       }
+      if (peggedOffset_ != null) {
+        output.writeMessage(8, getPeggedOffset());
+      }
+      if (peggedReference_ != io.vegaprotocol.vega.Vega.PeggedReference.PEGGED_REFERENCE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(9, peggedReference_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -35420,6 +35601,14 @@ public final class Vega {
       if (timeInForce_ != io.vegaprotocol.vega.Vega.Order.TimeInForce.TIF_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, timeInForce_);
+      }
+      if (peggedOffset_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, getPeggedOffset());
+      }
+      if (peggedReference_ != io.vegaprotocol.vega.Vega.PeggedReference.PEGGED_REFERENCE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, peggedReference_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -35455,6 +35644,12 @@ public final class Vega {
             .equals(other.getExpiresAt())) return false;
       }
       if (timeInForce_ != other.timeInForce_) return false;
+      if (hasPeggedOffset() != other.hasPeggedOffset()) return false;
+      if (hasPeggedOffset()) {
+        if (!getPeggedOffset()
+            .equals(other.getPeggedOffset())) return false;
+      }
+      if (peggedReference_ != other.peggedReference_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -35485,6 +35680,12 @@ public final class Vega {
       }
       hash = (37 * hash) + TIMEINFORCE_FIELD_NUMBER;
       hash = (53 * hash) + timeInForce_;
+      if (hasPeggedOffset()) {
+        hash = (37 * hash) + PEGGEDOFFSET_FIELD_NUMBER;
+        hash = (53 * hash) + getPeggedOffset().hashCode();
+      }
+      hash = (37 * hash) + PEGGEDREFERENCE_FIELD_NUMBER;
+      hash = (53 * hash) + peggedReference_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -35644,6 +35845,14 @@ public final class Vega {
         }
         timeInForce_ = 0;
 
+        if (peggedOffsetBuilder_ == null) {
+          peggedOffset_ = null;
+        } else {
+          peggedOffset_ = null;
+          peggedOffsetBuilder_ = null;
+        }
+        peggedReference_ = 0;
+
         return this;
       }
 
@@ -35685,6 +35894,12 @@ public final class Vega {
           result.expiresAt_ = expiresAtBuilder_.build();
         }
         result.timeInForce_ = timeInForce_;
+        if (peggedOffsetBuilder_ == null) {
+          result.peggedOffset_ = peggedOffset_;
+        } else {
+          result.peggedOffset_ = peggedOffsetBuilder_.build();
+        }
+        result.peggedReference_ = peggedReference_;
         onBuilt();
         return result;
       }
@@ -35756,6 +35971,12 @@ public final class Vega {
         }
         if (other.timeInForce_ != 0) {
           setTimeInForceValue(other.getTimeInForceValue());
+        }
+        if (other.hasPeggedOffset()) {
+          mergePeggedOffset(other.getPeggedOffset());
+        }
+        if (other.peggedReference_ != 0) {
+          setPeggedReferenceValue(other.getPeggedReferenceValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -36481,6 +36702,229 @@ public final class Vega {
       public Builder clearTimeInForce() {
 
         timeInForce_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Int64Value peggedOffset_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Int64Value, com.google.protobuf.Int64Value.Builder, com.google.protobuf.Int64ValueOrBuilder> peggedOffsetBuilder_;
+      /**
+       * <pre>
+       * Amend the pegged order offset for the order
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value peggedOffset = 8;</code>
+       */
+      public boolean hasPeggedOffset() {
+        return peggedOffsetBuilder_ != null || peggedOffset_ != null;
+      }
+      /**
+       * <pre>
+       * Amend the pegged order offset for the order
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value peggedOffset = 8;</code>
+       */
+      public com.google.protobuf.Int64Value getPeggedOffset() {
+        if (peggedOffsetBuilder_ == null) {
+          return peggedOffset_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : peggedOffset_;
+        } else {
+          return peggedOffsetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Amend the pegged order offset for the order
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value peggedOffset = 8;</code>
+       */
+      public Builder setPeggedOffset(com.google.protobuf.Int64Value value) {
+        if (peggedOffsetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          peggedOffset_ = value;
+          onChanged();
+        } else {
+          peggedOffsetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Amend the pegged order offset for the order
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value peggedOffset = 8;</code>
+       */
+      public Builder setPeggedOffset(
+          com.google.protobuf.Int64Value.Builder builderForValue) {
+        if (peggedOffsetBuilder_ == null) {
+          peggedOffset_ = builderForValue.build();
+          onChanged();
+        } else {
+          peggedOffsetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Amend the pegged order offset for the order
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value peggedOffset = 8;</code>
+       */
+      public Builder mergePeggedOffset(com.google.protobuf.Int64Value value) {
+        if (peggedOffsetBuilder_ == null) {
+          if (peggedOffset_ != null) {
+            peggedOffset_ =
+              com.google.protobuf.Int64Value.newBuilder(peggedOffset_).mergeFrom(value).buildPartial();
+          } else {
+            peggedOffset_ = value;
+          }
+          onChanged();
+        } else {
+          peggedOffsetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Amend the pegged order offset for the order
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value peggedOffset = 8;</code>
+       */
+      public Builder clearPeggedOffset() {
+        if (peggedOffsetBuilder_ == null) {
+          peggedOffset_ = null;
+          onChanged();
+        } else {
+          peggedOffset_ = null;
+          peggedOffsetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Amend the pegged order offset for the order
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value peggedOffset = 8;</code>
+       */
+      public com.google.protobuf.Int64Value.Builder getPeggedOffsetBuilder() {
+
+        onChanged();
+        return getPeggedOffsetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Amend the pegged order offset for the order
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value peggedOffset = 8;</code>
+       */
+      public com.google.protobuf.Int64ValueOrBuilder getPeggedOffsetOrBuilder() {
+        if (peggedOffsetBuilder_ != null) {
+          return peggedOffsetBuilder_.getMessageOrBuilder();
+        } else {
+          return peggedOffset_ == null ?
+              com.google.protobuf.Int64Value.getDefaultInstance() : peggedOffset_;
+        }
+      }
+      /**
+       * <pre>
+       * Amend the pegged order offset for the order
+       * </pre>
+       *
+       * <code>.google.protobuf.Int64Value peggedOffset = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Int64Value, com.google.protobuf.Int64Value.Builder, com.google.protobuf.Int64ValueOrBuilder>
+          getPeggedOffsetFieldBuilder() {
+        if (peggedOffsetBuilder_ == null) {
+          peggedOffsetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Int64Value, com.google.protobuf.Int64Value.Builder, com.google.protobuf.Int64ValueOrBuilder>(
+                  getPeggedOffset(),
+                  getParentForChildren(),
+                  isClean());
+          peggedOffset_ = null;
+        }
+        return peggedOffsetBuilder_;
+      }
+
+      private int peggedReference_ = 0;
+      /**
+       * <pre>
+       * Amend the pegged order reference for the order
+       * See [`PeggedReference`](#api.PeggedReference).
+       * </pre>
+       *
+       * <code>.vega.PeggedReference peggedReference = 9;</code>
+       */
+      public int getPeggedReferenceValue() {
+        return peggedReference_;
+      }
+      /**
+       * <pre>
+       * Amend the pegged order reference for the order
+       * See [`PeggedReference`](#api.PeggedReference).
+       * </pre>
+       *
+       * <code>.vega.PeggedReference peggedReference = 9;</code>
+       */
+      public Builder setPeggedReferenceValue(int value) {
+        peggedReference_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Amend the pegged order reference for the order
+       * See [`PeggedReference`](#api.PeggedReference).
+       * </pre>
+       *
+       * <code>.vega.PeggedReference peggedReference = 9;</code>
+       */
+      public io.vegaprotocol.vega.Vega.PeggedReference getPeggedReference() {
+        @SuppressWarnings("deprecation")
+        io.vegaprotocol.vega.Vega.PeggedReference result = io.vegaprotocol.vega.Vega.PeggedReference.valueOf(peggedReference_);
+        return result == null ? io.vegaprotocol.vega.Vega.PeggedReference.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Amend the pegged order reference for the order
+       * See [`PeggedReference`](#api.PeggedReference).
+       * </pre>
+       *
+       * <code>.vega.PeggedReference peggedReference = 9;</code>
+       */
+      public Builder setPeggedReference(io.vegaprotocol.vega.Vega.PeggedReference value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        peggedReference_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Amend the pegged order reference for the order
+       * See [`PeggedReference`](#api.PeggedReference).
+       * </pre>
+       *
+       * <code>.vega.PeggedReference peggedReference = 9;</code>
+       */
+      public Builder clearPeggedReference() {
+
+        peggedReference_ = 0;
         onChanged();
         return this;
       }
@@ -50595,20 +51039,65 @@ public final class Vega {
 
     /**
      * <pre>
+     * Highest price on the order book for buy orders not including pegged orders
+     * </pre>
+     *
+     * <code>uint64 bestStaticBidPrice = 6;</code>
+     */
+    long getBestStaticBidPrice();
+
+    /**
+     * <pre>
+     * Total volume at the best static bid price excluding pegged orders
+     * </pre>
+     *
+     * <code>uint64 bestStaticBidVolume = 7;</code>
+     */
+    long getBestStaticBidVolume();
+
+    /**
+     * <pre>
+     * Lowest price on the order book for sell orders not including pegged orders
+     * </pre>
+     *
+     * <code>uint64 bestStaticOfferPrice = 8;</code>
+     */
+    long getBestStaticOfferPrice();
+
+    /**
+     * <pre>
+     * Total volume at the best static offer price excluding pegged orders
+     * </pre>
+     *
+     * <code>uint64 bestStaticOfferVolume = 9;</code>
+     */
+    long getBestStaticOfferVolume();
+
+    /**
+     * <pre>
      * Arithmetic average of the best bid price and best offer price, as an integer, for example `123456` is a correctly
      *  // formatted price of `1.23456` assuming market configured to 5 decimal places.
      * </pre>
      *
-     * <code>uint64 midPrice = 6;</code>
+     * <code>uint64 midPrice = 10;</code>
      */
     long getMidPrice();
+
+    /**
+     * <pre>
+     * Arithmetic average of the best static bid price and best static offer price
+     * </pre>
+     *
+     * <code>uint64 staticMidPrice = 11;</code>
+     */
+    long getStaticMidPrice();
 
     /**
      * <pre>
      * Market identifier for the data.
      * </pre>
      *
-     * <code>string market = 7;</code>
+     * <code>string market = 12;</code>
      */
     java.lang.String getMarket();
     /**
@@ -50616,7 +51105,7 @@ public final class Vega {
      * Market identifier for the data.
      * </pre>
      *
-     * <code>string market = 7;</code>
+     * <code>string market = 12;</code>
      */
     com.google.protobuf.ByteString
         getMarketBytes();
@@ -50627,7 +51116,7 @@ public final class Vega {
      * See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`.
      * </pre>
      *
-     * <code>int64 timestamp = 8;</code>
+     * <code>int64 timestamp = 13;</code>
      */
     long getTimestamp();
 
@@ -50636,7 +51125,7 @@ public final class Vega {
      * The sum of the size of all positions greater than 0 on the market.
      * </pre>
      *
-     * <code>uint64 openInterest = 9;</code>
+     * <code>uint64 openInterest = 14;</code>
      */
     long getOpenInterest();
 
@@ -50645,7 +51134,7 @@ public final class Vega {
      * Time in seconds until the end of the auction (0 if currently not in auction period).
      * </pre>
      *
-     * <code>int64 auctionEnd = 10;</code>
+     * <code>int64 auctionEnd = 15;</code>
      */
     long getAuctionEnd();
 
@@ -50654,7 +51143,7 @@ public final class Vega {
      * Time until next auction (used in FBA's) - currently always 0.
      * </pre>
      *
-     * <code>int64 auctionStart = 11;</code>
+     * <code>int64 auctionStart = 16;</code>
      */
     long getAuctionStart();
 
@@ -50663,7 +51152,7 @@ public final class Vega {
      * indicative price (zero if not in auction)
      * </pre>
      *
-     * <code>uint64 indicativePrice = 12;</code>
+     * <code>uint64 indicativePrice = 17;</code>
      */
     long getIndicativePrice();
 
@@ -50672,7 +51161,7 @@ public final class Vega {
      * indicative volume (zero if not in auction)
      * </pre>
      *
-     * <code>uint64 indicativeVolume = 13;</code>
+     * <code>uint64 indicativeVolume = 18;</code>
      */
     long getIndicativeVolume();
 
@@ -50681,7 +51170,7 @@ public final class Vega {
      * the current state of the market
      * </pre>
      *
-     * <code>.vega.MarketState marketState = 14;</code>
+     * <code>.vega.MarketState marketState = 19;</code>
      */
     int getMarketStateValue();
     /**
@@ -50689,7 +51178,7 @@ public final class Vega {
      * the current state of the market
      * </pre>
      *
-     * <code>.vega.MarketState marketState = 14;</code>
+     * <code>.vega.MarketState marketState = 19;</code>
      */
     io.vegaprotocol.vega.Vega.MarketState getMarketState();
 
@@ -50698,7 +51187,7 @@ public final class Vega {
      * if the market is in auction state, this field indicates what triggered the auction
      * </pre>
      *
-     * <code>.vega.AuctionTrigger trigger = 15;</code>
+     * <code>.vega.AuctionTrigger trigger = 20;</code>
      */
     int getTriggerValue();
     /**
@@ -50706,7 +51195,7 @@ public final class Vega {
      * if the market is in auction state, this field indicates what triggered the auction
      * </pre>
      *
-     * <code>.vega.AuctionTrigger trigger = 15;</code>
+     * <code>.vega.AuctionTrigger trigger = 20;</code>
      */
     io.vegaprotocol.vega.Vega.AuctionTrigger getTrigger();
 
@@ -50715,7 +51204,7 @@ public final class Vega {
      * the targeted stake for the given market
      * </pre>
      *
-     * <code>string targetStake = 16;</code>
+     * <code>string targetStake = 21;</code>
      */
     java.lang.String getTargetStake();
     /**
@@ -50723,7 +51212,7 @@ public final class Vega {
      * the targeted stake for the given market
      * </pre>
      *
-     * <code>string targetStake = 16;</code>
+     * <code>string targetStake = 21;</code>
      */
     com.google.protobuf.ByteString
         getTargetStakeBytes();
@@ -50733,7 +51222,7 @@ public final class Vega {
      * the available stake fo the given market
      * </pre>
      *
-     * <code>string suppliedStake = 17;</code>
+     * <code>string suppliedStake = 22;</code>
      */
     java.lang.String getSuppliedStake();
     /**
@@ -50741,7 +51230,7 @@ public final class Vega {
      * the available stake fo the given market
      * </pre>
      *
-     * <code>string suppliedStake = 17;</code>
+     * <code>string suppliedStake = 22;</code>
      */
     com.google.protobuf.ByteString
         getSuppliedStakeBytes();
@@ -50821,64 +51310,89 @@ public final class Vega {
             }
             case 48: {
 
+              bestStaticBidPrice_ = input.readUInt64();
+              break;
+            }
+            case 56: {
+
+              bestStaticBidVolume_ = input.readUInt64();
+              break;
+            }
+            case 64: {
+
+              bestStaticOfferPrice_ = input.readUInt64();
+              break;
+            }
+            case 72: {
+
+              bestStaticOfferVolume_ = input.readUInt64();
+              break;
+            }
+            case 80: {
+
               midPrice_ = input.readUInt64();
               break;
             }
-            case 58: {
+            case 88: {
+
+              staticMidPrice_ = input.readUInt64();
+              break;
+            }
+            case 98: {
               java.lang.String s = input.readStringRequireUtf8();
 
               market_ = s;
               break;
             }
-            case 64: {
+            case 104: {
 
               timestamp_ = input.readInt64();
               break;
             }
-            case 72: {
+            case 112: {
 
               openInterest_ = input.readUInt64();
               break;
             }
-            case 80: {
+            case 120: {
 
               auctionEnd_ = input.readInt64();
               break;
             }
-            case 88: {
+            case 128: {
 
               auctionStart_ = input.readInt64();
               break;
             }
-            case 96: {
+            case 136: {
 
               indicativePrice_ = input.readUInt64();
               break;
             }
-            case 104: {
+            case 144: {
 
               indicativeVolume_ = input.readUInt64();
               break;
             }
-            case 112: {
+            case 152: {
               int rawValue = input.readEnum();
 
               marketState_ = rawValue;
               break;
             }
-            case 120: {
+            case 160: {
               int rawValue = input.readEnum();
 
               trigger_ = rawValue;
               break;
             }
-            case 130: {
+            case 170: {
               java.lang.String s = input.readStringRequireUtf8();
 
               targetStake_ = s;
               break;
             }
-            case 138: {
+            case 178: {
               java.lang.String s = input.readStringRequireUtf8();
 
               suppliedStake_ = s;
@@ -50984,7 +51498,59 @@ public final class Vega {
       return bestOfferVolume_;
     }
 
-    public static final int MIDPRICE_FIELD_NUMBER = 6;
+    public static final int BESTSTATICBIDPRICE_FIELD_NUMBER = 6;
+    private long bestStaticBidPrice_;
+    /**
+     * <pre>
+     * Highest price on the order book for buy orders not including pegged orders
+     * </pre>
+     *
+     * <code>uint64 bestStaticBidPrice = 6;</code>
+     */
+    public long getBestStaticBidPrice() {
+      return bestStaticBidPrice_;
+    }
+
+    public static final int BESTSTATICBIDVOLUME_FIELD_NUMBER = 7;
+    private long bestStaticBidVolume_;
+    /**
+     * <pre>
+     * Total volume at the best static bid price excluding pegged orders
+     * </pre>
+     *
+     * <code>uint64 bestStaticBidVolume = 7;</code>
+     */
+    public long getBestStaticBidVolume() {
+      return bestStaticBidVolume_;
+    }
+
+    public static final int BESTSTATICOFFERPRICE_FIELD_NUMBER = 8;
+    private long bestStaticOfferPrice_;
+    /**
+     * <pre>
+     * Lowest price on the order book for sell orders not including pegged orders
+     * </pre>
+     *
+     * <code>uint64 bestStaticOfferPrice = 8;</code>
+     */
+    public long getBestStaticOfferPrice() {
+      return bestStaticOfferPrice_;
+    }
+
+    public static final int BESTSTATICOFFERVOLUME_FIELD_NUMBER = 9;
+    private long bestStaticOfferVolume_;
+    /**
+     * <pre>
+     * Total volume at the best static offer price excluding pegged orders
+     * </pre>
+     *
+     * <code>uint64 bestStaticOfferVolume = 9;</code>
+     */
+    public long getBestStaticOfferVolume() {
+      return bestStaticOfferVolume_;
+    }
+
+    public static final int MIDPRICE_FIELD_NUMBER = 10;
     private long midPrice_;
     /**
      * <pre>
@@ -50992,20 +51558,33 @@ public final class Vega {
      *  // formatted price of `1.23456` assuming market configured to 5 decimal places.
      * </pre>
      *
-     * <code>uint64 midPrice = 6;</code>
+     * <code>uint64 midPrice = 10;</code>
      */
     public long getMidPrice() {
       return midPrice_;
     }
 
-    public static final int MARKET_FIELD_NUMBER = 7;
+    public static final int STATICMIDPRICE_FIELD_NUMBER = 11;
+    private long staticMidPrice_;
+    /**
+     * <pre>
+     * Arithmetic average of the best static bid price and best static offer price
+     * </pre>
+     *
+     * <code>uint64 staticMidPrice = 11;</code>
+     */
+    public long getStaticMidPrice() {
+      return staticMidPrice_;
+    }
+
+    public static final int MARKET_FIELD_NUMBER = 12;
     private volatile java.lang.Object market_;
     /**
      * <pre>
      * Market identifier for the data.
      * </pre>
      *
-     * <code>string market = 7;</code>
+     * <code>string market = 12;</code>
      */
     public java.lang.String getMarket() {
       java.lang.Object ref = market_;
@@ -51024,7 +51603,7 @@ public final class Vega {
      * Market identifier for the data.
      * </pre>
      *
-     * <code>string market = 7;</code>
+     * <code>string market = 12;</code>
      */
     public com.google.protobuf.ByteString
         getMarketBytes() {
@@ -51040,7 +51619,7 @@ public final class Vega {
       }
     }
 
-    public static final int TIMESTAMP_FIELD_NUMBER = 8;
+    public static final int TIMESTAMP_FIELD_NUMBER = 13;
     private long timestamp_;
     /**
      * <pre>
@@ -51048,85 +51627,85 @@ public final class Vega {
      * See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`.
      * </pre>
      *
-     * <code>int64 timestamp = 8;</code>
+     * <code>int64 timestamp = 13;</code>
      */
     public long getTimestamp() {
       return timestamp_;
     }
 
-    public static final int OPENINTEREST_FIELD_NUMBER = 9;
+    public static final int OPENINTEREST_FIELD_NUMBER = 14;
     private long openInterest_;
     /**
      * <pre>
      * The sum of the size of all positions greater than 0 on the market.
      * </pre>
      *
-     * <code>uint64 openInterest = 9;</code>
+     * <code>uint64 openInterest = 14;</code>
      */
     public long getOpenInterest() {
       return openInterest_;
     }
 
-    public static final int AUCTIONEND_FIELD_NUMBER = 10;
+    public static final int AUCTIONEND_FIELD_NUMBER = 15;
     private long auctionEnd_;
     /**
      * <pre>
      * Time in seconds until the end of the auction (0 if currently not in auction period).
      * </pre>
      *
-     * <code>int64 auctionEnd = 10;</code>
+     * <code>int64 auctionEnd = 15;</code>
      */
     public long getAuctionEnd() {
       return auctionEnd_;
     }
 
-    public static final int AUCTIONSTART_FIELD_NUMBER = 11;
+    public static final int AUCTIONSTART_FIELD_NUMBER = 16;
     private long auctionStart_;
     /**
      * <pre>
      * Time until next auction (used in FBA's) - currently always 0.
      * </pre>
      *
-     * <code>int64 auctionStart = 11;</code>
+     * <code>int64 auctionStart = 16;</code>
      */
     public long getAuctionStart() {
       return auctionStart_;
     }
 
-    public static final int INDICATIVEPRICE_FIELD_NUMBER = 12;
+    public static final int INDICATIVEPRICE_FIELD_NUMBER = 17;
     private long indicativePrice_;
     /**
      * <pre>
      * indicative price (zero if not in auction)
      * </pre>
      *
-     * <code>uint64 indicativePrice = 12;</code>
+     * <code>uint64 indicativePrice = 17;</code>
      */
     public long getIndicativePrice() {
       return indicativePrice_;
     }
 
-    public static final int INDICATIVEVOLUME_FIELD_NUMBER = 13;
+    public static final int INDICATIVEVOLUME_FIELD_NUMBER = 18;
     private long indicativeVolume_;
     /**
      * <pre>
      * indicative volume (zero if not in auction)
      * </pre>
      *
-     * <code>uint64 indicativeVolume = 13;</code>
+     * <code>uint64 indicativeVolume = 18;</code>
      */
     public long getIndicativeVolume() {
       return indicativeVolume_;
     }
 
-    public static final int MARKETSTATE_FIELD_NUMBER = 14;
+    public static final int MARKETSTATE_FIELD_NUMBER = 19;
     private int marketState_;
     /**
      * <pre>
      * the current state of the market
      * </pre>
      *
-     * <code>.vega.MarketState marketState = 14;</code>
+     * <code>.vega.MarketState marketState = 19;</code>
      */
     public int getMarketStateValue() {
       return marketState_;
@@ -51136,7 +51715,7 @@ public final class Vega {
      * the current state of the market
      * </pre>
      *
-     * <code>.vega.MarketState marketState = 14;</code>
+     * <code>.vega.MarketState marketState = 19;</code>
      */
     public io.vegaprotocol.vega.Vega.MarketState getMarketState() {
       @SuppressWarnings("deprecation")
@@ -51144,14 +51723,14 @@ public final class Vega {
       return result == null ? io.vegaprotocol.vega.Vega.MarketState.UNRECOGNIZED : result;
     }
 
-    public static final int TRIGGER_FIELD_NUMBER = 15;
+    public static final int TRIGGER_FIELD_NUMBER = 20;
     private int trigger_;
     /**
      * <pre>
      * if the market is in auction state, this field indicates what triggered the auction
      * </pre>
      *
-     * <code>.vega.AuctionTrigger trigger = 15;</code>
+     * <code>.vega.AuctionTrigger trigger = 20;</code>
      */
     public int getTriggerValue() {
       return trigger_;
@@ -51161,7 +51740,7 @@ public final class Vega {
      * if the market is in auction state, this field indicates what triggered the auction
      * </pre>
      *
-     * <code>.vega.AuctionTrigger trigger = 15;</code>
+     * <code>.vega.AuctionTrigger trigger = 20;</code>
      */
     public io.vegaprotocol.vega.Vega.AuctionTrigger getTrigger() {
       @SuppressWarnings("deprecation")
@@ -51169,14 +51748,14 @@ public final class Vega {
       return result == null ? io.vegaprotocol.vega.Vega.AuctionTrigger.UNRECOGNIZED : result;
     }
 
-    public static final int TARGETSTAKE_FIELD_NUMBER = 16;
+    public static final int TARGETSTAKE_FIELD_NUMBER = 21;
     private volatile java.lang.Object targetStake_;
     /**
      * <pre>
      * the targeted stake for the given market
      * </pre>
      *
-     * <code>string targetStake = 16;</code>
+     * <code>string targetStake = 21;</code>
      */
     public java.lang.String getTargetStake() {
       java.lang.Object ref = targetStake_;
@@ -51195,7 +51774,7 @@ public final class Vega {
      * the targeted stake for the given market
      * </pre>
      *
-     * <code>string targetStake = 16;</code>
+     * <code>string targetStake = 21;</code>
      */
     public com.google.protobuf.ByteString
         getTargetStakeBytes() {
@@ -51211,14 +51790,14 @@ public final class Vega {
       }
     }
 
-    public static final int SUPPLIEDSTAKE_FIELD_NUMBER = 17;
+    public static final int SUPPLIEDSTAKE_FIELD_NUMBER = 22;
     private volatile java.lang.Object suppliedStake_;
     /**
      * <pre>
      * the available stake fo the given market
      * </pre>
      *
-     * <code>string suppliedStake = 17;</code>
+     * <code>string suppliedStake = 22;</code>
      */
     public java.lang.String getSuppliedStake() {
       java.lang.Object ref = suppliedStake_;
@@ -51237,7 +51816,7 @@ public final class Vega {
      * the available stake fo the given market
      * </pre>
      *
-     * <code>string suppliedStake = 17;</code>
+     * <code>string suppliedStake = 22;</code>
      */
     public com.google.protobuf.ByteString
         getSuppliedStakeBytes() {
@@ -51282,41 +51861,56 @@ public final class Vega {
       if (bestOfferVolume_ != 0L) {
         output.writeUInt64(5, bestOfferVolume_);
       }
+      if (bestStaticBidPrice_ != 0L) {
+        output.writeUInt64(6, bestStaticBidPrice_);
+      }
+      if (bestStaticBidVolume_ != 0L) {
+        output.writeUInt64(7, bestStaticBidVolume_);
+      }
+      if (bestStaticOfferPrice_ != 0L) {
+        output.writeUInt64(8, bestStaticOfferPrice_);
+      }
+      if (bestStaticOfferVolume_ != 0L) {
+        output.writeUInt64(9, bestStaticOfferVolume_);
+      }
       if (midPrice_ != 0L) {
-        output.writeUInt64(6, midPrice_);
+        output.writeUInt64(10, midPrice_);
+      }
+      if (staticMidPrice_ != 0L) {
+        output.writeUInt64(11, staticMidPrice_);
       }
       if (!getMarketBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, market_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, market_);
       }
       if (timestamp_ != 0L) {
-        output.writeInt64(8, timestamp_);
+        output.writeInt64(13, timestamp_);
       }
       if (openInterest_ != 0L) {
-        output.writeUInt64(9, openInterest_);
+        output.writeUInt64(14, openInterest_);
       }
       if (auctionEnd_ != 0L) {
-        output.writeInt64(10, auctionEnd_);
+        output.writeInt64(15, auctionEnd_);
       }
       if (auctionStart_ != 0L) {
-        output.writeInt64(11, auctionStart_);
+        output.writeInt64(16, auctionStart_);
       }
       if (indicativePrice_ != 0L) {
-        output.writeUInt64(12, indicativePrice_);
+        output.writeUInt64(17, indicativePrice_);
       }
       if (indicativeVolume_ != 0L) {
-        output.writeUInt64(13, indicativeVolume_);
+        output.writeUInt64(18, indicativeVolume_);
       }
       if (marketState_ != io.vegaprotocol.vega.Vega.MarketState.MARKET_STATE_UNSPECIFIED.getNumber()) {
-        output.writeEnum(14, marketState_);
+        output.writeEnum(19, marketState_);
       }
       if (trigger_ != io.vegaprotocol.vega.Vega.AuctionTrigger.AUCTION_TRIGGER_UNSPECIFIED.getNumber()) {
-        output.writeEnum(15, trigger_);
+        output.writeEnum(20, trigger_);
       }
       if (!getTargetStakeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, targetStake_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 21, targetStake_);
       }
       if (!getSuppliedStakeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, suppliedStake_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 22, suppliedStake_);
       }
       unknownFields.writeTo(output);
     }
@@ -51347,50 +51941,70 @@ public final class Vega {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(5, bestOfferVolume_);
       }
+      if (bestStaticBidPrice_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, bestStaticBidPrice_);
+      }
+      if (bestStaticBidVolume_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(7, bestStaticBidVolume_);
+      }
+      if (bestStaticOfferPrice_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(8, bestStaticOfferPrice_);
+      }
+      if (bestStaticOfferVolume_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(9, bestStaticOfferVolume_);
+      }
       if (midPrice_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(6, midPrice_);
+          .computeUInt64Size(10, midPrice_);
+      }
+      if (staticMidPrice_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(11, staticMidPrice_);
       }
       if (!getMarketBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, market_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, market_);
       }
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(8, timestamp_);
+          .computeInt64Size(13, timestamp_);
       }
       if (openInterest_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(9, openInterest_);
+          .computeUInt64Size(14, openInterest_);
       }
       if (auctionEnd_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(10, auctionEnd_);
+          .computeInt64Size(15, auctionEnd_);
       }
       if (auctionStart_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(11, auctionStart_);
+          .computeInt64Size(16, auctionStart_);
       }
       if (indicativePrice_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(12, indicativePrice_);
+          .computeUInt64Size(17, indicativePrice_);
       }
       if (indicativeVolume_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(13, indicativeVolume_);
+          .computeUInt64Size(18, indicativeVolume_);
       }
       if (marketState_ != io.vegaprotocol.vega.Vega.MarketState.MARKET_STATE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(14, marketState_);
+          .computeEnumSize(19, marketState_);
       }
       if (trigger_ != io.vegaprotocol.vega.Vega.AuctionTrigger.AUCTION_TRIGGER_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(15, trigger_);
+          .computeEnumSize(20, trigger_);
       }
       if (!getTargetStakeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, targetStake_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, targetStake_);
       }
       if (!getSuppliedStakeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, suppliedStake_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, suppliedStake_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -51417,8 +52031,18 @@ public final class Vega {
           != other.getBestOfferPrice()) return false;
       if (getBestOfferVolume()
           != other.getBestOfferVolume()) return false;
+      if (getBestStaticBidPrice()
+          != other.getBestStaticBidPrice()) return false;
+      if (getBestStaticBidVolume()
+          != other.getBestStaticBidVolume()) return false;
+      if (getBestStaticOfferPrice()
+          != other.getBestStaticOfferPrice()) return false;
+      if (getBestStaticOfferVolume()
+          != other.getBestStaticOfferVolume()) return false;
       if (getMidPrice()
           != other.getMidPrice()) return false;
+      if (getStaticMidPrice()
+          != other.getStaticMidPrice()) return false;
       if (!getMarket()
           .equals(other.getMarket())) return false;
       if (getTimestamp()
@@ -51465,9 +52089,24 @@ public final class Vega {
       hash = (37 * hash) + BESTOFFERVOLUME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getBestOfferVolume());
+      hash = (37 * hash) + BESTSTATICBIDPRICE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBestStaticBidPrice());
+      hash = (37 * hash) + BESTSTATICBIDVOLUME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBestStaticBidVolume());
+      hash = (37 * hash) + BESTSTATICOFFERPRICE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBestStaticOfferPrice());
+      hash = (37 * hash) + BESTSTATICOFFERVOLUME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBestStaticOfferVolume());
       hash = (37 * hash) + MIDPRICE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMidPrice());
+      hash = (37 * hash) + STATICMIDPRICE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getStaticMidPrice());
       hash = (37 * hash) + MARKET_FIELD_NUMBER;
       hash = (53 * hash) + getMarket().hashCode();
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
@@ -51643,7 +52282,17 @@ public final class Vega {
 
         bestOfferVolume_ = 0L;
 
+        bestStaticBidPrice_ = 0L;
+
+        bestStaticBidVolume_ = 0L;
+
+        bestStaticOfferPrice_ = 0L;
+
+        bestStaticOfferVolume_ = 0L;
+
         midPrice_ = 0L;
+
+        staticMidPrice_ = 0L;
 
         market_ = "";
 
@@ -51698,7 +52347,12 @@ public final class Vega {
         result.bestBidVolume_ = bestBidVolume_;
         result.bestOfferPrice_ = bestOfferPrice_;
         result.bestOfferVolume_ = bestOfferVolume_;
+        result.bestStaticBidPrice_ = bestStaticBidPrice_;
+        result.bestStaticBidVolume_ = bestStaticBidVolume_;
+        result.bestStaticOfferPrice_ = bestStaticOfferPrice_;
+        result.bestStaticOfferVolume_ = bestStaticOfferVolume_;
         result.midPrice_ = midPrice_;
+        result.staticMidPrice_ = staticMidPrice_;
         result.market_ = market_;
         result.timestamp_ = timestamp_;
         result.openInterest_ = openInterest_;
@@ -51773,8 +52427,23 @@ public final class Vega {
         if (other.getBestOfferVolume() != 0L) {
           setBestOfferVolume(other.getBestOfferVolume());
         }
+        if (other.getBestStaticBidPrice() != 0L) {
+          setBestStaticBidPrice(other.getBestStaticBidPrice());
+        }
+        if (other.getBestStaticBidVolume() != 0L) {
+          setBestStaticBidVolume(other.getBestStaticBidVolume());
+        }
+        if (other.getBestStaticOfferPrice() != 0L) {
+          setBestStaticOfferPrice(other.getBestStaticOfferPrice());
+        }
+        if (other.getBestStaticOfferVolume() != 0L) {
+          setBestStaticOfferVolume(other.getBestStaticOfferVolume());
+        }
         if (other.getMidPrice() != 0L) {
           setMidPrice(other.getMidPrice());
+        }
+        if (other.getStaticMidPrice() != 0L) {
+          setStaticMidPrice(other.getStaticMidPrice());
         }
         if (!other.getMarket().isEmpty()) {
           market_ = other.market_;
@@ -52040,6 +52709,158 @@ public final class Vega {
         return this;
       }
 
+      private long bestStaticBidPrice_ ;
+      /**
+       * <pre>
+       * Highest price on the order book for buy orders not including pegged orders
+       * </pre>
+       *
+       * <code>uint64 bestStaticBidPrice = 6;</code>
+       */
+      public long getBestStaticBidPrice() {
+        return bestStaticBidPrice_;
+      }
+      /**
+       * <pre>
+       * Highest price on the order book for buy orders not including pegged orders
+       * </pre>
+       *
+       * <code>uint64 bestStaticBidPrice = 6;</code>
+       */
+      public Builder setBestStaticBidPrice(long value) {
+
+        bestStaticBidPrice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Highest price on the order book for buy orders not including pegged orders
+       * </pre>
+       *
+       * <code>uint64 bestStaticBidPrice = 6;</code>
+       */
+      public Builder clearBestStaticBidPrice() {
+
+        bestStaticBidPrice_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long bestStaticBidVolume_ ;
+      /**
+       * <pre>
+       * Total volume at the best static bid price excluding pegged orders
+       * </pre>
+       *
+       * <code>uint64 bestStaticBidVolume = 7;</code>
+       */
+      public long getBestStaticBidVolume() {
+        return bestStaticBidVolume_;
+      }
+      /**
+       * <pre>
+       * Total volume at the best static bid price excluding pegged orders
+       * </pre>
+       *
+       * <code>uint64 bestStaticBidVolume = 7;</code>
+       */
+      public Builder setBestStaticBidVolume(long value) {
+
+        bestStaticBidVolume_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total volume at the best static bid price excluding pegged orders
+       * </pre>
+       *
+       * <code>uint64 bestStaticBidVolume = 7;</code>
+       */
+      public Builder clearBestStaticBidVolume() {
+
+        bestStaticBidVolume_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long bestStaticOfferPrice_ ;
+      /**
+       * <pre>
+       * Lowest price on the order book for sell orders not including pegged orders
+       * </pre>
+       *
+       * <code>uint64 bestStaticOfferPrice = 8;</code>
+       */
+      public long getBestStaticOfferPrice() {
+        return bestStaticOfferPrice_;
+      }
+      /**
+       * <pre>
+       * Lowest price on the order book for sell orders not including pegged orders
+       * </pre>
+       *
+       * <code>uint64 bestStaticOfferPrice = 8;</code>
+       */
+      public Builder setBestStaticOfferPrice(long value) {
+
+        bestStaticOfferPrice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Lowest price on the order book for sell orders not including pegged orders
+       * </pre>
+       *
+       * <code>uint64 bestStaticOfferPrice = 8;</code>
+       */
+      public Builder clearBestStaticOfferPrice() {
+
+        bestStaticOfferPrice_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long bestStaticOfferVolume_ ;
+      /**
+       * <pre>
+       * Total volume at the best static offer price excluding pegged orders
+       * </pre>
+       *
+       * <code>uint64 bestStaticOfferVolume = 9;</code>
+       */
+      public long getBestStaticOfferVolume() {
+        return bestStaticOfferVolume_;
+      }
+      /**
+       * <pre>
+       * Total volume at the best static offer price excluding pegged orders
+       * </pre>
+       *
+       * <code>uint64 bestStaticOfferVolume = 9;</code>
+       */
+      public Builder setBestStaticOfferVolume(long value) {
+
+        bestStaticOfferVolume_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total volume at the best static offer price excluding pegged orders
+       * </pre>
+       *
+       * <code>uint64 bestStaticOfferVolume = 9;</code>
+       */
+      public Builder clearBestStaticOfferVolume() {
+
+        bestStaticOfferVolume_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private long midPrice_ ;
       /**
        * <pre>
@@ -52047,7 +52868,7 @@ public final class Vega {
        *  // formatted price of `1.23456` assuming market configured to 5 decimal places.
        * </pre>
        *
-       * <code>uint64 midPrice = 6;</code>
+       * <code>uint64 midPrice = 10;</code>
        */
       public long getMidPrice() {
         return midPrice_;
@@ -52058,7 +52879,7 @@ public final class Vega {
        *  // formatted price of `1.23456` assuming market configured to 5 decimal places.
        * </pre>
        *
-       * <code>uint64 midPrice = 6;</code>
+       * <code>uint64 midPrice = 10;</code>
        */
       public Builder setMidPrice(long value) {
 
@@ -52072,11 +52893,49 @@ public final class Vega {
        *  // formatted price of `1.23456` assuming market configured to 5 decimal places.
        * </pre>
        *
-       * <code>uint64 midPrice = 6;</code>
+       * <code>uint64 midPrice = 10;</code>
        */
       public Builder clearMidPrice() {
 
         midPrice_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long staticMidPrice_ ;
+      /**
+       * <pre>
+       * Arithmetic average of the best static bid price and best static offer price
+       * </pre>
+       *
+       * <code>uint64 staticMidPrice = 11;</code>
+       */
+      public long getStaticMidPrice() {
+        return staticMidPrice_;
+      }
+      /**
+       * <pre>
+       * Arithmetic average of the best static bid price and best static offer price
+       * </pre>
+       *
+       * <code>uint64 staticMidPrice = 11;</code>
+       */
+      public Builder setStaticMidPrice(long value) {
+
+        staticMidPrice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Arithmetic average of the best static bid price and best static offer price
+       * </pre>
+       *
+       * <code>uint64 staticMidPrice = 11;</code>
+       */
+      public Builder clearStaticMidPrice() {
+
+        staticMidPrice_ = 0L;
         onChanged();
         return this;
       }
@@ -52087,7 +52946,7 @@ public final class Vega {
        * Market identifier for the data.
        * </pre>
        *
-       * <code>string market = 7;</code>
+       * <code>string market = 12;</code>
        */
       public java.lang.String getMarket() {
         java.lang.Object ref = market_;
@@ -52106,7 +52965,7 @@ public final class Vega {
        * Market identifier for the data.
        * </pre>
        *
-       * <code>string market = 7;</code>
+       * <code>string market = 12;</code>
        */
       public com.google.protobuf.ByteString
           getMarketBytes() {
@@ -52126,7 +52985,7 @@ public final class Vega {
        * Market identifier for the data.
        * </pre>
        *
-       * <code>string market = 7;</code>
+       * <code>string market = 12;</code>
        */
       public Builder setMarket(
           java.lang.String value) {
@@ -52143,7 +53002,7 @@ public final class Vega {
        * Market identifier for the data.
        * </pre>
        *
-       * <code>string market = 7;</code>
+       * <code>string market = 12;</code>
        */
       public Builder clearMarket() {
 
@@ -52156,7 +53015,7 @@ public final class Vega {
        * Market identifier for the data.
        * </pre>
        *
-       * <code>string market = 7;</code>
+       * <code>string market = 12;</code>
        */
       public Builder setMarketBytes(
           com.google.protobuf.ByteString value) {
@@ -52177,7 +53036,7 @@ public final class Vega {
        * See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`.
        * </pre>
        *
-       * <code>int64 timestamp = 8;</code>
+       * <code>int64 timestamp = 13;</code>
        */
       public long getTimestamp() {
         return timestamp_;
@@ -52188,7 +53047,7 @@ public final class Vega {
        * See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`.
        * </pre>
        *
-       * <code>int64 timestamp = 8;</code>
+       * <code>int64 timestamp = 13;</code>
        */
       public Builder setTimestamp(long value) {
 
@@ -52202,7 +53061,7 @@ public final class Vega {
        * See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`.
        * </pre>
        *
-       * <code>int64 timestamp = 8;</code>
+       * <code>int64 timestamp = 13;</code>
        */
       public Builder clearTimestamp() {
 
@@ -52217,7 +53076,7 @@ public final class Vega {
        * The sum of the size of all positions greater than 0 on the market.
        * </pre>
        *
-       * <code>uint64 openInterest = 9;</code>
+       * <code>uint64 openInterest = 14;</code>
        */
       public long getOpenInterest() {
         return openInterest_;
@@ -52227,7 +53086,7 @@ public final class Vega {
        * The sum of the size of all positions greater than 0 on the market.
        * </pre>
        *
-       * <code>uint64 openInterest = 9;</code>
+       * <code>uint64 openInterest = 14;</code>
        */
       public Builder setOpenInterest(long value) {
 
@@ -52240,7 +53099,7 @@ public final class Vega {
        * The sum of the size of all positions greater than 0 on the market.
        * </pre>
        *
-       * <code>uint64 openInterest = 9;</code>
+       * <code>uint64 openInterest = 14;</code>
        */
       public Builder clearOpenInterest() {
 
@@ -52255,7 +53114,7 @@ public final class Vega {
        * Time in seconds until the end of the auction (0 if currently not in auction period).
        * </pre>
        *
-       * <code>int64 auctionEnd = 10;</code>
+       * <code>int64 auctionEnd = 15;</code>
        */
       public long getAuctionEnd() {
         return auctionEnd_;
@@ -52265,7 +53124,7 @@ public final class Vega {
        * Time in seconds until the end of the auction (0 if currently not in auction period).
        * </pre>
        *
-       * <code>int64 auctionEnd = 10;</code>
+       * <code>int64 auctionEnd = 15;</code>
        */
       public Builder setAuctionEnd(long value) {
 
@@ -52278,7 +53137,7 @@ public final class Vega {
        * Time in seconds until the end of the auction (0 if currently not in auction period).
        * </pre>
        *
-       * <code>int64 auctionEnd = 10;</code>
+       * <code>int64 auctionEnd = 15;</code>
        */
       public Builder clearAuctionEnd() {
 
@@ -52293,7 +53152,7 @@ public final class Vega {
        * Time until next auction (used in FBA's) - currently always 0.
        * </pre>
        *
-       * <code>int64 auctionStart = 11;</code>
+       * <code>int64 auctionStart = 16;</code>
        */
       public long getAuctionStart() {
         return auctionStart_;
@@ -52303,7 +53162,7 @@ public final class Vega {
        * Time until next auction (used in FBA's) - currently always 0.
        * </pre>
        *
-       * <code>int64 auctionStart = 11;</code>
+       * <code>int64 auctionStart = 16;</code>
        */
       public Builder setAuctionStart(long value) {
 
@@ -52316,7 +53175,7 @@ public final class Vega {
        * Time until next auction (used in FBA's) - currently always 0.
        * </pre>
        *
-       * <code>int64 auctionStart = 11;</code>
+       * <code>int64 auctionStart = 16;</code>
        */
       public Builder clearAuctionStart() {
 
@@ -52331,7 +53190,7 @@ public final class Vega {
        * indicative price (zero if not in auction)
        * </pre>
        *
-       * <code>uint64 indicativePrice = 12;</code>
+       * <code>uint64 indicativePrice = 17;</code>
        */
       public long getIndicativePrice() {
         return indicativePrice_;
@@ -52341,7 +53200,7 @@ public final class Vega {
        * indicative price (zero if not in auction)
        * </pre>
        *
-       * <code>uint64 indicativePrice = 12;</code>
+       * <code>uint64 indicativePrice = 17;</code>
        */
       public Builder setIndicativePrice(long value) {
 
@@ -52354,7 +53213,7 @@ public final class Vega {
        * indicative price (zero if not in auction)
        * </pre>
        *
-       * <code>uint64 indicativePrice = 12;</code>
+       * <code>uint64 indicativePrice = 17;</code>
        */
       public Builder clearIndicativePrice() {
 
@@ -52369,7 +53228,7 @@ public final class Vega {
        * indicative volume (zero if not in auction)
        * </pre>
        *
-       * <code>uint64 indicativeVolume = 13;</code>
+       * <code>uint64 indicativeVolume = 18;</code>
        */
       public long getIndicativeVolume() {
         return indicativeVolume_;
@@ -52379,7 +53238,7 @@ public final class Vega {
        * indicative volume (zero if not in auction)
        * </pre>
        *
-       * <code>uint64 indicativeVolume = 13;</code>
+       * <code>uint64 indicativeVolume = 18;</code>
        */
       public Builder setIndicativeVolume(long value) {
 
@@ -52392,7 +53251,7 @@ public final class Vega {
        * indicative volume (zero if not in auction)
        * </pre>
        *
-       * <code>uint64 indicativeVolume = 13;</code>
+       * <code>uint64 indicativeVolume = 18;</code>
        */
       public Builder clearIndicativeVolume() {
 
@@ -52407,7 +53266,7 @@ public final class Vega {
        * the current state of the market
        * </pre>
        *
-       * <code>.vega.MarketState marketState = 14;</code>
+       * <code>.vega.MarketState marketState = 19;</code>
        */
       public int getMarketStateValue() {
         return marketState_;
@@ -52417,7 +53276,7 @@ public final class Vega {
        * the current state of the market
        * </pre>
        *
-       * <code>.vega.MarketState marketState = 14;</code>
+       * <code>.vega.MarketState marketState = 19;</code>
        */
       public Builder setMarketStateValue(int value) {
         marketState_ = value;
@@ -52429,7 +53288,7 @@ public final class Vega {
        * the current state of the market
        * </pre>
        *
-       * <code>.vega.MarketState marketState = 14;</code>
+       * <code>.vega.MarketState marketState = 19;</code>
        */
       public io.vegaprotocol.vega.Vega.MarketState getMarketState() {
         @SuppressWarnings("deprecation")
@@ -52441,7 +53300,7 @@ public final class Vega {
        * the current state of the market
        * </pre>
        *
-       * <code>.vega.MarketState marketState = 14;</code>
+       * <code>.vega.MarketState marketState = 19;</code>
        */
       public Builder setMarketState(io.vegaprotocol.vega.Vega.MarketState value) {
         if (value == null) {
@@ -52457,7 +53316,7 @@ public final class Vega {
        * the current state of the market
        * </pre>
        *
-       * <code>.vega.MarketState marketState = 14;</code>
+       * <code>.vega.MarketState marketState = 19;</code>
        */
       public Builder clearMarketState() {
 
@@ -52472,7 +53331,7 @@ public final class Vega {
        * if the market is in auction state, this field indicates what triggered the auction
        * </pre>
        *
-       * <code>.vega.AuctionTrigger trigger = 15;</code>
+       * <code>.vega.AuctionTrigger trigger = 20;</code>
        */
       public int getTriggerValue() {
         return trigger_;
@@ -52482,7 +53341,7 @@ public final class Vega {
        * if the market is in auction state, this field indicates what triggered the auction
        * </pre>
        *
-       * <code>.vega.AuctionTrigger trigger = 15;</code>
+       * <code>.vega.AuctionTrigger trigger = 20;</code>
        */
       public Builder setTriggerValue(int value) {
         trigger_ = value;
@@ -52494,7 +53353,7 @@ public final class Vega {
        * if the market is in auction state, this field indicates what triggered the auction
        * </pre>
        *
-       * <code>.vega.AuctionTrigger trigger = 15;</code>
+       * <code>.vega.AuctionTrigger trigger = 20;</code>
        */
       public io.vegaprotocol.vega.Vega.AuctionTrigger getTrigger() {
         @SuppressWarnings("deprecation")
@@ -52506,7 +53365,7 @@ public final class Vega {
        * if the market is in auction state, this field indicates what triggered the auction
        * </pre>
        *
-       * <code>.vega.AuctionTrigger trigger = 15;</code>
+       * <code>.vega.AuctionTrigger trigger = 20;</code>
        */
       public Builder setTrigger(io.vegaprotocol.vega.Vega.AuctionTrigger value) {
         if (value == null) {
@@ -52522,7 +53381,7 @@ public final class Vega {
        * if the market is in auction state, this field indicates what triggered the auction
        * </pre>
        *
-       * <code>.vega.AuctionTrigger trigger = 15;</code>
+       * <code>.vega.AuctionTrigger trigger = 20;</code>
        */
       public Builder clearTrigger() {
 
@@ -52537,7 +53396,7 @@ public final class Vega {
        * the targeted stake for the given market
        * </pre>
        *
-       * <code>string targetStake = 16;</code>
+       * <code>string targetStake = 21;</code>
        */
       public java.lang.String getTargetStake() {
         java.lang.Object ref = targetStake_;
@@ -52556,7 +53415,7 @@ public final class Vega {
        * the targeted stake for the given market
        * </pre>
        *
-       * <code>string targetStake = 16;</code>
+       * <code>string targetStake = 21;</code>
        */
       public com.google.protobuf.ByteString
           getTargetStakeBytes() {
@@ -52576,7 +53435,7 @@ public final class Vega {
        * the targeted stake for the given market
        * </pre>
        *
-       * <code>string targetStake = 16;</code>
+       * <code>string targetStake = 21;</code>
        */
       public Builder setTargetStake(
           java.lang.String value) {
@@ -52593,7 +53452,7 @@ public final class Vega {
        * the targeted stake for the given market
        * </pre>
        *
-       * <code>string targetStake = 16;</code>
+       * <code>string targetStake = 21;</code>
        */
       public Builder clearTargetStake() {
 
@@ -52606,7 +53465,7 @@ public final class Vega {
        * the targeted stake for the given market
        * </pre>
        *
-       * <code>string targetStake = 16;</code>
+       * <code>string targetStake = 21;</code>
        */
       public Builder setTargetStakeBytes(
           com.google.protobuf.ByteString value) {
@@ -52626,7 +53485,7 @@ public final class Vega {
        * the available stake fo the given market
        * </pre>
        *
-       * <code>string suppliedStake = 17;</code>
+       * <code>string suppliedStake = 22;</code>
        */
       public java.lang.String getSuppliedStake() {
         java.lang.Object ref = suppliedStake_;
@@ -52645,7 +53504,7 @@ public final class Vega {
        * the available stake fo the given market
        * </pre>
        *
-       * <code>string suppliedStake = 17;</code>
+       * <code>string suppliedStake = 22;</code>
        */
       public com.google.protobuf.ByteString
           getSuppliedStakeBytes() {
@@ -52665,7 +53524,7 @@ public final class Vega {
        * the available stake fo the given market
        * </pre>
        *
-       * <code>string suppliedStake = 17;</code>
+       * <code>string suppliedStake = 22;</code>
        */
       public Builder setSuppliedStake(
           java.lang.String value) {
@@ -52682,7 +53541,7 @@ public final class Vega {
        * the available stake fo the given market
        * </pre>
        *
-       * <code>string suppliedStake = 17;</code>
+       * <code>string suppliedStake = 22;</code>
        */
       public Builder clearSuppliedStake() {
 
@@ -52695,7 +53554,7 @@ public final class Vega {
        * the available stake fo the given market
        * </pre>
        *
-       * <code>string suppliedStake = 17;</code>
+       * <code>string suppliedStake = 22;</code>
        */
       public Builder setSuppliedStakeBytes(
           com.google.protobuf.ByteString value) {
@@ -61292,6 +62151,14 @@ public final class Vega {
        * <code>LIQUIDITY_PROVISION_STATUS_CANCELLED = 3;</code>
        */
       LIQUIDITY_PROVISION_STATUS_CANCELLED(3),
+      /**
+       * <pre>
+       * The liquidity provision was invalid and got rejected.
+       * </pre>
+       *
+       * <code>LIQUIDITY_PROVISION_STATUS_REJECTED = 4;</code>
+       */
+      LIQUIDITY_PROVISION_STATUS_REJECTED(4),
       UNRECOGNIZED(-1),
       ;
 
@@ -61327,6 +62194,14 @@ public final class Vega {
        * <code>LIQUIDITY_PROVISION_STATUS_CANCELLED = 3;</code>
        */
       public static final int LIQUIDITY_PROVISION_STATUS_CANCELLED_VALUE = 3;
+      /**
+       * <pre>
+       * The liquidity provision was invalid and got rejected.
+       * </pre>
+       *
+       * <code>LIQUIDITY_PROVISION_STATUS_REJECTED = 4;</code>
+       */
+      public static final int LIQUIDITY_PROVISION_STATUS_REJECTED_VALUE = 4;
 
 
       public final int getNumber() {
@@ -61351,6 +62226,7 @@ public final class Vega {
           case 1: return LIQUIDITY_PROVISION_STATUS_ACTIVE;
           case 2: return LIQUIDITY_PROVISION_STATUS_STOPPED;
           case 3: return LIQUIDITY_PROVISION_STATUS_CANCELLED;
+          case 4: return LIQUIDITY_PROVISION_STATUS_REJECTED;
           default: return null;
         }
       }
@@ -63920,297 +64796,308 @@ public final class Vega {
     java.lang.String[] descriptorData = {
       "\n\020proto/vega.proto\022\004vega\0326github.com/mwi" +
       "tkow/go-proto-validators/validator.proto" +
-      "\"\026\n\005Price\022\r\n\005value\030\001 \001(\004\"\032\n\tTimestamp\022\r\n" +
-      "\005value\030\001 \001(\003\"\033\n\005Party\022\022\n\002id\030\001 \001(\tB\006\342\337\037\002 " +
-      "\001\"9\n\nRiskFactor\022\016\n\006market\030\001 \001(\t\022\r\n\005short" +
-      "\030\002 \001(\001\022\014\n\004long\030\003 \001(\001\"\346\002\n\nRiskResult\022\030\n\020u" +
-      "pdatedTimestamp\030\001 \001(\003\0226\n\013riskFactors\030\002 \003" +
-      "(\0132!.vega.RiskResult.RiskFactorsEntry\022\033\n" +
-      "\023nextUpdateTimestamp\030\003 \001(\003\022P\n\030predictedN" +
-      "extRiskFactors\030\004 \003(\0132..vega.RiskResult.P" +
-      "redictedNextRiskFactorsEntry\032D\n\020RiskFact" +
-      "orsEntry\022\013\n\003key\030\001 \001(\t\022\037\n\005value\030\002 \001(\0132\020.v" +
-      "ega.RiskFactor:\0028\001\032Q\n\035PredictedNextRiskF" +
-      "actorsEntry\022\013\n\003key\030\001 \001(\t\022\037\n\005value\030\002 \001(\0132" +
-      "\020.vega.RiskFactor:\0028\001\"G\n\013PeggedOrder\022(\n\t" +
-      "reference\030\001 \001(\0162\025.vega.PeggedReference\022\016" +
-      "\n\006offset\030\002 \001(\003\"\242\006\n\005Order\022\n\n\002id\030\001 \001(\t\022\020\n\010" +
-      "marketID\030\002 \001(\t\022\017\n\007partyID\030\003 \001(\t\022\030\n\004side\030" +
-      "\004 \001(\0162\n.vega.Side\022\r\n\005price\030\005 \001(\004\022\014\n\004size" +
-      "\030\006 \001(\004\022\021\n\tremaining\030\007 \001(\004\022,\n\013timeInForce" +
-      "\030\010 \001(\0162\027.vega.Order.TimeInForce\022\036\n\004type\030" +
-      "\t \001(\0162\020.vega.Order.Type\022\021\n\tcreatedAt\030\n \001" +
-      "(\003\022\"\n\006status\030\013 \001(\0162\022.vega.Order.Status\022\021" +
-      "\n\texpiresAt\030\014 \001(\003\022\021\n\treference\030\r \001(\t\022 \n\006" +
-      "reason\030\016 \001(\0162\020.vega.OrderError\022\021\n\tupdate" +
-      "dAt\030\017 \001(\003\022\017\n\007version\030\020 \001(\004\022\017\n\007batchID\030\021 " +
-      "\001(\004\022&\n\013peggedOrder\030\022 \001(\0132\021.vega.PeggedOr" +
-      "der\"p\n\013TimeInForce\022\023\n\017TIF_UNSPECIFIED\020\000\022" +
-      "\013\n\007TIF_GTC\020\001\022\013\n\007TIF_GTT\020\002\022\013\n\007TIF_IOC\020\003\022\013" +
-      "\n\007TIF_FOK\020\004\022\013\n\007TIF_GFA\020\005\022\013\n\007TIF_GFN\020\006\"O\n" +
-      "\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\016\n\nTYPE_LIMI" +
-      "T\020\001\022\017\n\013TYPE_MARKET\020\002\022\020\n\014TYPE_NETWORK\020\003\"\262" +
-      "\001\n\006Status\022\022\n\016STATUS_INVALID\020\000\022\021\n\rSTATUS_" +
-      "ACTIVE\020\001\022\022\n\016STATUS_EXPIRED\020\002\022\024\n\020STATUS_C" +
-      "ANCELLED\020\003\022\022\n\016STATUS_STOPPED\020\004\022\021\n\rSTATUS" +
-      "_FILLED\020\005\022\023\n\017STATUS_REJECTED\020\006\022\033\n\027STATUS" +
-      "_PARTIALLY_FILLED\020\007\";\n\035OrderCancellation" +
-      "Confirmation\022\032\n\005order\030\001 \001(\0132\013.vega.Order" +
-      "\"x\n\021OrderConfirmation\022\032\n\005order\030\001 \001(\0132\013.v" +
-      "ega.Order\022\033\n\006trades\030\002 \003(\0132\013.vega.Trade\022*" +
-      "\n\025passiveOrdersAffected\030\003 \003(\0132\013.vega.Ord" +
-      "er\"\207\001\n\026AuctionIndicativeState\022\020\n\010marketI" +
-      "D\030\001 \001(\t\022\027\n\017indicativePrice\030\002 \001(\004\022\030\n\020indi" +
-      "cativeVolume\030\003 \001(\004\022\024\n\014auctionStart\030\004 \001(\003" +
-      "\022\022\n\nauctionEnd\030\005 \001(\003\"\273\003\n\005Trade\022\n\n\002id\030\001 \001" +
-      "(\t\022\020\n\010marketID\030\002 \001(\t\022\r\n\005price\030\003 \001(\004\022\014\n\004s" +
-      "ize\030\004 \001(\004\022\r\n\005buyer\030\005 \001(\t\022\016\n\006seller\030\006 \001(\t" +
-      "\022\035\n\taggressor\030\007 \001(\0162\n.vega.Side\022\020\n\010buyOr" +
-      "der\030\010 \001(\t\022\021\n\tsellOrder\030\t \001(\t\022\021\n\ttimestam" +
-      "p\030\n \001(\003\022\036\n\004type\030\013 \001(\0162\020.vega.Trade.Type\022" +
-      "\033\n\010buyerFee\030\014 \001(\0132\t.vega.Fee\022\034\n\tsellerFe" +
-      "e\030\r \001(\0132\t.vega.Fee\022\031\n\021buyerAuctionBatch\030" +
-      "\016 \001(\004\022\032\n\022sellerAuctionBatch\030\017 \001(\004\"o\n\004Typ" +
-      "e\022\024\n\020TYPE_UNSPECIFIED\020\000\022\020\n\014TYPE_DEFAULT\020" +
-      "\001\022\037\n\033TYPE_NETWORK_CLOSE_OUT_GOOD\020\002\022\036\n\032TY" +
-      "PE_NETWORK_CLOSE_OUT_BAD\020\003\"H\n\003Fee\022\020\n\010mak" +
-      "erFee\030\001 \001(\004\022\031\n\021infrastructureFee\030\002 \001(\004\022\024" +
-      "\n\014liquidityFee\030\003 \001(\004\"\'\n\010TradeSet\022\033\n\006trad" +
-      "es\030\001 \003(\0132\013.vega.Trade\"\227\001\n\006Candle\022\021\n\ttime" +
-      "stamp\030\001 \001(\003\022\020\n\010datetime\030\002 \001(\t\022\014\n\004high\030\003 " +
-      "\001(\004\022\013\n\003low\030\004 \001(\004\022\014\n\004open\030\005 \001(\004\022\r\n\005close\030" +
-      "\006 \001(\004\022\016\n\006volume\030\007 \001(\004\022 \n\010interval\030\010 \001(\0162" +
-      "\016.vega.Interval\"C\n\nPriceLevel\022\r\n\005price\030\001" +
-      " \001(\004\022\026\n\016numberOfOrders\030\002 \001(\004\022\016\n\006volume\030\003" +
-      " \001(\004\"v\n\013MarketDepth\022\020\n\010marketID\030\001 \001(\t\022\035\n" +
-      "\003buy\030\002 \003(\0132\020.vega.PriceLevel\022\036\n\004sell\030\003 \003" +
-      "(\0132\020.vega.PriceLevel\022\026\n\016sequenceNumber\030\004" +
-      " \001(\004\"|\n\021MarketDepthUpdate\022\020\n\010marketID\030\001 " +
-      "\001(\t\022\035\n\003buy\030\002 \003(\0132\020.vega.PriceLevel\022\036\n\004se" +
-      "ll\030\003 \003(\0132\020.vega.PriceLevel\022\026\n\016sequenceNu" +
-      "mber\030\004 \001(\004\"\233\001\n\010Position\022\020\n\010marketID\030\001 \001(" +
-      "\t\022\017\n\007partyID\030\002 \001(\t\022\022\n\nopenVolume\030\003 \001(\003\022\023" +
-      "\n\013realisedPNL\030\004 \001(\003\022\025\n\runrealisedPNL\030\005 \001" +
-      "(\003\022\031\n\021averageEntryPrice\030\006 \001(\004\022\021\n\tupdated" +
-      "At\030\007 \001(\003\".\n\rPositionTrade\022\016\n\006volume\030\001 \001(" +
-      "\003\022\r\n\005price\030\002 \001(\004\"\256\006\n\nStatistics\022\023\n\013block" +
-      "Height\030\001 \001(\004\022\025\n\rbacklogLength\030\002 \001(\004\022\022\n\nt" +
-      "otalPeers\030\003 \001(\004\022\023\n\013genesisTime\030\004 \001(\t\022\023\n\013" +
-      "currentTime\030\005 \001(\t\022\020\n\010vegaTime\030\006 \001(\t\022!\n\006s" +
-      "tatus\030\007 \001(\0162\021.vega.ChainStatus\022\022\n\ntxPerB" +
-      "lock\030\010 \001(\004\022\026\n\016averageTxBytes\030\t \001(\004\022\035\n\025av" +
-      "erageOrdersPerBlock\030\n \001(\004\022\027\n\017tradesPerSe" +
-      "cond\030\013 \001(\004\022\027\n\017ordersPerSecond\030\014 \001(\004\022\024\n\014t" +
-      "otalMarkets\030\r \001(\004\022\027\n\017totalAmendOrder\030\020 \001" +
-      "(\004\022\030\n\020totalCancelOrder\030\021 \001(\004\022\030\n\020totalCre" +
-      "ateOrder\030\022 \001(\004\022\023\n\013totalOrders\030\023 \001(\004\022\023\n\013t" +
-      "otalTrades\030\024 \001(\004\022\032\n\022orderSubscriptions\030\025" +
-      " \001(\r\022\032\n\022tradeSubscriptions\030\026 \001(\r\022\033\n\023cand" +
-      "leSubscriptions\030\027 \001(\r\022 \n\030marketDepthSubs" +
-      "criptions\030\030 \001(\r\022\036\n\026positionsSubscription" +
-      "s\030\031 \001(\r\022\034\n\024accountSubscriptions\030\032 \001(\r\022\037\n" +
-      "\027marketDataSubscriptions\030\033 \001(\r\022\026\n\016appVer" +
-      "sionHash\030\034 \001(\t\022\022\n\nappVersion\030\035 \001(\t\022\024\n\014ch" +
-      "ainVersion\030\036 \001(\t\022\025\n\rblockDuration\030\037 \001(\004\022" +
-      "\016\n\006uptime\030  \001(\t\022\017\n\007chainID\030! \001(\t\022\'\n\037mark" +
-      "etDepthUpdatesSubscriptions\030\" \001(\r\"\257\002\n\007De" +
-      "posit\022\n\n\002id\030\001 \001(\t\022$\n\006status\030\002 \001(\0162\024.vega" +
-      ".Deposit.Status\022\017\n\007partyID\030\003 \001(\t\022\r\n\005asse" +
-      "t\030\004 \001(\t\022\016\n\006amount\030\005 \001(\t\022\016\n\006txHash\030\006 \001(\t\022" +
-      "\031\n\021creditedTimestamp\030\007 \001(\003\022\030\n\020createdTim" +
-      "estamp\030\010 \001(\003\"}\n\006Status\022\036\n\032DEPOSIT_STATUS" +
-      "_UNSPECIFIED\020\000\022\027\n\023DEPOSIT_STATUS_OPEN\020\001\022" +
-      "\034\n\030DEPOSIT_STATUS_CANCELLED\020\002\022\034\n\030DEPOSIT" +
-      "_STATUS_FINALIZED\020\003\"\200\003\n\nWithdrawal\022\n\n\002id" +
-      "\030\001 \001(\t\022\017\n\007partyID\030\002 \001(\t\022\016\n\006amount\030\003 \001(\004\022" +
-      "\r\n\005asset\030\004 \001(\t\022\'\n\006status\030\005 \001(\0162\027.vega.Wi" +
-      "thdrawal.Status\022\013\n\003ref\030\006 \001(\t\022\016\n\006expiry\030\007" +
-      " \001(\003\022\016\n\006txHash\030\010 \001(\t\022\030\n\020createdTimestamp" +
-      "\030\t \001(\003\022\032\n\022withdrawnTimestamp\030\n \001(\003\022\036\n\003ex" +
-      "t\030\013 \001(\0132\021.vega.WithdrawExt\"\211\001\n\006Status\022!\n" +
-      "\035WITHDRAWAL_STATUS_UNSPECIFIED\020\000\022\032\n\026WITH" +
-      "DRAWAL_STATUS_OPEN\020\001\022\037\n\033WITHDRAWAL_STATU" +
-      "S_CANCELLED\020\002\022\037\n\033WITHDRAWAL_STATUS_FINAL" +
-      "IZED\020\003\"d\n\022WithdrawSubmission\022\017\n\007partyID\030" +
-      "\001 \001(\t\022\016\n\006amount\030\002 \001(\004\022\r\n\005asset\030\003 \001(\t\022\036\n\003" +
-      "ext\030\004 \001(\0132\021.vega.WithdrawExt\"=\n\013Withdraw" +
-      "Ext\022\'\n\005erc20\030\001 \001(\0132\026.vega.Erc20WithdrawE" +
-      "xtH\000B\005\n\003ext\"+\n\020Erc20WithdrawExt\022\027\n\017recei" +
-      "verAddress\030\001 \001(\t\"\325\001\n\016OrderAmendment\022\027\n\007o" +
-      "rderID\030\001 \001(\tB\006\342\337\037\002X\001\022\027\n\007partyID\030\002 \001(\tB\006\342" +
-      "\337\037\002X\001\022\020\n\010marketID\030\003 \001(\t\022\032\n\005price\030\004 \001(\0132\013" +
-      ".vega.Price\022\021\n\tsizeDelta\030\005 \001(\003\022\"\n\texpire" +
-      "sAt\030\006 \001(\0132\017.vega.Timestamp\022,\n\013timeInForc" +
-      "e\030\007 \001(\0162\027.vega.Order.TimeInForce\"\316\002\n\017Ord" +
-      "erSubmission\022\022\n\002id\030\001 \001(\tB\006\342\337\037\002X\000\022\030\n\010mark" +
-      "etID\030\002 \001(\tB\006\342\337\037\002X\001\022\027\n\007partyID\030\003 \001(\tB\006\342\337\037" +
-      "\002X\001\022\r\n\005price\030\004 \001(\004\022\024\n\004size\030\005 \001(\004B\006\342\337\037\002\020\000" +
-      "\022!\n\004side\030\006 \001(\0162\n.vega.SideB\007\342\337\037\003\210\001\001\0225\n\013t" +
-      "imeInForce\030\007 \001(\0162\027.vega.Order.TimeInForc" +
-      "eB\007\342\337\037\003\210\001\001\022\021\n\texpiresAt\030\010 \001(\003\022\'\n\004type\030\t " +
-      "\001(\0162\020.vega.Order.TypeB\007\342\337\037\003\210\001\001\022\021\n\trefere" +
-      "nce\030\n \001(\t\022&\n\013peggedOrder\030\013 \001(\0132\021.vega.Pe" +
-      "ggedOrder\"O\n\021OrderCancellation\022\017\n\007orderI" +
-      "D\030\001 \001(\t\022\020\n\010marketID\030\002 \001(\t\022\027\n\007partyID\030\003 \001" +
-      "(\tB\006\342\337\037\002X\001\"G\n\020NodeRegistration\022\026\n\006pubKey" +
-      "\030\001 \001(\014B\006\342\337\037\002X\001\022\033\n\013chainPubKey\030\002 \001(\014B\006\342\337\037" +
-      "\002X\001\"=\n\010NodeVote\022\026\n\006pubKey\030\001 \001(\014B\006\342\337\037\002X\001\022" +
-      "\031\n\treference\030\002 \001(\tB\006\342\337\037\002X\001\"w\n\007Account\022\n\n" +
-      "\002id\030\001 \001(\t\022\r\n\005owner\030\002 \001(\t\022\017\n\007balance\030\003 \001(" +
-      "\004\022\r\n\005asset\030\004 \001(\t\022\020\n\010marketID\030\005 \001(\t\022\037\n\004ty" +
-      "pe\030\006 \001(\0162\021.vega.AccountType\"0\n\017Financial" +
-      "Amount\022\016\n\006amount\030\001 \001(\003\022\r\n\005asset\030\002 \001(\t\"u\n" +
-      "\010Transfer\022\r\n\005owner\030\001 \001(\t\022%\n\006amount\030\002 \001(\013" +
-      "2\025.vega.FinancialAmount\022 \n\004type\030\003 \001(\0162\022." +
-      "vega.TransferType\022\021\n\tminAmount\030\004 \001(\003\"\234\001\n" +
-      "\017TransferRequest\022\"\n\013fromAccount\030\001 \003(\0132\r." +
-      "vega.Account\022 \n\ttoAccount\030\002 \003(\0132\r.vega.A" +
-      "ccount\022\016\n\006amount\030\003 \001(\004\022\021\n\tminAmount\030\004 \001(" +
-      "\004\022\r\n\005asset\030\005 \001(\t\022\021\n\treference\030\006 \001(\t\"y\n\013L" +
-      "edgerEntry\022\023\n\013fromAccount\030\001 \001(\t\022\021\n\ttoAcc" +
-      "ount\030\002 \001(\t\022\016\n\006amount\030\003 \001(\004\022\021\n\treference\030" +
-      "\004 \001(\t\022\014\n\004type\030\005 \001(\t\022\021\n\ttimestamp\030\006 \001(\003\"B" +
-      "\n\017TransferBalance\022\036\n\007account\030\001 \001(\0132\r.veg" +
-      "a.Account\022\017\n\007balance\030\002 \001(\004\"a\n\020TransferRe" +
-      "sponse\022$\n\ttransfers\030\001 \003(\0132\021.vega.LedgerE" +
-      "ntry\022\'\n\010balances\030\002 \003(\0132\025.vega.TransferBa" +
-      "lance\"\272\001\n\014MarginLevels\022\031\n\021maintenanceMar" +
-      "gin\030\001 \001(\004\022\023\n\013searchLevel\030\002 \001(\004\022\025\n\rinitia" +
-      "lMargin\030\003 \001(\004\022\036\n\026collateralReleaseLevel\030" +
-      "\004 \001(\004\022\017\n\007partyID\030\005 \001(\t\022\020\n\010marketID\030\006 \001(\t" +
-      "\022\r\n\005asset\030\007 \001(\t\022\021\n\ttimestamp\030\010 \001(\003\"\240\003\n\nM" +
-      "arketData\022\021\n\tmarkPrice\030\001 \001(\004\022\024\n\014bestBidP" +
-      "rice\030\002 \001(\004\022\025\n\rbestBidVolume\030\003 \001(\004\022\026\n\016bes" +
-      "tOfferPrice\030\004 \001(\004\022\027\n\017bestOfferVolume\030\005 \001" +
-      "(\004\022\020\n\010midPrice\030\006 \001(\004\022\016\n\006market\030\007 \001(\t\022\021\n\t" +
-      "timestamp\030\010 \001(\003\022\024\n\014openInterest\030\t \001(\004\022\022\n" +
-      "\nauctionEnd\030\n \001(\003\022\024\n\014auctionStart\030\013 \001(\003\022" +
-      "\027\n\017indicativePrice\030\014 \001(\004\022\030\n\020indicativeVo" +
-      "lume\030\r \001(\004\022&\n\013marketState\030\016 \001(\0162\021.vega.M" +
-      "arketState\022%\n\007trigger\030\017 \001(\0162\024.vega.Aucti" +
-      "onTrigger\022\023\n\013targetStake\030\020 \001(\t\022\025\n\rsuppli" +
-      "edStake\030\021 \001(\t\";\n\013ErrorDetail\022\014\n\004code\030\001 \001" +
-      "(\005\022\017\n\007message\030\002 \001(\t\022\r\n\005inner\030\003 \001(\t\"s\n\013Tr" +
-      "ansaction\022\021\n\tinputData\030\001 \001(\014\022\r\n\005nonce\030\002 " +
-      "\001(\004\022\023\n\013blockHeight\030\003 \001(\004\022\022\n\007address\030\351\007 \001" +
-      "(\014H\000\022\021\n\006pubKey\030\352\007 \001(\014H\000B\006\n\004from\"7\n\tSigna" +
-      "ture\022\013\n\003sig\030\001 \001(\014\022\014\n\004algo\030\002 \001(\t\022\017\n\007versi" +
-      "on\030\003 \001(\004\"8\n\014SignedBundle\022\n\n\002tx\030\001 \001(\014\022\034\n\003" +
-      "sig\030\002 \001(\0132\017.vega.Signature\"O\n\rNodeSignat" +
-      "ure\022\n\n\002ID\030\001 \001(\t\022\013\n\003sig\030\002 \001(\014\022%\n\004kind\030\003 \001" +
-      "(\0162\027.vega.NodeSignatureKind\".\n\020NetworkPa" +
-      "rameter\022\013\n\003Key\030\001 \001(\t\022\r\n\005Value\030\002 \001(\t\"^\n\016L" +
-      "iquidityOrder\022(\n\treference\030\001 \001(\0162\025.vega." +
-      "PeggedReference\022\022\n\nproportion\030\002 \001(\r\022\016\n\006o" +
-      "ffset\030\003 \001(\003\"\250\001\n\034LiquidityProvisionSubmis" +
-      "sion\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037\002X\001\022\030\n\020commit" +
-      "mentAmount\030\002 \001(\004\022\013\n\003fee\030\003 \001(\t\022#\n\005Sells\030\004" +
-      " \003(\0132\024.vega.LiquidityOrder\022\"\n\004Buys\030\005 \003(\013" +
-      "2\024.vega.LiquidityOrder\"X\n\027LiquidityOrder" +
-      "Reference\022\017\n\007orderID\030\001 \001(\t\022,\n\016liquidityO" +
-      "rder\030\002 \001(\0132\024.vega.LiquidityOrder\"\345\003\n\022Liq" +
-      "uidityProvision\022\n\n\002id\030\001 \001(\t\022\017\n\007partyID\030\002" +
-      " \001(\t\022\021\n\tcreatedAt\030\003 \001(\003\022\021\n\tupdatedAt\030\004 \001" +
-      "(\003\022\030\n\010marketID\030\005 \001(\tB\006\342\337\037\002X\001\022\030\n\020commitme" +
-      "ntAmount\030\006 \001(\004\022\013\n\003fee\030\007 \001(\t\022,\n\005sells\030\010 \003" +
-      "(\0132\035.vega.LiquidityOrderReference\022+\n\004buy" +
-      "s\030\t \003(\0132\035.vega.LiquidityOrderReference\022\017" +
-      "\n\007version\030\n \001(\t\022/\n\006status\030\013 \001(\0162\037.vega.L" +
-      "iquidityProvision.Status\"\255\001\n\006Status\022*\n&L" +
-      "IQUIDITY_PROVISION_STATUS_UNSPECIFIED\020\000\022" +
-      "%\n!LIQUIDITY_PROVISION_STATUS_ACTIVE\020\001\022&" +
-      "\n\"LIQUIDITY_PROVISION_STATUS_STOPPED\020\002\022(" +
-      "\n$LIQUIDITY_PROVISION_STATUS_CANCELLED\020\003" +
-      "*9\n\004Side\022\024\n\020SIDE_UNSPECIFIED\020\000\022\014\n\010SIDE_B" +
-      "UY\020\001\022\r\n\tSIDE_SELL\020\002*\230\001\n\010Interval\022\030\n\024INTE" +
-      "RVAL_UNSPECIFIED\020\000\022\020\n\014INTERVAL_I1M\020<\022\021\n\014" +
-      "INTERVAL_I5M\020\254\002\022\022\n\rINTERVAL_I15M\020\204\007\022\021\n\014I" +
-      "NTERVAL_I1H\020\220\034\022\022\n\014INTERVAL_I6H\020\340\250\001\022\022\n\014IN" +
-      "TERVAL_I1D\020\200\243\005*\257\001\n\013MarketState\022\034\n\030MARKET" +
-      "_STATE_UNSPECIFIED\020\000\022\033\n\027MARKET_STATE_CON" +
-      "TINUOUS\020\001\022\036\n\032MARKET_STATE_BATCH_AUCTION\020" +
-      "\002\022 \n\034MARKET_STATE_OPENING_AUCTION\020\003\022#\n\037M" +
-      "ARKET_STATE_MONITORING_AUCTION\020\004*\243\001\n\016Auc" +
-      "tionTrigger\022\037\n\033AUCTION_TRIGGER_UNSPECIFI" +
-      "ED\020\000\022\031\n\025AUCTION_TRIGGER_BATCH\020\001\022\033\n\027AUCTI" +
-      "ON_TRIGGER_OPENING\020\002\022\031\n\025AUCTION_TRIGGER_" +
-      "PRICE\020\003\022\035\n\031AUCTION_TRIGGER_LIQUIDITY\020\004*\213" +
-      "\001\n\017PeggedReference\022 \n\034PEGGED_REFERENCE_U" +
-      "NSPECIFIED\020\000\022\030\n\024PEGGED_REFERENCE_MID\020\001\022\035" +
-      "\n\031PEGGED_REFERENCE_BEST_BID\020\002\022\035\n\031PEGGED_" +
-      "REFERENCE_BEST_ASK\020\003*\211\016\n\nOrderError\022\024\n\020O" +
-      "RDER_ERROR_NONE\020\000\022!\n\035ORDER_ERROR_INVALID" +
-      "_MARKET_ID\020\001\022 \n\034ORDER_ERROR_INVALID_ORDE" +
-      "R_ID\020\002\022\037\n\033ORDER_ERROR_OUT_OF_SEQUENCE\020\003\022" +
-      "&\n\"ORDER_ERROR_INVALID_REMAINING_SIZE\020\004\022" +
-      "\034\n\030ORDER_ERROR_TIME_FAILURE\020\005\022\037\n\033ORDER_E" +
-      "RROR_REMOVAL_FAILURE\020\006\022+\n\'ORDER_ERROR_IN" +
-      "VALID_EXPIRATION_DATETIME\020\007\022\'\n#ORDER_ERR" +
-      "OR_INVALID_ORDER_REFERENCE\020\010\022 \n\034ORDER_ER" +
-      "ROR_EDIT_NOT_ALLOWED\020\t\022\035\n\031ORDER_ERROR_AM" +
-      "END_FAILURE\020\n\022\031\n\025ORDER_ERROR_NOT_FOUND\020\013" +
-      "\022 \n\034ORDER_ERROR_INVALID_PARTY_ID\020\014\022\035\n\031OR" +
-      "DER_ERROR_MARKET_CLOSED\020\r\022#\n\037ORDER_ERROR" +
-      "_MARGIN_CHECK_FAILED\020\016\022\'\n#ORDER_ERROR_MI" +
-      "SSING_GENERAL_ACCOUNT\020\017\022\036\n\032ORDER_ERROR_I" +
-      "NTERNAL_ERROR\020\020\022\034\n\030ORDER_ERROR_INVALID_S" +
-      "IZE\020\021\022#\n\037ORDER_ERROR_INVALID_PERSISTENCE" +
-      "\020\022\022\034\n\030ORDER_ERROR_INVALID_TYPE\020\023\022\034\n\030ORDE" +
-      "R_ERROR_SELF_TRADING\020\024\022.\n*ORDER_ERROR_IN" +
-      "SUFFICIENT_FUNDS_TO_PAY_FEES\020\025\022%\n!ORDER_" +
-      "ERROR_INCORRECT_MARKET_TYPE\020\026\022%\n!ORDER_E" +
-      "RROR_INVALID_TIME_IN_FORCE\020\027\022+\n\'ORDER_ER" +
-      "ROR_GFN_ORDER_DURING_AN_AUCTION\020\030\0223\n/ORD" +
-      "ER_ERROR_GFA_ORDER_DURING_CONTINUOUS_TRA" +
-      "DING\020\031\0224\n0ORDER_ERROR_CANNOT_AMEND_TO_GT" +
-      "T_WITHOUT_EXPIRYAT\020\032\022)\n%ORDER_ERROR_EXPI" +
-      "RYAT_BEFORE_CREATEDAT\020\033\022,\n(ORDER_ERROR_C" +
-      "ANNOT_HAVE_GTC_AND_EXPIRYAT\020\034\022*\n&ORDER_E" +
-      "RROR_CANNOT_AMEND_TO_FOK_OR_IOC\020\035\022*\n&ORD" +
-      "ER_ERROR_CANNOT_AMEND_TO_GFA_OR_GFN\020\036\022,\n" +
-      "(ORDER_ERROR_CANNOT_AMEND_FROM_GFA_OR_GF" +
-      "N\020\037\0224\n0ORDER_ERROR_CANNOT_SEND_IOC_ORDER" +
-      "_DURING_AUCTION\020 \0224\n0ORDER_ERROR_CANNOT_" +
-      "SEND_FOK_ORDER_DURING_AUCTION\020!\022#\n\037ORDER" +
-      "_ERROR_MUST_BE_LIMIT_ORDER\020\"\022\"\n\036ORDER_ER" +
-      "ROR_MUST_BE_GTT_OR_GTC\020#\022\'\n#ORDER_ERROR_" +
-      "WITHOUT_REFERENCE_PRICE\020$\0223\n/ORDER_ERROR" +
-      "_BUY_CANNOT_REFERENCE_BEST_ASK_PRICE\020%\0224" +
-      "\n0ORDER_ERROR_OFFSET_MUST_BE_LESS_OR_EQU" +
-      "AL_TO_ZERO\020&\022-\n)ORDER_ERROR_OFFSET_MUST_" +
-      "BE_LESS_THAN_ZERO\020\'\0227\n3ORDER_ERROR_OFFSE" +
-      "T_MUST_BE_GREATER_OR_EQUAL_TO_ZERO\020(\0224\n0" +
-      "ORDER_ERROR_SELL_CANNOT_REFERENCE_BEST_B" +
-      "ID_PRICE\020)\0220\n,ORDER_ERROR_OFFSET_MUST_BE" +
-      "_GREATER_THAN_ZERO\020*\022*\n&ORDER_ERROR_INSU" +
-      "FFICIENT_ASSET_BALANCE\020+*\202\001\n\013ChainStatus" +
-      "\022\034\n\030CHAIN_STATUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_" +
-      "STATUS_DISCONNECTED\020\001\022\032\n\026CHAIN_STATUS_RE" +
-      "PLAYING\020\002\022\032\n\026CHAIN_STATUS_CONNECTED\020\003*\262\002" +
-      "\n\013AccountType\022\034\n\030ACCOUNT_TYPE_UNSPECIFIE" +
-      "D\020\000\022\032\n\026ACCOUNT_TYPE_INSURANCE\020\001\022\033\n\027ACCOU" +
-      "NT_TYPE_SETTLEMENT\020\002\022\027\n\023ACCOUNT_TYPE_MAR" +
-      "GIN\020\003\022\030\n\024ACCOUNT_TYPE_GENERAL\020\004\022$\n ACCOU" +
-      "NT_TYPE_FEES_INFRASTRUCTURE\020\005\022\037\n\033ACCOUNT" +
-      "_TYPE_FEES_LIQUIDITY\020\006\022\033\n\027ACCOUNT_TYPE_F" +
-      "EES_MAKER\020\007\022\036\n\032ACCOUNT_TYPE_LOCK_WITHDRA" +
-      "W\020\010\022\025\n\021ACCOUNT_TYPE_BOND\020\t*\244\003\n\014TransferT" +
-      "ype\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\026\n\022TR" +
-      "ANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSFER_TYPE_WIN\020" +
-      "\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032\n\026TRANSFER_T" +
-      "YPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_TYPE_MTM_WIN\020" +
-      "\005\022\034\n\030TRANSFER_TYPE_MARGIN_LOW\020\006\022\035\n\031TRANS" +
-      "FER_TYPE_MARGIN_HIGH\020\007\022$\n TRANSFER_TYPE_" +
-      "MARGIN_CONFISCATED\020\010\022\037\n\033TRANSFER_TYPE_MA" +
-      "KER_FEE_PAY\020\t\022#\n\037TRANSFER_TYPE_MAKER_FEE" +
-      "_RECEIVE\020\n\022(\n$TRANSFER_TYPE_INFRASTRUCTU" +
-      "RE_FEE_PAY\020\013\022#\n\037TRANSFER_TYPE_LIQUIDITY_" +
-      "FEE_PAY\020\014*\205\001\n\021NodeSignatureKind\022#\n\037NODE_" +
-      "SIGNATURE_KIND_UNSPECIFIED\020\000\022!\n\035NODE_SIG" +
-      "NATURE_KIND_ASSET_NEW\020\001\022(\n$NODE_SIGNATUR" +
-      "E_KIND_ASSET_WITHDRAWAL\020\002B7\n\024io.vegaprot" +
-      "ocol.vegaZ\037code.vegaprotocol.io/vega/pro" +
-      "tob\006proto3"
+      "\032\036google/protobuf/wrappers.proto\"\026\n\005Pric" +
+      "e\022\r\n\005value\030\001 \001(\004\"\032\n\tTimestamp\022\r\n\005value\030\001" +
+      " \001(\003\"\033\n\005Party\022\022\n\002id\030\001 \001(\tB\006\342\337\037\002 \001\"9\n\nRis" +
+      "kFactor\022\016\n\006market\030\001 \001(\t\022\r\n\005short\030\002 \001(\001\022\014" +
+      "\n\004long\030\003 \001(\001\"\346\002\n\nRiskResult\022\030\n\020updatedTi" +
+      "mestamp\030\001 \001(\003\0226\n\013riskFactors\030\002 \003(\0132!.veg" +
+      "a.RiskResult.RiskFactorsEntry\022\033\n\023nextUpd" +
+      "ateTimestamp\030\003 \001(\003\022P\n\030predictedNextRiskF" +
+      "actors\030\004 \003(\0132..vega.RiskResult.Predicted" +
+      "NextRiskFactorsEntry\032D\n\020RiskFactorsEntry" +
+      "\022\013\n\003key\030\001 \001(\t\022\037\n\005value\030\002 \001(\0132\020.vega.Risk" +
+      "Factor:\0028\001\032Q\n\035PredictedNextRiskFactorsEn" +
+      "try\022\013\n\003key\030\001 \001(\t\022\037\n\005value\030\002 \001(\0132\020.vega.R" +
+      "iskFactor:\0028\001\"G\n\013PeggedOrder\022(\n\treferenc" +
+      "e\030\001 \001(\0162\025.vega.PeggedReference\022\016\n\006offset" +
+      "\030\002 \001(\003\"\265\006\n\005Order\022\n\n\002id\030\001 \001(\t\022\020\n\010marketID" +
+      "\030\002 \001(\t\022\017\n\007partyID\030\003 \001(\t\022\030\n\004side\030\004 \001(\0162\n." +
+      "vega.Side\022\r\n\005price\030\005 \001(\004\022\014\n\004size\030\006 \001(\004\022\021" +
+      "\n\tremaining\030\007 \001(\004\022,\n\013timeInForce\030\010 \001(\0162\027" +
+      ".vega.Order.TimeInForce\022\036\n\004type\030\t \001(\0162\020." +
+      "vega.Order.Type\022\021\n\tcreatedAt\030\n \001(\003\022\"\n\006st" +
+      "atus\030\013 \001(\0162\022.vega.Order.Status\022\021\n\texpire" +
+      "sAt\030\014 \001(\003\022\021\n\treference\030\r \001(\t\022 \n\006reason\030\016" +
+      " \001(\0162\020.vega.OrderError\022\021\n\tupdatedAt\030\017 \001(" +
+      "\003\022\017\n\007version\030\020 \001(\004\022\017\n\007batchID\030\021 \001(\004\022&\n\013p" +
+      "eggedOrder\030\022 \001(\0132\021.vega.PeggedOrder\"p\n\013T" +
+      "imeInForce\022\023\n\017TIF_UNSPECIFIED\020\000\022\013\n\007TIF_G" +
+      "TC\020\001\022\013\n\007TIF_GTT\020\002\022\013\n\007TIF_IOC\020\003\022\013\n\007TIF_FO" +
+      "K\020\004\022\013\n\007TIF_GFA\020\005\022\013\n\007TIF_GFN\020\006\"O\n\004Type\022\024\n" +
+      "\020TYPE_UNSPECIFIED\020\000\022\016\n\nTYPE_LIMIT\020\001\022\017\n\013T" +
+      "YPE_MARKET\020\002\022\020\n\014TYPE_NETWORK\020\003\"\305\001\n\006Statu" +
+      "s\022\022\n\016STATUS_INVALID\020\000\022\021\n\rSTATUS_ACTIVE\020\001" +
+      "\022\022\n\016STATUS_EXPIRED\020\002\022\024\n\020STATUS_CANCELLED" +
+      "\020\003\022\022\n\016STATUS_STOPPED\020\004\022\021\n\rSTATUS_FILLED\020" +
+      "\005\022\023\n\017STATUS_REJECTED\020\006\022\033\n\027STATUS_PARTIAL" +
+      "LY_FILLED\020\007\022\021\n\rSTATUS_PARKED\020\010\";\n\035OrderC" +
+      "ancellationConfirmation\022\032\n\005order\030\001 \001(\0132\013" +
+      ".vega.Order\"x\n\021OrderConfirmation\022\032\n\005orde" +
+      "r\030\001 \001(\0132\013.vega.Order\022\033\n\006trades\030\002 \003(\0132\013.v" +
+      "ega.Trade\022*\n\025passiveOrdersAffected\030\003 \003(\013" +
+      "2\013.vega.Order\"\207\001\n\026AuctionIndicativeState" +
+      "\022\020\n\010marketID\030\001 \001(\t\022\027\n\017indicativePrice\030\002 " +
+      "\001(\004\022\030\n\020indicativeVolume\030\003 \001(\004\022\024\n\014auction" +
+      "Start\030\004 \001(\003\022\022\n\nauctionEnd\030\005 \001(\003\"\273\003\n\005Trad" +
+      "e\022\n\n\002id\030\001 \001(\t\022\020\n\010marketID\030\002 \001(\t\022\r\n\005price" +
+      "\030\003 \001(\004\022\014\n\004size\030\004 \001(\004\022\r\n\005buyer\030\005 \001(\t\022\016\n\006s" +
+      "eller\030\006 \001(\t\022\035\n\taggressor\030\007 \001(\0162\n.vega.Si" +
+      "de\022\020\n\010buyOrder\030\010 \001(\t\022\021\n\tsellOrder\030\t \001(\t\022" +
+      "\021\n\ttimestamp\030\n \001(\003\022\036\n\004type\030\013 \001(\0162\020.vega." +
+      "Trade.Type\022\033\n\010buyerFee\030\014 \001(\0132\t.vega.Fee\022" +
+      "\034\n\tsellerFee\030\r \001(\0132\t.vega.Fee\022\031\n\021buyerAu" +
+      "ctionBatch\030\016 \001(\004\022\032\n\022sellerAuctionBatch\030\017" +
+      " \001(\004\"o\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\020\n\014TY" +
+      "PE_DEFAULT\020\001\022\037\n\033TYPE_NETWORK_CLOSE_OUT_G" +
+      "OOD\020\002\022\036\n\032TYPE_NETWORK_CLOSE_OUT_BAD\020\003\"H\n" +
+      "\003Fee\022\020\n\010makerFee\030\001 \001(\004\022\031\n\021infrastructure" +
+      "Fee\030\002 \001(\004\022\024\n\014liquidityFee\030\003 \001(\004\"\'\n\010Trade" +
+      "Set\022\033\n\006trades\030\001 \003(\0132\013.vega.Trade\"\227\001\n\006Can" +
+      "dle\022\021\n\ttimestamp\030\001 \001(\003\022\020\n\010datetime\030\002 \001(\t" +
+      "\022\014\n\004high\030\003 \001(\004\022\013\n\003low\030\004 \001(\004\022\014\n\004open\030\005 \001(" +
+      "\004\022\r\n\005close\030\006 \001(\004\022\016\n\006volume\030\007 \001(\004\022 \n\010inte" +
+      "rval\030\010 \001(\0162\016.vega.Interval\"C\n\nPriceLevel" +
+      "\022\r\n\005price\030\001 \001(\004\022\026\n\016numberOfOrders\030\002 \001(\004\022" +
+      "\016\n\006volume\030\003 \001(\004\"v\n\013MarketDepth\022\020\n\010market" +
+      "ID\030\001 \001(\t\022\035\n\003buy\030\002 \003(\0132\020.vega.PriceLevel\022" +
+      "\036\n\004sell\030\003 \003(\0132\020.vega.PriceLevel\022\026\n\016seque" +
+      "nceNumber\030\004 \001(\004\"|\n\021MarketDepthUpdate\022\020\n\010" +
+      "marketID\030\001 \001(\t\022\035\n\003buy\030\002 \003(\0132\020.vega.Price" +
+      "Level\022\036\n\004sell\030\003 \003(\0132\020.vega.PriceLevel\022\026\n" +
+      "\016sequenceNumber\030\004 \001(\004\"\233\001\n\010Position\022\020\n\010ma" +
+      "rketID\030\001 \001(\t\022\017\n\007partyID\030\002 \001(\t\022\022\n\nopenVol" +
+      "ume\030\003 \001(\003\022\023\n\013realisedPNL\030\004 \001(\003\022\025\n\runreal" +
+      "isedPNL\030\005 \001(\003\022\031\n\021averageEntryPrice\030\006 \001(\004" +
+      "\022\021\n\tupdatedAt\030\007 \001(\003\".\n\rPositionTrade\022\016\n\006" +
+      "volume\030\001 \001(\003\022\r\n\005price\030\002 \001(\004\"\256\006\n\nStatisti" +
+      "cs\022\023\n\013blockHeight\030\001 \001(\004\022\025\n\rbacklogLength" +
+      "\030\002 \001(\004\022\022\n\ntotalPeers\030\003 \001(\004\022\023\n\013genesisTim" +
+      "e\030\004 \001(\t\022\023\n\013currentTime\030\005 \001(\t\022\020\n\010vegaTime" +
+      "\030\006 \001(\t\022!\n\006status\030\007 \001(\0162\021.vega.ChainStatu" +
+      "s\022\022\n\ntxPerBlock\030\010 \001(\004\022\026\n\016averageTxBytes\030" +
+      "\t \001(\004\022\035\n\025averageOrdersPerBlock\030\n \001(\004\022\027\n\017" +
+      "tradesPerSecond\030\013 \001(\004\022\027\n\017ordersPerSecond" +
+      "\030\014 \001(\004\022\024\n\014totalMarkets\030\r \001(\004\022\027\n\017totalAme" +
+      "ndOrder\030\020 \001(\004\022\030\n\020totalCancelOrder\030\021 \001(\004\022" +
+      "\030\n\020totalCreateOrder\030\022 \001(\004\022\023\n\013totalOrders" +
+      "\030\023 \001(\004\022\023\n\013totalTrades\030\024 \001(\004\022\032\n\022orderSubs" +
+      "criptions\030\025 \001(\r\022\032\n\022tradeSubscriptions\030\026 " +
+      "\001(\r\022\033\n\023candleSubscriptions\030\027 \001(\r\022 \n\030mark" +
+      "etDepthSubscriptions\030\030 \001(\r\022\036\n\026positionsS" +
+      "ubscriptions\030\031 \001(\r\022\034\n\024accountSubscriptio" +
+      "ns\030\032 \001(\r\022\037\n\027marketDataSubscriptions\030\033 \001(" +
+      "\r\022\026\n\016appVersionHash\030\034 \001(\t\022\022\n\nappVersion\030" +
+      "\035 \001(\t\022\024\n\014chainVersion\030\036 \001(\t\022\025\n\rblockDura" +
+      "tion\030\037 \001(\004\022\016\n\006uptime\030  \001(\t\022\017\n\007chainID\030! " +
+      "\001(\t\022\'\n\037marketDepthUpdatesSubscriptions\030\"" +
+      " \001(\r\"\257\002\n\007Deposit\022\n\n\002id\030\001 \001(\t\022$\n\006status\030\002" +
+      " \001(\0162\024.vega.Deposit.Status\022\017\n\007partyID\030\003 " +
+      "\001(\t\022\r\n\005asset\030\004 \001(\t\022\016\n\006amount\030\005 \001(\t\022\016\n\006tx" +
+      "Hash\030\006 \001(\t\022\031\n\021creditedTimestamp\030\007 \001(\003\022\030\n" +
+      "\020createdTimestamp\030\010 \001(\003\"}\n\006Status\022\036\n\032DEP" +
+      "OSIT_STATUS_UNSPECIFIED\020\000\022\027\n\023DEPOSIT_STA" +
+      "TUS_OPEN\020\001\022\034\n\030DEPOSIT_STATUS_CANCELLED\020\002" +
+      "\022\034\n\030DEPOSIT_STATUS_FINALIZED\020\003\"\200\003\n\nWithd" +
+      "rawal\022\n\n\002id\030\001 \001(\t\022\017\n\007partyID\030\002 \001(\t\022\016\n\006am" +
+      "ount\030\003 \001(\004\022\r\n\005asset\030\004 \001(\t\022\'\n\006status\030\005 \001(" +
+      "\0162\027.vega.Withdrawal.Status\022\013\n\003ref\030\006 \001(\t\022" +
+      "\016\n\006expiry\030\007 \001(\003\022\016\n\006txHash\030\010 \001(\t\022\030\n\020creat" +
+      "edTimestamp\030\t \001(\003\022\032\n\022withdrawnTimestamp\030" +
+      "\n \001(\003\022\036\n\003ext\030\013 \001(\0132\021.vega.WithdrawExt\"\211\001" +
+      "\n\006Status\022!\n\035WITHDRAWAL_STATUS_UNSPECIFIE" +
+      "D\020\000\022\032\n\026WITHDRAWAL_STATUS_OPEN\020\001\022\037\n\033WITHD" +
+      "RAWAL_STATUS_CANCELLED\020\002\022\037\n\033WITHDRAWAL_S" +
+      "TATUS_FINALIZED\020\003\"d\n\022WithdrawSubmission\022" +
+      "\017\n\007partyID\030\001 \001(\t\022\016\n\006amount\030\002 \001(\004\022\r\n\005asse" +
+      "t\030\003 \001(\t\022\036\n\003ext\030\004 \001(\0132\021.vega.WithdrawExt\"" +
+      "=\n\013WithdrawExt\022\'\n\005erc20\030\001 \001(\0132\026.vega.Erc" +
+      "20WithdrawExtH\000B\005\n\003ext\"+\n\020Erc20WithdrawE" +
+      "xt\022\027\n\017receiverAddress\030\001 \001(\t\"\270\002\n\016OrderAme" +
+      "ndment\022\027\n\007orderID\030\001 \001(\tB\006\342\337\037\002X\001\022\027\n\007party" +
+      "ID\030\002 \001(\tB\006\342\337\037\002X\001\022\020\n\010marketID\030\003 \001(\t\022\032\n\005pr" +
+      "ice\030\004 \001(\0132\013.vega.Price\022\021\n\tsizeDelta\030\005 \001(" +
+      "\003\022\"\n\texpiresAt\030\006 \001(\0132\017.vega.Timestamp\022,\n" +
+      "\013timeInForce\030\007 \001(\0162\027.vega.Order.TimeInFo" +
+      "rce\0221\n\014peggedOffset\030\010 \001(\0132\033.google.proto" +
+      "buf.Int64Value\022.\n\017peggedReference\030\t \001(\0162" +
+      "\025.vega.PeggedReference\"\316\002\n\017OrderSubmissi" +
+      "on\022\022\n\002id\030\001 \001(\tB\006\342\337\037\002X\000\022\030\n\010marketID\030\002 \001(\t" +
+      "B\006\342\337\037\002X\001\022\027\n\007partyID\030\003 \001(\tB\006\342\337\037\002X\001\022\r\n\005pri" +
+      "ce\030\004 \001(\004\022\024\n\004size\030\005 \001(\004B\006\342\337\037\002\020\000\022!\n\004side\030\006" +
+      " \001(\0162\n.vega.SideB\007\342\337\037\003\210\001\001\0225\n\013timeInForce" +
+      "\030\007 \001(\0162\027.vega.Order.TimeInForceB\007\342\337\037\003\210\001\001" +
+      "\022\021\n\texpiresAt\030\010 \001(\003\022\'\n\004type\030\t \001(\0162\020.vega" +
+      ".Order.TypeB\007\342\337\037\003\210\001\001\022\021\n\treference\030\n \001(\t\022" +
+      "&\n\013peggedOrder\030\013 \001(\0132\021.vega.PeggedOrder\"" +
+      "O\n\021OrderCancellation\022\017\n\007orderID\030\001 \001(\t\022\020\n" +
+      "\010marketID\030\002 \001(\t\022\027\n\007partyID\030\003 \001(\tB\006\342\337\037\002X\001" +
+      "\"G\n\020NodeRegistration\022\026\n\006pubKey\030\001 \001(\014B\006\342\337" +
+      "\037\002X\001\022\033\n\013chainPubKey\030\002 \001(\014B\006\342\337\037\002X\001\"=\n\010Nod" +
+      "eVote\022\026\n\006pubKey\030\001 \001(\014B\006\342\337\037\002X\001\022\031\n\treferen" +
+      "ce\030\002 \001(\tB\006\342\337\037\002X\001\"w\n\007Account\022\n\n\002id\030\001 \001(\t\022" +
+      "\r\n\005owner\030\002 \001(\t\022\017\n\007balance\030\003 \001(\004\022\r\n\005asset" +
+      "\030\004 \001(\t\022\020\n\010marketID\030\005 \001(\t\022\037\n\004type\030\006 \001(\0162\021" +
+      ".vega.AccountType\"0\n\017FinancialAmount\022\016\n\006" +
+      "amount\030\001 \001(\003\022\r\n\005asset\030\002 \001(\t\"u\n\010Transfer\022" +
+      "\r\n\005owner\030\001 \001(\t\022%\n\006amount\030\002 \001(\0132\025.vega.Fi" +
+      "nancialAmount\022 \n\004type\030\003 \001(\0162\022.vega.Trans" +
+      "ferType\022\021\n\tminAmount\030\004 \001(\003\"\234\001\n\017TransferR" +
+      "equest\022\"\n\013fromAccount\030\001 \003(\0132\r.vega.Accou" +
+      "nt\022 \n\ttoAccount\030\002 \003(\0132\r.vega.Account\022\016\n\006" +
+      "amount\030\003 \001(\004\022\021\n\tminAmount\030\004 \001(\004\022\r\n\005asset" +
+      "\030\005 \001(\t\022\021\n\treference\030\006 \001(\t\"y\n\013LedgerEntry" +
+      "\022\023\n\013fromAccount\030\001 \001(\t\022\021\n\ttoAccount\030\002 \001(\t" +
+      "\022\016\n\006amount\030\003 \001(\004\022\021\n\treference\030\004 \001(\t\022\014\n\004t" +
+      "ype\030\005 \001(\t\022\021\n\ttimestamp\030\006 \001(\003\"B\n\017Transfer" +
+      "Balance\022\036\n\007account\030\001 \001(\0132\r.vega.Account\022" +
+      "\017\n\007balance\030\002 \001(\004\"a\n\020TransferResponse\022$\n\t" +
+      "transfers\030\001 \003(\0132\021.vega.LedgerEntry\022\'\n\010ba" +
+      "lances\030\002 \003(\0132\025.vega.TransferBalance\"\272\001\n\014" +
+      "MarginLevels\022\031\n\021maintenanceMargin\030\001 \001(\004\022" +
+      "\023\n\013searchLevel\030\002 \001(\004\022\025\n\rinitialMargin\030\003 " +
+      "\001(\004\022\036\n\026collateralReleaseLevel\030\004 \001(\004\022\017\n\007p" +
+      "artyID\030\005 \001(\t\022\020\n\010marketID\030\006 \001(\t\022\r\n\005asset\030" +
+      "\007 \001(\t\022\021\n\ttimestamp\030\010 \001(\003\"\256\004\n\nMarketData\022" +
+      "\021\n\tmarkPrice\030\001 \001(\004\022\024\n\014bestBidPrice\030\002 \001(\004" +
+      "\022\025\n\rbestBidVolume\030\003 \001(\004\022\026\n\016bestOfferPric" +
+      "e\030\004 \001(\004\022\027\n\017bestOfferVolume\030\005 \001(\004\022\032\n\022best" +
+      "StaticBidPrice\030\006 \001(\004\022\033\n\023bestStaticBidVol" +
+      "ume\030\007 \001(\004\022\034\n\024bestStaticOfferPrice\030\010 \001(\004\022" +
+      "\035\n\025bestStaticOfferVolume\030\t \001(\004\022\020\n\010midPri" +
+      "ce\030\n \001(\004\022\026\n\016staticMidPrice\030\013 \001(\004\022\016\n\006mark" +
+      "et\030\014 \001(\t\022\021\n\ttimestamp\030\r \001(\003\022\024\n\014openInter" +
+      "est\030\016 \001(\004\022\022\n\nauctionEnd\030\017 \001(\003\022\024\n\014auction" +
+      "Start\030\020 \001(\003\022\027\n\017indicativePrice\030\021 \001(\004\022\030\n\020" +
+      "indicativeVolume\030\022 \001(\004\022&\n\013marketState\030\023 " +
+      "\001(\0162\021.vega.MarketState\022%\n\007trigger\030\024 \001(\0162" +
+      "\024.vega.AuctionTrigger\022\023\n\013targetStake\030\025 \001" +
+      "(\t\022\025\n\rsuppliedStake\030\026 \001(\t\";\n\013ErrorDetail" +
+      "\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\r\n\005inner" +
+      "\030\003 \001(\t\"s\n\013Transaction\022\021\n\tinputData\030\001 \001(\014" +
+      "\022\r\n\005nonce\030\002 \001(\004\022\023\n\013blockHeight\030\003 \001(\004\022\022\n\007" +
+      "address\030\351\007 \001(\014H\000\022\021\n\006pubKey\030\352\007 \001(\014H\000B\006\n\004f" +
+      "rom\"7\n\tSignature\022\013\n\003sig\030\001 \001(\014\022\014\n\004algo\030\002 " +
+      "\001(\t\022\017\n\007version\030\003 \001(\004\"8\n\014SignedBundle\022\n\n\002" +
+      "tx\030\001 \001(\014\022\034\n\003sig\030\002 \001(\0132\017.vega.Signature\"O" +
+      "\n\rNodeSignature\022\n\n\002ID\030\001 \001(\t\022\013\n\003sig\030\002 \001(\014" +
+      "\022%\n\004kind\030\003 \001(\0162\027.vega.NodeSignatureKind\"" +
+      ".\n\020NetworkParameter\022\013\n\003Key\030\001 \001(\t\022\r\n\005Valu" +
+      "e\030\002 \001(\t\"^\n\016LiquidityOrder\022(\n\treference\030\001" +
+      " \001(\0162\025.vega.PeggedReference\022\022\n\nproportio" +
+      "n\030\002 \001(\r\022\016\n\006offset\030\003 \001(\003\"\250\001\n\034LiquidityPro" +
+      "visionSubmission\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037\002" +
+      "X\001\022\030\n\020commitmentAmount\030\002 \001(\004\022\013\n\003fee\030\003 \001(" +
+      "\t\022#\n\005Sells\030\004 \003(\0132\024.vega.LiquidityOrder\022\"" +
+      "\n\004Buys\030\005 \003(\0132\024.vega.LiquidityOrder\"X\n\027Li" +
+      "quidityOrderReference\022\017\n\007orderID\030\001 \001(\t\022," +
+      "\n\016liquidityOrder\030\002 \001(\0132\024.vega.LiquidityO" +
+      "rder\"\216\004\n\022LiquidityProvision\022\n\n\002id\030\001 \001(\t\022" +
+      "\017\n\007partyID\030\002 \001(\t\022\021\n\tcreatedAt\030\003 \001(\003\022\021\n\tu" +
+      "pdatedAt\030\004 \001(\003\022\030\n\010marketID\030\005 \001(\tB\006\342\337\037\002X\001" +
+      "\022\030\n\020commitmentAmount\030\006 \001(\004\022\013\n\003fee\030\007 \001(\t\022" +
+      ",\n\005sells\030\010 \003(\0132\035.vega.LiquidityOrderRefe" +
+      "rence\022+\n\004buys\030\t \003(\0132\035.vega.LiquidityOrde" +
+      "rReference\022\017\n\007version\030\n \001(\t\022/\n\006status\030\013 " +
+      "\001(\0162\037.vega.LiquidityProvision.Status\"\326\001\n" +
+      "\006Status\022*\n&LIQUIDITY_PROVISION_STATUS_UN" +
+      "SPECIFIED\020\000\022%\n!LIQUIDITY_PROVISION_STATU" +
+      "S_ACTIVE\020\001\022&\n\"LIQUIDITY_PROVISION_STATUS" +
+      "_STOPPED\020\002\022(\n$LIQUIDITY_PROVISION_STATUS" +
+      "_CANCELLED\020\003\022\'\n#LIQUIDITY_PROVISION_STAT" +
+      "US_REJECTED\020\004*9\n\004Side\022\024\n\020SIDE_UNSPECIFIE" +
+      "D\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n\tSIDE_SELL\020\002*\230\001\n\010Int" +
+      "erval\022\030\n\024INTERVAL_UNSPECIFIED\020\000\022\020\n\014INTER" +
+      "VAL_I1M\020<\022\021\n\014INTERVAL_I5M\020\254\002\022\022\n\rINTERVAL" +
+      "_I15M\020\204\007\022\021\n\014INTERVAL_I1H\020\220\034\022\022\n\014INTERVAL_" +
+      "I6H\020\340\250\001\022\022\n\014INTERVAL_I1D\020\200\243\005*\257\001\n\013MarketSt" +
+      "ate\022\034\n\030MARKET_STATE_UNSPECIFIED\020\000\022\033\n\027MAR" +
+      "KET_STATE_CONTINUOUS\020\001\022\036\n\032MARKET_STATE_B" +
+      "ATCH_AUCTION\020\002\022 \n\034MARKET_STATE_OPENING_A" +
+      "UCTION\020\003\022#\n\037MARKET_STATE_MONITORING_AUCT" +
+      "ION\020\004*\243\001\n\016AuctionTrigger\022\037\n\033AUCTION_TRIG" +
+      "GER_UNSPECIFIED\020\000\022\031\n\025AUCTION_TRIGGER_BAT" +
+      "CH\020\001\022\033\n\027AUCTION_TRIGGER_OPENING\020\002\022\031\n\025AUC" +
+      "TION_TRIGGER_PRICE\020\003\022\035\n\031AUCTION_TRIGGER_" +
+      "LIQUIDITY\020\004*\213\001\n\017PeggedReference\022 \n\034PEGGE" +
+      "D_REFERENCE_UNSPECIFIED\020\000\022\030\n\024PEGGED_REFE" +
+      "RENCE_MID\020\001\022\035\n\031PEGGED_REFERENCE_BEST_BID" +
+      "\020\002\022\035\n\031PEGGED_REFERENCE_BEST_ASK\020\003*\200\017\n\nOr" +
+      "derError\022\024\n\020ORDER_ERROR_NONE\020\000\022!\n\035ORDER_" +
+      "ERROR_INVALID_MARKET_ID\020\001\022 \n\034ORDER_ERROR" +
+      "_INVALID_ORDER_ID\020\002\022\037\n\033ORDER_ERROR_OUT_O" +
+      "F_SEQUENCE\020\003\022&\n\"ORDER_ERROR_INVALID_REMA" +
+      "INING_SIZE\020\004\022\034\n\030ORDER_ERROR_TIME_FAILURE" +
+      "\020\005\022\037\n\033ORDER_ERROR_REMOVAL_FAILURE\020\006\022+\n\'O" +
+      "RDER_ERROR_INVALID_EXPIRATION_DATETIME\020\007" +
+      "\022\'\n#ORDER_ERROR_INVALID_ORDER_REFERENCE\020" +
+      "\010\022 \n\034ORDER_ERROR_EDIT_NOT_ALLOWED\020\t\022\035\n\031O" +
+      "RDER_ERROR_AMEND_FAILURE\020\n\022\031\n\025ORDER_ERRO" +
+      "R_NOT_FOUND\020\013\022 \n\034ORDER_ERROR_INVALID_PAR" +
+      "TY_ID\020\014\022\035\n\031ORDER_ERROR_MARKET_CLOSED\020\r\022#" +
+      "\n\037ORDER_ERROR_MARGIN_CHECK_FAILED\020\016\022\'\n#O" +
+      "RDER_ERROR_MISSING_GENERAL_ACCOUNT\020\017\022\036\n\032" +
+      "ORDER_ERROR_INTERNAL_ERROR\020\020\022\034\n\030ORDER_ER" +
+      "ROR_INVALID_SIZE\020\021\022#\n\037ORDER_ERROR_INVALI" +
+      "D_PERSISTENCE\020\022\022\034\n\030ORDER_ERROR_INVALID_T" +
+      "YPE\020\023\022\034\n\030ORDER_ERROR_SELF_TRADING\020\024\022.\n*O" +
+      "RDER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEE" +
+      "S\020\025\022%\n!ORDER_ERROR_INCORRECT_MARKET_TYPE" +
+      "\020\026\022%\n!ORDER_ERROR_INVALID_TIME_IN_FORCE\020" +
+      "\027\022+\n\'ORDER_ERROR_GFN_ORDER_DURING_AN_AUC" +
+      "TION\020\030\0223\n/ORDER_ERROR_GFA_ORDER_DURING_C" +
+      "ONTINUOUS_TRADING\020\031\0224\n0ORDER_ERROR_CANNO" +
+      "T_AMEND_TO_GTT_WITHOUT_EXPIRYAT\020\032\022)\n%ORD" +
+      "ER_ERROR_EXPIRYAT_BEFORE_CREATEDAT\020\033\022,\n(" +
+      "ORDER_ERROR_CANNOT_HAVE_GTC_AND_EXPIRYAT" +
+      "\020\034\022*\n&ORDER_ERROR_CANNOT_AMEND_TO_FOK_OR" +
+      "_IOC\020\035\022*\n&ORDER_ERROR_CANNOT_AMEND_TO_GF" +
+      "A_OR_GFN\020\036\022,\n(ORDER_ERROR_CANNOT_AMEND_F" +
+      "ROM_GFA_OR_GFN\020\037\0224\n0ORDER_ERROR_CANNOT_S" +
+      "END_IOC_ORDER_DURING_AUCTION\020 \0224\n0ORDER_" +
+      "ERROR_CANNOT_SEND_FOK_ORDER_DURING_AUCTI" +
+      "ON\020!\022#\n\037ORDER_ERROR_MUST_BE_LIMIT_ORDER\020" +
+      "\"\022\"\n\036ORDER_ERROR_MUST_BE_GTT_OR_GTC\020#\022\'\n" +
+      "#ORDER_ERROR_WITHOUT_REFERENCE_PRICE\020$\0223" +
+      "\n/ORDER_ERROR_BUY_CANNOT_REFERENCE_BEST_" +
+      "ASK_PRICE\020%\0224\n0ORDER_ERROR_OFFSET_MUST_B" +
+      "E_LESS_OR_EQUAL_TO_ZERO\020&\022-\n)ORDER_ERROR" +
+      "_OFFSET_MUST_BE_LESS_THAN_ZERO\020\'\0227\n3ORDE" +
+      "R_ERROR_OFFSET_MUST_BE_GREATER_OR_EQUAL_" +
+      "TO_ZERO\020(\0224\n0ORDER_ERROR_SELL_CANNOT_REF" +
+      "ERENCE_BEST_BID_PRICE\020)\0220\n,ORDER_ERROR_O" +
+      "FFSET_MUST_BE_GREATER_THAN_ZERO\020*\022*\n&ORD" +
+      "ER_ERROR_INSUFFICIENT_ASSET_BALANCE\020+\022E\n" +
+      "AORDER_ERROR_CANNOT_AMEND_PEGGED_ORDER_D" +
+      "ETAILS_ON_NON_PEGGED_ORDER\020,\022.\n*ORDER_ER" +
+      "ROR_UNABLE_TO_REPRICE_PEGGED_ORDER\020-*\202\001\n" +
+      "\013ChainStatus\022\034\n\030CHAIN_STATUS_UNSPECIFIED" +
+      "\020\000\022\035\n\031CHAIN_STATUS_DISCONNECTED\020\001\022\032\n\026CHA" +
+      "IN_STATUS_REPLAYING\020\002\022\032\n\026CHAIN_STATUS_CO" +
+      "NNECTED\020\003*\262\002\n\013AccountType\022\034\n\030ACCOUNT_TYP" +
+      "E_UNSPECIFIED\020\000\022\032\n\026ACCOUNT_TYPE_INSURANC" +
+      "E\020\001\022\033\n\027ACCOUNT_TYPE_SETTLEMENT\020\002\022\027\n\023ACCO" +
+      "UNT_TYPE_MARGIN\020\003\022\030\n\024ACCOUNT_TYPE_GENERA" +
+      "L\020\004\022$\n ACCOUNT_TYPE_FEES_INFRASTRUCTURE\020" +
+      "\005\022\037\n\033ACCOUNT_TYPE_FEES_LIQUIDITY\020\006\022\033\n\027AC" +
+      "COUNT_TYPE_FEES_MAKER\020\007\022\036\n\032ACCOUNT_TYPE_" +
+      "LOCK_WITHDRAW\020\010\022\025\n\021ACCOUNT_TYPE_BOND\020\t*\244" +
+      "\003\n\014TransferType\022\035\n\031TRANSFER_TYPE_UNSPECI" +
+      "FIED\020\000\022\026\n\022TRANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSF" +
+      "ER_TYPE_WIN\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032" +
+      "\n\026TRANSFER_TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_T" +
+      "YPE_MTM_WIN\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_LO" +
+      "W\020\006\022\035\n\031TRANSFER_TYPE_MARGIN_HIGH\020\007\022$\n TR" +
+      "ANSFER_TYPE_MARGIN_CONFISCATED\020\010\022\037\n\033TRAN" +
+      "SFER_TYPE_MAKER_FEE_PAY\020\t\022#\n\037TRANSFER_TY" +
+      "PE_MAKER_FEE_RECEIVE\020\n\022(\n$TRANSFER_TYPE_" +
+      "INFRASTRUCTURE_FEE_PAY\020\013\022#\n\037TRANSFER_TYP" +
+      "E_LIQUIDITY_FEE_PAY\020\014*\205\001\n\021NodeSignatureK" +
+      "ind\022#\n\037NODE_SIGNATURE_KIND_UNSPECIFIED\020\000" +
+      "\022!\n\035NODE_SIGNATURE_KIND_ASSET_NEW\020\001\022(\n$N" +
+      "ODE_SIGNATURE_KIND_ASSET_WITHDRAWAL\020\002B7\n" +
+      "\024io.vegaprotocol.vegaZ\037code.vegaprotocol" +
+      ".io/vega/protob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -64224,6 +65111,7 @@ public final class Vega {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.github.mwitkow.go_proto_validators.Validator.getDescriptor(),
+          com.google.protobuf.WrappersProto.getDescriptor(),
         }, assigner);
     internal_static_vega_Price_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -64392,7 +65280,7 @@ public final class Vega {
     internal_static_vega_OrderAmendment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_OrderAmendment_descriptor,
-        new java.lang.String[] { "OrderID", "PartyID", "MarketID", "Price", "SizeDelta", "ExpiresAt", "TimeInForce", });
+        new java.lang.String[] { "OrderID", "PartyID", "MarketID", "Price", "SizeDelta", "ExpiresAt", "TimeInForce", "PeggedOffset", "PeggedReference", });
     internal_static_vega_OrderSubmission_descriptor =
       getDescriptor().getMessageTypes().get(26);
     internal_static_vega_OrderSubmission_fieldAccessorTable = new
@@ -64470,7 +65358,7 @@ public final class Vega {
     internal_static_vega_MarketData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_MarketData_descriptor,
-        new java.lang.String[] { "MarkPrice", "BestBidPrice", "BestBidVolume", "BestOfferPrice", "BestOfferVolume", "MidPrice", "Market", "Timestamp", "OpenInterest", "AuctionEnd", "AuctionStart", "IndicativePrice", "IndicativeVolume", "MarketState", "Trigger", "TargetStake", "SuppliedStake", });
+        new java.lang.String[] { "MarkPrice", "BestBidPrice", "BestBidVolume", "BestOfferPrice", "BestOfferVolume", "BestStaticBidPrice", "BestStaticBidVolume", "BestStaticOfferPrice", "BestStaticOfferVolume", "MidPrice", "StaticMidPrice", "Market", "Timestamp", "OpenInterest", "AuctionEnd", "AuctionStart", "IndicativePrice", "IndicativeVolume", "MarketState", "Trigger", "TargetStake", "SuppliedStake", });
     internal_static_vega_ErrorDetail_descriptor =
       getDescriptor().getMessageTypes().get(39);
     internal_static_vega_ErrorDetail_fieldAccessorTable = new
@@ -64537,6 +65425,7 @@ public final class Vega {
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.github.mwitkow.go_proto_validators.Validator.getDescriptor();
+    com.google.protobuf.WrappersProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

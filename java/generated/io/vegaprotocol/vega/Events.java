@@ -242,6 +242,14 @@ public final class Events {
      * <code>BUS_EVENT_TYPE_MARKET = 101;</code>
      */
     BUS_EVENT_TYPE_MARKET(101),
+    /**
+     * <pre>
+     * Event used to report failed transactions back to a user - excluded from the ALL type
+     * </pre>
+     *
+     * <code>BUS_EVENT_TYPE_TX_ERROR = 201;</code>
+     */
+    BUS_EVENT_TYPE_TX_ERROR(201),
     UNRECOGNIZED(-1),
     ;
 
@@ -461,6 +469,14 @@ public final class Events {
      * <code>BUS_EVENT_TYPE_MARKET = 101;</code>
      */
     public static final int BUS_EVENT_TYPE_MARKET_VALUE = 101;
+    /**
+     * <pre>
+     * Event used to report failed transactions back to a user - excluded from the ALL type
+     * </pre>
+     *
+     * <code>BUS_EVENT_TYPE_TX_ERROR = 201;</code>
+     */
+    public static final int BUS_EVENT_TYPE_TX_ERROR_VALUE = 201;
 
 
     public final int getNumber() {
@@ -508,6 +524,7 @@ public final class Events {
         case 24: return BUS_EVENT_TYPE_NETWORK_PARAMETER;
         case 25: return BUS_EVENT_TYPE_LIQUIDITY_PROVISION;
         case 101: return BUS_EVENT_TYPE_MARKET;
+        case 201: return BUS_EVENT_TYPE_TX_ERROR;
         default: return null;
       }
     }
@@ -1323,6 +1340,1917 @@ public final class Events {
 
     @java.lang.Override
     public io.vegaprotocol.vega.Events.MarketEvent getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TxErrorEventOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.TxErrorEvent)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * the party who had a tx fail
+     * </pre>
+     *
+     * <code>string PartyID = 1;</code>
+     */
+    java.lang.String getPartyID();
+    /**
+     * <pre>
+     * the party who had a tx fail
+     * </pre>
+     *
+     * <code>string PartyID = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getPartyIDBytes();
+
+    /**
+     * <pre>
+     * error message describing what went wrong
+     * </pre>
+     *
+     * <code>string errMsg = 2;</code>
+     */
+    java.lang.String getErrMsg();
+    /**
+     * <pre>
+     * error message describing what went wrong
+     * </pre>
+     *
+     * <code>string errMsg = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getErrMsgBytes();
+
+    /**
+     * <code>.vega.OrderSubmission orderSubmission = 101;</code>
+     */
+    boolean hasOrderSubmission();
+    /**
+     * <code>.vega.OrderSubmission orderSubmission = 101;</code>
+     */
+    io.vegaprotocol.vega.Vega.OrderSubmission getOrderSubmission();
+    /**
+     * <code>.vega.OrderSubmission orderSubmission = 101;</code>
+     */
+    io.vegaprotocol.vega.Vega.OrderSubmissionOrBuilder getOrderSubmissionOrBuilder();
+
+    /**
+     * <code>.vega.OrderAmendment orderAmendment = 102;</code>
+     */
+    boolean hasOrderAmendment();
+    /**
+     * <code>.vega.OrderAmendment orderAmendment = 102;</code>
+     */
+    io.vegaprotocol.vega.Vega.OrderAmendment getOrderAmendment();
+    /**
+     * <code>.vega.OrderAmendment orderAmendment = 102;</code>
+     */
+    io.vegaprotocol.vega.Vega.OrderAmendmentOrBuilder getOrderAmendmentOrBuilder();
+
+    /**
+     * <code>.vega.OrderCancellation orderCancellation = 103;</code>
+     */
+    boolean hasOrderCancellation();
+    /**
+     * <code>.vega.OrderCancellation orderCancellation = 103;</code>
+     */
+    io.vegaprotocol.vega.Vega.OrderCancellation getOrderCancellation();
+    /**
+     * <code>.vega.OrderCancellation orderCancellation = 103;</code>
+     */
+    io.vegaprotocol.vega.Vega.OrderCancellationOrBuilder getOrderCancellationOrBuilder();
+
+    /**
+     * <code>.vega.Proposal proposal = 104;</code>
+     */
+    boolean hasProposal();
+    /**
+     * <code>.vega.Proposal proposal = 104;</code>
+     */
+    io.vegaprotocol.vega.Governance.Proposal getProposal();
+    /**
+     * <code>.vega.Proposal proposal = 104;</code>
+     */
+    io.vegaprotocol.vega.Governance.ProposalOrBuilder getProposalOrBuilder();
+
+    /**
+     * <code>.vega.Vote vote = 105;</code>
+     */
+    boolean hasVote();
+    /**
+     * <code>.vega.Vote vote = 105;</code>
+     */
+    io.vegaprotocol.vega.Governance.Vote getVote();
+    /**
+     * <code>.vega.Vote vote = 105;</code>
+     */
+    io.vegaprotocol.vega.Governance.VoteOrBuilder getVoteOrBuilder();
+
+    public io.vegaprotocol.vega.Events.TxErrorEvent.TransactionCase getTransactionCase();
+  }
+  /**
+   * Protobuf type {@code vega.TxErrorEvent}
+   */
+  public  static final class TxErrorEvent extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.TxErrorEvent)
+      TxErrorEventOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TxErrorEvent.newBuilder() to construct.
+    private TxErrorEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TxErrorEvent() {
+      partyID_ = "";
+      errMsg_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TxErrorEvent(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              partyID_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              errMsg_ = s;
+              break;
+            }
+            case 810: {
+              io.vegaprotocol.vega.Vega.OrderSubmission.Builder subBuilder = null;
+              if (transactionCase_ == 101) {
+                subBuilder = ((io.vegaprotocol.vega.Vega.OrderSubmission) transaction_).toBuilder();
+              }
+              transaction_ =
+                  input.readMessage(io.vegaprotocol.vega.Vega.OrderSubmission.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.Vega.OrderSubmission) transaction_);
+                transaction_ = subBuilder.buildPartial();
+              }
+              transactionCase_ = 101;
+              break;
+            }
+            case 818: {
+              io.vegaprotocol.vega.Vega.OrderAmendment.Builder subBuilder = null;
+              if (transactionCase_ == 102) {
+                subBuilder = ((io.vegaprotocol.vega.Vega.OrderAmendment) transaction_).toBuilder();
+              }
+              transaction_ =
+                  input.readMessage(io.vegaprotocol.vega.Vega.OrderAmendment.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.Vega.OrderAmendment) transaction_);
+                transaction_ = subBuilder.buildPartial();
+              }
+              transactionCase_ = 102;
+              break;
+            }
+            case 826: {
+              io.vegaprotocol.vega.Vega.OrderCancellation.Builder subBuilder = null;
+              if (transactionCase_ == 103) {
+                subBuilder = ((io.vegaprotocol.vega.Vega.OrderCancellation) transaction_).toBuilder();
+              }
+              transaction_ =
+                  input.readMessage(io.vegaprotocol.vega.Vega.OrderCancellation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.Vega.OrderCancellation) transaction_);
+                transaction_ = subBuilder.buildPartial();
+              }
+              transactionCase_ = 103;
+              break;
+            }
+            case 834: {
+              io.vegaprotocol.vega.Governance.Proposal.Builder subBuilder = null;
+              if (transactionCase_ == 104) {
+                subBuilder = ((io.vegaprotocol.vega.Governance.Proposal) transaction_).toBuilder();
+              }
+              transaction_ =
+                  input.readMessage(io.vegaprotocol.vega.Governance.Proposal.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.Governance.Proposal) transaction_);
+                transaction_ = subBuilder.buildPartial();
+              }
+              transactionCase_ = 104;
+              break;
+            }
+            case 842: {
+              io.vegaprotocol.vega.Governance.Vote.Builder subBuilder = null;
+              if (transactionCase_ == 105) {
+                subBuilder = ((io.vegaprotocol.vega.Governance.Vote) transaction_).toBuilder();
+              }
+              transaction_ =
+                  input.readMessage(io.vegaprotocol.vega.Governance.Vote.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.Governance.Vote) transaction_);
+                transaction_ = subBuilder.buildPartial();
+              }
+              transactionCase_ = 105;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Events.internal_static_vega_TxErrorEvent_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Events.internal_static_vega_TxErrorEvent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Events.TxErrorEvent.class, io.vegaprotocol.vega.Events.TxErrorEvent.Builder.class);
+    }
+
+    private int transactionCase_ = 0;
+    private java.lang.Object transaction_;
+    public enum TransactionCase
+        implements com.google.protobuf.Internal.EnumLite {
+      ORDERSUBMISSION(101),
+      ORDERAMENDMENT(102),
+      ORDERCANCELLATION(103),
+      PROPOSAL(104),
+      VOTE(105),
+      TRANSACTION_NOT_SET(0);
+      private final int value;
+      private TransactionCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TransactionCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static TransactionCase forNumber(int value) {
+        switch (value) {
+          case 101: return ORDERSUBMISSION;
+          case 102: return ORDERAMENDMENT;
+          case 103: return ORDERCANCELLATION;
+          case 104: return PROPOSAL;
+          case 105: return VOTE;
+          case 0: return TRANSACTION_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public TransactionCase
+    getTransactionCase() {
+      return TransactionCase.forNumber(
+          transactionCase_);
+    }
+
+    public static final int PARTYID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object partyID_;
+    /**
+     * <pre>
+     * the party who had a tx fail
+     * </pre>
+     *
+     * <code>string PartyID = 1;</code>
+     */
+    public java.lang.String getPartyID() {
+      java.lang.Object ref = partyID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        partyID_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * the party who had a tx fail
+     * </pre>
+     *
+     * <code>string PartyID = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPartyIDBytes() {
+      java.lang.Object ref = partyID_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        partyID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ERRMSG_FIELD_NUMBER = 2;
+    private volatile java.lang.Object errMsg_;
+    /**
+     * <pre>
+     * error message describing what went wrong
+     * </pre>
+     *
+     * <code>string errMsg = 2;</code>
+     */
+    public java.lang.String getErrMsg() {
+      java.lang.Object ref = errMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        errMsg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * error message describing what went wrong
+     * </pre>
+     *
+     * <code>string errMsg = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getErrMsgBytes() {
+      java.lang.Object ref = errMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        errMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ORDERSUBMISSION_FIELD_NUMBER = 101;
+    /**
+     * <code>.vega.OrderSubmission orderSubmission = 101;</code>
+     */
+    public boolean hasOrderSubmission() {
+      return transactionCase_ == 101;
+    }
+    /**
+     * <code>.vega.OrderSubmission orderSubmission = 101;</code>
+     */
+    public io.vegaprotocol.vega.Vega.OrderSubmission getOrderSubmission() {
+      if (transactionCase_ == 101) {
+         return (io.vegaprotocol.vega.Vega.OrderSubmission) transaction_;
+      }
+      return io.vegaprotocol.vega.Vega.OrderSubmission.getDefaultInstance();
+    }
+    /**
+     * <code>.vega.OrderSubmission orderSubmission = 101;</code>
+     */
+    public io.vegaprotocol.vega.Vega.OrderSubmissionOrBuilder getOrderSubmissionOrBuilder() {
+      if (transactionCase_ == 101) {
+         return (io.vegaprotocol.vega.Vega.OrderSubmission) transaction_;
+      }
+      return io.vegaprotocol.vega.Vega.OrderSubmission.getDefaultInstance();
+    }
+
+    public static final int ORDERAMENDMENT_FIELD_NUMBER = 102;
+    /**
+     * <code>.vega.OrderAmendment orderAmendment = 102;</code>
+     */
+    public boolean hasOrderAmendment() {
+      return transactionCase_ == 102;
+    }
+    /**
+     * <code>.vega.OrderAmendment orderAmendment = 102;</code>
+     */
+    public io.vegaprotocol.vega.Vega.OrderAmendment getOrderAmendment() {
+      if (transactionCase_ == 102) {
+         return (io.vegaprotocol.vega.Vega.OrderAmendment) transaction_;
+      }
+      return io.vegaprotocol.vega.Vega.OrderAmendment.getDefaultInstance();
+    }
+    /**
+     * <code>.vega.OrderAmendment orderAmendment = 102;</code>
+     */
+    public io.vegaprotocol.vega.Vega.OrderAmendmentOrBuilder getOrderAmendmentOrBuilder() {
+      if (transactionCase_ == 102) {
+         return (io.vegaprotocol.vega.Vega.OrderAmendment) transaction_;
+      }
+      return io.vegaprotocol.vega.Vega.OrderAmendment.getDefaultInstance();
+    }
+
+    public static final int ORDERCANCELLATION_FIELD_NUMBER = 103;
+    /**
+     * <code>.vega.OrderCancellation orderCancellation = 103;</code>
+     */
+    public boolean hasOrderCancellation() {
+      return transactionCase_ == 103;
+    }
+    /**
+     * <code>.vega.OrderCancellation orderCancellation = 103;</code>
+     */
+    public io.vegaprotocol.vega.Vega.OrderCancellation getOrderCancellation() {
+      if (transactionCase_ == 103) {
+         return (io.vegaprotocol.vega.Vega.OrderCancellation) transaction_;
+      }
+      return io.vegaprotocol.vega.Vega.OrderCancellation.getDefaultInstance();
+    }
+    /**
+     * <code>.vega.OrderCancellation orderCancellation = 103;</code>
+     */
+    public io.vegaprotocol.vega.Vega.OrderCancellationOrBuilder getOrderCancellationOrBuilder() {
+      if (transactionCase_ == 103) {
+         return (io.vegaprotocol.vega.Vega.OrderCancellation) transaction_;
+      }
+      return io.vegaprotocol.vega.Vega.OrderCancellation.getDefaultInstance();
+    }
+
+    public static final int PROPOSAL_FIELD_NUMBER = 104;
+    /**
+     * <code>.vega.Proposal proposal = 104;</code>
+     */
+    public boolean hasProposal() {
+      return transactionCase_ == 104;
+    }
+    /**
+     * <code>.vega.Proposal proposal = 104;</code>
+     */
+    public io.vegaprotocol.vega.Governance.Proposal getProposal() {
+      if (transactionCase_ == 104) {
+         return (io.vegaprotocol.vega.Governance.Proposal) transaction_;
+      }
+      return io.vegaprotocol.vega.Governance.Proposal.getDefaultInstance();
+    }
+    /**
+     * <code>.vega.Proposal proposal = 104;</code>
+     */
+    public io.vegaprotocol.vega.Governance.ProposalOrBuilder getProposalOrBuilder() {
+      if (transactionCase_ == 104) {
+         return (io.vegaprotocol.vega.Governance.Proposal) transaction_;
+      }
+      return io.vegaprotocol.vega.Governance.Proposal.getDefaultInstance();
+    }
+
+    public static final int VOTE_FIELD_NUMBER = 105;
+    /**
+     * <code>.vega.Vote vote = 105;</code>
+     */
+    public boolean hasVote() {
+      return transactionCase_ == 105;
+    }
+    /**
+     * <code>.vega.Vote vote = 105;</code>
+     */
+    public io.vegaprotocol.vega.Governance.Vote getVote() {
+      if (transactionCase_ == 105) {
+         return (io.vegaprotocol.vega.Governance.Vote) transaction_;
+      }
+      return io.vegaprotocol.vega.Governance.Vote.getDefaultInstance();
+    }
+    /**
+     * <code>.vega.Vote vote = 105;</code>
+     */
+    public io.vegaprotocol.vega.Governance.VoteOrBuilder getVoteOrBuilder() {
+      if (transactionCase_ == 105) {
+         return (io.vegaprotocol.vega.Governance.Vote) transaction_;
+      }
+      return io.vegaprotocol.vega.Governance.Vote.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getPartyIDBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, partyID_);
+      }
+      if (!getErrMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errMsg_);
+      }
+      if (transactionCase_ == 101) {
+        output.writeMessage(101, (io.vegaprotocol.vega.Vega.OrderSubmission) transaction_);
+      }
+      if (transactionCase_ == 102) {
+        output.writeMessage(102, (io.vegaprotocol.vega.Vega.OrderAmendment) transaction_);
+      }
+      if (transactionCase_ == 103) {
+        output.writeMessage(103, (io.vegaprotocol.vega.Vega.OrderCancellation) transaction_);
+      }
+      if (transactionCase_ == 104) {
+        output.writeMessage(104, (io.vegaprotocol.vega.Governance.Proposal) transaction_);
+      }
+      if (transactionCase_ == 105) {
+        output.writeMessage(105, (io.vegaprotocol.vega.Governance.Vote) transaction_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getPartyIDBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, partyID_);
+      }
+      if (!getErrMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errMsg_);
+      }
+      if (transactionCase_ == 101) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(101, (io.vegaprotocol.vega.Vega.OrderSubmission) transaction_);
+      }
+      if (transactionCase_ == 102) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(102, (io.vegaprotocol.vega.Vega.OrderAmendment) transaction_);
+      }
+      if (transactionCase_ == 103) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(103, (io.vegaprotocol.vega.Vega.OrderCancellation) transaction_);
+      }
+      if (transactionCase_ == 104) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(104, (io.vegaprotocol.vega.Governance.Proposal) transaction_);
+      }
+      if (transactionCase_ == 105) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(105, (io.vegaprotocol.vega.Governance.Vote) transaction_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Events.TxErrorEvent)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Events.TxErrorEvent other = (io.vegaprotocol.vega.Events.TxErrorEvent) obj;
+
+      if (!getPartyID()
+          .equals(other.getPartyID())) return false;
+      if (!getErrMsg()
+          .equals(other.getErrMsg())) return false;
+      if (!getTransactionCase().equals(other.getTransactionCase())) return false;
+      switch (transactionCase_) {
+        case 101:
+          if (!getOrderSubmission()
+              .equals(other.getOrderSubmission())) return false;
+          break;
+        case 102:
+          if (!getOrderAmendment()
+              .equals(other.getOrderAmendment())) return false;
+          break;
+        case 103:
+          if (!getOrderCancellation()
+              .equals(other.getOrderCancellation())) return false;
+          break;
+        case 104:
+          if (!getProposal()
+              .equals(other.getProposal())) return false;
+          break;
+        case 105:
+          if (!getVote()
+              .equals(other.getVote())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PARTYID_FIELD_NUMBER;
+      hash = (53 * hash) + getPartyID().hashCode();
+      hash = (37 * hash) + ERRMSG_FIELD_NUMBER;
+      hash = (53 * hash) + getErrMsg().hashCode();
+      switch (transactionCase_) {
+        case 101:
+          hash = (37 * hash) + ORDERSUBMISSION_FIELD_NUMBER;
+          hash = (53 * hash) + getOrderSubmission().hashCode();
+          break;
+        case 102:
+          hash = (37 * hash) + ORDERAMENDMENT_FIELD_NUMBER;
+          hash = (53 * hash) + getOrderAmendment().hashCode();
+          break;
+        case 103:
+          hash = (37 * hash) + ORDERCANCELLATION_FIELD_NUMBER;
+          hash = (53 * hash) + getOrderCancellation().hashCode();
+          break;
+        case 104:
+          hash = (37 * hash) + PROPOSAL_FIELD_NUMBER;
+          hash = (53 * hash) + getProposal().hashCode();
+          break;
+        case 105:
+          hash = (37 * hash) + VOTE_FIELD_NUMBER;
+          hash = (53 * hash) + getVote().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Events.TxErrorEvent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Events.TxErrorEvent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Events.TxErrorEvent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Events.TxErrorEvent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Events.TxErrorEvent parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Events.TxErrorEvent parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Events.TxErrorEvent parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Events.TxErrorEvent parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Events.TxErrorEvent parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Events.TxErrorEvent parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Events.TxErrorEvent parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Events.TxErrorEvent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Events.TxErrorEvent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.TxErrorEvent}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.TxErrorEvent)
+        io.vegaprotocol.vega.Events.TxErrorEventOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Events.internal_static_vega_TxErrorEvent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Events.internal_static_vega_TxErrorEvent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Events.TxErrorEvent.class, io.vegaprotocol.vega.Events.TxErrorEvent.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Events.TxErrorEvent.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        partyID_ = "";
+
+        errMsg_ = "";
+
+        transactionCase_ = 0;
+        transaction_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Events.internal_static_vega_TxErrorEvent_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Events.TxErrorEvent getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Events.TxErrorEvent.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Events.TxErrorEvent build() {
+        io.vegaprotocol.vega.Events.TxErrorEvent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Events.TxErrorEvent buildPartial() {
+        io.vegaprotocol.vega.Events.TxErrorEvent result = new io.vegaprotocol.vega.Events.TxErrorEvent(this);
+        result.partyID_ = partyID_;
+        result.errMsg_ = errMsg_;
+        if (transactionCase_ == 101) {
+          if (orderSubmissionBuilder_ == null) {
+            result.transaction_ = transaction_;
+          } else {
+            result.transaction_ = orderSubmissionBuilder_.build();
+          }
+        }
+        if (transactionCase_ == 102) {
+          if (orderAmendmentBuilder_ == null) {
+            result.transaction_ = transaction_;
+          } else {
+            result.transaction_ = orderAmendmentBuilder_.build();
+          }
+        }
+        if (transactionCase_ == 103) {
+          if (orderCancellationBuilder_ == null) {
+            result.transaction_ = transaction_;
+          } else {
+            result.transaction_ = orderCancellationBuilder_.build();
+          }
+        }
+        if (transactionCase_ == 104) {
+          if (proposalBuilder_ == null) {
+            result.transaction_ = transaction_;
+          } else {
+            result.transaction_ = proposalBuilder_.build();
+          }
+        }
+        if (transactionCase_ == 105) {
+          if (voteBuilder_ == null) {
+            result.transaction_ = transaction_;
+          } else {
+            result.transaction_ = voteBuilder_.build();
+          }
+        }
+        result.transactionCase_ = transactionCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Events.TxErrorEvent) {
+          return mergeFrom((io.vegaprotocol.vega.Events.TxErrorEvent)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Events.TxErrorEvent other) {
+        if (other == io.vegaprotocol.vega.Events.TxErrorEvent.getDefaultInstance()) return this;
+        if (!other.getPartyID().isEmpty()) {
+          partyID_ = other.partyID_;
+          onChanged();
+        }
+        if (!other.getErrMsg().isEmpty()) {
+          errMsg_ = other.errMsg_;
+          onChanged();
+        }
+        switch (other.getTransactionCase()) {
+          case ORDERSUBMISSION: {
+            mergeOrderSubmission(other.getOrderSubmission());
+            break;
+          }
+          case ORDERAMENDMENT: {
+            mergeOrderAmendment(other.getOrderAmendment());
+            break;
+          }
+          case ORDERCANCELLATION: {
+            mergeOrderCancellation(other.getOrderCancellation());
+            break;
+          }
+          case PROPOSAL: {
+            mergeProposal(other.getProposal());
+            break;
+          }
+          case VOTE: {
+            mergeVote(other.getVote());
+            break;
+          }
+          case TRANSACTION_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Events.TxErrorEvent parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Events.TxErrorEvent) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int transactionCase_ = 0;
+      private java.lang.Object transaction_;
+      public TransactionCase
+          getTransactionCase() {
+        return TransactionCase.forNumber(
+            transactionCase_);
+      }
+
+      public Builder clearTransaction() {
+        transactionCase_ = 0;
+        transaction_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private java.lang.Object partyID_ = "";
+      /**
+       * <pre>
+       * the party who had a tx fail
+       * </pre>
+       *
+       * <code>string PartyID = 1;</code>
+       */
+      public java.lang.String getPartyID() {
+        java.lang.Object ref = partyID_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          partyID_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the party who had a tx fail
+       * </pre>
+       *
+       * <code>string PartyID = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPartyIDBytes() {
+        java.lang.Object ref = partyID_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          partyID_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the party who had a tx fail
+       * </pre>
+       *
+       * <code>string PartyID = 1;</code>
+       */
+      public Builder setPartyID(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        partyID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the party who had a tx fail
+       * </pre>
+       *
+       * <code>string PartyID = 1;</code>
+       */
+      public Builder clearPartyID() {
+
+        partyID_ = getDefaultInstance().getPartyID();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the party who had a tx fail
+       * </pre>
+       *
+       * <code>string PartyID = 1;</code>
+       */
+      public Builder setPartyIDBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        partyID_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object errMsg_ = "";
+      /**
+       * <pre>
+       * error message describing what went wrong
+       * </pre>
+       *
+       * <code>string errMsg = 2;</code>
+       */
+      public java.lang.String getErrMsg() {
+        java.lang.Object ref = errMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          errMsg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * error message describing what went wrong
+       * </pre>
+       *
+       * <code>string errMsg = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getErrMsgBytes() {
+        java.lang.Object ref = errMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          errMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * error message describing what went wrong
+       * </pre>
+       *
+       * <code>string errMsg = 2;</code>
+       */
+      public Builder setErrMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        errMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * error message describing what went wrong
+       * </pre>
+       *
+       * <code>string errMsg = 2;</code>
+       */
+      public Builder clearErrMsg() {
+
+        errMsg_ = getDefaultInstance().getErrMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * error message describing what went wrong
+       * </pre>
+       *
+       * <code>string errMsg = 2;</code>
+       */
+      public Builder setErrMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        errMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.OrderSubmission, io.vegaprotocol.vega.Vega.OrderSubmission.Builder, io.vegaprotocol.vega.Vega.OrderSubmissionOrBuilder> orderSubmissionBuilder_;
+      /**
+       * <code>.vega.OrderSubmission orderSubmission = 101;</code>
+       */
+      public boolean hasOrderSubmission() {
+        return transactionCase_ == 101;
+      }
+      /**
+       * <code>.vega.OrderSubmission orderSubmission = 101;</code>
+       */
+      public io.vegaprotocol.vega.Vega.OrderSubmission getOrderSubmission() {
+        if (orderSubmissionBuilder_ == null) {
+          if (transactionCase_ == 101) {
+            return (io.vegaprotocol.vega.Vega.OrderSubmission) transaction_;
+          }
+          return io.vegaprotocol.vega.Vega.OrderSubmission.getDefaultInstance();
+        } else {
+          if (transactionCase_ == 101) {
+            return orderSubmissionBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.Vega.OrderSubmission.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.OrderSubmission orderSubmission = 101;</code>
+       */
+      public Builder setOrderSubmission(io.vegaprotocol.vega.Vega.OrderSubmission value) {
+        if (orderSubmissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transaction_ = value;
+          onChanged();
+        } else {
+          orderSubmissionBuilder_.setMessage(value);
+        }
+        transactionCase_ = 101;
+        return this;
+      }
+      /**
+       * <code>.vega.OrderSubmission orderSubmission = 101;</code>
+       */
+      public Builder setOrderSubmission(
+          io.vegaprotocol.vega.Vega.OrderSubmission.Builder builderForValue) {
+        if (orderSubmissionBuilder_ == null) {
+          transaction_ = builderForValue.build();
+          onChanged();
+        } else {
+          orderSubmissionBuilder_.setMessage(builderForValue.build());
+        }
+        transactionCase_ = 101;
+        return this;
+      }
+      /**
+       * <code>.vega.OrderSubmission orderSubmission = 101;</code>
+       */
+      public Builder mergeOrderSubmission(io.vegaprotocol.vega.Vega.OrderSubmission value) {
+        if (orderSubmissionBuilder_ == null) {
+          if (transactionCase_ == 101 &&
+              transaction_ != io.vegaprotocol.vega.Vega.OrderSubmission.getDefaultInstance()) {
+            transaction_ = io.vegaprotocol.vega.Vega.OrderSubmission.newBuilder((io.vegaprotocol.vega.Vega.OrderSubmission) transaction_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            transaction_ = value;
+          }
+          onChanged();
+        } else {
+          if (transactionCase_ == 101) {
+            orderSubmissionBuilder_.mergeFrom(value);
+          }
+          orderSubmissionBuilder_.setMessage(value);
+        }
+        transactionCase_ = 101;
+        return this;
+      }
+      /**
+       * <code>.vega.OrderSubmission orderSubmission = 101;</code>
+       */
+      public Builder clearOrderSubmission() {
+        if (orderSubmissionBuilder_ == null) {
+          if (transactionCase_ == 101) {
+            transactionCase_ = 0;
+            transaction_ = null;
+            onChanged();
+          }
+        } else {
+          if (transactionCase_ == 101) {
+            transactionCase_ = 0;
+            transaction_ = null;
+          }
+          orderSubmissionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.vega.OrderSubmission orderSubmission = 101;</code>
+       */
+      public io.vegaprotocol.vega.Vega.OrderSubmission.Builder getOrderSubmissionBuilder() {
+        return getOrderSubmissionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.vega.OrderSubmission orderSubmission = 101;</code>
+       */
+      public io.vegaprotocol.vega.Vega.OrderSubmissionOrBuilder getOrderSubmissionOrBuilder() {
+        if ((transactionCase_ == 101) && (orderSubmissionBuilder_ != null)) {
+          return orderSubmissionBuilder_.getMessageOrBuilder();
+        } else {
+          if (transactionCase_ == 101) {
+            return (io.vegaprotocol.vega.Vega.OrderSubmission) transaction_;
+          }
+          return io.vegaprotocol.vega.Vega.OrderSubmission.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.OrderSubmission orderSubmission = 101;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.OrderSubmission, io.vegaprotocol.vega.Vega.OrderSubmission.Builder, io.vegaprotocol.vega.Vega.OrderSubmissionOrBuilder>
+          getOrderSubmissionFieldBuilder() {
+        if (orderSubmissionBuilder_ == null) {
+          if (!(transactionCase_ == 101)) {
+            transaction_ = io.vegaprotocol.vega.Vega.OrderSubmission.getDefaultInstance();
+          }
+          orderSubmissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.OrderSubmission, io.vegaprotocol.vega.Vega.OrderSubmission.Builder, io.vegaprotocol.vega.Vega.OrderSubmissionOrBuilder>(
+                  (io.vegaprotocol.vega.Vega.OrderSubmission) transaction_,
+                  getParentForChildren(),
+                  isClean());
+          transaction_ = null;
+        }
+        transactionCase_ = 101;
+        onChanged();;
+        return orderSubmissionBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.OrderAmendment, io.vegaprotocol.vega.Vega.OrderAmendment.Builder, io.vegaprotocol.vega.Vega.OrderAmendmentOrBuilder> orderAmendmentBuilder_;
+      /**
+       * <code>.vega.OrderAmendment orderAmendment = 102;</code>
+       */
+      public boolean hasOrderAmendment() {
+        return transactionCase_ == 102;
+      }
+      /**
+       * <code>.vega.OrderAmendment orderAmendment = 102;</code>
+       */
+      public io.vegaprotocol.vega.Vega.OrderAmendment getOrderAmendment() {
+        if (orderAmendmentBuilder_ == null) {
+          if (transactionCase_ == 102) {
+            return (io.vegaprotocol.vega.Vega.OrderAmendment) transaction_;
+          }
+          return io.vegaprotocol.vega.Vega.OrderAmendment.getDefaultInstance();
+        } else {
+          if (transactionCase_ == 102) {
+            return orderAmendmentBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.Vega.OrderAmendment.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.OrderAmendment orderAmendment = 102;</code>
+       */
+      public Builder setOrderAmendment(io.vegaprotocol.vega.Vega.OrderAmendment value) {
+        if (orderAmendmentBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transaction_ = value;
+          onChanged();
+        } else {
+          orderAmendmentBuilder_.setMessage(value);
+        }
+        transactionCase_ = 102;
+        return this;
+      }
+      /**
+       * <code>.vega.OrderAmendment orderAmendment = 102;</code>
+       */
+      public Builder setOrderAmendment(
+          io.vegaprotocol.vega.Vega.OrderAmendment.Builder builderForValue) {
+        if (orderAmendmentBuilder_ == null) {
+          transaction_ = builderForValue.build();
+          onChanged();
+        } else {
+          orderAmendmentBuilder_.setMessage(builderForValue.build());
+        }
+        transactionCase_ = 102;
+        return this;
+      }
+      /**
+       * <code>.vega.OrderAmendment orderAmendment = 102;</code>
+       */
+      public Builder mergeOrderAmendment(io.vegaprotocol.vega.Vega.OrderAmendment value) {
+        if (orderAmendmentBuilder_ == null) {
+          if (transactionCase_ == 102 &&
+              transaction_ != io.vegaprotocol.vega.Vega.OrderAmendment.getDefaultInstance()) {
+            transaction_ = io.vegaprotocol.vega.Vega.OrderAmendment.newBuilder((io.vegaprotocol.vega.Vega.OrderAmendment) transaction_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            transaction_ = value;
+          }
+          onChanged();
+        } else {
+          if (transactionCase_ == 102) {
+            orderAmendmentBuilder_.mergeFrom(value);
+          }
+          orderAmendmentBuilder_.setMessage(value);
+        }
+        transactionCase_ = 102;
+        return this;
+      }
+      /**
+       * <code>.vega.OrderAmendment orderAmendment = 102;</code>
+       */
+      public Builder clearOrderAmendment() {
+        if (orderAmendmentBuilder_ == null) {
+          if (transactionCase_ == 102) {
+            transactionCase_ = 0;
+            transaction_ = null;
+            onChanged();
+          }
+        } else {
+          if (transactionCase_ == 102) {
+            transactionCase_ = 0;
+            transaction_ = null;
+          }
+          orderAmendmentBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.vega.OrderAmendment orderAmendment = 102;</code>
+       */
+      public io.vegaprotocol.vega.Vega.OrderAmendment.Builder getOrderAmendmentBuilder() {
+        return getOrderAmendmentFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.vega.OrderAmendment orderAmendment = 102;</code>
+       */
+      public io.vegaprotocol.vega.Vega.OrderAmendmentOrBuilder getOrderAmendmentOrBuilder() {
+        if ((transactionCase_ == 102) && (orderAmendmentBuilder_ != null)) {
+          return orderAmendmentBuilder_.getMessageOrBuilder();
+        } else {
+          if (transactionCase_ == 102) {
+            return (io.vegaprotocol.vega.Vega.OrderAmendment) transaction_;
+          }
+          return io.vegaprotocol.vega.Vega.OrderAmendment.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.OrderAmendment orderAmendment = 102;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.OrderAmendment, io.vegaprotocol.vega.Vega.OrderAmendment.Builder, io.vegaprotocol.vega.Vega.OrderAmendmentOrBuilder>
+          getOrderAmendmentFieldBuilder() {
+        if (orderAmendmentBuilder_ == null) {
+          if (!(transactionCase_ == 102)) {
+            transaction_ = io.vegaprotocol.vega.Vega.OrderAmendment.getDefaultInstance();
+          }
+          orderAmendmentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.OrderAmendment, io.vegaprotocol.vega.Vega.OrderAmendment.Builder, io.vegaprotocol.vega.Vega.OrderAmendmentOrBuilder>(
+                  (io.vegaprotocol.vega.Vega.OrderAmendment) transaction_,
+                  getParentForChildren(),
+                  isClean());
+          transaction_ = null;
+        }
+        transactionCase_ = 102;
+        onChanged();;
+        return orderAmendmentBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.OrderCancellation, io.vegaprotocol.vega.Vega.OrderCancellation.Builder, io.vegaprotocol.vega.Vega.OrderCancellationOrBuilder> orderCancellationBuilder_;
+      /**
+       * <code>.vega.OrderCancellation orderCancellation = 103;</code>
+       */
+      public boolean hasOrderCancellation() {
+        return transactionCase_ == 103;
+      }
+      /**
+       * <code>.vega.OrderCancellation orderCancellation = 103;</code>
+       */
+      public io.vegaprotocol.vega.Vega.OrderCancellation getOrderCancellation() {
+        if (orderCancellationBuilder_ == null) {
+          if (transactionCase_ == 103) {
+            return (io.vegaprotocol.vega.Vega.OrderCancellation) transaction_;
+          }
+          return io.vegaprotocol.vega.Vega.OrderCancellation.getDefaultInstance();
+        } else {
+          if (transactionCase_ == 103) {
+            return orderCancellationBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.Vega.OrderCancellation.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.OrderCancellation orderCancellation = 103;</code>
+       */
+      public Builder setOrderCancellation(io.vegaprotocol.vega.Vega.OrderCancellation value) {
+        if (orderCancellationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transaction_ = value;
+          onChanged();
+        } else {
+          orderCancellationBuilder_.setMessage(value);
+        }
+        transactionCase_ = 103;
+        return this;
+      }
+      /**
+       * <code>.vega.OrderCancellation orderCancellation = 103;</code>
+       */
+      public Builder setOrderCancellation(
+          io.vegaprotocol.vega.Vega.OrderCancellation.Builder builderForValue) {
+        if (orderCancellationBuilder_ == null) {
+          transaction_ = builderForValue.build();
+          onChanged();
+        } else {
+          orderCancellationBuilder_.setMessage(builderForValue.build());
+        }
+        transactionCase_ = 103;
+        return this;
+      }
+      /**
+       * <code>.vega.OrderCancellation orderCancellation = 103;</code>
+       */
+      public Builder mergeOrderCancellation(io.vegaprotocol.vega.Vega.OrderCancellation value) {
+        if (orderCancellationBuilder_ == null) {
+          if (transactionCase_ == 103 &&
+              transaction_ != io.vegaprotocol.vega.Vega.OrderCancellation.getDefaultInstance()) {
+            transaction_ = io.vegaprotocol.vega.Vega.OrderCancellation.newBuilder((io.vegaprotocol.vega.Vega.OrderCancellation) transaction_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            transaction_ = value;
+          }
+          onChanged();
+        } else {
+          if (transactionCase_ == 103) {
+            orderCancellationBuilder_.mergeFrom(value);
+          }
+          orderCancellationBuilder_.setMessage(value);
+        }
+        transactionCase_ = 103;
+        return this;
+      }
+      /**
+       * <code>.vega.OrderCancellation orderCancellation = 103;</code>
+       */
+      public Builder clearOrderCancellation() {
+        if (orderCancellationBuilder_ == null) {
+          if (transactionCase_ == 103) {
+            transactionCase_ = 0;
+            transaction_ = null;
+            onChanged();
+          }
+        } else {
+          if (transactionCase_ == 103) {
+            transactionCase_ = 0;
+            transaction_ = null;
+          }
+          orderCancellationBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.vega.OrderCancellation orderCancellation = 103;</code>
+       */
+      public io.vegaprotocol.vega.Vega.OrderCancellation.Builder getOrderCancellationBuilder() {
+        return getOrderCancellationFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.vega.OrderCancellation orderCancellation = 103;</code>
+       */
+      public io.vegaprotocol.vega.Vega.OrderCancellationOrBuilder getOrderCancellationOrBuilder() {
+        if ((transactionCase_ == 103) && (orderCancellationBuilder_ != null)) {
+          return orderCancellationBuilder_.getMessageOrBuilder();
+        } else {
+          if (transactionCase_ == 103) {
+            return (io.vegaprotocol.vega.Vega.OrderCancellation) transaction_;
+          }
+          return io.vegaprotocol.vega.Vega.OrderCancellation.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.OrderCancellation orderCancellation = 103;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.OrderCancellation, io.vegaprotocol.vega.Vega.OrderCancellation.Builder, io.vegaprotocol.vega.Vega.OrderCancellationOrBuilder>
+          getOrderCancellationFieldBuilder() {
+        if (orderCancellationBuilder_ == null) {
+          if (!(transactionCase_ == 103)) {
+            transaction_ = io.vegaprotocol.vega.Vega.OrderCancellation.getDefaultInstance();
+          }
+          orderCancellationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.OrderCancellation, io.vegaprotocol.vega.Vega.OrderCancellation.Builder, io.vegaprotocol.vega.Vega.OrderCancellationOrBuilder>(
+                  (io.vegaprotocol.vega.Vega.OrderCancellation) transaction_,
+                  getParentForChildren(),
+                  isClean());
+          transaction_ = null;
+        }
+        transactionCase_ = 103;
+        onChanged();;
+        return orderCancellationBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Governance.Proposal, io.vegaprotocol.vega.Governance.Proposal.Builder, io.vegaprotocol.vega.Governance.ProposalOrBuilder> proposalBuilder_;
+      /**
+       * <code>.vega.Proposal proposal = 104;</code>
+       */
+      public boolean hasProposal() {
+        return transactionCase_ == 104;
+      }
+      /**
+       * <code>.vega.Proposal proposal = 104;</code>
+       */
+      public io.vegaprotocol.vega.Governance.Proposal getProposal() {
+        if (proposalBuilder_ == null) {
+          if (transactionCase_ == 104) {
+            return (io.vegaprotocol.vega.Governance.Proposal) transaction_;
+          }
+          return io.vegaprotocol.vega.Governance.Proposal.getDefaultInstance();
+        } else {
+          if (transactionCase_ == 104) {
+            return proposalBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.Governance.Proposal.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.Proposal proposal = 104;</code>
+       */
+      public Builder setProposal(io.vegaprotocol.vega.Governance.Proposal value) {
+        if (proposalBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transaction_ = value;
+          onChanged();
+        } else {
+          proposalBuilder_.setMessage(value);
+        }
+        transactionCase_ = 104;
+        return this;
+      }
+      /**
+       * <code>.vega.Proposal proposal = 104;</code>
+       */
+      public Builder setProposal(
+          io.vegaprotocol.vega.Governance.Proposal.Builder builderForValue) {
+        if (proposalBuilder_ == null) {
+          transaction_ = builderForValue.build();
+          onChanged();
+        } else {
+          proposalBuilder_.setMessage(builderForValue.build());
+        }
+        transactionCase_ = 104;
+        return this;
+      }
+      /**
+       * <code>.vega.Proposal proposal = 104;</code>
+       */
+      public Builder mergeProposal(io.vegaprotocol.vega.Governance.Proposal value) {
+        if (proposalBuilder_ == null) {
+          if (transactionCase_ == 104 &&
+              transaction_ != io.vegaprotocol.vega.Governance.Proposal.getDefaultInstance()) {
+            transaction_ = io.vegaprotocol.vega.Governance.Proposal.newBuilder((io.vegaprotocol.vega.Governance.Proposal) transaction_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            transaction_ = value;
+          }
+          onChanged();
+        } else {
+          if (transactionCase_ == 104) {
+            proposalBuilder_.mergeFrom(value);
+          }
+          proposalBuilder_.setMessage(value);
+        }
+        transactionCase_ = 104;
+        return this;
+      }
+      /**
+       * <code>.vega.Proposal proposal = 104;</code>
+       */
+      public Builder clearProposal() {
+        if (proposalBuilder_ == null) {
+          if (transactionCase_ == 104) {
+            transactionCase_ = 0;
+            transaction_ = null;
+            onChanged();
+          }
+        } else {
+          if (transactionCase_ == 104) {
+            transactionCase_ = 0;
+            transaction_ = null;
+          }
+          proposalBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.vega.Proposal proposal = 104;</code>
+       */
+      public io.vegaprotocol.vega.Governance.Proposal.Builder getProposalBuilder() {
+        return getProposalFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.vega.Proposal proposal = 104;</code>
+       */
+      public io.vegaprotocol.vega.Governance.ProposalOrBuilder getProposalOrBuilder() {
+        if ((transactionCase_ == 104) && (proposalBuilder_ != null)) {
+          return proposalBuilder_.getMessageOrBuilder();
+        } else {
+          if (transactionCase_ == 104) {
+            return (io.vegaprotocol.vega.Governance.Proposal) transaction_;
+          }
+          return io.vegaprotocol.vega.Governance.Proposal.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.Proposal proposal = 104;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Governance.Proposal, io.vegaprotocol.vega.Governance.Proposal.Builder, io.vegaprotocol.vega.Governance.ProposalOrBuilder>
+          getProposalFieldBuilder() {
+        if (proposalBuilder_ == null) {
+          if (!(transactionCase_ == 104)) {
+            transaction_ = io.vegaprotocol.vega.Governance.Proposal.getDefaultInstance();
+          }
+          proposalBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Governance.Proposal, io.vegaprotocol.vega.Governance.Proposal.Builder, io.vegaprotocol.vega.Governance.ProposalOrBuilder>(
+                  (io.vegaprotocol.vega.Governance.Proposal) transaction_,
+                  getParentForChildren(),
+                  isClean());
+          transaction_ = null;
+        }
+        transactionCase_ = 104;
+        onChanged();;
+        return proposalBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder> voteBuilder_;
+      /**
+       * <code>.vega.Vote vote = 105;</code>
+       */
+      public boolean hasVote() {
+        return transactionCase_ == 105;
+      }
+      /**
+       * <code>.vega.Vote vote = 105;</code>
+       */
+      public io.vegaprotocol.vega.Governance.Vote getVote() {
+        if (voteBuilder_ == null) {
+          if (transactionCase_ == 105) {
+            return (io.vegaprotocol.vega.Governance.Vote) transaction_;
+          }
+          return io.vegaprotocol.vega.Governance.Vote.getDefaultInstance();
+        } else {
+          if (transactionCase_ == 105) {
+            return voteBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.Governance.Vote.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.Vote vote = 105;</code>
+       */
+      public Builder setVote(io.vegaprotocol.vega.Governance.Vote value) {
+        if (voteBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transaction_ = value;
+          onChanged();
+        } else {
+          voteBuilder_.setMessage(value);
+        }
+        transactionCase_ = 105;
+        return this;
+      }
+      /**
+       * <code>.vega.Vote vote = 105;</code>
+       */
+      public Builder setVote(
+          io.vegaprotocol.vega.Governance.Vote.Builder builderForValue) {
+        if (voteBuilder_ == null) {
+          transaction_ = builderForValue.build();
+          onChanged();
+        } else {
+          voteBuilder_.setMessage(builderForValue.build());
+        }
+        transactionCase_ = 105;
+        return this;
+      }
+      /**
+       * <code>.vega.Vote vote = 105;</code>
+       */
+      public Builder mergeVote(io.vegaprotocol.vega.Governance.Vote value) {
+        if (voteBuilder_ == null) {
+          if (transactionCase_ == 105 &&
+              transaction_ != io.vegaprotocol.vega.Governance.Vote.getDefaultInstance()) {
+            transaction_ = io.vegaprotocol.vega.Governance.Vote.newBuilder((io.vegaprotocol.vega.Governance.Vote) transaction_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            transaction_ = value;
+          }
+          onChanged();
+        } else {
+          if (transactionCase_ == 105) {
+            voteBuilder_.mergeFrom(value);
+          }
+          voteBuilder_.setMessage(value);
+        }
+        transactionCase_ = 105;
+        return this;
+      }
+      /**
+       * <code>.vega.Vote vote = 105;</code>
+       */
+      public Builder clearVote() {
+        if (voteBuilder_ == null) {
+          if (transactionCase_ == 105) {
+            transactionCase_ = 0;
+            transaction_ = null;
+            onChanged();
+          }
+        } else {
+          if (transactionCase_ == 105) {
+            transactionCase_ = 0;
+            transaction_ = null;
+          }
+          voteBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.vega.Vote vote = 105;</code>
+       */
+      public io.vegaprotocol.vega.Governance.Vote.Builder getVoteBuilder() {
+        return getVoteFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.vega.Vote vote = 105;</code>
+       */
+      public io.vegaprotocol.vega.Governance.VoteOrBuilder getVoteOrBuilder() {
+        if ((transactionCase_ == 105) && (voteBuilder_ != null)) {
+          return voteBuilder_.getMessageOrBuilder();
+        } else {
+          if (transactionCase_ == 105) {
+            return (io.vegaprotocol.vega.Governance.Vote) transaction_;
+          }
+          return io.vegaprotocol.vega.Governance.Vote.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.Vote vote = 105;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder>
+          getVoteFieldBuilder() {
+        if (voteBuilder_ == null) {
+          if (!(transactionCase_ == 105)) {
+            transaction_ = io.vegaprotocol.vega.Governance.Vote.getDefaultInstance();
+          }
+          voteBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder>(
+                  (io.vegaprotocol.vega.Governance.Vote) transaction_,
+                  getParentForChildren(),
+                  isClean());
+          transaction_ = null;
+        }
+        transactionCase_ = 105;
+        onChanged();;
+        return voteBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.TxErrorEvent)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.TxErrorEvent)
+    private static final io.vegaprotocol.vega.Events.TxErrorEvent DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Events.TxErrorEvent();
+    }
+
+    public static io.vegaprotocol.vega.Events.TxErrorEvent getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TxErrorEvent>
+        PARSER = new com.google.protobuf.AbstractParser<TxErrorEvent>() {
+      @java.lang.Override
+      public TxErrorEvent parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TxErrorEvent(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TxErrorEvent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TxErrorEvent> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Events.TxErrorEvent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9712,6 +11640,31 @@ public final class Events {
      */
     io.vegaprotocol.vega.Events.MarketEventOrBuilder getMarketOrBuilder();
 
+    /**
+     * <pre>
+     * Transaction error events - separate category, not included in ALL events
+     * </pre>
+     *
+     * <code>.vega.TxErrorEvent txErrEvent = 2001;</code>
+     */
+    boolean hasTxErrEvent();
+    /**
+     * <pre>
+     * Transaction error events - separate category, not included in ALL events
+     * </pre>
+     *
+     * <code>.vega.TxErrorEvent txErrEvent = 2001;</code>
+     */
+    io.vegaprotocol.vega.Events.TxErrorEvent getTxErrEvent();
+    /**
+     * <pre>
+     * Transaction error events - separate category, not included in ALL events
+     * </pre>
+     *
+     * <code>.vega.TxErrorEvent txErrEvent = 2001;</code>
+     */
+    io.vegaprotocol.vega.Events.TxErrorEventOrBuilder getTxErrEventOrBuilder();
+
     public io.vegaprotocol.vega.Events.BusEvent.EventCase getEventCase();
   }
   /**
@@ -10128,6 +12081,20 @@ public final class Events {
               eventCase_ = 1001;
               break;
             }
+            case 16010: {
+              io.vegaprotocol.vega.Events.TxErrorEvent.Builder subBuilder = null;
+              if (eventCase_ == 2001) {
+                subBuilder = ((io.vegaprotocol.vega.Events.TxErrorEvent) event_).toBuilder();
+              }
+              event_ =
+                  input.readMessage(io.vegaprotocol.vega.Events.TxErrorEvent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.Events.TxErrorEvent) event_);
+                event_ = subBuilder.buildPartial();
+              }
+              eventCase_ = 2001;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -10189,6 +12156,7 @@ public final class Events {
       NETWORKPARAMETER(123),
       LIQUIDITYPROVISION(124),
       MARKET(1001),
+      TXERREVENT(2001),
       EVENT_NOT_SET(0);
       private final int value;
       private EventCase(int value) {
@@ -10229,6 +12197,7 @@ public final class Events {
           case 123: return NETWORKPARAMETER;
           case 124: return LIQUIDITYPROVISION;
           case 1001: return MARKET;
+          case 2001: return TXERREVENT;
           case 0: return EVENT_NOT_SET;
           default: return null;
         }
@@ -11303,6 +13272,44 @@ public final class Events {
       return io.vegaprotocol.vega.Events.MarketEvent.getDefaultInstance();
     }
 
+    public static final int TXERREVENT_FIELD_NUMBER = 2001;
+    /**
+     * <pre>
+     * Transaction error events - separate category, not included in ALL events
+     * </pre>
+     *
+     * <code>.vega.TxErrorEvent txErrEvent = 2001;</code>
+     */
+    public boolean hasTxErrEvent() {
+      return eventCase_ == 2001;
+    }
+    /**
+     * <pre>
+     * Transaction error events - separate category, not included in ALL events
+     * </pre>
+     *
+     * <code>.vega.TxErrorEvent txErrEvent = 2001;</code>
+     */
+    public io.vegaprotocol.vega.Events.TxErrorEvent getTxErrEvent() {
+      if (eventCase_ == 2001) {
+         return (io.vegaprotocol.vega.Events.TxErrorEvent) event_;
+      }
+      return io.vegaprotocol.vega.Events.TxErrorEvent.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Transaction error events - separate category, not included in ALL events
+     * </pre>
+     *
+     * <code>.vega.TxErrorEvent txErrEvent = 2001;</code>
+     */
+    public io.vegaprotocol.vega.Events.TxErrorEventOrBuilder getTxErrEventOrBuilder() {
+      if (eventCase_ == 2001) {
+         return (io.vegaprotocol.vega.Events.TxErrorEvent) event_;
+      }
+      return io.vegaprotocol.vega.Events.TxErrorEvent.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -11400,6 +13407,9 @@ public final class Events {
       }
       if (eventCase_ == 1001) {
         output.writeMessage(1001, (io.vegaprotocol.vega.Events.MarketEvent) event_);
+      }
+      if (eventCase_ == 2001) {
+        output.writeMessage(2001, (io.vegaprotocol.vega.Events.TxErrorEvent) event_);
       }
       unknownFields.writeTo(output);
     }
@@ -11519,6 +13529,10 @@ public final class Events {
       if (eventCase_ == 1001) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1001, (io.vegaprotocol.vega.Events.MarketEvent) event_);
+      }
+      if (eventCase_ == 2001) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2001, (io.vegaprotocol.vega.Events.TxErrorEvent) event_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11642,6 +13656,10 @@ public final class Events {
           if (!getMarket()
               .equals(other.getMarket())) return false;
           break;
+        case 2001:
+          if (!getTxErrEvent()
+              .equals(other.getTxErrEvent())) return false;
+          break;
         case 0:
         default:
       }
@@ -11762,6 +13780,10 @@ public final class Events {
         case 1001:
           hash = (37 * hash) + MARKET_FIELD_NUMBER;
           hash = (53 * hash) + getMarket().hashCode();
+          break;
+        case 2001:
+          hash = (37 * hash) + TXERREVENT_FIELD_NUMBER;
+          hash = (53 * hash) + getTxErrEvent().hashCode();
           break;
         case 0:
         default:
@@ -12115,6 +14137,13 @@ public final class Events {
             result.event_ = marketBuilder_.build();
           }
         }
+        if (eventCase_ == 2001) {
+          if (txErrEventBuilder_ == null) {
+            result.event_ = event_;
+          } else {
+            result.event_ = txErrEventBuilder_.build();
+          }
+        }
         result.eventCase_ = eventCase_;
         onBuilt();
         return result;
@@ -12274,6 +14303,10 @@ public final class Events {
           }
           case MARKET: {
             mergeMarket(other.getMarket());
+            break;
+          }
+          case TXERREVENT: {
+            mergeTxErrEvent(other.getTxErrEvent());
             break;
           }
           case EVENT_NOT_SET: {
@@ -16866,6 +18899,178 @@ public final class Events {
         onChanged();;
         return marketBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Events.TxErrorEvent, io.vegaprotocol.vega.Events.TxErrorEvent.Builder, io.vegaprotocol.vega.Events.TxErrorEventOrBuilder> txErrEventBuilder_;
+      /**
+       * <pre>
+       * Transaction error events - separate category, not included in ALL events
+       * </pre>
+       *
+       * <code>.vega.TxErrorEvent txErrEvent = 2001;</code>
+       */
+      public boolean hasTxErrEvent() {
+        return eventCase_ == 2001;
+      }
+      /**
+       * <pre>
+       * Transaction error events - separate category, not included in ALL events
+       * </pre>
+       *
+       * <code>.vega.TxErrorEvent txErrEvent = 2001;</code>
+       */
+      public io.vegaprotocol.vega.Events.TxErrorEvent getTxErrEvent() {
+        if (txErrEventBuilder_ == null) {
+          if (eventCase_ == 2001) {
+            return (io.vegaprotocol.vega.Events.TxErrorEvent) event_;
+          }
+          return io.vegaprotocol.vega.Events.TxErrorEvent.getDefaultInstance();
+        } else {
+          if (eventCase_ == 2001) {
+            return txErrEventBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.Events.TxErrorEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Transaction error events - separate category, not included in ALL events
+       * </pre>
+       *
+       * <code>.vega.TxErrorEvent txErrEvent = 2001;</code>
+       */
+      public Builder setTxErrEvent(io.vegaprotocol.vega.Events.TxErrorEvent value) {
+        if (txErrEventBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          event_ = value;
+          onChanged();
+        } else {
+          txErrEventBuilder_.setMessage(value);
+        }
+        eventCase_ = 2001;
+        return this;
+      }
+      /**
+       * <pre>
+       * Transaction error events - separate category, not included in ALL events
+       * </pre>
+       *
+       * <code>.vega.TxErrorEvent txErrEvent = 2001;</code>
+       */
+      public Builder setTxErrEvent(
+          io.vegaprotocol.vega.Events.TxErrorEvent.Builder builderForValue) {
+        if (txErrEventBuilder_ == null) {
+          event_ = builderForValue.build();
+          onChanged();
+        } else {
+          txErrEventBuilder_.setMessage(builderForValue.build());
+        }
+        eventCase_ = 2001;
+        return this;
+      }
+      /**
+       * <pre>
+       * Transaction error events - separate category, not included in ALL events
+       * </pre>
+       *
+       * <code>.vega.TxErrorEvent txErrEvent = 2001;</code>
+       */
+      public Builder mergeTxErrEvent(io.vegaprotocol.vega.Events.TxErrorEvent value) {
+        if (txErrEventBuilder_ == null) {
+          if (eventCase_ == 2001 &&
+              event_ != io.vegaprotocol.vega.Events.TxErrorEvent.getDefaultInstance()) {
+            event_ = io.vegaprotocol.vega.Events.TxErrorEvent.newBuilder((io.vegaprotocol.vega.Events.TxErrorEvent) event_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            event_ = value;
+          }
+          onChanged();
+        } else {
+          if (eventCase_ == 2001) {
+            txErrEventBuilder_.mergeFrom(value);
+          }
+          txErrEventBuilder_.setMessage(value);
+        }
+        eventCase_ = 2001;
+        return this;
+      }
+      /**
+       * <pre>
+       * Transaction error events - separate category, not included in ALL events
+       * </pre>
+       *
+       * <code>.vega.TxErrorEvent txErrEvent = 2001;</code>
+       */
+      public Builder clearTxErrEvent() {
+        if (txErrEventBuilder_ == null) {
+          if (eventCase_ == 2001) {
+            eventCase_ = 0;
+            event_ = null;
+            onChanged();
+          }
+        } else {
+          if (eventCase_ == 2001) {
+            eventCase_ = 0;
+            event_ = null;
+          }
+          txErrEventBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Transaction error events - separate category, not included in ALL events
+       * </pre>
+       *
+       * <code>.vega.TxErrorEvent txErrEvent = 2001;</code>
+       */
+      public io.vegaprotocol.vega.Events.TxErrorEvent.Builder getTxErrEventBuilder() {
+        return getTxErrEventFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Transaction error events - separate category, not included in ALL events
+       * </pre>
+       *
+       * <code>.vega.TxErrorEvent txErrEvent = 2001;</code>
+       */
+      public io.vegaprotocol.vega.Events.TxErrorEventOrBuilder getTxErrEventOrBuilder() {
+        if ((eventCase_ == 2001) && (txErrEventBuilder_ != null)) {
+          return txErrEventBuilder_.getMessageOrBuilder();
+        } else {
+          if (eventCase_ == 2001) {
+            return (io.vegaprotocol.vega.Events.TxErrorEvent) event_;
+          }
+          return io.vegaprotocol.vega.Events.TxErrorEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Transaction error events - separate category, not included in ALL events
+       * </pre>
+       *
+       * <code>.vega.TxErrorEvent txErrEvent = 2001;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Events.TxErrorEvent, io.vegaprotocol.vega.Events.TxErrorEvent.Builder, io.vegaprotocol.vega.Events.TxErrorEventOrBuilder>
+          getTxErrEventFieldBuilder() {
+        if (txErrEventBuilder_ == null) {
+          if (!(eventCase_ == 2001)) {
+            event_ = io.vegaprotocol.vega.Events.TxErrorEvent.getDefaultInstance();
+          }
+          txErrEventBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Events.TxErrorEvent, io.vegaprotocol.vega.Events.TxErrorEvent.Builder, io.vegaprotocol.vega.Events.TxErrorEventOrBuilder>(
+                  (io.vegaprotocol.vega.Events.TxErrorEvent) event_,
+                  getParentForChildren(),
+                  isClean());
+          event_ = null;
+        }
+        eventCase_ = 2001;
+        onChanged();;
+        return txErrEventBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -16924,6 +19129,11 @@ public final class Events {
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_MarketEvent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_TxErrorEvent_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_TxErrorEvent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_TimeUpdate_descriptor;
   private static final
@@ -16987,75 +19197,84 @@ public final class Events {
       "s.proto\032\022proto/assets.proto\032\026proto/gover" +
       "nance.proto\032\020proto/vega.proto\"0\n\013MarketE" +
       "vent\022\020\n\010marketID\030\001 \001(\t\022\017\n\007payload\030\002 \001(\t\"" +
-      "\037\n\nTimeUpdate\022\021\n\ttimestamp\030\001 \001(\003\">\n\021Tran" +
-      "sferResponses\022)\n\tresponses\030\001 \003(\0132\026.vega." +
-      "TransferResponse\"]\n\022PositionResolution\022\020" +
-      "\n\010marketID\030\001 \001(\t\022\022\n\ndistressed\030\002 \001(\003\022\016\n\006" +
-      "closed\030\003 \001(\003\022\021\n\tmarkPrice\030\004 \001(\004\"F\n\021LossS" +
-      "ocialization\022\020\n\010marketID\030\001 \001(\t\022\017\n\007partyI" +
-      "D\030\002 \001(\t\022\016\n\006amount\030\003 \001(\003\".\n\017TradeSettleme" +
-      "nt\022\014\n\004size\030\001 \001(\003\022\r\n\005price\030\002 \001(\004\"s\n\016Settl" +
-      "ePosition\022\020\n\010marketID\030\001 \001(\t\022\017\n\007partyID\030\002" +
-      " \001(\t\022\r\n\005price\030\003 \001(\004\022/\n\020tradeSettlements\030" +
-      "\004 \003(\0132\025.vega.TradeSettlement\"T\n\020SettleDi" +
-      "stressed\022\020\n\010marketID\030\001 \001(\t\022\017\n\007partyID\030\002 " +
-      "\001(\t\022\016\n\006margin\030\003 \001(\004\022\r\n\005price\030\004 \001(\004\"&\n\nMa" +
-      "rketTick\022\n\n\002ID\030\001 \001(\t\022\014\n\004time\030\002 \001(\003\"\212\001\n\014A" +
-      "uctionEvent\022\020\n\010marketID\030\001 \001(\t\022\026\n\016opening" +
-      "Auction\030\002 \001(\010\022\r\n\005leave\030\003 \001(\010\022\r\n\005start\030\004 " +
-      "\001(\003\022\013\n\003end\030\005 \001(\003\022%\n\007trigger\030\006 \001(\0162\024.vega" +
-      ".AuctionTrigger\"\326\010\n\010BusEvent\022\n\n\002ID\030\001 \001(\t" +
-      "\022\r\n\005block\030\002 \001(\t\022 \n\004type\030\003 \001(\0162\022.vega.Bus" +
-      "EventType\022&\n\ntimeUpdate\030e \001(\0132\020.vega.Tim" +
-      "eUpdateH\000\0224\n\021transferResponses\030f \001(\0132\027.v" +
-      "ega.TransferResponsesH\000\0226\n\022positionResol" +
-      "ution\030g \001(\0132\030.vega.PositionResolutionH\000\022" +
-      "\034\n\005order\030h \001(\0132\013.vega.OrderH\000\022 \n\007account" +
-      "\030i \001(\0132\r.vega.AccountH\000\022\034\n\005party\030j \001(\0132\013" +
-      ".vega.PartyH\000\022\034\n\005trade\030k \001(\0132\013.vega.Trad" +
-      "eH\000\022*\n\014marginLevels\030l \001(\0132\022.vega.MarginL" +
-      "evelsH\000\022\"\n\010proposal\030m \001(\0132\016.vega.Proposa" +
-      "lH\000\022\032\n\004vote\030n \001(\0132\n.vega.VoteH\000\022&\n\nmarke" +
-      "tData\030o \001(\0132\020.vega.MarketDataH\000\022,\n\rnodeS" +
-      "ignature\030p \001(\0132\023.vega.NodeSignatureH\000\0224\n" +
-      "\021lossSocialization\030q \001(\0132\027.vega.LossSoci" +
-      "alizationH\000\022.\n\016settlePosition\030r \001(\0132\024.ve" +
-      "ga.SettlePositionH\000\0222\n\020settleDistressed\030" +
-      "s \001(\0132\026.vega.SettleDistressedH\000\022%\n\rmarke" +
-      "tCreated\030t \001(\0132\014.vega.MarketH\000\022\034\n\005asset\030" +
-      "u \001(\0132\013.vega.AssetH\000\022&\n\nmarketTick\030v \001(\013" +
-      "2\020.vega.MarketTickH\000\022&\n\nwithdrawal\030w \001(\013" +
-      "2\020.vega.WithdrawalH\000\022 \n\007deposit\030x \001(\0132\r." +
-      "vega.DepositH\000\022%\n\007auction\030y \001(\0132\022.vega.A" +
-      "uctionEventH\000\022&\n\nriskFactor\030z \001(\0132\020.vega" +
-      ".RiskFactorH\000\0222\n\020networkParameter\030{ \001(\0132" +
-      "\026.vega.NetworkParameterH\000\0226\n\022liquidityPr" +
-      "ovision\030| \001(\0132\030.vega.LiquidityProvisionH" +
-      "\000\022$\n\006market\030\351\007 \001(\0132\021.vega.MarketEventH\000B" +
-      "\007\n\005event*\350\006\n\014BusEventType\022\036\n\032BUS_EVENT_T" +
-      "YPE_UNSPECIFIED\020\000\022\026\n\022BUS_EVENT_TYPE_ALL\020" +
-      "\001\022\036\n\032BUS_EVENT_TYPE_TIME_UPDATE\020\002\022%\n!BUS" +
-      "_EVENT_TYPE_TRANSFER_RESPONSES\020\003\022&\n\"BUS_" +
-      "EVENT_TYPE_POSITION_RESOLUTION\020\004\022\030\n\024BUS_" +
-      "EVENT_TYPE_ORDER\020\005\022\032\n\026BUS_EVENT_TYPE_ACC" +
-      "OUNT\020\006\022\030\n\024BUS_EVENT_TYPE_PARTY\020\007\022\030\n\024BUS_" +
-      "EVENT_TYPE_TRADE\020\010\022 \n\034BUS_EVENT_TYPE_MAR" +
-      "GIN_LEVELS\020\t\022\033\n\027BUS_EVENT_TYPE_PROPOSAL\020" +
-      "\n\022\027\n\023BUS_EVENT_TYPE_VOTE\020\013\022\036\n\032BUS_EVENT_" +
-      "TYPE_MARKET_DATA\020\014\022!\n\035BUS_EVENT_TYPE_NOD" +
-      "E_SIGNATURE\020\r\022%\n!BUS_EVENT_TYPE_LOSS_SOC" +
-      "IALIZATION\020\016\022\"\n\036BUS_EVENT_TYPE_SETTLE_PO" +
-      "SITION\020\017\022$\n BUS_EVENT_TYPE_SETTLE_DISTRE" +
-      "SSED\020\020\022!\n\035BUS_EVENT_TYPE_MARKET_CREATED\020" +
-      "\021\022\030\n\024BUS_EVENT_TYPE_ASSET\020\022\022\036\n\032BUS_EVENT" +
-      "_TYPE_MARKET_TICK\020\023\022\035\n\031BUS_EVENT_TYPE_WI" +
-      "THDRAWAL\020\024\022\032\n\026BUS_EVENT_TYPE_DEPOSIT\020\025\022\032" +
-      "\n\026BUS_EVENT_TYPE_AUCTION\020\026\022\036\n\032BUS_EVENT_" +
-      "TYPE_RISK_FACTOR\020\027\022$\n BUS_EVENT_TYPE_NET" +
-      "WORK_PARAMETER\020\030\022&\n\"BUS_EVENT_TYPE_LIQUI" +
-      "DITY_PROVISION\020\031\022\031\n\025BUS_EVENT_TYPE_MARKE" +
-      "T\020eB7\n\024io.vegaprotocol.vegaZ\037code.vegapr" +
-      "otocol.io/vega/protob\006proto3"
+      "\226\002\n\014TxErrorEvent\022\017\n\007PartyID\030\001 \001(\t\022\016\n\006err" +
+      "Msg\030\002 \001(\t\0220\n\017orderSubmission\030e \001(\0132\025.veg" +
+      "a.OrderSubmissionH\000\022.\n\016orderAmendment\030f " +
+      "\001(\0132\024.vega.OrderAmendmentH\000\0224\n\021orderCanc" +
+      "ellation\030g \001(\0132\027.vega.OrderCancellationH" +
+      "\000\022\"\n\010proposal\030h \001(\0132\016.vega.ProposalH\000\022\032\n" +
+      "\004vote\030i \001(\0132\n.vega.VoteH\000B\r\n\013transaction" +
+      "\"\037\n\nTimeUpdate\022\021\n\ttimestamp\030\001 \001(\003\">\n\021Tra" +
+      "nsferResponses\022)\n\tresponses\030\001 \003(\0132\026.vega" +
+      ".TransferResponse\"]\n\022PositionResolution\022" +
+      "\020\n\010marketID\030\001 \001(\t\022\022\n\ndistressed\030\002 \001(\003\022\016\n" +
+      "\006closed\030\003 \001(\003\022\021\n\tmarkPrice\030\004 \001(\004\"F\n\021Loss" +
+      "Socialization\022\020\n\010marketID\030\001 \001(\t\022\017\n\007party" +
+      "ID\030\002 \001(\t\022\016\n\006amount\030\003 \001(\003\".\n\017TradeSettlem" +
+      "ent\022\014\n\004size\030\001 \001(\003\022\r\n\005price\030\002 \001(\004\"s\n\016Sett" +
+      "lePosition\022\020\n\010marketID\030\001 \001(\t\022\017\n\007partyID\030" +
+      "\002 \001(\t\022\r\n\005price\030\003 \001(\004\022/\n\020tradeSettlements" +
+      "\030\004 \003(\0132\025.vega.TradeSettlement\"T\n\020SettleD" +
+      "istressed\022\020\n\010marketID\030\001 \001(\t\022\017\n\007partyID\030\002" +
+      " \001(\t\022\016\n\006margin\030\003 \001(\004\022\r\n\005price\030\004 \001(\004\"&\n\nM" +
+      "arketTick\022\n\n\002ID\030\001 \001(\t\022\014\n\004time\030\002 \001(\003\"\212\001\n\014" +
+      "AuctionEvent\022\020\n\010marketID\030\001 \001(\t\022\026\n\016openin" +
+      "gAuction\030\002 \001(\010\022\r\n\005leave\030\003 \001(\010\022\r\n\005start\030\004" +
+      " \001(\003\022\013\n\003end\030\005 \001(\003\022%\n\007trigger\030\006 \001(\0162\024.veg" +
+      "a.AuctionTrigger\"\201\t\n\010BusEvent\022\n\n\002ID\030\001 \001(" +
+      "\t\022\r\n\005block\030\002 \001(\t\022 \n\004type\030\003 \001(\0162\022.vega.Bu" +
+      "sEventType\022&\n\ntimeUpdate\030e \001(\0132\020.vega.Ti" +
+      "meUpdateH\000\0224\n\021transferResponses\030f \001(\0132\027." +
+      "vega.TransferResponsesH\000\0226\n\022positionReso" +
+      "lution\030g \001(\0132\030.vega.PositionResolutionH\000" +
+      "\022\034\n\005order\030h \001(\0132\013.vega.OrderH\000\022 \n\007accoun" +
+      "t\030i \001(\0132\r.vega.AccountH\000\022\034\n\005party\030j \001(\0132" +
+      "\013.vega.PartyH\000\022\034\n\005trade\030k \001(\0132\013.vega.Tra" +
+      "deH\000\022*\n\014marginLevels\030l \001(\0132\022.vega.Margin" +
+      "LevelsH\000\022\"\n\010proposal\030m \001(\0132\016.vega.Propos" +
+      "alH\000\022\032\n\004vote\030n \001(\0132\n.vega.VoteH\000\022&\n\nmark" +
+      "etData\030o \001(\0132\020.vega.MarketDataH\000\022,\n\rnode" +
+      "Signature\030p \001(\0132\023.vega.NodeSignatureH\000\0224" +
+      "\n\021lossSocialization\030q \001(\0132\027.vega.LossSoc" +
+      "ializationH\000\022.\n\016settlePosition\030r \001(\0132\024.v" +
+      "ega.SettlePositionH\000\0222\n\020settleDistressed" +
+      "\030s \001(\0132\026.vega.SettleDistressedH\000\022%\n\rmark" +
+      "etCreated\030t \001(\0132\014.vega.MarketH\000\022\034\n\005asset" +
+      "\030u \001(\0132\013.vega.AssetH\000\022&\n\nmarketTick\030v \001(" +
+      "\0132\020.vega.MarketTickH\000\022&\n\nwithdrawal\030w \001(" +
+      "\0132\020.vega.WithdrawalH\000\022 \n\007deposit\030x \001(\0132\r" +
+      ".vega.DepositH\000\022%\n\007auction\030y \001(\0132\022.vega." +
+      "AuctionEventH\000\022&\n\nriskFactor\030z \001(\0132\020.veg" +
+      "a.RiskFactorH\000\0222\n\020networkParameter\030{ \001(\013" +
+      "2\026.vega.NetworkParameterH\000\0226\n\022liquidityP" +
+      "rovision\030| \001(\0132\030.vega.LiquidityProvision" +
+      "H\000\022$\n\006market\030\351\007 \001(\0132\021.vega.MarketEventH\000" +
+      "\022)\n\ntxErrEvent\030\321\017 \001(\0132\022.vega.TxErrorEven" +
+      "tH\000B\007\n\005event*\206\007\n\014BusEventType\022\036\n\032BUS_EVE" +
+      "NT_TYPE_UNSPECIFIED\020\000\022\026\n\022BUS_EVENT_TYPE_" +
+      "ALL\020\001\022\036\n\032BUS_EVENT_TYPE_TIME_UPDATE\020\002\022%\n" +
+      "!BUS_EVENT_TYPE_TRANSFER_RESPONSES\020\003\022&\n\"" +
+      "BUS_EVENT_TYPE_POSITION_RESOLUTION\020\004\022\030\n\024" +
+      "BUS_EVENT_TYPE_ORDER\020\005\022\032\n\026BUS_EVENT_TYPE" +
+      "_ACCOUNT\020\006\022\030\n\024BUS_EVENT_TYPE_PARTY\020\007\022\030\n\024" +
+      "BUS_EVENT_TYPE_TRADE\020\010\022 \n\034BUS_EVENT_TYPE" +
+      "_MARGIN_LEVELS\020\t\022\033\n\027BUS_EVENT_TYPE_PROPO" +
+      "SAL\020\n\022\027\n\023BUS_EVENT_TYPE_VOTE\020\013\022\036\n\032BUS_EV" +
+      "ENT_TYPE_MARKET_DATA\020\014\022!\n\035BUS_EVENT_TYPE" +
+      "_NODE_SIGNATURE\020\r\022%\n!BUS_EVENT_TYPE_LOSS" +
+      "_SOCIALIZATION\020\016\022\"\n\036BUS_EVENT_TYPE_SETTL" +
+      "E_POSITION\020\017\022$\n BUS_EVENT_TYPE_SETTLE_DI" +
+      "STRESSED\020\020\022!\n\035BUS_EVENT_TYPE_MARKET_CREA" +
+      "TED\020\021\022\030\n\024BUS_EVENT_TYPE_ASSET\020\022\022\036\n\032BUS_E" +
+      "VENT_TYPE_MARKET_TICK\020\023\022\035\n\031BUS_EVENT_TYP" +
+      "E_WITHDRAWAL\020\024\022\032\n\026BUS_EVENT_TYPE_DEPOSIT" +
+      "\020\025\022\032\n\026BUS_EVENT_TYPE_AUCTION\020\026\022\036\n\032BUS_EV" +
+      "ENT_TYPE_RISK_FACTOR\020\027\022$\n BUS_EVENT_TYPE" +
+      "_NETWORK_PARAMETER\020\030\022&\n\"BUS_EVENT_TYPE_L" +
+      "IQUIDITY_PROVISION\020\031\022\031\n\025BUS_EVENT_TYPE_M" +
+      "ARKET\020e\022\034\n\027BUS_EVENT_TYPE_TX_ERROR\020\311\001B7\n" +
+      "\024io.vegaprotocol.vegaZ\037code.vegaprotocol" +
+      ".io/vega/protob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -17079,66 +19298,72 @@ public final class Events {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_MarketEvent_descriptor,
         new java.lang.String[] { "MarketID", "Payload", });
-    internal_static_vega_TimeUpdate_descriptor =
+    internal_static_vega_TxErrorEvent_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_vega_TxErrorEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_TxErrorEvent_descriptor,
+        new java.lang.String[] { "PartyID", "ErrMsg", "OrderSubmission", "OrderAmendment", "OrderCancellation", "Proposal", "Vote", "Transaction", });
+    internal_static_vega_TimeUpdate_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_vega_TimeUpdate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_TimeUpdate_descriptor,
         new java.lang.String[] { "Timestamp", });
     internal_static_vega_TransferResponses_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_vega_TransferResponses_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_TransferResponses_descriptor,
         new java.lang.String[] { "Responses", });
     internal_static_vega_PositionResolution_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_vega_PositionResolution_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_PositionResolution_descriptor,
         new java.lang.String[] { "MarketID", "Distressed", "Closed", "MarkPrice", });
     internal_static_vega_LossSocialization_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_vega_LossSocialization_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_LossSocialization_descriptor,
         new java.lang.String[] { "MarketID", "PartyID", "Amount", });
     internal_static_vega_TradeSettlement_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_vega_TradeSettlement_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_TradeSettlement_descriptor,
         new java.lang.String[] { "Size", "Price", });
     internal_static_vega_SettlePosition_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_vega_SettlePosition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_SettlePosition_descriptor,
         new java.lang.String[] { "MarketID", "PartyID", "Price", "TradeSettlements", });
     internal_static_vega_SettleDistressed_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_vega_SettleDistressed_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_SettleDistressed_descriptor,
         new java.lang.String[] { "MarketID", "PartyID", "Margin", "Price", });
     internal_static_vega_MarketTick_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_vega_MarketTick_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_MarketTick_descriptor,
         new java.lang.String[] { "ID", "Time", });
     internal_static_vega_AuctionEvent_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_vega_AuctionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_AuctionEvent_descriptor,
         new java.lang.String[] { "MarketID", "OpeningAuction", "Leave", "Start", "End", "Trigger", });
     internal_static_vega_BusEvent_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_vega_BusEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_BusEvent_descriptor,
-        new java.lang.String[] { "ID", "Block", "Type", "TimeUpdate", "TransferResponses", "PositionResolution", "Order", "Account", "Party", "Trade", "MarginLevels", "Proposal", "Vote", "MarketData", "NodeSignature", "LossSocialization", "SettlePosition", "SettleDistressed", "MarketCreated", "Asset", "MarketTick", "Withdrawal", "Deposit", "Auction", "RiskFactor", "NetworkParameter", "LiquidityProvision", "Market", "Event", });
+        new java.lang.String[] { "ID", "Block", "Type", "TimeUpdate", "TransferResponses", "PositionResolution", "Order", "Account", "Party", "Trade", "MarginLevels", "Proposal", "Vote", "MarketData", "NodeSignature", "LossSocialization", "SettlePosition", "SettleDistressed", "MarketCreated", "Asset", "MarketTick", "Withdrawal", "Deposit", "Auction", "RiskFactor", "NetworkParameter", "LiquidityProvision", "Market", "TxErrEvent", "Event", });
     io.vegaprotocol.vega.Markets.getDescriptor();
     io.vegaprotocol.vega.Assets.getDescriptor();
     io.vegaprotocol.vega.Governance.getDescriptor();

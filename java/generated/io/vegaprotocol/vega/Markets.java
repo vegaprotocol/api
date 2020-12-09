@@ -4580,28 +4580,10 @@ public final class Markets {
 
     /**
      * <pre>
-     * Base name of the instrument.
-     * </pre>
-     *
-     * <code>string baseName = 4;</code>
-     */
-    java.lang.String getBaseName();
-    /**
-     * <pre>
-     * Base name of the instrument.
-     * </pre>
-     *
-     * <code>string baseName = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getBaseNameBytes();
-
-    /**
-     * <pre>
      * Quote name of the instrument.
      * </pre>
      *
-     * <code>string quoteName = 5;</code>
+     * <code>string quoteName = 4;</code>
      */
     java.lang.String getQuoteName();
     /**
@@ -4609,7 +4591,7 @@ public final class Markets {
      * Quote name of the instrument.
      * </pre>
      *
-     * <code>string quoteName = 5;</code>
+     * <code>string quoteName = 4;</code>
      */
     com.google.protobuf.ByteString
         getQuoteNameBytes();
@@ -4619,7 +4601,7 @@ public final class Markets {
      * A collection of instrument meta-data.
      * </pre>
      *
-     * <code>.vega.InstrumentMetadata metadata = 6;</code>
+     * <code>.vega.InstrumentMetadata metadata = 5;</code>
      */
     boolean hasMetadata();
     /**
@@ -4627,7 +4609,7 @@ public final class Markets {
      * A collection of instrument meta-data.
      * </pre>
      *
-     * <code>.vega.InstrumentMetadata metadata = 6;</code>
+     * <code>.vega.InstrumentMetadata metadata = 5;</code>
      */
     io.vegaprotocol.vega.Markets.InstrumentMetadata getMetadata();
     /**
@@ -4635,7 +4617,7 @@ public final class Markets {
      * A collection of instrument meta-data.
      * </pre>
      *
-     * <code>.vega.InstrumentMetadata metadata = 6;</code>
+     * <code>.vega.InstrumentMetadata metadata = 5;</code>
      */
     io.vegaprotocol.vega.Markets.InstrumentMetadataOrBuilder getMetadataOrBuilder();
 
@@ -4644,7 +4626,7 @@ public final class Markets {
      * An initial mark price for the instrument.
      * </pre>
      *
-     * <code>uint64 initialMarkPrice = 7;</code>
+     * <code>uint64 initialMarkPrice = 6;</code>
      */
     long getInitialMarkPrice();
 
@@ -4695,7 +4677,6 @@ public final class Markets {
       id_ = "";
       code_ = "";
       name_ = "";
-      baseName_ = "";
       quoteName_ = "";
     }
 
@@ -4744,16 +4725,10 @@ public final class Markets {
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              baseName_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
               quoteName_ = s;
               break;
             }
-            case 50: {
+            case 42: {
               io.vegaprotocol.vega.Markets.InstrumentMetadata.Builder subBuilder = null;
               if (metadata_ != null) {
                 subBuilder = metadata_.toBuilder();
@@ -4766,7 +4741,7 @@ public final class Markets {
 
               break;
             }
-            case 56: {
+            case 48: {
 
               initialMarkPrice_ = input.readUInt64();
               break;
@@ -4979,56 +4954,14 @@ public final class Markets {
       }
     }
 
-    public static final int BASENAME_FIELD_NUMBER = 4;
-    private volatile java.lang.Object baseName_;
-    /**
-     * <pre>
-     * Base name of the instrument.
-     * </pre>
-     *
-     * <code>string baseName = 4;</code>
-     */
-    public java.lang.String getBaseName() {
-      java.lang.Object ref = baseName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        baseName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Base name of the instrument.
-     * </pre>
-     *
-     * <code>string baseName = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getBaseNameBytes() {
-      java.lang.Object ref = baseName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        baseName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int QUOTENAME_FIELD_NUMBER = 5;
+    public static final int QUOTENAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object quoteName_;
     /**
      * <pre>
      * Quote name of the instrument.
      * </pre>
      *
-     * <code>string quoteName = 5;</code>
+     * <code>string quoteName = 4;</code>
      */
     public java.lang.String getQuoteName() {
       java.lang.Object ref = quoteName_;
@@ -5047,7 +4980,7 @@ public final class Markets {
      * Quote name of the instrument.
      * </pre>
      *
-     * <code>string quoteName = 5;</code>
+     * <code>string quoteName = 4;</code>
      */
     public com.google.protobuf.ByteString
         getQuoteNameBytes() {
@@ -5063,14 +4996,14 @@ public final class Markets {
       }
     }
 
-    public static final int METADATA_FIELD_NUMBER = 6;
+    public static final int METADATA_FIELD_NUMBER = 5;
     private io.vegaprotocol.vega.Markets.InstrumentMetadata metadata_;
     /**
      * <pre>
      * A collection of instrument meta-data.
      * </pre>
      *
-     * <code>.vega.InstrumentMetadata metadata = 6;</code>
+     * <code>.vega.InstrumentMetadata metadata = 5;</code>
      */
     public boolean hasMetadata() {
       return metadata_ != null;
@@ -5080,7 +5013,7 @@ public final class Markets {
      * A collection of instrument meta-data.
      * </pre>
      *
-     * <code>.vega.InstrumentMetadata metadata = 6;</code>
+     * <code>.vega.InstrumentMetadata metadata = 5;</code>
      */
     public io.vegaprotocol.vega.Markets.InstrumentMetadata getMetadata() {
       return metadata_ == null ? io.vegaprotocol.vega.Markets.InstrumentMetadata.getDefaultInstance() : metadata_;
@@ -5090,20 +5023,20 @@ public final class Markets {
      * A collection of instrument meta-data.
      * </pre>
      *
-     * <code>.vega.InstrumentMetadata metadata = 6;</code>
+     * <code>.vega.InstrumentMetadata metadata = 5;</code>
      */
     public io.vegaprotocol.vega.Markets.InstrumentMetadataOrBuilder getMetadataOrBuilder() {
       return getMetadata();
     }
 
-    public static final int INITIALMARKPRICE_FIELD_NUMBER = 7;
+    public static final int INITIALMARKPRICE_FIELD_NUMBER = 6;
     private long initialMarkPrice_;
     /**
      * <pre>
      * An initial mark price for the instrument.
      * </pre>
      *
-     * <code>uint64 initialMarkPrice = 7;</code>
+     * <code>uint64 initialMarkPrice = 6;</code>
      */
     public long getInitialMarkPrice() {
       return initialMarkPrice_;
@@ -5170,17 +5103,14 @@ public final class Markets {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
-      if (!getBaseNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, baseName_);
-      }
       if (!getQuoteNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, quoteName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, quoteName_);
       }
       if (metadata_ != null) {
-        output.writeMessage(6, getMetadata());
+        output.writeMessage(5, getMetadata());
       }
       if (initialMarkPrice_ != 0L) {
-        output.writeUInt64(7, initialMarkPrice_);
+        output.writeUInt64(6, initialMarkPrice_);
       }
       if (productCase_ == 100) {
         output.writeMessage(100, (io.vegaprotocol.vega.Markets.Future) product_);
@@ -5203,19 +5133,16 @@ public final class Markets {
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
-      if (!getBaseNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, baseName_);
-      }
       if (!getQuoteNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, quoteName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, quoteName_);
       }
       if (metadata_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getMetadata());
+          .computeMessageSize(5, getMetadata());
       }
       if (initialMarkPrice_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(7, initialMarkPrice_);
+          .computeUInt64Size(6, initialMarkPrice_);
       }
       if (productCase_ == 100) {
         size += com.google.protobuf.CodedOutputStream
@@ -5242,8 +5169,6 @@ public final class Markets {
           .equals(other.getCode())) return false;
       if (!getName()
           .equals(other.getName())) return false;
-      if (!getBaseName()
-          .equals(other.getBaseName())) return false;
       if (!getQuoteName()
           .equals(other.getQuoteName())) return false;
       if (hasMetadata() != other.hasMetadata()) return false;
@@ -5279,8 +5204,6 @@ public final class Markets {
       hash = (53 * hash) + getCode().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + BASENAME_FIELD_NUMBER;
-      hash = (53 * hash) + getBaseName().hashCode();
       hash = (37 * hash) + QUOTENAME_FIELD_NUMBER;
       hash = (53 * hash) + getQuoteName().hashCode();
       if (hasMetadata()) {
@@ -5441,8 +5364,6 @@ public final class Markets {
 
         name_ = "";
 
-        baseName_ = "";
-
         quoteName_ = "";
 
         if (metadataBuilder_ == null) {
@@ -5484,7 +5405,6 @@ public final class Markets {
         result.id_ = id_;
         result.code_ = code_;
         result.name_ = name_;
-        result.baseName_ = baseName_;
         result.quoteName_ = quoteName_;
         if (metadataBuilder_ == null) {
           result.metadata_ = metadata_;
@@ -5558,10 +5478,6 @@ public final class Markets {
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
-          onChanged();
-        }
-        if (!other.getBaseName().isEmpty()) {
-          baseName_ = other.baseName_;
           onChanged();
         }
         if (!other.getQuoteName().isEmpty()) {
@@ -5894,102 +5810,13 @@ public final class Markets {
         return this;
       }
 
-      private java.lang.Object baseName_ = "";
-      /**
-       * <pre>
-       * Base name of the instrument.
-       * </pre>
-       *
-       * <code>string baseName = 4;</code>
-       */
-      public java.lang.String getBaseName() {
-        java.lang.Object ref = baseName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          baseName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Base name of the instrument.
-       * </pre>
-       *
-       * <code>string baseName = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getBaseNameBytes() {
-        java.lang.Object ref = baseName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          baseName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Base name of the instrument.
-       * </pre>
-       *
-       * <code>string baseName = 4;</code>
-       */
-      public Builder setBaseName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        baseName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Base name of the instrument.
-       * </pre>
-       *
-       * <code>string baseName = 4;</code>
-       */
-      public Builder clearBaseName() {
-
-        baseName_ = getDefaultInstance().getBaseName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Base name of the instrument.
-       * </pre>
-       *
-       * <code>string baseName = 4;</code>
-       */
-      public Builder setBaseNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        baseName_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object quoteName_ = "";
       /**
        * <pre>
        * Quote name of the instrument.
        * </pre>
        *
-       * <code>string quoteName = 5;</code>
+       * <code>string quoteName = 4;</code>
        */
       public java.lang.String getQuoteName() {
         java.lang.Object ref = quoteName_;
@@ -6008,7 +5835,7 @@ public final class Markets {
        * Quote name of the instrument.
        * </pre>
        *
-       * <code>string quoteName = 5;</code>
+       * <code>string quoteName = 4;</code>
        */
       public com.google.protobuf.ByteString
           getQuoteNameBytes() {
@@ -6028,7 +5855,7 @@ public final class Markets {
        * Quote name of the instrument.
        * </pre>
        *
-       * <code>string quoteName = 5;</code>
+       * <code>string quoteName = 4;</code>
        */
       public Builder setQuoteName(
           java.lang.String value) {
@@ -6045,7 +5872,7 @@ public final class Markets {
        * Quote name of the instrument.
        * </pre>
        *
-       * <code>string quoteName = 5;</code>
+       * <code>string quoteName = 4;</code>
        */
       public Builder clearQuoteName() {
 
@@ -6058,7 +5885,7 @@ public final class Markets {
        * Quote name of the instrument.
        * </pre>
        *
-       * <code>string quoteName = 5;</code>
+       * <code>string quoteName = 4;</code>
        */
       public Builder setQuoteNameBytes(
           com.google.protobuf.ByteString value) {
@@ -6080,7 +5907,7 @@ public final class Markets {
        * A collection of instrument meta-data.
        * </pre>
        *
-       * <code>.vega.InstrumentMetadata metadata = 6;</code>
+       * <code>.vega.InstrumentMetadata metadata = 5;</code>
        */
       public boolean hasMetadata() {
         return metadataBuilder_ != null || metadata_ != null;
@@ -6090,7 +5917,7 @@ public final class Markets {
        * A collection of instrument meta-data.
        * </pre>
        *
-       * <code>.vega.InstrumentMetadata metadata = 6;</code>
+       * <code>.vega.InstrumentMetadata metadata = 5;</code>
        */
       public io.vegaprotocol.vega.Markets.InstrumentMetadata getMetadata() {
         if (metadataBuilder_ == null) {
@@ -6104,7 +5931,7 @@ public final class Markets {
        * A collection of instrument meta-data.
        * </pre>
        *
-       * <code>.vega.InstrumentMetadata metadata = 6;</code>
+       * <code>.vega.InstrumentMetadata metadata = 5;</code>
        */
       public Builder setMetadata(io.vegaprotocol.vega.Markets.InstrumentMetadata value) {
         if (metadataBuilder_ == null) {
@@ -6124,7 +5951,7 @@ public final class Markets {
        * A collection of instrument meta-data.
        * </pre>
        *
-       * <code>.vega.InstrumentMetadata metadata = 6;</code>
+       * <code>.vega.InstrumentMetadata metadata = 5;</code>
        */
       public Builder setMetadata(
           io.vegaprotocol.vega.Markets.InstrumentMetadata.Builder builderForValue) {
@@ -6142,7 +5969,7 @@ public final class Markets {
        * A collection of instrument meta-data.
        * </pre>
        *
-       * <code>.vega.InstrumentMetadata metadata = 6;</code>
+       * <code>.vega.InstrumentMetadata metadata = 5;</code>
        */
       public Builder mergeMetadata(io.vegaprotocol.vega.Markets.InstrumentMetadata value) {
         if (metadataBuilder_ == null) {
@@ -6164,7 +5991,7 @@ public final class Markets {
        * A collection of instrument meta-data.
        * </pre>
        *
-       * <code>.vega.InstrumentMetadata metadata = 6;</code>
+       * <code>.vega.InstrumentMetadata metadata = 5;</code>
        */
       public Builder clearMetadata() {
         if (metadataBuilder_ == null) {
@@ -6182,7 +6009,7 @@ public final class Markets {
        * A collection of instrument meta-data.
        * </pre>
        *
-       * <code>.vega.InstrumentMetadata metadata = 6;</code>
+       * <code>.vega.InstrumentMetadata metadata = 5;</code>
        */
       public io.vegaprotocol.vega.Markets.InstrumentMetadata.Builder getMetadataBuilder() {
 
@@ -6194,7 +6021,7 @@ public final class Markets {
        * A collection of instrument meta-data.
        * </pre>
        *
-       * <code>.vega.InstrumentMetadata metadata = 6;</code>
+       * <code>.vega.InstrumentMetadata metadata = 5;</code>
        */
       public io.vegaprotocol.vega.Markets.InstrumentMetadataOrBuilder getMetadataOrBuilder() {
         if (metadataBuilder_ != null) {
@@ -6209,7 +6036,7 @@ public final class Markets {
        * A collection of instrument meta-data.
        * </pre>
        *
-       * <code>.vega.InstrumentMetadata metadata = 6;</code>
+       * <code>.vega.InstrumentMetadata metadata = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.InstrumentMetadata, io.vegaprotocol.vega.Markets.InstrumentMetadata.Builder, io.vegaprotocol.vega.Markets.InstrumentMetadataOrBuilder>
@@ -6231,7 +6058,7 @@ public final class Markets {
        * An initial mark price for the instrument.
        * </pre>
        *
-       * <code>uint64 initialMarkPrice = 7;</code>
+       * <code>uint64 initialMarkPrice = 6;</code>
        */
       public long getInitialMarkPrice() {
         return initialMarkPrice_;
@@ -6241,7 +6068,7 @@ public final class Markets {
        * An initial mark price for the instrument.
        * </pre>
        *
-       * <code>uint64 initialMarkPrice = 7;</code>
+       * <code>uint64 initialMarkPrice = 6;</code>
        */
       public Builder setInitialMarkPrice(long value) {
 
@@ -6254,7 +6081,7 @@ public final class Markets {
        * An initial mark price for the instrument.
        * </pre>
        *
-       * <code>uint64 initialMarkPrice = 7;</code>
+       * <code>uint64 initialMarkPrice = 6;</code>
        */
       public Builder clearInitialMarkPrice() {
 
@@ -8714,6 +8541,15 @@ public final class Markets {
      * <code>double minMoveDown = 4 [(.validator.field) = { ... }</code>
      */
     double getMinMoveDown();
+
+    /**
+     * <pre>
+     * Pre-defined constant probability of trading
+     * </pre>
+     *
+     * <code>double probabilityOfTrading = 5 [(.validator.field) = { ... }</code>
+     */
+    double getProbabilityOfTrading();
   }
   /**
    * <pre>
@@ -8776,6 +8612,11 @@ public final class Markets {
             case 33: {
 
               minMoveDown_ = input.readDouble();
+              break;
+            }
+            case 41: {
+
+              probabilityOfTrading_ = input.readDouble();
               break;
             }
             default: {
@@ -8862,6 +8703,19 @@ public final class Markets {
       return minMoveDown_;
     }
 
+    public static final int PROBABILITYOFTRADING_FIELD_NUMBER = 5;
+    private double probabilityOfTrading_;
+    /**
+     * <pre>
+     * Pre-defined constant probability of trading
+     * </pre>
+     *
+     * <code>double probabilityOfTrading = 5 [(.validator.field) = { ... }</code>
+     */
+    public double getProbabilityOfTrading() {
+      return probabilityOfTrading_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8888,6 +8742,9 @@ public final class Markets {
       if (minMoveDown_ != 0D) {
         output.writeDouble(4, minMoveDown_);
       }
+      if (probabilityOfTrading_ != 0D) {
+        output.writeDouble(5, probabilityOfTrading_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -8912,6 +8769,10 @@ public final class Markets {
       if (minMoveDown_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(4, minMoveDown_);
+      }
+      if (probabilityOfTrading_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(5, probabilityOfTrading_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8940,6 +8801,9 @@ public final class Markets {
       if (java.lang.Double.doubleToLongBits(getMinMoveDown())
           != java.lang.Double.doubleToLongBits(
               other.getMinMoveDown())) return false;
+      if (java.lang.Double.doubleToLongBits(getProbabilityOfTrading())
+          != java.lang.Double.doubleToLongBits(
+              other.getProbabilityOfTrading())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8963,6 +8827,9 @@ public final class Markets {
       hash = (37 * hash) + MINMOVEDOWN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getMinMoveDown()));
+      hash = (37 * hash) + PROBABILITYOFTRADING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getProbabilityOfTrading()));
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9108,6 +8975,8 @@ public final class Markets {
 
         minMoveDown_ = 0D;
 
+        probabilityOfTrading_ = 0D;
+
         return this;
       }
 
@@ -9138,6 +9007,7 @@ public final class Markets {
         result.factorShort_ = factorShort_;
         result.maxMoveUp_ = maxMoveUp_;
         result.minMoveDown_ = minMoveDown_;
+        result.probabilityOfTrading_ = probabilityOfTrading_;
         onBuilt();
         return result;
       }
@@ -9197,6 +9067,9 @@ public final class Markets {
         }
         if (other.getMinMoveDown() != 0D) {
           setMinMoveDown(other.getMinMoveDown());
+        }
+        if (other.getProbabilityOfTrading() != 0D) {
+          setProbabilityOfTrading(other.getProbabilityOfTrading());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9375,6 +9248,44 @@ public final class Markets {
       public Builder clearMinMoveDown() {
 
         minMoveDown_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double probabilityOfTrading_ ;
+      /**
+       * <pre>
+       * Pre-defined constant probability of trading
+       * </pre>
+       *
+       * <code>double probabilityOfTrading = 5 [(.validator.field) = { ... }</code>
+       */
+      public double getProbabilityOfTrading() {
+        return probabilityOfTrading_;
+      }
+      /**
+       * <pre>
+       * Pre-defined constant probability of trading
+       * </pre>
+       *
+       * <code>double probabilityOfTrading = 5 [(.validator.field) = { ... }</code>
+       */
+      public Builder setProbabilityOfTrading(double value) {
+
+        probabilityOfTrading_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Pre-defined constant probability of trading
+       * </pre>
+       *
+       * <code>double probabilityOfTrading = 5 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearProbabilityOfTrading() {
+
+        probabilityOfTrading_ = 0D;
         onChanged();
         return this;
       }
@@ -13940,8 +13851,8 @@ public final class Markets {
 
   }
 
-  public interface PriceMonitoringParametersOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:vega.PriceMonitoringParameters)
+  public interface PriceMonitoringTriggerOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.PriceMonitoringTrigger)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -13975,21 +13886,21 @@ public final class Markets {
   }
   /**
    * <pre>
-   * PriceMonitoringParameters holds together price projection horizon τ, probability level p, and auction extension duration
+   * PriceMonitoringTrigger holds together price projection horizon τ, probability level p, and auction extension duration
    * </pre>
    *
-   * Protobuf type {@code vega.PriceMonitoringParameters}
+   * Protobuf type {@code vega.PriceMonitoringTrigger}
    */
-  public  static final class PriceMonitoringParameters extends
+  public  static final class PriceMonitoringTrigger extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:vega.PriceMonitoringParameters)
-      PriceMonitoringParametersOrBuilder {
+      // @@protoc_insertion_point(message_implements:vega.PriceMonitoringTrigger)
+      PriceMonitoringTriggerOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use PriceMonitoringParameters.newBuilder() to construct.
-    private PriceMonitoringParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use PriceMonitoringTrigger.newBuilder() to construct.
+    private PriceMonitoringTrigger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private PriceMonitoringParameters() {
+    private PriceMonitoringTrigger() {
     }
 
     @java.lang.Override
@@ -13997,7 +13908,7 @@ public final class Markets {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PriceMonitoringParameters(
+    private PriceMonitoringTrigger(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -14052,15 +13963,15 @@ public final class Markets {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.vegaprotocol.vega.Markets.internal_static_vega_PriceMonitoringParameters_descriptor;
+      return io.vegaprotocol.vega.Markets.internal_static_vega_PriceMonitoringTrigger_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.vegaprotocol.vega.Markets.internal_static_vega_PriceMonitoringParameters_fieldAccessorTable
+      return io.vegaprotocol.vega.Markets.internal_static_vega_PriceMonitoringTrigger_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.vegaprotocol.vega.Markets.PriceMonitoringParameters.class, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder.class);
+              io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.class, io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder.class);
     }
 
     public static final int HORIZON_FIELD_NUMBER = 1;
@@ -14158,10 +14069,10 @@ public final class Markets {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof io.vegaprotocol.vega.Markets.PriceMonitoringParameters)) {
+      if (!(obj instanceof io.vegaprotocol.vega.Markets.PriceMonitoringTrigger)) {
         return super.equals(obj);
       }
-      io.vegaprotocol.vega.Markets.PriceMonitoringParameters other = (io.vegaprotocol.vega.Markets.PriceMonitoringParameters) obj;
+      io.vegaprotocol.vega.Markets.PriceMonitoringTrigger other = (io.vegaprotocol.vega.Markets.PriceMonitoringTrigger) obj;
 
       if (getHorizon()
           != other.getHorizon()) return false;
@@ -14195,69 +14106,69 @@ public final class Markets {
       return hash;
     }
 
-    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringTrigger parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringTrigger parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringTrigger parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringTrigger parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(byte[] data)
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringTrigger parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringTrigger parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(java.io.InputStream input)
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringTrigger parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringTrigger parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseDelimitedFrom(java.io.InputStream input)
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringTrigger parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseDelimitedFrom(
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringTrigger parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringTrigger parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringTrigger parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -14270,7 +14181,7 @@ public final class Markets {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(io.vegaprotocol.vega.Markets.PriceMonitoringParameters prototype) {
+    public static Builder newBuilder(io.vegaprotocol.vega.Markets.PriceMonitoringTrigger prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -14287,29 +14198,29 @@ public final class Markets {
     }
     /**
      * <pre>
-     * PriceMonitoringParameters holds together price projection horizon τ, probability level p, and auction extension duration
+     * PriceMonitoringTrigger holds together price projection horizon τ, probability level p, and auction extension duration
      * </pre>
      *
-     * Protobuf type {@code vega.PriceMonitoringParameters}
+     * Protobuf type {@code vega.PriceMonitoringTrigger}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:vega.PriceMonitoringParameters)
-        io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder {
+        // @@protoc_insertion_point(builder_implements:vega.PriceMonitoringTrigger)
+        io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return io.vegaprotocol.vega.Markets.internal_static_vega_PriceMonitoringParameters_descriptor;
+        return io.vegaprotocol.vega.Markets.internal_static_vega_PriceMonitoringTrigger_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.vegaprotocol.vega.Markets.internal_static_vega_PriceMonitoringParameters_fieldAccessorTable
+        return io.vegaprotocol.vega.Markets.internal_static_vega_PriceMonitoringTrigger_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.vegaprotocol.vega.Markets.PriceMonitoringParameters.class, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder.class);
+                io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.class, io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder.class);
       }
 
-      // Construct using io.vegaprotocol.vega.Markets.PriceMonitoringParameters.newBuilder()
+      // Construct using io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -14339,17 +14250,17 @@ public final class Markets {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return io.vegaprotocol.vega.Markets.internal_static_vega_PriceMonitoringParameters_descriptor;
+        return io.vegaprotocol.vega.Markets.internal_static_vega_PriceMonitoringTrigger_descriptor;
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.Markets.PriceMonitoringParameters getDefaultInstanceForType() {
-        return io.vegaprotocol.vega.Markets.PriceMonitoringParameters.getDefaultInstance();
+      public io.vegaprotocol.vega.Markets.PriceMonitoringTrigger getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.getDefaultInstance();
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.Markets.PriceMonitoringParameters build() {
-        io.vegaprotocol.vega.Markets.PriceMonitoringParameters result = buildPartial();
+      public io.vegaprotocol.vega.Markets.PriceMonitoringTrigger build() {
+        io.vegaprotocol.vega.Markets.PriceMonitoringTrigger result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -14357,8 +14268,8 @@ public final class Markets {
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.Markets.PriceMonitoringParameters buildPartial() {
-        io.vegaprotocol.vega.Markets.PriceMonitoringParameters result = new io.vegaprotocol.vega.Markets.PriceMonitoringParameters(this);
+      public io.vegaprotocol.vega.Markets.PriceMonitoringTrigger buildPartial() {
+        io.vegaprotocol.vega.Markets.PriceMonitoringTrigger result = new io.vegaprotocol.vega.Markets.PriceMonitoringTrigger(this);
         result.horizon_ = horizon_;
         result.probability_ = probability_;
         result.auctionExtension_ = auctionExtension_;
@@ -14400,16 +14311,16 @@ public final class Markets {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.vegaprotocol.vega.Markets.PriceMonitoringParameters) {
-          return mergeFrom((io.vegaprotocol.vega.Markets.PriceMonitoringParameters)other);
+        if (other instanceof io.vegaprotocol.vega.Markets.PriceMonitoringTrigger) {
+          return mergeFrom((io.vegaprotocol.vega.Markets.PriceMonitoringTrigger)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(io.vegaprotocol.vega.Markets.PriceMonitoringParameters other) {
-        if (other == io.vegaprotocol.vega.Markets.PriceMonitoringParameters.getDefaultInstance()) return this;
+      public Builder mergeFrom(io.vegaprotocol.vega.Markets.PriceMonitoringTrigger other) {
+        if (other == io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.getDefaultInstance()) return this;
         if (other.getHorizon() != 0L) {
           setHorizon(other.getHorizon());
         }
@@ -14434,11 +14345,11 @@ public final class Markets {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        io.vegaprotocol.vega.Markets.PriceMonitoringParameters parsedMessage = null;
+        io.vegaprotocol.vega.Markets.PriceMonitoringTrigger parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.vegaprotocol.vega.Markets.PriceMonitoringParameters) e.getUnfinishedMessage();
+          parsedMessage = (io.vegaprotocol.vega.Markets.PriceMonitoringTrigger) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -14580,6 +14491,795 @@ public final class Markets {
       }
 
 
+      // @@protoc_insertion_point(builder_scope:vega.PriceMonitoringTrigger)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.PriceMonitoringTrigger)
+    private static final io.vegaprotocol.vega.Markets.PriceMonitoringTrigger DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Markets.PriceMonitoringTrigger();
+    }
+
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringTrigger getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PriceMonitoringTrigger>
+        PARSER = new com.google.protobuf.AbstractParser<PriceMonitoringTrigger>() {
+      @java.lang.Override
+      public PriceMonitoringTrigger parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PriceMonitoringTrigger(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PriceMonitoringTrigger> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PriceMonitoringTrigger> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Markets.PriceMonitoringTrigger getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PriceMonitoringParametersOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.PriceMonitoringParameters)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+     */
+    java.util.List<io.vegaprotocol.vega.Markets.PriceMonitoringTrigger>
+        getTriggersList();
+    /**
+     * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+     */
+    io.vegaprotocol.vega.Markets.PriceMonitoringTrigger getTriggers(int index);
+    /**
+     * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+     */
+    int getTriggersCount();
+    /**
+     * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+     */
+    java.util.List<? extends io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder>
+        getTriggersOrBuilderList();
+    /**
+     * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+     */
+    io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder getTriggersOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * PriceMonitoringParameters contain a collection of triggers to be used for a given market.
+   * </pre>
+   *
+   * Protobuf type {@code vega.PriceMonitoringParameters}
+   */
+  public  static final class PriceMonitoringParameters extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.PriceMonitoringParameters)
+      PriceMonitoringParametersOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PriceMonitoringParameters.newBuilder() to construct.
+    private PriceMonitoringParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PriceMonitoringParameters() {
+      triggers_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PriceMonitoringParameters(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                triggers_ = new java.util.ArrayList<io.vegaprotocol.vega.Markets.PriceMonitoringTrigger>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              triggers_.add(
+                  input.readMessage(io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          triggers_ = java.util.Collections.unmodifiableList(triggers_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Markets.internal_static_vega_PriceMonitoringParameters_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Markets.internal_static_vega_PriceMonitoringParameters_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Markets.PriceMonitoringParameters.class, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder.class);
+    }
+
+    public static final int TRIGGERS_FIELD_NUMBER = 1;
+    private java.util.List<io.vegaprotocol.vega.Markets.PriceMonitoringTrigger> triggers_;
+    /**
+     * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+     */
+    public java.util.List<io.vegaprotocol.vega.Markets.PriceMonitoringTrigger> getTriggersList() {
+      return triggers_;
+    }
+    /**
+     * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+     */
+    public java.util.List<? extends io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder>
+        getTriggersOrBuilderList() {
+      return triggers_;
+    }
+    /**
+     * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+     */
+    public int getTriggersCount() {
+      return triggers_.size();
+    }
+    /**
+     * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+     */
+    public io.vegaprotocol.vega.Markets.PriceMonitoringTrigger getTriggers(int index) {
+      return triggers_.get(index);
+    }
+    /**
+     * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+     */
+    public io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder getTriggersOrBuilder(
+        int index) {
+      return triggers_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < triggers_.size(); i++) {
+        output.writeMessage(1, triggers_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < triggers_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, triggers_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Markets.PriceMonitoringParameters)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Markets.PriceMonitoringParameters other = (io.vegaprotocol.vega.Markets.PriceMonitoringParameters) obj;
+
+      if (!getTriggersList()
+          .equals(other.getTriggersList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getTriggersCount() > 0) {
+        hash = (37 * hash) + TRIGGERS_FIELD_NUMBER;
+        hash = (53 * hash) + getTriggersList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Markets.PriceMonitoringParameters parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Markets.PriceMonitoringParameters prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * PriceMonitoringParameters contain a collection of triggers to be used for a given market.
+     * </pre>
+     *
+     * Protobuf type {@code vega.PriceMonitoringParameters}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.PriceMonitoringParameters)
+        io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Markets.internal_static_vega_PriceMonitoringParameters_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Markets.internal_static_vega_PriceMonitoringParameters_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Markets.PriceMonitoringParameters.class, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Markets.PriceMonitoringParameters.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getTriggersFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (triggersBuilder_ == null) {
+          triggers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          triggersBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Markets.internal_static_vega_PriceMonitoringParameters_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Markets.PriceMonitoringParameters getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Markets.PriceMonitoringParameters.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Markets.PriceMonitoringParameters build() {
+        io.vegaprotocol.vega.Markets.PriceMonitoringParameters result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Markets.PriceMonitoringParameters buildPartial() {
+        io.vegaprotocol.vega.Markets.PriceMonitoringParameters result = new io.vegaprotocol.vega.Markets.PriceMonitoringParameters(this);
+        int from_bitField0_ = bitField0_;
+        if (triggersBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            triggers_ = java.util.Collections.unmodifiableList(triggers_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.triggers_ = triggers_;
+        } else {
+          result.triggers_ = triggersBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Markets.PriceMonitoringParameters) {
+          return mergeFrom((io.vegaprotocol.vega.Markets.PriceMonitoringParameters)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Markets.PriceMonitoringParameters other) {
+        if (other == io.vegaprotocol.vega.Markets.PriceMonitoringParameters.getDefaultInstance()) return this;
+        if (triggersBuilder_ == null) {
+          if (!other.triggers_.isEmpty()) {
+            if (triggers_.isEmpty()) {
+              triggers_ = other.triggers_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureTriggersIsMutable();
+              triggers_.addAll(other.triggers_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.triggers_.isEmpty()) {
+            if (triggersBuilder_.isEmpty()) {
+              triggersBuilder_.dispose();
+              triggersBuilder_ = null;
+              triggers_ = other.triggers_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              triggersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTriggersFieldBuilder() : null;
+            } else {
+              triggersBuilder_.addAllMessages(other.triggers_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Markets.PriceMonitoringParameters parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Markets.PriceMonitoringParameters) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<io.vegaprotocol.vega.Markets.PriceMonitoringTrigger> triggers_ =
+        java.util.Collections.emptyList();
+      private void ensureTriggersIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          triggers_ = new java.util.ArrayList<io.vegaprotocol.vega.Markets.PriceMonitoringTrigger>(triggers_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.PriceMonitoringTrigger, io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder> triggersBuilder_;
+
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Markets.PriceMonitoringTrigger> getTriggersList() {
+        if (triggersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(triggers_);
+        } else {
+          return triggersBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public int getTriggersCount() {
+        if (triggersBuilder_ == null) {
+          return triggers_.size();
+        } else {
+          return triggersBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public io.vegaprotocol.vega.Markets.PriceMonitoringTrigger getTriggers(int index) {
+        if (triggersBuilder_ == null) {
+          return triggers_.get(index);
+        } else {
+          return triggersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public Builder setTriggers(
+          int index, io.vegaprotocol.vega.Markets.PriceMonitoringTrigger value) {
+        if (triggersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTriggersIsMutable();
+          triggers_.set(index, value);
+          onChanged();
+        } else {
+          triggersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public Builder setTriggers(
+          int index, io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder builderForValue) {
+        if (triggersBuilder_ == null) {
+          ensureTriggersIsMutable();
+          triggers_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          triggersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public Builder addTriggers(io.vegaprotocol.vega.Markets.PriceMonitoringTrigger value) {
+        if (triggersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTriggersIsMutable();
+          triggers_.add(value);
+          onChanged();
+        } else {
+          triggersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public Builder addTriggers(
+          int index, io.vegaprotocol.vega.Markets.PriceMonitoringTrigger value) {
+        if (triggersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTriggersIsMutable();
+          triggers_.add(index, value);
+          onChanged();
+        } else {
+          triggersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public Builder addTriggers(
+          io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder builderForValue) {
+        if (triggersBuilder_ == null) {
+          ensureTriggersIsMutable();
+          triggers_.add(builderForValue.build());
+          onChanged();
+        } else {
+          triggersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public Builder addTriggers(
+          int index, io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder builderForValue) {
+        if (triggersBuilder_ == null) {
+          ensureTriggersIsMutable();
+          triggers_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          triggersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public Builder addAllTriggers(
+          java.lang.Iterable<? extends io.vegaprotocol.vega.Markets.PriceMonitoringTrigger> values) {
+        if (triggersBuilder_ == null) {
+          ensureTriggersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, triggers_);
+          onChanged();
+        } else {
+          triggersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public Builder clearTriggers() {
+        if (triggersBuilder_ == null) {
+          triggers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          triggersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public Builder removeTriggers(int index) {
+        if (triggersBuilder_ == null) {
+          ensureTriggersIsMutable();
+          triggers_.remove(index);
+          onChanged();
+        } else {
+          triggersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder getTriggersBuilder(
+          int index) {
+        return getTriggersFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder getTriggersOrBuilder(
+          int index) {
+        if (triggersBuilder_ == null) {
+          return triggers_.get(index);  } else {
+          return triggersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public java.util.List<? extends io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder>
+           getTriggersOrBuilderList() {
+        if (triggersBuilder_ != null) {
+          return triggersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(triggers_);
+        }
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder addTriggersBuilder() {
+        return getTriggersFieldBuilder().addBuilder(
+            io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder addTriggersBuilder(
+          int index) {
+        return getTriggersFieldBuilder().addBuilder(
+            index, io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vega.PriceMonitoringTrigger triggers = 1;</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder>
+           getTriggersBuilderList() {
+        return getTriggersFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.PriceMonitoringTrigger, io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder>
+          getTriggersFieldBuilder() {
+        if (triggersBuilder_ == null) {
+          triggersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              io.vegaprotocol.vega.Markets.PriceMonitoringTrigger, io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder>(
+                  triggers_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          triggers_ = null;
+        }
+        return triggersBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
       // @@protoc_insertion_point(builder_scope:vega.PriceMonitoringParameters)
     }
 
@@ -14626,52 +15326,28 @@ public final class Markets {
 
     /**
      * <pre>
-     * Specifies a set of PriceMonitoringParameters to be used for price
-     * monitoring purposes
+     * Specifies PriceMonitoringParameters to be used for price monitoring purposes
      * </pre>
      *
-     * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
+     * <code>.vega.PriceMonitoringParameters parameters = 1;</code>
      */
-    java.util.List<io.vegaprotocol.vega.Markets.PriceMonitoringParameters>
-        getPriceMonitoringParametersList();
+    boolean hasParameters();
     /**
      * <pre>
-     * Specifies a set of PriceMonitoringParameters to be used for price
-     * monitoring purposes
+     * Specifies PriceMonitoringParameters to be used for price monitoring purposes
      * </pre>
      *
-     * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
+     * <code>.vega.PriceMonitoringParameters parameters = 1;</code>
      */
-    io.vegaprotocol.vega.Markets.PriceMonitoringParameters getPriceMonitoringParameters(int index);
+    io.vegaprotocol.vega.Markets.PriceMonitoringParameters getParameters();
     /**
      * <pre>
-     * Specifies a set of PriceMonitoringParameters to be used for price
-     * monitoring purposes
+     * Specifies PriceMonitoringParameters to be used for price monitoring purposes
      * </pre>
      *
-     * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
+     * <code>.vega.PriceMonitoringParameters parameters = 1;</code>
      */
-    int getPriceMonitoringParametersCount();
-    /**
-     * <pre>
-     * Specifies a set of PriceMonitoringParameters to be used for price
-     * monitoring purposes
-     * </pre>
-     *
-     * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
-     */
-    java.util.List<? extends io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder>
-        getPriceMonitoringParametersOrBuilderList();
-    /**
-     * <pre>
-     * Specifies a set of PriceMonitoringParameters to be used for price
-     * monitoring purposes
-     * </pre>
-     *
-     * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
-     */
-    io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder getPriceMonitoringParametersOrBuilder(
-        int index);
+    io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder getParametersOrBuilder();
 
     /**
      * <pre>
@@ -14695,7 +15371,6 @@ public final class Markets {
       super(builder);
     }
     private PriceMonitoringSettings() {
-      priceMonitoringParameters_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -14723,12 +15398,16 @@ public final class Markets {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                priceMonitoringParameters_ = new java.util.ArrayList<io.vegaprotocol.vega.Markets.PriceMonitoringParameters>();
-                mutable_bitField0_ |= 0x00000001;
+              io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder subBuilder = null;
+              if (parameters_ != null) {
+                subBuilder = parameters_.toBuilder();
               }
-              priceMonitoringParameters_.add(
-                  input.readMessage(io.vegaprotocol.vega.Markets.PriceMonitoringParameters.parser(), extensionRegistry));
+              parameters_ = input.readMessage(io.vegaprotocol.vega.Markets.PriceMonitoringParameters.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(parameters_);
+                parameters_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             case 16: {
@@ -14751,9 +15430,6 @@ public final class Markets {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          priceMonitoringParameters_ = java.util.Collections.unmodifiableList(priceMonitoringParameters_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -14771,65 +15447,37 @@ public final class Markets {
               io.vegaprotocol.vega.Markets.PriceMonitoringSettings.class, io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int PRICEMONITORINGPARAMETERS_FIELD_NUMBER = 1;
-    private java.util.List<io.vegaprotocol.vega.Markets.PriceMonitoringParameters> priceMonitoringParameters_;
+    public static final int PARAMETERS_FIELD_NUMBER = 1;
+    private io.vegaprotocol.vega.Markets.PriceMonitoringParameters parameters_;
     /**
      * <pre>
-     * Specifies a set of PriceMonitoringParameters to be used for price
-     * monitoring purposes
+     * Specifies PriceMonitoringParameters to be used for price monitoring purposes
      * </pre>
      *
-     * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
+     * <code>.vega.PriceMonitoringParameters parameters = 1;</code>
      */
-    public java.util.List<io.vegaprotocol.vega.Markets.PriceMonitoringParameters> getPriceMonitoringParametersList() {
-      return priceMonitoringParameters_;
+    public boolean hasParameters() {
+      return parameters_ != null;
     }
     /**
      * <pre>
-     * Specifies a set of PriceMonitoringParameters to be used for price
-     * monitoring purposes
+     * Specifies PriceMonitoringParameters to be used for price monitoring purposes
      * </pre>
      *
-     * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
+     * <code>.vega.PriceMonitoringParameters parameters = 1;</code>
      */
-    public java.util.List<? extends io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder>
-        getPriceMonitoringParametersOrBuilderList() {
-      return priceMonitoringParameters_;
+    public io.vegaprotocol.vega.Markets.PriceMonitoringParameters getParameters() {
+      return parameters_ == null ? io.vegaprotocol.vega.Markets.PriceMonitoringParameters.getDefaultInstance() : parameters_;
     }
     /**
      * <pre>
-     * Specifies a set of PriceMonitoringParameters to be used for price
-     * monitoring purposes
+     * Specifies PriceMonitoringParameters to be used for price monitoring purposes
      * </pre>
      *
-     * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
+     * <code>.vega.PriceMonitoringParameters parameters = 1;</code>
      */
-    public int getPriceMonitoringParametersCount() {
-      return priceMonitoringParameters_.size();
-    }
-    /**
-     * <pre>
-     * Specifies a set of PriceMonitoringParameters to be used for price
-     * monitoring purposes
-     * </pre>
-     *
-     * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
-     */
-    public io.vegaprotocol.vega.Markets.PriceMonitoringParameters getPriceMonitoringParameters(int index) {
-      return priceMonitoringParameters_.get(index);
-    }
-    /**
-     * <pre>
-     * Specifies a set of PriceMonitoringParameters to be used for price
-     * monitoring purposes
-     * </pre>
-     *
-     * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
-     */
-    public io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder getPriceMonitoringParametersOrBuilder(
-        int index) {
-      return priceMonitoringParameters_.get(index);
+    public io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder getParametersOrBuilder() {
+      return getParameters();
     }
 
     public static final int UPDATEFREQUENCY_FIELD_NUMBER = 2;
@@ -14859,8 +15507,8 @@ public final class Markets {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < priceMonitoringParameters_.size(); i++) {
-        output.writeMessage(1, priceMonitoringParameters_.get(i));
+      if (parameters_ != null) {
+        output.writeMessage(1, getParameters());
       }
       if (updateFrequency_ != 0L) {
         output.writeInt64(2, updateFrequency_);
@@ -14874,9 +15522,9 @@ public final class Markets {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < priceMonitoringParameters_.size(); i++) {
+      if (parameters_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, priceMonitoringParameters_.get(i));
+          .computeMessageSize(1, getParameters());
       }
       if (updateFrequency_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -14897,8 +15545,11 @@ public final class Markets {
       }
       io.vegaprotocol.vega.Markets.PriceMonitoringSettings other = (io.vegaprotocol.vega.Markets.PriceMonitoringSettings) obj;
 
-      if (!getPriceMonitoringParametersList()
-          .equals(other.getPriceMonitoringParametersList())) return false;
+      if (hasParameters() != other.hasParameters()) return false;
+      if (hasParameters()) {
+        if (!getParameters()
+            .equals(other.getParameters())) return false;
+      }
       if (getUpdateFrequency()
           != other.getUpdateFrequency()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -14912,9 +15563,9 @@ public final class Markets {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getPriceMonitoringParametersCount() > 0) {
-        hash = (37 * hash) + PRICEMONITORINGPARAMETERS_FIELD_NUMBER;
-        hash = (53 * hash) + getPriceMonitoringParametersList().hashCode();
+      if (hasParameters()) {
+        hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
+        hash = (53 * hash) + getParameters().hashCode();
       }
       hash = (37 * hash) + UPDATEFREQUENCY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -15047,17 +15698,16 @@ public final class Markets {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getPriceMonitoringParametersFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (priceMonitoringParametersBuilder_ == null) {
-          priceMonitoringParameters_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (parametersBuilder_ == null) {
+          parameters_ = null;
         } else {
-          priceMonitoringParametersBuilder_.clear();
+          parameters_ = null;
+          parametersBuilder_ = null;
         }
         updateFrequency_ = 0L;
 
@@ -15087,19 +15737,12 @@ public final class Markets {
       @java.lang.Override
       public io.vegaprotocol.vega.Markets.PriceMonitoringSettings buildPartial() {
         io.vegaprotocol.vega.Markets.PriceMonitoringSettings result = new io.vegaprotocol.vega.Markets.PriceMonitoringSettings(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (priceMonitoringParametersBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            priceMonitoringParameters_ = java.util.Collections.unmodifiableList(priceMonitoringParameters_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.priceMonitoringParameters_ = priceMonitoringParameters_;
+        if (parametersBuilder_ == null) {
+          result.parameters_ = parameters_;
         } else {
-          result.priceMonitoringParameters_ = priceMonitoringParametersBuilder_.build();
+          result.parameters_ = parametersBuilder_.build();
         }
         result.updateFrequency_ = updateFrequency_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -15148,31 +15791,8 @@ public final class Markets {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Markets.PriceMonitoringSettings other) {
         if (other == io.vegaprotocol.vega.Markets.PriceMonitoringSettings.getDefaultInstance()) return this;
-        if (priceMonitoringParametersBuilder_ == null) {
-          if (!other.priceMonitoringParameters_.isEmpty()) {
-            if (priceMonitoringParameters_.isEmpty()) {
-              priceMonitoringParameters_ = other.priceMonitoringParameters_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensurePriceMonitoringParametersIsMutable();
-              priceMonitoringParameters_.addAll(other.priceMonitoringParameters_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.priceMonitoringParameters_.isEmpty()) {
-            if (priceMonitoringParametersBuilder_.isEmpty()) {
-              priceMonitoringParametersBuilder_.dispose();
-              priceMonitoringParametersBuilder_ = null;
-              priceMonitoringParameters_ = other.priceMonitoringParameters_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              priceMonitoringParametersBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getPriceMonitoringParametersFieldBuilder() : null;
-            } else {
-              priceMonitoringParametersBuilder_.addAllMessages(other.priceMonitoringParameters_);
-            }
-          }
+        if (other.hasParameters()) {
+          mergeParameters(other.getParameters());
         }
         if (other.getUpdateFrequency() != 0L) {
           setUpdateFrequency(other.getUpdateFrequency());
@@ -15205,336 +15825,158 @@ public final class Markets {
         }
         return this;
       }
-      private int bitField0_;
 
-      private java.util.List<io.vegaprotocol.vega.Markets.PriceMonitoringParameters> priceMonitoringParameters_ =
-        java.util.Collections.emptyList();
-      private void ensurePriceMonitoringParametersIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          priceMonitoringParameters_ = new java.util.ArrayList<io.vegaprotocol.vega.Markets.PriceMonitoringParameters>(priceMonitoringParameters_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.PriceMonitoringParameters, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder> priceMonitoringParametersBuilder_;
-
+      private io.vegaprotocol.vega.Markets.PriceMonitoringParameters parameters_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.PriceMonitoringParameters, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder> parametersBuilder_;
       /**
        * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
+       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
+       * <code>.vega.PriceMonitoringParameters parameters = 1;</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Markets.PriceMonitoringParameters> getPriceMonitoringParametersList() {
-        if (priceMonitoringParametersBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(priceMonitoringParameters_);
+      public boolean hasParameters() {
+        return parametersBuilder_ != null || parameters_ != null;
+      }
+      /**
+       * <pre>
+       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringParameters parameters = 1;</code>
+       */
+      public io.vegaprotocol.vega.Markets.PriceMonitoringParameters getParameters() {
+        if (parametersBuilder_ == null) {
+          return parameters_ == null ? io.vegaprotocol.vega.Markets.PriceMonitoringParameters.getDefaultInstance() : parameters_;
         } else {
-          return priceMonitoringParametersBuilder_.getMessageList();
+          return parametersBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
+       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
+       * <code>.vega.PriceMonitoringParameters parameters = 1;</code>
        */
-      public int getPriceMonitoringParametersCount() {
-        if (priceMonitoringParametersBuilder_ == null) {
-          return priceMonitoringParameters_.size();
-        } else {
-          return priceMonitoringParametersBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
-       * </pre>
-       *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
-       */
-      public io.vegaprotocol.vega.Markets.PriceMonitoringParameters getPriceMonitoringParameters(int index) {
-        if (priceMonitoringParametersBuilder_ == null) {
-          return priceMonitoringParameters_.get(index);
-        } else {
-          return priceMonitoringParametersBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
-       * </pre>
-       *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
-       */
-      public Builder setPriceMonitoringParameters(
-          int index, io.vegaprotocol.vega.Markets.PriceMonitoringParameters value) {
-        if (priceMonitoringParametersBuilder_ == null) {
+      public Builder setParameters(io.vegaprotocol.vega.Markets.PriceMonitoringParameters value) {
+        if (parametersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensurePriceMonitoringParametersIsMutable();
-          priceMonitoringParameters_.set(index, value);
+          parameters_ = value;
           onChanged();
         } else {
-          priceMonitoringParametersBuilder_.setMessage(index, value);
+          parametersBuilder_.setMessage(value);
         }
+
         return this;
       }
       /**
        * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
+       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
+       * <code>.vega.PriceMonitoringParameters parameters = 1;</code>
        */
-      public Builder setPriceMonitoringParameters(
-          int index, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder builderForValue) {
-        if (priceMonitoringParametersBuilder_ == null) {
-          ensurePriceMonitoringParametersIsMutable();
-          priceMonitoringParameters_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          priceMonitoringParametersBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
-       * </pre>
-       *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
-       */
-      public Builder addPriceMonitoringParameters(io.vegaprotocol.vega.Markets.PriceMonitoringParameters value) {
-        if (priceMonitoringParametersBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePriceMonitoringParametersIsMutable();
-          priceMonitoringParameters_.add(value);
-          onChanged();
-        } else {
-          priceMonitoringParametersBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
-       * </pre>
-       *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
-       */
-      public Builder addPriceMonitoringParameters(
-          int index, io.vegaprotocol.vega.Markets.PriceMonitoringParameters value) {
-        if (priceMonitoringParametersBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePriceMonitoringParametersIsMutable();
-          priceMonitoringParameters_.add(index, value);
-          onChanged();
-        } else {
-          priceMonitoringParametersBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
-       * </pre>
-       *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
-       */
-      public Builder addPriceMonitoringParameters(
+      public Builder setParameters(
           io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder builderForValue) {
-        if (priceMonitoringParametersBuilder_ == null) {
-          ensurePriceMonitoringParametersIsMutable();
-          priceMonitoringParameters_.add(builderForValue.build());
+        if (parametersBuilder_ == null) {
+          parameters_ = builderForValue.build();
           onChanged();
         } else {
-          priceMonitoringParametersBuilder_.addMessage(builderForValue.build());
+          parametersBuilder_.setMessage(builderForValue.build());
         }
+
         return this;
       }
       /**
        * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
+       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
+       * <code>.vega.PriceMonitoringParameters parameters = 1;</code>
        */
-      public Builder addPriceMonitoringParameters(
-          int index, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder builderForValue) {
-        if (priceMonitoringParametersBuilder_ == null) {
-          ensurePriceMonitoringParametersIsMutable();
-          priceMonitoringParameters_.add(index, builderForValue.build());
+      public Builder mergeParameters(io.vegaprotocol.vega.Markets.PriceMonitoringParameters value) {
+        if (parametersBuilder_ == null) {
+          if (parameters_ != null) {
+            parameters_ =
+              io.vegaprotocol.vega.Markets.PriceMonitoringParameters.newBuilder(parameters_).mergeFrom(value).buildPartial();
+          } else {
+            parameters_ = value;
+          }
           onChanged();
         } else {
-          priceMonitoringParametersBuilder_.addMessage(index, builderForValue.build());
+          parametersBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
        * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
+       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
+       * <code>.vega.PriceMonitoringParameters parameters = 1;</code>
        */
-      public Builder addAllPriceMonitoringParameters(
-          java.lang.Iterable<? extends io.vegaprotocol.vega.Markets.PriceMonitoringParameters> values) {
-        if (priceMonitoringParametersBuilder_ == null) {
-          ensurePriceMonitoringParametersIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, priceMonitoringParameters_);
+      public Builder clearParameters() {
+        if (parametersBuilder_ == null) {
+          parameters_ = null;
           onChanged();
         } else {
-          priceMonitoringParametersBuilder_.addAllMessages(values);
+          parameters_ = null;
+          parametersBuilder_ = null;
         }
+
         return this;
       }
       /**
        * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
+       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
+       * <code>.vega.PriceMonitoringParameters parameters = 1;</code>
        */
-      public Builder clearPriceMonitoringParameters() {
-        if (priceMonitoringParametersBuilder_ == null) {
-          priceMonitoringParameters_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
+      public io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder getParametersBuilder() {
+
+        onChanged();
+        return getParametersFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringParameters parameters = 1;</code>
+       */
+      public io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder getParametersOrBuilder() {
+        if (parametersBuilder_ != null) {
+          return parametersBuilder_.getMessageOrBuilder();
         } else {
-          priceMonitoringParametersBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
-       * </pre>
-       *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
-       */
-      public Builder removePriceMonitoringParameters(int index) {
-        if (priceMonitoringParametersBuilder_ == null) {
-          ensurePriceMonitoringParametersIsMutable();
-          priceMonitoringParameters_.remove(index);
-          onChanged();
-        } else {
-          priceMonitoringParametersBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
-       * </pre>
-       *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
-       */
-      public io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder getPriceMonitoringParametersBuilder(
-          int index) {
-        return getPriceMonitoringParametersFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
-       * </pre>
-       *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
-       */
-      public io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder getPriceMonitoringParametersOrBuilder(
-          int index) {
-        if (priceMonitoringParametersBuilder_ == null) {
-          return priceMonitoringParameters_.get(index);  } else {
-          return priceMonitoringParametersBuilder_.getMessageOrBuilder(index);
+          return parameters_ == null ?
+              io.vegaprotocol.vega.Markets.PriceMonitoringParameters.getDefaultInstance() : parameters_;
         }
       }
       /**
        * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
+       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
+       * <code>.vega.PriceMonitoringParameters parameters = 1;</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder>
-           getPriceMonitoringParametersOrBuilderList() {
-        if (priceMonitoringParametersBuilder_ != null) {
-          return priceMonitoringParametersBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(priceMonitoringParameters_);
-        }
-      }
-      /**
-       * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
-       * </pre>
-       *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
-       */
-      public io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder addPriceMonitoringParametersBuilder() {
-        return getPriceMonitoringParametersFieldBuilder().addBuilder(
-            io.vegaprotocol.vega.Markets.PriceMonitoringParameters.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
-       * </pre>
-       *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
-       */
-      public io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder addPriceMonitoringParametersBuilder(
-          int index) {
-        return getPriceMonitoringParametersFieldBuilder().addBuilder(
-            index, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * Specifies a set of PriceMonitoringParameters to be used for price
-       * monitoring purposes
-       * </pre>
-       *
-       * <code>repeated .vega.PriceMonitoringParameters priceMonitoringParameters = 1;</code>
-       */
-      public java.util.List<io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder>
-           getPriceMonitoringParametersBuilderList() {
-        return getPriceMonitoringParametersFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.PriceMonitoringParameters, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder>
-          getPriceMonitoringParametersFieldBuilder() {
-        if (priceMonitoringParametersBuilder_ == null) {
-          priceMonitoringParametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getParametersFieldBuilder() {
+        if (parametersBuilder_ == null) {
+          parametersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               io.vegaprotocol.vega.Markets.PriceMonitoringParameters, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder>(
-                  priceMonitoringParameters_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  getParameters(),
                   getParentForChildren(),
                   isClean());
-          priceMonitoringParameters_ = null;
+          parameters_ = null;
         }
-        return priceMonitoringParametersBuilder_;
+        return parametersBuilder_;
       }
 
       private long updateFrequency_ ;
@@ -18047,6 +18489,11 @@ public final class Markets {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Fees_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_PriceMonitoringTrigger_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_PriceMonitoringTrigger_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_PriceMonitoringParameters_descriptor;
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -18081,50 +18528,53 @@ public final class Markets {
       "ga.EthereumEventH\000B\010\n\006oracle\"A\n\rEthereum" +
       "Event\022\022\n\ncontractID\030\001 \001(\t\022\r\n\005event\030\002 \001(\t" +
       "\022\r\n\005value\030\003 \001(\004\"\"\n\022InstrumentMetadata\022\014\n" +
-      "\004tags\030\001 \003(\t\"\312\001\n\nInstrument\022\n\n\002id\030\001 \001(\t\022\014" +
-      "\n\004code\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\020\n\010baseName\030\004" +
-      " \001(\t\022\021\n\tquoteName\030\005 \001(\t\022*\n\010metadata\030\006 \001(" +
-      "\0132\030.vega.InstrumentMetadata\022\030\n\020initialMa" +
-      "rkPrice\030\007 \001(\004\022\036\n\006future\030d \001(\0132\014.vega.Fut" +
-      "ureH\000B\t\n\007product\"l\n\022LogNormalRiskModel\022\035" +
-      "\n\025riskAversionParameter\030\001 \001(\001\022\013\n\003tau\030\002 \001" +
-      "(\001\022*\n\006params\030\003 \001(\0132\032.vega.LogNormalModel" +
-      "Params\"<\n\024LogNormalModelParams\022\n\n\002mu\030\001 \001" +
-      "(\001\022\t\n\001r\030\002 \001(\001\022\r\n\005sigma\030\003 \001(\001\":\n\017SimpleRi" +
-      "skModel\022\'\n\006params\030\001 \001(\0132\027.vega.SimpleMod" +
-      "elParams\"\202\001\n\021SimpleModelParams\022\022\n\nfactor" +
-      "Long\030\001 \001(\001\022\023\n\013factorShort\030\002 \001(\001\022 \n\tmaxMo" +
-      "veUp\030\003 \001(\001B\r\342\337\037\tI\000\000\000\000\000\000\000\000\022\"\n\013minMoveDown" +
-      "\030\004 \001(\001B\r\342\337\037\tQ\000\000\000\000\000\000\000\000\"W\n\016ScalingFactors\022" +
-      "\023\n\013searchLevel\030\001 \001(\001\022\025\n\rinitialMargin\030\002 " +
-      "\001(\001\022\031\n\021collateralRelease\030\003 \001(\001\"@\n\020Margin" +
-      "Calculator\022,\n\016scalingFactors\030\001 \001(\0132\024.veg" +
-      "a.ScalingFactors\"\343\001\n\022TradableInstrument\022" +
-      "$\n\ninstrument\030\001 \001(\0132\020.vega.Instrument\0220\n" +
-      "\020marginCalculator\030\002 \001(\0132\026.vega.MarginCal" +
-      "culator\0226\n\022logNormalRiskModel\030d \001(\0132\030.ve" +
-      "ga.LogNormalRiskModelH\000\0220\n\017simpleRiskMod" +
-      "el\030e \001(\0132\025.vega.SimpleRiskModelH\000B\013\n\tris" +
-      "kModel\"O\n\nFeeFactors\022\020\n\010makerFee\030\001 \001(\t\022\031" +
-      "\n\021infrastructureFee\030\002 \001(\t\022\024\n\014liquidityFe" +
-      "e\030\003 \001(\t\")\n\004Fees\022!\n\007factors\030\001 \001(\0132\020.vega." +
-      "FeeFactors\"\203\001\n\031PriceMonitoringParameters" +
-      "\022\027\n\007horizon\030\001 \001(\003B\006\342\337\037\002\020\000\022+\n\013probability" +
-      "\030\002 \001(\001B\026\342\337\037\0221\000\000\000\000\000\000\000\0009\000\000\000\000\000\000\360?\022 \n\020auctio" +
-      "nExtension\030\003 \001(\003B\006\342\337\037\002\020\000\"v\n\027PriceMonitor" +
-      "ingSettings\022B\n\031priceMonitoringParameters" +
-      "\030\001 \003(\0132\037.vega.PriceMonitoringParameters\022" +
-      "\027\n\017updateFrequency\030\002 \001(\003\"\323\002\n\006Market\022\n\n\002i" +
-      "d\030\001 \001(\t\0224\n\022tradableInstrument\030\002 \001(\0132\030.ve" +
-      "ga.TradableInstrument\022\025\n\rdecimalPlaces\030\003" +
-      " \001(\004\022\030\n\004fees\030\004 \001(\0132\n.vega.Fees\022-\n\016openin" +
-      "gAuction\030\005 \001(\0132\025.vega.AuctionDuration\022-\n" +
-      "\ncontinuous\030d \001(\0132\027.vega.ContinuousTradi" +
-      "ngH\000\022)\n\010discrete\030e \001(\0132\025.vega.DiscreteTr" +
-      "adingH\000\022>\n\027priceMonitoringSettings\030\006 \001(\013" +
-      "2\035.vega.PriceMonitoringSettingsB\r\n\013tradi" +
-      "ngModeB7\n\024io.vegaprotocol.vegaZ\037code.veg" +
-      "aprotocol.io/vega/protob\006proto3"
+      "\004tags\030\001 \003(\t\"\270\001\n\nInstrument\022\n\n\002id\030\001 \001(\t\022\014" +
+      "\n\004code\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\021\n\tquoteName\030" +
+      "\004 \001(\t\022*\n\010metadata\030\005 \001(\0132\030.vega.Instrumen" +
+      "tMetadata\022\030\n\020initialMarkPrice\030\006 \001(\004\022\036\n\006f" +
+      "uture\030d \001(\0132\014.vega.FutureH\000B\t\n\007product\"l" +
+      "\n\022LogNormalRiskModel\022\035\n\025riskAversionPara" +
+      "meter\030\001 \001(\001\022\013\n\003tau\030\002 \001(\001\022*\n\006params\030\003 \001(\013" +
+      "2\032.vega.LogNormalModelParams\"<\n\024LogNorma" +
+      "lModelParams\022\n\n\002mu\030\001 \001(\001\022\t\n\001r\030\002 \001(\001\022\r\n\005s" +
+      "igma\030\003 \001(\001\":\n\017SimpleRiskModel\022\'\n\006params\030" +
+      "\001 \001(\0132\027.vega.SimpleModelParams\"\270\001\n\021Simpl" +
+      "eModelParams\022\022\n\nfactorLong\030\001 \001(\001\022\023\n\013fact" +
+      "orShort\030\002 \001(\001\022 \n\tmaxMoveUp\030\003 \001(\001B\r\342\337\037\tI\000" +
+      "\000\000\000\000\000\000\000\022\"\n\013minMoveDown\030\004 \001(\001B\r\342\337\037\tQ\000\000\000\000\000" +
+      "\000\000\000\0224\n\024probabilityOfTrading\030\005 \001(\001B\026\342\337\037\022I" +
+      "\000\000\000\000\000\000\000\000Q\000\000\000\000\000\000\360?\"W\n\016ScalingFactors\022\023\n\013s" +
+      "earchLevel\030\001 \001(\001\022\025\n\rinitialMargin\030\002 \001(\001\022" +
+      "\031\n\021collateralRelease\030\003 \001(\001\"@\n\020MarginCalc" +
+      "ulator\022,\n\016scalingFactors\030\001 \001(\0132\024.vega.Sc" +
+      "alingFactors\"\343\001\n\022TradableInstrument\022$\n\ni" +
+      "nstrument\030\001 \001(\0132\020.vega.Instrument\0220\n\020mar" +
+      "ginCalculator\030\002 \001(\0132\026.vega.MarginCalcula" +
+      "tor\0226\n\022logNormalRiskModel\030d \001(\0132\030.vega.L" +
+      "ogNormalRiskModelH\000\0220\n\017simpleRiskModel\030e" +
+      " \001(\0132\025.vega.SimpleRiskModelH\000B\013\n\triskMod" +
+      "el\"O\n\nFeeFactors\022\020\n\010makerFee\030\001 \001(\t\022\031\n\021in" +
+      "frastructureFee\030\002 \001(\t\022\024\n\014liquidityFee\030\003 " +
+      "\001(\t\")\n\004Fees\022!\n\007factors\030\001 \001(\0132\020.vega.FeeF" +
+      "actors\"\200\001\n\026PriceMonitoringTrigger\022\027\n\007hor" +
+      "izon\030\001 \001(\003B\006\342\337\037\002\020\000\022+\n\013probability\030\002 \001(\001B" +
+      "\026\342\337\037\0221\000\000\000\000\000\000\000\0009\000\000\000\000\000\000\360?\022 \n\020auctionExtens" +
+      "ion\030\003 \001(\003B\006\342\337\037\002\020\000\"K\n\031PriceMonitoringPara" +
+      "meters\022.\n\010triggers\030\001 \003(\0132\034.vega.PriceMon" +
+      "itoringTrigger\"g\n\027PriceMonitoringSetting" +
+      "s\0223\n\nparameters\030\001 \001(\0132\037.vega.PriceMonito" +
+      "ringParameters\022\027\n\017updateFrequency\030\002 \001(\003\"" +
+      "\323\002\n\006Market\022\n\n\002id\030\001 \001(\t\0224\n\022tradableInstru" +
+      "ment\030\002 \001(\0132\030.vega.TradableInstrument\022\025\n\r" +
+      "decimalPlaces\030\003 \001(\004\022\030\n\004fees\030\004 \001(\0132\n.vega" +
+      ".Fees\022-\n\016openingAuction\030\005 \001(\0132\025.vega.Auc" +
+      "tionDuration\022-\n\ncontinuous\030d \001(\0132\027.vega." +
+      "ContinuousTradingH\000\022)\n\010discrete\030e \001(\0132\025." +
+      "vega.DiscreteTradingH\000\022>\n\027priceMonitorin" +
+      "gSettings\030\006 \001(\0132\035.vega.PriceMonitoringSe" +
+      "ttingsB\r\n\013tradingModeB7\n\024io.vegaprotocol" +
+      ".vegaZ\037code.vegaprotocol.io/vega/protob\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -18180,7 +18630,7 @@ public final class Markets {
     internal_static_vega_Instrument_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Instrument_descriptor,
-        new java.lang.String[] { "Id", "Code", "Name", "BaseName", "QuoteName", "Metadata", "InitialMarkPrice", "Future", "Product", });
+        new java.lang.String[] { "Id", "Code", "Name", "QuoteName", "Metadata", "InitialMarkPrice", "Future", "Product", });
     internal_static_vega_LogNormalRiskModel_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_vega_LogNormalRiskModel_fieldAccessorTable = new
@@ -18204,7 +18654,7 @@ public final class Markets {
     internal_static_vega_SimpleModelParams_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_SimpleModelParams_descriptor,
-        new java.lang.String[] { "FactorLong", "FactorShort", "MaxMoveUp", "MinMoveDown", });
+        new java.lang.String[] { "FactorLong", "FactorShort", "MaxMoveUp", "MinMoveDown", "ProbabilityOfTrading", });
     internal_static_vega_ScalingFactors_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_vega_ScalingFactors_fieldAccessorTable = new
@@ -18235,20 +18685,26 @@ public final class Markets {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Fees_descriptor,
         new java.lang.String[] { "Factors", });
-    internal_static_vega_PriceMonitoringParameters_descriptor =
+    internal_static_vega_PriceMonitoringTrigger_descriptor =
       getDescriptor().getMessageTypes().get(16);
+    internal_static_vega_PriceMonitoringTrigger_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_PriceMonitoringTrigger_descriptor,
+        new java.lang.String[] { "Horizon", "Probability", "AuctionExtension", });
+    internal_static_vega_PriceMonitoringParameters_descriptor =
+      getDescriptor().getMessageTypes().get(17);
     internal_static_vega_PriceMonitoringParameters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_PriceMonitoringParameters_descriptor,
-        new java.lang.String[] { "Horizon", "Probability", "AuctionExtension", });
+        new java.lang.String[] { "Triggers", });
     internal_static_vega_PriceMonitoringSettings_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_vega_PriceMonitoringSettings_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_PriceMonitoringSettings_descriptor,
-        new java.lang.String[] { "PriceMonitoringParameters", "UpdateFrequency", });
+        new java.lang.String[] { "Parameters", "UpdateFrequency", });
     internal_static_vega_Market_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_vega_Market_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Market_descriptor,

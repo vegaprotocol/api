@@ -36,6 +36,7 @@
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "github.com/mwitkow/go-proto-validators/validator.pb.h"
+#include <google/protobuf/wrappers.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto
@@ -323,12 +324,13 @@ enum Order_Status {
   Order_Status_STATUS_FILLED = 5,
   Order_Status_STATUS_REJECTED = 6,
   Order_Status_STATUS_PARTIALLY_FILLED = 7,
+  Order_Status_STATUS_PARKED = 8,
   Order_Status_Order_Status_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   Order_Status_Order_Status_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool Order_Status_IsValid(int value);
 const Order_Status Order_Status_Status_MIN = Order_Status_STATUS_INVALID;
-const Order_Status Order_Status_Status_MAX = Order_Status_STATUS_PARTIALLY_FILLED;
+const Order_Status Order_Status_Status_MAX = Order_Status_STATUS_PARKED;
 const int Order_Status_Status_ARRAYSIZE = Order_Status_Status_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Order_Status_descriptor();
@@ -415,12 +417,13 @@ enum LiquidityProvision_Status {
   LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_ACTIVE = 1,
   LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_STOPPED = 2,
   LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_CANCELLED = 3,
+  LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_REJECTED = 4,
   LiquidityProvision_Status_LiquidityProvision_Status_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   LiquidityProvision_Status_LiquidityProvision_Status_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool LiquidityProvision_Status_IsValid(int value);
 const LiquidityProvision_Status LiquidityProvision_Status_Status_MIN = LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_UNSPECIFIED;
-const LiquidityProvision_Status LiquidityProvision_Status_Status_MAX = LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_CANCELLED;
+const LiquidityProvision_Status LiquidityProvision_Status_Status_MAX = LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_REJECTED;
 const int LiquidityProvision_Status_Status_ARRAYSIZE = LiquidityProvision_Status_Status_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* LiquidityProvision_Status_descriptor();
@@ -597,12 +600,14 @@ enum OrderError {
   ORDER_ERROR_SELL_CANNOT_REFERENCE_BEST_BID_PRICE = 41,
   ORDER_ERROR_OFFSET_MUST_BE_GREATER_THAN_ZERO = 42,
   ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE = 43,
+  ORDER_ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAILS_ON_NON_PEGGED_ORDER = 44,
+  ORDER_ERROR_UNABLE_TO_REPRICE_PEGGED_ORDER = 45,
   OrderError_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   OrderError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool OrderError_IsValid(int value);
 const OrderError OrderError_MIN = ORDER_ERROR_NONE;
-const OrderError OrderError_MAX = ORDER_ERROR_INSUFFICIENT_ASSET_BALANCE;
+const OrderError OrderError_MAX = ORDER_ERROR_UNABLE_TO_REPRICE_PEGGED_ORDER;
 const int OrderError_ARRAYSIZE = OrderError_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* OrderError_descriptor();
@@ -1694,6 +1699,8 @@ class Order :
     Order_Status_STATUS_REJECTED;
   static const Status STATUS_PARTIALLY_FILLED =
     Order_Status_STATUS_PARTIALLY_FILLED;
+  static const Status STATUS_PARKED =
+    Order_Status_STATUS_PARKED;
   static inline bool Status_IsValid(int value) {
     return Order_Status_IsValid(value);
   }
@@ -5157,6 +5164,15 @@ class OrderAmendment :
   ::vega::Timestamp* mutable_expiresat();
   void set_allocated_expiresat(::vega::Timestamp* expiresat);
 
+  // .google.protobuf.Int64Value peggedOffset = 8;
+  bool has_peggedoffset() const;
+  void clear_peggedoffset();
+  static const int kPeggedOffsetFieldNumber = 8;
+  const ::google::protobuf::Int64Value& peggedoffset() const;
+  ::google::protobuf::Int64Value* release_peggedoffset();
+  ::google::protobuf::Int64Value* mutable_peggedoffset();
+  void set_allocated_peggedoffset(::google::protobuf::Int64Value* peggedoffset);
+
   // int64 sizeDelta = 5;
   void clear_sizedelta();
   static const int kSizeDeltaFieldNumber = 5;
@@ -5169,6 +5185,12 @@ class OrderAmendment :
   ::vega::Order_TimeInForce timeinforce() const;
   void set_timeinforce(::vega::Order_TimeInForce value);
 
+  // .vega.PeggedReference peggedReference = 9;
+  void clear_peggedreference();
+  static const int kPeggedReferenceFieldNumber = 9;
+  ::vega::PeggedReference peggedreference() const;
+  void set_peggedreference(::vega::PeggedReference value);
+
   // @@protoc_insertion_point(class_scope:vega.OrderAmendment)
  private:
   class HasBitSetters;
@@ -5179,8 +5201,10 @@ class OrderAmendment :
   ::google::protobuf::internal::ArenaStringPtr marketid_;
   ::vega::Price* price_;
   ::vega::Timestamp* expiresat_;
+  ::google::protobuf::Int64Value* peggedoffset_;
   ::google::protobuf::int64 sizedelta_;
   int timeinforce_;
+  int peggedreference_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_proto_2fvega_2eproto;
 };
@@ -7160,9 +7184,9 @@ class MarketData :
 
   // accessors -------------------------------------------------------
 
-  // string market = 7;
+  // string market = 12;
   void clear_market();
-  static const int kMarketFieldNumber = 7;
+  static const int kMarketFieldNumber = 12;
   const ::std::string& market() const;
   void set_market(const ::std::string& value);
   #if LANG_CXX11
@@ -7174,9 +7198,9 @@ class MarketData :
   ::std::string* release_market();
   void set_allocated_market(::std::string* market);
 
-  // string targetStake = 16;
+  // string targetStake = 21;
   void clear_targetstake();
-  static const int kTargetStakeFieldNumber = 16;
+  static const int kTargetStakeFieldNumber = 21;
   const ::std::string& targetstake() const;
   void set_targetstake(const ::std::string& value);
   #if LANG_CXX11
@@ -7188,9 +7212,9 @@ class MarketData :
   ::std::string* release_targetstake();
   void set_allocated_targetstake(::std::string* targetstake);
 
-  // string suppliedStake = 17;
+  // string suppliedStake = 22;
   void clear_suppliedstake();
-  static const int kSuppliedStakeFieldNumber = 17;
+  static const int kSuppliedStakeFieldNumber = 22;
   const ::std::string& suppliedstake() const;
   void set_suppliedstake(const ::std::string& value);
   #if LANG_CXX11
@@ -7232,57 +7256,87 @@ class MarketData :
   ::google::protobuf::uint64 bestoffervolume() const;
   void set_bestoffervolume(::google::protobuf::uint64 value);
 
-  // uint64 midPrice = 6;
+  // uint64 bestStaticBidPrice = 6;
+  void clear_beststaticbidprice();
+  static const int kBestStaticBidPriceFieldNumber = 6;
+  ::google::protobuf::uint64 beststaticbidprice() const;
+  void set_beststaticbidprice(::google::protobuf::uint64 value);
+
+  // uint64 bestStaticBidVolume = 7;
+  void clear_beststaticbidvolume();
+  static const int kBestStaticBidVolumeFieldNumber = 7;
+  ::google::protobuf::uint64 beststaticbidvolume() const;
+  void set_beststaticbidvolume(::google::protobuf::uint64 value);
+
+  // uint64 bestStaticOfferPrice = 8;
+  void clear_beststaticofferprice();
+  static const int kBestStaticOfferPriceFieldNumber = 8;
+  ::google::protobuf::uint64 beststaticofferprice() const;
+  void set_beststaticofferprice(::google::protobuf::uint64 value);
+
+  // uint64 bestStaticOfferVolume = 9;
+  void clear_beststaticoffervolume();
+  static const int kBestStaticOfferVolumeFieldNumber = 9;
+  ::google::protobuf::uint64 beststaticoffervolume() const;
+  void set_beststaticoffervolume(::google::protobuf::uint64 value);
+
+  // uint64 midPrice = 10;
   void clear_midprice();
-  static const int kMidPriceFieldNumber = 6;
+  static const int kMidPriceFieldNumber = 10;
   ::google::protobuf::uint64 midprice() const;
   void set_midprice(::google::protobuf::uint64 value);
 
-  // int64 timestamp = 8;
+  // uint64 staticMidPrice = 11;
+  void clear_staticmidprice();
+  static const int kStaticMidPriceFieldNumber = 11;
+  ::google::protobuf::uint64 staticmidprice() const;
+  void set_staticmidprice(::google::protobuf::uint64 value);
+
+  // int64 timestamp = 13;
   void clear_timestamp();
-  static const int kTimestampFieldNumber = 8;
+  static const int kTimestampFieldNumber = 13;
   ::google::protobuf::int64 timestamp() const;
   void set_timestamp(::google::protobuf::int64 value);
 
-  // uint64 openInterest = 9;
+  // uint64 openInterest = 14;
   void clear_openinterest();
-  static const int kOpenInterestFieldNumber = 9;
+  static const int kOpenInterestFieldNumber = 14;
   ::google::protobuf::uint64 openinterest() const;
   void set_openinterest(::google::protobuf::uint64 value);
 
-  // int64 auctionEnd = 10;
+  // int64 auctionEnd = 15;
   void clear_auctionend();
-  static const int kAuctionEndFieldNumber = 10;
+  static const int kAuctionEndFieldNumber = 15;
   ::google::protobuf::int64 auctionend() const;
   void set_auctionend(::google::protobuf::int64 value);
 
-  // int64 auctionStart = 11;
+  // int64 auctionStart = 16;
   void clear_auctionstart();
-  static const int kAuctionStartFieldNumber = 11;
+  static const int kAuctionStartFieldNumber = 16;
   ::google::protobuf::int64 auctionstart() const;
   void set_auctionstart(::google::protobuf::int64 value);
 
-  // uint64 indicativePrice = 12;
+  // uint64 indicativePrice = 17;
   void clear_indicativeprice();
-  static const int kIndicativePriceFieldNumber = 12;
+  static const int kIndicativePriceFieldNumber = 17;
   ::google::protobuf::uint64 indicativeprice() const;
   void set_indicativeprice(::google::protobuf::uint64 value);
 
-  // uint64 indicativeVolume = 13;
+  // uint64 indicativeVolume = 18;
   void clear_indicativevolume();
-  static const int kIndicativeVolumeFieldNumber = 13;
+  static const int kIndicativeVolumeFieldNumber = 18;
   ::google::protobuf::uint64 indicativevolume() const;
   void set_indicativevolume(::google::protobuf::uint64 value);
 
-  // .vega.MarketState marketState = 14;
+  // .vega.MarketState marketState = 19;
   void clear_marketstate();
-  static const int kMarketStateFieldNumber = 14;
+  static const int kMarketStateFieldNumber = 19;
   ::vega::MarketState marketstate() const;
   void set_marketstate(::vega::MarketState value);
 
-  // .vega.AuctionTrigger trigger = 15;
+  // .vega.AuctionTrigger trigger = 20;
   void clear_trigger();
-  static const int kTriggerFieldNumber = 15;
+  static const int kTriggerFieldNumber = 20;
   ::vega::AuctionTrigger trigger() const;
   void set_trigger(::vega::AuctionTrigger value);
 
@@ -7299,7 +7353,12 @@ class MarketData :
   ::google::protobuf::uint64 bestbidvolume_;
   ::google::protobuf::uint64 bestofferprice_;
   ::google::protobuf::uint64 bestoffervolume_;
+  ::google::protobuf::uint64 beststaticbidprice_;
+  ::google::protobuf::uint64 beststaticbidvolume_;
+  ::google::protobuf::uint64 beststaticofferprice_;
+  ::google::protobuf::uint64 beststaticoffervolume_;
   ::google::protobuf::uint64 midprice_;
+  ::google::protobuf::uint64 staticmidprice_;
   ::google::protobuf::int64 timestamp_;
   ::google::protobuf::uint64 openinterest_;
   ::google::protobuf::int64 auctionend_;
@@ -8718,6 +8777,8 @@ class LiquidityProvision :
     LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_STOPPED;
   static const Status LIQUIDITY_PROVISION_STATUS_CANCELLED =
     LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_CANCELLED;
+  static const Status LIQUIDITY_PROVISION_STATUS_REJECTED =
+    LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_REJECTED;
   static inline bool Status_IsValid(int value) {
     return LiquidityProvision_Status_IsValid(value);
   }
@@ -13220,6 +13281,66 @@ inline void OrderAmendment::set_timeinforce(::vega::Order_TimeInForce value) {
   // @@protoc_insertion_point(field_set:vega.OrderAmendment.timeInForce)
 }
 
+// .google.protobuf.Int64Value peggedOffset = 8;
+inline bool OrderAmendment::has_peggedoffset() const {
+  return this != internal_default_instance() && peggedoffset_ != nullptr;
+}
+inline const ::google::protobuf::Int64Value& OrderAmendment::peggedoffset() const {
+  const ::google::protobuf::Int64Value* p = peggedoffset_;
+  // @@protoc_insertion_point(field_get:vega.OrderAmendment.peggedOffset)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Int64Value*>(
+      &::google::protobuf::_Int64Value_default_instance_);
+}
+inline ::google::protobuf::Int64Value* OrderAmendment::release_peggedoffset() {
+  // @@protoc_insertion_point(field_release:vega.OrderAmendment.peggedOffset)
+
+  ::google::protobuf::Int64Value* temp = peggedoffset_;
+  peggedoffset_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Int64Value* OrderAmendment::mutable_peggedoffset() {
+
+  if (peggedoffset_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Int64Value>(GetArenaNoVirtual());
+    peggedoffset_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:vega.OrderAmendment.peggedOffset)
+  return peggedoffset_;
+}
+inline void OrderAmendment::set_allocated_peggedoffset(::google::protobuf::Int64Value* peggedoffset) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(peggedoffset_);
+  }
+  if (peggedoffset) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(peggedoffset)->GetArena();
+    if (message_arena != submessage_arena) {
+      peggedoffset = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, peggedoffset, submessage_arena);
+    }
+
+  } else {
+
+  }
+  peggedoffset_ = peggedoffset;
+  // @@protoc_insertion_point(field_set_allocated:vega.OrderAmendment.peggedOffset)
+}
+
+// .vega.PeggedReference peggedReference = 9;
+inline void OrderAmendment::clear_peggedreference() {
+  peggedreference_ = 0;
+}
+inline ::vega::PeggedReference OrderAmendment::peggedreference() const {
+  // @@protoc_insertion_point(field_get:vega.OrderAmendment.peggedReference)
+  return static_cast< ::vega::PeggedReference >(peggedreference_);
+}
+inline void OrderAmendment::set_peggedreference(::vega::PeggedReference value) {
+
+  peggedreference_ = value;
+  // @@protoc_insertion_point(field_set:vega.OrderAmendment.peggedReference)
+}
+
 // -------------------------------------------------------------------
 
 // OrderSubmission
@@ -15287,7 +15408,63 @@ inline void MarketData::set_bestoffervolume(::google::protobuf::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.MarketData.bestOfferVolume)
 }
 
-// uint64 midPrice = 6;
+// uint64 bestStaticBidPrice = 6;
+inline void MarketData::clear_beststaticbidprice() {
+  beststaticbidprice_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 MarketData::beststaticbidprice() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.bestStaticBidPrice)
+  return beststaticbidprice_;
+}
+inline void MarketData::set_beststaticbidprice(::google::protobuf::uint64 value) {
+
+  beststaticbidprice_ = value;
+  // @@protoc_insertion_point(field_set:vega.MarketData.bestStaticBidPrice)
+}
+
+// uint64 bestStaticBidVolume = 7;
+inline void MarketData::clear_beststaticbidvolume() {
+  beststaticbidvolume_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 MarketData::beststaticbidvolume() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.bestStaticBidVolume)
+  return beststaticbidvolume_;
+}
+inline void MarketData::set_beststaticbidvolume(::google::protobuf::uint64 value) {
+
+  beststaticbidvolume_ = value;
+  // @@protoc_insertion_point(field_set:vega.MarketData.bestStaticBidVolume)
+}
+
+// uint64 bestStaticOfferPrice = 8;
+inline void MarketData::clear_beststaticofferprice() {
+  beststaticofferprice_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 MarketData::beststaticofferprice() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.bestStaticOfferPrice)
+  return beststaticofferprice_;
+}
+inline void MarketData::set_beststaticofferprice(::google::protobuf::uint64 value) {
+
+  beststaticofferprice_ = value;
+  // @@protoc_insertion_point(field_set:vega.MarketData.bestStaticOfferPrice)
+}
+
+// uint64 bestStaticOfferVolume = 9;
+inline void MarketData::clear_beststaticoffervolume() {
+  beststaticoffervolume_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 MarketData::beststaticoffervolume() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.bestStaticOfferVolume)
+  return beststaticoffervolume_;
+}
+inline void MarketData::set_beststaticoffervolume(::google::protobuf::uint64 value) {
+
+  beststaticoffervolume_ = value;
+  // @@protoc_insertion_point(field_set:vega.MarketData.bestStaticOfferVolume)
+}
+
+// uint64 midPrice = 10;
 inline void MarketData::clear_midprice() {
   midprice_ = PROTOBUF_ULONGLONG(0);
 }
@@ -15301,7 +15478,21 @@ inline void MarketData::set_midprice(::google::protobuf::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.MarketData.midPrice)
 }
 
-// string market = 7;
+// uint64 staticMidPrice = 11;
+inline void MarketData::clear_staticmidprice() {
+  staticmidprice_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 MarketData::staticmidprice() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.staticMidPrice)
+  return staticmidprice_;
+}
+inline void MarketData::set_staticmidprice(::google::protobuf::uint64 value) {
+
+  staticmidprice_ = value;
+  // @@protoc_insertion_point(field_set:vega.MarketData.staticMidPrice)
+}
+
+// string market = 12;
 inline void MarketData::clear_market() {
   market_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -15354,7 +15545,7 @@ inline void MarketData::set_allocated_market(::std::string* market) {
   // @@protoc_insertion_point(field_set_allocated:vega.MarketData.market)
 }
 
-// int64 timestamp = 8;
+// int64 timestamp = 13;
 inline void MarketData::clear_timestamp() {
   timestamp_ = PROTOBUF_LONGLONG(0);
 }
@@ -15368,7 +15559,7 @@ inline void MarketData::set_timestamp(::google::protobuf::int64 value) {
   // @@protoc_insertion_point(field_set:vega.MarketData.timestamp)
 }
 
-// uint64 openInterest = 9;
+// uint64 openInterest = 14;
 inline void MarketData::clear_openinterest() {
   openinterest_ = PROTOBUF_ULONGLONG(0);
 }
@@ -15382,7 +15573,7 @@ inline void MarketData::set_openinterest(::google::protobuf::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.MarketData.openInterest)
 }
 
-// int64 auctionEnd = 10;
+// int64 auctionEnd = 15;
 inline void MarketData::clear_auctionend() {
   auctionend_ = PROTOBUF_LONGLONG(0);
 }
@@ -15396,7 +15587,7 @@ inline void MarketData::set_auctionend(::google::protobuf::int64 value) {
   // @@protoc_insertion_point(field_set:vega.MarketData.auctionEnd)
 }
 
-// int64 auctionStart = 11;
+// int64 auctionStart = 16;
 inline void MarketData::clear_auctionstart() {
   auctionstart_ = PROTOBUF_LONGLONG(0);
 }
@@ -15410,7 +15601,7 @@ inline void MarketData::set_auctionstart(::google::protobuf::int64 value) {
   // @@protoc_insertion_point(field_set:vega.MarketData.auctionStart)
 }
 
-// uint64 indicativePrice = 12;
+// uint64 indicativePrice = 17;
 inline void MarketData::clear_indicativeprice() {
   indicativeprice_ = PROTOBUF_ULONGLONG(0);
 }
@@ -15424,7 +15615,7 @@ inline void MarketData::set_indicativeprice(::google::protobuf::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.MarketData.indicativePrice)
 }
 
-// uint64 indicativeVolume = 13;
+// uint64 indicativeVolume = 18;
 inline void MarketData::clear_indicativevolume() {
   indicativevolume_ = PROTOBUF_ULONGLONG(0);
 }
@@ -15438,7 +15629,7 @@ inline void MarketData::set_indicativevolume(::google::protobuf::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.MarketData.indicativeVolume)
 }
 
-// .vega.MarketState marketState = 14;
+// .vega.MarketState marketState = 19;
 inline void MarketData::clear_marketstate() {
   marketstate_ = 0;
 }
@@ -15452,7 +15643,7 @@ inline void MarketData::set_marketstate(::vega::MarketState value) {
   // @@protoc_insertion_point(field_set:vega.MarketData.marketState)
 }
 
-// .vega.AuctionTrigger trigger = 15;
+// .vega.AuctionTrigger trigger = 20;
 inline void MarketData::clear_trigger() {
   trigger_ = 0;
 }
@@ -15466,7 +15657,7 @@ inline void MarketData::set_trigger(::vega::AuctionTrigger value) {
   // @@protoc_insertion_point(field_set:vega.MarketData.trigger)
 }
 
-// string targetStake = 16;
+// string targetStake = 21;
 inline void MarketData::clear_targetstake() {
   targetstake_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -15519,7 +15710,7 @@ inline void MarketData::set_allocated_targetstake(::std::string* targetstake) {
   // @@protoc_insertion_point(field_set_allocated:vega.MarketData.targetStake)
 }
 
-// string suppliedStake = 17;
+// string suppliedStake = 22;
 inline void MarketData::clear_suppliedstake() {
   suppliedstake_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
