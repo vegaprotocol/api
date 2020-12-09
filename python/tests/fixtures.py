@@ -28,16 +28,6 @@ def tradingdata():
 
 
 @pytest.fixture(scope="module")
-def faucetclient():
-    """
-    Provide a FaucetClient, connected to $FAUCETSERVER.
-    """
-    faucetserver = os.getenv("FAUCETSERVER")
-    assert faucetserver is not None and faucetserver != ""
-    return vac.FaucetClient(faucetserver)
-
-
-@pytest.fixture(scope="module")
 def walletclient():
     """
     Provide a WalletClient, connected to $WALLETSERVER.
@@ -73,9 +63,7 @@ def walletpassphrase() -> str:
 
 
 @pytest.fixture(scope="module")
-def walletClientWalletKeypair(
-    walletclient, walletname, walletpassphrase
-) -> Tuple[Any, str, str, str]:
+def walletClientWalletKeypair(walletclient) -> Tuple[Any, str, str, str]:
     """
     Provide a WalletClient that has had a wallet and keypair added.
 
@@ -86,15 +74,18 @@ def walletClientWalletKeypair(
     * a public key
     """
 
-    # Create wallet
-    r = walletclient.create(walletname, walletpassphrase)
-    assert r.status_code == 200
+    # Use a traderbot bot for Staging.
+    wname = "demo"
+    wpass = f"123"
+
+    # Log in
+    r = walletclient.login(wname, wpass)
+    assert r.status_code == 200, f"{r.url} returned HTTP {r.status_code} {r.text}"
+
+    r = walletclient.listkeys()
+    assert r.status_code == 200, f"{r.url} returned HTTP {r.status_code} {r.text}"
     j = r.json()
-    assert "token" in j, "Bad response from CreateWallet: {}".format(j)
+    assert len(j["keys"]) > 0
+    pubkey = j["keys"][0]["pub"]
 
-    # Create a keypair
-    r = walletclient.generatekey(walletpassphrase, [])
-    assert r.status_code == 200
-    pubKey = r.json()["key"]["pub"]
-
-    return (walletclient, walletname, walletpassphrase, pubKey)
+    return (walletclient, wname, wpass, pubkey)
