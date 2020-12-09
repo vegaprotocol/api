@@ -659,7 +659,7 @@ class NewMarketConfiguration :
   ::vega::InstrumentConfiguration* mutable_instrument();
   void set_allocated_instrument(::vega::InstrumentConfiguration* instrument);
 
-  // .vega.PriceMonitoringParameters PriceMonitoringParameters = 5;
+  // .vega.PriceMonitoringParameters priceMonitoringParameters = 5;
   bool has_pricemonitoringparameters() const;
   void clear_pricemonitoringparameters();
   static const int kPriceMonitoringParametersFieldNumber = 5;
@@ -2491,18 +2491,18 @@ inline void NewMarketConfiguration::set_openingauctionduration(::google::protobu
   // @@protoc_insertion_point(field_set:vega.NewMarketConfiguration.openingAuctionDuration)
 }
 
-// .vega.PriceMonitoringParameters PriceMonitoringParameters = 5;
+// .vega.PriceMonitoringParameters priceMonitoringParameters = 5;
 inline bool NewMarketConfiguration::has_pricemonitoringparameters() const {
   return this != internal_default_instance() && pricemonitoringparameters_ != nullptr;
 }
 inline const ::vega::PriceMonitoringParameters& NewMarketConfiguration::pricemonitoringparameters() const {
   const ::vega::PriceMonitoringParameters* p = pricemonitoringparameters_;
-  // @@protoc_insertion_point(field_get:vega.NewMarketConfiguration.PriceMonitoringParameters)
+  // @@protoc_insertion_point(field_get:vega.NewMarketConfiguration.priceMonitoringParameters)
   return p != nullptr ? *p : *reinterpret_cast<const ::vega::PriceMonitoringParameters*>(
       &::vega::_PriceMonitoringParameters_default_instance_);
 }
 inline ::vega::PriceMonitoringParameters* NewMarketConfiguration::release_pricemonitoringparameters() {
-  // @@protoc_insertion_point(field_release:vega.NewMarketConfiguration.PriceMonitoringParameters)
+  // @@protoc_insertion_point(field_release:vega.NewMarketConfiguration.priceMonitoringParameters)
 
   ::vega::PriceMonitoringParameters* temp = pricemonitoringparameters_;
   pricemonitoringparameters_ = nullptr;
@@ -2514,7 +2514,7 @@ inline ::vega::PriceMonitoringParameters* NewMarketConfiguration::mutable_pricem
     auto* p = CreateMaybeMessage<::vega::PriceMonitoringParameters>(GetArenaNoVirtual());
     pricemonitoringparameters_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:vega.NewMarketConfiguration.PriceMonitoringParameters)
+  // @@protoc_insertion_point(field_mutable:vega.NewMarketConfiguration.priceMonitoringParameters)
   return pricemonitoringparameters_;
 }
 inline void NewMarketConfiguration::set_allocated_pricemonitoringparameters(::vega::PriceMonitoringParameters* pricemonitoringparameters) {
@@ -2533,7 +2533,7 @@ inline void NewMarketConfiguration::set_allocated_pricemonitoringparameters(::ve
 
   }
   pricemonitoringparameters_ = pricemonitoringparameters;
-  // @@protoc_insertion_point(field_set_allocated:vega.NewMarketConfiguration.PriceMonitoringParameters)
+  // @@protoc_insertion_point(field_set_allocated:vega.NewMarketConfiguration.priceMonitoringParameters)
 }
 
 // .vega.SimpleModelParams simple = 100;

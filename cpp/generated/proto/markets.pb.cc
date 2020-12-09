@@ -26,6 +26,7 @@ extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::inte
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_PriceMonitoringTrigger_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ScalingFactors_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SimpleModelParams_proto_2fmarkets_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TargetStakeParameters_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Fees_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Future_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_LogNormalRiskModel_proto_2fmarkets_2eproto;
@@ -116,6 +117,10 @@ class PriceMonitoringSettingsDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<PriceMonitoringSettings> _instance;
 } _PriceMonitoringSettings_default_instance_;
+class TargetStakeParametersDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<TargetStakeParameters> _instance;
+} _TargetStakeParameters_default_instance_;
 class MarketDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Market> _instance;
@@ -402,6 +407,20 @@ static void InitDefaultsPriceMonitoringSettings_proto_2fmarkets_2eproto() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsPriceMonitoringSettings_proto_2fmarkets_2eproto}, {
       &scc_info_PriceMonitoringParameters_proto_2fmarkets_2eproto.base,}};
 
+static void InitDefaultsTargetStakeParameters_proto_2fmarkets_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vega::_TargetStakeParameters_default_instance_;
+    new (ptr) ::vega::TargetStakeParameters();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::vega::TargetStakeParameters::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_TargetStakeParameters_proto_2fmarkets_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTargetStakeParameters_proto_2fmarkets_2eproto}, {}};
+
 static void InitDefaultsMarket_proto_2fmarkets_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -413,14 +432,15 @@ static void InitDefaultsMarket_proto_2fmarkets_2eproto() {
   ::vega::Market::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<6> scc_info_Market_proto_2fmarkets_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 6, InitDefaultsMarket_proto_2fmarkets_2eproto}, {
+::google::protobuf::internal::SCCInfo<7> scc_info_Market_proto_2fmarkets_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 7, InitDefaultsMarket_proto_2fmarkets_2eproto}, {
       &scc_info_TradableInstrument_proto_2fmarkets_2eproto.base,
       &scc_info_Fees_proto_2fmarkets_2eproto.base,
       &scc_info_AuctionDuration_proto_2fmarkets_2eproto.base,
       &scc_info_ContinuousTrading_proto_2fmarkets_2eproto.base,
       &scc_info_DiscreteTrading_proto_2fmarkets_2eproto.base,
-      &scc_info_PriceMonitoringSettings_proto_2fmarkets_2eproto.base,}};
+      &scc_info_PriceMonitoringSettings_proto_2fmarkets_2eproto.base,
+      &scc_info_TargetStakeParameters_proto_2fmarkets_2eproto.base,}};
 
 void InitDefaults_proto_2fmarkets_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_AuctionDuration_proto_2fmarkets_2eproto.base);
@@ -442,10 +462,11 @@ void InitDefaults_proto_2fmarkets_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_PriceMonitoringTrigger_proto_2fmarkets_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PriceMonitoringParameters_proto_2fmarkets_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PriceMonitoringSettings_proto_2fmarkets_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_TargetStakeParameters_proto_2fmarkets_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Market_proto_2fmarkets_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_proto_2fmarkets_2eproto[20];
+::google::protobuf::Metadata file_level_metadata_proto_2fmarkets_2eproto[21];
 constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_proto_2fmarkets_2eproto = nullptr;
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_proto_2fmarkets_2eproto = nullptr;
 
@@ -598,6 +619,13 @@ const ::google::protobuf::uint32 TableStruct_proto_2fmarkets_2eproto::offsets[] 
   PROTOBUF_FIELD_OFFSET(::vega::PriceMonitoringSettings, parameters_),
   PROTOBUF_FIELD_OFFSET(::vega::PriceMonitoringSettings, updatefrequency_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vega::TargetStakeParameters, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vega::TargetStakeParameters, timewindow_),
+  PROTOBUF_FIELD_OFFSET(::vega::TargetStakeParameters, scalingfactor_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::Market, _internal_metadata_),
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::vega::Market, _oneof_case_[0]),
@@ -610,6 +638,7 @@ const ::google::protobuf::uint32 TableStruct_proto_2fmarkets_2eproto::offsets[] 
   offsetof(::vega::MarketDefaultTypeInternal, continuous_),
   offsetof(::vega::MarketDefaultTypeInternal, discrete_),
   PROTOBUF_FIELD_OFFSET(::vega::Market, pricemonitoringsettings_),
+  PROTOBUF_FIELD_OFFSET(::vega::Market, targetstakeparameters_),
   PROTOBUF_FIELD_OFFSET(::vega::Market, tradingMode_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -632,7 +661,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 126, -1, sizeof(::vega::PriceMonitoringTrigger)},
   { 134, -1, sizeof(::vega::PriceMonitoringParameters)},
   { 140, -1, sizeof(::vega::PriceMonitoringSettings)},
-  { 147, -1, sizeof(::vega::Market)},
+  { 147, -1, sizeof(::vega::TargetStakeParameters)},
+  { 154, -1, sizeof(::vega::Market)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -655,13 +685,14 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_PriceMonitoringTrigger_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_PriceMonitoringParameters_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_PriceMonitoringSettings_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_TargetStakeParameters_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::vega::_Market_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_proto_2fmarkets_2eproto = {
   {}, AddDescriptors_proto_2fmarkets_2eproto, "proto/markets.proto", schemas,
   file_default_instances, TableStruct_proto_2fmarkets_2eproto::offsets,
-  file_level_metadata_proto_2fmarkets_2eproto, 20, file_level_enum_descriptors_proto_2fmarkets_2eproto, file_level_service_descriptors_proto_2fmarkets_2eproto,
+  file_level_metadata_proto_2fmarkets_2eproto, 21, file_level_enum_descriptors_proto_2fmarkets_2eproto, file_level_service_descriptors_proto_2fmarkets_2eproto,
 };
 
 const char descriptor_table_protodef_proto_2fmarkets_2eproto[] =
@@ -712,22 +743,25 @@ const char descriptor_table_protodef_proto_2fmarkets_2eproto[] =
   "itoringTrigger\"g\n\027PriceMonitoringSetting"
   "s\0223\n\nparameters\030\001 \001(\0132\037.vega.PriceMonito"
   "ringParameters\022\027\n\017updateFrequency\030\002 \001(\003\""
-  "\323\002\n\006Market\022\n\n\002id\030\001 \001(\t\0224\n\022tradableInstru"
-  "ment\030\002 \001(\0132\030.vega.TradableInstrument\022\025\n\r"
-  "decimalPlaces\030\003 \001(\004\022\030\n\004fees\030\004 \001(\0132\n.vega"
-  ".Fees\022-\n\016openingAuction\030\005 \001(\0132\025.vega.Auc"
-  "tionDuration\022-\n\ncontinuous\030d \001(\0132\027.vega."
-  "ContinuousTradingH\000\022)\n\010discrete\030e \001(\0132\025."
-  "vega.DiscreteTradingH\000\022>\n\027priceMonitorin"
-  "gSettings\030\006 \001(\0132\035.vega.PriceMonitoringSe"
-  "ttingsB\r\n\013tradingModeB7\n\024io.vegaprotocol"
-  ".vegaZ\037code.vegaprotocol.io/vega/protob\006"
-  "proto3"
+  "Y\n\025TargetStakeParameters\022\032\n\ntimeWindow\030\001"
+  " \001(\003B\006\342\337\037\002\020\000\022$\n\rscalingFactor\030\002 \001(\001B\r\342\337\037"
+  "\t1\000\000\000\000\000\000\000\000\"\217\003\n\006Market\022\n\n\002id\030\001 \001(\t\0224\n\022tra"
+  "dableInstrument\030\002 \001(\0132\030.vega.TradableIns"
+  "trument\022\025\n\rdecimalPlaces\030\003 \001(\004\022\030\n\004fees\030\004"
+  " \001(\0132\n.vega.Fees\022-\n\016openingAuction\030\005 \001(\013"
+  "2\025.vega.AuctionDuration\022-\n\ncontinuous\030d "
+  "\001(\0132\027.vega.ContinuousTradingH\000\022)\n\010discre"
+  "te\030e \001(\0132\025.vega.DiscreteTradingH\000\022>\n\027pri"
+  "ceMonitoringSettings\030\006 \001(\0132\035.vega.PriceM"
+  "onitoringSettings\022:\n\025targetStakeParamete"
+  "rs\030\007 \001(\0132\033.vega.TargetStakeParametersB\r\n"
+  "\013tradingModeB7\n\024io.vegaprotocol.vegaZ\037co"
+  "de.vegaprotocol.io/vega/protob\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_proto_2fmarkets_2eproto = {
   false, InitDefaults_proto_2fmarkets_2eproto, 
   descriptor_table_protodef_proto_2fmarkets_2eproto,
-  "proto/markets.proto", &assign_descriptors_table_proto_2fmarkets_2eproto, 2286,
+  "proto/markets.proto", &assign_descriptors_table_proto_2fmarkets_2eproto, 2437,
 };
 
 void AddDescriptors_proto_2fmarkets_2eproto() {
@@ -7918,6 +7952,312 @@ void PriceMonitoringSettings::InternalSwap(PriceMonitoringSettings* other) {
 
 // ===================================================================
 
+void TargetStakeParameters::InitAsDefaultInstance() {
+}
+class TargetStakeParameters::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int TargetStakeParameters::kTimeWindowFieldNumber;
+const int TargetStakeParameters::kScalingFactorFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+TargetStakeParameters::TargetStakeParameters()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:vega.TargetStakeParameters)
+}
+TargetStakeParameters::TargetStakeParameters(const TargetStakeParameters& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&timewindow_, &from.timewindow_,
+    static_cast<size_t>(reinterpret_cast<char*>(&scalingfactor_) -
+    reinterpret_cast<char*>(&timewindow_)) + sizeof(scalingfactor_));
+  // @@protoc_insertion_point(copy_constructor:vega.TargetStakeParameters)
+}
+
+void TargetStakeParameters::SharedCtor() {
+  ::memset(&timewindow_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&scalingfactor_) -
+      reinterpret_cast<char*>(&timewindow_)) + sizeof(scalingfactor_));
+}
+
+TargetStakeParameters::~TargetStakeParameters() {
+  // @@protoc_insertion_point(destructor:vega.TargetStakeParameters)
+  SharedDtor();
+}
+
+void TargetStakeParameters::SharedDtor() {
+}
+
+void TargetStakeParameters::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const TargetStakeParameters& TargetStakeParameters::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_TargetStakeParameters_proto_2fmarkets_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void TargetStakeParameters::Clear() {
+// @@protoc_insertion_point(message_clear_start:vega.TargetStakeParameters)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&timewindow_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&scalingfactor_) -
+      reinterpret_cast<char*>(&timewindow_)) + sizeof(scalingfactor_));
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* TargetStakeParameters::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<TargetStakeParameters*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // int64 timeWindow = 1 [(.validator.field) = {
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        msg->set_timewindow(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // double scalingFactor = 2 [(.validator.field) = {
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 17) goto handle_unusual;
+        msg->set_scalingfactor(::google::protobuf::io::UnalignedLoad<double>(ptr));
+        ptr += sizeof(double);
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool TargetStakeParameters::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:vega.TargetStakeParameters)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // int64 timeWindow = 1 [(.validator.field) = {
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &timewindow_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // double scalingFactor = 2 [(.validator.field) = {
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (17 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &scalingfactor_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:vega.TargetStakeParameters)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:vega.TargetStakeParameters)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void TargetStakeParameters::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:vega.TargetStakeParameters)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 timeWindow = 1 [(.validator.field) = {
+  if (this->timewindow() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->timewindow(), output);
+  }
+
+  // double scalingFactor = 2 [(.validator.field) = {
+  if (this->scalingfactor() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->scalingfactor(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:vega.TargetStakeParameters)
+}
+
+::google::protobuf::uint8* TargetStakeParameters::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vega.TargetStakeParameters)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 timeWindow = 1 [(.validator.field) = {
+  if (this->timewindow() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->timewindow(), target);
+  }
+
+  // double scalingFactor = 2 [(.validator.field) = {
+  if (this->scalingfactor() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->scalingfactor(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vega.TargetStakeParameters)
+  return target;
+}
+
+size_t TargetStakeParameters::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vega.TargetStakeParameters)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int64 timeWindow = 1 [(.validator.field) = {
+  if (this->timewindow() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->timewindow());
+  }
+
+  // double scalingFactor = 2 [(.validator.field) = {
+  if (this->scalingfactor() != 0) {
+    total_size += 1 + 8;
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void TargetStakeParameters::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vega.TargetStakeParameters)
+  GOOGLE_DCHECK_NE(&from, this);
+  const TargetStakeParameters* source =
+      ::google::protobuf::DynamicCastToGenerated<TargetStakeParameters>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.TargetStakeParameters)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.TargetStakeParameters)
+    MergeFrom(*source);
+  }
+}
+
+void TargetStakeParameters::MergeFrom(const TargetStakeParameters& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vega.TargetStakeParameters)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.timewindow() != 0) {
+    set_timewindow(from.timewindow());
+  }
+  if (from.scalingfactor() != 0) {
+    set_scalingfactor(from.scalingfactor());
+  }
+}
+
+void TargetStakeParameters::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vega.TargetStakeParameters)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TargetStakeParameters::CopyFrom(const TargetStakeParameters& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vega.TargetStakeParameters)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TargetStakeParameters::IsInitialized() const {
+  return true;
+}
+
+void TargetStakeParameters::Swap(TargetStakeParameters* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void TargetStakeParameters::InternalSwap(TargetStakeParameters* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(timewindow_, other->timewindow_);
+  swap(scalingfactor_, other->scalingfactor_);
+}
+
+::google::protobuf::Metadata TargetStakeParameters::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_proto_2fmarkets_2eproto);
+  return ::file_level_metadata_proto_2fmarkets_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 void Market::InitAsDefaultInstance() {
   ::vega::_Market_default_instance_._instance.get_mutable()->tradableinstrument_ = const_cast< ::vega::TradableInstrument*>(
       ::vega::TradableInstrument::internal_default_instance());
@@ -7931,6 +8271,8 @@ void Market::InitAsDefaultInstance() {
       ::vega::DiscreteTrading::internal_default_instance());
   ::vega::_Market_default_instance_._instance.get_mutable()->pricemonitoringsettings_ = const_cast< ::vega::PriceMonitoringSettings*>(
       ::vega::PriceMonitoringSettings::internal_default_instance());
+  ::vega::_Market_default_instance_._instance.get_mutable()->targetstakeparameters_ = const_cast< ::vega::TargetStakeParameters*>(
+      ::vega::TargetStakeParameters::internal_default_instance());
 }
 class Market::HasBitSetters {
  public:
@@ -7940,6 +8282,7 @@ class Market::HasBitSetters {
   static const ::vega::ContinuousTrading& continuous(const Market* msg);
   static const ::vega::DiscreteTrading& discrete(const Market* msg);
   static const ::vega::PriceMonitoringSettings& pricemonitoringsettings(const Market* msg);
+  static const ::vega::TargetStakeParameters& targetstakeparameters(const Market* msg);
 };
 
 const ::vega::TradableInstrument&
@@ -7965,6 +8308,10 @@ Market::HasBitSetters::discrete(const Market* msg) {
 const ::vega::PriceMonitoringSettings&
 Market::HasBitSetters::pricemonitoringsettings(const Market* msg) {
   return *msg->pricemonitoringsettings_;
+}
+const ::vega::TargetStakeParameters&
+Market::HasBitSetters::targetstakeparameters(const Market* msg) {
+  return *msg->targetstakeparameters_;
 }
 void Market::set_allocated_continuous(::vega::ContinuousTrading* continuous) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
@@ -8003,6 +8350,7 @@ const int Market::kOpeningAuctionFieldNumber;
 const int Market::kContinuousFieldNumber;
 const int Market::kDiscreteFieldNumber;
 const int Market::kPriceMonitoringSettingsFieldNumber;
+const int Market::kTargetStakeParametersFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Market::Market()
@@ -8037,6 +8385,11 @@ Market::Market(const Market& from)
     pricemonitoringsettings_ = new ::vega::PriceMonitoringSettings(*from.pricemonitoringsettings_);
   } else {
     pricemonitoringsettings_ = nullptr;
+  }
+  if (from.has_targetstakeparameters()) {
+    targetstakeparameters_ = new ::vega::TargetStakeParameters(*from.targetstakeparameters_);
+  } else {
+    targetstakeparameters_ = nullptr;
   }
   decimalplaces_ = from.decimalplaces_;
   clear_has_tradingMode();
@@ -8077,6 +8430,7 @@ void Market::SharedDtor() {
   if (this != internal_default_instance()) delete fees_;
   if (this != internal_default_instance()) delete openingauction_;
   if (this != internal_default_instance()) delete pricemonitoringsettings_;
+  if (this != internal_default_instance()) delete targetstakeparameters_;
   if (has_tradingMode()) {
     clear_tradingMode();
   }
@@ -8133,6 +8487,10 @@ void Market::Clear() {
     delete pricemonitoringsettings_;
   }
   pricemonitoringsettings_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && targetstakeparameters_ != nullptr) {
+    delete targetstakeparameters_;
+  }
+  targetstakeparameters_ = nullptr;
   decimalplaces_ = PROTOBUF_ULONGLONG(0);
   clear_tradingMode();
   _internal_metadata_.Clear();
@@ -8220,6 +8578,19 @@ const char* Market::_InternalParse(const char* begin, const char* end, void* obj
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::vega::PriceMonitoringSettings::_InternalParse;
         object = msg->mutable_pricemonitoringsettings();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .vega.TargetStakeParameters targetStakeParameters = 7;
+      case 7: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 58) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::vega::TargetStakeParameters::_InternalParse;
+        object = msg->mutable_targetstakeparameters();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -8358,6 +8729,17 @@ bool Market::MergePartialFromCodedStream(
         break;
       }
 
+      // .vega.TargetStakeParameters targetStakeParameters = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (58 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_targetstakeparameters()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // .vega.ContinuousTrading continuous = 100;
       case 100: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (802 & 0xFF)) {
@@ -8446,6 +8828,12 @@ void Market::SerializeWithCachedSizes(
       6, HasBitSetters::pricemonitoringsettings(this), output);
   }
 
+  // .vega.TargetStakeParameters targetStakeParameters = 7;
+  if (this->has_targetstakeparameters()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      7, HasBitSetters::targetstakeparameters(this), output);
+  }
+
   // .vega.ContinuousTrading continuous = 100;
   if (has_continuous()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -8513,6 +8901,13 @@ void Market::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         6, HasBitSetters::pricemonitoringsettings(this), target);
+  }
+
+  // .vega.TargetStakeParameters targetStakeParameters = 7;
+  if (this->has_targetstakeparameters()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        7, HasBitSetters::targetstakeparameters(this), target);
   }
 
   // .vega.ContinuousTrading continuous = 100;
@@ -8585,6 +8980,13 @@ size_t Market::ByteSizeLong() const {
         *pricemonitoringsettings_);
   }
 
+  // .vega.TargetStakeParameters targetStakeParameters = 7;
+  if (this->has_targetstakeparameters()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *targetstakeparameters_);
+  }
+
   // uint64 decimalPlaces = 3;
   if (this->decimalplaces() != 0) {
     total_size += 1 +
@@ -8654,6 +9056,9 @@ void Market::MergeFrom(const Market& from) {
   if (from.has_pricemonitoringsettings()) {
     mutable_pricemonitoringsettings()->::vega::PriceMonitoringSettings::MergeFrom(from.pricemonitoringsettings());
   }
+  if (from.has_targetstakeparameters()) {
+    mutable_targetstakeparameters()->::vega::TargetStakeParameters::MergeFrom(from.targetstakeparameters());
+  }
   if (from.decimalplaces() != 0) {
     set_decimalplaces(from.decimalplaces());
   }
@@ -8703,6 +9108,7 @@ void Market::InternalSwap(Market* other) {
   swap(fees_, other->fees_);
   swap(openingauction_, other->openingauction_);
   swap(pricemonitoringsettings_, other->pricemonitoringsettings_);
+  swap(targetstakeparameters_, other->targetstakeparameters_);
   swap(decimalplaces_, other->decimalplaces_);
   swap(tradingMode_, other->tradingMode_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
@@ -8774,6 +9180,9 @@ template<> PROTOBUF_NOINLINE ::vega::PriceMonitoringParameters* Arena::CreateMay
 }
 template<> PROTOBUF_NOINLINE ::vega::PriceMonitoringSettings* Arena::CreateMaybeMessage< ::vega::PriceMonitoringSettings >(Arena* arena) {
   return Arena::CreateInternal< ::vega::PriceMonitoringSettings >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vega::TargetStakeParameters* Arena::CreateMaybeMessage< ::vega::TargetStakeParameters >(Arena* arena) {
+  return Arena::CreateInternal< ::vega::TargetStakeParameters >(arena);
 }
 template<> PROTOBUF_NOINLINE ::vega::Market* Arena::CreateMaybeMessage< ::vega::Market >(Arena* arena) {
   return Arena::CreateInternal< ::vega::Market >(arena);

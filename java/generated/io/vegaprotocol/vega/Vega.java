@@ -2250,6 +2250,22 @@ public final class Vega {
      * <code>TRANSFER_TYPE_LIQUIDITY_FEE_PAY = 12;</code>
      */
     TRANSFER_TYPE_LIQUIDITY_FEE_PAY(12),
+    /**
+     * <pre>
+     * Bond too low.
+     * </pre>
+     *
+     * <code>TRANSFER_TYPE_BOND_LOW = 13;</code>
+     */
+    TRANSFER_TYPE_BOND_LOW(13),
+    /**
+     * <pre>
+     * Bond too high.
+     * </pre>
+     *
+     * <code>TRANSFER_TYPE_BOND_HIGH = 14;</code>
+     */
+    TRANSFER_TYPE_BOND_HIGH(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -2357,6 +2373,22 @@ public final class Vega {
      * <code>TRANSFER_TYPE_LIQUIDITY_FEE_PAY = 12;</code>
      */
     public static final int TRANSFER_TYPE_LIQUIDITY_FEE_PAY_VALUE = 12;
+    /**
+     * <pre>
+     * Bond too low.
+     * </pre>
+     *
+     * <code>TRANSFER_TYPE_BOND_LOW = 13;</code>
+     */
+    public static final int TRANSFER_TYPE_BOND_LOW_VALUE = 13;
+    /**
+     * <pre>
+     * Bond too high.
+     * </pre>
+     *
+     * <code>TRANSFER_TYPE_BOND_HIGH = 14;</code>
+     */
+    public static final int TRANSFER_TYPE_BOND_HIGH_VALUE = 14;
 
 
     public final int getNumber() {
@@ -2390,6 +2422,8 @@ public final class Vega {
         case 10: return TRANSFER_TYPE_MAKER_FEE_RECEIVE;
         case 11: return TRANSFER_TYPE_INFRASTRUCTURE_FEE_PAY;
         case 12: return TRANSFER_TYPE_LIQUIDITY_FEE_PAY;
+        case 13: return TRANSFER_TYPE_BOND_LOW;
+        case 14: return TRANSFER_TYPE_BOND_HIGH;
         default: return null;
       }
     }
@@ -2444,7 +2478,7 @@ public final class Vega {
 
   /**
    * <pre>
-   * The kind of the signature created by a node, for example, whitelisting a new asset, withdrawal etc.
+   * The kind of the signature created by a node, for example, allowlisting a new asset, withdrawal etc.
    * </pre>
    *
    * Protobuf enum {@code vega.NodeSignatureKind}
@@ -2461,7 +2495,7 @@ public final class Vega {
     NODE_SIGNATURE_KIND_UNSPECIFIED(0),
     /**
      * <pre>
-     * represents a signature for a new asset whitelisting
+     * represents a signature for a new asset allowlisting
      * </pre>
      *
      * <code>NODE_SIGNATURE_KIND_ASSET_NEW = 1;</code>
@@ -2488,7 +2522,7 @@ public final class Vega {
     public static final int NODE_SIGNATURE_KIND_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * represents a signature for a new asset whitelisting
+     * represents a signature for a new asset allowlisting
      * </pre>
      *
      * <code>NODE_SIGNATURE_KIND_ASSET_NEW = 1;</code>
@@ -51234,6 +51268,50 @@ public final class Vega {
      */
     com.google.protobuf.ByteString
         getSuppliedStakeBytes();
+
+    /**
+     * <pre>
+     * a list of price monitoring bounds per current time
+     * </pre>
+     *
+     * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+     */
+    java.util.List<io.vegaprotocol.vega.Vega.PriceMonitoringBounds>
+        getPriceMonitoringBoundsList();
+    /**
+     * <pre>
+     * a list of price monitoring bounds per current time
+     * </pre>
+     *
+     * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+     */
+    io.vegaprotocol.vega.Vega.PriceMonitoringBounds getPriceMonitoringBounds(int index);
+    /**
+     * <pre>
+     * a list of price monitoring bounds per current time
+     * </pre>
+     *
+     * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+     */
+    int getPriceMonitoringBoundsCount();
+    /**
+     * <pre>
+     * a list of price monitoring bounds per current time
+     * </pre>
+     *
+     * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+     */
+    java.util.List<? extends io.vegaprotocol.vega.Vega.PriceMonitoringBoundsOrBuilder>
+        getPriceMonitoringBoundsOrBuilderList();
+    /**
+     * <pre>
+     * a list of price monitoring bounds per current time
+     * </pre>
+     *
+     * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+     */
+    io.vegaprotocol.vega.Vega.PriceMonitoringBoundsOrBuilder getPriceMonitoringBoundsOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -51257,6 +51335,7 @@ public final class Vega {
       trigger_ = 0;
       targetStake_ = "";
       suppliedStake_ = "";
+      priceMonitoringBounds_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -51398,6 +51477,15 @@ public final class Vega {
               suppliedStake_ = s;
               break;
             }
+            case 186: {
+              if (!((mutable_bitField0_ & 0x00400000) != 0)) {
+                priceMonitoringBounds_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.PriceMonitoringBounds>();
+                mutable_bitField0_ |= 0x00400000;
+              }
+              priceMonitoringBounds_.add(
+                  input.readMessage(io.vegaprotocol.vega.Vega.PriceMonitoringBounds.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -51413,6 +51501,9 @@ public final class Vega {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00400000) != 0)) {
+          priceMonitoringBounds_ = java.util.Collections.unmodifiableList(priceMonitoringBounds_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -51430,6 +51521,7 @@ public final class Vega {
               io.vegaprotocol.vega.Vega.MarketData.class, io.vegaprotocol.vega.Vega.MarketData.Builder.class);
     }
 
+    private int bitField0_;
     public static final int MARKPRICE_FIELD_NUMBER = 1;
     private long markPrice_;
     /**
@@ -51832,6 +51924,61 @@ public final class Vega {
       }
     }
 
+    public static final int PRICEMONITORINGBOUNDS_FIELD_NUMBER = 23;
+    private java.util.List<io.vegaprotocol.vega.Vega.PriceMonitoringBounds> priceMonitoringBounds_;
+    /**
+     * <pre>
+     * a list of price monitoring bounds per current time
+     * </pre>
+     *
+     * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+     */
+    public java.util.List<io.vegaprotocol.vega.Vega.PriceMonitoringBounds> getPriceMonitoringBoundsList() {
+      return priceMonitoringBounds_;
+    }
+    /**
+     * <pre>
+     * a list of price monitoring bounds per current time
+     * </pre>
+     *
+     * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+     */
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceMonitoringBoundsOrBuilder>
+        getPriceMonitoringBoundsOrBuilderList() {
+      return priceMonitoringBounds_;
+    }
+    /**
+     * <pre>
+     * a list of price monitoring bounds per current time
+     * </pre>
+     *
+     * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+     */
+    public int getPriceMonitoringBoundsCount() {
+      return priceMonitoringBounds_.size();
+    }
+    /**
+     * <pre>
+     * a list of price monitoring bounds per current time
+     * </pre>
+     *
+     * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+     */
+    public io.vegaprotocol.vega.Vega.PriceMonitoringBounds getPriceMonitoringBounds(int index) {
+      return priceMonitoringBounds_.get(index);
+    }
+    /**
+     * <pre>
+     * a list of price monitoring bounds per current time
+     * </pre>
+     *
+     * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+     */
+    public io.vegaprotocol.vega.Vega.PriceMonitoringBoundsOrBuilder getPriceMonitoringBoundsOrBuilder(
+        int index) {
+      return priceMonitoringBounds_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -51911,6 +52058,9 @@ public final class Vega {
       }
       if (!getSuppliedStakeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 22, suppliedStake_);
+      }
+      for (int i = 0; i < priceMonitoringBounds_.size(); i++) {
+        output.writeMessage(23, priceMonitoringBounds_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -52006,6 +52156,10 @@ public final class Vega {
       if (!getSuppliedStakeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, suppliedStake_);
       }
+      for (int i = 0; i < priceMonitoringBounds_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(23, priceMonitoringBounds_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -52063,6 +52217,8 @@ public final class Vega {
           .equals(other.getTargetStake())) return false;
       if (!getSuppliedStake()
           .equals(other.getSuppliedStake())) return false;
+      if (!getPriceMonitoringBoundsList()
+          .equals(other.getPriceMonitoringBoundsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -52135,6 +52291,10 @@ public final class Vega {
       hash = (53 * hash) + getTargetStake().hashCode();
       hash = (37 * hash) + SUPPLIEDSTAKE_FIELD_NUMBER;
       hash = (53 * hash) + getSuppliedStake().hashCode();
+      if (getPriceMonitoringBoundsCount() > 0) {
+        hash = (37 * hash) + PRICEMONITORINGBOUNDS_FIELD_NUMBER;
+        hash = (53 * hash) + getPriceMonitoringBoundsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -52267,6 +52427,7 @@ public final class Vega {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getPriceMonitoringBoundsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -52316,6 +52477,12 @@ public final class Vega {
 
         suppliedStake_ = "";
 
+        if (priceMonitoringBoundsBuilder_ == null) {
+          priceMonitoringBounds_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00400000);
+        } else {
+          priceMonitoringBoundsBuilder_.clear();
+        }
         return this;
       }
 
@@ -52342,6 +52509,8 @@ public final class Vega {
       @java.lang.Override
       public io.vegaprotocol.vega.Vega.MarketData buildPartial() {
         io.vegaprotocol.vega.Vega.MarketData result = new io.vegaprotocol.vega.Vega.MarketData(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.markPrice_ = markPrice_;
         result.bestBidPrice_ = bestBidPrice_;
         result.bestBidVolume_ = bestBidVolume_;
@@ -52364,6 +52533,16 @@ public final class Vega {
         result.trigger_ = trigger_;
         result.targetStake_ = targetStake_;
         result.suppliedStake_ = suppliedStake_;
+        if (priceMonitoringBoundsBuilder_ == null) {
+          if (((bitField0_ & 0x00400000) != 0)) {
+            priceMonitoringBounds_ = java.util.Collections.unmodifiableList(priceMonitoringBounds_);
+            bitField0_ = (bitField0_ & ~0x00400000);
+          }
+          result.priceMonitoringBounds_ = priceMonitoringBounds_;
+        } else {
+          result.priceMonitoringBounds_ = priceMonitoringBoundsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -52481,6 +52660,32 @@ public final class Vega {
           suppliedStake_ = other.suppliedStake_;
           onChanged();
         }
+        if (priceMonitoringBoundsBuilder_ == null) {
+          if (!other.priceMonitoringBounds_.isEmpty()) {
+            if (priceMonitoringBounds_.isEmpty()) {
+              priceMonitoringBounds_ = other.priceMonitoringBounds_;
+              bitField0_ = (bitField0_ & ~0x00400000);
+            } else {
+              ensurePriceMonitoringBoundsIsMutable();
+              priceMonitoringBounds_.addAll(other.priceMonitoringBounds_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.priceMonitoringBounds_.isEmpty()) {
+            if (priceMonitoringBoundsBuilder_.isEmpty()) {
+              priceMonitoringBoundsBuilder_.dispose();
+              priceMonitoringBoundsBuilder_ = null;
+              priceMonitoringBounds_ = other.priceMonitoringBounds_;
+              bitField0_ = (bitField0_ & ~0x00400000);
+              priceMonitoringBoundsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPriceMonitoringBoundsFieldBuilder() : null;
+            } else {
+              priceMonitoringBoundsBuilder_.addAllMessages(other.priceMonitoringBounds_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -52509,6 +52714,7 @@ public final class Vega {
         }
         return this;
       }
+      private int bitField0_;
 
       private long markPrice_ ;
       /**
@@ -53567,6 +53773,318 @@ public final class Vega {
         onChanged();
         return this;
       }
+
+      private java.util.List<io.vegaprotocol.vega.Vega.PriceMonitoringBounds> priceMonitoringBounds_ =
+        java.util.Collections.emptyList();
+      private void ensurePriceMonitoringBoundsIsMutable() {
+        if (!((bitField0_ & 0x00400000) != 0)) {
+          priceMonitoringBounds_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.PriceMonitoringBounds>(priceMonitoringBounds_);
+          bitField0_ |= 0x00400000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.PriceMonitoringBounds, io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder, io.vegaprotocol.vega.Vega.PriceMonitoringBoundsOrBuilder> priceMonitoringBoundsBuilder_;
+
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.PriceMonitoringBounds> getPriceMonitoringBoundsList() {
+        if (priceMonitoringBoundsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(priceMonitoringBounds_);
+        } else {
+          return priceMonitoringBoundsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public int getPriceMonitoringBoundsCount() {
+        if (priceMonitoringBoundsBuilder_ == null) {
+          return priceMonitoringBounds_.size();
+        } else {
+          return priceMonitoringBoundsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public io.vegaprotocol.vega.Vega.PriceMonitoringBounds getPriceMonitoringBounds(int index) {
+        if (priceMonitoringBoundsBuilder_ == null) {
+          return priceMonitoringBounds_.get(index);
+        } else {
+          return priceMonitoringBoundsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public Builder setPriceMonitoringBounds(
+          int index, io.vegaprotocol.vega.Vega.PriceMonitoringBounds value) {
+        if (priceMonitoringBoundsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePriceMonitoringBoundsIsMutable();
+          priceMonitoringBounds_.set(index, value);
+          onChanged();
+        } else {
+          priceMonitoringBoundsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public Builder setPriceMonitoringBounds(
+          int index, io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder builderForValue) {
+        if (priceMonitoringBoundsBuilder_ == null) {
+          ensurePriceMonitoringBoundsIsMutable();
+          priceMonitoringBounds_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          priceMonitoringBoundsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public Builder addPriceMonitoringBounds(io.vegaprotocol.vega.Vega.PriceMonitoringBounds value) {
+        if (priceMonitoringBoundsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePriceMonitoringBoundsIsMutable();
+          priceMonitoringBounds_.add(value);
+          onChanged();
+        } else {
+          priceMonitoringBoundsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public Builder addPriceMonitoringBounds(
+          int index, io.vegaprotocol.vega.Vega.PriceMonitoringBounds value) {
+        if (priceMonitoringBoundsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePriceMonitoringBoundsIsMutable();
+          priceMonitoringBounds_.add(index, value);
+          onChanged();
+        } else {
+          priceMonitoringBoundsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public Builder addPriceMonitoringBounds(
+          io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder builderForValue) {
+        if (priceMonitoringBoundsBuilder_ == null) {
+          ensurePriceMonitoringBoundsIsMutable();
+          priceMonitoringBounds_.add(builderForValue.build());
+          onChanged();
+        } else {
+          priceMonitoringBoundsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public Builder addPriceMonitoringBounds(
+          int index, io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder builderForValue) {
+        if (priceMonitoringBoundsBuilder_ == null) {
+          ensurePriceMonitoringBoundsIsMutable();
+          priceMonitoringBounds_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          priceMonitoringBoundsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public Builder addAllPriceMonitoringBounds(
+          java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.PriceMonitoringBounds> values) {
+        if (priceMonitoringBoundsBuilder_ == null) {
+          ensurePriceMonitoringBoundsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, priceMonitoringBounds_);
+          onChanged();
+        } else {
+          priceMonitoringBoundsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public Builder clearPriceMonitoringBounds() {
+        if (priceMonitoringBoundsBuilder_ == null) {
+          priceMonitoringBounds_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00400000);
+          onChanged();
+        } else {
+          priceMonitoringBoundsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public Builder removePriceMonitoringBounds(int index) {
+        if (priceMonitoringBoundsBuilder_ == null) {
+          ensurePriceMonitoringBoundsIsMutable();
+          priceMonitoringBounds_.remove(index);
+          onChanged();
+        } else {
+          priceMonitoringBoundsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder getPriceMonitoringBoundsBuilder(
+          int index) {
+        return getPriceMonitoringBoundsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public io.vegaprotocol.vega.Vega.PriceMonitoringBoundsOrBuilder getPriceMonitoringBoundsOrBuilder(
+          int index) {
+        if (priceMonitoringBoundsBuilder_ == null) {
+          return priceMonitoringBounds_.get(index);  } else {
+          return priceMonitoringBoundsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceMonitoringBoundsOrBuilder>
+           getPriceMonitoringBoundsOrBuilderList() {
+        if (priceMonitoringBoundsBuilder_ != null) {
+          return priceMonitoringBoundsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(priceMonitoringBounds_);
+        }
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder addPriceMonitoringBoundsBuilder() {
+        return getPriceMonitoringBoundsFieldBuilder().addBuilder(
+            io.vegaprotocol.vega.Vega.PriceMonitoringBounds.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder addPriceMonitoringBoundsBuilder(
+          int index) {
+        return getPriceMonitoringBoundsFieldBuilder().addBuilder(
+            index, io.vegaprotocol.vega.Vega.PriceMonitoringBounds.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * a list of price monitoring bounds per current time
+       * </pre>
+       *
+       * <code>repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23;</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder>
+           getPriceMonitoringBoundsBuilderList() {
+        return getPriceMonitoringBoundsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.PriceMonitoringBounds, io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder, io.vegaprotocol.vega.Vega.PriceMonitoringBoundsOrBuilder>
+          getPriceMonitoringBoundsFieldBuilder() {
+        if (priceMonitoringBoundsBuilder_ == null) {
+          priceMonitoringBoundsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.PriceMonitoringBounds, io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder, io.vegaprotocol.vega.Vega.PriceMonitoringBoundsOrBuilder>(
+                  priceMonitoringBounds_,
+                  ((bitField0_ & 0x00400000) != 0),
+                  getParentForChildren(),
+                  isClean());
+          priceMonitoringBounds_ = null;
+        }
+        return priceMonitoringBoundsBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -53615,6 +54133,846 @@ public final class Vega {
 
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.MarketData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PriceMonitoringBoundsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.PriceMonitoringBounds)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Minimum price that isn't currently breaching the specified price monitoring trigger
+     * </pre>
+     *
+     * <code>uint64 minValidPrice = 1;</code>
+     */
+    long getMinValidPrice();
+
+    /**
+     * <pre>
+     * Maximum price that isn't currently breaching the specified price monitoring trigger
+     * </pre>
+     *
+     * <code>uint64 maxValidPrice = 2;</code>
+     */
+    long getMaxValidPrice();
+
+    /**
+     * <pre>
+     * Price monitoring trigger associated with the bounds
+     * </pre>
+     *
+     * <code>.vega.PriceMonitoringTrigger trigger = 3;</code>
+     */
+    boolean hasTrigger();
+    /**
+     * <pre>
+     * Price monitoring trigger associated with the bounds
+     * </pre>
+     *
+     * <code>.vega.PriceMonitoringTrigger trigger = 3;</code>
+     */
+    io.vegaprotocol.vega.Markets.PriceMonitoringTrigger getTrigger();
+    /**
+     * <pre>
+     * Price monitoring trigger associated with the bounds
+     * </pre>
+     *
+     * <code>.vega.PriceMonitoringTrigger trigger = 3;</code>
+     */
+    io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder getTriggerOrBuilder();
+  }
+  /**
+   * <pre>
+   * Represents a list of valid (at the current time) price ranges per associated trigger
+   * </pre>
+   *
+   * Protobuf type {@code vega.PriceMonitoringBounds}
+   */
+  public  static final class PriceMonitoringBounds extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.PriceMonitoringBounds)
+      PriceMonitoringBoundsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PriceMonitoringBounds.newBuilder() to construct.
+    private PriceMonitoringBounds(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PriceMonitoringBounds() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PriceMonitoringBounds(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              minValidPrice_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              maxValidPrice_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+              io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder subBuilder = null;
+              if (trigger_ != null) {
+                subBuilder = trigger_.toBuilder();
+              }
+              trigger_ = input.readMessage(io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(trigger_);
+                trigger_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_PriceMonitoringBounds_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_PriceMonitoringBounds_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Vega.PriceMonitoringBounds.class, io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder.class);
+    }
+
+    public static final int MINVALIDPRICE_FIELD_NUMBER = 1;
+    private long minValidPrice_;
+    /**
+     * <pre>
+     * Minimum price that isn't currently breaching the specified price monitoring trigger
+     * </pre>
+     *
+     * <code>uint64 minValidPrice = 1;</code>
+     */
+    public long getMinValidPrice() {
+      return minValidPrice_;
+    }
+
+    public static final int MAXVALIDPRICE_FIELD_NUMBER = 2;
+    private long maxValidPrice_;
+    /**
+     * <pre>
+     * Maximum price that isn't currently breaching the specified price monitoring trigger
+     * </pre>
+     *
+     * <code>uint64 maxValidPrice = 2;</code>
+     */
+    public long getMaxValidPrice() {
+      return maxValidPrice_;
+    }
+
+    public static final int TRIGGER_FIELD_NUMBER = 3;
+    private io.vegaprotocol.vega.Markets.PriceMonitoringTrigger trigger_;
+    /**
+     * <pre>
+     * Price monitoring trigger associated with the bounds
+     * </pre>
+     *
+     * <code>.vega.PriceMonitoringTrigger trigger = 3;</code>
+     */
+    public boolean hasTrigger() {
+      return trigger_ != null;
+    }
+    /**
+     * <pre>
+     * Price monitoring trigger associated with the bounds
+     * </pre>
+     *
+     * <code>.vega.PriceMonitoringTrigger trigger = 3;</code>
+     */
+    public io.vegaprotocol.vega.Markets.PriceMonitoringTrigger getTrigger() {
+      return trigger_ == null ? io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.getDefaultInstance() : trigger_;
+    }
+    /**
+     * <pre>
+     * Price monitoring trigger associated with the bounds
+     * </pre>
+     *
+     * <code>.vega.PriceMonitoringTrigger trigger = 3;</code>
+     */
+    public io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder getTriggerOrBuilder() {
+      return getTrigger();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (minValidPrice_ != 0L) {
+        output.writeUInt64(1, minValidPrice_);
+      }
+      if (maxValidPrice_ != 0L) {
+        output.writeUInt64(2, maxValidPrice_);
+      }
+      if (trigger_ != null) {
+        output.writeMessage(3, getTrigger());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (minValidPrice_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, minValidPrice_);
+      }
+      if (maxValidPrice_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, maxValidPrice_);
+      }
+      if (trigger_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getTrigger());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Vega.PriceMonitoringBounds)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Vega.PriceMonitoringBounds other = (io.vegaprotocol.vega.Vega.PriceMonitoringBounds) obj;
+
+      if (getMinValidPrice()
+          != other.getMinValidPrice()) return false;
+      if (getMaxValidPrice()
+          != other.getMaxValidPrice()) return false;
+      if (hasTrigger() != other.hasTrigger()) return false;
+      if (hasTrigger()) {
+        if (!getTrigger()
+            .equals(other.getTrigger())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MINVALIDPRICE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMinValidPrice());
+      hash = (37 * hash) + MAXVALIDPRICE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMaxValidPrice());
+      if (hasTrigger()) {
+        hash = (37 * hash) + TRIGGER_FIELD_NUMBER;
+        hash = (53 * hash) + getTrigger().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Vega.PriceMonitoringBounds parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.PriceMonitoringBounds parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.PriceMonitoringBounds parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.PriceMonitoringBounds parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.PriceMonitoringBounds parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.PriceMonitoringBounds parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.PriceMonitoringBounds parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.PriceMonitoringBounds parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.PriceMonitoringBounds parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.PriceMonitoringBounds parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.PriceMonitoringBounds parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.PriceMonitoringBounds parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Vega.PriceMonitoringBounds prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Represents a list of valid (at the current time) price ranges per associated trigger
+     * </pre>
+     *
+     * Protobuf type {@code vega.PriceMonitoringBounds}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.PriceMonitoringBounds)
+        io.vegaprotocol.vega.Vega.PriceMonitoringBoundsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_PriceMonitoringBounds_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_PriceMonitoringBounds_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Vega.PriceMonitoringBounds.class, io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Vega.PriceMonitoringBounds.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        minValidPrice_ = 0L;
+
+        maxValidPrice_ = 0L;
+
+        if (triggerBuilder_ == null) {
+          trigger_ = null;
+        } else {
+          trigger_ = null;
+          triggerBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_PriceMonitoringBounds_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.PriceMonitoringBounds getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Vega.PriceMonitoringBounds.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.PriceMonitoringBounds build() {
+        io.vegaprotocol.vega.Vega.PriceMonitoringBounds result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.PriceMonitoringBounds buildPartial() {
+        io.vegaprotocol.vega.Vega.PriceMonitoringBounds result = new io.vegaprotocol.vega.Vega.PriceMonitoringBounds(this);
+        result.minValidPrice_ = minValidPrice_;
+        result.maxValidPrice_ = maxValidPrice_;
+        if (triggerBuilder_ == null) {
+          result.trigger_ = trigger_;
+        } else {
+          result.trigger_ = triggerBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Vega.PriceMonitoringBounds) {
+          return mergeFrom((io.vegaprotocol.vega.Vega.PriceMonitoringBounds)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Vega.PriceMonitoringBounds other) {
+        if (other == io.vegaprotocol.vega.Vega.PriceMonitoringBounds.getDefaultInstance()) return this;
+        if (other.getMinValidPrice() != 0L) {
+          setMinValidPrice(other.getMinValidPrice());
+        }
+        if (other.getMaxValidPrice() != 0L) {
+          setMaxValidPrice(other.getMaxValidPrice());
+        }
+        if (other.hasTrigger()) {
+          mergeTrigger(other.getTrigger());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Vega.PriceMonitoringBounds parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Vega.PriceMonitoringBounds) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long minValidPrice_ ;
+      /**
+       * <pre>
+       * Minimum price that isn't currently breaching the specified price monitoring trigger
+       * </pre>
+       *
+       * <code>uint64 minValidPrice = 1;</code>
+       */
+      public long getMinValidPrice() {
+        return minValidPrice_;
+      }
+      /**
+       * <pre>
+       * Minimum price that isn't currently breaching the specified price monitoring trigger
+       * </pre>
+       *
+       * <code>uint64 minValidPrice = 1;</code>
+       */
+      public Builder setMinValidPrice(long value) {
+
+        minValidPrice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Minimum price that isn't currently breaching the specified price monitoring trigger
+       * </pre>
+       *
+       * <code>uint64 minValidPrice = 1;</code>
+       */
+      public Builder clearMinValidPrice() {
+
+        minValidPrice_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long maxValidPrice_ ;
+      /**
+       * <pre>
+       * Maximum price that isn't currently breaching the specified price monitoring trigger
+       * </pre>
+       *
+       * <code>uint64 maxValidPrice = 2;</code>
+       */
+      public long getMaxValidPrice() {
+        return maxValidPrice_;
+      }
+      /**
+       * <pre>
+       * Maximum price that isn't currently breaching the specified price monitoring trigger
+       * </pre>
+       *
+       * <code>uint64 maxValidPrice = 2;</code>
+       */
+      public Builder setMaxValidPrice(long value) {
+
+        maxValidPrice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Maximum price that isn't currently breaching the specified price monitoring trigger
+       * </pre>
+       *
+       * <code>uint64 maxValidPrice = 2;</code>
+       */
+      public Builder clearMaxValidPrice() {
+
+        maxValidPrice_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private io.vegaprotocol.vega.Markets.PriceMonitoringTrigger trigger_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.PriceMonitoringTrigger, io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder> triggerBuilder_;
+      /**
+       * <pre>
+       * Price monitoring trigger associated with the bounds
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringTrigger trigger = 3;</code>
+       */
+      public boolean hasTrigger() {
+        return triggerBuilder_ != null || trigger_ != null;
+      }
+      /**
+       * <pre>
+       * Price monitoring trigger associated with the bounds
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringTrigger trigger = 3;</code>
+       */
+      public io.vegaprotocol.vega.Markets.PriceMonitoringTrigger getTrigger() {
+        if (triggerBuilder_ == null) {
+          return trigger_ == null ? io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.getDefaultInstance() : trigger_;
+        } else {
+          return triggerBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Price monitoring trigger associated with the bounds
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringTrigger trigger = 3;</code>
+       */
+      public Builder setTrigger(io.vegaprotocol.vega.Markets.PriceMonitoringTrigger value) {
+        if (triggerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          trigger_ = value;
+          onChanged();
+        } else {
+          triggerBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Price monitoring trigger associated with the bounds
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringTrigger trigger = 3;</code>
+       */
+      public Builder setTrigger(
+          io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder builderForValue) {
+        if (triggerBuilder_ == null) {
+          trigger_ = builderForValue.build();
+          onChanged();
+        } else {
+          triggerBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Price monitoring trigger associated with the bounds
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringTrigger trigger = 3;</code>
+       */
+      public Builder mergeTrigger(io.vegaprotocol.vega.Markets.PriceMonitoringTrigger value) {
+        if (triggerBuilder_ == null) {
+          if (trigger_ != null) {
+            trigger_ =
+              io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.newBuilder(trigger_).mergeFrom(value).buildPartial();
+          } else {
+            trigger_ = value;
+          }
+          onChanged();
+        } else {
+          triggerBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Price monitoring trigger associated with the bounds
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringTrigger trigger = 3;</code>
+       */
+      public Builder clearTrigger() {
+        if (triggerBuilder_ == null) {
+          trigger_ = null;
+          onChanged();
+        } else {
+          trigger_ = null;
+          triggerBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Price monitoring trigger associated with the bounds
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringTrigger trigger = 3;</code>
+       */
+      public io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder getTriggerBuilder() {
+
+        onChanged();
+        return getTriggerFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Price monitoring trigger associated with the bounds
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringTrigger trigger = 3;</code>
+       */
+      public io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder getTriggerOrBuilder() {
+        if (triggerBuilder_ != null) {
+          return triggerBuilder_.getMessageOrBuilder();
+        } else {
+          return trigger_ == null ?
+              io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.getDefaultInstance() : trigger_;
+        }
+      }
+      /**
+       * <pre>
+       * Price monitoring trigger associated with the bounds
+       * </pre>
+       *
+       * <code>.vega.PriceMonitoringTrigger trigger = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.PriceMonitoringTrigger, io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder>
+          getTriggerFieldBuilder() {
+        if (triggerBuilder_ == null) {
+          triggerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Markets.PriceMonitoringTrigger, io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder>(
+                  getTrigger(),
+                  getParentForChildren(),
+                  isClean());
+          trigger_ = null;
+        }
+        return triggerBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.PriceMonitoringBounds)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.PriceMonitoringBounds)
+    private static final io.vegaprotocol.vega.Vega.PriceMonitoringBounds DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.PriceMonitoringBounds();
+    }
+
+    public static io.vegaprotocol.vega.Vega.PriceMonitoringBounds getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PriceMonitoringBounds>
+        PARSER = new com.google.protobuf.AbstractParser<PriceMonitoringBounds>() {
+      @java.lang.Override
+      public PriceMonitoringBounds parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PriceMonitoringBounds(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PriceMonitoringBounds> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PriceMonitoringBounds> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.PriceMonitoringBounds getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -64736,6 +66094,11 @@ public final class Vega {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_MarketData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_PriceMonitoringBounds_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_PriceMonitoringBounds_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_ErrorDetail_descriptor;
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -64796,308 +66159,314 @@ public final class Vega {
     java.lang.String[] descriptorData = {
       "\n\020proto/vega.proto\022\004vega\0326github.com/mwi" +
       "tkow/go-proto-validators/validator.proto" +
-      "\032\036google/protobuf/wrappers.proto\"\026\n\005Pric" +
-      "e\022\r\n\005value\030\001 \001(\004\"\032\n\tTimestamp\022\r\n\005value\030\001" +
-      " \001(\003\"\033\n\005Party\022\022\n\002id\030\001 \001(\tB\006\342\337\037\002 \001\"9\n\nRis" +
-      "kFactor\022\016\n\006market\030\001 \001(\t\022\r\n\005short\030\002 \001(\001\022\014" +
-      "\n\004long\030\003 \001(\001\"\346\002\n\nRiskResult\022\030\n\020updatedTi" +
-      "mestamp\030\001 \001(\003\0226\n\013riskFactors\030\002 \003(\0132!.veg" +
-      "a.RiskResult.RiskFactorsEntry\022\033\n\023nextUpd" +
-      "ateTimestamp\030\003 \001(\003\022P\n\030predictedNextRiskF" +
-      "actors\030\004 \003(\0132..vega.RiskResult.Predicted" +
-      "NextRiskFactorsEntry\032D\n\020RiskFactorsEntry" +
-      "\022\013\n\003key\030\001 \001(\t\022\037\n\005value\030\002 \001(\0132\020.vega.Risk" +
-      "Factor:\0028\001\032Q\n\035PredictedNextRiskFactorsEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022\037\n\005value\030\002 \001(\0132\020.vega.R" +
-      "iskFactor:\0028\001\"G\n\013PeggedOrder\022(\n\treferenc" +
-      "e\030\001 \001(\0162\025.vega.PeggedReference\022\016\n\006offset" +
-      "\030\002 \001(\003\"\265\006\n\005Order\022\n\n\002id\030\001 \001(\t\022\020\n\010marketID" +
-      "\030\002 \001(\t\022\017\n\007partyID\030\003 \001(\t\022\030\n\004side\030\004 \001(\0162\n." +
-      "vega.Side\022\r\n\005price\030\005 \001(\004\022\014\n\004size\030\006 \001(\004\022\021" +
-      "\n\tremaining\030\007 \001(\004\022,\n\013timeInForce\030\010 \001(\0162\027" +
-      ".vega.Order.TimeInForce\022\036\n\004type\030\t \001(\0162\020." +
-      "vega.Order.Type\022\021\n\tcreatedAt\030\n \001(\003\022\"\n\006st" +
-      "atus\030\013 \001(\0162\022.vega.Order.Status\022\021\n\texpire" +
-      "sAt\030\014 \001(\003\022\021\n\treference\030\r \001(\t\022 \n\006reason\030\016" +
-      " \001(\0162\020.vega.OrderError\022\021\n\tupdatedAt\030\017 \001(" +
-      "\003\022\017\n\007version\030\020 \001(\004\022\017\n\007batchID\030\021 \001(\004\022&\n\013p" +
-      "eggedOrder\030\022 \001(\0132\021.vega.PeggedOrder\"p\n\013T" +
-      "imeInForce\022\023\n\017TIF_UNSPECIFIED\020\000\022\013\n\007TIF_G" +
-      "TC\020\001\022\013\n\007TIF_GTT\020\002\022\013\n\007TIF_IOC\020\003\022\013\n\007TIF_FO" +
-      "K\020\004\022\013\n\007TIF_GFA\020\005\022\013\n\007TIF_GFN\020\006\"O\n\004Type\022\024\n" +
-      "\020TYPE_UNSPECIFIED\020\000\022\016\n\nTYPE_LIMIT\020\001\022\017\n\013T" +
-      "YPE_MARKET\020\002\022\020\n\014TYPE_NETWORK\020\003\"\305\001\n\006Statu" +
-      "s\022\022\n\016STATUS_INVALID\020\000\022\021\n\rSTATUS_ACTIVE\020\001" +
-      "\022\022\n\016STATUS_EXPIRED\020\002\022\024\n\020STATUS_CANCELLED" +
-      "\020\003\022\022\n\016STATUS_STOPPED\020\004\022\021\n\rSTATUS_FILLED\020" +
-      "\005\022\023\n\017STATUS_REJECTED\020\006\022\033\n\027STATUS_PARTIAL" +
-      "LY_FILLED\020\007\022\021\n\rSTATUS_PARKED\020\010\";\n\035OrderC" +
-      "ancellationConfirmation\022\032\n\005order\030\001 \001(\0132\013" +
-      ".vega.Order\"x\n\021OrderConfirmation\022\032\n\005orde" +
-      "r\030\001 \001(\0132\013.vega.Order\022\033\n\006trades\030\002 \003(\0132\013.v" +
-      "ega.Trade\022*\n\025passiveOrdersAffected\030\003 \003(\013" +
-      "2\013.vega.Order\"\207\001\n\026AuctionIndicativeState" +
-      "\022\020\n\010marketID\030\001 \001(\t\022\027\n\017indicativePrice\030\002 " +
-      "\001(\004\022\030\n\020indicativeVolume\030\003 \001(\004\022\024\n\014auction" +
-      "Start\030\004 \001(\003\022\022\n\nauctionEnd\030\005 \001(\003\"\273\003\n\005Trad" +
-      "e\022\n\n\002id\030\001 \001(\t\022\020\n\010marketID\030\002 \001(\t\022\r\n\005price" +
-      "\030\003 \001(\004\022\014\n\004size\030\004 \001(\004\022\r\n\005buyer\030\005 \001(\t\022\016\n\006s" +
-      "eller\030\006 \001(\t\022\035\n\taggressor\030\007 \001(\0162\n.vega.Si" +
-      "de\022\020\n\010buyOrder\030\010 \001(\t\022\021\n\tsellOrder\030\t \001(\t\022" +
-      "\021\n\ttimestamp\030\n \001(\003\022\036\n\004type\030\013 \001(\0162\020.vega." +
-      "Trade.Type\022\033\n\010buyerFee\030\014 \001(\0132\t.vega.Fee\022" +
-      "\034\n\tsellerFee\030\r \001(\0132\t.vega.Fee\022\031\n\021buyerAu" +
-      "ctionBatch\030\016 \001(\004\022\032\n\022sellerAuctionBatch\030\017" +
-      " \001(\004\"o\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\020\n\014TY" +
-      "PE_DEFAULT\020\001\022\037\n\033TYPE_NETWORK_CLOSE_OUT_G" +
-      "OOD\020\002\022\036\n\032TYPE_NETWORK_CLOSE_OUT_BAD\020\003\"H\n" +
-      "\003Fee\022\020\n\010makerFee\030\001 \001(\004\022\031\n\021infrastructure" +
-      "Fee\030\002 \001(\004\022\024\n\014liquidityFee\030\003 \001(\004\"\'\n\010Trade" +
-      "Set\022\033\n\006trades\030\001 \003(\0132\013.vega.Trade\"\227\001\n\006Can" +
-      "dle\022\021\n\ttimestamp\030\001 \001(\003\022\020\n\010datetime\030\002 \001(\t" +
-      "\022\014\n\004high\030\003 \001(\004\022\013\n\003low\030\004 \001(\004\022\014\n\004open\030\005 \001(" +
-      "\004\022\r\n\005close\030\006 \001(\004\022\016\n\006volume\030\007 \001(\004\022 \n\010inte" +
-      "rval\030\010 \001(\0162\016.vega.Interval\"C\n\nPriceLevel" +
-      "\022\r\n\005price\030\001 \001(\004\022\026\n\016numberOfOrders\030\002 \001(\004\022" +
-      "\016\n\006volume\030\003 \001(\004\"v\n\013MarketDepth\022\020\n\010market" +
-      "ID\030\001 \001(\t\022\035\n\003buy\030\002 \003(\0132\020.vega.PriceLevel\022" +
-      "\036\n\004sell\030\003 \003(\0132\020.vega.PriceLevel\022\026\n\016seque" +
-      "nceNumber\030\004 \001(\004\"|\n\021MarketDepthUpdate\022\020\n\010" +
-      "marketID\030\001 \001(\t\022\035\n\003buy\030\002 \003(\0132\020.vega.Price" +
-      "Level\022\036\n\004sell\030\003 \003(\0132\020.vega.PriceLevel\022\026\n" +
-      "\016sequenceNumber\030\004 \001(\004\"\233\001\n\010Position\022\020\n\010ma" +
-      "rketID\030\001 \001(\t\022\017\n\007partyID\030\002 \001(\t\022\022\n\nopenVol" +
-      "ume\030\003 \001(\003\022\023\n\013realisedPNL\030\004 \001(\003\022\025\n\runreal" +
-      "isedPNL\030\005 \001(\003\022\031\n\021averageEntryPrice\030\006 \001(\004" +
-      "\022\021\n\tupdatedAt\030\007 \001(\003\".\n\rPositionTrade\022\016\n\006" +
-      "volume\030\001 \001(\003\022\r\n\005price\030\002 \001(\004\"\256\006\n\nStatisti" +
-      "cs\022\023\n\013blockHeight\030\001 \001(\004\022\025\n\rbacklogLength" +
-      "\030\002 \001(\004\022\022\n\ntotalPeers\030\003 \001(\004\022\023\n\013genesisTim" +
-      "e\030\004 \001(\t\022\023\n\013currentTime\030\005 \001(\t\022\020\n\010vegaTime" +
-      "\030\006 \001(\t\022!\n\006status\030\007 \001(\0162\021.vega.ChainStatu" +
-      "s\022\022\n\ntxPerBlock\030\010 \001(\004\022\026\n\016averageTxBytes\030" +
-      "\t \001(\004\022\035\n\025averageOrdersPerBlock\030\n \001(\004\022\027\n\017" +
-      "tradesPerSecond\030\013 \001(\004\022\027\n\017ordersPerSecond" +
-      "\030\014 \001(\004\022\024\n\014totalMarkets\030\r \001(\004\022\027\n\017totalAme" +
-      "ndOrder\030\020 \001(\004\022\030\n\020totalCancelOrder\030\021 \001(\004\022" +
-      "\030\n\020totalCreateOrder\030\022 \001(\004\022\023\n\013totalOrders" +
-      "\030\023 \001(\004\022\023\n\013totalTrades\030\024 \001(\004\022\032\n\022orderSubs" +
-      "criptions\030\025 \001(\r\022\032\n\022tradeSubscriptions\030\026 " +
-      "\001(\r\022\033\n\023candleSubscriptions\030\027 \001(\r\022 \n\030mark" +
-      "etDepthSubscriptions\030\030 \001(\r\022\036\n\026positionsS" +
-      "ubscriptions\030\031 \001(\r\022\034\n\024accountSubscriptio" +
-      "ns\030\032 \001(\r\022\037\n\027marketDataSubscriptions\030\033 \001(" +
-      "\r\022\026\n\016appVersionHash\030\034 \001(\t\022\022\n\nappVersion\030" +
-      "\035 \001(\t\022\024\n\014chainVersion\030\036 \001(\t\022\025\n\rblockDura" +
-      "tion\030\037 \001(\004\022\016\n\006uptime\030  \001(\t\022\017\n\007chainID\030! " +
-      "\001(\t\022\'\n\037marketDepthUpdatesSubscriptions\030\"" +
-      " \001(\r\"\257\002\n\007Deposit\022\n\n\002id\030\001 \001(\t\022$\n\006status\030\002" +
-      " \001(\0162\024.vega.Deposit.Status\022\017\n\007partyID\030\003 " +
-      "\001(\t\022\r\n\005asset\030\004 \001(\t\022\016\n\006amount\030\005 \001(\t\022\016\n\006tx" +
-      "Hash\030\006 \001(\t\022\031\n\021creditedTimestamp\030\007 \001(\003\022\030\n" +
-      "\020createdTimestamp\030\010 \001(\003\"}\n\006Status\022\036\n\032DEP" +
-      "OSIT_STATUS_UNSPECIFIED\020\000\022\027\n\023DEPOSIT_STA" +
-      "TUS_OPEN\020\001\022\034\n\030DEPOSIT_STATUS_CANCELLED\020\002" +
-      "\022\034\n\030DEPOSIT_STATUS_FINALIZED\020\003\"\200\003\n\nWithd" +
-      "rawal\022\n\n\002id\030\001 \001(\t\022\017\n\007partyID\030\002 \001(\t\022\016\n\006am" +
-      "ount\030\003 \001(\004\022\r\n\005asset\030\004 \001(\t\022\'\n\006status\030\005 \001(" +
-      "\0162\027.vega.Withdrawal.Status\022\013\n\003ref\030\006 \001(\t\022" +
-      "\016\n\006expiry\030\007 \001(\003\022\016\n\006txHash\030\010 \001(\t\022\030\n\020creat" +
-      "edTimestamp\030\t \001(\003\022\032\n\022withdrawnTimestamp\030" +
-      "\n \001(\003\022\036\n\003ext\030\013 \001(\0132\021.vega.WithdrawExt\"\211\001" +
-      "\n\006Status\022!\n\035WITHDRAWAL_STATUS_UNSPECIFIE" +
-      "D\020\000\022\032\n\026WITHDRAWAL_STATUS_OPEN\020\001\022\037\n\033WITHD" +
-      "RAWAL_STATUS_CANCELLED\020\002\022\037\n\033WITHDRAWAL_S" +
-      "TATUS_FINALIZED\020\003\"d\n\022WithdrawSubmission\022" +
-      "\017\n\007partyID\030\001 \001(\t\022\016\n\006amount\030\002 \001(\004\022\r\n\005asse" +
-      "t\030\003 \001(\t\022\036\n\003ext\030\004 \001(\0132\021.vega.WithdrawExt\"" +
-      "=\n\013WithdrawExt\022\'\n\005erc20\030\001 \001(\0132\026.vega.Erc" +
-      "20WithdrawExtH\000B\005\n\003ext\"+\n\020Erc20WithdrawE" +
-      "xt\022\027\n\017receiverAddress\030\001 \001(\t\"\270\002\n\016OrderAme" +
-      "ndment\022\027\n\007orderID\030\001 \001(\tB\006\342\337\037\002X\001\022\027\n\007party" +
-      "ID\030\002 \001(\tB\006\342\337\037\002X\001\022\020\n\010marketID\030\003 \001(\t\022\032\n\005pr" +
-      "ice\030\004 \001(\0132\013.vega.Price\022\021\n\tsizeDelta\030\005 \001(" +
-      "\003\022\"\n\texpiresAt\030\006 \001(\0132\017.vega.Timestamp\022,\n" +
-      "\013timeInForce\030\007 \001(\0162\027.vega.Order.TimeInFo" +
-      "rce\0221\n\014peggedOffset\030\010 \001(\0132\033.google.proto" +
-      "buf.Int64Value\022.\n\017peggedReference\030\t \001(\0162" +
-      "\025.vega.PeggedReference\"\316\002\n\017OrderSubmissi" +
-      "on\022\022\n\002id\030\001 \001(\tB\006\342\337\037\002X\000\022\030\n\010marketID\030\002 \001(\t" +
-      "B\006\342\337\037\002X\001\022\027\n\007partyID\030\003 \001(\tB\006\342\337\037\002X\001\022\r\n\005pri" +
-      "ce\030\004 \001(\004\022\024\n\004size\030\005 \001(\004B\006\342\337\037\002\020\000\022!\n\004side\030\006" +
-      " \001(\0162\n.vega.SideB\007\342\337\037\003\210\001\001\0225\n\013timeInForce" +
-      "\030\007 \001(\0162\027.vega.Order.TimeInForceB\007\342\337\037\003\210\001\001" +
-      "\022\021\n\texpiresAt\030\010 \001(\003\022\'\n\004type\030\t \001(\0162\020.vega" +
-      ".Order.TypeB\007\342\337\037\003\210\001\001\022\021\n\treference\030\n \001(\t\022" +
-      "&\n\013peggedOrder\030\013 \001(\0132\021.vega.PeggedOrder\"" +
-      "O\n\021OrderCancellation\022\017\n\007orderID\030\001 \001(\t\022\020\n" +
-      "\010marketID\030\002 \001(\t\022\027\n\007partyID\030\003 \001(\tB\006\342\337\037\002X\001" +
-      "\"G\n\020NodeRegistration\022\026\n\006pubKey\030\001 \001(\014B\006\342\337" +
-      "\037\002X\001\022\033\n\013chainPubKey\030\002 \001(\014B\006\342\337\037\002X\001\"=\n\010Nod" +
-      "eVote\022\026\n\006pubKey\030\001 \001(\014B\006\342\337\037\002X\001\022\031\n\treferen" +
-      "ce\030\002 \001(\tB\006\342\337\037\002X\001\"w\n\007Account\022\n\n\002id\030\001 \001(\t\022" +
-      "\r\n\005owner\030\002 \001(\t\022\017\n\007balance\030\003 \001(\004\022\r\n\005asset" +
-      "\030\004 \001(\t\022\020\n\010marketID\030\005 \001(\t\022\037\n\004type\030\006 \001(\0162\021" +
-      ".vega.AccountType\"0\n\017FinancialAmount\022\016\n\006" +
-      "amount\030\001 \001(\003\022\r\n\005asset\030\002 \001(\t\"u\n\010Transfer\022" +
-      "\r\n\005owner\030\001 \001(\t\022%\n\006amount\030\002 \001(\0132\025.vega.Fi" +
-      "nancialAmount\022 \n\004type\030\003 \001(\0162\022.vega.Trans" +
-      "ferType\022\021\n\tminAmount\030\004 \001(\003\"\234\001\n\017TransferR" +
-      "equest\022\"\n\013fromAccount\030\001 \003(\0132\r.vega.Accou" +
-      "nt\022 \n\ttoAccount\030\002 \003(\0132\r.vega.Account\022\016\n\006" +
-      "amount\030\003 \001(\004\022\021\n\tminAmount\030\004 \001(\004\022\r\n\005asset" +
-      "\030\005 \001(\t\022\021\n\treference\030\006 \001(\t\"y\n\013LedgerEntry" +
-      "\022\023\n\013fromAccount\030\001 \001(\t\022\021\n\ttoAccount\030\002 \001(\t" +
-      "\022\016\n\006amount\030\003 \001(\004\022\021\n\treference\030\004 \001(\t\022\014\n\004t" +
-      "ype\030\005 \001(\t\022\021\n\ttimestamp\030\006 \001(\003\"B\n\017Transfer" +
-      "Balance\022\036\n\007account\030\001 \001(\0132\r.vega.Account\022" +
-      "\017\n\007balance\030\002 \001(\004\"a\n\020TransferResponse\022$\n\t" +
-      "transfers\030\001 \003(\0132\021.vega.LedgerEntry\022\'\n\010ba" +
-      "lances\030\002 \003(\0132\025.vega.TransferBalance\"\272\001\n\014" +
-      "MarginLevels\022\031\n\021maintenanceMargin\030\001 \001(\004\022" +
-      "\023\n\013searchLevel\030\002 \001(\004\022\025\n\rinitialMargin\030\003 " +
-      "\001(\004\022\036\n\026collateralReleaseLevel\030\004 \001(\004\022\017\n\007p" +
-      "artyID\030\005 \001(\t\022\020\n\010marketID\030\006 \001(\t\022\r\n\005asset\030" +
-      "\007 \001(\t\022\021\n\ttimestamp\030\010 \001(\003\"\256\004\n\nMarketData\022" +
-      "\021\n\tmarkPrice\030\001 \001(\004\022\024\n\014bestBidPrice\030\002 \001(\004" +
-      "\022\025\n\rbestBidVolume\030\003 \001(\004\022\026\n\016bestOfferPric" +
-      "e\030\004 \001(\004\022\027\n\017bestOfferVolume\030\005 \001(\004\022\032\n\022best" +
-      "StaticBidPrice\030\006 \001(\004\022\033\n\023bestStaticBidVol" +
-      "ume\030\007 \001(\004\022\034\n\024bestStaticOfferPrice\030\010 \001(\004\022" +
-      "\035\n\025bestStaticOfferVolume\030\t \001(\004\022\020\n\010midPri" +
-      "ce\030\n \001(\004\022\026\n\016staticMidPrice\030\013 \001(\004\022\016\n\006mark" +
-      "et\030\014 \001(\t\022\021\n\ttimestamp\030\r \001(\003\022\024\n\014openInter" +
-      "est\030\016 \001(\004\022\022\n\nauctionEnd\030\017 \001(\003\022\024\n\014auction" +
-      "Start\030\020 \001(\003\022\027\n\017indicativePrice\030\021 \001(\004\022\030\n\020" +
-      "indicativeVolume\030\022 \001(\004\022&\n\013marketState\030\023 " +
-      "\001(\0162\021.vega.MarketState\022%\n\007trigger\030\024 \001(\0162" +
-      "\024.vega.AuctionTrigger\022\023\n\013targetStake\030\025 \001" +
-      "(\t\022\025\n\rsuppliedStake\030\026 \001(\t\";\n\013ErrorDetail" +
-      "\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\r\n\005inner" +
-      "\030\003 \001(\t\"s\n\013Transaction\022\021\n\tinputData\030\001 \001(\014" +
-      "\022\r\n\005nonce\030\002 \001(\004\022\023\n\013blockHeight\030\003 \001(\004\022\022\n\007" +
-      "address\030\351\007 \001(\014H\000\022\021\n\006pubKey\030\352\007 \001(\014H\000B\006\n\004f" +
-      "rom\"7\n\tSignature\022\013\n\003sig\030\001 \001(\014\022\014\n\004algo\030\002 " +
-      "\001(\t\022\017\n\007version\030\003 \001(\004\"8\n\014SignedBundle\022\n\n\002" +
-      "tx\030\001 \001(\014\022\034\n\003sig\030\002 \001(\0132\017.vega.Signature\"O" +
-      "\n\rNodeSignature\022\n\n\002ID\030\001 \001(\t\022\013\n\003sig\030\002 \001(\014" +
-      "\022%\n\004kind\030\003 \001(\0162\027.vega.NodeSignatureKind\"" +
-      ".\n\020NetworkParameter\022\013\n\003Key\030\001 \001(\t\022\r\n\005Valu" +
-      "e\030\002 \001(\t\"^\n\016LiquidityOrder\022(\n\treference\030\001" +
-      " \001(\0162\025.vega.PeggedReference\022\022\n\nproportio" +
-      "n\030\002 \001(\r\022\016\n\006offset\030\003 \001(\003\"\250\001\n\034LiquidityPro" +
-      "visionSubmission\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037\002" +
-      "X\001\022\030\n\020commitmentAmount\030\002 \001(\004\022\013\n\003fee\030\003 \001(" +
-      "\t\022#\n\005Sells\030\004 \003(\0132\024.vega.LiquidityOrder\022\"" +
-      "\n\004Buys\030\005 \003(\0132\024.vega.LiquidityOrder\"X\n\027Li" +
-      "quidityOrderReference\022\017\n\007orderID\030\001 \001(\t\022," +
-      "\n\016liquidityOrder\030\002 \001(\0132\024.vega.LiquidityO" +
-      "rder\"\216\004\n\022LiquidityProvision\022\n\n\002id\030\001 \001(\t\022" +
-      "\017\n\007partyID\030\002 \001(\t\022\021\n\tcreatedAt\030\003 \001(\003\022\021\n\tu" +
-      "pdatedAt\030\004 \001(\003\022\030\n\010marketID\030\005 \001(\tB\006\342\337\037\002X\001" +
-      "\022\030\n\020commitmentAmount\030\006 \001(\004\022\013\n\003fee\030\007 \001(\t\022" +
-      ",\n\005sells\030\010 \003(\0132\035.vega.LiquidityOrderRefe" +
-      "rence\022+\n\004buys\030\t \003(\0132\035.vega.LiquidityOrde" +
-      "rReference\022\017\n\007version\030\n \001(\t\022/\n\006status\030\013 " +
-      "\001(\0162\037.vega.LiquidityProvision.Status\"\326\001\n" +
-      "\006Status\022*\n&LIQUIDITY_PROVISION_STATUS_UN" +
-      "SPECIFIED\020\000\022%\n!LIQUIDITY_PROVISION_STATU" +
-      "S_ACTIVE\020\001\022&\n\"LIQUIDITY_PROVISION_STATUS" +
-      "_STOPPED\020\002\022(\n$LIQUIDITY_PROVISION_STATUS" +
-      "_CANCELLED\020\003\022\'\n#LIQUIDITY_PROVISION_STAT" +
-      "US_REJECTED\020\004*9\n\004Side\022\024\n\020SIDE_UNSPECIFIE" +
-      "D\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n\tSIDE_SELL\020\002*\230\001\n\010Int" +
-      "erval\022\030\n\024INTERVAL_UNSPECIFIED\020\000\022\020\n\014INTER" +
-      "VAL_I1M\020<\022\021\n\014INTERVAL_I5M\020\254\002\022\022\n\rINTERVAL" +
-      "_I15M\020\204\007\022\021\n\014INTERVAL_I1H\020\220\034\022\022\n\014INTERVAL_" +
-      "I6H\020\340\250\001\022\022\n\014INTERVAL_I1D\020\200\243\005*\257\001\n\013MarketSt" +
-      "ate\022\034\n\030MARKET_STATE_UNSPECIFIED\020\000\022\033\n\027MAR" +
-      "KET_STATE_CONTINUOUS\020\001\022\036\n\032MARKET_STATE_B" +
-      "ATCH_AUCTION\020\002\022 \n\034MARKET_STATE_OPENING_A" +
-      "UCTION\020\003\022#\n\037MARKET_STATE_MONITORING_AUCT" +
-      "ION\020\004*\243\001\n\016AuctionTrigger\022\037\n\033AUCTION_TRIG" +
-      "GER_UNSPECIFIED\020\000\022\031\n\025AUCTION_TRIGGER_BAT" +
-      "CH\020\001\022\033\n\027AUCTION_TRIGGER_OPENING\020\002\022\031\n\025AUC" +
-      "TION_TRIGGER_PRICE\020\003\022\035\n\031AUCTION_TRIGGER_" +
-      "LIQUIDITY\020\004*\213\001\n\017PeggedReference\022 \n\034PEGGE" +
-      "D_REFERENCE_UNSPECIFIED\020\000\022\030\n\024PEGGED_REFE" +
-      "RENCE_MID\020\001\022\035\n\031PEGGED_REFERENCE_BEST_BID" +
-      "\020\002\022\035\n\031PEGGED_REFERENCE_BEST_ASK\020\003*\200\017\n\nOr" +
-      "derError\022\024\n\020ORDER_ERROR_NONE\020\000\022!\n\035ORDER_" +
-      "ERROR_INVALID_MARKET_ID\020\001\022 \n\034ORDER_ERROR" +
-      "_INVALID_ORDER_ID\020\002\022\037\n\033ORDER_ERROR_OUT_O" +
-      "F_SEQUENCE\020\003\022&\n\"ORDER_ERROR_INVALID_REMA" +
-      "INING_SIZE\020\004\022\034\n\030ORDER_ERROR_TIME_FAILURE" +
-      "\020\005\022\037\n\033ORDER_ERROR_REMOVAL_FAILURE\020\006\022+\n\'O" +
-      "RDER_ERROR_INVALID_EXPIRATION_DATETIME\020\007" +
-      "\022\'\n#ORDER_ERROR_INVALID_ORDER_REFERENCE\020" +
-      "\010\022 \n\034ORDER_ERROR_EDIT_NOT_ALLOWED\020\t\022\035\n\031O" +
-      "RDER_ERROR_AMEND_FAILURE\020\n\022\031\n\025ORDER_ERRO" +
-      "R_NOT_FOUND\020\013\022 \n\034ORDER_ERROR_INVALID_PAR" +
-      "TY_ID\020\014\022\035\n\031ORDER_ERROR_MARKET_CLOSED\020\r\022#" +
-      "\n\037ORDER_ERROR_MARGIN_CHECK_FAILED\020\016\022\'\n#O" +
-      "RDER_ERROR_MISSING_GENERAL_ACCOUNT\020\017\022\036\n\032" +
-      "ORDER_ERROR_INTERNAL_ERROR\020\020\022\034\n\030ORDER_ER" +
-      "ROR_INVALID_SIZE\020\021\022#\n\037ORDER_ERROR_INVALI" +
-      "D_PERSISTENCE\020\022\022\034\n\030ORDER_ERROR_INVALID_T" +
-      "YPE\020\023\022\034\n\030ORDER_ERROR_SELF_TRADING\020\024\022.\n*O" +
-      "RDER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEE" +
-      "S\020\025\022%\n!ORDER_ERROR_INCORRECT_MARKET_TYPE" +
-      "\020\026\022%\n!ORDER_ERROR_INVALID_TIME_IN_FORCE\020" +
-      "\027\022+\n\'ORDER_ERROR_GFN_ORDER_DURING_AN_AUC" +
-      "TION\020\030\0223\n/ORDER_ERROR_GFA_ORDER_DURING_C" +
-      "ONTINUOUS_TRADING\020\031\0224\n0ORDER_ERROR_CANNO" +
-      "T_AMEND_TO_GTT_WITHOUT_EXPIRYAT\020\032\022)\n%ORD" +
-      "ER_ERROR_EXPIRYAT_BEFORE_CREATEDAT\020\033\022,\n(" +
-      "ORDER_ERROR_CANNOT_HAVE_GTC_AND_EXPIRYAT" +
-      "\020\034\022*\n&ORDER_ERROR_CANNOT_AMEND_TO_FOK_OR" +
-      "_IOC\020\035\022*\n&ORDER_ERROR_CANNOT_AMEND_TO_GF" +
-      "A_OR_GFN\020\036\022,\n(ORDER_ERROR_CANNOT_AMEND_F" +
-      "ROM_GFA_OR_GFN\020\037\0224\n0ORDER_ERROR_CANNOT_S" +
-      "END_IOC_ORDER_DURING_AUCTION\020 \0224\n0ORDER_" +
-      "ERROR_CANNOT_SEND_FOK_ORDER_DURING_AUCTI" +
-      "ON\020!\022#\n\037ORDER_ERROR_MUST_BE_LIMIT_ORDER\020" +
-      "\"\022\"\n\036ORDER_ERROR_MUST_BE_GTT_OR_GTC\020#\022\'\n" +
-      "#ORDER_ERROR_WITHOUT_REFERENCE_PRICE\020$\0223" +
-      "\n/ORDER_ERROR_BUY_CANNOT_REFERENCE_BEST_" +
-      "ASK_PRICE\020%\0224\n0ORDER_ERROR_OFFSET_MUST_B" +
-      "E_LESS_OR_EQUAL_TO_ZERO\020&\022-\n)ORDER_ERROR" +
-      "_OFFSET_MUST_BE_LESS_THAN_ZERO\020\'\0227\n3ORDE" +
-      "R_ERROR_OFFSET_MUST_BE_GREATER_OR_EQUAL_" +
-      "TO_ZERO\020(\0224\n0ORDER_ERROR_SELL_CANNOT_REF" +
-      "ERENCE_BEST_BID_PRICE\020)\0220\n,ORDER_ERROR_O" +
-      "FFSET_MUST_BE_GREATER_THAN_ZERO\020*\022*\n&ORD" +
-      "ER_ERROR_INSUFFICIENT_ASSET_BALANCE\020+\022E\n" +
-      "AORDER_ERROR_CANNOT_AMEND_PEGGED_ORDER_D" +
-      "ETAILS_ON_NON_PEGGED_ORDER\020,\022.\n*ORDER_ER" +
-      "ROR_UNABLE_TO_REPRICE_PEGGED_ORDER\020-*\202\001\n" +
-      "\013ChainStatus\022\034\n\030CHAIN_STATUS_UNSPECIFIED" +
-      "\020\000\022\035\n\031CHAIN_STATUS_DISCONNECTED\020\001\022\032\n\026CHA" +
-      "IN_STATUS_REPLAYING\020\002\022\032\n\026CHAIN_STATUS_CO" +
-      "NNECTED\020\003*\262\002\n\013AccountType\022\034\n\030ACCOUNT_TYP" +
-      "E_UNSPECIFIED\020\000\022\032\n\026ACCOUNT_TYPE_INSURANC" +
-      "E\020\001\022\033\n\027ACCOUNT_TYPE_SETTLEMENT\020\002\022\027\n\023ACCO" +
-      "UNT_TYPE_MARGIN\020\003\022\030\n\024ACCOUNT_TYPE_GENERA" +
-      "L\020\004\022$\n ACCOUNT_TYPE_FEES_INFRASTRUCTURE\020" +
-      "\005\022\037\n\033ACCOUNT_TYPE_FEES_LIQUIDITY\020\006\022\033\n\027AC" +
-      "COUNT_TYPE_FEES_MAKER\020\007\022\036\n\032ACCOUNT_TYPE_" +
-      "LOCK_WITHDRAW\020\010\022\025\n\021ACCOUNT_TYPE_BOND\020\t*\244" +
-      "\003\n\014TransferType\022\035\n\031TRANSFER_TYPE_UNSPECI" +
-      "FIED\020\000\022\026\n\022TRANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSF" +
-      "ER_TYPE_WIN\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032" +
-      "\n\026TRANSFER_TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_T" +
-      "YPE_MTM_WIN\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_LO" +
-      "W\020\006\022\035\n\031TRANSFER_TYPE_MARGIN_HIGH\020\007\022$\n TR" +
-      "ANSFER_TYPE_MARGIN_CONFISCATED\020\010\022\037\n\033TRAN" +
-      "SFER_TYPE_MAKER_FEE_PAY\020\t\022#\n\037TRANSFER_TY" +
-      "PE_MAKER_FEE_RECEIVE\020\n\022(\n$TRANSFER_TYPE_" +
-      "INFRASTRUCTURE_FEE_PAY\020\013\022#\n\037TRANSFER_TYP" +
-      "E_LIQUIDITY_FEE_PAY\020\014*\205\001\n\021NodeSignatureK" +
-      "ind\022#\n\037NODE_SIGNATURE_KIND_UNSPECIFIED\020\000" +
-      "\022!\n\035NODE_SIGNATURE_KIND_ASSET_NEW\020\001\022(\n$N" +
-      "ODE_SIGNATURE_KIND_ASSET_WITHDRAWAL\020\002B7\n" +
-      "\024io.vegaprotocol.vegaZ\037code.vegaprotocol" +
-      ".io/vega/protob\006proto3"
+      "\032\036google/protobuf/wrappers.proto\032\023proto/" +
+      "markets.proto\"\026\n\005Price\022\r\n\005value\030\001 \001(\004\"\032\n" +
+      "\tTimestamp\022\r\n\005value\030\001 \001(\003\"\033\n\005Party\022\022\n\002id" +
+      "\030\001 \001(\tB\006\342\337\037\002 \001\"9\n\nRiskFactor\022\016\n\006market\030\001" +
+      " \001(\t\022\r\n\005short\030\002 \001(\001\022\014\n\004long\030\003 \001(\001\"\346\002\n\nRi" +
+      "skResult\022\030\n\020updatedTimestamp\030\001 \001(\003\0226\n\013ri" +
+      "skFactors\030\002 \003(\0132!.vega.RiskResult.RiskFa" +
+      "ctorsEntry\022\033\n\023nextUpdateTimestamp\030\003 \001(\003\022" +
+      "P\n\030predictedNextRiskFactors\030\004 \003(\0132..vega" +
+      ".RiskResult.PredictedNextRiskFactorsEntr" +
+      "y\032D\n\020RiskFactorsEntry\022\013\n\003key\030\001 \001(\t\022\037\n\005va" +
+      "lue\030\002 \001(\0132\020.vega.RiskFactor:\0028\001\032Q\n\035Predi" +
+      "ctedNextRiskFactorsEntry\022\013\n\003key\030\001 \001(\t\022\037\n" +
+      "\005value\030\002 \001(\0132\020.vega.RiskFactor:\0028\001\"G\n\013Pe" +
+      "ggedOrder\022(\n\treference\030\001 \001(\0162\025.vega.Pegg" +
+      "edReference\022\016\n\006offset\030\002 \001(\003\"\265\006\n\005Order\022\n\n" +
+      "\002id\030\001 \001(\t\022\020\n\010marketID\030\002 \001(\t\022\017\n\007partyID\030\003" +
+      " \001(\t\022\030\n\004side\030\004 \001(\0162\n.vega.Side\022\r\n\005price\030" +
+      "\005 \001(\004\022\014\n\004size\030\006 \001(\004\022\021\n\tremaining\030\007 \001(\004\022," +
+      "\n\013timeInForce\030\010 \001(\0162\027.vega.Order.TimeInF" +
+      "orce\022\036\n\004type\030\t \001(\0162\020.vega.Order.Type\022\021\n\t" +
+      "createdAt\030\n \001(\003\022\"\n\006status\030\013 \001(\0162\022.vega.O" +
+      "rder.Status\022\021\n\texpiresAt\030\014 \001(\003\022\021\n\trefere" +
+      "nce\030\r \001(\t\022 \n\006reason\030\016 \001(\0162\020.vega.OrderEr" +
+      "ror\022\021\n\tupdatedAt\030\017 \001(\003\022\017\n\007version\030\020 \001(\004\022" +
+      "\017\n\007batchID\030\021 \001(\004\022&\n\013peggedOrder\030\022 \001(\0132\021." +
+      "vega.PeggedOrder\"p\n\013TimeInForce\022\023\n\017TIF_U" +
+      "NSPECIFIED\020\000\022\013\n\007TIF_GTC\020\001\022\013\n\007TIF_GTT\020\002\022\013" +
+      "\n\007TIF_IOC\020\003\022\013\n\007TIF_FOK\020\004\022\013\n\007TIF_GFA\020\005\022\013\n" +
+      "\007TIF_GFN\020\006\"O\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000" +
+      "\022\016\n\nTYPE_LIMIT\020\001\022\017\n\013TYPE_MARKET\020\002\022\020\n\014TYP" +
+      "E_NETWORK\020\003\"\305\001\n\006Status\022\022\n\016STATUS_INVALID" +
+      "\020\000\022\021\n\rSTATUS_ACTIVE\020\001\022\022\n\016STATUS_EXPIRED\020" +
+      "\002\022\024\n\020STATUS_CANCELLED\020\003\022\022\n\016STATUS_STOPPE" +
+      "D\020\004\022\021\n\rSTATUS_FILLED\020\005\022\023\n\017STATUS_REJECTE" +
+      "D\020\006\022\033\n\027STATUS_PARTIALLY_FILLED\020\007\022\021\n\rSTAT" +
+      "US_PARKED\020\010\";\n\035OrderCancellationConfirma" +
+      "tion\022\032\n\005order\030\001 \001(\0132\013.vega.Order\"x\n\021Orde" +
+      "rConfirmation\022\032\n\005order\030\001 \001(\0132\013.vega.Orde" +
+      "r\022\033\n\006trades\030\002 \003(\0132\013.vega.Trade\022*\n\025passiv" +
+      "eOrdersAffected\030\003 \003(\0132\013.vega.Order\"\207\001\n\026A" +
+      "uctionIndicativeState\022\020\n\010marketID\030\001 \001(\t\022" +
+      "\027\n\017indicativePrice\030\002 \001(\004\022\030\n\020indicativeVo" +
+      "lume\030\003 \001(\004\022\024\n\014auctionStart\030\004 \001(\003\022\022\n\nauct" +
+      "ionEnd\030\005 \001(\003\"\273\003\n\005Trade\022\n\n\002id\030\001 \001(\t\022\020\n\010ma" +
+      "rketID\030\002 \001(\t\022\r\n\005price\030\003 \001(\004\022\014\n\004size\030\004 \001(" +
+      "\004\022\r\n\005buyer\030\005 \001(\t\022\016\n\006seller\030\006 \001(\t\022\035\n\taggr" +
+      "essor\030\007 \001(\0162\n.vega.Side\022\020\n\010buyOrder\030\010 \001(" +
+      "\t\022\021\n\tsellOrder\030\t \001(\t\022\021\n\ttimestamp\030\n \001(\003\022" +
+      "\036\n\004type\030\013 \001(\0162\020.vega.Trade.Type\022\033\n\010buyer" +
+      "Fee\030\014 \001(\0132\t.vega.Fee\022\034\n\tsellerFee\030\r \001(\0132" +
+      "\t.vega.Fee\022\031\n\021buyerAuctionBatch\030\016 \001(\004\022\032\n" +
+      "\022sellerAuctionBatch\030\017 \001(\004\"o\n\004Type\022\024\n\020TYP" +
+      "E_UNSPECIFIED\020\000\022\020\n\014TYPE_DEFAULT\020\001\022\037\n\033TYP" +
+      "E_NETWORK_CLOSE_OUT_GOOD\020\002\022\036\n\032TYPE_NETWO" +
+      "RK_CLOSE_OUT_BAD\020\003\"H\n\003Fee\022\020\n\010makerFee\030\001 " +
+      "\001(\004\022\031\n\021infrastructureFee\030\002 \001(\004\022\024\n\014liquid" +
+      "ityFee\030\003 \001(\004\"\'\n\010TradeSet\022\033\n\006trades\030\001 \003(\013" +
+      "2\013.vega.Trade\"\227\001\n\006Candle\022\021\n\ttimestamp\030\001 " +
+      "\001(\003\022\020\n\010datetime\030\002 \001(\t\022\014\n\004high\030\003 \001(\004\022\013\n\003l" +
+      "ow\030\004 \001(\004\022\014\n\004open\030\005 \001(\004\022\r\n\005close\030\006 \001(\004\022\016\n" +
+      "\006volume\030\007 \001(\004\022 \n\010interval\030\010 \001(\0162\016.vega.I" +
+      "nterval\"C\n\nPriceLevel\022\r\n\005price\030\001 \001(\004\022\026\n\016" +
+      "numberOfOrders\030\002 \001(\004\022\016\n\006volume\030\003 \001(\004\"v\n\013" +
+      "MarketDepth\022\020\n\010marketID\030\001 \001(\t\022\035\n\003buy\030\002 \003" +
+      "(\0132\020.vega.PriceLevel\022\036\n\004sell\030\003 \003(\0132\020.veg" +
+      "a.PriceLevel\022\026\n\016sequenceNumber\030\004 \001(\004\"|\n\021" +
+      "MarketDepthUpdate\022\020\n\010marketID\030\001 \001(\t\022\035\n\003b" +
+      "uy\030\002 \003(\0132\020.vega.PriceLevel\022\036\n\004sell\030\003 \003(\013" +
+      "2\020.vega.PriceLevel\022\026\n\016sequenceNumber\030\004 \001" +
+      "(\004\"\233\001\n\010Position\022\020\n\010marketID\030\001 \001(\t\022\017\n\007par" +
+      "tyID\030\002 \001(\t\022\022\n\nopenVolume\030\003 \001(\003\022\023\n\013realis" +
+      "edPNL\030\004 \001(\003\022\025\n\runrealisedPNL\030\005 \001(\003\022\031\n\021av" +
+      "erageEntryPrice\030\006 \001(\004\022\021\n\tupdatedAt\030\007 \001(\003" +
+      "\".\n\rPositionTrade\022\016\n\006volume\030\001 \001(\003\022\r\n\005pri" +
+      "ce\030\002 \001(\004\"\256\006\n\nStatistics\022\023\n\013blockHeight\030\001" +
+      " \001(\004\022\025\n\rbacklogLength\030\002 \001(\004\022\022\n\ntotalPeer" +
+      "s\030\003 \001(\004\022\023\n\013genesisTime\030\004 \001(\t\022\023\n\013currentT" +
+      "ime\030\005 \001(\t\022\020\n\010vegaTime\030\006 \001(\t\022!\n\006status\030\007 " +
+      "\001(\0162\021.vega.ChainStatus\022\022\n\ntxPerBlock\030\010 \001" +
+      "(\004\022\026\n\016averageTxBytes\030\t \001(\004\022\035\n\025averageOrd" +
+      "ersPerBlock\030\n \001(\004\022\027\n\017tradesPerSecond\030\013 \001" +
+      "(\004\022\027\n\017ordersPerSecond\030\014 \001(\004\022\024\n\014totalMark" +
+      "ets\030\r \001(\004\022\027\n\017totalAmendOrder\030\020 \001(\004\022\030\n\020to" +
+      "talCancelOrder\030\021 \001(\004\022\030\n\020totalCreateOrder" +
+      "\030\022 \001(\004\022\023\n\013totalOrders\030\023 \001(\004\022\023\n\013totalTrad" +
+      "es\030\024 \001(\004\022\032\n\022orderSubscriptions\030\025 \001(\r\022\032\n\022" +
+      "tradeSubscriptions\030\026 \001(\r\022\033\n\023candleSubscr" +
+      "iptions\030\027 \001(\r\022 \n\030marketDepthSubscription" +
+      "s\030\030 \001(\r\022\036\n\026positionsSubscriptions\030\031 \001(\r\022" +
+      "\034\n\024accountSubscriptions\030\032 \001(\r\022\037\n\027marketD" +
+      "ataSubscriptions\030\033 \001(\r\022\026\n\016appVersionHash" +
+      "\030\034 \001(\t\022\022\n\nappVersion\030\035 \001(\t\022\024\n\014chainVersi" +
+      "on\030\036 \001(\t\022\025\n\rblockDuration\030\037 \001(\004\022\016\n\006uptim" +
+      "e\030  \001(\t\022\017\n\007chainID\030! \001(\t\022\'\n\037marketDepthU" +
+      "pdatesSubscriptions\030\" \001(\r\"\257\002\n\007Deposit\022\n\n" +
+      "\002id\030\001 \001(\t\022$\n\006status\030\002 \001(\0162\024.vega.Deposit" +
+      ".Status\022\017\n\007partyID\030\003 \001(\t\022\r\n\005asset\030\004 \001(\t\022" +
+      "\016\n\006amount\030\005 \001(\t\022\016\n\006txHash\030\006 \001(\t\022\031\n\021credi" +
+      "tedTimestamp\030\007 \001(\003\022\030\n\020createdTimestamp\030\010" +
+      " \001(\003\"}\n\006Status\022\036\n\032DEPOSIT_STATUS_UNSPECI" +
+      "FIED\020\000\022\027\n\023DEPOSIT_STATUS_OPEN\020\001\022\034\n\030DEPOS" +
+      "IT_STATUS_CANCELLED\020\002\022\034\n\030DEPOSIT_STATUS_" +
+      "FINALIZED\020\003\"\200\003\n\nWithdrawal\022\n\n\002id\030\001 \001(\t\022\017" +
+      "\n\007partyID\030\002 \001(\t\022\016\n\006amount\030\003 \001(\004\022\r\n\005asset" +
+      "\030\004 \001(\t\022\'\n\006status\030\005 \001(\0162\027.vega.Withdrawal" +
+      ".Status\022\013\n\003ref\030\006 \001(\t\022\016\n\006expiry\030\007 \001(\003\022\016\n\006" +
+      "txHash\030\010 \001(\t\022\030\n\020createdTimestamp\030\t \001(\003\022\032" +
+      "\n\022withdrawnTimestamp\030\n \001(\003\022\036\n\003ext\030\013 \001(\0132" +
+      "\021.vega.WithdrawExt\"\211\001\n\006Status\022!\n\035WITHDRA" +
+      "WAL_STATUS_UNSPECIFIED\020\000\022\032\n\026WITHDRAWAL_S" +
+      "TATUS_OPEN\020\001\022\037\n\033WITHDRAWAL_STATUS_CANCEL" +
+      "LED\020\002\022\037\n\033WITHDRAWAL_STATUS_FINALIZED\020\003\"d" +
+      "\n\022WithdrawSubmission\022\017\n\007partyID\030\001 \001(\t\022\016\n" +
+      "\006amount\030\002 \001(\004\022\r\n\005asset\030\003 \001(\t\022\036\n\003ext\030\004 \001(" +
+      "\0132\021.vega.WithdrawExt\"=\n\013WithdrawExt\022\'\n\005e" +
+      "rc20\030\001 \001(\0132\026.vega.Erc20WithdrawExtH\000B\005\n\003" +
+      "ext\"+\n\020Erc20WithdrawExt\022\027\n\017receiverAddre" +
+      "ss\030\001 \001(\t\"\270\002\n\016OrderAmendment\022\027\n\007orderID\030\001" +
+      " \001(\tB\006\342\337\037\002X\001\022\027\n\007partyID\030\002 \001(\tB\006\342\337\037\002X\001\022\020\n" +
+      "\010marketID\030\003 \001(\t\022\032\n\005price\030\004 \001(\0132\013.vega.Pr" +
+      "ice\022\021\n\tsizeDelta\030\005 \001(\003\022\"\n\texpiresAt\030\006 \001(" +
+      "\0132\017.vega.Timestamp\022,\n\013timeInForce\030\007 \001(\0162" +
+      "\027.vega.Order.TimeInForce\0221\n\014peggedOffset" +
+      "\030\010 \001(\0132\033.google.protobuf.Int64Value\022.\n\017p" +
+      "eggedReference\030\t \001(\0162\025.vega.PeggedRefere" +
+      "nce\"\316\002\n\017OrderSubmission\022\022\n\002id\030\001 \001(\tB\006\342\337\037" +
+      "\002X\000\022\030\n\010marketID\030\002 \001(\tB\006\342\337\037\002X\001\022\027\n\007partyID" +
+      "\030\003 \001(\tB\006\342\337\037\002X\001\022\r\n\005price\030\004 \001(\004\022\024\n\004size\030\005 " +
+      "\001(\004B\006\342\337\037\002\020\000\022!\n\004side\030\006 \001(\0162\n.vega.SideB\007\342" +
+      "\337\037\003\210\001\001\0225\n\013timeInForce\030\007 \001(\0162\027.vega.Order" +
+      ".TimeInForceB\007\342\337\037\003\210\001\001\022\021\n\texpiresAt\030\010 \001(\003" +
+      "\022\'\n\004type\030\t \001(\0162\020.vega.Order.TypeB\007\342\337\037\003\210\001" +
+      "\001\022\021\n\treference\030\n \001(\t\022&\n\013peggedOrder\030\013 \001(" +
+      "\0132\021.vega.PeggedOrder\"O\n\021OrderCancellatio" +
+      "n\022\017\n\007orderID\030\001 \001(\t\022\020\n\010marketID\030\002 \001(\t\022\027\n\007" +
+      "partyID\030\003 \001(\tB\006\342\337\037\002X\001\"G\n\020NodeRegistratio" +
+      "n\022\026\n\006pubKey\030\001 \001(\014B\006\342\337\037\002X\001\022\033\n\013chainPubKey" +
+      "\030\002 \001(\014B\006\342\337\037\002X\001\"=\n\010NodeVote\022\026\n\006pubKey\030\001 \001" +
+      "(\014B\006\342\337\037\002X\001\022\031\n\treference\030\002 \001(\tB\006\342\337\037\002X\001\"w\n" +
+      "\007Account\022\n\n\002id\030\001 \001(\t\022\r\n\005owner\030\002 \001(\t\022\017\n\007b" +
+      "alance\030\003 \001(\004\022\r\n\005asset\030\004 \001(\t\022\020\n\010marketID\030" +
+      "\005 \001(\t\022\037\n\004type\030\006 \001(\0162\021.vega.AccountType\"0" +
+      "\n\017FinancialAmount\022\016\n\006amount\030\001 \001(\003\022\r\n\005ass" +
+      "et\030\002 \001(\t\"u\n\010Transfer\022\r\n\005owner\030\001 \001(\t\022%\n\006a" +
+      "mount\030\002 \001(\0132\025.vega.FinancialAmount\022 \n\004ty" +
+      "pe\030\003 \001(\0162\022.vega.TransferType\022\021\n\tminAmoun" +
+      "t\030\004 \001(\003\"\234\001\n\017TransferRequest\022\"\n\013fromAccou" +
+      "nt\030\001 \003(\0132\r.vega.Account\022 \n\ttoAccount\030\002 \003" +
+      "(\0132\r.vega.Account\022\016\n\006amount\030\003 \001(\004\022\021\n\tmin" +
+      "Amount\030\004 \001(\004\022\r\n\005asset\030\005 \001(\t\022\021\n\treference" +
+      "\030\006 \001(\t\"y\n\013LedgerEntry\022\023\n\013fromAccount\030\001 \001" +
+      "(\t\022\021\n\ttoAccount\030\002 \001(\t\022\016\n\006amount\030\003 \001(\004\022\021\n" +
+      "\treference\030\004 \001(\t\022\014\n\004type\030\005 \001(\t\022\021\n\ttimest" +
+      "amp\030\006 \001(\003\"B\n\017TransferBalance\022\036\n\007account\030" +
+      "\001 \001(\0132\r.vega.Account\022\017\n\007balance\030\002 \001(\004\"a\n" +
+      "\020TransferResponse\022$\n\ttransfers\030\001 \003(\0132\021.v" +
+      "ega.LedgerEntry\022\'\n\010balances\030\002 \003(\0132\025.vega" +
+      ".TransferBalance\"\272\001\n\014MarginLevels\022\031\n\021mai" +
+      "ntenanceMargin\030\001 \001(\004\022\023\n\013searchLevel\030\002 \001(" +
+      "\004\022\025\n\rinitialMargin\030\003 \001(\004\022\036\n\026collateralRe" +
+      "leaseLevel\030\004 \001(\004\022\017\n\007partyID\030\005 \001(\t\022\020\n\010mar" +
+      "ketID\030\006 \001(\t\022\r\n\005asset\030\007 \001(\t\022\021\n\ttimestamp\030" +
+      "\010 \001(\003\"\352\004\n\nMarketData\022\021\n\tmarkPrice\030\001 \001(\004\022" +
+      "\024\n\014bestBidPrice\030\002 \001(\004\022\025\n\rbestBidVolume\030\003" +
+      " \001(\004\022\026\n\016bestOfferPrice\030\004 \001(\004\022\027\n\017bestOffe" +
+      "rVolume\030\005 \001(\004\022\032\n\022bestStaticBidPrice\030\006 \001(" +
+      "\004\022\033\n\023bestStaticBidVolume\030\007 \001(\004\022\034\n\024bestSt" +
+      "aticOfferPrice\030\010 \001(\004\022\035\n\025bestStaticOfferV" +
+      "olume\030\t \001(\004\022\020\n\010midPrice\030\n \001(\004\022\026\n\016staticM" +
+      "idPrice\030\013 \001(\004\022\016\n\006market\030\014 \001(\t\022\021\n\ttimesta" +
+      "mp\030\r \001(\003\022\024\n\014openInterest\030\016 \001(\004\022\022\n\nauctio" +
+      "nEnd\030\017 \001(\003\022\024\n\014auctionStart\030\020 \001(\003\022\027\n\017indi" +
+      "cativePrice\030\021 \001(\004\022\030\n\020indicativeVolume\030\022 " +
+      "\001(\004\022&\n\013marketState\030\023 \001(\0162\021.vega.MarketSt" +
+      "ate\022%\n\007trigger\030\024 \001(\0162\024.vega.AuctionTrigg" +
+      "er\022\023\n\013targetStake\030\025 \001(\t\022\025\n\rsuppliedStake" +
+      "\030\026 \001(\t\022:\n\025priceMonitoringBounds\030\027 \003(\0132\033." +
+      "vega.PriceMonitoringBounds\"t\n\025PriceMonit" +
+      "oringBounds\022\025\n\rminValidPrice\030\001 \001(\004\022\025\n\rma" +
+      "xValidPrice\030\002 \001(\004\022-\n\007trigger\030\003 \001(\0132\034.veg" +
+      "a.PriceMonitoringTrigger\";\n\013ErrorDetail\022" +
+      "\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\022\r\n\005inner\030" +
+      "\003 \001(\t\"s\n\013Transaction\022\021\n\tinputData\030\001 \001(\014\022" +
+      "\r\n\005nonce\030\002 \001(\004\022\023\n\013blockHeight\030\003 \001(\004\022\022\n\007a" +
+      "ddress\030\351\007 \001(\014H\000\022\021\n\006pubKey\030\352\007 \001(\014H\000B\006\n\004fr" +
+      "om\"7\n\tSignature\022\013\n\003sig\030\001 \001(\014\022\014\n\004algo\030\002 \001" +
+      "(\t\022\017\n\007version\030\003 \001(\004\"8\n\014SignedBundle\022\n\n\002t" +
+      "x\030\001 \001(\014\022\034\n\003sig\030\002 \001(\0132\017.vega.Signature\"O\n" +
+      "\rNodeSignature\022\n\n\002ID\030\001 \001(\t\022\013\n\003sig\030\002 \001(\014\022" +
+      "%\n\004kind\030\003 \001(\0162\027.vega.NodeSignatureKind\"." +
+      "\n\020NetworkParameter\022\013\n\003Key\030\001 \001(\t\022\r\n\005Value" +
+      "\030\002 \001(\t\"^\n\016LiquidityOrder\022(\n\treference\030\001 " +
+      "\001(\0162\025.vega.PeggedReference\022\022\n\nproportion" +
+      "\030\002 \001(\r\022\016\n\006offset\030\003 \001(\003\"\250\001\n\034LiquidityProv" +
+      "isionSubmission\022\030\n\010marketID\030\001 \001(\tB\006\342\337\037\002X" +
+      "\001\022\030\n\020commitmentAmount\030\002 \001(\004\022\013\n\003fee\030\003 \001(\t" +
+      "\022#\n\005Sells\030\004 \003(\0132\024.vega.LiquidityOrder\022\"\n" +
+      "\004Buys\030\005 \003(\0132\024.vega.LiquidityOrder\"X\n\027Liq" +
+      "uidityOrderReference\022\017\n\007orderID\030\001 \001(\t\022,\n" +
+      "\016liquidityOrder\030\002 \001(\0132\024.vega.LiquidityOr" +
+      "der\"\216\004\n\022LiquidityProvision\022\n\n\002id\030\001 \001(\t\022\017" +
+      "\n\007partyID\030\002 \001(\t\022\021\n\tcreatedAt\030\003 \001(\003\022\021\n\tup" +
+      "datedAt\030\004 \001(\003\022\030\n\010marketID\030\005 \001(\tB\006\342\337\037\002X\001\022" +
+      "\030\n\020commitmentAmount\030\006 \001(\004\022\013\n\003fee\030\007 \001(\t\022," +
+      "\n\005sells\030\010 \003(\0132\035.vega.LiquidityOrderRefer" +
+      "ence\022+\n\004buys\030\t \003(\0132\035.vega.LiquidityOrder" +
+      "Reference\022\017\n\007version\030\n \001(\t\022/\n\006status\030\013 \001" +
+      "(\0162\037.vega.LiquidityProvision.Status\"\326\001\n\006" +
+      "Status\022*\n&LIQUIDITY_PROVISION_STATUS_UNS" +
+      "PECIFIED\020\000\022%\n!LIQUIDITY_PROVISION_STATUS" +
+      "_ACTIVE\020\001\022&\n\"LIQUIDITY_PROVISION_STATUS_" +
+      "STOPPED\020\002\022(\n$LIQUIDITY_PROVISION_STATUS_" +
+      "CANCELLED\020\003\022\'\n#LIQUIDITY_PROVISION_STATU" +
+      "S_REJECTED\020\004*9\n\004Side\022\024\n\020SIDE_UNSPECIFIED" +
+      "\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n\tSIDE_SELL\020\002*\230\001\n\010Inte" +
+      "rval\022\030\n\024INTERVAL_UNSPECIFIED\020\000\022\020\n\014INTERV" +
+      "AL_I1M\020<\022\021\n\014INTERVAL_I5M\020\254\002\022\022\n\rINTERVAL_" +
+      "I15M\020\204\007\022\021\n\014INTERVAL_I1H\020\220\034\022\022\n\014INTERVAL_I" +
+      "6H\020\340\250\001\022\022\n\014INTERVAL_I1D\020\200\243\005*\257\001\n\013MarketSta" +
+      "te\022\034\n\030MARKET_STATE_UNSPECIFIED\020\000\022\033\n\027MARK" +
+      "ET_STATE_CONTINUOUS\020\001\022\036\n\032MARKET_STATE_BA" +
+      "TCH_AUCTION\020\002\022 \n\034MARKET_STATE_OPENING_AU" +
+      "CTION\020\003\022#\n\037MARKET_STATE_MONITORING_AUCTI" +
+      "ON\020\004*\243\001\n\016AuctionTrigger\022\037\n\033AUCTION_TRIGG" +
+      "ER_UNSPECIFIED\020\000\022\031\n\025AUCTION_TRIGGER_BATC" +
+      "H\020\001\022\033\n\027AUCTION_TRIGGER_OPENING\020\002\022\031\n\025AUCT" +
+      "ION_TRIGGER_PRICE\020\003\022\035\n\031AUCTION_TRIGGER_L" +
+      "IQUIDITY\020\004*\213\001\n\017PeggedReference\022 \n\034PEGGED" +
+      "_REFERENCE_UNSPECIFIED\020\000\022\030\n\024PEGGED_REFER" +
+      "ENCE_MID\020\001\022\035\n\031PEGGED_REFERENCE_BEST_BID\020" +
+      "\002\022\035\n\031PEGGED_REFERENCE_BEST_ASK\020\003*\200\017\n\nOrd" +
+      "erError\022\024\n\020ORDER_ERROR_NONE\020\000\022!\n\035ORDER_E" +
+      "RROR_INVALID_MARKET_ID\020\001\022 \n\034ORDER_ERROR_" +
+      "INVALID_ORDER_ID\020\002\022\037\n\033ORDER_ERROR_OUT_OF" +
+      "_SEQUENCE\020\003\022&\n\"ORDER_ERROR_INVALID_REMAI" +
+      "NING_SIZE\020\004\022\034\n\030ORDER_ERROR_TIME_FAILURE\020" +
+      "\005\022\037\n\033ORDER_ERROR_REMOVAL_FAILURE\020\006\022+\n\'OR" +
+      "DER_ERROR_INVALID_EXPIRATION_DATETIME\020\007\022" +
+      "\'\n#ORDER_ERROR_INVALID_ORDER_REFERENCE\020\010" +
+      "\022 \n\034ORDER_ERROR_EDIT_NOT_ALLOWED\020\t\022\035\n\031OR" +
+      "DER_ERROR_AMEND_FAILURE\020\n\022\031\n\025ORDER_ERROR" +
+      "_NOT_FOUND\020\013\022 \n\034ORDER_ERROR_INVALID_PART" +
+      "Y_ID\020\014\022\035\n\031ORDER_ERROR_MARKET_CLOSED\020\r\022#\n" +
+      "\037ORDER_ERROR_MARGIN_CHECK_FAILED\020\016\022\'\n#OR" +
+      "DER_ERROR_MISSING_GENERAL_ACCOUNT\020\017\022\036\n\032O" +
+      "RDER_ERROR_INTERNAL_ERROR\020\020\022\034\n\030ORDER_ERR" +
+      "OR_INVALID_SIZE\020\021\022#\n\037ORDER_ERROR_INVALID" +
+      "_PERSISTENCE\020\022\022\034\n\030ORDER_ERROR_INVALID_TY" +
+      "PE\020\023\022\034\n\030ORDER_ERROR_SELF_TRADING\020\024\022.\n*OR" +
+      "DER_ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEES" +
+      "\020\025\022%\n!ORDER_ERROR_INCORRECT_MARKET_TYPE\020" +
+      "\026\022%\n!ORDER_ERROR_INVALID_TIME_IN_FORCE\020\027" +
+      "\022+\n\'ORDER_ERROR_GFN_ORDER_DURING_AN_AUCT" +
+      "ION\020\030\0223\n/ORDER_ERROR_GFA_ORDER_DURING_CO" +
+      "NTINUOUS_TRADING\020\031\0224\n0ORDER_ERROR_CANNOT" +
+      "_AMEND_TO_GTT_WITHOUT_EXPIRYAT\020\032\022)\n%ORDE" +
+      "R_ERROR_EXPIRYAT_BEFORE_CREATEDAT\020\033\022,\n(O" +
+      "RDER_ERROR_CANNOT_HAVE_GTC_AND_EXPIRYAT\020" +
+      "\034\022*\n&ORDER_ERROR_CANNOT_AMEND_TO_FOK_OR_" +
+      "IOC\020\035\022*\n&ORDER_ERROR_CANNOT_AMEND_TO_GFA" +
+      "_OR_GFN\020\036\022,\n(ORDER_ERROR_CANNOT_AMEND_FR" +
+      "OM_GFA_OR_GFN\020\037\0224\n0ORDER_ERROR_CANNOT_SE" +
+      "ND_IOC_ORDER_DURING_AUCTION\020 \0224\n0ORDER_E" +
+      "RROR_CANNOT_SEND_FOK_ORDER_DURING_AUCTIO" +
+      "N\020!\022#\n\037ORDER_ERROR_MUST_BE_LIMIT_ORDER\020\"" +
+      "\022\"\n\036ORDER_ERROR_MUST_BE_GTT_OR_GTC\020#\022\'\n#" +
+      "ORDER_ERROR_WITHOUT_REFERENCE_PRICE\020$\0223\n" +
+      "/ORDER_ERROR_BUY_CANNOT_REFERENCE_BEST_A" +
+      "SK_PRICE\020%\0224\n0ORDER_ERROR_OFFSET_MUST_BE" +
+      "_LESS_OR_EQUAL_TO_ZERO\020&\022-\n)ORDER_ERROR_" +
+      "OFFSET_MUST_BE_LESS_THAN_ZERO\020\'\0227\n3ORDER" +
+      "_ERROR_OFFSET_MUST_BE_GREATER_OR_EQUAL_T" +
+      "O_ZERO\020(\0224\n0ORDER_ERROR_SELL_CANNOT_REFE" +
+      "RENCE_BEST_BID_PRICE\020)\0220\n,ORDER_ERROR_OF" +
+      "FSET_MUST_BE_GREATER_THAN_ZERO\020*\022*\n&ORDE" +
+      "R_ERROR_INSUFFICIENT_ASSET_BALANCE\020+\022E\nA" +
+      "ORDER_ERROR_CANNOT_AMEND_PEGGED_ORDER_DE" +
+      "TAILS_ON_NON_PEGGED_ORDER\020,\022.\n*ORDER_ERR" +
+      "OR_UNABLE_TO_REPRICE_PEGGED_ORDER\020-*\202\001\n\013" +
+      "ChainStatus\022\034\n\030CHAIN_STATUS_UNSPECIFIED\020" +
+      "\000\022\035\n\031CHAIN_STATUS_DISCONNECTED\020\001\022\032\n\026CHAI" +
+      "N_STATUS_REPLAYING\020\002\022\032\n\026CHAIN_STATUS_CON" +
+      "NECTED\020\003*\262\002\n\013AccountType\022\034\n\030ACCOUNT_TYPE" +
+      "_UNSPECIFIED\020\000\022\032\n\026ACCOUNT_TYPE_INSURANCE" +
+      "\020\001\022\033\n\027ACCOUNT_TYPE_SETTLEMENT\020\002\022\027\n\023ACCOU" +
+      "NT_TYPE_MARGIN\020\003\022\030\n\024ACCOUNT_TYPE_GENERAL" +
+      "\020\004\022$\n ACCOUNT_TYPE_FEES_INFRASTRUCTURE\020\005" +
+      "\022\037\n\033ACCOUNT_TYPE_FEES_LIQUIDITY\020\006\022\033\n\027ACC" +
+      "OUNT_TYPE_FEES_MAKER\020\007\022\036\n\032ACCOUNT_TYPE_L" +
+      "OCK_WITHDRAW\020\010\022\025\n\021ACCOUNT_TYPE_BOND\020\t*\335\003" +
+      "\n\014TransferType\022\035\n\031TRANSFER_TYPE_UNSPECIF" +
+      "IED\020\000\022\026\n\022TRANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSFE" +
+      "R_TYPE_WIN\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032\n" +
+      "\026TRANSFER_TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_TY" +
+      "PE_MTM_WIN\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_LOW" +
+      "\020\006\022\035\n\031TRANSFER_TYPE_MARGIN_HIGH\020\007\022$\n TRA" +
+      "NSFER_TYPE_MARGIN_CONFISCATED\020\010\022\037\n\033TRANS" +
+      "FER_TYPE_MAKER_FEE_PAY\020\t\022#\n\037TRANSFER_TYP" +
+      "E_MAKER_FEE_RECEIVE\020\n\022(\n$TRANSFER_TYPE_I" +
+      "NFRASTRUCTURE_FEE_PAY\020\013\022#\n\037TRANSFER_TYPE" +
+      "_LIQUIDITY_FEE_PAY\020\014\022\032\n\026TRANSFER_TYPE_BO" +
+      "ND_LOW\020\r\022\033\n\027TRANSFER_TYPE_BOND_HIGH\020\016*\205\001" +
+      "\n\021NodeSignatureKind\022#\n\037NODE_SIGNATURE_KI" +
+      "ND_UNSPECIFIED\020\000\022!\n\035NODE_SIGNATURE_KIND_" +
+      "ASSET_NEW\020\001\022(\n$NODE_SIGNATURE_KIND_ASSET" +
+      "_WITHDRAWAL\020\002B7\n\024io.vegaprotocol.vegaZ\037c" +
+      "ode.vegaprotocol.io/vega/protob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -65112,6 +66481,7 @@ public final class Vega {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.github.mwitkow.go_proto_validators.Validator.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
+          io.vegaprotocol.vega.Markets.getDescriptor(),
         }, assigner);
     internal_static_vega_Price_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -65358,63 +66728,69 @@ public final class Vega {
     internal_static_vega_MarketData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_MarketData_descriptor,
-        new java.lang.String[] { "MarkPrice", "BestBidPrice", "BestBidVolume", "BestOfferPrice", "BestOfferVolume", "BestStaticBidPrice", "BestStaticBidVolume", "BestStaticOfferPrice", "BestStaticOfferVolume", "MidPrice", "StaticMidPrice", "Market", "Timestamp", "OpenInterest", "AuctionEnd", "AuctionStart", "IndicativePrice", "IndicativeVolume", "MarketState", "Trigger", "TargetStake", "SuppliedStake", });
-    internal_static_vega_ErrorDetail_descriptor =
+        new java.lang.String[] { "MarkPrice", "BestBidPrice", "BestBidVolume", "BestOfferPrice", "BestOfferVolume", "BestStaticBidPrice", "BestStaticBidVolume", "BestStaticOfferPrice", "BestStaticOfferVolume", "MidPrice", "StaticMidPrice", "Market", "Timestamp", "OpenInterest", "AuctionEnd", "AuctionStart", "IndicativePrice", "IndicativeVolume", "MarketState", "Trigger", "TargetStake", "SuppliedStake", "PriceMonitoringBounds", });
+    internal_static_vega_PriceMonitoringBounds_descriptor =
       getDescriptor().getMessageTypes().get(39);
+    internal_static_vega_PriceMonitoringBounds_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_PriceMonitoringBounds_descriptor,
+        new java.lang.String[] { "MinValidPrice", "MaxValidPrice", "Trigger", });
+    internal_static_vega_ErrorDetail_descriptor =
+      getDescriptor().getMessageTypes().get(40);
     internal_static_vega_ErrorDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_ErrorDetail_descriptor,
         new java.lang.String[] { "Code", "Message", "Inner", });
     internal_static_vega_Transaction_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_vega_Transaction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Transaction_descriptor,
         new java.lang.String[] { "InputData", "Nonce", "BlockHeight", "Address", "PubKey", "From", });
     internal_static_vega_Signature_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_vega_Signature_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Signature_descriptor,
         new java.lang.String[] { "Sig", "Algo", "Version", });
     internal_static_vega_SignedBundle_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_vega_SignedBundle_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_SignedBundle_descriptor,
         new java.lang.String[] { "Tx", "Sig", });
     internal_static_vega_NodeSignature_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_vega_NodeSignature_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_NodeSignature_descriptor,
         new java.lang.String[] { "ID", "Sig", "Kind", });
     internal_static_vega_NetworkParameter_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_vega_NetworkParameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_NetworkParameter_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_vega_LiquidityOrder_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_vega_LiquidityOrder_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_LiquidityOrder_descriptor,
         new java.lang.String[] { "Reference", "Proportion", "Offset", });
     internal_static_vega_LiquidityProvisionSubmission_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_vega_LiquidityProvisionSubmission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_LiquidityProvisionSubmission_descriptor,
         new java.lang.String[] { "MarketID", "CommitmentAmount", "Fee", "Sells", "Buys", });
     internal_static_vega_LiquidityOrderReference_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_vega_LiquidityOrderReference_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_LiquidityOrderReference_descriptor,
         new java.lang.String[] { "OrderID", "LiquidityOrder", });
     internal_static_vega_LiquidityProvision_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_vega_LiquidityProvision_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_LiquidityProvision_descriptor,
@@ -65426,6 +66802,7 @@ public final class Vega {
         .internalUpdateFileDescriptor(descriptor, registry);
     com.github.mwitkow.go_proto_validators.Validator.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
+    io.vegaprotocol.vega.Markets.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -491,7 +491,7 @@ const char descriptor_table_protodef_proto_2fgovernance_2eproto[] =
   "t\030\001 \001(\0132\035.vega.InstrumentConfigurationB\006"
   "\342\337\037\002 \001\022\036\n\rdecimalPlaces\030\002 \001(\004B\007\342\337\037\003\030\226\001\022\020"
   "\n\010metadata\030\003 \003(\t\022\036\n\026openingAuctionDurati"
-  "on\030\004 \001(\003\022B\n\031PriceMonitoringParameters\030\005 "
+  "on\030\004 \001(\003\022B\n\031priceMonitoringParameters\030\005 "
   "\001(\0132\037.vega.PriceMonitoringParameters\022)\n\006"
   "simple\030d \001(\0132\027.vega.SimpleModelParamsH\000\022"
   "-\n\tlogNormal\030e \001(\0132\030.vega.LogNormalRiskM"
@@ -1958,7 +1958,7 @@ const char* NewMarketConfiguration::_InternalParse(const char* begin, const char
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // .vega.PriceMonitoringParameters PriceMonitoringParameters = 5;
+      // .vega.PriceMonitoringParameters priceMonitoringParameters = 5;
       case 5: {
         if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
@@ -2110,7 +2110,7 @@ bool NewMarketConfiguration::MergePartialFromCodedStream(
         break;
       }
 
-      // .vega.PriceMonitoringParameters PriceMonitoringParameters = 5;
+      // .vega.PriceMonitoringParameters priceMonitoringParameters = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -2218,7 +2218,7 @@ void NewMarketConfiguration::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(4, this->openingauctionduration(), output);
   }
 
-  // .vega.PriceMonitoringParameters PriceMonitoringParameters = 5;
+  // .vega.PriceMonitoringParameters priceMonitoringParameters = 5;
   if (this->has_pricemonitoringparameters()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       5, HasBitSetters::pricemonitoringparameters(this), output);
@@ -2288,7 +2288,7 @@ void NewMarketConfiguration::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(4, this->openingauctionduration(), target);
   }
 
-  // .vega.PriceMonitoringParameters PriceMonitoringParameters = 5;
+  // .vega.PriceMonitoringParameters priceMonitoringParameters = 5;
   if (this->has_pricemonitoringparameters()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
@@ -2359,7 +2359,7 @@ size_t NewMarketConfiguration::ByteSizeLong() const {
         *instrument_);
   }
 
-  // .vega.PriceMonitoringParameters PriceMonitoringParameters = 5;
+  // .vega.PriceMonitoringParameters priceMonitoringParameters = 5;
   if (this->has_pricemonitoringparameters()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(

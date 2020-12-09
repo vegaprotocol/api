@@ -25,13 +25,12 @@ extern PROTOBUF_INTERNAL_EXPORT_proto_2fgovernance_2eproto ::google::protobuf::i
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fgovernance_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Proposal_proto_2fgovernance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fgovernance_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_GovernanceData_proto_2fgovernance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fgovernance_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_ProposalTerms_proto_2fgovernance_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<6> scc_info_Market_proto_2fmarkets_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fmarkets_2eproto ::google::protobuf::internal::SCCInfo<7> scc_info_Market_proto_2fmarkets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Account_proto_2fvega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Candle_proto_2fvega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Deposit_proto_2fvega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Fee_proto_2fvega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_MarginLevels_proto_2fvega_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_MarketData_proto_2fvega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_NetworkParameter_proto_2fvega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_NodeSignature_proto_2fvega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_OrderCancellation_proto_2fvega_2eproto;
@@ -40,6 +39,7 @@ extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::interna
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_PriceLevel_proto_2fvega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_LiquidityProvisionSubmission_proto_2fvega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_LiquidityProvision_proto_2fvega_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_MarketData_proto_2fvega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_OrderSubmission_proto_2fvega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Order_proto_2fvega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_proto_2fvega_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SignedBundle_proto_2fvega_2eproto;
@@ -3521,7 +3521,7 @@ const char descriptor_table_protodef_proto_2fapi_2ftrading_2eproto[] =
   "st\022\032\n\nproposalID\030\001 \001(\tB\006\342\337\037\002X\001\"=\n\027GetPro"
   "posalByIDResponse\022\"\n\004data\030\001 \001(\0132\024.vega.G"
   "overnanceData\":\n\035GetProposalByReferenceR"
-  "equest\022\031\n\tReference\030\001 \001(\tB\006\342\337\037\002X\001\"D\n\036Get"
+  "equest\022\031\n\treference\030\001 \001(\tB\006\342\337\037\002X\001\"D\n\036Get"
   "ProposalByReferenceResponse\022\"\n\004data\030\001 \001("
   "\0132\024.vega.GovernanceData\"7\n\034ObservePartyP"
   "roposalsRequest\022\027\n\007partyID\030\001 \001(\tB\006\342\337\037\002X\001"
@@ -14259,12 +14259,12 @@ const char* GetProposalByReferenceRequest::_InternalParse(const char* begin, con
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // string Reference = 1 [(.validator.field) = {
+      // string reference = 1 [(.validator.field) = {
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("api.GetProposalByReferenceRequest.Reference");
+        ctx->extra_parse_data().SetFieldName("api.GetProposalByReferenceRequest.reference");
         object = msg->mutable_reference();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -14309,7 +14309,7 @@ bool GetProposalByReferenceRequest::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string Reference = 1 [(.validator.field) = {
+      // string reference = 1 [(.validator.field) = {
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
@@ -14317,7 +14317,7 @@ bool GetProposalByReferenceRequest::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->reference().data(), static_cast<int>(this->reference().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.GetProposalByReferenceRequest.Reference"));
+            "api.GetProposalByReferenceRequest.reference"));
         } else {
           goto handle_unusual;
         }
@@ -14351,12 +14351,12 @@ void GetProposalByReferenceRequest::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string Reference = 1 [(.validator.field) = {
+  // string reference = 1 [(.validator.field) = {
   if (this->reference().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->reference().data(), static_cast<int>(this->reference().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.GetProposalByReferenceRequest.Reference");
+      "api.GetProposalByReferenceRequest.reference");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->reference(), output);
   }
@@ -14374,12 +14374,12 @@ void GetProposalByReferenceRequest::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string Reference = 1 [(.validator.field) = {
+  // string reference = 1 [(.validator.field) = {
   if (this->reference().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->reference().data(), static_cast<int>(this->reference().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.GetProposalByReferenceRequest.Reference");
+      "api.GetProposalByReferenceRequest.reference");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->reference(), target);
@@ -14406,7 +14406,7 @@ size_t GetProposalByReferenceRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string Reference = 1 [(.validator.field) = {
+  // string reference = 1 [(.validator.field) = {
   if (this->reference().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
