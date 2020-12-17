@@ -27,16 +27,23 @@ preproto:
 proto: proto-cpp proto-java proto-javascript proto-python
 
 CPP_GENERATED_DIR := cpp/generated
+GRPC_CPP_PLUGIN := "$(shell command -v grpc_cpp_plugin)"
 
 .PHONY: proto-cpp
 proto-cpp:
+	@if test -z "$(GRPC_CPP_PLUGIN)" ; then \
+		echo "Need grpc_cpp_plugin. See https://github.com/grpc/grpc/blob/master/BUILDING.md#building-with-cmake" ; \
+		exit 1 ; \
+	fi
 	@mkdir -p "$(CPP_GENERATED_DIR)"
 	@find proto \
 		-name '*.proto' | \
 		xargs protoc \
 		-I. \
 		-Iexternal \
-		--cpp_out="$(CPP_GENERATED_DIR)"
+		--cpp_out="$(CPP_GENERATED_DIR)" \
+		--grpc_out="$(CPP_GENERATED_DIR)" \
+		--plugin="protoc-gen-grpc=$(GRPC_CPP_PLUGIN)"
 	@find "$(CPP_GENERATED_DIR)" -name '*.pb.cc' -o -name '*.pb.h' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
 
 JAVA_GENERATED_DIR := java/generated
