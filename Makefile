@@ -2,7 +2,7 @@
 
 SHELL := /usr/bin/env bash
 
-VEGA_VERSION := $(shell cat proto/from.txt)
+VEGA_VERSION := $(shell cat proto/from.txt | sed -e 's/^v//')
 API_CLIENTS_VERSION := $(shell git describe --tags 2>/dev/null || echo unknown)
 
 .PHONY: default
@@ -19,7 +19,7 @@ preproto:
 	@mkdir -p proto/tm && find "$(VEGACORE)"/proto/tm -maxdepth 1 -name '*.proto' -exec cp '{}' proto/tm/ ';'
 	@find proto -name '*.proto' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
 	@(cd "$(VEGACORE)" && git describe --tags) >proto/from.txt
-	@find proto -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega";'
+	@find proto -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega";' # \n// option java_outer_classname = "tbd";\noption java_multiple_files = true;
 	@find proto/api -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.api";'
 	@find proto/tm -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.tm";'
 
@@ -62,19 +62,17 @@ proto-java:
 		xargs protoc \
 		-I. \
 		-Iexternal \
-		--java_out="$(JAVA_GENERATED_DIR)" \
-		--java_out="$(JAVA_GENERATED_DIR)/vega-$(VEGA_VERSION)-api-$(API_CLIENTS_VERSION)-source.jar"
+		--java_out="$(JAVA_GENERATED_DIR)"
 	@find external/github.com/mwitkow \
 		-name '*.proto' | \
 		xargs protoc \
 		-I. \
 		-Iexternal \
-		--java_out="$(JAVA_GENERATED_DIR)" \
-		--java_out="$(JAVA_GENERATED_DIR)/mwitkow-go_proto_validators-source.jar"
+		--java_out="$(JAVA_GENERATED_DIR)"
 	@find "$(JAVA_GENERATED_DIR)" -name '*.java' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
 	@find "$(JAVA_GENERATED_DIR)" -name '*.java' -print0 | xargs -0 javac -cp "$(JAVA_GENERATED_DIR):$(JAVA_LIB_DIR)/$(JAR_PROTOBUF)"
-	@echo -e 'Manifest-Version: 1.0\nCreated-by: $(shell java -version 2>&1 | awk '/^openjdk version/ {gsub(/"/, ""); print $$3}') (OpenJDK)\nMain-Class: n/a\nClass-Path: $(JAR_PROTOBUF)\nName: Vega\nSpecification-Title: Vega\nSpecification-Version: $(VEGA_VERSION)\nSpecification-Vendor: Vega\nImplementation-Title: Vega\nImplementation-Version: $(API_CLIENTS_VERSION)\nImplementation-Vendor: Vega' >"$(JAVA_GENERATED_DIR)/manifest.txt"
-	@cd "$(JAVA_GENERATED_DIR)" && jar cfm "vega-$(VEGA_VERSION)-api-$(API_CLIENTS_VERSION).jar" manifest.txt com io
+	@echo -e 'Manifest-Version: 1.0\nCreated-by: $(shell java -version 2>&1 | awk '/^openjdk version/ {gsub(/"/, ""); print $$3}') (OpenJDK)\nMain-Class: n/a\nClass-Path: $(JAR_PROTOBUF)\nName: com.vegaprotocol.vega\nSpecification-Title: Vega\nSpecification-Version: $(VEGA_VERSION)\nSpecification-Vendor: Vega\nImplementation-Title: Vega\nImplementation-Version: $(API_CLIENTS_VERSION)\nImplementation-Vendor: Vega\nExport-Package: io.vegaprotocol.vega;version="$(VEGA_VERSION)"\nImport-Package: com.google.protobuf;version="[3.13,4)"' >"$(JAVA_GENERATED_DIR)/manifest.txt"
+	@cd "$(JAVA_GENERATED_DIR)" && jar cfm "vega-$(VEGA_VERSION).jar" manifest.txt com io && ln -s "vega-$(VEGA_VERSION).jar" io.vegaprotocol.vega.jar
 
 JAVASCRIPT_GENERATED_DIR := js/generated
 
