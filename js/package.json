@@ -22,7 +22,7 @@
   "homepage": "https://github.com/vegaprotocol/api-clients#readme",
   "devDependencies": {
     "tap-dot": "2.0.0",
-    "tape": "5.0.1"
+    "tape": "5.1.1"
   },
   "dependencies": {
     "google-protobuf": "^3.13.0"
