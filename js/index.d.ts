@@ -1,8 +1,8 @@
-export * as assets from "./generated/proto/assets_pb.d.ts";
-export * as chain_events from "./generated/proto/chain_events_pb.d.ts";
-export * as events from "./generated/proto/events_pb.d.ts";
-export * as governance from "./generated/proto/governance_pb.d.ts";
-export * as markets from "./generated/proto/markets_pb.d.ts";
-export * as vega from "./generated/proto/vega_pb.d.ts";
-export * as api_trading from "./generated/proto/api_trading_pb.d.ts";
-export * as tm_replay from "./generated/proto/tm_replay_pb.d.ts";
+export * as assets from "./generated/proto/assets_pb";
+export * as chain_events from "./generated/proto/chain_events_pb";
+export * as events from "./generated/proto/events_pb";
+export * as governance from "./generated/proto/governance_pb";
+export * as markets from "./generated/proto/markets_pb";
+export * as vega from "./generated/proto/vega_pb";
+export * as api_trading from "./generated/proto/api/trading_pb";
+export * as tm_replay from "./generated/proto/tm/replay_pb";
