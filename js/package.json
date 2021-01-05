@@ -3,6 +3,7 @@
   "version": "0.29.0",
   "description": "A gRPC client for Vega Protocol",
   "main": "index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "test": "tape test/**.js | tap-dot"
   },
@@ -25,6 +26,8 @@
     "tape": "5.1.1"
   },
   "dependencies": {
-    "google-protobuf": "^3.13.0"
+    "google-protobuf": "^3.13.0",
+    "ts-protoc-gen": "^0.14.0",
+    "xmlhttprequest": "^1.8.0"
   }
 }
