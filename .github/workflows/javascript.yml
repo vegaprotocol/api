@@ -39,10 +39,9 @@ jobs:
 
     - name: Test
       env:
+        CI: true
         GRPC_NODE: ${{ secrets.GRPC_NODE }}
         WALLETSERVER: ${{ secrets.WALLETSERVER }}
       run: |
         cd js
         npm test
-      env:
-        CI: true
