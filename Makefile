@@ -75,22 +75,50 @@ proto-java:
 	@cd "$(JAVA_GENERATED_DIR)" && jar cfm "vega-$(VEGA_VERSION).jar" manifest.txt com io && ln -s "vega-$(VEGA_VERSION).jar" io.vegaprotocol.vega.jar
 
 JAVASCRIPT_GENERATED_DIR := js/generated
+PROTOC_GEN_TS := ./js/node_modules/.bin/protoc-gen-ts
 
 .PHONY: proto-javascript
 proto-javascript:
-	@mkdir -p "$(JAVASCRIPT_GENERATED_DIR)"
+	@rm -rf "$(JAVASCRIPT_GENERATED_DIR)" && mkdir -p "$(JAVASCRIPT_GENERATED_DIR)"
+	@cd js && npm install
+	@if ! test -r "$(PROTOC_GEN_TS)" -a -x "$(PROTOC_GEN_TS)" ; then \
+		echo "Not found/executable: $(PROTOC_GEN_TS)" ; \
+		exit 1 ; \
+	fi
+	@# JS + TS definitions
 	@find proto \
 		-name '*.proto' | \
 		xargs protoc \
 		-I. \
 		-Iexternal \
-		--js_out=import_style=commonjs,binary:$(JAVASCRIPT_GENERATED_DIR)
+		--plugin="protoc-gen-ts=${PROTOC_GEN_TS}" \
+		--js_out=import_style=commonjs,binary:$(JAVASCRIPT_GENERATED_DIR) \
+		--ts_out="${JAVASCRIPT_GENERATED_DIR}"
+	@# TS gRPC
+	@find proto \
+		-name '*.proto' | \
+		xargs protoc \
+		-I. \
+		-Iexternal \
+		--plugin="protoc-gen-ts=${PROTOC_GEN_TS}" \
+		--ts_out="service=grpc-web:${JAVASCRIPT_GENERATED_DIR}"
+	@# JS + TS definitions
 	@find external/github.com/mwitkow \
 		-name '*.proto' | \
 		xargs protoc \
 		-I. \
 		-Iexternal \
-		--js_out=import_style=commonjs,binary:$(JAVASCRIPT_GENERATED_DIR)
+		--plugin="protoc-gen-ts=${PROTOC_GEN_TS}" \
+		--js_out=import_style=commonjs,binary:$(JAVASCRIPT_GENERATED_DIR) \
+		--ts_out="${JAVASCRIPT_GENERATED_DIR}"
+	@# TS gRPC
+	@find external/github.com/mwitkow \
+		-name '*.proto' | \
+		xargs protoc \
+		-I. \
+		-Iexternal \
+		--plugin="protoc-gen-ts=${PROTOC_GEN_TS}" \
+		--ts_out="service=grpc-web:${JAVASCRIPT_GENERATED_DIR}"
 	@sed --in-place \
 		-e 's#\.\./\.\./github.com#../../external/github.com#' \
 		"$(JAVASCRIPT_GENERATED_DIR)/proto/api"/*.js
