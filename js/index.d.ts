@@ -1,3 +1,5 @@
+// GENERATED CODE -- DO NOT EDIT!
+
 export * as assets from "./generated/proto/assets_pb";
 export * as chain_events from "./generated/proto/chain_events_pb";
 export * as events from "./generated/proto/events_pb";

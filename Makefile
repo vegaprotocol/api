@@ -144,7 +144,7 @@ proto-javascript:
 	@sed --in-place \
 		-e 's#\.\./github.com#../external/github.com#' \
 		"$(JAVASCRIPT_GENERATED_DIR)/proto"/*.js
-	@(cd js; ./.generate_indexjs.sh >index.js)
+	@(cd js; ./.generate_indexjs.sh)
 	@find js/generated -name '*.js' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
 
 PYTHON_GENERATED_DIR := python/vegaapiclient/generated
