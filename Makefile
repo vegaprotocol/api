@@ -31,6 +31,7 @@ GRPC_CPP_PLUGIN := "$(shell command -v grpc_cpp_plugin)"
 
 .PHONY: proto-cpp
 proto-cpp:
+	@echo "C++"
 	@if test -z "$(GRPC_CPP_PLUGIN)" ; then \
 		echo "Need grpc_cpp_plugin. See https://github.com/grpc/grpc/blob/master/BUILDING.md#building-with-cmake" ; \
 		exit 1 ; \
@@ -54,6 +55,7 @@ JAR_PROTOBUF_URL := https://search.maven.org/remotecontent?filepath=com/google/p
 
 .PHONY: proto-java
 proto-java:
+	@echo "Java"
 	@rm -rf "$(JAVA_GENERATED_DIR)" && mkdir -p "$(JAVA_GENERATED_DIR)"
 	@mkdir -p "$(JAVA_LIB_DIR)"
 	@test -f "$(JAVA_LIB_DIR)/$(JAR_PROTOBUF)" || wget -qO "$(JAVA_LIB_DIR)/$(JAR_PROTOBUF)" "$(JAR_PROTOBUF_URL)"
@@ -79,6 +81,7 @@ PROTOC_GEN_TS := ./js/node_modules/.bin/protoc-gen-ts
 
 .PHONY: proto-javascript
 proto-javascript:
+	@echo "Javascript"
 	@rm -rf "$(JAVASCRIPT_GENERATED_DIR)" && mkdir -p "$(JAVASCRIPT_GENERATED_DIR)"
 	@cd js && npm install
 	@if ! test -r "$(PROTOC_GEN_TS)" -a -x "$(PROTOC_GEN_TS)" ; then \
@@ -94,7 +97,15 @@ proto-javascript:
 		--plugin="protoc-gen-ts=${PROTOC_GEN_TS}" \
 		--js_out=import_style=commonjs,binary:$(JAVASCRIPT_GENERATED_DIR) \
 		--ts_out="${JAVASCRIPT_GENERATED_DIR}"
-	@# TS gRPC
+	@# TS gRPC-node
+	@find proto \
+		-name '*.proto' | \
+		xargs protoc \
+		-I. \
+		-Iexternal \
+		--plugin="protoc-gen-ts=${PROTOC_GEN_TS}" \
+		--ts_out="service=grpc-node:${JAVASCRIPT_GENERATED_DIR}"
+	@# TS gRPC-web
 	@find proto \
 		-name '*.proto' | \
 		xargs protoc \
@@ -111,7 +122,15 @@ proto-javascript:
 		--plugin="protoc-gen-ts=${PROTOC_GEN_TS}" \
 		--js_out=import_style=commonjs,binary:$(JAVASCRIPT_GENERATED_DIR) \
 		--ts_out="${JAVASCRIPT_GENERATED_DIR}"
-	@# TS gRPC
+	@# TS gRPC node
+	@find external/github.com/mwitkow \
+		-name '*.proto' | \
+		xargs protoc \
+		-I. \
+		-Iexternal \
+		--plugin="protoc-gen-ts=${PROTOC_GEN_TS}" \
+		--ts_out="service=grpc-node:${JAVASCRIPT_GENERATED_DIR}"
+	@# TS gRPC web
 	@find external/github.com/mwitkow \
 		-name '*.proto' | \
 		xargs protoc \
@@ -132,6 +151,7 @@ PYTHON_GENERATED_DIR := python/vegaapiclient/generated
 
 .PHONY: proto-python
 proto-python:
+	@echo "Python"
 	@mkdir -p "$(PYTHON_GENERATED_DIR)"
 	@pipenv --bare install 1>/dev/null 2>&1 && \
 	find proto \
