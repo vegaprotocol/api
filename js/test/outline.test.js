@@ -4,12 +4,7 @@ var test = require('tape');
 
 var x = require('../index')
 
-test('Basic test: Can be imported', function (t) {
-  t.plan(1);
-  t.equal(typeof x, 'object');
-});
-
-test('Voting: PrepareVoteRequest exists', function (t) {
+test('Voting: PrepareVoteRequest exists', t => {
   t.plan(1);
   t.equal(typeof x.api.trading.PrepareVoteRequest, 'function');
 });

@@ -8,8 +8,8 @@
     "lint": "npm run lint:javascript && npm run lint:typescript",
     "lint:javascript": "eslint generated/**/*.js",
     "lint:typescript": "eslint generated/**/*.d.ts",
-    "test": "tape test/**.js | tap-dot",
-    "test:local": "WALLET_SERVER=false tape test/**.js | tap-dot"
+    "test": "tape test/**/*.test.js | tap-dot",
+    "test:local": "WALLET_SERVER=false tape test/**/*.test.js | tap-dot"
   },
   "repository": {
     "type": "git",
