@@ -31,8 +31,6 @@ function wallet_server_login(walletServerURL, walletName, walletPassphrase) {
 
 
 test('Submit Order', function (t) {
-  t.plan(3);
-
   // Log in to wallet server
   wname = "de3mo";
   wpass = "123";
@@ -44,8 +42,6 @@ test('Submit Order', function (t) {
     var token = wallet_server_login(t, wserver, wname, wpass);
   } catch (e) {
     t.fail("Failed to log in to waller server: " + e);
-    process.exit(1);
-
   }
   // if(token === undefined) {
   // }
@@ -70,4 +66,6 @@ test('Submit Order', function (t) {
   req2.wrappers_["1"].wrappers_ = {};
 
   t.deepEqual(req2, req1)
-});
+  t.end()
+
+}, { skip: process.env.WALLET_SERVER === 'false' });
