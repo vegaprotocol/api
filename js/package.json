@@ -9,7 +9,7 @@
     "lint:javascript": "eslint generated/**/*.js",
     "lint:typescript": "eslint generated/**/*.d.ts",
     "test": "tape 'test/**/*.test.js' | tap-dot",
-    "test:local": "WALLET_SERVER=false yarn run test"
+    "test:local": "WALLETSERVER=false yarn run test"
   },
   "repository": {
     "type": "git",

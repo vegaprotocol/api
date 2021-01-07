@@ -1,4 +1,4 @@
-var skip = (process.env.WALLET_SERVER === 'false')
+var skip = (process.env.WALLETSERVER === 'false')
 
 module.exports = {
     skipIfLocalOnly: { skip: skip }
