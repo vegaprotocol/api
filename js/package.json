@@ -33,6 +33,7 @@
     "tap-dot": "2.0.0",
     "tape": "5.1.1",
     "ts-protoc-gen": "^0.14.0",
+    "typescript": "^4.1.3",
     "xmlhttprequest": "^1.8.0"
   }
 }
