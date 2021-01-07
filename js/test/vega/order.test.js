@@ -5,7 +5,7 @@ var { skipIfLocalOnly } = require('../lib/env')
 // var protoLoader = require('@grpc/proto-loader');
 var xhr = require("xmlhttprequest");
 
-var { vega } = require('../../index')
+var { vega, api } = require('../../index')
 
 function wallet_server_login(walletServerURL, walletName, walletPassphrase) {
     var request = new xhr.XMLHttpRequest();
@@ -138,20 +138,20 @@ test('Submit Order', t => {
         return t.end()
     }
 
-    const sub = new x.vega.OrderSubmission()
+    const sub = new vega.OrderSubmission()
     sub.setExpiresat(2000000000000000000)
     sub.setMarketid("AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPP")
     sub.setPartyid("1122aabb") // a public key
     sub.setPrice(99912345)
-    sub.setSide(x.vega.Side.SIDE_BUY)
+    sub.setSide(vega.Side.SIDE_BUY)
     sub.setSize(1)
-    sub.setTimeinforce(x.vega.Order.TimeInForce.TIF_GTT)
-    sub.setType(x.vega.Order.Type.TYPE_LIMIT)
+    sub.setTimeinforce(vega.Order.TimeInForce.TIF_GTT)
+    sub.setType(vega.Order.Type.TYPE_LIMIT)
 
-    const req1 = new x.api.trading.SubmitOrderRequest();
+    const req1 = new api.trading.SubmitOrderRequest();
     req1.setSubmission(sub)
 
-    const req2 = x.api.trading.SubmitOrderRequest.deserializeBinary(req1.serializeBinary())
+    const req2 = api.trading.SubmitOrderRequest.deserializeBinary(req1.serializeBinary())
 
     // For some reason, nested wrappers can be null or {}.
     req2.wrappers_["1"].wrappers_ = {};
