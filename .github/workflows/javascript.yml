@@ -37,6 +37,11 @@ jobs:
         cd js
         npm ci
 
+    - name: Lint
+      run: |
+        cd js
+        npm run lint
+
     - name: Test
       env:
         CI: true
