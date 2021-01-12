@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=b'\n&com.github.mwitkow.go_proto_validatorsZ\tvalidator',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n6github.com/mwitkow/go-proto-validators/validator.proto\x12\tvalidator\x1a google/protobuf/descriptor.proto\"\xfa\x02\n\x0e\x46ieldValidator\x12\r\n\x05regex\x18\x01 \x01(\t\x12\x0e\n\x06int_gt\x18\x02 \x01(\x03\x12\x0e\n\x06int_lt\x18\x03 \x01(\x03\x12\x12\n\nmsg_exists\x18\x04 \x01(\x08\x12\x13\n\x0bhuman_error\x18\x05 \x01(\t\x12\x10\n\x08\x66loat_gt\x18\x06 \x01(\x01\x12\x10\n\x08\x66loat_lt\x18\x07 \x01(\x01\x12\x15\n\rfloat_epsilon\x18\x08 \x01(\x01\x12\x11\n\tfloat_gte\x18\t \x01(\x01\x12\x11\n\tfloat_lte\x18\n \x01(\x01\x12\x18\n\x10string_not_empty\x18\x0b \x01(\x08\x12\x1a\n\x12repeated_count_min\x18\x0c \x01(\x03\x12\x1a\n\x12repeated_count_max\x18\r \x01(\x03\x12\x11\n\tlength_gt\x18\x0e \x01(\x03\x12\x11\n\tlength_lt\x18\x0f \x01(\x03\x12\x11\n\tlength_eq\x18\x10 \x01(\x03\x12\x12\n\nis_in_enum\x18\x11 \x01(\x08\x12\x10\n\x08uuid_ver\x18\x12 \x01(\x05\"\"\n\x0eOneofValidator\x12\x10\n\x08required\x18\x01 \x01(\x08:I\n\x05\x66ield\x12\x1d.google.protobuf.FieldOptions\x18\xfc\xfb\x03 \x01(\x0b\x32\x19.validator.FieldValidator:I\n\x05oneof\x12\x1d.google.protobuf.OneofOptions\x18\xfd\xfb\x03 \x01(\x0b\x32\x19.validator.OneofValidatorB3\n&com.github.mwitkow.go_proto_validatorsZ\tvalidator'
+  serialized_pb=b'\n6github.com/mwitkow/go-proto-validators/validator.proto\x12\tvalidator\x1a google/protobuf/descriptor.proto\"\xbf\x04\n\x0e\x46ieldValidator\x12\x14\n\x05regex\x18\x01 \x01(\tR\x05regex\x12\x15\n\x06int_gt\x18\x02 \x01(\x03R\x05intGt\x12\x15\n\x06int_lt\x18\x03 \x01(\x03R\x05intLt\x12\x1d\n\nmsg_exists\x18\x04 \x01(\x08R\tmsgExists\x12\x1f\n\x0bhuman_error\x18\x05 \x01(\tR\nhumanError\x12\x19\n\x08\x66loat_gt\x18\x06 \x01(\x01R\x07\x66loatGt\x12\x19\n\x08\x66loat_lt\x18\x07 \x01(\x01R\x07\x66loatLt\x12#\n\rfloat_epsilon\x18\x08 \x01(\x01R\x0c\x66loatEpsilon\x12\x1b\n\tfloat_gte\x18\t \x01(\x01R\x08\x66loatGte\x12\x1b\n\tfloat_lte\x18\n \x01(\x01R\x08\x66loatLte\x12(\n\x10string_not_empty\x18\x0b \x01(\x08R\x0estringNotEmpty\x12,\n\x12repeated_count_min\x18\x0c \x01(\x03R\x10repeatedCountMin\x12,\n\x12repeated_count_max\x18\r \x01(\x03R\x10repeatedCountMax\x12\x1b\n\tlength_gt\x18\x0e \x01(\x03R\x08lengthGt\x12\x1b\n\tlength_lt\x18\x0f \x01(\x03R\x08lengthLt\x12\x1b\n\tlength_eq\x18\x10 \x01(\x03R\x08lengthEq\x12\x1c\n\nis_in_enum\x18\x11 \x01(\x08R\x08isInEnum\x12\x19\n\x08uuid_ver\x18\x12 \x01(\x05R\x07uuidVer\",\n\x0eOneofValidator\x12\x1a\n\x08required\x18\x01 \x01(\x08R\x08required:P\n\x05\x66ield\x12\x1d.google.protobuf.FieldOptions\x18\xfc\xfb\x03 \x01(\x0b\x32\x19.validator.FieldValidatorR\x05\x66ield:P\n\x05oneof\x12\x1d.google.protobuf.OneofOptions\x18\xfd\xfb\x03 \x01(\x0b\x32\x19.validator.OneofValidatorR\x05oneofB3\n&com.github.mwitkow.go_proto_validatorsZ\tvalidator'
   ,
   dependencies=[google_dot_protobuf_dot_descriptor__pb2.DESCRIPTOR,])
 
@@ -32,7 +32,7 @@ field = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key)
+  serialized_options=None, json_name='field', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key)
 ONEOF_FIELD_NUMBER = 65021
 oneof = _descriptor.FieldDescriptor(
   name='oneof', full_name='validator.oneof', index=1,
@@ -40,7 +40,7 @@ oneof = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key)
+  serialized_options=None, json_name='oneof', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key)
 
 
 _FIELDVALIDATOR = _descriptor.Descriptor(
@@ -57,126 +57,126 @@ _FIELDVALIDATOR = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='regex', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='int_gt', full_name='validator.FieldValidator.int_gt', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='intGt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='int_lt', full_name='validator.FieldValidator.int_lt', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='intLt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='msg_exists', full_name='validator.FieldValidator.msg_exists', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='msgExists', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='human_error', full_name='validator.FieldValidator.human_error', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='humanError', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='float_gt', full_name='validator.FieldValidator.float_gt', index=5,
       number=6, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='floatGt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='float_lt', full_name='validator.FieldValidator.float_lt', index=6,
       number=7, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='floatLt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='float_epsilon', full_name='validator.FieldValidator.float_epsilon', index=7,
       number=8, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='floatEpsilon', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='float_gte', full_name='validator.FieldValidator.float_gte', index=8,
       number=9, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='floatGte', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='float_lte', full_name='validator.FieldValidator.float_lte', index=9,
       number=10, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='floatLte', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='string_not_empty', full_name='validator.FieldValidator.string_not_empty', index=10,
       number=11, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='stringNotEmpty', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='repeated_count_min', full_name='validator.FieldValidator.repeated_count_min', index=11,
       number=12, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='repeatedCountMin', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='repeated_count_max', full_name='validator.FieldValidator.repeated_count_max', index=12,
       number=13, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='repeatedCountMax', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='length_gt', full_name='validator.FieldValidator.length_gt', index=13,
       number=14, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='lengthGt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='length_lt', full_name='validator.FieldValidator.length_lt', index=14,
       number=15, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='lengthLt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='length_eq', full_name='validator.FieldValidator.length_eq', index=15,
       number=16, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='lengthEq', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='is_in_enum', full_name='validator.FieldValidator.is_in_enum', index=16,
       number=17, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='isInEnum', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='uuid_ver', full_name='validator.FieldValidator.uuid_ver', index=17,
       number=18, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='uuidVer', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -190,7 +190,7 @@ _FIELDVALIDATOR = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=104,
-  serialized_end=482,
+  serialized_end=679,
 )
 
 
@@ -208,7 +208,7 @@ _ONEOFVALIDATOR = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='required', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -221,8 +221,8 @@ _ONEOFVALIDATOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=484,
-  serialized_end=518,
+  serialized_start=681,
+  serialized_end=725,
 )
 
 DESCRIPTOR.message_types_by_name['FieldValidator'] = _FIELDVALIDATOR
