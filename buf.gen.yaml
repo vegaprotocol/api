@@ -1,0 +1,18 @@
+---
+version: v1beta1
+
+plugins:
+
+  - name: cpp
+    out: cpp/generated
+
+  - name: cpp-grpc
+    out: cpp/generated
+    path: grpc_cpp_plugin
+
+  - name: python
+    out: python/vegaapiclient/generated
+
+  - name: python-grpc
+    out: python/vegaapiclient/generated
+    path: grpc_python_plugin

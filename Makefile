@@ -23,29 +23,21 @@ preproto:
 	@find proto/api -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.api";'
 	@find proto/tm -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.tm";'
 
-.PHONY: proto
-proto: proto-cpp proto-java proto-javascript proto-python
+.PHONY: buf-build
+buf-build:
+	@buf build
+
+.PHONY: buf-generate
+buf-generate: buf-build
+	@buf generate
 
 CPP_GENERATED_DIR := cpp/generated
-GRPC_CPP_PLUGIN := "$(shell command -v grpc_cpp_plugin)"
+PYTHON_GENERATED_DIR := python/vegaapiclient/generated
 
-.PHONY: proto-cpp
-proto-cpp:
-	@echo "C++"
-	@if test -z "$(GRPC_CPP_PLUGIN)" ; then \
-		echo "Need grpc_cpp_plugin. See https://github.com/grpc/grpc/blob/master/BUILDING.md#building-with-cmake" ; \
-		exit 1 ; \
-	fi
-	@mkdir -p "$(CPP_GENERATED_DIR)"
-	@find proto \
-		-name '*.proto' | \
-		xargs protoc \
-		-I. \
-		-Iexternal \
-		--cpp_out="$(CPP_GENERATED_DIR)" \
-		--grpc_out="$(CPP_GENERATED_DIR)" \
-		--plugin="protoc-gen-grpc=$(GRPC_CPP_PLUGIN)"
-	@find "$(CPP_GENERATED_DIR)" -name '*.pb.cc' -o -name '*.pb.h' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
+.PHONY: proto
+proto: buf-generate
+	@env CPP_GENERATED_DIR="$(CPP_GENERATED_DIR)" ./cpp/post-generate.sh
+	@env PYTHON_GENERATED_DIR="$(PYTHON_GENERATED_DIR)" ./python/post-generate.sh
 
 JAVA_GENERATED_DIR := java/generated
 JAVA_LIB_DIR := java/lib
@@ -147,56 +139,18 @@ proto-javascript:
 	@(cd js; ./.generate_indexjs.sh)
 	@find js/generated -name '*.js' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
 
-PYTHON_GENERATED_DIR := python/vegaapiclient/generated
-
-.PHONY: proto-python
-proto-python:
-	@echo "Python"
-	@mkdir -p "$(PYTHON_GENERATED_DIR)"
-	@pipenv --bare install 1>/dev/null 2>&1 && \
-	find proto \
-		-name '*.proto' | \
-		xargs pipenv run python3 pyproto.py \
-		-I. \
-		-Iexternal \
-		--python_out="$(PYTHON_GENERATED_DIR)" \
-		--grpc_python_out="$(PYTHON_GENERATED_DIR)" && \
-	find external/github.com/mwitkow \
-		-name '*.proto' | \
-		xargs pipenv run python3 pyproto.py \
-		-Iexternal \
-		--python_out="$(PYTHON_GENERATED_DIR)" \
-		--grpc_python_out="$(PYTHON_GENERATED_DIR)"
-	@sed --in-place \
-		-e 's#^from proto import#from . import#' \
-		"$(PYTHON_GENERATED_DIR)/proto/"*.py
-	@sed --in-place \
-		-e 's#^from proto import#from .. import#' \
-		-e 's#^from proto.api import#from . import#' \
-		"$(PYTHON_GENERATED_DIR)/proto/api"/*.py
-	@echo -e 'from . import trading_pb2 as trading\nfrom . import trading_pb2_grpc as trading_grpc\n\n__all__ = ["trading", "trading_grpc"]' \
-		>"$(PYTHON_GENERATED_DIR)/proto/api/__init__.py"
-	@echo -e 'from . import replay_pb2 as replay\nfrom . import replay_pb2_grpc as replay_grpc\n\n__all__ = ["replay", "replay_grpc"]' \
-		>"$(PYTHON_GENERATED_DIR)/proto/tm/__init__.py"
-	@touch "$(PYTHON_GENERATED_DIR)/__init__.py" "$(PYTHON_GENERATED_DIR)/proto/__init__.py"
-	@mv "$(PYTHON_GENERATED_DIR)/github/com/mwitkow/go_proto_validators/validator_pb2.py" "$(PYTHON_GENERATED_DIR)/proto/mwitkow_goprotovalidators_validator_pb2.py"
-	@mv "$(PYTHON_GENERATED_DIR)/github.com/mwitkow/go_proto_validators/validator_pb2_grpc.py" "$(PYTHON_GENERATED_DIR)/proto/mwitkow_goprotovalidators_validator_pb2_grpc.py"
-	@sed --in-place \
-		-e 's#^from github.com.mwitkow.go_proto_validators import validator_pb2 as#from . import mwitkow_goprotovalidators_validator_pb2 as#' \
-		"$(PYTHON_GENERATED_DIR)/proto"/*.py
-	@sed --in-place \
-		-e 's#^from github.com.mwitkow.go_proto_validators import validator_pb2 as#from .. import mwitkow_goprotovalidators_validator_pb2 as#' \
-		"$(PYTHON_GENERATED_DIR)/proto/api"/*.py
-	@rm -rf "$(PYTHON_GENERATED_DIR)/github" "$(PYTHON_GENERATED_DIR)/github.com"
-	@cd python && python3 generate_init.py >"vegaapiclient/__init__.py"
-	@find "$(PYTHON_GENERATED_DIR)" -name '*.py' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
+# Test
 
 .PHONY: test
-test: test-cpp test-javascript test-python
+test: test-cpp test-java test-javascript test-python
 
 .PHONY: test-cpp
 test-cpp:
 	@echo "TBD: test-cpp"
+
+.PHONY: test-java
+test-java:
+	@echo "TBD: test-java"
 
 .PHONY: test-javascript
 test-javascript:
@@ -205,3 +159,24 @@ test-javascript:
 .PHONY: test
 test-python:
 	@cd python && make test
+
+# Clean
+
+.PHONY: clean
+clean: clean-cpp clean-java clean-javascript clean-python
+
+.PHONY: clean-cpp
+clean-cpp:
+	@rm -rf "$(CPP_GENERATED_DIR)"
+
+.PHONY: clean-java
+clean-java:
+	@rm -rf "$(JAVA_GENERATED_DIR)"
+
+.PHONY: clean-javascript
+clean-javascript:
+	@rm -rf "$(JAVASCRIPT_GENERATED_DIR)"
+
+.PHONY: clean-python
+clean-python:
+	@rm -rf "$(PYTHON_GENERATED_DIR)"

@@ -9,7 +9,7 @@ from .vegatradingdataclient import VegaTradingDataClient
 from .faucetclient import FaucetClient
 from .helpers import grpc_error_detail
 from .walletclient import WalletClient
-from .generated.proto import (
+from .generated import (
     api,
     tm,
 {%- for i in imports %}
@@ -33,10 +33,8 @@ __all__ = [
 
 
 def main():
-    p = "vegaapiclient/generated/proto/"
-    exclude_pb2 = [
-        "mwitkow_goprotovalidators_validator_pb2.py",
-    ]
+    p = "vegaapiclient/generated/"
+    exclude_pb2 = []
     pb2_files = sorted(
         f[:-7]
         for f in os.listdir(p)
@@ -44,9 +42,7 @@ def main():
         and f.endswith("_pb2.py")
         and f not in exclude_pb2
     )
-    exclude_pb2_grpc = [
-        "mwitkow_goprotovalidators_validator_pb2_grpc.py",
-    ]
+    exclude_pb2_grpc = []
     pb2_grpc_files = sorted(
         f[:-12]
         for f in os.listdir(p)

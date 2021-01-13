@@ -5,7 +5,7 @@ from .vegatradingdataclient import VegaTradingDataClient
 from .faucetclient import FaucetClient
 from .helpers import grpc_error_detail
 from .walletclient import WalletClient
-from .generated.proto import (
+from .generated import (
     api,
     tm,
     assets_pb2 as assets,
