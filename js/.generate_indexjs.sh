@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-protodir=./generated/proto
+protodir=./generated
 
 requires="$(mktemp)"
 modexports="$(mktemp)"
@@ -10,7 +10,7 @@ ts_exports="$(mktemp)"
 find "$protodir" -maxdepth 1 -name '*_pb.js' | sort | while read -r pbjs
 do
 	filename="$(basename "$pbjs")"
-	varname="${filename//_pb.js/}"
+	varname="$(echo "$filename" | tr - _ | sed -e 's/_pb.js$//')"
 	echo "var $varname = require('$pbjs')" >>"$requires"
 	echo "  $varname: $varname," >>"$modexports"
 
@@ -19,12 +19,12 @@ done
 
 # Handle proto subdirs
 find "$protodir" -name '*_pb.js' -print0 | xargs -0 dirname | sort -u | tail +2 | while read -r protosubdir ; do
-	echo "  $(basename "$protosubdir"): {" >>"$modexports"
+	echo "  $(basename "$protosubdir" | tr - _): {" >>"$modexports"
 	find "$protosubdir" -maxdepth 1 -name '*_pb.js' | sort | while read -r pbjs
 	do
 		filename="$(basename "$pbjs")"
-		varname="${filename//_pb.js/}"
-		prefix="$(basename "$(dirname "$pbjs")")"
+		varname="$(echo "$filename" | tr - _ | sed -e 's/_pb.js$//')"
+		prefix="$(basename "$(dirname "$pbjs")" | tr - _)"
 		echo "var ${prefix}_${varname} = require('$pbjs')" >>"$requires"
 		echo "    $varname: ${prefix}_${varname}," >>"$modexports"
 
