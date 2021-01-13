@@ -1,6 +1,6 @@
 import grpc
 
-from .generated.proto.api import trading_pb2_grpc as trading_grpc
+from .generated.api import trading_pb2_grpc as trading_grpc
 
 
 class VegaTradingDataClient(object):
