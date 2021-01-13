@@ -139,8 +139,9 @@ const char descriptor_table_protodef_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalid
   "tions\030\374\373\003 \001(\0132\031.validator.FieldValidator"
   "R\005field:P\n\005oneof\022\035.google.protobuf.Oneof"
   "Options\030\375\373\003 \001(\0132\031.validator.OneofValidat"
-  "orR\005oneofB3\n&com.github.mwitkow.go_proto"
-  "_validatorsZ\tvalidator"
+  "orR\005oneofBZ\n&com.github.mwitkow.go_proto"
+  "_validatorsZ0github.com/mwitkow/go-proto"
+  "-validators;validator"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fdescriptor_2eproto,
@@ -151,7 +152,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_git
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto = {
-  false, false, descriptor_table_protodef_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto, "github.com/mwitkow/go-proto-validators/validator.proto", 942,
+  false, false, descriptor_table_protodef_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto, "github.com/mwitkow/go-proto-validators/validator.proto", 981,
   &descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto_once, descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto_sccs, descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto_deps, 2, 1,
   schemas, file_default_instances, TableStruct_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto::offsets,
   file_level_metadata_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto, 2, file_level_enum_descriptors_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto, file_level_service_descriptors_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto,

@@ -3731,8 +3731,9 @@ public final class Validator {
       "tions\030\374\373\003 \001(\0132\031.validator.FieldValidator" +
       "R\005field:P\n\005oneof\022\035.google.protobuf.Oneof" +
       "Options\030\375\373\003 \001(\0132\031.validator.OneofValidat" +
-      "orR\005oneofB3\n&com.github.mwitkow.go_proto" +
-      "_validatorsZ\tvalidator"
+      "orR\005oneofBZ\n&com.github.mwitkow.go_proto" +
+      "_validatorsZ0github.com/mwitkow/go-proto" +
+      "-validators;validator"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
