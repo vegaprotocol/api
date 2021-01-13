@@ -2,13 +2,11 @@
 
 SHELL := /usr/bin/env bash
 
-VEGA_VERSION := $(shell cat proto/from.txt | sed -e 's/^v//')
-API_CLIENTS_VERSION := $(shell git describe --tags 2>/dev/null || echo unknown)
-
 .PHONY: default
 default:
 	@echo "Please select a target:"
 	@echo "- preproto:  copy *.proto from vega core repository"
+	@echo "- proto:     Run buf to auto-generate API clients"
 
 .PHONY: preproto
 preproto:
@@ -36,113 +34,29 @@ buf-generate: buf-build
 			exit 1 ; \
 		fi ; \
 	done
-	@cd js && npm install
-	@if ! test -r ./js/node_modules/.bin/protoc-gen-ts -a -x ./js/node_modules/.bin/protoc-gen-ts ; then \
-		echo "Not found/executable: protoc-gen-ts" ; \
-		exit 1 ; \
+	@proto_gen_ts=./js/node_modules/.bin/protoc-gen-ts && \
+	if ! test -r "$$proto_gen_ts" -a -x "$$proto_gen_ts" ; then \
+		pushd js 1>/dev/null && \
+		npm install && \
+		popd 1>/dev/null && \
+		if ! test -r "$$proto_gen_ts" -a -x "$$proto_gen_ts" ; then \
+			echo "Not found/executable: protoc-gen-ts" ; \
+			exit 1 ; \
+		fi ; \
 	fi
 	@buf generate
 
 CPP_GENERATED_DIR := cpp/generated
-JS_GENERATED_DIR := js/generated
+JAVA_GENERATED_DIR := java/generated
+JAVASCRIPT_GENERATED_DIR := js/generated
 PYTHON_GENERATED_DIR := python/vegaapiclient/generated
 
 .PHONY: proto
 proto: buf-generate
 	@env CPP_GENERATED_DIR="$(CPP_GENERATED_DIR)" ./cpp/post-generate.sh
-	@env JS_GENERATED_DIR="$(JS_GENERATED_DIR)" ./js/post-generate.sh
+	@env JAVA_GENERATED_DIR="$(JAVA_GENERATED_DIR)" ./java/post-generate.sh
+	@env JAVASCRIPT_GENERATED_DIR="$(JAVASCRIPT_GENERATED_DIR)" ./js/post-generate.sh
 	@env PYTHON_GENERATED_DIR="$(PYTHON_GENERATED_DIR)" ./python/post-generate.sh
-
-JAVA_GENERATED_DIR := java/generated
-JAVA_LIB_DIR := java/lib
-JAR_PROTOBUF_VERSION := 3.13.0
-JAR_PROTOBUF := protobuf-java-$(JAR_PROTOBUF_VERSION).jar
-JAR_PROTOBUF_URL := https://search.maven.org/remotecontent?filepath=com/google/protobuf/protobuf-java/$(JAR_PROTOBUF_VERSION)/protobuf-java-$(JAR_PROTOBUF_VERSION).jar
-
-.PHONY: proto-java
-proto-java:
-	@echo "Java"
-	@rm -rf "$(JAVA_GENERATED_DIR)" && mkdir -p "$(JAVA_GENERATED_DIR)"
-	@mkdir -p "$(JAVA_LIB_DIR)"
-	@test -f "$(JAVA_LIB_DIR)/$(JAR_PROTOBUF)" || wget -qO "$(JAVA_LIB_DIR)/$(JAR_PROTOBUF)" "$(JAR_PROTOBUF_URL)"
-	@find proto \
-		-name '*.proto' | \
-		xargs protoc \
-		-I. \
-		-Iexternal \
-		--java_out="$(JAVA_GENERATED_DIR)"
-	@find external/github.com/mwitkow \
-		-name '*.proto' | \
-		xargs protoc \
-		-I. \
-		-Iexternal \
-		--java_out="$(JAVA_GENERATED_DIR)"
-	@find "$(JAVA_GENERATED_DIR)" -name '*.java' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
-	@find "$(JAVA_GENERATED_DIR)" -name '*.java' -print0 | xargs -0 javac -cp "$(JAVA_GENERATED_DIR):$(JAVA_LIB_DIR)/$(JAR_PROTOBUF)"
-	@echo -e 'Manifest-Version: 1.0\nCreated-by: $(shell java -version 2>&1 | awk '/^openjdk version/ {gsub(/"/, ""); print $$3}') (OpenJDK)\nMain-Class: n/a\nClass-Path: $(JAR_PROTOBUF)\nName: com.vegaprotocol.vega\nSpecification-Title: Vega\nSpecification-Version: $(VEGA_VERSION)\nSpecification-Vendor: Vega\nImplementation-Title: Vega\nImplementation-Version: $(API_CLIENTS_VERSION)\nImplementation-Vendor: Vega\nExport-Package: io.vegaprotocol.vega;version="$(VEGA_VERSION)"\nImport-Package: com.google.protobuf;version="[3.13,4)"' >"$(JAVA_GENERATED_DIR)/manifest.txt"
-	@cd "$(JAVA_GENERATED_DIR)" && jar cfm "vega-$(VEGA_VERSION).jar" manifest.txt com io && ln -s "vega-$(VEGA_VERSION).jar" io.vegaprotocol.vega.jar
-
-# PROTOC_GEN_TS := ./js/node_modules/.bin/protoc-gen-ts
-
-# .PHONY: proto-javascript
-# proto-javascript:
-# 	@echo "Javascript"
-# 	@rm -rf "$(JAVASCRIPT_GENERATED_DIR)" && mkdir -p "$(JAVASCRIPT_GENERATED_DIR)"
-# 	@cd js && npm install
-# 	@if ! test -r "$(PROTOC_GEN_TS)" -a -x "$(PROTOC_GEN_TS)" ; then \
-# 		echo "Not found/executable: $(PROTOC_GEN_TS)" ; \
-# 		exit 1 ; \
-# 	fi
-# 	@# JS + TS definitions
-# 	@find proto \
-# 		-name '*.proto' | \
-# 		xargs protoc \
-# 		-I. \
-# 		-Iexternal \
-# 		--plugin="protoc-gen-ts=${PROTOC_GEN_TS}" \
-# 		--js_out=import_style=commonjs,binary:$(JAVASCRIPT_GENERATED_DIR) \
-# 		--ts_out="${JAVASCRIPT_GENERATED_DIR}"
-# 	@# TS gRPC-node
-# 	@find proto \
-# 		-name '*.proto' | \
-# 		xargs protoc \
-# 		-I. \
-# 		-Iexternal \
-# 		--plugin="protoc-gen-ts=${PROTOC_GEN_TS}" \
-# 		--ts_out="service=grpc-node:${JAVASCRIPT_GENERATED_DIR}"
-# 	@# TS gRPC-web
-# 	@find proto \
-# 		-name '*.proto' | \
-# 		xargs protoc \
-# 		-I. \
-# 		-Iexternal \
-# 		--plugin="protoc-gen-ts=${PROTOC_GEN_TS}" \
-# 		--ts_out="service=grpc-web:${JAVASCRIPT_GENERATED_DIR}"
-# 	@# JS + TS definitions
-# 	@find external/github.com/mwitkow \
-# 		-name '*.proto' | \
-# 		xargs protoc \
-# 		-I. \
-# 		-Iexternal \
-# 		--plugin="protoc-gen-ts=${PROTOC_GEN_TS}" \
-# 		--js_out=import_style=commonjs,binary:$(JAVASCRIPT_GENERATED_DIR) \
-# 		--ts_out="${JAVASCRIPT_GENERATED_DIR}"
-# 	@# TS gRPC node
-# 	@find external/github.com/mwitkow \
-# 		-name '*.proto' | \
-# 		xargs protoc \
-# 		-I. \
-# 		-Iexternal \
-# 		--plugin="protoc-gen-ts=${PROTOC_GEN_TS}" \
-# 		--ts_out="service=grpc-node:${JAVASCRIPT_GENERATED_DIR}"
-# 	@# TS gRPC web
-# 	@find external/github.com/mwitkow \
-# 		-name '*.proto' | \
-# 		xargs protoc \
-# 		-I. \
-# 		-Iexternal \
-# 		--plugin="protoc-gen-ts=${PROTOC_GEN_TS}" \
-# 		--ts_out="service=grpc-web:${JAVASCRIPT_GENERATED_DIR}"
 
 # Test
 

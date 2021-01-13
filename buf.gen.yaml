@@ -11,6 +11,10 @@ plugins:
     out: cpp/generated
     path: grpc_cpp_plugin
 
+  # Java
+  - name: java
+    out: java/generated
+
   # JavaScript and TypeScript
   - name: js
     out: js/generated
