@@ -47,6 +47,7 @@ buf-generate: buf-build
 	@buf generate
 
 CPP_GENERATED_DIR := cpp/generated
+GO_GENERATED_DIR := go/generated
 JAVA_GENERATED_DIR := java/generated
 JAVASCRIPT_GENERATED_DIR := js/generated
 PYTHON_GENERATED_DIR := python/vegaapiclient/generated
@@ -54,6 +55,7 @@ PYTHON_GENERATED_DIR := python/vegaapiclient/generated
 .PHONY: proto
 proto: buf-generate
 	@env CPP_GENERATED_DIR="$(CPP_GENERATED_DIR)" ./cpp/post-generate.sh
+	@env GO_GENERATED_DIR="$(GO_GENERATED_DIR)" ./go/post-generate.sh
 	@env JAVA_GENERATED_DIR="$(JAVA_GENERATED_DIR)" ./java/post-generate.sh
 	@env JAVASCRIPT_GENERATED_DIR="$(JAVASCRIPT_GENERATED_DIR)" ./js/post-generate.sh
 	@env PYTHON_GENERATED_DIR="$(PYTHON_GENERATED_DIR)" ./python/post-generate.sh
@@ -66,6 +68,10 @@ test: test-cpp test-java test-javascript test-python
 .PHONY: test-cpp
 test-cpp:
 	@echo "TBD: test-cpp"
+
+.PHONY: test-go
+test-go:
+	@echo "TBD: test-go"
 
 .PHONY: test-java
 test-java:
@@ -82,11 +88,15 @@ test-python:
 # Clean
 
 .PHONY: clean
-clean: clean-cpp clean-java clean-javascript clean-python
+clean: clean-cpp clean-go clean-java clean-javascript clean-python
 
 .PHONY: clean-cpp
 clean-cpp:
 	@rm -rf "$(CPP_GENERATED_DIR)"
+
+.PHONY: clean-go
+clean-go:
+	@rm -rf "$(GO_GENERATED_DIR)"
 
 .PHONY: clean-java
 clean-java:

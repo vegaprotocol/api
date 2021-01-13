@@ -11,6 +11,17 @@ plugins:
     out: cpp/generated
     path: grpc_cpp_plugin
 
+  # Go
+  - name: go
+    out: go/generated
+
+  - name: go-grpc
+    out: go/generated
+
+  - name: govalidators
+    out: go/generated
+    # opt: paths=source_relative
+
   # Java
   - name: java
     out: java/generated
