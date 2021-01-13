@@ -7,6 +7,8 @@ on:
       - master
     paths-ignore:
       - "cpp/**"
+      - "go/**"
+      - "java/**"
       - "python/**"
   pull_request:
     branches:
@@ -14,6 +16,8 @@ on:
       - master
     paths-ignore:
       - "cpp/**"
+      - "go/**"
+      - "java/**"
       - "python/**"
 
 jobs:
