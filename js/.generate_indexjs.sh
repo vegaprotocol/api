@@ -37,7 +37,7 @@ find "$protodir" -name '*_pb.js' -print0 | xargs -0 dirname | sort -u | tail +2 
 	echo "  }," >>"$modexports"
 done
 
-cat >index.js <<EOF
+cat >index.ts <<EOF
 // GENERATED CODE -- DO NOT EDIT!
 
 $(cat "$requires")

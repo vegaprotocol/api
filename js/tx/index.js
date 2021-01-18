@@ -1,11 +1,9 @@
-const txTypes = require('./lib/transaction-types')
-const decode = require('./decode')
-
-module.exports = {
-   getTransactionType: txTypes.getTransactionType,
-   getTransactionTypeFromBuffer: txTypes.getTransactionTypeFromBuffer,
-   UnknownTransactionType: txTypes.UnknownTransactionType,
-   InvalidTransaction: txTypes.InvalidTransaction,
-   
-   decodeTx: decode.decodeTx
-}
+import { getTransactionTypeFromBuffer, getTransactionType, UnknownTransactionType, InvalidTransaction } from './lib/transaction-types';
+import { decodeTx } from './decode';
+export default {
+    getTransactionType,
+    getTransactionTypeFromBuffer,
+    UnknownTransactionType,
+    InvalidTransaction,
+    decodeTx
+};
