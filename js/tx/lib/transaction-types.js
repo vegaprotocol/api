@@ -4,20 +4,20 @@ exports.getTransactionTypeFromBuffer = exports.getTransactionType = exports.Inva
 const COMMAND_BYTE = 36;
 const ENCODED_COMMAND_START = 37;
 const transactionTypes = {
-    '40': 'SubmitOrderCommand',
-    '41': 'CancelOrderCommand',
-    '42': 'AmendOrderCommand',
-    '44': 'WithdrawCommand',
-    '45': 'ProposeCommand',
-    '46': 'VoteCommand',
-    '47': 'RegisterNodeCommand',
-    '48': 'NodeVoteCommand',
-    '49': 'NodeSignatureCommand',
-    '4A': 'LiquidityProvisionCommand',
-    '50': 'ChainEventCommand'
+    "40": "SubmitOrderCommand",
+    "41": "CancelOrderCommand",
+    "42": "AmendOrderCommand",
+    "44": "WithdrawCommand",
+    "45": "ProposeCommand",
+    "46": "VoteCommand",
+    "47": "RegisterNodeCommand",
+    "48": "NodeVoteCommand",
+    "49": "NodeSignatureCommand",
+    "4A": "LiquidityProvisionCommand",
+    "50": "ChainEventCommand",
 };
-exports.UnknownTransactionType = new Error('Unknown transaction type');
-exports.InvalidTransaction = new Error('Invalid transaction (transaction too short)');
+exports.UnknownTransactionType = new Error("Unknown transaction type");
+exports.InvalidTransaction = new Error("Invalid transaction (transaction too short)");
 /**
  * Looks for the magic byte that tells us what transaction type this is
  * @param transactionTypeByte
@@ -44,7 +44,7 @@ function getTransactionTypeFromBuffer(txBuf) {
     transactionType = getTransactionType(txBuf.readInt8(COMMAND_BYTE));
     return {
         type: transactionType,
-        tx: txBuf.subarray(ENCODED_COMMAND_START)
+        tx: txBuf.subarray(ENCODED_COMMAND_START),
     };
 }
 exports.getTransactionTypeFromBuffer = getTransactionTypeFromBuffer;
