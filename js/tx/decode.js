@@ -15,6 +15,8 @@ function decodeTx(encodedTx) {
         txArray = signedBundle.getTx_asB64();
     }
     catch (e) {
+        //@ts-ignore
+        console.log(e);
         throw exports.ErrorGettingTransaction;
     }
     // Get the Vega TX from the signed bundle

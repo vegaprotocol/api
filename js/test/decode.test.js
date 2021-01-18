@@ -7,7 +7,7 @@ const encodedTx = `CvABCsABNDliOTk4MzEtMmRjYS00YzA1LThhZTAtN2I3MDA4YWYzN2M4QBIQM
 test('A raw encoded TX decodes', t => {
    const res = tx.decodeTx(encodedTx)
 
-   t.equal(res.marketid, '3C58ED2A4A6C5D7E')
+   t.equal(res.marketid, '2839D9B2329C9E70')
    t.end()
 })
 

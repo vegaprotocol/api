@@ -17,9 +17,12 @@ export function decodeTx(encodedTx: string) {
   // Decode the raw tx from tendermint to a signed bundle
   try {
     const buf = Buffer.from(encodedTx, "base64");
+
     const signedBundle = SignedBundle.deserializeBinary(buf);
     txArray = signedBundle.getTx_asB64();
   } catch (e) {
+    //@ts-ignore
+      console.log(e)
     throw ErrorGettingTransaction;
   }
 
