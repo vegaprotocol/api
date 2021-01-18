@@ -20,6 +20,7 @@ done
 # Also include known JS exports
 echo "var tx = require('./tx/index')" >>"$requires"
 echo "  tx: tx," >>"$modexports"
+echo "export * as tx from \"./tx/index.ts\";" >>"$ts_exports"
 
 # Handle proto subdirs
 find "$protodir" -name '*_pb.js' -print0 | xargs -0 dirname | sort -u | tail +2 | while read -r protosubdir ; do
