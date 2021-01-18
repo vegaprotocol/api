@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2020",
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "ES2016",
     "lib": [
       "es2020"
     ],

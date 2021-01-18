@@ -5,7 +5,8 @@
   "main": "index.js",
   "types": "./index.d.ts",
   "scripts": {
-    "build": "npm run lint && tsc",
+    "build": "npm run lint && npm run build:ts",
+    "build:ts": "tsc",
     "lint": "npm run lint:javascript && npm run lint:typescript",
     "lint:javascript": "eslint generated/**/*.js",
     "lint:typescript": "eslint generated/**/*.d.ts",
@@ -27,6 +28,7 @@
   },
   "homepage": "https://github.com/vegaprotocol/api-clients#readme",
   "devDependencies": {
+    "@types/google-protobuf": "^3.7.4",
     "@typescript-eslint/eslint-plugin": "4.13.0",
     "@typescript-eslint/parser": "4.13.0",
     "eslint": "7.17.0",

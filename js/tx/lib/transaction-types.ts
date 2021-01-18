@@ -1,7 +1,13 @@
+import {Buffer} from "buffer";
+
 const COMMAND_BYTE = 36
 const ENCODED_COMMAND_START = 37
 
-const transactionTypes = {
+interface txMap {
+    [key: string]: string
+}
+
+const transactionTypes: txMap = {
     '40': 'SubmitOrderCommand',
     '41': 'CancelOrderCommand',
     '42': 'AmendOrderCommand',
@@ -20,10 +26,11 @@ export const InvalidTransaction = new Error('Invalid transaction (transaction to
 
 /**
  * Looks for the magic byte that tells us what transaction type this is
-*/
-export function getTransactionType(transactionTypeByte) {
+ * @param transactionTypeByte
+ */
+export function getTransactionType(transactionTypeByte: number): string {
   // Convert hex to string
-  var byte = (+transactionTypeByte).toString(16);
+  const byte = (+transactionTypeByte).toString(16);
 
   // If we have a named type, return it
   if (transactionTypes[byte]) {
@@ -35,16 +42,15 @@ export function getTransactionType(transactionTypeByte) {
 
 /**
  * Takes an encoded transaction, and returns the type & relevant bytes
- *  
- * @param {string} Transaction as a string
+ * @param txBuf
  */
-export function getTransactionTypeFromBuffer(txBuf) {
+export function getTransactionTypeFromBuffer(txBuf: Buffer) {
   if (txBuf.length <= ENCODED_COMMAND_START) {
     throw InvalidTransaction
   }
-  let transactionType 
+  let transactionType
 
-  transactionType = getTransactionType(txBuf[COMMAND_BYTE]) 
+  transactionType = getTransactionType(txBuf.readInt8(COMMAND_BYTE))
 
   return {
     type: transactionType,

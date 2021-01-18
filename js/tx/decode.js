@@ -1,32 +1,36 @@
-import { SignedBundle, Transaction, OrderSubmission } from '../generated/vega_pb';
-import { Buffer } from 'buffer';
-import { getTransactionTypeFromBuffer } from "./lib/transaction-types";
-export const ErrorGettingTransaction = new Error('Cannot decode signed bundle');
-export const ErrorDeserializingTransaction = new Error('Cannot deserialise transaction');
-export function decodeTx(encodedTx) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.decodeTx = exports.ErrorDeserializingTransaction = exports.ErrorGettingTransaction = void 0;
+const vega_pb_1 = require("../generated/vega_pb");
+const buffer_1 = require("buffer");
+const transaction_types_1 = require("./lib/transaction-types");
+exports.ErrorGettingTransaction = new Error('Cannot decode signed bundle');
+exports.ErrorDeserializingTransaction = new Error('Cannot deserialise transaction');
+function decodeTx(encodedTx) {
     let txArray, txBuf, res;
     // Decode the raw tx from tendermint to a signed bundle
     try {
-        const buf = Buffer.from(encodedTx, 'base64');
-        const signedBundle = SignedBundle.deserializeBinary(buf);
-        txArray = signedBundle.getTx_asB64();
+        const buf = buffer_1.Buffer.from(encodedTx, 'base64');
+        const signedBundle = vega_pb_1.SignedBundle.deserializeBinary(buf);
+        txArray = signedBundle.getTx_asU8();
     }
     catch (e) {
-        throw ErrorGettingTransaction;
+        throw exports.ErrorGettingTransaction;
     }
     // Get the Vega TX from the signed bundle
     try {
-        const rawTx = Transaction.deserializeBinary(txArray);
+        const rawTx = vega_pb_1.Transaction.deserializeBinary(txArray);
         // @ts-ignore
-        txBuf = Buffer.from(rawTx.toObject().inputdata, 'base64');
+        txBuf = buffer_1.Buffer.from(rawTx.toObject().inputdata, 'base64');
     }
     catch (e) {
-        throw ErrorDeserializingTransaction;
+        throw exports.ErrorDeserializingTransaction;
     }
-    const { type, tx } = getTransactionTypeFromBuffer(txBuf);
+    const { type, tx } = transaction_types_1.getTransactionTypeFromBuffer(txBuf);
     if (type === 'SubmitOrderCommand') {
         // Note that this won't have a partyID. It should have come from tawTx.pubKey
-        res = OrderSubmission.deserializeBinary(tx).toObject();
+        res = vega_pb_1.OrderSubmission.deserializeBinary(tx).toObject();
     }
     return res;
 }
+exports.decodeTx = decodeTx;

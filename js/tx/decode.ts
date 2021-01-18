@@ -5,14 +5,14 @@ import { getTransactionTypeFromBuffer } from "./lib/transaction-types";
 export const ErrorGettingTransaction = new Error('Cannot decode signed bundle')
 export const ErrorDeserializingTransaction = new Error('Cannot deserialise transaction')
 
-export function decodeTx(encodedTx) {
-  let txArray, txBuf, res
+export function decodeTx(encodedTx: string) {
+  let txArray: Uint8Array, txBuf, res
 
   // Decode the raw tx from tendermint to a signed bundle
   try {
     const buf = Buffer.from(encodedTx, 'base64')
     const signedBundle = SignedBundle.deserializeBinary(buf)
-    txArray = signedBundle.getTx_asB64()
+    txArray = signedBundle.getTx_asU8()
   } catch(e) {
     throw ErrorGettingTransaction
   }
