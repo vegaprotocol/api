@@ -3,7 +3,7 @@ import {
   Transaction,
   OrderSubmission,
 } from "../generated/vega_pb";
-import { Buffer } from "buffer/";
+import { Buffer } from "buffer";
 import { getTransactionTypeFromBuffer } from "./lib/transaction-types";
 
 export const ErrorGettingTransaction = new Error("Cannot decode signed bundle");

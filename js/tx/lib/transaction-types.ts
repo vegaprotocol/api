@@ -1,4 +1,4 @@
-import { Buffer } from "buffer/";
+import { Buffer } from "buffer";
 
 const COMMAND_BYTE = 36;
 const ENCODED_COMMAND_START = 37;

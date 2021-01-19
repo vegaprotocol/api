@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.decodeTx = exports.ErrorDeserializingTransaction = exports.ErrorGettingTransaction = void 0;
 const vega_pb_1 = require("../generated/vega_pb");
-const buffer_1 = require("buffer/");
+const buffer_1 = require("buffer");
 const transaction_types_1 = require("./lib/transaction-types");
 exports.ErrorGettingTransaction = new Error("Cannot decode signed bundle");
 exports.ErrorDeserializingTransaction = new Error("Cannot deserialise transaction");
