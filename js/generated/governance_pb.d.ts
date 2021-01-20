@@ -85,9 +85,6 @@ export class NewMarketConfiguration extends jspb.Message {
   setMetadataList(value: Array<string>): void;
   addMetadata(value: string, index?: number): string;
 
-  getOpeningauctionduration(): number;
-  setOpeningauctionduration(value: number): void;
-
   hasPricemonitoringparameters(): boolean;
   clearPricemonitoringparameters(): void;
   getPricemonitoringparameters(): markets_pb.PriceMonitoringParameters | undefined;
@@ -130,7 +127,6 @@ export namespace NewMarketConfiguration {
     instrument?: InstrumentConfiguration.AsObject,
     decimalplaces: number,
     metadataList: Array<string>,
-    openingauctionduration: number,
     pricemonitoringparameters?: markets_pb.PriceMonitoringParameters.AsObject,
     simple?: markets_pb.SimpleModelParams.AsObject,
     lognormal?: markets_pb.LogNormalRiskModel.AsObject,
@@ -151,11 +147,52 @@ export namespace NewMarketConfiguration {
   }
 }
 
+export class NewMarketCommitment extends jspb.Message {
+  getCommitmentamount(): number;
+  setCommitmentamount(value: number): void;
+
+  getFee(): string;
+  setFee(value: string): void;
+
+  clearSellsList(): void;
+  getSellsList(): Array<vega_pb.LiquidityOrder>;
+  setSellsList(value: Array<vega_pb.LiquidityOrder>): void;
+  addSells(value?: vega_pb.LiquidityOrder, index?: number): vega_pb.LiquidityOrder;
+
+  clearBuysList(): void;
+  getBuysList(): Array<vega_pb.LiquidityOrder>;
+  setBuysList(value: Array<vega_pb.LiquidityOrder>): void;
+  addBuys(value?: vega_pb.LiquidityOrder, index?: number): vega_pb.LiquidityOrder;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NewMarketCommitment.AsObject;
+  static toObject(includeInstance: boolean, msg: NewMarketCommitment): NewMarketCommitment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: NewMarketCommitment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NewMarketCommitment;
+  static deserializeBinaryFromReader(message: NewMarketCommitment, reader: jspb.BinaryReader): NewMarketCommitment;
+}
+
+export namespace NewMarketCommitment {
+  export type AsObject = {
+    commitmentamount: number,
+    fee: string,
+    sellsList: Array<vega_pb.LiquidityOrder.AsObject>,
+    buysList: Array<vega_pb.LiquidityOrder.AsObject>,
+  }
+}
+
 export class NewMarket extends jspb.Message {
   hasChanges(): boolean;
   clearChanges(): void;
   getChanges(): NewMarketConfiguration | undefined;
   setChanges(value?: NewMarketConfiguration): void;
+
+  hasLiquiditycommitment(): boolean;
+  clearLiquiditycommitment(): void;
+  getLiquiditycommitment(): NewMarketCommitment | undefined;
+  setLiquiditycommitment(value?: NewMarketCommitment): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NewMarket.AsObject;
@@ -170,6 +207,7 @@ export class NewMarket extends jspb.Message {
 export namespace NewMarket {
   export type AsObject = {
     changes?: NewMarketConfiguration.AsObject,
+    liquiditycommitment?: NewMarketCommitment.AsObject,
   }
 }
 
@@ -458,6 +496,8 @@ export interface ProposalErrorMap {
   PROPOSAL_ERROR_NETWORK_PARAMETER_VALIDATION_FAILED: 21;
   PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_SMALL: 22;
   PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE: 23;
+  PROPOSAL_ERROR_MARKET_MISSING_LIQUIDITY_COMMITMENT: 24;
+  PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET: 25;
 }
 
 export const ProposalError: ProposalErrorMap;

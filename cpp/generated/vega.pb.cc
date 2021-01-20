@@ -2008,7 +2008,7 @@ const char descriptor_table_protodef_vega_2eproto[] PROTOBUF_SECTION_VARIABLE(pr
   "LIQUIDITY\020\006\022\033\n\027ACCOUNT_TYPE_FEES_MAKER\020\007"
   "\022\036\n\032ACCOUNT_TYPE_LOCK_WITHDRAW\020\010\022\025\n\021ACCO"
   "UNT_TYPE_BOND\020\t\022\031\n\025ACCOUNT_TYPE_EXTERNAL"
-  "\020\n*\265\004\n\014TransferType\022\035\n\031TRANSFER_TYPE_UNS"
+  "\020\n*\263\005\n\014TransferType\022\035\n\031TRANSFER_TYPE_UNS"
   "PECIFIED\020\000\022\026\n\022TRANSFER_TYPE_LOSS\020\001\022\025\n\021TR"
   "ANSFER_TYPE_WIN\020\002\022\027\n\023TRANSFER_TYPE_CLOSE"
   "\020\003\022\032\n\026TRANSFER_TYPE_MTM_LOSS\020\004\022\031\n\025TRANSF"
@@ -2017,17 +2017,20 @@ const char descriptor_table_protodef_vega_2eproto[] PROTOBUF_SECTION_VARIABLE(pr
   "\n TRANSFER_TYPE_MARGIN_CONFISCATED\020\010\022\037\n\033"
   "TRANSFER_TYPE_MAKER_FEE_PAY\020\t\022#\n\037TRANSFE"
   "R_TYPE_MAKER_FEE_RECEIVE\020\n\022(\n$TRANSFER_T"
-  "YPE_INFRASTRUCTURE_FEE_PAY\020\013\022#\n\037TRANSFER"
-  "_TYPE_LIQUIDITY_FEE_PAY\020\014\022\032\n\026TRANSFER_TY"
-  "PE_BOND_LOW\020\r\022\033\n\027TRANSFER_TYPE_BOND_HIGH"
-  "\020\016\022\037\n\033TRANSFER_TYPE_WITHDRAW_LOCK\020\017\022\032\n\026T"
-  "RANSFER_TYPE_WITHDRAW\020\020\022\031\n\025TRANSFER_TYPE"
-  "_DEPOSIT\020\021*\205\001\n\021NodeSignatureKind\022#\n\037NODE"
-  "_SIGNATURE_KIND_UNSPECIFIED\020\000\022!\n\035NODE_SI"
-  "GNATURE_KIND_ASSET_NEW\020\001\022(\n$NODE_SIGNATU"
-  "RE_KIND_ASSET_WITHDRAWAL\020\002B7\n\024io.vegapro"
-  "tocol.vegaZ\037code.vegaprotocol.io/vega/pr"
-  "otob\006proto3"
+  "YPE_INFRASTRUCTURE_FEE_PAY\020\013\022/\n+TRANSFER"
+  "_TYPE_INFRASTRUCTURE_FEE_DISTRIBUTE\020\014\022#\n"
+  "\037TRANSFER_TYPE_LIQUIDITY_FEE_PAY\020\r\022*\n&TR"
+  "ANSFER_TYPE_LIQUIDITY_FEE_DISTRIBUTE\020\016\022\032"
+  "\n\026TRANSFER_TYPE_BOND_LOW\020\017\022\033\n\027TRANSFER_T"
+  "YPE_BOND_HIGH\020\020\022\037\n\033TRANSFER_TYPE_WITHDRA"
+  "W_LOCK\020\021\022\032\n\026TRANSFER_TYPE_WITHDRAW\020\022\022\031\n\025"
+  "TRANSFER_TYPE_DEPOSIT\020\023\022\037\n\033TRANSFER_TYPE"
+  "_BOND_SLASHING\020\024*\205\001\n\021NodeSignatureKind\022#"
+  "\n\037NODE_SIGNATURE_KIND_UNSPECIFIED\020\000\022!\n\035N"
+  "ODE_SIGNATURE_KIND_ASSET_NEW\020\001\022(\n$NODE_S"
+  "IGNATURE_KIND_ASSET_WITHDRAWAL\020\002B7\n\024io.v"
+  "egaprotocol.vegaZ\037code.vegaprotocol.io/v"
+  "ega/protob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_vega_2eproto_deps[3] = {
   &::descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto,
@@ -2091,7 +2094,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_veg
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vega_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vega_2eproto = {
-  false, false, descriptor_table_protodef_vega_2eproto, "vega.proto", 15611,
+  false, false, descriptor_table_protodef_vega_2eproto, "vega.proto", 15737,
   &descriptor_table_vega_2eproto_once, descriptor_table_vega_2eproto_sccs, descriptor_table_vega_2eproto_deps, 53, 3,
   schemas, file_default_instances, TableStruct_vega_2eproto::offsets,
   file_level_metadata_vega_2eproto, 53, file_level_enum_descriptors_vega_2eproto, file_level_service_descriptors_vega_2eproto,
@@ -2482,6 +2485,9 @@ bool TransferType_IsValid(int value) {
     case 15:
     case 16:
     case 17:
+    case 18:
+    case 19:
+    case 20:
       return true;
     default:
       return false;

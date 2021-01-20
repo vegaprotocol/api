@@ -54,7 +54,7 @@ struct TableStruct_governance_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[13]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -83,6 +83,9 @@ extern NewAssetDefaultTypeInternal _NewAsset_default_instance_;
 class NewMarket;
 class NewMarketDefaultTypeInternal;
 extern NewMarketDefaultTypeInternal _NewMarket_default_instance_;
+class NewMarketCommitment;
+class NewMarketCommitmentDefaultTypeInternal;
+extern NewMarketCommitmentDefaultTypeInternal _NewMarketCommitment_default_instance_;
 class NewMarketConfiguration;
 class NewMarketConfigurationDefaultTypeInternal;
 extern NewMarketConfigurationDefaultTypeInternal _NewMarketConfiguration_default_instance_;
@@ -110,6 +113,7 @@ template<> ::vega::GovernanceData_YesPartyEntry_DoNotUse* Arena::CreateMaybeMess
 template<> ::vega::InstrumentConfiguration* Arena::CreateMaybeMessage<::vega::InstrumentConfiguration>(Arena*);
 template<> ::vega::NewAsset* Arena::CreateMaybeMessage<::vega::NewAsset>(Arena*);
 template<> ::vega::NewMarket* Arena::CreateMaybeMessage<::vega::NewMarket>(Arena*);
+template<> ::vega::NewMarketCommitment* Arena::CreateMaybeMessage<::vega::NewMarketCommitment>(Arena*);
 template<> ::vega::NewMarketConfiguration* Arena::CreateMaybeMessage<::vega::NewMarketConfiguration>(Arena*);
 template<> ::vega::Proposal* Arena::CreateMaybeMessage<::vega::Proposal>(Arena*);
 template<> ::vega::ProposalTerms* Arena::CreateMaybeMessage<::vega::ProposalTerms>(Arena*);
@@ -201,12 +205,14 @@ enum ProposalError : int {
   PROPOSAL_ERROR_NETWORK_PARAMETER_VALIDATION_FAILED = 21,
   PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_SMALL = 22,
   PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE = 23,
+  PROPOSAL_ERROR_MARKET_MISSING_LIQUIDITY_COMMITMENT = 24,
+  PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET = 25,
   ProposalError_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   ProposalError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool ProposalError_IsValid(int value);
 constexpr ProposalError ProposalError_MIN = PROPOSAL_ERROR_UNSPECIFIED;
-constexpr ProposalError ProposalError_MAX = PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE;
+constexpr ProposalError ProposalError_MAX = PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET;
 constexpr int ProposalError_ARRAYSIZE = ProposalError_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ProposalError_descriptor();
@@ -727,9 +733,8 @@ class NewMarketConfiguration PROTOBUF_FINAL :
   enum : int {
     kMetadataFieldNumber = 3,
     kInstrumentFieldNumber = 1,
-    kPriceMonitoringParametersFieldNumber = 5,
+    kPriceMonitoringParametersFieldNumber = 4,
     kDecimalPlacesFieldNumber = 2,
-    kOpeningAuctionDurationFieldNumber = 4,
     kSimpleFieldNumber = 100,
     kLogNormalFieldNumber = 101,
     kContinuousFieldNumber = 200,
@@ -777,7 +782,7 @@ class NewMarketConfiguration PROTOBUF_FINAL :
       ::vega::InstrumentConfiguration* instrument);
   ::vega::InstrumentConfiguration* unsafe_arena_release_instrument();
 
-  // .vega.PriceMonitoringParameters priceMonitoringParameters = 5 [json_name = "priceMonitoringParameters"];
+  // .vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];
   bool has_pricemonitoringparameters() const;
   private:
   bool _internal_has_pricemonitoringparameters() const;
@@ -802,15 +807,6 @@ class NewMarketConfiguration PROTOBUF_FINAL :
   private:
   ::PROTOBUF_NAMESPACE_ID::uint64 _internal_decimalplaces() const;
   void _internal_set_decimalplaces(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // int64 openingAuctionDuration = 4 [json_name = "openingAuctionDuration"];
-  void clear_openingauctionduration();
-  ::PROTOBUF_NAMESPACE_ID::int64 openingauctionduration() const;
-  void set_openingauctionduration(::PROTOBUF_NAMESPACE_ID::int64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_openingauctionduration() const;
-  void _internal_set_openingauctionduration(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // .vega.SimpleModelParams simple = 100 [json_name = "simple"];
@@ -910,7 +906,6 @@ class NewMarketConfiguration PROTOBUF_FINAL :
   ::vega::InstrumentConfiguration* instrument_;
   ::vega::PriceMonitoringParameters* pricemonitoringparameters_;
   ::PROTOBUF_NAMESPACE_ID::uint64 decimalplaces_;
-  ::PROTOBUF_NAMESPACE_ID::int64 openingauctionduration_;
   union RiskParametersUnion {
     RiskParametersUnion() {}
     ::vega::SimpleModelParams* simple_;
@@ -924,6 +919,200 @@ class NewMarketConfiguration PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[2];
 
+  friend struct ::TableStruct_governance_2eproto;
+};
+// -------------------------------------------------------------------
+
+class NewMarketCommitment PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.NewMarketCommitment) */ {
+ public:
+  inline NewMarketCommitment() : NewMarketCommitment(nullptr) {}
+  virtual ~NewMarketCommitment();
+
+  NewMarketCommitment(const NewMarketCommitment& from);
+  NewMarketCommitment(NewMarketCommitment&& from) noexcept
+    : NewMarketCommitment() {
+    *this = ::std::move(from);
+  }
+
+  inline NewMarketCommitment& operator=(const NewMarketCommitment& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline NewMarketCommitment& operator=(NewMarketCommitment&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const NewMarketCommitment& default_instance();
+
+  static inline const NewMarketCommitment* internal_default_instance() {
+    return reinterpret_cast<const NewMarketCommitment*>(
+               &_NewMarketCommitment_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(NewMarketCommitment& a, NewMarketCommitment& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(NewMarketCommitment* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(NewMarketCommitment* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline NewMarketCommitment* New() const final {
+    return CreateMaybeMessage<NewMarketCommitment>(nullptr);
+  }
+
+  NewMarketCommitment* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<NewMarketCommitment>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const NewMarketCommitment& from);
+  void MergeFrom(const NewMarketCommitment& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(NewMarketCommitment* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.NewMarketCommitment";
+  }
+  protected:
+  explicit NewMarketCommitment(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_governance_2eproto);
+    return ::descriptor_table_governance_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSellsFieldNumber = 3,
+    kBuysFieldNumber = 4,
+    kFeeFieldNumber = 2,
+    kCommitmentAmountFieldNumber = 1,
+  };
+  // repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];
+  int sells_size() const;
+  private:
+  int _internal_sells_size() const;
+  public:
+  void clear_sells();
+  ::vega::LiquidityOrder* mutable_sells(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder >*
+      mutable_sells();
+  private:
+  const ::vega::LiquidityOrder& _internal_sells(int index) const;
+  ::vega::LiquidityOrder* _internal_add_sells();
+  public:
+  const ::vega::LiquidityOrder& sells(int index) const;
+  ::vega::LiquidityOrder* add_sells();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder >&
+      sells() const;
+
+  // repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];
+  int buys_size() const;
+  private:
+  int _internal_buys_size() const;
+  public:
+  void clear_buys();
+  ::vega::LiquidityOrder* mutable_buys(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder >*
+      mutable_buys();
+  private:
+  const ::vega::LiquidityOrder& _internal_buys(int index) const;
+  ::vega::LiquidityOrder* _internal_add_buys();
+  public:
+  const ::vega::LiquidityOrder& buys(int index) const;
+  ::vega::LiquidityOrder* add_buys();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder >&
+      buys() const;
+
+  // string fee = 2 [json_name = "fee"];
+  void clear_fee();
+  const std::string& fee() const;
+  void set_fee(const std::string& value);
+  void set_fee(std::string&& value);
+  void set_fee(const char* value);
+  void set_fee(const char* value, size_t size);
+  std::string* mutable_fee();
+  std::string* release_fee();
+  void set_allocated_fee(std::string* fee);
+  private:
+  const std::string& _internal_fee() const;
+  void _internal_set_fee(const std::string& value);
+  std::string* _internal_mutable_fee();
+  public:
+
+  // uint64 commitmentAmount = 1 [json_name = "commitmentAmount"];
+  void clear_commitmentamount();
+  ::PROTOBUF_NAMESPACE_ID::uint64 commitmentamount() const;
+  void set_commitmentamount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_commitmentamount() const;
+  void _internal_set_commitmentamount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.NewMarketCommitment)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder > sells_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder > buys_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fee_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 commitmentamount_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_governance_2eproto;
 };
 // -------------------------------------------------------------------
@@ -969,7 +1158,7 @@ class NewMarket PROTOBUF_FINAL :
                &_NewMarket_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(NewMarket& a, NewMarket& b) {
     a.Swap(&b);
@@ -1041,6 +1230,7 @@ class NewMarket PROTOBUF_FINAL :
 
   enum : int {
     kChangesFieldNumber = 1,
+    kLiquidityCommitmentFieldNumber = 2,
   };
   // .vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = {
   bool has_changes() const;
@@ -1060,6 +1250,24 @@ class NewMarket PROTOBUF_FINAL :
       ::vega::NewMarketConfiguration* changes);
   ::vega::NewMarketConfiguration* unsafe_arena_release_changes();
 
+  // .vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];
+  bool has_liquiditycommitment() const;
+  private:
+  bool _internal_has_liquiditycommitment() const;
+  public:
+  void clear_liquiditycommitment();
+  const ::vega::NewMarketCommitment& liquiditycommitment() const;
+  ::vega::NewMarketCommitment* release_liquiditycommitment();
+  ::vega::NewMarketCommitment* mutable_liquiditycommitment();
+  void set_allocated_liquiditycommitment(::vega::NewMarketCommitment* liquiditycommitment);
+  private:
+  const ::vega::NewMarketCommitment& _internal_liquiditycommitment() const;
+  ::vega::NewMarketCommitment* _internal_mutable_liquiditycommitment();
+  public:
+  void unsafe_arena_set_allocated_liquiditycommitment(
+      ::vega::NewMarketCommitment* liquiditycommitment);
+  ::vega::NewMarketCommitment* unsafe_arena_release_liquiditycommitment();
+
   // @@protoc_insertion_point(class_scope:vega.NewMarket)
  private:
   class _Internal;
@@ -1068,6 +1276,7 @@ class NewMarket PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::vega::NewMarketConfiguration* changes_;
+  ::vega::NewMarketCommitment* liquiditycommitment_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_governance_2eproto;
 };
@@ -1114,7 +1323,7 @@ class UpdateMarket PROTOBUF_FINAL :
                &_UpdateMarket_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(UpdateMarket& a, UpdateMarket& b) {
     a.Swap(&b);
@@ -1237,7 +1446,7 @@ class UpdateNetworkParameter PROTOBUF_FINAL :
                &_UpdateNetworkParameter_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(UpdateNetworkParameter& a, UpdateNetworkParameter& b) {
     a.Swap(&b);
@@ -1382,7 +1591,7 @@ class NewAsset PROTOBUF_FINAL :
                &_NewAsset_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(NewAsset& a, NewAsset& b) {
     a.Swap(&b);
@@ -1535,7 +1744,7 @@ class ProposalTerms PROTOBUF_FINAL :
                &_ProposalTerms_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(ProposalTerms& a, ProposalTerms& b) {
     a.Swap(&b);
@@ -1768,7 +1977,7 @@ public:
   private:
   static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
     ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_governance_2eproto);
-    return ::descriptor_table_governance_2eproto.file_level_metadata[8];
+    return ::descriptor_table_governance_2eproto.file_level_metadata[9];
   }
 
   public:
@@ -1798,7 +2007,7 @@ public:
   private:
   static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
     ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_governance_2eproto);
-    return ::descriptor_table_governance_2eproto.file_level_metadata[9];
+    return ::descriptor_table_governance_2eproto.file_level_metadata[10];
   }
 
   public:
@@ -1847,7 +2056,7 @@ class GovernanceData PROTOBUF_FINAL :
                &_GovernanceData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(GovernanceData& a, GovernanceData& b) {
     a.Swap(&b);
@@ -2079,7 +2288,7 @@ class Proposal PROTOBUF_FINAL :
                &_Proposal_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(Proposal& a, Proposal& b) {
     a.Swap(&b);
@@ -2353,7 +2562,7 @@ class Vote PROTOBUF_FINAL :
                &_Vote_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(Vote& a, Vote& b) {
     a.Swap(&b);
@@ -3108,27 +3317,7 @@ NewMarketConfiguration::mutable_metadata() {
   return &metadata_;
 }
 
-// int64 openingAuctionDuration = 4 [json_name = "openingAuctionDuration"];
-inline void NewMarketConfiguration::clear_openingauctionduration() {
-  openingauctionduration_ = PROTOBUF_LONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::int64 NewMarketConfiguration::_internal_openingauctionduration() const {
-  return openingauctionduration_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int64 NewMarketConfiguration::openingauctionduration() const {
-  // @@protoc_insertion_point(field_get:vega.NewMarketConfiguration.openingAuctionDuration)
-  return _internal_openingauctionduration();
-}
-inline void NewMarketConfiguration::_internal_set_openingauctionduration(::PROTOBUF_NAMESPACE_ID::int64 value) {
-
-  openingauctionduration_ = value;
-}
-inline void NewMarketConfiguration::set_openingauctionduration(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_openingauctionduration(value);
-  // @@protoc_insertion_point(field_set:vega.NewMarketConfiguration.openingAuctionDuration)
-}
-
-// .vega.PriceMonitoringParameters priceMonitoringParameters = 5 [json_name = "priceMonitoringParameters"];
+// .vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];
 inline bool NewMarketConfiguration::_internal_has_pricemonitoringparameters() const {
   return this != internal_default_instance() && pricemonitoringparameters_ != nullptr;
 }
@@ -3485,6 +3674,163 @@ inline NewMarketConfiguration::TradingModeCase NewMarketConfiguration::tradingMo
 }
 // -------------------------------------------------------------------
 
+// NewMarketCommitment
+
+// uint64 commitmentAmount = 1 [json_name = "commitmentAmount"];
+inline void NewMarketCommitment::clear_commitmentamount() {
+  commitmentamount_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewMarketCommitment::_internal_commitmentamount() const {
+  return commitmentamount_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewMarketCommitment::commitmentamount() const {
+  // @@protoc_insertion_point(field_get:vega.NewMarketCommitment.commitmentAmount)
+  return _internal_commitmentamount();
+}
+inline void NewMarketCommitment::_internal_set_commitmentamount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  commitmentamount_ = value;
+}
+inline void NewMarketCommitment::set_commitmentamount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_commitmentamount(value);
+  // @@protoc_insertion_point(field_set:vega.NewMarketCommitment.commitmentAmount)
+}
+
+// string fee = 2 [json_name = "fee"];
+inline void NewMarketCommitment::clear_fee() {
+  fee_.ClearToEmpty();
+}
+inline const std::string& NewMarketCommitment::fee() const {
+  // @@protoc_insertion_point(field_get:vega.NewMarketCommitment.fee)
+  return _internal_fee();
+}
+inline void NewMarketCommitment::set_fee(const std::string& value) {
+  _internal_set_fee(value);
+  // @@protoc_insertion_point(field_set:vega.NewMarketCommitment.fee)
+}
+inline std::string* NewMarketCommitment::mutable_fee() {
+  // @@protoc_insertion_point(field_mutable:vega.NewMarketCommitment.fee)
+  return _internal_mutable_fee();
+}
+inline const std::string& NewMarketCommitment::_internal_fee() const {
+  return fee_.Get();
+}
+inline void NewMarketCommitment::_internal_set_fee(const std::string& value) {
+
+  fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void NewMarketCommitment::set_fee(std::string&& value) {
+
+  fee_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.NewMarketCommitment.fee)
+}
+inline void NewMarketCommitment::set_fee(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.NewMarketCommitment.fee)
+}
+inline void NewMarketCommitment::set_fee(const char* value,
+    size_t size) {
+
+  fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.NewMarketCommitment.fee)
+}
+inline std::string* NewMarketCommitment::_internal_mutable_fee() {
+
+  return fee_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* NewMarketCommitment::release_fee() {
+  // @@protoc_insertion_point(field_release:vega.NewMarketCommitment.fee)
+  return fee_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void NewMarketCommitment::set_allocated_fee(std::string* fee) {
+  if (fee != nullptr) {
+
+  } else {
+
+  }
+  fee_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), fee,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.NewMarketCommitment.fee)
+}
+
+// repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];
+inline int NewMarketCommitment::_internal_sells_size() const {
+  return sells_.size();
+}
+inline int NewMarketCommitment::sells_size() const {
+  return _internal_sells_size();
+}
+inline ::vega::LiquidityOrder* NewMarketCommitment::mutable_sells(int index) {
+  // @@protoc_insertion_point(field_mutable:vega.NewMarketCommitment.Sells)
+  return sells_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder >*
+NewMarketCommitment::mutable_sells() {
+  // @@protoc_insertion_point(field_mutable_list:vega.NewMarketCommitment.Sells)
+  return &sells_;
+}
+inline const ::vega::LiquidityOrder& NewMarketCommitment::_internal_sells(int index) const {
+  return sells_.Get(index);
+}
+inline const ::vega::LiquidityOrder& NewMarketCommitment::sells(int index) const {
+  // @@protoc_insertion_point(field_get:vega.NewMarketCommitment.Sells)
+  return _internal_sells(index);
+}
+inline ::vega::LiquidityOrder* NewMarketCommitment::_internal_add_sells() {
+  return sells_.Add();
+}
+inline ::vega::LiquidityOrder* NewMarketCommitment::add_sells() {
+  // @@protoc_insertion_point(field_add:vega.NewMarketCommitment.Sells)
+  return _internal_add_sells();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder >&
+NewMarketCommitment::sells() const {
+  // @@protoc_insertion_point(field_list:vega.NewMarketCommitment.Sells)
+  return sells_;
+}
+
+// repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];
+inline int NewMarketCommitment::_internal_buys_size() const {
+  return buys_.size();
+}
+inline int NewMarketCommitment::buys_size() const {
+  return _internal_buys_size();
+}
+inline ::vega::LiquidityOrder* NewMarketCommitment::mutable_buys(int index) {
+  // @@protoc_insertion_point(field_mutable:vega.NewMarketCommitment.Buys)
+  return buys_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder >*
+NewMarketCommitment::mutable_buys() {
+  // @@protoc_insertion_point(field_mutable_list:vega.NewMarketCommitment.Buys)
+  return &buys_;
+}
+inline const ::vega::LiquidityOrder& NewMarketCommitment::_internal_buys(int index) const {
+  return buys_.Get(index);
+}
+inline const ::vega::LiquidityOrder& NewMarketCommitment::buys(int index) const {
+  // @@protoc_insertion_point(field_get:vega.NewMarketCommitment.Buys)
+  return _internal_buys(index);
+}
+inline ::vega::LiquidityOrder* NewMarketCommitment::_internal_add_buys() {
+  return buys_.Add();
+}
+inline ::vega::LiquidityOrder* NewMarketCommitment::add_buys() {
+  // @@protoc_insertion_point(field_add:vega.NewMarketCommitment.Buys)
+  return _internal_add_buys();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder >&
+NewMarketCommitment::buys() const {
+  // @@protoc_insertion_point(field_list:vega.NewMarketCommitment.Buys)
+  return buys_;
+}
+
+// -------------------------------------------------------------------
+
 // NewMarket
 
 // .vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = {
@@ -3568,6 +3914,89 @@ inline void NewMarket::set_allocated_changes(::vega::NewMarketConfiguration* cha
   }
   changes_ = changes;
   // @@protoc_insertion_point(field_set_allocated:vega.NewMarket.changes)
+}
+
+// .vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];
+inline bool NewMarket::_internal_has_liquiditycommitment() const {
+  return this != internal_default_instance() && liquiditycommitment_ != nullptr;
+}
+inline bool NewMarket::has_liquiditycommitment() const {
+  return _internal_has_liquiditycommitment();
+}
+inline void NewMarket::clear_liquiditycommitment() {
+  if (GetArena() == nullptr && liquiditycommitment_ != nullptr) {
+    delete liquiditycommitment_;
+  }
+  liquiditycommitment_ = nullptr;
+}
+inline const ::vega::NewMarketCommitment& NewMarket::_internal_liquiditycommitment() const {
+  const ::vega::NewMarketCommitment* p = liquiditycommitment_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::NewMarketCommitment&>(
+      ::vega::_NewMarketCommitment_default_instance_);
+}
+inline const ::vega::NewMarketCommitment& NewMarket::liquiditycommitment() const {
+  // @@protoc_insertion_point(field_get:vega.NewMarket.liquidityCommitment)
+  return _internal_liquiditycommitment();
+}
+inline void NewMarket::unsafe_arena_set_allocated_liquiditycommitment(
+    ::vega::NewMarketCommitment* liquiditycommitment) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(liquiditycommitment_);
+  }
+  liquiditycommitment_ = liquiditycommitment;
+  if (liquiditycommitment) {
+
+  } else {
+
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.NewMarket.liquidityCommitment)
+}
+inline ::vega::NewMarketCommitment* NewMarket::release_liquiditycommitment() {
+
+  ::vega::NewMarketCommitment* temp = liquiditycommitment_;
+  liquiditycommitment_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::vega::NewMarketCommitment* NewMarket::unsafe_arena_release_liquiditycommitment() {
+  // @@protoc_insertion_point(field_release:vega.NewMarket.liquidityCommitment)
+
+  ::vega::NewMarketCommitment* temp = liquiditycommitment_;
+  liquiditycommitment_ = nullptr;
+  return temp;
+}
+inline ::vega::NewMarketCommitment* NewMarket::_internal_mutable_liquiditycommitment() {
+
+  if (liquiditycommitment_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::NewMarketCommitment>(GetArena());
+    liquiditycommitment_ = p;
+  }
+  return liquiditycommitment_;
+}
+inline ::vega::NewMarketCommitment* NewMarket::mutable_liquiditycommitment() {
+  // @@protoc_insertion_point(field_mutable:vega.NewMarket.liquidityCommitment)
+  return _internal_mutable_liquiditycommitment();
+}
+inline void NewMarket::set_allocated_liquiditycommitment(::vega::NewMarketCommitment* liquiditycommitment) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete liquiditycommitment_;
+  }
+  if (liquiditycommitment) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(liquiditycommitment);
+    if (message_arena != submessage_arena) {
+      liquiditycommitment = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, liquiditycommitment, submessage_arena);
+    }
+
+  } else {
+
+  }
+  liquiditycommitment_ = liquiditycommitment;
+  // @@protoc_insertion_point(field_set_allocated:vega.NewMarket.liquidityCommitment)
 }
 
 // -------------------------------------------------------------------
@@ -4827,6 +5256,8 @@ inline void Vote::set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

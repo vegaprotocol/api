@@ -2179,52 +2179,76 @@ public final class Vega {
     TRANSFER_TYPE_INFRASTRUCTURE_FEE_PAY(11),
     /**
      * <pre>
+     * Receive infrastructure fee.
+     * </pre>
+     *
+     * <code>TRANSFER_TYPE_INFRASTRUCTURE_FEE_DISTRIBUTE = 12;</code>
+     */
+    TRANSFER_TYPE_INFRASTRUCTURE_FEE_DISTRIBUTE(12),
+    /**
+     * <pre>
      * Pay liquidity fee.
      * </pre>
      *
-     * <code>TRANSFER_TYPE_LIQUIDITY_FEE_PAY = 12;</code>
+     * <code>TRANSFER_TYPE_LIQUIDITY_FEE_PAY = 13;</code>
      */
-    TRANSFER_TYPE_LIQUIDITY_FEE_PAY(12),
+    TRANSFER_TYPE_LIQUIDITY_FEE_PAY(13),
+    /**
+     * <pre>
+     * Receive liquidity fee.
+     * </pre>
+     *
+     * <code>TRANSFER_TYPE_LIQUIDITY_FEE_DISTRIBUTE = 14;</code>
+     */
+    TRANSFER_TYPE_LIQUIDITY_FEE_DISTRIBUTE(14),
     /**
      * <pre>
      * Bond too low.
      * </pre>
      *
-     * <code>TRANSFER_TYPE_BOND_LOW = 13;</code>
+     * <code>TRANSFER_TYPE_BOND_LOW = 15;</code>
      */
-    TRANSFER_TYPE_BOND_LOW(13),
+    TRANSFER_TYPE_BOND_LOW(15),
     /**
      * <pre>
      * Bond too high.
      * </pre>
      *
-     * <code>TRANSFER_TYPE_BOND_HIGH = 14;</code>
+     * <code>TRANSFER_TYPE_BOND_HIGH = 16;</code>
      */
-    TRANSFER_TYPE_BOND_HIGH(14),
+    TRANSFER_TYPE_BOND_HIGH(16),
     /**
      * <pre>
      * Lock amount for withdraw.
      * </pre>
      *
-     * <code>TRANSFER_TYPE_WITHDRAW_LOCK = 15;</code>
+     * <code>TRANSFER_TYPE_WITHDRAW_LOCK = 17;</code>
      */
-    TRANSFER_TYPE_WITHDRAW_LOCK(15),
+    TRANSFER_TYPE_WITHDRAW_LOCK(17),
     /**
      * <pre>
      * Actual withdraw from system.
      * </pre>
      *
-     * <code>TRANSFER_TYPE_WITHDRAW = 16;</code>
+     * <code>TRANSFER_TYPE_WITHDRAW = 18;</code>
      */
-    TRANSFER_TYPE_WITHDRAW(16),
+    TRANSFER_TYPE_WITHDRAW(18),
     /**
      * <pre>
      * Deposit funds.
      * </pre>
      *
-     * <code>TRANSFER_TYPE_DEPOSIT = 17;</code>
+     * <code>TRANSFER_TYPE_DEPOSIT = 19;</code>
      */
-    TRANSFER_TYPE_DEPOSIT(17),
+    TRANSFER_TYPE_DEPOSIT(19),
+    /**
+     * <pre>
+     * Bond slashing.
+     * </pre>
+     *
+     * <code>TRANSFER_TYPE_BOND_SLASHING = 20;</code>
+     */
+    TRANSFER_TYPE_BOND_SLASHING(20),
     UNRECOGNIZED(-1),
     ;
 
@@ -2326,52 +2350,76 @@ public final class Vega {
     public static final int TRANSFER_TYPE_INFRASTRUCTURE_FEE_PAY_VALUE = 11;
     /**
      * <pre>
+     * Receive infrastructure fee.
+     * </pre>
+     *
+     * <code>TRANSFER_TYPE_INFRASTRUCTURE_FEE_DISTRIBUTE = 12;</code>
+     */
+    public static final int TRANSFER_TYPE_INFRASTRUCTURE_FEE_DISTRIBUTE_VALUE = 12;
+    /**
+     * <pre>
      * Pay liquidity fee.
      * </pre>
      *
-     * <code>TRANSFER_TYPE_LIQUIDITY_FEE_PAY = 12;</code>
+     * <code>TRANSFER_TYPE_LIQUIDITY_FEE_PAY = 13;</code>
      */
-    public static final int TRANSFER_TYPE_LIQUIDITY_FEE_PAY_VALUE = 12;
+    public static final int TRANSFER_TYPE_LIQUIDITY_FEE_PAY_VALUE = 13;
+    /**
+     * <pre>
+     * Receive liquidity fee.
+     * </pre>
+     *
+     * <code>TRANSFER_TYPE_LIQUIDITY_FEE_DISTRIBUTE = 14;</code>
+     */
+    public static final int TRANSFER_TYPE_LIQUIDITY_FEE_DISTRIBUTE_VALUE = 14;
     /**
      * <pre>
      * Bond too low.
      * </pre>
      *
-     * <code>TRANSFER_TYPE_BOND_LOW = 13;</code>
+     * <code>TRANSFER_TYPE_BOND_LOW = 15;</code>
      */
-    public static final int TRANSFER_TYPE_BOND_LOW_VALUE = 13;
+    public static final int TRANSFER_TYPE_BOND_LOW_VALUE = 15;
     /**
      * <pre>
      * Bond too high.
      * </pre>
      *
-     * <code>TRANSFER_TYPE_BOND_HIGH = 14;</code>
+     * <code>TRANSFER_TYPE_BOND_HIGH = 16;</code>
      */
-    public static final int TRANSFER_TYPE_BOND_HIGH_VALUE = 14;
+    public static final int TRANSFER_TYPE_BOND_HIGH_VALUE = 16;
     /**
      * <pre>
      * Lock amount for withdraw.
      * </pre>
      *
-     * <code>TRANSFER_TYPE_WITHDRAW_LOCK = 15;</code>
+     * <code>TRANSFER_TYPE_WITHDRAW_LOCK = 17;</code>
      */
-    public static final int TRANSFER_TYPE_WITHDRAW_LOCK_VALUE = 15;
+    public static final int TRANSFER_TYPE_WITHDRAW_LOCK_VALUE = 17;
     /**
      * <pre>
      * Actual withdraw from system.
      * </pre>
      *
-     * <code>TRANSFER_TYPE_WITHDRAW = 16;</code>
+     * <code>TRANSFER_TYPE_WITHDRAW = 18;</code>
      */
-    public static final int TRANSFER_TYPE_WITHDRAW_VALUE = 16;
+    public static final int TRANSFER_TYPE_WITHDRAW_VALUE = 18;
     /**
      * <pre>
      * Deposit funds.
      * </pre>
      *
-     * <code>TRANSFER_TYPE_DEPOSIT = 17;</code>
+     * <code>TRANSFER_TYPE_DEPOSIT = 19;</code>
      */
-    public static final int TRANSFER_TYPE_DEPOSIT_VALUE = 17;
+    public static final int TRANSFER_TYPE_DEPOSIT_VALUE = 19;
+    /**
+     * <pre>
+     * Bond slashing.
+     * </pre>
+     *
+     * <code>TRANSFER_TYPE_BOND_SLASHING = 20;</code>
+     */
+    public static final int TRANSFER_TYPE_BOND_SLASHING_VALUE = 20;
 
 
     public final int getNumber() {
@@ -2410,12 +2458,15 @@ public final class Vega {
         case 9: return TRANSFER_TYPE_MAKER_FEE_PAY;
         case 10: return TRANSFER_TYPE_MAKER_FEE_RECEIVE;
         case 11: return TRANSFER_TYPE_INFRASTRUCTURE_FEE_PAY;
-        case 12: return TRANSFER_TYPE_LIQUIDITY_FEE_PAY;
-        case 13: return TRANSFER_TYPE_BOND_LOW;
-        case 14: return TRANSFER_TYPE_BOND_HIGH;
-        case 15: return TRANSFER_TYPE_WITHDRAW_LOCK;
-        case 16: return TRANSFER_TYPE_WITHDRAW;
-        case 17: return TRANSFER_TYPE_DEPOSIT;
+        case 12: return TRANSFER_TYPE_INFRASTRUCTURE_FEE_DISTRIBUTE;
+        case 13: return TRANSFER_TYPE_LIQUIDITY_FEE_PAY;
+        case 14: return TRANSFER_TYPE_LIQUIDITY_FEE_DISTRIBUTE;
+        case 15: return TRANSFER_TYPE_BOND_LOW;
+        case 16: return TRANSFER_TYPE_BOND_HIGH;
+        case 17: return TRANSFER_TYPE_WITHDRAW_LOCK;
+        case 18: return TRANSFER_TYPE_WITHDRAW;
+        case 19: return TRANSFER_TYPE_DEPOSIT;
+        case 20: return TRANSFER_TYPE_BOND_SLASHING;
         default: return null;
       }
     }
@@ -70731,7 +70782,7 @@ public final class Vega {
       "LIQUIDITY\020\006\022\033\n\027ACCOUNT_TYPE_FEES_MAKER\020\007" +
       "\022\036\n\032ACCOUNT_TYPE_LOCK_WITHDRAW\020\010\022\025\n\021ACCO" +
       "UNT_TYPE_BOND\020\t\022\031\n\025ACCOUNT_TYPE_EXTERNAL" +
-      "\020\n*\265\004\n\014TransferType\022\035\n\031TRANSFER_TYPE_UNS" +
+      "\020\n*\263\005\n\014TransferType\022\035\n\031TRANSFER_TYPE_UNS" +
       "PECIFIED\020\000\022\026\n\022TRANSFER_TYPE_LOSS\020\001\022\025\n\021TR" +
       "ANSFER_TYPE_WIN\020\002\022\027\n\023TRANSFER_TYPE_CLOSE" +
       "\020\003\022\032\n\026TRANSFER_TYPE_MTM_LOSS\020\004\022\031\n\025TRANSF" +
@@ -70740,17 +70791,20 @@ public final class Vega {
       "\n TRANSFER_TYPE_MARGIN_CONFISCATED\020\010\022\037\n\033" +
       "TRANSFER_TYPE_MAKER_FEE_PAY\020\t\022#\n\037TRANSFE" +
       "R_TYPE_MAKER_FEE_RECEIVE\020\n\022(\n$TRANSFER_T" +
-      "YPE_INFRASTRUCTURE_FEE_PAY\020\013\022#\n\037TRANSFER" +
-      "_TYPE_LIQUIDITY_FEE_PAY\020\014\022\032\n\026TRANSFER_TY" +
-      "PE_BOND_LOW\020\r\022\033\n\027TRANSFER_TYPE_BOND_HIGH" +
-      "\020\016\022\037\n\033TRANSFER_TYPE_WITHDRAW_LOCK\020\017\022\032\n\026T" +
-      "RANSFER_TYPE_WITHDRAW\020\020\022\031\n\025TRANSFER_TYPE" +
-      "_DEPOSIT\020\021*\205\001\n\021NodeSignatureKind\022#\n\037NODE" +
-      "_SIGNATURE_KIND_UNSPECIFIED\020\000\022!\n\035NODE_SI" +
-      "GNATURE_KIND_ASSET_NEW\020\001\022(\n$NODE_SIGNATU" +
-      "RE_KIND_ASSET_WITHDRAWAL\020\002B7\n\024io.vegapro" +
-      "tocol.vegaZ\037code.vegaprotocol.io/vega/pr" +
-      "otob\006proto3"
+      "YPE_INFRASTRUCTURE_FEE_PAY\020\013\022/\n+TRANSFER" +
+      "_TYPE_INFRASTRUCTURE_FEE_DISTRIBUTE\020\014\022#\n" +
+      "\037TRANSFER_TYPE_LIQUIDITY_FEE_PAY\020\r\022*\n&TR" +
+      "ANSFER_TYPE_LIQUIDITY_FEE_DISTRIBUTE\020\016\022\032" +
+      "\n\026TRANSFER_TYPE_BOND_LOW\020\017\022\033\n\027TRANSFER_T" +
+      "YPE_BOND_HIGH\020\020\022\037\n\033TRANSFER_TYPE_WITHDRA" +
+      "W_LOCK\020\021\022\032\n\026TRANSFER_TYPE_WITHDRAW\020\022\022\031\n\025" +
+      "TRANSFER_TYPE_DEPOSIT\020\023\022\037\n\033TRANSFER_TYPE" +
+      "_BOND_SLASHING\020\024*\205\001\n\021NodeSignatureKind\022#" +
+      "\n\037NODE_SIGNATURE_KIND_UNSPECIFIED\020\000\022!\n\035N" +
+      "ODE_SIGNATURE_KIND_ASSET_NEW\020\001\022(\n$NODE_S" +
+      "IGNATURE_KIND_ASSET_WITHDRAWAL\020\002B7\n\024io.v" +
+      "egaprotocol.vegaZ\037code.vegaprotocol.io/v" +
+      "ega/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
