@@ -3,7 +3,7 @@
 # Set version strings everywhere.
 
 version="${1:-}"
-versionregex='^[0-9]+\.[0-9]+\.[0-9]+(-pre[0-9]+)?$'
+versionregex='^[0-9]+\.[0-9]+\.[0-9]+(-(a|pre)[0-9]+)?$'
 if ! echo "$version" | grep -qE "$versionregex" ; then
 	echo "Version does not match regex."
 	echo "Regex: $versionregex"

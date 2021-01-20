@@ -7,6 +7,8 @@ on:
       - master
     paths-ignore:
       - "cpp/**"
+      - "go/**"
+      - "java/**"
       - "python/**"
   pull_request:
     branches:
@@ -14,6 +16,8 @@ on:
       - master
     paths-ignore:
       - "cpp/**"
+      - "go/**"
+      - "java/**"
       - "python/**"
 
 jobs:
@@ -28,7 +32,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
 
@@ -37,9 +41,16 @@ jobs:
         cd js
         npm ci
 
+    - name: Lint
+      run: |
+        cd js
+        npm run lint
+
     - name: Test
+      env:
+        CI: true
+        GRPC_NODE: ${{ secrets.GRPC_NODE }}
+        WALLETSERVER: ${{ secrets.WALLETSERVER }}
       run: |
         cd js
         npm test
-      env:
-        CI: true
