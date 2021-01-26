@@ -57,7 +57,7 @@ def main():
     all_list = sorted(pb2_files + [f"{f}_grpc" for f in pb2_grpc_files])
     print(
         jinja2.Template(templ).render(
-            {"imports": imports, "all_list": all_list,}
+            {"imports": imports, "all_list": all_list}
         )
     )
 
