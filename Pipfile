@@ -16,3 +16,7 @@ googleapis-common-protos = "*"
 
 [requires]
 python_version = "3"
+
+[packages.865407b]
+path = "./python"
+editable = true
