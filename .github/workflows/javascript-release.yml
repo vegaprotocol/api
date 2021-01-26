@@ -33,8 +33,6 @@ jobs:
       run: |
         cd js
         npm test
-      env:
-        CI: true
 
     - name: Push release to npm (public)
       env:
