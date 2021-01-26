@@ -61,7 +61,8 @@ pipenv_install:
 
 .PHONY: test
 test: | varcheck pipenv_install
-	@pipenv run env PYTHONPATH=. pytest tests/
+	@pipenv run pip install -e .
+	@pipenv run pytest tests/
 
 .PHONY: varcheck
 varcheck:
