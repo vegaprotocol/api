@@ -72,3 +72,9 @@ jobs:
         cd python
         command -v mypy 1>/dev/null || pip install mypy
         make mypy
+
+    - name: Check archive file counts
+      run: |
+        cd python
+        python3 setup.py sdist bdist_wheel
+        make check_dist
