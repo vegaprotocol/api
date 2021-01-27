@@ -25,6 +25,12 @@ preproto:
 buf-build:
 	@buf build
 
+CPP_GENERATED_DIR := cpp/generated
+GO_GENERATED_DIR := go/generated
+JAVA_GENERATED_DIR := java/generated
+JAVASCRIPT_GENERATED_DIR := js/generated
+PYTHON_GENERATED_DIR := python/vegaapiclient/generated
+
 .PHONY: buf-generate
 buf-generate: buf-build
 	@for cmd in grpc_cpp_plugin grpc_python_plugin ; do \
@@ -44,13 +50,16 @@ buf-generate: buf-build
 			exit 1 ; \
 		fi ; \
 	fi
+	@for d in \
+		"$(CPP_GENERATED_DIR)" \
+		"$(GO_GENERATED_DIR)" \
+		"$(JAVA_GENERATED_DIR)" \
+		"$(JAVASCRIPT_GENERATED_DIR)" \
+		"$(PYTHON_GENERATED_DIR)" ; \
+	do \
+		rm -rf "$$d" && mkdir -p "$$d" || exit 1 ; \
+	done
 	@buf generate
-
-CPP_GENERATED_DIR := cpp/generated
-GO_GENERATED_DIR := go/generated
-JAVA_GENERATED_DIR := java/generated
-JAVASCRIPT_GENERATED_DIR := js/generated
-PYTHON_GENERATED_DIR := python/vegaapiclient/generated
 
 .PHONY: proto
 proto: buf-generate
