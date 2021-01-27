@@ -16,8 +16,6 @@ from . import replay_pb2_grpc as replay_grpc
 __all__ = ["replay", "replay_grpc"]
 EOF
 
-touch "$python_generated_dir/__init__.py"
-
 mv "$python_generated_dir/github.com/mwitkow/go_proto_validators/validator_pb2_grpc.py" "$python_generated_dir/github/com/mwitkow/go_proto_validators/"
 rm -rf "$python_generated_dir/github.com"
 
@@ -27,6 +25,11 @@ from . import validator_pb2_grpc as validator_grpc
 
 __all__ = ["validator", "validator_grpc"]
 EOF
+
+touch "$python_generated_dir/github/com/mwitkow/__init__.py"
+touch "$python_generated_dir/github/com/__init__.py"
+touch "$python_generated_dir/github/__init__.py"
+touch "$python_generated_dir/__init__.py"
 
 find "$python_generated_dir" -maxdepth 1 -name '*.py' -print0 | xargs -0r sed --in-place -r \
 	-e 's#^from github.com.mwitkow.go_proto_validators #from .github.com.mwitkow.go_proto_validators #' \
