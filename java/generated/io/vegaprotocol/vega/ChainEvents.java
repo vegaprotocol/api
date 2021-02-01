@@ -20,47 +20,47 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * A Vega network internal asset identifier.
+     * A Vega network internal asset identifier
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The vegaAssetId.
      */
-    java.lang.String getVegaAssetID();
+    java.lang.String getVegaAssetId();
     /**
      * <pre>
-     * A Vega network internal asset identifier.
+     * A Vega network internal asset identifier
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The bytes for vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The bytes for vegaAssetId.
      */
     com.google.protobuf.ByteString
-        getVegaAssetIDBytes();
+        getVegaAssetIdBytes();
 
     /**
      * <pre>
      * A Vega party identifier (pub-key)
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The partyId.
      */
-    java.lang.String getPartyID();
+    java.lang.String getPartyId();
     /**
      * <pre>
      * A Vega party identifier (pub-key)
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The bytes for partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The bytes for partyId.
      */
     com.google.protobuf.ByteString
-        getPartyIDBytes();
+        getPartyIdBytes();
 
     /**
      * <pre>
-     * The amount to be deposited.
+     * The amount to be deposited
      * </pre>
      *
      * <code>uint64 amount = 3 [json_name = "amount"];</code>
@@ -70,7 +70,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * A deposit for a Vega built-in asset.
+   * A deposit for a Vega built-in asset
    * </pre>
    *
    * Protobuf type {@code vega.BuiltinAssetDeposit}
@@ -85,8 +85,8 @@ public final class ChainEvents {
       super(builder);
     }
     private BuiltinAssetDeposit() {
-      vegaAssetID_ = "";
-      partyID_ = "";
+      vegaAssetId_ = "";
+      partyId_ = "";
     }
 
     @java.lang.Override
@@ -122,13 +122,13 @@ public final class ChainEvents {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              vegaAssetID_ = s;
+              vegaAssetId_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              partyID_ = s;
+              partyId_ = s;
               break;
             }
             case 24: {
@@ -168,72 +168,72 @@ public final class ChainEvents {
               io.vegaprotocol.vega.ChainEvents.BuiltinAssetDeposit.class, io.vegaprotocol.vega.ChainEvents.BuiltinAssetDeposit.Builder.class);
     }
 
-    public static final int VEGAASSETID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object vegaAssetID_;
+    public static final int VEGA_ASSET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object vegaAssetId_;
     /**
      * <pre>
-     * A Vega network internal asset identifier.
+     * A Vega network internal asset identifier
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The vegaAssetId.
      */
     @java.lang.Override
-    public java.lang.String getVegaAssetID() {
-      java.lang.Object ref = vegaAssetID_;
+    public java.lang.String getVegaAssetId() {
+      java.lang.Object ref = vegaAssetId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        vegaAssetID_ = s;
+        vegaAssetId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * A Vega network internal asset identifier.
+     * A Vega network internal asset identifier
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The bytes for vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The bytes for vegaAssetId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getVegaAssetIDBytes() {
-      java.lang.Object ref = vegaAssetID_;
+        getVegaAssetIdBytes() {
+      java.lang.Object ref = vegaAssetId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        vegaAssetID_ = b;
+        vegaAssetId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int PARTYID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object partyID_;
+    public static final int PARTY_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object partyId_;
     /**
      * <pre>
      * A Vega party identifier (pub-key)
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The partyId.
      */
     @java.lang.Override
-    public java.lang.String getPartyID() {
-      java.lang.Object ref = partyID_;
+    public java.lang.String getPartyId() {
+      java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        partyID_ = s;
+        partyId_ = s;
         return s;
       }
     }
@@ -242,18 +242,18 @@ public final class ChainEvents {
      * A Vega party identifier (pub-key)
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The bytes for partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The bytes for partyId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getPartyIDBytes() {
-      java.lang.Object ref = partyID_;
+        getPartyIdBytes() {
+      java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        partyID_ = b;
+        partyId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -264,7 +264,7 @@ public final class ChainEvents {
     private long amount_;
     /**
      * <pre>
-     * The amount to be deposited.
+     * The amount to be deposited
      * </pre>
      *
      * <code>uint64 amount = 3 [json_name = "amount"];</code>
@@ -289,11 +289,11 @@ public final class ChainEvents {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getVegaAssetIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaAssetID_);
+      if (!getVegaAssetIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaAssetId_);
       }
-      if (!getPartyIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partyID_);
+      if (!getPartyIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partyId_);
       }
       if (amount_ != 0L) {
         output.writeUInt64(3, amount_);
@@ -307,11 +307,11 @@ public final class ChainEvents {
       if (size != -1) return size;
 
       size = 0;
-      if (!getVegaAssetIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaAssetID_);
+      if (!getVegaAssetIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaAssetId_);
       }
-      if (!getPartyIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partyID_);
+      if (!getPartyIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partyId_);
       }
       if (amount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -332,10 +332,10 @@ public final class ChainEvents {
       }
       io.vegaprotocol.vega.ChainEvents.BuiltinAssetDeposit other = (io.vegaprotocol.vega.ChainEvents.BuiltinAssetDeposit) obj;
 
-      if (!getVegaAssetID()
-          .equals(other.getVegaAssetID())) return false;
-      if (!getPartyID()
-          .equals(other.getPartyID())) return false;
+      if (!getVegaAssetId()
+          .equals(other.getVegaAssetId())) return false;
+      if (!getPartyId()
+          .equals(other.getPartyId())) return false;
       if (getAmount()
           != other.getAmount()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -349,10 +349,10 @@ public final class ChainEvents {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + VEGAASSETID_FIELD_NUMBER;
-      hash = (53 * hash) + getVegaAssetID().hashCode();
-      hash = (37 * hash) + PARTYID_FIELD_NUMBER;
-      hash = (53 * hash) + getPartyID().hashCode();
+      hash = (37 * hash) + VEGA_ASSET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVegaAssetId().hashCode();
+      hash = (37 * hash) + PARTY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPartyId().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAmount());
@@ -453,7 +453,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * A deposit for a Vega built-in asset.
+     * A deposit for a Vega built-in asset
      * </pre>
      *
      * Protobuf type {@code vega.BuiltinAssetDeposit}
@@ -493,9 +493,9 @@ public final class ChainEvents {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        vegaAssetID_ = "";
+        vegaAssetId_ = "";
 
-        partyID_ = "";
+        partyId_ = "";
 
         amount_ = 0L;
 
@@ -525,8 +525,8 @@ public final class ChainEvents {
       @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.BuiltinAssetDeposit buildPartial() {
         io.vegaprotocol.vega.ChainEvents.BuiltinAssetDeposit result = new io.vegaprotocol.vega.ChainEvents.BuiltinAssetDeposit(this);
-        result.vegaAssetID_ = vegaAssetID_;
-        result.partyID_ = partyID_;
+        result.vegaAssetId_ = vegaAssetId_;
+        result.partyId_ = partyId_;
         result.amount_ = amount_;
         onBuilt();
         return result;
@@ -576,12 +576,12 @@ public final class ChainEvents {
 
       public Builder mergeFrom(io.vegaprotocol.vega.ChainEvents.BuiltinAssetDeposit other) {
         if (other == io.vegaprotocol.vega.ChainEvents.BuiltinAssetDeposit.getDefaultInstance()) return this;
-        if (!other.getVegaAssetID().isEmpty()) {
-          vegaAssetID_ = other.vegaAssetID_;
+        if (!other.getVegaAssetId().isEmpty()) {
+          vegaAssetId_ = other.vegaAssetId_;
           onChanged();
         }
-        if (!other.getPartyID().isEmpty()) {
-          partyID_ = other.partyID_;
+        if (!other.getPartyId().isEmpty()) {
+          partyId_ = other.partyId_;
           onChanged();
         }
         if (other.getAmount() != 0L) {
@@ -616,22 +616,22 @@ public final class ChainEvents {
         return this;
       }
 
-      private java.lang.Object vegaAssetID_ = "";
+      private java.lang.Object vegaAssetId_ = "";
       /**
        * <pre>
-       * A Vega network internal asset identifier.
+       * A Vega network internal asset identifier
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @return The vegaAssetID.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @return The vegaAssetId.
        */
-      public java.lang.String getVegaAssetID() {
-        java.lang.Object ref = vegaAssetID_;
+      public java.lang.String getVegaAssetId() {
+        java.lang.Object ref = vegaAssetId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          vegaAssetID_ = s;
+          vegaAssetId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -639,20 +639,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * A Vega network internal asset identifier.
+       * A Vega network internal asset identifier
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @return The bytes for vegaAssetID.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @return The bytes for vegaAssetId.
        */
       public com.google.protobuf.ByteString
-          getVegaAssetIDBytes() {
-        java.lang.Object ref = vegaAssetID_;
+          getVegaAssetIdBytes() {
+        java.lang.Object ref = vegaAssetId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          vegaAssetID_ = b;
+          vegaAssetId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -660,74 +660,74 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * A Vega network internal asset identifier.
+       * A Vega network internal asset identifier
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @param value The vegaAssetID to set.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @param value The vegaAssetId to set.
        * @return This builder for chaining.
        */
-      public Builder setVegaAssetID(
+      public Builder setVegaAssetId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        vegaAssetID_ = value;
+        vegaAssetId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * A Vega network internal asset identifier.
+       * A Vega network internal asset identifier
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearVegaAssetID() {
+      public Builder clearVegaAssetId() {
 
-        vegaAssetID_ = getDefaultInstance().getVegaAssetID();
+        vegaAssetId_ = getDefaultInstance().getVegaAssetId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * A Vega network internal asset identifier.
+       * A Vega network internal asset identifier
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @param value The bytes for vegaAssetID to set.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @param value The bytes for vegaAssetId to set.
        * @return This builder for chaining.
        */
-      public Builder setVegaAssetIDBytes(
+      public Builder setVegaAssetIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        vegaAssetID_ = value;
+        vegaAssetId_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object partyID_ = "";
+      private java.lang.Object partyId_ = "";
       /**
        * <pre>
        * A Vega party identifier (pub-key)
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @return The partyID.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @return The partyId.
        */
-      public java.lang.String getPartyID() {
-        java.lang.Object ref = partyID_;
+      public java.lang.String getPartyId() {
+        java.lang.Object ref = partyId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          partyID_ = s;
+          partyId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -738,17 +738,17 @@ public final class ChainEvents {
        * A Vega party identifier (pub-key)
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @return The bytes for partyID.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @return The bytes for partyId.
        */
       public com.google.protobuf.ByteString
-          getPartyIDBytes() {
-        java.lang.Object ref = partyID_;
+          getPartyIdBytes() {
+        java.lang.Object ref = partyId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          partyID_ = b;
+          partyId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -759,17 +759,17 @@ public final class ChainEvents {
        * A Vega party identifier (pub-key)
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @param value The partyID to set.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @param value The partyId to set.
        * @return This builder for chaining.
        */
-      public Builder setPartyID(
+      public Builder setPartyId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        partyID_ = value;
+        partyId_ = value;
         onChanged();
         return this;
       }
@@ -778,12 +778,12 @@ public final class ChainEvents {
        * A Vega party identifier (pub-key)
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearPartyID() {
+      public Builder clearPartyId() {
 
-        partyID_ = getDefaultInstance().getPartyID();
+        partyId_ = getDefaultInstance().getPartyId();
         onChanged();
         return this;
       }
@@ -792,18 +792,18 @@ public final class ChainEvents {
        * A Vega party identifier (pub-key)
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @param value The bytes for partyID to set.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @param value The bytes for partyId to set.
        * @return This builder for chaining.
        */
-      public Builder setPartyIDBytes(
+      public Builder setPartyIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        partyID_ = value;
+        partyId_ = value;
         onChanged();
         return this;
       }
@@ -811,7 +811,7 @@ public final class ChainEvents {
       private long amount_ ;
       /**
        * <pre>
-       * The amount to be deposited.
+       * The amount to be deposited
        * </pre>
        *
        * <code>uint64 amount = 3 [json_name = "amount"];</code>
@@ -823,7 +823,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The amount to be deposited.
+       * The amount to be deposited
        * </pre>
        *
        * <code>uint64 amount = 3 [json_name = "amount"];</code>
@@ -838,7 +838,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The amount to be deposited.
+       * The amount to be deposited
        * </pre>
        *
        * <code>uint64 amount = 3 [json_name = "amount"];</code>
@@ -909,47 +909,47 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * A Vega network internal asset identifier.
+     * A Vega network internal asset identifier
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The vegaAssetId.
      */
-    java.lang.String getVegaAssetID();
+    java.lang.String getVegaAssetId();
     /**
      * <pre>
-     * A Vega network internal asset identifier.
+     * A Vega network internal asset identifier
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The bytes for vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The bytes for vegaAssetId.
      */
     com.google.protobuf.ByteString
-        getVegaAssetIDBytes();
+        getVegaAssetIdBytes();
 
     /**
      * <pre>
      * A Vega network party identifier (pub-key)
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The partyId.
      */
-    java.lang.String getPartyID();
+    java.lang.String getPartyId();
     /**
      * <pre>
      * A Vega network party identifier (pub-key)
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The bytes for partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The bytes for partyId.
      */
     com.google.protobuf.ByteString
-        getPartyIDBytes();
+        getPartyIdBytes();
 
     /**
      * <pre>
-     * The amount to be withdrawn.
+     * The amount to be withdrawn
      * </pre>
      *
      * <code>uint64 amount = 3 [json_name = "amount"];</code>
@@ -959,7 +959,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * A withdrawal for a Vega built-in asset.
+   * A withdrawal for a Vega built-in asset
    * </pre>
    *
    * Protobuf type {@code vega.BuiltinAssetWithdrawal}
@@ -974,8 +974,8 @@ public final class ChainEvents {
       super(builder);
     }
     private BuiltinAssetWithdrawal() {
-      vegaAssetID_ = "";
-      partyID_ = "";
+      vegaAssetId_ = "";
+      partyId_ = "";
     }
 
     @java.lang.Override
@@ -1011,13 +1011,13 @@ public final class ChainEvents {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              vegaAssetID_ = s;
+              vegaAssetId_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              partyID_ = s;
+              partyId_ = s;
               break;
             }
             case 24: {
@@ -1057,72 +1057,72 @@ public final class ChainEvents {
               io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawal.class, io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawal.Builder.class);
     }
 
-    public static final int VEGAASSETID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object vegaAssetID_;
+    public static final int VEGA_ASSET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object vegaAssetId_;
     /**
      * <pre>
-     * A Vega network internal asset identifier.
+     * A Vega network internal asset identifier
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The vegaAssetId.
      */
     @java.lang.Override
-    public java.lang.String getVegaAssetID() {
-      java.lang.Object ref = vegaAssetID_;
+    public java.lang.String getVegaAssetId() {
+      java.lang.Object ref = vegaAssetId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        vegaAssetID_ = s;
+        vegaAssetId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * A Vega network internal asset identifier.
+     * A Vega network internal asset identifier
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The bytes for vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The bytes for vegaAssetId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getVegaAssetIDBytes() {
-      java.lang.Object ref = vegaAssetID_;
+        getVegaAssetIdBytes() {
+      java.lang.Object ref = vegaAssetId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        vegaAssetID_ = b;
+        vegaAssetId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int PARTYID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object partyID_;
+    public static final int PARTY_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object partyId_;
     /**
      * <pre>
      * A Vega network party identifier (pub-key)
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The partyId.
      */
     @java.lang.Override
-    public java.lang.String getPartyID() {
-      java.lang.Object ref = partyID_;
+    public java.lang.String getPartyId() {
+      java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        partyID_ = s;
+        partyId_ = s;
         return s;
       }
     }
@@ -1131,18 +1131,18 @@ public final class ChainEvents {
      * A Vega network party identifier (pub-key)
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The bytes for partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The bytes for partyId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getPartyIDBytes() {
-      java.lang.Object ref = partyID_;
+        getPartyIdBytes() {
+      java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        partyID_ = b;
+        partyId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1153,7 +1153,7 @@ public final class ChainEvents {
     private long amount_;
     /**
      * <pre>
-     * The amount to be withdrawn.
+     * The amount to be withdrawn
      * </pre>
      *
      * <code>uint64 amount = 3 [json_name = "amount"];</code>
@@ -1178,11 +1178,11 @@ public final class ChainEvents {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getVegaAssetIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaAssetID_);
+      if (!getVegaAssetIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaAssetId_);
       }
-      if (!getPartyIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partyID_);
+      if (!getPartyIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partyId_);
       }
       if (amount_ != 0L) {
         output.writeUInt64(3, amount_);
@@ -1196,11 +1196,11 @@ public final class ChainEvents {
       if (size != -1) return size;
 
       size = 0;
-      if (!getVegaAssetIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaAssetID_);
+      if (!getVegaAssetIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaAssetId_);
       }
-      if (!getPartyIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partyID_);
+      if (!getPartyIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partyId_);
       }
       if (amount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -1221,10 +1221,10 @@ public final class ChainEvents {
       }
       io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawal other = (io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawal) obj;
 
-      if (!getVegaAssetID()
-          .equals(other.getVegaAssetID())) return false;
-      if (!getPartyID()
-          .equals(other.getPartyID())) return false;
+      if (!getVegaAssetId()
+          .equals(other.getVegaAssetId())) return false;
+      if (!getPartyId()
+          .equals(other.getPartyId())) return false;
       if (getAmount()
           != other.getAmount()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1238,10 +1238,10 @@ public final class ChainEvents {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + VEGAASSETID_FIELD_NUMBER;
-      hash = (53 * hash) + getVegaAssetID().hashCode();
-      hash = (37 * hash) + PARTYID_FIELD_NUMBER;
-      hash = (53 * hash) + getPartyID().hashCode();
+      hash = (37 * hash) + VEGA_ASSET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVegaAssetId().hashCode();
+      hash = (37 * hash) + PARTY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPartyId().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAmount());
@@ -1342,7 +1342,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * A withdrawal for a Vega built-in asset.
+     * A withdrawal for a Vega built-in asset
      * </pre>
      *
      * Protobuf type {@code vega.BuiltinAssetWithdrawal}
@@ -1382,9 +1382,9 @@ public final class ChainEvents {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        vegaAssetID_ = "";
+        vegaAssetId_ = "";
 
-        partyID_ = "";
+        partyId_ = "";
 
         amount_ = 0L;
 
@@ -1414,8 +1414,8 @@ public final class ChainEvents {
       @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawal buildPartial() {
         io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawal result = new io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawal(this);
-        result.vegaAssetID_ = vegaAssetID_;
-        result.partyID_ = partyID_;
+        result.vegaAssetId_ = vegaAssetId_;
+        result.partyId_ = partyId_;
         result.amount_ = amount_;
         onBuilt();
         return result;
@@ -1465,12 +1465,12 @@ public final class ChainEvents {
 
       public Builder mergeFrom(io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawal other) {
         if (other == io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawal.getDefaultInstance()) return this;
-        if (!other.getVegaAssetID().isEmpty()) {
-          vegaAssetID_ = other.vegaAssetID_;
+        if (!other.getVegaAssetId().isEmpty()) {
+          vegaAssetId_ = other.vegaAssetId_;
           onChanged();
         }
-        if (!other.getPartyID().isEmpty()) {
-          partyID_ = other.partyID_;
+        if (!other.getPartyId().isEmpty()) {
+          partyId_ = other.partyId_;
           onChanged();
         }
         if (other.getAmount() != 0L) {
@@ -1505,22 +1505,22 @@ public final class ChainEvents {
         return this;
       }
 
-      private java.lang.Object vegaAssetID_ = "";
+      private java.lang.Object vegaAssetId_ = "";
       /**
        * <pre>
-       * A Vega network internal asset identifier.
+       * A Vega network internal asset identifier
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @return The vegaAssetID.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @return The vegaAssetId.
        */
-      public java.lang.String getVegaAssetID() {
-        java.lang.Object ref = vegaAssetID_;
+      public java.lang.String getVegaAssetId() {
+        java.lang.Object ref = vegaAssetId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          vegaAssetID_ = s;
+          vegaAssetId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1528,20 +1528,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * A Vega network internal asset identifier.
+       * A Vega network internal asset identifier
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @return The bytes for vegaAssetID.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @return The bytes for vegaAssetId.
        */
       public com.google.protobuf.ByteString
-          getVegaAssetIDBytes() {
-        java.lang.Object ref = vegaAssetID_;
+          getVegaAssetIdBytes() {
+        java.lang.Object ref = vegaAssetId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          vegaAssetID_ = b;
+          vegaAssetId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -1549,74 +1549,74 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * A Vega network internal asset identifier.
+       * A Vega network internal asset identifier
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @param value The vegaAssetID to set.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @param value The vegaAssetId to set.
        * @return This builder for chaining.
        */
-      public Builder setVegaAssetID(
+      public Builder setVegaAssetId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        vegaAssetID_ = value;
+        vegaAssetId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * A Vega network internal asset identifier.
+       * A Vega network internal asset identifier
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearVegaAssetID() {
+      public Builder clearVegaAssetId() {
 
-        vegaAssetID_ = getDefaultInstance().getVegaAssetID();
+        vegaAssetId_ = getDefaultInstance().getVegaAssetId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * A Vega network internal asset identifier.
+       * A Vega network internal asset identifier
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @param value The bytes for vegaAssetID to set.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @param value The bytes for vegaAssetId to set.
        * @return This builder for chaining.
        */
-      public Builder setVegaAssetIDBytes(
+      public Builder setVegaAssetIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        vegaAssetID_ = value;
+        vegaAssetId_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object partyID_ = "";
+      private java.lang.Object partyId_ = "";
       /**
        * <pre>
        * A Vega network party identifier (pub-key)
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @return The partyID.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @return The partyId.
        */
-      public java.lang.String getPartyID() {
-        java.lang.Object ref = partyID_;
+      public java.lang.String getPartyId() {
+        java.lang.Object ref = partyId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          partyID_ = s;
+          partyId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1627,17 +1627,17 @@ public final class ChainEvents {
        * A Vega network party identifier (pub-key)
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @return The bytes for partyID.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @return The bytes for partyId.
        */
       public com.google.protobuf.ByteString
-          getPartyIDBytes() {
-        java.lang.Object ref = partyID_;
+          getPartyIdBytes() {
+        java.lang.Object ref = partyId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          partyID_ = b;
+          partyId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -1648,17 +1648,17 @@ public final class ChainEvents {
        * A Vega network party identifier (pub-key)
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @param value The partyID to set.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @param value The partyId to set.
        * @return This builder for chaining.
        */
-      public Builder setPartyID(
+      public Builder setPartyId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        partyID_ = value;
+        partyId_ = value;
         onChanged();
         return this;
       }
@@ -1667,12 +1667,12 @@ public final class ChainEvents {
        * A Vega network party identifier (pub-key)
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearPartyID() {
+      public Builder clearPartyId() {
 
-        partyID_ = getDefaultInstance().getPartyID();
+        partyId_ = getDefaultInstance().getPartyId();
         onChanged();
         return this;
       }
@@ -1681,18 +1681,18 @@ public final class ChainEvents {
        * A Vega network party identifier (pub-key)
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @param value The bytes for partyID to set.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @param value The bytes for partyId to set.
        * @return This builder for chaining.
        */
-      public Builder setPartyIDBytes(
+      public Builder setPartyIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        partyID_ = value;
+        partyId_ = value;
         onChanged();
         return this;
       }
@@ -1700,7 +1700,7 @@ public final class ChainEvents {
       private long amount_ ;
       /**
        * <pre>
-       * The amount to be withdrawn.
+       * The amount to be withdrawn
        * </pre>
        *
        * <code>uint64 amount = 3 [json_name = "amount"];</code>
@@ -1712,7 +1712,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The amount to be withdrawn.
+       * The amount to be withdrawn
        * </pre>
        *
        * <code>uint64 amount = 3 [json_name = "amount"];</code>
@@ -1727,7 +1727,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The amount to be withdrawn.
+       * The amount to be withdrawn
        * </pre>
        *
        * <code>uint64 amount = 3 [json_name = "amount"];</code>
@@ -1798,7 +1798,7 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * Built-in asset deposit.
+     * Built-in asset deposit
      * </pre>
      *
      * <code>.vega.BuiltinAssetDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -1807,7 +1807,7 @@ public final class ChainEvents {
     boolean hasDeposit();
     /**
      * <pre>
-     * Built-in asset deposit.
+     * Built-in asset deposit
      * </pre>
      *
      * <code>.vega.BuiltinAssetDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -1816,7 +1816,7 @@ public final class ChainEvents {
     io.vegaprotocol.vega.ChainEvents.BuiltinAssetDeposit getDeposit();
     /**
      * <pre>
-     * Built-in asset deposit.
+     * Built-in asset deposit
      * </pre>
      *
      * <code>.vega.BuiltinAssetDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -1825,7 +1825,7 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * Built-in asset withdrawal.
+     * Built-in asset withdrawal
      * </pre>
      *
      * <code>.vega.BuiltinAssetWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -1834,7 +1834,7 @@ public final class ChainEvents {
     boolean hasWithdrawal();
     /**
      * <pre>
-     * Built-in asset withdrawal.
+     * Built-in asset withdrawal
      * </pre>
      *
      * <code>.vega.BuiltinAssetWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -1843,7 +1843,7 @@ public final class ChainEvents {
     io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawal getWithdrawal();
     /**
      * <pre>
-     * Built-in asset withdrawal.
+     * Built-in asset withdrawal
      * </pre>
      *
      * <code>.vega.BuiltinAssetWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -1854,7 +1854,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * An event related to a Vega built-in asset.
+   * An event related to a Vega built-in asset
    * </pre>
    *
    * Protobuf type {@code vega.BuiltinAssetEvent}
@@ -2005,7 +2005,7 @@ public final class ChainEvents {
     public static final int DEPOSIT_FIELD_NUMBER = 1001;
     /**
      * <pre>
-     * Built-in asset deposit.
+     * Built-in asset deposit
      * </pre>
      *
      * <code>.vega.BuiltinAssetDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -2017,7 +2017,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Built-in asset deposit.
+     * Built-in asset deposit
      * </pre>
      *
      * <code>.vega.BuiltinAssetDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -2032,7 +2032,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Built-in asset deposit.
+     * Built-in asset deposit
      * </pre>
      *
      * <code>.vega.BuiltinAssetDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -2048,7 +2048,7 @@ public final class ChainEvents {
     public static final int WITHDRAWAL_FIELD_NUMBER = 1002;
     /**
      * <pre>
-     * Built-in asset withdrawal.
+     * Built-in asset withdrawal
      * </pre>
      *
      * <code>.vega.BuiltinAssetWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -2060,7 +2060,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Built-in asset withdrawal.
+     * Built-in asset withdrawal
      * </pre>
      *
      * <code>.vega.BuiltinAssetWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -2075,7 +2075,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Built-in asset withdrawal.
+     * Built-in asset withdrawal
      * </pre>
      *
      * <code>.vega.BuiltinAssetWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -2273,7 +2273,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * An event related to a Vega built-in asset.
+     * An event related to a Vega built-in asset
      * </pre>
      *
      * Protobuf type {@code vega.BuiltinAssetEvent}
@@ -2465,7 +2465,7 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.BuiltinAssetDeposit, io.vegaprotocol.vega.ChainEvents.BuiltinAssetDeposit.Builder, io.vegaprotocol.vega.ChainEvents.BuiltinAssetDepositOrBuilder> depositBuilder_;
       /**
        * <pre>
-       * Built-in asset deposit.
+       * Built-in asset deposit
        * </pre>
        *
        * <code>.vega.BuiltinAssetDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -2477,7 +2477,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset deposit.
+       * Built-in asset deposit
        * </pre>
        *
        * <code>.vega.BuiltinAssetDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -2499,7 +2499,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset deposit.
+       * Built-in asset deposit
        * </pre>
        *
        * <code>.vega.BuiltinAssetDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -2519,7 +2519,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset deposit.
+       * Built-in asset deposit
        * </pre>
        *
        * <code>.vega.BuiltinAssetDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -2537,7 +2537,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset deposit.
+       * Built-in asset deposit
        * </pre>
        *
        * <code>.vega.BuiltinAssetDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -2563,7 +2563,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset deposit.
+       * Built-in asset deposit
        * </pre>
        *
        * <code>.vega.BuiltinAssetDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -2586,7 +2586,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset deposit.
+       * Built-in asset deposit
        * </pre>
        *
        * <code>.vega.BuiltinAssetDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -2596,7 +2596,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset deposit.
+       * Built-in asset deposit
        * </pre>
        *
        * <code>.vega.BuiltinAssetDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -2614,7 +2614,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset deposit.
+       * Built-in asset deposit
        * </pre>
        *
        * <code>.vega.BuiltinAssetDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -2642,7 +2642,7 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawal, io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawal.Builder, io.vegaprotocol.vega.ChainEvents.BuiltinAssetWithdrawalOrBuilder> withdrawalBuilder_;
       /**
        * <pre>
-       * Built-in asset withdrawal.
+       * Built-in asset withdrawal
        * </pre>
        *
        * <code>.vega.BuiltinAssetWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -2654,7 +2654,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset withdrawal.
+       * Built-in asset withdrawal
        * </pre>
        *
        * <code>.vega.BuiltinAssetWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -2676,7 +2676,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset withdrawal.
+       * Built-in asset withdrawal
        * </pre>
        *
        * <code>.vega.BuiltinAssetWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -2696,7 +2696,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset withdrawal.
+       * Built-in asset withdrawal
        * </pre>
        *
        * <code>.vega.BuiltinAssetWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -2714,7 +2714,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset withdrawal.
+       * Built-in asset withdrawal
        * </pre>
        *
        * <code>.vega.BuiltinAssetWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -2740,7 +2740,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset withdrawal.
+       * Built-in asset withdrawal
        * </pre>
        *
        * <code>.vega.BuiltinAssetWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -2763,7 +2763,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset withdrawal.
+       * Built-in asset withdrawal
        * </pre>
        *
        * <code>.vega.BuiltinAssetWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -2773,7 +2773,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset withdrawal.
+       * Built-in asset withdrawal
        * </pre>
        *
        * <code>.vega.BuiltinAssetWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -2791,7 +2791,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset withdrawal.
+       * Built-in asset withdrawal
        * </pre>
        *
        * <code>.vega.BuiltinAssetWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -2873,27 +2873,27 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * The Vega network internal identifier of the asset.
+     * The Vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The vegaAssetId.
      */
-    java.lang.String getVegaAssetID();
+    java.lang.String getVegaAssetId();
     /**
      * <pre>
-     * The Vega network internal identifier of the asset.
+     * The Vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The bytes for vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The bytes for vegaAssetId.
      */
     com.google.protobuf.ByteString
-        getVegaAssetIDBytes();
+        getVegaAssetIdBytes();
   }
   /**
    * <pre>
-   * An asset allowlisting for an ERC20 token.
+   * An asset allow-listing for an ERC20 token
    * </pre>
    *
    * Protobuf type {@code vega.ERC20AssetList}
@@ -2908,7 +2908,7 @@ public final class ChainEvents {
       super(builder);
     }
     private ERC20AssetList() {
-      vegaAssetID_ = "";
+      vegaAssetId_ = "";
     }
 
     @java.lang.Override
@@ -2944,7 +2944,7 @@ public final class ChainEvents {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              vegaAssetID_ = s;
+              vegaAssetId_ = s;
               break;
             }
             default: {
@@ -2979,46 +2979,46 @@ public final class ChainEvents {
               io.vegaprotocol.vega.ChainEvents.ERC20AssetList.class, io.vegaprotocol.vega.ChainEvents.ERC20AssetList.Builder.class);
     }
 
-    public static final int VEGAASSETID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object vegaAssetID_;
+    public static final int VEGA_ASSET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object vegaAssetId_;
     /**
      * <pre>
-     * The Vega network internal identifier of the asset.
+     * The Vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The vegaAssetId.
      */
     @java.lang.Override
-    public java.lang.String getVegaAssetID() {
-      java.lang.Object ref = vegaAssetID_;
+    public java.lang.String getVegaAssetId() {
+      java.lang.Object ref = vegaAssetId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        vegaAssetID_ = s;
+        vegaAssetId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * The Vega network internal identifier of the asset.
+     * The Vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The bytes for vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The bytes for vegaAssetId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getVegaAssetIDBytes() {
-      java.lang.Object ref = vegaAssetID_;
+        getVegaAssetIdBytes() {
+      java.lang.Object ref = vegaAssetId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        vegaAssetID_ = b;
+        vegaAssetId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3039,8 +3039,8 @@ public final class ChainEvents {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getVegaAssetIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaAssetID_);
+      if (!getVegaAssetIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaAssetId_);
       }
       unknownFields.writeTo(output);
     }
@@ -3051,8 +3051,8 @@ public final class ChainEvents {
       if (size != -1) return size;
 
       size = 0;
-      if (!getVegaAssetIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaAssetID_);
+      if (!getVegaAssetIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaAssetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3069,8 +3069,8 @@ public final class ChainEvents {
       }
       io.vegaprotocol.vega.ChainEvents.ERC20AssetList other = (io.vegaprotocol.vega.ChainEvents.ERC20AssetList) obj;
 
-      if (!getVegaAssetID()
-          .equals(other.getVegaAssetID())) return false;
+      if (!getVegaAssetId()
+          .equals(other.getVegaAssetId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3082,8 +3082,8 @@ public final class ChainEvents {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + VEGAASSETID_FIELD_NUMBER;
-      hash = (53 * hash) + getVegaAssetID().hashCode();
+      hash = (37 * hash) + VEGA_ASSET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVegaAssetId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3181,7 +3181,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * An asset allowlisting for an ERC20 token.
+     * An asset allow-listing for an ERC20 token
      * </pre>
      *
      * Protobuf type {@code vega.ERC20AssetList}
@@ -3221,7 +3221,7 @@ public final class ChainEvents {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        vegaAssetID_ = "";
+        vegaAssetId_ = "";
 
         return this;
       }
@@ -3249,7 +3249,7 @@ public final class ChainEvents {
       @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.ERC20AssetList buildPartial() {
         io.vegaprotocol.vega.ChainEvents.ERC20AssetList result = new io.vegaprotocol.vega.ChainEvents.ERC20AssetList(this);
-        result.vegaAssetID_ = vegaAssetID_;
+        result.vegaAssetId_ = vegaAssetId_;
         onBuilt();
         return result;
       }
@@ -3298,8 +3298,8 @@ public final class ChainEvents {
 
       public Builder mergeFrom(io.vegaprotocol.vega.ChainEvents.ERC20AssetList other) {
         if (other == io.vegaprotocol.vega.ChainEvents.ERC20AssetList.getDefaultInstance()) return this;
-        if (!other.getVegaAssetID().isEmpty()) {
-          vegaAssetID_ = other.vegaAssetID_;
+        if (!other.getVegaAssetId().isEmpty()) {
+          vegaAssetId_ = other.vegaAssetId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3331,22 +3331,22 @@ public final class ChainEvents {
         return this;
       }
 
-      private java.lang.Object vegaAssetID_ = "";
+      private java.lang.Object vegaAssetId_ = "";
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @return The vegaAssetID.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @return The vegaAssetId.
        */
-      public java.lang.String getVegaAssetID() {
-        java.lang.Object ref = vegaAssetID_;
+      public java.lang.String getVegaAssetId() {
+        java.lang.Object ref = vegaAssetId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          vegaAssetID_ = s;
+          vegaAssetId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -3354,20 +3354,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @return The bytes for vegaAssetID.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @return The bytes for vegaAssetId.
        */
       public com.google.protobuf.ByteString
-          getVegaAssetIDBytes() {
-        java.lang.Object ref = vegaAssetID_;
+          getVegaAssetIdBytes() {
+        java.lang.Object ref = vegaAssetId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          vegaAssetID_ = b;
+          vegaAssetId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -3375,54 +3375,54 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @param value The vegaAssetID to set.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @param value The vegaAssetId to set.
        * @return This builder for chaining.
        */
-      public Builder setVegaAssetID(
+      public Builder setVegaAssetId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        vegaAssetID_ = value;
+        vegaAssetId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearVegaAssetID() {
+      public Builder clearVegaAssetId() {
 
-        vegaAssetID_ = getDefaultInstance().getVegaAssetID();
+        vegaAssetId_ = getDefaultInstance().getVegaAssetId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @param value The bytes for vegaAssetID to set.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @param value The bytes for vegaAssetId to set.
        * @return This builder for chaining.
        */
-      public Builder setVegaAssetIDBytes(
+      public Builder setVegaAssetIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        vegaAssetID_ = value;
+        vegaAssetId_ = value;
         onChanged();
         return this;
       }
@@ -3485,27 +3485,27 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * The Vega network internal identifier of the asset.
+     * The Vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The vegaAssetId.
      */
-    java.lang.String getVegaAssetID();
+    java.lang.String getVegaAssetId();
     /**
      * <pre>
-     * The Vega network internal identifier of the asset.
+     * The Vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The bytes for vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The bytes for vegaAssetId.
      */
     com.google.protobuf.ByteString
-        getVegaAssetIDBytes();
+        getVegaAssetIdBytes();
   }
   /**
    * <pre>
-   * An asset denylisting for an ERC20 token.
+   * An asset deny-listing for an ERC20 token
    * </pre>
    *
    * Protobuf type {@code vega.ERC20AssetDelist}
@@ -3520,7 +3520,7 @@ public final class ChainEvents {
       super(builder);
     }
     private ERC20AssetDelist() {
-      vegaAssetID_ = "";
+      vegaAssetId_ = "";
     }
 
     @java.lang.Override
@@ -3556,7 +3556,7 @@ public final class ChainEvents {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              vegaAssetID_ = s;
+              vegaAssetId_ = s;
               break;
             }
             default: {
@@ -3591,46 +3591,46 @@ public final class ChainEvents {
               io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist.class, io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist.Builder.class);
     }
 
-    public static final int VEGAASSETID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object vegaAssetID_;
+    public static final int VEGA_ASSET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object vegaAssetId_;
     /**
      * <pre>
-     * The Vega network internal identifier of the asset.
+     * The Vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The vegaAssetId.
      */
     @java.lang.Override
-    public java.lang.String getVegaAssetID() {
-      java.lang.Object ref = vegaAssetID_;
+    public java.lang.String getVegaAssetId() {
+      java.lang.Object ref = vegaAssetId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        vegaAssetID_ = s;
+        vegaAssetId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * The Vega network internal identifier of the asset.
+     * The Vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The bytes for vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The bytes for vegaAssetId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getVegaAssetIDBytes() {
-      java.lang.Object ref = vegaAssetID_;
+        getVegaAssetIdBytes() {
+      java.lang.Object ref = vegaAssetId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        vegaAssetID_ = b;
+        vegaAssetId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3651,8 +3651,8 @@ public final class ChainEvents {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getVegaAssetIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaAssetID_);
+      if (!getVegaAssetIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaAssetId_);
       }
       unknownFields.writeTo(output);
     }
@@ -3663,8 +3663,8 @@ public final class ChainEvents {
       if (size != -1) return size;
 
       size = 0;
-      if (!getVegaAssetIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaAssetID_);
+      if (!getVegaAssetIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaAssetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3681,8 +3681,8 @@ public final class ChainEvents {
       }
       io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist other = (io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist) obj;
 
-      if (!getVegaAssetID()
-          .equals(other.getVegaAssetID())) return false;
+      if (!getVegaAssetId()
+          .equals(other.getVegaAssetId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3694,8 +3694,8 @@ public final class ChainEvents {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + VEGAASSETID_FIELD_NUMBER;
-      hash = (53 * hash) + getVegaAssetID().hashCode();
+      hash = (37 * hash) + VEGA_ASSET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVegaAssetId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3793,7 +3793,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * An asset denylisting for an ERC20 token.
+     * An asset deny-listing for an ERC20 token
      * </pre>
      *
      * Protobuf type {@code vega.ERC20AssetDelist}
@@ -3833,7 +3833,7 @@ public final class ChainEvents {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        vegaAssetID_ = "";
+        vegaAssetId_ = "";
 
         return this;
       }
@@ -3861,7 +3861,7 @@ public final class ChainEvents {
       @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist buildPartial() {
         io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist result = new io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist(this);
-        result.vegaAssetID_ = vegaAssetID_;
+        result.vegaAssetId_ = vegaAssetId_;
         onBuilt();
         return result;
       }
@@ -3910,8 +3910,8 @@ public final class ChainEvents {
 
       public Builder mergeFrom(io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist other) {
         if (other == io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist.getDefaultInstance()) return this;
-        if (!other.getVegaAssetID().isEmpty()) {
-          vegaAssetID_ = other.vegaAssetID_;
+        if (!other.getVegaAssetId().isEmpty()) {
+          vegaAssetId_ = other.vegaAssetId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3943,22 +3943,22 @@ public final class ChainEvents {
         return this;
       }
 
-      private java.lang.Object vegaAssetID_ = "";
+      private java.lang.Object vegaAssetId_ = "";
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @return The vegaAssetID.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @return The vegaAssetId.
        */
-      public java.lang.String getVegaAssetID() {
-        java.lang.Object ref = vegaAssetID_;
+      public java.lang.String getVegaAssetId() {
+        java.lang.Object ref = vegaAssetId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          vegaAssetID_ = s;
+          vegaAssetId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -3966,20 +3966,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @return The bytes for vegaAssetID.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @return The bytes for vegaAssetId.
        */
       public com.google.protobuf.ByteString
-          getVegaAssetIDBytes() {
-        java.lang.Object ref = vegaAssetID_;
+          getVegaAssetIdBytes() {
+        java.lang.Object ref = vegaAssetId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          vegaAssetID_ = b;
+          vegaAssetId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -3987,54 +3987,54 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @param value The vegaAssetID to set.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @param value The vegaAssetId to set.
        * @return This builder for chaining.
        */
-      public Builder setVegaAssetID(
+      public Builder setVegaAssetId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        vegaAssetID_ = value;
+        vegaAssetId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearVegaAssetID() {
+      public Builder clearVegaAssetId() {
 
-        vegaAssetID_ = getDefaultInstance().getVegaAssetID();
+        vegaAssetId_ = getDefaultInstance().getVegaAssetId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @param value The bytes for vegaAssetID to set.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @param value The bytes for vegaAssetId to set.
        * @return This builder for chaining.
        */
-      public Builder setVegaAssetIDBytes(
+      public Builder setVegaAssetIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        vegaAssetID_ = value;
+        vegaAssetId_ = value;
         onChanged();
         return this;
       }
@@ -4097,39 +4097,39 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * The vega network internal identifier of the asset.
+     * The vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The vegaAssetId.
      */
-    java.lang.String getVegaAssetID();
+    java.lang.String getVegaAssetId();
     /**
      * <pre>
-     * The vega network internal identifier of the asset.
+     * The vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The bytes for vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The bytes for vegaAssetId.
      */
     com.google.protobuf.ByteString
-        getVegaAssetIDBytes();
+        getVegaAssetIdBytes();
 
     /**
      * <pre>
-     * The Ethereum wallet that initiated the deposit.
+     * The Ethereum wallet that initiated the deposit
      * </pre>
      *
-     * <code>string sourceEthereumAddress = 2 [json_name = "sourceEthereumAddress"];</code>
+     * <code>string source_ethereum_address = 2 [json_name = "sourceEthereumAddress"];</code>
      * @return The sourceEthereumAddress.
      */
     java.lang.String getSourceEthereumAddress();
     /**
      * <pre>
-     * The Ethereum wallet that initiated the deposit.
+     * The Ethereum wallet that initiated the deposit
      * </pre>
      *
-     * <code>string sourceEthereumAddress = 2 [json_name = "sourceEthereumAddress"];</code>
+     * <code>string source_ethereum_address = 2 [json_name = "sourceEthereumAddress"];</code>
      * @return The bytes for sourceEthereumAddress.
      */
     com.google.protobuf.ByteString
@@ -4137,23 +4137,23 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * The Vega party identifier (pub-key) which is the target of the deposit.
+     * The Vega party identifier (pub-key) which is the target of the deposit
      * </pre>
      *
-     * <code>string targetPartyID = 3 [json_name = "targetPartyID"];</code>
-     * @return The targetPartyID.
+     * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
+     * @return The targetPartyId.
      */
-    java.lang.String getTargetPartyID();
+    java.lang.String getTargetPartyId();
     /**
      * <pre>
-     * The Vega party identifier (pub-key) which is the target of the deposit.
+     * The Vega party identifier (pub-key) which is the target of the deposit
      * </pre>
      *
-     * <code>string targetPartyID = 3 [json_name = "targetPartyID"];</code>
-     * @return The bytes for targetPartyID.
+     * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
+     * @return The bytes for targetPartyId.
      */
     com.google.protobuf.ByteString
-        getTargetPartyIDBytes();
+        getTargetPartyIdBytes();
 
     /**
      * <pre>
@@ -4177,7 +4177,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * An asset deposit for an ERC20 token.
+   * An asset deposit for an ERC20 token
    * </pre>
    *
    * Protobuf type {@code vega.ERC20Deposit}
@@ -4192,9 +4192,9 @@ public final class ChainEvents {
       super(builder);
     }
     private ERC20Deposit() {
-      vegaAssetID_ = "";
+      vegaAssetId_ = "";
       sourceEthereumAddress_ = "";
-      targetPartyID_ = "";
+      targetPartyId_ = "";
       amount_ = "";
     }
 
@@ -4231,7 +4231,7 @@ public final class ChainEvents {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              vegaAssetID_ = s;
+              vegaAssetId_ = s;
               break;
             }
             case 18: {
@@ -4243,7 +4243,7 @@ public final class ChainEvents {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              targetPartyID_ = s;
+              targetPartyId_ = s;
               break;
             }
             case 34: {
@@ -4284,60 +4284,60 @@ public final class ChainEvents {
               io.vegaprotocol.vega.ChainEvents.ERC20Deposit.class, io.vegaprotocol.vega.ChainEvents.ERC20Deposit.Builder.class);
     }
 
-    public static final int VEGAASSETID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object vegaAssetID_;
+    public static final int VEGA_ASSET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object vegaAssetId_;
     /**
      * <pre>
-     * The vega network internal identifier of the asset.
+     * The vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The vegaAssetId.
      */
     @java.lang.Override
-    public java.lang.String getVegaAssetID() {
-      java.lang.Object ref = vegaAssetID_;
+    public java.lang.String getVegaAssetId() {
+      java.lang.Object ref = vegaAssetId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        vegaAssetID_ = s;
+        vegaAssetId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * The vega network internal identifier of the asset.
+     * The vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The bytes for vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The bytes for vegaAssetId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getVegaAssetIDBytes() {
-      java.lang.Object ref = vegaAssetID_;
+        getVegaAssetIdBytes() {
+      java.lang.Object ref = vegaAssetId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        vegaAssetID_ = b;
+        vegaAssetId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int SOURCEETHEREUMADDRESS_FIELD_NUMBER = 2;
+    public static final int SOURCE_ETHEREUM_ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object sourceEthereumAddress_;
     /**
      * <pre>
-     * The Ethereum wallet that initiated the deposit.
+     * The Ethereum wallet that initiated the deposit
      * </pre>
      *
-     * <code>string sourceEthereumAddress = 2 [json_name = "sourceEthereumAddress"];</code>
+     * <code>string source_ethereum_address = 2 [json_name = "sourceEthereumAddress"];</code>
      * @return The sourceEthereumAddress.
      */
     @java.lang.Override
@@ -4355,10 +4355,10 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * The Ethereum wallet that initiated the deposit.
+     * The Ethereum wallet that initiated the deposit
      * </pre>
      *
-     * <code>string sourceEthereumAddress = 2 [json_name = "sourceEthereumAddress"];</code>
+     * <code>string source_ethereum_address = 2 [json_name = "sourceEthereumAddress"];</code>
      * @return The bytes for sourceEthereumAddress.
      */
     @java.lang.Override
@@ -4376,46 +4376,46 @@ public final class ChainEvents {
       }
     }
 
-    public static final int TARGETPARTYID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object targetPartyID_;
+    public static final int TARGET_PARTY_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object targetPartyId_;
     /**
      * <pre>
-     * The Vega party identifier (pub-key) which is the target of the deposit.
+     * The Vega party identifier (pub-key) which is the target of the deposit
      * </pre>
      *
-     * <code>string targetPartyID = 3 [json_name = "targetPartyID"];</code>
-     * @return The targetPartyID.
+     * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
+     * @return The targetPartyId.
      */
     @java.lang.Override
-    public java.lang.String getTargetPartyID() {
-      java.lang.Object ref = targetPartyID_;
+    public java.lang.String getTargetPartyId() {
+      java.lang.Object ref = targetPartyId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        targetPartyID_ = s;
+        targetPartyId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * The Vega party identifier (pub-key) which is the target of the deposit.
+     * The Vega party identifier (pub-key) which is the target of the deposit
      * </pre>
      *
-     * <code>string targetPartyID = 3 [json_name = "targetPartyID"];</code>
-     * @return The bytes for targetPartyID.
+     * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
+     * @return The bytes for targetPartyId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTargetPartyIDBytes() {
-      java.lang.Object ref = targetPartyID_;
+        getTargetPartyIdBytes() {
+      java.lang.Object ref = targetPartyId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        targetPartyID_ = b;
+        targetPartyId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -4482,14 +4482,14 @@ public final class ChainEvents {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getVegaAssetIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaAssetID_);
+      if (!getVegaAssetIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaAssetId_);
       }
       if (!getSourceEthereumAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceEthereumAddress_);
       }
-      if (!getTargetPartyIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, targetPartyID_);
+      if (!getTargetPartyIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, targetPartyId_);
       }
       if (!getAmountBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, amount_);
@@ -4503,14 +4503,14 @@ public final class ChainEvents {
       if (size != -1) return size;
 
       size = 0;
-      if (!getVegaAssetIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaAssetID_);
+      if (!getVegaAssetIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaAssetId_);
       }
       if (!getSourceEthereumAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceEthereumAddress_);
       }
-      if (!getTargetPartyIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, targetPartyID_);
+      if (!getTargetPartyIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, targetPartyId_);
       }
       if (!getAmountBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, amount_);
@@ -4530,12 +4530,12 @@ public final class ChainEvents {
       }
       io.vegaprotocol.vega.ChainEvents.ERC20Deposit other = (io.vegaprotocol.vega.ChainEvents.ERC20Deposit) obj;
 
-      if (!getVegaAssetID()
-          .equals(other.getVegaAssetID())) return false;
+      if (!getVegaAssetId()
+          .equals(other.getVegaAssetId())) return false;
       if (!getSourceEthereumAddress()
           .equals(other.getSourceEthereumAddress())) return false;
-      if (!getTargetPartyID()
-          .equals(other.getTargetPartyID())) return false;
+      if (!getTargetPartyId()
+          .equals(other.getTargetPartyId())) return false;
       if (!getAmount()
           .equals(other.getAmount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -4549,12 +4549,12 @@ public final class ChainEvents {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + VEGAASSETID_FIELD_NUMBER;
-      hash = (53 * hash) + getVegaAssetID().hashCode();
-      hash = (37 * hash) + SOURCEETHEREUMADDRESS_FIELD_NUMBER;
+      hash = (37 * hash) + VEGA_ASSET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVegaAssetId().hashCode();
+      hash = (37 * hash) + SOURCE_ETHEREUM_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getSourceEthereumAddress().hashCode();
-      hash = (37 * hash) + TARGETPARTYID_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetPartyID().hashCode();
+      hash = (37 * hash) + TARGET_PARTY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetPartyId().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getAmount().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -4654,7 +4654,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * An asset deposit for an ERC20 token.
+     * An asset deposit for an ERC20 token
      * </pre>
      *
      * Protobuf type {@code vega.ERC20Deposit}
@@ -4694,11 +4694,11 @@ public final class ChainEvents {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        vegaAssetID_ = "";
+        vegaAssetId_ = "";
 
         sourceEthereumAddress_ = "";
 
-        targetPartyID_ = "";
+        targetPartyId_ = "";
 
         amount_ = "";
 
@@ -4728,9 +4728,9 @@ public final class ChainEvents {
       @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.ERC20Deposit buildPartial() {
         io.vegaprotocol.vega.ChainEvents.ERC20Deposit result = new io.vegaprotocol.vega.ChainEvents.ERC20Deposit(this);
-        result.vegaAssetID_ = vegaAssetID_;
+        result.vegaAssetId_ = vegaAssetId_;
         result.sourceEthereumAddress_ = sourceEthereumAddress_;
-        result.targetPartyID_ = targetPartyID_;
+        result.targetPartyId_ = targetPartyId_;
         result.amount_ = amount_;
         onBuilt();
         return result;
@@ -4780,16 +4780,16 @@ public final class ChainEvents {
 
       public Builder mergeFrom(io.vegaprotocol.vega.ChainEvents.ERC20Deposit other) {
         if (other == io.vegaprotocol.vega.ChainEvents.ERC20Deposit.getDefaultInstance()) return this;
-        if (!other.getVegaAssetID().isEmpty()) {
-          vegaAssetID_ = other.vegaAssetID_;
+        if (!other.getVegaAssetId().isEmpty()) {
+          vegaAssetId_ = other.vegaAssetId_;
           onChanged();
         }
         if (!other.getSourceEthereumAddress().isEmpty()) {
           sourceEthereumAddress_ = other.sourceEthereumAddress_;
           onChanged();
         }
-        if (!other.getTargetPartyID().isEmpty()) {
-          targetPartyID_ = other.targetPartyID_;
+        if (!other.getTargetPartyId().isEmpty()) {
+          targetPartyId_ = other.targetPartyId_;
           onChanged();
         }
         if (!other.getAmount().isEmpty()) {
@@ -4825,22 +4825,22 @@ public final class ChainEvents {
         return this;
       }
 
-      private java.lang.Object vegaAssetID_ = "";
+      private java.lang.Object vegaAssetId_ = "";
       /**
        * <pre>
-       * The vega network internal identifier of the asset.
+       * The vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @return The vegaAssetID.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @return The vegaAssetId.
        */
-      public java.lang.String getVegaAssetID() {
-        java.lang.Object ref = vegaAssetID_;
+      public java.lang.String getVegaAssetId() {
+        java.lang.Object ref = vegaAssetId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          vegaAssetID_ = s;
+          vegaAssetId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4848,20 +4848,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The vega network internal identifier of the asset.
+       * The vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @return The bytes for vegaAssetID.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @return The bytes for vegaAssetId.
        */
       public com.google.protobuf.ByteString
-          getVegaAssetIDBytes() {
-        java.lang.Object ref = vegaAssetID_;
+          getVegaAssetIdBytes() {
+        java.lang.Object ref = vegaAssetId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          vegaAssetID_ = b;
+          vegaAssetId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -4869,54 +4869,54 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The vega network internal identifier of the asset.
+       * The vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @param value The vegaAssetID to set.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @param value The vegaAssetId to set.
        * @return This builder for chaining.
        */
-      public Builder setVegaAssetID(
+      public Builder setVegaAssetId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        vegaAssetID_ = value;
+        vegaAssetId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The vega network internal identifier of the asset.
+       * The vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearVegaAssetID() {
+      public Builder clearVegaAssetId() {
 
-        vegaAssetID_ = getDefaultInstance().getVegaAssetID();
+        vegaAssetId_ = getDefaultInstance().getVegaAssetId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The vega network internal identifier of the asset.
+       * The vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @param value The bytes for vegaAssetID to set.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @param value The bytes for vegaAssetId to set.
        * @return This builder for chaining.
        */
-      public Builder setVegaAssetIDBytes(
+      public Builder setVegaAssetIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        vegaAssetID_ = value;
+        vegaAssetId_ = value;
         onChanged();
         return this;
       }
@@ -4924,10 +4924,10 @@ public final class ChainEvents {
       private java.lang.Object sourceEthereumAddress_ = "";
       /**
        * <pre>
-       * The Ethereum wallet that initiated the deposit.
+       * The Ethereum wallet that initiated the deposit
        * </pre>
        *
-       * <code>string sourceEthereumAddress = 2 [json_name = "sourceEthereumAddress"];</code>
+       * <code>string source_ethereum_address = 2 [json_name = "sourceEthereumAddress"];</code>
        * @return The sourceEthereumAddress.
        */
       public java.lang.String getSourceEthereumAddress() {
@@ -4944,10 +4944,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Ethereum wallet that initiated the deposit.
+       * The Ethereum wallet that initiated the deposit
        * </pre>
        *
-       * <code>string sourceEthereumAddress = 2 [json_name = "sourceEthereumAddress"];</code>
+       * <code>string source_ethereum_address = 2 [json_name = "sourceEthereumAddress"];</code>
        * @return The bytes for sourceEthereumAddress.
        */
       public com.google.protobuf.ByteString
@@ -4965,10 +4965,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Ethereum wallet that initiated the deposit.
+       * The Ethereum wallet that initiated the deposit
        * </pre>
        *
-       * <code>string sourceEthereumAddress = 2 [json_name = "sourceEthereumAddress"];</code>
+       * <code>string source_ethereum_address = 2 [json_name = "sourceEthereumAddress"];</code>
        * @param value The sourceEthereumAddress to set.
        * @return This builder for chaining.
        */
@@ -4984,10 +4984,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Ethereum wallet that initiated the deposit.
+       * The Ethereum wallet that initiated the deposit
        * </pre>
        *
-       * <code>string sourceEthereumAddress = 2 [json_name = "sourceEthereumAddress"];</code>
+       * <code>string source_ethereum_address = 2 [json_name = "sourceEthereumAddress"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSourceEthereumAddress() {
@@ -4998,10 +4998,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Ethereum wallet that initiated the deposit.
+       * The Ethereum wallet that initiated the deposit
        * </pre>
        *
-       * <code>string sourceEthereumAddress = 2 [json_name = "sourceEthereumAddress"];</code>
+       * <code>string source_ethereum_address = 2 [json_name = "sourceEthereumAddress"];</code>
        * @param value The bytes for sourceEthereumAddress to set.
        * @return This builder for chaining.
        */
@@ -5017,22 +5017,22 @@ public final class ChainEvents {
         return this;
       }
 
-      private java.lang.Object targetPartyID_ = "";
+      private java.lang.Object targetPartyId_ = "";
       /**
        * <pre>
-       * The Vega party identifier (pub-key) which is the target of the deposit.
+       * The Vega party identifier (pub-key) which is the target of the deposit
        * </pre>
        *
-       * <code>string targetPartyID = 3 [json_name = "targetPartyID"];</code>
-       * @return The targetPartyID.
+       * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
+       * @return The targetPartyId.
        */
-      public java.lang.String getTargetPartyID() {
-        java.lang.Object ref = targetPartyID_;
+      public java.lang.String getTargetPartyId() {
+        java.lang.Object ref = targetPartyId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          targetPartyID_ = s;
+          targetPartyId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -5040,20 +5040,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Vega party identifier (pub-key) which is the target of the deposit.
+       * The Vega party identifier (pub-key) which is the target of the deposit
        * </pre>
        *
-       * <code>string targetPartyID = 3 [json_name = "targetPartyID"];</code>
-       * @return The bytes for targetPartyID.
+       * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
+       * @return The bytes for targetPartyId.
        */
       public com.google.protobuf.ByteString
-          getTargetPartyIDBytes() {
-        java.lang.Object ref = targetPartyID_;
+          getTargetPartyIdBytes() {
+        java.lang.Object ref = targetPartyId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          targetPartyID_ = b;
+          targetPartyId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -5061,54 +5061,54 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Vega party identifier (pub-key) which is the target of the deposit.
+       * The Vega party identifier (pub-key) which is the target of the deposit
        * </pre>
        *
-       * <code>string targetPartyID = 3 [json_name = "targetPartyID"];</code>
-       * @param value The targetPartyID to set.
+       * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
+       * @param value The targetPartyId to set.
        * @return This builder for chaining.
        */
-      public Builder setTargetPartyID(
+      public Builder setTargetPartyId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        targetPartyID_ = value;
+        targetPartyId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The Vega party identifier (pub-key) which is the target of the deposit.
+       * The Vega party identifier (pub-key) which is the target of the deposit
        * </pre>
        *
-       * <code>string targetPartyID = 3 [json_name = "targetPartyID"];</code>
+       * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearTargetPartyID() {
+      public Builder clearTargetPartyId() {
 
-        targetPartyID_ = getDefaultInstance().getTargetPartyID();
+        targetPartyId_ = getDefaultInstance().getTargetPartyId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The Vega party identifier (pub-key) which is the target of the deposit.
+       * The Vega party identifier (pub-key) which is the target of the deposit
        * </pre>
        *
-       * <code>string targetPartyID = 3 [json_name = "targetPartyID"];</code>
-       * @param value The bytes for targetPartyID to set.
+       * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
+       * @param value The bytes for targetPartyId to set.
        * @return This builder for chaining.
        */
-      public Builder setTargetPartyIDBytes(
+      public Builder setTargetPartyIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        targetPartyID_ = value;
+        targetPartyId_ = value;
         onChanged();
         return this;
       }
@@ -5267,39 +5267,39 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * The Vega network internal identifier of the asset.
+     * The Vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The vegaAssetId.
      */
-    java.lang.String getVegaAssetID();
+    java.lang.String getVegaAssetId();
     /**
      * <pre>
-     * The Vega network internal identifier of the asset.
+     * The Vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The bytes for vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The bytes for vegaAssetId.
      */
     com.google.protobuf.ByteString
-        getVegaAssetIDBytes();
+        getVegaAssetIdBytes();
 
     /**
      * <pre>
-     * The target Ethereum wallet address.
+     * The target Ethereum wallet address
      * </pre>
      *
-     * <code>string targetEthereumAddress = 2 [json_name = "targetEthereumAddress"];</code>
+     * <code>string target_ethereum_address = 2 [json_name = "targetEthereumAddress"];</code>
      * @return The targetEthereumAddress.
      */
     java.lang.String getTargetEthereumAddress();
     /**
      * <pre>
-     * The target Ethereum wallet address.
+     * The target Ethereum wallet address
      * </pre>
      *
-     * <code>string targetEthereumAddress = 2 [json_name = "targetEthereumAddress"];</code>
+     * <code>string target_ethereum_address = 2 [json_name = "targetEthereumAddress"];</code>
      * @return The bytes for targetEthereumAddress.
      */
     com.google.protobuf.ByteString
@@ -5307,19 +5307,19 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * The reference nonce used for the transaction.
+     * The reference nonce used for the transaction
      * </pre>
      *
-     * <code>string referenceNonce = 3 [json_name = "referenceNonce"];</code>
+     * <code>string reference_nonce = 3 [json_name = "referenceNonce"];</code>
      * @return The referenceNonce.
      */
     java.lang.String getReferenceNonce();
     /**
      * <pre>
-     * The reference nonce used for the transaction.
+     * The reference nonce used for the transaction
      * </pre>
      *
-     * <code>string referenceNonce = 3 [json_name = "referenceNonce"];</code>
+     * <code>string reference_nonce = 3 [json_name = "referenceNonce"];</code>
      * @return The bytes for referenceNonce.
      */
     com.google.protobuf.ByteString
@@ -5327,7 +5327,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * An asset withdrawal for an ERC20 token.
+   * An asset withdrawal for an ERC20 token
    * </pre>
    *
    * Protobuf type {@code vega.ERC20Withdrawal}
@@ -5342,7 +5342,7 @@ public final class ChainEvents {
       super(builder);
     }
     private ERC20Withdrawal() {
-      vegaAssetID_ = "";
+      vegaAssetId_ = "";
       targetEthereumAddress_ = "";
       referenceNonce_ = "";
     }
@@ -5380,7 +5380,7 @@ public final class ChainEvents {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              vegaAssetID_ = s;
+              vegaAssetId_ = s;
               break;
             }
             case 18: {
@@ -5427,60 +5427,60 @@ public final class ChainEvents {
               io.vegaprotocol.vega.ChainEvents.ERC20Withdrawal.class, io.vegaprotocol.vega.ChainEvents.ERC20Withdrawal.Builder.class);
     }
 
-    public static final int VEGAASSETID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object vegaAssetID_;
+    public static final int VEGA_ASSET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object vegaAssetId_;
     /**
      * <pre>
-     * The Vega network internal identifier of the asset.
+     * The Vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The vegaAssetId.
      */
     @java.lang.Override
-    public java.lang.String getVegaAssetID() {
-      java.lang.Object ref = vegaAssetID_;
+    public java.lang.String getVegaAssetId() {
+      java.lang.Object ref = vegaAssetId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        vegaAssetID_ = s;
+        vegaAssetId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * The Vega network internal identifier of the asset.
+     * The Vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The bytes for vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The bytes for vegaAssetId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getVegaAssetIDBytes() {
-      java.lang.Object ref = vegaAssetID_;
+        getVegaAssetIdBytes() {
+      java.lang.Object ref = vegaAssetId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        vegaAssetID_ = b;
+        vegaAssetId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int TARGETETHEREUMADDRESS_FIELD_NUMBER = 2;
+    public static final int TARGET_ETHEREUM_ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object targetEthereumAddress_;
     /**
      * <pre>
-     * The target Ethereum wallet address.
+     * The target Ethereum wallet address
      * </pre>
      *
-     * <code>string targetEthereumAddress = 2 [json_name = "targetEthereumAddress"];</code>
+     * <code>string target_ethereum_address = 2 [json_name = "targetEthereumAddress"];</code>
      * @return The targetEthereumAddress.
      */
     @java.lang.Override
@@ -5498,10 +5498,10 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * The target Ethereum wallet address.
+     * The target Ethereum wallet address
      * </pre>
      *
-     * <code>string targetEthereumAddress = 2 [json_name = "targetEthereumAddress"];</code>
+     * <code>string target_ethereum_address = 2 [json_name = "targetEthereumAddress"];</code>
      * @return The bytes for targetEthereumAddress.
      */
     @java.lang.Override
@@ -5519,14 +5519,14 @@ public final class ChainEvents {
       }
     }
 
-    public static final int REFERENCENONCE_FIELD_NUMBER = 3;
+    public static final int REFERENCE_NONCE_FIELD_NUMBER = 3;
     private volatile java.lang.Object referenceNonce_;
     /**
      * <pre>
-     * The reference nonce used for the transaction.
+     * The reference nonce used for the transaction
      * </pre>
      *
-     * <code>string referenceNonce = 3 [json_name = "referenceNonce"];</code>
+     * <code>string reference_nonce = 3 [json_name = "referenceNonce"];</code>
      * @return The referenceNonce.
      */
     @java.lang.Override
@@ -5544,10 +5544,10 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * The reference nonce used for the transaction.
+     * The reference nonce used for the transaction
      * </pre>
      *
-     * <code>string referenceNonce = 3 [json_name = "referenceNonce"];</code>
+     * <code>string reference_nonce = 3 [json_name = "referenceNonce"];</code>
      * @return The bytes for referenceNonce.
      */
     @java.lang.Override
@@ -5579,8 +5579,8 @@ public final class ChainEvents {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getVegaAssetIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaAssetID_);
+      if (!getVegaAssetIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaAssetId_);
       }
       if (!getTargetEthereumAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, targetEthereumAddress_);
@@ -5597,8 +5597,8 @@ public final class ChainEvents {
       if (size != -1) return size;
 
       size = 0;
-      if (!getVegaAssetIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaAssetID_);
+      if (!getVegaAssetIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaAssetId_);
       }
       if (!getTargetEthereumAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, targetEthereumAddress_);
@@ -5621,8 +5621,8 @@ public final class ChainEvents {
       }
       io.vegaprotocol.vega.ChainEvents.ERC20Withdrawal other = (io.vegaprotocol.vega.ChainEvents.ERC20Withdrawal) obj;
 
-      if (!getVegaAssetID()
-          .equals(other.getVegaAssetID())) return false;
+      if (!getVegaAssetId()
+          .equals(other.getVegaAssetId())) return false;
       if (!getTargetEthereumAddress()
           .equals(other.getTargetEthereumAddress())) return false;
       if (!getReferenceNonce()
@@ -5638,11 +5638,11 @@ public final class ChainEvents {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + VEGAASSETID_FIELD_NUMBER;
-      hash = (53 * hash) + getVegaAssetID().hashCode();
-      hash = (37 * hash) + TARGETETHEREUMADDRESS_FIELD_NUMBER;
+      hash = (37 * hash) + VEGA_ASSET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVegaAssetId().hashCode();
+      hash = (37 * hash) + TARGET_ETHEREUM_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getTargetEthereumAddress().hashCode();
-      hash = (37 * hash) + REFERENCENONCE_FIELD_NUMBER;
+      hash = (37 * hash) + REFERENCE_NONCE_FIELD_NUMBER;
       hash = (53 * hash) + getReferenceNonce().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -5741,7 +5741,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * An asset withdrawal for an ERC20 token.
+     * An asset withdrawal for an ERC20 token
      * </pre>
      *
      * Protobuf type {@code vega.ERC20Withdrawal}
@@ -5781,7 +5781,7 @@ public final class ChainEvents {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        vegaAssetID_ = "";
+        vegaAssetId_ = "";
 
         targetEthereumAddress_ = "";
 
@@ -5813,7 +5813,7 @@ public final class ChainEvents {
       @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.ERC20Withdrawal buildPartial() {
         io.vegaprotocol.vega.ChainEvents.ERC20Withdrawal result = new io.vegaprotocol.vega.ChainEvents.ERC20Withdrawal(this);
-        result.vegaAssetID_ = vegaAssetID_;
+        result.vegaAssetId_ = vegaAssetId_;
         result.targetEthereumAddress_ = targetEthereumAddress_;
         result.referenceNonce_ = referenceNonce_;
         onBuilt();
@@ -5864,8 +5864,8 @@ public final class ChainEvents {
 
       public Builder mergeFrom(io.vegaprotocol.vega.ChainEvents.ERC20Withdrawal other) {
         if (other == io.vegaprotocol.vega.ChainEvents.ERC20Withdrawal.getDefaultInstance()) return this;
-        if (!other.getVegaAssetID().isEmpty()) {
-          vegaAssetID_ = other.vegaAssetID_;
+        if (!other.getVegaAssetId().isEmpty()) {
+          vegaAssetId_ = other.vegaAssetId_;
           onChanged();
         }
         if (!other.getTargetEthereumAddress().isEmpty()) {
@@ -5905,22 +5905,22 @@ public final class ChainEvents {
         return this;
       }
 
-      private java.lang.Object vegaAssetID_ = "";
+      private java.lang.Object vegaAssetId_ = "";
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @return The vegaAssetID.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @return The vegaAssetId.
        */
-      public java.lang.String getVegaAssetID() {
-        java.lang.Object ref = vegaAssetID_;
+      public java.lang.String getVegaAssetId() {
+        java.lang.Object ref = vegaAssetId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          vegaAssetID_ = s;
+          vegaAssetId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -5928,20 +5928,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @return The bytes for vegaAssetID.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @return The bytes for vegaAssetId.
        */
       public com.google.protobuf.ByteString
-          getVegaAssetIDBytes() {
-        java.lang.Object ref = vegaAssetID_;
+          getVegaAssetIdBytes() {
+        java.lang.Object ref = vegaAssetId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          vegaAssetID_ = b;
+          vegaAssetId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -5949,54 +5949,54 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @param value The vegaAssetID to set.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @param value The vegaAssetId to set.
        * @return This builder for chaining.
        */
-      public Builder setVegaAssetID(
+      public Builder setVegaAssetId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        vegaAssetID_ = value;
+        vegaAssetId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearVegaAssetID() {
+      public Builder clearVegaAssetId() {
 
-        vegaAssetID_ = getDefaultInstance().getVegaAssetID();
+        vegaAssetId_ = getDefaultInstance().getVegaAssetId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @param value The bytes for vegaAssetID to set.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @param value The bytes for vegaAssetId to set.
        * @return This builder for chaining.
        */
-      public Builder setVegaAssetIDBytes(
+      public Builder setVegaAssetIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        vegaAssetID_ = value;
+        vegaAssetId_ = value;
         onChanged();
         return this;
       }
@@ -6004,10 +6004,10 @@ public final class ChainEvents {
       private java.lang.Object targetEthereumAddress_ = "";
       /**
        * <pre>
-       * The target Ethereum wallet address.
+       * The target Ethereum wallet address
        * </pre>
        *
-       * <code>string targetEthereumAddress = 2 [json_name = "targetEthereumAddress"];</code>
+       * <code>string target_ethereum_address = 2 [json_name = "targetEthereumAddress"];</code>
        * @return The targetEthereumAddress.
        */
       public java.lang.String getTargetEthereumAddress() {
@@ -6024,10 +6024,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The target Ethereum wallet address.
+       * The target Ethereum wallet address
        * </pre>
        *
-       * <code>string targetEthereumAddress = 2 [json_name = "targetEthereumAddress"];</code>
+       * <code>string target_ethereum_address = 2 [json_name = "targetEthereumAddress"];</code>
        * @return The bytes for targetEthereumAddress.
        */
       public com.google.protobuf.ByteString
@@ -6045,10 +6045,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The target Ethereum wallet address.
+       * The target Ethereum wallet address
        * </pre>
        *
-       * <code>string targetEthereumAddress = 2 [json_name = "targetEthereumAddress"];</code>
+       * <code>string target_ethereum_address = 2 [json_name = "targetEthereumAddress"];</code>
        * @param value The targetEthereumAddress to set.
        * @return This builder for chaining.
        */
@@ -6064,10 +6064,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The target Ethereum wallet address.
+       * The target Ethereum wallet address
        * </pre>
        *
-       * <code>string targetEthereumAddress = 2 [json_name = "targetEthereumAddress"];</code>
+       * <code>string target_ethereum_address = 2 [json_name = "targetEthereumAddress"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetEthereumAddress() {
@@ -6078,10 +6078,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The target Ethereum wallet address.
+       * The target Ethereum wallet address
        * </pre>
        *
-       * <code>string targetEthereumAddress = 2 [json_name = "targetEthereumAddress"];</code>
+       * <code>string target_ethereum_address = 2 [json_name = "targetEthereumAddress"];</code>
        * @param value The bytes for targetEthereumAddress to set.
        * @return This builder for chaining.
        */
@@ -6100,10 +6100,10 @@ public final class ChainEvents {
       private java.lang.Object referenceNonce_ = "";
       /**
        * <pre>
-       * The reference nonce used for the transaction.
+       * The reference nonce used for the transaction
        * </pre>
        *
-       * <code>string referenceNonce = 3 [json_name = "referenceNonce"];</code>
+       * <code>string reference_nonce = 3 [json_name = "referenceNonce"];</code>
        * @return The referenceNonce.
        */
       public java.lang.String getReferenceNonce() {
@@ -6120,10 +6120,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The reference nonce used for the transaction.
+       * The reference nonce used for the transaction
        * </pre>
        *
-       * <code>string referenceNonce = 3 [json_name = "referenceNonce"];</code>
+       * <code>string reference_nonce = 3 [json_name = "referenceNonce"];</code>
        * @return The bytes for referenceNonce.
        */
       public com.google.protobuf.ByteString
@@ -6141,10 +6141,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The reference nonce used for the transaction.
+       * The reference nonce used for the transaction
        * </pre>
        *
-       * <code>string referenceNonce = 3 [json_name = "referenceNonce"];</code>
+       * <code>string reference_nonce = 3 [json_name = "referenceNonce"];</code>
        * @param value The referenceNonce to set.
        * @return This builder for chaining.
        */
@@ -6160,10 +6160,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The reference nonce used for the transaction.
+       * The reference nonce used for the transaction
        * </pre>
        *
-       * <code>string referenceNonce = 3 [json_name = "referenceNonce"];</code>
+       * <code>string reference_nonce = 3 [json_name = "referenceNonce"];</code>
        * @return This builder for chaining.
        */
       public Builder clearReferenceNonce() {
@@ -6174,10 +6174,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The reference nonce used for the transaction.
+       * The reference nonce used for the transaction
        * </pre>
        *
-       * <code>string referenceNonce = 3 [json_name = "referenceNonce"];</code>
+       * <code>string reference_nonce = 3 [json_name = "referenceNonce"];</code>
        * @param value The bytes for referenceNonce to set.
        * @return This builder for chaining.
        */
@@ -6271,61 +6271,61 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * List an ERC20 asset.
+     * List an ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];</code>
+     * <code>.vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];</code>
      * @return Whether the assetList field is set.
      */
     boolean hasAssetList();
     /**
      * <pre>
-     * List an ERC20 asset.
+     * List an ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];</code>
+     * <code>.vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];</code>
      * @return The assetList.
      */
     io.vegaprotocol.vega.ChainEvents.ERC20AssetList getAssetList();
     /**
      * <pre>
-     * List an ERC20 asset.
+     * List an ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];</code>
+     * <code>.vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];</code>
      */
     io.vegaprotocol.vega.ChainEvents.ERC20AssetListOrBuilder getAssetListOrBuilder();
 
     /**
      * <pre>
-     * De-list an ERC20 asset.
+     * De-list an ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];</code>
+     * <code>.vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];</code>
      * @return Whether the assetDelist field is set.
      */
     boolean hasAssetDelist();
     /**
      * <pre>
-     * De-list an ERC20 asset.
+     * De-list an ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];</code>
+     * <code>.vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];</code>
      * @return The assetDelist.
      */
     io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist getAssetDelist();
     /**
      * <pre>
-     * De-list an ERC20 asset.
+     * De-list an ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];</code>
+     * <code>.vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];</code>
      */
     io.vegaprotocol.vega.ChainEvents.ERC20AssetDelistOrBuilder getAssetDelistOrBuilder();
 
     /**
      * <pre>
-     * Deposit ERC20 asset.
+     * Deposit ERC20 asset
      * </pre>
      *
      * <code>.vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];</code>
@@ -6334,7 +6334,7 @@ public final class ChainEvents {
     boolean hasDeposit();
     /**
      * <pre>
-     * Deposit ERC20 asset.
+     * Deposit ERC20 asset
      * </pre>
      *
      * <code>.vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];</code>
@@ -6343,7 +6343,7 @@ public final class ChainEvents {
     io.vegaprotocol.vega.ChainEvents.ERC20Deposit getDeposit();
     /**
      * <pre>
-     * Deposit ERC20 asset.
+     * Deposit ERC20 asset
      * </pre>
      *
      * <code>.vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];</code>
@@ -6352,7 +6352,7 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * Withdraw ERC20 asset.
+     * Withdraw ERC20 asset
      * </pre>
      *
      * <code>.vega.ERC20Withdrawal withdrawal = 1004 [json_name = "withdrawal"];</code>
@@ -6361,7 +6361,7 @@ public final class ChainEvents {
     boolean hasWithdrawal();
     /**
      * <pre>
-     * Withdraw ERC20 asset.
+     * Withdraw ERC20 asset
      * </pre>
      *
      * <code>.vega.ERC20Withdrawal withdrawal = 1004 [json_name = "withdrawal"];</code>
@@ -6370,7 +6370,7 @@ public final class ChainEvents {
     io.vegaprotocol.vega.ChainEvents.ERC20Withdrawal getWithdrawal();
     /**
      * <pre>
-     * Withdraw ERC20 asset.
+     * Withdraw ERC20 asset
      * </pre>
      *
      * <code>.vega.ERC20Withdrawal withdrawal = 1004 [json_name = "withdrawal"];</code>
@@ -6381,7 +6381,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * An event related to an ERC20 token.
+   * An event related to an ERC20 token
    * </pre>
    *
    * Protobuf type {@code vega.ERC20Event}
@@ -6531,8 +6531,8 @@ public final class ChainEvents {
     public enum ActionCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      ASSETLIST(1001),
-      ASSETDELIST(1002),
+      ASSET_LIST(1001),
+      ASSET_DELIST(1002),
       DEPOSIT(1003),
       WITHDRAWAL(1004),
       ACTION_NOT_SET(0);
@@ -6552,8 +6552,8 @@ public final class ChainEvents {
 
       public static ActionCase forNumber(int value) {
         switch (value) {
-          case 1001: return ASSETLIST;
-          case 1002: return ASSETDELIST;
+          case 1001: return ASSET_LIST;
+          case 1002: return ASSET_DELIST;
           case 1003: return DEPOSIT;
           case 1004: return WITHDRAWAL;
           case 0: return ACTION_NOT_SET;
@@ -6601,13 +6601,13 @@ public final class ChainEvents {
       return block_;
     }
 
-    public static final int ASSETLIST_FIELD_NUMBER = 1001;
+    public static final int ASSET_LIST_FIELD_NUMBER = 1001;
     /**
      * <pre>
-     * List an ERC20 asset.
+     * List an ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];</code>
+     * <code>.vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];</code>
      * @return Whether the assetList field is set.
      */
     @java.lang.Override
@@ -6616,10 +6616,10 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * List an ERC20 asset.
+     * List an ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];</code>
+     * <code>.vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];</code>
      * @return The assetList.
      */
     @java.lang.Override
@@ -6631,10 +6631,10 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * List an ERC20 asset.
+     * List an ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];</code>
+     * <code>.vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.ChainEvents.ERC20AssetListOrBuilder getAssetListOrBuilder() {
@@ -6644,13 +6644,13 @@ public final class ChainEvents {
       return io.vegaprotocol.vega.ChainEvents.ERC20AssetList.getDefaultInstance();
     }
 
-    public static final int ASSETDELIST_FIELD_NUMBER = 1002;
+    public static final int ASSET_DELIST_FIELD_NUMBER = 1002;
     /**
      * <pre>
-     * De-list an ERC20 asset.
+     * De-list an ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];</code>
+     * <code>.vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];</code>
      * @return Whether the assetDelist field is set.
      */
     @java.lang.Override
@@ -6659,10 +6659,10 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * De-list an ERC20 asset.
+     * De-list an ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];</code>
+     * <code>.vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];</code>
      * @return The assetDelist.
      */
     @java.lang.Override
@@ -6674,10 +6674,10 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * De-list an ERC20 asset.
+     * De-list an ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];</code>
+     * <code>.vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.ChainEvents.ERC20AssetDelistOrBuilder getAssetDelistOrBuilder() {
@@ -6690,7 +6690,7 @@ public final class ChainEvents {
     public static final int DEPOSIT_FIELD_NUMBER = 1003;
     /**
      * <pre>
-     * Deposit ERC20 asset.
+     * Deposit ERC20 asset
      * </pre>
      *
      * <code>.vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];</code>
@@ -6702,7 +6702,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Deposit ERC20 asset.
+     * Deposit ERC20 asset
      * </pre>
      *
      * <code>.vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];</code>
@@ -6717,7 +6717,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Deposit ERC20 asset.
+     * Deposit ERC20 asset
      * </pre>
      *
      * <code>.vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];</code>
@@ -6733,7 +6733,7 @@ public final class ChainEvents {
     public static final int WITHDRAWAL_FIELD_NUMBER = 1004;
     /**
      * <pre>
-     * Withdraw ERC20 asset.
+     * Withdraw ERC20 asset
      * </pre>
      *
      * <code>.vega.ERC20Withdrawal withdrawal = 1004 [json_name = "withdrawal"];</code>
@@ -6745,7 +6745,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Withdraw ERC20 asset.
+     * Withdraw ERC20 asset
      * </pre>
      *
      * <code>.vega.ERC20Withdrawal withdrawal = 1004 [json_name = "withdrawal"];</code>
@@ -6760,7 +6760,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Withdraw ERC20 asset.
+     * Withdraw ERC20 asset
      * </pre>
      *
      * <code>.vega.ERC20Withdrawal withdrawal = 1004 [json_name = "withdrawal"];</code>
@@ -6897,11 +6897,11 @@ public final class ChainEvents {
           getBlock());
       switch (actionCase_) {
         case 1001:
-          hash = (37 * hash) + ASSETLIST_FIELD_NUMBER;
+          hash = (37 * hash) + ASSET_LIST_FIELD_NUMBER;
           hash = (53 * hash) + getAssetList().hashCode();
           break;
         case 1002:
-          hash = (37 * hash) + ASSETDELIST_FIELD_NUMBER;
+          hash = (37 * hash) + ASSET_DELIST_FIELD_NUMBER;
           hash = (53 * hash) + getAssetDelist().hashCode();
           break;
         case 1003:
@@ -7012,7 +7012,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * An event related to an ERC20 token.
+     * An event related to an ERC20 token
      * </pre>
      *
      * Protobuf type {@code vega.ERC20Event}
@@ -7170,11 +7170,11 @@ public final class ChainEvents {
           setBlock(other.getBlock());
         }
         switch (other.getActionCase()) {
-          case ASSETLIST: {
+          case ASSET_LIST: {
             mergeAssetList(other.getAssetList());
             break;
           }
-          case ASSETDELIST: {
+          case ASSET_DELIST: {
             mergeAssetDelist(other.getAssetDelist());
             break;
           }
@@ -7324,10 +7324,10 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.ERC20AssetList, io.vegaprotocol.vega.ChainEvents.ERC20AssetList.Builder, io.vegaprotocol.vega.ChainEvents.ERC20AssetListOrBuilder> assetListBuilder_;
       /**
        * <pre>
-       * List an ERC20 asset.
+       * List an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];</code>
+       * <code>.vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];</code>
        * @return Whether the assetList field is set.
        */
       @java.lang.Override
@@ -7336,10 +7336,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * List an ERC20 asset.
+       * List an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];</code>
+       * <code>.vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];</code>
        * @return The assetList.
        */
       @java.lang.Override
@@ -7358,10 +7358,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * List an ERC20 asset.
+       * List an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];</code>
+       * <code>.vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];</code>
        */
       public Builder setAssetList(io.vegaprotocol.vega.ChainEvents.ERC20AssetList value) {
         if (assetListBuilder_ == null) {
@@ -7378,10 +7378,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * List an ERC20 asset.
+       * List an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];</code>
+       * <code>.vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];</code>
        */
       public Builder setAssetList(
           io.vegaprotocol.vega.ChainEvents.ERC20AssetList.Builder builderForValue) {
@@ -7396,10 +7396,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * List an ERC20 asset.
+       * List an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];</code>
+       * <code>.vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];</code>
        */
       public Builder mergeAssetList(io.vegaprotocol.vega.ChainEvents.ERC20AssetList value) {
         if (assetListBuilder_ == null) {
@@ -7422,10 +7422,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * List an ERC20 asset.
+       * List an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];</code>
+       * <code>.vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];</code>
        */
       public Builder clearAssetList() {
         if (assetListBuilder_ == null) {
@@ -7445,20 +7445,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * List an ERC20 asset.
+       * List an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];</code>
+       * <code>.vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];</code>
        */
       public io.vegaprotocol.vega.ChainEvents.ERC20AssetList.Builder getAssetListBuilder() {
         return getAssetListFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * List an ERC20 asset.
+       * List an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];</code>
+       * <code>.vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.ERC20AssetListOrBuilder getAssetListOrBuilder() {
@@ -7473,10 +7473,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * List an ERC20 asset.
+       * List an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];</code>
+       * <code>.vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.ChainEvents.ERC20AssetList, io.vegaprotocol.vega.ChainEvents.ERC20AssetList.Builder, io.vegaprotocol.vega.ChainEvents.ERC20AssetListOrBuilder>
@@ -7501,10 +7501,10 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist, io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist.Builder, io.vegaprotocol.vega.ChainEvents.ERC20AssetDelistOrBuilder> assetDelistBuilder_;
       /**
        * <pre>
-       * De-list an ERC20 asset.
+       * De-list an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];</code>
+       * <code>.vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];</code>
        * @return Whether the assetDelist field is set.
        */
       @java.lang.Override
@@ -7513,10 +7513,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * De-list an ERC20 asset.
+       * De-list an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];</code>
+       * <code>.vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];</code>
        * @return The assetDelist.
        */
       @java.lang.Override
@@ -7535,10 +7535,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * De-list an ERC20 asset.
+       * De-list an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];</code>
+       * <code>.vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];</code>
        */
       public Builder setAssetDelist(io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist value) {
         if (assetDelistBuilder_ == null) {
@@ -7555,10 +7555,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * De-list an ERC20 asset.
+       * De-list an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];</code>
+       * <code>.vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];</code>
        */
       public Builder setAssetDelist(
           io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist.Builder builderForValue) {
@@ -7573,10 +7573,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * De-list an ERC20 asset.
+       * De-list an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];</code>
+       * <code>.vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];</code>
        */
       public Builder mergeAssetDelist(io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist value) {
         if (assetDelistBuilder_ == null) {
@@ -7599,10 +7599,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * De-list an ERC20 asset.
+       * De-list an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];</code>
+       * <code>.vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];</code>
        */
       public Builder clearAssetDelist() {
         if (assetDelistBuilder_ == null) {
@@ -7622,20 +7622,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * De-list an ERC20 asset.
+       * De-list an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];</code>
+       * <code>.vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];</code>
        */
       public io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist.Builder getAssetDelistBuilder() {
         return getAssetDelistFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * De-list an ERC20 asset.
+       * De-list an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];</code>
+       * <code>.vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.ERC20AssetDelistOrBuilder getAssetDelistOrBuilder() {
@@ -7650,10 +7650,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * De-list an ERC20 asset.
+       * De-list an ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];</code>
+       * <code>.vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist, io.vegaprotocol.vega.ChainEvents.ERC20AssetDelist.Builder, io.vegaprotocol.vega.ChainEvents.ERC20AssetDelistOrBuilder>
@@ -7678,7 +7678,7 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.ERC20Deposit, io.vegaprotocol.vega.ChainEvents.ERC20Deposit.Builder, io.vegaprotocol.vega.ChainEvents.ERC20DepositOrBuilder> depositBuilder_;
       /**
        * <pre>
-       * Deposit ERC20 asset.
+       * Deposit ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];</code>
@@ -7690,7 +7690,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Deposit ERC20 asset.
+       * Deposit ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];</code>
@@ -7712,7 +7712,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Deposit ERC20 asset.
+       * Deposit ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];</code>
@@ -7732,7 +7732,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Deposit ERC20 asset.
+       * Deposit ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];</code>
@@ -7750,7 +7750,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Deposit ERC20 asset.
+       * Deposit ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];</code>
@@ -7776,7 +7776,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Deposit ERC20 asset.
+       * Deposit ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];</code>
@@ -7799,7 +7799,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Deposit ERC20 asset.
+       * Deposit ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];</code>
@@ -7809,7 +7809,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Deposit ERC20 asset.
+       * Deposit ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];</code>
@@ -7827,7 +7827,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Deposit ERC20 asset.
+       * Deposit ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];</code>
@@ -7855,7 +7855,7 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.ERC20Withdrawal, io.vegaprotocol.vega.ChainEvents.ERC20Withdrawal.Builder, io.vegaprotocol.vega.ChainEvents.ERC20WithdrawalOrBuilder> withdrawalBuilder_;
       /**
        * <pre>
-       * Withdraw ERC20 asset.
+       * Withdraw ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Withdrawal withdrawal = 1004 [json_name = "withdrawal"];</code>
@@ -7867,7 +7867,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Withdraw ERC20 asset.
+       * Withdraw ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Withdrawal withdrawal = 1004 [json_name = "withdrawal"];</code>
@@ -7889,7 +7889,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Withdraw ERC20 asset.
+       * Withdraw ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Withdrawal withdrawal = 1004 [json_name = "withdrawal"];</code>
@@ -7909,7 +7909,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Withdraw ERC20 asset.
+       * Withdraw ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Withdrawal withdrawal = 1004 [json_name = "withdrawal"];</code>
@@ -7927,7 +7927,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Withdraw ERC20 asset.
+       * Withdraw ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Withdrawal withdrawal = 1004 [json_name = "withdrawal"];</code>
@@ -7953,7 +7953,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Withdraw ERC20 asset.
+       * Withdraw ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Withdrawal withdrawal = 1004 [json_name = "withdrawal"];</code>
@@ -7976,7 +7976,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Withdraw ERC20 asset.
+       * Withdraw ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Withdrawal withdrawal = 1004 [json_name = "withdrawal"];</code>
@@ -7986,7 +7986,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Withdraw ERC20 asset.
+       * Withdraw ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Withdrawal withdrawal = 1004 [json_name = "withdrawal"];</code>
@@ -8004,7 +8004,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Withdraw ERC20 asset.
+       * Withdraw ERC20 asset
        * </pre>
        *
        * <code>.vega.ERC20Withdrawal withdrawal = 1004 [json_name = "withdrawal"];</code>
@@ -8086,59 +8086,59 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * The Vega network internal identifier of the asset.
+     * The Vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The vegaAssetId.
      */
-    java.lang.String getVegaAssetID();
+    java.lang.String getVegaAssetId();
     /**
      * <pre>
-     * The Vega network internal identifier of the asset.
+     * The Vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The bytes for vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The bytes for vegaAssetId.
      */
     com.google.protobuf.ByteString
-        getVegaAssetIDBytes();
+        getVegaAssetIdBytes();
 
     /**
      * <pre>
-     * The BTC wallet initiating the deposit.
+     * The BTC wallet initiating the deposit
      * </pre>
      *
-     * <code>string sourceBTCAddress = 2 [json_name = "sourceBTCAddress"];</code>
-     * @return The sourceBTCAddress.
+     * <code>string source_btc_address = 2 [json_name = "sourceBtcAddress"];</code>
+     * @return The sourceBtcAddress.
      */
-    java.lang.String getSourceBTCAddress();
+    java.lang.String getSourceBtcAddress();
     /**
      * <pre>
-     * The BTC wallet initiating the deposit.
+     * The BTC wallet initiating the deposit
      * </pre>
      *
-     * <code>string sourceBTCAddress = 2 [json_name = "sourceBTCAddress"];</code>
-     * @return The bytes for sourceBTCAddress.
+     * <code>string source_btc_address = 2 [json_name = "sourceBtcAddress"];</code>
+     * @return The bytes for sourceBtcAddress.
      */
     com.google.protobuf.ByteString
-        getSourceBTCAddressBytes();
+        getSourceBtcAddressBytes();
 
     /**
      * <pre>
-     * The Vega party identifier (pub-key) which is the target of the deposit.
+     * The Vega party identifier (pub-key) which is the target of the deposit
      * </pre>
      *
-     * <code>string targetPartyId = 3 [json_name = "targetPartyId"];</code>
+     * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
      * @return The targetPartyId.
      */
     java.lang.String getTargetPartyId();
     /**
      * <pre>
-     * The Vega party identifier (pub-key) which is the target of the deposit.
+     * The Vega party identifier (pub-key) which is the target of the deposit
      * </pre>
      *
-     * <code>string targetPartyId = 3 [json_name = "targetPartyId"];</code>
+     * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
      * @return The bytes for targetPartyId.
      */
     com.google.protobuf.ByteString
@@ -8146,7 +8146,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * A Bitcoin deposit into Vega.
+   * A Bitcoin deposit into Vega
    * </pre>
    *
    * Protobuf type {@code vega.BTCDeposit}
@@ -8161,8 +8161,8 @@ public final class ChainEvents {
       super(builder);
     }
     private BTCDeposit() {
-      vegaAssetID_ = "";
-      sourceBTCAddress_ = "";
+      vegaAssetId_ = "";
+      sourceBtcAddress_ = "";
       targetPartyId_ = "";
     }
 
@@ -8199,13 +8199,13 @@ public final class ChainEvents {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              vegaAssetID_ = s;
+              vegaAssetId_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              sourceBTCAddress_ = s;
+              sourceBtcAddress_ = s;
               break;
             }
             case 26: {
@@ -8246,106 +8246,106 @@ public final class ChainEvents {
               io.vegaprotocol.vega.ChainEvents.BTCDeposit.class, io.vegaprotocol.vega.ChainEvents.BTCDeposit.Builder.class);
     }
 
-    public static final int VEGAASSETID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object vegaAssetID_;
+    public static final int VEGA_ASSET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object vegaAssetId_;
     /**
      * <pre>
-     * The Vega network internal identifier of the asset.
+     * The Vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The vegaAssetId.
      */
     @java.lang.Override
-    public java.lang.String getVegaAssetID() {
-      java.lang.Object ref = vegaAssetID_;
+    public java.lang.String getVegaAssetId() {
+      java.lang.Object ref = vegaAssetId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        vegaAssetID_ = s;
+        vegaAssetId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * The Vega network internal identifier of the asset.
+     * The Vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The bytes for vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The bytes for vegaAssetId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getVegaAssetIDBytes() {
-      java.lang.Object ref = vegaAssetID_;
+        getVegaAssetIdBytes() {
+      java.lang.Object ref = vegaAssetId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        vegaAssetID_ = b;
+        vegaAssetId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int SOURCEBTCADDRESS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object sourceBTCAddress_;
+    public static final int SOURCE_BTC_ADDRESS_FIELD_NUMBER = 2;
+    private volatile java.lang.Object sourceBtcAddress_;
     /**
      * <pre>
-     * The BTC wallet initiating the deposit.
+     * The BTC wallet initiating the deposit
      * </pre>
      *
-     * <code>string sourceBTCAddress = 2 [json_name = "sourceBTCAddress"];</code>
-     * @return The sourceBTCAddress.
+     * <code>string source_btc_address = 2 [json_name = "sourceBtcAddress"];</code>
+     * @return The sourceBtcAddress.
      */
     @java.lang.Override
-    public java.lang.String getSourceBTCAddress() {
-      java.lang.Object ref = sourceBTCAddress_;
+    public java.lang.String getSourceBtcAddress() {
+      java.lang.Object ref = sourceBtcAddress_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        sourceBTCAddress_ = s;
+        sourceBtcAddress_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * The BTC wallet initiating the deposit.
+     * The BTC wallet initiating the deposit
      * </pre>
      *
-     * <code>string sourceBTCAddress = 2 [json_name = "sourceBTCAddress"];</code>
-     * @return The bytes for sourceBTCAddress.
+     * <code>string source_btc_address = 2 [json_name = "sourceBtcAddress"];</code>
+     * @return The bytes for sourceBtcAddress.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getSourceBTCAddressBytes() {
-      java.lang.Object ref = sourceBTCAddress_;
+        getSourceBtcAddressBytes() {
+      java.lang.Object ref = sourceBtcAddress_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        sourceBTCAddress_ = b;
+        sourceBtcAddress_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int TARGETPARTYID_FIELD_NUMBER = 3;
+    public static final int TARGET_PARTY_ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object targetPartyId_;
     /**
      * <pre>
-     * The Vega party identifier (pub-key) which is the target of the deposit.
+     * The Vega party identifier (pub-key) which is the target of the deposit
      * </pre>
      *
-     * <code>string targetPartyId = 3 [json_name = "targetPartyId"];</code>
+     * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
      * @return The targetPartyId.
      */
     @java.lang.Override
@@ -8363,10 +8363,10 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * The Vega party identifier (pub-key) which is the target of the deposit.
+     * The Vega party identifier (pub-key) which is the target of the deposit
      * </pre>
      *
-     * <code>string targetPartyId = 3 [json_name = "targetPartyId"];</code>
+     * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
      * @return The bytes for targetPartyId.
      */
     @java.lang.Override
@@ -8398,11 +8398,11 @@ public final class ChainEvents {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getVegaAssetIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaAssetID_);
+      if (!getVegaAssetIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaAssetId_);
       }
-      if (!getSourceBTCAddressBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceBTCAddress_);
+      if (!getSourceBtcAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceBtcAddress_);
       }
       if (!getTargetPartyIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, targetPartyId_);
@@ -8416,11 +8416,11 @@ public final class ChainEvents {
       if (size != -1) return size;
 
       size = 0;
-      if (!getVegaAssetIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaAssetID_);
+      if (!getVegaAssetIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaAssetId_);
       }
-      if (!getSourceBTCAddressBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceBTCAddress_);
+      if (!getSourceBtcAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceBtcAddress_);
       }
       if (!getTargetPartyIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, targetPartyId_);
@@ -8440,10 +8440,10 @@ public final class ChainEvents {
       }
       io.vegaprotocol.vega.ChainEvents.BTCDeposit other = (io.vegaprotocol.vega.ChainEvents.BTCDeposit) obj;
 
-      if (!getVegaAssetID()
-          .equals(other.getVegaAssetID())) return false;
-      if (!getSourceBTCAddress()
-          .equals(other.getSourceBTCAddress())) return false;
+      if (!getVegaAssetId()
+          .equals(other.getVegaAssetId())) return false;
+      if (!getSourceBtcAddress()
+          .equals(other.getSourceBtcAddress())) return false;
       if (!getTargetPartyId()
           .equals(other.getTargetPartyId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -8457,11 +8457,11 @@ public final class ChainEvents {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + VEGAASSETID_FIELD_NUMBER;
-      hash = (53 * hash) + getVegaAssetID().hashCode();
-      hash = (37 * hash) + SOURCEBTCADDRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getSourceBTCAddress().hashCode();
-      hash = (37 * hash) + TARGETPARTYID_FIELD_NUMBER;
+      hash = (37 * hash) + VEGA_ASSET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVegaAssetId().hashCode();
+      hash = (37 * hash) + SOURCE_BTC_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceBtcAddress().hashCode();
+      hash = (37 * hash) + TARGET_PARTY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetPartyId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -8560,7 +8560,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * A Bitcoin deposit into Vega.
+     * A Bitcoin deposit into Vega
      * </pre>
      *
      * Protobuf type {@code vega.BTCDeposit}
@@ -8600,9 +8600,9 @@ public final class ChainEvents {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        vegaAssetID_ = "";
+        vegaAssetId_ = "";
 
-        sourceBTCAddress_ = "";
+        sourceBtcAddress_ = "";
 
         targetPartyId_ = "";
 
@@ -8632,8 +8632,8 @@ public final class ChainEvents {
       @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.BTCDeposit buildPartial() {
         io.vegaprotocol.vega.ChainEvents.BTCDeposit result = new io.vegaprotocol.vega.ChainEvents.BTCDeposit(this);
-        result.vegaAssetID_ = vegaAssetID_;
-        result.sourceBTCAddress_ = sourceBTCAddress_;
+        result.vegaAssetId_ = vegaAssetId_;
+        result.sourceBtcAddress_ = sourceBtcAddress_;
         result.targetPartyId_ = targetPartyId_;
         onBuilt();
         return result;
@@ -8683,12 +8683,12 @@ public final class ChainEvents {
 
       public Builder mergeFrom(io.vegaprotocol.vega.ChainEvents.BTCDeposit other) {
         if (other == io.vegaprotocol.vega.ChainEvents.BTCDeposit.getDefaultInstance()) return this;
-        if (!other.getVegaAssetID().isEmpty()) {
-          vegaAssetID_ = other.vegaAssetID_;
+        if (!other.getVegaAssetId().isEmpty()) {
+          vegaAssetId_ = other.vegaAssetId_;
           onChanged();
         }
-        if (!other.getSourceBTCAddress().isEmpty()) {
-          sourceBTCAddress_ = other.sourceBTCAddress_;
+        if (!other.getSourceBtcAddress().isEmpty()) {
+          sourceBtcAddress_ = other.sourceBtcAddress_;
           onChanged();
         }
         if (!other.getTargetPartyId().isEmpty()) {
@@ -8724,22 +8724,22 @@ public final class ChainEvents {
         return this;
       }
 
-      private java.lang.Object vegaAssetID_ = "";
+      private java.lang.Object vegaAssetId_ = "";
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @return The vegaAssetID.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @return The vegaAssetId.
        */
-      public java.lang.String getVegaAssetID() {
-        java.lang.Object ref = vegaAssetID_;
+      public java.lang.String getVegaAssetId() {
+        java.lang.Object ref = vegaAssetId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          vegaAssetID_ = s;
+          vegaAssetId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8747,20 +8747,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @return The bytes for vegaAssetID.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @return The bytes for vegaAssetId.
        */
       public com.google.protobuf.ByteString
-          getVegaAssetIDBytes() {
-        java.lang.Object ref = vegaAssetID_;
+          getVegaAssetIdBytes() {
+        java.lang.Object ref = vegaAssetId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          vegaAssetID_ = b;
+          vegaAssetId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -8768,74 +8768,74 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @param value The vegaAssetID to set.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @param value The vegaAssetId to set.
        * @return This builder for chaining.
        */
-      public Builder setVegaAssetID(
+      public Builder setVegaAssetId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        vegaAssetID_ = value;
+        vegaAssetId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearVegaAssetID() {
+      public Builder clearVegaAssetId() {
 
-        vegaAssetID_ = getDefaultInstance().getVegaAssetID();
+        vegaAssetId_ = getDefaultInstance().getVegaAssetId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The Vega network internal identifier of the asset.
+       * The Vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @param value The bytes for vegaAssetID to set.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @param value The bytes for vegaAssetId to set.
        * @return This builder for chaining.
        */
-      public Builder setVegaAssetIDBytes(
+      public Builder setVegaAssetIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        vegaAssetID_ = value;
+        vegaAssetId_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object sourceBTCAddress_ = "";
+      private java.lang.Object sourceBtcAddress_ = "";
       /**
        * <pre>
-       * The BTC wallet initiating the deposit.
+       * The BTC wallet initiating the deposit
        * </pre>
        *
-       * <code>string sourceBTCAddress = 2 [json_name = "sourceBTCAddress"];</code>
-       * @return The sourceBTCAddress.
+       * <code>string source_btc_address = 2 [json_name = "sourceBtcAddress"];</code>
+       * @return The sourceBtcAddress.
        */
-      public java.lang.String getSourceBTCAddress() {
-        java.lang.Object ref = sourceBTCAddress_;
+      public java.lang.String getSourceBtcAddress() {
+        java.lang.Object ref = sourceBtcAddress_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          sourceBTCAddress_ = s;
+          sourceBtcAddress_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8843,20 +8843,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The BTC wallet initiating the deposit.
+       * The BTC wallet initiating the deposit
        * </pre>
        *
-       * <code>string sourceBTCAddress = 2 [json_name = "sourceBTCAddress"];</code>
-       * @return The bytes for sourceBTCAddress.
+       * <code>string source_btc_address = 2 [json_name = "sourceBtcAddress"];</code>
+       * @return The bytes for sourceBtcAddress.
        */
       public com.google.protobuf.ByteString
-          getSourceBTCAddressBytes() {
-        java.lang.Object ref = sourceBTCAddress_;
+          getSourceBtcAddressBytes() {
+        java.lang.Object ref = sourceBtcAddress_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          sourceBTCAddress_ = b;
+          sourceBtcAddress_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -8864,54 +8864,54 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The BTC wallet initiating the deposit.
+       * The BTC wallet initiating the deposit
        * </pre>
        *
-       * <code>string sourceBTCAddress = 2 [json_name = "sourceBTCAddress"];</code>
-       * @param value The sourceBTCAddress to set.
+       * <code>string source_btc_address = 2 [json_name = "sourceBtcAddress"];</code>
+       * @param value The sourceBtcAddress to set.
        * @return This builder for chaining.
        */
-      public Builder setSourceBTCAddress(
+      public Builder setSourceBtcAddress(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        sourceBTCAddress_ = value;
+        sourceBtcAddress_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The BTC wallet initiating the deposit.
+       * The BTC wallet initiating the deposit
        * </pre>
        *
-       * <code>string sourceBTCAddress = 2 [json_name = "sourceBTCAddress"];</code>
+       * <code>string source_btc_address = 2 [json_name = "sourceBtcAddress"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearSourceBTCAddress() {
+      public Builder clearSourceBtcAddress() {
 
-        sourceBTCAddress_ = getDefaultInstance().getSourceBTCAddress();
+        sourceBtcAddress_ = getDefaultInstance().getSourceBtcAddress();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The BTC wallet initiating the deposit.
+       * The BTC wallet initiating the deposit
        * </pre>
        *
-       * <code>string sourceBTCAddress = 2 [json_name = "sourceBTCAddress"];</code>
-       * @param value The bytes for sourceBTCAddress to set.
+       * <code>string source_btc_address = 2 [json_name = "sourceBtcAddress"];</code>
+       * @param value The bytes for sourceBtcAddress to set.
        * @return This builder for chaining.
        */
-      public Builder setSourceBTCAddressBytes(
+      public Builder setSourceBtcAddressBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        sourceBTCAddress_ = value;
+        sourceBtcAddress_ = value;
         onChanged();
         return this;
       }
@@ -8919,10 +8919,10 @@ public final class ChainEvents {
       private java.lang.Object targetPartyId_ = "";
       /**
        * <pre>
-       * The Vega party identifier (pub-key) which is the target of the deposit.
+       * The Vega party identifier (pub-key) which is the target of the deposit
        * </pre>
        *
-       * <code>string targetPartyId = 3 [json_name = "targetPartyId"];</code>
+       * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
        * @return The targetPartyId.
        */
       public java.lang.String getTargetPartyId() {
@@ -8939,10 +8939,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Vega party identifier (pub-key) which is the target of the deposit.
+       * The Vega party identifier (pub-key) which is the target of the deposit
        * </pre>
        *
-       * <code>string targetPartyId = 3 [json_name = "targetPartyId"];</code>
+       * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
        * @return The bytes for targetPartyId.
        */
       public com.google.protobuf.ByteString
@@ -8960,10 +8960,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Vega party identifier (pub-key) which is the target of the deposit.
+       * The Vega party identifier (pub-key) which is the target of the deposit
        * </pre>
        *
-       * <code>string targetPartyId = 3 [json_name = "targetPartyId"];</code>
+       * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
        * @param value The targetPartyId to set.
        * @return This builder for chaining.
        */
@@ -8979,10 +8979,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Vega party identifier (pub-key) which is the target of the deposit.
+       * The Vega party identifier (pub-key) which is the target of the deposit
        * </pre>
        *
-       * <code>string targetPartyId = 3 [json_name = "targetPartyId"];</code>
+       * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetPartyId() {
@@ -8993,10 +8993,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The Vega party identifier (pub-key) which is the target of the deposit.
+       * The Vega party identifier (pub-key) which is the target of the deposit
        * </pre>
        *
-       * <code>string targetPartyId = 3 [json_name = "targetPartyId"];</code>
+       * <code>string target_party_id = 3 [json_name = "targetPartyId"];</code>
        * @param value The bytes for targetPartyId to set.
        * @return This builder for chaining.
        */
@@ -9070,39 +9070,39 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * The vega network internal identifier of the asset.
+     * The vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The vegaAssetId.
      */
-    java.lang.String getVegaAssetID();
+    java.lang.String getVegaAssetId();
     /**
      * <pre>
-     * The vega network internal identifier of the asset.
+     * The vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The bytes for vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The bytes for vegaAssetId.
      */
     com.google.protobuf.ByteString
-        getVegaAssetIDBytes();
+        getVegaAssetIdBytes();
 
     /**
      * <pre>
-     * The party identifier (pub-key) initiating the withdrawal.
+     * The party identifier (pub-key) initiating the withdrawal
      * </pre>
      *
-     * <code>string sourcePartyId = 2 [json_name = "sourcePartyId"];</code>
+     * <code>string source_party_id = 2 [json_name = "sourcePartyId"];</code>
      * @return The sourcePartyId.
      */
     java.lang.String getSourcePartyId();
     /**
      * <pre>
-     * The party identifier (pub-key) initiating the withdrawal.
+     * The party identifier (pub-key) initiating the withdrawal
      * </pre>
      *
-     * <code>string sourcePartyId = 2 [json_name = "sourcePartyId"];</code>
+     * <code>string source_party_id = 2 [json_name = "sourcePartyId"];</code>
      * @return The bytes for sourcePartyId.
      */
     com.google.protobuf.ByteString
@@ -9110,39 +9110,39 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * Target Bitcoin wallet address.
+     * Target Bitcoin wallet address
      * </pre>
      *
-     * <code>string targetBTCAddress = 3 [json_name = "targetBTCAddress"];</code>
-     * @return The targetBTCAddress.
+     * <code>string target_btc_address = 3 [json_name = "targetBtcAddress"];</code>
+     * @return The targetBtcAddress.
      */
-    java.lang.String getTargetBTCAddress();
+    java.lang.String getTargetBtcAddress();
     /**
      * <pre>
-     * Target Bitcoin wallet address.
+     * Target Bitcoin wallet address
      * </pre>
      *
-     * <code>string targetBTCAddress = 3 [json_name = "targetBTCAddress"];</code>
-     * @return The bytes for targetBTCAddress.
+     * <code>string target_btc_address = 3 [json_name = "targetBtcAddress"];</code>
+     * @return The bytes for targetBtcAddress.
      */
     com.google.protobuf.ByteString
-        getTargetBTCAddressBytes();
+        getTargetBtcAddressBytes();
 
     /**
      * <pre>
-     * The nonce reference of the transaction.
+     * The nonce reference of the transaction
      * </pre>
      *
-     * <code>string referenceNonce = 4 [json_name = "referenceNonce"];</code>
+     * <code>string reference_nonce = 4 [json_name = "referenceNonce"];</code>
      * @return The referenceNonce.
      */
     java.lang.String getReferenceNonce();
     /**
      * <pre>
-     * The nonce reference of the transaction.
+     * The nonce reference of the transaction
      * </pre>
      *
-     * <code>string referenceNonce = 4 [json_name = "referenceNonce"];</code>
+     * <code>string reference_nonce = 4 [json_name = "referenceNonce"];</code>
      * @return The bytes for referenceNonce.
      */
     com.google.protobuf.ByteString
@@ -9150,7 +9150,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * A Bitcoin withdrawal from Vega.
+   * A Bitcoin withdrawal from Vega
    * </pre>
    *
    * Protobuf type {@code vega.BTCWithdrawal}
@@ -9165,9 +9165,9 @@ public final class ChainEvents {
       super(builder);
     }
     private BTCWithdrawal() {
-      vegaAssetID_ = "";
+      vegaAssetId_ = "";
       sourcePartyId_ = "";
-      targetBTCAddress_ = "";
+      targetBtcAddress_ = "";
       referenceNonce_ = "";
     }
 
@@ -9204,7 +9204,7 @@ public final class ChainEvents {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              vegaAssetID_ = s;
+              vegaAssetId_ = s;
               break;
             }
             case 18: {
@@ -9216,7 +9216,7 @@ public final class ChainEvents {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              targetBTCAddress_ = s;
+              targetBtcAddress_ = s;
               break;
             }
             case 34: {
@@ -9257,60 +9257,60 @@ public final class ChainEvents {
               io.vegaprotocol.vega.ChainEvents.BTCWithdrawal.class, io.vegaprotocol.vega.ChainEvents.BTCWithdrawal.Builder.class);
     }
 
-    public static final int VEGAASSETID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object vegaAssetID_;
+    public static final int VEGA_ASSET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object vegaAssetId_;
     /**
      * <pre>
-     * The vega network internal identifier of the asset.
+     * The vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The vegaAssetId.
      */
     @java.lang.Override
-    public java.lang.String getVegaAssetID() {
-      java.lang.Object ref = vegaAssetID_;
+    public java.lang.String getVegaAssetId() {
+      java.lang.Object ref = vegaAssetId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        vegaAssetID_ = s;
+        vegaAssetId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * The vega network internal identifier of the asset.
+     * The vega network internal identifier of the asset
      * </pre>
      *
-     * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-     * @return The bytes for vegaAssetID.
+     * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+     * @return The bytes for vegaAssetId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getVegaAssetIDBytes() {
-      java.lang.Object ref = vegaAssetID_;
+        getVegaAssetIdBytes() {
+      java.lang.Object ref = vegaAssetId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        vegaAssetID_ = b;
+        vegaAssetId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int SOURCEPARTYID_FIELD_NUMBER = 2;
+    public static final int SOURCE_PARTY_ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object sourcePartyId_;
     /**
      * <pre>
-     * The party identifier (pub-key) initiating the withdrawal.
+     * The party identifier (pub-key) initiating the withdrawal
      * </pre>
      *
-     * <code>string sourcePartyId = 2 [json_name = "sourcePartyId"];</code>
+     * <code>string source_party_id = 2 [json_name = "sourcePartyId"];</code>
      * @return The sourcePartyId.
      */
     @java.lang.Override
@@ -9328,10 +9328,10 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * The party identifier (pub-key) initiating the withdrawal.
+     * The party identifier (pub-key) initiating the withdrawal
      * </pre>
      *
-     * <code>string sourcePartyId = 2 [json_name = "sourcePartyId"];</code>
+     * <code>string source_party_id = 2 [json_name = "sourcePartyId"];</code>
      * @return The bytes for sourcePartyId.
      */
     @java.lang.Override
@@ -9349,60 +9349,60 @@ public final class ChainEvents {
       }
     }
 
-    public static final int TARGETBTCADDRESS_FIELD_NUMBER = 3;
-    private volatile java.lang.Object targetBTCAddress_;
+    public static final int TARGET_BTC_ADDRESS_FIELD_NUMBER = 3;
+    private volatile java.lang.Object targetBtcAddress_;
     /**
      * <pre>
-     * Target Bitcoin wallet address.
+     * Target Bitcoin wallet address
      * </pre>
      *
-     * <code>string targetBTCAddress = 3 [json_name = "targetBTCAddress"];</code>
-     * @return The targetBTCAddress.
+     * <code>string target_btc_address = 3 [json_name = "targetBtcAddress"];</code>
+     * @return The targetBtcAddress.
      */
     @java.lang.Override
-    public java.lang.String getTargetBTCAddress() {
-      java.lang.Object ref = targetBTCAddress_;
+    public java.lang.String getTargetBtcAddress() {
+      java.lang.Object ref = targetBtcAddress_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        targetBTCAddress_ = s;
+        targetBtcAddress_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * Target Bitcoin wallet address.
+     * Target Bitcoin wallet address
      * </pre>
      *
-     * <code>string targetBTCAddress = 3 [json_name = "targetBTCAddress"];</code>
-     * @return The bytes for targetBTCAddress.
+     * <code>string target_btc_address = 3 [json_name = "targetBtcAddress"];</code>
+     * @return The bytes for targetBtcAddress.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTargetBTCAddressBytes() {
-      java.lang.Object ref = targetBTCAddress_;
+        getTargetBtcAddressBytes() {
+      java.lang.Object ref = targetBtcAddress_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        targetBTCAddress_ = b;
+        targetBtcAddress_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int REFERENCENONCE_FIELD_NUMBER = 4;
+    public static final int REFERENCE_NONCE_FIELD_NUMBER = 4;
     private volatile java.lang.Object referenceNonce_;
     /**
      * <pre>
-     * The nonce reference of the transaction.
+     * The nonce reference of the transaction
      * </pre>
      *
-     * <code>string referenceNonce = 4 [json_name = "referenceNonce"];</code>
+     * <code>string reference_nonce = 4 [json_name = "referenceNonce"];</code>
      * @return The referenceNonce.
      */
     @java.lang.Override
@@ -9420,10 +9420,10 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * The nonce reference of the transaction.
+     * The nonce reference of the transaction
      * </pre>
      *
-     * <code>string referenceNonce = 4 [json_name = "referenceNonce"];</code>
+     * <code>string reference_nonce = 4 [json_name = "referenceNonce"];</code>
      * @return The bytes for referenceNonce.
      */
     @java.lang.Override
@@ -9455,14 +9455,14 @@ public final class ChainEvents {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getVegaAssetIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaAssetID_);
+      if (!getVegaAssetIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaAssetId_);
       }
       if (!getSourcePartyIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourcePartyId_);
       }
-      if (!getTargetBTCAddressBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, targetBTCAddress_);
+      if (!getTargetBtcAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, targetBtcAddress_);
       }
       if (!getReferenceNonceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, referenceNonce_);
@@ -9476,14 +9476,14 @@ public final class ChainEvents {
       if (size != -1) return size;
 
       size = 0;
-      if (!getVegaAssetIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaAssetID_);
+      if (!getVegaAssetIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaAssetId_);
       }
       if (!getSourcePartyIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourcePartyId_);
       }
-      if (!getTargetBTCAddressBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, targetBTCAddress_);
+      if (!getTargetBtcAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, targetBtcAddress_);
       }
       if (!getReferenceNonceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, referenceNonce_);
@@ -9503,12 +9503,12 @@ public final class ChainEvents {
       }
       io.vegaprotocol.vega.ChainEvents.BTCWithdrawal other = (io.vegaprotocol.vega.ChainEvents.BTCWithdrawal) obj;
 
-      if (!getVegaAssetID()
-          .equals(other.getVegaAssetID())) return false;
+      if (!getVegaAssetId()
+          .equals(other.getVegaAssetId())) return false;
       if (!getSourcePartyId()
           .equals(other.getSourcePartyId())) return false;
-      if (!getTargetBTCAddress()
-          .equals(other.getTargetBTCAddress())) return false;
+      if (!getTargetBtcAddress()
+          .equals(other.getTargetBtcAddress())) return false;
       if (!getReferenceNonce()
           .equals(other.getReferenceNonce())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -9522,13 +9522,13 @@ public final class ChainEvents {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + VEGAASSETID_FIELD_NUMBER;
-      hash = (53 * hash) + getVegaAssetID().hashCode();
-      hash = (37 * hash) + SOURCEPARTYID_FIELD_NUMBER;
+      hash = (37 * hash) + VEGA_ASSET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVegaAssetId().hashCode();
+      hash = (37 * hash) + SOURCE_PARTY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSourcePartyId().hashCode();
-      hash = (37 * hash) + TARGETBTCADDRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetBTCAddress().hashCode();
-      hash = (37 * hash) + REFERENCENONCE_FIELD_NUMBER;
+      hash = (37 * hash) + TARGET_BTC_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetBtcAddress().hashCode();
+      hash = (37 * hash) + REFERENCE_NONCE_FIELD_NUMBER;
       hash = (53 * hash) + getReferenceNonce().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -9627,7 +9627,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * A Bitcoin withdrawal from Vega.
+     * A Bitcoin withdrawal from Vega
      * </pre>
      *
      * Protobuf type {@code vega.BTCWithdrawal}
@@ -9667,11 +9667,11 @@ public final class ChainEvents {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        vegaAssetID_ = "";
+        vegaAssetId_ = "";
 
         sourcePartyId_ = "";
 
-        targetBTCAddress_ = "";
+        targetBtcAddress_ = "";
 
         referenceNonce_ = "";
 
@@ -9701,9 +9701,9 @@ public final class ChainEvents {
       @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.BTCWithdrawal buildPartial() {
         io.vegaprotocol.vega.ChainEvents.BTCWithdrawal result = new io.vegaprotocol.vega.ChainEvents.BTCWithdrawal(this);
-        result.vegaAssetID_ = vegaAssetID_;
+        result.vegaAssetId_ = vegaAssetId_;
         result.sourcePartyId_ = sourcePartyId_;
-        result.targetBTCAddress_ = targetBTCAddress_;
+        result.targetBtcAddress_ = targetBtcAddress_;
         result.referenceNonce_ = referenceNonce_;
         onBuilt();
         return result;
@@ -9753,16 +9753,16 @@ public final class ChainEvents {
 
       public Builder mergeFrom(io.vegaprotocol.vega.ChainEvents.BTCWithdrawal other) {
         if (other == io.vegaprotocol.vega.ChainEvents.BTCWithdrawal.getDefaultInstance()) return this;
-        if (!other.getVegaAssetID().isEmpty()) {
-          vegaAssetID_ = other.vegaAssetID_;
+        if (!other.getVegaAssetId().isEmpty()) {
+          vegaAssetId_ = other.vegaAssetId_;
           onChanged();
         }
         if (!other.getSourcePartyId().isEmpty()) {
           sourcePartyId_ = other.sourcePartyId_;
           onChanged();
         }
-        if (!other.getTargetBTCAddress().isEmpty()) {
-          targetBTCAddress_ = other.targetBTCAddress_;
+        if (!other.getTargetBtcAddress().isEmpty()) {
+          targetBtcAddress_ = other.targetBtcAddress_;
           onChanged();
         }
         if (!other.getReferenceNonce().isEmpty()) {
@@ -9798,22 +9798,22 @@ public final class ChainEvents {
         return this;
       }
 
-      private java.lang.Object vegaAssetID_ = "";
+      private java.lang.Object vegaAssetId_ = "";
       /**
        * <pre>
-       * The vega network internal identifier of the asset.
+       * The vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @return The vegaAssetID.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @return The vegaAssetId.
        */
-      public java.lang.String getVegaAssetID() {
-        java.lang.Object ref = vegaAssetID_;
+      public java.lang.String getVegaAssetId() {
+        java.lang.Object ref = vegaAssetId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          vegaAssetID_ = s;
+          vegaAssetId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -9821,20 +9821,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The vega network internal identifier of the asset.
+       * The vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @return The bytes for vegaAssetID.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @return The bytes for vegaAssetId.
        */
       public com.google.protobuf.ByteString
-          getVegaAssetIDBytes() {
-        java.lang.Object ref = vegaAssetID_;
+          getVegaAssetIdBytes() {
+        java.lang.Object ref = vegaAssetId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          vegaAssetID_ = b;
+          vegaAssetId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -9842,54 +9842,54 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The vega network internal identifier of the asset.
+       * The vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @param value The vegaAssetID to set.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @param value The vegaAssetId to set.
        * @return This builder for chaining.
        */
-      public Builder setVegaAssetID(
+      public Builder setVegaAssetId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        vegaAssetID_ = value;
+        vegaAssetId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The vega network internal identifier of the asset.
+       * The vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearVegaAssetID() {
+      public Builder clearVegaAssetId() {
 
-        vegaAssetID_ = getDefaultInstance().getVegaAssetID();
+        vegaAssetId_ = getDefaultInstance().getVegaAssetId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The vega network internal identifier of the asset.
+       * The vega network internal identifier of the asset
        * </pre>
        *
-       * <code>string vegaAssetID = 1 [json_name = "vegaAssetID"];</code>
-       * @param value The bytes for vegaAssetID to set.
+       * <code>string vega_asset_id = 1 [json_name = "vegaAssetId"];</code>
+       * @param value The bytes for vegaAssetId to set.
        * @return This builder for chaining.
        */
-      public Builder setVegaAssetIDBytes(
+      public Builder setVegaAssetIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        vegaAssetID_ = value;
+        vegaAssetId_ = value;
         onChanged();
         return this;
       }
@@ -9897,10 +9897,10 @@ public final class ChainEvents {
       private java.lang.Object sourcePartyId_ = "";
       /**
        * <pre>
-       * The party identifier (pub-key) initiating the withdrawal.
+       * The party identifier (pub-key) initiating the withdrawal
        * </pre>
        *
-       * <code>string sourcePartyId = 2 [json_name = "sourcePartyId"];</code>
+       * <code>string source_party_id = 2 [json_name = "sourcePartyId"];</code>
        * @return The sourcePartyId.
        */
       public java.lang.String getSourcePartyId() {
@@ -9917,10 +9917,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The party identifier (pub-key) initiating the withdrawal.
+       * The party identifier (pub-key) initiating the withdrawal
        * </pre>
        *
-       * <code>string sourcePartyId = 2 [json_name = "sourcePartyId"];</code>
+       * <code>string source_party_id = 2 [json_name = "sourcePartyId"];</code>
        * @return The bytes for sourcePartyId.
        */
       public com.google.protobuf.ByteString
@@ -9938,10 +9938,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The party identifier (pub-key) initiating the withdrawal.
+       * The party identifier (pub-key) initiating the withdrawal
        * </pre>
        *
-       * <code>string sourcePartyId = 2 [json_name = "sourcePartyId"];</code>
+       * <code>string source_party_id = 2 [json_name = "sourcePartyId"];</code>
        * @param value The sourcePartyId to set.
        * @return This builder for chaining.
        */
@@ -9957,10 +9957,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The party identifier (pub-key) initiating the withdrawal.
+       * The party identifier (pub-key) initiating the withdrawal
        * </pre>
        *
-       * <code>string sourcePartyId = 2 [json_name = "sourcePartyId"];</code>
+       * <code>string source_party_id = 2 [json_name = "sourcePartyId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSourcePartyId() {
@@ -9971,10 +9971,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The party identifier (pub-key) initiating the withdrawal.
+       * The party identifier (pub-key) initiating the withdrawal
        * </pre>
        *
-       * <code>string sourcePartyId = 2 [json_name = "sourcePartyId"];</code>
+       * <code>string source_party_id = 2 [json_name = "sourcePartyId"];</code>
        * @param value The bytes for sourcePartyId to set.
        * @return This builder for chaining.
        */
@@ -9990,22 +9990,22 @@ public final class ChainEvents {
         return this;
       }
 
-      private java.lang.Object targetBTCAddress_ = "";
+      private java.lang.Object targetBtcAddress_ = "";
       /**
        * <pre>
-       * Target Bitcoin wallet address.
+       * Target Bitcoin wallet address
        * </pre>
        *
-       * <code>string targetBTCAddress = 3 [json_name = "targetBTCAddress"];</code>
-       * @return The targetBTCAddress.
+       * <code>string target_btc_address = 3 [json_name = "targetBtcAddress"];</code>
+       * @return The targetBtcAddress.
        */
-      public java.lang.String getTargetBTCAddress() {
-        java.lang.Object ref = targetBTCAddress_;
+      public java.lang.String getTargetBtcAddress() {
+        java.lang.Object ref = targetBtcAddress_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          targetBTCAddress_ = s;
+          targetBtcAddress_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -10013,20 +10013,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Target Bitcoin wallet address.
+       * Target Bitcoin wallet address
        * </pre>
        *
-       * <code>string targetBTCAddress = 3 [json_name = "targetBTCAddress"];</code>
-       * @return The bytes for targetBTCAddress.
+       * <code>string target_btc_address = 3 [json_name = "targetBtcAddress"];</code>
+       * @return The bytes for targetBtcAddress.
        */
       public com.google.protobuf.ByteString
-          getTargetBTCAddressBytes() {
-        java.lang.Object ref = targetBTCAddress_;
+          getTargetBtcAddressBytes() {
+        java.lang.Object ref = targetBtcAddress_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          targetBTCAddress_ = b;
+          targetBtcAddress_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -10034,54 +10034,54 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Target Bitcoin wallet address.
+       * Target Bitcoin wallet address
        * </pre>
        *
-       * <code>string targetBTCAddress = 3 [json_name = "targetBTCAddress"];</code>
-       * @param value The targetBTCAddress to set.
+       * <code>string target_btc_address = 3 [json_name = "targetBtcAddress"];</code>
+       * @param value The targetBtcAddress to set.
        * @return This builder for chaining.
        */
-      public Builder setTargetBTCAddress(
+      public Builder setTargetBtcAddress(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        targetBTCAddress_ = value;
+        targetBtcAddress_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Target Bitcoin wallet address.
+       * Target Bitcoin wallet address
        * </pre>
        *
-       * <code>string targetBTCAddress = 3 [json_name = "targetBTCAddress"];</code>
+       * <code>string target_btc_address = 3 [json_name = "targetBtcAddress"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearTargetBTCAddress() {
+      public Builder clearTargetBtcAddress() {
 
-        targetBTCAddress_ = getDefaultInstance().getTargetBTCAddress();
+        targetBtcAddress_ = getDefaultInstance().getTargetBtcAddress();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Target Bitcoin wallet address.
+       * Target Bitcoin wallet address
        * </pre>
        *
-       * <code>string targetBTCAddress = 3 [json_name = "targetBTCAddress"];</code>
-       * @param value The bytes for targetBTCAddress to set.
+       * <code>string target_btc_address = 3 [json_name = "targetBtcAddress"];</code>
+       * @param value The bytes for targetBtcAddress to set.
        * @return This builder for chaining.
        */
-      public Builder setTargetBTCAddressBytes(
+      public Builder setTargetBtcAddressBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        targetBTCAddress_ = value;
+        targetBtcAddress_ = value;
         onChanged();
         return this;
       }
@@ -10089,10 +10089,10 @@ public final class ChainEvents {
       private java.lang.Object referenceNonce_ = "";
       /**
        * <pre>
-       * The nonce reference of the transaction.
+       * The nonce reference of the transaction
        * </pre>
        *
-       * <code>string referenceNonce = 4 [json_name = "referenceNonce"];</code>
+       * <code>string reference_nonce = 4 [json_name = "referenceNonce"];</code>
        * @return The referenceNonce.
        */
       public java.lang.String getReferenceNonce() {
@@ -10109,10 +10109,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The nonce reference of the transaction.
+       * The nonce reference of the transaction
        * </pre>
        *
-       * <code>string referenceNonce = 4 [json_name = "referenceNonce"];</code>
+       * <code>string reference_nonce = 4 [json_name = "referenceNonce"];</code>
        * @return The bytes for referenceNonce.
        */
       public com.google.protobuf.ByteString
@@ -10130,10 +10130,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The nonce reference of the transaction.
+       * The nonce reference of the transaction
        * </pre>
        *
-       * <code>string referenceNonce = 4 [json_name = "referenceNonce"];</code>
+       * <code>string reference_nonce = 4 [json_name = "referenceNonce"];</code>
        * @param value The referenceNonce to set.
        * @return This builder for chaining.
        */
@@ -10149,10 +10149,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The nonce reference of the transaction.
+       * The nonce reference of the transaction
        * </pre>
        *
-       * <code>string referenceNonce = 4 [json_name = "referenceNonce"];</code>
+       * <code>string reference_nonce = 4 [json_name = "referenceNonce"];</code>
        * @return This builder for chaining.
        */
       public Builder clearReferenceNonce() {
@@ -10163,10 +10163,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The nonce reference of the transaction.
+       * The nonce reference of the transaction
        * </pre>
        *
-       * <code>string referenceNonce = 4 [json_name = "referenceNonce"];</code>
+       * <code>string reference_nonce = 4 [json_name = "referenceNonce"];</code>
        * @param value The bytes for referenceNonce to set.
        * @return This builder for chaining.
        */
@@ -10240,7 +10240,7 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * The index of the transaction.
+     * The index of the transaction
      * </pre>
      *
      * <code>uint64 index = 1 [json_name = "index"];</code>
@@ -10250,7 +10250,7 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * The block in which the transaction happened.
+     * The block in which the transaction happened
      * </pre>
      *
      * <code>uint64 block = 2 [json_name = "block"];</code>
@@ -10260,7 +10260,7 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * Deposit BTC asset.
+     * Deposit BTC asset
      * </pre>
      *
      * <code>.vega.BTCDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -10269,7 +10269,7 @@ public final class ChainEvents {
     boolean hasDeposit();
     /**
      * <pre>
-     * Deposit BTC asset.
+     * Deposit BTC asset
      * </pre>
      *
      * <code>.vega.BTCDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -10278,7 +10278,7 @@ public final class ChainEvents {
     io.vegaprotocol.vega.ChainEvents.BTCDeposit getDeposit();
     /**
      * <pre>
-     * Deposit BTC asset.
+     * Deposit BTC asset
      * </pre>
      *
      * <code>.vega.BTCDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -10287,7 +10287,7 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * Withdraw BTC asset.
+     * Withdraw BTC asset
      * </pre>
      *
      * <code>.vega.BTCWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -10296,7 +10296,7 @@ public final class ChainEvents {
     boolean hasWithdrawal();
     /**
      * <pre>
-     * Withdraw BTC asset.
+     * Withdraw BTC asset
      * </pre>
      *
      * <code>.vega.BTCWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -10305,7 +10305,7 @@ public final class ChainEvents {
     io.vegaprotocol.vega.ChainEvents.BTCWithdrawal getWithdrawal();
     /**
      * <pre>
-     * Withdraw BTC asset.
+     * Withdraw BTC asset
      * </pre>
      *
      * <code>.vega.BTCWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -10316,7 +10316,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * An event from the Bitcoin network.
+   * An event from the Bitcoin network
    * </pre>
    *
    * Protobuf type {@code vega.BTCEvent}
@@ -10478,7 +10478,7 @@ public final class ChainEvents {
     private long index_;
     /**
      * <pre>
-     * The index of the transaction.
+     * The index of the transaction
      * </pre>
      *
      * <code>uint64 index = 1 [json_name = "index"];</code>
@@ -10493,7 +10493,7 @@ public final class ChainEvents {
     private long block_;
     /**
      * <pre>
-     * The block in which the transaction happened.
+     * The block in which the transaction happened
      * </pre>
      *
      * <code>uint64 block = 2 [json_name = "block"];</code>
@@ -10507,7 +10507,7 @@ public final class ChainEvents {
     public static final int DEPOSIT_FIELD_NUMBER = 1001;
     /**
      * <pre>
-     * Deposit BTC asset.
+     * Deposit BTC asset
      * </pre>
      *
      * <code>.vega.BTCDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -10519,7 +10519,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Deposit BTC asset.
+     * Deposit BTC asset
      * </pre>
      *
      * <code>.vega.BTCDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -10534,7 +10534,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Deposit BTC asset.
+     * Deposit BTC asset
      * </pre>
      *
      * <code>.vega.BTCDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -10550,7 +10550,7 @@ public final class ChainEvents {
     public static final int WITHDRAWAL_FIELD_NUMBER = 1002;
     /**
      * <pre>
-     * Withdraw BTC asset.
+     * Withdraw BTC asset
      * </pre>
      *
      * <code>.vega.BTCWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -10562,7 +10562,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Withdraw BTC asset.
+     * Withdraw BTC asset
      * </pre>
      *
      * <code>.vega.BTCWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -10577,7 +10577,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Withdraw BTC asset.
+     * Withdraw BTC asset
      * </pre>
      *
      * <code>.vega.BTCWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -10799,7 +10799,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * An event from the Bitcoin network.
+     * An event from the Bitcoin network
      * </pre>
      *
      * Protobuf type {@code vega.BTCEvent}
@@ -11002,7 +11002,7 @@ public final class ChainEvents {
       private long index_ ;
       /**
        * <pre>
-       * The index of the transaction.
+       * The index of the transaction
        * </pre>
        *
        * <code>uint64 index = 1 [json_name = "index"];</code>
@@ -11014,7 +11014,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The index of the transaction.
+       * The index of the transaction
        * </pre>
        *
        * <code>uint64 index = 1 [json_name = "index"];</code>
@@ -11029,7 +11029,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The index of the transaction.
+       * The index of the transaction
        * </pre>
        *
        * <code>uint64 index = 1 [json_name = "index"];</code>
@@ -11045,7 +11045,7 @@ public final class ChainEvents {
       private long block_ ;
       /**
        * <pre>
-       * The block in which the transaction happened.
+       * The block in which the transaction happened
        * </pre>
        *
        * <code>uint64 block = 2 [json_name = "block"];</code>
@@ -11057,7 +11057,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The block in which the transaction happened.
+       * The block in which the transaction happened
        * </pre>
        *
        * <code>uint64 block = 2 [json_name = "block"];</code>
@@ -11072,7 +11072,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The block in which the transaction happened.
+       * The block in which the transaction happened
        * </pre>
        *
        * <code>uint64 block = 2 [json_name = "block"];</code>
@@ -11089,7 +11089,7 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.BTCDeposit, io.vegaprotocol.vega.ChainEvents.BTCDeposit.Builder, io.vegaprotocol.vega.ChainEvents.BTCDepositOrBuilder> depositBuilder_;
       /**
        * <pre>
-       * Deposit BTC asset.
+       * Deposit BTC asset
        * </pre>
        *
        * <code>.vega.BTCDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -11101,7 +11101,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Deposit BTC asset.
+       * Deposit BTC asset
        * </pre>
        *
        * <code>.vega.BTCDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -11123,7 +11123,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Deposit BTC asset.
+       * Deposit BTC asset
        * </pre>
        *
        * <code>.vega.BTCDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -11143,7 +11143,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Deposit BTC asset.
+       * Deposit BTC asset
        * </pre>
        *
        * <code>.vega.BTCDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -11161,7 +11161,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Deposit BTC asset.
+       * Deposit BTC asset
        * </pre>
        *
        * <code>.vega.BTCDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -11187,7 +11187,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Deposit BTC asset.
+       * Deposit BTC asset
        * </pre>
        *
        * <code>.vega.BTCDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -11210,7 +11210,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Deposit BTC asset.
+       * Deposit BTC asset
        * </pre>
        *
        * <code>.vega.BTCDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -11220,7 +11220,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Deposit BTC asset.
+       * Deposit BTC asset
        * </pre>
        *
        * <code>.vega.BTCDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -11238,7 +11238,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Deposit BTC asset.
+       * Deposit BTC asset
        * </pre>
        *
        * <code>.vega.BTCDeposit deposit = 1001 [json_name = "deposit"];</code>
@@ -11266,7 +11266,7 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.BTCWithdrawal, io.vegaprotocol.vega.ChainEvents.BTCWithdrawal.Builder, io.vegaprotocol.vega.ChainEvents.BTCWithdrawalOrBuilder> withdrawalBuilder_;
       /**
        * <pre>
-       * Withdraw BTC asset.
+       * Withdraw BTC asset
        * </pre>
        *
        * <code>.vega.BTCWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -11278,7 +11278,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Withdraw BTC asset.
+       * Withdraw BTC asset
        * </pre>
        *
        * <code>.vega.BTCWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -11300,7 +11300,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Withdraw BTC asset.
+       * Withdraw BTC asset
        * </pre>
        *
        * <code>.vega.BTCWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -11320,7 +11320,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Withdraw BTC asset.
+       * Withdraw BTC asset
        * </pre>
        *
        * <code>.vega.BTCWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -11338,7 +11338,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Withdraw BTC asset.
+       * Withdraw BTC asset
        * </pre>
        *
        * <code>.vega.BTCWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -11364,7 +11364,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Withdraw BTC asset.
+       * Withdraw BTC asset
        * </pre>
        *
        * <code>.vega.BTCWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -11387,7 +11387,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Withdraw BTC asset.
+       * Withdraw BTC asset
        * </pre>
        *
        * <code>.vega.BTCWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -11397,7 +11397,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Withdraw BTC asset.
+       * Withdraw BTC asset
        * </pre>
        *
        * <code>.vega.BTCWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -11415,7 +11415,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Withdraw BTC asset.
+       * Withdraw BTC asset
        * </pre>
        *
        * <code>.vega.BTCWithdrawal withdrawal = 1002 [json_name = "withdrawal"];</code>
@@ -11497,7 +11497,7 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * An Ethereum address.
+     * An Ethereum address
      * </pre>
      *
      * <code>string address = 1 [json_name = "address"];</code>
@@ -11506,7 +11506,7 @@ public final class ChainEvents {
     java.lang.String getAddress();
     /**
      * <pre>
-     * An Ethereum address.
+     * An Ethereum address
      * </pre>
      *
      * <code>string address = 1 [json_name = "address"];</code>
@@ -11517,7 +11517,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * Used as a wrapper for an Ethereum address (wallet/contract).
+   * Used as a wrapper for an Ethereum address (wallet/contract)
    * </pre>
    *
    * Protobuf type {@code vega.EthereumAddress}
@@ -11607,7 +11607,7 @@ public final class ChainEvents {
     private volatile java.lang.Object address_;
     /**
      * <pre>
-     * An Ethereum address.
+     * An Ethereum address
      * </pre>
      *
      * <code>string address = 1 [json_name = "address"];</code>
@@ -11628,7 +11628,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * An Ethereum address.
+     * An Ethereum address
      * </pre>
      *
      * <code>string address = 1 [json_name = "address"];</code>
@@ -11805,7 +11805,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Used as a wrapper for an Ethereum address (wallet/contract).
+     * Used as a wrapper for an Ethereum address (wallet/contract)
      * </pre>
      *
      * Protobuf type {@code vega.EthereumAddress}
@@ -11958,7 +11958,7 @@ public final class ChainEvents {
       private java.lang.Object address_ = "";
       /**
        * <pre>
-       * An Ethereum address.
+       * An Ethereum address
        * </pre>
        *
        * <code>string address = 1 [json_name = "address"];</code>
@@ -11978,7 +11978,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * An Ethereum address.
+       * An Ethereum address
        * </pre>
        *
        * <code>string address = 1 [json_name = "address"];</code>
@@ -11999,7 +11999,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * An Ethereum address.
+       * An Ethereum address
        * </pre>
        *
        * <code>string address = 1 [json_name = "address"];</code>
@@ -12018,7 +12018,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * An Ethereum address.
+       * An Ethereum address
        * </pre>
        *
        * <code>string address = 1 [json_name = "address"];</code>
@@ -12032,7 +12032,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * An Ethereum address.
+       * An Ethereum address
        * </pre>
        *
        * <code>string address = 1 [json_name = "address"];</code>
@@ -12109,7 +12109,7 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * A Bitcoin address.
+     * A Bitcoin address
      * </pre>
      *
      * <code>string address = 1 [json_name = "address"];</code>
@@ -12118,7 +12118,7 @@ public final class ChainEvents {
     java.lang.String getAddress();
     /**
      * <pre>
-     * A Bitcoin address.
+     * A Bitcoin address
      * </pre>
      *
      * <code>string address = 1 [json_name = "address"];</code>
@@ -12129,7 +12129,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * Used as a wrapper for a Bitcoin address (wallet).
+   * Used as a wrapper for a Bitcoin address (wallet)
    * </pre>
    *
    * Protobuf type {@code vega.BitcoinAddress}
@@ -12219,7 +12219,7 @@ public final class ChainEvents {
     private volatile java.lang.Object address_;
     /**
      * <pre>
-     * A Bitcoin address.
+     * A Bitcoin address
      * </pre>
      *
      * <code>string address = 1 [json_name = "address"];</code>
@@ -12240,7 +12240,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * A Bitcoin address.
+     * A Bitcoin address
      * </pre>
      *
      * <code>string address = 1 [json_name = "address"];</code>
@@ -12417,7 +12417,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Used as a wrapper for a Bitcoin address (wallet).
+     * Used as a wrapper for a Bitcoin address (wallet)
      * </pre>
      *
      * Protobuf type {@code vega.BitcoinAddress}
@@ -12570,7 +12570,7 @@ public final class ChainEvents {
       private java.lang.Object address_ = "";
       /**
        * <pre>
-       * A Bitcoin address.
+       * A Bitcoin address
        * </pre>
        *
        * <code>string address = 1 [json_name = "address"];</code>
@@ -12590,7 +12590,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * A Bitcoin address.
+       * A Bitcoin address
        * </pre>
        *
        * <code>string address = 1 [json_name = "address"];</code>
@@ -12611,7 +12611,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * A Bitcoin address.
+       * A Bitcoin address
        * </pre>
        *
        * <code>string address = 1 [json_name = "address"];</code>
@@ -12630,7 +12630,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * A Bitcoin address.
+       * A Bitcoin address
        * </pre>
        *
        * <code>string address = 1 [json_name = "address"];</code>
@@ -12644,7 +12644,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * A Bitcoin address.
+       * A Bitcoin address
        * </pre>
        *
        * <code>string address = 1 [json_name = "address"];</code>
@@ -12721,55 +12721,55 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * Ethereum network.
+     * Ethereum network
      * </pre>
      *
-     * <code>.vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];</code>
+     * <code>.vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];</code>
      * @return Whether the ethereumAddress field is set.
      */
     boolean hasEthereumAddress();
     /**
      * <pre>
-     * Ethereum network.
+     * Ethereum network
      * </pre>
      *
-     * <code>.vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];</code>
+     * <code>.vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];</code>
      * @return The ethereumAddress.
      */
     io.vegaprotocol.vega.ChainEvents.EthereumAddress getEthereumAddress();
     /**
      * <pre>
-     * Ethereum network.
+     * Ethereum network
      * </pre>
      *
-     * <code>.vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];</code>
+     * <code>.vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];</code>
      */
     io.vegaprotocol.vega.ChainEvents.EthereumAddressOrBuilder getEthereumAddressOrBuilder();
 
     /**
      * <pre>
-     * Bitcoin network.
+     * Bitcoin network
      * </pre>
      *
-     * <code>.vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];</code>
+     * <code>.vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];</code>
      * @return Whether the bitcoinAddress field is set.
      */
     boolean hasBitcoinAddress();
     /**
      * <pre>
-     * Bitcoin network.
+     * Bitcoin network
      * </pre>
      *
-     * <code>.vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];</code>
+     * <code>.vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];</code>
      * @return The bitcoinAddress.
      */
     io.vegaprotocol.vega.ChainEvents.BitcoinAddress getBitcoinAddress();
     /**
      * <pre>
-     * Bitcoin network.
+     * Bitcoin network
      * </pre>
      *
-     * <code>.vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];</code>
+     * <code>.vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];</code>
      */
     io.vegaprotocol.vega.ChainEvents.BitcoinAddressOrBuilder getBitcoinAddressOrBuilder();
 
@@ -12777,7 +12777,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * Used as a wrapper type on any possible network address supported by Vega.
+   * Used as a wrapper type on any possible network address supported by Vega
    * </pre>
    *
    * Protobuf type {@code vega.Identifier}
@@ -12889,8 +12889,8 @@ public final class ChainEvents {
     public enum IdentifierCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      ETHEREUMADDRESS(1),
-      BITCOINADDRESS(2),
+      ETHEREUM_ADDRESS(1),
+      BITCOIN_ADDRESS(2),
       IDENTIFIER_NOT_SET(0);
       private final int value;
       private IdentifierCase(int value) {
@@ -12908,8 +12908,8 @@ public final class ChainEvents {
 
       public static IdentifierCase forNumber(int value) {
         switch (value) {
-          case 1: return ETHEREUMADDRESS;
-          case 2: return BITCOINADDRESS;
+          case 1: return ETHEREUM_ADDRESS;
+          case 2: return BITCOIN_ADDRESS;
           case 0: return IDENTIFIER_NOT_SET;
           default: return null;
         }
@@ -12925,13 +12925,13 @@ public final class ChainEvents {
           identifierCase_);
     }
 
-    public static final int ETHEREUMADDRESS_FIELD_NUMBER = 1;
+    public static final int ETHEREUM_ADDRESS_FIELD_NUMBER = 1;
     /**
      * <pre>
-     * Ethereum network.
+     * Ethereum network
      * </pre>
      *
-     * <code>.vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];</code>
+     * <code>.vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];</code>
      * @return Whether the ethereumAddress field is set.
      */
     @java.lang.Override
@@ -12940,10 +12940,10 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Ethereum network.
+     * Ethereum network
      * </pre>
      *
-     * <code>.vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];</code>
+     * <code>.vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];</code>
      * @return The ethereumAddress.
      */
     @java.lang.Override
@@ -12955,10 +12955,10 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Ethereum network.
+     * Ethereum network
      * </pre>
      *
-     * <code>.vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];</code>
+     * <code>.vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.ChainEvents.EthereumAddressOrBuilder getEthereumAddressOrBuilder() {
@@ -12968,13 +12968,13 @@ public final class ChainEvents {
       return io.vegaprotocol.vega.ChainEvents.EthereumAddress.getDefaultInstance();
     }
 
-    public static final int BITCOINADDRESS_FIELD_NUMBER = 2;
+    public static final int BITCOIN_ADDRESS_FIELD_NUMBER = 2;
     /**
      * <pre>
-     * Bitcoin network.
+     * Bitcoin network
      * </pre>
      *
-     * <code>.vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];</code>
+     * <code>.vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];</code>
      * @return Whether the bitcoinAddress field is set.
      */
     @java.lang.Override
@@ -12983,10 +12983,10 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Bitcoin network.
+     * Bitcoin network
      * </pre>
      *
-     * <code>.vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];</code>
+     * <code>.vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];</code>
      * @return The bitcoinAddress.
      */
     @java.lang.Override
@@ -12998,10 +12998,10 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Bitcoin network.
+     * Bitcoin network
      * </pre>
      *
-     * <code>.vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];</code>
+     * <code>.vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.ChainEvents.BitcoinAddressOrBuilder getBitcoinAddressOrBuilder() {
@@ -13089,11 +13089,11 @@ public final class ChainEvents {
       hash = (19 * hash) + getDescriptor().hashCode();
       switch (identifierCase_) {
         case 1:
-          hash = (37 * hash) + ETHEREUMADDRESS_FIELD_NUMBER;
+          hash = (37 * hash) + ETHEREUM_ADDRESS_FIELD_NUMBER;
           hash = (53 * hash) + getEthereumAddress().hashCode();
           break;
         case 2:
-          hash = (37 * hash) + BITCOINADDRESS_FIELD_NUMBER;
+          hash = (37 * hash) + BITCOIN_ADDRESS_FIELD_NUMBER;
           hash = (53 * hash) + getBitcoinAddress().hashCode();
           break;
         case 0:
@@ -13196,7 +13196,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Used as a wrapper type on any possible network address supported by Vega.
+     * Used as a wrapper type on any possible network address supported by Vega
      * </pre>
      *
      * Protobuf type {@code vega.Identifier}
@@ -13328,11 +13328,11 @@ public final class ChainEvents {
       public Builder mergeFrom(io.vegaprotocol.vega.ChainEvents.Identifier other) {
         if (other == io.vegaprotocol.vega.ChainEvents.Identifier.getDefaultInstance()) return this;
         switch (other.getIdentifierCase()) {
-          case ETHEREUMADDRESS: {
+          case ETHEREUM_ADDRESS: {
             mergeEthereumAddress(other.getEthereumAddress());
             break;
           }
-          case BITCOINADDRESS: {
+          case BITCOIN_ADDRESS: {
             mergeBitcoinAddress(other.getBitcoinAddress());
             break;
           }
@@ -13388,10 +13388,10 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.EthereumAddress, io.vegaprotocol.vega.ChainEvents.EthereumAddress.Builder, io.vegaprotocol.vega.ChainEvents.EthereumAddressOrBuilder> ethereumAddressBuilder_;
       /**
        * <pre>
-       * Ethereum network.
+       * Ethereum network
        * </pre>
        *
-       * <code>.vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];</code>
+       * <code>.vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];</code>
        * @return Whether the ethereumAddress field is set.
        */
       @java.lang.Override
@@ -13400,10 +13400,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Ethereum network.
+       * Ethereum network
        * </pre>
        *
-       * <code>.vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];</code>
+       * <code>.vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];</code>
        * @return The ethereumAddress.
        */
       @java.lang.Override
@@ -13422,10 +13422,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Ethereum network.
+       * Ethereum network
        * </pre>
        *
-       * <code>.vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];</code>
+       * <code>.vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];</code>
        */
       public Builder setEthereumAddress(io.vegaprotocol.vega.ChainEvents.EthereumAddress value) {
         if (ethereumAddressBuilder_ == null) {
@@ -13442,10 +13442,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Ethereum network.
+       * Ethereum network
        * </pre>
        *
-       * <code>.vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];</code>
+       * <code>.vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];</code>
        */
       public Builder setEthereumAddress(
           io.vegaprotocol.vega.ChainEvents.EthereumAddress.Builder builderForValue) {
@@ -13460,10 +13460,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Ethereum network.
+       * Ethereum network
        * </pre>
        *
-       * <code>.vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];</code>
+       * <code>.vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];</code>
        */
       public Builder mergeEthereumAddress(io.vegaprotocol.vega.ChainEvents.EthereumAddress value) {
         if (ethereumAddressBuilder_ == null) {
@@ -13486,10 +13486,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Ethereum network.
+       * Ethereum network
        * </pre>
        *
-       * <code>.vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];</code>
+       * <code>.vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];</code>
        */
       public Builder clearEthereumAddress() {
         if (ethereumAddressBuilder_ == null) {
@@ -13509,20 +13509,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Ethereum network.
+       * Ethereum network
        * </pre>
        *
-       * <code>.vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];</code>
+       * <code>.vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];</code>
        */
       public io.vegaprotocol.vega.ChainEvents.EthereumAddress.Builder getEthereumAddressBuilder() {
         return getEthereumAddressFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Ethereum network.
+       * Ethereum network
        * </pre>
        *
-       * <code>.vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];</code>
+       * <code>.vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.EthereumAddressOrBuilder getEthereumAddressOrBuilder() {
@@ -13537,10 +13537,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Ethereum network.
+       * Ethereum network
        * </pre>
        *
-       * <code>.vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];</code>
+       * <code>.vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.ChainEvents.EthereumAddress, io.vegaprotocol.vega.ChainEvents.EthereumAddress.Builder, io.vegaprotocol.vega.ChainEvents.EthereumAddressOrBuilder>
@@ -13565,10 +13565,10 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.BitcoinAddress, io.vegaprotocol.vega.ChainEvents.BitcoinAddress.Builder, io.vegaprotocol.vega.ChainEvents.BitcoinAddressOrBuilder> bitcoinAddressBuilder_;
       /**
        * <pre>
-       * Bitcoin network.
+       * Bitcoin network
        * </pre>
        *
-       * <code>.vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];</code>
+       * <code>.vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];</code>
        * @return Whether the bitcoinAddress field is set.
        */
       @java.lang.Override
@@ -13577,10 +13577,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Bitcoin network.
+       * Bitcoin network
        * </pre>
        *
-       * <code>.vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];</code>
+       * <code>.vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];</code>
        * @return The bitcoinAddress.
        */
       @java.lang.Override
@@ -13599,10 +13599,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Bitcoin network.
+       * Bitcoin network
        * </pre>
        *
-       * <code>.vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];</code>
+       * <code>.vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];</code>
        */
       public Builder setBitcoinAddress(io.vegaprotocol.vega.ChainEvents.BitcoinAddress value) {
         if (bitcoinAddressBuilder_ == null) {
@@ -13619,10 +13619,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Bitcoin network.
+       * Bitcoin network
        * </pre>
        *
-       * <code>.vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];</code>
+       * <code>.vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];</code>
        */
       public Builder setBitcoinAddress(
           io.vegaprotocol.vega.ChainEvents.BitcoinAddress.Builder builderForValue) {
@@ -13637,10 +13637,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Bitcoin network.
+       * Bitcoin network
        * </pre>
        *
-       * <code>.vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];</code>
+       * <code>.vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];</code>
        */
       public Builder mergeBitcoinAddress(io.vegaprotocol.vega.ChainEvents.BitcoinAddress value) {
         if (bitcoinAddressBuilder_ == null) {
@@ -13663,10 +13663,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Bitcoin network.
+       * Bitcoin network
        * </pre>
        *
-       * <code>.vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];</code>
+       * <code>.vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];</code>
        */
       public Builder clearBitcoinAddress() {
         if (bitcoinAddressBuilder_ == null) {
@@ -13686,20 +13686,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Bitcoin network.
+       * Bitcoin network
        * </pre>
        *
-       * <code>.vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];</code>
+       * <code>.vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];</code>
        */
       public io.vegaprotocol.vega.ChainEvents.BitcoinAddress.Builder getBitcoinAddressBuilder() {
         return getBitcoinAddressFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Bitcoin network.
+       * Bitcoin network
        * </pre>
        *
-       * <code>.vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];</code>
+       * <code>.vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.BitcoinAddressOrBuilder getBitcoinAddressOrBuilder() {
@@ -13714,10 +13714,10 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Bitcoin network.
+       * Bitcoin network
        * </pre>
        *
-       * <code>.vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];</code>
+       * <code>.vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.ChainEvents.BitcoinAddress, io.vegaprotocol.vega.ChainEvents.BitcoinAddress.Builder, io.vegaprotocol.vega.ChainEvents.BitcoinAddressOrBuilder>
@@ -13796,7 +13796,7 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * The identifier of the validator.
+     * The identifier of the validator
      * </pre>
      *
      * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -13805,7 +13805,7 @@ public final class ChainEvents {
     boolean hasId();
     /**
      * <pre>
-     * The identifier of the validator.
+     * The identifier of the validator
      * </pre>
      *
      * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -13814,7 +13814,7 @@ public final class ChainEvents {
     io.vegaprotocol.vega.ChainEvents.Identifier getId();
     /**
      * <pre>
-     * The identifier of the validator.
+     * The identifier of the validator
      * </pre>
      *
      * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -13823,7 +13823,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * A message to notify when a new validator is being added to the Vega network.
+   * A message to notify when a new validator is being added to the Vega network
    * </pre>
    *
    * Protobuf type {@code vega.AddValidator}
@@ -13919,7 +13919,7 @@ public final class ChainEvents {
     private io.vegaprotocol.vega.ChainEvents.Identifier id_;
     /**
      * <pre>
-     * The identifier of the validator.
+     * The identifier of the validator
      * </pre>
      *
      * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -13931,7 +13931,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * The identifier of the validator.
+     * The identifier of the validator
      * </pre>
      *
      * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -13943,7 +13943,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * The identifier of the validator.
+     * The identifier of the validator
      * </pre>
      *
      * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14115,7 +14115,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * A message to notify when a new validator is being added to the Vega network.
+     * A message to notify when a new validator is being added to the Vega network
      * </pre>
      *
      * Protobuf type {@code vega.AddValidator}
@@ -14277,7 +14277,7 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.Identifier, io.vegaprotocol.vega.ChainEvents.Identifier.Builder, io.vegaprotocol.vega.ChainEvents.IdentifierOrBuilder> idBuilder_;
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14288,7 +14288,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14303,7 +14303,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14323,7 +14323,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14341,7 +14341,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14363,7 +14363,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14381,7 +14381,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14393,7 +14393,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14408,7 +14408,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14485,7 +14485,7 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * The identifier of the validator.
+     * The identifier of the validator
      * </pre>
      *
      * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14494,7 +14494,7 @@ public final class ChainEvents {
     boolean hasId();
     /**
      * <pre>
-     * The identifier of the validator.
+     * The identifier of the validator
      * </pre>
      *
      * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14503,7 +14503,7 @@ public final class ChainEvents {
     io.vegaprotocol.vega.ChainEvents.Identifier getId();
     /**
      * <pre>
-     * The identifier of the validator.
+     * The identifier of the validator
      * </pre>
      *
      * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14512,7 +14512,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * A message to notify when a validator is being removed from the Vega network.
+   * A message to notify when a validator is being removed from the Vega network
    * </pre>
    *
    * Protobuf type {@code vega.RemoveValidator}
@@ -14608,7 +14608,7 @@ public final class ChainEvents {
     private io.vegaprotocol.vega.ChainEvents.Identifier id_;
     /**
      * <pre>
-     * The identifier of the validator.
+     * The identifier of the validator
      * </pre>
      *
      * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14620,7 +14620,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * The identifier of the validator.
+     * The identifier of the validator
      * </pre>
      *
      * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14632,7 +14632,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * The identifier of the validator.
+     * The identifier of the validator
      * </pre>
      *
      * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14804,7 +14804,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * A message to notify when a validator is being removed from the Vega network.
+     * A message to notify when a validator is being removed from the Vega network
      * </pre>
      *
      * Protobuf type {@code vega.RemoveValidator}
@@ -14966,7 +14966,7 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.Identifier, io.vegaprotocol.vega.ChainEvents.Identifier.Builder, io.vegaprotocol.vega.ChainEvents.IdentifierOrBuilder> idBuilder_;
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14977,7 +14977,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -14992,7 +14992,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -15012,7 +15012,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -15030,7 +15030,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -15052,7 +15052,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -15070,7 +15070,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -15082,7 +15082,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -15097,7 +15097,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the validator.
+       * The identifier of the validator
        * </pre>
        *
        * <code>.vega.Identifier id = 1 [json_name = "id"];</code>
@@ -15174,27 +15174,27 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * The source identifier of the event.
+     * The source identifier of the event
      * </pre>
      *
-     * <code>string sourceID = 1 [json_name = "sourceID"];</code>
-     * @return The sourceID.
+     * <code>string source_id = 1 [json_name = "sourceId"];</code>
+     * @return The sourceId.
      */
-    java.lang.String getSourceID();
+    java.lang.String getSourceId();
     /**
      * <pre>
-     * The source identifier of the event.
+     * The source identifier of the event
      * </pre>
      *
-     * <code>string sourceID = 1 [json_name = "sourceID"];</code>
-     * @return The bytes for sourceID.
+     * <code>string source_id = 1 [json_name = "sourceId"];</code>
+     * @return The bytes for sourceId.
      */
     com.google.protobuf.ByteString
-        getSourceIDBytes();
+        getSourceIdBytes();
 
     /**
      * <pre>
-     * Add a new validator.
+     * Add a new validator
      * </pre>
      *
      * <code>.vega.AddValidator add = 1001 [json_name = "add"];</code>
@@ -15203,7 +15203,7 @@ public final class ChainEvents {
     boolean hasAdd();
     /**
      * <pre>
-     * Add a new validator.
+     * Add a new validator
      * </pre>
      *
      * <code>.vega.AddValidator add = 1001 [json_name = "add"];</code>
@@ -15212,7 +15212,7 @@ public final class ChainEvents {
     io.vegaprotocol.vega.ChainEvents.AddValidator getAdd();
     /**
      * <pre>
-     * Add a new validator.
+     * Add a new validator
      * </pre>
      *
      * <code>.vega.AddValidator add = 1001 [json_name = "add"];</code>
@@ -15221,7 +15221,7 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * Remove an existing validator.
+     * Remove an existing validator
      * </pre>
      *
      * <code>.vega.RemoveValidator rm = 1002 [json_name = "rm"];</code>
@@ -15230,7 +15230,7 @@ public final class ChainEvents {
     boolean hasRm();
     /**
      * <pre>
-     * Remove an existing validator.
+     * Remove an existing validator
      * </pre>
      *
      * <code>.vega.RemoveValidator rm = 1002 [json_name = "rm"];</code>
@@ -15239,7 +15239,7 @@ public final class ChainEvents {
     io.vegaprotocol.vega.ChainEvents.RemoveValidator getRm();
     /**
      * <pre>
-     * Remove an existing validator.
+     * Remove an existing validator
      * </pre>
      *
      * <code>.vega.RemoveValidator rm = 1002 [json_name = "rm"];</code>
@@ -15250,7 +15250,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * An event related to validator management with foreign networks.
+   * An event related to validator management with foreign networks
    * </pre>
    *
    * Protobuf type {@code vega.ValidatorEvent}
@@ -15265,7 +15265,7 @@ public final class ChainEvents {
       super(builder);
     }
     private ValidatorEvent() {
-      sourceID_ = "";
+      sourceId_ = "";
     }
 
     @java.lang.Override
@@ -15301,7 +15301,7 @@ public final class ChainEvents {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              sourceID_ = s;
+              sourceId_ = s;
               break;
             }
             case 8010: {
@@ -15405,46 +15405,46 @@ public final class ChainEvents {
           actionCase_);
     }
 
-    public static final int SOURCEID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object sourceID_;
+    public static final int SOURCE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object sourceId_;
     /**
      * <pre>
-     * The source identifier of the event.
+     * The source identifier of the event
      * </pre>
      *
-     * <code>string sourceID = 1 [json_name = "sourceID"];</code>
-     * @return The sourceID.
+     * <code>string source_id = 1 [json_name = "sourceId"];</code>
+     * @return The sourceId.
      */
     @java.lang.Override
-    public java.lang.String getSourceID() {
-      java.lang.Object ref = sourceID_;
+    public java.lang.String getSourceId() {
+      java.lang.Object ref = sourceId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        sourceID_ = s;
+        sourceId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * The source identifier of the event.
+     * The source identifier of the event
      * </pre>
      *
-     * <code>string sourceID = 1 [json_name = "sourceID"];</code>
-     * @return The bytes for sourceID.
+     * <code>string source_id = 1 [json_name = "sourceId"];</code>
+     * @return The bytes for sourceId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getSourceIDBytes() {
-      java.lang.Object ref = sourceID_;
+        getSourceIdBytes() {
+      java.lang.Object ref = sourceId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        sourceID_ = b;
+        sourceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -15454,7 +15454,7 @@ public final class ChainEvents {
     public static final int ADD_FIELD_NUMBER = 1001;
     /**
      * <pre>
-     * Add a new validator.
+     * Add a new validator
      * </pre>
      *
      * <code>.vega.AddValidator add = 1001 [json_name = "add"];</code>
@@ -15466,7 +15466,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Add a new validator.
+     * Add a new validator
      * </pre>
      *
      * <code>.vega.AddValidator add = 1001 [json_name = "add"];</code>
@@ -15481,7 +15481,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Add a new validator.
+     * Add a new validator
      * </pre>
      *
      * <code>.vega.AddValidator add = 1001 [json_name = "add"];</code>
@@ -15497,7 +15497,7 @@ public final class ChainEvents {
     public static final int RM_FIELD_NUMBER = 1002;
     /**
      * <pre>
-     * Remove an existing validator.
+     * Remove an existing validator
      * </pre>
      *
      * <code>.vega.RemoveValidator rm = 1002 [json_name = "rm"];</code>
@@ -15509,7 +15509,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Remove an existing validator.
+     * Remove an existing validator
      * </pre>
      *
      * <code>.vega.RemoveValidator rm = 1002 [json_name = "rm"];</code>
@@ -15524,7 +15524,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Remove an existing validator.
+     * Remove an existing validator
      * </pre>
      *
      * <code>.vega.RemoveValidator rm = 1002 [json_name = "rm"];</code>
@@ -15551,8 +15551,8 @@ public final class ChainEvents {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSourceIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sourceID_);
+      if (!getSourceIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sourceId_);
       }
       if (actionCase_ == 1001) {
         output.writeMessage(1001, (io.vegaprotocol.vega.ChainEvents.AddValidator) action_);
@@ -15569,8 +15569,8 @@ public final class ChainEvents {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSourceIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sourceID_);
+      if (!getSourceIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sourceId_);
       }
       if (actionCase_ == 1001) {
         size += com.google.protobuf.CodedOutputStream
@@ -15595,8 +15595,8 @@ public final class ChainEvents {
       }
       io.vegaprotocol.vega.ChainEvents.ValidatorEvent other = (io.vegaprotocol.vega.ChainEvents.ValidatorEvent) obj;
 
-      if (!getSourceID()
-          .equals(other.getSourceID())) return false;
+      if (!getSourceId()
+          .equals(other.getSourceId())) return false;
       if (!getActionCase().equals(other.getActionCase())) return false;
       switch (actionCase_) {
         case 1001:
@@ -15621,8 +15621,8 @@ public final class ChainEvents {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SOURCEID_FIELD_NUMBER;
-      hash = (53 * hash) + getSourceID().hashCode();
+      hash = (37 * hash) + SOURCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceId().hashCode();
       switch (actionCase_) {
         case 1001:
           hash = (37 * hash) + ADD_FIELD_NUMBER;
@@ -15732,7 +15732,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * An event related to validator management with foreign networks.
+     * An event related to validator management with foreign networks
      * </pre>
      *
      * Protobuf type {@code vega.ValidatorEvent}
@@ -15772,7 +15772,7 @@ public final class ChainEvents {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        sourceID_ = "";
+        sourceId_ = "";
 
         actionCase_ = 0;
         action_ = null;
@@ -15802,7 +15802,7 @@ public final class ChainEvents {
       @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.ValidatorEvent buildPartial() {
         io.vegaprotocol.vega.ChainEvents.ValidatorEvent result = new io.vegaprotocol.vega.ChainEvents.ValidatorEvent(this);
-        result.sourceID_ = sourceID_;
+        result.sourceId_ = sourceId_;
         if (actionCase_ == 1001) {
           if (addBuilder_ == null) {
             result.action_ = action_;
@@ -15866,8 +15866,8 @@ public final class ChainEvents {
 
       public Builder mergeFrom(io.vegaprotocol.vega.ChainEvents.ValidatorEvent other) {
         if (other == io.vegaprotocol.vega.ChainEvents.ValidatorEvent.getDefaultInstance()) return this;
-        if (!other.getSourceID().isEmpty()) {
-          sourceID_ = other.sourceID_;
+        if (!other.getSourceId().isEmpty()) {
+          sourceId_ = other.sourceId_;
           onChanged();
         }
         switch (other.getActionCase()) {
@@ -15927,22 +15927,22 @@ public final class ChainEvents {
       }
 
 
-      private java.lang.Object sourceID_ = "";
+      private java.lang.Object sourceId_ = "";
       /**
        * <pre>
-       * The source identifier of the event.
+       * The source identifier of the event
        * </pre>
        *
-       * <code>string sourceID = 1 [json_name = "sourceID"];</code>
-       * @return The sourceID.
+       * <code>string source_id = 1 [json_name = "sourceId"];</code>
+       * @return The sourceId.
        */
-      public java.lang.String getSourceID() {
-        java.lang.Object ref = sourceID_;
+      public java.lang.String getSourceId() {
+        java.lang.Object ref = sourceId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          sourceID_ = s;
+          sourceId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -15950,20 +15950,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The source identifier of the event.
+       * The source identifier of the event
        * </pre>
        *
-       * <code>string sourceID = 1 [json_name = "sourceID"];</code>
-       * @return The bytes for sourceID.
+       * <code>string source_id = 1 [json_name = "sourceId"];</code>
+       * @return The bytes for sourceId.
        */
       public com.google.protobuf.ByteString
-          getSourceIDBytes() {
-        java.lang.Object ref = sourceID_;
+          getSourceIdBytes() {
+        java.lang.Object ref = sourceId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          sourceID_ = b;
+          sourceId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -15971,54 +15971,54 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The source identifier of the event.
+       * The source identifier of the event
        * </pre>
        *
-       * <code>string sourceID = 1 [json_name = "sourceID"];</code>
-       * @param value The sourceID to set.
+       * <code>string source_id = 1 [json_name = "sourceId"];</code>
+       * @param value The sourceId to set.
        * @return This builder for chaining.
        */
-      public Builder setSourceID(
+      public Builder setSourceId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        sourceID_ = value;
+        sourceId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The source identifier of the event.
+       * The source identifier of the event
        * </pre>
        *
-       * <code>string sourceID = 1 [json_name = "sourceID"];</code>
+       * <code>string source_id = 1 [json_name = "sourceId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearSourceID() {
+      public Builder clearSourceId() {
 
-        sourceID_ = getDefaultInstance().getSourceID();
+        sourceId_ = getDefaultInstance().getSourceId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The source identifier of the event.
+       * The source identifier of the event
        * </pre>
        *
-       * <code>string sourceID = 1 [json_name = "sourceID"];</code>
-       * @param value The bytes for sourceID to set.
+       * <code>string source_id = 1 [json_name = "sourceId"];</code>
+       * @param value The bytes for sourceId to set.
        * @return This builder for chaining.
        */
-      public Builder setSourceIDBytes(
+      public Builder setSourceIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        sourceID_ = value;
+        sourceId_ = value;
         onChanged();
         return this;
       }
@@ -16027,7 +16027,7 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.AddValidator, io.vegaprotocol.vega.ChainEvents.AddValidator.Builder, io.vegaprotocol.vega.ChainEvents.AddValidatorOrBuilder> addBuilder_;
       /**
        * <pre>
-       * Add a new validator.
+       * Add a new validator
        * </pre>
        *
        * <code>.vega.AddValidator add = 1001 [json_name = "add"];</code>
@@ -16039,7 +16039,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Add a new validator.
+       * Add a new validator
        * </pre>
        *
        * <code>.vega.AddValidator add = 1001 [json_name = "add"];</code>
@@ -16061,7 +16061,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Add a new validator.
+       * Add a new validator
        * </pre>
        *
        * <code>.vega.AddValidator add = 1001 [json_name = "add"];</code>
@@ -16081,7 +16081,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Add a new validator.
+       * Add a new validator
        * </pre>
        *
        * <code>.vega.AddValidator add = 1001 [json_name = "add"];</code>
@@ -16099,7 +16099,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Add a new validator.
+       * Add a new validator
        * </pre>
        *
        * <code>.vega.AddValidator add = 1001 [json_name = "add"];</code>
@@ -16125,7 +16125,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Add a new validator.
+       * Add a new validator
        * </pre>
        *
        * <code>.vega.AddValidator add = 1001 [json_name = "add"];</code>
@@ -16148,7 +16148,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Add a new validator.
+       * Add a new validator
        * </pre>
        *
        * <code>.vega.AddValidator add = 1001 [json_name = "add"];</code>
@@ -16158,7 +16158,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Add a new validator.
+       * Add a new validator
        * </pre>
        *
        * <code>.vega.AddValidator add = 1001 [json_name = "add"];</code>
@@ -16176,7 +16176,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Add a new validator.
+       * Add a new validator
        * </pre>
        *
        * <code>.vega.AddValidator add = 1001 [json_name = "add"];</code>
@@ -16204,7 +16204,7 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.RemoveValidator, io.vegaprotocol.vega.ChainEvents.RemoveValidator.Builder, io.vegaprotocol.vega.ChainEvents.RemoveValidatorOrBuilder> rmBuilder_;
       /**
        * <pre>
-       * Remove an existing validator.
+       * Remove an existing validator
        * </pre>
        *
        * <code>.vega.RemoveValidator rm = 1002 [json_name = "rm"];</code>
@@ -16216,7 +16216,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Remove an existing validator.
+       * Remove an existing validator
        * </pre>
        *
        * <code>.vega.RemoveValidator rm = 1002 [json_name = "rm"];</code>
@@ -16238,7 +16238,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Remove an existing validator.
+       * Remove an existing validator
        * </pre>
        *
        * <code>.vega.RemoveValidator rm = 1002 [json_name = "rm"];</code>
@@ -16258,7 +16258,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Remove an existing validator.
+       * Remove an existing validator
        * </pre>
        *
        * <code>.vega.RemoveValidator rm = 1002 [json_name = "rm"];</code>
@@ -16276,7 +16276,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Remove an existing validator.
+       * Remove an existing validator
        * </pre>
        *
        * <code>.vega.RemoveValidator rm = 1002 [json_name = "rm"];</code>
@@ -16302,7 +16302,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Remove an existing validator.
+       * Remove an existing validator
        * </pre>
        *
        * <code>.vega.RemoveValidator rm = 1002 [json_name = "rm"];</code>
@@ -16325,7 +16325,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Remove an existing validator.
+       * Remove an existing validator
        * </pre>
        *
        * <code>.vega.RemoveValidator rm = 1002 [json_name = "rm"];</code>
@@ -16335,7 +16335,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Remove an existing validator.
+       * Remove an existing validator
        * </pre>
        *
        * <code>.vega.RemoveValidator rm = 1002 [json_name = "rm"];</code>
@@ -16353,7 +16353,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Remove an existing validator.
+       * Remove an existing validator
        * </pre>
        *
        * <code>.vega.RemoveValidator rm = 1002 [json_name = "rm"];</code>
@@ -16435,27 +16435,27 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * The identifier of the transaction in which the events happened, usually a hash.
+     * The identifier of the transaction in which the events happened, usually a hash
      * </pre>
      *
-     * <code>string txID = 1 [json_name = "txID"];</code>
-     * @return The txID.
+     * <code>string tx_id = 1 [json_name = "txId"];</code>
+     * @return The txId.
      */
-    java.lang.String getTxID();
+    java.lang.String getTxId();
     /**
      * <pre>
-     * The identifier of the transaction in which the events happened, usually a hash.
+     * The identifier of the transaction in which the events happened, usually a hash
      * </pre>
      *
-     * <code>string txID = 1 [json_name = "txID"];</code>
-     * @return The bytes for txID.
+     * <code>string tx_id = 1 [json_name = "txId"];</code>
+     * @return The bytes for txId.
      */
     com.google.protobuf.ByteString
-        getTxIDBytes();
+        getTxIdBytes();
 
     /**
      * <pre>
-     * Arbitrary one-time integer used to prevent replay attacks.
+     * Arbitrary one-time integer used to prevent replay attacks
      * </pre>
      *
      * <code>uint64 nonce = 2 [json_name = "nonce"];</code>
@@ -16465,7 +16465,7 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * Built-in asset event.
+     * Built-in asset event
      * </pre>
      *
      * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
@@ -16474,7 +16474,7 @@ public final class ChainEvents {
     boolean hasBuiltin();
     /**
      * <pre>
-     * Built-in asset event.
+     * Built-in asset event
      * </pre>
      *
      * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
@@ -16483,7 +16483,7 @@ public final class ChainEvents {
     io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent getBuiltin();
     /**
      * <pre>
-     * Built-in asset event.
+     * Built-in asset event
      * </pre>
      *
      * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
@@ -16492,7 +16492,7 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * Ethereum ERC20 event.
+     * Ethereum ERC20 event
      * </pre>
      *
      * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
@@ -16501,7 +16501,7 @@ public final class ChainEvents {
     boolean hasErc20();
     /**
      * <pre>
-     * Ethereum ERC20 event.
+     * Ethereum ERC20 event
      * </pre>
      *
      * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
@@ -16510,7 +16510,7 @@ public final class ChainEvents {
     io.vegaprotocol.vega.ChainEvents.ERC20Event getErc20();
     /**
      * <pre>
-     * Ethereum ERC20 event.
+     * Ethereum ERC20 event
      * </pre>
      *
      * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
@@ -16519,7 +16519,7 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * Bitcoin BTC event.
+     * Bitcoin BTC event
      * </pre>
      *
      * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
@@ -16528,7 +16528,7 @@ public final class ChainEvents {
     boolean hasBtc();
     /**
      * <pre>
-     * Bitcoin BTC event.
+     * Bitcoin BTC event
      * </pre>
      *
      * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
@@ -16537,7 +16537,7 @@ public final class ChainEvents {
     io.vegaprotocol.vega.ChainEvents.BTCEvent getBtc();
     /**
      * <pre>
-     * Bitcoin BTC event.
+     * Bitcoin BTC event
      * </pre>
      *
      * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
@@ -16546,7 +16546,7 @@ public final class ChainEvents {
 
     /**
      * <pre>
-     * Validator event.
+     * Validator event
      * </pre>
      *
      * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
@@ -16555,7 +16555,7 @@ public final class ChainEvents {
     boolean hasValidator();
     /**
      * <pre>
-     * Validator event.
+     * Validator event
      * </pre>
      *
      * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
@@ -16564,7 +16564,7 @@ public final class ChainEvents {
     io.vegaprotocol.vega.ChainEvents.ValidatorEvent getValidator();
     /**
      * <pre>
-     * Validator event.
+     * Validator event
      * </pre>
      *
      * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
@@ -16575,7 +16575,7 @@ public final class ChainEvents {
   }
   /**
    * <pre>
-   * An event forwarded to the Vega network to provide information on events happening on other networks.
+   * An event forwarded to the Vega network to provide information on events happening on other networks
    * </pre>
    *
    * Protobuf type {@code vega.ChainEvent}
@@ -16590,7 +16590,7 @@ public final class ChainEvents {
       super(builder);
     }
     private ChainEvent() {
-      txID_ = "";
+      txId_ = "";
     }
 
     @java.lang.Override
@@ -16626,7 +16626,7 @@ public final class ChainEvents {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              txID_ = s;
+              txId_ = s;
               break;
             }
             case 16: {
@@ -16767,46 +16767,46 @@ public final class ChainEvents {
           eventCase_);
     }
 
-    public static final int TXID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object txID_;
+    public static final int TX_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object txId_;
     /**
      * <pre>
-     * The identifier of the transaction in which the events happened, usually a hash.
+     * The identifier of the transaction in which the events happened, usually a hash
      * </pre>
      *
-     * <code>string txID = 1 [json_name = "txID"];</code>
-     * @return The txID.
+     * <code>string tx_id = 1 [json_name = "txId"];</code>
+     * @return The txId.
      */
     @java.lang.Override
-    public java.lang.String getTxID() {
-      java.lang.Object ref = txID_;
+    public java.lang.String getTxId() {
+      java.lang.Object ref = txId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        txID_ = s;
+        txId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * The identifier of the transaction in which the events happened, usually a hash.
+     * The identifier of the transaction in which the events happened, usually a hash
      * </pre>
      *
-     * <code>string txID = 1 [json_name = "txID"];</code>
-     * @return The bytes for txID.
+     * <code>string tx_id = 1 [json_name = "txId"];</code>
+     * @return The bytes for txId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTxIDBytes() {
-      java.lang.Object ref = txID_;
+        getTxIdBytes() {
+      java.lang.Object ref = txId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        txID_ = b;
+        txId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -16817,7 +16817,7 @@ public final class ChainEvents {
     private long nonce_;
     /**
      * <pre>
-     * Arbitrary one-time integer used to prevent replay attacks.
+     * Arbitrary one-time integer used to prevent replay attacks
      * </pre>
      *
      * <code>uint64 nonce = 2 [json_name = "nonce"];</code>
@@ -16831,7 +16831,7 @@ public final class ChainEvents {
     public static final int BUILTIN_FIELD_NUMBER = 1001;
     /**
      * <pre>
-     * Built-in asset event.
+     * Built-in asset event
      * </pre>
      *
      * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
@@ -16843,7 +16843,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Built-in asset event.
+     * Built-in asset event
      * </pre>
      *
      * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
@@ -16858,7 +16858,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Built-in asset event.
+     * Built-in asset event
      * </pre>
      *
      * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
@@ -16874,7 +16874,7 @@ public final class ChainEvents {
     public static final int ERC20_FIELD_NUMBER = 1002;
     /**
      * <pre>
-     * Ethereum ERC20 event.
+     * Ethereum ERC20 event
      * </pre>
      *
      * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
@@ -16886,7 +16886,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Ethereum ERC20 event.
+     * Ethereum ERC20 event
      * </pre>
      *
      * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
@@ -16901,7 +16901,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Ethereum ERC20 event.
+     * Ethereum ERC20 event
      * </pre>
      *
      * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
@@ -16917,7 +16917,7 @@ public final class ChainEvents {
     public static final int BTC_FIELD_NUMBER = 1003;
     /**
      * <pre>
-     * Bitcoin BTC event.
+     * Bitcoin BTC event
      * </pre>
      *
      * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
@@ -16929,7 +16929,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Bitcoin BTC event.
+     * Bitcoin BTC event
      * </pre>
      *
      * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
@@ -16944,7 +16944,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Bitcoin BTC event.
+     * Bitcoin BTC event
      * </pre>
      *
      * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
@@ -16960,7 +16960,7 @@ public final class ChainEvents {
     public static final int VALIDATOR_FIELD_NUMBER = 1004;
     /**
      * <pre>
-     * Validator event.
+     * Validator event
      * </pre>
      *
      * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
@@ -16972,7 +16972,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Validator event.
+     * Validator event
      * </pre>
      *
      * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
@@ -16987,7 +16987,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * Validator event.
+     * Validator event
      * </pre>
      *
      * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
@@ -17014,8 +17014,8 @@ public final class ChainEvents {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTxIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, txID_);
+      if (!getTxIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, txId_);
       }
       if (nonce_ != 0L) {
         output.writeUInt64(2, nonce_);
@@ -17041,8 +17041,8 @@ public final class ChainEvents {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTxIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, txID_);
+      if (!getTxIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, txId_);
       }
       if (nonce_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -17079,8 +17079,8 @@ public final class ChainEvents {
       }
       io.vegaprotocol.vega.ChainEvents.ChainEvent other = (io.vegaprotocol.vega.ChainEvents.ChainEvent) obj;
 
-      if (!getTxID()
-          .equals(other.getTxID())) return false;
+      if (!getTxId()
+          .equals(other.getTxId())) return false;
       if (getNonce()
           != other.getNonce()) return false;
       if (!getEventCase().equals(other.getEventCase())) return false;
@@ -17115,8 +17115,8 @@ public final class ChainEvents {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TXID_FIELD_NUMBER;
-      hash = (53 * hash) + getTxID().hashCode();
+      hash = (37 * hash) + TX_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTxId().hashCode();
       hash = (37 * hash) + NONCE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getNonce());
@@ -17237,7 +17237,7 @@ public final class ChainEvents {
     }
     /**
      * <pre>
-     * An event forwarded to the Vega network to provide information on events happening on other networks.
+     * An event forwarded to the Vega network to provide information on events happening on other networks
      * </pre>
      *
      * Protobuf type {@code vega.ChainEvent}
@@ -17277,7 +17277,7 @@ public final class ChainEvents {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        txID_ = "";
+        txId_ = "";
 
         nonce_ = 0L;
 
@@ -17309,7 +17309,7 @@ public final class ChainEvents {
       @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.ChainEvent buildPartial() {
         io.vegaprotocol.vega.ChainEvents.ChainEvent result = new io.vegaprotocol.vega.ChainEvents.ChainEvent(this);
-        result.txID_ = txID_;
+        result.txId_ = txId_;
         result.nonce_ = nonce_;
         if (eventCase_ == 1001) {
           if (builtinBuilder_ == null) {
@@ -17388,8 +17388,8 @@ public final class ChainEvents {
 
       public Builder mergeFrom(io.vegaprotocol.vega.ChainEvents.ChainEvent other) {
         if (other == io.vegaprotocol.vega.ChainEvents.ChainEvent.getDefaultInstance()) return this;
-        if (!other.getTxID().isEmpty()) {
-          txID_ = other.txID_;
+        if (!other.getTxId().isEmpty()) {
+          txId_ = other.txId_;
           onChanged();
         }
         if (other.getNonce() != 0L) {
@@ -17460,22 +17460,22 @@ public final class ChainEvents {
       }
 
 
-      private java.lang.Object txID_ = "";
+      private java.lang.Object txId_ = "";
       /**
        * <pre>
-       * The identifier of the transaction in which the events happened, usually a hash.
+       * The identifier of the transaction in which the events happened, usually a hash
        * </pre>
        *
-       * <code>string txID = 1 [json_name = "txID"];</code>
-       * @return The txID.
+       * <code>string tx_id = 1 [json_name = "txId"];</code>
+       * @return The txId.
        */
-      public java.lang.String getTxID() {
-        java.lang.Object ref = txID_;
+      public java.lang.String getTxId() {
+        java.lang.Object ref = txId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          txID_ = s;
+          txId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -17483,20 +17483,20 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the transaction in which the events happened, usually a hash.
+       * The identifier of the transaction in which the events happened, usually a hash
        * </pre>
        *
-       * <code>string txID = 1 [json_name = "txID"];</code>
-       * @return The bytes for txID.
+       * <code>string tx_id = 1 [json_name = "txId"];</code>
+       * @return The bytes for txId.
        */
       public com.google.protobuf.ByteString
-          getTxIDBytes() {
-        java.lang.Object ref = txID_;
+          getTxIdBytes() {
+        java.lang.Object ref = txId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          txID_ = b;
+          txId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -17504,54 +17504,54 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * The identifier of the transaction in which the events happened, usually a hash.
+       * The identifier of the transaction in which the events happened, usually a hash
        * </pre>
        *
-       * <code>string txID = 1 [json_name = "txID"];</code>
-       * @param value The txID to set.
+       * <code>string tx_id = 1 [json_name = "txId"];</code>
+       * @param value The txId to set.
        * @return This builder for chaining.
        */
-      public Builder setTxID(
+      public Builder setTxId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        txID_ = value;
+        txId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The identifier of the transaction in which the events happened, usually a hash.
+       * The identifier of the transaction in which the events happened, usually a hash
        * </pre>
        *
-       * <code>string txID = 1 [json_name = "txID"];</code>
+       * <code>string tx_id = 1 [json_name = "txId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearTxID() {
+      public Builder clearTxId() {
 
-        txID_ = getDefaultInstance().getTxID();
+        txId_ = getDefaultInstance().getTxId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The identifier of the transaction in which the events happened, usually a hash.
+       * The identifier of the transaction in which the events happened, usually a hash
        * </pre>
        *
-       * <code>string txID = 1 [json_name = "txID"];</code>
-       * @param value The bytes for txID to set.
+       * <code>string tx_id = 1 [json_name = "txId"];</code>
+       * @param value The bytes for txId to set.
        * @return This builder for chaining.
        */
-      public Builder setTxIDBytes(
+      public Builder setTxIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        txID_ = value;
+        txId_ = value;
         onChanged();
         return this;
       }
@@ -17559,7 +17559,7 @@ public final class ChainEvents {
       private long nonce_ ;
       /**
        * <pre>
-       * Arbitrary one-time integer used to prevent replay attacks.
+       * Arbitrary one-time integer used to prevent replay attacks
        * </pre>
        *
        * <code>uint64 nonce = 2 [json_name = "nonce"];</code>
@@ -17571,7 +17571,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Arbitrary one-time integer used to prevent replay attacks.
+       * Arbitrary one-time integer used to prevent replay attacks
        * </pre>
        *
        * <code>uint64 nonce = 2 [json_name = "nonce"];</code>
@@ -17586,7 +17586,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Arbitrary one-time integer used to prevent replay attacks.
+       * Arbitrary one-time integer used to prevent replay attacks
        * </pre>
        *
        * <code>uint64 nonce = 2 [json_name = "nonce"];</code>
@@ -17603,7 +17603,7 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent, io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent.Builder, io.vegaprotocol.vega.ChainEvents.BuiltinAssetEventOrBuilder> builtinBuilder_;
       /**
        * <pre>
-       * Built-in asset event.
+       * Built-in asset event
        * </pre>
        *
        * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
@@ -17615,7 +17615,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset event.
+       * Built-in asset event
        * </pre>
        *
        * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
@@ -17637,7 +17637,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset event.
+       * Built-in asset event
        * </pre>
        *
        * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
@@ -17657,7 +17657,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset event.
+       * Built-in asset event
        * </pre>
        *
        * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
@@ -17675,7 +17675,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset event.
+       * Built-in asset event
        * </pre>
        *
        * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
@@ -17701,7 +17701,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset event.
+       * Built-in asset event
        * </pre>
        *
        * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
@@ -17724,7 +17724,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset event.
+       * Built-in asset event
        * </pre>
        *
        * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
@@ -17734,7 +17734,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset event.
+       * Built-in asset event
        * </pre>
        *
        * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
@@ -17752,7 +17752,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Built-in asset event.
+       * Built-in asset event
        * </pre>
        *
        * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
@@ -17780,7 +17780,7 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.ERC20Event, io.vegaprotocol.vega.ChainEvents.ERC20Event.Builder, io.vegaprotocol.vega.ChainEvents.ERC20EventOrBuilder> erc20Builder_;
       /**
        * <pre>
-       * Ethereum ERC20 event.
+       * Ethereum ERC20 event
        * </pre>
        *
        * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
@@ -17792,7 +17792,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Ethereum ERC20 event.
+       * Ethereum ERC20 event
        * </pre>
        *
        * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
@@ -17814,7 +17814,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Ethereum ERC20 event.
+       * Ethereum ERC20 event
        * </pre>
        *
        * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
@@ -17834,7 +17834,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Ethereum ERC20 event.
+       * Ethereum ERC20 event
        * </pre>
        *
        * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
@@ -17852,7 +17852,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Ethereum ERC20 event.
+       * Ethereum ERC20 event
        * </pre>
        *
        * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
@@ -17878,7 +17878,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Ethereum ERC20 event.
+       * Ethereum ERC20 event
        * </pre>
        *
        * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
@@ -17901,7 +17901,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Ethereum ERC20 event.
+       * Ethereum ERC20 event
        * </pre>
        *
        * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
@@ -17911,7 +17911,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Ethereum ERC20 event.
+       * Ethereum ERC20 event
        * </pre>
        *
        * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
@@ -17929,7 +17929,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Ethereum ERC20 event.
+       * Ethereum ERC20 event
        * </pre>
        *
        * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
@@ -17957,7 +17957,7 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.BTCEvent, io.vegaprotocol.vega.ChainEvents.BTCEvent.Builder, io.vegaprotocol.vega.ChainEvents.BTCEventOrBuilder> btcBuilder_;
       /**
        * <pre>
-       * Bitcoin BTC event.
+       * Bitcoin BTC event
        * </pre>
        *
        * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
@@ -17969,7 +17969,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Bitcoin BTC event.
+       * Bitcoin BTC event
        * </pre>
        *
        * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
@@ -17991,7 +17991,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Bitcoin BTC event.
+       * Bitcoin BTC event
        * </pre>
        *
        * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
@@ -18011,7 +18011,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Bitcoin BTC event.
+       * Bitcoin BTC event
        * </pre>
        *
        * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
@@ -18029,7 +18029,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Bitcoin BTC event.
+       * Bitcoin BTC event
        * </pre>
        *
        * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
@@ -18055,7 +18055,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Bitcoin BTC event.
+       * Bitcoin BTC event
        * </pre>
        *
        * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
@@ -18078,7 +18078,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Bitcoin BTC event.
+       * Bitcoin BTC event
        * </pre>
        *
        * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
@@ -18088,7 +18088,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Bitcoin BTC event.
+       * Bitcoin BTC event
        * </pre>
        *
        * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
@@ -18106,7 +18106,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Bitcoin BTC event.
+       * Bitcoin BTC event
        * </pre>
        *
        * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
@@ -18134,7 +18134,7 @@ public final class ChainEvents {
           io.vegaprotocol.vega.ChainEvents.ValidatorEvent, io.vegaprotocol.vega.ChainEvents.ValidatorEvent.Builder, io.vegaprotocol.vega.ChainEvents.ValidatorEventOrBuilder> validatorBuilder_;
       /**
        * <pre>
-       * Validator event.
+       * Validator event
        * </pre>
        *
        * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
@@ -18146,7 +18146,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Validator event.
+       * Validator event
        * </pre>
        *
        * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
@@ -18168,7 +18168,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Validator event.
+       * Validator event
        * </pre>
        *
        * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
@@ -18188,7 +18188,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Validator event.
+       * Validator event
        * </pre>
        *
        * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
@@ -18206,7 +18206,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Validator event.
+       * Validator event
        * </pre>
        *
        * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
@@ -18232,7 +18232,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Validator event.
+       * Validator event
        * </pre>
        *
        * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
@@ -18255,7 +18255,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Validator event.
+       * Validator event
        * </pre>
        *
        * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
@@ -18265,7 +18265,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Validator event.
+       * Validator event
        * </pre>
        *
        * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
@@ -18283,7 +18283,7 @@ public final class ChainEvents {
       }
       /**
        * <pre>
-       * Validator event.
+       * Validator event
        * </pre>
        *
        * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
@@ -18458,59 +18458,60 @@ public final class ChainEvents {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022chain_events.proto\022\004vega\"i\n\023BuiltinAss" +
-      "etDeposit\022 \n\013vegaAssetID\030\001 \001(\tR\013vegaAsse" +
-      "tID\022\030\n\007partyID\030\002 \001(\tR\007partyID\022\026\n\006amount\030" +
-      "\003 \001(\004R\006amount\"l\n\026BuiltinAssetWithdrawal\022" +
-      " \n\013vegaAssetID\030\001 \001(\tR\013vegaAssetID\022\030\n\007par" +
-      "tyID\030\002 \001(\tR\007partyID\022\026\n\006amount\030\003 \001(\004R\006amo" +
-      "unt\"\226\001\n\021BuiltinAssetEvent\0226\n\007deposit\030\351\007 " +
-      "\001(\0132\031.vega.BuiltinAssetDepositH\000R\007deposi" +
-      "t\022?\n\nwithdrawal\030\352\007 \001(\0132\034.vega.BuiltinAss" +
-      "etWithdrawalH\000R\nwithdrawalB\010\n\006action\"2\n\016" +
-      "ERC20AssetList\022 \n\013vegaAssetID\030\001 \001(\tR\013veg" +
-      "aAssetID\"4\n\020ERC20AssetDelist\022 \n\013vegaAsse" +
-      "tID\030\001 \001(\tR\013vegaAssetID\"\244\001\n\014ERC20Deposit\022" +
-      " \n\013vegaAssetID\030\001 \001(\tR\013vegaAssetID\0224\n\025sou" +
-      "rceEthereumAddress\030\002 \001(\tR\025sourceEthereum" +
-      "Address\022$\n\rtargetPartyID\030\003 \001(\tR\rtargetPa" +
-      "rtyID\022\026\n\006amount\030\004 \001(\tR\006amount\"\221\001\n\017ERC20W" +
-      "ithdrawal\022 \n\013vegaAssetID\030\001 \001(\tR\013vegaAsse" +
-      "tID\0224\n\025targetEthereumAddress\030\002 \001(\tR\025targ" +
-      "etEthereumAddress\022&\n\016referenceNonce\030\003 \001(" +
-      "\tR\016referenceNonce\"\241\002\n\nERC20Event\022\024\n\005inde" +
-      "x\030\001 \001(\004R\005index\022\024\n\005block\030\002 \001(\004R\005block\0225\n\t" +
-      "assetList\030\351\007 \001(\0132\024.vega.ERC20AssetListH\000" +
-      "R\tassetList\022;\n\013assetDelist\030\352\007 \001(\0132\026.vega" +
-      ".ERC20AssetDelistH\000R\013assetDelist\022/\n\007depo" +
-      "sit\030\353\007 \001(\0132\022.vega.ERC20DepositH\000R\007deposi" +
-      "t\0228\n\nwithdrawal\030\354\007 \001(\0132\025.vega.ERC20Withd" +
-      "rawalH\000R\nwithdrawalB\010\n\006action\"\200\001\n\nBTCDep" +
-      "osit\022 \n\013vegaAssetID\030\001 \001(\tR\013vegaAssetID\022*" +
-      "\n\020sourceBTCAddress\030\002 \001(\tR\020sourceBTCAddre" +
-      "ss\022$\n\rtargetPartyId\030\003 \001(\tR\rtargetPartyId" +
-      "\"\253\001\n\rBTCWithdrawal\022 \n\013vegaAssetID\030\001 \001(\tR" +
-      "\013vegaAssetID\022$\n\rsourcePartyId\030\002 \001(\tR\rsou" +
-      "rcePartyId\022*\n\020targetBTCAddress\030\003 \001(\tR\020ta" +
-      "rgetBTCAddress\022&\n\016referenceNonce\030\004 \001(\tR\016" +
-      "referenceNonce\"\247\001\n\010BTCEvent\022\024\n\005index\030\001 \001" +
-      "(\004R\005index\022\024\n\005block\030\002 \001(\004R\005block\022-\n\007depos" +
-      "it\030\351\007 \001(\0132\020.vega.BTCDepositH\000R\007deposit\0226" +
-      "\n\nwithdrawal\030\352\007 \001(\0132\023.vega.BTCWithdrawal" +
-      "H\000R\nwithdrawalB\010\n\006action\"+\n\017EthereumAddr" +
-      "ess\022\030\n\007address\030\001 \001(\tR\007address\"*\n\016Bitcoin" +
-      "Address\022\030\n\007address\030\001 \001(\tR\007address\"\235\001\n\nId" +
-      "entifier\022A\n\017ethereumAddress\030\001 \001(\0132\025.vega" +
-      ".EthereumAddressH\000R\017ethereumAddress\022>\n\016b" +
-      "itcoinAddress\030\002 \001(\0132\024.vega.BitcoinAddres" +
-      "sH\000R\016bitcoinAddressB\014\n\nidentifier\"0\n\014Add" +
-      "Validator\022 \n\002id\030\001 \001(\0132\020.vega.IdentifierR" +
-      "\002id\"3\n\017RemoveValidator\022 \n\002id\030\001 \001(\0132\020.veg" +
-      "a.IdentifierR\002id\"\211\001\n\016ValidatorEvent\022\032\n\010s" +
-      "ourceID\030\001 \001(\tR\010sourceID\022\'\n\003add\030\351\007 \001(\0132\022." +
-      "vega.AddValidatorH\000R\003add\022(\n\002rm\030\352\007 \001(\0132\025." +
-      "vega.RemoveValidatorH\000R\002rmB\010\n\006action\"\374\001\n" +
-      "\nChainEvent\022\022\n\004txID\030\001 \001(\tR\004txID\022\024\n\005nonce" +
+      "\n\022chain_events.proto\022\004vega\"l\n\023BuiltinAss" +
+      "etDeposit\022\"\n\rvega_asset_id\030\001 \001(\tR\013vegaAs" +
+      "setId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\026\n\006amou" +
+      "nt\030\003 \001(\004R\006amount\"o\n\026BuiltinAssetWithdraw" +
+      "al\022\"\n\rvega_asset_id\030\001 \001(\tR\013vegaAssetId\022\031" +
+      "\n\010party_id\030\002 \001(\tR\007partyId\022\026\n\006amount\030\003 \001(" +
+      "\004R\006amount\"\226\001\n\021BuiltinAssetEvent\0226\n\007depos" +
+      "it\030\351\007 \001(\0132\031.vega.BuiltinAssetDepositH\000R\007" +
+      "deposit\022?\n\nwithdrawal\030\352\007 \001(\0132\034.vega.Buil" +
+      "tinAssetWithdrawalH\000R\nwithdrawalB\010\n\006acti" +
+      "on\"4\n\016ERC20AssetList\022\"\n\rvega_asset_id\030\001 " +
+      "\001(\tR\013vegaAssetId\"6\n\020ERC20AssetDelist\022\"\n\r" +
+      "vega_asset_id\030\001 \001(\tR\013vegaAssetId\"\252\001\n\014ERC" +
+      "20Deposit\022\"\n\rvega_asset_id\030\001 \001(\tR\013vegaAs" +
+      "setId\0226\n\027source_ethereum_address\030\002 \001(\tR\025" +
+      "sourceEthereumAddress\022&\n\017target_party_id" +
+      "\030\003 \001(\tR\rtargetPartyId\022\026\n\006amount\030\004 \001(\tR\006a" +
+      "mount\"\226\001\n\017ERC20Withdrawal\022\"\n\rvega_asset_" +
+      "id\030\001 \001(\tR\013vegaAssetId\0226\n\027target_ethereum" +
+      "_address\030\002 \001(\tR\025targetEthereumAddress\022\'\n" +
+      "\017reference_nonce\030\003 \001(\tR\016referenceNonce\"\243" +
+      "\002\n\nERC20Event\022\024\n\005index\030\001 \001(\004R\005index\022\024\n\005b" +
+      "lock\030\002 \001(\004R\005block\0226\n\nasset_list\030\351\007 \001(\0132\024" +
+      ".vega.ERC20AssetListH\000R\tassetList\022<\n\014ass" +
+      "et_delist\030\352\007 \001(\0132\026.vega.ERC20AssetDelist" +
+      "H\000R\013assetDelist\022/\n\007deposit\030\353\007 \001(\0132\022.vega" +
+      ".ERC20DepositH\000R\007deposit\0228\n\nwithdrawal\030\354" +
+      "\007 \001(\0132\025.vega.ERC20WithdrawalH\000R\nwithdraw" +
+      "alB\010\n\006action\"\206\001\n\nBTCDeposit\022\"\n\rvega_asse" +
+      "t_id\030\001 \001(\tR\013vegaAssetId\022,\n\022source_btc_ad" +
+      "dress\030\002 \001(\tR\020sourceBtcAddress\022&\n\017target_" +
+      "party_id\030\003 \001(\tR\rtargetPartyId\"\262\001\n\rBTCWit" +
+      "hdrawal\022\"\n\rvega_asset_id\030\001 \001(\tR\013vegaAsse" +
+      "tId\022&\n\017source_party_id\030\002 \001(\tR\rsourcePart" +
+      "yId\022,\n\022target_btc_address\030\003 \001(\tR\020targetB" +
+      "tcAddress\022\'\n\017reference_nonce\030\004 \001(\tR\016refe" +
+      "renceNonce\"\247\001\n\010BTCEvent\022\024\n\005index\030\001 \001(\004R\005" +
+      "index\022\024\n\005block\030\002 \001(\004R\005block\022-\n\007deposit\030\351" +
+      "\007 \001(\0132\020.vega.BTCDepositH\000R\007deposit\0226\n\nwi" +
+      "thdrawal\030\352\007 \001(\0132\023.vega.BTCWithdrawalH\000R\n" +
+      "withdrawalB\010\n\006action\"+\n\017EthereumAddress\022" +
+      "\030\n\007address\030\001 \001(\tR\007address\"*\n\016BitcoinAddr" +
+      "ess\022\030\n\007address\030\001 \001(\tR\007address\"\237\001\n\nIdenti" +
+      "fier\022B\n\020ethereum_address\030\001 \001(\0132\025.vega.Et" +
+      "hereumAddressH\000R\017ethereumAddress\022?\n\017bitc" +
+      "oin_address\030\002 \001(\0132\024.vega.BitcoinAddressH" +
+      "\000R\016bitcoinAddressB\014\n\nidentifier\"0\n\014AddVa" +
+      "lidator\022 \n\002id\030\001 \001(\0132\020.vega.IdentifierR\002i" +
+      "d\"3\n\017RemoveValidator\022 \n\002id\030\001 \001(\0132\020.vega." +
+      "IdentifierR\002id\"\212\001\n\016ValidatorEvent\022\033\n\tsou" +
+      "rce_id\030\001 \001(\tR\010sourceId\022\'\n\003add\030\351\007 \001(\0132\022.v" +
+      "ega.AddValidatorH\000R\003add\022(\n\002rm\030\352\007 \001(\0132\025.v" +
+      "ega.RemoveValidatorH\000R\002rmB\010\n\006action\"\375\001\n\n" +
+      "ChainEvent\022\023\n\005tx_id\030\001 \001(\tR\004txId\022\024\n\005nonce" +
       "\030\002 \001(\004R\005nonce\0224\n\007builtin\030\351\007 \001(\0132\027.vega.B" +
       "uiltinAssetEventH\000R\007builtin\022)\n\005erc20\030\352\007 " +
       "\001(\0132\020.vega.ERC20EventH\000R\005erc20\022#\n\003btc\030\353\007" +
@@ -18528,13 +18529,13 @@ public final class ChainEvents {
     internal_static_vega_BuiltinAssetDeposit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_BuiltinAssetDeposit_descriptor,
-        new java.lang.String[] { "VegaAssetID", "PartyID", "Amount", });
+        new java.lang.String[] { "VegaAssetId", "PartyId", "Amount", });
     internal_static_vega_BuiltinAssetWithdrawal_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_vega_BuiltinAssetWithdrawal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_BuiltinAssetWithdrawal_descriptor,
-        new java.lang.String[] { "VegaAssetID", "PartyID", "Amount", });
+        new java.lang.String[] { "VegaAssetId", "PartyId", "Amount", });
     internal_static_vega_BuiltinAssetEvent_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_vega_BuiltinAssetEvent_fieldAccessorTable = new
@@ -18546,25 +18547,25 @@ public final class ChainEvents {
     internal_static_vega_ERC20AssetList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_ERC20AssetList_descriptor,
-        new java.lang.String[] { "VegaAssetID", });
+        new java.lang.String[] { "VegaAssetId", });
     internal_static_vega_ERC20AssetDelist_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_vega_ERC20AssetDelist_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_ERC20AssetDelist_descriptor,
-        new java.lang.String[] { "VegaAssetID", });
+        new java.lang.String[] { "VegaAssetId", });
     internal_static_vega_ERC20Deposit_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_vega_ERC20Deposit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_ERC20Deposit_descriptor,
-        new java.lang.String[] { "VegaAssetID", "SourceEthereumAddress", "TargetPartyID", "Amount", });
+        new java.lang.String[] { "VegaAssetId", "SourceEthereumAddress", "TargetPartyId", "Amount", });
     internal_static_vega_ERC20Withdrawal_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_vega_ERC20Withdrawal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_ERC20Withdrawal_descriptor,
-        new java.lang.String[] { "VegaAssetID", "TargetEthereumAddress", "ReferenceNonce", });
+        new java.lang.String[] { "VegaAssetId", "TargetEthereumAddress", "ReferenceNonce", });
     internal_static_vega_ERC20Event_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_vega_ERC20Event_fieldAccessorTable = new
@@ -18576,13 +18577,13 @@ public final class ChainEvents {
     internal_static_vega_BTCDeposit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_BTCDeposit_descriptor,
-        new java.lang.String[] { "VegaAssetID", "SourceBTCAddress", "TargetPartyId", });
+        new java.lang.String[] { "VegaAssetId", "SourceBtcAddress", "TargetPartyId", });
     internal_static_vega_BTCWithdrawal_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_vega_BTCWithdrawal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_BTCWithdrawal_descriptor,
-        new java.lang.String[] { "VegaAssetID", "SourcePartyId", "TargetBTCAddress", "ReferenceNonce", });
+        new java.lang.String[] { "VegaAssetId", "SourcePartyId", "TargetBtcAddress", "ReferenceNonce", });
     internal_static_vega_BTCEvent_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_vega_BTCEvent_fieldAccessorTable = new
@@ -18624,13 +18625,13 @@ public final class ChainEvents {
     internal_static_vega_ValidatorEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_ValidatorEvent_descriptor,
-        new java.lang.String[] { "SourceID", "Add", "Rm", "Action", });
+        new java.lang.String[] { "SourceId", "Add", "Rm", "Action", });
     internal_static_vega_ChainEvent_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_vega_ChainEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_ChainEvent_descriptor,
-        new java.lang.String[] { "TxID", "Nonce", "Builtin", "Erc20", "Btc", "Validator", "Event", });
+        new java.lang.String[] { "TxId", "Nonce", "Builtin", "Erc20", "Btc", "Validator", "Event", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -3,9 +3,7 @@
 package api
 
 import (
-	proto "code.vegaprotocol.io/vega/proto"
 	context "context"
-	empty "github.com/golang/protobuf/ptypes/empty"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -15,16 +13,16 @@ import (
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion7
 
-// TradingClient is the client API for Trading service.
+// TradingServiceClient is the client API for TradingService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type TradingClient interface {
+type TradingServiceClient interface {
 	// Prepare a submit order request
-	PrepareSubmitOrder(ctx context.Context, in *SubmitOrderRequest, opts ...grpc.CallOption) (*PrepareSubmitOrderResponse, error)
+	PrepareSubmitOrder(ctx context.Context, in *PrepareSubmitOrderRequest, opts ...grpc.CallOption) (*PrepareSubmitOrderResponse, error)
 	// Prepare a cancel order request
-	PrepareCancelOrder(ctx context.Context, in *CancelOrderRequest, opts ...grpc.CallOption) (*PrepareCancelOrderResponse, error)
+	PrepareCancelOrder(ctx context.Context, in *PrepareCancelOrderRequest, opts ...grpc.CallOption) (*PrepareCancelOrderResponse, error)
 	// Prepare an amend order request
-	PrepareAmendOrder(ctx context.Context, in *AmendOrderRequest, opts ...grpc.CallOption) (*PrepareAmendOrderResponse, error)
+	PrepareAmendOrder(ctx context.Context, in *PrepareAmendOrderRequest, opts ...grpc.CallOption) (*PrepareAmendOrderResponse, error)
 	// Request a withdrawal
 	PrepareWithdraw(ctx context.Context, in *PrepareWithdrawRequest, opts ...grpc.CallOption) (*PrepareWithdrawResponse, error)
 	// Submit a signed transaction
@@ -35,108 +33,109 @@ type TradingClient interface {
 	PrepareVote(ctx context.Context, in *PrepareVoteRequest, opts ...grpc.CallOption) (*PrepareVoteResponse, error)
 	// Propagate a chain event
 	PropagateChainEvent(ctx context.Context, in *PropagateChainEventRequest, opts ...grpc.CallOption) (*PropagateChainEventResponse, error)
+	// Prepare a liquidity provision request
 	PrepareLiquidityProvision(ctx context.Context, in *PrepareLiquidityProvisionRequest, opts ...grpc.CallOption) (*PrepareLiquidityProvisionResponse, error)
 }
 
-type tradingClient struct {
+type tradingServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewTradingClient(cc grpc.ClientConnInterface) TradingClient {
-	return &tradingClient{cc}
+func NewTradingServiceClient(cc grpc.ClientConnInterface) TradingServiceClient {
+	return &tradingServiceClient{cc}
 }
 
-func (c *tradingClient) PrepareSubmitOrder(ctx context.Context, in *SubmitOrderRequest, opts ...grpc.CallOption) (*PrepareSubmitOrderResponse, error) {
+func (c *tradingServiceClient) PrepareSubmitOrder(ctx context.Context, in *PrepareSubmitOrderRequest, opts ...grpc.CallOption) (*PrepareSubmitOrderResponse, error) {
 	out := new(PrepareSubmitOrderResponse)
-	err := c.cc.Invoke(ctx, "/api.trading/PrepareSubmitOrder", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingService/PrepareSubmitOrder", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingClient) PrepareCancelOrder(ctx context.Context, in *CancelOrderRequest, opts ...grpc.CallOption) (*PrepareCancelOrderResponse, error) {
+func (c *tradingServiceClient) PrepareCancelOrder(ctx context.Context, in *PrepareCancelOrderRequest, opts ...grpc.CallOption) (*PrepareCancelOrderResponse, error) {
 	out := new(PrepareCancelOrderResponse)
-	err := c.cc.Invoke(ctx, "/api.trading/PrepareCancelOrder", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingService/PrepareCancelOrder", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingClient) PrepareAmendOrder(ctx context.Context, in *AmendOrderRequest, opts ...grpc.CallOption) (*PrepareAmendOrderResponse, error) {
+func (c *tradingServiceClient) PrepareAmendOrder(ctx context.Context, in *PrepareAmendOrderRequest, opts ...grpc.CallOption) (*PrepareAmendOrderResponse, error) {
 	out := new(PrepareAmendOrderResponse)
-	err := c.cc.Invoke(ctx, "/api.trading/PrepareAmendOrder", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingService/PrepareAmendOrder", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingClient) PrepareWithdraw(ctx context.Context, in *PrepareWithdrawRequest, opts ...grpc.CallOption) (*PrepareWithdrawResponse, error) {
+func (c *tradingServiceClient) PrepareWithdraw(ctx context.Context, in *PrepareWithdrawRequest, opts ...grpc.CallOption) (*PrepareWithdrawResponse, error) {
 	out := new(PrepareWithdrawResponse)
-	err := c.cc.Invoke(ctx, "/api.trading/PrepareWithdraw", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingService/PrepareWithdraw", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingClient) SubmitTransaction(ctx context.Context, in *SubmitTransactionRequest, opts ...grpc.CallOption) (*SubmitTransactionResponse, error) {
+func (c *tradingServiceClient) SubmitTransaction(ctx context.Context, in *SubmitTransactionRequest, opts ...grpc.CallOption) (*SubmitTransactionResponse, error) {
 	out := new(SubmitTransactionResponse)
-	err := c.cc.Invoke(ctx, "/api.trading/SubmitTransaction", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingService/SubmitTransaction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingClient) PrepareProposal(ctx context.Context, in *PrepareProposalRequest, opts ...grpc.CallOption) (*PrepareProposalResponse, error) {
+func (c *tradingServiceClient) PrepareProposal(ctx context.Context, in *PrepareProposalRequest, opts ...grpc.CallOption) (*PrepareProposalResponse, error) {
 	out := new(PrepareProposalResponse)
-	err := c.cc.Invoke(ctx, "/api.trading/PrepareProposal", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingService/PrepareProposal", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingClient) PrepareVote(ctx context.Context, in *PrepareVoteRequest, opts ...grpc.CallOption) (*PrepareVoteResponse, error) {
+func (c *tradingServiceClient) PrepareVote(ctx context.Context, in *PrepareVoteRequest, opts ...grpc.CallOption) (*PrepareVoteResponse, error) {
 	out := new(PrepareVoteResponse)
-	err := c.cc.Invoke(ctx, "/api.trading/PrepareVote", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingService/PrepareVote", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingClient) PropagateChainEvent(ctx context.Context, in *PropagateChainEventRequest, opts ...grpc.CallOption) (*PropagateChainEventResponse, error) {
+func (c *tradingServiceClient) PropagateChainEvent(ctx context.Context, in *PropagateChainEventRequest, opts ...grpc.CallOption) (*PropagateChainEventResponse, error) {
 	out := new(PropagateChainEventResponse)
-	err := c.cc.Invoke(ctx, "/api.trading/PropagateChainEvent", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingService/PropagateChainEvent", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingClient) PrepareLiquidityProvision(ctx context.Context, in *PrepareLiquidityProvisionRequest, opts ...grpc.CallOption) (*PrepareLiquidityProvisionResponse, error) {
+func (c *tradingServiceClient) PrepareLiquidityProvision(ctx context.Context, in *PrepareLiquidityProvisionRequest, opts ...grpc.CallOption) (*PrepareLiquidityProvisionResponse, error) {
 	out := new(PrepareLiquidityProvisionResponse)
-	err := c.cc.Invoke(ctx, "/api.trading/PrepareLiquidityProvision", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingService/PrepareLiquidityProvision", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// TradingServer is the server API for Trading service.
-// All implementations must embed UnimplementedTradingServer
+// TradingServiceServer is the server API for TradingService service.
+// All implementations must embed UnimplementedTradingServiceServer
 // for forward compatibility
-type TradingServer interface {
+type TradingServiceServer interface {
 	// Prepare a submit order request
-	PrepareSubmitOrder(context.Context, *SubmitOrderRequest) (*PrepareSubmitOrderResponse, error)
+	PrepareSubmitOrder(context.Context, *PrepareSubmitOrderRequest) (*PrepareSubmitOrderResponse, error)
 	// Prepare a cancel order request
-	PrepareCancelOrder(context.Context, *CancelOrderRequest) (*PrepareCancelOrderResponse, error)
+	PrepareCancelOrder(context.Context, *PrepareCancelOrderRequest) (*PrepareCancelOrderResponse, error)
 	// Prepare an amend order request
-	PrepareAmendOrder(context.Context, *AmendOrderRequest) (*PrepareAmendOrderResponse, error)
+	PrepareAmendOrder(context.Context, *PrepareAmendOrderRequest) (*PrepareAmendOrderResponse, error)
 	// Request a withdrawal
 	PrepareWithdraw(context.Context, *PrepareWithdrawRequest) (*PrepareWithdrawResponse, error)
 	// Submit a signed transaction
@@ -147,299 +146,300 @@ type TradingServer interface {
 	PrepareVote(context.Context, *PrepareVoteRequest) (*PrepareVoteResponse, error)
 	// Propagate a chain event
 	PropagateChainEvent(context.Context, *PropagateChainEventRequest) (*PropagateChainEventResponse, error)
+	// Prepare a liquidity provision request
 	PrepareLiquidityProvision(context.Context, *PrepareLiquidityProvisionRequest) (*PrepareLiquidityProvisionResponse, error)
-	mustEmbedUnimplementedTradingServer()
+	mustEmbedUnimplementedTradingServiceServer()
 }
 
-// UnimplementedTradingServer must be embedded to have forward compatible implementations.
-type UnimplementedTradingServer struct {
+// UnimplementedTradingServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedTradingServiceServer struct {
 }
 
-func (UnimplementedTradingServer) PrepareSubmitOrder(context.Context, *SubmitOrderRequest) (*PrepareSubmitOrderResponse, error) {
+func (UnimplementedTradingServiceServer) PrepareSubmitOrder(context.Context, *PrepareSubmitOrderRequest) (*PrepareSubmitOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PrepareSubmitOrder not implemented")
 }
-func (UnimplementedTradingServer) PrepareCancelOrder(context.Context, *CancelOrderRequest) (*PrepareCancelOrderResponse, error) {
+func (UnimplementedTradingServiceServer) PrepareCancelOrder(context.Context, *PrepareCancelOrderRequest) (*PrepareCancelOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PrepareCancelOrder not implemented")
 }
-func (UnimplementedTradingServer) PrepareAmendOrder(context.Context, *AmendOrderRequest) (*PrepareAmendOrderResponse, error) {
+func (UnimplementedTradingServiceServer) PrepareAmendOrder(context.Context, *PrepareAmendOrderRequest) (*PrepareAmendOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PrepareAmendOrder not implemented")
 }
-func (UnimplementedTradingServer) PrepareWithdraw(context.Context, *PrepareWithdrawRequest) (*PrepareWithdrawResponse, error) {
+func (UnimplementedTradingServiceServer) PrepareWithdraw(context.Context, *PrepareWithdrawRequest) (*PrepareWithdrawResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PrepareWithdraw not implemented")
 }
-func (UnimplementedTradingServer) SubmitTransaction(context.Context, *SubmitTransactionRequest) (*SubmitTransactionResponse, error) {
+func (UnimplementedTradingServiceServer) SubmitTransaction(context.Context, *SubmitTransactionRequest) (*SubmitTransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SubmitTransaction not implemented")
 }
-func (UnimplementedTradingServer) PrepareProposal(context.Context, *PrepareProposalRequest) (*PrepareProposalResponse, error) {
+func (UnimplementedTradingServiceServer) PrepareProposal(context.Context, *PrepareProposalRequest) (*PrepareProposalResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PrepareProposal not implemented")
 }
-func (UnimplementedTradingServer) PrepareVote(context.Context, *PrepareVoteRequest) (*PrepareVoteResponse, error) {
+func (UnimplementedTradingServiceServer) PrepareVote(context.Context, *PrepareVoteRequest) (*PrepareVoteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PrepareVote not implemented")
 }
-func (UnimplementedTradingServer) PropagateChainEvent(context.Context, *PropagateChainEventRequest) (*PropagateChainEventResponse, error) {
+func (UnimplementedTradingServiceServer) PropagateChainEvent(context.Context, *PropagateChainEventRequest) (*PropagateChainEventResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PropagateChainEvent not implemented")
 }
-func (UnimplementedTradingServer) PrepareLiquidityProvision(context.Context, *PrepareLiquidityProvisionRequest) (*PrepareLiquidityProvisionResponse, error) {
+func (UnimplementedTradingServiceServer) PrepareLiquidityProvision(context.Context, *PrepareLiquidityProvisionRequest) (*PrepareLiquidityProvisionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PrepareLiquidityProvision not implemented")
 }
-func (UnimplementedTradingServer) mustEmbedUnimplementedTradingServer() {}
+func (UnimplementedTradingServiceServer) mustEmbedUnimplementedTradingServiceServer() {}
 
-// UnsafeTradingServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to TradingServer will
+// UnsafeTradingServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to TradingServiceServer will
 // result in compilation errors.
-type UnsafeTradingServer interface {
-	mustEmbedUnimplementedTradingServer()
+type UnsafeTradingServiceServer interface {
+	mustEmbedUnimplementedTradingServiceServer()
 }
 
-func RegisterTradingServer(s grpc.ServiceRegistrar, srv TradingServer) {
-	s.RegisterService(&_Trading_serviceDesc, srv)
+func RegisterTradingServiceServer(s grpc.ServiceRegistrar, srv TradingServiceServer) {
+	s.RegisterService(&_TradingService_serviceDesc, srv)
 }
 
-func _Trading_PrepareSubmitOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SubmitOrderRequest)
+func _TradingService_PrepareSubmitOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrepareSubmitOrderRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingServer).PrepareSubmitOrder(ctx, in)
+		return srv.(TradingServiceServer).PrepareSubmitOrder(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading/PrepareSubmitOrder",
+		FullMethod: "/api.v1.TradingService/PrepareSubmitOrder",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingServer).PrepareSubmitOrder(ctx, req.(*SubmitOrderRequest))
+		return srv.(TradingServiceServer).PrepareSubmitOrder(ctx, req.(*PrepareSubmitOrderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Trading_PrepareCancelOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CancelOrderRequest)
+func _TradingService_PrepareCancelOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrepareCancelOrderRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingServer).PrepareCancelOrder(ctx, in)
+		return srv.(TradingServiceServer).PrepareCancelOrder(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading/PrepareCancelOrder",
+		FullMethod: "/api.v1.TradingService/PrepareCancelOrder",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingServer).PrepareCancelOrder(ctx, req.(*CancelOrderRequest))
+		return srv.(TradingServiceServer).PrepareCancelOrder(ctx, req.(*PrepareCancelOrderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Trading_PrepareAmendOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AmendOrderRequest)
+func _TradingService_PrepareAmendOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrepareAmendOrderRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingServer).PrepareAmendOrder(ctx, in)
+		return srv.(TradingServiceServer).PrepareAmendOrder(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading/PrepareAmendOrder",
+		FullMethod: "/api.v1.TradingService/PrepareAmendOrder",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingServer).PrepareAmendOrder(ctx, req.(*AmendOrderRequest))
+		return srv.(TradingServiceServer).PrepareAmendOrder(ctx, req.(*PrepareAmendOrderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Trading_PrepareWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingService_PrepareWithdraw_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PrepareWithdrawRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingServer).PrepareWithdraw(ctx, in)
+		return srv.(TradingServiceServer).PrepareWithdraw(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading/PrepareWithdraw",
+		FullMethod: "/api.v1.TradingService/PrepareWithdraw",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingServer).PrepareWithdraw(ctx, req.(*PrepareWithdrawRequest))
+		return srv.(TradingServiceServer).PrepareWithdraw(ctx, req.(*PrepareWithdrawRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Trading_SubmitTransaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingService_SubmitTransaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SubmitTransactionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingServer).SubmitTransaction(ctx, in)
+		return srv.(TradingServiceServer).SubmitTransaction(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading/SubmitTransaction",
+		FullMethod: "/api.v1.TradingService/SubmitTransaction",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingServer).SubmitTransaction(ctx, req.(*SubmitTransactionRequest))
+		return srv.(TradingServiceServer).SubmitTransaction(ctx, req.(*SubmitTransactionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Trading_PrepareProposal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingService_PrepareProposal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PrepareProposalRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingServer).PrepareProposal(ctx, in)
+		return srv.(TradingServiceServer).PrepareProposal(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading/PrepareProposal",
+		FullMethod: "/api.v1.TradingService/PrepareProposal",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingServer).PrepareProposal(ctx, req.(*PrepareProposalRequest))
+		return srv.(TradingServiceServer).PrepareProposal(ctx, req.(*PrepareProposalRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Trading_PrepareVote_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingService_PrepareVote_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PrepareVoteRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingServer).PrepareVote(ctx, in)
+		return srv.(TradingServiceServer).PrepareVote(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading/PrepareVote",
+		FullMethod: "/api.v1.TradingService/PrepareVote",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingServer).PrepareVote(ctx, req.(*PrepareVoteRequest))
+		return srv.(TradingServiceServer).PrepareVote(ctx, req.(*PrepareVoteRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Trading_PropagateChainEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingService_PropagateChainEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PropagateChainEventRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingServer).PropagateChainEvent(ctx, in)
+		return srv.(TradingServiceServer).PropagateChainEvent(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading/PropagateChainEvent",
+		FullMethod: "/api.v1.TradingService/PropagateChainEvent",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingServer).PropagateChainEvent(ctx, req.(*PropagateChainEventRequest))
+		return srv.(TradingServiceServer).PropagateChainEvent(ctx, req.(*PropagateChainEventRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Trading_PrepareLiquidityProvision_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingService_PrepareLiquidityProvision_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PrepareLiquidityProvisionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingServer).PrepareLiquidityProvision(ctx, in)
+		return srv.(TradingServiceServer).PrepareLiquidityProvision(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading/PrepareLiquidityProvision",
+		FullMethod: "/api.v1.TradingService/PrepareLiquidityProvision",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingServer).PrepareLiquidityProvision(ctx, req.(*PrepareLiquidityProvisionRequest))
+		return srv.(TradingServiceServer).PrepareLiquidityProvision(ctx, req.(*PrepareLiquidityProvisionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _Trading_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "api.trading",
-	HandlerType: (*TradingServer)(nil),
+var _TradingService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "api.v1.TradingService",
+	HandlerType: (*TradingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "PrepareSubmitOrder",
-			Handler:    _Trading_PrepareSubmitOrder_Handler,
+			Handler:    _TradingService_PrepareSubmitOrder_Handler,
 		},
 		{
 			MethodName: "PrepareCancelOrder",
-			Handler:    _Trading_PrepareCancelOrder_Handler,
+			Handler:    _TradingService_PrepareCancelOrder_Handler,
 		},
 		{
 			MethodName: "PrepareAmendOrder",
-			Handler:    _Trading_PrepareAmendOrder_Handler,
+			Handler:    _TradingService_PrepareAmendOrder_Handler,
 		},
 		{
 			MethodName: "PrepareWithdraw",
-			Handler:    _Trading_PrepareWithdraw_Handler,
+			Handler:    _TradingService_PrepareWithdraw_Handler,
 		},
 		{
 			MethodName: "SubmitTransaction",
-			Handler:    _Trading_SubmitTransaction_Handler,
+			Handler:    _TradingService_SubmitTransaction_Handler,
 		},
 		{
 			MethodName: "PrepareProposal",
-			Handler:    _Trading_PrepareProposal_Handler,
+			Handler:    _TradingService_PrepareProposal_Handler,
 		},
 		{
 			MethodName: "PrepareVote",
-			Handler:    _Trading_PrepareVote_Handler,
+			Handler:    _TradingService_PrepareVote_Handler,
 		},
 		{
 			MethodName: "PropagateChainEvent",
-			Handler:    _Trading_PropagateChainEvent_Handler,
+			Handler:    _TradingService_PropagateChainEvent_Handler,
 		},
 		{
 			MethodName: "PrepareLiquidityProvision",
-			Handler:    _Trading_PrepareLiquidityProvision_Handler,
+			Handler:    _TradingService_PrepareLiquidityProvision_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "api/trading.proto",
 }
 
-// TradingDataClient is the client API for TradingData service.
+// TradingDataServiceClient is the client API for TradingDataService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type TradingDataClient interface {
+type TradingDataServiceClient interface {
 	// Get a list of Accounts by Market
 	MarketAccounts(ctx context.Context, in *MarketAccountsRequest, opts ...grpc.CallOption) (*MarketAccountsResponse, error)
 	// Get a list of Accounts by Party
 	PartyAccounts(ctx context.Context, in *PartyAccountsRequest, opts ...grpc.CallOption) (*PartyAccountsResponse, error)
-	// Get the list of infrastructure fees accounts filter eventually by assets
+	// Get a list of infrastructure fees accounts filter eventually by assets
 	FeeInfrastructureAccounts(ctx context.Context, in *FeeInfrastructureAccountsRequest, opts ...grpc.CallOption) (*FeeInfrastructureAccountsResponse, error)
 	// Get a list of Candles by Market
 	Candles(ctx context.Context, in *CandlesRequest, opts ...grpc.CallOption) (*CandlesResponse, error)
-	// Get Market Data by MarketID
+	// Get Market Data by Market ID
 	MarketDataByID(ctx context.Context, in *MarketDataByIDRequest, opts ...grpc.CallOption) (*MarketDataByIDResponse, error)
 	// Get a list of Market Data
-	MarketsData(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*MarketsDataResponse, error)
+	MarketsData(ctx context.Context, in *MarketsDataRequest, opts ...grpc.CallOption) (*MarketsDataResponse, error)
 	// Get a Market by ID
 	MarketByID(ctx context.Context, in *MarketByIDRequest, opts ...grpc.CallOption) (*MarketByIDResponse, error)
 	// Get Market Depth
 	MarketDepth(ctx context.Context, in *MarketDepthRequest, opts ...grpc.CallOption) (*MarketDepthResponse, error)
 	// Get a list of Markets
-	Markets(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*MarketsResponse, error)
-	// Get an Order by Market and OrderID
-	OrderByMarketAndID(ctx context.Context, in *OrderByMarketAndIdRequest, opts ...grpc.CallOption) (*OrderByMarketAndIdResponse, error)
+	Markets(ctx context.Context, in *MarketsRequest, opts ...grpc.CallOption) (*MarketsResponse, error)
+	// Get an Order by Market and Order ID
+	OrderByMarketAndID(ctx context.Context, in *OrderByMarketAndIDRequest, opts ...grpc.CallOption) (*OrderByMarketAndIDResponse, error)
 	// Get an Order by Pending Order reference (UUID)
 	OrderByReference(ctx context.Context, in *OrderByReferenceRequest, opts ...grpc.CallOption) (*OrderByReferenceResponse, error)
 	// Get a list of Orders by Market
 	OrdersByMarket(ctx context.Context, in *OrdersByMarketRequest, opts ...grpc.CallOption) (*OrdersByMarketResponse, error)
 	// Get a list of Orders by Party
 	OrdersByParty(ctx context.Context, in *OrdersByPartyRequest, opts ...grpc.CallOption) (*OrdersByPartyResponse, error)
-	// Get a specific order by orderID
-	OrderByID(ctx context.Context, in *OrderByIDRequest, opts ...grpc.CallOption) (*proto.Order, error)
+	// Get a specific order by order ID
+	OrderByID(ctx context.Context, in *OrderByIDRequest, opts ...grpc.CallOption) (*OrderByIDResponse, error)
 	// Get all versions of the order by its orderID
-	OrderVersionsByID(ctx context.Context, in *OrderVersionsByIDRequest, opts ...grpc.CallOption) (*OrderVersionsResponse, error)
-	// Get Margin Levels by PartyID
+	OrderVersionsByID(ctx context.Context, in *OrderVersionsByIDRequest, opts ...grpc.CallOption) (*OrderVersionsByIDResponse, error)
+	// Get Margin Levels by Party ID
 	MarginLevels(ctx context.Context, in *MarginLevelsRequest, opts ...grpc.CallOption) (*MarginLevelsResponse, error)
 	// Get a list of Parties
-	Parties(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*PartiesResponse, error)
+	Parties(ctx context.Context, in *PartiesRequest, opts ...grpc.CallOption) (*PartiesResponse, error)
 	// Get a Party by ID
 	PartyByID(ctx context.Context, in *PartyByIDRequest, opts ...grpc.CallOption) (*PartyByIDResponse, error)
 	// Get a list of Positions by Party
@@ -471,59 +471,59 @@ type TradingDataClient interface {
 	// Get governance data (proposals and votes) for a proposal located by reference
 	GetProposalByReference(ctx context.Context, in *GetProposalByReferenceRequest, opts ...grpc.CallOption) (*GetProposalByReferenceResponse, error)
 	// Subscribe to a stream of all governance updates
-	ObserveGovernance(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (TradingData_ObserveGovernanceClient, error)
+	ObserveGovernance(ctx context.Context, in *ObserveGovernanceRequest, opts ...grpc.CallOption) (TradingDataService_ObserveGovernanceClient, error)
 	// Subscribe to a stream of proposal updates
-	ObservePartyProposals(ctx context.Context, in *ObservePartyProposalsRequest, opts ...grpc.CallOption) (TradingData_ObservePartyProposalsClient, error)
+	ObservePartyProposals(ctx context.Context, in *ObservePartyProposalsRequest, opts ...grpc.CallOption) (TradingDataService_ObservePartyProposalsClient, error)
 	// Subscribe to a stream of votes cast by a specific party
-	ObservePartyVotes(ctx context.Context, in *ObservePartyVotesRequest, opts ...grpc.CallOption) (TradingData_ObservePartyVotesClient, error)
+	ObservePartyVotes(ctx context.Context, in *ObservePartyVotesRequest, opts ...grpc.CallOption) (TradingDataService_ObservePartyVotesClient, error)
 	// Subscribe to a stream of proposal votes
-	ObserveProposalVotes(ctx context.Context, in *ObserveProposalVotesRequest, opts ...grpc.CallOption) (TradingData_ObserveProposalVotesClient, error)
+	ObserveProposalVotes(ctx context.Context, in *ObserveProposalVotesRequest, opts ...grpc.CallOption) (TradingDataService_ObserveProposalVotesClient, error)
 	// Subscribe to a stream of events from the core
-	ObserveEventBus(ctx context.Context, opts ...grpc.CallOption) (TradingData_ObserveEventBusClient, error)
-	// Get Statistics
-	Statistics(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*proto.Statistics, error)
+	ObserveEventBus(ctx context.Context, opts ...grpc.CallOption) (TradingDataService_ObserveEventBusClient, error)
+	// Get Statistics on Vega
+	Statistics(ctx context.Context, in *StatisticsRequest, opts ...grpc.CallOption) (*StatisticsResponse, error)
 	// Get Time
-	GetVegaTime(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*VegaTimeResponse, error)
+	GetVegaTime(ctx context.Context, in *GetVegaTimeRequest, opts ...grpc.CallOption) (*GetVegaTimeResponse, error)
 	// Subscribe to a stream of Accounts
-	AccountsSubscribe(ctx context.Context, in *AccountsSubscribeRequest, opts ...grpc.CallOption) (TradingData_AccountsSubscribeClient, error)
+	AccountsSubscribe(ctx context.Context, in *AccountsSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_AccountsSubscribeClient, error)
 	// Subscribe to a stream of Candles
-	CandlesSubscribe(ctx context.Context, in *CandlesSubscribeRequest, opts ...grpc.CallOption) (TradingData_CandlesSubscribeClient, error)
+	CandlesSubscribe(ctx context.Context, in *CandlesSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_CandlesSubscribeClient, error)
 	// Subscribe to a stream of Margin Levels
-	MarginLevelsSubscribe(ctx context.Context, in *MarginLevelsSubscribeRequest, opts ...grpc.CallOption) (TradingData_MarginLevelsSubscribeClient, error)
+	MarginLevelsSubscribe(ctx context.Context, in *MarginLevelsSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_MarginLevelsSubscribeClient, error)
 	// Subscribe to a stream of Market Depth
-	MarketDepthSubscribe(ctx context.Context, in *MarketDepthSubscribeRequest, opts ...grpc.CallOption) (TradingData_MarketDepthSubscribeClient, error)
-	// Subscribe to a stream of Market Depth PriceLevel Updates
-	MarketDepthUpdatesSubscribe(ctx context.Context, in *MarketDepthUpdatesSubscribeRequest, opts ...grpc.CallOption) (TradingData_MarketDepthUpdatesSubscribeClient, error)
+	MarketDepthSubscribe(ctx context.Context, in *MarketDepthSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_MarketDepthSubscribeClient, error)
+	// Subscribe to a stream of Market Depth Price Level Updates
+	MarketDepthUpdatesSubscribe(ctx context.Context, in *MarketDepthUpdatesSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_MarketDepthUpdatesSubscribeClient, error)
 	// Subscribe to a stream of Markets Data
-	MarketsDataSubscribe(ctx context.Context, in *MarketsDataSubscribeRequest, opts ...grpc.CallOption) (TradingData_MarketsDataSubscribeClient, error)
+	MarketsDataSubscribe(ctx context.Context, in *MarketsDataSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_MarketsDataSubscribeClient, error)
 	// Subscribe to a stream of Orders
-	OrdersSubscribe(ctx context.Context, in *OrdersSubscribeRequest, opts ...grpc.CallOption) (TradingData_OrdersSubscribeClient, error)
+	OrdersSubscribe(ctx context.Context, in *OrdersSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_OrdersSubscribeClient, error)
 	// Subscribe to a stream of Positions
-	PositionsSubscribe(ctx context.Context, in *PositionsSubscribeRequest, opts ...grpc.CallOption) (TradingData_PositionsSubscribeClient, error)
+	PositionsSubscribe(ctx context.Context, in *PositionsSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_PositionsSubscribeClient, error)
 	// Subscribe to a stream of Trades
-	TradesSubscribe(ctx context.Context, in *TradesSubscribeRequest, opts ...grpc.CallOption) (TradingData_TradesSubscribeClient, error)
+	TradesSubscribe(ctx context.Context, in *TradesSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_TradesSubscribeClient, error)
 	// Subscribe to a stream of Transfer Responses
-	TransferResponsesSubscribe(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (TradingData_TransferResponsesSubscribeClient, error)
-	// Get an aggregate of signatures from all the nodes of the network.
+	TransferResponsesSubscribe(ctx context.Context, in *TransferResponsesSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_TransferResponsesSubscribeClient, error)
+	// Get an aggregate of signatures from all the nodes of the network
 	GetNodeSignaturesAggregate(ctx context.Context, in *GetNodeSignaturesAggregateRequest, opts ...grpc.CallOption) (*GetNodeSignaturesAggregateResponse, error)
-	// Get an asset by its identifier.
+	// Get an asset by its identifier
 	AssetByID(ctx context.Context, in *AssetByIDRequest, opts ...grpc.CallOption) (*AssetByIDResponse, error)
-	// Get a list of all assets on Vega.
+	// Get a list of all assets on Vega
 	Assets(ctx context.Context, in *AssetsRequest, opts ...grpc.CallOption) (*AssetsResponse, error)
 	// Get an estimate for the fee to be paid for a given order
 	EstimateFee(ctx context.Context, in *EstimateFeeRequest, opts ...grpc.CallOption) (*EstimateFeeResponse, error)
 	// Get an estimate for the margin required for a new order
 	EstimateMargin(ctx context.Context, in *EstimateMarginRequest, opts ...grpc.CallOption) (*EstimateMarginResponse, error)
-	// Get the bundle approval for an ERC20 withdrawal
+	// Get the bundle approval for an ERC20 withdrawal,
 	// these data are being used to bundle the call to the smart contract on the ethereum bridge
 	ERC20WithdrawalApproval(ctx context.Context, in *ERC20WithdrawalApprovalRequest, opts ...grpc.CallOption) (*ERC20WithdrawalApprovalResponse, error)
-	// Get a withdrawal by its ID
+	// Get a withdrawal by its identifier
 	Withdrawal(ctx context.Context, in *WithdrawalRequest, opts ...grpc.CallOption) (*WithdrawalResponse, error)
 	// Get withdrawals for a party
 	Withdrawals(ctx context.Context, in *WithdrawalsRequest, opts ...grpc.CallOption) (*WithdrawalsResponse, error)
-	// Get a deposit by its ID
+	// Get a deposit by its identifier
 	Deposit(ctx context.Context, in *DepositRequest, opts ...grpc.CallOption) (*DepositResponse, error)
-	// Get withdrawals for a party
+	// Get deposits for a party
 	Deposits(ctx context.Context, in *DepositsRequest, opts ...grpc.CallOption) (*DepositsResponse, error)
 	// Get the network parameters
 	NetworkParameters(ctx context.Context, in *NetworkParametersRequest, opts ...grpc.CallOption) (*NetworkParametersResponse, error)
@@ -531,308 +531,308 @@ type TradingDataClient interface {
 	LiquidityProvisions(ctx context.Context, in *LiquidityProvisionsRequest, opts ...grpc.CallOption) (*LiquidityProvisionsResponse, error)
 }
 
-type tradingDataClient struct {
+type tradingDataServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewTradingDataClient(cc grpc.ClientConnInterface) TradingDataClient {
-	return &tradingDataClient{cc}
+func NewTradingDataServiceClient(cc grpc.ClientConnInterface) TradingDataServiceClient {
+	return &tradingDataServiceClient{cc}
 }
 
-func (c *tradingDataClient) MarketAccounts(ctx context.Context, in *MarketAccountsRequest, opts ...grpc.CallOption) (*MarketAccountsResponse, error) {
+func (c *tradingDataServiceClient) MarketAccounts(ctx context.Context, in *MarketAccountsRequest, opts ...grpc.CallOption) (*MarketAccountsResponse, error) {
 	out := new(MarketAccountsResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/MarketAccounts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/MarketAccounts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) PartyAccounts(ctx context.Context, in *PartyAccountsRequest, opts ...grpc.CallOption) (*PartyAccountsResponse, error) {
+func (c *tradingDataServiceClient) PartyAccounts(ctx context.Context, in *PartyAccountsRequest, opts ...grpc.CallOption) (*PartyAccountsResponse, error) {
 	out := new(PartyAccountsResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/PartyAccounts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/PartyAccounts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) FeeInfrastructureAccounts(ctx context.Context, in *FeeInfrastructureAccountsRequest, opts ...grpc.CallOption) (*FeeInfrastructureAccountsResponse, error) {
+func (c *tradingDataServiceClient) FeeInfrastructureAccounts(ctx context.Context, in *FeeInfrastructureAccountsRequest, opts ...grpc.CallOption) (*FeeInfrastructureAccountsResponse, error) {
 	out := new(FeeInfrastructureAccountsResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/FeeInfrastructureAccounts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/FeeInfrastructureAccounts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) Candles(ctx context.Context, in *CandlesRequest, opts ...grpc.CallOption) (*CandlesResponse, error) {
+func (c *tradingDataServiceClient) Candles(ctx context.Context, in *CandlesRequest, opts ...grpc.CallOption) (*CandlesResponse, error) {
 	out := new(CandlesResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/Candles", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/Candles", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) MarketDataByID(ctx context.Context, in *MarketDataByIDRequest, opts ...grpc.CallOption) (*MarketDataByIDResponse, error) {
+func (c *tradingDataServiceClient) MarketDataByID(ctx context.Context, in *MarketDataByIDRequest, opts ...grpc.CallOption) (*MarketDataByIDResponse, error) {
 	out := new(MarketDataByIDResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/MarketDataByID", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/MarketDataByID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) MarketsData(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*MarketsDataResponse, error) {
+func (c *tradingDataServiceClient) MarketsData(ctx context.Context, in *MarketsDataRequest, opts ...grpc.CallOption) (*MarketsDataResponse, error) {
 	out := new(MarketsDataResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/MarketsData", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/MarketsData", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) MarketByID(ctx context.Context, in *MarketByIDRequest, opts ...grpc.CallOption) (*MarketByIDResponse, error) {
+func (c *tradingDataServiceClient) MarketByID(ctx context.Context, in *MarketByIDRequest, opts ...grpc.CallOption) (*MarketByIDResponse, error) {
 	out := new(MarketByIDResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/MarketByID", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/MarketByID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) MarketDepth(ctx context.Context, in *MarketDepthRequest, opts ...grpc.CallOption) (*MarketDepthResponse, error) {
+func (c *tradingDataServiceClient) MarketDepth(ctx context.Context, in *MarketDepthRequest, opts ...grpc.CallOption) (*MarketDepthResponse, error) {
 	out := new(MarketDepthResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/MarketDepth", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/MarketDepth", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) Markets(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*MarketsResponse, error) {
+func (c *tradingDataServiceClient) Markets(ctx context.Context, in *MarketsRequest, opts ...grpc.CallOption) (*MarketsResponse, error) {
 	out := new(MarketsResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/Markets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/Markets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) OrderByMarketAndID(ctx context.Context, in *OrderByMarketAndIdRequest, opts ...grpc.CallOption) (*OrderByMarketAndIdResponse, error) {
-	out := new(OrderByMarketAndIdResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/OrderByMarketAndID", in, out, opts...)
+func (c *tradingDataServiceClient) OrderByMarketAndID(ctx context.Context, in *OrderByMarketAndIDRequest, opts ...grpc.CallOption) (*OrderByMarketAndIDResponse, error) {
+	out := new(OrderByMarketAndIDResponse)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/OrderByMarketAndID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) OrderByReference(ctx context.Context, in *OrderByReferenceRequest, opts ...grpc.CallOption) (*OrderByReferenceResponse, error) {
+func (c *tradingDataServiceClient) OrderByReference(ctx context.Context, in *OrderByReferenceRequest, opts ...grpc.CallOption) (*OrderByReferenceResponse, error) {
 	out := new(OrderByReferenceResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/OrderByReference", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/OrderByReference", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) OrdersByMarket(ctx context.Context, in *OrdersByMarketRequest, opts ...grpc.CallOption) (*OrdersByMarketResponse, error) {
+func (c *tradingDataServiceClient) OrdersByMarket(ctx context.Context, in *OrdersByMarketRequest, opts ...grpc.CallOption) (*OrdersByMarketResponse, error) {
 	out := new(OrdersByMarketResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/OrdersByMarket", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/OrdersByMarket", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) OrdersByParty(ctx context.Context, in *OrdersByPartyRequest, opts ...grpc.CallOption) (*OrdersByPartyResponse, error) {
+func (c *tradingDataServiceClient) OrdersByParty(ctx context.Context, in *OrdersByPartyRequest, opts ...grpc.CallOption) (*OrdersByPartyResponse, error) {
 	out := new(OrdersByPartyResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/OrdersByParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/OrdersByParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) OrderByID(ctx context.Context, in *OrderByIDRequest, opts ...grpc.CallOption) (*proto.Order, error) {
-	out := new(proto.Order)
-	err := c.cc.Invoke(ctx, "/api.trading_data/OrderByID", in, out, opts...)
+func (c *tradingDataServiceClient) OrderByID(ctx context.Context, in *OrderByIDRequest, opts ...grpc.CallOption) (*OrderByIDResponse, error) {
+	out := new(OrderByIDResponse)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/OrderByID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) OrderVersionsByID(ctx context.Context, in *OrderVersionsByIDRequest, opts ...grpc.CallOption) (*OrderVersionsResponse, error) {
-	out := new(OrderVersionsResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/OrderVersionsByID", in, out, opts...)
+func (c *tradingDataServiceClient) OrderVersionsByID(ctx context.Context, in *OrderVersionsByIDRequest, opts ...grpc.CallOption) (*OrderVersionsByIDResponse, error) {
+	out := new(OrderVersionsByIDResponse)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/OrderVersionsByID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) MarginLevels(ctx context.Context, in *MarginLevelsRequest, opts ...grpc.CallOption) (*MarginLevelsResponse, error) {
+func (c *tradingDataServiceClient) MarginLevels(ctx context.Context, in *MarginLevelsRequest, opts ...grpc.CallOption) (*MarginLevelsResponse, error) {
 	out := new(MarginLevelsResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/MarginLevels", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/MarginLevels", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) Parties(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*PartiesResponse, error) {
+func (c *tradingDataServiceClient) Parties(ctx context.Context, in *PartiesRequest, opts ...grpc.CallOption) (*PartiesResponse, error) {
 	out := new(PartiesResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/Parties", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/Parties", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) PartyByID(ctx context.Context, in *PartyByIDRequest, opts ...grpc.CallOption) (*PartyByIDResponse, error) {
+func (c *tradingDataServiceClient) PartyByID(ctx context.Context, in *PartyByIDRequest, opts ...grpc.CallOption) (*PartyByIDResponse, error) {
 	out := new(PartyByIDResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/PartyByID", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/PartyByID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) PositionsByParty(ctx context.Context, in *PositionsByPartyRequest, opts ...grpc.CallOption) (*PositionsByPartyResponse, error) {
+func (c *tradingDataServiceClient) PositionsByParty(ctx context.Context, in *PositionsByPartyRequest, opts ...grpc.CallOption) (*PositionsByPartyResponse, error) {
 	out := new(PositionsByPartyResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/PositionsByParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/PositionsByParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) LastTrade(ctx context.Context, in *LastTradeRequest, opts ...grpc.CallOption) (*LastTradeResponse, error) {
+func (c *tradingDataServiceClient) LastTrade(ctx context.Context, in *LastTradeRequest, opts ...grpc.CallOption) (*LastTradeResponse, error) {
 	out := new(LastTradeResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/LastTrade", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/LastTrade", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) TradesByMarket(ctx context.Context, in *TradesByMarketRequest, opts ...grpc.CallOption) (*TradesByMarketResponse, error) {
+func (c *tradingDataServiceClient) TradesByMarket(ctx context.Context, in *TradesByMarketRequest, opts ...grpc.CallOption) (*TradesByMarketResponse, error) {
 	out := new(TradesByMarketResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/TradesByMarket", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/TradesByMarket", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) TradesByOrder(ctx context.Context, in *TradesByOrderRequest, opts ...grpc.CallOption) (*TradesByOrderResponse, error) {
+func (c *tradingDataServiceClient) TradesByOrder(ctx context.Context, in *TradesByOrderRequest, opts ...grpc.CallOption) (*TradesByOrderResponse, error) {
 	out := new(TradesByOrderResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/TradesByOrder", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/TradesByOrder", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) TradesByParty(ctx context.Context, in *TradesByPartyRequest, opts ...grpc.CallOption) (*TradesByPartyResponse, error) {
+func (c *tradingDataServiceClient) TradesByParty(ctx context.Context, in *TradesByPartyRequest, opts ...grpc.CallOption) (*TradesByPartyResponse, error) {
 	out := new(TradesByPartyResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/TradesByParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/TradesByParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) GetProposals(ctx context.Context, in *GetProposalsRequest, opts ...grpc.CallOption) (*GetProposalsResponse, error) {
+func (c *tradingDataServiceClient) GetProposals(ctx context.Context, in *GetProposalsRequest, opts ...grpc.CallOption) (*GetProposalsResponse, error) {
 	out := new(GetProposalsResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/GetProposals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/GetProposals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) GetProposalsByParty(ctx context.Context, in *GetProposalsByPartyRequest, opts ...grpc.CallOption) (*GetProposalsByPartyResponse, error) {
+func (c *tradingDataServiceClient) GetProposalsByParty(ctx context.Context, in *GetProposalsByPartyRequest, opts ...grpc.CallOption) (*GetProposalsByPartyResponse, error) {
 	out := new(GetProposalsByPartyResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/GetProposalsByParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/GetProposalsByParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) GetVotesByParty(ctx context.Context, in *GetVotesByPartyRequest, opts ...grpc.CallOption) (*GetVotesByPartyResponse, error) {
+func (c *tradingDataServiceClient) GetVotesByParty(ctx context.Context, in *GetVotesByPartyRequest, opts ...grpc.CallOption) (*GetVotesByPartyResponse, error) {
 	out := new(GetVotesByPartyResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/GetVotesByParty", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/GetVotesByParty", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) GetNewMarketProposals(ctx context.Context, in *GetNewMarketProposalsRequest, opts ...grpc.CallOption) (*GetNewMarketProposalsResponse, error) {
+func (c *tradingDataServiceClient) GetNewMarketProposals(ctx context.Context, in *GetNewMarketProposalsRequest, opts ...grpc.CallOption) (*GetNewMarketProposalsResponse, error) {
 	out := new(GetNewMarketProposalsResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/GetNewMarketProposals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/GetNewMarketProposals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) GetUpdateMarketProposals(ctx context.Context, in *GetUpdateMarketProposalsRequest, opts ...grpc.CallOption) (*GetUpdateMarketProposalsResponse, error) {
+func (c *tradingDataServiceClient) GetUpdateMarketProposals(ctx context.Context, in *GetUpdateMarketProposalsRequest, opts ...grpc.CallOption) (*GetUpdateMarketProposalsResponse, error) {
 	out := new(GetUpdateMarketProposalsResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/GetUpdateMarketProposals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/GetUpdateMarketProposals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) GetNetworkParametersProposals(ctx context.Context, in *GetNetworkParametersProposalsRequest, opts ...grpc.CallOption) (*GetNetworkParametersProposalsResponse, error) {
+func (c *tradingDataServiceClient) GetNetworkParametersProposals(ctx context.Context, in *GetNetworkParametersProposalsRequest, opts ...grpc.CallOption) (*GetNetworkParametersProposalsResponse, error) {
 	out := new(GetNetworkParametersProposalsResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/GetNetworkParametersProposals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/GetNetworkParametersProposals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) GetNewAssetProposals(ctx context.Context, in *GetNewAssetProposalsRequest, opts ...grpc.CallOption) (*GetNewAssetProposalsResponse, error) {
+func (c *tradingDataServiceClient) GetNewAssetProposals(ctx context.Context, in *GetNewAssetProposalsRequest, opts ...grpc.CallOption) (*GetNewAssetProposalsResponse, error) {
 	out := new(GetNewAssetProposalsResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/GetNewAssetProposals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/GetNewAssetProposals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) GetProposalByID(ctx context.Context, in *GetProposalByIDRequest, opts ...grpc.CallOption) (*GetProposalByIDResponse, error) {
+func (c *tradingDataServiceClient) GetProposalByID(ctx context.Context, in *GetProposalByIDRequest, opts ...grpc.CallOption) (*GetProposalByIDResponse, error) {
 	out := new(GetProposalByIDResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/GetProposalByID", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/GetProposalByID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) GetProposalByReference(ctx context.Context, in *GetProposalByReferenceRequest, opts ...grpc.CallOption) (*GetProposalByReferenceResponse, error) {
+func (c *tradingDataServiceClient) GetProposalByReference(ctx context.Context, in *GetProposalByReferenceRequest, opts ...grpc.CallOption) (*GetProposalByReferenceResponse, error) {
 	out := new(GetProposalByReferenceResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/GetProposalByReference", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/GetProposalByReference", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) ObserveGovernance(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (TradingData_ObserveGovernanceClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingData_serviceDesc.Streams[0], "/api.trading_data/ObserveGovernance", opts...)
+func (c *tradingDataServiceClient) ObserveGovernance(ctx context.Context, in *ObserveGovernanceRequest, opts ...grpc.CallOption) (TradingDataService_ObserveGovernanceClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[0], "/api.v1.TradingDataService/ObserveGovernance", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &tradingDataObserveGovernanceClient{stream}
+	x := &tradingDataServiceObserveGovernanceClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -842,29 +842,29 @@ func (c *tradingDataClient) ObserveGovernance(ctx context.Context, in *empty.Emp
 	return x, nil
 }
 
-type TradingData_ObserveGovernanceClient interface {
-	Recv() (*proto.GovernanceData, error)
+type TradingDataService_ObserveGovernanceClient interface {
+	Recv() (*ObserveGovernanceResponse, error)
 	grpc.ClientStream
 }
 
-type tradingDataObserveGovernanceClient struct {
+type tradingDataServiceObserveGovernanceClient struct {
 	grpc.ClientStream
 }
 
-func (x *tradingDataObserveGovernanceClient) Recv() (*proto.GovernanceData, error) {
-	m := new(proto.GovernanceData)
+func (x *tradingDataServiceObserveGovernanceClient) Recv() (*ObserveGovernanceResponse, error) {
+	m := new(ObserveGovernanceResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *tradingDataClient) ObservePartyProposals(ctx context.Context, in *ObservePartyProposalsRequest, opts ...grpc.CallOption) (TradingData_ObservePartyProposalsClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingData_serviceDesc.Streams[1], "/api.trading_data/ObservePartyProposals", opts...)
+func (c *tradingDataServiceClient) ObservePartyProposals(ctx context.Context, in *ObservePartyProposalsRequest, opts ...grpc.CallOption) (TradingDataService_ObservePartyProposalsClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[1], "/api.v1.TradingDataService/ObservePartyProposals", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &tradingDataObservePartyProposalsClient{stream}
+	x := &tradingDataServiceObservePartyProposalsClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -874,29 +874,29 @@ func (c *tradingDataClient) ObservePartyProposals(ctx context.Context, in *Obser
 	return x, nil
 }
 
-type TradingData_ObservePartyProposalsClient interface {
-	Recv() (*proto.GovernanceData, error)
+type TradingDataService_ObservePartyProposalsClient interface {
+	Recv() (*ObservePartyProposalsResponse, error)
 	grpc.ClientStream
 }
 
-type tradingDataObservePartyProposalsClient struct {
+type tradingDataServiceObservePartyProposalsClient struct {
 	grpc.ClientStream
 }
 
-func (x *tradingDataObservePartyProposalsClient) Recv() (*proto.GovernanceData, error) {
-	m := new(proto.GovernanceData)
+func (x *tradingDataServiceObservePartyProposalsClient) Recv() (*ObservePartyProposalsResponse, error) {
+	m := new(ObservePartyProposalsResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *tradingDataClient) ObservePartyVotes(ctx context.Context, in *ObservePartyVotesRequest, opts ...grpc.CallOption) (TradingData_ObservePartyVotesClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingData_serviceDesc.Streams[2], "/api.trading_data/ObservePartyVotes", opts...)
+func (c *tradingDataServiceClient) ObservePartyVotes(ctx context.Context, in *ObservePartyVotesRequest, opts ...grpc.CallOption) (TradingDataService_ObservePartyVotesClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[2], "/api.v1.TradingDataService/ObservePartyVotes", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &tradingDataObservePartyVotesClient{stream}
+	x := &tradingDataServiceObservePartyVotesClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -906,29 +906,29 @@ func (c *tradingDataClient) ObservePartyVotes(ctx context.Context, in *ObservePa
 	return x, nil
 }
 
-type TradingData_ObservePartyVotesClient interface {
-	Recv() (*proto.Vote, error)
+type TradingDataService_ObservePartyVotesClient interface {
+	Recv() (*ObservePartyVotesResponse, error)
 	grpc.ClientStream
 }
 
-type tradingDataObservePartyVotesClient struct {
+type tradingDataServiceObservePartyVotesClient struct {
 	grpc.ClientStream
 }
 
-func (x *tradingDataObservePartyVotesClient) Recv() (*proto.Vote, error) {
-	m := new(proto.Vote)
+func (x *tradingDataServiceObservePartyVotesClient) Recv() (*ObservePartyVotesResponse, error) {
+	m := new(ObservePartyVotesResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *tradingDataClient) ObserveProposalVotes(ctx context.Context, in *ObserveProposalVotesRequest, opts ...grpc.CallOption) (TradingData_ObserveProposalVotesClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingData_serviceDesc.Streams[3], "/api.trading_data/ObserveProposalVotes", opts...)
+func (c *tradingDataServiceClient) ObserveProposalVotes(ctx context.Context, in *ObserveProposalVotesRequest, opts ...grpc.CallOption) (TradingDataService_ObserveProposalVotesClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[3], "/api.v1.TradingDataService/ObserveProposalVotes", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &tradingDataObserveProposalVotesClient{stream}
+	x := &tradingDataServiceObserveProposalVotesClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -938,78 +938,78 @@ func (c *tradingDataClient) ObserveProposalVotes(ctx context.Context, in *Observ
 	return x, nil
 }
 
-type TradingData_ObserveProposalVotesClient interface {
-	Recv() (*proto.Vote, error)
+type TradingDataService_ObserveProposalVotesClient interface {
+	Recv() (*ObserveProposalVotesResponse, error)
 	grpc.ClientStream
 }
 
-type tradingDataObserveProposalVotesClient struct {
+type tradingDataServiceObserveProposalVotesClient struct {
 	grpc.ClientStream
 }
 
-func (x *tradingDataObserveProposalVotesClient) Recv() (*proto.Vote, error) {
-	m := new(proto.Vote)
+func (x *tradingDataServiceObserveProposalVotesClient) Recv() (*ObserveProposalVotesResponse, error) {
+	m := new(ObserveProposalVotesResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *tradingDataClient) ObserveEventBus(ctx context.Context, opts ...grpc.CallOption) (TradingData_ObserveEventBusClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingData_serviceDesc.Streams[4], "/api.trading_data/ObserveEventBus", opts...)
+func (c *tradingDataServiceClient) ObserveEventBus(ctx context.Context, opts ...grpc.CallOption) (TradingDataService_ObserveEventBusClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[4], "/api.v1.TradingDataService/ObserveEventBus", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &tradingDataObserveEventBusClient{stream}
+	x := &tradingDataServiceObserveEventBusClient{stream}
 	return x, nil
 }
 
-type TradingData_ObserveEventBusClient interface {
-	Send(*ObserveEventsRequest) error
-	Recv() (*ObserveEventsResponse, error)
+type TradingDataService_ObserveEventBusClient interface {
+	Send(*ObserveEventBusRequest) error
+	Recv() (*ObserveEventBusResponse, error)
 	grpc.ClientStream
 }
 
-type tradingDataObserveEventBusClient struct {
+type tradingDataServiceObserveEventBusClient struct {
 	grpc.ClientStream
 }
 
-func (x *tradingDataObserveEventBusClient) Send(m *ObserveEventsRequest) error {
+func (x *tradingDataServiceObserveEventBusClient) Send(m *ObserveEventBusRequest) error {
 	return x.ClientStream.SendMsg(m)
 }
 
-func (x *tradingDataObserveEventBusClient) Recv() (*ObserveEventsResponse, error) {
-	m := new(ObserveEventsResponse)
+func (x *tradingDataServiceObserveEventBusClient) Recv() (*ObserveEventBusResponse, error) {
+	m := new(ObserveEventBusResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *tradingDataClient) Statistics(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*proto.Statistics, error) {
-	out := new(proto.Statistics)
-	err := c.cc.Invoke(ctx, "/api.trading_data/Statistics", in, out, opts...)
+func (c *tradingDataServiceClient) Statistics(ctx context.Context, in *StatisticsRequest, opts ...grpc.CallOption) (*StatisticsResponse, error) {
+	out := new(StatisticsResponse)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/Statistics", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) GetVegaTime(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*VegaTimeResponse, error) {
-	out := new(VegaTimeResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/GetVegaTime", in, out, opts...)
+func (c *tradingDataServiceClient) GetVegaTime(ctx context.Context, in *GetVegaTimeRequest, opts ...grpc.CallOption) (*GetVegaTimeResponse, error) {
+	out := new(GetVegaTimeResponse)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/GetVegaTime", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) AccountsSubscribe(ctx context.Context, in *AccountsSubscribeRequest, opts ...grpc.CallOption) (TradingData_AccountsSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingData_serviceDesc.Streams[5], "/api.trading_data/AccountsSubscribe", opts...)
+func (c *tradingDataServiceClient) AccountsSubscribe(ctx context.Context, in *AccountsSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_AccountsSubscribeClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[5], "/api.v1.TradingDataService/AccountsSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &tradingDataAccountsSubscribeClient{stream}
+	x := &tradingDataServiceAccountsSubscribeClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -1019,29 +1019,29 @@ func (c *tradingDataClient) AccountsSubscribe(ctx context.Context, in *AccountsS
 	return x, nil
 }
 
-type TradingData_AccountsSubscribeClient interface {
-	Recv() (*proto.Account, error)
+type TradingDataService_AccountsSubscribeClient interface {
+	Recv() (*AccountsSubscribeResponse, error)
 	grpc.ClientStream
 }
 
-type tradingDataAccountsSubscribeClient struct {
+type tradingDataServiceAccountsSubscribeClient struct {
 	grpc.ClientStream
 }
 
-func (x *tradingDataAccountsSubscribeClient) Recv() (*proto.Account, error) {
-	m := new(proto.Account)
+func (x *tradingDataServiceAccountsSubscribeClient) Recv() (*AccountsSubscribeResponse, error) {
+	m := new(AccountsSubscribeResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *tradingDataClient) CandlesSubscribe(ctx context.Context, in *CandlesSubscribeRequest, opts ...grpc.CallOption) (TradingData_CandlesSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingData_serviceDesc.Streams[6], "/api.trading_data/CandlesSubscribe", opts...)
+func (c *tradingDataServiceClient) CandlesSubscribe(ctx context.Context, in *CandlesSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_CandlesSubscribeClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[6], "/api.v1.TradingDataService/CandlesSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &tradingDataCandlesSubscribeClient{stream}
+	x := &tradingDataServiceCandlesSubscribeClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -1051,29 +1051,29 @@ func (c *tradingDataClient) CandlesSubscribe(ctx context.Context, in *CandlesSub
 	return x, nil
 }
 
-type TradingData_CandlesSubscribeClient interface {
-	Recv() (*proto.Candle, error)
+type TradingDataService_CandlesSubscribeClient interface {
+	Recv() (*CandlesSubscribeResponse, error)
 	grpc.ClientStream
 }
 
-type tradingDataCandlesSubscribeClient struct {
+type tradingDataServiceCandlesSubscribeClient struct {
 	grpc.ClientStream
 }
 
-func (x *tradingDataCandlesSubscribeClient) Recv() (*proto.Candle, error) {
-	m := new(proto.Candle)
+func (x *tradingDataServiceCandlesSubscribeClient) Recv() (*CandlesSubscribeResponse, error) {
+	m := new(CandlesSubscribeResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *tradingDataClient) MarginLevelsSubscribe(ctx context.Context, in *MarginLevelsSubscribeRequest, opts ...grpc.CallOption) (TradingData_MarginLevelsSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingData_serviceDesc.Streams[7], "/api.trading_data/MarginLevelsSubscribe", opts...)
+func (c *tradingDataServiceClient) MarginLevelsSubscribe(ctx context.Context, in *MarginLevelsSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_MarginLevelsSubscribeClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[7], "/api.v1.TradingDataService/MarginLevelsSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &tradingDataMarginLevelsSubscribeClient{stream}
+	x := &tradingDataServiceMarginLevelsSubscribeClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -1083,29 +1083,29 @@ func (c *tradingDataClient) MarginLevelsSubscribe(ctx context.Context, in *Margi
 	return x, nil
 }
 
-type TradingData_MarginLevelsSubscribeClient interface {
-	Recv() (*proto.MarginLevels, error)
+type TradingDataService_MarginLevelsSubscribeClient interface {
+	Recv() (*MarginLevelsSubscribeResponse, error)
 	grpc.ClientStream
 }
 
-type tradingDataMarginLevelsSubscribeClient struct {
+type tradingDataServiceMarginLevelsSubscribeClient struct {
 	grpc.ClientStream
 }
 
-func (x *tradingDataMarginLevelsSubscribeClient) Recv() (*proto.MarginLevels, error) {
-	m := new(proto.MarginLevels)
+func (x *tradingDataServiceMarginLevelsSubscribeClient) Recv() (*MarginLevelsSubscribeResponse, error) {
+	m := new(MarginLevelsSubscribeResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *tradingDataClient) MarketDepthSubscribe(ctx context.Context, in *MarketDepthSubscribeRequest, opts ...grpc.CallOption) (TradingData_MarketDepthSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingData_serviceDesc.Streams[8], "/api.trading_data/MarketDepthSubscribe", opts...)
+func (c *tradingDataServiceClient) MarketDepthSubscribe(ctx context.Context, in *MarketDepthSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_MarketDepthSubscribeClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[8], "/api.v1.TradingDataService/MarketDepthSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &tradingDataMarketDepthSubscribeClient{stream}
+	x := &tradingDataServiceMarketDepthSubscribeClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -1115,29 +1115,29 @@ func (c *tradingDataClient) MarketDepthSubscribe(ctx context.Context, in *Market
 	return x, nil
 }
 
-type TradingData_MarketDepthSubscribeClient interface {
-	Recv() (*proto.MarketDepth, error)
+type TradingDataService_MarketDepthSubscribeClient interface {
+	Recv() (*MarketDepthSubscribeResponse, error)
 	grpc.ClientStream
 }
 
-type tradingDataMarketDepthSubscribeClient struct {
+type tradingDataServiceMarketDepthSubscribeClient struct {
 	grpc.ClientStream
 }
 
-func (x *tradingDataMarketDepthSubscribeClient) Recv() (*proto.MarketDepth, error) {
-	m := new(proto.MarketDepth)
+func (x *tradingDataServiceMarketDepthSubscribeClient) Recv() (*MarketDepthSubscribeResponse, error) {
+	m := new(MarketDepthSubscribeResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *tradingDataClient) MarketDepthUpdatesSubscribe(ctx context.Context, in *MarketDepthUpdatesSubscribeRequest, opts ...grpc.CallOption) (TradingData_MarketDepthUpdatesSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingData_serviceDesc.Streams[9], "/api.trading_data/MarketDepthUpdatesSubscribe", opts...)
+func (c *tradingDataServiceClient) MarketDepthUpdatesSubscribe(ctx context.Context, in *MarketDepthUpdatesSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_MarketDepthUpdatesSubscribeClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[9], "/api.v1.TradingDataService/MarketDepthUpdatesSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &tradingDataMarketDepthUpdatesSubscribeClient{stream}
+	x := &tradingDataServiceMarketDepthUpdatesSubscribeClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -1147,29 +1147,29 @@ func (c *tradingDataClient) MarketDepthUpdatesSubscribe(ctx context.Context, in 
 	return x, nil
 }
 
-type TradingData_MarketDepthUpdatesSubscribeClient interface {
-	Recv() (*proto.MarketDepthUpdate, error)
+type TradingDataService_MarketDepthUpdatesSubscribeClient interface {
+	Recv() (*MarketDepthUpdatesSubscribeResponse, error)
 	grpc.ClientStream
 }
 
-type tradingDataMarketDepthUpdatesSubscribeClient struct {
+type tradingDataServiceMarketDepthUpdatesSubscribeClient struct {
 	grpc.ClientStream
 }
 
-func (x *tradingDataMarketDepthUpdatesSubscribeClient) Recv() (*proto.MarketDepthUpdate, error) {
-	m := new(proto.MarketDepthUpdate)
+func (x *tradingDataServiceMarketDepthUpdatesSubscribeClient) Recv() (*MarketDepthUpdatesSubscribeResponse, error) {
+	m := new(MarketDepthUpdatesSubscribeResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *tradingDataClient) MarketsDataSubscribe(ctx context.Context, in *MarketsDataSubscribeRequest, opts ...grpc.CallOption) (TradingData_MarketsDataSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingData_serviceDesc.Streams[10], "/api.trading_data/MarketsDataSubscribe", opts...)
+func (c *tradingDataServiceClient) MarketsDataSubscribe(ctx context.Context, in *MarketsDataSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_MarketsDataSubscribeClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[10], "/api.v1.TradingDataService/MarketsDataSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &tradingDataMarketsDataSubscribeClient{stream}
+	x := &tradingDataServiceMarketsDataSubscribeClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -1179,29 +1179,29 @@ func (c *tradingDataClient) MarketsDataSubscribe(ctx context.Context, in *Market
 	return x, nil
 }
 
-type TradingData_MarketsDataSubscribeClient interface {
-	Recv() (*proto.MarketData, error)
+type TradingDataService_MarketsDataSubscribeClient interface {
+	Recv() (*MarketsDataSubscribeResponse, error)
 	grpc.ClientStream
 }
 
-type tradingDataMarketsDataSubscribeClient struct {
+type tradingDataServiceMarketsDataSubscribeClient struct {
 	grpc.ClientStream
 }
 
-func (x *tradingDataMarketsDataSubscribeClient) Recv() (*proto.MarketData, error) {
-	m := new(proto.MarketData)
+func (x *tradingDataServiceMarketsDataSubscribeClient) Recv() (*MarketsDataSubscribeResponse, error) {
+	m := new(MarketsDataSubscribeResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *tradingDataClient) OrdersSubscribe(ctx context.Context, in *OrdersSubscribeRequest, opts ...grpc.CallOption) (TradingData_OrdersSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingData_serviceDesc.Streams[11], "/api.trading_data/OrdersSubscribe", opts...)
+func (c *tradingDataServiceClient) OrdersSubscribe(ctx context.Context, in *OrdersSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_OrdersSubscribeClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[11], "/api.v1.TradingDataService/OrdersSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &tradingDataOrdersSubscribeClient{stream}
+	x := &tradingDataServiceOrdersSubscribeClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -1211,29 +1211,29 @@ func (c *tradingDataClient) OrdersSubscribe(ctx context.Context, in *OrdersSubsc
 	return x, nil
 }
 
-type TradingData_OrdersSubscribeClient interface {
-	Recv() (*OrdersStream, error)
+type TradingDataService_OrdersSubscribeClient interface {
+	Recv() (*OrdersSubscribeResponse, error)
 	grpc.ClientStream
 }
 
-type tradingDataOrdersSubscribeClient struct {
+type tradingDataServiceOrdersSubscribeClient struct {
 	grpc.ClientStream
 }
 
-func (x *tradingDataOrdersSubscribeClient) Recv() (*OrdersStream, error) {
-	m := new(OrdersStream)
+func (x *tradingDataServiceOrdersSubscribeClient) Recv() (*OrdersSubscribeResponse, error) {
+	m := new(OrdersSubscribeResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *tradingDataClient) PositionsSubscribe(ctx context.Context, in *PositionsSubscribeRequest, opts ...grpc.CallOption) (TradingData_PositionsSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingData_serviceDesc.Streams[12], "/api.trading_data/PositionsSubscribe", opts...)
+func (c *tradingDataServiceClient) PositionsSubscribe(ctx context.Context, in *PositionsSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_PositionsSubscribeClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[12], "/api.v1.TradingDataService/PositionsSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &tradingDataPositionsSubscribeClient{stream}
+	x := &tradingDataServicePositionsSubscribeClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -1243,29 +1243,29 @@ func (c *tradingDataClient) PositionsSubscribe(ctx context.Context, in *Position
 	return x, nil
 }
 
-type TradingData_PositionsSubscribeClient interface {
-	Recv() (*proto.Position, error)
+type TradingDataService_PositionsSubscribeClient interface {
+	Recv() (*PositionsSubscribeResponse, error)
 	grpc.ClientStream
 }
 
-type tradingDataPositionsSubscribeClient struct {
+type tradingDataServicePositionsSubscribeClient struct {
 	grpc.ClientStream
 }
 
-func (x *tradingDataPositionsSubscribeClient) Recv() (*proto.Position, error) {
-	m := new(proto.Position)
+func (x *tradingDataServicePositionsSubscribeClient) Recv() (*PositionsSubscribeResponse, error) {
+	m := new(PositionsSubscribeResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *tradingDataClient) TradesSubscribe(ctx context.Context, in *TradesSubscribeRequest, opts ...grpc.CallOption) (TradingData_TradesSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingData_serviceDesc.Streams[13], "/api.trading_data/TradesSubscribe", opts...)
+func (c *tradingDataServiceClient) TradesSubscribe(ctx context.Context, in *TradesSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_TradesSubscribeClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[13], "/api.v1.TradingDataService/TradesSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &tradingDataTradesSubscribeClient{stream}
+	x := &tradingDataServiceTradesSubscribeClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -1275,29 +1275,29 @@ func (c *tradingDataClient) TradesSubscribe(ctx context.Context, in *TradesSubsc
 	return x, nil
 }
 
-type TradingData_TradesSubscribeClient interface {
-	Recv() (*TradesStream, error)
+type TradingDataService_TradesSubscribeClient interface {
+	Recv() (*TradesSubscribeResponse, error)
 	grpc.ClientStream
 }
 
-type tradingDataTradesSubscribeClient struct {
+type tradingDataServiceTradesSubscribeClient struct {
 	grpc.ClientStream
 }
 
-func (x *tradingDataTradesSubscribeClient) Recv() (*TradesStream, error) {
-	m := new(TradesStream)
+func (x *tradingDataServiceTradesSubscribeClient) Recv() (*TradesSubscribeResponse, error) {
+	m := new(TradesSubscribeResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *tradingDataClient) TransferResponsesSubscribe(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (TradingData_TransferResponsesSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingData_serviceDesc.Streams[14], "/api.trading_data/TransferResponsesSubscribe", opts...)
+func (c *tradingDataServiceClient) TransferResponsesSubscribe(ctx context.Context, in *TransferResponsesSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_TransferResponsesSubscribeClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[14], "/api.v1.TradingDataService/TransferResponsesSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &tradingDataTransferResponsesSubscribeClient{stream}
+	x := &tradingDataServiceTransferResponsesSubscribeClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -1307,169 +1307,169 @@ func (c *tradingDataClient) TransferResponsesSubscribe(ctx context.Context, in *
 	return x, nil
 }
 
-type TradingData_TransferResponsesSubscribeClient interface {
-	Recv() (*proto.TransferResponse, error)
+type TradingDataService_TransferResponsesSubscribeClient interface {
+	Recv() (*TransferResponsesSubscribeResponse, error)
 	grpc.ClientStream
 }
 
-type tradingDataTransferResponsesSubscribeClient struct {
+type tradingDataServiceTransferResponsesSubscribeClient struct {
 	grpc.ClientStream
 }
 
-func (x *tradingDataTransferResponsesSubscribeClient) Recv() (*proto.TransferResponse, error) {
-	m := new(proto.TransferResponse)
+func (x *tradingDataServiceTransferResponsesSubscribeClient) Recv() (*TransferResponsesSubscribeResponse, error) {
+	m := new(TransferResponsesSubscribeResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *tradingDataClient) GetNodeSignaturesAggregate(ctx context.Context, in *GetNodeSignaturesAggregateRequest, opts ...grpc.CallOption) (*GetNodeSignaturesAggregateResponse, error) {
+func (c *tradingDataServiceClient) GetNodeSignaturesAggregate(ctx context.Context, in *GetNodeSignaturesAggregateRequest, opts ...grpc.CallOption) (*GetNodeSignaturesAggregateResponse, error) {
 	out := new(GetNodeSignaturesAggregateResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/GetNodeSignaturesAggregate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/GetNodeSignaturesAggregate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) AssetByID(ctx context.Context, in *AssetByIDRequest, opts ...grpc.CallOption) (*AssetByIDResponse, error) {
+func (c *tradingDataServiceClient) AssetByID(ctx context.Context, in *AssetByIDRequest, opts ...grpc.CallOption) (*AssetByIDResponse, error) {
 	out := new(AssetByIDResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/AssetByID", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/AssetByID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) Assets(ctx context.Context, in *AssetsRequest, opts ...grpc.CallOption) (*AssetsResponse, error) {
+func (c *tradingDataServiceClient) Assets(ctx context.Context, in *AssetsRequest, opts ...grpc.CallOption) (*AssetsResponse, error) {
 	out := new(AssetsResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/Assets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/Assets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) EstimateFee(ctx context.Context, in *EstimateFeeRequest, opts ...grpc.CallOption) (*EstimateFeeResponse, error) {
+func (c *tradingDataServiceClient) EstimateFee(ctx context.Context, in *EstimateFeeRequest, opts ...grpc.CallOption) (*EstimateFeeResponse, error) {
 	out := new(EstimateFeeResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/EstimateFee", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/EstimateFee", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) EstimateMargin(ctx context.Context, in *EstimateMarginRequest, opts ...grpc.CallOption) (*EstimateMarginResponse, error) {
+func (c *tradingDataServiceClient) EstimateMargin(ctx context.Context, in *EstimateMarginRequest, opts ...grpc.CallOption) (*EstimateMarginResponse, error) {
 	out := new(EstimateMarginResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/EstimateMargin", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/EstimateMargin", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) ERC20WithdrawalApproval(ctx context.Context, in *ERC20WithdrawalApprovalRequest, opts ...grpc.CallOption) (*ERC20WithdrawalApprovalResponse, error) {
+func (c *tradingDataServiceClient) ERC20WithdrawalApproval(ctx context.Context, in *ERC20WithdrawalApprovalRequest, opts ...grpc.CallOption) (*ERC20WithdrawalApprovalResponse, error) {
 	out := new(ERC20WithdrawalApprovalResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/ERC20WithdrawalApproval", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/ERC20WithdrawalApproval", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) Withdrawal(ctx context.Context, in *WithdrawalRequest, opts ...grpc.CallOption) (*WithdrawalResponse, error) {
+func (c *tradingDataServiceClient) Withdrawal(ctx context.Context, in *WithdrawalRequest, opts ...grpc.CallOption) (*WithdrawalResponse, error) {
 	out := new(WithdrawalResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/Withdrawal", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/Withdrawal", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) Withdrawals(ctx context.Context, in *WithdrawalsRequest, opts ...grpc.CallOption) (*WithdrawalsResponse, error) {
+func (c *tradingDataServiceClient) Withdrawals(ctx context.Context, in *WithdrawalsRequest, opts ...grpc.CallOption) (*WithdrawalsResponse, error) {
 	out := new(WithdrawalsResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/Withdrawals", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/Withdrawals", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) Deposit(ctx context.Context, in *DepositRequest, opts ...grpc.CallOption) (*DepositResponse, error) {
+func (c *tradingDataServiceClient) Deposit(ctx context.Context, in *DepositRequest, opts ...grpc.CallOption) (*DepositResponse, error) {
 	out := new(DepositResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/Deposit", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/Deposit", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) Deposits(ctx context.Context, in *DepositsRequest, opts ...grpc.CallOption) (*DepositsResponse, error) {
+func (c *tradingDataServiceClient) Deposits(ctx context.Context, in *DepositsRequest, opts ...grpc.CallOption) (*DepositsResponse, error) {
 	out := new(DepositsResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/Deposits", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/Deposits", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) NetworkParameters(ctx context.Context, in *NetworkParametersRequest, opts ...grpc.CallOption) (*NetworkParametersResponse, error) {
+func (c *tradingDataServiceClient) NetworkParameters(ctx context.Context, in *NetworkParametersRequest, opts ...grpc.CallOption) (*NetworkParametersResponse, error) {
 	out := new(NetworkParametersResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/NetworkParameters", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/NetworkParameters", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingDataClient) LiquidityProvisions(ctx context.Context, in *LiquidityProvisionsRequest, opts ...grpc.CallOption) (*LiquidityProvisionsResponse, error) {
+func (c *tradingDataServiceClient) LiquidityProvisions(ctx context.Context, in *LiquidityProvisionsRequest, opts ...grpc.CallOption) (*LiquidityProvisionsResponse, error) {
 	out := new(LiquidityProvisionsResponse)
-	err := c.cc.Invoke(ctx, "/api.trading_data/LiquidityProvisions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/LiquidityProvisions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// TradingDataServer is the server API for TradingData service.
-// All implementations must embed UnimplementedTradingDataServer
+// TradingDataServiceServer is the server API for TradingDataService service.
+// All implementations must embed UnimplementedTradingDataServiceServer
 // for forward compatibility
-type TradingDataServer interface {
+type TradingDataServiceServer interface {
 	// Get a list of Accounts by Market
 	MarketAccounts(context.Context, *MarketAccountsRequest) (*MarketAccountsResponse, error)
 	// Get a list of Accounts by Party
 	PartyAccounts(context.Context, *PartyAccountsRequest) (*PartyAccountsResponse, error)
-	// Get the list of infrastructure fees accounts filter eventually by assets
+	// Get a list of infrastructure fees accounts filter eventually by assets
 	FeeInfrastructureAccounts(context.Context, *FeeInfrastructureAccountsRequest) (*FeeInfrastructureAccountsResponse, error)
 	// Get a list of Candles by Market
 	Candles(context.Context, *CandlesRequest) (*CandlesResponse, error)
-	// Get Market Data by MarketID
+	// Get Market Data by Market ID
 	MarketDataByID(context.Context, *MarketDataByIDRequest) (*MarketDataByIDResponse, error)
 	// Get a list of Market Data
-	MarketsData(context.Context, *empty.Empty) (*MarketsDataResponse, error)
+	MarketsData(context.Context, *MarketsDataRequest) (*MarketsDataResponse, error)
 	// Get a Market by ID
 	MarketByID(context.Context, *MarketByIDRequest) (*MarketByIDResponse, error)
 	// Get Market Depth
 	MarketDepth(context.Context, *MarketDepthRequest) (*MarketDepthResponse, error)
 	// Get a list of Markets
-	Markets(context.Context, *empty.Empty) (*MarketsResponse, error)
-	// Get an Order by Market and OrderID
-	OrderByMarketAndID(context.Context, *OrderByMarketAndIdRequest) (*OrderByMarketAndIdResponse, error)
+	Markets(context.Context, *MarketsRequest) (*MarketsResponse, error)
+	// Get an Order by Market and Order ID
+	OrderByMarketAndID(context.Context, *OrderByMarketAndIDRequest) (*OrderByMarketAndIDResponse, error)
 	// Get an Order by Pending Order reference (UUID)
 	OrderByReference(context.Context, *OrderByReferenceRequest) (*OrderByReferenceResponse, error)
 	// Get a list of Orders by Market
 	OrdersByMarket(context.Context, *OrdersByMarketRequest) (*OrdersByMarketResponse, error)
 	// Get a list of Orders by Party
 	OrdersByParty(context.Context, *OrdersByPartyRequest) (*OrdersByPartyResponse, error)
-	// Get a specific order by orderID
-	OrderByID(context.Context, *OrderByIDRequest) (*proto.Order, error)
+	// Get a specific order by order ID
+	OrderByID(context.Context, *OrderByIDRequest) (*OrderByIDResponse, error)
 	// Get all versions of the order by its orderID
-	OrderVersionsByID(context.Context, *OrderVersionsByIDRequest) (*OrderVersionsResponse, error)
-	// Get Margin Levels by PartyID
+	OrderVersionsByID(context.Context, *OrderVersionsByIDRequest) (*OrderVersionsByIDResponse, error)
+	// Get Margin Levels by Party ID
 	MarginLevels(context.Context, *MarginLevelsRequest) (*MarginLevelsResponse, error)
 	// Get a list of Parties
-	Parties(context.Context, *empty.Empty) (*PartiesResponse, error)
+	Parties(context.Context, *PartiesRequest) (*PartiesResponse, error)
 	// Get a Party by ID
 	PartyByID(context.Context, *PartyByIDRequest) (*PartyByIDResponse, error)
 	// Get a list of Positions by Party
@@ -1501,1679 +1501,1679 @@ type TradingDataServer interface {
 	// Get governance data (proposals and votes) for a proposal located by reference
 	GetProposalByReference(context.Context, *GetProposalByReferenceRequest) (*GetProposalByReferenceResponse, error)
 	// Subscribe to a stream of all governance updates
-	ObserveGovernance(*empty.Empty, TradingData_ObserveGovernanceServer) error
+	ObserveGovernance(*ObserveGovernanceRequest, TradingDataService_ObserveGovernanceServer) error
 	// Subscribe to a stream of proposal updates
-	ObservePartyProposals(*ObservePartyProposalsRequest, TradingData_ObservePartyProposalsServer) error
+	ObservePartyProposals(*ObservePartyProposalsRequest, TradingDataService_ObservePartyProposalsServer) error
 	// Subscribe to a stream of votes cast by a specific party
-	ObservePartyVotes(*ObservePartyVotesRequest, TradingData_ObservePartyVotesServer) error
+	ObservePartyVotes(*ObservePartyVotesRequest, TradingDataService_ObservePartyVotesServer) error
 	// Subscribe to a stream of proposal votes
-	ObserveProposalVotes(*ObserveProposalVotesRequest, TradingData_ObserveProposalVotesServer) error
+	ObserveProposalVotes(*ObserveProposalVotesRequest, TradingDataService_ObserveProposalVotesServer) error
 	// Subscribe to a stream of events from the core
-	ObserveEventBus(TradingData_ObserveEventBusServer) error
-	// Get Statistics
-	Statistics(context.Context, *empty.Empty) (*proto.Statistics, error)
+	ObserveEventBus(TradingDataService_ObserveEventBusServer) error
+	// Get Statistics on Vega
+	Statistics(context.Context, *StatisticsRequest) (*StatisticsResponse, error)
 	// Get Time
-	GetVegaTime(context.Context, *empty.Empty) (*VegaTimeResponse, error)
+	GetVegaTime(context.Context, *GetVegaTimeRequest) (*GetVegaTimeResponse, error)
 	// Subscribe to a stream of Accounts
-	AccountsSubscribe(*AccountsSubscribeRequest, TradingData_AccountsSubscribeServer) error
+	AccountsSubscribe(*AccountsSubscribeRequest, TradingDataService_AccountsSubscribeServer) error
 	// Subscribe to a stream of Candles
-	CandlesSubscribe(*CandlesSubscribeRequest, TradingData_CandlesSubscribeServer) error
+	CandlesSubscribe(*CandlesSubscribeRequest, TradingDataService_CandlesSubscribeServer) error
 	// Subscribe to a stream of Margin Levels
-	MarginLevelsSubscribe(*MarginLevelsSubscribeRequest, TradingData_MarginLevelsSubscribeServer) error
+	MarginLevelsSubscribe(*MarginLevelsSubscribeRequest, TradingDataService_MarginLevelsSubscribeServer) error
 	// Subscribe to a stream of Market Depth
-	MarketDepthSubscribe(*MarketDepthSubscribeRequest, TradingData_MarketDepthSubscribeServer) error
-	// Subscribe to a stream of Market Depth PriceLevel Updates
-	MarketDepthUpdatesSubscribe(*MarketDepthUpdatesSubscribeRequest, TradingData_MarketDepthUpdatesSubscribeServer) error
+	MarketDepthSubscribe(*MarketDepthSubscribeRequest, TradingDataService_MarketDepthSubscribeServer) error
+	// Subscribe to a stream of Market Depth Price Level Updates
+	MarketDepthUpdatesSubscribe(*MarketDepthUpdatesSubscribeRequest, TradingDataService_MarketDepthUpdatesSubscribeServer) error
 	// Subscribe to a stream of Markets Data
-	MarketsDataSubscribe(*MarketsDataSubscribeRequest, TradingData_MarketsDataSubscribeServer) error
+	MarketsDataSubscribe(*MarketsDataSubscribeRequest, TradingDataService_MarketsDataSubscribeServer) error
 	// Subscribe to a stream of Orders
-	OrdersSubscribe(*OrdersSubscribeRequest, TradingData_OrdersSubscribeServer) error
+	OrdersSubscribe(*OrdersSubscribeRequest, TradingDataService_OrdersSubscribeServer) error
 	// Subscribe to a stream of Positions
-	PositionsSubscribe(*PositionsSubscribeRequest, TradingData_PositionsSubscribeServer) error
+	PositionsSubscribe(*PositionsSubscribeRequest, TradingDataService_PositionsSubscribeServer) error
 	// Subscribe to a stream of Trades
-	TradesSubscribe(*TradesSubscribeRequest, TradingData_TradesSubscribeServer) error
+	TradesSubscribe(*TradesSubscribeRequest, TradingDataService_TradesSubscribeServer) error
 	// Subscribe to a stream of Transfer Responses
-	TransferResponsesSubscribe(*empty.Empty, TradingData_TransferResponsesSubscribeServer) error
-	// Get an aggregate of signatures from all the nodes of the network.
+	TransferResponsesSubscribe(*TransferResponsesSubscribeRequest, TradingDataService_TransferResponsesSubscribeServer) error
+	// Get an aggregate of signatures from all the nodes of the network
 	GetNodeSignaturesAggregate(context.Context, *GetNodeSignaturesAggregateRequest) (*GetNodeSignaturesAggregateResponse, error)
-	// Get an asset by its identifier.
+	// Get an asset by its identifier
 	AssetByID(context.Context, *AssetByIDRequest) (*AssetByIDResponse, error)
-	// Get a list of all assets on Vega.
+	// Get a list of all assets on Vega
 	Assets(context.Context, *AssetsRequest) (*AssetsResponse, error)
 	// Get an estimate for the fee to be paid for a given order
 	EstimateFee(context.Context, *EstimateFeeRequest) (*EstimateFeeResponse, error)
 	// Get an estimate for the margin required for a new order
 	EstimateMargin(context.Context, *EstimateMarginRequest) (*EstimateMarginResponse, error)
-	// Get the bundle approval for an ERC20 withdrawal
+	// Get the bundle approval for an ERC20 withdrawal,
 	// these data are being used to bundle the call to the smart contract on the ethereum bridge
 	ERC20WithdrawalApproval(context.Context, *ERC20WithdrawalApprovalRequest) (*ERC20WithdrawalApprovalResponse, error)
-	// Get a withdrawal by its ID
+	// Get a withdrawal by its identifier
 	Withdrawal(context.Context, *WithdrawalRequest) (*WithdrawalResponse, error)
 	// Get withdrawals for a party
 	Withdrawals(context.Context, *WithdrawalsRequest) (*WithdrawalsResponse, error)
-	// Get a deposit by its ID
+	// Get a deposit by its identifier
 	Deposit(context.Context, *DepositRequest) (*DepositResponse, error)
-	// Get withdrawals for a party
+	// Get deposits for a party
 	Deposits(context.Context, *DepositsRequest) (*DepositsResponse, error)
 	// Get the network parameters
 	NetworkParameters(context.Context, *NetworkParametersRequest) (*NetworkParametersResponse, error)
 	// Get the liquidity provision orders
 	LiquidityProvisions(context.Context, *LiquidityProvisionsRequest) (*LiquidityProvisionsResponse, error)
-	mustEmbedUnimplementedTradingDataServer()
+	mustEmbedUnimplementedTradingDataServiceServer()
 }
 
-// UnimplementedTradingDataServer must be embedded to have forward compatible implementations.
-type UnimplementedTradingDataServer struct {
+// UnimplementedTradingDataServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedTradingDataServiceServer struct {
 }
 
-func (UnimplementedTradingDataServer) MarketAccounts(context.Context, *MarketAccountsRequest) (*MarketAccountsResponse, error) {
+func (UnimplementedTradingDataServiceServer) MarketAccounts(context.Context, *MarketAccountsRequest) (*MarketAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MarketAccounts not implemented")
 }
-func (UnimplementedTradingDataServer) PartyAccounts(context.Context, *PartyAccountsRequest) (*PartyAccountsResponse, error) {
+func (UnimplementedTradingDataServiceServer) PartyAccounts(context.Context, *PartyAccountsRequest) (*PartyAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PartyAccounts not implemented")
 }
-func (UnimplementedTradingDataServer) FeeInfrastructureAccounts(context.Context, *FeeInfrastructureAccountsRequest) (*FeeInfrastructureAccountsResponse, error) {
+func (UnimplementedTradingDataServiceServer) FeeInfrastructureAccounts(context.Context, *FeeInfrastructureAccountsRequest) (*FeeInfrastructureAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FeeInfrastructureAccounts not implemented")
 }
-func (UnimplementedTradingDataServer) Candles(context.Context, *CandlesRequest) (*CandlesResponse, error) {
+func (UnimplementedTradingDataServiceServer) Candles(context.Context, *CandlesRequest) (*CandlesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Candles not implemented")
 }
-func (UnimplementedTradingDataServer) MarketDataByID(context.Context, *MarketDataByIDRequest) (*MarketDataByIDResponse, error) {
+func (UnimplementedTradingDataServiceServer) MarketDataByID(context.Context, *MarketDataByIDRequest) (*MarketDataByIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MarketDataByID not implemented")
 }
-func (UnimplementedTradingDataServer) MarketsData(context.Context, *empty.Empty) (*MarketsDataResponse, error) {
+func (UnimplementedTradingDataServiceServer) MarketsData(context.Context, *MarketsDataRequest) (*MarketsDataResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MarketsData not implemented")
 }
-func (UnimplementedTradingDataServer) MarketByID(context.Context, *MarketByIDRequest) (*MarketByIDResponse, error) {
+func (UnimplementedTradingDataServiceServer) MarketByID(context.Context, *MarketByIDRequest) (*MarketByIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MarketByID not implemented")
 }
-func (UnimplementedTradingDataServer) MarketDepth(context.Context, *MarketDepthRequest) (*MarketDepthResponse, error) {
+func (UnimplementedTradingDataServiceServer) MarketDepth(context.Context, *MarketDepthRequest) (*MarketDepthResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MarketDepth not implemented")
 }
-func (UnimplementedTradingDataServer) Markets(context.Context, *empty.Empty) (*MarketsResponse, error) {
+func (UnimplementedTradingDataServiceServer) Markets(context.Context, *MarketsRequest) (*MarketsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Markets not implemented")
 }
-func (UnimplementedTradingDataServer) OrderByMarketAndID(context.Context, *OrderByMarketAndIdRequest) (*OrderByMarketAndIdResponse, error) {
+func (UnimplementedTradingDataServiceServer) OrderByMarketAndID(context.Context, *OrderByMarketAndIDRequest) (*OrderByMarketAndIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OrderByMarketAndID not implemented")
 }
-func (UnimplementedTradingDataServer) OrderByReference(context.Context, *OrderByReferenceRequest) (*OrderByReferenceResponse, error) {
+func (UnimplementedTradingDataServiceServer) OrderByReference(context.Context, *OrderByReferenceRequest) (*OrderByReferenceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OrderByReference not implemented")
 }
-func (UnimplementedTradingDataServer) OrdersByMarket(context.Context, *OrdersByMarketRequest) (*OrdersByMarketResponse, error) {
+func (UnimplementedTradingDataServiceServer) OrdersByMarket(context.Context, *OrdersByMarketRequest) (*OrdersByMarketResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OrdersByMarket not implemented")
 }
-func (UnimplementedTradingDataServer) OrdersByParty(context.Context, *OrdersByPartyRequest) (*OrdersByPartyResponse, error) {
+func (UnimplementedTradingDataServiceServer) OrdersByParty(context.Context, *OrdersByPartyRequest) (*OrdersByPartyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OrdersByParty not implemented")
 }
-func (UnimplementedTradingDataServer) OrderByID(context.Context, *OrderByIDRequest) (*proto.Order, error) {
+func (UnimplementedTradingDataServiceServer) OrderByID(context.Context, *OrderByIDRequest) (*OrderByIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OrderByID not implemented")
 }
-func (UnimplementedTradingDataServer) OrderVersionsByID(context.Context, *OrderVersionsByIDRequest) (*OrderVersionsResponse, error) {
+func (UnimplementedTradingDataServiceServer) OrderVersionsByID(context.Context, *OrderVersionsByIDRequest) (*OrderVersionsByIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OrderVersionsByID not implemented")
 }
-func (UnimplementedTradingDataServer) MarginLevels(context.Context, *MarginLevelsRequest) (*MarginLevelsResponse, error) {
+func (UnimplementedTradingDataServiceServer) MarginLevels(context.Context, *MarginLevelsRequest) (*MarginLevelsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MarginLevels not implemented")
 }
-func (UnimplementedTradingDataServer) Parties(context.Context, *empty.Empty) (*PartiesResponse, error) {
+func (UnimplementedTradingDataServiceServer) Parties(context.Context, *PartiesRequest) (*PartiesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Parties not implemented")
 }
-func (UnimplementedTradingDataServer) PartyByID(context.Context, *PartyByIDRequest) (*PartyByIDResponse, error) {
+func (UnimplementedTradingDataServiceServer) PartyByID(context.Context, *PartyByIDRequest) (*PartyByIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PartyByID not implemented")
 }
-func (UnimplementedTradingDataServer) PositionsByParty(context.Context, *PositionsByPartyRequest) (*PositionsByPartyResponse, error) {
+func (UnimplementedTradingDataServiceServer) PositionsByParty(context.Context, *PositionsByPartyRequest) (*PositionsByPartyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PositionsByParty not implemented")
 }
-func (UnimplementedTradingDataServer) LastTrade(context.Context, *LastTradeRequest) (*LastTradeResponse, error) {
+func (UnimplementedTradingDataServiceServer) LastTrade(context.Context, *LastTradeRequest) (*LastTradeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method LastTrade not implemented")
 }
-func (UnimplementedTradingDataServer) TradesByMarket(context.Context, *TradesByMarketRequest) (*TradesByMarketResponse, error) {
+func (UnimplementedTradingDataServiceServer) TradesByMarket(context.Context, *TradesByMarketRequest) (*TradesByMarketResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TradesByMarket not implemented")
 }
-func (UnimplementedTradingDataServer) TradesByOrder(context.Context, *TradesByOrderRequest) (*TradesByOrderResponse, error) {
+func (UnimplementedTradingDataServiceServer) TradesByOrder(context.Context, *TradesByOrderRequest) (*TradesByOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TradesByOrder not implemented")
 }
-func (UnimplementedTradingDataServer) TradesByParty(context.Context, *TradesByPartyRequest) (*TradesByPartyResponse, error) {
+func (UnimplementedTradingDataServiceServer) TradesByParty(context.Context, *TradesByPartyRequest) (*TradesByPartyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TradesByParty not implemented")
 }
-func (UnimplementedTradingDataServer) GetProposals(context.Context, *GetProposalsRequest) (*GetProposalsResponse, error) {
+func (UnimplementedTradingDataServiceServer) GetProposals(context.Context, *GetProposalsRequest) (*GetProposalsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProposals not implemented")
 }
-func (UnimplementedTradingDataServer) GetProposalsByParty(context.Context, *GetProposalsByPartyRequest) (*GetProposalsByPartyResponse, error) {
+func (UnimplementedTradingDataServiceServer) GetProposalsByParty(context.Context, *GetProposalsByPartyRequest) (*GetProposalsByPartyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProposalsByParty not implemented")
 }
-func (UnimplementedTradingDataServer) GetVotesByParty(context.Context, *GetVotesByPartyRequest) (*GetVotesByPartyResponse, error) {
+func (UnimplementedTradingDataServiceServer) GetVotesByParty(context.Context, *GetVotesByPartyRequest) (*GetVotesByPartyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetVotesByParty not implemented")
 }
-func (UnimplementedTradingDataServer) GetNewMarketProposals(context.Context, *GetNewMarketProposalsRequest) (*GetNewMarketProposalsResponse, error) {
+func (UnimplementedTradingDataServiceServer) GetNewMarketProposals(context.Context, *GetNewMarketProposalsRequest) (*GetNewMarketProposalsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNewMarketProposals not implemented")
 }
-func (UnimplementedTradingDataServer) GetUpdateMarketProposals(context.Context, *GetUpdateMarketProposalsRequest) (*GetUpdateMarketProposalsResponse, error) {
+func (UnimplementedTradingDataServiceServer) GetUpdateMarketProposals(context.Context, *GetUpdateMarketProposalsRequest) (*GetUpdateMarketProposalsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUpdateMarketProposals not implemented")
 }
-func (UnimplementedTradingDataServer) GetNetworkParametersProposals(context.Context, *GetNetworkParametersProposalsRequest) (*GetNetworkParametersProposalsResponse, error) {
+func (UnimplementedTradingDataServiceServer) GetNetworkParametersProposals(context.Context, *GetNetworkParametersProposalsRequest) (*GetNetworkParametersProposalsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNetworkParametersProposals not implemented")
 }
-func (UnimplementedTradingDataServer) GetNewAssetProposals(context.Context, *GetNewAssetProposalsRequest) (*GetNewAssetProposalsResponse, error) {
+func (UnimplementedTradingDataServiceServer) GetNewAssetProposals(context.Context, *GetNewAssetProposalsRequest) (*GetNewAssetProposalsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNewAssetProposals not implemented")
 }
-func (UnimplementedTradingDataServer) GetProposalByID(context.Context, *GetProposalByIDRequest) (*GetProposalByIDResponse, error) {
+func (UnimplementedTradingDataServiceServer) GetProposalByID(context.Context, *GetProposalByIDRequest) (*GetProposalByIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProposalByID not implemented")
 }
-func (UnimplementedTradingDataServer) GetProposalByReference(context.Context, *GetProposalByReferenceRequest) (*GetProposalByReferenceResponse, error) {
+func (UnimplementedTradingDataServiceServer) GetProposalByReference(context.Context, *GetProposalByReferenceRequest) (*GetProposalByReferenceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProposalByReference not implemented")
 }
-func (UnimplementedTradingDataServer) ObserveGovernance(*empty.Empty, TradingData_ObserveGovernanceServer) error {
+func (UnimplementedTradingDataServiceServer) ObserveGovernance(*ObserveGovernanceRequest, TradingDataService_ObserveGovernanceServer) error {
 	return status.Errorf(codes.Unimplemented, "method ObserveGovernance not implemented")
 }
-func (UnimplementedTradingDataServer) ObservePartyProposals(*ObservePartyProposalsRequest, TradingData_ObservePartyProposalsServer) error {
+func (UnimplementedTradingDataServiceServer) ObservePartyProposals(*ObservePartyProposalsRequest, TradingDataService_ObservePartyProposalsServer) error {
 	return status.Errorf(codes.Unimplemented, "method ObservePartyProposals not implemented")
 }
-func (UnimplementedTradingDataServer) ObservePartyVotes(*ObservePartyVotesRequest, TradingData_ObservePartyVotesServer) error {
+func (UnimplementedTradingDataServiceServer) ObservePartyVotes(*ObservePartyVotesRequest, TradingDataService_ObservePartyVotesServer) error {
 	return status.Errorf(codes.Unimplemented, "method ObservePartyVotes not implemented")
 }
-func (UnimplementedTradingDataServer) ObserveProposalVotes(*ObserveProposalVotesRequest, TradingData_ObserveProposalVotesServer) error {
+func (UnimplementedTradingDataServiceServer) ObserveProposalVotes(*ObserveProposalVotesRequest, TradingDataService_ObserveProposalVotesServer) error {
 	return status.Errorf(codes.Unimplemented, "method ObserveProposalVotes not implemented")
 }
-func (UnimplementedTradingDataServer) ObserveEventBus(TradingData_ObserveEventBusServer) error {
+func (UnimplementedTradingDataServiceServer) ObserveEventBus(TradingDataService_ObserveEventBusServer) error {
 	return status.Errorf(codes.Unimplemented, "method ObserveEventBus not implemented")
 }
-func (UnimplementedTradingDataServer) Statistics(context.Context, *empty.Empty) (*proto.Statistics, error) {
+func (UnimplementedTradingDataServiceServer) Statistics(context.Context, *StatisticsRequest) (*StatisticsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Statistics not implemented")
 }
-func (UnimplementedTradingDataServer) GetVegaTime(context.Context, *empty.Empty) (*VegaTimeResponse, error) {
+func (UnimplementedTradingDataServiceServer) GetVegaTime(context.Context, *GetVegaTimeRequest) (*GetVegaTimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetVegaTime not implemented")
 }
-func (UnimplementedTradingDataServer) AccountsSubscribe(*AccountsSubscribeRequest, TradingData_AccountsSubscribeServer) error {
+func (UnimplementedTradingDataServiceServer) AccountsSubscribe(*AccountsSubscribeRequest, TradingDataService_AccountsSubscribeServer) error {
 	return status.Errorf(codes.Unimplemented, "method AccountsSubscribe not implemented")
 }
-func (UnimplementedTradingDataServer) CandlesSubscribe(*CandlesSubscribeRequest, TradingData_CandlesSubscribeServer) error {
+func (UnimplementedTradingDataServiceServer) CandlesSubscribe(*CandlesSubscribeRequest, TradingDataService_CandlesSubscribeServer) error {
 	return status.Errorf(codes.Unimplemented, "method CandlesSubscribe not implemented")
 }
-func (UnimplementedTradingDataServer) MarginLevelsSubscribe(*MarginLevelsSubscribeRequest, TradingData_MarginLevelsSubscribeServer) error {
+func (UnimplementedTradingDataServiceServer) MarginLevelsSubscribe(*MarginLevelsSubscribeRequest, TradingDataService_MarginLevelsSubscribeServer) error {
 	return status.Errorf(codes.Unimplemented, "method MarginLevelsSubscribe not implemented")
 }
-func (UnimplementedTradingDataServer) MarketDepthSubscribe(*MarketDepthSubscribeRequest, TradingData_MarketDepthSubscribeServer) error {
+func (UnimplementedTradingDataServiceServer) MarketDepthSubscribe(*MarketDepthSubscribeRequest, TradingDataService_MarketDepthSubscribeServer) error {
 	return status.Errorf(codes.Unimplemented, "method MarketDepthSubscribe not implemented")
 }
-func (UnimplementedTradingDataServer) MarketDepthUpdatesSubscribe(*MarketDepthUpdatesSubscribeRequest, TradingData_MarketDepthUpdatesSubscribeServer) error {
+func (UnimplementedTradingDataServiceServer) MarketDepthUpdatesSubscribe(*MarketDepthUpdatesSubscribeRequest, TradingDataService_MarketDepthUpdatesSubscribeServer) error {
 	return status.Errorf(codes.Unimplemented, "method MarketDepthUpdatesSubscribe not implemented")
 }
-func (UnimplementedTradingDataServer) MarketsDataSubscribe(*MarketsDataSubscribeRequest, TradingData_MarketsDataSubscribeServer) error {
+func (UnimplementedTradingDataServiceServer) MarketsDataSubscribe(*MarketsDataSubscribeRequest, TradingDataService_MarketsDataSubscribeServer) error {
 	return status.Errorf(codes.Unimplemented, "method MarketsDataSubscribe not implemented")
 }
-func (UnimplementedTradingDataServer) OrdersSubscribe(*OrdersSubscribeRequest, TradingData_OrdersSubscribeServer) error {
+func (UnimplementedTradingDataServiceServer) OrdersSubscribe(*OrdersSubscribeRequest, TradingDataService_OrdersSubscribeServer) error {
 	return status.Errorf(codes.Unimplemented, "method OrdersSubscribe not implemented")
 }
-func (UnimplementedTradingDataServer) PositionsSubscribe(*PositionsSubscribeRequest, TradingData_PositionsSubscribeServer) error {
+func (UnimplementedTradingDataServiceServer) PositionsSubscribe(*PositionsSubscribeRequest, TradingDataService_PositionsSubscribeServer) error {
 	return status.Errorf(codes.Unimplemented, "method PositionsSubscribe not implemented")
 }
-func (UnimplementedTradingDataServer) TradesSubscribe(*TradesSubscribeRequest, TradingData_TradesSubscribeServer) error {
+func (UnimplementedTradingDataServiceServer) TradesSubscribe(*TradesSubscribeRequest, TradingDataService_TradesSubscribeServer) error {
 	return status.Errorf(codes.Unimplemented, "method TradesSubscribe not implemented")
 }
-func (UnimplementedTradingDataServer) TransferResponsesSubscribe(*empty.Empty, TradingData_TransferResponsesSubscribeServer) error {
+func (UnimplementedTradingDataServiceServer) TransferResponsesSubscribe(*TransferResponsesSubscribeRequest, TradingDataService_TransferResponsesSubscribeServer) error {
 	return status.Errorf(codes.Unimplemented, "method TransferResponsesSubscribe not implemented")
 }
-func (UnimplementedTradingDataServer) GetNodeSignaturesAggregate(context.Context, *GetNodeSignaturesAggregateRequest) (*GetNodeSignaturesAggregateResponse, error) {
+func (UnimplementedTradingDataServiceServer) GetNodeSignaturesAggregate(context.Context, *GetNodeSignaturesAggregateRequest) (*GetNodeSignaturesAggregateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNodeSignaturesAggregate not implemented")
 }
-func (UnimplementedTradingDataServer) AssetByID(context.Context, *AssetByIDRequest) (*AssetByIDResponse, error) {
+func (UnimplementedTradingDataServiceServer) AssetByID(context.Context, *AssetByIDRequest) (*AssetByIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AssetByID not implemented")
 }
-func (UnimplementedTradingDataServer) Assets(context.Context, *AssetsRequest) (*AssetsResponse, error) {
+func (UnimplementedTradingDataServiceServer) Assets(context.Context, *AssetsRequest) (*AssetsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Assets not implemented")
 }
-func (UnimplementedTradingDataServer) EstimateFee(context.Context, *EstimateFeeRequest) (*EstimateFeeResponse, error) {
+func (UnimplementedTradingDataServiceServer) EstimateFee(context.Context, *EstimateFeeRequest) (*EstimateFeeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EstimateFee not implemented")
 }
-func (UnimplementedTradingDataServer) EstimateMargin(context.Context, *EstimateMarginRequest) (*EstimateMarginResponse, error) {
+func (UnimplementedTradingDataServiceServer) EstimateMargin(context.Context, *EstimateMarginRequest) (*EstimateMarginResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EstimateMargin not implemented")
 }
-func (UnimplementedTradingDataServer) ERC20WithdrawalApproval(context.Context, *ERC20WithdrawalApprovalRequest) (*ERC20WithdrawalApprovalResponse, error) {
+func (UnimplementedTradingDataServiceServer) ERC20WithdrawalApproval(context.Context, *ERC20WithdrawalApprovalRequest) (*ERC20WithdrawalApprovalResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ERC20WithdrawalApproval not implemented")
 }
-func (UnimplementedTradingDataServer) Withdrawal(context.Context, *WithdrawalRequest) (*WithdrawalResponse, error) {
+func (UnimplementedTradingDataServiceServer) Withdrawal(context.Context, *WithdrawalRequest) (*WithdrawalResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Withdrawal not implemented")
 }
-func (UnimplementedTradingDataServer) Withdrawals(context.Context, *WithdrawalsRequest) (*WithdrawalsResponse, error) {
+func (UnimplementedTradingDataServiceServer) Withdrawals(context.Context, *WithdrawalsRequest) (*WithdrawalsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Withdrawals not implemented")
 }
-func (UnimplementedTradingDataServer) Deposit(context.Context, *DepositRequest) (*DepositResponse, error) {
+func (UnimplementedTradingDataServiceServer) Deposit(context.Context, *DepositRequest) (*DepositResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Deposit not implemented")
 }
-func (UnimplementedTradingDataServer) Deposits(context.Context, *DepositsRequest) (*DepositsResponse, error) {
+func (UnimplementedTradingDataServiceServer) Deposits(context.Context, *DepositsRequest) (*DepositsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Deposits not implemented")
 }
-func (UnimplementedTradingDataServer) NetworkParameters(context.Context, *NetworkParametersRequest) (*NetworkParametersResponse, error) {
+func (UnimplementedTradingDataServiceServer) NetworkParameters(context.Context, *NetworkParametersRequest) (*NetworkParametersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NetworkParameters not implemented")
 }
-func (UnimplementedTradingDataServer) LiquidityProvisions(context.Context, *LiquidityProvisionsRequest) (*LiquidityProvisionsResponse, error) {
+func (UnimplementedTradingDataServiceServer) LiquidityProvisions(context.Context, *LiquidityProvisionsRequest) (*LiquidityProvisionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method LiquidityProvisions not implemented")
 }
-func (UnimplementedTradingDataServer) mustEmbedUnimplementedTradingDataServer() {}
+func (UnimplementedTradingDataServiceServer) mustEmbedUnimplementedTradingDataServiceServer() {}
 
-// UnsafeTradingDataServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to TradingDataServer will
+// UnsafeTradingDataServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to TradingDataServiceServer will
 // result in compilation errors.
-type UnsafeTradingDataServer interface {
-	mustEmbedUnimplementedTradingDataServer()
+type UnsafeTradingDataServiceServer interface {
+	mustEmbedUnimplementedTradingDataServiceServer()
 }
 
-func RegisterTradingDataServer(s grpc.ServiceRegistrar, srv TradingDataServer) {
-	s.RegisterService(&_TradingData_serviceDesc, srv)
+func RegisterTradingDataServiceServer(s grpc.ServiceRegistrar, srv TradingDataServiceServer) {
+	s.RegisterService(&_TradingDataService_serviceDesc, srv)
 }
 
-func _TradingData_MarketAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_MarketAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MarketAccountsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).MarketAccounts(ctx, in)
+		return srv.(TradingDataServiceServer).MarketAccounts(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/MarketAccounts",
+		FullMethod: "/api.v1.TradingDataService/MarketAccounts",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).MarketAccounts(ctx, req.(*MarketAccountsRequest))
+		return srv.(TradingDataServiceServer).MarketAccounts(ctx, req.(*MarketAccountsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_PartyAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_PartyAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PartyAccountsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).PartyAccounts(ctx, in)
+		return srv.(TradingDataServiceServer).PartyAccounts(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/PartyAccounts",
+		FullMethod: "/api.v1.TradingDataService/PartyAccounts",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).PartyAccounts(ctx, req.(*PartyAccountsRequest))
+		return srv.(TradingDataServiceServer).PartyAccounts(ctx, req.(*PartyAccountsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_FeeInfrastructureAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_FeeInfrastructureAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(FeeInfrastructureAccountsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).FeeInfrastructureAccounts(ctx, in)
+		return srv.(TradingDataServiceServer).FeeInfrastructureAccounts(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/FeeInfrastructureAccounts",
+		FullMethod: "/api.v1.TradingDataService/FeeInfrastructureAccounts",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).FeeInfrastructureAccounts(ctx, req.(*FeeInfrastructureAccountsRequest))
+		return srv.(TradingDataServiceServer).FeeInfrastructureAccounts(ctx, req.(*FeeInfrastructureAccountsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_Candles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_Candles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CandlesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).Candles(ctx, in)
+		return srv.(TradingDataServiceServer).Candles(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/Candles",
+		FullMethod: "/api.v1.TradingDataService/Candles",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).Candles(ctx, req.(*CandlesRequest))
+		return srv.(TradingDataServiceServer).Candles(ctx, req.(*CandlesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_MarketDataByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_MarketDataByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MarketDataByIDRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).MarketDataByID(ctx, in)
+		return srv.(TradingDataServiceServer).MarketDataByID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/MarketDataByID",
+		FullMethod: "/api.v1.TradingDataService/MarketDataByID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).MarketDataByID(ctx, req.(*MarketDataByIDRequest))
+		return srv.(TradingDataServiceServer).MarketDataByID(ctx, req.(*MarketDataByIDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_MarketsData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(empty.Empty)
+func _TradingDataService_MarketsData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MarketsDataRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).MarketsData(ctx, in)
+		return srv.(TradingDataServiceServer).MarketsData(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/MarketsData",
+		FullMethod: "/api.v1.TradingDataService/MarketsData",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).MarketsData(ctx, req.(*empty.Empty))
+		return srv.(TradingDataServiceServer).MarketsData(ctx, req.(*MarketsDataRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_MarketByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_MarketByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MarketByIDRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).MarketByID(ctx, in)
+		return srv.(TradingDataServiceServer).MarketByID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/MarketByID",
+		FullMethod: "/api.v1.TradingDataService/MarketByID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).MarketByID(ctx, req.(*MarketByIDRequest))
+		return srv.(TradingDataServiceServer).MarketByID(ctx, req.(*MarketByIDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_MarketDepth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_MarketDepth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MarketDepthRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).MarketDepth(ctx, in)
+		return srv.(TradingDataServiceServer).MarketDepth(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/MarketDepth",
+		FullMethod: "/api.v1.TradingDataService/MarketDepth",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).MarketDepth(ctx, req.(*MarketDepthRequest))
+		return srv.(TradingDataServiceServer).MarketDepth(ctx, req.(*MarketDepthRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_Markets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(empty.Empty)
+func _TradingDataService_Markets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MarketsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).Markets(ctx, in)
+		return srv.(TradingDataServiceServer).Markets(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/Markets",
+		FullMethod: "/api.v1.TradingDataService/Markets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).Markets(ctx, req.(*empty.Empty))
+		return srv.(TradingDataServiceServer).Markets(ctx, req.(*MarketsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_OrderByMarketAndID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(OrderByMarketAndIdRequest)
+func _TradingDataService_OrderByMarketAndID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(OrderByMarketAndIDRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).OrderByMarketAndID(ctx, in)
+		return srv.(TradingDataServiceServer).OrderByMarketAndID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/OrderByMarketAndID",
+		FullMethod: "/api.v1.TradingDataService/OrderByMarketAndID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).OrderByMarketAndID(ctx, req.(*OrderByMarketAndIdRequest))
+		return srv.(TradingDataServiceServer).OrderByMarketAndID(ctx, req.(*OrderByMarketAndIDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_OrderByReference_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_OrderByReference_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(OrderByReferenceRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).OrderByReference(ctx, in)
+		return srv.(TradingDataServiceServer).OrderByReference(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/OrderByReference",
+		FullMethod: "/api.v1.TradingDataService/OrderByReference",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).OrderByReference(ctx, req.(*OrderByReferenceRequest))
+		return srv.(TradingDataServiceServer).OrderByReference(ctx, req.(*OrderByReferenceRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_OrdersByMarket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_OrdersByMarket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(OrdersByMarketRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).OrdersByMarket(ctx, in)
+		return srv.(TradingDataServiceServer).OrdersByMarket(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/OrdersByMarket",
+		FullMethod: "/api.v1.TradingDataService/OrdersByMarket",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).OrdersByMarket(ctx, req.(*OrdersByMarketRequest))
+		return srv.(TradingDataServiceServer).OrdersByMarket(ctx, req.(*OrdersByMarketRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_OrdersByParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_OrdersByParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(OrdersByPartyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).OrdersByParty(ctx, in)
+		return srv.(TradingDataServiceServer).OrdersByParty(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/OrdersByParty",
+		FullMethod: "/api.v1.TradingDataService/OrdersByParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).OrdersByParty(ctx, req.(*OrdersByPartyRequest))
+		return srv.(TradingDataServiceServer).OrdersByParty(ctx, req.(*OrdersByPartyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_OrderByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_OrderByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(OrderByIDRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).OrderByID(ctx, in)
+		return srv.(TradingDataServiceServer).OrderByID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/OrderByID",
+		FullMethod: "/api.v1.TradingDataService/OrderByID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).OrderByID(ctx, req.(*OrderByIDRequest))
+		return srv.(TradingDataServiceServer).OrderByID(ctx, req.(*OrderByIDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_OrderVersionsByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_OrderVersionsByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(OrderVersionsByIDRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).OrderVersionsByID(ctx, in)
+		return srv.(TradingDataServiceServer).OrderVersionsByID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/OrderVersionsByID",
+		FullMethod: "/api.v1.TradingDataService/OrderVersionsByID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).OrderVersionsByID(ctx, req.(*OrderVersionsByIDRequest))
+		return srv.(TradingDataServiceServer).OrderVersionsByID(ctx, req.(*OrderVersionsByIDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_MarginLevels_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_MarginLevels_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MarginLevelsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).MarginLevels(ctx, in)
+		return srv.(TradingDataServiceServer).MarginLevels(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/MarginLevels",
+		FullMethod: "/api.v1.TradingDataService/MarginLevels",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).MarginLevels(ctx, req.(*MarginLevelsRequest))
+		return srv.(TradingDataServiceServer).MarginLevels(ctx, req.(*MarginLevelsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_Parties_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(empty.Empty)
+func _TradingDataService_Parties_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PartiesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).Parties(ctx, in)
+		return srv.(TradingDataServiceServer).Parties(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/Parties",
+		FullMethod: "/api.v1.TradingDataService/Parties",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).Parties(ctx, req.(*empty.Empty))
+		return srv.(TradingDataServiceServer).Parties(ctx, req.(*PartiesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_PartyByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_PartyByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PartyByIDRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).PartyByID(ctx, in)
+		return srv.(TradingDataServiceServer).PartyByID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/PartyByID",
+		FullMethod: "/api.v1.TradingDataService/PartyByID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).PartyByID(ctx, req.(*PartyByIDRequest))
+		return srv.(TradingDataServiceServer).PartyByID(ctx, req.(*PartyByIDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_PositionsByParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_PositionsByParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PositionsByPartyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).PositionsByParty(ctx, in)
+		return srv.(TradingDataServiceServer).PositionsByParty(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/PositionsByParty",
+		FullMethod: "/api.v1.TradingDataService/PositionsByParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).PositionsByParty(ctx, req.(*PositionsByPartyRequest))
+		return srv.(TradingDataServiceServer).PositionsByParty(ctx, req.(*PositionsByPartyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_LastTrade_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_LastTrade_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(LastTradeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).LastTrade(ctx, in)
+		return srv.(TradingDataServiceServer).LastTrade(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/LastTrade",
+		FullMethod: "/api.v1.TradingDataService/LastTrade",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).LastTrade(ctx, req.(*LastTradeRequest))
+		return srv.(TradingDataServiceServer).LastTrade(ctx, req.(*LastTradeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_TradesByMarket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_TradesByMarket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(TradesByMarketRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).TradesByMarket(ctx, in)
+		return srv.(TradingDataServiceServer).TradesByMarket(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/TradesByMarket",
+		FullMethod: "/api.v1.TradingDataService/TradesByMarket",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).TradesByMarket(ctx, req.(*TradesByMarketRequest))
+		return srv.(TradingDataServiceServer).TradesByMarket(ctx, req.(*TradesByMarketRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_TradesByOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_TradesByOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(TradesByOrderRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).TradesByOrder(ctx, in)
+		return srv.(TradingDataServiceServer).TradesByOrder(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/TradesByOrder",
+		FullMethod: "/api.v1.TradingDataService/TradesByOrder",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).TradesByOrder(ctx, req.(*TradesByOrderRequest))
+		return srv.(TradingDataServiceServer).TradesByOrder(ctx, req.(*TradesByOrderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_TradesByParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_TradesByParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(TradesByPartyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).TradesByParty(ctx, in)
+		return srv.(TradingDataServiceServer).TradesByParty(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/TradesByParty",
+		FullMethod: "/api.v1.TradingDataService/TradesByParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).TradesByParty(ctx, req.(*TradesByPartyRequest))
+		return srv.(TradingDataServiceServer).TradesByParty(ctx, req.(*TradesByPartyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_GetProposals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_GetProposals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetProposalsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).GetProposals(ctx, in)
+		return srv.(TradingDataServiceServer).GetProposals(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/GetProposals",
+		FullMethod: "/api.v1.TradingDataService/GetProposals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).GetProposals(ctx, req.(*GetProposalsRequest))
+		return srv.(TradingDataServiceServer).GetProposals(ctx, req.(*GetProposalsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_GetProposalsByParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_GetProposalsByParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetProposalsByPartyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).GetProposalsByParty(ctx, in)
+		return srv.(TradingDataServiceServer).GetProposalsByParty(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/GetProposalsByParty",
+		FullMethod: "/api.v1.TradingDataService/GetProposalsByParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).GetProposalsByParty(ctx, req.(*GetProposalsByPartyRequest))
+		return srv.(TradingDataServiceServer).GetProposalsByParty(ctx, req.(*GetProposalsByPartyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_GetVotesByParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_GetVotesByParty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetVotesByPartyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).GetVotesByParty(ctx, in)
+		return srv.(TradingDataServiceServer).GetVotesByParty(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/GetVotesByParty",
+		FullMethod: "/api.v1.TradingDataService/GetVotesByParty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).GetVotesByParty(ctx, req.(*GetVotesByPartyRequest))
+		return srv.(TradingDataServiceServer).GetVotesByParty(ctx, req.(*GetVotesByPartyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_GetNewMarketProposals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_GetNewMarketProposals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetNewMarketProposalsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).GetNewMarketProposals(ctx, in)
+		return srv.(TradingDataServiceServer).GetNewMarketProposals(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/GetNewMarketProposals",
+		FullMethod: "/api.v1.TradingDataService/GetNewMarketProposals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).GetNewMarketProposals(ctx, req.(*GetNewMarketProposalsRequest))
+		return srv.(TradingDataServiceServer).GetNewMarketProposals(ctx, req.(*GetNewMarketProposalsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_GetUpdateMarketProposals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_GetUpdateMarketProposals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUpdateMarketProposalsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).GetUpdateMarketProposals(ctx, in)
+		return srv.(TradingDataServiceServer).GetUpdateMarketProposals(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/GetUpdateMarketProposals",
+		FullMethod: "/api.v1.TradingDataService/GetUpdateMarketProposals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).GetUpdateMarketProposals(ctx, req.(*GetUpdateMarketProposalsRequest))
+		return srv.(TradingDataServiceServer).GetUpdateMarketProposals(ctx, req.(*GetUpdateMarketProposalsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_GetNetworkParametersProposals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_GetNetworkParametersProposals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetNetworkParametersProposalsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).GetNetworkParametersProposals(ctx, in)
+		return srv.(TradingDataServiceServer).GetNetworkParametersProposals(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/GetNetworkParametersProposals",
+		FullMethod: "/api.v1.TradingDataService/GetNetworkParametersProposals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).GetNetworkParametersProposals(ctx, req.(*GetNetworkParametersProposalsRequest))
+		return srv.(TradingDataServiceServer).GetNetworkParametersProposals(ctx, req.(*GetNetworkParametersProposalsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_GetNewAssetProposals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_GetNewAssetProposals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetNewAssetProposalsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).GetNewAssetProposals(ctx, in)
+		return srv.(TradingDataServiceServer).GetNewAssetProposals(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/GetNewAssetProposals",
+		FullMethod: "/api.v1.TradingDataService/GetNewAssetProposals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).GetNewAssetProposals(ctx, req.(*GetNewAssetProposalsRequest))
+		return srv.(TradingDataServiceServer).GetNewAssetProposals(ctx, req.(*GetNewAssetProposalsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_GetProposalByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_GetProposalByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetProposalByIDRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).GetProposalByID(ctx, in)
+		return srv.(TradingDataServiceServer).GetProposalByID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/GetProposalByID",
+		FullMethod: "/api.v1.TradingDataService/GetProposalByID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).GetProposalByID(ctx, req.(*GetProposalByIDRequest))
+		return srv.(TradingDataServiceServer).GetProposalByID(ctx, req.(*GetProposalByIDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_GetProposalByReference_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_GetProposalByReference_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetProposalByReferenceRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).GetProposalByReference(ctx, in)
+		return srv.(TradingDataServiceServer).GetProposalByReference(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/GetProposalByReference",
+		FullMethod: "/api.v1.TradingDataService/GetProposalByReference",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).GetProposalByReference(ctx, req.(*GetProposalByReferenceRequest))
+		return srv.(TradingDataServiceServer).GetProposalByReference(ctx, req.(*GetProposalByReferenceRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_ObserveGovernance_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(empty.Empty)
+func _TradingDataService_ObserveGovernance_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(ObserveGovernanceRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(TradingDataServer).ObserveGovernance(m, &tradingDataObserveGovernanceServer{stream})
+	return srv.(TradingDataServiceServer).ObserveGovernance(m, &tradingDataServiceObserveGovernanceServer{stream})
 }
 
-type TradingData_ObserveGovernanceServer interface {
-	Send(*proto.GovernanceData) error
+type TradingDataService_ObserveGovernanceServer interface {
+	Send(*ObserveGovernanceResponse) error
 	grpc.ServerStream
 }
 
-type tradingDataObserveGovernanceServer struct {
+type tradingDataServiceObserveGovernanceServer struct {
 	grpc.ServerStream
 }
 
-func (x *tradingDataObserveGovernanceServer) Send(m *proto.GovernanceData) error {
+func (x *tradingDataServiceObserveGovernanceServer) Send(m *ObserveGovernanceResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _TradingData_ObservePartyProposals_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _TradingDataService_ObservePartyProposals_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(ObservePartyProposalsRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(TradingDataServer).ObservePartyProposals(m, &tradingDataObservePartyProposalsServer{stream})
+	return srv.(TradingDataServiceServer).ObservePartyProposals(m, &tradingDataServiceObservePartyProposalsServer{stream})
 }
 
-type TradingData_ObservePartyProposalsServer interface {
-	Send(*proto.GovernanceData) error
+type TradingDataService_ObservePartyProposalsServer interface {
+	Send(*ObservePartyProposalsResponse) error
 	grpc.ServerStream
 }
 
-type tradingDataObservePartyProposalsServer struct {
+type tradingDataServiceObservePartyProposalsServer struct {
 	grpc.ServerStream
 }
 
-func (x *tradingDataObservePartyProposalsServer) Send(m *proto.GovernanceData) error {
+func (x *tradingDataServiceObservePartyProposalsServer) Send(m *ObservePartyProposalsResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _TradingData_ObservePartyVotes_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _TradingDataService_ObservePartyVotes_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(ObservePartyVotesRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(TradingDataServer).ObservePartyVotes(m, &tradingDataObservePartyVotesServer{stream})
+	return srv.(TradingDataServiceServer).ObservePartyVotes(m, &tradingDataServiceObservePartyVotesServer{stream})
 }
 
-type TradingData_ObservePartyVotesServer interface {
-	Send(*proto.Vote) error
+type TradingDataService_ObservePartyVotesServer interface {
+	Send(*ObservePartyVotesResponse) error
 	grpc.ServerStream
 }
 
-type tradingDataObservePartyVotesServer struct {
+type tradingDataServiceObservePartyVotesServer struct {
 	grpc.ServerStream
 }
 
-func (x *tradingDataObservePartyVotesServer) Send(m *proto.Vote) error {
+func (x *tradingDataServiceObservePartyVotesServer) Send(m *ObservePartyVotesResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _TradingData_ObserveProposalVotes_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _TradingDataService_ObserveProposalVotes_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(ObserveProposalVotesRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(TradingDataServer).ObserveProposalVotes(m, &tradingDataObserveProposalVotesServer{stream})
+	return srv.(TradingDataServiceServer).ObserveProposalVotes(m, &tradingDataServiceObserveProposalVotesServer{stream})
 }
 
-type TradingData_ObserveProposalVotesServer interface {
-	Send(*proto.Vote) error
+type TradingDataService_ObserveProposalVotesServer interface {
+	Send(*ObserveProposalVotesResponse) error
 	grpc.ServerStream
 }
 
-type tradingDataObserveProposalVotesServer struct {
+type tradingDataServiceObserveProposalVotesServer struct {
 	grpc.ServerStream
 }
 
-func (x *tradingDataObserveProposalVotesServer) Send(m *proto.Vote) error {
+func (x *tradingDataServiceObserveProposalVotesServer) Send(m *ObserveProposalVotesResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _TradingData_ObserveEventBus_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(TradingDataServer).ObserveEventBus(&tradingDataObserveEventBusServer{stream})
+func _TradingDataService_ObserveEventBus_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(TradingDataServiceServer).ObserveEventBus(&tradingDataServiceObserveEventBusServer{stream})
 }
 
-type TradingData_ObserveEventBusServer interface {
-	Send(*ObserveEventsResponse) error
-	Recv() (*ObserveEventsRequest, error)
+type TradingDataService_ObserveEventBusServer interface {
+	Send(*ObserveEventBusResponse) error
+	Recv() (*ObserveEventBusRequest, error)
 	grpc.ServerStream
 }
 
-type tradingDataObserveEventBusServer struct {
+type tradingDataServiceObserveEventBusServer struct {
 	grpc.ServerStream
 }
 
-func (x *tradingDataObserveEventBusServer) Send(m *ObserveEventsResponse) error {
+func (x *tradingDataServiceObserveEventBusServer) Send(m *ObserveEventBusResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func (x *tradingDataObserveEventBusServer) Recv() (*ObserveEventsRequest, error) {
-	m := new(ObserveEventsRequest)
+func (x *tradingDataServiceObserveEventBusServer) Recv() (*ObserveEventBusRequest, error) {
+	m := new(ObserveEventBusRequest)
 	if err := x.ServerStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func _TradingData_Statistics_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(empty.Empty)
+func _TradingDataService_Statistics_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StatisticsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).Statistics(ctx, in)
+		return srv.(TradingDataServiceServer).Statistics(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/Statistics",
+		FullMethod: "/api.v1.TradingDataService/Statistics",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).Statistics(ctx, req.(*empty.Empty))
+		return srv.(TradingDataServiceServer).Statistics(ctx, req.(*StatisticsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_GetVegaTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(empty.Empty)
+func _TradingDataService_GetVegaTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVegaTimeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).GetVegaTime(ctx, in)
+		return srv.(TradingDataServiceServer).GetVegaTime(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/GetVegaTime",
+		FullMethod: "/api.v1.TradingDataService/GetVegaTime",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).GetVegaTime(ctx, req.(*empty.Empty))
+		return srv.(TradingDataServiceServer).GetVegaTime(ctx, req.(*GetVegaTimeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_AccountsSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _TradingDataService_AccountsSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(AccountsSubscribeRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(TradingDataServer).AccountsSubscribe(m, &tradingDataAccountsSubscribeServer{stream})
+	return srv.(TradingDataServiceServer).AccountsSubscribe(m, &tradingDataServiceAccountsSubscribeServer{stream})
 }
 
-type TradingData_AccountsSubscribeServer interface {
-	Send(*proto.Account) error
+type TradingDataService_AccountsSubscribeServer interface {
+	Send(*AccountsSubscribeResponse) error
 	grpc.ServerStream
 }
 
-type tradingDataAccountsSubscribeServer struct {
+type tradingDataServiceAccountsSubscribeServer struct {
 	grpc.ServerStream
 }
 
-func (x *tradingDataAccountsSubscribeServer) Send(m *proto.Account) error {
+func (x *tradingDataServiceAccountsSubscribeServer) Send(m *AccountsSubscribeResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _TradingData_CandlesSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _TradingDataService_CandlesSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(CandlesSubscribeRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(TradingDataServer).CandlesSubscribe(m, &tradingDataCandlesSubscribeServer{stream})
+	return srv.(TradingDataServiceServer).CandlesSubscribe(m, &tradingDataServiceCandlesSubscribeServer{stream})
 }
 
-type TradingData_CandlesSubscribeServer interface {
-	Send(*proto.Candle) error
+type TradingDataService_CandlesSubscribeServer interface {
+	Send(*CandlesSubscribeResponse) error
 	grpc.ServerStream
 }
 
-type tradingDataCandlesSubscribeServer struct {
+type tradingDataServiceCandlesSubscribeServer struct {
 	grpc.ServerStream
 }
 
-func (x *tradingDataCandlesSubscribeServer) Send(m *proto.Candle) error {
+func (x *tradingDataServiceCandlesSubscribeServer) Send(m *CandlesSubscribeResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _TradingData_MarginLevelsSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _TradingDataService_MarginLevelsSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(MarginLevelsSubscribeRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(TradingDataServer).MarginLevelsSubscribe(m, &tradingDataMarginLevelsSubscribeServer{stream})
+	return srv.(TradingDataServiceServer).MarginLevelsSubscribe(m, &tradingDataServiceMarginLevelsSubscribeServer{stream})
 }
 
-type TradingData_MarginLevelsSubscribeServer interface {
-	Send(*proto.MarginLevels) error
+type TradingDataService_MarginLevelsSubscribeServer interface {
+	Send(*MarginLevelsSubscribeResponse) error
 	grpc.ServerStream
 }
 
-type tradingDataMarginLevelsSubscribeServer struct {
+type tradingDataServiceMarginLevelsSubscribeServer struct {
 	grpc.ServerStream
 }
 
-func (x *tradingDataMarginLevelsSubscribeServer) Send(m *proto.MarginLevels) error {
+func (x *tradingDataServiceMarginLevelsSubscribeServer) Send(m *MarginLevelsSubscribeResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _TradingData_MarketDepthSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _TradingDataService_MarketDepthSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(MarketDepthSubscribeRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(TradingDataServer).MarketDepthSubscribe(m, &tradingDataMarketDepthSubscribeServer{stream})
+	return srv.(TradingDataServiceServer).MarketDepthSubscribe(m, &tradingDataServiceMarketDepthSubscribeServer{stream})
 }
 
-type TradingData_MarketDepthSubscribeServer interface {
-	Send(*proto.MarketDepth) error
+type TradingDataService_MarketDepthSubscribeServer interface {
+	Send(*MarketDepthSubscribeResponse) error
 	grpc.ServerStream
 }
 
-type tradingDataMarketDepthSubscribeServer struct {
+type tradingDataServiceMarketDepthSubscribeServer struct {
 	grpc.ServerStream
 }
 
-func (x *tradingDataMarketDepthSubscribeServer) Send(m *proto.MarketDepth) error {
+func (x *tradingDataServiceMarketDepthSubscribeServer) Send(m *MarketDepthSubscribeResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _TradingData_MarketDepthUpdatesSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _TradingDataService_MarketDepthUpdatesSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(MarketDepthUpdatesSubscribeRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(TradingDataServer).MarketDepthUpdatesSubscribe(m, &tradingDataMarketDepthUpdatesSubscribeServer{stream})
+	return srv.(TradingDataServiceServer).MarketDepthUpdatesSubscribe(m, &tradingDataServiceMarketDepthUpdatesSubscribeServer{stream})
 }
 
-type TradingData_MarketDepthUpdatesSubscribeServer interface {
-	Send(*proto.MarketDepthUpdate) error
+type TradingDataService_MarketDepthUpdatesSubscribeServer interface {
+	Send(*MarketDepthUpdatesSubscribeResponse) error
 	grpc.ServerStream
 }
 
-type tradingDataMarketDepthUpdatesSubscribeServer struct {
+type tradingDataServiceMarketDepthUpdatesSubscribeServer struct {
 	grpc.ServerStream
 }
 
-func (x *tradingDataMarketDepthUpdatesSubscribeServer) Send(m *proto.MarketDepthUpdate) error {
+func (x *tradingDataServiceMarketDepthUpdatesSubscribeServer) Send(m *MarketDepthUpdatesSubscribeResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _TradingData_MarketsDataSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _TradingDataService_MarketsDataSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(MarketsDataSubscribeRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(TradingDataServer).MarketsDataSubscribe(m, &tradingDataMarketsDataSubscribeServer{stream})
+	return srv.(TradingDataServiceServer).MarketsDataSubscribe(m, &tradingDataServiceMarketsDataSubscribeServer{stream})
 }
 
-type TradingData_MarketsDataSubscribeServer interface {
-	Send(*proto.MarketData) error
+type TradingDataService_MarketsDataSubscribeServer interface {
+	Send(*MarketsDataSubscribeResponse) error
 	grpc.ServerStream
 }
 
-type tradingDataMarketsDataSubscribeServer struct {
+type tradingDataServiceMarketsDataSubscribeServer struct {
 	grpc.ServerStream
 }
 
-func (x *tradingDataMarketsDataSubscribeServer) Send(m *proto.MarketData) error {
+func (x *tradingDataServiceMarketsDataSubscribeServer) Send(m *MarketsDataSubscribeResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _TradingData_OrdersSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _TradingDataService_OrdersSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(OrdersSubscribeRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(TradingDataServer).OrdersSubscribe(m, &tradingDataOrdersSubscribeServer{stream})
+	return srv.(TradingDataServiceServer).OrdersSubscribe(m, &tradingDataServiceOrdersSubscribeServer{stream})
 }
 
-type TradingData_OrdersSubscribeServer interface {
-	Send(*OrdersStream) error
+type TradingDataService_OrdersSubscribeServer interface {
+	Send(*OrdersSubscribeResponse) error
 	grpc.ServerStream
 }
 
-type tradingDataOrdersSubscribeServer struct {
+type tradingDataServiceOrdersSubscribeServer struct {
 	grpc.ServerStream
 }
 
-func (x *tradingDataOrdersSubscribeServer) Send(m *OrdersStream) error {
+func (x *tradingDataServiceOrdersSubscribeServer) Send(m *OrdersSubscribeResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _TradingData_PositionsSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _TradingDataService_PositionsSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(PositionsSubscribeRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(TradingDataServer).PositionsSubscribe(m, &tradingDataPositionsSubscribeServer{stream})
+	return srv.(TradingDataServiceServer).PositionsSubscribe(m, &tradingDataServicePositionsSubscribeServer{stream})
 }
 
-type TradingData_PositionsSubscribeServer interface {
-	Send(*proto.Position) error
+type TradingDataService_PositionsSubscribeServer interface {
+	Send(*PositionsSubscribeResponse) error
 	grpc.ServerStream
 }
 
-type tradingDataPositionsSubscribeServer struct {
+type tradingDataServicePositionsSubscribeServer struct {
 	grpc.ServerStream
 }
 
-func (x *tradingDataPositionsSubscribeServer) Send(m *proto.Position) error {
+func (x *tradingDataServicePositionsSubscribeServer) Send(m *PositionsSubscribeResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _TradingData_TradesSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _TradingDataService_TradesSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(TradesSubscribeRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(TradingDataServer).TradesSubscribe(m, &tradingDataTradesSubscribeServer{stream})
+	return srv.(TradingDataServiceServer).TradesSubscribe(m, &tradingDataServiceTradesSubscribeServer{stream})
 }
 
-type TradingData_TradesSubscribeServer interface {
-	Send(*TradesStream) error
+type TradingDataService_TradesSubscribeServer interface {
+	Send(*TradesSubscribeResponse) error
 	grpc.ServerStream
 }
 
-type tradingDataTradesSubscribeServer struct {
+type tradingDataServiceTradesSubscribeServer struct {
 	grpc.ServerStream
 }
 
-func (x *tradingDataTradesSubscribeServer) Send(m *TradesStream) error {
+func (x *tradingDataServiceTradesSubscribeServer) Send(m *TradesSubscribeResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _TradingData_TransferResponsesSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(empty.Empty)
+func _TradingDataService_TransferResponsesSubscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(TransferResponsesSubscribeRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(TradingDataServer).TransferResponsesSubscribe(m, &tradingDataTransferResponsesSubscribeServer{stream})
+	return srv.(TradingDataServiceServer).TransferResponsesSubscribe(m, &tradingDataServiceTransferResponsesSubscribeServer{stream})
 }
 
-type TradingData_TransferResponsesSubscribeServer interface {
-	Send(*proto.TransferResponse) error
+type TradingDataService_TransferResponsesSubscribeServer interface {
+	Send(*TransferResponsesSubscribeResponse) error
 	grpc.ServerStream
 }
 
-type tradingDataTransferResponsesSubscribeServer struct {
+type tradingDataServiceTransferResponsesSubscribeServer struct {
 	grpc.ServerStream
 }
 
-func (x *tradingDataTransferResponsesSubscribeServer) Send(m *proto.TransferResponse) error {
+func (x *tradingDataServiceTransferResponsesSubscribeServer) Send(m *TransferResponsesSubscribeResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _TradingData_GetNodeSignaturesAggregate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_GetNodeSignaturesAggregate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetNodeSignaturesAggregateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).GetNodeSignaturesAggregate(ctx, in)
+		return srv.(TradingDataServiceServer).GetNodeSignaturesAggregate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/GetNodeSignaturesAggregate",
+		FullMethod: "/api.v1.TradingDataService/GetNodeSignaturesAggregate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).GetNodeSignaturesAggregate(ctx, req.(*GetNodeSignaturesAggregateRequest))
+		return srv.(TradingDataServiceServer).GetNodeSignaturesAggregate(ctx, req.(*GetNodeSignaturesAggregateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_AssetByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_AssetByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AssetByIDRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).AssetByID(ctx, in)
+		return srv.(TradingDataServiceServer).AssetByID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/AssetByID",
+		FullMethod: "/api.v1.TradingDataService/AssetByID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).AssetByID(ctx, req.(*AssetByIDRequest))
+		return srv.(TradingDataServiceServer).AssetByID(ctx, req.(*AssetByIDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_Assets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_Assets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AssetsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).Assets(ctx, in)
+		return srv.(TradingDataServiceServer).Assets(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/Assets",
+		FullMethod: "/api.v1.TradingDataService/Assets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).Assets(ctx, req.(*AssetsRequest))
+		return srv.(TradingDataServiceServer).Assets(ctx, req.(*AssetsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_EstimateFee_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_EstimateFee_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(EstimateFeeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).EstimateFee(ctx, in)
+		return srv.(TradingDataServiceServer).EstimateFee(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/EstimateFee",
+		FullMethod: "/api.v1.TradingDataService/EstimateFee",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).EstimateFee(ctx, req.(*EstimateFeeRequest))
+		return srv.(TradingDataServiceServer).EstimateFee(ctx, req.(*EstimateFeeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_EstimateMargin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_EstimateMargin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(EstimateMarginRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).EstimateMargin(ctx, in)
+		return srv.(TradingDataServiceServer).EstimateMargin(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/EstimateMargin",
+		FullMethod: "/api.v1.TradingDataService/EstimateMargin",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).EstimateMargin(ctx, req.(*EstimateMarginRequest))
+		return srv.(TradingDataServiceServer).EstimateMargin(ctx, req.(*EstimateMarginRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_ERC20WithdrawalApproval_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_ERC20WithdrawalApproval_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ERC20WithdrawalApprovalRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).ERC20WithdrawalApproval(ctx, in)
+		return srv.(TradingDataServiceServer).ERC20WithdrawalApproval(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/ERC20WithdrawalApproval",
+		FullMethod: "/api.v1.TradingDataService/ERC20WithdrawalApproval",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).ERC20WithdrawalApproval(ctx, req.(*ERC20WithdrawalApprovalRequest))
+		return srv.(TradingDataServiceServer).ERC20WithdrawalApproval(ctx, req.(*ERC20WithdrawalApprovalRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_Withdrawal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_Withdrawal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(WithdrawalRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).Withdrawal(ctx, in)
+		return srv.(TradingDataServiceServer).Withdrawal(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/Withdrawal",
+		FullMethod: "/api.v1.TradingDataService/Withdrawal",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).Withdrawal(ctx, req.(*WithdrawalRequest))
+		return srv.(TradingDataServiceServer).Withdrawal(ctx, req.(*WithdrawalRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_Withdrawals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_Withdrawals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(WithdrawalsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).Withdrawals(ctx, in)
+		return srv.(TradingDataServiceServer).Withdrawals(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/Withdrawals",
+		FullMethod: "/api.v1.TradingDataService/Withdrawals",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).Withdrawals(ctx, req.(*WithdrawalsRequest))
+		return srv.(TradingDataServiceServer).Withdrawals(ctx, req.(*WithdrawalsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_Deposit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_Deposit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DepositRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).Deposit(ctx, in)
+		return srv.(TradingDataServiceServer).Deposit(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/Deposit",
+		FullMethod: "/api.v1.TradingDataService/Deposit",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).Deposit(ctx, req.(*DepositRequest))
+		return srv.(TradingDataServiceServer).Deposit(ctx, req.(*DepositRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_Deposits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_Deposits_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DepositsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).Deposits(ctx, in)
+		return srv.(TradingDataServiceServer).Deposits(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/Deposits",
+		FullMethod: "/api.v1.TradingDataService/Deposits",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).Deposits(ctx, req.(*DepositsRequest))
+		return srv.(TradingDataServiceServer).Deposits(ctx, req.(*DepositsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_NetworkParameters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_NetworkParameters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NetworkParametersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).NetworkParameters(ctx, in)
+		return srv.(TradingDataServiceServer).NetworkParameters(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/NetworkParameters",
+		FullMethod: "/api.v1.TradingDataService/NetworkParameters",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).NetworkParameters(ctx, req.(*NetworkParametersRequest))
+		return srv.(TradingDataServiceServer).NetworkParameters(ctx, req.(*NetworkParametersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingData_LiquidityProvisions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _TradingDataService_LiquidityProvisions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(LiquidityProvisionsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingDataServer).LiquidityProvisions(ctx, in)
+		return srv.(TradingDataServiceServer).LiquidityProvisions(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.trading_data/LiquidityProvisions",
+		FullMethod: "/api.v1.TradingDataService/LiquidityProvisions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServer).LiquidityProvisions(ctx, req.(*LiquidityProvisionsRequest))
+		return srv.(TradingDataServiceServer).LiquidityProvisions(ctx, req.(*LiquidityProvisionsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _TradingData_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "api.trading_data",
-	HandlerType: (*TradingDataServer)(nil),
+var _TradingDataService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "api.v1.TradingDataService",
+	HandlerType: (*TradingDataServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "MarketAccounts",
-			Handler:    _TradingData_MarketAccounts_Handler,
+			Handler:    _TradingDataService_MarketAccounts_Handler,
 		},
 		{
 			MethodName: "PartyAccounts",
-			Handler:    _TradingData_PartyAccounts_Handler,
+			Handler:    _TradingDataService_PartyAccounts_Handler,
 		},
 		{
 			MethodName: "FeeInfrastructureAccounts",
-			Handler:    _TradingData_FeeInfrastructureAccounts_Handler,
+			Handler:    _TradingDataService_FeeInfrastructureAccounts_Handler,
 		},
 		{
 			MethodName: "Candles",
-			Handler:    _TradingData_Candles_Handler,
+			Handler:    _TradingDataService_Candles_Handler,
 		},
 		{
 			MethodName: "MarketDataByID",
-			Handler:    _TradingData_MarketDataByID_Handler,
+			Handler:    _TradingDataService_MarketDataByID_Handler,
 		},
 		{
 			MethodName: "MarketsData",
-			Handler:    _TradingData_MarketsData_Handler,
+			Handler:    _TradingDataService_MarketsData_Handler,
 		},
 		{
 			MethodName: "MarketByID",
-			Handler:    _TradingData_MarketByID_Handler,
+			Handler:    _TradingDataService_MarketByID_Handler,
 		},
 		{
 			MethodName: "MarketDepth",
-			Handler:    _TradingData_MarketDepth_Handler,
+			Handler:    _TradingDataService_MarketDepth_Handler,
 		},
 		{
 			MethodName: "Markets",
-			Handler:    _TradingData_Markets_Handler,
+			Handler:    _TradingDataService_Markets_Handler,
 		},
 		{
 			MethodName: "OrderByMarketAndID",
-			Handler:    _TradingData_OrderByMarketAndID_Handler,
+			Handler:    _TradingDataService_OrderByMarketAndID_Handler,
 		},
 		{
 			MethodName: "OrderByReference",
-			Handler:    _TradingData_OrderByReference_Handler,
+			Handler:    _TradingDataService_OrderByReference_Handler,
 		},
 		{
 			MethodName: "OrdersByMarket",
-			Handler:    _TradingData_OrdersByMarket_Handler,
+			Handler:    _TradingDataService_OrdersByMarket_Handler,
 		},
 		{
 			MethodName: "OrdersByParty",
-			Handler:    _TradingData_OrdersByParty_Handler,
+			Handler:    _TradingDataService_OrdersByParty_Handler,
 		},
 		{
 			MethodName: "OrderByID",
-			Handler:    _TradingData_OrderByID_Handler,
+			Handler:    _TradingDataService_OrderByID_Handler,
 		},
 		{
 			MethodName: "OrderVersionsByID",
-			Handler:    _TradingData_OrderVersionsByID_Handler,
+			Handler:    _TradingDataService_OrderVersionsByID_Handler,
 		},
 		{
 			MethodName: "MarginLevels",
-			Handler:    _TradingData_MarginLevels_Handler,
+			Handler:    _TradingDataService_MarginLevels_Handler,
 		},
 		{
 			MethodName: "Parties",
-			Handler:    _TradingData_Parties_Handler,
+			Handler:    _TradingDataService_Parties_Handler,
 		},
 		{
 			MethodName: "PartyByID",
-			Handler:    _TradingData_PartyByID_Handler,
+			Handler:    _TradingDataService_PartyByID_Handler,
 		},
 		{
 			MethodName: "PositionsByParty",
-			Handler:    _TradingData_PositionsByParty_Handler,
+			Handler:    _TradingDataService_PositionsByParty_Handler,
 		},
 		{
 			MethodName: "LastTrade",
-			Handler:    _TradingData_LastTrade_Handler,
+			Handler:    _TradingDataService_LastTrade_Handler,
 		},
 		{
 			MethodName: "TradesByMarket",
-			Handler:    _TradingData_TradesByMarket_Handler,
+			Handler:    _TradingDataService_TradesByMarket_Handler,
 		},
 		{
 			MethodName: "TradesByOrder",
-			Handler:    _TradingData_TradesByOrder_Handler,
+			Handler:    _TradingDataService_TradesByOrder_Handler,
 		},
 		{
 			MethodName: "TradesByParty",
-			Handler:    _TradingData_TradesByParty_Handler,
+			Handler:    _TradingDataService_TradesByParty_Handler,
 		},
 		{
 			MethodName: "GetProposals",
-			Handler:    _TradingData_GetProposals_Handler,
+			Handler:    _TradingDataService_GetProposals_Handler,
 		},
 		{
 			MethodName: "GetProposalsByParty",
-			Handler:    _TradingData_GetProposalsByParty_Handler,
+			Handler:    _TradingDataService_GetProposalsByParty_Handler,
 		},
 		{
 			MethodName: "GetVotesByParty",
-			Handler:    _TradingData_GetVotesByParty_Handler,
+			Handler:    _TradingDataService_GetVotesByParty_Handler,
 		},
 		{
 			MethodName: "GetNewMarketProposals",
-			Handler:    _TradingData_GetNewMarketProposals_Handler,
+			Handler:    _TradingDataService_GetNewMarketProposals_Handler,
 		},
 		{
 			MethodName: "GetUpdateMarketProposals",
-			Handler:    _TradingData_GetUpdateMarketProposals_Handler,
+			Handler:    _TradingDataService_GetUpdateMarketProposals_Handler,
 		},
 		{
 			MethodName: "GetNetworkParametersProposals",
-			Handler:    _TradingData_GetNetworkParametersProposals_Handler,
+			Handler:    _TradingDataService_GetNetworkParametersProposals_Handler,
 		},
 		{
 			MethodName: "GetNewAssetProposals",
-			Handler:    _TradingData_GetNewAssetProposals_Handler,
+			Handler:    _TradingDataService_GetNewAssetProposals_Handler,
 		},
 		{
 			MethodName: "GetProposalByID",
-			Handler:    _TradingData_GetProposalByID_Handler,
+			Handler:    _TradingDataService_GetProposalByID_Handler,
 		},
 		{
 			MethodName: "GetProposalByReference",
-			Handler:    _TradingData_GetProposalByReference_Handler,
+			Handler:    _TradingDataService_GetProposalByReference_Handler,
 		},
 		{
 			MethodName: "Statistics",
-			Handler:    _TradingData_Statistics_Handler,
+			Handler:    _TradingDataService_Statistics_Handler,
 		},
 		{
 			MethodName: "GetVegaTime",
-			Handler:    _TradingData_GetVegaTime_Handler,
+			Handler:    _TradingDataService_GetVegaTime_Handler,
 		},
 		{
 			MethodName: "GetNodeSignaturesAggregate",
-			Handler:    _TradingData_GetNodeSignaturesAggregate_Handler,
+			Handler:    _TradingDataService_GetNodeSignaturesAggregate_Handler,
 		},
 		{
 			MethodName: "AssetByID",
-			Handler:    _TradingData_AssetByID_Handler,
+			Handler:    _TradingDataService_AssetByID_Handler,
 		},
 		{
 			MethodName: "Assets",
-			Handler:    _TradingData_Assets_Handler,
+			Handler:    _TradingDataService_Assets_Handler,
 		},
 		{
 			MethodName: "EstimateFee",
-			Handler:    _TradingData_EstimateFee_Handler,
+			Handler:    _TradingDataService_EstimateFee_Handler,
 		},
 		{
 			MethodName: "EstimateMargin",
-			Handler:    _TradingData_EstimateMargin_Handler,
+			Handler:    _TradingDataService_EstimateMargin_Handler,
 		},
 		{
 			MethodName: "ERC20WithdrawalApproval",
-			Handler:    _TradingData_ERC20WithdrawalApproval_Handler,
+			Handler:    _TradingDataService_ERC20WithdrawalApproval_Handler,
 		},
 		{
 			MethodName: "Withdrawal",
-			Handler:    _TradingData_Withdrawal_Handler,
+			Handler:    _TradingDataService_Withdrawal_Handler,
 		},
 		{
 			MethodName: "Withdrawals",
-			Handler:    _TradingData_Withdrawals_Handler,
+			Handler:    _TradingDataService_Withdrawals_Handler,
 		},
 		{
 			MethodName: "Deposit",
-			Handler:    _TradingData_Deposit_Handler,
+			Handler:    _TradingDataService_Deposit_Handler,
 		},
 		{
 			MethodName: "Deposits",
-			Handler:    _TradingData_Deposits_Handler,
+			Handler:    _TradingDataService_Deposits_Handler,
 		},
 		{
 			MethodName: "NetworkParameters",
-			Handler:    _TradingData_NetworkParameters_Handler,
+			Handler:    _TradingDataService_NetworkParameters_Handler,
 		},
 		{
 			MethodName: "LiquidityProvisions",
-			Handler:    _TradingData_LiquidityProvisions_Handler,
+			Handler:    _TradingDataService_LiquidityProvisions_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "ObserveGovernance",
-			Handler:       _TradingData_ObserveGovernance_Handler,
+			Handler:       _TradingDataService_ObserveGovernance_Handler,
 			ServerStreams: true,
 		},
 		{
 			StreamName:    "ObservePartyProposals",
-			Handler:       _TradingData_ObservePartyProposals_Handler,
+			Handler:       _TradingDataService_ObservePartyProposals_Handler,
 			ServerStreams: true,
 		},
 		{
 			StreamName:    "ObservePartyVotes",
-			Handler:       _TradingData_ObservePartyVotes_Handler,
+			Handler:       _TradingDataService_ObservePartyVotes_Handler,
 			ServerStreams: true,
 		},
 		{
 			StreamName:    "ObserveProposalVotes",
-			Handler:       _TradingData_ObserveProposalVotes_Handler,
+			Handler:       _TradingDataService_ObserveProposalVotes_Handler,
 			ServerStreams: true,
 		},
 		{
 			StreamName:    "ObserveEventBus",
-			Handler:       _TradingData_ObserveEventBus_Handler,
+			Handler:       _TradingDataService_ObserveEventBus_Handler,
 			ServerStreams: true,
 			ClientStreams: true,
 		},
 		{
 			StreamName:    "AccountsSubscribe",
-			Handler:       _TradingData_AccountsSubscribe_Handler,
+			Handler:       _TradingDataService_AccountsSubscribe_Handler,
 			ServerStreams: true,
 		},
 		{
 			StreamName:    "CandlesSubscribe",
-			Handler:       _TradingData_CandlesSubscribe_Handler,
+			Handler:       _TradingDataService_CandlesSubscribe_Handler,
 			ServerStreams: true,
 		},
 		{
 			StreamName:    "MarginLevelsSubscribe",
-			Handler:       _TradingData_MarginLevelsSubscribe_Handler,
+			Handler:       _TradingDataService_MarginLevelsSubscribe_Handler,
 			ServerStreams: true,
 		},
 		{
 			StreamName:    "MarketDepthSubscribe",
-			Handler:       _TradingData_MarketDepthSubscribe_Handler,
+			Handler:       _TradingDataService_MarketDepthSubscribe_Handler,
 			ServerStreams: true,
 		},
 		{
 			StreamName:    "MarketDepthUpdatesSubscribe",
-			Handler:       _TradingData_MarketDepthUpdatesSubscribe_Handler,
+			Handler:       _TradingDataService_MarketDepthUpdatesSubscribe_Handler,
 			ServerStreams: true,
 		},
 		{
 			StreamName:    "MarketsDataSubscribe",
-			Handler:       _TradingData_MarketsDataSubscribe_Handler,
+			Handler:       _TradingDataService_MarketsDataSubscribe_Handler,
 			ServerStreams: true,
 		},
 		{
 			StreamName:    "OrdersSubscribe",
-			Handler:       _TradingData_OrdersSubscribe_Handler,
+			Handler:       _TradingDataService_OrdersSubscribe_Handler,
 			ServerStreams: true,
 		},
 		{
 			StreamName:    "PositionsSubscribe",
-			Handler:       _TradingData_PositionsSubscribe_Handler,
+			Handler:       _TradingDataService_PositionsSubscribe_Handler,
 			ServerStreams: true,
 		},
 		{
 			StreamName:    "TradesSubscribe",
-			Handler:       _TradingData_TradesSubscribe_Handler,
+			Handler:       _TradingDataService_TradesSubscribe_Handler,
 			ServerStreams: true,
 		},
 		{
 			StreamName:    "TransferResponsesSubscribe",
-			Handler:       _TradingData_TransferResponsesSubscribe_Handler,
+			Handler:       _TradingDataService_TransferResponsesSubscribe_Handler,
 			ServerStreams: true,
 		},
 	},

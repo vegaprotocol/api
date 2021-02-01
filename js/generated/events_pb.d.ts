@@ -8,8 +8,8 @@ import * as governance_pb from "./governance_pb";
 import * as vega_pb from "./vega_pb";
 
 export class MarketEvent extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   getPayload(): string;
   setPayload(value: string): void;
@@ -26,32 +26,32 @@ export class MarketEvent extends jspb.Message {
 
 export namespace MarketEvent {
   export type AsObject = {
-    marketid: string,
+    marketId: string,
     payload: string,
   }
 }
 
 export class TxErrorEvent extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
-  getErrmsg(): string;
-  setErrmsg(value: string): void;
+  getErrMsg(): string;
+  setErrMsg(value: string): void;
 
-  hasOrdersubmission(): boolean;
-  clearOrdersubmission(): void;
-  getOrdersubmission(): vega_pb.OrderSubmission | undefined;
-  setOrdersubmission(value?: vega_pb.OrderSubmission): void;
+  hasOrderSubmission(): boolean;
+  clearOrderSubmission(): void;
+  getOrderSubmission(): vega_pb.OrderSubmission | undefined;
+  setOrderSubmission(value?: vega_pb.OrderSubmission): void;
 
-  hasOrderamendment(): boolean;
-  clearOrderamendment(): void;
-  getOrderamendment(): vega_pb.OrderAmendment | undefined;
-  setOrderamendment(value?: vega_pb.OrderAmendment): void;
+  hasOrderAmendment(): boolean;
+  clearOrderAmendment(): void;
+  getOrderAmendment(): vega_pb.OrderAmendment | undefined;
+  setOrderAmendment(value?: vega_pb.OrderAmendment): void;
 
-  hasOrdercancellation(): boolean;
-  clearOrdercancellation(): void;
-  getOrdercancellation(): vega_pb.OrderCancellation | undefined;
-  setOrdercancellation(value?: vega_pb.OrderCancellation): void;
+  hasOrderCancellation(): boolean;
+  clearOrderCancellation(): void;
+  getOrderCancellation(): vega_pb.OrderCancellation | undefined;
+  setOrderCancellation(value?: vega_pb.OrderCancellation): void;
 
   hasProposal(): boolean;
   clearProposal(): void;
@@ -76,20 +76,20 @@ export class TxErrorEvent extends jspb.Message {
 
 export namespace TxErrorEvent {
   export type AsObject = {
-    partyid: string,
-    errmsg: string,
-    ordersubmission?: vega_pb.OrderSubmission.AsObject,
-    orderamendment?: vega_pb.OrderAmendment.AsObject,
-    ordercancellation?: vega_pb.OrderCancellation.AsObject,
+    partyId: string,
+    errMsg: string,
+    orderSubmission?: vega_pb.OrderSubmission.AsObject,
+    orderAmendment?: vega_pb.OrderAmendment.AsObject,
+    orderCancellation?: vega_pb.OrderCancellation.AsObject,
     proposal?: governance_pb.Proposal.AsObject,
     vote?: governance_pb.Vote.AsObject,
   }
 
   export enum TransactionCase {
     TRANSACTION_NOT_SET = 0,
-    ORDERSUBMISSION = 101,
-    ORDERAMENDMENT = 102,
-    ORDERCANCELLATION = 103,
+    ORDER_SUBMISSION = 101,
+    ORDER_AMENDMENT = 102,
+    ORDER_CANCELLATION = 103,
     PROPOSAL = 104,
     VOTE = 105,
   }
@@ -138,8 +138,8 @@ export namespace TransferResponses {
 }
 
 export class PositionResolution extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   getDistressed(): number;
   setDistressed(value: number): void;
@@ -147,8 +147,8 @@ export class PositionResolution extends jspb.Message {
   getClosed(): number;
   setClosed(value: number): void;
 
-  getMarkprice(): number;
-  setMarkprice(value: number): void;
+  getMarkPrice(): number;
+  setMarkPrice(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PositionResolution.AsObject;
@@ -162,19 +162,19 @@ export class PositionResolution extends jspb.Message {
 
 export namespace PositionResolution {
   export type AsObject = {
-    marketid: string,
+    marketId: string,
     distressed: number,
     closed: number,
-    markprice: number,
+    markPrice: number,
   }
 }
 
 export class LossSocialization extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   getAmount(): number;
   setAmount(value: number): void;
@@ -191,8 +191,8 @@ export class LossSocialization extends jspb.Message {
 
 export namespace LossSocialization {
   export type AsObject = {
-    marketid: string,
-    partyid: string,
+    marketId: string,
+    partyId: string,
     amount: number,
   }
 }
@@ -222,19 +222,19 @@ export namespace TradeSettlement {
 }
 
 export class SettlePosition extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   getPrice(): number;
   setPrice(value: number): void;
 
-  clearTradesettlementsList(): void;
-  getTradesettlementsList(): Array<TradeSettlement>;
-  setTradesettlementsList(value: Array<TradeSettlement>): void;
-  addTradesettlements(value?: TradeSettlement, index?: number): TradeSettlement;
+  clearTradeSettlementsList(): void;
+  getTradeSettlementsList(): Array<TradeSettlement>;
+  setTradeSettlementsList(value: Array<TradeSettlement>): void;
+  addTradeSettlements(value?: TradeSettlement, index?: number): TradeSettlement;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SettlePosition.AsObject;
@@ -248,19 +248,19 @@ export class SettlePosition extends jspb.Message {
 
 export namespace SettlePosition {
   export type AsObject = {
-    marketid: string,
-    partyid: string,
+    marketId: string,
+    partyId: string,
     price: number,
-    tradesettlementsList: Array<TradeSettlement.AsObject>,
+    tradeSettlementsList: Array<TradeSettlement.AsObject>,
   }
 }
 
 export class SettleDistressed extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   getMargin(): number;
   setMargin(value: number): void;
@@ -280,8 +280,8 @@ export class SettleDistressed extends jspb.Message {
 
 export namespace SettleDistressed {
   export type AsObject = {
-    marketid: string,
-    partyid: string,
+    marketId: string,
+    partyId: string,
     margin: number,
     price: number,
   }
@@ -312,11 +312,11 @@ export namespace MarketTick {
 }
 
 export class AuctionEvent extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getOpeningauction(): boolean;
-  setOpeningauction(value: boolean): void;
+  getOpeningAuction(): boolean;
+  setOpeningAuction(value: boolean): void;
 
   getLeave(): boolean;
   setLeave(value: boolean): void;
@@ -342,8 +342,8 @@ export class AuctionEvent extends jspb.Message {
 
 export namespace AuctionEvent {
   export type AsObject = {
-    marketid: string,
-    openingauction: boolean,
+    marketId: string,
+    openingAuction: boolean,
     leave: boolean,
     start: number,
     end: number,
@@ -361,20 +361,20 @@ export class BusEvent extends jspb.Message {
   getType(): BusEventTypeMap[keyof BusEventTypeMap];
   setType(value: BusEventTypeMap[keyof BusEventTypeMap]): void;
 
-  hasTimeupdate(): boolean;
-  clearTimeupdate(): void;
-  getTimeupdate(): TimeUpdate | undefined;
-  setTimeupdate(value?: TimeUpdate): void;
+  hasTimeUpdate(): boolean;
+  clearTimeUpdate(): void;
+  getTimeUpdate(): TimeUpdate | undefined;
+  setTimeUpdate(value?: TimeUpdate): void;
 
-  hasTransferresponses(): boolean;
-  clearTransferresponses(): void;
-  getTransferresponses(): TransferResponses | undefined;
-  setTransferresponses(value?: TransferResponses): void;
+  hasTransferResponses(): boolean;
+  clearTransferResponses(): void;
+  getTransferResponses(): TransferResponses | undefined;
+  setTransferResponses(value?: TransferResponses): void;
 
-  hasPositionresolution(): boolean;
-  clearPositionresolution(): void;
-  getPositionresolution(): PositionResolution | undefined;
-  setPositionresolution(value?: PositionResolution): void;
+  hasPositionResolution(): boolean;
+  clearPositionResolution(): void;
+  getPositionResolution(): PositionResolution | undefined;
+  setPositionResolution(value?: PositionResolution): void;
 
   hasOrder(): boolean;
   clearOrder(): void;
@@ -396,10 +396,10 @@ export class BusEvent extends jspb.Message {
   getTrade(): vega_pb.Trade | undefined;
   setTrade(value?: vega_pb.Trade): void;
 
-  hasMarginlevels(): boolean;
-  clearMarginlevels(): void;
-  getMarginlevels(): vega_pb.MarginLevels | undefined;
-  setMarginlevels(value?: vega_pb.MarginLevels): void;
+  hasMarginLevels(): boolean;
+  clearMarginLevels(): void;
+  getMarginLevels(): vega_pb.MarginLevels | undefined;
+  setMarginLevels(value?: vega_pb.MarginLevels): void;
 
   hasProposal(): boolean;
   clearProposal(): void;
@@ -411,45 +411,45 @@ export class BusEvent extends jspb.Message {
   getVote(): governance_pb.Vote | undefined;
   setVote(value?: governance_pb.Vote): void;
 
-  hasMarketdata(): boolean;
-  clearMarketdata(): void;
-  getMarketdata(): vega_pb.MarketData | undefined;
-  setMarketdata(value?: vega_pb.MarketData): void;
+  hasMarketData(): boolean;
+  clearMarketData(): void;
+  getMarketData(): vega_pb.MarketData | undefined;
+  setMarketData(value?: vega_pb.MarketData): void;
 
-  hasNodesignature(): boolean;
-  clearNodesignature(): void;
-  getNodesignature(): vega_pb.NodeSignature | undefined;
-  setNodesignature(value?: vega_pb.NodeSignature): void;
+  hasNodeSignature(): boolean;
+  clearNodeSignature(): void;
+  getNodeSignature(): vega_pb.NodeSignature | undefined;
+  setNodeSignature(value?: vega_pb.NodeSignature): void;
 
-  hasLosssocialization(): boolean;
-  clearLosssocialization(): void;
-  getLosssocialization(): LossSocialization | undefined;
-  setLosssocialization(value?: LossSocialization): void;
+  hasLossSocialization(): boolean;
+  clearLossSocialization(): void;
+  getLossSocialization(): LossSocialization | undefined;
+  setLossSocialization(value?: LossSocialization): void;
 
-  hasSettleposition(): boolean;
-  clearSettleposition(): void;
-  getSettleposition(): SettlePosition | undefined;
-  setSettleposition(value?: SettlePosition): void;
+  hasSettlePosition(): boolean;
+  clearSettlePosition(): void;
+  getSettlePosition(): SettlePosition | undefined;
+  setSettlePosition(value?: SettlePosition): void;
 
-  hasSettledistressed(): boolean;
-  clearSettledistressed(): void;
-  getSettledistressed(): SettleDistressed | undefined;
-  setSettledistressed(value?: SettleDistressed): void;
+  hasSettleDistressed(): boolean;
+  clearSettleDistressed(): void;
+  getSettleDistressed(): SettleDistressed | undefined;
+  setSettleDistressed(value?: SettleDistressed): void;
 
-  hasMarketcreated(): boolean;
-  clearMarketcreated(): void;
-  getMarketcreated(): markets_pb.Market | undefined;
-  setMarketcreated(value?: markets_pb.Market): void;
+  hasMarketCreated(): boolean;
+  clearMarketCreated(): void;
+  getMarketCreated(): markets_pb.Market | undefined;
+  setMarketCreated(value?: markets_pb.Market): void;
 
   hasAsset(): boolean;
   clearAsset(): void;
   getAsset(): assets_pb.Asset | undefined;
   setAsset(value?: assets_pb.Asset): void;
 
-  hasMarkettick(): boolean;
-  clearMarkettick(): void;
-  getMarkettick(): MarketTick | undefined;
-  setMarkettick(value?: MarketTick): void;
+  hasMarketTick(): boolean;
+  clearMarketTick(): void;
+  getMarketTick(): MarketTick | undefined;
+  setMarketTick(value?: MarketTick): void;
 
   hasWithdrawal(): boolean;
   clearWithdrawal(): void;
@@ -466,35 +466,35 @@ export class BusEvent extends jspb.Message {
   getAuction(): AuctionEvent | undefined;
   setAuction(value?: AuctionEvent): void;
 
-  hasRiskfactor(): boolean;
-  clearRiskfactor(): void;
-  getRiskfactor(): vega_pb.RiskFactor | undefined;
-  setRiskfactor(value?: vega_pb.RiskFactor): void;
+  hasRiskFactor(): boolean;
+  clearRiskFactor(): void;
+  getRiskFactor(): vega_pb.RiskFactor | undefined;
+  setRiskFactor(value?: vega_pb.RiskFactor): void;
 
-  hasNetworkparameter(): boolean;
-  clearNetworkparameter(): void;
-  getNetworkparameter(): vega_pb.NetworkParameter | undefined;
-  setNetworkparameter(value?: vega_pb.NetworkParameter): void;
+  hasNetworkParameter(): boolean;
+  clearNetworkParameter(): void;
+  getNetworkParameter(): vega_pb.NetworkParameter | undefined;
+  setNetworkParameter(value?: vega_pb.NetworkParameter): void;
 
-  hasLiquidityprovision(): boolean;
-  clearLiquidityprovision(): void;
-  getLiquidityprovision(): vega_pb.LiquidityProvision | undefined;
-  setLiquidityprovision(value?: vega_pb.LiquidityProvision): void;
+  hasLiquidityProvision(): boolean;
+  clearLiquidityProvision(): void;
+  getLiquidityProvision(): vega_pb.LiquidityProvision | undefined;
+  setLiquidityProvision(value?: vega_pb.LiquidityProvision): void;
 
-  hasMarketupdated(): boolean;
-  clearMarketupdated(): void;
-  getMarketupdated(): markets_pb.Market | undefined;
-  setMarketupdated(value?: markets_pb.Market): void;
+  hasMarketUpdated(): boolean;
+  clearMarketUpdated(): void;
+  getMarketUpdated(): markets_pb.Market | undefined;
+  setMarketUpdated(value?: markets_pb.Market): void;
 
   hasMarket(): boolean;
   clearMarket(): void;
   getMarket(): MarketEvent | undefined;
   setMarket(value?: MarketEvent): void;
 
-  hasTxerrevent(): boolean;
-  clearTxerrevent(): void;
-  getTxerrevent(): TxErrorEvent | undefined;
-  setTxerrevent(value?: TxErrorEvent): void;
+  hasTxErrEvent(): boolean;
+  clearTxErrEvent(): void;
+  getTxErrEvent(): TxErrorEvent | undefined;
+  setTxErrEvent(value?: TxErrorEvent): void;
 
   getEventCase(): BusEvent.EventCase;
   serializeBinary(): Uint8Array;
@@ -512,64 +512,64 @@ export namespace BusEvent {
     id: string,
     block: string,
     type: BusEventTypeMap[keyof BusEventTypeMap],
-    timeupdate?: TimeUpdate.AsObject,
-    transferresponses?: TransferResponses.AsObject,
-    positionresolution?: PositionResolution.AsObject,
+    timeUpdate?: TimeUpdate.AsObject,
+    transferResponses?: TransferResponses.AsObject,
+    positionResolution?: PositionResolution.AsObject,
     order?: vega_pb.Order.AsObject,
     account?: vega_pb.Account.AsObject,
     party?: vega_pb.Party.AsObject,
     trade?: vega_pb.Trade.AsObject,
-    marginlevels?: vega_pb.MarginLevels.AsObject,
+    marginLevels?: vega_pb.MarginLevels.AsObject,
     proposal?: governance_pb.Proposal.AsObject,
     vote?: governance_pb.Vote.AsObject,
-    marketdata?: vega_pb.MarketData.AsObject,
-    nodesignature?: vega_pb.NodeSignature.AsObject,
-    losssocialization?: LossSocialization.AsObject,
-    settleposition?: SettlePosition.AsObject,
-    settledistressed?: SettleDistressed.AsObject,
-    marketcreated?: markets_pb.Market.AsObject,
+    marketData?: vega_pb.MarketData.AsObject,
+    nodeSignature?: vega_pb.NodeSignature.AsObject,
+    lossSocialization?: LossSocialization.AsObject,
+    settlePosition?: SettlePosition.AsObject,
+    settleDistressed?: SettleDistressed.AsObject,
+    marketCreated?: markets_pb.Market.AsObject,
     asset?: assets_pb.Asset.AsObject,
-    markettick?: MarketTick.AsObject,
+    marketTick?: MarketTick.AsObject,
     withdrawal?: vega_pb.Withdrawal.AsObject,
     deposit?: vega_pb.Deposit.AsObject,
     auction?: AuctionEvent.AsObject,
-    riskfactor?: vega_pb.RiskFactor.AsObject,
-    networkparameter?: vega_pb.NetworkParameter.AsObject,
-    liquidityprovision?: vega_pb.LiquidityProvision.AsObject,
-    marketupdated?: markets_pb.Market.AsObject,
+    riskFactor?: vega_pb.RiskFactor.AsObject,
+    networkParameter?: vega_pb.NetworkParameter.AsObject,
+    liquidityProvision?: vega_pb.LiquidityProvision.AsObject,
+    marketUpdated?: markets_pb.Market.AsObject,
     market?: MarketEvent.AsObject,
-    txerrevent?: TxErrorEvent.AsObject,
+    txErrEvent?: TxErrorEvent.AsObject,
   }
 
   export enum EventCase {
     EVENT_NOT_SET = 0,
-    TIMEUPDATE = 101,
-    TRANSFERRESPONSES = 102,
-    POSITIONRESOLUTION = 103,
+    TIME_UPDATE = 101,
+    TRANSFER_RESPONSES = 102,
+    POSITION_RESOLUTION = 103,
     ORDER = 104,
     ACCOUNT = 105,
     PARTY = 106,
     TRADE = 107,
-    MARGINLEVELS = 108,
+    MARGIN_LEVELS = 108,
     PROPOSAL = 109,
     VOTE = 110,
-    MARKETDATA = 111,
-    NODESIGNATURE = 112,
-    LOSSSOCIALIZATION = 113,
-    SETTLEPOSITION = 114,
-    SETTLEDISTRESSED = 115,
-    MARKETCREATED = 116,
+    MARKET_DATA = 111,
+    NODE_SIGNATURE = 112,
+    LOSS_SOCIALIZATION = 113,
+    SETTLE_POSITION = 114,
+    SETTLE_DISTRESSED = 115,
+    MARKET_CREATED = 116,
     ASSET = 117,
-    MARKETTICK = 118,
+    MARKET_TICK = 118,
     WITHDRAWAL = 119,
     DEPOSIT = 120,
     AUCTION = 121,
-    RISKFACTOR = 122,
-    NETWORKPARAMETER = 123,
-    LIQUIDITYPROVISION = 124,
-    MARKETUPDATED = 125,
+    RISK_FACTOR = 122,
+    NETWORK_PARAMETER = 123,
+    LIQUIDITY_PROVISION = 124,
+    MARKET_UPDATED = 125,
     MARKET = 1001,
-    TXERREVENT = 2001,
+    TX_ERR_EVENT = 2001,
   }
 }
 

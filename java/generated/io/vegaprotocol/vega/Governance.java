@@ -16,7 +16,7 @@ public final class Governance {
   }
   /**
    * <pre>
-   * A list of possible errors that can cause a proposal to be in state rejected or failed.
+   * A list of possible errors that can cause a proposal to be in state rejected or failed
    * </pre>
    *
    * Protobuf enum {@code vega.ProposalError}
@@ -25,7 +25,7 @@ public final class Governance {
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
-     * Default value.
+     * Default value
      * </pre>
      *
      * <code>PROPOSAL_ERROR_UNSPECIFIED = 0;</code>
@@ -33,7 +33,7 @@ public final class Governance {
     PROPOSAL_ERROR_UNSPECIFIED(0),
     /**
      * <pre>
-     * The specified close time is too early base on network parameters.
+     * The specified close time is too early base on network parameters
      * </pre>
      *
      * <code>PROPOSAL_ERROR_CLOSE_TIME_TOO_SOON = 1;</code>
@@ -41,7 +41,7 @@ public final class Governance {
     PROPOSAL_ERROR_CLOSE_TIME_TOO_SOON(1),
     /**
      * <pre>
-     * The specified close time is too late based on network parameters.
+     * The specified close time is too late based on network parameters
      * </pre>
      *
      * <code>PROPOSAL_ERROR_CLOSE_TIME_TOO_LATE = 2;</code>
@@ -49,7 +49,7 @@ public final class Governance {
     PROPOSAL_ERROR_CLOSE_TIME_TOO_LATE(2),
     /**
      * <pre>
-     * The specified enact time is too early based on network parameters.
+     * The specified enact time is too early based on network parameters
      * </pre>
      *
      * <code>PROPOSAL_ERROR_ENACT_TIME_TOO_SOON = 3;</code>
@@ -57,7 +57,7 @@ public final class Governance {
     PROPOSAL_ERROR_ENACT_TIME_TOO_SOON(3),
     /**
      * <pre>
-     * The specified enact time is too late based on network parameters.
+     * The specified enact time is too late based on network parameters
      * </pre>
      *
      * <code>PROPOSAL_ERROR_ENACT_TIME_TOO_LATE = 4;</code>
@@ -65,7 +65,7 @@ public final class Governance {
     PROPOSAL_ERROR_ENACT_TIME_TOO_LATE(4),
     /**
      * <pre>
-     * The proposer for this proposal as insufficient tokens.
+     * The proposer for this proposal as insufficient tokens
      * </pre>
      *
      * <code>PROPOSAL_ERROR_INSUFFICIENT_TOKENS = 5;</code>
@@ -73,7 +73,7 @@ public final class Governance {
     PROPOSAL_ERROR_INSUFFICIENT_TOKENS(5),
     /**
      * <pre>
-     * The instrument quote name and base name were the same.
+     * The instrument quote name and base name were the same
      * </pre>
      *
      * <code>PROPOSAL_ERROR_INVALID_INSTRUMENT_SECURITY = 6;</code>
@@ -81,7 +81,7 @@ public final class Governance {
     PROPOSAL_ERROR_INVALID_INSTRUMENT_SECURITY(6),
     /**
      * <pre>
-     * The proposal has no product.
+     * The proposal has no product
      * </pre>
      *
      * <code>PROPOSAL_ERROR_NO_PRODUCT = 7;</code>
@@ -89,7 +89,7 @@ public final class Governance {
     PROPOSAL_ERROR_NO_PRODUCT(7),
     /**
      * <pre>
-     * The specified product is not supported.
+     * The specified product is not supported
      * </pre>
      *
      * <code>PROPOSAL_ERROR_UNSUPPORTED_PRODUCT = 8;</code>
@@ -97,7 +97,7 @@ public final class Governance {
     PROPOSAL_ERROR_UNSUPPORTED_PRODUCT(8),
     /**
      * <pre>
-     * Invalid future maturity timestamp (expect RFC3339).
+     * Invalid future maturity timestamp (expect RFC3339)
      * </pre>
      *
      * <code>PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT_TIMESTAMP = 9;</code>
@@ -105,7 +105,7 @@ public final class Governance {
     PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT_TIMESTAMP(9),
     /**
      * <pre>
-     * The product maturity is past.
+     * The product maturity is past
      * </pre>
      *
      * <code>PROPOSAL_ERROR_PRODUCT_MATURITY_IS_PASSED = 10;</code>
@@ -113,7 +113,7 @@ public final class Governance {
     PROPOSAL_ERROR_PRODUCT_MATURITY_IS_PASSED(10),
     /**
      * <pre>
-     * The proposal has no trading mode.
+     * The proposal has no trading mode
      * </pre>
      *
      * <code>PROPOSAL_ERROR_NO_TRADING_MODE = 11;</code>
@@ -121,7 +121,7 @@ public final class Governance {
     PROPOSAL_ERROR_NO_TRADING_MODE(11),
     /**
      * <pre>
-     * The proposal has an unsupported trading mode.
+     * The proposal has an unsupported trading mode
      * </pre>
      *
      * <code>PROPOSAL_ERROR_UNSUPPORTED_TRADING_MODE = 12;</code>
@@ -129,7 +129,7 @@ public final class Governance {
     PROPOSAL_ERROR_UNSUPPORTED_TRADING_MODE(12),
     /**
      * <pre>
-     * The proposal failed node validation.
+     * The proposal failed node validation
      * </pre>
      *
      * <code>PROPOSAL_ERROR_NODE_VALIDATION_FAILED = 13;</code>
@@ -137,7 +137,7 @@ public final class Governance {
     PROPOSAL_ERROR_NODE_VALIDATION_FAILED(13),
     /**
      * <pre>
-     * A field is missing in a builtin asset source.
+     * A field is missing in a builtin asset source
      * </pre>
      *
      * <code>PROPOSAL_ERROR_MISSING_BUILTIN_ASSET_FIELD = 14;</code>
@@ -145,7 +145,7 @@ public final class Governance {
     PROPOSAL_ERROR_MISSING_BUILTIN_ASSET_FIELD(14),
     /**
      * <pre>
-     * The contract address is missing in the ERC20 asset source.
+     * The contract address is missing in the ERC20 asset source
      * </pre>
      *
      * <code>PROPOSAL_ERROR_MISSING_ERC20_CONTRACT_ADDRESS = 15;</code>
@@ -153,7 +153,7 @@ public final class Governance {
     PROPOSAL_ERROR_MISSING_ERC20_CONTRACT_ADDRESS(15),
     /**
      * <pre>
-     * The asset id refer to no assets in vega.
+     * The asset identifier is invalid or does not exist on the Vega network
      * </pre>
      *
      * <code>PROPOSAL_ERROR_INVALID_ASSET = 16;</code>
@@ -161,7 +161,7 @@ public final class Governance {
     PROPOSAL_ERROR_INVALID_ASSET(16),
     /**
      * <pre>
-     * Proposal terms timestamps are not compatible (Validation &lt; Closing &lt; Enactment).
+     * Proposal terms timestamps are not compatible (Validation &lt; Closing &lt; Enactment)
      * </pre>
      *
      * <code>PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS = 17;</code>
@@ -169,7 +169,7 @@ public final class Governance {
     PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS(17),
     /**
      * <pre>
-     * No risk parameteres were specified
+     * No risk parameters were specified
      * </pre>
      *
      * <code>PROPOSAL_ERROR_NO_RISK_PARAMETERS = 18;</code>
@@ -236,7 +236,7 @@ public final class Governance {
 
     /**
      * <pre>
-     * Default value.
+     * Default value
      * </pre>
      *
      * <code>PROPOSAL_ERROR_UNSPECIFIED = 0;</code>
@@ -244,7 +244,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * The specified close time is too early base on network parameters.
+     * The specified close time is too early base on network parameters
      * </pre>
      *
      * <code>PROPOSAL_ERROR_CLOSE_TIME_TOO_SOON = 1;</code>
@@ -252,7 +252,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_CLOSE_TIME_TOO_SOON_VALUE = 1;
     /**
      * <pre>
-     * The specified close time is too late based on network parameters.
+     * The specified close time is too late based on network parameters
      * </pre>
      *
      * <code>PROPOSAL_ERROR_CLOSE_TIME_TOO_LATE = 2;</code>
@@ -260,7 +260,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_CLOSE_TIME_TOO_LATE_VALUE = 2;
     /**
      * <pre>
-     * The specified enact time is too early based on network parameters.
+     * The specified enact time is too early based on network parameters
      * </pre>
      *
      * <code>PROPOSAL_ERROR_ENACT_TIME_TOO_SOON = 3;</code>
@@ -268,7 +268,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_ENACT_TIME_TOO_SOON_VALUE = 3;
     /**
      * <pre>
-     * The specified enact time is too late based on network parameters.
+     * The specified enact time is too late based on network parameters
      * </pre>
      *
      * <code>PROPOSAL_ERROR_ENACT_TIME_TOO_LATE = 4;</code>
@@ -276,7 +276,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_ENACT_TIME_TOO_LATE_VALUE = 4;
     /**
      * <pre>
-     * The proposer for this proposal as insufficient tokens.
+     * The proposer for this proposal as insufficient tokens
      * </pre>
      *
      * <code>PROPOSAL_ERROR_INSUFFICIENT_TOKENS = 5;</code>
@@ -284,7 +284,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_INSUFFICIENT_TOKENS_VALUE = 5;
     /**
      * <pre>
-     * The instrument quote name and base name were the same.
+     * The instrument quote name and base name were the same
      * </pre>
      *
      * <code>PROPOSAL_ERROR_INVALID_INSTRUMENT_SECURITY = 6;</code>
@@ -292,7 +292,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_INVALID_INSTRUMENT_SECURITY_VALUE = 6;
     /**
      * <pre>
-     * The proposal has no product.
+     * The proposal has no product
      * </pre>
      *
      * <code>PROPOSAL_ERROR_NO_PRODUCT = 7;</code>
@@ -300,7 +300,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_NO_PRODUCT_VALUE = 7;
     /**
      * <pre>
-     * The specified product is not supported.
+     * The specified product is not supported
      * </pre>
      *
      * <code>PROPOSAL_ERROR_UNSUPPORTED_PRODUCT = 8;</code>
@@ -308,7 +308,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_UNSUPPORTED_PRODUCT_VALUE = 8;
     /**
      * <pre>
-     * Invalid future maturity timestamp (expect RFC3339).
+     * Invalid future maturity timestamp (expect RFC3339)
      * </pre>
      *
      * <code>PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT_TIMESTAMP = 9;</code>
@@ -316,7 +316,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT_TIMESTAMP_VALUE = 9;
     /**
      * <pre>
-     * The product maturity is past.
+     * The product maturity is past
      * </pre>
      *
      * <code>PROPOSAL_ERROR_PRODUCT_MATURITY_IS_PASSED = 10;</code>
@@ -324,7 +324,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_PRODUCT_MATURITY_IS_PASSED_VALUE = 10;
     /**
      * <pre>
-     * The proposal has no trading mode.
+     * The proposal has no trading mode
      * </pre>
      *
      * <code>PROPOSAL_ERROR_NO_TRADING_MODE = 11;</code>
@@ -332,7 +332,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_NO_TRADING_MODE_VALUE = 11;
     /**
      * <pre>
-     * The proposal has an unsupported trading mode.
+     * The proposal has an unsupported trading mode
      * </pre>
      *
      * <code>PROPOSAL_ERROR_UNSUPPORTED_TRADING_MODE = 12;</code>
@@ -340,7 +340,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_UNSUPPORTED_TRADING_MODE_VALUE = 12;
     /**
      * <pre>
-     * The proposal failed node validation.
+     * The proposal failed node validation
      * </pre>
      *
      * <code>PROPOSAL_ERROR_NODE_VALIDATION_FAILED = 13;</code>
@@ -348,7 +348,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_NODE_VALIDATION_FAILED_VALUE = 13;
     /**
      * <pre>
-     * A field is missing in a builtin asset source.
+     * A field is missing in a builtin asset source
      * </pre>
      *
      * <code>PROPOSAL_ERROR_MISSING_BUILTIN_ASSET_FIELD = 14;</code>
@@ -356,7 +356,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_MISSING_BUILTIN_ASSET_FIELD_VALUE = 14;
     /**
      * <pre>
-     * The contract address is missing in the ERC20 asset source.
+     * The contract address is missing in the ERC20 asset source
      * </pre>
      *
      * <code>PROPOSAL_ERROR_MISSING_ERC20_CONTRACT_ADDRESS = 15;</code>
@@ -364,7 +364,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_MISSING_ERC20_CONTRACT_ADDRESS_VALUE = 15;
     /**
      * <pre>
-     * The asset id refer to no assets in vega.
+     * The asset identifier is invalid or does not exist on the Vega network
      * </pre>
      *
      * <code>PROPOSAL_ERROR_INVALID_ASSET = 16;</code>
@@ -372,7 +372,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_INVALID_ASSET_VALUE = 16;
     /**
      * <pre>
-     * Proposal terms timestamps are not compatible (Validation &lt; Closing &lt; Enactment).
+     * Proposal terms timestamps are not compatible (Validation &lt; Closing &lt; Enactment)
      * </pre>
      *
      * <code>PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS = 17;</code>
@@ -380,7 +380,7 @@ public final class Governance {
     public static final int PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS_VALUE = 17;
     /**
      * <pre>
-     * No risk parameteres were specified
+     * No risk parameters were specified
      * </pre>
      *
      * <code>PROPOSAL_ERROR_NO_RISK_PARAMETERS = 18;</code>
@@ -556,7 +556,7 @@ public final class Governance {
 
     /**
      * <pre>
-     * Future product maturity (ISO8601/RFC3339 timestamp).
+     * Future product maturity (ISO8601/RFC3339 timestamp)
      * </pre>
      *
      * <code>string maturity = 1 [json_name = "maturity", (.validator.field) = { ... }</code>
@@ -565,7 +565,7 @@ public final class Governance {
     java.lang.String getMaturity();
     /**
      * <pre>
-     * Future product maturity (ISO8601/RFC3339 timestamp).
+     * Future product maturity (ISO8601/RFC3339 timestamp)
      * </pre>
      *
      * <code>string maturity = 1 [json_name = "maturity", (.validator.field) = { ... }</code>
@@ -576,19 +576,19 @@ public final class Governance {
 
     /**
      * <pre>
-     * Product settlementAsset ID.
+     * Product settlement asset identifier
      * </pre>
      *
-     * <code>string settlementAsset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
+     * <code>string settlement_asset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
      * @return The settlementAsset.
      */
     java.lang.String getSettlementAsset();
     /**
      * <pre>
-     * Product settlementAsset ID.
+     * Product settlement asset identifier
      * </pre>
      *
-     * <code>string settlementAsset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
+     * <code>string settlement_asset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
      * @return The bytes for settlementAsset.
      */
     com.google.protobuf.ByteString
@@ -596,19 +596,19 @@ public final class Governance {
 
     /**
      * <pre>
-     * Product quoteName
+     * Product quote name
      * </pre>
      *
-     * <code>string quoteName = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
+     * <code>string quote_name = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
      * @return The quoteName.
      */
     java.lang.String getQuoteName();
     /**
      * <pre>
-     * Product quoteName
+     * Product quote name
      * </pre>
      *
-     * <code>string quoteName = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
+     * <code>string quote_name = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
      * @return The bytes for quoteName.
      */
     com.google.protobuf.ByteString
@@ -616,7 +616,7 @@ public final class Governance {
   }
   /**
    * <pre>
-   * Future product configuration.
+   * Future product configuration
    * </pre>
    *
    * Protobuf type {@code vega.FutureProduct}
@@ -720,7 +720,7 @@ public final class Governance {
     private volatile java.lang.Object maturity_;
     /**
      * <pre>
-     * Future product maturity (ISO8601/RFC3339 timestamp).
+     * Future product maturity (ISO8601/RFC3339 timestamp)
      * </pre>
      *
      * <code>string maturity = 1 [json_name = "maturity", (.validator.field) = { ... }</code>
@@ -741,7 +741,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Future product maturity (ISO8601/RFC3339 timestamp).
+     * Future product maturity (ISO8601/RFC3339 timestamp)
      * </pre>
      *
      * <code>string maturity = 1 [json_name = "maturity", (.validator.field) = { ... }</code>
@@ -762,14 +762,14 @@ public final class Governance {
       }
     }
 
-    public static final int SETTLEMENTASSET_FIELD_NUMBER = 2;
+    public static final int SETTLEMENT_ASSET_FIELD_NUMBER = 2;
     private volatile java.lang.Object settlementAsset_;
     /**
      * <pre>
-     * Product settlementAsset ID.
+     * Product settlement asset identifier
      * </pre>
      *
-     * <code>string settlementAsset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
+     * <code>string settlement_asset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
      * @return The settlementAsset.
      */
     @java.lang.Override
@@ -787,10 +787,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Product settlementAsset ID.
+     * Product settlement asset identifier
      * </pre>
      *
-     * <code>string settlementAsset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
+     * <code>string settlement_asset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
      * @return The bytes for settlementAsset.
      */
     @java.lang.Override
@@ -808,14 +808,14 @@ public final class Governance {
       }
     }
 
-    public static final int QUOTENAME_FIELD_NUMBER = 3;
+    public static final int QUOTE_NAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object quoteName_;
     /**
      * <pre>
-     * Product quoteName
+     * Product quote name
      * </pre>
      *
-     * <code>string quoteName = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
+     * <code>string quote_name = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
      * @return The quoteName.
      */
     @java.lang.Override
@@ -833,10 +833,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Product quoteName
+     * Product quote name
      * </pre>
      *
-     * <code>string quoteName = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
+     * <code>string quote_name = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
      * @return The bytes for quoteName.
      */
     @java.lang.Override
@@ -929,9 +929,9 @@ public final class Governance {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MATURITY_FIELD_NUMBER;
       hash = (53 * hash) + getMaturity().hashCode();
-      hash = (37 * hash) + SETTLEMENTASSET_FIELD_NUMBER;
+      hash = (37 * hash) + SETTLEMENT_ASSET_FIELD_NUMBER;
       hash = (53 * hash) + getSettlementAsset().hashCode();
-      hash = (37 * hash) + QUOTENAME_FIELD_NUMBER;
+      hash = (37 * hash) + QUOTE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getQuoteName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1030,7 +1030,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Future product configuration.
+     * Future product configuration
      * </pre>
      *
      * Protobuf type {@code vega.FutureProduct}
@@ -1197,7 +1197,7 @@ public final class Governance {
       private java.lang.Object maturity_ = "";
       /**
        * <pre>
-       * Future product maturity (ISO8601/RFC3339 timestamp).
+       * Future product maturity (ISO8601/RFC3339 timestamp)
        * </pre>
        *
        * <code>string maturity = 1 [json_name = "maturity", (.validator.field) = { ... }</code>
@@ -1217,7 +1217,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Future product maturity (ISO8601/RFC3339 timestamp).
+       * Future product maturity (ISO8601/RFC3339 timestamp)
        * </pre>
        *
        * <code>string maturity = 1 [json_name = "maturity", (.validator.field) = { ... }</code>
@@ -1238,7 +1238,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Future product maturity (ISO8601/RFC3339 timestamp).
+       * Future product maturity (ISO8601/RFC3339 timestamp)
        * </pre>
        *
        * <code>string maturity = 1 [json_name = "maturity", (.validator.field) = { ... }</code>
@@ -1257,7 +1257,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Future product maturity (ISO8601/RFC3339 timestamp).
+       * Future product maturity (ISO8601/RFC3339 timestamp)
        * </pre>
        *
        * <code>string maturity = 1 [json_name = "maturity", (.validator.field) = { ... }</code>
@@ -1271,7 +1271,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Future product maturity (ISO8601/RFC3339 timestamp).
+       * Future product maturity (ISO8601/RFC3339 timestamp)
        * </pre>
        *
        * <code>string maturity = 1 [json_name = "maturity", (.validator.field) = { ... }</code>
@@ -1293,10 +1293,10 @@ public final class Governance {
       private java.lang.Object settlementAsset_ = "";
       /**
        * <pre>
-       * Product settlementAsset ID.
+       * Product settlement asset identifier
        * </pre>
        *
-       * <code>string settlementAsset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
+       * <code>string settlement_asset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
        * @return The settlementAsset.
        */
       public java.lang.String getSettlementAsset() {
@@ -1313,10 +1313,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Product settlementAsset ID.
+       * Product settlement asset identifier
        * </pre>
        *
-       * <code>string settlementAsset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
+       * <code>string settlement_asset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
        * @return The bytes for settlementAsset.
        */
       public com.google.protobuf.ByteString
@@ -1334,10 +1334,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Product settlementAsset ID.
+       * Product settlement asset identifier
        * </pre>
        *
-       * <code>string settlementAsset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
+       * <code>string settlement_asset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
        * @param value The settlementAsset to set.
        * @return This builder for chaining.
        */
@@ -1353,10 +1353,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Product settlementAsset ID.
+       * Product settlement asset identifier
        * </pre>
        *
-       * <code>string settlementAsset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
+       * <code>string settlement_asset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSettlementAsset() {
@@ -1367,10 +1367,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Product settlementAsset ID.
+       * Product settlement asset identifier
        * </pre>
        *
-       * <code>string settlementAsset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
+       * <code>string settlement_asset = 2 [json_name = "settlementAsset", (.validator.field) = { ... }</code>
        * @param value The bytes for settlementAsset to set.
        * @return This builder for chaining.
        */
@@ -1389,10 +1389,10 @@ public final class Governance {
       private java.lang.Object quoteName_ = "";
       /**
        * <pre>
-       * Product quoteName
+       * Product quote name
        * </pre>
        *
-       * <code>string quoteName = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
+       * <code>string quote_name = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
        * @return The quoteName.
        */
       public java.lang.String getQuoteName() {
@@ -1409,10 +1409,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Product quoteName
+       * Product quote name
        * </pre>
        *
-       * <code>string quoteName = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
+       * <code>string quote_name = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
        * @return The bytes for quoteName.
        */
       public com.google.protobuf.ByteString
@@ -1430,10 +1430,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Product quoteName
+       * Product quote name
        * </pre>
        *
-       * <code>string quoteName = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
+       * <code>string quote_name = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
        * @param value The quoteName to set.
        * @return This builder for chaining.
        */
@@ -1449,10 +1449,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Product quoteName
+       * Product quote name
        * </pre>
        *
-       * <code>string quoteName = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
+       * <code>string quote_name = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearQuoteName() {
@@ -1463,10 +1463,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Product quoteName
+       * Product quote name
        * </pre>
        *
-       * <code>string quoteName = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
+       * <code>string quote_name = 3 [json_name = "quoteName", (.validator.field) = { ... }</code>
        * @param value The bytes for quoteName to set.
        * @return This builder for chaining.
        */
@@ -1540,7 +1540,7 @@ public final class Governance {
 
     /**
      * <pre>
-     * Instrument name.
+     * Instrument name
      * </pre>
      *
      * <code>string name = 1 [json_name = "name", (.validator.field) = { ... }</code>
@@ -1549,7 +1549,7 @@ public final class Governance {
     java.lang.String getName();
     /**
      * <pre>
-     * Instrument name.
+     * Instrument name
      * </pre>
      *
      * <code>string name = 1 [json_name = "name", (.validator.field) = { ... }</code>
@@ -1560,7 +1560,7 @@ public final class Governance {
 
     /**
      * <pre>
-     * Instrument code.
+     * Instrument code
      * </pre>
      *
      * <code>string code = 2 [json_name = "code", (.validator.field) = { ... }</code>
@@ -1569,7 +1569,7 @@ public final class Governance {
     java.lang.String getCode();
     /**
      * <pre>
-     * Instrument code.
+     * Instrument code
      * </pre>
      *
      * <code>string code = 2 [json_name = "code", (.validator.field) = { ... }</code>
@@ -1580,7 +1580,7 @@ public final class Governance {
 
     /**
      * <pre>
-     * Futures.
+     * Future
      * </pre>
      *
      * <code>.vega.FutureProduct future = 100 [json_name = "future"];</code>
@@ -1589,7 +1589,7 @@ public final class Governance {
     boolean hasFuture();
     /**
      * <pre>
-     * Futures.
+     * Future
      * </pre>
      *
      * <code>.vega.FutureProduct future = 100 [json_name = "future"];</code>
@@ -1598,7 +1598,7 @@ public final class Governance {
     io.vegaprotocol.vega.Governance.FutureProduct getFuture();
     /**
      * <pre>
-     * Futures.
+     * Future
      * </pre>
      *
      * <code>.vega.FutureProduct future = 100 [json_name = "future"];</code>
@@ -1609,7 +1609,7 @@ public final class Governance {
   }
   /**
    * <pre>
-   * Instrument configuration.
+   * Instrument configuration
    * </pre>
    *
    * Protobuf type {@code vega.InstrumentConfiguration}
@@ -1759,7 +1759,7 @@ public final class Governance {
     private volatile java.lang.Object name_;
     /**
      * <pre>
-     * Instrument name.
+     * Instrument name
      * </pre>
      *
      * <code>string name = 1 [json_name = "name", (.validator.field) = { ... }</code>
@@ -1780,7 +1780,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Instrument name.
+     * Instrument name
      * </pre>
      *
      * <code>string name = 1 [json_name = "name", (.validator.field) = { ... }</code>
@@ -1805,7 +1805,7 @@ public final class Governance {
     private volatile java.lang.Object code_;
     /**
      * <pre>
-     * Instrument code.
+     * Instrument code
      * </pre>
      *
      * <code>string code = 2 [json_name = "code", (.validator.field) = { ... }</code>
@@ -1826,7 +1826,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Instrument code.
+     * Instrument code
      * </pre>
      *
      * <code>string code = 2 [json_name = "code", (.validator.field) = { ... }</code>
@@ -1850,7 +1850,7 @@ public final class Governance {
     public static final int FUTURE_FIELD_NUMBER = 100;
     /**
      * <pre>
-     * Futures.
+     * Future
      * </pre>
      *
      * <code>.vega.FutureProduct future = 100 [json_name = "future"];</code>
@@ -1862,7 +1862,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Futures.
+     * Future
      * </pre>
      *
      * <code>.vega.FutureProduct future = 100 [json_name = "future"];</code>
@@ -1877,7 +1877,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Futures.
+     * Future
      * </pre>
      *
      * <code>.vega.FutureProduct future = 100 [json_name = "future"];</code>
@@ -2080,7 +2080,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Instrument configuration.
+     * Instrument configuration
      * </pre>
      *
      * Protobuf type {@code vega.InstrumentConfiguration}
@@ -2274,7 +2274,7 @@ public final class Governance {
       private java.lang.Object name_ = "";
       /**
        * <pre>
-       * Instrument name.
+       * Instrument name
        * </pre>
        *
        * <code>string name = 1 [json_name = "name", (.validator.field) = { ... }</code>
@@ -2294,7 +2294,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Instrument name.
+       * Instrument name
        * </pre>
        *
        * <code>string name = 1 [json_name = "name", (.validator.field) = { ... }</code>
@@ -2315,7 +2315,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Instrument name.
+       * Instrument name
        * </pre>
        *
        * <code>string name = 1 [json_name = "name", (.validator.field) = { ... }</code>
@@ -2334,7 +2334,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Instrument name.
+       * Instrument name
        * </pre>
        *
        * <code>string name = 1 [json_name = "name", (.validator.field) = { ... }</code>
@@ -2348,7 +2348,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Instrument name.
+       * Instrument name
        * </pre>
        *
        * <code>string name = 1 [json_name = "name", (.validator.field) = { ... }</code>
@@ -2370,7 +2370,7 @@ public final class Governance {
       private java.lang.Object code_ = "";
       /**
        * <pre>
-       * Instrument code.
+       * Instrument code
        * </pre>
        *
        * <code>string code = 2 [json_name = "code", (.validator.field) = { ... }</code>
@@ -2390,7 +2390,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Instrument code.
+       * Instrument code
        * </pre>
        *
        * <code>string code = 2 [json_name = "code", (.validator.field) = { ... }</code>
@@ -2411,7 +2411,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Instrument code.
+       * Instrument code
        * </pre>
        *
        * <code>string code = 2 [json_name = "code", (.validator.field) = { ... }</code>
@@ -2430,7 +2430,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Instrument code.
+       * Instrument code
        * </pre>
        *
        * <code>string code = 2 [json_name = "code", (.validator.field) = { ... }</code>
@@ -2444,7 +2444,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Instrument code.
+       * Instrument code
        * </pre>
        *
        * <code>string code = 2 [json_name = "code", (.validator.field) = { ... }</code>
@@ -2467,7 +2467,7 @@ public final class Governance {
           io.vegaprotocol.vega.Governance.FutureProduct, io.vegaprotocol.vega.Governance.FutureProduct.Builder, io.vegaprotocol.vega.Governance.FutureProductOrBuilder> futureBuilder_;
       /**
        * <pre>
-       * Futures.
+       * Future
        * </pre>
        *
        * <code>.vega.FutureProduct future = 100 [json_name = "future"];</code>
@@ -2479,7 +2479,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Futures.
+       * Future
        * </pre>
        *
        * <code>.vega.FutureProduct future = 100 [json_name = "future"];</code>
@@ -2501,7 +2501,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Futures.
+       * Future
        * </pre>
        *
        * <code>.vega.FutureProduct future = 100 [json_name = "future"];</code>
@@ -2521,7 +2521,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Futures.
+       * Future
        * </pre>
        *
        * <code>.vega.FutureProduct future = 100 [json_name = "future"];</code>
@@ -2539,7 +2539,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Futures.
+       * Future
        * </pre>
        *
        * <code>.vega.FutureProduct future = 100 [json_name = "future"];</code>
@@ -2565,7 +2565,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Futures.
+       * Future
        * </pre>
        *
        * <code>.vega.FutureProduct future = 100 [json_name = "future"];</code>
@@ -2588,7 +2588,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Futures.
+       * Future
        * </pre>
        *
        * <code>.vega.FutureProduct future = 100 [json_name = "future"];</code>
@@ -2598,7 +2598,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Futures.
+       * Future
        * </pre>
        *
        * <code>.vega.FutureProduct future = 100 [json_name = "future"];</code>
@@ -2616,7 +2616,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Futures.
+       * Future
        * </pre>
        *
        * <code>.vega.FutureProduct future = 100 [json_name = "future"];</code>
@@ -2698,7 +2698,7 @@ public final class Governance {
 
     /**
      * <pre>
-     * New market instrument configuration.
+     * New market instrument configuration
      * </pre>
      *
      * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
@@ -2707,7 +2707,7 @@ public final class Governance {
     boolean hasInstrument();
     /**
      * <pre>
-     * New market instrument configuration.
+     * New market instrument configuration
      * </pre>
      *
      * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
@@ -2716,7 +2716,7 @@ public final class Governance {
     io.vegaprotocol.vega.Governance.InstrumentConfiguration getInstrument();
     /**
      * <pre>
-     * New market instrument configuration.
+     * New market instrument configuration
      * </pre>
      *
      * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
@@ -2725,17 +2725,17 @@ public final class Governance {
 
     /**
      * <pre>
-     * Decimal places used for the new market.
+     * Decimal places used for the new market
      * </pre>
      *
-     * <code>uint64 decimalPlaces = 2 [json_name = "decimalPlaces", (.validator.field) = { ... }</code>
+     * <code>uint64 decimal_places = 2 [json_name = "decimalPlaces", (.validator.field) = { ... }</code>
      * @return The decimalPlaces.
      */
     long getDecimalPlaces();
 
     /**
      * <pre>
-     * Optional new market meta data, tags.
+     * Optional new market meta data, tags
      * </pre>
      *
      * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -2745,7 +2745,7 @@ public final class Governance {
         getMetadataList();
     /**
      * <pre>
-     * Optional new market meta data, tags.
+     * Optional new market meta data, tags
      * </pre>
      *
      * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -2754,7 +2754,7 @@ public final class Governance {
     int getMetadataCount();
     /**
      * <pre>
-     * Optional new market meta data, tags.
+     * Optional new market meta data, tags
      * </pre>
      *
      * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -2764,7 +2764,7 @@ public final class Governance {
     java.lang.String getMetadata(int index);
     /**
      * <pre>
-     * Optional new market meta data, tags.
+     * Optional new market meta data, tags
      * </pre>
      *
      * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -2776,28 +2776,28 @@ public final class Governance {
 
     /**
      * <pre>
-     * price monitoring configuration
+     * Price monitoring parameters
      * </pre>
      *
-     * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];</code>
+     * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
      * @return Whether the priceMonitoringParameters field is set.
      */
     boolean hasPriceMonitoringParameters();
     /**
      * <pre>
-     * price monitoring configuration
+     * Price monitoring parameters
      * </pre>
      *
-     * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];</code>
+     * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
      * @return The priceMonitoringParameters.
      */
     io.vegaprotocol.vega.Markets.PriceMonitoringParameters getPriceMonitoringParameters();
     /**
      * <pre>
-     * price monitoring configuration
+     * Price monitoring parameters
      * </pre>
      *
-     * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];</code>
+     * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
      */
     io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder getPriceMonitoringParametersOrBuilder();
 
@@ -2833,7 +2833,7 @@ public final class Governance {
      * Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected
      * </pre>
      *
-     * <code>.vega.LogNormalRiskModel logNormal = 101 [json_name = "logNormal"];</code>
+     * <code>.vega.LogNormalRiskModel log_normal = 101 [json_name = "logNormal"];</code>
      * @return Whether the logNormal field is set.
      */
     boolean hasLogNormal();
@@ -2842,7 +2842,7 @@ public final class Governance {
      * Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected
      * </pre>
      *
-     * <code>.vega.LogNormalRiskModel logNormal = 101 [json_name = "logNormal"];</code>
+     * <code>.vega.LogNormalRiskModel log_normal = 101 [json_name = "logNormal"];</code>
      * @return The logNormal.
      */
     io.vegaprotocol.vega.Markets.LogNormalRiskModel getLogNormal();
@@ -2851,13 +2851,13 @@ public final class Governance {
      * Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected
      * </pre>
      *
-     * <code>.vega.LogNormalRiskModel logNormal = 101 [json_name = "logNormal"];</code>
+     * <code>.vega.LogNormalRiskModel log_normal = 101 [json_name = "logNormal"];</code>
      */
     io.vegaprotocol.vega.Markets.LogNormalRiskModelOrBuilder getLogNormalOrBuilder();
 
     /**
      * <pre>
-     * Continuous trading.
+     * Continuous trading
      * </pre>
      *
      * <code>.vega.ContinuousTrading continuous = 200 [json_name = "continuous"];</code>
@@ -2866,7 +2866,7 @@ public final class Governance {
     boolean hasContinuous();
     /**
      * <pre>
-     * Continuous trading.
+     * Continuous trading
      * </pre>
      *
      * <code>.vega.ContinuousTrading continuous = 200 [json_name = "continuous"];</code>
@@ -2875,7 +2875,7 @@ public final class Governance {
     io.vegaprotocol.vega.Markets.ContinuousTrading getContinuous();
     /**
      * <pre>
-     * Continuous trading.
+     * Continuous trading
      * </pre>
      *
      * <code>.vega.ContinuousTrading continuous = 200 [json_name = "continuous"];</code>
@@ -2884,7 +2884,7 @@ public final class Governance {
 
     /**
      * <pre>
-     * Discrete trading.
+     * Discrete trading
      * </pre>
      *
      * <code>.vega.DiscreteTrading discrete = 201 [json_name = "discrete"];</code>
@@ -2893,7 +2893,7 @@ public final class Governance {
     boolean hasDiscrete();
     /**
      * <pre>
-     * Discrete trading.
+     * Discrete trading
      * </pre>
      *
      * <code>.vega.DiscreteTrading discrete = 201 [json_name = "discrete"];</code>
@@ -2902,7 +2902,7 @@ public final class Governance {
     io.vegaprotocol.vega.Markets.DiscreteTrading getDiscrete();
     /**
      * <pre>
-     * Discrete trading.
+     * Discrete trading
      * </pre>
      *
      * <code>.vega.DiscreteTrading discrete = 201 [json_name = "discrete"];</code>
@@ -2915,7 +2915,7 @@ public final class Governance {
   }
   /**
    * <pre>
-   * Configuration for a new market on Vega.
+   * Configuration for a new market on Vega
    * </pre>
    *
    * Protobuf type {@code vega.NewMarketConfiguration}
@@ -3101,7 +3101,7 @@ public final class Governance {
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       SIMPLE(100),
-      LOGNORMAL(101),
+      LOG_NORMAL(101),
       RISKPARAMETERS_NOT_SET(0);
       private final int value;
       private RiskParametersCase(int value) {
@@ -3120,7 +3120,7 @@ public final class Governance {
       public static RiskParametersCase forNumber(int value) {
         switch (value) {
           case 100: return SIMPLE;
-          case 101: return LOGNORMAL;
+          case 101: return LOG_NORMAL;
           case 0: return RISKPARAMETERS_NOT_SET;
           default: return null;
         }
@@ -3181,7 +3181,7 @@ public final class Governance {
     private io.vegaprotocol.vega.Governance.InstrumentConfiguration instrument_;
     /**
      * <pre>
-     * New market instrument configuration.
+     * New market instrument configuration
      * </pre>
      *
      * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
@@ -3193,7 +3193,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * New market instrument configuration.
+     * New market instrument configuration
      * </pre>
      *
      * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
@@ -3205,7 +3205,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * New market instrument configuration.
+     * New market instrument configuration
      * </pre>
      *
      * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
@@ -3215,14 +3215,14 @@ public final class Governance {
       return getInstrument();
     }
 
-    public static final int DECIMALPLACES_FIELD_NUMBER = 2;
+    public static final int DECIMAL_PLACES_FIELD_NUMBER = 2;
     private long decimalPlaces_;
     /**
      * <pre>
-     * Decimal places used for the new market.
+     * Decimal places used for the new market
      * </pre>
      *
-     * <code>uint64 decimalPlaces = 2 [json_name = "decimalPlaces", (.validator.field) = { ... }</code>
+     * <code>uint64 decimal_places = 2 [json_name = "decimalPlaces", (.validator.field) = { ... }</code>
      * @return The decimalPlaces.
      */
     @java.lang.Override
@@ -3234,7 +3234,7 @@ public final class Governance {
     private com.google.protobuf.LazyStringList metadata_;
     /**
      * <pre>
-     * Optional new market meta data, tags.
+     * Optional new market meta data, tags
      * </pre>
      *
      * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -3246,7 +3246,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Optional new market meta data, tags.
+     * Optional new market meta data, tags
      * </pre>
      *
      * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -3257,7 +3257,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Optional new market meta data, tags.
+     * Optional new market meta data, tags
      * </pre>
      *
      * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -3269,7 +3269,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Optional new market meta data, tags.
+     * Optional new market meta data, tags
      * </pre>
      *
      * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -3281,14 +3281,14 @@ public final class Governance {
       return metadata_.getByteString(index);
     }
 
-    public static final int PRICEMONITORINGPARAMETERS_FIELD_NUMBER = 4;
+    public static final int PRICE_MONITORING_PARAMETERS_FIELD_NUMBER = 4;
     private io.vegaprotocol.vega.Markets.PriceMonitoringParameters priceMonitoringParameters_;
     /**
      * <pre>
-     * price monitoring configuration
+     * Price monitoring parameters
      * </pre>
      *
-     * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];</code>
+     * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
      * @return Whether the priceMonitoringParameters field is set.
      */
     @java.lang.Override
@@ -3297,10 +3297,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * price monitoring configuration
+     * Price monitoring parameters
      * </pre>
      *
-     * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];</code>
+     * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
      * @return The priceMonitoringParameters.
      */
     @java.lang.Override
@@ -3309,10 +3309,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * price monitoring configuration
+     * Price monitoring parameters
      * </pre>
      *
-     * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];</code>
+     * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder getPriceMonitoringParametersOrBuilder() {
@@ -3362,13 +3362,13 @@ public final class Governance {
       return io.vegaprotocol.vega.Markets.SimpleModelParams.getDefaultInstance();
     }
 
-    public static final int LOGNORMAL_FIELD_NUMBER = 101;
+    public static final int LOG_NORMAL_FIELD_NUMBER = 101;
     /**
      * <pre>
      * Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected
      * </pre>
      *
-     * <code>.vega.LogNormalRiskModel logNormal = 101 [json_name = "logNormal"];</code>
+     * <code>.vega.LogNormalRiskModel log_normal = 101 [json_name = "logNormal"];</code>
      * @return Whether the logNormal field is set.
      */
     @java.lang.Override
@@ -3380,7 +3380,7 @@ public final class Governance {
      * Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected
      * </pre>
      *
-     * <code>.vega.LogNormalRiskModel logNormal = 101 [json_name = "logNormal"];</code>
+     * <code>.vega.LogNormalRiskModel log_normal = 101 [json_name = "logNormal"];</code>
      * @return The logNormal.
      */
     @java.lang.Override
@@ -3395,7 +3395,7 @@ public final class Governance {
      * Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected
      * </pre>
      *
-     * <code>.vega.LogNormalRiskModel logNormal = 101 [json_name = "logNormal"];</code>
+     * <code>.vega.LogNormalRiskModel log_normal = 101 [json_name = "logNormal"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Markets.LogNormalRiskModelOrBuilder getLogNormalOrBuilder() {
@@ -3408,7 +3408,7 @@ public final class Governance {
     public static final int CONTINUOUS_FIELD_NUMBER = 200;
     /**
      * <pre>
-     * Continuous trading.
+     * Continuous trading
      * </pre>
      *
      * <code>.vega.ContinuousTrading continuous = 200 [json_name = "continuous"];</code>
@@ -3420,7 +3420,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Continuous trading.
+     * Continuous trading
      * </pre>
      *
      * <code>.vega.ContinuousTrading continuous = 200 [json_name = "continuous"];</code>
@@ -3435,7 +3435,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Continuous trading.
+     * Continuous trading
      * </pre>
      *
      * <code>.vega.ContinuousTrading continuous = 200 [json_name = "continuous"];</code>
@@ -3451,7 +3451,7 @@ public final class Governance {
     public static final int DISCRETE_FIELD_NUMBER = 201;
     /**
      * <pre>
-     * Discrete trading.
+     * Discrete trading
      * </pre>
      *
      * <code>.vega.DiscreteTrading discrete = 201 [json_name = "discrete"];</code>
@@ -3463,7 +3463,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Discrete trading.
+     * Discrete trading
      * </pre>
      *
      * <code>.vega.DiscreteTrading discrete = 201 [json_name = "discrete"];</code>
@@ -3478,7 +3478,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Discrete trading.
+     * Discrete trading
      * </pre>
      *
      * <code>.vega.DiscreteTrading discrete = 201 [json_name = "discrete"];</code>
@@ -3644,7 +3644,7 @@ public final class Governance {
         hash = (37 * hash) + INSTRUMENT_FIELD_NUMBER;
         hash = (53 * hash) + getInstrument().hashCode();
       }
-      hash = (37 * hash) + DECIMALPLACES_FIELD_NUMBER;
+      hash = (37 * hash) + DECIMAL_PLACES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getDecimalPlaces());
       if (getMetadataCount() > 0) {
@@ -3652,7 +3652,7 @@ public final class Governance {
         hash = (53 * hash) + getMetadataList().hashCode();
       }
       if (hasPriceMonitoringParameters()) {
-        hash = (37 * hash) + PRICEMONITORINGPARAMETERS_FIELD_NUMBER;
+        hash = (37 * hash) + PRICE_MONITORING_PARAMETERS_FIELD_NUMBER;
         hash = (53 * hash) + getPriceMonitoringParameters().hashCode();
       }
       switch (riskParametersCase_) {
@@ -3661,7 +3661,7 @@ public final class Governance {
           hash = (53 * hash) + getSimple().hashCode();
           break;
         case 101:
-          hash = (37 * hash) + LOGNORMAL_FIELD_NUMBER;
+          hash = (37 * hash) + LOG_NORMAL_FIELD_NUMBER;
           hash = (53 * hash) + getLogNormal().hashCode();
           break;
         case 0:
@@ -3776,7 +3776,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Configuration for a new market on Vega.
+     * Configuration for a new market on Vega
      * </pre>
      *
      * Protobuf type {@code vega.NewMarketConfiguration}
@@ -3981,7 +3981,7 @@ public final class Governance {
             mergeSimple(other.getSimple());
             break;
           }
-          case LOGNORMAL: {
+          case LOG_NORMAL: {
             mergeLogNormal(other.getLogNormal());
             break;
           }
@@ -4067,7 +4067,7 @@ public final class Governance {
           io.vegaprotocol.vega.Governance.InstrumentConfiguration, io.vegaprotocol.vega.Governance.InstrumentConfiguration.Builder, io.vegaprotocol.vega.Governance.InstrumentConfigurationOrBuilder> instrumentBuilder_;
       /**
        * <pre>
-       * New market instrument configuration.
+       * New market instrument configuration
        * </pre>
        *
        * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
@@ -4078,7 +4078,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * New market instrument configuration.
+       * New market instrument configuration
        * </pre>
        *
        * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
@@ -4093,7 +4093,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * New market instrument configuration.
+       * New market instrument configuration
        * </pre>
        *
        * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
@@ -4113,7 +4113,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * New market instrument configuration.
+       * New market instrument configuration
        * </pre>
        *
        * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
@@ -4131,7 +4131,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * New market instrument configuration.
+       * New market instrument configuration
        * </pre>
        *
        * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
@@ -4153,7 +4153,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * New market instrument configuration.
+       * New market instrument configuration
        * </pre>
        *
        * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
@@ -4171,7 +4171,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * New market instrument configuration.
+       * New market instrument configuration
        * </pre>
        *
        * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
@@ -4183,7 +4183,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * New market instrument configuration.
+       * New market instrument configuration
        * </pre>
        *
        * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
@@ -4198,7 +4198,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * New market instrument configuration.
+       * New market instrument configuration
        * </pre>
        *
        * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
@@ -4220,10 +4220,10 @@ public final class Governance {
       private long decimalPlaces_ ;
       /**
        * <pre>
-       * Decimal places used for the new market.
+       * Decimal places used for the new market
        * </pre>
        *
-       * <code>uint64 decimalPlaces = 2 [json_name = "decimalPlaces", (.validator.field) = { ... }</code>
+       * <code>uint64 decimal_places = 2 [json_name = "decimalPlaces", (.validator.field) = { ... }</code>
        * @return The decimalPlaces.
        */
       @java.lang.Override
@@ -4232,10 +4232,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Decimal places used for the new market.
+       * Decimal places used for the new market
        * </pre>
        *
-       * <code>uint64 decimalPlaces = 2 [json_name = "decimalPlaces", (.validator.field) = { ... }</code>
+       * <code>uint64 decimal_places = 2 [json_name = "decimalPlaces", (.validator.field) = { ... }</code>
        * @param value The decimalPlaces to set.
        * @return This builder for chaining.
        */
@@ -4247,10 +4247,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Decimal places used for the new market.
+       * Decimal places used for the new market
        * </pre>
        *
-       * <code>uint64 decimalPlaces = 2 [json_name = "decimalPlaces", (.validator.field) = { ... }</code>
+       * <code>uint64 decimal_places = 2 [json_name = "decimalPlaces", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearDecimalPlaces() {
@@ -4269,7 +4269,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Optional new market meta data, tags.
+       * Optional new market meta data, tags
        * </pre>
        *
        * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -4281,7 +4281,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Optional new market meta data, tags.
+       * Optional new market meta data, tags
        * </pre>
        *
        * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -4292,7 +4292,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Optional new market meta data, tags.
+       * Optional new market meta data, tags
        * </pre>
        *
        * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -4304,7 +4304,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Optional new market meta data, tags.
+       * Optional new market meta data, tags
        * </pre>
        *
        * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -4317,7 +4317,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Optional new market meta data, tags.
+       * Optional new market meta data, tags
        * </pre>
        *
        * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -4337,7 +4337,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Optional new market meta data, tags.
+       * Optional new market meta data, tags
        * </pre>
        *
        * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -4356,7 +4356,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Optional new market meta data, tags.
+       * Optional new market meta data, tags
        * </pre>
        *
        * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -4373,7 +4373,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Optional new market meta data, tags.
+       * Optional new market meta data, tags
        * </pre>
        *
        * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -4387,7 +4387,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Optional new market meta data, tags.
+       * Optional new market meta data, tags
        * </pre>
        *
        * <code>repeated string metadata = 3 [json_name = "metadata"];</code>
@@ -4411,10 +4411,10 @@ public final class Governance {
           io.vegaprotocol.vega.Markets.PriceMonitoringParameters, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder> priceMonitoringParametersBuilder_;
       /**
        * <pre>
-       * price monitoring configuration
+       * Price monitoring parameters
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];</code>
+       * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
        * @return Whether the priceMonitoringParameters field is set.
        */
       public boolean hasPriceMonitoringParameters() {
@@ -4422,10 +4422,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * price monitoring configuration
+       * Price monitoring parameters
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];</code>
+       * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
        * @return The priceMonitoringParameters.
        */
       public io.vegaprotocol.vega.Markets.PriceMonitoringParameters getPriceMonitoringParameters() {
@@ -4437,10 +4437,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * price monitoring configuration
+       * Price monitoring parameters
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];</code>
+       * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
        */
       public Builder setPriceMonitoringParameters(io.vegaprotocol.vega.Markets.PriceMonitoringParameters value) {
         if (priceMonitoringParametersBuilder_ == null) {
@@ -4457,10 +4457,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * price monitoring configuration
+       * Price monitoring parameters
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];</code>
+       * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
        */
       public Builder setPriceMonitoringParameters(
           io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder builderForValue) {
@@ -4475,10 +4475,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * price monitoring configuration
+       * Price monitoring parameters
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];</code>
+       * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
        */
       public Builder mergePriceMonitoringParameters(io.vegaprotocol.vega.Markets.PriceMonitoringParameters value) {
         if (priceMonitoringParametersBuilder_ == null) {
@@ -4497,10 +4497,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * price monitoring configuration
+       * Price monitoring parameters
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];</code>
+       * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
        */
       public Builder clearPriceMonitoringParameters() {
         if (priceMonitoringParametersBuilder_ == null) {
@@ -4515,10 +4515,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * price monitoring configuration
+       * Price monitoring parameters
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];</code>
+       * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
        */
       public io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder getPriceMonitoringParametersBuilder() {
 
@@ -4527,10 +4527,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * price monitoring configuration
+       * Price monitoring parameters
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];</code>
+       * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
        */
       public io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder getPriceMonitoringParametersOrBuilder() {
         if (priceMonitoringParametersBuilder_ != null) {
@@ -4542,10 +4542,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * price monitoring configuration
+       * Price monitoring parameters
        * </pre>
        *
-       * <code>.vega.PriceMonitoringParameters priceMonitoringParameters = 4 [json_name = "priceMonitoringParameters"];</code>
+       * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.PriceMonitoringParameters, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder>
@@ -4745,7 +4745,7 @@ public final class Governance {
        * Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormal = 101 [json_name = "logNormal"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal = 101 [json_name = "logNormal"];</code>
        * @return Whether the logNormal field is set.
        */
       @java.lang.Override
@@ -4757,7 +4757,7 @@ public final class Governance {
        * Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormal = 101 [json_name = "logNormal"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal = 101 [json_name = "logNormal"];</code>
        * @return The logNormal.
        */
       @java.lang.Override
@@ -4779,7 +4779,7 @@ public final class Governance {
        * Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormal = 101 [json_name = "logNormal"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal = 101 [json_name = "logNormal"];</code>
        */
       public Builder setLogNormal(io.vegaprotocol.vega.Markets.LogNormalRiskModel value) {
         if (logNormalBuilder_ == null) {
@@ -4799,7 +4799,7 @@ public final class Governance {
        * Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormal = 101 [json_name = "logNormal"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal = 101 [json_name = "logNormal"];</code>
        */
       public Builder setLogNormal(
           io.vegaprotocol.vega.Markets.LogNormalRiskModel.Builder builderForValue) {
@@ -4817,7 +4817,7 @@ public final class Governance {
        * Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormal = 101 [json_name = "logNormal"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal = 101 [json_name = "logNormal"];</code>
        */
       public Builder mergeLogNormal(io.vegaprotocol.vega.Markets.LogNormalRiskModel value) {
         if (logNormalBuilder_ == null) {
@@ -4843,7 +4843,7 @@ public final class Governance {
        * Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormal = 101 [json_name = "logNormal"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal = 101 [json_name = "logNormal"];</code>
        */
       public Builder clearLogNormal() {
         if (logNormalBuilder_ == null) {
@@ -4866,7 +4866,7 @@ public final class Governance {
        * Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormal = 101 [json_name = "logNormal"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal = 101 [json_name = "logNormal"];</code>
        */
       public io.vegaprotocol.vega.Markets.LogNormalRiskModel.Builder getLogNormalBuilder() {
         return getLogNormalFieldBuilder().getBuilder();
@@ -4876,7 +4876,7 @@ public final class Governance {
        * Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormal = 101 [json_name = "logNormal"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal = 101 [json_name = "logNormal"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Markets.LogNormalRiskModelOrBuilder getLogNormalOrBuilder() {
@@ -4894,7 +4894,7 @@ public final class Governance {
        * Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormal = 101 [json_name = "logNormal"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal = 101 [json_name = "logNormal"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.LogNormalRiskModel, io.vegaprotocol.vega.Markets.LogNormalRiskModel.Builder, io.vegaprotocol.vega.Markets.LogNormalRiskModelOrBuilder>
@@ -4919,7 +4919,7 @@ public final class Governance {
           io.vegaprotocol.vega.Markets.ContinuousTrading, io.vegaprotocol.vega.Markets.ContinuousTrading.Builder, io.vegaprotocol.vega.Markets.ContinuousTradingOrBuilder> continuousBuilder_;
       /**
        * <pre>
-       * Continuous trading.
+       * Continuous trading
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 200 [json_name = "continuous"];</code>
@@ -4931,7 +4931,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Continuous trading.
+       * Continuous trading
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 200 [json_name = "continuous"];</code>
@@ -4953,7 +4953,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Continuous trading.
+       * Continuous trading
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 200 [json_name = "continuous"];</code>
@@ -4973,7 +4973,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Continuous trading.
+       * Continuous trading
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 200 [json_name = "continuous"];</code>
@@ -4991,7 +4991,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Continuous trading.
+       * Continuous trading
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 200 [json_name = "continuous"];</code>
@@ -5017,7 +5017,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Continuous trading.
+       * Continuous trading
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 200 [json_name = "continuous"];</code>
@@ -5040,7 +5040,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Continuous trading.
+       * Continuous trading
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 200 [json_name = "continuous"];</code>
@@ -5050,7 +5050,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Continuous trading.
+       * Continuous trading
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 200 [json_name = "continuous"];</code>
@@ -5068,7 +5068,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Continuous trading.
+       * Continuous trading
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 200 [json_name = "continuous"];</code>
@@ -5096,7 +5096,7 @@ public final class Governance {
           io.vegaprotocol.vega.Markets.DiscreteTrading, io.vegaprotocol.vega.Markets.DiscreteTrading.Builder, io.vegaprotocol.vega.Markets.DiscreteTradingOrBuilder> discreteBuilder_;
       /**
        * <pre>
-       * Discrete trading.
+       * Discrete trading
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 201 [json_name = "discrete"];</code>
@@ -5108,7 +5108,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Discrete trading.
+       * Discrete trading
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 201 [json_name = "discrete"];</code>
@@ -5130,7 +5130,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Discrete trading.
+       * Discrete trading
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 201 [json_name = "discrete"];</code>
@@ -5150,7 +5150,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Discrete trading.
+       * Discrete trading
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 201 [json_name = "discrete"];</code>
@@ -5168,7 +5168,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Discrete trading.
+       * Discrete trading
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 201 [json_name = "discrete"];</code>
@@ -5194,7 +5194,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Discrete trading.
+       * Discrete trading
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 201 [json_name = "discrete"];</code>
@@ -5217,7 +5217,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Discrete trading.
+       * Discrete trading
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 201 [json_name = "discrete"];</code>
@@ -5227,7 +5227,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Discrete trading.
+       * Discrete trading
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 201 [json_name = "discrete"];</code>
@@ -5245,7 +5245,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Discrete trading.
+       * Discrete trading
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 201 [json_name = "discrete"];</code>
@@ -5327,17 +5327,17 @@ public final class Governance {
 
     /**
      * <pre>
-     * Specified as a unitless number that represents the amount of settlement asset of the market.
+     * Specified as a unitless number that represents the amount of settlement asset of the market
      * </pre>
      *
-     * <code>uint64 commitmentAmount = 1 [json_name = "commitmentAmount"];</code>
+     * <code>uint64 commitment_amount = 1 [json_name = "commitmentAmount"];</code>
      * @return The commitmentAmount.
      */
     long getCommitmentAmount();
 
     /**
      * <pre>
-     * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+     * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
      * </pre>
      *
      * <code>string fee = 2 [json_name = "fee"];</code>
@@ -5346,7 +5346,7 @@ public final class Governance {
     java.lang.String getFee();
     /**
      * <pre>
-     * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+     * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
      * </pre>
      *
      * <code>string fee = 2 [json_name = "fee"];</code>
@@ -5357,99 +5357,95 @@ public final class Governance {
 
     /**
      * <pre>
-     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
      */
     java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder>
         getSellsList();
     /**
      * <pre>
-     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
      */
     io.vegaprotocol.vega.Vega.LiquidityOrder getSells(int index);
     /**
      * <pre>
-     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
      */
     int getSellsCount();
     /**
      * <pre>
-     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
      */
     java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
         getSellsOrBuilderList();
     /**
      * <pre>
-     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
      */
     io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getSellsOrBuilder(
         int index);
 
     /**
      * <pre>
-     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
      */
     java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder>
         getBuysList();
     /**
      * <pre>
-     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
      */
     io.vegaprotocol.vega.Vega.LiquidityOrder getBuys(int index);
     /**
      * <pre>
-     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
      */
     int getBuysCount();
     /**
      * <pre>
-     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
      */
     java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
         getBuysOrBuilderList();
     /**
      * <pre>
-     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
      */
     io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getBuysOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * A commitment of liquidity to be made by the party
-   * which propose the market.
-   * We create a new type here as we do not require the marketID from the submission
-   * the governance engine will create a LiquidityProvisionSubmission from
-   * this message internally.
+   * A commitment of liquidity to be made by the party which proposes a market
    * </pre>
    *
    * Protobuf type {@code vega.NewMarketCommitment}
@@ -5567,14 +5563,14 @@ public final class Governance {
               io.vegaprotocol.vega.Governance.NewMarketCommitment.class, io.vegaprotocol.vega.Governance.NewMarketCommitment.Builder.class);
     }
 
-    public static final int COMMITMENTAMOUNT_FIELD_NUMBER = 1;
+    public static final int COMMITMENT_AMOUNT_FIELD_NUMBER = 1;
     private long commitmentAmount_;
     /**
      * <pre>
-     * Specified as a unitless number that represents the amount of settlement asset of the market.
+     * Specified as a unitless number that represents the amount of settlement asset of the market
      * </pre>
      *
-     * <code>uint64 commitmentAmount = 1 [json_name = "commitmentAmount"];</code>
+     * <code>uint64 commitment_amount = 1 [json_name = "commitmentAmount"];</code>
      * @return The commitmentAmount.
      */
     @java.lang.Override
@@ -5586,7 +5582,7 @@ public final class Governance {
     private volatile java.lang.Object fee_;
     /**
      * <pre>
-     * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+     * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
      * </pre>
      *
      * <code>string fee = 2 [json_name = "fee"];</code>
@@ -5607,7 +5603,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+     * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
      * </pre>
      *
      * <code>string fee = 2 [json_name = "fee"];</code>
@@ -5632,10 +5628,10 @@ public final class Governance {
     private java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> sells_;
     /**
      * <pre>
-     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
      */
     @java.lang.Override
     public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> getSellsList() {
@@ -5643,10 +5639,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
      */
     @java.lang.Override
     public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
@@ -5655,10 +5651,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
      */
     @java.lang.Override
     public int getSellsCount() {
@@ -5666,10 +5662,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.LiquidityOrder getSells(int index) {
@@ -5677,10 +5673,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getSellsOrBuilder(
@@ -5692,10 +5688,10 @@ public final class Governance {
     private java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> buys_;
     /**
      * <pre>
-     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
      */
     @java.lang.Override
     public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> getBuysList() {
@@ -5703,10 +5699,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
      */
     @java.lang.Override
     public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
@@ -5715,10 +5711,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
      */
     @java.lang.Override
     public int getBuysCount() {
@@ -5726,10 +5722,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.LiquidityOrder getBuys(int index) {
@@ -5737,10 +5733,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+     * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getBuysOrBuilder(
@@ -5832,7 +5828,7 @@ public final class Governance {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + COMMITMENTAMOUNT_FIELD_NUMBER;
+      hash = (37 * hash) + COMMITMENT_AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCommitmentAmount());
       hash = (37 * hash) + FEE_FIELD_NUMBER;
@@ -5942,11 +5938,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * A commitment of liquidity to be made by the party
-     * which propose the market.
-     * We create a new type here as we do not require the marketID from the submission
-     * the governance engine will create a LiquidityProvisionSubmission from
-     * this message internally.
+     * A commitment of liquidity to be made by the party which proposes a market
      * </pre>
      *
      * Protobuf type {@code vega.NewMarketCommitment}
@@ -6191,10 +6183,10 @@ public final class Governance {
       private long commitmentAmount_ ;
       /**
        * <pre>
-       * Specified as a unitless number that represents the amount of settlement asset of the market.
+       * Specified as a unitless number that represents the amount of settlement asset of the market
        * </pre>
        *
-       * <code>uint64 commitmentAmount = 1 [json_name = "commitmentAmount"];</code>
+       * <code>uint64 commitment_amount = 1 [json_name = "commitmentAmount"];</code>
        * @return The commitmentAmount.
        */
       @java.lang.Override
@@ -6203,10 +6195,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Specified as a unitless number that represents the amount of settlement asset of the market.
+       * Specified as a unitless number that represents the amount of settlement asset of the market
        * </pre>
        *
-       * <code>uint64 commitmentAmount = 1 [json_name = "commitmentAmount"];</code>
+       * <code>uint64 commitment_amount = 1 [json_name = "commitmentAmount"];</code>
        * @param value The commitmentAmount to set.
        * @return This builder for chaining.
        */
@@ -6218,10 +6210,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Specified as a unitless number that represents the amount of settlement asset of the market.
+       * Specified as a unitless number that represents the amount of settlement asset of the market
        * </pre>
        *
-       * <code>uint64 commitmentAmount = 1 [json_name = "commitmentAmount"];</code>
+       * <code>uint64 commitment_amount = 1 [json_name = "commitmentAmount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCommitmentAmount() {
@@ -6234,7 +6226,7 @@ public final class Governance {
       private java.lang.Object fee_ = "";
       /**
        * <pre>
-       * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+       * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
        * </pre>
        *
        * <code>string fee = 2 [json_name = "fee"];</code>
@@ -6254,7 +6246,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+       * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
        * </pre>
        *
        * <code>string fee = 2 [json_name = "fee"];</code>
@@ -6275,7 +6267,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+       * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
        * </pre>
        *
        * <code>string fee = 2 [json_name = "fee"];</code>
@@ -6294,7 +6286,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+       * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
        * </pre>
        *
        * <code>string fee = 2 [json_name = "fee"];</code>
@@ -6308,7 +6300,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers.
+       * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
        * </pre>
        *
        * <code>string fee = 2 [json_name = "fee"];</code>
@@ -6341,10 +6333,10 @@ public final class Governance {
 
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> getSellsList() {
         if (sellsBuilder_ == null) {
@@ -6355,10 +6347,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public int getSellsCount() {
         if (sellsBuilder_ == null) {
@@ -6369,10 +6361,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrder getSells(int index) {
         if (sellsBuilder_ == null) {
@@ -6383,10 +6375,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public Builder setSells(
           int index, io.vegaprotocol.vega.Vega.LiquidityOrder value) {
@@ -6404,10 +6396,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public Builder setSells(
           int index, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
@@ -6422,10 +6414,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public Builder addSells(io.vegaprotocol.vega.Vega.LiquidityOrder value) {
         if (sellsBuilder_ == null) {
@@ -6442,10 +6434,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public Builder addSells(
           int index, io.vegaprotocol.vega.Vega.LiquidityOrder value) {
@@ -6463,10 +6455,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public Builder addSells(
           io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
@@ -6481,10 +6473,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public Builder addSells(
           int index, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
@@ -6499,10 +6491,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public Builder addAllSells(
           java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.LiquidityOrder> values) {
@@ -6518,10 +6510,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public Builder clearSells() {
         if (sellsBuilder_ == null) {
@@ -6535,10 +6527,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public Builder removeSells(int index) {
         if (sellsBuilder_ == null) {
@@ -6552,10 +6544,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder getSellsBuilder(
           int index) {
@@ -6563,10 +6555,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getSellsOrBuilder(
           int index) {
@@ -6577,10 +6569,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
            getSellsOrBuilderList() {
@@ -6592,10 +6584,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder addSellsBuilder() {
         return getSellsFieldBuilder().addBuilder(
@@ -6603,10 +6595,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder addSellsBuilder(
           int index) {
@@ -6615,10 +6607,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity sell orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Sells = 3 [json_name = "Sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder.Builder>
            getSellsBuilderList() {
@@ -6653,10 +6645,10 @@ public final class Governance {
 
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> getBuysList() {
         if (buysBuilder_ == null) {
@@ -6667,10 +6659,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public int getBuysCount() {
         if (buysBuilder_ == null) {
@@ -6681,10 +6673,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrder getBuys(int index) {
         if (buysBuilder_ == null) {
@@ -6695,10 +6687,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public Builder setBuys(
           int index, io.vegaprotocol.vega.Vega.LiquidityOrder value) {
@@ -6716,10 +6708,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public Builder setBuys(
           int index, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
@@ -6734,10 +6726,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public Builder addBuys(io.vegaprotocol.vega.Vega.LiquidityOrder value) {
         if (buysBuilder_ == null) {
@@ -6754,10 +6746,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public Builder addBuys(
           int index, io.vegaprotocol.vega.Vega.LiquidityOrder value) {
@@ -6775,10 +6767,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public Builder addBuys(
           io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
@@ -6793,10 +6785,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public Builder addBuys(
           int index, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
@@ -6811,10 +6803,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public Builder addAllBuys(
           java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.LiquidityOrder> values) {
@@ -6830,10 +6822,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public Builder clearBuys() {
         if (buysBuilder_ == null) {
@@ -6847,10 +6839,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public Builder removeBuys(int index) {
         if (buysBuilder_ == null) {
@@ -6864,10 +6856,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder getBuysBuilder(
           int index) {
@@ -6875,10 +6867,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getBuysOrBuilder(
           int index) {
@@ -6889,10 +6881,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
            getBuysOrBuilderList() {
@@ -6904,10 +6896,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder addBuysBuilder() {
         return getBuysFieldBuilder().addBuilder(
@@ -6915,10 +6907,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder addBuysBuilder(
           int index) {
@@ -6927,10 +6919,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * a set of liquidity buy orders to meet the liquidity provision obligation, see MM orders spec.
+       * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder Buys = 4 [json_name = "Buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder.Builder>
            getBuysBuilderList() {
@@ -7009,7 +7001,7 @@ public final class Governance {
 
     /**
      * <pre>
-     * Configuration.
+     * The configuration of the new market
      * </pre>
      *
      * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -7018,7 +7010,7 @@ public final class Governance {
     boolean hasChanges();
     /**
      * <pre>
-     * Configuration.
+     * The configuration of the new market
      * </pre>
      *
      * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -7027,7 +7019,7 @@ public final class Governance {
     io.vegaprotocol.vega.Governance.NewMarketConfiguration getChanges();
     /**
      * <pre>
-     * Configuration.
+     * The configuration of the new market
      * </pre>
      *
      * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -7039,7 +7031,7 @@ public final class Governance {
      * The commitment from the party creating the NewMarket proposal
      * </pre>
      *
-     * <code>.vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];</code>
+     * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
      * @return Whether the liquidityCommitment field is set.
      */
     boolean hasLiquidityCommitment();
@@ -7048,7 +7040,7 @@ public final class Governance {
      * The commitment from the party creating the NewMarket proposal
      * </pre>
      *
-     * <code>.vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];</code>
+     * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
      * @return The liquidityCommitment.
      */
     io.vegaprotocol.vega.Governance.NewMarketCommitment getLiquidityCommitment();
@@ -7057,13 +7049,13 @@ public final class Governance {
      * The commitment from the party creating the NewMarket proposal
      * </pre>
      *
-     * <code>.vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];</code>
+     * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
      */
     io.vegaprotocol.vega.Governance.NewMarketCommitmentOrBuilder getLiquidityCommitmentOrBuilder();
   }
   /**
    * <pre>
-   * New market on Vega.
+   * New market on Vega
    * </pre>
    *
    * Protobuf type {@code vega.NewMarket}
@@ -7172,7 +7164,7 @@ public final class Governance {
     private io.vegaprotocol.vega.Governance.NewMarketConfiguration changes_;
     /**
      * <pre>
-     * Configuration.
+     * The configuration of the new market
      * </pre>
      *
      * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -7184,7 +7176,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Configuration.
+     * The configuration of the new market
      * </pre>
      *
      * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -7196,7 +7188,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Configuration.
+     * The configuration of the new market
      * </pre>
      *
      * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -7206,14 +7198,14 @@ public final class Governance {
       return getChanges();
     }
 
-    public static final int LIQUIDITYCOMMITMENT_FIELD_NUMBER = 2;
+    public static final int LIQUIDITY_COMMITMENT_FIELD_NUMBER = 2;
     private io.vegaprotocol.vega.Governance.NewMarketCommitment liquidityCommitment_;
     /**
      * <pre>
      * The commitment from the party creating the NewMarket proposal
      * </pre>
      *
-     * <code>.vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];</code>
+     * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
      * @return Whether the liquidityCommitment field is set.
      */
     @java.lang.Override
@@ -7225,7 +7217,7 @@ public final class Governance {
      * The commitment from the party creating the NewMarket proposal
      * </pre>
      *
-     * <code>.vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];</code>
+     * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
      * @return The liquidityCommitment.
      */
     @java.lang.Override
@@ -7237,7 +7229,7 @@ public final class Governance {
      * The commitment from the party creating the NewMarket proposal
      * </pre>
      *
-     * <code>.vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];</code>
+     * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Governance.NewMarketCommitmentOrBuilder getLiquidityCommitmentOrBuilder() {
@@ -7322,7 +7314,7 @@ public final class Governance {
         hash = (53 * hash) + getChanges().hashCode();
       }
       if (hasLiquidityCommitment()) {
-        hash = (37 * hash) + LIQUIDITYCOMMITMENT_FIELD_NUMBER;
+        hash = (37 * hash) + LIQUIDITY_COMMITMENT_FIELD_NUMBER;
         hash = (53 * hash) + getLiquidityCommitment().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -7422,7 +7414,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * New market on Vega.
+     * New market on Vega
      * </pre>
      *
      * Protobuf type {@code vega.NewMarket}
@@ -7598,7 +7590,7 @@ public final class Governance {
           io.vegaprotocol.vega.Governance.NewMarketConfiguration, io.vegaprotocol.vega.Governance.NewMarketConfiguration.Builder, io.vegaprotocol.vega.Governance.NewMarketConfigurationOrBuilder> changesBuilder_;
       /**
        * <pre>
-       * Configuration.
+       * The configuration of the new market
        * </pre>
        *
        * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -7609,7 +7601,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Configuration.
+       * The configuration of the new market
        * </pre>
        *
        * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -7624,7 +7616,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Configuration.
+       * The configuration of the new market
        * </pre>
        *
        * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -7644,7 +7636,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Configuration.
+       * The configuration of the new market
        * </pre>
        *
        * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -7662,7 +7654,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Configuration.
+       * The configuration of the new market
        * </pre>
        *
        * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -7684,7 +7676,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Configuration.
+       * The configuration of the new market
        * </pre>
        *
        * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -7702,7 +7694,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Configuration.
+       * The configuration of the new market
        * </pre>
        *
        * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -7714,7 +7706,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Configuration.
+       * The configuration of the new market
        * </pre>
        *
        * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -7729,7 +7721,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Configuration.
+       * The configuration of the new market
        * </pre>
        *
        * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -7756,7 +7748,7 @@ public final class Governance {
        * The commitment from the party creating the NewMarket proposal
        * </pre>
        *
-       * <code>.vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];</code>
+       * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
        * @return Whether the liquidityCommitment field is set.
        */
       public boolean hasLiquidityCommitment() {
@@ -7767,7 +7759,7 @@ public final class Governance {
        * The commitment from the party creating the NewMarket proposal
        * </pre>
        *
-       * <code>.vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];</code>
+       * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
        * @return The liquidityCommitment.
        */
       public io.vegaprotocol.vega.Governance.NewMarketCommitment getLiquidityCommitment() {
@@ -7782,7 +7774,7 @@ public final class Governance {
        * The commitment from the party creating the NewMarket proposal
        * </pre>
        *
-       * <code>.vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];</code>
+       * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
        */
       public Builder setLiquidityCommitment(io.vegaprotocol.vega.Governance.NewMarketCommitment value) {
         if (liquidityCommitmentBuilder_ == null) {
@@ -7802,7 +7794,7 @@ public final class Governance {
        * The commitment from the party creating the NewMarket proposal
        * </pre>
        *
-       * <code>.vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];</code>
+       * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
        */
       public Builder setLiquidityCommitment(
           io.vegaprotocol.vega.Governance.NewMarketCommitment.Builder builderForValue) {
@@ -7820,7 +7812,7 @@ public final class Governance {
        * The commitment from the party creating the NewMarket proposal
        * </pre>
        *
-       * <code>.vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];</code>
+       * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
        */
       public Builder mergeLiquidityCommitment(io.vegaprotocol.vega.Governance.NewMarketCommitment value) {
         if (liquidityCommitmentBuilder_ == null) {
@@ -7842,7 +7834,7 @@ public final class Governance {
        * The commitment from the party creating the NewMarket proposal
        * </pre>
        *
-       * <code>.vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];</code>
+       * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
        */
       public Builder clearLiquidityCommitment() {
         if (liquidityCommitmentBuilder_ == null) {
@@ -7860,7 +7852,7 @@ public final class Governance {
        * The commitment from the party creating the NewMarket proposal
        * </pre>
        *
-       * <code>.vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];</code>
+       * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
        */
       public io.vegaprotocol.vega.Governance.NewMarketCommitment.Builder getLiquidityCommitmentBuilder() {
 
@@ -7872,7 +7864,7 @@ public final class Governance {
        * The commitment from the party creating the NewMarket proposal
        * </pre>
        *
-       * <code>.vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];</code>
+       * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
        */
       public io.vegaprotocol.vega.Governance.NewMarketCommitmentOrBuilder getLiquidityCommitmentOrBuilder() {
         if (liquidityCommitmentBuilder_ != null) {
@@ -7887,7 +7879,7 @@ public final class Governance {
        * The commitment from the party creating the NewMarket proposal
        * </pre>
        *
-       * <code>.vega.NewMarketCommitment liquidityCommitment = 2 [json_name = "liquidityCommitment"];</code>
+       * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Governance.NewMarketCommitment, io.vegaprotocol.vega.Governance.NewMarketCommitment.Builder, io.vegaprotocol.vega.Governance.NewMarketCommitmentOrBuilder>
@@ -7961,7 +7953,7 @@ public final class Governance {
   }
   /**
    * <pre>
-   * Update an existing market on Vega.
+   * Update an existing market on Vega
    * </pre>
    *
    * Protobuf type {@code vega.UpdateMarket}
@@ -8186,7 +8178,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Update an existing market on Vega.
+     * Update an existing market on Vega
      * </pre>
      *
      * Protobuf type {@code vega.UpdateMarket}
@@ -8414,7 +8406,7 @@ public final class Governance {
   }
   /**
    * <pre>
-   * Update network configuration on Vega.
+   * Update network configuration on Vega
    * </pre>
    *
    * Protobuf type {@code vega.UpdateNetworkParameter}
@@ -8706,7 +8698,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Update network configuration on Vega.
+     * Update network configuration on Vega
      * </pre>
      *
      * Protobuf type {@code vega.UpdateNetworkParameter}
@@ -9076,7 +9068,7 @@ public final class Governance {
 
     /**
      * <pre>
-     * Asset configuration.
+     * The configuration of the new asset
      * </pre>
      *
      * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -9085,7 +9077,7 @@ public final class Governance {
     boolean hasChanges();
     /**
      * <pre>
-     * Asset configuration.
+     * The configuration of the new asset
      * </pre>
      *
      * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -9094,7 +9086,7 @@ public final class Governance {
     io.vegaprotocol.vega.Assets.AssetSource getChanges();
     /**
      * <pre>
-     * Asset configuration.
+     * The configuration of the new asset
      * </pre>
      *
      * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -9103,7 +9095,7 @@ public final class Governance {
   }
   /**
    * <pre>
-   * New asset on Vega.
+   * New asset on Vega
    * </pre>
    *
    * Protobuf type {@code vega.NewAsset}
@@ -9199,7 +9191,7 @@ public final class Governance {
     private io.vegaprotocol.vega.Assets.AssetSource changes_;
     /**
      * <pre>
-     * Asset configuration.
+     * The configuration of the new asset
      * </pre>
      *
      * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -9211,7 +9203,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Asset configuration.
+     * The configuration of the new asset
      * </pre>
      *
      * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -9223,7 +9215,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Asset configuration.
+     * The configuration of the new asset
      * </pre>
      *
      * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -9395,7 +9387,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * New asset on Vega.
+     * New asset on Vega
      * </pre>
      *
      * Protobuf type {@code vega.NewAsset}
@@ -9557,7 +9549,7 @@ public final class Governance {
           io.vegaprotocol.vega.Assets.AssetSource, io.vegaprotocol.vega.Assets.AssetSource.Builder, io.vegaprotocol.vega.Assets.AssetSourceOrBuilder> changesBuilder_;
       /**
        * <pre>
-       * Asset configuration.
+       * The configuration of the new asset
        * </pre>
        *
        * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -9568,7 +9560,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Asset configuration.
+       * The configuration of the new asset
        * </pre>
        *
        * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -9583,7 +9575,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Asset configuration.
+       * The configuration of the new asset
        * </pre>
        *
        * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -9603,7 +9595,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Asset configuration.
+       * The configuration of the new asset
        * </pre>
        *
        * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -9621,7 +9613,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Asset configuration.
+       * The configuration of the new asset
        * </pre>
        *
        * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -9643,7 +9635,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Asset configuration.
+       * The configuration of the new asset
        * </pre>
        *
        * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -9661,7 +9653,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Asset configuration.
+       * The configuration of the new asset
        * </pre>
        *
        * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -9673,7 +9665,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Asset configuration.
+       * The configuration of the new asset
        * </pre>
        *
        * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -9688,7 +9680,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Asset configuration.
+       * The configuration of the new asset
        * </pre>
        *
        * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
@@ -9765,141 +9757,141 @@ public final class Governance {
 
     /**
      * <pre>
-     * Timestamp (Unix time in seconds) when voting closes for this proposal.
-     * Constrained by `minCloseInSeconds` and `maxCloseInSeconds` network parameters.
+     * Timestamp (Unix time in seconds) when voting closes for this proposal,
+     * constrained by `minCloseInSeconds` and `maxCloseInSeconds` network parameters
      * </pre>
      *
-     * <code>int64 closingTimestamp = 1 [json_name = "closingTimestamp", (.validator.field) = { ... }</code>
+     * <code>int64 closing_timestamp = 1 [json_name = "closingTimestamp", (.validator.field) = { ... }</code>
      * @return The closingTimestamp.
      */
     long getClosingTimestamp();
 
     /**
      * <pre>
-     * Timestamp (Unix time in seconds) when proposal gets enacted (if passed).
-     * Constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters.
+     * Timestamp (Unix time in seconds) when proposal gets enacted (if passed),
+     * constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters
      * </pre>
      *
-     * <code>int64 enactmentTimestamp = 2 [json_name = "enactmentTimestamp", (.validator.field) = { ... }</code>
+     * <code>int64 enactment_timestamp = 2 [json_name = "enactmentTimestamp", (.validator.field) = { ... }</code>
      * @return The enactmentTimestamp.
      */
     long getEnactmentTimestamp();
 
     /**
      * <pre>
-     * Validation timestamp (Unix time in seconds).
+     * Validation timestamp (Unix time in seconds)
      * </pre>
      *
-     * <code>int64 validationTimestamp = 3 [json_name = "validationTimestamp"];</code>
+     * <code>int64 validation_timestamp = 3 [json_name = "validationTimestamp"];</code>
      * @return The validationTimestamp.
      */
     long getValidationTimestamp();
 
     /**
      * <pre>
-     * Proposal change for modifying an existing market on Vega.
+     * Proposal change for modifying an existing market on Vega
      * </pre>
      *
-     * <code>.vega.UpdateMarket updateMarket = 101 [json_name = "updateMarket"];</code>
+     * <code>.vega.UpdateMarket update_market = 101 [json_name = "updateMarket"];</code>
      * @return Whether the updateMarket field is set.
      */
     boolean hasUpdateMarket();
     /**
      * <pre>
-     * Proposal change for modifying an existing market on Vega.
+     * Proposal change for modifying an existing market on Vega
      * </pre>
      *
-     * <code>.vega.UpdateMarket updateMarket = 101 [json_name = "updateMarket"];</code>
+     * <code>.vega.UpdateMarket update_market = 101 [json_name = "updateMarket"];</code>
      * @return The updateMarket.
      */
     io.vegaprotocol.vega.Governance.UpdateMarket getUpdateMarket();
     /**
      * <pre>
-     * Proposal change for modifying an existing market on Vega.
+     * Proposal change for modifying an existing market on Vega
      * </pre>
      *
-     * <code>.vega.UpdateMarket updateMarket = 101 [json_name = "updateMarket"];</code>
+     * <code>.vega.UpdateMarket update_market = 101 [json_name = "updateMarket"];</code>
      */
     io.vegaprotocol.vega.Governance.UpdateMarketOrBuilder getUpdateMarketOrBuilder();
 
     /**
      * <pre>
-     * Proposal change for creating new market on Vega.
+     * Proposal change for creating new market on Vega
      * </pre>
      *
-     * <code>.vega.NewMarket newMarket = 102 [json_name = "newMarket"];</code>
+     * <code>.vega.NewMarket new_market = 102 [json_name = "newMarket"];</code>
      * @return Whether the newMarket field is set.
      */
     boolean hasNewMarket();
     /**
      * <pre>
-     * Proposal change for creating new market on Vega.
+     * Proposal change for creating new market on Vega
      * </pre>
      *
-     * <code>.vega.NewMarket newMarket = 102 [json_name = "newMarket"];</code>
+     * <code>.vega.NewMarket new_market = 102 [json_name = "newMarket"];</code>
      * @return The newMarket.
      */
     io.vegaprotocol.vega.Governance.NewMarket getNewMarket();
     /**
      * <pre>
-     * Proposal change for creating new market on Vega.
+     * Proposal change for creating new market on Vega
      * </pre>
      *
-     * <code>.vega.NewMarket newMarket = 102 [json_name = "newMarket"];</code>
+     * <code>.vega.NewMarket new_market = 102 [json_name = "newMarket"];</code>
      */
     io.vegaprotocol.vega.Governance.NewMarketOrBuilder getNewMarketOrBuilder();
 
     /**
      * <pre>
-     * Proposal change for updating Vega network parameters.
+     * Proposal change for updating Vega network parameters
      * </pre>
      *
-     * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103 [json_name = "updateNetworkParameter"];</code>
+     * <code>.vega.UpdateNetworkParameter update_network_parameter = 103 [json_name = "updateNetworkParameter"];</code>
      * @return Whether the updateNetworkParameter field is set.
      */
     boolean hasUpdateNetworkParameter();
     /**
      * <pre>
-     * Proposal change for updating Vega network parameters.
+     * Proposal change for updating Vega network parameters
      * </pre>
      *
-     * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103 [json_name = "updateNetworkParameter"];</code>
+     * <code>.vega.UpdateNetworkParameter update_network_parameter = 103 [json_name = "updateNetworkParameter"];</code>
      * @return The updateNetworkParameter.
      */
     io.vegaprotocol.vega.Governance.UpdateNetworkParameter getUpdateNetworkParameter();
     /**
      * <pre>
-     * Proposal change for updating Vega network parameters.
+     * Proposal change for updating Vega network parameters
      * </pre>
      *
-     * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103 [json_name = "updateNetworkParameter"];</code>
+     * <code>.vega.UpdateNetworkParameter update_network_parameter = 103 [json_name = "updateNetworkParameter"];</code>
      */
     io.vegaprotocol.vega.Governance.UpdateNetworkParameterOrBuilder getUpdateNetworkParameterOrBuilder();
 
     /**
      * <pre>
-     * Proposal change for creating new assets on Vega.
+     * Proposal change for creating new assets on Vega
      * </pre>
      *
-     * <code>.vega.NewAsset newAsset = 104 [json_name = "newAsset"];</code>
+     * <code>.vega.NewAsset new_asset = 104 [json_name = "newAsset"];</code>
      * @return Whether the newAsset field is set.
      */
     boolean hasNewAsset();
     /**
      * <pre>
-     * Proposal change for creating new assets on Vega.
+     * Proposal change for creating new assets on Vega
      * </pre>
      *
-     * <code>.vega.NewAsset newAsset = 104 [json_name = "newAsset"];</code>
+     * <code>.vega.NewAsset new_asset = 104 [json_name = "newAsset"];</code>
      * @return The newAsset.
      */
     io.vegaprotocol.vega.Governance.NewAsset getNewAsset();
     /**
      * <pre>
-     * Proposal change for creating new assets on Vega.
+     * Proposal change for creating new assets on Vega
      * </pre>
      *
-     * <code>.vega.NewAsset newAsset = 104 [json_name = "newAsset"];</code>
+     * <code>.vega.NewAsset new_asset = 104 [json_name = "newAsset"];</code>
      */
     io.vegaprotocol.vega.Governance.NewAssetOrBuilder getNewAssetOrBuilder();
 
@@ -9907,7 +9899,7 @@ public final class Governance {
   }
   /**
    * <pre>
-   * Terms for a governance proposal on Vega.
+   * Terms for a governance proposal on Vega
    * </pre>
    *
    * Protobuf type {@code vega.ProposalTerms}
@@ -10062,10 +10054,10 @@ public final class Governance {
     public enum ChangeCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      UPDATEMARKET(101),
-      NEWMARKET(102),
-      UPDATENETWORKPARAMETER(103),
-      NEWASSET(104),
+      UPDATE_MARKET(101),
+      NEW_MARKET(102),
+      UPDATE_NETWORK_PARAMETER(103),
+      NEW_ASSET(104),
       CHANGE_NOT_SET(0);
       private final int value;
       private ChangeCase(int value) {
@@ -10083,10 +10075,10 @@ public final class Governance {
 
       public static ChangeCase forNumber(int value) {
         switch (value) {
-          case 101: return UPDATEMARKET;
-          case 102: return NEWMARKET;
-          case 103: return UPDATENETWORKPARAMETER;
-          case 104: return NEWASSET;
+          case 101: return UPDATE_MARKET;
+          case 102: return NEW_MARKET;
+          case 103: return UPDATE_NETWORK_PARAMETER;
+          case 104: return NEW_ASSET;
           case 0: return CHANGE_NOT_SET;
           default: return null;
         }
@@ -10102,15 +10094,15 @@ public final class Governance {
           changeCase_);
     }
 
-    public static final int CLOSINGTIMESTAMP_FIELD_NUMBER = 1;
+    public static final int CLOSING_TIMESTAMP_FIELD_NUMBER = 1;
     private long closingTimestamp_;
     /**
      * <pre>
-     * Timestamp (Unix time in seconds) when voting closes for this proposal.
-     * Constrained by `minCloseInSeconds` and `maxCloseInSeconds` network parameters.
+     * Timestamp (Unix time in seconds) when voting closes for this proposal,
+     * constrained by `minCloseInSeconds` and `maxCloseInSeconds` network parameters
      * </pre>
      *
-     * <code>int64 closingTimestamp = 1 [json_name = "closingTimestamp", (.validator.field) = { ... }</code>
+     * <code>int64 closing_timestamp = 1 [json_name = "closingTimestamp", (.validator.field) = { ... }</code>
      * @return The closingTimestamp.
      */
     @java.lang.Override
@@ -10118,15 +10110,15 @@ public final class Governance {
       return closingTimestamp_;
     }
 
-    public static final int ENACTMENTTIMESTAMP_FIELD_NUMBER = 2;
+    public static final int ENACTMENT_TIMESTAMP_FIELD_NUMBER = 2;
     private long enactmentTimestamp_;
     /**
      * <pre>
-     * Timestamp (Unix time in seconds) when proposal gets enacted (if passed).
-     * Constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters.
+     * Timestamp (Unix time in seconds) when proposal gets enacted (if passed),
+     * constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters
      * </pre>
      *
-     * <code>int64 enactmentTimestamp = 2 [json_name = "enactmentTimestamp", (.validator.field) = { ... }</code>
+     * <code>int64 enactment_timestamp = 2 [json_name = "enactmentTimestamp", (.validator.field) = { ... }</code>
      * @return The enactmentTimestamp.
      */
     @java.lang.Override
@@ -10134,14 +10126,14 @@ public final class Governance {
       return enactmentTimestamp_;
     }
 
-    public static final int VALIDATIONTIMESTAMP_FIELD_NUMBER = 3;
+    public static final int VALIDATION_TIMESTAMP_FIELD_NUMBER = 3;
     private long validationTimestamp_;
     /**
      * <pre>
-     * Validation timestamp (Unix time in seconds).
+     * Validation timestamp (Unix time in seconds)
      * </pre>
      *
-     * <code>int64 validationTimestamp = 3 [json_name = "validationTimestamp"];</code>
+     * <code>int64 validation_timestamp = 3 [json_name = "validationTimestamp"];</code>
      * @return The validationTimestamp.
      */
     @java.lang.Override
@@ -10149,13 +10141,13 @@ public final class Governance {
       return validationTimestamp_;
     }
 
-    public static final int UPDATEMARKET_FIELD_NUMBER = 101;
+    public static final int UPDATE_MARKET_FIELD_NUMBER = 101;
     /**
      * <pre>
-     * Proposal change for modifying an existing market on Vega.
+     * Proposal change for modifying an existing market on Vega
      * </pre>
      *
-     * <code>.vega.UpdateMarket updateMarket = 101 [json_name = "updateMarket"];</code>
+     * <code>.vega.UpdateMarket update_market = 101 [json_name = "updateMarket"];</code>
      * @return Whether the updateMarket field is set.
      */
     @java.lang.Override
@@ -10164,10 +10156,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Proposal change for modifying an existing market on Vega.
+     * Proposal change for modifying an existing market on Vega
      * </pre>
      *
-     * <code>.vega.UpdateMarket updateMarket = 101 [json_name = "updateMarket"];</code>
+     * <code>.vega.UpdateMarket update_market = 101 [json_name = "updateMarket"];</code>
      * @return The updateMarket.
      */
     @java.lang.Override
@@ -10179,10 +10171,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Proposal change for modifying an existing market on Vega.
+     * Proposal change for modifying an existing market on Vega
      * </pre>
      *
-     * <code>.vega.UpdateMarket updateMarket = 101 [json_name = "updateMarket"];</code>
+     * <code>.vega.UpdateMarket update_market = 101 [json_name = "updateMarket"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Governance.UpdateMarketOrBuilder getUpdateMarketOrBuilder() {
@@ -10192,13 +10184,13 @@ public final class Governance {
       return io.vegaprotocol.vega.Governance.UpdateMarket.getDefaultInstance();
     }
 
-    public static final int NEWMARKET_FIELD_NUMBER = 102;
+    public static final int NEW_MARKET_FIELD_NUMBER = 102;
     /**
      * <pre>
-     * Proposal change for creating new market on Vega.
+     * Proposal change for creating new market on Vega
      * </pre>
      *
-     * <code>.vega.NewMarket newMarket = 102 [json_name = "newMarket"];</code>
+     * <code>.vega.NewMarket new_market = 102 [json_name = "newMarket"];</code>
      * @return Whether the newMarket field is set.
      */
     @java.lang.Override
@@ -10207,10 +10199,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Proposal change for creating new market on Vega.
+     * Proposal change for creating new market on Vega
      * </pre>
      *
-     * <code>.vega.NewMarket newMarket = 102 [json_name = "newMarket"];</code>
+     * <code>.vega.NewMarket new_market = 102 [json_name = "newMarket"];</code>
      * @return The newMarket.
      */
     @java.lang.Override
@@ -10222,10 +10214,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Proposal change for creating new market on Vega.
+     * Proposal change for creating new market on Vega
      * </pre>
      *
-     * <code>.vega.NewMarket newMarket = 102 [json_name = "newMarket"];</code>
+     * <code>.vega.NewMarket new_market = 102 [json_name = "newMarket"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Governance.NewMarketOrBuilder getNewMarketOrBuilder() {
@@ -10235,13 +10227,13 @@ public final class Governance {
       return io.vegaprotocol.vega.Governance.NewMarket.getDefaultInstance();
     }
 
-    public static final int UPDATENETWORKPARAMETER_FIELD_NUMBER = 103;
+    public static final int UPDATE_NETWORK_PARAMETER_FIELD_NUMBER = 103;
     /**
      * <pre>
-     * Proposal change for updating Vega network parameters.
+     * Proposal change for updating Vega network parameters
      * </pre>
      *
-     * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103 [json_name = "updateNetworkParameter"];</code>
+     * <code>.vega.UpdateNetworkParameter update_network_parameter = 103 [json_name = "updateNetworkParameter"];</code>
      * @return Whether the updateNetworkParameter field is set.
      */
     @java.lang.Override
@@ -10250,10 +10242,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Proposal change for updating Vega network parameters.
+     * Proposal change for updating Vega network parameters
      * </pre>
      *
-     * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103 [json_name = "updateNetworkParameter"];</code>
+     * <code>.vega.UpdateNetworkParameter update_network_parameter = 103 [json_name = "updateNetworkParameter"];</code>
      * @return The updateNetworkParameter.
      */
     @java.lang.Override
@@ -10265,10 +10257,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Proposal change for updating Vega network parameters.
+     * Proposal change for updating Vega network parameters
      * </pre>
      *
-     * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103 [json_name = "updateNetworkParameter"];</code>
+     * <code>.vega.UpdateNetworkParameter update_network_parameter = 103 [json_name = "updateNetworkParameter"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Governance.UpdateNetworkParameterOrBuilder getUpdateNetworkParameterOrBuilder() {
@@ -10278,13 +10270,13 @@ public final class Governance {
       return io.vegaprotocol.vega.Governance.UpdateNetworkParameter.getDefaultInstance();
     }
 
-    public static final int NEWASSET_FIELD_NUMBER = 104;
+    public static final int NEW_ASSET_FIELD_NUMBER = 104;
     /**
      * <pre>
-     * Proposal change for creating new assets on Vega.
+     * Proposal change for creating new assets on Vega
      * </pre>
      *
-     * <code>.vega.NewAsset newAsset = 104 [json_name = "newAsset"];</code>
+     * <code>.vega.NewAsset new_asset = 104 [json_name = "newAsset"];</code>
      * @return Whether the newAsset field is set.
      */
     @java.lang.Override
@@ -10293,10 +10285,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Proposal change for creating new assets on Vega.
+     * Proposal change for creating new assets on Vega
      * </pre>
      *
-     * <code>.vega.NewAsset newAsset = 104 [json_name = "newAsset"];</code>
+     * <code>.vega.NewAsset new_asset = 104 [json_name = "newAsset"];</code>
      * @return The newAsset.
      */
     @java.lang.Override
@@ -10308,10 +10300,10 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Proposal change for creating new assets on Vega.
+     * Proposal change for creating new assets on Vega
      * </pre>
      *
-     * <code>.vega.NewAsset newAsset = 104 [json_name = "newAsset"];</code>
+     * <code>.vega.NewAsset new_asset = 104 [json_name = "newAsset"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Governance.NewAssetOrBuilder getNewAssetOrBuilder() {
@@ -10446,30 +10438,30 @@ public final class Governance {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CLOSINGTIMESTAMP_FIELD_NUMBER;
+      hash = (37 * hash) + CLOSING_TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getClosingTimestamp());
-      hash = (37 * hash) + ENACTMENTTIMESTAMP_FIELD_NUMBER;
+      hash = (37 * hash) + ENACTMENT_TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getEnactmentTimestamp());
-      hash = (37 * hash) + VALIDATIONTIMESTAMP_FIELD_NUMBER;
+      hash = (37 * hash) + VALIDATION_TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getValidationTimestamp());
       switch (changeCase_) {
         case 101:
-          hash = (37 * hash) + UPDATEMARKET_FIELD_NUMBER;
+          hash = (37 * hash) + UPDATE_MARKET_FIELD_NUMBER;
           hash = (53 * hash) + getUpdateMarket().hashCode();
           break;
         case 102:
-          hash = (37 * hash) + NEWMARKET_FIELD_NUMBER;
+          hash = (37 * hash) + NEW_MARKET_FIELD_NUMBER;
           hash = (53 * hash) + getNewMarket().hashCode();
           break;
         case 103:
-          hash = (37 * hash) + UPDATENETWORKPARAMETER_FIELD_NUMBER;
+          hash = (37 * hash) + UPDATE_NETWORK_PARAMETER_FIELD_NUMBER;
           hash = (53 * hash) + getUpdateNetworkParameter().hashCode();
           break;
         case 104:
-          hash = (37 * hash) + NEWASSET_FIELD_NUMBER;
+          hash = (37 * hash) + NEW_ASSET_FIELD_NUMBER;
           hash = (53 * hash) + getNewAsset().hashCode();
           break;
         case 0:
@@ -10572,7 +10564,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Terms for a governance proposal on Vega.
+     * Terms for a governance proposal on Vega
      * </pre>
      *
      * Protobuf type {@code vega.ProposalTerms}
@@ -10736,19 +10728,19 @@ public final class Governance {
           setValidationTimestamp(other.getValidationTimestamp());
         }
         switch (other.getChangeCase()) {
-          case UPDATEMARKET: {
+          case UPDATE_MARKET: {
             mergeUpdateMarket(other.getUpdateMarket());
             break;
           }
-          case NEWMARKET: {
+          case NEW_MARKET: {
             mergeNewMarket(other.getNewMarket());
             break;
           }
-          case UPDATENETWORKPARAMETER: {
+          case UPDATE_NETWORK_PARAMETER: {
             mergeUpdateNetworkParameter(other.getUpdateNetworkParameter());
             break;
           }
-          case NEWASSET: {
+          case NEW_ASSET: {
             mergeNewAsset(other.getNewAsset());
             break;
           }
@@ -10803,11 +10795,11 @@ public final class Governance {
       private long closingTimestamp_ ;
       /**
        * <pre>
-       * Timestamp (Unix time in seconds) when voting closes for this proposal.
-       * Constrained by `minCloseInSeconds` and `maxCloseInSeconds` network parameters.
+       * Timestamp (Unix time in seconds) when voting closes for this proposal,
+       * constrained by `minCloseInSeconds` and `maxCloseInSeconds` network parameters
        * </pre>
        *
-       * <code>int64 closingTimestamp = 1 [json_name = "closingTimestamp", (.validator.field) = { ... }</code>
+       * <code>int64 closing_timestamp = 1 [json_name = "closingTimestamp", (.validator.field) = { ... }</code>
        * @return The closingTimestamp.
        */
       @java.lang.Override
@@ -10816,11 +10808,11 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Timestamp (Unix time in seconds) when voting closes for this proposal.
-       * Constrained by `minCloseInSeconds` and `maxCloseInSeconds` network parameters.
+       * Timestamp (Unix time in seconds) when voting closes for this proposal,
+       * constrained by `minCloseInSeconds` and `maxCloseInSeconds` network parameters
        * </pre>
        *
-       * <code>int64 closingTimestamp = 1 [json_name = "closingTimestamp", (.validator.field) = { ... }</code>
+       * <code>int64 closing_timestamp = 1 [json_name = "closingTimestamp", (.validator.field) = { ... }</code>
        * @param value The closingTimestamp to set.
        * @return This builder for chaining.
        */
@@ -10832,11 +10824,11 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Timestamp (Unix time in seconds) when voting closes for this proposal.
-       * Constrained by `minCloseInSeconds` and `maxCloseInSeconds` network parameters.
+       * Timestamp (Unix time in seconds) when voting closes for this proposal,
+       * constrained by `minCloseInSeconds` and `maxCloseInSeconds` network parameters
        * </pre>
        *
-       * <code>int64 closingTimestamp = 1 [json_name = "closingTimestamp", (.validator.field) = { ... }</code>
+       * <code>int64 closing_timestamp = 1 [json_name = "closingTimestamp", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearClosingTimestamp() {
@@ -10849,11 +10841,11 @@ public final class Governance {
       private long enactmentTimestamp_ ;
       /**
        * <pre>
-       * Timestamp (Unix time in seconds) when proposal gets enacted (if passed).
-       * Constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters.
+       * Timestamp (Unix time in seconds) when proposal gets enacted (if passed),
+       * constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters
        * </pre>
        *
-       * <code>int64 enactmentTimestamp = 2 [json_name = "enactmentTimestamp", (.validator.field) = { ... }</code>
+       * <code>int64 enactment_timestamp = 2 [json_name = "enactmentTimestamp", (.validator.field) = { ... }</code>
        * @return The enactmentTimestamp.
        */
       @java.lang.Override
@@ -10862,11 +10854,11 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Timestamp (Unix time in seconds) when proposal gets enacted (if passed).
-       * Constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters.
+       * Timestamp (Unix time in seconds) when proposal gets enacted (if passed),
+       * constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters
        * </pre>
        *
-       * <code>int64 enactmentTimestamp = 2 [json_name = "enactmentTimestamp", (.validator.field) = { ... }</code>
+       * <code>int64 enactment_timestamp = 2 [json_name = "enactmentTimestamp", (.validator.field) = { ... }</code>
        * @param value The enactmentTimestamp to set.
        * @return This builder for chaining.
        */
@@ -10878,11 +10870,11 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Timestamp (Unix time in seconds) when proposal gets enacted (if passed).
-       * Constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters.
+       * Timestamp (Unix time in seconds) when proposal gets enacted (if passed),
+       * constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters
        * </pre>
        *
-       * <code>int64 enactmentTimestamp = 2 [json_name = "enactmentTimestamp", (.validator.field) = { ... }</code>
+       * <code>int64 enactment_timestamp = 2 [json_name = "enactmentTimestamp", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearEnactmentTimestamp() {
@@ -10895,10 +10887,10 @@ public final class Governance {
       private long validationTimestamp_ ;
       /**
        * <pre>
-       * Validation timestamp (Unix time in seconds).
+       * Validation timestamp (Unix time in seconds)
        * </pre>
        *
-       * <code>int64 validationTimestamp = 3 [json_name = "validationTimestamp"];</code>
+       * <code>int64 validation_timestamp = 3 [json_name = "validationTimestamp"];</code>
        * @return The validationTimestamp.
        */
       @java.lang.Override
@@ -10907,10 +10899,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Validation timestamp (Unix time in seconds).
+       * Validation timestamp (Unix time in seconds)
        * </pre>
        *
-       * <code>int64 validationTimestamp = 3 [json_name = "validationTimestamp"];</code>
+       * <code>int64 validation_timestamp = 3 [json_name = "validationTimestamp"];</code>
        * @param value The validationTimestamp to set.
        * @return This builder for chaining.
        */
@@ -10922,10 +10914,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Validation timestamp (Unix time in seconds).
+       * Validation timestamp (Unix time in seconds)
        * </pre>
        *
-       * <code>int64 validationTimestamp = 3 [json_name = "validationTimestamp"];</code>
+       * <code>int64 validation_timestamp = 3 [json_name = "validationTimestamp"];</code>
        * @return This builder for chaining.
        */
       public Builder clearValidationTimestamp() {
@@ -10939,10 +10931,10 @@ public final class Governance {
           io.vegaprotocol.vega.Governance.UpdateMarket, io.vegaprotocol.vega.Governance.UpdateMarket.Builder, io.vegaprotocol.vega.Governance.UpdateMarketOrBuilder> updateMarketBuilder_;
       /**
        * <pre>
-       * Proposal change for modifying an existing market on Vega.
+       * Proposal change for modifying an existing market on Vega
        * </pre>
        *
-       * <code>.vega.UpdateMarket updateMarket = 101 [json_name = "updateMarket"];</code>
+       * <code>.vega.UpdateMarket update_market = 101 [json_name = "updateMarket"];</code>
        * @return Whether the updateMarket field is set.
        */
       @java.lang.Override
@@ -10951,10 +10943,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for modifying an existing market on Vega.
+       * Proposal change for modifying an existing market on Vega
        * </pre>
        *
-       * <code>.vega.UpdateMarket updateMarket = 101 [json_name = "updateMarket"];</code>
+       * <code>.vega.UpdateMarket update_market = 101 [json_name = "updateMarket"];</code>
        * @return The updateMarket.
        */
       @java.lang.Override
@@ -10973,10 +10965,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for modifying an existing market on Vega.
+       * Proposal change for modifying an existing market on Vega
        * </pre>
        *
-       * <code>.vega.UpdateMarket updateMarket = 101 [json_name = "updateMarket"];</code>
+       * <code>.vega.UpdateMarket update_market = 101 [json_name = "updateMarket"];</code>
        */
       public Builder setUpdateMarket(io.vegaprotocol.vega.Governance.UpdateMarket value) {
         if (updateMarketBuilder_ == null) {
@@ -10993,10 +10985,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for modifying an existing market on Vega.
+       * Proposal change for modifying an existing market on Vega
        * </pre>
        *
-       * <code>.vega.UpdateMarket updateMarket = 101 [json_name = "updateMarket"];</code>
+       * <code>.vega.UpdateMarket update_market = 101 [json_name = "updateMarket"];</code>
        */
       public Builder setUpdateMarket(
           io.vegaprotocol.vega.Governance.UpdateMarket.Builder builderForValue) {
@@ -11011,10 +11003,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for modifying an existing market on Vega.
+       * Proposal change for modifying an existing market on Vega
        * </pre>
        *
-       * <code>.vega.UpdateMarket updateMarket = 101 [json_name = "updateMarket"];</code>
+       * <code>.vega.UpdateMarket update_market = 101 [json_name = "updateMarket"];</code>
        */
       public Builder mergeUpdateMarket(io.vegaprotocol.vega.Governance.UpdateMarket value) {
         if (updateMarketBuilder_ == null) {
@@ -11037,10 +11029,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for modifying an existing market on Vega.
+       * Proposal change for modifying an existing market on Vega
        * </pre>
        *
-       * <code>.vega.UpdateMarket updateMarket = 101 [json_name = "updateMarket"];</code>
+       * <code>.vega.UpdateMarket update_market = 101 [json_name = "updateMarket"];</code>
        */
       public Builder clearUpdateMarket() {
         if (updateMarketBuilder_ == null) {
@@ -11060,20 +11052,20 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for modifying an existing market on Vega.
+       * Proposal change for modifying an existing market on Vega
        * </pre>
        *
-       * <code>.vega.UpdateMarket updateMarket = 101 [json_name = "updateMarket"];</code>
+       * <code>.vega.UpdateMarket update_market = 101 [json_name = "updateMarket"];</code>
        */
       public io.vegaprotocol.vega.Governance.UpdateMarket.Builder getUpdateMarketBuilder() {
         return getUpdateMarketFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Proposal change for modifying an existing market on Vega.
+       * Proposal change for modifying an existing market on Vega
        * </pre>
        *
-       * <code>.vega.UpdateMarket updateMarket = 101 [json_name = "updateMarket"];</code>
+       * <code>.vega.UpdateMarket update_market = 101 [json_name = "updateMarket"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Governance.UpdateMarketOrBuilder getUpdateMarketOrBuilder() {
@@ -11088,10 +11080,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for modifying an existing market on Vega.
+       * Proposal change for modifying an existing market on Vega
        * </pre>
        *
-       * <code>.vega.UpdateMarket updateMarket = 101 [json_name = "updateMarket"];</code>
+       * <code>.vega.UpdateMarket update_market = 101 [json_name = "updateMarket"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Governance.UpdateMarket, io.vegaprotocol.vega.Governance.UpdateMarket.Builder, io.vegaprotocol.vega.Governance.UpdateMarketOrBuilder>
@@ -11116,10 +11108,10 @@ public final class Governance {
           io.vegaprotocol.vega.Governance.NewMarket, io.vegaprotocol.vega.Governance.NewMarket.Builder, io.vegaprotocol.vega.Governance.NewMarketOrBuilder> newMarketBuilder_;
       /**
        * <pre>
-       * Proposal change for creating new market on Vega.
+       * Proposal change for creating new market on Vega
        * </pre>
        *
-       * <code>.vega.NewMarket newMarket = 102 [json_name = "newMarket"];</code>
+       * <code>.vega.NewMarket new_market = 102 [json_name = "newMarket"];</code>
        * @return Whether the newMarket field is set.
        */
       @java.lang.Override
@@ -11128,10 +11120,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for creating new market on Vega.
+       * Proposal change for creating new market on Vega
        * </pre>
        *
-       * <code>.vega.NewMarket newMarket = 102 [json_name = "newMarket"];</code>
+       * <code>.vega.NewMarket new_market = 102 [json_name = "newMarket"];</code>
        * @return The newMarket.
        */
       @java.lang.Override
@@ -11150,10 +11142,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for creating new market on Vega.
+       * Proposal change for creating new market on Vega
        * </pre>
        *
-       * <code>.vega.NewMarket newMarket = 102 [json_name = "newMarket"];</code>
+       * <code>.vega.NewMarket new_market = 102 [json_name = "newMarket"];</code>
        */
       public Builder setNewMarket(io.vegaprotocol.vega.Governance.NewMarket value) {
         if (newMarketBuilder_ == null) {
@@ -11170,10 +11162,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for creating new market on Vega.
+       * Proposal change for creating new market on Vega
        * </pre>
        *
-       * <code>.vega.NewMarket newMarket = 102 [json_name = "newMarket"];</code>
+       * <code>.vega.NewMarket new_market = 102 [json_name = "newMarket"];</code>
        */
       public Builder setNewMarket(
           io.vegaprotocol.vega.Governance.NewMarket.Builder builderForValue) {
@@ -11188,10 +11180,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for creating new market on Vega.
+       * Proposal change for creating new market on Vega
        * </pre>
        *
-       * <code>.vega.NewMarket newMarket = 102 [json_name = "newMarket"];</code>
+       * <code>.vega.NewMarket new_market = 102 [json_name = "newMarket"];</code>
        */
       public Builder mergeNewMarket(io.vegaprotocol.vega.Governance.NewMarket value) {
         if (newMarketBuilder_ == null) {
@@ -11214,10 +11206,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for creating new market on Vega.
+       * Proposal change for creating new market on Vega
        * </pre>
        *
-       * <code>.vega.NewMarket newMarket = 102 [json_name = "newMarket"];</code>
+       * <code>.vega.NewMarket new_market = 102 [json_name = "newMarket"];</code>
        */
       public Builder clearNewMarket() {
         if (newMarketBuilder_ == null) {
@@ -11237,20 +11229,20 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for creating new market on Vega.
+       * Proposal change for creating new market on Vega
        * </pre>
        *
-       * <code>.vega.NewMarket newMarket = 102 [json_name = "newMarket"];</code>
+       * <code>.vega.NewMarket new_market = 102 [json_name = "newMarket"];</code>
        */
       public io.vegaprotocol.vega.Governance.NewMarket.Builder getNewMarketBuilder() {
         return getNewMarketFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Proposal change for creating new market on Vega.
+       * Proposal change for creating new market on Vega
        * </pre>
        *
-       * <code>.vega.NewMarket newMarket = 102 [json_name = "newMarket"];</code>
+       * <code>.vega.NewMarket new_market = 102 [json_name = "newMarket"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Governance.NewMarketOrBuilder getNewMarketOrBuilder() {
@@ -11265,10 +11257,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for creating new market on Vega.
+       * Proposal change for creating new market on Vega
        * </pre>
        *
-       * <code>.vega.NewMarket newMarket = 102 [json_name = "newMarket"];</code>
+       * <code>.vega.NewMarket new_market = 102 [json_name = "newMarket"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Governance.NewMarket, io.vegaprotocol.vega.Governance.NewMarket.Builder, io.vegaprotocol.vega.Governance.NewMarketOrBuilder>
@@ -11293,10 +11285,10 @@ public final class Governance {
           io.vegaprotocol.vega.Governance.UpdateNetworkParameter, io.vegaprotocol.vega.Governance.UpdateNetworkParameter.Builder, io.vegaprotocol.vega.Governance.UpdateNetworkParameterOrBuilder> updateNetworkParameterBuilder_;
       /**
        * <pre>
-       * Proposal change for updating Vega network parameters.
+       * Proposal change for updating Vega network parameters
        * </pre>
        *
-       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103 [json_name = "updateNetworkParameter"];</code>
+       * <code>.vega.UpdateNetworkParameter update_network_parameter = 103 [json_name = "updateNetworkParameter"];</code>
        * @return Whether the updateNetworkParameter field is set.
        */
       @java.lang.Override
@@ -11305,10 +11297,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for updating Vega network parameters.
+       * Proposal change for updating Vega network parameters
        * </pre>
        *
-       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103 [json_name = "updateNetworkParameter"];</code>
+       * <code>.vega.UpdateNetworkParameter update_network_parameter = 103 [json_name = "updateNetworkParameter"];</code>
        * @return The updateNetworkParameter.
        */
       @java.lang.Override
@@ -11327,10 +11319,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for updating Vega network parameters.
+       * Proposal change for updating Vega network parameters
        * </pre>
        *
-       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103 [json_name = "updateNetworkParameter"];</code>
+       * <code>.vega.UpdateNetworkParameter update_network_parameter = 103 [json_name = "updateNetworkParameter"];</code>
        */
       public Builder setUpdateNetworkParameter(io.vegaprotocol.vega.Governance.UpdateNetworkParameter value) {
         if (updateNetworkParameterBuilder_ == null) {
@@ -11347,10 +11339,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for updating Vega network parameters.
+       * Proposal change for updating Vega network parameters
        * </pre>
        *
-       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103 [json_name = "updateNetworkParameter"];</code>
+       * <code>.vega.UpdateNetworkParameter update_network_parameter = 103 [json_name = "updateNetworkParameter"];</code>
        */
       public Builder setUpdateNetworkParameter(
           io.vegaprotocol.vega.Governance.UpdateNetworkParameter.Builder builderForValue) {
@@ -11365,10 +11357,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for updating Vega network parameters.
+       * Proposal change for updating Vega network parameters
        * </pre>
        *
-       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103 [json_name = "updateNetworkParameter"];</code>
+       * <code>.vega.UpdateNetworkParameter update_network_parameter = 103 [json_name = "updateNetworkParameter"];</code>
        */
       public Builder mergeUpdateNetworkParameter(io.vegaprotocol.vega.Governance.UpdateNetworkParameter value) {
         if (updateNetworkParameterBuilder_ == null) {
@@ -11391,10 +11383,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for updating Vega network parameters.
+       * Proposal change for updating Vega network parameters
        * </pre>
        *
-       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103 [json_name = "updateNetworkParameter"];</code>
+       * <code>.vega.UpdateNetworkParameter update_network_parameter = 103 [json_name = "updateNetworkParameter"];</code>
        */
       public Builder clearUpdateNetworkParameter() {
         if (updateNetworkParameterBuilder_ == null) {
@@ -11414,20 +11406,20 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for updating Vega network parameters.
+       * Proposal change for updating Vega network parameters
        * </pre>
        *
-       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103 [json_name = "updateNetworkParameter"];</code>
+       * <code>.vega.UpdateNetworkParameter update_network_parameter = 103 [json_name = "updateNetworkParameter"];</code>
        */
       public io.vegaprotocol.vega.Governance.UpdateNetworkParameter.Builder getUpdateNetworkParameterBuilder() {
         return getUpdateNetworkParameterFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Proposal change for updating Vega network parameters.
+       * Proposal change for updating Vega network parameters
        * </pre>
        *
-       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103 [json_name = "updateNetworkParameter"];</code>
+       * <code>.vega.UpdateNetworkParameter update_network_parameter = 103 [json_name = "updateNetworkParameter"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Governance.UpdateNetworkParameterOrBuilder getUpdateNetworkParameterOrBuilder() {
@@ -11442,10 +11434,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for updating Vega network parameters.
+       * Proposal change for updating Vega network parameters
        * </pre>
        *
-       * <code>.vega.UpdateNetworkParameter updateNetworkParameter = 103 [json_name = "updateNetworkParameter"];</code>
+       * <code>.vega.UpdateNetworkParameter update_network_parameter = 103 [json_name = "updateNetworkParameter"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Governance.UpdateNetworkParameter, io.vegaprotocol.vega.Governance.UpdateNetworkParameter.Builder, io.vegaprotocol.vega.Governance.UpdateNetworkParameterOrBuilder>
@@ -11470,10 +11462,10 @@ public final class Governance {
           io.vegaprotocol.vega.Governance.NewAsset, io.vegaprotocol.vega.Governance.NewAsset.Builder, io.vegaprotocol.vega.Governance.NewAssetOrBuilder> newAssetBuilder_;
       /**
        * <pre>
-       * Proposal change for creating new assets on Vega.
+       * Proposal change for creating new assets on Vega
        * </pre>
        *
-       * <code>.vega.NewAsset newAsset = 104 [json_name = "newAsset"];</code>
+       * <code>.vega.NewAsset new_asset = 104 [json_name = "newAsset"];</code>
        * @return Whether the newAsset field is set.
        */
       @java.lang.Override
@@ -11482,10 +11474,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for creating new assets on Vega.
+       * Proposal change for creating new assets on Vega
        * </pre>
        *
-       * <code>.vega.NewAsset newAsset = 104 [json_name = "newAsset"];</code>
+       * <code>.vega.NewAsset new_asset = 104 [json_name = "newAsset"];</code>
        * @return The newAsset.
        */
       @java.lang.Override
@@ -11504,10 +11496,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for creating new assets on Vega.
+       * Proposal change for creating new assets on Vega
        * </pre>
        *
-       * <code>.vega.NewAsset newAsset = 104 [json_name = "newAsset"];</code>
+       * <code>.vega.NewAsset new_asset = 104 [json_name = "newAsset"];</code>
        */
       public Builder setNewAsset(io.vegaprotocol.vega.Governance.NewAsset value) {
         if (newAssetBuilder_ == null) {
@@ -11524,10 +11516,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for creating new assets on Vega.
+       * Proposal change for creating new assets on Vega
        * </pre>
        *
-       * <code>.vega.NewAsset newAsset = 104 [json_name = "newAsset"];</code>
+       * <code>.vega.NewAsset new_asset = 104 [json_name = "newAsset"];</code>
        */
       public Builder setNewAsset(
           io.vegaprotocol.vega.Governance.NewAsset.Builder builderForValue) {
@@ -11542,10 +11534,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for creating new assets on Vega.
+       * Proposal change for creating new assets on Vega
        * </pre>
        *
-       * <code>.vega.NewAsset newAsset = 104 [json_name = "newAsset"];</code>
+       * <code>.vega.NewAsset new_asset = 104 [json_name = "newAsset"];</code>
        */
       public Builder mergeNewAsset(io.vegaprotocol.vega.Governance.NewAsset value) {
         if (newAssetBuilder_ == null) {
@@ -11568,10 +11560,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for creating new assets on Vega.
+       * Proposal change for creating new assets on Vega
        * </pre>
        *
-       * <code>.vega.NewAsset newAsset = 104 [json_name = "newAsset"];</code>
+       * <code>.vega.NewAsset new_asset = 104 [json_name = "newAsset"];</code>
        */
       public Builder clearNewAsset() {
         if (newAssetBuilder_ == null) {
@@ -11591,20 +11583,20 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for creating new assets on Vega.
+       * Proposal change for creating new assets on Vega
        * </pre>
        *
-       * <code>.vega.NewAsset newAsset = 104 [json_name = "newAsset"];</code>
+       * <code>.vega.NewAsset new_asset = 104 [json_name = "newAsset"];</code>
        */
       public io.vegaprotocol.vega.Governance.NewAsset.Builder getNewAssetBuilder() {
         return getNewAssetFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Proposal change for creating new assets on Vega.
+       * Proposal change for creating new assets on Vega
        * </pre>
        *
-       * <code>.vega.NewAsset newAsset = 104 [json_name = "newAsset"];</code>
+       * <code>.vega.NewAsset new_asset = 104 [json_name = "newAsset"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Governance.NewAssetOrBuilder getNewAssetOrBuilder() {
@@ -11619,10 +11611,10 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal change for creating new assets on Vega.
+       * Proposal change for creating new assets on Vega
        * </pre>
        *
-       * <code>.vega.NewAsset newAsset = 104 [json_name = "newAsset"];</code>
+       * <code>.vega.NewAsset new_asset = 104 [json_name = "newAsset"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Governance.NewAsset, io.vegaprotocol.vega.Governance.NewAsset.Builder, io.vegaprotocol.vega.Governance.NewAssetOrBuilder>
@@ -11701,7 +11693,7 @@ public final class Governance {
 
     /**
      * <pre>
-     * Proposal.
+     * The governance proposal
      * </pre>
      *
      * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
@@ -11710,7 +11702,7 @@ public final class Governance {
     boolean hasProposal();
     /**
      * <pre>
-     * Proposal.
+     * The governance proposal
      * </pre>
      *
      * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
@@ -11719,7 +11711,7 @@ public final class Governance {
     io.vegaprotocol.vega.Governance.Proposal getProposal();
     /**
      * <pre>
-     * Proposal.
+     * The governance proposal
      * </pre>
      *
      * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
@@ -11728,7 +11720,7 @@ public final class Governance {
 
     /**
      * <pre>
-     * All "yes" votes in favour of the proposal above.
+     * All "yes" votes in favour of the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -11737,7 +11729,7 @@ public final class Governance {
         getYesList();
     /**
      * <pre>
-     * All "yes" votes in favour of the proposal above.
+     * All "yes" votes in favour of the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -11745,7 +11737,7 @@ public final class Governance {
     io.vegaprotocol.vega.Governance.Vote getYes(int index);
     /**
      * <pre>
-     * All "yes" votes in favour of the proposal above.
+     * All "yes" votes in favour of the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -11753,7 +11745,7 @@ public final class Governance {
     int getYesCount();
     /**
      * <pre>
-     * All "yes" votes in favour of the proposal above.
+     * All "yes" votes in favour of the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -11762,7 +11754,7 @@ public final class Governance {
         getYesOrBuilderList();
     /**
      * <pre>
-     * All "yes" votes in favour of the proposal above.
+     * All "yes" votes in favour of the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -11772,7 +11764,7 @@ public final class Governance {
 
     /**
      * <pre>
-     * All "no" votes against the proposal above.
+     * All "no" votes against the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -11781,7 +11773,7 @@ public final class Governance {
         getNoList();
     /**
      * <pre>
-     * All "no" votes against the proposal above.
+     * All "no" votes against the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -11789,7 +11781,7 @@ public final class Governance {
     io.vegaprotocol.vega.Governance.Vote getNo(int index);
     /**
      * <pre>
-     * All "no" votes against the proposal above.
+     * All "no" votes against the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -11797,7 +11789,7 @@ public final class Governance {
     int getNoCount();
     /**
      * <pre>
-     * All "no" votes against the proposal above.
+     * All "no" votes against the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -11806,7 +11798,7 @@ public final class Governance {
         getNoOrBuilderList();
     /**
      * <pre>
-     * All "no" votes against the proposal above.
+     * All "no" votes against the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -11816,22 +11808,22 @@ public final class Governance {
 
     /**
      * <pre>
-     * All latest YES votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest YES votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; yesParty = 4 [json_name = "yesParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; yes_party = 4 [json_name = "yesParty"];</code>
      */
     int getYesPartyCount();
     /**
      * <pre>
-     * All latest YES votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest YES votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; yesParty = 4 [json_name = "yesParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; yes_party = 4 [json_name = "yesParty"];</code>
      */
     boolean containsYesParty(
         java.lang.String key);
@@ -11843,23 +11835,23 @@ public final class Governance {
     getYesParty();
     /**
      * <pre>
-     * All latest YES votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest YES votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; yesParty = 4 [json_name = "yesParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; yes_party = 4 [json_name = "yesParty"];</code>
      */
     java.util.Map<java.lang.String, io.vegaprotocol.vega.Governance.Vote>
     getYesPartyMap();
     /**
      * <pre>
-     * All latest YES votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest YES votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; yesParty = 4 [json_name = "yesParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; yes_party = 4 [json_name = "yesParty"];</code>
      */
 
     io.vegaprotocol.vega.Governance.Vote getYesPartyOrDefault(
@@ -11867,12 +11859,12 @@ public final class Governance {
         io.vegaprotocol.vega.Governance.Vote defaultValue);
     /**
      * <pre>
-     * All latest YES votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest YES votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; yesParty = 4 [json_name = "yesParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; yes_party = 4 [json_name = "yesParty"];</code>
      */
 
     io.vegaprotocol.vega.Governance.Vote getYesPartyOrThrow(
@@ -11880,22 +11872,22 @@ public final class Governance {
 
     /**
      * <pre>
-     * All latest NO votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest NO votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; noParty = 5 [json_name = "noParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; no_party = 5 [json_name = "noParty"];</code>
      */
     int getNoPartyCount();
     /**
      * <pre>
-     * All latest NO votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest NO votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; noParty = 5 [json_name = "noParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; no_party = 5 [json_name = "noParty"];</code>
      */
     boolean containsNoParty(
         java.lang.String key);
@@ -11907,23 +11899,23 @@ public final class Governance {
     getNoParty();
     /**
      * <pre>
-     * All latest NO votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest NO votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; noParty = 5 [json_name = "noParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; no_party = 5 [json_name = "noParty"];</code>
      */
     java.util.Map<java.lang.String, io.vegaprotocol.vega.Governance.Vote>
     getNoPartyMap();
     /**
      * <pre>
-     * All latest NO votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest NO votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; noParty = 5 [json_name = "noParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; no_party = 5 [json_name = "noParty"];</code>
      */
 
     io.vegaprotocol.vega.Governance.Vote getNoPartyOrDefault(
@@ -11931,12 +11923,12 @@ public final class Governance {
         io.vegaprotocol.vega.Governance.Vote defaultValue);
     /**
      * <pre>
-     * All latest NO votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest NO votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; noParty = 5 [json_name = "noParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; no_party = 5 [json_name = "noParty"];</code>
      */
 
     io.vegaprotocol.vega.Governance.Vote getNoPartyOrThrow(
@@ -11944,7 +11936,7 @@ public final class Governance {
   }
   /**
    * <pre>
-   * Governance data.
+   * Governance data
    * </pre>
    *
    * Protobuf type {@code vega.GovernanceData}
@@ -12107,7 +12099,7 @@ public final class Governance {
     private io.vegaprotocol.vega.Governance.Proposal proposal_;
     /**
      * <pre>
-     * Proposal.
+     * The governance proposal
      * </pre>
      *
      * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
@@ -12119,7 +12111,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Proposal.
+     * The governance proposal
      * </pre>
      *
      * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
@@ -12131,7 +12123,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Proposal.
+     * The governance proposal
      * </pre>
      *
      * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
@@ -12145,7 +12137,7 @@ public final class Governance {
     private java.util.List<io.vegaprotocol.vega.Governance.Vote> yes_;
     /**
      * <pre>
-     * All "yes" votes in favour of the proposal above.
+     * All "yes" votes in favour of the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -12156,7 +12148,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All "yes" votes in favour of the proposal above.
+     * All "yes" votes in favour of the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -12168,7 +12160,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All "yes" votes in favour of the proposal above.
+     * All "yes" votes in favour of the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -12179,7 +12171,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All "yes" votes in favour of the proposal above.
+     * All "yes" votes in favour of the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -12190,7 +12182,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All "yes" votes in favour of the proposal above.
+     * All "yes" votes in favour of the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -12205,7 +12197,7 @@ public final class Governance {
     private java.util.List<io.vegaprotocol.vega.Governance.Vote> no_;
     /**
      * <pre>
-     * All "no" votes against the proposal above.
+     * All "no" votes against the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -12216,7 +12208,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All "no" votes against the proposal above.
+     * All "no" votes against the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -12228,7 +12220,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All "no" votes against the proposal above.
+     * All "no" votes against the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -12239,7 +12231,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All "no" votes against the proposal above.
+     * All "no" votes against the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -12250,7 +12242,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All "no" votes against the proposal above.
+     * All "no" votes against the proposal above
      * </pre>
      *
      * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -12261,7 +12253,7 @@ public final class Governance {
       return no_.get(index);
     }
 
-    public static final int YESPARTY_FIELD_NUMBER = 4;
+    public static final int YES_PARTY_FIELD_NUMBER = 4;
     private static final class YesPartyDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, io.vegaprotocol.vega.Governance.Vote> defaultEntry =
@@ -12289,12 +12281,12 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All latest YES votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest YES votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; yesParty = 4 [json_name = "yesParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; yes_party = 4 [json_name = "yesParty"];</code>
      */
 
     @java.lang.Override
@@ -12313,12 +12305,12 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All latest YES votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest YES votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; yesParty = 4 [json_name = "yesParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; yes_party = 4 [json_name = "yesParty"];</code>
      */
     @java.lang.Override
 
@@ -12327,12 +12319,12 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All latest YES votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest YES votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; yesParty = 4 [json_name = "yesParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; yes_party = 4 [json_name = "yesParty"];</code>
      */
     @java.lang.Override
 
@@ -12346,12 +12338,12 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All latest YES votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest YES votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; yesParty = 4 [json_name = "yesParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; yes_party = 4 [json_name = "yesParty"];</code>
      */
     @java.lang.Override
 
@@ -12366,7 +12358,7 @@ public final class Governance {
       return map.get(key);
     }
 
-    public static final int NOPARTY_FIELD_NUMBER = 5;
+    public static final int NO_PARTY_FIELD_NUMBER = 5;
     private static final class NoPartyDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, io.vegaprotocol.vega.Governance.Vote> defaultEntry =
@@ -12394,12 +12386,12 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All latest NO votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest NO votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; noParty = 5 [json_name = "noParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; no_party = 5 [json_name = "noParty"];</code>
      */
 
     @java.lang.Override
@@ -12418,12 +12410,12 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All latest NO votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest NO votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; noParty = 5 [json_name = "noParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; no_party = 5 [json_name = "noParty"];</code>
      */
     @java.lang.Override
 
@@ -12432,12 +12424,12 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All latest NO votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest NO votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; noParty = 5 [json_name = "noParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; no_party = 5 [json_name = "noParty"];</code>
      */
     @java.lang.Override
 
@@ -12451,12 +12443,12 @@ public final class Governance {
     }
     /**
      * <pre>
-     * All latest NO votes by party (guaranteed to be unique).
-     * key (string) is the party ID (public key)
+     * All latest NO votes by party (guaranteed to be unique),
+     * where key (string) is the party ID (public key) and
      * value (Vote) is the vote cast by the given party
      * </pre>
      *
-     * <code>map&lt;string, .vega.Vote&gt; noParty = 5 [json_name = "noParty"];</code>
+     * <code>map&lt;string, .vega.Vote&gt; no_party = 5 [json_name = "noParty"];</code>
      */
     @java.lang.Override
 
@@ -12599,11 +12591,11 @@ public final class Governance {
         hash = (53 * hash) + getNoList().hashCode();
       }
       if (!internalGetYesParty().getMap().isEmpty()) {
-        hash = (37 * hash) + YESPARTY_FIELD_NUMBER;
+        hash = (37 * hash) + YES_PARTY_FIELD_NUMBER;
         hash = (53 * hash) + internalGetYesParty().hashCode();
       }
       if (!internalGetNoParty().getMap().isEmpty()) {
-        hash = (37 * hash) + NOPARTY_FIELD_NUMBER;
+        hash = (37 * hash) + NO_PARTY_FIELD_NUMBER;
         hash = (53 * hash) + internalGetNoParty().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -12703,7 +12695,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Governance data.
+     * Governance data
      * </pre>
      *
      * Protobuf type {@code vega.GovernanceData}
@@ -12987,7 +12979,7 @@ public final class Governance {
           io.vegaprotocol.vega.Governance.Proposal, io.vegaprotocol.vega.Governance.Proposal.Builder, io.vegaprotocol.vega.Governance.ProposalOrBuilder> proposalBuilder_;
       /**
        * <pre>
-       * Proposal.
+       * The governance proposal
        * </pre>
        *
        * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
@@ -12998,7 +12990,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal.
+       * The governance proposal
        * </pre>
        *
        * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
@@ -13013,7 +13005,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal.
+       * The governance proposal
        * </pre>
        *
        * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
@@ -13033,7 +13025,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal.
+       * The governance proposal
        * </pre>
        *
        * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
@@ -13051,7 +13043,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal.
+       * The governance proposal
        * </pre>
        *
        * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
@@ -13073,7 +13065,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal.
+       * The governance proposal
        * </pre>
        *
        * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
@@ -13091,7 +13083,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal.
+       * The governance proposal
        * </pre>
        *
        * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
@@ -13103,7 +13095,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal.
+       * The governance proposal
        * </pre>
        *
        * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
@@ -13118,7 +13110,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal.
+       * The governance proposal
        * </pre>
        *
        * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
@@ -13151,7 +13143,7 @@ public final class Governance {
 
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13165,7 +13157,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13179,7 +13171,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13193,7 +13185,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13214,7 +13206,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13232,7 +13224,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13252,7 +13244,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13273,7 +13265,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13291,7 +13283,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13309,7 +13301,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13328,7 +13320,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13345,7 +13337,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13362,7 +13354,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13373,7 +13365,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13387,7 +13379,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13402,7 +13394,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13413,7 +13405,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13425,7 +13417,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "yes" votes in favour of the proposal above.
+       * All "yes" votes in favour of the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
@@ -13463,7 +13455,7 @@ public final class Governance {
 
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13477,7 +13469,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13491,7 +13483,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13505,7 +13497,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13526,7 +13518,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13544,7 +13536,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13564,7 +13556,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13585,7 +13577,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13603,7 +13595,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13621,7 +13613,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13640,7 +13632,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13657,7 +13649,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13674,7 +13666,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13685,7 +13677,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13699,7 +13691,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13714,7 +13706,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13725,7 +13717,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13737,7 +13729,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All "no" votes against the proposal above.
+       * All "no" votes against the proposal above
        * </pre>
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
@@ -13789,12 +13781,12 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest YES votes by party (guaranteed to be unique).
-       * key (string) is the party ID (public key)
+       * All latest YES votes by party (guaranteed to be unique),
+       * where key (string) is the party ID (public key) and
        * value (Vote) is the vote cast by the given party
        * </pre>
        *
-       * <code>map&lt;string, .vega.Vote&gt; yesParty = 4 [json_name = "yesParty"];</code>
+       * <code>map&lt;string, .vega.Vote&gt; yes_party = 4 [json_name = "yesParty"];</code>
        */
 
       @java.lang.Override
@@ -13813,12 +13805,12 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest YES votes by party (guaranteed to be unique).
-       * key (string) is the party ID (public key)
+       * All latest YES votes by party (guaranteed to be unique),
+       * where key (string) is the party ID (public key) and
        * value (Vote) is the vote cast by the given party
        * </pre>
        *
-       * <code>map&lt;string, .vega.Vote&gt; yesParty = 4 [json_name = "yesParty"];</code>
+       * <code>map&lt;string, .vega.Vote&gt; yes_party = 4 [json_name = "yesParty"];</code>
        */
       @java.lang.Override
 
@@ -13827,12 +13819,12 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest YES votes by party (guaranteed to be unique).
-       * key (string) is the party ID (public key)
+       * All latest YES votes by party (guaranteed to be unique),
+       * where key (string) is the party ID (public key) and
        * value (Vote) is the vote cast by the given party
        * </pre>
        *
-       * <code>map&lt;string, .vega.Vote&gt; yesParty = 4 [json_name = "yesParty"];</code>
+       * <code>map&lt;string, .vega.Vote&gt; yes_party = 4 [json_name = "yesParty"];</code>
        */
       @java.lang.Override
 
@@ -13846,12 +13838,12 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest YES votes by party (guaranteed to be unique).
-       * key (string) is the party ID (public key)
+       * All latest YES votes by party (guaranteed to be unique),
+       * where key (string) is the party ID (public key) and
        * value (Vote) is the vote cast by the given party
        * </pre>
        *
-       * <code>map&lt;string, .vega.Vote&gt; yesParty = 4 [json_name = "yesParty"];</code>
+       * <code>map&lt;string, .vega.Vote&gt; yes_party = 4 [json_name = "yesParty"];</code>
        */
       @java.lang.Override
 
@@ -13873,12 +13865,12 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest YES votes by party (guaranteed to be unique).
-       * key (string) is the party ID (public key)
+       * All latest YES votes by party (guaranteed to be unique),
+       * where key (string) is the party ID (public key) and
        * value (Vote) is the vote cast by the given party
        * </pre>
        *
-       * <code>map&lt;string, .vega.Vote&gt; yesParty = 4 [json_name = "yesParty"];</code>
+       * <code>map&lt;string, .vega.Vote&gt; yes_party = 4 [json_name = "yesParty"];</code>
        */
 
       public Builder removeYesParty(
@@ -13898,12 +13890,12 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest YES votes by party (guaranteed to be unique).
-       * key (string) is the party ID (public key)
+       * All latest YES votes by party (guaranteed to be unique),
+       * where key (string) is the party ID (public key) and
        * value (Vote) is the vote cast by the given party
        * </pre>
        *
-       * <code>map&lt;string, .vega.Vote&gt; yesParty = 4 [json_name = "yesParty"];</code>
+       * <code>map&lt;string, .vega.Vote&gt; yes_party = 4 [json_name = "yesParty"];</code>
        */
       public Builder putYesParty(
           java.lang.String key,
@@ -13916,12 +13908,12 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest YES votes by party (guaranteed to be unique).
-       * key (string) is the party ID (public key)
+       * All latest YES votes by party (guaranteed to be unique),
+       * where key (string) is the party ID (public key) and
        * value (Vote) is the vote cast by the given party
        * </pre>
        *
-       * <code>map&lt;string, .vega.Vote&gt; yesParty = 4 [json_name = "yesParty"];</code>
+       * <code>map&lt;string, .vega.Vote&gt; yes_party = 4 [json_name = "yesParty"];</code>
        */
 
       public Builder putAllYesParty(
@@ -13959,12 +13951,12 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest NO votes by party (guaranteed to be unique).
-       * key (string) is the party ID (public key)
+       * All latest NO votes by party (guaranteed to be unique),
+       * where key (string) is the party ID (public key) and
        * value (Vote) is the vote cast by the given party
        * </pre>
        *
-       * <code>map&lt;string, .vega.Vote&gt; noParty = 5 [json_name = "noParty"];</code>
+       * <code>map&lt;string, .vega.Vote&gt; no_party = 5 [json_name = "noParty"];</code>
        */
 
       @java.lang.Override
@@ -13983,12 +13975,12 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest NO votes by party (guaranteed to be unique).
-       * key (string) is the party ID (public key)
+       * All latest NO votes by party (guaranteed to be unique),
+       * where key (string) is the party ID (public key) and
        * value (Vote) is the vote cast by the given party
        * </pre>
        *
-       * <code>map&lt;string, .vega.Vote&gt; noParty = 5 [json_name = "noParty"];</code>
+       * <code>map&lt;string, .vega.Vote&gt; no_party = 5 [json_name = "noParty"];</code>
        */
       @java.lang.Override
 
@@ -13997,12 +13989,12 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest NO votes by party (guaranteed to be unique).
-       * key (string) is the party ID (public key)
+       * All latest NO votes by party (guaranteed to be unique),
+       * where key (string) is the party ID (public key) and
        * value (Vote) is the vote cast by the given party
        * </pre>
        *
-       * <code>map&lt;string, .vega.Vote&gt; noParty = 5 [json_name = "noParty"];</code>
+       * <code>map&lt;string, .vega.Vote&gt; no_party = 5 [json_name = "noParty"];</code>
        */
       @java.lang.Override
 
@@ -14016,12 +14008,12 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest NO votes by party (guaranteed to be unique).
-       * key (string) is the party ID (public key)
+       * All latest NO votes by party (guaranteed to be unique),
+       * where key (string) is the party ID (public key) and
        * value (Vote) is the vote cast by the given party
        * </pre>
        *
-       * <code>map&lt;string, .vega.Vote&gt; noParty = 5 [json_name = "noParty"];</code>
+       * <code>map&lt;string, .vega.Vote&gt; no_party = 5 [json_name = "noParty"];</code>
        */
       @java.lang.Override
 
@@ -14043,12 +14035,12 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest NO votes by party (guaranteed to be unique).
-       * key (string) is the party ID (public key)
+       * All latest NO votes by party (guaranteed to be unique),
+       * where key (string) is the party ID (public key) and
        * value (Vote) is the vote cast by the given party
        * </pre>
        *
-       * <code>map&lt;string, .vega.Vote&gt; noParty = 5 [json_name = "noParty"];</code>
+       * <code>map&lt;string, .vega.Vote&gt; no_party = 5 [json_name = "noParty"];</code>
        */
 
       public Builder removeNoParty(
@@ -14068,12 +14060,12 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest NO votes by party (guaranteed to be unique).
-       * key (string) is the party ID (public key)
+       * All latest NO votes by party (guaranteed to be unique),
+       * where key (string) is the party ID (public key) and
        * value (Vote) is the vote cast by the given party
        * </pre>
        *
-       * <code>map&lt;string, .vega.Vote&gt; noParty = 5 [json_name = "noParty"];</code>
+       * <code>map&lt;string, .vega.Vote&gt; no_party = 5 [json_name = "noParty"];</code>
        */
       public Builder putNoParty(
           java.lang.String key,
@@ -14086,12 +14078,12 @@ public final class Governance {
       }
       /**
        * <pre>
-       * All latest NO votes by party (guaranteed to be unique).
-       * key (string) is the party ID (public key)
+       * All latest NO votes by party (guaranteed to be unique),
+       * where key (string) is the party ID (public key) and
        * value (Vote) is the vote cast by the given party
        * </pre>
        *
-       * <code>map&lt;string, .vega.Vote&gt; noParty = 5 [json_name = "noParty"];</code>
+       * <code>map&lt;string, .vega.Vote&gt; no_party = 5 [json_name = "noParty"];</code>
        */
 
       public Builder putAllNoParty(
@@ -14159,27 +14151,27 @@ public final class Governance {
 
     /**
      * <pre>
-     * Unique proposal identifier.
+     * Unique proposal identifier
      * </pre>
      *
-     * <code>string ID = 1 [json_name = "ID"];</code>
-     * @return The iD.
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
      */
-    java.lang.String getID();
+    java.lang.String getId();
     /**
      * <pre>
-     * Unique proposal identifier.
+     * Unique proposal identifier
      * </pre>
      *
-     * <code>string ID = 1 [json_name = "ID"];</code>
-     * @return The bytes for iD.
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
-        getIDBytes();
+        getIdBytes();
 
     /**
      * <pre>
-     * Proposal reference.
+     * Proposal reference
      * </pre>
      *
      * <code>string reference = 2 [json_name = "reference"];</code>
@@ -14188,7 +14180,7 @@ public final class Governance {
     java.lang.String getReference();
     /**
      * <pre>
-     * Proposal reference.
+     * Proposal reference
      * </pre>
      *
      * <code>string reference = 2 [json_name = "reference"];</code>
@@ -14199,27 +14191,27 @@ public final class Governance {
 
     /**
      * <pre>
-     * Party identifier of the author (the party submitting the proposal).
+     * Party identifier of the author (the party submitting the proposal)
      * </pre>
      *
-     * <code>string partyID = 3 [json_name = "partyID", (.validator.field) = { ... }</code>
-     * @return The partyID.
+     * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
+     * @return The partyId.
      */
-    java.lang.String getPartyID();
+    java.lang.String getPartyId();
     /**
      * <pre>
-     * Party identifier of the author (the party submitting the proposal).
+     * Party identifier of the author (the party submitting the proposal)
      * </pre>
      *
-     * <code>string partyID = 3 [json_name = "partyID", (.validator.field) = { ... }</code>
-     * @return The bytes for partyID.
+     * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
+     * @return The bytes for partyId.
      */
     com.google.protobuf.ByteString
-        getPartyIDBytes();
+        getPartyIdBytes();
 
     /**
      * <pre>
-     * Proposal state (see (Proposal.State)[#vega.Proposal.State] definition).
+     * Proposal state - See (Proposal.State)[#vega.Proposal.State] definition
      * </pre>
      *
      * <code>.vega.Proposal.State state = 4 [json_name = "state", (.validator.field) = { ... }</code>
@@ -14228,7 +14220,7 @@ public final class Governance {
     int getStateValue();
     /**
      * <pre>
-     * Proposal state (see (Proposal.State)[#vega.Proposal.State] definition).
+     * Proposal state - See (Proposal.State)[#vega.Proposal.State] definition
      * </pre>
      *
      * <code>.vega.Proposal.State state = 4 [json_name = "state", (.validator.field) = { ... }</code>
@@ -14238,7 +14230,7 @@ public final class Governance {
 
     /**
      * <pre>
-     * Proposal timestamp for date and time (in nanoseconds) when proposal was submitted to the network.
+     * Proposal timestamp for date and time (in nanoseconds) when proposal was submitted to the network
      * </pre>
      *
      * <code>int64 timestamp = 5 [json_name = "timestamp"];</code>
@@ -14248,7 +14240,7 @@ public final class Governance {
 
     /**
      * <pre>
-     * Proposal configuration and the actual change that is meant to be executed when proposal is enacted.
+     * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
      * </pre>
      *
      * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
@@ -14257,7 +14249,7 @@ public final class Governance {
     boolean hasTerms();
     /**
      * <pre>
-     * Proposal configuration and the actual change that is meant to be executed when proposal is enacted.
+     * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
      * </pre>
      *
      * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
@@ -14266,7 +14258,7 @@ public final class Governance {
     io.vegaprotocol.vega.Governance.ProposalTerms getTerms();
     /**
      * <pre>
-     * Proposal configuration and the actual change that is meant to be executed when proposal is enacted.
+     * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
      * </pre>
      *
      * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
@@ -14275,7 +14267,7 @@ public final class Governance {
 
     /**
      * <pre>
-     * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses.
+     * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses
      * </pre>
      *
      * <code>.vega.ProposalError reason = 7 [json_name = "reason"];</code>
@@ -14284,7 +14276,7 @@ public final class Governance {
     int getReasonValue();
     /**
      * <pre>
-     * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses.
+     * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses
      * </pre>
      *
      * <code>.vega.ProposalError reason = 7 [json_name = "reason"];</code>
@@ -14294,7 +14286,7 @@ public final class Governance {
   }
   /**
    * <pre>
-   * Governance proposal.
+   * Governance proposal
    * </pre>
    *
    * Protobuf type {@code vega.Proposal}
@@ -14309,9 +14301,9 @@ public final class Governance {
       super(builder);
     }
     private Proposal() {
-      iD_ = "";
+      id_ = "";
       reference_ = "";
-      partyID_ = "";
+      partyId_ = "";
       state_ = 0;
       reason_ = 0;
     }
@@ -14349,7 +14341,7 @@ public final class Governance {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              iD_ = s;
+              id_ = s;
               break;
             }
             case 18: {
@@ -14361,7 +14353,7 @@ public final class Governance {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              partyID_ = s;
+              partyId_ = s;
               break;
             }
             case 32: {
@@ -14434,7 +14426,7 @@ public final class Governance {
      *   - Passed -&gt; Failed.
      *   - Declined
      * Rejected
-     * Proposal can enter Failed state from any other state.
+     * Proposal can enter Failed state from any other state
      * </pre>
      *
      * Protobuf enum {@code vega.Proposal.State}
@@ -14443,7 +14435,7 @@ public final class Governance {
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <pre>
-       * Default value, always invalid.
+       * Default value, always invalid
        * </pre>
        *
        * <code>STATE_UNSPECIFIED = 0;</code>
@@ -14451,7 +14443,7 @@ public final class Governance {
       STATE_UNSPECIFIED(0),
       /**
        * <pre>
-       * Proposal enactment has failed - even though proposal has passed, its execution could not be performed.
+       * Proposal enactment has failed - even though proposal has passed, its execution could not be performed
        * </pre>
        *
        * <code>STATE_FAILED = 1;</code>
@@ -14459,7 +14451,7 @@ public final class Governance {
       STATE_FAILED(1),
       /**
        * <pre>
-       * Proposal is open for voting.
+       * Proposal is open for voting
        * </pre>
        *
        * <code>STATE_OPEN = 2;</code>
@@ -14467,7 +14459,7 @@ public final class Governance {
       STATE_OPEN(2),
       /**
        * <pre>
-       * Proposal has gained enough support to be executed.
+       * Proposal has gained enough support to be executed
        * </pre>
        *
        * <code>STATE_PASSED = 3;</code>
@@ -14475,7 +14467,7 @@ public final class Governance {
       STATE_PASSED(3),
       /**
        * <pre>
-       * Proposal wasn't accepted (proposal terms failed validation due to wrong configuration or failing to meet network requirements).
+       * Proposal wasn't accepted (proposal terms failed validation due to wrong configuration or failing to meet network requirements)
        * </pre>
        *
        * <code>STATE_REJECTED = 4;</code>
@@ -14483,7 +14475,7 @@ public final class Governance {
       STATE_REJECTED(4),
       /**
        * <pre>
-       * Proposal didn't get enough votes (either failing to gain required participation or majority level).
+       * Proposal didn't get enough votes (either failing to gain required participation or majority level)
        * </pre>
        *
        * <code>STATE_DECLINED = 5;</code>
@@ -14491,7 +14483,7 @@ public final class Governance {
       STATE_DECLINED(5),
       /**
        * <pre>
-       * Proposal enacted.
+       * Proposal enacted
        * </pre>
        *
        * <code>STATE_ENACTED = 6;</code>
@@ -14510,7 +14502,7 @@ public final class Governance {
 
       /**
        * <pre>
-       * Default value, always invalid.
+       * Default value, always invalid
        * </pre>
        *
        * <code>STATE_UNSPECIFIED = 0;</code>
@@ -14518,7 +14510,7 @@ public final class Governance {
       public static final int STATE_UNSPECIFIED_VALUE = 0;
       /**
        * <pre>
-       * Proposal enactment has failed - even though proposal has passed, its execution could not be performed.
+       * Proposal enactment has failed - even though proposal has passed, its execution could not be performed
        * </pre>
        *
        * <code>STATE_FAILED = 1;</code>
@@ -14526,7 +14518,7 @@ public final class Governance {
       public static final int STATE_FAILED_VALUE = 1;
       /**
        * <pre>
-       * Proposal is open for voting.
+       * Proposal is open for voting
        * </pre>
        *
        * <code>STATE_OPEN = 2;</code>
@@ -14534,7 +14526,7 @@ public final class Governance {
       public static final int STATE_OPEN_VALUE = 2;
       /**
        * <pre>
-       * Proposal has gained enough support to be executed.
+       * Proposal has gained enough support to be executed
        * </pre>
        *
        * <code>STATE_PASSED = 3;</code>
@@ -14542,7 +14534,7 @@ public final class Governance {
       public static final int STATE_PASSED_VALUE = 3;
       /**
        * <pre>
-       * Proposal wasn't accepted (proposal terms failed validation due to wrong configuration or failing to meet network requirements).
+       * Proposal wasn't accepted (proposal terms failed validation due to wrong configuration or failing to meet network requirements)
        * </pre>
        *
        * <code>STATE_REJECTED = 4;</code>
@@ -14550,7 +14542,7 @@ public final class Governance {
       public static final int STATE_REJECTED_VALUE = 4;
       /**
        * <pre>
-       * Proposal didn't get enough votes (either failing to gain required participation or majority level).
+       * Proposal didn't get enough votes (either failing to gain required participation or majority level)
        * </pre>
        *
        * <code>STATE_DECLINED = 5;</code>
@@ -14558,7 +14550,7 @@ public final class Governance {
       public static final int STATE_DECLINED_VALUE = 5;
       /**
        * <pre>
-       * Proposal enacted.
+       * Proposal enacted
        * </pre>
        *
        * <code>STATE_ENACTED = 6;</code>
@@ -14663,45 +14655,45 @@ public final class Governance {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object iD_;
+    private volatile java.lang.Object id_;
     /**
      * <pre>
-     * Unique proposal identifier.
+     * Unique proposal identifier
      * </pre>
      *
-     * <code>string ID = 1 [json_name = "ID"];</code>
-     * @return The iD.
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
      */
     @java.lang.Override
-    public java.lang.String getID() {
-      java.lang.Object ref = iD_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        iD_ = s;
+        id_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * Unique proposal identifier.
+     * Unique proposal identifier
      * </pre>
      *
-     * <code>string ID = 1 [json_name = "ID"];</code>
-     * @return The bytes for iD.
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getIDBytes() {
-      java.lang.Object ref = iD_;
+        getIdBytes() {
+      java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        iD_ = b;
+        id_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -14712,7 +14704,7 @@ public final class Governance {
     private volatile java.lang.Object reference_;
     /**
      * <pre>
-     * Proposal reference.
+     * Proposal reference
      * </pre>
      *
      * <code>string reference = 2 [json_name = "reference"];</code>
@@ -14733,7 +14725,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Proposal reference.
+     * Proposal reference
      * </pre>
      *
      * <code>string reference = 2 [json_name = "reference"];</code>
@@ -14754,46 +14746,46 @@ public final class Governance {
       }
     }
 
-    public static final int PARTYID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object partyID_;
+    public static final int PARTY_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object partyId_;
     /**
      * <pre>
-     * Party identifier of the author (the party submitting the proposal).
+     * Party identifier of the author (the party submitting the proposal)
      * </pre>
      *
-     * <code>string partyID = 3 [json_name = "partyID", (.validator.field) = { ... }</code>
-     * @return The partyID.
+     * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
+     * @return The partyId.
      */
     @java.lang.Override
-    public java.lang.String getPartyID() {
-      java.lang.Object ref = partyID_;
+    public java.lang.String getPartyId() {
+      java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        partyID_ = s;
+        partyId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * Party identifier of the author (the party submitting the proposal).
+     * Party identifier of the author (the party submitting the proposal)
      * </pre>
      *
-     * <code>string partyID = 3 [json_name = "partyID", (.validator.field) = { ... }</code>
-     * @return The bytes for partyID.
+     * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
+     * @return The bytes for partyId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getPartyIDBytes() {
-      java.lang.Object ref = partyID_;
+        getPartyIdBytes() {
+      java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        partyID_ = b;
+        partyId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -14804,7 +14796,7 @@ public final class Governance {
     private int state_;
     /**
      * <pre>
-     * Proposal state (see (Proposal.State)[#vega.Proposal.State] definition).
+     * Proposal state - See (Proposal.State)[#vega.Proposal.State] definition
      * </pre>
      *
      * <code>.vega.Proposal.State state = 4 [json_name = "state", (.validator.field) = { ... }</code>
@@ -14815,7 +14807,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Proposal state (see (Proposal.State)[#vega.Proposal.State] definition).
+     * Proposal state - See (Proposal.State)[#vega.Proposal.State] definition
      * </pre>
      *
      * <code>.vega.Proposal.State state = 4 [json_name = "state", (.validator.field) = { ... }</code>
@@ -14831,7 +14823,7 @@ public final class Governance {
     private long timestamp_;
     /**
      * <pre>
-     * Proposal timestamp for date and time (in nanoseconds) when proposal was submitted to the network.
+     * Proposal timestamp for date and time (in nanoseconds) when proposal was submitted to the network
      * </pre>
      *
      * <code>int64 timestamp = 5 [json_name = "timestamp"];</code>
@@ -14846,7 +14838,7 @@ public final class Governance {
     private io.vegaprotocol.vega.Governance.ProposalTerms terms_;
     /**
      * <pre>
-     * Proposal configuration and the actual change that is meant to be executed when proposal is enacted.
+     * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
      * </pre>
      *
      * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
@@ -14858,7 +14850,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Proposal configuration and the actual change that is meant to be executed when proposal is enacted.
+     * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
      * </pre>
      *
      * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
@@ -14870,7 +14862,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Proposal configuration and the actual change that is meant to be executed when proposal is enacted.
+     * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
      * </pre>
      *
      * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
@@ -14884,7 +14876,7 @@ public final class Governance {
     private int reason_;
     /**
      * <pre>
-     * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses.
+     * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses
      * </pre>
      *
      * <code>.vega.ProposalError reason = 7 [json_name = "reason"];</code>
@@ -14895,7 +14887,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses.
+     * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses
      * </pre>
      *
      * <code>.vega.ProposalError reason = 7 [json_name = "reason"];</code>
@@ -14921,14 +14913,14 @@ public final class Governance {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, iD_);
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (!getReferenceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, reference_);
       }
-      if (!getPartyIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, partyID_);
+      if (!getPartyIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, partyId_);
       }
       if (state_ != io.vegaprotocol.vega.Governance.Proposal.State.STATE_UNSPECIFIED.getNumber()) {
         output.writeEnum(4, state_);
@@ -14951,14 +14943,14 @@ public final class Governance {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, iD_);
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (!getReferenceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, reference_);
       }
-      if (!getPartyIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, partyID_);
+      if (!getPartyIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, partyId_);
       }
       if (state_ != io.vegaprotocol.vega.Governance.Proposal.State.STATE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -14991,12 +14983,12 @@ public final class Governance {
       }
       io.vegaprotocol.vega.Governance.Proposal other = (io.vegaprotocol.vega.Governance.Proposal) obj;
 
-      if (!getID()
-          .equals(other.getID())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
       if (!getReference()
           .equals(other.getReference())) return false;
-      if (!getPartyID()
-          .equals(other.getPartyID())) return false;
+      if (!getPartyId()
+          .equals(other.getPartyId())) return false;
       if (state_ != other.state_) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
@@ -15018,11 +15010,11 @@ public final class Governance {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getID().hashCode();
+      hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
       hash = (53 * hash) + getReference().hashCode();
-      hash = (37 * hash) + PARTYID_FIELD_NUMBER;
-      hash = (53 * hash) + getPartyID().hashCode();
+      hash = (37 * hash) + PARTY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPartyId().hashCode();
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
@@ -15131,7 +15123,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Governance proposal.
+     * Governance proposal
      * </pre>
      *
      * Protobuf type {@code vega.Proposal}
@@ -15171,11 +15163,11 @@ public final class Governance {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        iD_ = "";
+        id_ = "";
 
         reference_ = "";
 
-        partyID_ = "";
+        partyId_ = "";
 
         state_ = 0;
 
@@ -15215,9 +15207,9 @@ public final class Governance {
       @java.lang.Override
       public io.vegaprotocol.vega.Governance.Proposal buildPartial() {
         io.vegaprotocol.vega.Governance.Proposal result = new io.vegaprotocol.vega.Governance.Proposal(this);
-        result.iD_ = iD_;
+        result.id_ = id_;
         result.reference_ = reference_;
-        result.partyID_ = partyID_;
+        result.partyId_ = partyId_;
         result.state_ = state_;
         result.timestamp_ = timestamp_;
         if (termsBuilder_ == null) {
@@ -15274,16 +15266,16 @@ public final class Governance {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Governance.Proposal other) {
         if (other == io.vegaprotocol.vega.Governance.Proposal.getDefaultInstance()) return this;
-        if (!other.getID().isEmpty()) {
-          iD_ = other.iD_;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
           onChanged();
         }
         if (!other.getReference().isEmpty()) {
           reference_ = other.reference_;
           onChanged();
         }
-        if (!other.getPartyID().isEmpty()) {
-          partyID_ = other.partyID_;
+        if (!other.getPartyId().isEmpty()) {
+          partyId_ = other.partyId_;
           onChanged();
         }
         if (other.state_ != 0) {
@@ -15327,22 +15319,22 @@ public final class Governance {
         return this;
       }
 
-      private java.lang.Object iD_ = "";
+      private java.lang.Object id_ = "";
       /**
        * <pre>
-       * Unique proposal identifier.
+       * Unique proposal identifier
        * </pre>
        *
-       * <code>string ID = 1 [json_name = "ID"];</code>
-       * @return The iD.
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The id.
        */
-      public java.lang.String getID() {
-        java.lang.Object ref = iD_;
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          iD_ = s;
+          id_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -15350,20 +15342,20 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Unique proposal identifier.
+       * Unique proposal identifier
        * </pre>
        *
-       * <code>string ID = 1 [json_name = "ID"];</code>
-       * @return The bytes for iD.
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
-          getIDBytes() {
-        java.lang.Object ref = iD_;
+          getIdBytes() {
+        java.lang.Object ref = id_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          iD_ = b;
+          id_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -15371,54 +15363,54 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Unique proposal identifier.
+       * Unique proposal identifier
        * </pre>
        *
-       * <code>string ID = 1 [json_name = "ID"];</code>
-       * @param value The iD to set.
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setID(
+      public Builder setId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        iD_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Unique proposal identifier.
+       * Unique proposal identifier
        * </pre>
        *
-       * <code>string ID = 1 [json_name = "ID"];</code>
+       * <code>string id = 1 [json_name = "id"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearID() {
+      public Builder clearId() {
 
-        iD_ = getDefaultInstance().getID();
+        id_ = getDefaultInstance().getId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Unique proposal identifier.
+       * Unique proposal identifier
        * </pre>
        *
-       * <code>string ID = 1 [json_name = "ID"];</code>
-       * @param value The bytes for iD to set.
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
-      public Builder setIDBytes(
+      public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        iD_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
@@ -15426,7 +15418,7 @@ public final class Governance {
       private java.lang.Object reference_ = "";
       /**
        * <pre>
-       * Proposal reference.
+       * Proposal reference
        * </pre>
        *
        * <code>string reference = 2 [json_name = "reference"];</code>
@@ -15446,7 +15438,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal reference.
+       * Proposal reference
        * </pre>
        *
        * <code>string reference = 2 [json_name = "reference"];</code>
@@ -15467,7 +15459,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal reference.
+       * Proposal reference
        * </pre>
        *
        * <code>string reference = 2 [json_name = "reference"];</code>
@@ -15486,7 +15478,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal reference.
+       * Proposal reference
        * </pre>
        *
        * <code>string reference = 2 [json_name = "reference"];</code>
@@ -15500,7 +15492,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal reference.
+       * Proposal reference
        * </pre>
        *
        * <code>string reference = 2 [json_name = "reference"];</code>
@@ -15519,22 +15511,22 @@ public final class Governance {
         return this;
       }
 
-      private java.lang.Object partyID_ = "";
+      private java.lang.Object partyId_ = "";
       /**
        * <pre>
-       * Party identifier of the author (the party submitting the proposal).
+       * Party identifier of the author (the party submitting the proposal)
        * </pre>
        *
-       * <code>string partyID = 3 [json_name = "partyID", (.validator.field) = { ... }</code>
-       * @return The partyID.
+       * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
+       * @return The partyId.
        */
-      public java.lang.String getPartyID() {
-        java.lang.Object ref = partyID_;
+      public java.lang.String getPartyId() {
+        java.lang.Object ref = partyId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          partyID_ = s;
+          partyId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -15542,20 +15534,20 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Party identifier of the author (the party submitting the proposal).
+       * Party identifier of the author (the party submitting the proposal)
        * </pre>
        *
-       * <code>string partyID = 3 [json_name = "partyID", (.validator.field) = { ... }</code>
-       * @return The bytes for partyID.
+       * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
+       * @return The bytes for partyId.
        */
       public com.google.protobuf.ByteString
-          getPartyIDBytes() {
-        java.lang.Object ref = partyID_;
+          getPartyIdBytes() {
+        java.lang.Object ref = partyId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          partyID_ = b;
+          partyId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -15563,54 +15555,54 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Party identifier of the author (the party submitting the proposal).
+       * Party identifier of the author (the party submitting the proposal)
        * </pre>
        *
-       * <code>string partyID = 3 [json_name = "partyID", (.validator.field) = { ... }</code>
-       * @param value The partyID to set.
+       * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
+       * @param value The partyId to set.
        * @return This builder for chaining.
        */
-      public Builder setPartyID(
+      public Builder setPartyId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        partyID_ = value;
+        partyId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Party identifier of the author (the party submitting the proposal).
+       * Party identifier of the author (the party submitting the proposal)
        * </pre>
        *
-       * <code>string partyID = 3 [json_name = "partyID", (.validator.field) = { ... }</code>
+       * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearPartyID() {
+      public Builder clearPartyId() {
 
-        partyID_ = getDefaultInstance().getPartyID();
+        partyId_ = getDefaultInstance().getPartyId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Party identifier of the author (the party submitting the proposal).
+       * Party identifier of the author (the party submitting the proposal)
        * </pre>
        *
-       * <code>string partyID = 3 [json_name = "partyID", (.validator.field) = { ... }</code>
-       * @param value The bytes for partyID to set.
+       * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
+       * @param value The bytes for partyId to set.
        * @return This builder for chaining.
        */
-      public Builder setPartyIDBytes(
+      public Builder setPartyIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        partyID_ = value;
+        partyId_ = value;
         onChanged();
         return this;
       }
@@ -15618,7 +15610,7 @@ public final class Governance {
       private int state_ = 0;
       /**
        * <pre>
-       * Proposal state (see (Proposal.State)[#vega.Proposal.State] definition).
+       * Proposal state - See (Proposal.State)[#vega.Proposal.State] definition
        * </pre>
        *
        * <code>.vega.Proposal.State state = 4 [json_name = "state", (.validator.field) = { ... }</code>
@@ -15629,7 +15621,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal state (see (Proposal.State)[#vega.Proposal.State] definition).
+       * Proposal state - See (Proposal.State)[#vega.Proposal.State] definition
        * </pre>
        *
        * <code>.vega.Proposal.State state = 4 [json_name = "state", (.validator.field) = { ... }</code>
@@ -15644,7 +15636,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal state (see (Proposal.State)[#vega.Proposal.State] definition).
+       * Proposal state - See (Proposal.State)[#vega.Proposal.State] definition
        * </pre>
        *
        * <code>.vega.Proposal.State state = 4 [json_name = "state", (.validator.field) = { ... }</code>
@@ -15658,7 +15650,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal state (see (Proposal.State)[#vega.Proposal.State] definition).
+       * Proposal state - See (Proposal.State)[#vega.Proposal.State] definition
        * </pre>
        *
        * <code>.vega.Proposal.State state = 4 [json_name = "state", (.validator.field) = { ... }</code>
@@ -15676,7 +15668,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal state (see (Proposal.State)[#vega.Proposal.State] definition).
+       * Proposal state - See (Proposal.State)[#vega.Proposal.State] definition
        * </pre>
        *
        * <code>.vega.Proposal.State state = 4 [json_name = "state", (.validator.field) = { ... }</code>
@@ -15692,7 +15684,7 @@ public final class Governance {
       private long timestamp_ ;
       /**
        * <pre>
-       * Proposal timestamp for date and time (in nanoseconds) when proposal was submitted to the network.
+       * Proposal timestamp for date and time (in nanoseconds) when proposal was submitted to the network
        * </pre>
        *
        * <code>int64 timestamp = 5 [json_name = "timestamp"];</code>
@@ -15704,7 +15696,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal timestamp for date and time (in nanoseconds) when proposal was submitted to the network.
+       * Proposal timestamp for date and time (in nanoseconds) when proposal was submitted to the network
        * </pre>
        *
        * <code>int64 timestamp = 5 [json_name = "timestamp"];</code>
@@ -15719,7 +15711,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal timestamp for date and time (in nanoseconds) when proposal was submitted to the network.
+       * Proposal timestamp for date and time (in nanoseconds) when proposal was submitted to the network
        * </pre>
        *
        * <code>int64 timestamp = 5 [json_name = "timestamp"];</code>
@@ -15737,7 +15729,7 @@ public final class Governance {
           io.vegaprotocol.vega.Governance.ProposalTerms, io.vegaprotocol.vega.Governance.ProposalTerms.Builder, io.vegaprotocol.vega.Governance.ProposalTermsOrBuilder> termsBuilder_;
       /**
        * <pre>
-       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted.
+       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
        * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
@@ -15748,7 +15740,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted.
+       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
        * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
@@ -15763,7 +15755,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted.
+       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
        * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
@@ -15783,7 +15775,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted.
+       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
        * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
@@ -15801,7 +15793,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted.
+       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
        * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
@@ -15823,7 +15815,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted.
+       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
        * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
@@ -15841,7 +15833,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted.
+       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
        * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
@@ -15853,7 +15845,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted.
+       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
        * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
@@ -15868,7 +15860,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted.
+       * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
        * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
@@ -15890,7 +15882,7 @@ public final class Governance {
       private int reason_ = 0;
       /**
        * <pre>
-       * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses.
+       * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses
        * </pre>
        *
        * <code>.vega.ProposalError reason = 7 [json_name = "reason"];</code>
@@ -15901,7 +15893,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses.
+       * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses
        * </pre>
        *
        * <code>.vega.ProposalError reason = 7 [json_name = "reason"];</code>
@@ -15916,7 +15908,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses.
+       * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses
        * </pre>
        *
        * <code>.vega.ProposalError reason = 7 [json_name = "reason"];</code>
@@ -15930,7 +15922,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses.
+       * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses
        * </pre>
        *
        * <code>.vega.ProposalError reason = 7 [json_name = "reason"];</code>
@@ -15948,7 +15940,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses.
+       * A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses
        * </pre>
        *
        * <code>.vega.ProposalError reason = 7 [json_name = "reason"];</code>
@@ -16019,27 +16011,27 @@ public final class Governance {
 
     /**
      * <pre>
-     * Voter's party identifier.
+     * Voter's party identifier
      * </pre>
      *
-     * <code>string partyID = 1 [json_name = "partyID", (.validator.field) = { ... }</code>
-     * @return The partyID.
+     * <code>string party_id = 1 [json_name = "partyId", (.validator.field) = { ... }</code>
+     * @return The partyId.
      */
-    java.lang.String getPartyID();
+    java.lang.String getPartyId();
     /**
      * <pre>
-     * Voter's party identifier.
+     * Voter's party identifier
      * </pre>
      *
-     * <code>string partyID = 1 [json_name = "partyID", (.validator.field) = { ... }</code>
-     * @return The bytes for partyID.
+     * <code>string party_id = 1 [json_name = "partyId", (.validator.field) = { ... }</code>
+     * @return The bytes for partyId.
      */
     com.google.protobuf.ByteString
-        getPartyIDBytes();
+        getPartyIdBytes();
 
     /**
      * <pre>
-     * Actual vote.
+     * Actual vote
      * </pre>
      *
      * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
@@ -16048,7 +16040,7 @@ public final class Governance {
     int getValueValue();
     /**
      * <pre>
-     * Actual vote.
+     * Actual vote
      * </pre>
      *
      * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
@@ -16058,27 +16050,27 @@ public final class Governance {
 
     /**
      * <pre>
-     * Identifier of the proposal being voted on.
+     * Identifier of the proposal being voted on
      * </pre>
      *
-     * <code>string proposalID = 3 [json_name = "proposalID", (.validator.field) = { ... }</code>
-     * @return The proposalID.
+     * <code>string proposal_id = 3 [json_name = "proposalId", (.validator.field) = { ... }</code>
+     * @return The proposalId.
      */
-    java.lang.String getProposalID();
+    java.lang.String getProposalId();
     /**
      * <pre>
-     * Identifier of the proposal being voted on.
+     * Identifier of the proposal being voted on
      * </pre>
      *
-     * <code>string proposalID = 3 [json_name = "proposalID", (.validator.field) = { ... }</code>
-     * @return The bytes for proposalID.
+     * <code>string proposal_id = 3 [json_name = "proposalId", (.validator.field) = { ... }</code>
+     * @return The bytes for proposalId.
      */
     com.google.protobuf.ByteString
-        getProposalIDBytes();
+        getProposalIdBytes();
 
     /**
      * <pre>
-     * Vote timestamp for date and time (in nanoseconds) when vote was submitted to the network.
+     * Vote timestamp for date and time (in nanoseconds) when vote was submitted to the network
      * </pre>
      *
      * <code>int64 timestamp = 4 [json_name = "timestamp"];</code>
@@ -16088,7 +16080,7 @@ public final class Governance {
   }
   /**
    * <pre>
-   * Governance vote.
+   * Governance vote
    * </pre>
    *
    * Protobuf type {@code vega.Vote}
@@ -16103,9 +16095,9 @@ public final class Governance {
       super(builder);
     }
     private Vote() {
-      partyID_ = "";
+      partyId_ = "";
       value_ = 0;
-      proposalID_ = "";
+      proposalId_ = "";
     }
 
     @java.lang.Override
@@ -16141,7 +16133,7 @@ public final class Governance {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              partyID_ = s;
+              partyId_ = s;
               break;
             }
             case 16: {
@@ -16153,7 +16145,7 @@ public final class Governance {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              proposalID_ = s;
+              proposalId_ = s;
               break;
             }
             case 32: {
@@ -16195,7 +16187,7 @@ public final class Governance {
 
     /**
      * <pre>
-     * Vote value.
+     * Vote value
      * </pre>
      *
      * Protobuf enum {@code vega.Vote.Value}
@@ -16204,7 +16196,7 @@ public final class Governance {
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <pre>
-       * Default value, always invalid.
+       * Default value, always invalid
        * </pre>
        *
        * <code>VALUE_UNSPECIFIED = 0;</code>
@@ -16212,7 +16204,7 @@ public final class Governance {
       VALUE_UNSPECIFIED(0),
       /**
        * <pre>
-       * A vote against the proposal.
+       * A vote against the proposal
        * </pre>
        *
        * <code>VALUE_NO = 1;</code>
@@ -16220,7 +16212,7 @@ public final class Governance {
       VALUE_NO(1),
       /**
        * <pre>
-       * A vote in favour of the proposal.
+       * A vote in favour of the proposal
        * </pre>
        *
        * <code>VALUE_YES = 2;</code>
@@ -16231,7 +16223,7 @@ public final class Governance {
 
       /**
        * <pre>
-       * Default value, always invalid.
+       * Default value, always invalid
        * </pre>
        *
        * <code>VALUE_UNSPECIFIED = 0;</code>
@@ -16239,7 +16231,7 @@ public final class Governance {
       public static final int VALUE_UNSPECIFIED_VALUE = 0;
       /**
        * <pre>
-       * A vote against the proposal.
+       * A vote against the proposal
        * </pre>
        *
        * <code>VALUE_NO = 1;</code>
@@ -16247,7 +16239,7 @@ public final class Governance {
       public static final int VALUE_NO_VALUE = 1;
       /**
        * <pre>
-       * A vote in favour of the proposal.
+       * A vote in favour of the proposal
        * </pre>
        *
        * <code>VALUE_YES = 2;</code>
@@ -16338,46 +16330,46 @@ public final class Governance {
       // @@protoc_insertion_point(enum_scope:vega.Vote.Value)
     }
 
-    public static final int PARTYID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object partyID_;
+    public static final int PARTY_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object partyId_;
     /**
      * <pre>
-     * Voter's party identifier.
+     * Voter's party identifier
      * </pre>
      *
-     * <code>string partyID = 1 [json_name = "partyID", (.validator.field) = { ... }</code>
-     * @return The partyID.
+     * <code>string party_id = 1 [json_name = "partyId", (.validator.field) = { ... }</code>
+     * @return The partyId.
      */
     @java.lang.Override
-    public java.lang.String getPartyID() {
-      java.lang.Object ref = partyID_;
+    public java.lang.String getPartyId() {
+      java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        partyID_ = s;
+        partyId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * Voter's party identifier.
+     * Voter's party identifier
      * </pre>
      *
-     * <code>string partyID = 1 [json_name = "partyID", (.validator.field) = { ... }</code>
-     * @return The bytes for partyID.
+     * <code>string party_id = 1 [json_name = "partyId", (.validator.field) = { ... }</code>
+     * @return The bytes for partyId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getPartyIDBytes() {
-      java.lang.Object ref = partyID_;
+        getPartyIdBytes() {
+      java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        partyID_ = b;
+        partyId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -16388,7 +16380,7 @@ public final class Governance {
     private int value_;
     /**
      * <pre>
-     * Actual vote.
+     * Actual vote
      * </pre>
      *
      * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
@@ -16399,7 +16391,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Actual vote.
+     * Actual vote
      * </pre>
      *
      * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
@@ -16411,46 +16403,46 @@ public final class Governance {
       return result == null ? io.vegaprotocol.vega.Governance.Vote.Value.UNRECOGNIZED : result;
     }
 
-    public static final int PROPOSALID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object proposalID_;
+    public static final int PROPOSAL_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object proposalId_;
     /**
      * <pre>
-     * Identifier of the proposal being voted on.
+     * Identifier of the proposal being voted on
      * </pre>
      *
-     * <code>string proposalID = 3 [json_name = "proposalID", (.validator.field) = { ... }</code>
-     * @return The proposalID.
+     * <code>string proposal_id = 3 [json_name = "proposalId", (.validator.field) = { ... }</code>
+     * @return The proposalId.
      */
     @java.lang.Override
-    public java.lang.String getProposalID() {
-      java.lang.Object ref = proposalID_;
+    public java.lang.String getProposalId() {
+      java.lang.Object ref = proposalId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        proposalID_ = s;
+        proposalId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * Identifier of the proposal being voted on.
+     * Identifier of the proposal being voted on
      * </pre>
      *
-     * <code>string proposalID = 3 [json_name = "proposalID", (.validator.field) = { ... }</code>
-     * @return The bytes for proposalID.
+     * <code>string proposal_id = 3 [json_name = "proposalId", (.validator.field) = { ... }</code>
+     * @return The bytes for proposalId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getProposalIDBytes() {
-      java.lang.Object ref = proposalID_;
+        getProposalIdBytes() {
+      java.lang.Object ref = proposalId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        proposalID_ = b;
+        proposalId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -16461,7 +16453,7 @@ public final class Governance {
     private long timestamp_;
     /**
      * <pre>
-     * Vote timestamp for date and time (in nanoseconds) when vote was submitted to the network.
+     * Vote timestamp for date and time (in nanoseconds) when vote was submitted to the network
      * </pre>
      *
      * <code>int64 timestamp = 4 [json_name = "timestamp"];</code>
@@ -16486,14 +16478,14 @@ public final class Governance {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getPartyIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, partyID_);
+      if (!getPartyIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, partyId_);
       }
       if (value_ != io.vegaprotocol.vega.Governance.Vote.Value.VALUE_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, value_);
       }
-      if (!getProposalIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, proposalID_);
+      if (!getProposalIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, proposalId_);
       }
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
@@ -16507,15 +16499,15 @@ public final class Governance {
       if (size != -1) return size;
 
       size = 0;
-      if (!getPartyIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, partyID_);
+      if (!getPartyIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, partyId_);
       }
       if (value_ != io.vegaprotocol.vega.Governance.Vote.Value.VALUE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, value_);
       }
-      if (!getProposalIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, proposalID_);
+      if (!getProposalIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, proposalId_);
       }
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -16536,11 +16528,11 @@ public final class Governance {
       }
       io.vegaprotocol.vega.Governance.Vote other = (io.vegaprotocol.vega.Governance.Vote) obj;
 
-      if (!getPartyID()
-          .equals(other.getPartyID())) return false;
+      if (!getPartyId()
+          .equals(other.getPartyId())) return false;
       if (value_ != other.value_) return false;
-      if (!getProposalID()
-          .equals(other.getProposalID())) return false;
+      if (!getProposalId()
+          .equals(other.getProposalId())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -16554,12 +16546,12 @@ public final class Governance {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PARTYID_FIELD_NUMBER;
-      hash = (53 * hash) + getPartyID().hashCode();
+      hash = (37 * hash) + PARTY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPartyId().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + value_;
-      hash = (37 * hash) + PROPOSALID_FIELD_NUMBER;
-      hash = (53 * hash) + getProposalID().hashCode();
+      hash = (37 * hash) + PROPOSAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProposalId().hashCode();
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
@@ -16660,7 +16652,7 @@ public final class Governance {
     }
     /**
      * <pre>
-     * Governance vote.
+     * Governance vote
      * </pre>
      *
      * Protobuf type {@code vega.Vote}
@@ -16700,11 +16692,11 @@ public final class Governance {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        partyID_ = "";
+        partyId_ = "";
 
         value_ = 0;
 
-        proposalID_ = "";
+        proposalId_ = "";
 
         timestamp_ = 0L;
 
@@ -16734,9 +16726,9 @@ public final class Governance {
       @java.lang.Override
       public io.vegaprotocol.vega.Governance.Vote buildPartial() {
         io.vegaprotocol.vega.Governance.Vote result = new io.vegaprotocol.vega.Governance.Vote(this);
-        result.partyID_ = partyID_;
+        result.partyId_ = partyId_;
         result.value_ = value_;
-        result.proposalID_ = proposalID_;
+        result.proposalId_ = proposalId_;
         result.timestamp_ = timestamp_;
         onBuilt();
         return result;
@@ -16786,15 +16778,15 @@ public final class Governance {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Governance.Vote other) {
         if (other == io.vegaprotocol.vega.Governance.Vote.getDefaultInstance()) return this;
-        if (!other.getPartyID().isEmpty()) {
-          partyID_ = other.partyID_;
+        if (!other.getPartyId().isEmpty()) {
+          partyId_ = other.partyId_;
           onChanged();
         }
         if (other.value_ != 0) {
           setValueValue(other.getValueValue());
         }
-        if (!other.getProposalID().isEmpty()) {
-          proposalID_ = other.proposalID_;
+        if (!other.getProposalId().isEmpty()) {
+          proposalId_ = other.proposalId_;
           onChanged();
         }
         if (other.getTimestamp() != 0L) {
@@ -16829,22 +16821,22 @@ public final class Governance {
         return this;
       }
 
-      private java.lang.Object partyID_ = "";
+      private java.lang.Object partyId_ = "";
       /**
        * <pre>
-       * Voter's party identifier.
+       * Voter's party identifier
        * </pre>
        *
-       * <code>string partyID = 1 [json_name = "partyID", (.validator.field) = { ... }</code>
-       * @return The partyID.
+       * <code>string party_id = 1 [json_name = "partyId", (.validator.field) = { ... }</code>
+       * @return The partyId.
        */
-      public java.lang.String getPartyID() {
-        java.lang.Object ref = partyID_;
+      public java.lang.String getPartyId() {
+        java.lang.Object ref = partyId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          partyID_ = s;
+          partyId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -16852,20 +16844,20 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Voter's party identifier.
+       * Voter's party identifier
        * </pre>
        *
-       * <code>string partyID = 1 [json_name = "partyID", (.validator.field) = { ... }</code>
-       * @return The bytes for partyID.
+       * <code>string party_id = 1 [json_name = "partyId", (.validator.field) = { ... }</code>
+       * @return The bytes for partyId.
        */
       public com.google.protobuf.ByteString
-          getPartyIDBytes() {
-        java.lang.Object ref = partyID_;
+          getPartyIdBytes() {
+        java.lang.Object ref = partyId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          partyID_ = b;
+          partyId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -16873,54 +16865,54 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Voter's party identifier.
+       * Voter's party identifier
        * </pre>
        *
-       * <code>string partyID = 1 [json_name = "partyID", (.validator.field) = { ... }</code>
-       * @param value The partyID to set.
+       * <code>string party_id = 1 [json_name = "partyId", (.validator.field) = { ... }</code>
+       * @param value The partyId to set.
        * @return This builder for chaining.
        */
-      public Builder setPartyID(
+      public Builder setPartyId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        partyID_ = value;
+        partyId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Voter's party identifier.
+       * Voter's party identifier
        * </pre>
        *
-       * <code>string partyID = 1 [json_name = "partyID", (.validator.field) = { ... }</code>
+       * <code>string party_id = 1 [json_name = "partyId", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearPartyID() {
+      public Builder clearPartyId() {
 
-        partyID_ = getDefaultInstance().getPartyID();
+        partyId_ = getDefaultInstance().getPartyId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Voter's party identifier.
+       * Voter's party identifier
        * </pre>
        *
-       * <code>string partyID = 1 [json_name = "partyID", (.validator.field) = { ... }</code>
-       * @param value The bytes for partyID to set.
+       * <code>string party_id = 1 [json_name = "partyId", (.validator.field) = { ... }</code>
+       * @param value The bytes for partyId to set.
        * @return This builder for chaining.
        */
-      public Builder setPartyIDBytes(
+      public Builder setPartyIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        partyID_ = value;
+        partyId_ = value;
         onChanged();
         return this;
       }
@@ -16928,7 +16920,7 @@ public final class Governance {
       private int value_ = 0;
       /**
        * <pre>
-       * Actual vote.
+       * Actual vote
        * </pre>
        *
        * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
@@ -16939,7 +16931,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Actual vote.
+       * Actual vote
        * </pre>
        *
        * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
@@ -16954,7 +16946,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Actual vote.
+       * Actual vote
        * </pre>
        *
        * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
@@ -16968,7 +16960,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Actual vote.
+       * Actual vote
        * </pre>
        *
        * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
@@ -16986,7 +16978,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Actual vote.
+       * Actual vote
        * </pre>
        *
        * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
@@ -16999,22 +16991,22 @@ public final class Governance {
         return this;
       }
 
-      private java.lang.Object proposalID_ = "";
+      private java.lang.Object proposalId_ = "";
       /**
        * <pre>
-       * Identifier of the proposal being voted on.
+       * Identifier of the proposal being voted on
        * </pre>
        *
-       * <code>string proposalID = 3 [json_name = "proposalID", (.validator.field) = { ... }</code>
-       * @return The proposalID.
+       * <code>string proposal_id = 3 [json_name = "proposalId", (.validator.field) = { ... }</code>
+       * @return The proposalId.
        */
-      public java.lang.String getProposalID() {
-        java.lang.Object ref = proposalID_;
+      public java.lang.String getProposalId() {
+        java.lang.Object ref = proposalId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          proposalID_ = s;
+          proposalId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -17022,20 +17014,20 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Identifier of the proposal being voted on.
+       * Identifier of the proposal being voted on
        * </pre>
        *
-       * <code>string proposalID = 3 [json_name = "proposalID", (.validator.field) = { ... }</code>
-       * @return The bytes for proposalID.
+       * <code>string proposal_id = 3 [json_name = "proposalId", (.validator.field) = { ... }</code>
+       * @return The bytes for proposalId.
        */
       public com.google.protobuf.ByteString
-          getProposalIDBytes() {
-        java.lang.Object ref = proposalID_;
+          getProposalIdBytes() {
+        java.lang.Object ref = proposalId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          proposalID_ = b;
+          proposalId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -17043,54 +17035,54 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Identifier of the proposal being voted on.
+       * Identifier of the proposal being voted on
        * </pre>
        *
-       * <code>string proposalID = 3 [json_name = "proposalID", (.validator.field) = { ... }</code>
-       * @param value The proposalID to set.
+       * <code>string proposal_id = 3 [json_name = "proposalId", (.validator.field) = { ... }</code>
+       * @param value The proposalId to set.
        * @return This builder for chaining.
        */
-      public Builder setProposalID(
+      public Builder setProposalId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        proposalID_ = value;
+        proposalId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Identifier of the proposal being voted on.
+       * Identifier of the proposal being voted on
        * </pre>
        *
-       * <code>string proposalID = 3 [json_name = "proposalID", (.validator.field) = { ... }</code>
+       * <code>string proposal_id = 3 [json_name = "proposalId", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearProposalID() {
+      public Builder clearProposalId() {
 
-        proposalID_ = getDefaultInstance().getProposalID();
+        proposalId_ = getDefaultInstance().getProposalId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Identifier of the proposal being voted on.
+       * Identifier of the proposal being voted on
        * </pre>
        *
-       * <code>string proposalID = 3 [json_name = "proposalID", (.validator.field) = { ... }</code>
-       * @param value The bytes for proposalID to set.
+       * <code>string proposal_id = 3 [json_name = "proposalId", (.validator.field) = { ... }</code>
+       * @param value The bytes for proposalId to set.
        * @return This builder for chaining.
        */
-      public Builder setProposalIDBytes(
+      public Builder setProposalIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        proposalID_ = value;
+        proposalId_ = value;
         onChanged();
         return this;
       }
@@ -17098,7 +17090,7 @@ public final class Governance {
       private long timestamp_ ;
       /**
        * <pre>
-       * Vote timestamp for date and time (in nanoseconds) when vote was submitted to the network.
+       * Vote timestamp for date and time (in nanoseconds) when vote was submitted to the network
        * </pre>
        *
        * <code>int64 timestamp = 4 [json_name = "timestamp"];</code>
@@ -17110,7 +17102,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Vote timestamp for date and time (in nanoseconds) when vote was submitted to the network.
+       * Vote timestamp for date and time (in nanoseconds) when vote was submitted to the network
        * </pre>
        *
        * <code>int64 timestamp = 4 [json_name = "timestamp"];</code>
@@ -17125,7 +17117,7 @@ public final class Governance {
       }
       /**
        * <pre>
-       * Vote timestamp for date and time (in nanoseconds) when vote was submitted to the network.
+       * Vote timestamp for date and time (in nanoseconds) when vote was submitted to the network
        * </pre>
        *
        * <code>int64 timestamp = 4 [json_name = "timestamp"];</code>
@@ -17272,107 +17264,108 @@ public final class Governance {
       "\n\020governance.proto\022\004vega\0326github.com/mwi" +
       "tkow/go-proto-validators/validator.proto" +
       "\032\rmarkets.proto\032\nvega.proto\032\014assets.prot" +
-      "o\"\213\001\n\rFutureProduct\022\"\n\010maturity\030\001 \001(\tB\006\342" +
-      "\337\037\002X\001R\010maturity\0220\n\017settlementAsset\030\002 \001(\t" +
-      "B\006\342\337\037\002X\001R\017settlementAsset\022$\n\tquoteName\030\003" +
-      " \001(\tB\006\342\337\037\002X\001R\tquoteName\"\213\001\n\027InstrumentCo" +
-      "nfiguration\022\032\n\004name\030\001 \001(\tB\006\342\337\037\002X\001R\004name\022" +
-      "\032\n\004code\030\002 \001(\tB\006\342\337\037\002X\001R\004code\022-\n\006future\030d " +
-      "\001(\0132\023.vega.FutureProductH\000R\006futureB\t\n\007pr" +
-      "oduct\"\211\004\n\026NewMarketConfiguration\022E\n\ninst" +
-      "rument\030\001 \001(\0132\035.vega.InstrumentConfigurat" +
-      "ionB\006\342\337\037\002 \001R\ninstrument\022-\n\rdecimalPlaces" +
-      "\030\002 \001(\004B\007\342\337\037\003\030\226\001R\rdecimalPlaces\022\032\n\010metada" +
-      "ta\030\003 \003(\tR\010metadata\022]\n\031priceMonitoringPar" +
-      "ameters\030\004 \001(\0132\037.vega.PriceMonitoringPara" +
-      "metersR\031priceMonitoringParameters\0221\n\006sim" +
-      "ple\030d \001(\0132\027.vega.SimpleModelParamsH\000R\006si" +
-      "mple\0228\n\tlogNormal\030e \001(\0132\030.vega.LogNormal" +
-      "RiskModelH\000R\tlogNormal\022:\n\ncontinuous\030\310\001 " +
-      "\001(\0132\027.vega.ContinuousTradingH\001R\ncontinuo" +
-      "us\0224\n\010discrete\030\311\001 \001(\0132\025.vega.DiscreteTra" +
-      "dingH\001R\010discreteB\020\n\016riskParametersB\r\n\013tr" +
-      "adingMode\"\251\001\n\023NewMarketCommitment\022*\n\020com" +
-      "mitmentAmount\030\001 \001(\004R\020commitmentAmount\022\020\n" +
-      "\003fee\030\002 \001(\tR\003fee\022*\n\005Sells\030\003 \003(\0132\024.vega.Li" +
-      "quidityOrderR\005Sells\022(\n\004Buys\030\004 \003(\0132\024.vega" +
-      ".LiquidityOrderR\004Buys\"\230\001\n\tNewMarket\022>\n\007c" +
-      "hanges\030\001 \001(\0132\034.vega.NewMarketConfigurati" +
-      "onB\006\342\337\037\002 \001R\007changes\022K\n\023liquidityCommitme" +
-      "nt\030\002 \001(\0132\031.vega.NewMarketCommitmentR\023liq" +
-      "uidityCommitment\"\016\n\014UpdateMarket\"R\n\026Upda" +
-      "teNetworkParameter\0228\n\007changes\030\001 \001(\0132\026.ve" +
-      "ga.NetworkParameterB\006\342\337\037\002 \001R\007changes\"?\n\010" +
-      "NewAsset\0223\n\007changes\030\001 \001(\0132\021.vega.AssetSo" +
-      "urceB\006\342\337\037\002 \001R\007changes\"\250\003\n\rProposalTerms\022" +
-      "2\n\020closingTimestamp\030\001 \001(\003B\006\342\337\037\002\020\000R\020closi" +
-      "ngTimestamp\0226\n\022enactmentTimestamp\030\002 \001(\003B" +
-      "\006\342\337\037\002\020\000R\022enactmentTimestamp\0220\n\023validatio" +
-      "nTimestamp\030\003 \001(\003R\023validationTimestamp\0228\n" +
-      "\014updateMarket\030e \001(\0132\022.vega.UpdateMarketH" +
-      "\000R\014updateMarket\022/\n\tnewMarket\030f \001(\0132\017.veg" +
-      "a.NewMarketH\000R\tnewMarket\022V\n\026updateNetwor" +
-      "kParameter\030g \001(\0132\034.vega.UpdateNetworkPar" +
-      "ameterH\000R\026updateNetworkParameter\022,\n\010newA" +
-      "sset\030h \001(\0132\016.vega.NewAssetH\000R\010newAssetB\010" +
-      "\n\006change\"\204\003\n\016GovernanceData\022*\n\010proposal\030" +
-      "\001 \001(\0132\016.vega.ProposalR\010proposal\022\034\n\003yes\030\002" +
-      " \003(\0132\n.vega.VoteR\003yes\022\032\n\002no\030\003 \003(\0132\n.vega" +
-      ".VoteR\002no\022>\n\010yesParty\030\004 \003(\0132\".vega.Gover" +
-      "nanceData.YesPartyEntryR\010yesParty\022;\n\007noP" +
-      "arty\030\005 \003(\0132!.vega.GovernanceData.NoParty" +
-      "EntryR\007noParty\032G\n\rYesPartyEntry\022\020\n\003key\030\001" +
-      " \001(\tR\003key\022 \n\005value\030\002 \001(\0132\n.vega.VoteR\005va" +
-      "lue:\0028\001\032F\n\014NoPartyEntry\022\020\n\003key\030\001 \001(\tR\003ke" +
-      "y\022 \n\005value\030\002 \001(\0132\n.vega.VoteR\005value:\0028\001\"" +
-      "\276\003\n\010Proposal\022\016\n\002ID\030\001 \001(\tR\002ID\022\034\n\treferenc" +
-      "e\030\002 \001(\tR\treference\022 \n\007partyID\030\003 \001(\tB\006\342\337\037" +
-      "\002X\001R\007partyID\0223\n\005state\030\004 \001(\0162\024.vega.Propo" +
-      "sal.StateB\007\342\337\037\003\210\001\001R\005state\022\034\n\ttimestamp\030\005" +
-      " \001(\003R\ttimestamp\0221\n\005terms\030\006 \001(\0132\023.vega.Pr" +
-      "oposalTermsB\006\342\337\037\002 \001R\005terms\022+\n\006reason\030\007 \001" +
-      "(\0162\023.vega.ProposalErrorR\006reason\"\256\001\n\005Stat" +
-      "e\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014STATE_FAILED" +
-      "\020\001\022\016\n\nSTATE_OPEN\020\002\022\020\n\014STATE_PASSED\020\003\022\022\n\016" +
-      "STATE_REJECTED\020\004\022\022\n\016STATE_DECLINED\020\005\022\021\n\r" +
-      "STATE_ENACTED\020\006\022\037\n\033STATE_WAITING_FOR_NOD" +
-      "E_VOTE\020\007\"\334\001\n\004Vote\022 \n\007partyID\030\001 \001(\tB\006\342\337\037\002" +
-      "X\001R\007partyID\022/\n\005value\030\002 \001(\0162\020.vega.Vote.V" +
-      "alueB\007\342\337\037\003\210\001\001R\005value\022&\n\nproposalID\030\003 \001(\t" +
-      "B\006\342\337\037\002X\001R\nproposalID\022\034\n\ttimestamp\030\004 \001(\003R" +
-      "\ttimestamp\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED" +
-      "\020\000\022\014\n\010VALUE_NO\020\001\022\r\n\tVALUE_YES\020\002*\233\t\n\rProp" +
-      "osalError\022\036\n\032PROPOSAL_ERROR_UNSPECIFIED\020" +
-      "\000\022&\n\"PROPOSAL_ERROR_CLOSE_TIME_TOO_SOON\020" +
-      "\001\022&\n\"PROPOSAL_ERROR_CLOSE_TIME_TOO_LATE\020" +
-      "\002\022&\n\"PROPOSAL_ERROR_ENACT_TIME_TOO_SOON\020" +
-      "\003\022&\n\"PROPOSAL_ERROR_ENACT_TIME_TOO_LATE\020" +
-      "\004\022&\n\"PROPOSAL_ERROR_INSUFFICIENT_TOKENS\020" +
-      "\005\022.\n*PROPOSAL_ERROR_INVALID_INSTRUMENT_S" +
-      "ECURITY\020\006\022\035\n\031PROPOSAL_ERROR_NO_PRODUCT\020\007" +
-      "\022&\n\"PROPOSAL_ERROR_UNSUPPORTED_PRODUCT\020\010" +
-      "\0223\n/PROPOSAL_ERROR_INVALID_FUTURE_PRODUC" +
-      "T_TIMESTAMP\020\t\022-\n)PROPOSAL_ERROR_PRODUCT_" +
-      "MATURITY_IS_PASSED\020\n\022\"\n\036PROPOSAL_ERROR_N" +
-      "O_TRADING_MODE\020\013\022+\n\'PROPOSAL_ERROR_UNSUP" +
-      "PORTED_TRADING_MODE\020\014\022)\n%PROPOSAL_ERROR_" +
-      "NODE_VALIDATION_FAILED\020\r\022.\n*PROPOSAL_ERR" +
-      "OR_MISSING_BUILTIN_ASSET_FIELD\020\016\0221\n-PROP" +
-      "OSAL_ERROR_MISSING_ERC20_CONTRACT_ADDRES" +
-      "S\020\017\022 \n\034PROPOSAL_ERROR_INVALID_ASSET\020\020\022*\n" +
-      "&PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS\020" +
-      "\021\022%\n!PROPOSAL_ERROR_NO_RISK_PARAMETERS\020\022" +
-      "\0220\n,PROPOSAL_ERROR_NETWORK_PARAMETER_INV" +
-      "ALID_KEY\020\023\0222\n.PROPOSAL_ERROR_NETWORK_PAR" +
-      "AMETER_INVALID_VALUE\020\024\0226\n2PROPOSAL_ERROR" +
-      "_NETWORK_PARAMETER_VALIDATION_FAILED\020\025\0225" +
-      "\n1PROPOSAL_ERROR_OPENING_AUCTION_DURATIO" +
-      "N_TOO_SMALL\020\026\0225\n1PROPOSAL_ERROR_OPENING_" +
-      "AUCTION_DURATION_TOO_LARGE\020\027\0226\n2PROPOSAL" +
-      "_ERROR_MARKET_MISSING_LIQUIDITY_COMMITME" +
-      "NT\020\030\022/\n+PROPOSAL_ERROR_COULD_NOT_INSTANT" +
-      "IATE_MARKET\020\031B7\n\024io.vegaprotocol.vegaZ\037c" +
-      "ode.vegaprotocol.io/vega/protob\006proto3"
+      "o\"\215\001\n\rFutureProduct\022\"\n\010maturity\030\001 \001(\tB\006\342" +
+      "\337\037\002X\001R\010maturity\0221\n\020settlement_asset\030\002 \001(" +
+      "\tB\006\342\337\037\002X\001R\017settlementAsset\022%\n\nquote_name" +
+      "\030\003 \001(\tB\006\342\337\037\002X\001R\tquoteName\"\213\001\n\027Instrument" +
+      "Configuration\022\032\n\004name\030\001 \001(\tB\006\342\337\037\002X\001R\004nam" +
+      "e\022\032\n\004code\030\002 \001(\tB\006\342\337\037\002X\001R\004code\022-\n\006future\030" +
+      "d \001(\0132\023.vega.FutureProductH\000R\006futureB\t\n\007" +
+      "product\"\217\004\n\026NewMarketConfiguration\022E\n\nin" +
+      "strument\030\001 \001(\0132\035.vega.InstrumentConfigur" +
+      "ationB\006\342\337\037\002 \001R\ninstrument\022.\n\016decimal_pla" +
+      "ces\030\002 \001(\004B\007\342\337\037\003\030\226\001R\rdecimalPlaces\022\032\n\010met" +
+      "adata\030\003 \003(\tR\010metadata\022_\n\033price_monitorin" +
+      "g_parameters\030\004 \001(\0132\037.vega.PriceMonitorin" +
+      "gParametersR\031priceMonitoringParameters\0221" +
+      "\n\006simple\030d \001(\0132\027.vega.SimpleModelParamsH" +
+      "\000R\006simple\0229\n\nlog_normal\030e \001(\0132\030.vega.Log" +
+      "NormalRiskModelH\000R\tlogNormal\022:\n\ncontinuo" +
+      "us\030\310\001 \001(\0132\027.vega.ContinuousTradingH\001R\nco" +
+      "ntinuous\0224\n\010discrete\030\311\001 \001(\0132\025.vega.Discr" +
+      "eteTradingH\001R\010discreteB\021\n\017risk_parameter" +
+      "sB\016\n\014trading_mode\"\252\001\n\023NewMarketCommitmen" +
+      "t\022+\n\021commitment_amount\030\001 \001(\004R\020commitment" +
+      "Amount\022\020\n\003fee\030\002 \001(\tR\003fee\022*\n\005sells\030\003 \003(\0132" +
+      "\024.vega.LiquidityOrderR\005sells\022(\n\004buys\030\004 \003" +
+      "(\0132\024.vega.LiquidityOrderR\004buys\"\231\001\n\tNewMa" +
+      "rket\022>\n\007changes\030\001 \001(\0132\034.vega.NewMarketCo" +
+      "nfigurationB\006\342\337\037\002 \001R\007changes\022L\n\024liquidit" +
+      "y_commitment\030\002 \001(\0132\031.vega.NewMarketCommi" +
+      "tmentR\023liquidityCommitment\"\016\n\014UpdateMark" +
+      "et\"R\n\026UpdateNetworkParameter\0228\n\007changes\030" +
+      "\001 \001(\0132\026.vega.NetworkParameterB\006\342\337\037\002 \001R\007c" +
+      "hanges\"?\n\010NewAsset\0223\n\007changes\030\001 \001(\0132\021.ve" +
+      "ga.AssetSourceB\006\342\337\037\002 \001R\007changes\"\260\003\n\rProp" +
+      "osalTerms\0223\n\021closing_timestamp\030\001 \001(\003B\006\342\337" +
+      "\037\002\020\000R\020closingTimestamp\0227\n\023enactment_time" +
+      "stamp\030\002 \001(\003B\006\342\337\037\002\020\000R\022enactmentTimestamp\022" +
+      "1\n\024validation_timestamp\030\003 \001(\003R\023validatio" +
+      "nTimestamp\0229\n\rupdate_market\030e \001(\0132\022.vega" +
+      ".UpdateMarketH\000R\014updateMarket\0220\n\nnew_mar" +
+      "ket\030f \001(\0132\017.vega.NewMarketH\000R\tnewMarket\022" +
+      "X\n\030update_network_parameter\030g \001(\0132\034.vega" +
+      ".UpdateNetworkParameterH\000R\026updateNetwork" +
+      "Parameter\022-\n\tnew_asset\030h \001(\0132\016.vega.NewA" +
+      "ssetH\000R\010newAssetB\010\n\006change\"\206\003\n\016Governanc" +
+      "eData\022*\n\010proposal\030\001 \001(\0132\016.vega.ProposalR" +
+      "\010proposal\022\034\n\003yes\030\002 \003(\0132\n.vega.VoteR\003yes\022" +
+      "\032\n\002no\030\003 \003(\0132\n.vega.VoteR\002no\022?\n\tyes_party" +
+      "\030\004 \003(\0132\".vega.GovernanceData.YesPartyEnt" +
+      "ryR\010yesParty\022<\n\010no_party\030\005 \003(\0132!.vega.Go" +
+      "vernanceData.NoPartyEntryR\007noParty\032G\n\rYe" +
+      "sPartyEntry\022\020\n\003key\030\001 \001(\tR\003key\022 \n\005value\030\002" +
+      " \001(\0132\n.vega.VoteR\005value:\0028\001\032F\n\014NoPartyEn" +
+      "try\022\020\n\003key\030\001 \001(\tR\003key\022 \n\005value\030\002 \001(\0132\n.v" +
+      "ega.VoteR\005value:\0028\001\"\277\003\n\010Proposal\022\016\n\002id\030\001" +
+      " \001(\tR\002id\022\034\n\treference\030\002 \001(\tR\treference\022!" +
+      "\n\010party_id\030\003 \001(\tB\006\342\337\037\002X\001R\007partyId\0223\n\005sta" +
+      "te\030\004 \001(\0162\024.vega.Proposal.StateB\007\342\337\037\003\210\001\001R" +
+      "\005state\022\034\n\ttimestamp\030\005 \001(\003R\ttimestamp\0221\n\005" +
+      "terms\030\006 \001(\0132\023.vega.ProposalTermsB\006\342\337\037\002 \001" +
+      "R\005terms\022+\n\006reason\030\007 \001(\0162\023.vega.ProposalE" +
+      "rrorR\006reason\"\256\001\n\005State\022\025\n\021STATE_UNSPECIF" +
+      "IED\020\000\022\020\n\014STATE_FAILED\020\001\022\016\n\nSTATE_OPEN\020\002\022" +
+      "\020\n\014STATE_PASSED\020\003\022\022\n\016STATE_REJECTED\020\004\022\022\n" +
+      "\016STATE_DECLINED\020\005\022\021\n\rSTATE_ENACTED\020\006\022\037\n\033" +
+      "STATE_WAITING_FOR_NODE_VOTE\020\007\"\336\001\n\004Vote\022!" +
+      "\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022/\n\005val" +
+      "ue\030\002 \001(\0162\020.vega.Vote.ValueB\007\342\337\037\003\210\001\001R\005val" +
+      "ue\022\'\n\013proposal_id\030\003 \001(\tB\006\342\337\037\002X\001R\nproposa" +
+      "lId\022\034\n\ttimestamp\030\004 \001(\003R\ttimestamp\";\n\005Val" +
+      "ue\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALUE_NO\020\001\022" +
+      "\r\n\tVALUE_YES\020\002*\233\t\n\rProposalError\022\036\n\032PROP" +
+      "OSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROPOSAL_ERR" +
+      "OR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROPOSAL_ERR" +
+      "OR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROPOSAL_ERR" +
+      "OR_ENACT_TIME_TOO_SOON\020\003\022&\n\"PROPOSAL_ERR" +
+      "OR_ENACT_TIME_TOO_LATE\020\004\022&\n\"PROPOSAL_ERR" +
+      "OR_INSUFFICIENT_TOKENS\020\005\022.\n*PROPOSAL_ERR" +
+      "OR_INVALID_INSTRUMENT_SECURITY\020\006\022\035\n\031PROP" +
+      "OSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PROPOSAL_ERRO" +
+      "R_UNSUPPORTED_PRODUCT\020\010\0223\n/PROPOSAL_ERRO" +
+      "R_INVALID_FUTURE_PRODUCT_TIMESTAMP\020\t\022-\n)" +
+      "PROPOSAL_ERROR_PRODUCT_MATURITY_IS_PASSE" +
+      "D\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRADING_MODE\020\013\022" +
+      "+\n\'PROPOSAL_ERROR_UNSUPPORTED_TRADING_MO" +
+      "DE\020\014\022)\n%PROPOSAL_ERROR_NODE_VALIDATION_F" +
+      "AILED\020\r\022.\n*PROPOSAL_ERROR_MISSING_BUILTI" +
+      "N_ASSET_FIELD\020\016\0221\n-PROPOSAL_ERROR_MISSIN" +
+      "G_ERC20_CONTRACT_ADDRESS\020\017\022 \n\034PROPOSAL_E" +
+      "RROR_INVALID_ASSET\020\020\022*\n&PROPOSAL_ERROR_I" +
+      "NCOMPATIBLE_TIMESTAMPS\020\021\022%\n!PROPOSAL_ERR" +
+      "OR_NO_RISK_PARAMETERS\020\022\0220\n,PROPOSAL_ERRO" +
+      "R_NETWORK_PARAMETER_INVALID_KEY\020\023\0222\n.PRO" +
+      "POSAL_ERROR_NETWORK_PARAMETER_INVALID_VA" +
+      "LUE\020\024\0226\n2PROPOSAL_ERROR_NETWORK_PARAMETE" +
+      "R_VALIDATION_FAILED\020\025\0225\n1PROPOSAL_ERROR_" +
+      "OPENING_AUCTION_DURATION_TOO_SMALL\020\026\0225\n1" +
+      "PROPOSAL_ERROR_OPENING_AUCTION_DURATION_" +
+      "TOO_LARGE\020\027\0226\n2PROPOSAL_ERROR_MARKET_MIS" +
+      "SING_LIQUIDITY_COMMITMENT\020\030\022/\n+PROPOSAL_" +
+      "ERROR_COULD_NOT_INSTANTIATE_MARKET\020\031B7\n\024" +
+      "io.vegaprotocol.vegaZ\037code.vegaprotocol." +
+      "io/vega/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -17459,13 +17452,13 @@ public final class Governance {
     internal_static_vega_Proposal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Proposal_descriptor,
-        new java.lang.String[] { "ID", "Reference", "PartyID", "State", "Timestamp", "Terms", "Reason", });
+        new java.lang.String[] { "Id", "Reference", "PartyId", "State", "Timestamp", "Terms", "Reason", });
     internal_static_vega_Vote_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_vega_Vote_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Vote_descriptor,
-        new java.lang.String[] { "PartyID", "Value", "ProposalID", "Timestamp", });
+        new java.lang.String[] { "PartyId", "Value", "ProposalId", "Timestamp", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.github.mwitkow.go_proto_validators.Validator.field);

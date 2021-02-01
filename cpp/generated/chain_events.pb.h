@@ -245,40 +245,40 @@ class BuiltinAssetDeposit PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVegaAssetIDFieldNumber = 1,
-    kPartyIDFieldNumber = 2,
+    kVegaAssetIdFieldNumber = 1,
+    kPartyIdFieldNumber = 2,
     kAmountFieldNumber = 3,
   };
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  void clear_vegaassetid();
-  const std::string& vegaassetid() const;
-  void set_vegaassetid(const std::string& value);
-  void set_vegaassetid(std::string&& value);
-  void set_vegaassetid(const char* value);
-  void set_vegaassetid(const char* value, size_t size);
-  std::string* mutable_vegaassetid();
-  std::string* release_vegaassetid();
-  void set_allocated_vegaassetid(std::string* vegaassetid);
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  void clear_vega_asset_id();
+  const std::string& vega_asset_id() const;
+  void set_vega_asset_id(const std::string& value);
+  void set_vega_asset_id(std::string&& value);
+  void set_vega_asset_id(const char* value);
+  void set_vega_asset_id(const char* value, size_t size);
+  std::string* mutable_vega_asset_id();
+  std::string* release_vega_asset_id();
+  void set_allocated_vega_asset_id(std::string* vega_asset_id);
   private:
-  const std::string& _internal_vegaassetid() const;
-  void _internal_set_vegaassetid(const std::string& value);
-  std::string* _internal_mutable_vegaassetid();
+  const std::string& _internal_vega_asset_id() const;
+  void _internal_set_vega_asset_id(const std::string& value);
+  std::string* _internal_mutable_vega_asset_id();
   public:
 
-  // string partyID = 2 [json_name = "partyID"];
-  void clear_partyid();
-  const std::string& partyid() const;
-  void set_partyid(const std::string& value);
-  void set_partyid(std::string&& value);
-  void set_partyid(const char* value);
-  void set_partyid(const char* value, size_t size);
-  std::string* mutable_partyid();
-  std::string* release_partyid();
-  void set_allocated_partyid(std::string* partyid);
+  // string party_id = 2 [json_name = "partyId"];
+  void clear_party_id();
+  const std::string& party_id() const;
+  void set_party_id(const std::string& value);
+  void set_party_id(std::string&& value);
+  void set_party_id(const char* value);
+  void set_party_id(const char* value, size_t size);
+  std::string* mutable_party_id();
+  std::string* release_party_id();
+  void set_allocated_party_id(std::string* party_id);
   private:
-  const std::string& _internal_partyid() const;
-  void _internal_set_partyid(const std::string& value);
-  std::string* _internal_mutable_partyid();
+  const std::string& _internal_party_id() const;
+  void _internal_set_party_id(const std::string& value);
+  std::string* _internal_mutable_party_id();
   public:
 
   // uint64 amount = 3 [json_name = "amount"];
@@ -297,8 +297,8 @@ class BuiltinAssetDeposit PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vegaassetid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr partyid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vega_asset_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
   ::PROTOBUF_NAMESPACE_ID::uint64 amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_chain_5fevents_2eproto;
@@ -417,40 +417,40 @@ class BuiltinAssetWithdrawal PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVegaAssetIDFieldNumber = 1,
-    kPartyIDFieldNumber = 2,
+    kVegaAssetIdFieldNumber = 1,
+    kPartyIdFieldNumber = 2,
     kAmountFieldNumber = 3,
   };
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  void clear_vegaassetid();
-  const std::string& vegaassetid() const;
-  void set_vegaassetid(const std::string& value);
-  void set_vegaassetid(std::string&& value);
-  void set_vegaassetid(const char* value);
-  void set_vegaassetid(const char* value, size_t size);
-  std::string* mutable_vegaassetid();
-  std::string* release_vegaassetid();
-  void set_allocated_vegaassetid(std::string* vegaassetid);
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  void clear_vega_asset_id();
+  const std::string& vega_asset_id() const;
+  void set_vega_asset_id(const std::string& value);
+  void set_vega_asset_id(std::string&& value);
+  void set_vega_asset_id(const char* value);
+  void set_vega_asset_id(const char* value, size_t size);
+  std::string* mutable_vega_asset_id();
+  std::string* release_vega_asset_id();
+  void set_allocated_vega_asset_id(std::string* vega_asset_id);
   private:
-  const std::string& _internal_vegaassetid() const;
-  void _internal_set_vegaassetid(const std::string& value);
-  std::string* _internal_mutable_vegaassetid();
+  const std::string& _internal_vega_asset_id() const;
+  void _internal_set_vega_asset_id(const std::string& value);
+  std::string* _internal_mutable_vega_asset_id();
   public:
 
-  // string partyID = 2 [json_name = "partyID"];
-  void clear_partyid();
-  const std::string& partyid() const;
-  void set_partyid(const std::string& value);
-  void set_partyid(std::string&& value);
-  void set_partyid(const char* value);
-  void set_partyid(const char* value, size_t size);
-  std::string* mutable_partyid();
-  std::string* release_partyid();
-  void set_allocated_partyid(std::string* partyid);
+  // string party_id = 2 [json_name = "partyId"];
+  void clear_party_id();
+  const std::string& party_id() const;
+  void set_party_id(const std::string& value);
+  void set_party_id(std::string&& value);
+  void set_party_id(const char* value);
+  void set_party_id(const char* value, size_t size);
+  std::string* mutable_party_id();
+  std::string* release_party_id();
+  void set_allocated_party_id(std::string* party_id);
   private:
-  const std::string& _internal_partyid() const;
-  void _internal_set_partyid(const std::string& value);
-  std::string* _internal_mutable_partyid();
+  const std::string& _internal_party_id() const;
+  void _internal_set_party_id(const std::string& value);
+  std::string* _internal_mutable_party_id();
   public:
 
   // uint64 amount = 3 [json_name = "amount"];
@@ -469,8 +469,8 @@ class BuiltinAssetWithdrawal PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vegaassetid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr partyid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vega_asset_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
   ::PROTOBUF_NAMESPACE_ID::uint64 amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_chain_5fevents_2eproto;
@@ -772,22 +772,22 @@ class ERC20AssetList PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVegaAssetIDFieldNumber = 1,
+    kVegaAssetIdFieldNumber = 1,
   };
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  void clear_vegaassetid();
-  const std::string& vegaassetid() const;
-  void set_vegaassetid(const std::string& value);
-  void set_vegaassetid(std::string&& value);
-  void set_vegaassetid(const char* value);
-  void set_vegaassetid(const char* value, size_t size);
-  std::string* mutable_vegaassetid();
-  std::string* release_vegaassetid();
-  void set_allocated_vegaassetid(std::string* vegaassetid);
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  void clear_vega_asset_id();
+  const std::string& vega_asset_id() const;
+  void set_vega_asset_id(const std::string& value);
+  void set_vega_asset_id(std::string&& value);
+  void set_vega_asset_id(const char* value);
+  void set_vega_asset_id(const char* value, size_t size);
+  std::string* mutable_vega_asset_id();
+  std::string* release_vega_asset_id();
+  void set_allocated_vega_asset_id(std::string* vega_asset_id);
   private:
-  const std::string& _internal_vegaassetid() const;
-  void _internal_set_vegaassetid(const std::string& value);
-  std::string* _internal_mutable_vegaassetid();
+  const std::string& _internal_vega_asset_id() const;
+  void _internal_set_vega_asset_id(const std::string& value);
+  std::string* _internal_mutable_vega_asset_id();
   public:
 
   // @@protoc_insertion_point(class_scope:vega.ERC20AssetList)
@@ -797,7 +797,7 @@ class ERC20AssetList PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vegaassetid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vega_asset_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_chain_5fevents_2eproto;
 };
@@ -915,22 +915,22 @@ class ERC20AssetDelist PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVegaAssetIDFieldNumber = 1,
+    kVegaAssetIdFieldNumber = 1,
   };
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  void clear_vegaassetid();
-  const std::string& vegaassetid() const;
-  void set_vegaassetid(const std::string& value);
-  void set_vegaassetid(std::string&& value);
-  void set_vegaassetid(const char* value);
-  void set_vegaassetid(const char* value, size_t size);
-  std::string* mutable_vegaassetid();
-  std::string* release_vegaassetid();
-  void set_allocated_vegaassetid(std::string* vegaassetid);
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  void clear_vega_asset_id();
+  const std::string& vega_asset_id() const;
+  void set_vega_asset_id(const std::string& value);
+  void set_vega_asset_id(std::string&& value);
+  void set_vega_asset_id(const char* value);
+  void set_vega_asset_id(const char* value, size_t size);
+  std::string* mutable_vega_asset_id();
+  std::string* release_vega_asset_id();
+  void set_allocated_vega_asset_id(std::string* vega_asset_id);
   private:
-  const std::string& _internal_vegaassetid() const;
-  void _internal_set_vegaassetid(const std::string& value);
-  std::string* _internal_mutable_vegaassetid();
+  const std::string& _internal_vega_asset_id() const;
+  void _internal_set_vega_asset_id(const std::string& value);
+  std::string* _internal_mutable_vega_asset_id();
   public:
 
   // @@protoc_insertion_point(class_scope:vega.ERC20AssetDelist)
@@ -940,7 +940,7 @@ class ERC20AssetDelist PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vegaassetid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vega_asset_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_chain_5fevents_2eproto;
 };
@@ -1058,57 +1058,57 @@ class ERC20Deposit PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVegaAssetIDFieldNumber = 1,
+    kVegaAssetIdFieldNumber = 1,
     kSourceEthereumAddressFieldNumber = 2,
-    kTargetPartyIDFieldNumber = 3,
+    kTargetPartyIdFieldNumber = 3,
     kAmountFieldNumber = 4,
   };
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  void clear_vegaassetid();
-  const std::string& vegaassetid() const;
-  void set_vegaassetid(const std::string& value);
-  void set_vegaassetid(std::string&& value);
-  void set_vegaassetid(const char* value);
-  void set_vegaassetid(const char* value, size_t size);
-  std::string* mutable_vegaassetid();
-  std::string* release_vegaassetid();
-  void set_allocated_vegaassetid(std::string* vegaassetid);
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  void clear_vega_asset_id();
+  const std::string& vega_asset_id() const;
+  void set_vega_asset_id(const std::string& value);
+  void set_vega_asset_id(std::string&& value);
+  void set_vega_asset_id(const char* value);
+  void set_vega_asset_id(const char* value, size_t size);
+  std::string* mutable_vega_asset_id();
+  std::string* release_vega_asset_id();
+  void set_allocated_vega_asset_id(std::string* vega_asset_id);
   private:
-  const std::string& _internal_vegaassetid() const;
-  void _internal_set_vegaassetid(const std::string& value);
-  std::string* _internal_mutable_vegaassetid();
+  const std::string& _internal_vega_asset_id() const;
+  void _internal_set_vega_asset_id(const std::string& value);
+  std::string* _internal_mutable_vega_asset_id();
   public:
 
-  // string sourceEthereumAddress = 2 [json_name = "sourceEthereumAddress"];
-  void clear_sourceethereumaddress();
-  const std::string& sourceethereumaddress() const;
-  void set_sourceethereumaddress(const std::string& value);
-  void set_sourceethereumaddress(std::string&& value);
-  void set_sourceethereumaddress(const char* value);
-  void set_sourceethereumaddress(const char* value, size_t size);
-  std::string* mutable_sourceethereumaddress();
-  std::string* release_sourceethereumaddress();
-  void set_allocated_sourceethereumaddress(std::string* sourceethereumaddress);
+  // string source_ethereum_address = 2 [json_name = "sourceEthereumAddress"];
+  void clear_source_ethereum_address();
+  const std::string& source_ethereum_address() const;
+  void set_source_ethereum_address(const std::string& value);
+  void set_source_ethereum_address(std::string&& value);
+  void set_source_ethereum_address(const char* value);
+  void set_source_ethereum_address(const char* value, size_t size);
+  std::string* mutable_source_ethereum_address();
+  std::string* release_source_ethereum_address();
+  void set_allocated_source_ethereum_address(std::string* source_ethereum_address);
   private:
-  const std::string& _internal_sourceethereumaddress() const;
-  void _internal_set_sourceethereumaddress(const std::string& value);
-  std::string* _internal_mutable_sourceethereumaddress();
+  const std::string& _internal_source_ethereum_address() const;
+  void _internal_set_source_ethereum_address(const std::string& value);
+  std::string* _internal_mutable_source_ethereum_address();
   public:
 
-  // string targetPartyID = 3 [json_name = "targetPartyID"];
-  void clear_targetpartyid();
-  const std::string& targetpartyid() const;
-  void set_targetpartyid(const std::string& value);
-  void set_targetpartyid(std::string&& value);
-  void set_targetpartyid(const char* value);
-  void set_targetpartyid(const char* value, size_t size);
-  std::string* mutable_targetpartyid();
-  std::string* release_targetpartyid();
-  void set_allocated_targetpartyid(std::string* targetpartyid);
+  // string target_party_id = 3 [json_name = "targetPartyId"];
+  void clear_target_party_id();
+  const std::string& target_party_id() const;
+  void set_target_party_id(const std::string& value);
+  void set_target_party_id(std::string&& value);
+  void set_target_party_id(const char* value);
+  void set_target_party_id(const char* value, size_t size);
+  std::string* mutable_target_party_id();
+  std::string* release_target_party_id();
+  void set_allocated_target_party_id(std::string* target_party_id);
   private:
-  const std::string& _internal_targetpartyid() const;
-  void _internal_set_targetpartyid(const std::string& value);
-  std::string* _internal_mutable_targetpartyid();
+  const std::string& _internal_target_party_id() const;
+  void _internal_set_target_party_id(const std::string& value);
+  std::string* _internal_mutable_target_party_id();
   public:
 
   // string amount = 4 [json_name = "amount"];
@@ -1134,9 +1134,9 @@ class ERC20Deposit PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vegaassetid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sourceethereumaddress_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr targetpartyid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vega_asset_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr source_ethereum_address_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr target_party_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_chain_5fevents_2eproto;
@@ -1255,56 +1255,56 @@ class ERC20Withdrawal PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVegaAssetIDFieldNumber = 1,
+    kVegaAssetIdFieldNumber = 1,
     kTargetEthereumAddressFieldNumber = 2,
     kReferenceNonceFieldNumber = 3,
   };
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  void clear_vegaassetid();
-  const std::string& vegaassetid() const;
-  void set_vegaassetid(const std::string& value);
-  void set_vegaassetid(std::string&& value);
-  void set_vegaassetid(const char* value);
-  void set_vegaassetid(const char* value, size_t size);
-  std::string* mutable_vegaassetid();
-  std::string* release_vegaassetid();
-  void set_allocated_vegaassetid(std::string* vegaassetid);
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  void clear_vega_asset_id();
+  const std::string& vega_asset_id() const;
+  void set_vega_asset_id(const std::string& value);
+  void set_vega_asset_id(std::string&& value);
+  void set_vega_asset_id(const char* value);
+  void set_vega_asset_id(const char* value, size_t size);
+  std::string* mutable_vega_asset_id();
+  std::string* release_vega_asset_id();
+  void set_allocated_vega_asset_id(std::string* vega_asset_id);
   private:
-  const std::string& _internal_vegaassetid() const;
-  void _internal_set_vegaassetid(const std::string& value);
-  std::string* _internal_mutable_vegaassetid();
+  const std::string& _internal_vega_asset_id() const;
+  void _internal_set_vega_asset_id(const std::string& value);
+  std::string* _internal_mutable_vega_asset_id();
   public:
 
-  // string targetEthereumAddress = 2 [json_name = "targetEthereumAddress"];
-  void clear_targetethereumaddress();
-  const std::string& targetethereumaddress() const;
-  void set_targetethereumaddress(const std::string& value);
-  void set_targetethereumaddress(std::string&& value);
-  void set_targetethereumaddress(const char* value);
-  void set_targetethereumaddress(const char* value, size_t size);
-  std::string* mutable_targetethereumaddress();
-  std::string* release_targetethereumaddress();
-  void set_allocated_targetethereumaddress(std::string* targetethereumaddress);
+  // string target_ethereum_address = 2 [json_name = "targetEthereumAddress"];
+  void clear_target_ethereum_address();
+  const std::string& target_ethereum_address() const;
+  void set_target_ethereum_address(const std::string& value);
+  void set_target_ethereum_address(std::string&& value);
+  void set_target_ethereum_address(const char* value);
+  void set_target_ethereum_address(const char* value, size_t size);
+  std::string* mutable_target_ethereum_address();
+  std::string* release_target_ethereum_address();
+  void set_allocated_target_ethereum_address(std::string* target_ethereum_address);
   private:
-  const std::string& _internal_targetethereumaddress() const;
-  void _internal_set_targetethereumaddress(const std::string& value);
-  std::string* _internal_mutable_targetethereumaddress();
+  const std::string& _internal_target_ethereum_address() const;
+  void _internal_set_target_ethereum_address(const std::string& value);
+  std::string* _internal_mutable_target_ethereum_address();
   public:
 
-  // string referenceNonce = 3 [json_name = "referenceNonce"];
-  void clear_referencenonce();
-  const std::string& referencenonce() const;
-  void set_referencenonce(const std::string& value);
-  void set_referencenonce(std::string&& value);
-  void set_referencenonce(const char* value);
-  void set_referencenonce(const char* value, size_t size);
-  std::string* mutable_referencenonce();
-  std::string* release_referencenonce();
-  void set_allocated_referencenonce(std::string* referencenonce);
+  // string reference_nonce = 3 [json_name = "referenceNonce"];
+  void clear_reference_nonce();
+  const std::string& reference_nonce() const;
+  void set_reference_nonce(const std::string& value);
+  void set_reference_nonce(std::string&& value);
+  void set_reference_nonce(const char* value);
+  void set_reference_nonce(const char* value, size_t size);
+  std::string* mutable_reference_nonce();
+  std::string* release_reference_nonce();
+  void set_allocated_reference_nonce(std::string* reference_nonce);
   private:
-  const std::string& _internal_referencenonce() const;
-  void _internal_set_referencenonce(const std::string& value);
-  std::string* _internal_mutable_referencenonce();
+  const std::string& _internal_reference_nonce() const;
+  void _internal_set_reference_nonce(const std::string& value);
+  std::string* _internal_mutable_reference_nonce();
   public:
 
   // @@protoc_insertion_point(class_scope:vega.ERC20Withdrawal)
@@ -1314,9 +1314,9 @@ class ERC20Withdrawal PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vegaassetid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr targetethereumaddress_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr referencenonce_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vega_asset_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr target_ethereum_address_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_nonce_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_chain_5fevents_2eproto;
 };
@@ -1467,41 +1467,41 @@ class ERC20Event PROTOBUF_FINAL :
   void _internal_set_block(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // .vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];
-  bool has_assetlist() const;
+  // .vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];
+  bool has_asset_list() const;
   private:
-  bool _internal_has_assetlist() const;
+  bool _internal_has_asset_list() const;
   public:
-  void clear_assetlist();
-  const ::vega::ERC20AssetList& assetlist() const;
-  ::vega::ERC20AssetList* release_assetlist();
-  ::vega::ERC20AssetList* mutable_assetlist();
-  void set_allocated_assetlist(::vega::ERC20AssetList* assetlist);
+  void clear_asset_list();
+  const ::vega::ERC20AssetList& asset_list() const;
+  ::vega::ERC20AssetList* release_asset_list();
+  ::vega::ERC20AssetList* mutable_asset_list();
+  void set_allocated_asset_list(::vega::ERC20AssetList* asset_list);
   private:
-  const ::vega::ERC20AssetList& _internal_assetlist() const;
-  ::vega::ERC20AssetList* _internal_mutable_assetlist();
+  const ::vega::ERC20AssetList& _internal_asset_list() const;
+  ::vega::ERC20AssetList* _internal_mutable_asset_list();
   public:
-  void unsafe_arena_set_allocated_assetlist(
-      ::vega::ERC20AssetList* assetlist);
-  ::vega::ERC20AssetList* unsafe_arena_release_assetlist();
+  void unsafe_arena_set_allocated_asset_list(
+      ::vega::ERC20AssetList* asset_list);
+  ::vega::ERC20AssetList* unsafe_arena_release_asset_list();
 
-  // .vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];
-  bool has_assetdelist() const;
+  // .vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];
+  bool has_asset_delist() const;
   private:
-  bool _internal_has_assetdelist() const;
+  bool _internal_has_asset_delist() const;
   public:
-  void clear_assetdelist();
-  const ::vega::ERC20AssetDelist& assetdelist() const;
-  ::vega::ERC20AssetDelist* release_assetdelist();
-  ::vega::ERC20AssetDelist* mutable_assetdelist();
-  void set_allocated_assetdelist(::vega::ERC20AssetDelist* assetdelist);
+  void clear_asset_delist();
+  const ::vega::ERC20AssetDelist& asset_delist() const;
+  ::vega::ERC20AssetDelist* release_asset_delist();
+  ::vega::ERC20AssetDelist* mutable_asset_delist();
+  void set_allocated_asset_delist(::vega::ERC20AssetDelist* asset_delist);
   private:
-  const ::vega::ERC20AssetDelist& _internal_assetdelist() const;
-  ::vega::ERC20AssetDelist* _internal_mutable_assetdelist();
+  const ::vega::ERC20AssetDelist& _internal_asset_delist() const;
+  ::vega::ERC20AssetDelist* _internal_mutable_asset_delist();
   public:
-  void unsafe_arena_set_allocated_assetdelist(
-      ::vega::ERC20AssetDelist* assetdelist);
-  ::vega::ERC20AssetDelist* unsafe_arena_release_assetdelist();
+  void unsafe_arena_set_allocated_asset_delist(
+      ::vega::ERC20AssetDelist* asset_delist);
+  ::vega::ERC20AssetDelist* unsafe_arena_release_asset_delist();
 
   // .vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];
   bool has_deposit() const;
@@ -1544,8 +1544,8 @@ class ERC20Event PROTOBUF_FINAL :
   // @@protoc_insertion_point(class_scope:vega.ERC20Event)
  private:
   class _Internal;
-  void set_has_assetlist();
-  void set_has_assetdelist();
+  void set_has_asset_list();
+  void set_has_asset_delist();
   void set_has_deposit();
   void set_has_withdrawal();
 
@@ -1559,8 +1559,8 @@ class ERC20Event PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::uint64 block_;
   union ActionUnion {
     ActionUnion() {}
-    ::vega::ERC20AssetList* assetlist_;
-    ::vega::ERC20AssetDelist* assetdelist_;
+    ::vega::ERC20AssetList* asset_list_;
+    ::vega::ERC20AssetDelist* asset_delist_;
     ::vega::ERC20Deposit* deposit_;
     ::vega::ERC20Withdrawal* withdrawal_;
   } action_;
@@ -1683,56 +1683,56 @@ class BTCDeposit PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVegaAssetIDFieldNumber = 1,
-    kSourceBTCAddressFieldNumber = 2,
+    kVegaAssetIdFieldNumber = 1,
+    kSourceBtcAddressFieldNumber = 2,
     kTargetPartyIdFieldNumber = 3,
   };
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  void clear_vegaassetid();
-  const std::string& vegaassetid() const;
-  void set_vegaassetid(const std::string& value);
-  void set_vegaassetid(std::string&& value);
-  void set_vegaassetid(const char* value);
-  void set_vegaassetid(const char* value, size_t size);
-  std::string* mutable_vegaassetid();
-  std::string* release_vegaassetid();
-  void set_allocated_vegaassetid(std::string* vegaassetid);
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  void clear_vega_asset_id();
+  const std::string& vega_asset_id() const;
+  void set_vega_asset_id(const std::string& value);
+  void set_vega_asset_id(std::string&& value);
+  void set_vega_asset_id(const char* value);
+  void set_vega_asset_id(const char* value, size_t size);
+  std::string* mutable_vega_asset_id();
+  std::string* release_vega_asset_id();
+  void set_allocated_vega_asset_id(std::string* vega_asset_id);
   private:
-  const std::string& _internal_vegaassetid() const;
-  void _internal_set_vegaassetid(const std::string& value);
-  std::string* _internal_mutable_vegaassetid();
+  const std::string& _internal_vega_asset_id() const;
+  void _internal_set_vega_asset_id(const std::string& value);
+  std::string* _internal_mutable_vega_asset_id();
   public:
 
-  // string sourceBTCAddress = 2 [json_name = "sourceBTCAddress"];
-  void clear_sourcebtcaddress();
-  const std::string& sourcebtcaddress() const;
-  void set_sourcebtcaddress(const std::string& value);
-  void set_sourcebtcaddress(std::string&& value);
-  void set_sourcebtcaddress(const char* value);
-  void set_sourcebtcaddress(const char* value, size_t size);
-  std::string* mutable_sourcebtcaddress();
-  std::string* release_sourcebtcaddress();
-  void set_allocated_sourcebtcaddress(std::string* sourcebtcaddress);
+  // string source_btc_address = 2 [json_name = "sourceBtcAddress"];
+  void clear_source_btc_address();
+  const std::string& source_btc_address() const;
+  void set_source_btc_address(const std::string& value);
+  void set_source_btc_address(std::string&& value);
+  void set_source_btc_address(const char* value);
+  void set_source_btc_address(const char* value, size_t size);
+  std::string* mutable_source_btc_address();
+  std::string* release_source_btc_address();
+  void set_allocated_source_btc_address(std::string* source_btc_address);
   private:
-  const std::string& _internal_sourcebtcaddress() const;
-  void _internal_set_sourcebtcaddress(const std::string& value);
-  std::string* _internal_mutable_sourcebtcaddress();
+  const std::string& _internal_source_btc_address() const;
+  void _internal_set_source_btc_address(const std::string& value);
+  std::string* _internal_mutable_source_btc_address();
   public:
 
-  // string targetPartyId = 3 [json_name = "targetPartyId"];
-  void clear_targetpartyid();
-  const std::string& targetpartyid() const;
-  void set_targetpartyid(const std::string& value);
-  void set_targetpartyid(std::string&& value);
-  void set_targetpartyid(const char* value);
-  void set_targetpartyid(const char* value, size_t size);
-  std::string* mutable_targetpartyid();
-  std::string* release_targetpartyid();
-  void set_allocated_targetpartyid(std::string* targetpartyid);
+  // string target_party_id = 3 [json_name = "targetPartyId"];
+  void clear_target_party_id();
+  const std::string& target_party_id() const;
+  void set_target_party_id(const std::string& value);
+  void set_target_party_id(std::string&& value);
+  void set_target_party_id(const char* value);
+  void set_target_party_id(const char* value, size_t size);
+  std::string* mutable_target_party_id();
+  std::string* release_target_party_id();
+  void set_allocated_target_party_id(std::string* target_party_id);
   private:
-  const std::string& _internal_targetpartyid() const;
-  void _internal_set_targetpartyid(const std::string& value);
-  std::string* _internal_mutable_targetpartyid();
+  const std::string& _internal_target_party_id() const;
+  void _internal_set_target_party_id(const std::string& value);
+  std::string* _internal_mutable_target_party_id();
   public:
 
   // @@protoc_insertion_point(class_scope:vega.BTCDeposit)
@@ -1742,9 +1742,9 @@ class BTCDeposit PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vegaassetid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sourcebtcaddress_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr targetpartyid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vega_asset_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr source_btc_address_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr target_party_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_chain_5fevents_2eproto;
 };
@@ -1862,73 +1862,73 @@ class BTCWithdrawal PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVegaAssetIDFieldNumber = 1,
+    kVegaAssetIdFieldNumber = 1,
     kSourcePartyIdFieldNumber = 2,
-    kTargetBTCAddressFieldNumber = 3,
+    kTargetBtcAddressFieldNumber = 3,
     kReferenceNonceFieldNumber = 4,
   };
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  void clear_vegaassetid();
-  const std::string& vegaassetid() const;
-  void set_vegaassetid(const std::string& value);
-  void set_vegaassetid(std::string&& value);
-  void set_vegaassetid(const char* value);
-  void set_vegaassetid(const char* value, size_t size);
-  std::string* mutable_vegaassetid();
-  std::string* release_vegaassetid();
-  void set_allocated_vegaassetid(std::string* vegaassetid);
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  void clear_vega_asset_id();
+  const std::string& vega_asset_id() const;
+  void set_vega_asset_id(const std::string& value);
+  void set_vega_asset_id(std::string&& value);
+  void set_vega_asset_id(const char* value);
+  void set_vega_asset_id(const char* value, size_t size);
+  std::string* mutable_vega_asset_id();
+  std::string* release_vega_asset_id();
+  void set_allocated_vega_asset_id(std::string* vega_asset_id);
   private:
-  const std::string& _internal_vegaassetid() const;
-  void _internal_set_vegaassetid(const std::string& value);
-  std::string* _internal_mutable_vegaassetid();
+  const std::string& _internal_vega_asset_id() const;
+  void _internal_set_vega_asset_id(const std::string& value);
+  std::string* _internal_mutable_vega_asset_id();
   public:
 
-  // string sourcePartyId = 2 [json_name = "sourcePartyId"];
-  void clear_sourcepartyid();
-  const std::string& sourcepartyid() const;
-  void set_sourcepartyid(const std::string& value);
-  void set_sourcepartyid(std::string&& value);
-  void set_sourcepartyid(const char* value);
-  void set_sourcepartyid(const char* value, size_t size);
-  std::string* mutable_sourcepartyid();
-  std::string* release_sourcepartyid();
-  void set_allocated_sourcepartyid(std::string* sourcepartyid);
+  // string source_party_id = 2 [json_name = "sourcePartyId"];
+  void clear_source_party_id();
+  const std::string& source_party_id() const;
+  void set_source_party_id(const std::string& value);
+  void set_source_party_id(std::string&& value);
+  void set_source_party_id(const char* value);
+  void set_source_party_id(const char* value, size_t size);
+  std::string* mutable_source_party_id();
+  std::string* release_source_party_id();
+  void set_allocated_source_party_id(std::string* source_party_id);
   private:
-  const std::string& _internal_sourcepartyid() const;
-  void _internal_set_sourcepartyid(const std::string& value);
-  std::string* _internal_mutable_sourcepartyid();
+  const std::string& _internal_source_party_id() const;
+  void _internal_set_source_party_id(const std::string& value);
+  std::string* _internal_mutable_source_party_id();
   public:
 
-  // string targetBTCAddress = 3 [json_name = "targetBTCAddress"];
-  void clear_targetbtcaddress();
-  const std::string& targetbtcaddress() const;
-  void set_targetbtcaddress(const std::string& value);
-  void set_targetbtcaddress(std::string&& value);
-  void set_targetbtcaddress(const char* value);
-  void set_targetbtcaddress(const char* value, size_t size);
-  std::string* mutable_targetbtcaddress();
-  std::string* release_targetbtcaddress();
-  void set_allocated_targetbtcaddress(std::string* targetbtcaddress);
+  // string target_btc_address = 3 [json_name = "targetBtcAddress"];
+  void clear_target_btc_address();
+  const std::string& target_btc_address() const;
+  void set_target_btc_address(const std::string& value);
+  void set_target_btc_address(std::string&& value);
+  void set_target_btc_address(const char* value);
+  void set_target_btc_address(const char* value, size_t size);
+  std::string* mutable_target_btc_address();
+  std::string* release_target_btc_address();
+  void set_allocated_target_btc_address(std::string* target_btc_address);
   private:
-  const std::string& _internal_targetbtcaddress() const;
-  void _internal_set_targetbtcaddress(const std::string& value);
-  std::string* _internal_mutable_targetbtcaddress();
+  const std::string& _internal_target_btc_address() const;
+  void _internal_set_target_btc_address(const std::string& value);
+  std::string* _internal_mutable_target_btc_address();
   public:
 
-  // string referenceNonce = 4 [json_name = "referenceNonce"];
-  void clear_referencenonce();
-  const std::string& referencenonce() const;
-  void set_referencenonce(const std::string& value);
-  void set_referencenonce(std::string&& value);
-  void set_referencenonce(const char* value);
-  void set_referencenonce(const char* value, size_t size);
-  std::string* mutable_referencenonce();
-  std::string* release_referencenonce();
-  void set_allocated_referencenonce(std::string* referencenonce);
+  // string reference_nonce = 4 [json_name = "referenceNonce"];
+  void clear_reference_nonce();
+  const std::string& reference_nonce() const;
+  void set_reference_nonce(const std::string& value);
+  void set_reference_nonce(std::string&& value);
+  void set_reference_nonce(const char* value);
+  void set_reference_nonce(const char* value, size_t size);
+  std::string* mutable_reference_nonce();
+  std::string* release_reference_nonce();
+  void set_allocated_reference_nonce(std::string* reference_nonce);
   private:
-  const std::string& _internal_referencenonce() const;
-  void _internal_set_referencenonce(const std::string& value);
-  std::string* _internal_mutable_referencenonce();
+  const std::string& _internal_reference_nonce() const;
+  void _internal_set_reference_nonce(const std::string& value);
+  std::string* _internal_mutable_reference_nonce();
   public:
 
   // @@protoc_insertion_point(class_scope:vega.BTCWithdrawal)
@@ -1938,10 +1938,10 @@ class BTCWithdrawal PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vegaassetid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sourcepartyid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr targetbtcaddress_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr referencenonce_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vega_asset_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr source_party_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr target_btc_address_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_nonce_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_chain_5fevents_2eproto;
 };
@@ -2559,49 +2559,49 @@ class Identifier PROTOBUF_FINAL :
     kEthereumAddressFieldNumber = 1,
     kBitcoinAddressFieldNumber = 2,
   };
-  // .vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];
-  bool has_ethereumaddress() const;
+  // .vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];
+  bool has_ethereum_address() const;
   private:
-  bool _internal_has_ethereumaddress() const;
+  bool _internal_has_ethereum_address() const;
   public:
-  void clear_ethereumaddress();
-  const ::vega::EthereumAddress& ethereumaddress() const;
-  ::vega::EthereumAddress* release_ethereumaddress();
-  ::vega::EthereumAddress* mutable_ethereumaddress();
-  void set_allocated_ethereumaddress(::vega::EthereumAddress* ethereumaddress);
+  void clear_ethereum_address();
+  const ::vega::EthereumAddress& ethereum_address() const;
+  ::vega::EthereumAddress* release_ethereum_address();
+  ::vega::EthereumAddress* mutable_ethereum_address();
+  void set_allocated_ethereum_address(::vega::EthereumAddress* ethereum_address);
   private:
-  const ::vega::EthereumAddress& _internal_ethereumaddress() const;
-  ::vega::EthereumAddress* _internal_mutable_ethereumaddress();
+  const ::vega::EthereumAddress& _internal_ethereum_address() const;
+  ::vega::EthereumAddress* _internal_mutable_ethereum_address();
   public:
-  void unsafe_arena_set_allocated_ethereumaddress(
-      ::vega::EthereumAddress* ethereumaddress);
-  ::vega::EthereumAddress* unsafe_arena_release_ethereumaddress();
+  void unsafe_arena_set_allocated_ethereum_address(
+      ::vega::EthereumAddress* ethereum_address);
+  ::vega::EthereumAddress* unsafe_arena_release_ethereum_address();
 
-  // .vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];
-  bool has_bitcoinaddress() const;
+  // .vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];
+  bool has_bitcoin_address() const;
   private:
-  bool _internal_has_bitcoinaddress() const;
+  bool _internal_has_bitcoin_address() const;
   public:
-  void clear_bitcoinaddress();
-  const ::vega::BitcoinAddress& bitcoinaddress() const;
-  ::vega::BitcoinAddress* release_bitcoinaddress();
-  ::vega::BitcoinAddress* mutable_bitcoinaddress();
-  void set_allocated_bitcoinaddress(::vega::BitcoinAddress* bitcoinaddress);
+  void clear_bitcoin_address();
+  const ::vega::BitcoinAddress& bitcoin_address() const;
+  ::vega::BitcoinAddress* release_bitcoin_address();
+  ::vega::BitcoinAddress* mutable_bitcoin_address();
+  void set_allocated_bitcoin_address(::vega::BitcoinAddress* bitcoin_address);
   private:
-  const ::vega::BitcoinAddress& _internal_bitcoinaddress() const;
-  ::vega::BitcoinAddress* _internal_mutable_bitcoinaddress();
+  const ::vega::BitcoinAddress& _internal_bitcoin_address() const;
+  ::vega::BitcoinAddress* _internal_mutable_bitcoin_address();
   public:
-  void unsafe_arena_set_allocated_bitcoinaddress(
-      ::vega::BitcoinAddress* bitcoinaddress);
-  ::vega::BitcoinAddress* unsafe_arena_release_bitcoinaddress();
+  void unsafe_arena_set_allocated_bitcoin_address(
+      ::vega::BitcoinAddress* bitcoin_address);
+  ::vega::BitcoinAddress* unsafe_arena_release_bitcoin_address();
 
   void clear_identifier();
   IdentifierCase identifier_case() const;
   // @@protoc_insertion_point(class_scope:vega.Identifier)
  private:
   class _Internal;
-  void set_has_ethereumaddress();
-  void set_has_bitcoinaddress();
+  void set_has_ethereum_address();
+  void set_has_bitcoin_address();
 
   inline bool has_identifier() const;
   inline void clear_has_identifier();
@@ -2611,8 +2611,8 @@ class Identifier PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   union IdentifierUnion {
     IdentifierUnion() {}
-    ::vega::EthereumAddress* ethereumaddress_;
-    ::vega::BitcoinAddress* bitcoinaddress_;
+    ::vega::EthereumAddress* ethereum_address_;
+    ::vega::BitcoinAddress* bitcoin_address_;
   } identifier_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -3029,24 +3029,24 @@ class ValidatorEvent PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSourceIDFieldNumber = 1,
+    kSourceIdFieldNumber = 1,
     kAddFieldNumber = 1001,
     kRmFieldNumber = 1002,
   };
-  // string sourceID = 1 [json_name = "sourceID"];
-  void clear_sourceid();
-  const std::string& sourceid() const;
-  void set_sourceid(const std::string& value);
-  void set_sourceid(std::string&& value);
-  void set_sourceid(const char* value);
-  void set_sourceid(const char* value, size_t size);
-  std::string* mutable_sourceid();
-  std::string* release_sourceid();
-  void set_allocated_sourceid(std::string* sourceid);
+  // string source_id = 1 [json_name = "sourceId"];
+  void clear_source_id();
+  const std::string& source_id() const;
+  void set_source_id(const std::string& value);
+  void set_source_id(std::string&& value);
+  void set_source_id(const char* value);
+  void set_source_id(const char* value, size_t size);
+  std::string* mutable_source_id();
+  std::string* release_source_id();
+  void set_allocated_source_id(std::string* source_id);
   private:
-  const std::string& _internal_sourceid() const;
-  void _internal_set_sourceid(const std::string& value);
-  std::string* _internal_mutable_sourceid();
+  const std::string& _internal_source_id() const;
+  void _internal_set_source_id(const std::string& value);
+  std::string* _internal_mutable_source_id();
   public:
 
   // .vega.AddValidator add = 1001 [json_name = "add"];
@@ -3099,7 +3099,7 @@ class ValidatorEvent PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sourceid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr source_id_;
   union ActionUnion {
     ActionUnion() {}
     ::vega::AddValidator* add_;
@@ -3232,27 +3232,27 @@ class ChainEvent PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTxIDFieldNumber = 1,
+    kTxIdFieldNumber = 1,
     kNonceFieldNumber = 2,
     kBuiltinFieldNumber = 1001,
     kErc20FieldNumber = 1002,
     kBtcFieldNumber = 1003,
     kValidatorFieldNumber = 1004,
   };
-  // string txID = 1 [json_name = "txID"];
-  void clear_txid();
-  const std::string& txid() const;
-  void set_txid(const std::string& value);
-  void set_txid(std::string&& value);
-  void set_txid(const char* value);
-  void set_txid(const char* value, size_t size);
-  std::string* mutable_txid();
-  std::string* release_txid();
-  void set_allocated_txid(std::string* txid);
+  // string tx_id = 1 [json_name = "txId"];
+  void clear_tx_id();
+  const std::string& tx_id() const;
+  void set_tx_id(const std::string& value);
+  void set_tx_id(std::string&& value);
+  void set_tx_id(const char* value);
+  void set_tx_id(const char* value, size_t size);
+  std::string* mutable_tx_id();
+  std::string* release_tx_id();
+  void set_allocated_tx_id(std::string* tx_id);
   private:
-  const std::string& _internal_txid() const;
-  void _internal_set_txid(const std::string& value);
-  std::string* _internal_mutable_txid();
+  const std::string& _internal_tx_id() const;
+  void _internal_set_tx_id(const std::string& value);
+  std::string* _internal_mutable_tx_id();
   public:
 
   // uint64 nonce = 2 [json_name = "nonce"];
@@ -3352,7 +3352,7 @@ class ChainEvent PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr txid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tx_id_;
   ::PROTOBUF_NAMESPACE_ID::uint64 nonce_;
   union EventUnion {
     EventUnion() {}
@@ -3377,126 +3377,126 @@ class ChainEvent PROTOBUF_FINAL :
 #endif  // __GNUC__
 // BuiltinAssetDeposit
 
-// string vegaAssetID = 1 [json_name = "vegaAssetID"];
-inline void BuiltinAssetDeposit::clear_vegaassetid() {
-  vegaassetid_.ClearToEmpty();
+// string vega_asset_id = 1 [json_name = "vegaAssetId"];
+inline void BuiltinAssetDeposit::clear_vega_asset_id() {
+  vega_asset_id_.ClearToEmpty();
 }
-inline const std::string& BuiltinAssetDeposit::vegaassetid() const {
-  // @@protoc_insertion_point(field_get:vega.BuiltinAssetDeposit.vegaAssetID)
-  return _internal_vegaassetid();
+inline const std::string& BuiltinAssetDeposit::vega_asset_id() const {
+  // @@protoc_insertion_point(field_get:vega.BuiltinAssetDeposit.vega_asset_id)
+  return _internal_vega_asset_id();
 }
-inline void BuiltinAssetDeposit::set_vegaassetid(const std::string& value) {
-  _internal_set_vegaassetid(value);
-  // @@protoc_insertion_point(field_set:vega.BuiltinAssetDeposit.vegaAssetID)
+inline void BuiltinAssetDeposit::set_vega_asset_id(const std::string& value) {
+  _internal_set_vega_asset_id(value);
+  // @@protoc_insertion_point(field_set:vega.BuiltinAssetDeposit.vega_asset_id)
 }
-inline std::string* BuiltinAssetDeposit::mutable_vegaassetid() {
-  // @@protoc_insertion_point(field_mutable:vega.BuiltinAssetDeposit.vegaAssetID)
-  return _internal_mutable_vegaassetid();
+inline std::string* BuiltinAssetDeposit::mutable_vega_asset_id() {
+  // @@protoc_insertion_point(field_mutable:vega.BuiltinAssetDeposit.vega_asset_id)
+  return _internal_mutable_vega_asset_id();
 }
-inline const std::string& BuiltinAssetDeposit::_internal_vegaassetid() const {
-  return vegaassetid_.Get();
+inline const std::string& BuiltinAssetDeposit::_internal_vega_asset_id() const {
+  return vega_asset_id_.Get();
 }
-inline void BuiltinAssetDeposit::_internal_set_vegaassetid(const std::string& value) {
+inline void BuiltinAssetDeposit::_internal_set_vega_asset_id(const std::string& value) {
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void BuiltinAssetDeposit::set_vegaassetid(std::string&& value) {
+inline void BuiltinAssetDeposit::set_vega_asset_id(std::string&& value) {
 
-  vegaassetid_.Set(
+  vega_asset_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAssetDeposit.vegaAssetID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAssetDeposit.vega_asset_id)
 }
-inline void BuiltinAssetDeposit::set_vegaassetid(const char* value) {
+inline void BuiltinAssetDeposit::set_vega_asset_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.BuiltinAssetDeposit.vegaAssetID)
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.BuiltinAssetDeposit.vega_asset_id)
 }
-inline void BuiltinAssetDeposit::set_vegaassetid(const char* value,
+inline void BuiltinAssetDeposit::set_vega_asset_id(const char* value,
     size_t size) {
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAssetDeposit.vegaAssetID)
+  // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAssetDeposit.vega_asset_id)
 }
-inline std::string* BuiltinAssetDeposit::_internal_mutable_vegaassetid() {
+inline std::string* BuiltinAssetDeposit::_internal_mutable_vega_asset_id() {
 
-  return vegaassetid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return vega_asset_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* BuiltinAssetDeposit::release_vegaassetid() {
-  // @@protoc_insertion_point(field_release:vega.BuiltinAssetDeposit.vegaAssetID)
-  return vegaassetid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* BuiltinAssetDeposit::release_vega_asset_id() {
+  // @@protoc_insertion_point(field_release:vega.BuiltinAssetDeposit.vega_asset_id)
+  return vega_asset_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void BuiltinAssetDeposit::set_allocated_vegaassetid(std::string* vegaassetid) {
-  if (vegaassetid != nullptr) {
+inline void BuiltinAssetDeposit::set_allocated_vega_asset_id(std::string* vega_asset_id) {
+  if (vega_asset_id != nullptr) {
 
   } else {
 
   }
-  vegaassetid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vegaassetid,
+  vega_asset_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vega_asset_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAssetDeposit.vegaAssetID)
+  // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAssetDeposit.vega_asset_id)
 }
 
-// string partyID = 2 [json_name = "partyID"];
-inline void BuiltinAssetDeposit::clear_partyid() {
-  partyid_.ClearToEmpty();
+// string party_id = 2 [json_name = "partyId"];
+inline void BuiltinAssetDeposit::clear_party_id() {
+  party_id_.ClearToEmpty();
 }
-inline const std::string& BuiltinAssetDeposit::partyid() const {
-  // @@protoc_insertion_point(field_get:vega.BuiltinAssetDeposit.partyID)
-  return _internal_partyid();
+inline const std::string& BuiltinAssetDeposit::party_id() const {
+  // @@protoc_insertion_point(field_get:vega.BuiltinAssetDeposit.party_id)
+  return _internal_party_id();
 }
-inline void BuiltinAssetDeposit::set_partyid(const std::string& value) {
-  _internal_set_partyid(value);
-  // @@protoc_insertion_point(field_set:vega.BuiltinAssetDeposit.partyID)
+inline void BuiltinAssetDeposit::set_party_id(const std::string& value) {
+  _internal_set_party_id(value);
+  // @@protoc_insertion_point(field_set:vega.BuiltinAssetDeposit.party_id)
 }
-inline std::string* BuiltinAssetDeposit::mutable_partyid() {
-  // @@protoc_insertion_point(field_mutable:vega.BuiltinAssetDeposit.partyID)
-  return _internal_mutable_partyid();
+inline std::string* BuiltinAssetDeposit::mutable_party_id() {
+  // @@protoc_insertion_point(field_mutable:vega.BuiltinAssetDeposit.party_id)
+  return _internal_mutable_party_id();
 }
-inline const std::string& BuiltinAssetDeposit::_internal_partyid() const {
-  return partyid_.Get();
+inline const std::string& BuiltinAssetDeposit::_internal_party_id() const {
+  return party_id_.Get();
 }
-inline void BuiltinAssetDeposit::_internal_set_partyid(const std::string& value) {
+inline void BuiltinAssetDeposit::_internal_set_party_id(const std::string& value) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void BuiltinAssetDeposit::set_partyid(std::string&& value) {
+inline void BuiltinAssetDeposit::set_party_id(std::string&& value) {
 
-  partyid_.Set(
+  party_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAssetDeposit.partyID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAssetDeposit.party_id)
 }
-inline void BuiltinAssetDeposit::set_partyid(const char* value) {
+inline void BuiltinAssetDeposit::set_party_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.BuiltinAssetDeposit.partyID)
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.BuiltinAssetDeposit.party_id)
 }
-inline void BuiltinAssetDeposit::set_partyid(const char* value,
+inline void BuiltinAssetDeposit::set_party_id(const char* value,
     size_t size) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAssetDeposit.partyID)
+  // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAssetDeposit.party_id)
 }
-inline std::string* BuiltinAssetDeposit::_internal_mutable_partyid() {
+inline std::string* BuiltinAssetDeposit::_internal_mutable_party_id() {
 
-  return partyid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* BuiltinAssetDeposit::release_partyid() {
-  // @@protoc_insertion_point(field_release:vega.BuiltinAssetDeposit.partyID)
-  return partyid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* BuiltinAssetDeposit::release_party_id() {
+  // @@protoc_insertion_point(field_release:vega.BuiltinAssetDeposit.party_id)
+  return party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void BuiltinAssetDeposit::set_allocated_partyid(std::string* partyid) {
-  if (partyid != nullptr) {
+inline void BuiltinAssetDeposit::set_allocated_party_id(std::string* party_id) {
+  if (party_id != nullptr) {
 
   } else {
 
   }
-  partyid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), partyid,
+  party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAssetDeposit.partyID)
+  // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAssetDeposit.party_id)
 }
 
 // uint64 amount = 3 [json_name = "amount"];
@@ -3523,126 +3523,126 @@ inline void BuiltinAssetDeposit::set_amount(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // BuiltinAssetWithdrawal
 
-// string vegaAssetID = 1 [json_name = "vegaAssetID"];
-inline void BuiltinAssetWithdrawal::clear_vegaassetid() {
-  vegaassetid_.ClearToEmpty();
+// string vega_asset_id = 1 [json_name = "vegaAssetId"];
+inline void BuiltinAssetWithdrawal::clear_vega_asset_id() {
+  vega_asset_id_.ClearToEmpty();
 }
-inline const std::string& BuiltinAssetWithdrawal::vegaassetid() const {
-  // @@protoc_insertion_point(field_get:vega.BuiltinAssetWithdrawal.vegaAssetID)
-  return _internal_vegaassetid();
+inline const std::string& BuiltinAssetWithdrawal::vega_asset_id() const {
+  // @@protoc_insertion_point(field_get:vega.BuiltinAssetWithdrawal.vega_asset_id)
+  return _internal_vega_asset_id();
 }
-inline void BuiltinAssetWithdrawal::set_vegaassetid(const std::string& value) {
-  _internal_set_vegaassetid(value);
-  // @@protoc_insertion_point(field_set:vega.BuiltinAssetWithdrawal.vegaAssetID)
+inline void BuiltinAssetWithdrawal::set_vega_asset_id(const std::string& value) {
+  _internal_set_vega_asset_id(value);
+  // @@protoc_insertion_point(field_set:vega.BuiltinAssetWithdrawal.vega_asset_id)
 }
-inline std::string* BuiltinAssetWithdrawal::mutable_vegaassetid() {
-  // @@protoc_insertion_point(field_mutable:vega.BuiltinAssetWithdrawal.vegaAssetID)
-  return _internal_mutable_vegaassetid();
+inline std::string* BuiltinAssetWithdrawal::mutable_vega_asset_id() {
+  // @@protoc_insertion_point(field_mutable:vega.BuiltinAssetWithdrawal.vega_asset_id)
+  return _internal_mutable_vega_asset_id();
 }
-inline const std::string& BuiltinAssetWithdrawal::_internal_vegaassetid() const {
-  return vegaassetid_.Get();
+inline const std::string& BuiltinAssetWithdrawal::_internal_vega_asset_id() const {
+  return vega_asset_id_.Get();
 }
-inline void BuiltinAssetWithdrawal::_internal_set_vegaassetid(const std::string& value) {
+inline void BuiltinAssetWithdrawal::_internal_set_vega_asset_id(const std::string& value) {
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void BuiltinAssetWithdrawal::set_vegaassetid(std::string&& value) {
+inline void BuiltinAssetWithdrawal::set_vega_asset_id(std::string&& value) {
 
-  vegaassetid_.Set(
+  vega_asset_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAssetWithdrawal.vegaAssetID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAssetWithdrawal.vega_asset_id)
 }
-inline void BuiltinAssetWithdrawal::set_vegaassetid(const char* value) {
+inline void BuiltinAssetWithdrawal::set_vega_asset_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.BuiltinAssetWithdrawal.vegaAssetID)
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.BuiltinAssetWithdrawal.vega_asset_id)
 }
-inline void BuiltinAssetWithdrawal::set_vegaassetid(const char* value,
+inline void BuiltinAssetWithdrawal::set_vega_asset_id(const char* value,
     size_t size) {
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAssetWithdrawal.vegaAssetID)
+  // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAssetWithdrawal.vega_asset_id)
 }
-inline std::string* BuiltinAssetWithdrawal::_internal_mutable_vegaassetid() {
+inline std::string* BuiltinAssetWithdrawal::_internal_mutable_vega_asset_id() {
 
-  return vegaassetid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return vega_asset_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* BuiltinAssetWithdrawal::release_vegaassetid() {
-  // @@protoc_insertion_point(field_release:vega.BuiltinAssetWithdrawal.vegaAssetID)
-  return vegaassetid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* BuiltinAssetWithdrawal::release_vega_asset_id() {
+  // @@protoc_insertion_point(field_release:vega.BuiltinAssetWithdrawal.vega_asset_id)
+  return vega_asset_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void BuiltinAssetWithdrawal::set_allocated_vegaassetid(std::string* vegaassetid) {
-  if (vegaassetid != nullptr) {
+inline void BuiltinAssetWithdrawal::set_allocated_vega_asset_id(std::string* vega_asset_id) {
+  if (vega_asset_id != nullptr) {
 
   } else {
 
   }
-  vegaassetid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vegaassetid,
+  vega_asset_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vega_asset_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAssetWithdrawal.vegaAssetID)
+  // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAssetWithdrawal.vega_asset_id)
 }
 
-// string partyID = 2 [json_name = "partyID"];
-inline void BuiltinAssetWithdrawal::clear_partyid() {
-  partyid_.ClearToEmpty();
+// string party_id = 2 [json_name = "partyId"];
+inline void BuiltinAssetWithdrawal::clear_party_id() {
+  party_id_.ClearToEmpty();
 }
-inline const std::string& BuiltinAssetWithdrawal::partyid() const {
-  // @@protoc_insertion_point(field_get:vega.BuiltinAssetWithdrawal.partyID)
-  return _internal_partyid();
+inline const std::string& BuiltinAssetWithdrawal::party_id() const {
+  // @@protoc_insertion_point(field_get:vega.BuiltinAssetWithdrawal.party_id)
+  return _internal_party_id();
 }
-inline void BuiltinAssetWithdrawal::set_partyid(const std::string& value) {
-  _internal_set_partyid(value);
-  // @@protoc_insertion_point(field_set:vega.BuiltinAssetWithdrawal.partyID)
+inline void BuiltinAssetWithdrawal::set_party_id(const std::string& value) {
+  _internal_set_party_id(value);
+  // @@protoc_insertion_point(field_set:vega.BuiltinAssetWithdrawal.party_id)
 }
-inline std::string* BuiltinAssetWithdrawal::mutable_partyid() {
-  // @@protoc_insertion_point(field_mutable:vega.BuiltinAssetWithdrawal.partyID)
-  return _internal_mutable_partyid();
+inline std::string* BuiltinAssetWithdrawal::mutable_party_id() {
+  // @@protoc_insertion_point(field_mutable:vega.BuiltinAssetWithdrawal.party_id)
+  return _internal_mutable_party_id();
 }
-inline const std::string& BuiltinAssetWithdrawal::_internal_partyid() const {
-  return partyid_.Get();
+inline const std::string& BuiltinAssetWithdrawal::_internal_party_id() const {
+  return party_id_.Get();
 }
-inline void BuiltinAssetWithdrawal::_internal_set_partyid(const std::string& value) {
+inline void BuiltinAssetWithdrawal::_internal_set_party_id(const std::string& value) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void BuiltinAssetWithdrawal::set_partyid(std::string&& value) {
+inline void BuiltinAssetWithdrawal::set_party_id(std::string&& value) {
 
-  partyid_.Set(
+  party_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAssetWithdrawal.partyID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAssetWithdrawal.party_id)
 }
-inline void BuiltinAssetWithdrawal::set_partyid(const char* value) {
+inline void BuiltinAssetWithdrawal::set_party_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.BuiltinAssetWithdrawal.partyID)
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.BuiltinAssetWithdrawal.party_id)
 }
-inline void BuiltinAssetWithdrawal::set_partyid(const char* value,
+inline void BuiltinAssetWithdrawal::set_party_id(const char* value,
     size_t size) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAssetWithdrawal.partyID)
+  // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAssetWithdrawal.party_id)
 }
-inline std::string* BuiltinAssetWithdrawal::_internal_mutable_partyid() {
+inline std::string* BuiltinAssetWithdrawal::_internal_mutable_party_id() {
 
-  return partyid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* BuiltinAssetWithdrawal::release_partyid() {
-  // @@protoc_insertion_point(field_release:vega.BuiltinAssetWithdrawal.partyID)
-  return partyid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* BuiltinAssetWithdrawal::release_party_id() {
+  // @@protoc_insertion_point(field_release:vega.BuiltinAssetWithdrawal.party_id)
+  return party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void BuiltinAssetWithdrawal::set_allocated_partyid(std::string* partyid) {
-  if (partyid != nullptr) {
+inline void BuiltinAssetWithdrawal::set_allocated_party_id(std::string* party_id) {
+  if (party_id != nullptr) {
 
   } else {
 
   }
-  partyid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), partyid,
+  party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAssetWithdrawal.partyID)
+  // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAssetWithdrawal.party_id)
 }
 
 // uint64 amount = 3 [json_name = "amount"];
@@ -3828,317 +3828,317 @@ inline BuiltinAssetEvent::ActionCase BuiltinAssetEvent::action_case() const {
 
 // ERC20AssetList
 
-// string vegaAssetID = 1 [json_name = "vegaAssetID"];
-inline void ERC20AssetList::clear_vegaassetid() {
-  vegaassetid_.ClearToEmpty();
+// string vega_asset_id = 1 [json_name = "vegaAssetId"];
+inline void ERC20AssetList::clear_vega_asset_id() {
+  vega_asset_id_.ClearToEmpty();
 }
-inline const std::string& ERC20AssetList::vegaassetid() const {
-  // @@protoc_insertion_point(field_get:vega.ERC20AssetList.vegaAssetID)
-  return _internal_vegaassetid();
+inline const std::string& ERC20AssetList::vega_asset_id() const {
+  // @@protoc_insertion_point(field_get:vega.ERC20AssetList.vega_asset_id)
+  return _internal_vega_asset_id();
 }
-inline void ERC20AssetList::set_vegaassetid(const std::string& value) {
-  _internal_set_vegaassetid(value);
-  // @@protoc_insertion_point(field_set:vega.ERC20AssetList.vegaAssetID)
+inline void ERC20AssetList::set_vega_asset_id(const std::string& value) {
+  _internal_set_vega_asset_id(value);
+  // @@protoc_insertion_point(field_set:vega.ERC20AssetList.vega_asset_id)
 }
-inline std::string* ERC20AssetList::mutable_vegaassetid() {
-  // @@protoc_insertion_point(field_mutable:vega.ERC20AssetList.vegaAssetID)
-  return _internal_mutable_vegaassetid();
+inline std::string* ERC20AssetList::mutable_vega_asset_id() {
+  // @@protoc_insertion_point(field_mutable:vega.ERC20AssetList.vega_asset_id)
+  return _internal_mutable_vega_asset_id();
 }
-inline const std::string& ERC20AssetList::_internal_vegaassetid() const {
-  return vegaassetid_.Get();
+inline const std::string& ERC20AssetList::_internal_vega_asset_id() const {
+  return vega_asset_id_.Get();
 }
-inline void ERC20AssetList::_internal_set_vegaassetid(const std::string& value) {
+inline void ERC20AssetList::_internal_set_vega_asset_id(const std::string& value) {
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void ERC20AssetList::set_vegaassetid(std::string&& value) {
+inline void ERC20AssetList::set_vega_asset_id(std::string&& value) {
 
-  vegaassetid_.Set(
+  vega_asset_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20AssetList.vegaAssetID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20AssetList.vega_asset_id)
 }
-inline void ERC20AssetList::set_vegaassetid(const char* value) {
+inline void ERC20AssetList::set_vega_asset_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.ERC20AssetList.vegaAssetID)
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.ERC20AssetList.vega_asset_id)
 }
-inline void ERC20AssetList::set_vegaassetid(const char* value,
+inline void ERC20AssetList::set_vega_asset_id(const char* value,
     size_t size) {
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.ERC20AssetList.vegaAssetID)
+  // @@protoc_insertion_point(field_set_pointer:vega.ERC20AssetList.vega_asset_id)
 }
-inline std::string* ERC20AssetList::_internal_mutable_vegaassetid() {
+inline std::string* ERC20AssetList::_internal_mutable_vega_asset_id() {
 
-  return vegaassetid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return vega_asset_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* ERC20AssetList::release_vegaassetid() {
-  // @@protoc_insertion_point(field_release:vega.ERC20AssetList.vegaAssetID)
-  return vegaassetid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* ERC20AssetList::release_vega_asset_id() {
+  // @@protoc_insertion_point(field_release:vega.ERC20AssetList.vega_asset_id)
+  return vega_asset_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void ERC20AssetList::set_allocated_vegaassetid(std::string* vegaassetid) {
-  if (vegaassetid != nullptr) {
+inline void ERC20AssetList::set_allocated_vega_asset_id(std::string* vega_asset_id) {
+  if (vega_asset_id != nullptr) {
 
   } else {
 
   }
-  vegaassetid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vegaassetid,
+  vega_asset_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vega_asset_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.ERC20AssetList.vegaAssetID)
+  // @@protoc_insertion_point(field_set_allocated:vega.ERC20AssetList.vega_asset_id)
 }
 
 // -------------------------------------------------------------------
 
 // ERC20AssetDelist
 
-// string vegaAssetID = 1 [json_name = "vegaAssetID"];
-inline void ERC20AssetDelist::clear_vegaassetid() {
-  vegaassetid_.ClearToEmpty();
+// string vega_asset_id = 1 [json_name = "vegaAssetId"];
+inline void ERC20AssetDelist::clear_vega_asset_id() {
+  vega_asset_id_.ClearToEmpty();
 }
-inline const std::string& ERC20AssetDelist::vegaassetid() const {
-  // @@protoc_insertion_point(field_get:vega.ERC20AssetDelist.vegaAssetID)
-  return _internal_vegaassetid();
+inline const std::string& ERC20AssetDelist::vega_asset_id() const {
+  // @@protoc_insertion_point(field_get:vega.ERC20AssetDelist.vega_asset_id)
+  return _internal_vega_asset_id();
 }
-inline void ERC20AssetDelist::set_vegaassetid(const std::string& value) {
-  _internal_set_vegaassetid(value);
-  // @@protoc_insertion_point(field_set:vega.ERC20AssetDelist.vegaAssetID)
+inline void ERC20AssetDelist::set_vega_asset_id(const std::string& value) {
+  _internal_set_vega_asset_id(value);
+  // @@protoc_insertion_point(field_set:vega.ERC20AssetDelist.vega_asset_id)
 }
-inline std::string* ERC20AssetDelist::mutable_vegaassetid() {
-  // @@protoc_insertion_point(field_mutable:vega.ERC20AssetDelist.vegaAssetID)
-  return _internal_mutable_vegaassetid();
+inline std::string* ERC20AssetDelist::mutable_vega_asset_id() {
+  // @@protoc_insertion_point(field_mutable:vega.ERC20AssetDelist.vega_asset_id)
+  return _internal_mutable_vega_asset_id();
 }
-inline const std::string& ERC20AssetDelist::_internal_vegaassetid() const {
-  return vegaassetid_.Get();
+inline const std::string& ERC20AssetDelist::_internal_vega_asset_id() const {
+  return vega_asset_id_.Get();
 }
-inline void ERC20AssetDelist::_internal_set_vegaassetid(const std::string& value) {
+inline void ERC20AssetDelist::_internal_set_vega_asset_id(const std::string& value) {
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void ERC20AssetDelist::set_vegaassetid(std::string&& value) {
+inline void ERC20AssetDelist::set_vega_asset_id(std::string&& value) {
 
-  vegaassetid_.Set(
+  vega_asset_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20AssetDelist.vegaAssetID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20AssetDelist.vega_asset_id)
 }
-inline void ERC20AssetDelist::set_vegaassetid(const char* value) {
+inline void ERC20AssetDelist::set_vega_asset_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.ERC20AssetDelist.vegaAssetID)
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.ERC20AssetDelist.vega_asset_id)
 }
-inline void ERC20AssetDelist::set_vegaassetid(const char* value,
+inline void ERC20AssetDelist::set_vega_asset_id(const char* value,
     size_t size) {
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.ERC20AssetDelist.vegaAssetID)
+  // @@protoc_insertion_point(field_set_pointer:vega.ERC20AssetDelist.vega_asset_id)
 }
-inline std::string* ERC20AssetDelist::_internal_mutable_vegaassetid() {
+inline std::string* ERC20AssetDelist::_internal_mutable_vega_asset_id() {
 
-  return vegaassetid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return vega_asset_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* ERC20AssetDelist::release_vegaassetid() {
-  // @@protoc_insertion_point(field_release:vega.ERC20AssetDelist.vegaAssetID)
-  return vegaassetid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* ERC20AssetDelist::release_vega_asset_id() {
+  // @@protoc_insertion_point(field_release:vega.ERC20AssetDelist.vega_asset_id)
+  return vega_asset_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void ERC20AssetDelist::set_allocated_vegaassetid(std::string* vegaassetid) {
-  if (vegaassetid != nullptr) {
+inline void ERC20AssetDelist::set_allocated_vega_asset_id(std::string* vega_asset_id) {
+  if (vega_asset_id != nullptr) {
 
   } else {
 
   }
-  vegaassetid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vegaassetid,
+  vega_asset_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vega_asset_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.ERC20AssetDelist.vegaAssetID)
+  // @@protoc_insertion_point(field_set_allocated:vega.ERC20AssetDelist.vega_asset_id)
 }
 
 // -------------------------------------------------------------------
 
 // ERC20Deposit
 
-// string vegaAssetID = 1 [json_name = "vegaAssetID"];
-inline void ERC20Deposit::clear_vegaassetid() {
-  vegaassetid_.ClearToEmpty();
+// string vega_asset_id = 1 [json_name = "vegaAssetId"];
+inline void ERC20Deposit::clear_vega_asset_id() {
+  vega_asset_id_.ClearToEmpty();
 }
-inline const std::string& ERC20Deposit::vegaassetid() const {
-  // @@protoc_insertion_point(field_get:vega.ERC20Deposit.vegaAssetID)
-  return _internal_vegaassetid();
+inline const std::string& ERC20Deposit::vega_asset_id() const {
+  // @@protoc_insertion_point(field_get:vega.ERC20Deposit.vega_asset_id)
+  return _internal_vega_asset_id();
 }
-inline void ERC20Deposit::set_vegaassetid(const std::string& value) {
-  _internal_set_vegaassetid(value);
-  // @@protoc_insertion_point(field_set:vega.ERC20Deposit.vegaAssetID)
+inline void ERC20Deposit::set_vega_asset_id(const std::string& value) {
+  _internal_set_vega_asset_id(value);
+  // @@protoc_insertion_point(field_set:vega.ERC20Deposit.vega_asset_id)
 }
-inline std::string* ERC20Deposit::mutable_vegaassetid() {
-  // @@protoc_insertion_point(field_mutable:vega.ERC20Deposit.vegaAssetID)
-  return _internal_mutable_vegaassetid();
+inline std::string* ERC20Deposit::mutable_vega_asset_id() {
+  // @@protoc_insertion_point(field_mutable:vega.ERC20Deposit.vega_asset_id)
+  return _internal_mutable_vega_asset_id();
 }
-inline const std::string& ERC20Deposit::_internal_vegaassetid() const {
-  return vegaassetid_.Get();
+inline const std::string& ERC20Deposit::_internal_vega_asset_id() const {
+  return vega_asset_id_.Get();
 }
-inline void ERC20Deposit::_internal_set_vegaassetid(const std::string& value) {
+inline void ERC20Deposit::_internal_set_vega_asset_id(const std::string& value) {
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void ERC20Deposit::set_vegaassetid(std::string&& value) {
+inline void ERC20Deposit::set_vega_asset_id(std::string&& value) {
 
-  vegaassetid_.Set(
+  vega_asset_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20Deposit.vegaAssetID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20Deposit.vega_asset_id)
 }
-inline void ERC20Deposit::set_vegaassetid(const char* value) {
+inline void ERC20Deposit::set_vega_asset_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.ERC20Deposit.vegaAssetID)
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.ERC20Deposit.vega_asset_id)
 }
-inline void ERC20Deposit::set_vegaassetid(const char* value,
+inline void ERC20Deposit::set_vega_asset_id(const char* value,
     size_t size) {
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.ERC20Deposit.vegaAssetID)
+  // @@protoc_insertion_point(field_set_pointer:vega.ERC20Deposit.vega_asset_id)
 }
-inline std::string* ERC20Deposit::_internal_mutable_vegaassetid() {
+inline std::string* ERC20Deposit::_internal_mutable_vega_asset_id() {
 
-  return vegaassetid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return vega_asset_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* ERC20Deposit::release_vegaassetid() {
-  // @@protoc_insertion_point(field_release:vega.ERC20Deposit.vegaAssetID)
-  return vegaassetid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* ERC20Deposit::release_vega_asset_id() {
+  // @@protoc_insertion_point(field_release:vega.ERC20Deposit.vega_asset_id)
+  return vega_asset_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void ERC20Deposit::set_allocated_vegaassetid(std::string* vegaassetid) {
-  if (vegaassetid != nullptr) {
+inline void ERC20Deposit::set_allocated_vega_asset_id(std::string* vega_asset_id) {
+  if (vega_asset_id != nullptr) {
 
   } else {
 
   }
-  vegaassetid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vegaassetid,
+  vega_asset_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vega_asset_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Deposit.vegaAssetID)
+  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Deposit.vega_asset_id)
 }
 
-// string sourceEthereumAddress = 2 [json_name = "sourceEthereumAddress"];
-inline void ERC20Deposit::clear_sourceethereumaddress() {
-  sourceethereumaddress_.ClearToEmpty();
+// string source_ethereum_address = 2 [json_name = "sourceEthereumAddress"];
+inline void ERC20Deposit::clear_source_ethereum_address() {
+  source_ethereum_address_.ClearToEmpty();
 }
-inline const std::string& ERC20Deposit::sourceethereumaddress() const {
-  // @@protoc_insertion_point(field_get:vega.ERC20Deposit.sourceEthereumAddress)
-  return _internal_sourceethereumaddress();
+inline const std::string& ERC20Deposit::source_ethereum_address() const {
+  // @@protoc_insertion_point(field_get:vega.ERC20Deposit.source_ethereum_address)
+  return _internal_source_ethereum_address();
 }
-inline void ERC20Deposit::set_sourceethereumaddress(const std::string& value) {
-  _internal_set_sourceethereumaddress(value);
-  // @@protoc_insertion_point(field_set:vega.ERC20Deposit.sourceEthereumAddress)
+inline void ERC20Deposit::set_source_ethereum_address(const std::string& value) {
+  _internal_set_source_ethereum_address(value);
+  // @@protoc_insertion_point(field_set:vega.ERC20Deposit.source_ethereum_address)
 }
-inline std::string* ERC20Deposit::mutable_sourceethereumaddress() {
-  // @@protoc_insertion_point(field_mutable:vega.ERC20Deposit.sourceEthereumAddress)
-  return _internal_mutable_sourceethereumaddress();
+inline std::string* ERC20Deposit::mutable_source_ethereum_address() {
+  // @@protoc_insertion_point(field_mutable:vega.ERC20Deposit.source_ethereum_address)
+  return _internal_mutable_source_ethereum_address();
 }
-inline const std::string& ERC20Deposit::_internal_sourceethereumaddress() const {
-  return sourceethereumaddress_.Get();
+inline const std::string& ERC20Deposit::_internal_source_ethereum_address() const {
+  return source_ethereum_address_.Get();
 }
-inline void ERC20Deposit::_internal_set_sourceethereumaddress(const std::string& value) {
+inline void ERC20Deposit::_internal_set_source_ethereum_address(const std::string& value) {
 
-  sourceethereumaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  source_ethereum_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void ERC20Deposit::set_sourceethereumaddress(std::string&& value) {
+inline void ERC20Deposit::set_source_ethereum_address(std::string&& value) {
 
-  sourceethereumaddress_.Set(
+  source_ethereum_address_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20Deposit.sourceEthereumAddress)
+  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20Deposit.source_ethereum_address)
 }
-inline void ERC20Deposit::set_sourceethereumaddress(const char* value) {
+inline void ERC20Deposit::set_source_ethereum_address(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  sourceethereumaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.ERC20Deposit.sourceEthereumAddress)
+  source_ethereum_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.ERC20Deposit.source_ethereum_address)
 }
-inline void ERC20Deposit::set_sourceethereumaddress(const char* value,
+inline void ERC20Deposit::set_source_ethereum_address(const char* value,
     size_t size) {
 
-  sourceethereumaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  source_ethereum_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.ERC20Deposit.sourceEthereumAddress)
+  // @@protoc_insertion_point(field_set_pointer:vega.ERC20Deposit.source_ethereum_address)
 }
-inline std::string* ERC20Deposit::_internal_mutable_sourceethereumaddress() {
+inline std::string* ERC20Deposit::_internal_mutable_source_ethereum_address() {
 
-  return sourceethereumaddress_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return source_ethereum_address_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* ERC20Deposit::release_sourceethereumaddress() {
-  // @@protoc_insertion_point(field_release:vega.ERC20Deposit.sourceEthereumAddress)
-  return sourceethereumaddress_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* ERC20Deposit::release_source_ethereum_address() {
+  // @@protoc_insertion_point(field_release:vega.ERC20Deposit.source_ethereum_address)
+  return source_ethereum_address_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void ERC20Deposit::set_allocated_sourceethereumaddress(std::string* sourceethereumaddress) {
-  if (sourceethereumaddress != nullptr) {
+inline void ERC20Deposit::set_allocated_source_ethereum_address(std::string* source_ethereum_address) {
+  if (source_ethereum_address != nullptr) {
 
   } else {
 
   }
-  sourceethereumaddress_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), sourceethereumaddress,
+  source_ethereum_address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), source_ethereum_address,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Deposit.sourceEthereumAddress)
+  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Deposit.source_ethereum_address)
 }
 
-// string targetPartyID = 3 [json_name = "targetPartyID"];
-inline void ERC20Deposit::clear_targetpartyid() {
-  targetpartyid_.ClearToEmpty();
+// string target_party_id = 3 [json_name = "targetPartyId"];
+inline void ERC20Deposit::clear_target_party_id() {
+  target_party_id_.ClearToEmpty();
 }
-inline const std::string& ERC20Deposit::targetpartyid() const {
-  // @@protoc_insertion_point(field_get:vega.ERC20Deposit.targetPartyID)
-  return _internal_targetpartyid();
+inline const std::string& ERC20Deposit::target_party_id() const {
+  // @@protoc_insertion_point(field_get:vega.ERC20Deposit.target_party_id)
+  return _internal_target_party_id();
 }
-inline void ERC20Deposit::set_targetpartyid(const std::string& value) {
-  _internal_set_targetpartyid(value);
-  // @@protoc_insertion_point(field_set:vega.ERC20Deposit.targetPartyID)
+inline void ERC20Deposit::set_target_party_id(const std::string& value) {
+  _internal_set_target_party_id(value);
+  // @@protoc_insertion_point(field_set:vega.ERC20Deposit.target_party_id)
 }
-inline std::string* ERC20Deposit::mutable_targetpartyid() {
-  // @@protoc_insertion_point(field_mutable:vega.ERC20Deposit.targetPartyID)
-  return _internal_mutable_targetpartyid();
+inline std::string* ERC20Deposit::mutable_target_party_id() {
+  // @@protoc_insertion_point(field_mutable:vega.ERC20Deposit.target_party_id)
+  return _internal_mutable_target_party_id();
 }
-inline const std::string& ERC20Deposit::_internal_targetpartyid() const {
-  return targetpartyid_.Get();
+inline const std::string& ERC20Deposit::_internal_target_party_id() const {
+  return target_party_id_.Get();
 }
-inline void ERC20Deposit::_internal_set_targetpartyid(const std::string& value) {
+inline void ERC20Deposit::_internal_set_target_party_id(const std::string& value) {
 
-  targetpartyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  target_party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void ERC20Deposit::set_targetpartyid(std::string&& value) {
+inline void ERC20Deposit::set_target_party_id(std::string&& value) {
 
-  targetpartyid_.Set(
+  target_party_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20Deposit.targetPartyID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20Deposit.target_party_id)
 }
-inline void ERC20Deposit::set_targetpartyid(const char* value) {
+inline void ERC20Deposit::set_target_party_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  targetpartyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.ERC20Deposit.targetPartyID)
+  target_party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.ERC20Deposit.target_party_id)
 }
-inline void ERC20Deposit::set_targetpartyid(const char* value,
+inline void ERC20Deposit::set_target_party_id(const char* value,
     size_t size) {
 
-  targetpartyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  target_party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.ERC20Deposit.targetPartyID)
+  // @@protoc_insertion_point(field_set_pointer:vega.ERC20Deposit.target_party_id)
 }
-inline std::string* ERC20Deposit::_internal_mutable_targetpartyid() {
+inline std::string* ERC20Deposit::_internal_mutable_target_party_id() {
 
-  return targetpartyid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return target_party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* ERC20Deposit::release_targetpartyid() {
-  // @@protoc_insertion_point(field_release:vega.ERC20Deposit.targetPartyID)
-  return targetpartyid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* ERC20Deposit::release_target_party_id() {
+  // @@protoc_insertion_point(field_release:vega.ERC20Deposit.target_party_id)
+  return target_party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void ERC20Deposit::set_allocated_targetpartyid(std::string* targetpartyid) {
-  if (targetpartyid != nullptr) {
+inline void ERC20Deposit::set_allocated_target_party_id(std::string* target_party_id) {
+  if (target_party_id != nullptr) {
 
   } else {
 
   }
-  targetpartyid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), targetpartyid,
+  target_party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), target_party_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Deposit.targetPartyID)
+  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Deposit.target_party_id)
 }
 
 // string amount = 4 [json_name = "amount"];
@@ -4206,187 +4206,187 @@ inline void ERC20Deposit::set_allocated_amount(std::string* amount) {
 
 // ERC20Withdrawal
 
-// string vegaAssetID = 1 [json_name = "vegaAssetID"];
-inline void ERC20Withdrawal::clear_vegaassetid() {
-  vegaassetid_.ClearToEmpty();
+// string vega_asset_id = 1 [json_name = "vegaAssetId"];
+inline void ERC20Withdrawal::clear_vega_asset_id() {
+  vega_asset_id_.ClearToEmpty();
 }
-inline const std::string& ERC20Withdrawal::vegaassetid() const {
-  // @@protoc_insertion_point(field_get:vega.ERC20Withdrawal.vegaAssetID)
-  return _internal_vegaassetid();
+inline const std::string& ERC20Withdrawal::vega_asset_id() const {
+  // @@protoc_insertion_point(field_get:vega.ERC20Withdrawal.vega_asset_id)
+  return _internal_vega_asset_id();
 }
-inline void ERC20Withdrawal::set_vegaassetid(const std::string& value) {
-  _internal_set_vegaassetid(value);
-  // @@protoc_insertion_point(field_set:vega.ERC20Withdrawal.vegaAssetID)
+inline void ERC20Withdrawal::set_vega_asset_id(const std::string& value) {
+  _internal_set_vega_asset_id(value);
+  // @@protoc_insertion_point(field_set:vega.ERC20Withdrawal.vega_asset_id)
 }
-inline std::string* ERC20Withdrawal::mutable_vegaassetid() {
-  // @@protoc_insertion_point(field_mutable:vega.ERC20Withdrawal.vegaAssetID)
-  return _internal_mutable_vegaassetid();
+inline std::string* ERC20Withdrawal::mutable_vega_asset_id() {
+  // @@protoc_insertion_point(field_mutable:vega.ERC20Withdrawal.vega_asset_id)
+  return _internal_mutable_vega_asset_id();
 }
-inline const std::string& ERC20Withdrawal::_internal_vegaassetid() const {
-  return vegaassetid_.Get();
+inline const std::string& ERC20Withdrawal::_internal_vega_asset_id() const {
+  return vega_asset_id_.Get();
 }
-inline void ERC20Withdrawal::_internal_set_vegaassetid(const std::string& value) {
+inline void ERC20Withdrawal::_internal_set_vega_asset_id(const std::string& value) {
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void ERC20Withdrawal::set_vegaassetid(std::string&& value) {
+inline void ERC20Withdrawal::set_vega_asset_id(std::string&& value) {
 
-  vegaassetid_.Set(
+  vega_asset_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20Withdrawal.vegaAssetID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20Withdrawal.vega_asset_id)
 }
-inline void ERC20Withdrawal::set_vegaassetid(const char* value) {
+inline void ERC20Withdrawal::set_vega_asset_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.ERC20Withdrawal.vegaAssetID)
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.ERC20Withdrawal.vega_asset_id)
 }
-inline void ERC20Withdrawal::set_vegaassetid(const char* value,
+inline void ERC20Withdrawal::set_vega_asset_id(const char* value,
     size_t size) {
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.ERC20Withdrawal.vegaAssetID)
+  // @@protoc_insertion_point(field_set_pointer:vega.ERC20Withdrawal.vega_asset_id)
 }
-inline std::string* ERC20Withdrawal::_internal_mutable_vegaassetid() {
+inline std::string* ERC20Withdrawal::_internal_mutable_vega_asset_id() {
 
-  return vegaassetid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return vega_asset_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* ERC20Withdrawal::release_vegaassetid() {
-  // @@protoc_insertion_point(field_release:vega.ERC20Withdrawal.vegaAssetID)
-  return vegaassetid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* ERC20Withdrawal::release_vega_asset_id() {
+  // @@protoc_insertion_point(field_release:vega.ERC20Withdrawal.vega_asset_id)
+  return vega_asset_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void ERC20Withdrawal::set_allocated_vegaassetid(std::string* vegaassetid) {
-  if (vegaassetid != nullptr) {
+inline void ERC20Withdrawal::set_allocated_vega_asset_id(std::string* vega_asset_id) {
+  if (vega_asset_id != nullptr) {
 
   } else {
 
   }
-  vegaassetid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vegaassetid,
+  vega_asset_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vega_asset_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Withdrawal.vegaAssetID)
+  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Withdrawal.vega_asset_id)
 }
 
-// string targetEthereumAddress = 2 [json_name = "targetEthereumAddress"];
-inline void ERC20Withdrawal::clear_targetethereumaddress() {
-  targetethereumaddress_.ClearToEmpty();
+// string target_ethereum_address = 2 [json_name = "targetEthereumAddress"];
+inline void ERC20Withdrawal::clear_target_ethereum_address() {
+  target_ethereum_address_.ClearToEmpty();
 }
-inline const std::string& ERC20Withdrawal::targetethereumaddress() const {
-  // @@protoc_insertion_point(field_get:vega.ERC20Withdrawal.targetEthereumAddress)
-  return _internal_targetethereumaddress();
+inline const std::string& ERC20Withdrawal::target_ethereum_address() const {
+  // @@protoc_insertion_point(field_get:vega.ERC20Withdrawal.target_ethereum_address)
+  return _internal_target_ethereum_address();
 }
-inline void ERC20Withdrawal::set_targetethereumaddress(const std::string& value) {
-  _internal_set_targetethereumaddress(value);
-  // @@protoc_insertion_point(field_set:vega.ERC20Withdrawal.targetEthereumAddress)
+inline void ERC20Withdrawal::set_target_ethereum_address(const std::string& value) {
+  _internal_set_target_ethereum_address(value);
+  // @@protoc_insertion_point(field_set:vega.ERC20Withdrawal.target_ethereum_address)
 }
-inline std::string* ERC20Withdrawal::mutable_targetethereumaddress() {
-  // @@protoc_insertion_point(field_mutable:vega.ERC20Withdrawal.targetEthereumAddress)
-  return _internal_mutable_targetethereumaddress();
+inline std::string* ERC20Withdrawal::mutable_target_ethereum_address() {
+  // @@protoc_insertion_point(field_mutable:vega.ERC20Withdrawal.target_ethereum_address)
+  return _internal_mutable_target_ethereum_address();
 }
-inline const std::string& ERC20Withdrawal::_internal_targetethereumaddress() const {
-  return targetethereumaddress_.Get();
+inline const std::string& ERC20Withdrawal::_internal_target_ethereum_address() const {
+  return target_ethereum_address_.Get();
 }
-inline void ERC20Withdrawal::_internal_set_targetethereumaddress(const std::string& value) {
+inline void ERC20Withdrawal::_internal_set_target_ethereum_address(const std::string& value) {
 
-  targetethereumaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  target_ethereum_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void ERC20Withdrawal::set_targetethereumaddress(std::string&& value) {
+inline void ERC20Withdrawal::set_target_ethereum_address(std::string&& value) {
 
-  targetethereumaddress_.Set(
+  target_ethereum_address_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20Withdrawal.targetEthereumAddress)
+  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20Withdrawal.target_ethereum_address)
 }
-inline void ERC20Withdrawal::set_targetethereumaddress(const char* value) {
+inline void ERC20Withdrawal::set_target_ethereum_address(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  targetethereumaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.ERC20Withdrawal.targetEthereumAddress)
+  target_ethereum_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.ERC20Withdrawal.target_ethereum_address)
 }
-inline void ERC20Withdrawal::set_targetethereumaddress(const char* value,
+inline void ERC20Withdrawal::set_target_ethereum_address(const char* value,
     size_t size) {
 
-  targetethereumaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  target_ethereum_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.ERC20Withdrawal.targetEthereumAddress)
+  // @@protoc_insertion_point(field_set_pointer:vega.ERC20Withdrawal.target_ethereum_address)
 }
-inline std::string* ERC20Withdrawal::_internal_mutable_targetethereumaddress() {
+inline std::string* ERC20Withdrawal::_internal_mutable_target_ethereum_address() {
 
-  return targetethereumaddress_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return target_ethereum_address_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* ERC20Withdrawal::release_targetethereumaddress() {
-  // @@protoc_insertion_point(field_release:vega.ERC20Withdrawal.targetEthereumAddress)
-  return targetethereumaddress_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* ERC20Withdrawal::release_target_ethereum_address() {
+  // @@protoc_insertion_point(field_release:vega.ERC20Withdrawal.target_ethereum_address)
+  return target_ethereum_address_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void ERC20Withdrawal::set_allocated_targetethereumaddress(std::string* targetethereumaddress) {
-  if (targetethereumaddress != nullptr) {
+inline void ERC20Withdrawal::set_allocated_target_ethereum_address(std::string* target_ethereum_address) {
+  if (target_ethereum_address != nullptr) {
 
   } else {
 
   }
-  targetethereumaddress_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), targetethereumaddress,
+  target_ethereum_address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), target_ethereum_address,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Withdrawal.targetEthereumAddress)
+  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Withdrawal.target_ethereum_address)
 }
 
-// string referenceNonce = 3 [json_name = "referenceNonce"];
-inline void ERC20Withdrawal::clear_referencenonce() {
-  referencenonce_.ClearToEmpty();
+// string reference_nonce = 3 [json_name = "referenceNonce"];
+inline void ERC20Withdrawal::clear_reference_nonce() {
+  reference_nonce_.ClearToEmpty();
 }
-inline const std::string& ERC20Withdrawal::referencenonce() const {
-  // @@protoc_insertion_point(field_get:vega.ERC20Withdrawal.referenceNonce)
-  return _internal_referencenonce();
+inline const std::string& ERC20Withdrawal::reference_nonce() const {
+  // @@protoc_insertion_point(field_get:vega.ERC20Withdrawal.reference_nonce)
+  return _internal_reference_nonce();
 }
-inline void ERC20Withdrawal::set_referencenonce(const std::string& value) {
-  _internal_set_referencenonce(value);
-  // @@protoc_insertion_point(field_set:vega.ERC20Withdrawal.referenceNonce)
+inline void ERC20Withdrawal::set_reference_nonce(const std::string& value) {
+  _internal_set_reference_nonce(value);
+  // @@protoc_insertion_point(field_set:vega.ERC20Withdrawal.reference_nonce)
 }
-inline std::string* ERC20Withdrawal::mutable_referencenonce() {
-  // @@protoc_insertion_point(field_mutable:vega.ERC20Withdrawal.referenceNonce)
-  return _internal_mutable_referencenonce();
+inline std::string* ERC20Withdrawal::mutable_reference_nonce() {
+  // @@protoc_insertion_point(field_mutable:vega.ERC20Withdrawal.reference_nonce)
+  return _internal_mutable_reference_nonce();
 }
-inline const std::string& ERC20Withdrawal::_internal_referencenonce() const {
-  return referencenonce_.Get();
+inline const std::string& ERC20Withdrawal::_internal_reference_nonce() const {
+  return reference_nonce_.Get();
 }
-inline void ERC20Withdrawal::_internal_set_referencenonce(const std::string& value) {
+inline void ERC20Withdrawal::_internal_set_reference_nonce(const std::string& value) {
 
-  referencenonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  reference_nonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void ERC20Withdrawal::set_referencenonce(std::string&& value) {
+inline void ERC20Withdrawal::set_reference_nonce(std::string&& value) {
 
-  referencenonce_.Set(
+  reference_nonce_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20Withdrawal.referenceNonce)
+  // @@protoc_insertion_point(field_set_rvalue:vega.ERC20Withdrawal.reference_nonce)
 }
-inline void ERC20Withdrawal::set_referencenonce(const char* value) {
+inline void ERC20Withdrawal::set_reference_nonce(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  referencenonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.ERC20Withdrawal.referenceNonce)
+  reference_nonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.ERC20Withdrawal.reference_nonce)
 }
-inline void ERC20Withdrawal::set_referencenonce(const char* value,
+inline void ERC20Withdrawal::set_reference_nonce(const char* value,
     size_t size) {
 
-  referencenonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  reference_nonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.ERC20Withdrawal.referenceNonce)
+  // @@protoc_insertion_point(field_set_pointer:vega.ERC20Withdrawal.reference_nonce)
 }
-inline std::string* ERC20Withdrawal::_internal_mutable_referencenonce() {
+inline std::string* ERC20Withdrawal::_internal_mutable_reference_nonce() {
 
-  return referencenonce_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return reference_nonce_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* ERC20Withdrawal::release_referencenonce() {
-  // @@protoc_insertion_point(field_release:vega.ERC20Withdrawal.referenceNonce)
-  return referencenonce_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* ERC20Withdrawal::release_reference_nonce() {
+  // @@protoc_insertion_point(field_release:vega.ERC20Withdrawal.reference_nonce)
+  return reference_nonce_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void ERC20Withdrawal::set_allocated_referencenonce(std::string* referencenonce) {
-  if (referencenonce != nullptr) {
+inline void ERC20Withdrawal::set_allocated_reference_nonce(std::string* reference_nonce) {
+  if (reference_nonce != nullptr) {
 
   } else {
 
   }
-  referencenonce_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), referencenonce,
+  reference_nonce_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reference_nonce,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Withdrawal.referenceNonce)
+  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Withdrawal.reference_nonce)
 }
 
 // -------------------------------------------------------------------
@@ -4433,150 +4433,150 @@ inline void ERC20Event::set_block(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.ERC20Event.block)
 }
 
-// .vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];
-inline bool ERC20Event::_internal_has_assetlist() const {
+// .vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];
+inline bool ERC20Event::_internal_has_asset_list() const {
   return action_case() == kAssetList;
 }
-inline bool ERC20Event::has_assetlist() const {
-  return _internal_has_assetlist();
+inline bool ERC20Event::has_asset_list() const {
+  return _internal_has_asset_list();
 }
-inline void ERC20Event::set_has_assetlist() {
+inline void ERC20Event::set_has_asset_list() {
   _oneof_case_[0] = kAssetList;
 }
-inline void ERC20Event::clear_assetlist() {
-  if (_internal_has_assetlist()) {
+inline void ERC20Event::clear_asset_list() {
+  if (_internal_has_asset_list()) {
     if (GetArena() == nullptr) {
-      delete action_.assetlist_;
+      delete action_.asset_list_;
     }
     clear_has_action();
   }
 }
-inline ::vega::ERC20AssetList* ERC20Event::release_assetlist() {
-  // @@protoc_insertion_point(field_release:vega.ERC20Event.assetList)
-  if (_internal_has_assetlist()) {
+inline ::vega::ERC20AssetList* ERC20Event::release_asset_list() {
+  // @@protoc_insertion_point(field_release:vega.ERC20Event.asset_list)
+  if (_internal_has_asset_list()) {
     clear_has_action();
-      ::vega::ERC20AssetList* temp = action_.assetlist_;
+      ::vega::ERC20AssetList* temp = action_.asset_list_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    action_.assetlist_ = nullptr;
+    action_.asset_list_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::vega::ERC20AssetList& ERC20Event::_internal_assetlist() const {
-  return _internal_has_assetlist()
-      ? *action_.assetlist_
+inline const ::vega::ERC20AssetList& ERC20Event::_internal_asset_list() const {
+  return _internal_has_asset_list()
+      ? *action_.asset_list_
       : reinterpret_cast< ::vega::ERC20AssetList&>(::vega::_ERC20AssetList_default_instance_);
 }
-inline const ::vega::ERC20AssetList& ERC20Event::assetlist() const {
-  // @@protoc_insertion_point(field_get:vega.ERC20Event.assetList)
-  return _internal_assetlist();
+inline const ::vega::ERC20AssetList& ERC20Event::asset_list() const {
+  // @@protoc_insertion_point(field_get:vega.ERC20Event.asset_list)
+  return _internal_asset_list();
 }
-inline ::vega::ERC20AssetList* ERC20Event::unsafe_arena_release_assetlist() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:vega.ERC20Event.assetList)
-  if (_internal_has_assetlist()) {
+inline ::vega::ERC20AssetList* ERC20Event::unsafe_arena_release_asset_list() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.ERC20Event.asset_list)
+  if (_internal_has_asset_list()) {
     clear_has_action();
-    ::vega::ERC20AssetList* temp = action_.assetlist_;
-    action_.assetlist_ = nullptr;
+    ::vega::ERC20AssetList* temp = action_.asset_list_;
+    action_.asset_list_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void ERC20Event::unsafe_arena_set_allocated_assetlist(::vega::ERC20AssetList* assetlist) {
+inline void ERC20Event::unsafe_arena_set_allocated_asset_list(::vega::ERC20AssetList* asset_list) {
   clear_action();
-  if (assetlist) {
-    set_has_assetlist();
-    action_.assetlist_ = assetlist;
+  if (asset_list) {
+    set_has_asset_list();
+    action_.asset_list_ = asset_list;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.ERC20Event.assetList)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.ERC20Event.asset_list)
 }
-inline ::vega::ERC20AssetList* ERC20Event::_internal_mutable_assetlist() {
-  if (!_internal_has_assetlist()) {
+inline ::vega::ERC20AssetList* ERC20Event::_internal_mutable_asset_list() {
+  if (!_internal_has_asset_list()) {
     clear_action();
-    set_has_assetlist();
-    action_.assetlist_ = CreateMaybeMessage< ::vega::ERC20AssetList >(GetArena());
+    set_has_asset_list();
+    action_.asset_list_ = CreateMaybeMessage< ::vega::ERC20AssetList >(GetArena());
   }
-  return action_.assetlist_;
+  return action_.asset_list_;
 }
-inline ::vega::ERC20AssetList* ERC20Event::mutable_assetlist() {
-  // @@protoc_insertion_point(field_mutable:vega.ERC20Event.assetList)
-  return _internal_mutable_assetlist();
+inline ::vega::ERC20AssetList* ERC20Event::mutable_asset_list() {
+  // @@protoc_insertion_point(field_mutable:vega.ERC20Event.asset_list)
+  return _internal_mutable_asset_list();
 }
 
-// .vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];
-inline bool ERC20Event::_internal_has_assetdelist() const {
+// .vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];
+inline bool ERC20Event::_internal_has_asset_delist() const {
   return action_case() == kAssetDelist;
 }
-inline bool ERC20Event::has_assetdelist() const {
-  return _internal_has_assetdelist();
+inline bool ERC20Event::has_asset_delist() const {
+  return _internal_has_asset_delist();
 }
-inline void ERC20Event::set_has_assetdelist() {
+inline void ERC20Event::set_has_asset_delist() {
   _oneof_case_[0] = kAssetDelist;
 }
-inline void ERC20Event::clear_assetdelist() {
-  if (_internal_has_assetdelist()) {
+inline void ERC20Event::clear_asset_delist() {
+  if (_internal_has_asset_delist()) {
     if (GetArena() == nullptr) {
-      delete action_.assetdelist_;
+      delete action_.asset_delist_;
     }
     clear_has_action();
   }
 }
-inline ::vega::ERC20AssetDelist* ERC20Event::release_assetdelist() {
-  // @@protoc_insertion_point(field_release:vega.ERC20Event.assetDelist)
-  if (_internal_has_assetdelist()) {
+inline ::vega::ERC20AssetDelist* ERC20Event::release_asset_delist() {
+  // @@protoc_insertion_point(field_release:vega.ERC20Event.asset_delist)
+  if (_internal_has_asset_delist()) {
     clear_has_action();
-      ::vega::ERC20AssetDelist* temp = action_.assetdelist_;
+      ::vega::ERC20AssetDelist* temp = action_.asset_delist_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    action_.assetdelist_ = nullptr;
+    action_.asset_delist_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::vega::ERC20AssetDelist& ERC20Event::_internal_assetdelist() const {
-  return _internal_has_assetdelist()
-      ? *action_.assetdelist_
+inline const ::vega::ERC20AssetDelist& ERC20Event::_internal_asset_delist() const {
+  return _internal_has_asset_delist()
+      ? *action_.asset_delist_
       : reinterpret_cast< ::vega::ERC20AssetDelist&>(::vega::_ERC20AssetDelist_default_instance_);
 }
-inline const ::vega::ERC20AssetDelist& ERC20Event::assetdelist() const {
-  // @@protoc_insertion_point(field_get:vega.ERC20Event.assetDelist)
-  return _internal_assetdelist();
+inline const ::vega::ERC20AssetDelist& ERC20Event::asset_delist() const {
+  // @@protoc_insertion_point(field_get:vega.ERC20Event.asset_delist)
+  return _internal_asset_delist();
 }
-inline ::vega::ERC20AssetDelist* ERC20Event::unsafe_arena_release_assetdelist() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:vega.ERC20Event.assetDelist)
-  if (_internal_has_assetdelist()) {
+inline ::vega::ERC20AssetDelist* ERC20Event::unsafe_arena_release_asset_delist() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.ERC20Event.asset_delist)
+  if (_internal_has_asset_delist()) {
     clear_has_action();
-    ::vega::ERC20AssetDelist* temp = action_.assetdelist_;
-    action_.assetdelist_ = nullptr;
+    ::vega::ERC20AssetDelist* temp = action_.asset_delist_;
+    action_.asset_delist_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void ERC20Event::unsafe_arena_set_allocated_assetdelist(::vega::ERC20AssetDelist* assetdelist) {
+inline void ERC20Event::unsafe_arena_set_allocated_asset_delist(::vega::ERC20AssetDelist* asset_delist) {
   clear_action();
-  if (assetdelist) {
-    set_has_assetdelist();
-    action_.assetdelist_ = assetdelist;
+  if (asset_delist) {
+    set_has_asset_delist();
+    action_.asset_delist_ = asset_delist;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.ERC20Event.assetDelist)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.ERC20Event.asset_delist)
 }
-inline ::vega::ERC20AssetDelist* ERC20Event::_internal_mutable_assetdelist() {
-  if (!_internal_has_assetdelist()) {
+inline ::vega::ERC20AssetDelist* ERC20Event::_internal_mutable_asset_delist() {
+  if (!_internal_has_asset_delist()) {
     clear_action();
-    set_has_assetdelist();
-    action_.assetdelist_ = CreateMaybeMessage< ::vega::ERC20AssetDelist >(GetArena());
+    set_has_asset_delist();
+    action_.asset_delist_ = CreateMaybeMessage< ::vega::ERC20AssetDelist >(GetArena());
   }
-  return action_.assetdelist_;
+  return action_.asset_delist_;
 }
-inline ::vega::ERC20AssetDelist* ERC20Event::mutable_assetdelist() {
-  // @@protoc_insertion_point(field_mutable:vega.ERC20Event.assetDelist)
-  return _internal_mutable_assetdelist();
+inline ::vega::ERC20AssetDelist* ERC20Event::mutable_asset_delist() {
+  // @@protoc_insertion_point(field_mutable:vega.ERC20Event.asset_delist)
+  return _internal_mutable_asset_delist();
 }
 
 // .vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];
@@ -4738,435 +4738,435 @@ inline ERC20Event::ActionCase ERC20Event::action_case() const {
 
 // BTCDeposit
 
-// string vegaAssetID = 1 [json_name = "vegaAssetID"];
-inline void BTCDeposit::clear_vegaassetid() {
-  vegaassetid_.ClearToEmpty();
+// string vega_asset_id = 1 [json_name = "vegaAssetId"];
+inline void BTCDeposit::clear_vega_asset_id() {
+  vega_asset_id_.ClearToEmpty();
 }
-inline const std::string& BTCDeposit::vegaassetid() const {
-  // @@protoc_insertion_point(field_get:vega.BTCDeposit.vegaAssetID)
-  return _internal_vegaassetid();
+inline const std::string& BTCDeposit::vega_asset_id() const {
+  // @@protoc_insertion_point(field_get:vega.BTCDeposit.vega_asset_id)
+  return _internal_vega_asset_id();
 }
-inline void BTCDeposit::set_vegaassetid(const std::string& value) {
-  _internal_set_vegaassetid(value);
-  // @@protoc_insertion_point(field_set:vega.BTCDeposit.vegaAssetID)
+inline void BTCDeposit::set_vega_asset_id(const std::string& value) {
+  _internal_set_vega_asset_id(value);
+  // @@protoc_insertion_point(field_set:vega.BTCDeposit.vega_asset_id)
 }
-inline std::string* BTCDeposit::mutable_vegaassetid() {
-  // @@protoc_insertion_point(field_mutable:vega.BTCDeposit.vegaAssetID)
-  return _internal_mutable_vegaassetid();
+inline std::string* BTCDeposit::mutable_vega_asset_id() {
+  // @@protoc_insertion_point(field_mutable:vega.BTCDeposit.vega_asset_id)
+  return _internal_mutable_vega_asset_id();
 }
-inline const std::string& BTCDeposit::_internal_vegaassetid() const {
-  return vegaassetid_.Get();
+inline const std::string& BTCDeposit::_internal_vega_asset_id() const {
+  return vega_asset_id_.Get();
 }
-inline void BTCDeposit::_internal_set_vegaassetid(const std::string& value) {
+inline void BTCDeposit::_internal_set_vega_asset_id(const std::string& value) {
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void BTCDeposit::set_vegaassetid(std::string&& value) {
+inline void BTCDeposit::set_vega_asset_id(std::string&& value) {
 
-  vegaassetid_.Set(
+  vega_asset_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.BTCDeposit.vegaAssetID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.BTCDeposit.vega_asset_id)
 }
-inline void BTCDeposit::set_vegaassetid(const char* value) {
+inline void BTCDeposit::set_vega_asset_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.BTCDeposit.vegaAssetID)
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.BTCDeposit.vega_asset_id)
 }
-inline void BTCDeposit::set_vegaassetid(const char* value,
+inline void BTCDeposit::set_vega_asset_id(const char* value,
     size_t size) {
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.BTCDeposit.vegaAssetID)
+  // @@protoc_insertion_point(field_set_pointer:vega.BTCDeposit.vega_asset_id)
 }
-inline std::string* BTCDeposit::_internal_mutable_vegaassetid() {
+inline std::string* BTCDeposit::_internal_mutable_vega_asset_id() {
 
-  return vegaassetid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return vega_asset_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* BTCDeposit::release_vegaassetid() {
-  // @@protoc_insertion_point(field_release:vega.BTCDeposit.vegaAssetID)
-  return vegaassetid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* BTCDeposit::release_vega_asset_id() {
+  // @@protoc_insertion_point(field_release:vega.BTCDeposit.vega_asset_id)
+  return vega_asset_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void BTCDeposit::set_allocated_vegaassetid(std::string* vegaassetid) {
-  if (vegaassetid != nullptr) {
+inline void BTCDeposit::set_allocated_vega_asset_id(std::string* vega_asset_id) {
+  if (vega_asset_id != nullptr) {
 
   } else {
 
   }
-  vegaassetid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vegaassetid,
+  vega_asset_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vega_asset_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.BTCDeposit.vegaAssetID)
+  // @@protoc_insertion_point(field_set_allocated:vega.BTCDeposit.vega_asset_id)
 }
 
-// string sourceBTCAddress = 2 [json_name = "sourceBTCAddress"];
-inline void BTCDeposit::clear_sourcebtcaddress() {
-  sourcebtcaddress_.ClearToEmpty();
+// string source_btc_address = 2 [json_name = "sourceBtcAddress"];
+inline void BTCDeposit::clear_source_btc_address() {
+  source_btc_address_.ClearToEmpty();
 }
-inline const std::string& BTCDeposit::sourcebtcaddress() const {
-  // @@protoc_insertion_point(field_get:vega.BTCDeposit.sourceBTCAddress)
-  return _internal_sourcebtcaddress();
+inline const std::string& BTCDeposit::source_btc_address() const {
+  // @@protoc_insertion_point(field_get:vega.BTCDeposit.source_btc_address)
+  return _internal_source_btc_address();
 }
-inline void BTCDeposit::set_sourcebtcaddress(const std::string& value) {
-  _internal_set_sourcebtcaddress(value);
-  // @@protoc_insertion_point(field_set:vega.BTCDeposit.sourceBTCAddress)
+inline void BTCDeposit::set_source_btc_address(const std::string& value) {
+  _internal_set_source_btc_address(value);
+  // @@protoc_insertion_point(field_set:vega.BTCDeposit.source_btc_address)
 }
-inline std::string* BTCDeposit::mutable_sourcebtcaddress() {
-  // @@protoc_insertion_point(field_mutable:vega.BTCDeposit.sourceBTCAddress)
-  return _internal_mutable_sourcebtcaddress();
+inline std::string* BTCDeposit::mutable_source_btc_address() {
+  // @@protoc_insertion_point(field_mutable:vega.BTCDeposit.source_btc_address)
+  return _internal_mutable_source_btc_address();
 }
-inline const std::string& BTCDeposit::_internal_sourcebtcaddress() const {
-  return sourcebtcaddress_.Get();
+inline const std::string& BTCDeposit::_internal_source_btc_address() const {
+  return source_btc_address_.Get();
 }
-inline void BTCDeposit::_internal_set_sourcebtcaddress(const std::string& value) {
+inline void BTCDeposit::_internal_set_source_btc_address(const std::string& value) {
 
-  sourcebtcaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  source_btc_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void BTCDeposit::set_sourcebtcaddress(std::string&& value) {
+inline void BTCDeposit::set_source_btc_address(std::string&& value) {
 
-  sourcebtcaddress_.Set(
+  source_btc_address_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.BTCDeposit.sourceBTCAddress)
+  // @@protoc_insertion_point(field_set_rvalue:vega.BTCDeposit.source_btc_address)
 }
-inline void BTCDeposit::set_sourcebtcaddress(const char* value) {
+inline void BTCDeposit::set_source_btc_address(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  sourcebtcaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.BTCDeposit.sourceBTCAddress)
+  source_btc_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.BTCDeposit.source_btc_address)
 }
-inline void BTCDeposit::set_sourcebtcaddress(const char* value,
+inline void BTCDeposit::set_source_btc_address(const char* value,
     size_t size) {
 
-  sourcebtcaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  source_btc_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.BTCDeposit.sourceBTCAddress)
+  // @@protoc_insertion_point(field_set_pointer:vega.BTCDeposit.source_btc_address)
 }
-inline std::string* BTCDeposit::_internal_mutable_sourcebtcaddress() {
+inline std::string* BTCDeposit::_internal_mutable_source_btc_address() {
 
-  return sourcebtcaddress_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return source_btc_address_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* BTCDeposit::release_sourcebtcaddress() {
-  // @@protoc_insertion_point(field_release:vega.BTCDeposit.sourceBTCAddress)
-  return sourcebtcaddress_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* BTCDeposit::release_source_btc_address() {
+  // @@protoc_insertion_point(field_release:vega.BTCDeposit.source_btc_address)
+  return source_btc_address_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void BTCDeposit::set_allocated_sourcebtcaddress(std::string* sourcebtcaddress) {
-  if (sourcebtcaddress != nullptr) {
+inline void BTCDeposit::set_allocated_source_btc_address(std::string* source_btc_address) {
+  if (source_btc_address != nullptr) {
 
   } else {
 
   }
-  sourcebtcaddress_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), sourcebtcaddress,
+  source_btc_address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), source_btc_address,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.BTCDeposit.sourceBTCAddress)
+  // @@protoc_insertion_point(field_set_allocated:vega.BTCDeposit.source_btc_address)
 }
 
-// string targetPartyId = 3 [json_name = "targetPartyId"];
-inline void BTCDeposit::clear_targetpartyid() {
-  targetpartyid_.ClearToEmpty();
+// string target_party_id = 3 [json_name = "targetPartyId"];
+inline void BTCDeposit::clear_target_party_id() {
+  target_party_id_.ClearToEmpty();
 }
-inline const std::string& BTCDeposit::targetpartyid() const {
-  // @@protoc_insertion_point(field_get:vega.BTCDeposit.targetPartyId)
-  return _internal_targetpartyid();
+inline const std::string& BTCDeposit::target_party_id() const {
+  // @@protoc_insertion_point(field_get:vega.BTCDeposit.target_party_id)
+  return _internal_target_party_id();
 }
-inline void BTCDeposit::set_targetpartyid(const std::string& value) {
-  _internal_set_targetpartyid(value);
-  // @@protoc_insertion_point(field_set:vega.BTCDeposit.targetPartyId)
+inline void BTCDeposit::set_target_party_id(const std::string& value) {
+  _internal_set_target_party_id(value);
+  // @@protoc_insertion_point(field_set:vega.BTCDeposit.target_party_id)
 }
-inline std::string* BTCDeposit::mutable_targetpartyid() {
-  // @@protoc_insertion_point(field_mutable:vega.BTCDeposit.targetPartyId)
-  return _internal_mutable_targetpartyid();
+inline std::string* BTCDeposit::mutable_target_party_id() {
+  // @@protoc_insertion_point(field_mutable:vega.BTCDeposit.target_party_id)
+  return _internal_mutable_target_party_id();
 }
-inline const std::string& BTCDeposit::_internal_targetpartyid() const {
-  return targetpartyid_.Get();
+inline const std::string& BTCDeposit::_internal_target_party_id() const {
+  return target_party_id_.Get();
 }
-inline void BTCDeposit::_internal_set_targetpartyid(const std::string& value) {
+inline void BTCDeposit::_internal_set_target_party_id(const std::string& value) {
 
-  targetpartyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  target_party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void BTCDeposit::set_targetpartyid(std::string&& value) {
+inline void BTCDeposit::set_target_party_id(std::string&& value) {
 
-  targetpartyid_.Set(
+  target_party_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.BTCDeposit.targetPartyId)
+  // @@protoc_insertion_point(field_set_rvalue:vega.BTCDeposit.target_party_id)
 }
-inline void BTCDeposit::set_targetpartyid(const char* value) {
+inline void BTCDeposit::set_target_party_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  targetpartyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.BTCDeposit.targetPartyId)
+  target_party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.BTCDeposit.target_party_id)
 }
-inline void BTCDeposit::set_targetpartyid(const char* value,
+inline void BTCDeposit::set_target_party_id(const char* value,
     size_t size) {
 
-  targetpartyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  target_party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.BTCDeposit.targetPartyId)
+  // @@protoc_insertion_point(field_set_pointer:vega.BTCDeposit.target_party_id)
 }
-inline std::string* BTCDeposit::_internal_mutable_targetpartyid() {
+inline std::string* BTCDeposit::_internal_mutable_target_party_id() {
 
-  return targetpartyid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return target_party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* BTCDeposit::release_targetpartyid() {
-  // @@protoc_insertion_point(field_release:vega.BTCDeposit.targetPartyId)
-  return targetpartyid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* BTCDeposit::release_target_party_id() {
+  // @@protoc_insertion_point(field_release:vega.BTCDeposit.target_party_id)
+  return target_party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void BTCDeposit::set_allocated_targetpartyid(std::string* targetpartyid) {
-  if (targetpartyid != nullptr) {
+inline void BTCDeposit::set_allocated_target_party_id(std::string* target_party_id) {
+  if (target_party_id != nullptr) {
 
   } else {
 
   }
-  targetpartyid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), targetpartyid,
+  target_party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), target_party_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.BTCDeposit.targetPartyId)
+  // @@protoc_insertion_point(field_set_allocated:vega.BTCDeposit.target_party_id)
 }
 
 // -------------------------------------------------------------------
 
 // BTCWithdrawal
 
-// string vegaAssetID = 1 [json_name = "vegaAssetID"];
-inline void BTCWithdrawal::clear_vegaassetid() {
-  vegaassetid_.ClearToEmpty();
+// string vega_asset_id = 1 [json_name = "vegaAssetId"];
+inline void BTCWithdrawal::clear_vega_asset_id() {
+  vega_asset_id_.ClearToEmpty();
 }
-inline const std::string& BTCWithdrawal::vegaassetid() const {
-  // @@protoc_insertion_point(field_get:vega.BTCWithdrawal.vegaAssetID)
-  return _internal_vegaassetid();
+inline const std::string& BTCWithdrawal::vega_asset_id() const {
+  // @@protoc_insertion_point(field_get:vega.BTCWithdrawal.vega_asset_id)
+  return _internal_vega_asset_id();
 }
-inline void BTCWithdrawal::set_vegaassetid(const std::string& value) {
-  _internal_set_vegaassetid(value);
-  // @@protoc_insertion_point(field_set:vega.BTCWithdrawal.vegaAssetID)
+inline void BTCWithdrawal::set_vega_asset_id(const std::string& value) {
+  _internal_set_vega_asset_id(value);
+  // @@protoc_insertion_point(field_set:vega.BTCWithdrawal.vega_asset_id)
 }
-inline std::string* BTCWithdrawal::mutable_vegaassetid() {
-  // @@protoc_insertion_point(field_mutable:vega.BTCWithdrawal.vegaAssetID)
-  return _internal_mutable_vegaassetid();
+inline std::string* BTCWithdrawal::mutable_vega_asset_id() {
+  // @@protoc_insertion_point(field_mutable:vega.BTCWithdrawal.vega_asset_id)
+  return _internal_mutable_vega_asset_id();
 }
-inline const std::string& BTCWithdrawal::_internal_vegaassetid() const {
-  return vegaassetid_.Get();
+inline const std::string& BTCWithdrawal::_internal_vega_asset_id() const {
+  return vega_asset_id_.Get();
 }
-inline void BTCWithdrawal::_internal_set_vegaassetid(const std::string& value) {
+inline void BTCWithdrawal::_internal_set_vega_asset_id(const std::string& value) {
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void BTCWithdrawal::set_vegaassetid(std::string&& value) {
+inline void BTCWithdrawal::set_vega_asset_id(std::string&& value) {
 
-  vegaassetid_.Set(
+  vega_asset_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.BTCWithdrawal.vegaAssetID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.BTCWithdrawal.vega_asset_id)
 }
-inline void BTCWithdrawal::set_vegaassetid(const char* value) {
+inline void BTCWithdrawal::set_vega_asset_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.BTCWithdrawal.vegaAssetID)
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.BTCWithdrawal.vega_asset_id)
 }
-inline void BTCWithdrawal::set_vegaassetid(const char* value,
+inline void BTCWithdrawal::set_vega_asset_id(const char* value,
     size_t size) {
 
-  vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.BTCWithdrawal.vegaAssetID)
+  // @@protoc_insertion_point(field_set_pointer:vega.BTCWithdrawal.vega_asset_id)
 }
-inline std::string* BTCWithdrawal::_internal_mutable_vegaassetid() {
+inline std::string* BTCWithdrawal::_internal_mutable_vega_asset_id() {
 
-  return vegaassetid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return vega_asset_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* BTCWithdrawal::release_vegaassetid() {
-  // @@protoc_insertion_point(field_release:vega.BTCWithdrawal.vegaAssetID)
-  return vegaassetid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* BTCWithdrawal::release_vega_asset_id() {
+  // @@protoc_insertion_point(field_release:vega.BTCWithdrawal.vega_asset_id)
+  return vega_asset_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void BTCWithdrawal::set_allocated_vegaassetid(std::string* vegaassetid) {
-  if (vegaassetid != nullptr) {
+inline void BTCWithdrawal::set_allocated_vega_asset_id(std::string* vega_asset_id) {
+  if (vega_asset_id != nullptr) {
 
   } else {
 
   }
-  vegaassetid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vegaassetid,
+  vega_asset_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vega_asset_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.BTCWithdrawal.vegaAssetID)
+  // @@protoc_insertion_point(field_set_allocated:vega.BTCWithdrawal.vega_asset_id)
 }
 
-// string sourcePartyId = 2 [json_name = "sourcePartyId"];
-inline void BTCWithdrawal::clear_sourcepartyid() {
-  sourcepartyid_.ClearToEmpty();
+// string source_party_id = 2 [json_name = "sourcePartyId"];
+inline void BTCWithdrawal::clear_source_party_id() {
+  source_party_id_.ClearToEmpty();
 }
-inline const std::string& BTCWithdrawal::sourcepartyid() const {
-  // @@protoc_insertion_point(field_get:vega.BTCWithdrawal.sourcePartyId)
-  return _internal_sourcepartyid();
+inline const std::string& BTCWithdrawal::source_party_id() const {
+  // @@protoc_insertion_point(field_get:vega.BTCWithdrawal.source_party_id)
+  return _internal_source_party_id();
 }
-inline void BTCWithdrawal::set_sourcepartyid(const std::string& value) {
-  _internal_set_sourcepartyid(value);
-  // @@protoc_insertion_point(field_set:vega.BTCWithdrawal.sourcePartyId)
+inline void BTCWithdrawal::set_source_party_id(const std::string& value) {
+  _internal_set_source_party_id(value);
+  // @@protoc_insertion_point(field_set:vega.BTCWithdrawal.source_party_id)
 }
-inline std::string* BTCWithdrawal::mutable_sourcepartyid() {
-  // @@protoc_insertion_point(field_mutable:vega.BTCWithdrawal.sourcePartyId)
-  return _internal_mutable_sourcepartyid();
+inline std::string* BTCWithdrawal::mutable_source_party_id() {
+  // @@protoc_insertion_point(field_mutable:vega.BTCWithdrawal.source_party_id)
+  return _internal_mutable_source_party_id();
 }
-inline const std::string& BTCWithdrawal::_internal_sourcepartyid() const {
-  return sourcepartyid_.Get();
+inline const std::string& BTCWithdrawal::_internal_source_party_id() const {
+  return source_party_id_.Get();
 }
-inline void BTCWithdrawal::_internal_set_sourcepartyid(const std::string& value) {
+inline void BTCWithdrawal::_internal_set_source_party_id(const std::string& value) {
 
-  sourcepartyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  source_party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void BTCWithdrawal::set_sourcepartyid(std::string&& value) {
+inline void BTCWithdrawal::set_source_party_id(std::string&& value) {
 
-  sourcepartyid_.Set(
+  source_party_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.BTCWithdrawal.sourcePartyId)
+  // @@protoc_insertion_point(field_set_rvalue:vega.BTCWithdrawal.source_party_id)
 }
-inline void BTCWithdrawal::set_sourcepartyid(const char* value) {
+inline void BTCWithdrawal::set_source_party_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  sourcepartyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.BTCWithdrawal.sourcePartyId)
+  source_party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.BTCWithdrawal.source_party_id)
 }
-inline void BTCWithdrawal::set_sourcepartyid(const char* value,
+inline void BTCWithdrawal::set_source_party_id(const char* value,
     size_t size) {
 
-  sourcepartyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  source_party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.BTCWithdrawal.sourcePartyId)
+  // @@protoc_insertion_point(field_set_pointer:vega.BTCWithdrawal.source_party_id)
 }
-inline std::string* BTCWithdrawal::_internal_mutable_sourcepartyid() {
+inline std::string* BTCWithdrawal::_internal_mutable_source_party_id() {
 
-  return sourcepartyid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return source_party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* BTCWithdrawal::release_sourcepartyid() {
-  // @@protoc_insertion_point(field_release:vega.BTCWithdrawal.sourcePartyId)
-  return sourcepartyid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* BTCWithdrawal::release_source_party_id() {
+  // @@protoc_insertion_point(field_release:vega.BTCWithdrawal.source_party_id)
+  return source_party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void BTCWithdrawal::set_allocated_sourcepartyid(std::string* sourcepartyid) {
-  if (sourcepartyid != nullptr) {
+inline void BTCWithdrawal::set_allocated_source_party_id(std::string* source_party_id) {
+  if (source_party_id != nullptr) {
 
   } else {
 
   }
-  sourcepartyid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), sourcepartyid,
+  source_party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), source_party_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.BTCWithdrawal.sourcePartyId)
+  // @@protoc_insertion_point(field_set_allocated:vega.BTCWithdrawal.source_party_id)
 }
 
-// string targetBTCAddress = 3 [json_name = "targetBTCAddress"];
-inline void BTCWithdrawal::clear_targetbtcaddress() {
-  targetbtcaddress_.ClearToEmpty();
+// string target_btc_address = 3 [json_name = "targetBtcAddress"];
+inline void BTCWithdrawal::clear_target_btc_address() {
+  target_btc_address_.ClearToEmpty();
 }
-inline const std::string& BTCWithdrawal::targetbtcaddress() const {
-  // @@protoc_insertion_point(field_get:vega.BTCWithdrawal.targetBTCAddress)
-  return _internal_targetbtcaddress();
+inline const std::string& BTCWithdrawal::target_btc_address() const {
+  // @@protoc_insertion_point(field_get:vega.BTCWithdrawal.target_btc_address)
+  return _internal_target_btc_address();
 }
-inline void BTCWithdrawal::set_targetbtcaddress(const std::string& value) {
-  _internal_set_targetbtcaddress(value);
-  // @@protoc_insertion_point(field_set:vega.BTCWithdrawal.targetBTCAddress)
+inline void BTCWithdrawal::set_target_btc_address(const std::string& value) {
+  _internal_set_target_btc_address(value);
+  // @@protoc_insertion_point(field_set:vega.BTCWithdrawal.target_btc_address)
 }
-inline std::string* BTCWithdrawal::mutable_targetbtcaddress() {
-  // @@protoc_insertion_point(field_mutable:vega.BTCWithdrawal.targetBTCAddress)
-  return _internal_mutable_targetbtcaddress();
+inline std::string* BTCWithdrawal::mutable_target_btc_address() {
+  // @@protoc_insertion_point(field_mutable:vega.BTCWithdrawal.target_btc_address)
+  return _internal_mutable_target_btc_address();
 }
-inline const std::string& BTCWithdrawal::_internal_targetbtcaddress() const {
-  return targetbtcaddress_.Get();
+inline const std::string& BTCWithdrawal::_internal_target_btc_address() const {
+  return target_btc_address_.Get();
 }
-inline void BTCWithdrawal::_internal_set_targetbtcaddress(const std::string& value) {
+inline void BTCWithdrawal::_internal_set_target_btc_address(const std::string& value) {
 
-  targetbtcaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  target_btc_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void BTCWithdrawal::set_targetbtcaddress(std::string&& value) {
+inline void BTCWithdrawal::set_target_btc_address(std::string&& value) {
 
-  targetbtcaddress_.Set(
+  target_btc_address_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.BTCWithdrawal.targetBTCAddress)
+  // @@protoc_insertion_point(field_set_rvalue:vega.BTCWithdrawal.target_btc_address)
 }
-inline void BTCWithdrawal::set_targetbtcaddress(const char* value) {
+inline void BTCWithdrawal::set_target_btc_address(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  targetbtcaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.BTCWithdrawal.targetBTCAddress)
+  target_btc_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.BTCWithdrawal.target_btc_address)
 }
-inline void BTCWithdrawal::set_targetbtcaddress(const char* value,
+inline void BTCWithdrawal::set_target_btc_address(const char* value,
     size_t size) {
 
-  targetbtcaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  target_btc_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.BTCWithdrawal.targetBTCAddress)
+  // @@protoc_insertion_point(field_set_pointer:vega.BTCWithdrawal.target_btc_address)
 }
-inline std::string* BTCWithdrawal::_internal_mutable_targetbtcaddress() {
+inline std::string* BTCWithdrawal::_internal_mutable_target_btc_address() {
 
-  return targetbtcaddress_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return target_btc_address_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* BTCWithdrawal::release_targetbtcaddress() {
-  // @@protoc_insertion_point(field_release:vega.BTCWithdrawal.targetBTCAddress)
-  return targetbtcaddress_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* BTCWithdrawal::release_target_btc_address() {
+  // @@protoc_insertion_point(field_release:vega.BTCWithdrawal.target_btc_address)
+  return target_btc_address_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void BTCWithdrawal::set_allocated_targetbtcaddress(std::string* targetbtcaddress) {
-  if (targetbtcaddress != nullptr) {
+inline void BTCWithdrawal::set_allocated_target_btc_address(std::string* target_btc_address) {
+  if (target_btc_address != nullptr) {
 
   } else {
 
   }
-  targetbtcaddress_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), targetbtcaddress,
+  target_btc_address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), target_btc_address,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.BTCWithdrawal.targetBTCAddress)
+  // @@protoc_insertion_point(field_set_allocated:vega.BTCWithdrawal.target_btc_address)
 }
 
-// string referenceNonce = 4 [json_name = "referenceNonce"];
-inline void BTCWithdrawal::clear_referencenonce() {
-  referencenonce_.ClearToEmpty();
+// string reference_nonce = 4 [json_name = "referenceNonce"];
+inline void BTCWithdrawal::clear_reference_nonce() {
+  reference_nonce_.ClearToEmpty();
 }
-inline const std::string& BTCWithdrawal::referencenonce() const {
-  // @@protoc_insertion_point(field_get:vega.BTCWithdrawal.referenceNonce)
-  return _internal_referencenonce();
+inline const std::string& BTCWithdrawal::reference_nonce() const {
+  // @@protoc_insertion_point(field_get:vega.BTCWithdrawal.reference_nonce)
+  return _internal_reference_nonce();
 }
-inline void BTCWithdrawal::set_referencenonce(const std::string& value) {
-  _internal_set_referencenonce(value);
-  // @@protoc_insertion_point(field_set:vega.BTCWithdrawal.referenceNonce)
+inline void BTCWithdrawal::set_reference_nonce(const std::string& value) {
+  _internal_set_reference_nonce(value);
+  // @@protoc_insertion_point(field_set:vega.BTCWithdrawal.reference_nonce)
 }
-inline std::string* BTCWithdrawal::mutable_referencenonce() {
-  // @@protoc_insertion_point(field_mutable:vega.BTCWithdrawal.referenceNonce)
-  return _internal_mutable_referencenonce();
+inline std::string* BTCWithdrawal::mutable_reference_nonce() {
+  // @@protoc_insertion_point(field_mutable:vega.BTCWithdrawal.reference_nonce)
+  return _internal_mutable_reference_nonce();
 }
-inline const std::string& BTCWithdrawal::_internal_referencenonce() const {
-  return referencenonce_.Get();
+inline const std::string& BTCWithdrawal::_internal_reference_nonce() const {
+  return reference_nonce_.Get();
 }
-inline void BTCWithdrawal::_internal_set_referencenonce(const std::string& value) {
+inline void BTCWithdrawal::_internal_set_reference_nonce(const std::string& value) {
 
-  referencenonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  reference_nonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void BTCWithdrawal::set_referencenonce(std::string&& value) {
+inline void BTCWithdrawal::set_reference_nonce(std::string&& value) {
 
-  referencenonce_.Set(
+  reference_nonce_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.BTCWithdrawal.referenceNonce)
+  // @@protoc_insertion_point(field_set_rvalue:vega.BTCWithdrawal.reference_nonce)
 }
-inline void BTCWithdrawal::set_referencenonce(const char* value) {
+inline void BTCWithdrawal::set_reference_nonce(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  referencenonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.BTCWithdrawal.referenceNonce)
+  reference_nonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.BTCWithdrawal.reference_nonce)
 }
-inline void BTCWithdrawal::set_referencenonce(const char* value,
+inline void BTCWithdrawal::set_reference_nonce(const char* value,
     size_t size) {
 
-  referencenonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  reference_nonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.BTCWithdrawal.referenceNonce)
+  // @@protoc_insertion_point(field_set_pointer:vega.BTCWithdrawal.reference_nonce)
 }
-inline std::string* BTCWithdrawal::_internal_mutable_referencenonce() {
+inline std::string* BTCWithdrawal::_internal_mutable_reference_nonce() {
 
-  return referencenonce_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return reference_nonce_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* BTCWithdrawal::release_referencenonce() {
-  // @@protoc_insertion_point(field_release:vega.BTCWithdrawal.referenceNonce)
-  return referencenonce_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* BTCWithdrawal::release_reference_nonce() {
+  // @@protoc_insertion_point(field_release:vega.BTCWithdrawal.reference_nonce)
+  return reference_nonce_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void BTCWithdrawal::set_allocated_referencenonce(std::string* referencenonce) {
-  if (referencenonce != nullptr) {
+inline void BTCWithdrawal::set_allocated_reference_nonce(std::string* reference_nonce) {
+  if (reference_nonce != nullptr) {
 
   } else {
 
   }
-  referencenonce_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), referencenonce,
+  reference_nonce_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reference_nonce,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.BTCWithdrawal.referenceNonce)
+  // @@protoc_insertion_point(field_set_allocated:vega.BTCWithdrawal.reference_nonce)
 }
 
 // -------------------------------------------------------------------
@@ -5502,150 +5502,150 @@ inline void BitcoinAddress::set_allocated_address(std::string* address) {
 
 // Identifier
 
-// .vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];
-inline bool Identifier::_internal_has_ethereumaddress() const {
+// .vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];
+inline bool Identifier::_internal_has_ethereum_address() const {
   return identifier_case() == kEthereumAddress;
 }
-inline bool Identifier::has_ethereumaddress() const {
-  return _internal_has_ethereumaddress();
+inline bool Identifier::has_ethereum_address() const {
+  return _internal_has_ethereum_address();
 }
-inline void Identifier::set_has_ethereumaddress() {
+inline void Identifier::set_has_ethereum_address() {
   _oneof_case_[0] = kEthereumAddress;
 }
-inline void Identifier::clear_ethereumaddress() {
-  if (_internal_has_ethereumaddress()) {
+inline void Identifier::clear_ethereum_address() {
+  if (_internal_has_ethereum_address()) {
     if (GetArena() == nullptr) {
-      delete identifier_.ethereumaddress_;
+      delete identifier_.ethereum_address_;
     }
     clear_has_identifier();
   }
 }
-inline ::vega::EthereumAddress* Identifier::release_ethereumaddress() {
-  // @@protoc_insertion_point(field_release:vega.Identifier.ethereumAddress)
-  if (_internal_has_ethereumaddress()) {
+inline ::vega::EthereumAddress* Identifier::release_ethereum_address() {
+  // @@protoc_insertion_point(field_release:vega.Identifier.ethereum_address)
+  if (_internal_has_ethereum_address()) {
     clear_has_identifier();
-      ::vega::EthereumAddress* temp = identifier_.ethereumaddress_;
+      ::vega::EthereumAddress* temp = identifier_.ethereum_address_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    identifier_.ethereumaddress_ = nullptr;
+    identifier_.ethereum_address_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::vega::EthereumAddress& Identifier::_internal_ethereumaddress() const {
-  return _internal_has_ethereumaddress()
-      ? *identifier_.ethereumaddress_
+inline const ::vega::EthereumAddress& Identifier::_internal_ethereum_address() const {
+  return _internal_has_ethereum_address()
+      ? *identifier_.ethereum_address_
       : reinterpret_cast< ::vega::EthereumAddress&>(::vega::_EthereumAddress_default_instance_);
 }
-inline const ::vega::EthereumAddress& Identifier::ethereumaddress() const {
-  // @@protoc_insertion_point(field_get:vega.Identifier.ethereumAddress)
-  return _internal_ethereumaddress();
+inline const ::vega::EthereumAddress& Identifier::ethereum_address() const {
+  // @@protoc_insertion_point(field_get:vega.Identifier.ethereum_address)
+  return _internal_ethereum_address();
 }
-inline ::vega::EthereumAddress* Identifier::unsafe_arena_release_ethereumaddress() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:vega.Identifier.ethereumAddress)
-  if (_internal_has_ethereumaddress()) {
+inline ::vega::EthereumAddress* Identifier::unsafe_arena_release_ethereum_address() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.Identifier.ethereum_address)
+  if (_internal_has_ethereum_address()) {
     clear_has_identifier();
-    ::vega::EthereumAddress* temp = identifier_.ethereumaddress_;
-    identifier_.ethereumaddress_ = nullptr;
+    ::vega::EthereumAddress* temp = identifier_.ethereum_address_;
+    identifier_.ethereum_address_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void Identifier::unsafe_arena_set_allocated_ethereumaddress(::vega::EthereumAddress* ethereumaddress) {
+inline void Identifier::unsafe_arena_set_allocated_ethereum_address(::vega::EthereumAddress* ethereum_address) {
   clear_identifier();
-  if (ethereumaddress) {
-    set_has_ethereumaddress();
-    identifier_.ethereumaddress_ = ethereumaddress;
+  if (ethereum_address) {
+    set_has_ethereum_address();
+    identifier_.ethereum_address_ = ethereum_address;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Identifier.ethereumAddress)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Identifier.ethereum_address)
 }
-inline ::vega::EthereumAddress* Identifier::_internal_mutable_ethereumaddress() {
-  if (!_internal_has_ethereumaddress()) {
+inline ::vega::EthereumAddress* Identifier::_internal_mutable_ethereum_address() {
+  if (!_internal_has_ethereum_address()) {
     clear_identifier();
-    set_has_ethereumaddress();
-    identifier_.ethereumaddress_ = CreateMaybeMessage< ::vega::EthereumAddress >(GetArena());
+    set_has_ethereum_address();
+    identifier_.ethereum_address_ = CreateMaybeMessage< ::vega::EthereumAddress >(GetArena());
   }
-  return identifier_.ethereumaddress_;
+  return identifier_.ethereum_address_;
 }
-inline ::vega::EthereumAddress* Identifier::mutable_ethereumaddress() {
-  // @@protoc_insertion_point(field_mutable:vega.Identifier.ethereumAddress)
-  return _internal_mutable_ethereumaddress();
+inline ::vega::EthereumAddress* Identifier::mutable_ethereum_address() {
+  // @@protoc_insertion_point(field_mutable:vega.Identifier.ethereum_address)
+  return _internal_mutable_ethereum_address();
 }
 
-// .vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];
-inline bool Identifier::_internal_has_bitcoinaddress() const {
+// .vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];
+inline bool Identifier::_internal_has_bitcoin_address() const {
   return identifier_case() == kBitcoinAddress;
 }
-inline bool Identifier::has_bitcoinaddress() const {
-  return _internal_has_bitcoinaddress();
+inline bool Identifier::has_bitcoin_address() const {
+  return _internal_has_bitcoin_address();
 }
-inline void Identifier::set_has_bitcoinaddress() {
+inline void Identifier::set_has_bitcoin_address() {
   _oneof_case_[0] = kBitcoinAddress;
 }
-inline void Identifier::clear_bitcoinaddress() {
-  if (_internal_has_bitcoinaddress()) {
+inline void Identifier::clear_bitcoin_address() {
+  if (_internal_has_bitcoin_address()) {
     if (GetArena() == nullptr) {
-      delete identifier_.bitcoinaddress_;
+      delete identifier_.bitcoin_address_;
     }
     clear_has_identifier();
   }
 }
-inline ::vega::BitcoinAddress* Identifier::release_bitcoinaddress() {
-  // @@protoc_insertion_point(field_release:vega.Identifier.bitcoinAddress)
-  if (_internal_has_bitcoinaddress()) {
+inline ::vega::BitcoinAddress* Identifier::release_bitcoin_address() {
+  // @@protoc_insertion_point(field_release:vega.Identifier.bitcoin_address)
+  if (_internal_has_bitcoin_address()) {
     clear_has_identifier();
-      ::vega::BitcoinAddress* temp = identifier_.bitcoinaddress_;
+      ::vega::BitcoinAddress* temp = identifier_.bitcoin_address_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    identifier_.bitcoinaddress_ = nullptr;
+    identifier_.bitcoin_address_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::vega::BitcoinAddress& Identifier::_internal_bitcoinaddress() const {
-  return _internal_has_bitcoinaddress()
-      ? *identifier_.bitcoinaddress_
+inline const ::vega::BitcoinAddress& Identifier::_internal_bitcoin_address() const {
+  return _internal_has_bitcoin_address()
+      ? *identifier_.bitcoin_address_
       : reinterpret_cast< ::vega::BitcoinAddress&>(::vega::_BitcoinAddress_default_instance_);
 }
-inline const ::vega::BitcoinAddress& Identifier::bitcoinaddress() const {
-  // @@protoc_insertion_point(field_get:vega.Identifier.bitcoinAddress)
-  return _internal_bitcoinaddress();
+inline const ::vega::BitcoinAddress& Identifier::bitcoin_address() const {
+  // @@protoc_insertion_point(field_get:vega.Identifier.bitcoin_address)
+  return _internal_bitcoin_address();
 }
-inline ::vega::BitcoinAddress* Identifier::unsafe_arena_release_bitcoinaddress() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:vega.Identifier.bitcoinAddress)
-  if (_internal_has_bitcoinaddress()) {
+inline ::vega::BitcoinAddress* Identifier::unsafe_arena_release_bitcoin_address() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.Identifier.bitcoin_address)
+  if (_internal_has_bitcoin_address()) {
     clear_has_identifier();
-    ::vega::BitcoinAddress* temp = identifier_.bitcoinaddress_;
-    identifier_.bitcoinaddress_ = nullptr;
+    ::vega::BitcoinAddress* temp = identifier_.bitcoin_address_;
+    identifier_.bitcoin_address_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void Identifier::unsafe_arena_set_allocated_bitcoinaddress(::vega::BitcoinAddress* bitcoinaddress) {
+inline void Identifier::unsafe_arena_set_allocated_bitcoin_address(::vega::BitcoinAddress* bitcoin_address) {
   clear_identifier();
-  if (bitcoinaddress) {
-    set_has_bitcoinaddress();
-    identifier_.bitcoinaddress_ = bitcoinaddress;
+  if (bitcoin_address) {
+    set_has_bitcoin_address();
+    identifier_.bitcoin_address_ = bitcoin_address;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Identifier.bitcoinAddress)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Identifier.bitcoin_address)
 }
-inline ::vega::BitcoinAddress* Identifier::_internal_mutable_bitcoinaddress() {
-  if (!_internal_has_bitcoinaddress()) {
+inline ::vega::BitcoinAddress* Identifier::_internal_mutable_bitcoin_address() {
+  if (!_internal_has_bitcoin_address()) {
     clear_identifier();
-    set_has_bitcoinaddress();
-    identifier_.bitcoinaddress_ = CreateMaybeMessage< ::vega::BitcoinAddress >(GetArena());
+    set_has_bitcoin_address();
+    identifier_.bitcoin_address_ = CreateMaybeMessage< ::vega::BitcoinAddress >(GetArena());
   }
-  return identifier_.bitcoinaddress_;
+  return identifier_.bitcoin_address_;
 }
-inline ::vega::BitcoinAddress* Identifier::mutable_bitcoinaddress() {
-  // @@protoc_insertion_point(field_mutable:vega.Identifier.bitcoinAddress)
-  return _internal_mutable_bitcoinaddress();
+inline ::vega::BitcoinAddress* Identifier::mutable_bitcoin_address() {
+  // @@protoc_insertion_point(field_mutable:vega.Identifier.bitcoin_address)
+  return _internal_mutable_bitcoin_address();
 }
 
 inline bool Identifier::has_identifier() const {
@@ -5835,65 +5835,65 @@ inline void RemoveValidator::set_allocated_id(::vega::Identifier* id) {
 
 // ValidatorEvent
 
-// string sourceID = 1 [json_name = "sourceID"];
-inline void ValidatorEvent::clear_sourceid() {
-  sourceid_.ClearToEmpty();
+// string source_id = 1 [json_name = "sourceId"];
+inline void ValidatorEvent::clear_source_id() {
+  source_id_.ClearToEmpty();
 }
-inline const std::string& ValidatorEvent::sourceid() const {
-  // @@protoc_insertion_point(field_get:vega.ValidatorEvent.sourceID)
-  return _internal_sourceid();
+inline const std::string& ValidatorEvent::source_id() const {
+  // @@protoc_insertion_point(field_get:vega.ValidatorEvent.source_id)
+  return _internal_source_id();
 }
-inline void ValidatorEvent::set_sourceid(const std::string& value) {
-  _internal_set_sourceid(value);
-  // @@protoc_insertion_point(field_set:vega.ValidatorEvent.sourceID)
+inline void ValidatorEvent::set_source_id(const std::string& value) {
+  _internal_set_source_id(value);
+  // @@protoc_insertion_point(field_set:vega.ValidatorEvent.source_id)
 }
-inline std::string* ValidatorEvent::mutable_sourceid() {
-  // @@protoc_insertion_point(field_mutable:vega.ValidatorEvent.sourceID)
-  return _internal_mutable_sourceid();
+inline std::string* ValidatorEvent::mutable_source_id() {
+  // @@protoc_insertion_point(field_mutable:vega.ValidatorEvent.source_id)
+  return _internal_mutable_source_id();
 }
-inline const std::string& ValidatorEvent::_internal_sourceid() const {
-  return sourceid_.Get();
+inline const std::string& ValidatorEvent::_internal_source_id() const {
+  return source_id_.Get();
 }
-inline void ValidatorEvent::_internal_set_sourceid(const std::string& value) {
+inline void ValidatorEvent::_internal_set_source_id(const std::string& value) {
 
-  sourceid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  source_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void ValidatorEvent::set_sourceid(std::string&& value) {
+inline void ValidatorEvent::set_source_id(std::string&& value) {
 
-  sourceid_.Set(
+  source_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.ValidatorEvent.sourceID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.ValidatorEvent.source_id)
 }
-inline void ValidatorEvent::set_sourceid(const char* value) {
+inline void ValidatorEvent::set_source_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  sourceid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.ValidatorEvent.sourceID)
+  source_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.ValidatorEvent.source_id)
 }
-inline void ValidatorEvent::set_sourceid(const char* value,
+inline void ValidatorEvent::set_source_id(const char* value,
     size_t size) {
 
-  sourceid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  source_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.ValidatorEvent.sourceID)
+  // @@protoc_insertion_point(field_set_pointer:vega.ValidatorEvent.source_id)
 }
-inline std::string* ValidatorEvent::_internal_mutable_sourceid() {
+inline std::string* ValidatorEvent::_internal_mutable_source_id() {
 
-  return sourceid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return source_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* ValidatorEvent::release_sourceid() {
-  // @@protoc_insertion_point(field_release:vega.ValidatorEvent.sourceID)
-  return sourceid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* ValidatorEvent::release_source_id() {
+  // @@protoc_insertion_point(field_release:vega.ValidatorEvent.source_id)
+  return source_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void ValidatorEvent::set_allocated_sourceid(std::string* sourceid) {
-  if (sourceid != nullptr) {
+inline void ValidatorEvent::set_allocated_source_id(std::string* source_id) {
+  if (source_id != nullptr) {
 
   } else {
 
   }
-  sourceid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), sourceid,
+  source_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), source_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.ValidatorEvent.sourceID)
+  // @@protoc_insertion_point(field_set_allocated:vega.ValidatorEvent.source_id)
 }
 
 // .vega.AddValidator add = 1001 [json_name = "add"];
@@ -6055,65 +6055,65 @@ inline ValidatorEvent::ActionCase ValidatorEvent::action_case() const {
 
 // ChainEvent
 
-// string txID = 1 [json_name = "txID"];
-inline void ChainEvent::clear_txid() {
-  txid_.ClearToEmpty();
+// string tx_id = 1 [json_name = "txId"];
+inline void ChainEvent::clear_tx_id() {
+  tx_id_.ClearToEmpty();
 }
-inline const std::string& ChainEvent::txid() const {
-  // @@protoc_insertion_point(field_get:vega.ChainEvent.txID)
-  return _internal_txid();
+inline const std::string& ChainEvent::tx_id() const {
+  // @@protoc_insertion_point(field_get:vega.ChainEvent.tx_id)
+  return _internal_tx_id();
 }
-inline void ChainEvent::set_txid(const std::string& value) {
-  _internal_set_txid(value);
-  // @@protoc_insertion_point(field_set:vega.ChainEvent.txID)
+inline void ChainEvent::set_tx_id(const std::string& value) {
+  _internal_set_tx_id(value);
+  // @@protoc_insertion_point(field_set:vega.ChainEvent.tx_id)
 }
-inline std::string* ChainEvent::mutable_txid() {
-  // @@protoc_insertion_point(field_mutable:vega.ChainEvent.txID)
-  return _internal_mutable_txid();
+inline std::string* ChainEvent::mutable_tx_id() {
+  // @@protoc_insertion_point(field_mutable:vega.ChainEvent.tx_id)
+  return _internal_mutable_tx_id();
 }
-inline const std::string& ChainEvent::_internal_txid() const {
-  return txid_.Get();
+inline const std::string& ChainEvent::_internal_tx_id() const {
+  return tx_id_.Get();
 }
-inline void ChainEvent::_internal_set_txid(const std::string& value) {
+inline void ChainEvent::_internal_set_tx_id(const std::string& value) {
 
-  txid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  tx_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void ChainEvent::set_txid(std::string&& value) {
+inline void ChainEvent::set_tx_id(std::string&& value) {
 
-  txid_.Set(
+  tx_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.ChainEvent.txID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.ChainEvent.tx_id)
 }
-inline void ChainEvent::set_txid(const char* value) {
+inline void ChainEvent::set_tx_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  txid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.ChainEvent.txID)
+  tx_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.ChainEvent.tx_id)
 }
-inline void ChainEvent::set_txid(const char* value,
+inline void ChainEvent::set_tx_id(const char* value,
     size_t size) {
 
-  txid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  tx_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.ChainEvent.txID)
+  // @@protoc_insertion_point(field_set_pointer:vega.ChainEvent.tx_id)
 }
-inline std::string* ChainEvent::_internal_mutable_txid() {
+inline std::string* ChainEvent::_internal_mutable_tx_id() {
 
-  return txid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return tx_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* ChainEvent::release_txid() {
-  // @@protoc_insertion_point(field_release:vega.ChainEvent.txID)
-  return txid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* ChainEvent::release_tx_id() {
+  // @@protoc_insertion_point(field_release:vega.ChainEvent.tx_id)
+  return tx_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void ChainEvent::set_allocated_txid(std::string* txid) {
-  if (txid != nullptr) {
+inline void ChainEvent::set_allocated_tx_id(std::string* tx_id) {
+  if (tx_id != nullptr) {
 
   } else {
 
   }
-  txid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), txid,
+  tx_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tx_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.ChainEvent.txID)
+  // @@protoc_insertion_point(field_set_allocated:vega.ChainEvent.tx_id)
 }
 
 // uint64 nonce = 2 [json_name = "nonce"];

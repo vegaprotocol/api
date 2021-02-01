@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\024io.vegaprotocol.vegaZ\037code.vegaprotocol.io/vega/proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0c\x65vents.proto\x12\x04vega\x1a\rmarkets.proto\x1a\x0c\x61ssets.proto\x1a\x10governance.proto\x1a\nvega.proto\"C\n\x0bMarketEvent\x12\x1a\n\x08marketID\x18\x01 \x01(\tR\x08marketID\x12\x18\n\x07payload\x18\x02 \x01(\tR\x07payload\"\xeb\x02\n\x0cTxErrorEvent\x12\x18\n\x07PartyID\x18\x01 \x01(\tR\x07PartyID\x12\x16\n\x06\x65rrMsg\x18\x02 \x01(\tR\x06\x65rrMsg\x12\x41\n\x0forderSubmission\x18\x65 \x01(\x0b\x32\x15.vega.OrderSubmissionH\x00R\x0forderSubmission\x12>\n\x0eorderAmendment\x18\x66 \x01(\x0b\x32\x14.vega.OrderAmendmentH\x00R\x0eorderAmendment\x12G\n\x11orderCancellation\x18g \x01(\x0b\x32\x17.vega.OrderCancellationH\x00R\x11orderCancellation\x12,\n\x08proposal\x18h \x01(\x0b\x32\x0e.vega.ProposalH\x00R\x08proposal\x12 \n\x04vote\x18i \x01(\x0b\x32\n.vega.VoteH\x00R\x04voteB\r\n\x0btransaction\"*\n\nTimeUpdate\x12\x1c\n\ttimestamp\x18\x01 \x01(\x03R\ttimestamp\"I\n\x11TransferResponses\x12\x34\n\tresponses\x18\x01 \x03(\x0b\x32\x16.vega.TransferResponseR\tresponses\"\x86\x01\n\x12PositionResolution\x12\x1a\n\x08marketID\x18\x01 \x01(\tR\x08marketID\x12\x1e\n\ndistressed\x18\x02 \x01(\x03R\ndistressed\x12\x16\n\x06\x63losed\x18\x03 \x01(\x03R\x06\x63losed\x12\x1c\n\tmarkPrice\x18\x04 \x01(\x04R\tmarkPrice\"a\n\x11LossSocialization\x12\x1a\n\x08marketID\x18\x01 \x01(\tR\x08marketID\x12\x18\n\x07partyID\x18\x02 \x01(\tR\x07partyID\x12\x16\n\x06\x61mount\x18\x03 \x01(\x03R\x06\x61mount\";\n\x0fTradeSettlement\x12\x12\n\x04size\x18\x01 \x01(\x03R\x04size\x12\x14\n\x05price\x18\x02 \x01(\x04R\x05price\"\x9f\x01\n\x0eSettlePosition\x12\x1a\n\x08marketID\x18\x01 \x01(\tR\x08marketID\x12\x18\n\x07partyID\x18\x02 \x01(\tR\x07partyID\x12\x14\n\x05price\x18\x03 \x01(\x04R\x05price\x12\x41\n\x10tradeSettlements\x18\x04 \x03(\x0b\x32\x15.vega.TradeSettlementR\x10tradeSettlements\"v\n\x10SettleDistressed\x12\x1a\n\x08marketID\x18\x01 \x01(\tR\x08marketID\x12\x18\n\x07partyID\x18\x02 \x01(\tR\x07partyID\x12\x16\n\x06margin\x18\x03 \x01(\x04R\x06margin\x12\x14\n\x05price\x18\x04 \x01(\x04R\x05price\"0\n\nMarketTick\x12\x0e\n\x02ID\x18\x01 \x01(\tR\x02ID\x12\x12\n\x04time\x18\x02 \x01(\x03R\x04time\"\xc0\x01\n\x0c\x41uctionEvent\x12\x1a\n\x08marketID\x18\x01 \x01(\tR\x08marketID\x12&\n\x0eopeningAuction\x18\x02 \x01(\x08R\x0eopeningAuction\x12\x14\n\x05leave\x18\x03 \x01(\x08R\x05leave\x12\x14\n\x05start\x18\x04 \x01(\x03R\x05start\x12\x10\n\x03\x65nd\x18\x05 \x01(\x03R\x03\x65nd\x12.\n\x07trigger\x18\x06 \x01(\x0e\x32\x14.vega.AuctionTriggerR\x07trigger\"\x8d\x0c\n\x08\x42usEvent\x12\x0e\n\x02ID\x18\x01 \x01(\tR\x02ID\x12\x14\n\x05\x62lock\x18\x02 \x01(\tR\x05\x62lock\x12&\n\x04type\x18\x03 \x01(\x0e\x32\x12.vega.BusEventTypeR\x04type\x12\x32\n\ntimeUpdate\x18\x65 \x01(\x0b\x32\x10.vega.TimeUpdateH\x00R\ntimeUpdate\x12G\n\x11transferResponses\x18\x66 \x01(\x0b\x32\x17.vega.TransferResponsesH\x00R\x11transferResponses\x12J\n\x12positionResolution\x18g \x01(\x0b\x32\x18.vega.PositionResolutionH\x00R\x12positionResolution\x12#\n\x05order\x18h \x01(\x0b\x32\x0b.vega.OrderH\x00R\x05order\x12)\n\x07\x61\x63\x63ount\x18i \x01(\x0b\x32\r.vega.AccountH\x00R\x07\x61\x63\x63ount\x12#\n\x05party\x18j \x01(\x0b\x32\x0b.vega.PartyH\x00R\x05party\x12#\n\x05trade\x18k \x01(\x0b\x32\x0b.vega.TradeH\x00R\x05trade\x12\x38\n\x0cmarginLevels\x18l \x01(\x0b\x32\x12.vega.MarginLevelsH\x00R\x0cmarginLevels\x12,\n\x08proposal\x18m \x01(\x0b\x32\x0e.vega.ProposalH\x00R\x08proposal\x12 \n\x04vote\x18n \x01(\x0b\x32\n.vega.VoteH\x00R\x04vote\x12\x32\n\nmarketData\x18o \x01(\x0b\x32\x10.vega.MarketDataH\x00R\nmarketData\x12;\n\rnodeSignature\x18p \x01(\x0b\x32\x13.vega.NodeSignatureH\x00R\rnodeSignature\x12G\n\x11lossSocialization\x18q \x01(\x0b\x32\x17.vega.LossSocializationH\x00R\x11lossSocialization\x12>\n\x0esettlePosition\x18r \x01(\x0b\x32\x14.vega.SettlePositionH\x00R\x0esettlePosition\x12\x44\n\x10settleDistressed\x18s \x01(\x0b\x32\x16.vega.SettleDistressedH\x00R\x10settleDistressed\x12\x34\n\rmarketCreated\x18t \x01(\x0b\x32\x0c.vega.MarketH\x00R\rmarketCreated\x12#\n\x05\x61sset\x18u \x01(\x0b\x32\x0b.vega.AssetH\x00R\x05\x61sset\x12\x32\n\nmarketTick\x18v \x01(\x0b\x32\x10.vega.MarketTickH\x00R\nmarketTick\x12\x32\n\nwithdrawal\x18w \x01(\x0b\x32\x10.vega.WithdrawalH\x00R\nwithdrawal\x12)\n\x07\x64\x65posit\x18x \x01(\x0b\x32\r.vega.DepositH\x00R\x07\x64\x65posit\x12.\n\x07\x61uction\x18y \x01(\x0b\x32\x12.vega.AuctionEventH\x00R\x07\x61uction\x12\x32\n\nriskFactor\x18z \x01(\x0b\x32\x10.vega.RiskFactorH\x00R\nriskFactor\x12\x44\n\x10networkParameter\x18{ \x01(\x0b\x32\x16.vega.NetworkParameterH\x00R\x10networkParameter\x12J\n\x12liquidityProvision\x18| \x01(\x0b\x32\x18.vega.LiquidityProvisionH\x00R\x12liquidityProvision\x12\x34\n\rmarketUpdated\x18} \x01(\x0b\x32\x0c.vega.MarketH\x00R\rmarketUpdated\x12,\n\x06market\x18\xe9\x07 \x01(\x0b\x32\x11.vega.MarketEventH\x00R\x06market\x12\x35\n\ntxErrEvent\x18\xd1\x0f \x01(\x0b\x32\x12.vega.TxErrorEventH\x00R\ntxErrEventB\x07\n\x05\x65vent*\xa9\x07\n\x0c\x42usEventType\x12\x1e\n\x1a\x42US_EVENT_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12\x42US_EVENT_TYPE_ALL\x10\x01\x12\x1e\n\x1a\x42US_EVENT_TYPE_TIME_UPDATE\x10\x02\x12%\n!BUS_EVENT_TYPE_TRANSFER_RESPONSES\x10\x03\x12&\n\"BUS_EVENT_TYPE_POSITION_RESOLUTION\x10\x04\x12\x18\n\x14\x42US_EVENT_TYPE_ORDER\x10\x05\x12\x1a\n\x16\x42US_EVENT_TYPE_ACCOUNT\x10\x06\x12\x18\n\x14\x42US_EVENT_TYPE_PARTY\x10\x07\x12\x18\n\x14\x42US_EVENT_TYPE_TRADE\x10\x08\x12 \n\x1c\x42US_EVENT_TYPE_MARGIN_LEVELS\x10\t\x12\x1b\n\x17\x42US_EVENT_TYPE_PROPOSAL\x10\n\x12\x17\n\x13\x42US_EVENT_TYPE_VOTE\x10\x0b\x12\x1e\n\x1a\x42US_EVENT_TYPE_MARKET_DATA\x10\x0c\x12!\n\x1d\x42US_EVENT_TYPE_NODE_SIGNATURE\x10\r\x12%\n!BUS_EVENT_TYPE_LOSS_SOCIALIZATION\x10\x0e\x12\"\n\x1e\x42US_EVENT_TYPE_SETTLE_POSITION\x10\x0f\x12$\n BUS_EVENT_TYPE_SETTLE_DISTRESSED\x10\x10\x12!\n\x1d\x42US_EVENT_TYPE_MARKET_CREATED\x10\x11\x12\x18\n\x14\x42US_EVENT_TYPE_ASSET\x10\x12\x12\x1e\n\x1a\x42US_EVENT_TYPE_MARKET_TICK\x10\x13\x12\x1d\n\x19\x42US_EVENT_TYPE_WITHDRAWAL\x10\x14\x12\x1a\n\x16\x42US_EVENT_TYPE_DEPOSIT\x10\x15\x12\x1a\n\x16\x42US_EVENT_TYPE_AUCTION\x10\x16\x12\x1e\n\x1a\x42US_EVENT_TYPE_RISK_FACTOR\x10\x17\x12$\n BUS_EVENT_TYPE_NETWORK_PARAMETER\x10\x18\x12&\n\"BUS_EVENT_TYPE_LIQUIDITY_PROVISION\x10\x19\x12!\n\x1d\x42US_EVENT_TYPE_MARKET_UPDATED\x10\x1a\x12\x19\n\x15\x42US_EVENT_TYPE_MARKET\x10\x65\x12\x1c\n\x17\x42US_EVENT_TYPE_TX_ERROR\x10\xc9\x01\x42\x37\n\x14io.vegaprotocol.vegaZ\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
+  serialized_pb=b'\n\x0c\x65vents.proto\x12\x04vega\x1a\rmarkets.proto\x1a\x0c\x61ssets.proto\x1a\x10governance.proto\x1a\nvega.proto\"D\n\x0bMarketEvent\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x18\n\x07payload\x18\x02 \x01(\tR\x07payload\"\xf0\x02\n\x0cTxErrorEvent\x12\x19\n\x08party_id\x18\x01 \x01(\tR\x07partyId\x12\x17\n\x07\x65rr_msg\x18\x02 \x01(\tR\x06\x65rrMsg\x12\x42\n\x10order_submission\x18\x65 \x01(\x0b\x32\x15.vega.OrderSubmissionH\x00R\x0forderSubmission\x12?\n\x0forder_amendment\x18\x66 \x01(\x0b\x32\x14.vega.OrderAmendmentH\x00R\x0eorderAmendment\x12H\n\x12order_cancellation\x18g \x01(\x0b\x32\x17.vega.OrderCancellationH\x00R\x11orderCancellation\x12,\n\x08proposal\x18h \x01(\x0b\x32\x0e.vega.ProposalH\x00R\x08proposal\x12 \n\x04vote\x18i \x01(\x0b\x32\n.vega.VoteH\x00R\x04voteB\r\n\x0btransaction\"*\n\nTimeUpdate\x12\x1c\n\ttimestamp\x18\x01 \x01(\x03R\ttimestamp\"I\n\x11TransferResponses\x12\x34\n\tresponses\x18\x01 \x03(\x0b\x32\x16.vega.TransferResponseR\tresponses\"\x88\x01\n\x12PositionResolution\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x1e\n\ndistressed\x18\x02 \x01(\x03R\ndistressed\x12\x16\n\x06\x63losed\x18\x03 \x01(\x03R\x06\x63losed\x12\x1d\n\nmark_price\x18\x04 \x01(\x04R\tmarkPrice\"c\n\x11LossSocialization\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x16\n\x06\x61mount\x18\x03 \x01(\x03R\x06\x61mount\";\n\x0fTradeSettlement\x12\x12\n\x04size\x18\x01 \x01(\x03R\x04size\x12\x14\n\x05price\x18\x02 \x01(\x04R\x05price\"\xa2\x01\n\x0eSettlePosition\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x14\n\x05price\x18\x03 \x01(\x04R\x05price\x12\x42\n\x11trade_settlements\x18\x04 \x03(\x0b\x32\x15.vega.TradeSettlementR\x10tradeSettlements\"x\n\x10SettleDistressed\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x16\n\x06margin\x18\x03 \x01(\x04R\x06margin\x12\x14\n\x05price\x18\x04 \x01(\x04R\x05price\"0\n\nMarketTick\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04time\x18\x02 \x01(\x03R\x04time\"\xc2\x01\n\x0c\x41uctionEvent\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\'\n\x0fopening_auction\x18\x02 \x01(\x08R\x0eopeningAuction\x12\x14\n\x05leave\x18\x03 \x01(\x08R\x05leave\x12\x14\n\x05start\x18\x04 \x01(\x03R\x05start\x12\x10\n\x03\x65nd\x18\x05 \x01(\x03R\x03\x65nd\x12.\n\x07trigger\x18\x06 \x01(\x0e\x32\x14.vega.AuctionTriggerR\x07trigger\"\x9e\x0c\n\x08\x42usEvent\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n\x05\x62lock\x18\x02 \x01(\tR\x05\x62lock\x12&\n\x04type\x18\x03 \x01(\x0e\x32\x12.vega.BusEventTypeR\x04type\x12\x33\n\x0btime_update\x18\x65 \x01(\x0b\x32\x10.vega.TimeUpdateH\x00R\ntimeUpdate\x12H\n\x12transfer_responses\x18\x66 \x01(\x0b\x32\x17.vega.TransferResponsesH\x00R\x11transferResponses\x12K\n\x13position_resolution\x18g \x01(\x0b\x32\x18.vega.PositionResolutionH\x00R\x12positionResolution\x12#\n\x05order\x18h \x01(\x0b\x32\x0b.vega.OrderH\x00R\x05order\x12)\n\x07\x61\x63\x63ount\x18i \x01(\x0b\x32\r.vega.AccountH\x00R\x07\x61\x63\x63ount\x12#\n\x05party\x18j \x01(\x0b\x32\x0b.vega.PartyH\x00R\x05party\x12#\n\x05trade\x18k \x01(\x0b\x32\x0b.vega.TradeH\x00R\x05trade\x12\x39\n\rmargin_levels\x18l \x01(\x0b\x32\x12.vega.MarginLevelsH\x00R\x0cmarginLevels\x12,\n\x08proposal\x18m \x01(\x0b\x32\x0e.vega.ProposalH\x00R\x08proposal\x12 \n\x04vote\x18n \x01(\x0b\x32\n.vega.VoteH\x00R\x04vote\x12\x33\n\x0bmarket_data\x18o \x01(\x0b\x32\x10.vega.MarketDataH\x00R\nmarketData\x12<\n\x0enode_signature\x18p \x01(\x0b\x32\x13.vega.NodeSignatureH\x00R\rnodeSignature\x12H\n\x12loss_socialization\x18q \x01(\x0b\x32\x17.vega.LossSocializationH\x00R\x11lossSocialization\x12?\n\x0fsettle_position\x18r \x01(\x0b\x32\x14.vega.SettlePositionH\x00R\x0esettlePosition\x12\x45\n\x11settle_distressed\x18s \x01(\x0b\x32\x16.vega.SettleDistressedH\x00R\x10settleDistressed\x12\x35\n\x0emarket_created\x18t \x01(\x0b\x32\x0c.vega.MarketH\x00R\rmarketCreated\x12#\n\x05\x61sset\x18u \x01(\x0b\x32\x0b.vega.AssetH\x00R\x05\x61sset\x12\x33\n\x0bmarket_tick\x18v \x01(\x0b\x32\x10.vega.MarketTickH\x00R\nmarketTick\x12\x32\n\nwithdrawal\x18w \x01(\x0b\x32\x10.vega.WithdrawalH\x00R\nwithdrawal\x12)\n\x07\x64\x65posit\x18x \x01(\x0b\x32\r.vega.DepositH\x00R\x07\x64\x65posit\x12.\n\x07\x61uction\x18y \x01(\x0b\x32\x12.vega.AuctionEventH\x00R\x07\x61uction\x12\x33\n\x0brisk_factor\x18z \x01(\x0b\x32\x10.vega.RiskFactorH\x00R\nriskFactor\x12\x45\n\x11network_parameter\x18{ \x01(\x0b\x32\x16.vega.NetworkParameterH\x00R\x10networkParameter\x12K\n\x13liquidity_provision\x18| \x01(\x0b\x32\x18.vega.LiquidityProvisionH\x00R\x12liquidityProvision\x12\x35\n\x0emarket_updated\x18} \x01(\x0b\x32\x0c.vega.MarketH\x00R\rmarketUpdated\x12,\n\x06market\x18\xe9\x07 \x01(\x0b\x32\x11.vega.MarketEventH\x00R\x06market\x12\x37\n\x0ctx_err_event\x18\xd1\x0f \x01(\x0b\x32\x12.vega.TxErrorEventH\x00R\ntxErrEventB\x07\n\x05\x65vent*\xa9\x07\n\x0c\x42usEventType\x12\x1e\n\x1a\x42US_EVENT_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12\x42US_EVENT_TYPE_ALL\x10\x01\x12\x1e\n\x1a\x42US_EVENT_TYPE_TIME_UPDATE\x10\x02\x12%\n!BUS_EVENT_TYPE_TRANSFER_RESPONSES\x10\x03\x12&\n\"BUS_EVENT_TYPE_POSITION_RESOLUTION\x10\x04\x12\x18\n\x14\x42US_EVENT_TYPE_ORDER\x10\x05\x12\x1a\n\x16\x42US_EVENT_TYPE_ACCOUNT\x10\x06\x12\x18\n\x14\x42US_EVENT_TYPE_PARTY\x10\x07\x12\x18\n\x14\x42US_EVENT_TYPE_TRADE\x10\x08\x12 \n\x1c\x42US_EVENT_TYPE_MARGIN_LEVELS\x10\t\x12\x1b\n\x17\x42US_EVENT_TYPE_PROPOSAL\x10\n\x12\x17\n\x13\x42US_EVENT_TYPE_VOTE\x10\x0b\x12\x1e\n\x1a\x42US_EVENT_TYPE_MARKET_DATA\x10\x0c\x12!\n\x1d\x42US_EVENT_TYPE_NODE_SIGNATURE\x10\r\x12%\n!BUS_EVENT_TYPE_LOSS_SOCIALIZATION\x10\x0e\x12\"\n\x1e\x42US_EVENT_TYPE_SETTLE_POSITION\x10\x0f\x12$\n BUS_EVENT_TYPE_SETTLE_DISTRESSED\x10\x10\x12!\n\x1d\x42US_EVENT_TYPE_MARKET_CREATED\x10\x11\x12\x18\n\x14\x42US_EVENT_TYPE_ASSET\x10\x12\x12\x1e\n\x1a\x42US_EVENT_TYPE_MARKET_TICK\x10\x13\x12\x1d\n\x19\x42US_EVENT_TYPE_WITHDRAWAL\x10\x14\x12\x1a\n\x16\x42US_EVENT_TYPE_DEPOSIT\x10\x15\x12\x1a\n\x16\x42US_EVENT_TYPE_AUCTION\x10\x16\x12\x1e\n\x1a\x42US_EVENT_TYPE_RISK_FACTOR\x10\x17\x12$\n BUS_EVENT_TYPE_NETWORK_PARAMETER\x10\x18\x12&\n\"BUS_EVENT_TYPE_LIQUIDITY_PROVISION\x10\x19\x12!\n\x1d\x42US_EVENT_TYPE_MARKET_UPDATED\x10\x1a\x12\x19\n\x15\x42US_EVENT_TYPE_MARKET\x10\x65\x12\x1c\n\x17\x42US_EVENT_TYPE_TX_ERROR\x10\xc9\x01\x42\x37\n\x14io.vegaprotocol.vegaZ\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
   ,
   dependencies=[markets__pb2.DESCRIPTOR,assets__pb2.DESCRIPTOR,governance__pb2.DESCRIPTOR,vega__pb2.DESCRIPTOR,])
 
@@ -183,8 +183,8 @@ _BUSEVENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3012,
-  serialized_end=3949,
+  serialized_start=3046,
+  serialized_end=3983,
 )
 _sym_db.RegisterEnumDescriptor(_BUSEVENTTYPE)
 
@@ -230,12 +230,12 @@ _MARKETEVENT = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='vega.MarketEvent.marketID', index=0,
+      name='market_id', full_name='vega.MarketEvent.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='payload', full_name='vega.MarketEvent.payload', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -256,7 +256,7 @@ _MARKETEVENT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=81,
-  serialized_end=148,
+  serialized_end=149,
 )
 
 
@@ -269,35 +269,35 @@ _TXERROREVENT = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='PartyID', full_name='vega.TxErrorEvent.PartyID', index=0,
+      name='party_id', full_name='vega.TxErrorEvent.party_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='PartyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='errMsg', full_name='vega.TxErrorEvent.errMsg', index=1,
+      name='err_msg', full_name='vega.TxErrorEvent.err_msg', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='errMsg', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='orderSubmission', full_name='vega.TxErrorEvent.orderSubmission', index=2,
+      name='order_submission', full_name='vega.TxErrorEvent.order_submission', index=2,
       number=101, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='orderSubmission', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='orderAmendment', full_name='vega.TxErrorEvent.orderAmendment', index=3,
+      name='order_amendment', full_name='vega.TxErrorEvent.order_amendment', index=3,
       number=102, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='orderAmendment', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='orderCancellation', full_name='vega.TxErrorEvent.orderCancellation', index=4,
+      name='order_cancellation', full_name='vega.TxErrorEvent.order_cancellation', index=4,
       number=103, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -334,8 +334,8 @@ _TXERROREVENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=151,
-  serialized_end=514,
+  serialized_start=152,
+  serialized_end=520,
 )
 
 
@@ -366,8 +366,8 @@ _TIMEUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=516,
-  serialized_end=558,
+  serialized_start=522,
+  serialized_end=564,
 )
 
 
@@ -398,8 +398,8 @@ _TRANSFERRESPONSES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=560,
-  serialized_end=633,
+  serialized_start=566,
+  serialized_end=639,
 )
 
 
@@ -412,12 +412,12 @@ _POSITIONRESOLUTION = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='vega.PositionResolution.marketID', index=0,
+      name='market_id', full_name='vega.PositionResolution.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='distressed', full_name='vega.PositionResolution.distressed', index=1,
       number=2, type=3, cpp_type=2, label=1,
@@ -433,7 +433,7 @@ _POSITIONRESOLUTION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='closed', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='markPrice', full_name='vega.PositionResolution.markPrice', index=3,
+      name='mark_price', full_name='vega.PositionResolution.mark_price', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -451,8 +451,8 @@ _POSITIONRESOLUTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=636,
-  serialized_end=770,
+  serialized_start=642,
+  serialized_end=778,
 )
 
 
@@ -465,19 +465,19 @@ _LOSSSOCIALIZATION = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='vega.LossSocialization.marketID', index=0,
+      name='market_id', full_name='vega.LossSocialization.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='vega.LossSocialization.partyID', index=1,
+      name='party_id', full_name='vega.LossSocialization.party_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='amount', full_name='vega.LossSocialization.amount', index=2,
       number=3, type=3, cpp_type=2, label=1,
@@ -497,8 +497,8 @@ _LOSSSOCIALIZATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=772,
-  serialized_end=869,
+  serialized_start=780,
+  serialized_end=879,
 )
 
 
@@ -536,8 +536,8 @@ _TRADESETTLEMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=871,
-  serialized_end=930,
+  serialized_start=881,
+  serialized_end=940,
 )
 
 
@@ -550,19 +550,19 @@ _SETTLEPOSITION = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='vega.SettlePosition.marketID', index=0,
+      name='market_id', full_name='vega.SettlePosition.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='vega.SettlePosition.partyID', index=1,
+      name='party_id', full_name='vega.SettlePosition.party_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='price', full_name='vega.SettlePosition.price', index=2,
       number=3, type=4, cpp_type=4, label=1,
@@ -571,7 +571,7 @@ _SETTLEPOSITION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='price', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='tradeSettlements', full_name='vega.SettlePosition.tradeSettlements', index=3,
+      name='trade_settlements', full_name='vega.SettlePosition.trade_settlements', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -589,8 +589,8 @@ _SETTLEPOSITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=933,
-  serialized_end=1092,
+  serialized_start=943,
+  serialized_end=1105,
 )
 
 
@@ -603,19 +603,19 @@ _SETTLEDISTRESSED = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='vega.SettleDistressed.marketID', index=0,
+      name='market_id', full_name='vega.SettleDistressed.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='vega.SettleDistressed.partyID', index=1,
+      name='party_id', full_name='vega.SettleDistressed.party_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='margin', full_name='vega.SettleDistressed.margin', index=2,
       number=3, type=4, cpp_type=4, label=1,
@@ -642,8 +642,8 @@ _SETTLEDISTRESSED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1094,
-  serialized_end=1212,
+  serialized_start=1107,
+  serialized_end=1227,
 )
 
 
@@ -656,12 +656,12 @@ _MARKETTICK = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ID', full_name='vega.MarketTick.ID', index=0,
+      name='id', full_name='vega.MarketTick.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='ID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='time', full_name='vega.MarketTick.time', index=1,
       number=2, type=3, cpp_type=2, label=1,
@@ -681,8 +681,8 @@ _MARKETTICK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1214,
-  serialized_end=1262,
+  serialized_start=1229,
+  serialized_end=1277,
 )
 
 
@@ -695,14 +695,14 @@ _AUCTIONEVENT = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='vega.AuctionEvent.marketID', index=0,
+      name='market_id', full_name='vega.AuctionEvent.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='openingAuction', full_name='vega.AuctionEvent.openingAuction', index=1,
+      name='opening_auction', full_name='vega.AuctionEvent.opening_auction', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -748,8 +748,8 @@ _AUCTIONEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1265,
-  serialized_end=1457,
+  serialized_start=1280,
+  serialized_end=1474,
 )
 
 
@@ -762,12 +762,12 @@ _BUSEVENT = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ID', full_name='vega.BusEvent.ID', index=0,
+      name='id', full_name='vega.BusEvent.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='ID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='block', full_name='vega.BusEvent.block', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -783,21 +783,21 @@ _BUSEVENT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='timeUpdate', full_name='vega.BusEvent.timeUpdate', index=3,
+      name='time_update', full_name='vega.BusEvent.time_update', index=3,
       number=101, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='timeUpdate', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='transferResponses', full_name='vega.BusEvent.transferResponses', index=4,
+      name='transfer_responses', full_name='vega.BusEvent.transfer_responses', index=4,
       number=102, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='transferResponses', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='positionResolution', full_name='vega.BusEvent.positionResolution', index=5,
+      name='position_resolution', full_name='vega.BusEvent.position_resolution', index=5,
       number=103, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -832,7 +832,7 @@ _BUSEVENT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='trade', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marginLevels', full_name='vega.BusEvent.marginLevels', index=10,
+      name='margin_levels', full_name='vega.BusEvent.margin_levels', index=10,
       number=108, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -853,42 +853,42 @@ _BUSEVENT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='vote', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketData', full_name='vega.BusEvent.marketData', index=13,
+      name='market_data', full_name='vega.BusEvent.market_data', index=13,
       number=111, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='marketData', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='nodeSignature', full_name='vega.BusEvent.nodeSignature', index=14,
+      name='node_signature', full_name='vega.BusEvent.node_signature', index=14,
       number=112, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='nodeSignature', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lossSocialization', full_name='vega.BusEvent.lossSocialization', index=15,
+      name='loss_socialization', full_name='vega.BusEvent.loss_socialization', index=15,
       number=113, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='lossSocialization', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='settlePosition', full_name='vega.BusEvent.settlePosition', index=16,
+      name='settle_position', full_name='vega.BusEvent.settle_position', index=16,
       number=114, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='settlePosition', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='settleDistressed', full_name='vega.BusEvent.settleDistressed', index=17,
+      name='settle_distressed', full_name='vega.BusEvent.settle_distressed', index=17,
       number=115, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='settleDistressed', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketCreated', full_name='vega.BusEvent.marketCreated', index=18,
+      name='market_created', full_name='vega.BusEvent.market_created', index=18,
       number=116, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -902,7 +902,7 @@ _BUSEVENT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='asset', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketTick', full_name='vega.BusEvent.marketTick', index=20,
+      name='market_tick', full_name='vega.BusEvent.market_tick', index=20,
       number=118, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -930,28 +930,28 @@ _BUSEVENT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='auction', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='riskFactor', full_name='vega.BusEvent.riskFactor', index=24,
+      name='risk_factor', full_name='vega.BusEvent.risk_factor', index=24,
       number=122, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='riskFactor', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='networkParameter', full_name='vega.BusEvent.networkParameter', index=25,
+      name='network_parameter', full_name='vega.BusEvent.network_parameter', index=25,
       number=123, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='networkParameter', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='liquidityProvision', full_name='vega.BusEvent.liquidityProvision', index=26,
+      name='liquidity_provision', full_name='vega.BusEvent.liquidity_provision', index=26,
       number=124, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='liquidityProvision', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketUpdated', full_name='vega.BusEvent.marketUpdated', index=27,
+      name='market_updated', full_name='vega.BusEvent.market_updated', index=27,
       number=125, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -965,7 +965,7 @@ _BUSEVENT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='market', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='txErrEvent', full_name='vega.BusEvent.txErrEvent', index=29,
+      name='tx_err_event', full_name='vega.BusEvent.tx_err_event', index=29,
       number=2001, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -988,24 +988,24 @@ _BUSEVENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1460,
-  serialized_end=3009,
+  serialized_start=1477,
+  serialized_end=3043,
 )
 
-_TXERROREVENT.fields_by_name['orderSubmission'].message_type = vega__pb2._ORDERSUBMISSION
-_TXERROREVENT.fields_by_name['orderAmendment'].message_type = vega__pb2._ORDERAMENDMENT
-_TXERROREVENT.fields_by_name['orderCancellation'].message_type = vega__pb2._ORDERCANCELLATION
+_TXERROREVENT.fields_by_name['order_submission'].message_type = vega__pb2._ORDERSUBMISSION
+_TXERROREVENT.fields_by_name['order_amendment'].message_type = vega__pb2._ORDERAMENDMENT
+_TXERROREVENT.fields_by_name['order_cancellation'].message_type = vega__pb2._ORDERCANCELLATION
 _TXERROREVENT.fields_by_name['proposal'].message_type = governance__pb2._PROPOSAL
 _TXERROREVENT.fields_by_name['vote'].message_type = governance__pb2._VOTE
 _TXERROREVENT.oneofs_by_name['transaction'].fields.append(
-  _TXERROREVENT.fields_by_name['orderSubmission'])
-_TXERROREVENT.fields_by_name['orderSubmission'].containing_oneof = _TXERROREVENT.oneofs_by_name['transaction']
+  _TXERROREVENT.fields_by_name['order_submission'])
+_TXERROREVENT.fields_by_name['order_submission'].containing_oneof = _TXERROREVENT.oneofs_by_name['transaction']
 _TXERROREVENT.oneofs_by_name['transaction'].fields.append(
-  _TXERROREVENT.fields_by_name['orderAmendment'])
-_TXERROREVENT.fields_by_name['orderAmendment'].containing_oneof = _TXERROREVENT.oneofs_by_name['transaction']
+  _TXERROREVENT.fields_by_name['order_amendment'])
+_TXERROREVENT.fields_by_name['order_amendment'].containing_oneof = _TXERROREVENT.oneofs_by_name['transaction']
 _TXERROREVENT.oneofs_by_name['transaction'].fields.append(
-  _TXERROREVENT.fields_by_name['orderCancellation'])
-_TXERROREVENT.fields_by_name['orderCancellation'].containing_oneof = _TXERROREVENT.oneofs_by_name['transaction']
+  _TXERROREVENT.fields_by_name['order_cancellation'])
+_TXERROREVENT.fields_by_name['order_cancellation'].containing_oneof = _TXERROREVENT.oneofs_by_name['transaction']
 _TXERROREVENT.oneofs_by_name['transaction'].fields.append(
   _TXERROREVENT.fields_by_name['proposal'])
 _TXERROREVENT.fields_by_name['proposal'].containing_oneof = _TXERROREVENT.oneofs_by_name['transaction']
@@ -1013,45 +1013,45 @@ _TXERROREVENT.oneofs_by_name['transaction'].fields.append(
   _TXERROREVENT.fields_by_name['vote'])
 _TXERROREVENT.fields_by_name['vote'].containing_oneof = _TXERROREVENT.oneofs_by_name['transaction']
 _TRANSFERRESPONSES.fields_by_name['responses'].message_type = vega__pb2._TRANSFERRESPONSE
-_SETTLEPOSITION.fields_by_name['tradeSettlements'].message_type = _TRADESETTLEMENT
+_SETTLEPOSITION.fields_by_name['trade_settlements'].message_type = _TRADESETTLEMENT
 _AUCTIONEVENT.fields_by_name['trigger'].enum_type = vega__pb2._AUCTIONTRIGGER
 _BUSEVENT.fields_by_name['type'].enum_type = _BUSEVENTTYPE
-_BUSEVENT.fields_by_name['timeUpdate'].message_type = _TIMEUPDATE
-_BUSEVENT.fields_by_name['transferResponses'].message_type = _TRANSFERRESPONSES
-_BUSEVENT.fields_by_name['positionResolution'].message_type = _POSITIONRESOLUTION
+_BUSEVENT.fields_by_name['time_update'].message_type = _TIMEUPDATE
+_BUSEVENT.fields_by_name['transfer_responses'].message_type = _TRANSFERRESPONSES
+_BUSEVENT.fields_by_name['position_resolution'].message_type = _POSITIONRESOLUTION
 _BUSEVENT.fields_by_name['order'].message_type = vega__pb2._ORDER
 _BUSEVENT.fields_by_name['account'].message_type = vega__pb2._ACCOUNT
 _BUSEVENT.fields_by_name['party'].message_type = vega__pb2._PARTY
 _BUSEVENT.fields_by_name['trade'].message_type = vega__pb2._TRADE
-_BUSEVENT.fields_by_name['marginLevels'].message_type = vega__pb2._MARGINLEVELS
+_BUSEVENT.fields_by_name['margin_levels'].message_type = vega__pb2._MARGINLEVELS
 _BUSEVENT.fields_by_name['proposal'].message_type = governance__pb2._PROPOSAL
 _BUSEVENT.fields_by_name['vote'].message_type = governance__pb2._VOTE
-_BUSEVENT.fields_by_name['marketData'].message_type = vega__pb2._MARKETDATA
-_BUSEVENT.fields_by_name['nodeSignature'].message_type = vega__pb2._NODESIGNATURE
-_BUSEVENT.fields_by_name['lossSocialization'].message_type = _LOSSSOCIALIZATION
-_BUSEVENT.fields_by_name['settlePosition'].message_type = _SETTLEPOSITION
-_BUSEVENT.fields_by_name['settleDistressed'].message_type = _SETTLEDISTRESSED
-_BUSEVENT.fields_by_name['marketCreated'].message_type = markets__pb2._MARKET
+_BUSEVENT.fields_by_name['market_data'].message_type = vega__pb2._MARKETDATA
+_BUSEVENT.fields_by_name['node_signature'].message_type = vega__pb2._NODESIGNATURE
+_BUSEVENT.fields_by_name['loss_socialization'].message_type = _LOSSSOCIALIZATION
+_BUSEVENT.fields_by_name['settle_position'].message_type = _SETTLEPOSITION
+_BUSEVENT.fields_by_name['settle_distressed'].message_type = _SETTLEDISTRESSED
+_BUSEVENT.fields_by_name['market_created'].message_type = markets__pb2._MARKET
 _BUSEVENT.fields_by_name['asset'].message_type = assets__pb2._ASSET
-_BUSEVENT.fields_by_name['marketTick'].message_type = _MARKETTICK
+_BUSEVENT.fields_by_name['market_tick'].message_type = _MARKETTICK
 _BUSEVENT.fields_by_name['withdrawal'].message_type = vega__pb2._WITHDRAWAL
 _BUSEVENT.fields_by_name['deposit'].message_type = vega__pb2._DEPOSIT
 _BUSEVENT.fields_by_name['auction'].message_type = _AUCTIONEVENT
-_BUSEVENT.fields_by_name['riskFactor'].message_type = vega__pb2._RISKFACTOR
-_BUSEVENT.fields_by_name['networkParameter'].message_type = vega__pb2._NETWORKPARAMETER
-_BUSEVENT.fields_by_name['liquidityProvision'].message_type = vega__pb2._LIQUIDITYPROVISION
-_BUSEVENT.fields_by_name['marketUpdated'].message_type = markets__pb2._MARKET
+_BUSEVENT.fields_by_name['risk_factor'].message_type = vega__pb2._RISKFACTOR
+_BUSEVENT.fields_by_name['network_parameter'].message_type = vega__pb2._NETWORKPARAMETER
+_BUSEVENT.fields_by_name['liquidity_provision'].message_type = vega__pb2._LIQUIDITYPROVISION
+_BUSEVENT.fields_by_name['market_updated'].message_type = markets__pb2._MARKET
 _BUSEVENT.fields_by_name['market'].message_type = _MARKETEVENT
-_BUSEVENT.fields_by_name['txErrEvent'].message_type = _TXERROREVENT
+_BUSEVENT.fields_by_name['tx_err_event'].message_type = _TXERROREVENT
 _BUSEVENT.oneofs_by_name['event'].fields.append(
-  _BUSEVENT.fields_by_name['timeUpdate'])
-_BUSEVENT.fields_by_name['timeUpdate'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+  _BUSEVENT.fields_by_name['time_update'])
+_BUSEVENT.fields_by_name['time_update'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
-  _BUSEVENT.fields_by_name['transferResponses'])
-_BUSEVENT.fields_by_name['transferResponses'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+  _BUSEVENT.fields_by_name['transfer_responses'])
+_BUSEVENT.fields_by_name['transfer_responses'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
-  _BUSEVENT.fields_by_name['positionResolution'])
-_BUSEVENT.fields_by_name['positionResolution'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+  _BUSEVENT.fields_by_name['position_resolution'])
+_BUSEVENT.fields_by_name['position_resolution'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
   _BUSEVENT.fields_by_name['order'])
 _BUSEVENT.fields_by_name['order'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
@@ -1065,8 +1065,8 @@ _BUSEVENT.oneofs_by_name['event'].fields.append(
   _BUSEVENT.fields_by_name['trade'])
 _BUSEVENT.fields_by_name['trade'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
-  _BUSEVENT.fields_by_name['marginLevels'])
-_BUSEVENT.fields_by_name['marginLevels'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+  _BUSEVENT.fields_by_name['margin_levels'])
+_BUSEVENT.fields_by_name['margin_levels'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
   _BUSEVENT.fields_by_name['proposal'])
 _BUSEVENT.fields_by_name['proposal'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
@@ -1074,29 +1074,29 @@ _BUSEVENT.oneofs_by_name['event'].fields.append(
   _BUSEVENT.fields_by_name['vote'])
 _BUSEVENT.fields_by_name['vote'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
-  _BUSEVENT.fields_by_name['marketData'])
-_BUSEVENT.fields_by_name['marketData'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+  _BUSEVENT.fields_by_name['market_data'])
+_BUSEVENT.fields_by_name['market_data'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
-  _BUSEVENT.fields_by_name['nodeSignature'])
-_BUSEVENT.fields_by_name['nodeSignature'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+  _BUSEVENT.fields_by_name['node_signature'])
+_BUSEVENT.fields_by_name['node_signature'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
-  _BUSEVENT.fields_by_name['lossSocialization'])
-_BUSEVENT.fields_by_name['lossSocialization'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+  _BUSEVENT.fields_by_name['loss_socialization'])
+_BUSEVENT.fields_by_name['loss_socialization'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
-  _BUSEVENT.fields_by_name['settlePosition'])
-_BUSEVENT.fields_by_name['settlePosition'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+  _BUSEVENT.fields_by_name['settle_position'])
+_BUSEVENT.fields_by_name['settle_position'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
-  _BUSEVENT.fields_by_name['settleDistressed'])
-_BUSEVENT.fields_by_name['settleDistressed'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+  _BUSEVENT.fields_by_name['settle_distressed'])
+_BUSEVENT.fields_by_name['settle_distressed'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
-  _BUSEVENT.fields_by_name['marketCreated'])
-_BUSEVENT.fields_by_name['marketCreated'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+  _BUSEVENT.fields_by_name['market_created'])
+_BUSEVENT.fields_by_name['market_created'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
   _BUSEVENT.fields_by_name['asset'])
 _BUSEVENT.fields_by_name['asset'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
-  _BUSEVENT.fields_by_name['marketTick'])
-_BUSEVENT.fields_by_name['marketTick'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+  _BUSEVENT.fields_by_name['market_tick'])
+_BUSEVENT.fields_by_name['market_tick'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
   _BUSEVENT.fields_by_name['withdrawal'])
 _BUSEVENT.fields_by_name['withdrawal'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
@@ -1107,23 +1107,23 @@ _BUSEVENT.oneofs_by_name['event'].fields.append(
   _BUSEVENT.fields_by_name['auction'])
 _BUSEVENT.fields_by_name['auction'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
-  _BUSEVENT.fields_by_name['riskFactor'])
-_BUSEVENT.fields_by_name['riskFactor'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+  _BUSEVENT.fields_by_name['risk_factor'])
+_BUSEVENT.fields_by_name['risk_factor'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
-  _BUSEVENT.fields_by_name['networkParameter'])
-_BUSEVENT.fields_by_name['networkParameter'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+  _BUSEVENT.fields_by_name['network_parameter'])
+_BUSEVENT.fields_by_name['network_parameter'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
-  _BUSEVENT.fields_by_name['liquidityProvision'])
-_BUSEVENT.fields_by_name['liquidityProvision'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+  _BUSEVENT.fields_by_name['liquidity_provision'])
+_BUSEVENT.fields_by_name['liquidity_provision'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
-  _BUSEVENT.fields_by_name['marketUpdated'])
-_BUSEVENT.fields_by_name['marketUpdated'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+  _BUSEVENT.fields_by_name['market_updated'])
+_BUSEVENT.fields_by_name['market_updated'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
   _BUSEVENT.fields_by_name['market'])
 _BUSEVENT.fields_by_name['market'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
-  _BUSEVENT.fields_by_name['txErrEvent'])
-_BUSEVENT.fields_by_name['txErrEvent'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+  _BUSEVENT.fields_by_name['tx_err_event'])
+_BUSEVENT.fields_by_name['tx_err_event'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 DESCRIPTOR.message_types_by_name['MarketEvent'] = _MARKETEVENT
 DESCRIPTOR.message_types_by_name['TxErrorEvent'] = _TXERROREVENT
 DESCRIPTOR.message_types_by_name['TimeUpdate'] = _TIMEUPDATE

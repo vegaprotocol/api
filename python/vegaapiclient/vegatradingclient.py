@@ -27,7 +27,7 @@ class VegaTradingClient(object):
             channel = grpc.insecure_channel(self.url)
             grpc.channel_ready_future(channel).result(timeout=10)
 
-        self._trading = trading_grpc.tradingStub(channel)
+        self._trading = trading_grpc.TradingServiceStub(channel)
 
     def PrepareSubmitOrder(self, request: Any, contact_node=True) -> Any:
         """
