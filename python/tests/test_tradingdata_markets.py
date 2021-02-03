@@ -10,7 +10,7 @@ def test_MarketByID(tradingdata):  # noqa: F811
     assert len(markets) > 0
     marketID = markets[0].id
 
-    req = vac.api.trading.MarketByIDRequest(marketID=marketID)
+    req = vac.api.trading.MarketByIDRequest(market_id=marketID)
     market = tradingdata.MarketByID(req)
 
     assert market.market.id == markets[0].id

@@ -55,7 +55,7 @@ class VegaTradingClient(object):
         blob += request.SerializeToString()
         return trading.PrepareSubmitOrderResponse(
             blob=blob,
-            submitID=request.submission.reference,
+            submit_id=request.submission.reference,
         )
 
     def prepare_sign_submit_tx(
