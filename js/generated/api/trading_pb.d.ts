@@ -1,4 +1,4 @@
-// package: api
+// package: api.v1
 // file: api/trading.proto
 
 import * as jspb from "google-protobuf";
@@ -8,7 +8,6 @@ import * as governance_pb from "../governance_pb";
 import * as chain_events_pb from "../chain_events_pb";
 import * as assets_pb from "../assets_pb";
 import * as events_pb from "../events_pb";
-import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
 import * as github_com_mwitkow_go_proto_validators_validator_pb from "../github.com/mwitkow/go-proto-validators/validator_pb";
 
 export class PropagateChainEventRequest extends jspb.Message {
@@ -17,8 +16,8 @@ export class PropagateChainEventRequest extends jspb.Message {
   getEvt(): chain_events_pb.ChainEvent | undefined;
   setEvt(value?: chain_events_pb.ChainEvent): void;
 
-  getPubkey(): string;
-  setPubkey(value: string): void;
+  getPubKey(): string;
+  setPubKey(value: string): void;
 
   getSignature(): Uint8Array | string;
   getSignature_asU8(): Uint8Array;
@@ -38,7 +37,7 @@ export class PropagateChainEventRequest extends jspb.Message {
 export namespace PropagateChainEventRequest {
   export type AsObject = {
     evt?: chain_events_pb.ChainEvent.AsObject,
-    pubkey: string,
+    pubKey: string,
     signature: Uint8Array | string,
   }
 }
@@ -168,8 +167,8 @@ export class PrepareSubmitOrderResponse extends jspb.Message {
   getBlob_asB64(): string;
   setBlob(value: Uint8Array | string): void;
 
-  getSubmitid(): string;
-  setSubmitid(value: string): void;
+  getSubmitId(): string;
+  setSubmitId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PrepareSubmitOrderResponse.AsObject;
@@ -184,7 +183,7 @@ export class PrepareSubmitOrderResponse extends jspb.Message {
 export namespace PrepareSubmitOrderResponse {
   export type AsObject = {
     blob: Uint8Array | string,
-    submitid: string,
+    submitId: string,
   }
 }
 
@@ -232,67 +231,67 @@ export namespace PrepareAmendOrderResponse {
   }
 }
 
-export class SubmitOrderRequest extends jspb.Message {
+export class PrepareSubmitOrderRequest extends jspb.Message {
   hasSubmission(): boolean;
   clearSubmission(): void;
   getSubmission(): vega_pb.OrderSubmission | undefined;
   setSubmission(value?: vega_pb.OrderSubmission): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SubmitOrderRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: SubmitOrderRequest): SubmitOrderRequest.AsObject;
+  toObject(includeInstance?: boolean): PrepareSubmitOrderRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareSubmitOrderRequest): PrepareSubmitOrderRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SubmitOrderRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SubmitOrderRequest;
-  static deserializeBinaryFromReader(message: SubmitOrderRequest, reader: jspb.BinaryReader): SubmitOrderRequest;
+  static serializeBinaryToWriter(message: PrepareSubmitOrderRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareSubmitOrderRequest;
+  static deserializeBinaryFromReader(message: PrepareSubmitOrderRequest, reader: jspb.BinaryReader): PrepareSubmitOrderRequest;
 }
 
-export namespace SubmitOrderRequest {
+export namespace PrepareSubmitOrderRequest {
   export type AsObject = {
     submission?: vega_pb.OrderSubmission.AsObject,
   }
 }
 
-export class CancelOrderRequest extends jspb.Message {
+export class PrepareCancelOrderRequest extends jspb.Message {
   hasCancellation(): boolean;
   clearCancellation(): void;
   getCancellation(): vega_pb.OrderCancellation | undefined;
   setCancellation(value?: vega_pb.OrderCancellation): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CancelOrderRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CancelOrderRequest): CancelOrderRequest.AsObject;
+  toObject(includeInstance?: boolean): PrepareCancelOrderRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareCancelOrderRequest): PrepareCancelOrderRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CancelOrderRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CancelOrderRequest;
-  static deserializeBinaryFromReader(message: CancelOrderRequest, reader: jspb.BinaryReader): CancelOrderRequest;
+  static serializeBinaryToWriter(message: PrepareCancelOrderRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareCancelOrderRequest;
+  static deserializeBinaryFromReader(message: PrepareCancelOrderRequest, reader: jspb.BinaryReader): PrepareCancelOrderRequest;
 }
 
-export namespace CancelOrderRequest {
+export namespace PrepareCancelOrderRequest {
   export type AsObject = {
     cancellation?: vega_pb.OrderCancellation.AsObject,
   }
 }
 
-export class AmendOrderRequest extends jspb.Message {
+export class PrepareAmendOrderRequest extends jspb.Message {
   hasAmendment(): boolean;
   clearAmendment(): void;
   getAmendment(): vega_pb.OrderAmendment | undefined;
   setAmendment(value?: vega_pb.OrderAmendment): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AmendOrderRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: AmendOrderRequest): AmendOrderRequest.AsObject;
+  toObject(includeInstance?: boolean): PrepareAmendOrderRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareAmendOrderRequest): PrepareAmendOrderRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AmendOrderRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AmendOrderRequest;
-  static deserializeBinaryFromReader(message: AmendOrderRequest, reader: jspb.BinaryReader): AmendOrderRequest;
+  static serializeBinaryToWriter(message: PrepareAmendOrderRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareAmendOrderRequest;
+  static deserializeBinaryFromReader(message: PrepareAmendOrderRequest, reader: jspb.BinaryReader): PrepareAmendOrderRequest;
 }
 
-export namespace AmendOrderRequest {
+export namespace PrepareAmendOrderRequest {
   export type AsObject = {
     amendment?: vega_pb.OrderAmendment.AsObject,
   }
@@ -441,10 +440,10 @@ export namespace OptionalProposalState {
 }
 
 export class GetProposalsRequest extends jspb.Message {
-  hasSelectinstate(): boolean;
-  clearSelectinstate(): void;
-  getSelectinstate(): OptionalProposalState | undefined;
-  setSelectinstate(value?: OptionalProposalState): void;
+  hasSelectInState(): boolean;
+  clearSelectInState(): void;
+  getSelectInState(): OptionalProposalState | undefined;
+  setSelectInState(value?: OptionalProposalState): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetProposalsRequest.AsObject;
@@ -458,7 +457,7 @@ export class GetProposalsRequest extends jspb.Message {
 
 export namespace GetProposalsRequest {
   export type AsObject = {
-    selectinstate?: OptionalProposalState.AsObject,
+    selectInState?: OptionalProposalState.AsObject,
   }
 }
 
@@ -485,13 +484,13 @@ export namespace GetProposalsResponse {
 }
 
 export class GetProposalsByPartyRequest extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
-  hasSelectinstate(): boolean;
-  clearSelectinstate(): void;
-  getSelectinstate(): OptionalProposalState | undefined;
-  setSelectinstate(value?: OptionalProposalState): void;
+  hasSelectInState(): boolean;
+  clearSelectInState(): void;
+  getSelectInState(): OptionalProposalState | undefined;
+  setSelectInState(value?: OptionalProposalState): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetProposalsByPartyRequest.AsObject;
@@ -505,8 +504,8 @@ export class GetProposalsByPartyRequest extends jspb.Message {
 
 export namespace GetProposalsByPartyRequest {
   export type AsObject = {
-    partyid: string,
-    selectinstate?: OptionalProposalState.AsObject,
+    partyId: string,
+    selectInState?: OptionalProposalState.AsObject,
   }
 }
 
@@ -533,8 +532,8 @@ export namespace GetProposalsByPartyResponse {
 }
 
 export class GetVotesByPartyRequest extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetVotesByPartyRequest.AsObject;
@@ -548,7 +547,7 @@ export class GetVotesByPartyRequest extends jspb.Message {
 
 export namespace GetVotesByPartyRequest {
   export type AsObject = {
-    partyid: string,
+    partyId: string,
   }
 }
 
@@ -575,10 +574,10 @@ export namespace GetVotesByPartyResponse {
 }
 
 export class GetNewMarketProposalsRequest extends jspb.Message {
-  hasSelectinstate(): boolean;
-  clearSelectinstate(): void;
-  getSelectinstate(): OptionalProposalState | undefined;
-  setSelectinstate(value?: OptionalProposalState): void;
+  hasSelectInState(): boolean;
+  clearSelectInState(): void;
+  getSelectInState(): OptionalProposalState | undefined;
+  setSelectInState(value?: OptionalProposalState): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetNewMarketProposalsRequest.AsObject;
@@ -592,7 +591,7 @@ export class GetNewMarketProposalsRequest extends jspb.Message {
 
 export namespace GetNewMarketProposalsRequest {
   export type AsObject = {
-    selectinstate?: OptionalProposalState.AsObject,
+    selectInState?: OptionalProposalState.AsObject,
   }
 }
 
@@ -619,13 +618,13 @@ export namespace GetNewMarketProposalsResponse {
 }
 
 export class GetUpdateMarketProposalsRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  hasSelectinstate(): boolean;
-  clearSelectinstate(): void;
-  getSelectinstate(): OptionalProposalState | undefined;
-  setSelectinstate(value?: OptionalProposalState): void;
+  hasSelectInState(): boolean;
+  clearSelectInState(): void;
+  getSelectInState(): OptionalProposalState | undefined;
+  setSelectInState(value?: OptionalProposalState): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUpdateMarketProposalsRequest.AsObject;
@@ -639,8 +638,8 @@ export class GetUpdateMarketProposalsRequest extends jspb.Message {
 
 export namespace GetUpdateMarketProposalsRequest {
   export type AsObject = {
-    marketid: string,
-    selectinstate?: OptionalProposalState.AsObject,
+    marketId: string,
+    selectInState?: OptionalProposalState.AsObject,
   }
 }
 
@@ -667,10 +666,10 @@ export namespace GetUpdateMarketProposalsResponse {
 }
 
 export class GetNetworkParametersProposalsRequest extends jspb.Message {
-  hasSelectinstate(): boolean;
-  clearSelectinstate(): void;
-  getSelectinstate(): OptionalProposalState | undefined;
-  setSelectinstate(value?: OptionalProposalState): void;
+  hasSelectInState(): boolean;
+  clearSelectInState(): void;
+  getSelectInState(): OptionalProposalState | undefined;
+  setSelectInState(value?: OptionalProposalState): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetNetworkParametersProposalsRequest.AsObject;
@@ -684,7 +683,7 @@ export class GetNetworkParametersProposalsRequest extends jspb.Message {
 
 export namespace GetNetworkParametersProposalsRequest {
   export type AsObject = {
-    selectinstate?: OptionalProposalState.AsObject,
+    selectInState?: OptionalProposalState.AsObject,
   }
 }
 
@@ -711,10 +710,10 @@ export namespace GetNetworkParametersProposalsResponse {
 }
 
 export class GetNewAssetProposalsRequest extends jspb.Message {
-  hasSelectinstate(): boolean;
-  clearSelectinstate(): void;
-  getSelectinstate(): OptionalProposalState | undefined;
-  setSelectinstate(value?: OptionalProposalState): void;
+  hasSelectInState(): boolean;
+  clearSelectInState(): void;
+  getSelectInState(): OptionalProposalState | undefined;
+  setSelectInState(value?: OptionalProposalState): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetNewAssetProposalsRequest.AsObject;
@@ -728,7 +727,7 @@ export class GetNewAssetProposalsRequest extends jspb.Message {
 
 export namespace GetNewAssetProposalsRequest {
   export type AsObject = {
-    selectinstate?: OptionalProposalState.AsObject,
+    selectInState?: OptionalProposalState.AsObject,
   }
 }
 
@@ -755,8 +754,8 @@ export namespace GetNewAssetProposalsResponse {
 }
 
 export class GetProposalByIDRequest extends jspb.Message {
-  getProposalid(): string;
-  setProposalid(value: string): void;
+  getProposalId(): string;
+  setProposalId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetProposalByIDRequest.AsObject;
@@ -770,7 +769,7 @@ export class GetProposalByIDRequest extends jspb.Message {
 
 export namespace GetProposalByIDRequest {
   export type AsObject = {
-    proposalid: string,
+    proposalId: string,
   }
 }
 
@@ -838,9 +837,47 @@ export namespace GetProposalByReferenceResponse {
   }
 }
 
+export class ObserveGovernanceRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ObserveGovernanceRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ObserveGovernanceRequest): ObserveGovernanceRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ObserveGovernanceRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ObserveGovernanceRequest;
+  static deserializeBinaryFromReader(message: ObserveGovernanceRequest, reader: jspb.BinaryReader): ObserveGovernanceRequest;
+}
+
+export namespace ObserveGovernanceRequest {
+  export type AsObject = {
+  }
+}
+
+export class ObserveGovernanceResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): governance_pb.GovernanceData | undefined;
+  setData(value?: governance_pb.GovernanceData): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ObserveGovernanceResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ObserveGovernanceResponse): ObserveGovernanceResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ObserveGovernanceResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ObserveGovernanceResponse;
+  static deserializeBinaryFromReader(message: ObserveGovernanceResponse, reader: jspb.BinaryReader): ObserveGovernanceResponse;
+}
+
+export namespace ObserveGovernanceResponse {
+  export type AsObject = {
+    data?: governance_pb.GovernanceData.AsObject,
+  }
+}
+
 export class ObservePartyProposalsRequest extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ObservePartyProposalsRequest.AsObject;
@@ -854,13 +891,35 @@ export class ObservePartyProposalsRequest extends jspb.Message {
 
 export namespace ObservePartyProposalsRequest {
   export type AsObject = {
-    partyid: string,
+    partyId: string,
+  }
+}
+
+export class ObservePartyProposalsResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): governance_pb.GovernanceData | undefined;
+  setData(value?: governance_pb.GovernanceData): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ObservePartyProposalsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ObservePartyProposalsResponse): ObservePartyProposalsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ObservePartyProposalsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ObservePartyProposalsResponse;
+  static deserializeBinaryFromReader(message: ObservePartyProposalsResponse, reader: jspb.BinaryReader): ObservePartyProposalsResponse;
+}
+
+export namespace ObservePartyProposalsResponse {
+  export type AsObject = {
+    data?: governance_pb.GovernanceData.AsObject,
   }
 }
 
 export class ObserveProposalVotesRequest extends jspb.Message {
-  getProposalid(): string;
-  setProposalid(value: string): void;
+  getProposalId(): string;
+  setProposalId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ObserveProposalVotesRequest.AsObject;
@@ -874,13 +933,35 @@ export class ObserveProposalVotesRequest extends jspb.Message {
 
 export namespace ObserveProposalVotesRequest {
   export type AsObject = {
-    proposalid: string,
+    proposalId: string,
+  }
+}
+
+export class ObserveProposalVotesResponse extends jspb.Message {
+  hasVote(): boolean;
+  clearVote(): void;
+  getVote(): governance_pb.Vote | undefined;
+  setVote(value?: governance_pb.Vote): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ObserveProposalVotesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ObserveProposalVotesResponse): ObserveProposalVotesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ObserveProposalVotesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ObserveProposalVotesResponse;
+  static deserializeBinaryFromReader(message: ObserveProposalVotesResponse, reader: jspb.BinaryReader): ObserveProposalVotesResponse;
+}
+
+export namespace ObserveProposalVotesResponse {
+  export type AsObject = {
+    vote?: governance_pb.Vote.AsObject,
   }
 }
 
 export class ObservePartyVotesRequest extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ObservePartyVotesRequest.AsObject;
@@ -894,16 +975,38 @@ export class ObservePartyVotesRequest extends jspb.Message {
 
 export namespace ObservePartyVotesRequest {
   export type AsObject = {
-    partyid: string,
+    partyId: string,
+  }
+}
+
+export class ObservePartyVotesResponse extends jspb.Message {
+  hasVote(): boolean;
+  clearVote(): void;
+  getVote(): governance_pb.Vote | undefined;
+  setVote(value?: governance_pb.Vote): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ObservePartyVotesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ObservePartyVotesResponse): ObservePartyVotesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ObservePartyVotesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ObservePartyVotesResponse;
+  static deserializeBinaryFromReader(message: ObservePartyVotesResponse, reader: jspb.BinaryReader): ObservePartyVotesResponse;
+}
+
+export namespace ObservePartyVotesResponse {
+  export type AsObject = {
+    vote?: governance_pb.Vote.AsObject,
   }
 }
 
 export class MarginLevelsSubscribeRequest extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MarginLevelsSubscribeRequest.AsObject;
@@ -917,17 +1020,39 @@ export class MarginLevelsSubscribeRequest extends jspb.Message {
 
 export namespace MarginLevelsSubscribeRequest {
   export type AsObject = {
-    partyid: string,
-    marketid: string,
+    partyId: string,
+    marketId: string,
+  }
+}
+
+export class MarginLevelsSubscribeResponse extends jspb.Message {
+  hasMarginLevels(): boolean;
+  clearMarginLevels(): void;
+  getMarginLevels(): vega_pb.MarginLevels | undefined;
+  setMarginLevels(value?: vega_pb.MarginLevels): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MarginLevelsSubscribeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MarginLevelsSubscribeResponse): MarginLevelsSubscribeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MarginLevelsSubscribeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MarginLevelsSubscribeResponse;
+  static deserializeBinaryFromReader(message: MarginLevelsSubscribeResponse, reader: jspb.BinaryReader): MarginLevelsSubscribeResponse;
+}
+
+export namespace MarginLevelsSubscribeResponse {
+  export type AsObject = {
+    marginLevels?: vega_pb.MarginLevels.AsObject,
   }
 }
 
 export class MarginLevelsRequest extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MarginLevelsRequest.AsObject;
@@ -941,16 +1066,16 @@ export class MarginLevelsRequest extends jspb.Message {
 
 export namespace MarginLevelsRequest {
   export type AsObject = {
-    partyid: string,
-    marketid: string,
+    partyId: string,
+    marketId: string,
   }
 }
 
 export class MarginLevelsResponse extends jspb.Message {
-  clearMarginlevelsList(): void;
-  getMarginlevelsList(): Array<vega_pb.MarginLevels>;
-  setMarginlevelsList(value: Array<vega_pb.MarginLevels>): void;
-  addMarginlevels(value?: vega_pb.MarginLevels, index?: number): vega_pb.MarginLevels;
+  clearMarginLevelsList(): void;
+  getMarginLevelsList(): Array<vega_pb.MarginLevels>;
+  setMarginLevelsList(value: Array<vega_pb.MarginLevels>): void;
+  addMarginLevels(value?: vega_pb.MarginLevels, index?: number): vega_pb.MarginLevels;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MarginLevelsResponse.AsObject;
@@ -964,13 +1089,13 @@ export class MarginLevelsResponse extends jspb.Message {
 
 export namespace MarginLevelsResponse {
   export type AsObject = {
-    marginlevelsList: Array<vega_pb.MarginLevels.AsObject>,
+    marginLevelsList: Array<vega_pb.MarginLevels.AsObject>,
   }
 }
 
 export class MarketsDataSubscribeRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MarketsDataSubscribeRequest.AsObject;
@@ -984,13 +1109,35 @@ export class MarketsDataSubscribeRequest extends jspb.Message {
 
 export namespace MarketsDataSubscribeRequest {
   export type AsObject = {
-    marketid: string,
+    marketId: string,
+  }
+}
+
+export class MarketsDataSubscribeResponse extends jspb.Message {
+  hasMarketData(): boolean;
+  clearMarketData(): void;
+  getMarketData(): vega_pb.MarketData | undefined;
+  setMarketData(value?: vega_pb.MarketData): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MarketsDataSubscribeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MarketsDataSubscribeResponse): MarketsDataSubscribeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MarketsDataSubscribeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MarketsDataSubscribeResponse;
+  static deserializeBinaryFromReader(message: MarketsDataSubscribeResponse, reader: jspb.BinaryReader): MarketsDataSubscribeResponse;
+}
+
+export namespace MarketsDataSubscribeResponse {
+  export type AsObject = {
+    marketData?: vega_pb.MarketData.AsObject,
   }
 }
 
 export class MarketDataByIDRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MarketDataByIDRequest.AsObject;
@@ -1004,15 +1151,15 @@ export class MarketDataByIDRequest extends jspb.Message {
 
 export namespace MarketDataByIDRequest {
   export type AsObject = {
-    marketid: string,
+    marketId: string,
   }
 }
 
 export class MarketDataByIDResponse extends jspb.Message {
-  hasMarketdata(): boolean;
-  clearMarketdata(): void;
-  getMarketdata(): vega_pb.MarketData | undefined;
-  setMarketdata(value?: vega_pb.MarketData): void;
+  hasMarketData(): boolean;
+  clearMarketData(): void;
+  getMarketData(): vega_pb.MarketData | undefined;
+  setMarketData(value?: vega_pb.MarketData): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MarketDataByIDResponse.AsObject;
@@ -1026,15 +1173,31 @@ export class MarketDataByIDResponse extends jspb.Message {
 
 export namespace MarketDataByIDResponse {
   export type AsObject = {
-    marketdata?: vega_pb.MarketData.AsObject,
+    marketData?: vega_pb.MarketData.AsObject,
+  }
+}
+
+export class MarketsDataRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MarketsDataRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: MarketsDataRequest): MarketsDataRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MarketsDataRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MarketsDataRequest;
+  static deserializeBinaryFromReader(message: MarketsDataRequest, reader: jspb.BinaryReader): MarketsDataRequest;
+}
+
+export namespace MarketsDataRequest {
+  export type AsObject = {
   }
 }
 
 export class MarketsDataResponse extends jspb.Message {
-  clearMarketsdataList(): void;
-  getMarketsdataList(): Array<vega_pb.MarketData>;
-  setMarketsdataList(value: Array<vega_pb.MarketData>): void;
-  addMarketsdata(value?: vega_pb.MarketData, index?: number): vega_pb.MarketData;
+  clearMarketsDataList(): void;
+  getMarketsDataList(): Array<vega_pb.MarketData>;
+  setMarketsDataList(value: Array<vega_pb.MarketData>): void;
+  addMarketsData(value?: vega_pb.MarketData, index?: number): vega_pb.MarketData;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MarketsDataResponse.AsObject;
@@ -1048,13 +1211,13 @@ export class MarketsDataResponse extends jspb.Message {
 
 export namespace MarketsDataResponse {
   export type AsObject = {
-    marketsdataList: Array<vega_pb.MarketData.AsObject>,
+    marketsDataList: Array<vega_pb.MarketData.AsObject>,
   }
 }
 
 export class LastTradeRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LastTradeRequest.AsObject;
@@ -1068,7 +1231,7 @@ export class LastTradeRequest extends jspb.Message {
 
 export namespace LastTradeRequest {
   export type AsObject = {
-    marketid: string,
+    marketId: string,
   }
 }
 
@@ -1095,8 +1258,8 @@ export namespace LastTradeResponse {
 }
 
 export class MarketByIDRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MarketByIDRequest.AsObject;
@@ -1110,7 +1273,7 @@ export class MarketByIDRequest extends jspb.Message {
 
 export namespace MarketByIDRequest {
   export type AsObject = {
-    marketid: string,
+    marketId: string,
   }
 }
 
@@ -1137,8 +1300,8 @@ export namespace MarketByIDResponse {
 }
 
 export class PartyByIDRequest extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PartyByIDRequest.AsObject;
@@ -1152,7 +1315,7 @@ export class PartyByIDRequest extends jspb.Message {
 
 export namespace PartyByIDRequest {
   export type AsObject = {
-    partyid: string,
+    partyId: string,
   }
 }
 
@@ -1175,6 +1338,22 @@ export class PartyByIDResponse extends jspb.Message {
 export namespace PartyByIDResponse {
   export type AsObject = {
     party?: vega_pb.Party.AsObject,
+  }
+}
+
+export class PartiesRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PartiesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PartiesRequest): PartiesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PartiesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PartiesRequest;
+  static deserializeBinaryFromReader(message: PartiesRequest, reader: jspb.BinaryReader): PartiesRequest;
+}
+
+export namespace PartiesRequest {
+  export type AsObject = {
   }
 }
 
@@ -1201,11 +1380,11 @@ export namespace PartiesResponse {
 }
 
 export class TradesByPartyRequest extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   hasPagination(): boolean;
   clearPagination(): void;
@@ -1224,8 +1403,8 @@ export class TradesByPartyRequest extends jspb.Message {
 
 export namespace TradesByPartyRequest {
   export type AsObject = {
-    partyid: string,
-    marketid: string,
+    partyId: string,
+    marketId: string,
     pagination?: Pagination.AsObject,
   }
 }
@@ -1253,8 +1432,8 @@ export namespace TradesByPartyResponse {
 }
 
 export class TradesByOrderRequest extends jspb.Message {
-  getOrderid(): string;
-  setOrderid(value: string): void;
+  getOrderId(): string;
+  setOrderId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TradesByOrderRequest.AsObject;
@@ -1268,7 +1447,7 @@ export class TradesByOrderRequest extends jspb.Message {
 
 export namespace TradesByOrderRequest {
   export type AsObject = {
-    orderid: string,
+    orderId: string,
   }
 }
 
@@ -1295,11 +1474,11 @@ export namespace TradesByOrderResponse {
 }
 
 export class AccountsSubscribeRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   getAsset(): string;
   setAsset(value: string): void;
@@ -1319,19 +1498,41 @@ export class AccountsSubscribeRequest extends jspb.Message {
 
 export namespace AccountsSubscribeRequest {
   export type AsObject = {
-    marketid: string,
-    partyid: string,
+    marketId: string,
+    partyId: string,
     asset: string,
     type: vega_pb.AccountTypeMap[keyof vega_pb.AccountTypeMap],
   }
 }
 
-export class OrdersSubscribeRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+export class AccountsSubscribeResponse extends jspb.Message {
+  hasAccount(): boolean;
+  clearAccount(): void;
+  getAccount(): vega_pb.Account | undefined;
+  setAccount(value?: vega_pb.Account): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AccountsSubscribeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AccountsSubscribeResponse): AccountsSubscribeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AccountsSubscribeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AccountsSubscribeResponse;
+  static deserializeBinaryFromReader(message: AccountsSubscribeResponse, reader: jspb.BinaryReader): AccountsSubscribeResponse;
+}
+
+export namespace AccountsSubscribeResponse {
+  export type AsObject = {
+    account?: vega_pb.Account.AsObject,
+  }
+}
+
+export class OrdersSubscribeRequest extends jspb.Message {
+  getMarketId(): string;
+  setMarketId(value: string): void;
+
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrdersSubscribeRequest.AsObject;
@@ -1345,17 +1546,17 @@ export class OrdersSubscribeRequest extends jspb.Message {
 
 export namespace OrdersSubscribeRequest {
   export type AsObject = {
-    marketid: string,
-    partyid: string,
+    marketId: string,
+    partyId: string,
   }
 }
 
 export class TradesSubscribeRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TradesSubscribeRequest.AsObject;
@@ -1369,14 +1570,14 @@ export class TradesSubscribeRequest extends jspb.Message {
 
 export namespace TradesSubscribeRequest {
   export type AsObject = {
-    marketid: string,
-    partyid: string,
+    marketId: string,
+    partyId: string,
   }
 }
 
 export class CandlesSubscribeRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   getInterval(): vega_pb.IntervalMap[keyof vega_pb.IntervalMap];
   setInterval(value: vega_pb.IntervalMap[keyof vega_pb.IntervalMap]): void;
@@ -1393,14 +1594,36 @@ export class CandlesSubscribeRequest extends jspb.Message {
 
 export namespace CandlesSubscribeRequest {
   export type AsObject = {
-    marketid: string,
+    marketId: string,
     interval: vega_pb.IntervalMap[keyof vega_pb.IntervalMap],
   }
 }
 
+export class CandlesSubscribeResponse extends jspb.Message {
+  hasCandle(): boolean;
+  clearCandle(): void;
+  getCandle(): vega_pb.Candle | undefined;
+  setCandle(value?: vega_pb.Candle): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CandlesSubscribeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CandlesSubscribeResponse): CandlesSubscribeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CandlesSubscribeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CandlesSubscribeResponse;
+  static deserializeBinaryFromReader(message: CandlesSubscribeResponse, reader: jspb.BinaryReader): CandlesSubscribeResponse;
+}
+
+export namespace CandlesSubscribeResponse {
+  export type AsObject = {
+    candle?: vega_pb.Candle.AsObject,
+  }
+}
+
 export class MarketDepthSubscribeRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MarketDepthSubscribeRequest.AsObject;
@@ -1414,13 +1637,35 @@ export class MarketDepthSubscribeRequest extends jspb.Message {
 
 export namespace MarketDepthSubscribeRequest {
   export type AsObject = {
-    marketid: string,
+    marketId: string,
+  }
+}
+
+export class MarketDepthSubscribeResponse extends jspb.Message {
+  hasMarketDepth(): boolean;
+  clearMarketDepth(): void;
+  getMarketDepth(): vega_pb.MarketDepth | undefined;
+  setMarketDepth(value?: vega_pb.MarketDepth): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MarketDepthSubscribeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MarketDepthSubscribeResponse): MarketDepthSubscribeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MarketDepthSubscribeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MarketDepthSubscribeResponse;
+  static deserializeBinaryFromReader(message: MarketDepthSubscribeResponse, reader: jspb.BinaryReader): MarketDepthSubscribeResponse;
+}
+
+export namespace MarketDepthSubscribeResponse {
+  export type AsObject = {
+    marketDepth?: vega_pb.MarketDepth.AsObject,
   }
 }
 
 export class MarketDepthUpdatesSubscribeRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MarketDepthUpdatesSubscribeRequest.AsObject;
@@ -1434,16 +1679,38 @@ export class MarketDepthUpdatesSubscribeRequest extends jspb.Message {
 
 export namespace MarketDepthUpdatesSubscribeRequest {
   export type AsObject = {
-    marketid: string,
+    marketId: string,
+  }
+}
+
+export class MarketDepthUpdatesSubscribeResponse extends jspb.Message {
+  hasUpdate(): boolean;
+  clearUpdate(): void;
+  getUpdate(): vega_pb.MarketDepthUpdate | undefined;
+  setUpdate(value?: vega_pb.MarketDepthUpdate): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MarketDepthUpdatesSubscribeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MarketDepthUpdatesSubscribeResponse): MarketDepthUpdatesSubscribeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MarketDepthUpdatesSubscribeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MarketDepthUpdatesSubscribeResponse;
+  static deserializeBinaryFromReader(message: MarketDepthUpdatesSubscribeResponse, reader: jspb.BinaryReader): MarketDepthUpdatesSubscribeResponse;
+}
+
+export namespace MarketDepthUpdatesSubscribeResponse {
+  export type AsObject = {
+    update?: vega_pb.MarketDepthUpdate.AsObject,
   }
 }
 
 export class PositionsSubscribeRequest extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PositionsSubscribeRequest.AsObject;
@@ -1457,14 +1724,36 @@ export class PositionsSubscribeRequest extends jspb.Message {
 
 export namespace PositionsSubscribeRequest {
   export type AsObject = {
-    partyid: string,
-    marketid: string,
+    partyId: string,
+    marketId: string,
+  }
+}
+
+export class PositionsSubscribeResponse extends jspb.Message {
+  hasPosition(): boolean;
+  clearPosition(): void;
+  getPosition(): vega_pb.Position | undefined;
+  setPosition(value?: vega_pb.Position): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PositionsSubscribeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PositionsSubscribeResponse): PositionsSubscribeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PositionsSubscribeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PositionsSubscribeResponse;
+  static deserializeBinaryFromReader(message: PositionsSubscribeResponse, reader: jspb.BinaryReader): PositionsSubscribeResponse;
+}
+
+export namespace PositionsSubscribeResponse {
+  export type AsObject = {
+    position?: vega_pb.Position.AsObject,
   }
 }
 
 export class OrdersByMarketRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   hasPagination(): boolean;
   clearPagination(): void;
@@ -1483,7 +1772,7 @@ export class OrdersByMarketRequest extends jspb.Message {
 
 export namespace OrdersByMarketRequest {
   export type AsObject = {
-    marketid: string,
+    marketId: string,
     pagination?: Pagination.AsObject,
   }
 }
@@ -1511,8 +1800,8 @@ export namespace OrdersByMarketResponse {
 }
 
 export class OrdersByPartyRequest extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   hasPagination(): boolean;
   clearPagination(): void;
@@ -1531,7 +1820,7 @@ export class OrdersByPartyRequest extends jspb.Message {
 
 export namespace OrdersByPartyRequest {
   export type AsObject = {
-    partyid: string,
+    partyId: string,
     pagination?: Pagination.AsObject,
   }
 }
@@ -1558,47 +1847,47 @@ export namespace OrdersByPartyResponse {
   }
 }
 
-export class OrderByMarketAndIdRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+export class OrderByMarketAndIDRequest extends jspb.Message {
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getOrderid(): string;
-  setOrderid(value: string): void;
+  getOrderId(): string;
+  setOrderId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OrderByMarketAndIdRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: OrderByMarketAndIdRequest): OrderByMarketAndIdRequest.AsObject;
+  toObject(includeInstance?: boolean): OrderByMarketAndIDRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: OrderByMarketAndIDRequest): OrderByMarketAndIDRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OrderByMarketAndIdRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OrderByMarketAndIdRequest;
-  static deserializeBinaryFromReader(message: OrderByMarketAndIdRequest, reader: jspb.BinaryReader): OrderByMarketAndIdRequest;
+  static serializeBinaryToWriter(message: OrderByMarketAndIDRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OrderByMarketAndIDRequest;
+  static deserializeBinaryFromReader(message: OrderByMarketAndIDRequest, reader: jspb.BinaryReader): OrderByMarketAndIDRequest;
 }
 
-export namespace OrderByMarketAndIdRequest {
+export namespace OrderByMarketAndIDRequest {
   export type AsObject = {
-    marketid: string,
-    orderid: string,
+    marketId: string,
+    orderId: string,
   }
 }
 
-export class OrderByMarketAndIdResponse extends jspb.Message {
+export class OrderByMarketAndIDResponse extends jspb.Message {
   hasOrder(): boolean;
   clearOrder(): void;
   getOrder(): vega_pb.Order | undefined;
   setOrder(value?: vega_pb.Order): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OrderByMarketAndIdResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: OrderByMarketAndIdResponse): OrderByMarketAndIdResponse.AsObject;
+  toObject(includeInstance?: boolean): OrderByMarketAndIDResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: OrderByMarketAndIDResponse): OrderByMarketAndIDResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OrderByMarketAndIdResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OrderByMarketAndIdResponse;
-  static deserializeBinaryFromReader(message: OrderByMarketAndIdResponse, reader: jspb.BinaryReader): OrderByMarketAndIdResponse;
+  static serializeBinaryToWriter(message: OrderByMarketAndIDResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OrderByMarketAndIDResponse;
+  static deserializeBinaryFromReader(message: OrderByMarketAndIDResponse, reader: jspb.BinaryReader): OrderByMarketAndIDResponse;
 }
 
-export namespace OrderByMarketAndIdResponse {
+export namespace OrderByMarketAndIDResponse {
   export type AsObject = {
     order?: vega_pb.Order.AsObject,
   }
@@ -1646,6 +1935,22 @@ export namespace OrderByReferenceResponse {
   }
 }
 
+export class MarketsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MarketsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: MarketsRequest): MarketsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MarketsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MarketsRequest;
+  static deserializeBinaryFromReader(message: MarketsRequest, reader: jspb.BinaryReader): MarketsRequest;
+}
+
+export namespace MarketsRequest {
+  export type AsObject = {
+  }
+}
+
 export class MarketsResponse extends jspb.Message {
   clearMarketsList(): void;
   getMarketsList(): Array<markets_pb.Market>;
@@ -1669,11 +1974,11 @@ export namespace MarketsResponse {
 }
 
 export class CandlesRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getSincetimestamp(): number;
-  setSincetimestamp(value: number): void;
+  getSinceTimestamp(): number;
+  setSinceTimestamp(value: number): void;
 
   getInterval(): vega_pb.IntervalMap[keyof vega_pb.IntervalMap];
   setInterval(value: vega_pb.IntervalMap[keyof vega_pb.IntervalMap]): void;
@@ -1690,8 +1995,8 @@ export class CandlesRequest extends jspb.Message {
 
 export namespace CandlesRequest {
   export type AsObject = {
-    marketid: string,
-    sincetimestamp: number,
+    marketId: string,
+    sinceTimestamp: number,
     interval: vega_pb.IntervalMap[keyof vega_pb.IntervalMap],
   }
 }
@@ -1719,11 +2024,11 @@ export namespace CandlesResponse {
 }
 
 export class MarketDepthRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getMaxdepth(): number;
-  setMaxdepth(value: number): void;
+  getMaxDepth(): number;
+  setMaxDepth(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MarketDepthRequest.AsObject;
@@ -1737,14 +2042,14 @@ export class MarketDepthRequest extends jspb.Message {
 
 export namespace MarketDepthRequest {
   export type AsObject = {
-    marketid: string,
-    maxdepth: number,
+    marketId: string,
+    maxDepth: number,
   }
 }
 
 export class MarketDepthResponse extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   clearBuyList(): void;
   getBuyList(): Array<vega_pb.PriceLevel>;
@@ -1756,13 +2061,13 @@ export class MarketDepthResponse extends jspb.Message {
   setSellList(value: Array<vega_pb.PriceLevel>): void;
   addSell(value?: vega_pb.PriceLevel, index?: number): vega_pb.PriceLevel;
 
-  hasLasttrade(): boolean;
-  clearLasttrade(): void;
-  getLasttrade(): vega_pb.Trade | undefined;
-  setLasttrade(value?: vega_pb.Trade): void;
+  hasLastTrade(): boolean;
+  clearLastTrade(): void;
+  getLastTrade(): vega_pb.Trade | undefined;
+  setLastTrade(value?: vega_pb.Trade): void;
 
-  getSequencenumber(): number;
-  setSequencenumber(value: number): void;
+  getSequenceNumber(): number;
+  setSequenceNumber(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MarketDepthResponse.AsObject;
@@ -1776,17 +2081,17 @@ export class MarketDepthResponse extends jspb.Message {
 
 export namespace MarketDepthResponse {
   export type AsObject = {
-    marketid: string,
+    marketId: string,
     buyList: Array<vega_pb.PriceLevel.AsObject>,
     sellList: Array<vega_pb.PriceLevel.AsObject>,
-    lasttrade?: vega_pb.Trade.AsObject,
-    sequencenumber: number,
+    lastTrade?: vega_pb.Trade.AsObject,
+    sequenceNumber: number,
   }
 }
 
 export class TradesByMarketRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   hasPagination(): boolean;
   clearPagination(): void;
@@ -1805,7 +2110,7 @@ export class TradesByMarketRequest extends jspb.Message {
 
 export namespace TradesByMarketRequest {
   export type AsObject = {
-    marketid: string,
+    marketId: string,
     pagination?: Pagination.AsObject,
   }
 }
@@ -1833,11 +2138,11 @@ export namespace TradesByMarketResponse {
 }
 
 export class PositionsByPartyRequest extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PositionsByPartyRequest.AsObject;
@@ -1851,8 +2156,8 @@ export class PositionsByPartyRequest extends jspb.Message {
 
 export namespace PositionsByPartyRequest {
   export type AsObject = {
-    partyid: string,
-    marketid: string,
+    partyId: string,
+    marketId: string,
   }
 }
 
@@ -1878,21 +2183,37 @@ export namespace PositionsByPartyResponse {
   }
 }
 
-export class VegaTimeResponse extends jspb.Message {
+export class GetVegaTimeRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetVegaTimeRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetVegaTimeRequest): GetVegaTimeRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetVegaTimeRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetVegaTimeRequest;
+  static deserializeBinaryFromReader(message: GetVegaTimeRequest, reader: jspb.BinaryReader): GetVegaTimeRequest;
+}
+
+export namespace GetVegaTimeRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetVegaTimeResponse extends jspb.Message {
   getTimestamp(): number;
   setTimestamp(value: number): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VegaTimeResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: VegaTimeResponse): VegaTimeResponse.AsObject;
+  toObject(includeInstance?: boolean): GetVegaTimeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetVegaTimeResponse): GetVegaTimeResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: VegaTimeResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VegaTimeResponse;
-  static deserializeBinaryFromReader(message: VegaTimeResponse, reader: jspb.BinaryReader): VegaTimeResponse;
+  static serializeBinaryToWriter(message: GetVegaTimeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetVegaTimeResponse;
+  static deserializeBinaryFromReader(message: GetVegaTimeResponse, reader: jspb.BinaryReader): GetVegaTimeResponse;
 }
 
-export namespace VegaTimeResponse {
+export namespace GetVegaTimeResponse {
   export type AsObject = {
     timestamp: number,
   }
@@ -1926,56 +2247,94 @@ export namespace Pagination {
   }
 }
 
-export class OrdersStream extends jspb.Message {
+export class OrdersSubscribeResponse extends jspb.Message {
   clearOrdersList(): void;
   getOrdersList(): Array<vega_pb.Order>;
   setOrdersList(value: Array<vega_pb.Order>): void;
   addOrders(value?: vega_pb.Order, index?: number): vega_pb.Order;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OrdersStream.AsObject;
-  static toObject(includeInstance: boolean, msg: OrdersStream): OrdersStream.AsObject;
+  toObject(includeInstance?: boolean): OrdersSubscribeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: OrdersSubscribeResponse): OrdersSubscribeResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OrdersStream, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OrdersStream;
-  static deserializeBinaryFromReader(message: OrdersStream, reader: jspb.BinaryReader): OrdersStream;
+  static serializeBinaryToWriter(message: OrdersSubscribeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OrdersSubscribeResponse;
+  static deserializeBinaryFromReader(message: OrdersSubscribeResponse, reader: jspb.BinaryReader): OrdersSubscribeResponse;
 }
 
-export namespace OrdersStream {
+export namespace OrdersSubscribeResponse {
   export type AsObject = {
     ordersList: Array<vega_pb.Order.AsObject>,
   }
 }
 
-export class TradesStream extends jspb.Message {
+export class TradesSubscribeResponse extends jspb.Message {
   clearTradesList(): void;
   getTradesList(): Array<vega_pb.Trade>;
   setTradesList(value: Array<vega_pb.Trade>): void;
   addTrades(value?: vega_pb.Trade, index?: number): vega_pb.Trade;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TradesStream.AsObject;
-  static toObject(includeInstance: boolean, msg: TradesStream): TradesStream.AsObject;
+  toObject(includeInstance?: boolean): TradesSubscribeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: TradesSubscribeResponse): TradesSubscribeResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: TradesStream, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TradesStream;
-  static deserializeBinaryFromReader(message: TradesStream, reader: jspb.BinaryReader): TradesStream;
+  static serializeBinaryToWriter(message: TradesSubscribeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TradesSubscribeResponse;
+  static deserializeBinaryFromReader(message: TradesSubscribeResponse, reader: jspb.BinaryReader): TradesSubscribeResponse;
 }
 
-export namespace TradesStream {
+export namespace TradesSubscribeResponse {
   export type AsObject = {
     tradesList: Array<vega_pb.Trade.AsObject>,
   }
 }
 
-export class PartyAccountsRequest extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+export class TransferResponsesSubscribeRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TransferResponsesSubscribeRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: TransferResponsesSubscribeRequest): TransferResponsesSubscribeRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TransferResponsesSubscribeRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TransferResponsesSubscribeRequest;
+  static deserializeBinaryFromReader(message: TransferResponsesSubscribeRequest, reader: jspb.BinaryReader): TransferResponsesSubscribeRequest;
+}
 
-  getMarketid(): string;
-  setMarketid(value: string): void;
+export namespace TransferResponsesSubscribeRequest {
+  export type AsObject = {
+  }
+}
+
+export class TransferResponsesSubscribeResponse extends jspb.Message {
+  hasResponse(): boolean;
+  clearResponse(): void;
+  getResponse(): vega_pb.TransferResponse | undefined;
+  setResponse(value?: vega_pb.TransferResponse): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TransferResponsesSubscribeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: TransferResponsesSubscribeResponse): TransferResponsesSubscribeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TransferResponsesSubscribeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TransferResponsesSubscribeResponse;
+  static deserializeBinaryFromReader(message: TransferResponsesSubscribeResponse, reader: jspb.BinaryReader): TransferResponsesSubscribeResponse;
+}
+
+export namespace TransferResponsesSubscribeResponse {
+  export type AsObject = {
+    response?: vega_pb.TransferResponse.AsObject,
+  }
+}
+
+export class PartyAccountsRequest extends jspb.Message {
+  getPartyId(): string;
+  setPartyId(value: string): void;
+
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   getType(): vega_pb.AccountTypeMap[keyof vega_pb.AccountTypeMap];
   setType(value: vega_pb.AccountTypeMap[keyof vega_pb.AccountTypeMap]): void;
@@ -1995,8 +2354,8 @@ export class PartyAccountsRequest extends jspb.Message {
 
 export namespace PartyAccountsRequest {
   export type AsObject = {
-    partyid: string,
-    marketid: string,
+    partyId: string,
+    marketId: string,
     type: vega_pb.AccountTypeMap[keyof vega_pb.AccountTypeMap],
     asset: string,
   }
@@ -2025,8 +2384,8 @@ export namespace PartyAccountsResponse {
 }
 
 export class MarketAccountsRequest extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   getAsset(): string;
   setAsset(value: string): void;
@@ -2043,7 +2402,7 @@ export class MarketAccountsRequest extends jspb.Message {
 
 export namespace MarketAccountsRequest {
   export type AsObject = {
-    marketid: string,
+    marketId: string,
     asset: string,
   }
 }
@@ -2113,8 +2472,8 @@ export namespace FeeInfrastructureAccountsResponse {
 }
 
 export class PrepareProposalRequest extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   getReference(): string;
   setReference(value: string): void;
@@ -2136,7 +2495,7 @@ export class PrepareProposalRequest extends jspb.Message {
 
 export namespace PrepareProposalRequest {
   export type AsObject = {
-    partyid: string,
+    partyId: string,
     reference: string,
     proposal?: governance_pb.ProposalTerms.AsObject,
   }
@@ -2148,10 +2507,10 @@ export class PrepareProposalResponse extends jspb.Message {
   getBlob_asB64(): string;
   setBlob(value: Uint8Array | string): void;
 
-  hasPendingproposal(): boolean;
-  clearPendingproposal(): void;
-  getPendingproposal(): governance_pb.Proposal | undefined;
-  setPendingproposal(value?: governance_pb.Proposal): void;
+  hasPendingProposal(): boolean;
+  clearPendingProposal(): void;
+  getPendingProposal(): governance_pb.Proposal | undefined;
+  setPendingProposal(value?: governance_pb.Proposal): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PrepareProposalResponse.AsObject;
@@ -2166,7 +2525,7 @@ export class PrepareProposalResponse extends jspb.Message {
 export namespace PrepareProposalResponse {
   export type AsObject = {
     blob: Uint8Array | string,
-    pendingproposal?: governance_pb.Proposal.AsObject,
+    pendingProposal?: governance_pb.Proposal.AsObject,
   }
 }
 
@@ -2265,8 +2624,8 @@ export namespace PrepareLiquidityProvisionResponse {
 }
 
 export class OrderByIDRequest extends jspb.Message {
-  getOrderid(): string;
-  setOrderid(value: string): void;
+  getOrderId(): string;
+  setOrderId(value: string): void;
 
   getVersion(): number;
   setVersion(value: number): void;
@@ -2283,14 +2642,36 @@ export class OrderByIDRequest extends jspb.Message {
 
 export namespace OrderByIDRequest {
   export type AsObject = {
-    orderid: string,
+    orderId: string,
     version: number,
   }
 }
 
+export class OrderByIDResponse extends jspb.Message {
+  hasOrder(): boolean;
+  clearOrder(): void;
+  getOrder(): vega_pb.Order | undefined;
+  setOrder(value?: vega_pb.Order): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OrderByIDResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: OrderByIDResponse): OrderByIDResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OrderByIDResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OrderByIDResponse;
+  static deserializeBinaryFromReader(message: OrderByIDResponse, reader: jspb.BinaryReader): OrderByIDResponse;
+}
+
+export namespace OrderByIDResponse {
+  export type AsObject = {
+    order?: vega_pb.Order.AsObject,
+  }
+}
+
 export class OrderVersionsByIDRequest extends jspb.Message {
-  getOrderid(): string;
-  setOrderid(value: string): void;
+  getOrderId(): string;
+  setOrderId(value: string): void;
 
   hasPagination(): boolean;
   clearPagination(): void;
@@ -2309,28 +2690,28 @@ export class OrderVersionsByIDRequest extends jspb.Message {
 
 export namespace OrderVersionsByIDRequest {
   export type AsObject = {
-    orderid: string,
+    orderId: string,
     pagination?: Pagination.AsObject,
   }
 }
 
-export class OrderVersionsResponse extends jspb.Message {
+export class OrderVersionsByIDResponse extends jspb.Message {
   clearOrdersList(): void;
   getOrdersList(): Array<vega_pb.Order>;
   setOrdersList(value: Array<vega_pb.Order>): void;
   addOrders(value?: vega_pb.Order, index?: number): vega_pb.Order;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OrderVersionsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: OrderVersionsResponse): OrderVersionsResponse.AsObject;
+  toObject(includeInstance?: boolean): OrderVersionsByIDResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: OrderVersionsByIDResponse): OrderVersionsByIDResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OrderVersionsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OrderVersionsResponse;
-  static deserializeBinaryFromReader(message: OrderVersionsResponse, reader: jspb.BinaryReader): OrderVersionsResponse;
+  static serializeBinaryToWriter(message: OrderVersionsByIDResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OrderVersionsByIDResponse;
+  static deserializeBinaryFromReader(message: OrderVersionsByIDResponse, reader: jspb.BinaryReader): OrderVersionsByIDResponse;
 }
 
-export namespace OrderVersionsResponse {
+export namespace OrderVersionsByIDResponse {
   export type AsObject = {
     ordersList: Array<vega_pb.Order.AsObject>,
   }
@@ -2403,10 +2784,10 @@ export namespace EstimateMarginRequest {
 }
 
 export class EstimateMarginResponse extends jspb.Message {
-  hasMarginlevels(): boolean;
-  clearMarginlevels(): void;
-  getMarginlevels(): vega_pb.MarginLevels | undefined;
-  setMarginlevels(value?: vega_pb.MarginLevels): void;
+  hasMarginLevels(): boolean;
+  clearMarginLevels(): void;
+  getMarginLevels(): vega_pb.MarginLevels | undefined;
+  setMarginLevels(value?: vega_pb.MarginLevels): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EstimateMarginResponse.AsObject;
@@ -2420,69 +2801,107 @@ export class EstimateMarginResponse extends jspb.Message {
 
 export namespace EstimateMarginResponse {
   export type AsObject = {
-    marginlevels?: vega_pb.MarginLevels.AsObject,
+    marginLevels?: vega_pb.MarginLevels.AsObject,
   }
 }
 
-export class ObserveEventsRequest extends jspb.Message {
+export class ObserveEventBusRequest extends jspb.Message {
   clearTypeList(): void;
   getTypeList(): Array<events_pb.BusEventTypeMap[keyof events_pb.BusEventTypeMap]>;
   setTypeList(value: Array<events_pb.BusEventTypeMap[keyof events_pb.BusEventTypeMap]>): void;
   addType(value: events_pb.BusEventTypeMap[keyof events_pb.BusEventTypeMap], index?: number): events_pb.BusEventTypeMap[keyof events_pb.BusEventTypeMap];
 
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
-  getBatchsize(): number;
-  setBatchsize(value: number): void;
+  getBatchSize(): number;
+  setBatchSize(value: number): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ObserveEventsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ObserveEventsRequest): ObserveEventsRequest.AsObject;
+  toObject(includeInstance?: boolean): ObserveEventBusRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ObserveEventBusRequest): ObserveEventBusRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ObserveEventsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ObserveEventsRequest;
-  static deserializeBinaryFromReader(message: ObserveEventsRequest, reader: jspb.BinaryReader): ObserveEventsRequest;
+  static serializeBinaryToWriter(message: ObserveEventBusRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ObserveEventBusRequest;
+  static deserializeBinaryFromReader(message: ObserveEventBusRequest, reader: jspb.BinaryReader): ObserveEventBusRequest;
 }
 
-export namespace ObserveEventsRequest {
+export namespace ObserveEventBusRequest {
   export type AsObject = {
     typeList: Array<events_pb.BusEventTypeMap[keyof events_pb.BusEventTypeMap]>,
-    marketid: string,
-    partyid: string,
-    batchsize: number,
+    marketId: string,
+    partyId: string,
+    batchSize: number,
   }
 }
 
-export class ObserveEventsResponse extends jspb.Message {
+export class ObserveEventBusResponse extends jspb.Message {
   clearEventsList(): void;
   getEventsList(): Array<events_pb.BusEvent>;
   setEventsList(value: Array<events_pb.BusEvent>): void;
   addEvents(value?: events_pb.BusEvent, index?: number): events_pb.BusEvent;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ObserveEventsResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ObserveEventsResponse): ObserveEventsResponse.AsObject;
+  toObject(includeInstance?: boolean): ObserveEventBusResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ObserveEventBusResponse): ObserveEventBusResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ObserveEventsResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ObserveEventsResponse;
-  static deserializeBinaryFromReader(message: ObserveEventsResponse, reader: jspb.BinaryReader): ObserveEventsResponse;
+  static serializeBinaryToWriter(message: ObserveEventBusResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ObserveEventBusResponse;
+  static deserializeBinaryFromReader(message: ObserveEventBusResponse, reader: jspb.BinaryReader): ObserveEventBusResponse;
 }
 
-export namespace ObserveEventsResponse {
+export namespace ObserveEventBusResponse {
   export type AsObject = {
     eventsList: Array<events_pb.BusEvent.AsObject>,
   }
 }
 
+export class StatisticsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StatisticsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: StatisticsRequest): StatisticsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: StatisticsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StatisticsRequest;
+  static deserializeBinaryFromReader(message: StatisticsRequest, reader: jspb.BinaryReader): StatisticsRequest;
+}
+
+export namespace StatisticsRequest {
+  export type AsObject = {
+  }
+}
+
+export class StatisticsResponse extends jspb.Message {
+  hasStatistics(): boolean;
+  clearStatistics(): void;
+  getStatistics(): vega_pb.Statistics | undefined;
+  setStatistics(value?: vega_pb.Statistics): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StatisticsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: StatisticsResponse): StatisticsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: StatisticsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StatisticsResponse;
+  static deserializeBinaryFromReader(message: StatisticsResponse, reader: jspb.BinaryReader): StatisticsResponse;
+}
+
+export namespace StatisticsResponse {
+  export type AsObject = {
+    statistics?: vega_pb.Statistics.AsObject,
+  }
+}
+
 export class WithdrawalsRequest extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WithdrawalsRequest.AsObject;
@@ -2496,7 +2915,7 @@ export class WithdrawalsRequest extends jspb.Message {
 
 export namespace WithdrawalsRequest {
   export type AsObject = {
-    partyid: string,
+    partyId: string,
   }
 }
 
@@ -2565,8 +2984,8 @@ export namespace WithdrawalResponse {
 }
 
 export class ERC20WithdrawalApprovalRequest extends jspb.Message {
-  getWithdrawalid(): string;
-  setWithdrawalid(value: string): void;
+  getWithdrawalId(): string;
+  setWithdrawalId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ERC20WithdrawalApprovalRequest.AsObject;
@@ -2580,13 +2999,13 @@ export class ERC20WithdrawalApprovalRequest extends jspb.Message {
 
 export namespace ERC20WithdrawalApprovalRequest {
   export type AsObject = {
-    withdrawalid: string,
+    withdrawalId: string,
   }
 }
 
 export class ERC20WithdrawalApprovalResponse extends jspb.Message {
-  getAssetsource(): string;
-  setAssetsource(value: string): void;
+  getAssetSource(): string;
+  setAssetSource(value: string): void;
 
   getAmount(): string;
   setAmount(value: string): void;
@@ -2612,7 +3031,7 @@ export class ERC20WithdrawalApprovalResponse extends jspb.Message {
 
 export namespace ERC20WithdrawalApprovalResponse {
   export type AsObject = {
-    assetsource: string,
+    assetSource: string,
     amount: string,
     expiry: number,
     nonce: string,
@@ -2621,8 +3040,8 @@ export namespace ERC20WithdrawalApprovalResponse {
 }
 
 export class DepositsRequest extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DepositsRequest.AsObject;
@@ -2636,7 +3055,7 @@ export class DepositsRequest extends jspb.Message {
 
 export namespace DepositsRequest {
   export type AsObject = {
-    partyid: string,
+    partyId: string,
   }
 }
 
@@ -2721,10 +3140,10 @@ export namespace NetworkParametersRequest {
 }
 
 export class NetworkParametersResponse extends jspb.Message {
-  clearNetworkparametersList(): void;
-  getNetworkparametersList(): Array<vega_pb.NetworkParameter>;
-  setNetworkparametersList(value: Array<vega_pb.NetworkParameter>): void;
-  addNetworkparameters(value?: vega_pb.NetworkParameter, index?: number): vega_pb.NetworkParameter;
+  clearNetworkParametersList(): void;
+  getNetworkParametersList(): Array<vega_pb.NetworkParameter>;
+  setNetworkParametersList(value: Array<vega_pb.NetworkParameter>): void;
+  addNetworkParameters(value?: vega_pb.NetworkParameter, index?: number): vega_pb.NetworkParameter;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NetworkParametersResponse.AsObject;
@@ -2738,7 +3157,7 @@ export class NetworkParametersResponse extends jspb.Message {
 
 export namespace NetworkParametersResponse {
   export type AsObject = {
-    networkparametersList: Array<vega_pb.NetworkParameter.AsObject>,
+    networkParametersList: Array<vega_pb.NetworkParameter.AsObject>,
   }
 }
 
@@ -2767,10 +3186,10 @@ export namespace LiquidityProvisionsRequest {
 }
 
 export class LiquidityProvisionsResponse extends jspb.Message {
-  clearLiquidityprovisionsList(): void;
-  getLiquidityprovisionsList(): Array<vega_pb.LiquidityProvision>;
-  setLiquidityprovisionsList(value: Array<vega_pb.LiquidityProvision>): void;
-  addLiquidityprovisions(value?: vega_pb.LiquidityProvision, index?: number): vega_pb.LiquidityProvision;
+  clearLiquidityProvisionsList(): void;
+  getLiquidityProvisionsList(): Array<vega_pb.LiquidityProvision>;
+  setLiquidityProvisionsList(value: Array<vega_pb.LiquidityProvision>): void;
+  addLiquidityProvisions(value?: vega_pb.LiquidityProvision, index?: number): vega_pb.LiquidityProvision;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LiquidityProvisionsResponse.AsObject;
@@ -2784,7 +3203,7 @@ export class LiquidityProvisionsResponse extends jspb.Message {
 
 export namespace LiquidityProvisionsResponse {
   export type AsObject = {
-    liquidityprovisionsList: Array<vega_pb.LiquidityProvision.AsObject>,
+    liquidityProvisionsList: Array<vega_pb.LiquidityProvision.AsObject>,
   }
 }
 

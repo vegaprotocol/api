@@ -95,16 +95,16 @@ export namespace RiskFactor {
 }
 
 export class RiskResult extends jspb.Message {
-  getUpdatedtimestamp(): number;
-  setUpdatedtimestamp(value: number): void;
+  getUpdatedTimestamp(): number;
+  setUpdatedTimestamp(value: number): void;
 
-  getRiskfactorsMap(): jspb.Map<string, RiskFactor>;
-  clearRiskfactorsMap(): void;
-  getNextupdatetimestamp(): number;
-  setNextupdatetimestamp(value: number): void;
+  getRiskFactorsMap(): jspb.Map<string, RiskFactor>;
+  clearRiskFactorsMap(): void;
+  getNextUpdateTimestamp(): number;
+  setNextUpdateTimestamp(value: number): void;
 
-  getPredictednextriskfactorsMap(): jspb.Map<string, RiskFactor>;
-  clearPredictednextriskfactorsMap(): void;
+  getPredictedNextRiskFactorsMap(): jspb.Map<string, RiskFactor>;
+  clearPredictedNextRiskFactorsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RiskResult.AsObject;
   static toObject(includeInstance: boolean, msg: RiskResult): RiskResult.AsObject;
@@ -117,10 +117,10 @@ export class RiskResult extends jspb.Message {
 
 export namespace RiskResult {
   export type AsObject = {
-    updatedtimestamp: number,
-    riskfactorsMap: Array<[string, RiskFactor.AsObject]>,
-    nextupdatetimestamp: number,
-    predictednextriskfactorsMap: Array<[string, RiskFactor.AsObject]>,
+    updatedTimestamp: number,
+    riskFactorsMap: Array<[string, RiskFactor.AsObject]>,
+    nextUpdateTimestamp: number,
+    predictedNextRiskFactorsMap: Array<[string, RiskFactor.AsObject]>,
   }
 }
 
@@ -152,11 +152,11 @@ export class Order extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   getSide(): SideMap[keyof SideMap];
   setSide(value: SideMap[keyof SideMap]): void;
@@ -170,20 +170,20 @@ export class Order extends jspb.Message {
   getRemaining(): number;
   setRemaining(value: number): void;
 
-  getTimeinforce(): Order.TimeInForceMap[keyof Order.TimeInForceMap];
-  setTimeinforce(value: Order.TimeInForceMap[keyof Order.TimeInForceMap]): void;
+  getTimeInForce(): Order.TimeInForceMap[keyof Order.TimeInForceMap];
+  setTimeInForce(value: Order.TimeInForceMap[keyof Order.TimeInForceMap]): void;
 
   getType(): Order.TypeMap[keyof Order.TypeMap];
   setType(value: Order.TypeMap[keyof Order.TypeMap]): void;
 
-  getCreatedat(): number;
-  setCreatedat(value: number): void;
+  getCreatedAt(): number;
+  setCreatedAt(value: number): void;
 
   getStatus(): Order.StatusMap[keyof Order.StatusMap];
   setStatus(value: Order.StatusMap[keyof Order.StatusMap]): void;
 
-  getExpiresat(): number;
-  setExpiresat(value: number): void;
+  getExpiresAt(): number;
+  setExpiresAt(value: number): void;
 
   getReference(): string;
   setReference(value: string): void;
@@ -191,19 +191,19 @@ export class Order extends jspb.Message {
   getReason(): OrderErrorMap[keyof OrderErrorMap];
   setReason(value: OrderErrorMap[keyof OrderErrorMap]): void;
 
-  getUpdatedat(): number;
-  setUpdatedat(value: number): void;
+  getUpdatedAt(): number;
+  setUpdatedAt(value: number): void;
 
   getVersion(): number;
   setVersion(value: number): void;
 
-  getBatchid(): number;
-  setBatchid(value: number): void;
+  getBatchId(): number;
+  setBatchId(value: number): void;
 
-  hasPeggedorder(): boolean;
-  clearPeggedorder(): void;
-  getPeggedorder(): PeggedOrder | undefined;
-  setPeggedorder(value?: PeggedOrder): void;
+  hasPeggedOrder(): boolean;
+  clearPeggedOrder(): void;
+  getPeggedOrder(): PeggedOrder | undefined;
+  setPeggedOrder(value?: PeggedOrder): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Order.AsObject;
@@ -218,33 +218,33 @@ export class Order extends jspb.Message {
 export namespace Order {
   export type AsObject = {
     id: string,
-    marketid: string,
-    partyid: string,
+    marketId: string,
+    partyId: string,
     side: SideMap[keyof SideMap],
     price: number,
     size: number,
     remaining: number,
-    timeinforce: Order.TimeInForceMap[keyof Order.TimeInForceMap],
+    timeInForce: Order.TimeInForceMap[keyof Order.TimeInForceMap],
     type: Order.TypeMap[keyof Order.TypeMap],
-    createdat: number,
+    createdAt: number,
     status: Order.StatusMap[keyof Order.StatusMap],
-    expiresat: number,
+    expiresAt: number,
     reference: string,
     reason: OrderErrorMap[keyof OrderErrorMap],
-    updatedat: number,
+    updatedAt: number,
     version: number,
-    batchid: number,
-    peggedorder?: PeggedOrder.AsObject,
+    batchId: number,
+    peggedOrder?: PeggedOrder.AsObject,
   }
 
   export interface TimeInForceMap {
-    TIF_UNSPECIFIED: 0;
-    TIF_GTC: 1;
-    TIF_GTT: 2;
-    TIF_IOC: 3;
-    TIF_FOK: 4;
-    TIF_GFA: 5;
-    TIF_GFN: 6;
+    TIME_IN_FORCE_UNSPECIFIED: 0;
+    TIME_IN_FORCE_GTC: 1;
+    TIME_IN_FORCE_GTT: 2;
+    TIME_IN_FORCE_IOC: 3;
+    TIME_IN_FORCE_FOK: 4;
+    TIME_IN_FORCE_GFA: 5;
+    TIME_IN_FORCE_GFN: 6;
   }
 
   export const TimeInForce: TimeInForceMap;
@@ -259,7 +259,7 @@ export namespace Order {
   export const Type: TypeMap;
 
   export interface StatusMap {
-    STATUS_INVALID: 0;
+    STATUS_UNSPECIFIED: 0;
     STATUS_ACTIVE: 1;
     STATUS_EXPIRED: 2;
     STATUS_CANCELLED: 3;
@@ -306,10 +306,10 @@ export class OrderConfirmation extends jspb.Message {
   setTradesList(value: Array<Trade>): void;
   addTrades(value?: Trade, index?: number): Trade;
 
-  clearPassiveordersaffectedList(): void;
-  getPassiveordersaffectedList(): Array<Order>;
-  setPassiveordersaffectedList(value: Array<Order>): void;
-  addPassiveordersaffected(value?: Order, index?: number): Order;
+  clearPassiveOrdersAffectedList(): void;
+  getPassiveOrdersAffectedList(): Array<Order>;
+  setPassiveOrdersAffectedList(value: Array<Order>): void;
+  addPassiveOrdersAffected(value?: Order, index?: number): Order;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrderConfirmation.AsObject;
@@ -325,25 +325,25 @@ export namespace OrderConfirmation {
   export type AsObject = {
     order?: Order.AsObject,
     tradesList: Array<Trade.AsObject>,
-    passiveordersaffectedList: Array<Order.AsObject>,
+    passiveOrdersAffectedList: Array<Order.AsObject>,
   }
 }
 
 export class AuctionIndicativeState extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getIndicativeprice(): number;
-  setIndicativeprice(value: number): void;
+  getIndicativePrice(): number;
+  setIndicativePrice(value: number): void;
 
-  getIndicativevolume(): number;
-  setIndicativevolume(value: number): void;
+  getIndicativeVolume(): number;
+  setIndicativeVolume(value: number): void;
 
-  getAuctionstart(): number;
-  setAuctionstart(value: number): void;
+  getAuctionStart(): number;
+  setAuctionStart(value: number): void;
 
-  getAuctionend(): number;
-  setAuctionend(value: number): void;
+  getAuctionEnd(): number;
+  setAuctionEnd(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuctionIndicativeState.AsObject;
@@ -357,11 +357,11 @@ export class AuctionIndicativeState extends jspb.Message {
 
 export namespace AuctionIndicativeState {
   export type AsObject = {
-    marketid: string,
-    indicativeprice: number,
-    indicativevolume: number,
-    auctionstart: number,
-    auctionend: number,
+    marketId: string,
+    indicativePrice: number,
+    indicativeVolume: number,
+    auctionStart: number,
+    auctionEnd: number,
   }
 }
 
@@ -369,8 +369,8 @@ export class Trade extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   getPrice(): number;
   setPrice(value: number): void;
@@ -387,11 +387,11 @@ export class Trade extends jspb.Message {
   getAggressor(): SideMap[keyof SideMap];
   setAggressor(value: SideMap[keyof SideMap]): void;
 
-  getBuyorder(): string;
-  setBuyorder(value: string): void;
+  getBuyOrder(): string;
+  setBuyOrder(value: string): void;
 
-  getSellorder(): string;
-  setSellorder(value: string): void;
+  getSellOrder(): string;
+  setSellOrder(value: string): void;
 
   getTimestamp(): number;
   setTimestamp(value: number): void;
@@ -399,21 +399,21 @@ export class Trade extends jspb.Message {
   getType(): Trade.TypeMap[keyof Trade.TypeMap];
   setType(value: Trade.TypeMap[keyof Trade.TypeMap]): void;
 
-  hasBuyerfee(): boolean;
-  clearBuyerfee(): void;
-  getBuyerfee(): Fee | undefined;
-  setBuyerfee(value?: Fee): void;
+  hasBuyerFee(): boolean;
+  clearBuyerFee(): void;
+  getBuyerFee(): Fee | undefined;
+  setBuyerFee(value?: Fee): void;
 
-  hasSellerfee(): boolean;
-  clearSellerfee(): void;
-  getSellerfee(): Fee | undefined;
-  setSellerfee(value?: Fee): void;
+  hasSellerFee(): boolean;
+  clearSellerFee(): void;
+  getSellerFee(): Fee | undefined;
+  setSellerFee(value?: Fee): void;
 
-  getBuyerauctionbatch(): number;
-  setBuyerauctionbatch(value: number): void;
+  getBuyerAuctionBatch(): number;
+  setBuyerAuctionBatch(value: number): void;
 
-  getSellerauctionbatch(): number;
-  setSellerauctionbatch(value: number): void;
+  getSellerAuctionBatch(): number;
+  setSellerAuctionBatch(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Trade.AsObject;
@@ -428,20 +428,20 @@ export class Trade extends jspb.Message {
 export namespace Trade {
   export type AsObject = {
     id: string,
-    marketid: string,
+    marketId: string,
     price: number,
     size: number,
     buyer: string,
     seller: string,
     aggressor: SideMap[keyof SideMap],
-    buyorder: string,
-    sellorder: string,
+    buyOrder: string,
+    sellOrder: string,
     timestamp: number,
     type: Trade.TypeMap[keyof Trade.TypeMap],
-    buyerfee?: Fee.AsObject,
-    sellerfee?: Fee.AsObject,
-    buyerauctionbatch: number,
-    sellerauctionbatch: number,
+    buyerFee?: Fee.AsObject,
+    sellerFee?: Fee.AsObject,
+    buyerAuctionBatch: number,
+    sellerAuctionBatch: number,
   }
 
   export interface TypeMap {
@@ -455,14 +455,14 @@ export namespace Trade {
 }
 
 export class Fee extends jspb.Message {
-  getMakerfee(): number;
-  setMakerfee(value: number): void;
+  getMakerFee(): number;
+  setMakerFee(value: number): void;
 
-  getInfrastructurefee(): number;
-  setInfrastructurefee(value: number): void;
+  getInfrastructureFee(): number;
+  setInfrastructureFee(value: number): void;
 
-  getLiquidityfee(): number;
-  setLiquidityfee(value: number): void;
+  getLiquidityFee(): number;
+  setLiquidityFee(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Fee.AsObject;
@@ -476,9 +476,9 @@ export class Fee extends jspb.Message {
 
 export namespace Fee {
   export type AsObject = {
-    makerfee: number,
-    infrastructurefee: number,
-    liquidityfee: number,
+    makerFee: number,
+    infrastructureFee: number,
+    liquidityFee: number,
   }
 }
 
@@ -556,8 +556,8 @@ export class PriceLevel extends jspb.Message {
   getPrice(): number;
   setPrice(value: number): void;
 
-  getNumberoforders(): number;
-  setNumberoforders(value: number): void;
+  getNumberOfOrders(): number;
+  setNumberOfOrders(value: number): void;
 
   getVolume(): number;
   setVolume(value: number): void;
@@ -575,14 +575,14 @@ export class PriceLevel extends jspb.Message {
 export namespace PriceLevel {
   export type AsObject = {
     price: number,
-    numberoforders: number,
+    numberOfOrders: number,
     volume: number,
   }
 }
 
 export class MarketDepth extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   clearBuyList(): void;
   getBuyList(): Array<PriceLevel>;
@@ -594,8 +594,8 @@ export class MarketDepth extends jspb.Message {
   setSellList(value: Array<PriceLevel>): void;
   addSell(value?: PriceLevel, index?: number): PriceLevel;
 
-  getSequencenumber(): number;
-  setSequencenumber(value: number): void;
+  getSequenceNumber(): number;
+  setSequenceNumber(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MarketDepth.AsObject;
@@ -609,16 +609,16 @@ export class MarketDepth extends jspb.Message {
 
 export namespace MarketDepth {
   export type AsObject = {
-    marketid: string,
+    marketId: string,
     buyList: Array<PriceLevel.AsObject>,
     sellList: Array<PriceLevel.AsObject>,
-    sequencenumber: number,
+    sequenceNumber: number,
   }
 }
 
 export class MarketDepthUpdate extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   clearBuyList(): void;
   getBuyList(): Array<PriceLevel>;
@@ -630,8 +630,8 @@ export class MarketDepthUpdate extends jspb.Message {
   setSellList(value: Array<PriceLevel>): void;
   addSell(value?: PriceLevel, index?: number): PriceLevel;
 
-  getSequencenumber(): number;
-  setSequencenumber(value: number): void;
+  getSequenceNumber(): number;
+  setSequenceNumber(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MarketDepthUpdate.AsObject;
@@ -645,34 +645,34 @@ export class MarketDepthUpdate extends jspb.Message {
 
 export namespace MarketDepthUpdate {
   export type AsObject = {
-    marketid: string,
+    marketId: string,
     buyList: Array<PriceLevel.AsObject>,
     sellList: Array<PriceLevel.AsObject>,
-    sequencenumber: number,
+    sequenceNumber: number,
   }
 }
 
 export class Position extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
-  getOpenvolume(): number;
-  setOpenvolume(value: number): void;
+  getOpenVolume(): number;
+  setOpenVolume(value: number): void;
 
-  getRealisedpnl(): number;
-  setRealisedpnl(value: number): void;
+  getRealisedPnl(): number;
+  setRealisedPnl(value: number): void;
 
-  getUnrealisedpnl(): number;
-  setUnrealisedpnl(value: number): void;
+  getUnrealisedPnl(): number;
+  setUnrealisedPnl(value: number): void;
 
-  getAverageentryprice(): number;
-  setAverageentryprice(value: number): void;
+  getAverageEntryPrice(): number;
+  setAverageEntryPrice(value: number): void;
 
-  getUpdatedat(): number;
-  setUpdatedat(value: number): void;
+  getUpdatedAt(): number;
+  setUpdatedAt(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Position.AsObject;
@@ -686,13 +686,13 @@ export class Position extends jspb.Message {
 
 export namespace Position {
   export type AsObject = {
-    marketid: string,
-    partyid: string,
-    openvolume: number,
-    realisedpnl: number,
-    unrealisedpnl: number,
-    averageentryprice: number,
-    updatedat: number,
+    marketId: string,
+    partyId: string,
+    openVolume: number,
+    realisedPnl: number,
+    unrealisedPnl: number,
+    averageEntryPrice: number,
+    updatedAt: number,
   }
 }
 
@@ -721,101 +721,101 @@ export namespace PositionTrade {
 }
 
 export class Statistics extends jspb.Message {
-  getBlockheight(): number;
-  setBlockheight(value: number): void;
+  getBlockHeight(): number;
+  setBlockHeight(value: number): void;
 
-  getBackloglength(): number;
-  setBackloglength(value: number): void;
+  getBacklogLength(): number;
+  setBacklogLength(value: number): void;
 
-  getTotalpeers(): number;
-  setTotalpeers(value: number): void;
+  getTotalPeers(): number;
+  setTotalPeers(value: number): void;
 
-  getGenesistime(): string;
-  setGenesistime(value: string): void;
+  getGenesisTime(): string;
+  setGenesisTime(value: string): void;
 
-  getCurrenttime(): string;
-  setCurrenttime(value: string): void;
+  getCurrentTime(): string;
+  setCurrentTime(value: string): void;
 
-  getVegatime(): string;
-  setVegatime(value: string): void;
+  getVegaTime(): string;
+  setVegaTime(value: string): void;
 
   getStatus(): ChainStatusMap[keyof ChainStatusMap];
   setStatus(value: ChainStatusMap[keyof ChainStatusMap]): void;
 
-  getTxperblock(): number;
-  setTxperblock(value: number): void;
+  getTxPerBlock(): number;
+  setTxPerBlock(value: number): void;
 
-  getAveragetxbytes(): number;
-  setAveragetxbytes(value: number): void;
+  getAverageTxBytes(): number;
+  setAverageTxBytes(value: number): void;
 
-  getAverageordersperblock(): number;
-  setAverageordersperblock(value: number): void;
+  getAverageOrdersPerBlock(): number;
+  setAverageOrdersPerBlock(value: number): void;
 
-  getTradespersecond(): number;
-  setTradespersecond(value: number): void;
+  getTradesPerSecond(): number;
+  setTradesPerSecond(value: number): void;
 
-  getOrderspersecond(): number;
-  setOrderspersecond(value: number): void;
+  getOrdersPerSecond(): number;
+  setOrdersPerSecond(value: number): void;
 
-  getTotalmarkets(): number;
-  setTotalmarkets(value: number): void;
+  getTotalMarkets(): number;
+  setTotalMarkets(value: number): void;
 
-  getTotalamendorder(): number;
-  setTotalamendorder(value: number): void;
+  getTotalAmendOrder(): number;
+  setTotalAmendOrder(value: number): void;
 
-  getTotalcancelorder(): number;
-  setTotalcancelorder(value: number): void;
+  getTotalCancelOrder(): number;
+  setTotalCancelOrder(value: number): void;
 
-  getTotalcreateorder(): number;
-  setTotalcreateorder(value: number): void;
+  getTotalCreateOrder(): number;
+  setTotalCreateOrder(value: number): void;
 
-  getTotalorders(): number;
-  setTotalorders(value: number): void;
+  getTotalOrders(): number;
+  setTotalOrders(value: number): void;
 
-  getTotaltrades(): number;
-  setTotaltrades(value: number): void;
+  getTotalTrades(): number;
+  setTotalTrades(value: number): void;
 
-  getOrdersubscriptions(): number;
-  setOrdersubscriptions(value: number): void;
+  getOrderSubscriptions(): number;
+  setOrderSubscriptions(value: number): void;
 
-  getTradesubscriptions(): number;
-  setTradesubscriptions(value: number): void;
+  getTradeSubscriptions(): number;
+  setTradeSubscriptions(value: number): void;
 
-  getCandlesubscriptions(): number;
-  setCandlesubscriptions(value: number): void;
+  getCandleSubscriptions(): number;
+  setCandleSubscriptions(value: number): void;
 
-  getMarketdepthsubscriptions(): number;
-  setMarketdepthsubscriptions(value: number): void;
+  getMarketDepthSubscriptions(): number;
+  setMarketDepthSubscriptions(value: number): void;
 
-  getPositionssubscriptions(): number;
-  setPositionssubscriptions(value: number): void;
+  getPositionsSubscriptions(): number;
+  setPositionsSubscriptions(value: number): void;
 
-  getAccountsubscriptions(): number;
-  setAccountsubscriptions(value: number): void;
+  getAccountSubscriptions(): number;
+  setAccountSubscriptions(value: number): void;
 
-  getMarketdatasubscriptions(): number;
-  setMarketdatasubscriptions(value: number): void;
+  getMarketDataSubscriptions(): number;
+  setMarketDataSubscriptions(value: number): void;
 
-  getAppversionhash(): string;
-  setAppversionhash(value: string): void;
+  getAppVersionHash(): string;
+  setAppVersionHash(value: string): void;
 
-  getAppversion(): string;
-  setAppversion(value: string): void;
+  getAppVersion(): string;
+  setAppVersion(value: string): void;
 
-  getChainversion(): string;
-  setChainversion(value: string): void;
+  getChainVersion(): string;
+  setChainVersion(value: string): void;
 
-  getBlockduration(): number;
-  setBlockduration(value: number): void;
+  getBlockDuration(): number;
+  setBlockDuration(value: number): void;
 
   getUptime(): string;
   setUptime(value: string): void;
 
-  getChainid(): string;
-  setChainid(value: string): void;
+  getChainId(): string;
+  setChainId(value: string): void;
 
-  getMarketdepthupdatessubscriptions(): number;
-  setMarketdepthupdatessubscriptions(value: number): void;
+  getMarketDepthUpdatesSubscriptions(): number;
+  setMarketDepthUpdatesSubscriptions(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Statistics.AsObject;
@@ -829,38 +829,38 @@ export class Statistics extends jspb.Message {
 
 export namespace Statistics {
   export type AsObject = {
-    blockheight: number,
-    backloglength: number,
-    totalpeers: number,
-    genesistime: string,
-    currenttime: string,
-    vegatime: string,
+    blockHeight: number,
+    backlogLength: number,
+    totalPeers: number,
+    genesisTime: string,
+    currentTime: string,
+    vegaTime: string,
     status: ChainStatusMap[keyof ChainStatusMap],
-    txperblock: number,
-    averagetxbytes: number,
-    averageordersperblock: number,
-    tradespersecond: number,
-    orderspersecond: number,
-    totalmarkets: number,
-    totalamendorder: number,
-    totalcancelorder: number,
-    totalcreateorder: number,
-    totalorders: number,
-    totaltrades: number,
-    ordersubscriptions: number,
-    tradesubscriptions: number,
-    candlesubscriptions: number,
-    marketdepthsubscriptions: number,
-    positionssubscriptions: number,
-    accountsubscriptions: number,
-    marketdatasubscriptions: number,
-    appversionhash: string,
-    appversion: string,
-    chainversion: string,
-    blockduration: number,
+    txPerBlock: number,
+    averageTxBytes: number,
+    averageOrdersPerBlock: number,
+    tradesPerSecond: number,
+    ordersPerSecond: number,
+    totalMarkets: number,
+    totalAmendOrder: number,
+    totalCancelOrder: number,
+    totalCreateOrder: number,
+    totalOrders: number,
+    totalTrades: number,
+    orderSubscriptions: number,
+    tradeSubscriptions: number,
+    candleSubscriptions: number,
+    marketDepthSubscriptions: number,
+    positionsSubscriptions: number,
+    accountSubscriptions: number,
+    marketDataSubscriptions: number,
+    appVersionHash: string,
+    appVersion: string,
+    chainVersion: string,
+    blockDuration: number,
     uptime: string,
-    chainid: string,
-    marketdepthupdatessubscriptions: number,
+    chainId: string,
+    marketDepthUpdatesSubscriptions: number,
   }
 }
 
@@ -871,8 +871,8 @@ export class Deposit extends jspb.Message {
   getStatus(): Deposit.StatusMap[keyof Deposit.StatusMap];
   setStatus(value: Deposit.StatusMap[keyof Deposit.StatusMap]): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   getAsset(): string;
   setAsset(value: string): void;
@@ -880,14 +880,14 @@ export class Deposit extends jspb.Message {
   getAmount(): string;
   setAmount(value: string): void;
 
-  getTxhash(): string;
-  setTxhash(value: string): void;
+  getTxHash(): string;
+  setTxHash(value: string): void;
 
-  getCreditedtimestamp(): number;
-  setCreditedtimestamp(value: number): void;
+  getCreditedTimestamp(): number;
+  setCreditedTimestamp(value: number): void;
 
-  getCreatedtimestamp(): number;
-  setCreatedtimestamp(value: number): void;
+  getCreatedTimestamp(): number;
+  setCreatedTimestamp(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Deposit.AsObject;
@@ -903,19 +903,19 @@ export namespace Deposit {
   export type AsObject = {
     id: string,
     status: Deposit.StatusMap[keyof Deposit.StatusMap],
-    partyid: string,
+    partyId: string,
     asset: string,
     amount: string,
-    txhash: string,
-    creditedtimestamp: number,
-    createdtimestamp: number,
+    txHash: string,
+    creditedTimestamp: number,
+    createdTimestamp: number,
   }
 
   export interface StatusMap {
-    DEPOSIT_STATUS_UNSPECIFIED: 0;
-    DEPOSIT_STATUS_OPEN: 1;
-    DEPOSIT_STATUS_CANCELLED: 2;
-    DEPOSIT_STATUS_FINALIZED: 3;
+    STATUS_UNSPECIFIED: 0;
+    STATUS_OPEN: 1;
+    STATUS_CANCELLED: 2;
+    STATUS_FINALIZED: 3;
   }
 
   export const Status: StatusMap;
@@ -925,8 +925,8 @@ export class Withdrawal extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   getAmount(): number;
   setAmount(value: number): void;
@@ -943,14 +943,14 @@ export class Withdrawal extends jspb.Message {
   getExpiry(): number;
   setExpiry(value: number): void;
 
-  getTxhash(): string;
-  setTxhash(value: string): void;
+  getTxHash(): string;
+  setTxHash(value: string): void;
 
-  getCreatedtimestamp(): number;
-  setCreatedtimestamp(value: number): void;
+  getCreatedTimestamp(): number;
+  setCreatedTimestamp(value: number): void;
 
-  getWithdrawntimestamp(): number;
-  setWithdrawntimestamp(value: number): void;
+  getWithdrawnTimestamp(): number;
+  setWithdrawnTimestamp(value: number): void;
 
   hasExt(): boolean;
   clearExt(): void;
@@ -970,31 +970,31 @@ export class Withdrawal extends jspb.Message {
 export namespace Withdrawal {
   export type AsObject = {
     id: string,
-    partyid: string,
+    partyId: string,
     amount: number,
     asset: string,
     status: Withdrawal.StatusMap[keyof Withdrawal.StatusMap],
     ref: string,
     expiry: number,
-    txhash: string,
-    createdtimestamp: number,
-    withdrawntimestamp: number,
+    txHash: string,
+    createdTimestamp: number,
+    withdrawnTimestamp: number,
     ext?: WithdrawExt.AsObject,
   }
 
   export interface StatusMap {
-    WITHDRAWAL_STATUS_UNSPECIFIED: 0;
-    WITHDRAWAL_STATUS_OPEN: 1;
-    WITHDRAWAL_STATUS_CANCELLED: 2;
-    WITHDRAWAL_STATUS_FINALIZED: 3;
+    STATUS_UNSPECIFIED: 0;
+    STATUS_OPEN: 1;
+    STATUS_CANCELLED: 2;
+    STATUS_FINALIZED: 3;
   }
 
   export const Status: StatusMap;
 }
 
 export class WithdrawSubmission extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   getAmount(): number;
   setAmount(value: number): void;
@@ -1019,7 +1019,7 @@ export class WithdrawSubmission extends jspb.Message {
 
 export namespace WithdrawSubmission {
   export type AsObject = {
-    partyid: string,
+    partyId: string,
     amount: number,
     asset: string,
     ext?: WithdrawExt.AsObject,
@@ -1055,8 +1055,8 @@ export namespace WithdrawExt {
 }
 
 export class Erc20WithdrawExt extends jspb.Message {
-  getReceiveraddress(): string;
-  setReceiveraddress(value: string): void;
+  getReceiverAddress(): string;
+  setReceiverAddress(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Erc20WithdrawExt.AsObject;
@@ -1070,43 +1070,43 @@ export class Erc20WithdrawExt extends jspb.Message {
 
 export namespace Erc20WithdrawExt {
   export type AsObject = {
-    receiveraddress: string,
+    receiverAddress: string,
   }
 }
 
 export class OrderAmendment extends jspb.Message {
-  getOrderid(): string;
-  setOrderid(value: string): void;
+  getOrderId(): string;
+  setOrderId(value: string): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   hasPrice(): boolean;
   clearPrice(): void;
   getPrice(): Price | undefined;
   setPrice(value?: Price): void;
 
-  getSizedelta(): number;
-  setSizedelta(value: number): void;
+  getSizeDelta(): number;
+  setSizeDelta(value: number): void;
 
-  hasExpiresat(): boolean;
-  clearExpiresat(): void;
-  getExpiresat(): Timestamp | undefined;
-  setExpiresat(value?: Timestamp): void;
+  hasExpiresAt(): boolean;
+  clearExpiresAt(): void;
+  getExpiresAt(): Timestamp | undefined;
+  setExpiresAt(value?: Timestamp): void;
 
-  getTimeinforce(): Order.TimeInForceMap[keyof Order.TimeInForceMap];
-  setTimeinforce(value: Order.TimeInForceMap[keyof Order.TimeInForceMap]): void;
+  getTimeInForce(): Order.TimeInForceMap[keyof Order.TimeInForceMap];
+  setTimeInForce(value: Order.TimeInForceMap[keyof Order.TimeInForceMap]): void;
 
-  hasPeggedoffset(): boolean;
-  clearPeggedoffset(): void;
-  getPeggedoffset(): google_protobuf_wrappers_pb.Int64Value | undefined;
-  setPeggedoffset(value?: google_protobuf_wrappers_pb.Int64Value): void;
+  hasPeggedOffset(): boolean;
+  clearPeggedOffset(): void;
+  getPeggedOffset(): google_protobuf_wrappers_pb.Int64Value | undefined;
+  setPeggedOffset(value?: google_protobuf_wrappers_pb.Int64Value): void;
 
-  getPeggedreference(): PeggedReferenceMap[keyof PeggedReferenceMap];
-  setPeggedreference(value: PeggedReferenceMap[keyof PeggedReferenceMap]): void;
+  getPeggedReference(): PeggedReferenceMap[keyof PeggedReferenceMap];
+  setPeggedReference(value: PeggedReferenceMap[keyof PeggedReferenceMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrderAmendment.AsObject;
@@ -1120,15 +1120,15 @@ export class OrderAmendment extends jspb.Message {
 
 export namespace OrderAmendment {
   export type AsObject = {
-    orderid: string,
-    partyid: string,
-    marketid: string,
+    orderId: string,
+    partyId: string,
+    marketId: string,
     price?: Price.AsObject,
-    sizedelta: number,
-    expiresat?: Timestamp.AsObject,
-    timeinforce: Order.TimeInForceMap[keyof Order.TimeInForceMap],
-    peggedoffset?: google_protobuf_wrappers_pb.Int64Value.AsObject,
-    peggedreference: PeggedReferenceMap[keyof PeggedReferenceMap],
+    sizeDelta: number,
+    expiresAt?: Timestamp.AsObject,
+    timeInForce: Order.TimeInForceMap[keyof Order.TimeInForceMap],
+    peggedOffset?: google_protobuf_wrappers_pb.Int64Value.AsObject,
+    peggedReference: PeggedReferenceMap[keyof PeggedReferenceMap],
   }
 }
 
@@ -1136,11 +1136,11 @@ export class OrderSubmission extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   getPrice(): number;
   setPrice(value: number): void;
@@ -1151,11 +1151,11 @@ export class OrderSubmission extends jspb.Message {
   getSide(): SideMap[keyof SideMap];
   setSide(value: SideMap[keyof SideMap]): void;
 
-  getTimeinforce(): Order.TimeInForceMap[keyof Order.TimeInForceMap];
-  setTimeinforce(value: Order.TimeInForceMap[keyof Order.TimeInForceMap]): void;
+  getTimeInForce(): Order.TimeInForceMap[keyof Order.TimeInForceMap];
+  setTimeInForce(value: Order.TimeInForceMap[keyof Order.TimeInForceMap]): void;
 
-  getExpiresat(): number;
-  setExpiresat(value: number): void;
+  getExpiresAt(): number;
+  setExpiresAt(value: number): void;
 
   getType(): Order.TypeMap[keyof Order.TypeMap];
   setType(value: Order.TypeMap[keyof Order.TypeMap]): void;
@@ -1163,10 +1163,10 @@ export class OrderSubmission extends jspb.Message {
   getReference(): string;
   setReference(value: string): void;
 
-  hasPeggedorder(): boolean;
-  clearPeggedorder(): void;
-  getPeggedorder(): PeggedOrder | undefined;
-  setPeggedorder(value?: PeggedOrder): void;
+  hasPeggedOrder(): boolean;
+  clearPeggedOrder(): void;
+  getPeggedOrder(): PeggedOrder | undefined;
+  setPeggedOrder(value?: PeggedOrder): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrderSubmission.AsObject;
@@ -1181,28 +1181,28 @@ export class OrderSubmission extends jspb.Message {
 export namespace OrderSubmission {
   export type AsObject = {
     id: string,
-    marketid: string,
-    partyid: string,
+    marketId: string,
+    partyId: string,
     price: number,
     size: number,
     side: SideMap[keyof SideMap],
-    timeinforce: Order.TimeInForceMap[keyof Order.TimeInForceMap],
-    expiresat: number,
+    timeInForce: Order.TimeInForceMap[keyof Order.TimeInForceMap],
+    expiresAt: number,
     type: Order.TypeMap[keyof Order.TypeMap],
     reference: string,
-    peggedorder?: PeggedOrder.AsObject,
+    peggedOrder?: PeggedOrder.AsObject,
   }
 }
 
 export class OrderCancellation extends jspb.Message {
-  getOrderid(): string;
-  setOrderid(value: string): void;
+  getOrderId(): string;
+  setOrderId(value: string): void;
 
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OrderCancellation.AsObject;
@@ -1216,22 +1216,22 @@ export class OrderCancellation extends jspb.Message {
 
 export namespace OrderCancellation {
   export type AsObject = {
-    orderid: string,
-    marketid: string,
-    partyid: string,
+    orderId: string,
+    marketId: string,
+    partyId: string,
   }
 }
 
 export class NodeRegistration extends jspb.Message {
-  getPubkey(): Uint8Array | string;
-  getPubkey_asU8(): Uint8Array;
-  getPubkey_asB64(): string;
-  setPubkey(value: Uint8Array | string): void;
+  getPubKey(): Uint8Array | string;
+  getPubKey_asU8(): Uint8Array;
+  getPubKey_asB64(): string;
+  setPubKey(value: Uint8Array | string): void;
 
-  getChainpubkey(): Uint8Array | string;
-  getChainpubkey_asU8(): Uint8Array;
-  getChainpubkey_asB64(): string;
-  setChainpubkey(value: Uint8Array | string): void;
+  getChainPubKey(): Uint8Array | string;
+  getChainPubKey_asU8(): Uint8Array;
+  getChainPubKey_asB64(): string;
+  setChainPubKey(value: Uint8Array | string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NodeRegistration.AsObject;
@@ -1245,16 +1245,16 @@ export class NodeRegistration extends jspb.Message {
 
 export namespace NodeRegistration {
   export type AsObject = {
-    pubkey: Uint8Array | string,
-    chainpubkey: Uint8Array | string,
+    pubKey: Uint8Array | string,
+    chainPubKey: Uint8Array | string,
   }
 }
 
 export class NodeVote extends jspb.Message {
-  getPubkey(): Uint8Array | string;
-  getPubkey_asU8(): Uint8Array;
-  getPubkey_asB64(): string;
-  setPubkey(value: Uint8Array | string): void;
+  getPubKey(): Uint8Array | string;
+  getPubKey_asU8(): Uint8Array;
+  getPubKey_asB64(): string;
+  setPubKey(value: Uint8Array | string): void;
 
   getReference(): string;
   setReference(value: string): void;
@@ -1271,7 +1271,7 @@ export class NodeVote extends jspb.Message {
 
 export namespace NodeVote {
   export type AsObject = {
-    pubkey: Uint8Array | string,
+    pubKey: Uint8Array | string,
     reference: string,
   }
 }
@@ -1289,8 +1289,8 @@ export class Account extends jspb.Message {
   getAsset(): string;
   setAsset(value: string): void;
 
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   getType(): AccountTypeMap[keyof AccountTypeMap];
   setType(value: AccountTypeMap[keyof AccountTypeMap]): void;
@@ -1311,7 +1311,7 @@ export namespace Account {
     owner: string,
     balance: number,
     asset: string,
-    marketid: string,
+    marketId: string,
     type: AccountTypeMap[keyof AccountTypeMap],
   }
 }
@@ -1352,8 +1352,8 @@ export class Transfer extends jspb.Message {
   getType(): TransferTypeMap[keyof TransferTypeMap];
   setType(value: TransferTypeMap[keyof TransferTypeMap]): void;
 
-  getMinamount(): number;
-  setMinamount(value: number): void;
+  getMinAmount(): number;
+  setMinAmount(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Transfer.AsObject;
@@ -1370,26 +1370,26 @@ export namespace Transfer {
     owner: string,
     amount?: FinancialAmount.AsObject,
     type: TransferTypeMap[keyof TransferTypeMap],
-    minamount: number,
+    minAmount: number,
   }
 }
 
 export class TransferRequest extends jspb.Message {
-  clearFromaccountList(): void;
-  getFromaccountList(): Array<Account>;
-  setFromaccountList(value: Array<Account>): void;
-  addFromaccount(value?: Account, index?: number): Account;
+  clearFromAccountList(): void;
+  getFromAccountList(): Array<Account>;
+  setFromAccountList(value: Array<Account>): void;
+  addFromAccount(value?: Account, index?: number): Account;
 
-  clearToaccountList(): void;
-  getToaccountList(): Array<Account>;
-  setToaccountList(value: Array<Account>): void;
-  addToaccount(value?: Account, index?: number): Account;
+  clearToAccountList(): void;
+  getToAccountList(): Array<Account>;
+  setToAccountList(value: Array<Account>): void;
+  addToAccount(value?: Account, index?: number): Account;
 
   getAmount(): number;
   setAmount(value: number): void;
 
-  getMinamount(): number;
-  setMinamount(value: number): void;
+  getMinAmount(): number;
+  setMinAmount(value: number): void;
 
   getAsset(): string;
   setAsset(value: string): void;
@@ -1409,21 +1409,21 @@ export class TransferRequest extends jspb.Message {
 
 export namespace TransferRequest {
   export type AsObject = {
-    fromaccountList: Array<Account.AsObject>,
-    toaccountList: Array<Account.AsObject>,
+    fromAccountList: Array<Account.AsObject>,
+    toAccountList: Array<Account.AsObject>,
     amount: number,
-    minamount: number,
+    minAmount: number,
     asset: string,
     reference: string,
   }
 }
 
 export class LedgerEntry extends jspb.Message {
-  getFromaccount(): string;
-  setFromaccount(value: string): void;
+  getFromAccount(): string;
+  setFromAccount(value: string): void;
 
-  getToaccount(): string;
-  setToaccount(value: string): void;
+  getToAccount(): string;
+  setToAccount(value: string): void;
 
   getAmount(): number;
   setAmount(value: number): void;
@@ -1449,8 +1449,8 @@ export class LedgerEntry extends jspb.Message {
 
 export namespace LedgerEntry {
   export type AsObject = {
-    fromaccount: string,
-    toaccount: string,
+    fromAccount: string,
+    toAccount: string,
     amount: number,
     reference: string,
     type: string,
@@ -1513,23 +1513,23 @@ export namespace TransferResponse {
 }
 
 export class MarginLevels extends jspb.Message {
-  getMaintenancemargin(): number;
-  setMaintenancemargin(value: number): void;
+  getMaintenanceMargin(): number;
+  setMaintenanceMargin(value: number): void;
 
-  getSearchlevel(): number;
-  setSearchlevel(value: number): void;
+  getSearchLevel(): number;
+  setSearchLevel(value: number): void;
 
-  getInitialmargin(): number;
-  setInitialmargin(value: number): void;
+  getInitialMargin(): number;
+  setInitialMargin(value: number): void;
 
-  getCollateralreleaselevel(): number;
-  setCollateralreleaselevel(value: number): void;
+  getCollateralReleaseLevel(): number;
+  setCollateralReleaseLevel(value: number): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
   getAsset(): string;
   setAsset(value: string): void;
@@ -1549,50 +1549,50 @@ export class MarginLevels extends jspb.Message {
 
 export namespace MarginLevels {
   export type AsObject = {
-    maintenancemargin: number,
-    searchlevel: number,
-    initialmargin: number,
-    collateralreleaselevel: number,
-    partyid: string,
-    marketid: string,
+    maintenanceMargin: number,
+    searchLevel: number,
+    initialMargin: number,
+    collateralReleaseLevel: number,
+    partyId: string,
+    marketId: string,
     asset: string,
     timestamp: number,
   }
 }
 
 export class MarketData extends jspb.Message {
-  getMarkprice(): number;
-  setMarkprice(value: number): void;
+  getMarkPrice(): number;
+  setMarkPrice(value: number): void;
 
-  getBestbidprice(): number;
-  setBestbidprice(value: number): void;
+  getBestBidPrice(): number;
+  setBestBidPrice(value: number): void;
 
-  getBestbidvolume(): number;
-  setBestbidvolume(value: number): void;
+  getBestBidVolume(): number;
+  setBestBidVolume(value: number): void;
 
-  getBestofferprice(): number;
-  setBestofferprice(value: number): void;
+  getBestOfferPrice(): number;
+  setBestOfferPrice(value: number): void;
 
-  getBestoffervolume(): number;
-  setBestoffervolume(value: number): void;
+  getBestOfferVolume(): number;
+  setBestOfferVolume(value: number): void;
 
-  getBeststaticbidprice(): number;
-  setBeststaticbidprice(value: number): void;
+  getBestStaticBidPrice(): number;
+  setBestStaticBidPrice(value: number): void;
 
-  getBeststaticbidvolume(): number;
-  setBeststaticbidvolume(value: number): void;
+  getBestStaticBidVolume(): number;
+  setBestStaticBidVolume(value: number): void;
 
-  getBeststaticofferprice(): number;
-  setBeststaticofferprice(value: number): void;
+  getBestStaticOfferPrice(): number;
+  setBestStaticOfferPrice(value: number): void;
 
-  getBeststaticoffervolume(): number;
-  setBeststaticoffervolume(value: number): void;
+  getBestStaticOfferVolume(): number;
+  setBestStaticOfferVolume(value: number): void;
 
-  getMidprice(): number;
-  setMidprice(value: number): void;
+  getMidPrice(): number;
+  setMidPrice(value: number): void;
 
-  getStaticmidprice(): number;
-  setStaticmidprice(value: number): void;
+  getStaticMidPrice(): number;
+  setStaticMidPrice(value: number): void;
 
   getMarket(): string;
   setMarket(value: string): void;
@@ -1600,37 +1600,45 @@ export class MarketData extends jspb.Message {
   getTimestamp(): number;
   setTimestamp(value: number): void;
 
-  getOpeninterest(): number;
-  setOpeninterest(value: number): void;
+  getOpenInterest(): number;
+  setOpenInterest(value: number): void;
 
-  getAuctionend(): number;
-  setAuctionend(value: number): void;
+  getAuctionEnd(): number;
+  setAuctionEnd(value: number): void;
 
-  getAuctionstart(): number;
-  setAuctionstart(value: number): void;
+  getAuctionStart(): number;
+  setAuctionStart(value: number): void;
 
-  getIndicativeprice(): number;
-  setIndicativeprice(value: number): void;
+  getIndicativePrice(): number;
+  setIndicativePrice(value: number): void;
 
-  getIndicativevolume(): number;
-  setIndicativevolume(value: number): void;
+  getIndicativeVolume(): number;
+  setIndicativeVolume(value: number): void;
 
-  getMarkettradingmode(): markets_pb.Market.TradingModeMap[keyof markets_pb.Market.TradingModeMap];
-  setMarkettradingmode(value: markets_pb.Market.TradingModeMap[keyof markets_pb.Market.TradingModeMap]): void;
+  getMarketTradingMode(): markets_pb.Market.TradingModeMap[keyof markets_pb.Market.TradingModeMap];
+  setMarketTradingMode(value: markets_pb.Market.TradingModeMap[keyof markets_pb.Market.TradingModeMap]): void;
 
   getTrigger(): AuctionTriggerMap[keyof AuctionTriggerMap];
   setTrigger(value: AuctionTriggerMap[keyof AuctionTriggerMap]): void;
 
-  getTargetstake(): string;
-  setTargetstake(value: string): void;
+  getTargetStake(): string;
+  setTargetStake(value: string): void;
 
-  getSuppliedstake(): string;
-  setSuppliedstake(value: string): void;
+  getSuppliedStake(): string;
+  setSuppliedStake(value: string): void;
 
-  clearPricemonitoringboundsList(): void;
-  getPricemonitoringboundsList(): Array<PriceMonitoringBounds>;
-  setPricemonitoringboundsList(value: Array<PriceMonitoringBounds>): void;
-  addPricemonitoringbounds(value?: PriceMonitoringBounds, index?: number): PriceMonitoringBounds;
+  clearPriceMonitoringBoundsList(): void;
+  getPriceMonitoringBoundsList(): Array<PriceMonitoringBounds>;
+  setPriceMonitoringBoundsList(value: Array<PriceMonitoringBounds>): void;
+  addPriceMonitoringBounds(value?: PriceMonitoringBounds, index?: number): PriceMonitoringBounds;
+
+  getMarketValueProxy(): string;
+  setMarketValueProxy(value: string): void;
+
+  clearLiquidityProviderFeeShareList(): void;
+  getLiquidityProviderFeeShareList(): Array<LiquidityProviderFeeShare>;
+  setLiquidityProviderFeeShareList(value: Array<LiquidityProviderFeeShare>): void;
+  addLiquidityProviderFeeShare(value?: LiquidityProviderFeeShare, index?: number): LiquidityProviderFeeShare;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MarketData.AsObject;
@@ -1644,46 +1652,76 @@ export class MarketData extends jspb.Message {
 
 export namespace MarketData {
   export type AsObject = {
-    markprice: number,
-    bestbidprice: number,
-    bestbidvolume: number,
-    bestofferprice: number,
-    bestoffervolume: number,
-    beststaticbidprice: number,
-    beststaticbidvolume: number,
-    beststaticofferprice: number,
-    beststaticoffervolume: number,
-    midprice: number,
-    staticmidprice: number,
+    markPrice: number,
+    bestBidPrice: number,
+    bestBidVolume: number,
+    bestOfferPrice: number,
+    bestOfferVolume: number,
+    bestStaticBidPrice: number,
+    bestStaticBidVolume: number,
+    bestStaticOfferPrice: number,
+    bestStaticOfferVolume: number,
+    midPrice: number,
+    staticMidPrice: number,
     market: string,
     timestamp: number,
-    openinterest: number,
-    auctionend: number,
-    auctionstart: number,
-    indicativeprice: number,
-    indicativevolume: number,
-    markettradingmode: markets_pb.Market.TradingModeMap[keyof markets_pb.Market.TradingModeMap],
+    openInterest: number,
+    auctionEnd: number,
+    auctionStart: number,
+    indicativePrice: number,
+    indicativeVolume: number,
+    marketTradingMode: markets_pb.Market.TradingModeMap[keyof markets_pb.Market.TradingModeMap],
     trigger: AuctionTriggerMap[keyof AuctionTriggerMap],
-    targetstake: string,
-    suppliedstake: string,
-    pricemonitoringboundsList: Array<PriceMonitoringBounds.AsObject>,
+    targetStake: string,
+    suppliedStake: string,
+    priceMonitoringBoundsList: Array<PriceMonitoringBounds.AsObject>,
+    marketValueProxy: string,
+    liquidityProviderFeeShareList: Array<LiquidityProviderFeeShare.AsObject>,
+  }
+}
+
+export class LiquidityProviderFeeShare extends jspb.Message {
+  getParty(): string;
+  setParty(value: string): void;
+
+  getEquityLikeShare(): string;
+  setEquityLikeShare(value: string): void;
+
+  getAverageEntryValuation(): string;
+  setAverageEntryValuation(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LiquidityProviderFeeShare.AsObject;
+  static toObject(includeInstance: boolean, msg: LiquidityProviderFeeShare): LiquidityProviderFeeShare.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LiquidityProviderFeeShare, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LiquidityProviderFeeShare;
+  static deserializeBinaryFromReader(message: LiquidityProviderFeeShare, reader: jspb.BinaryReader): LiquidityProviderFeeShare;
+}
+
+export namespace LiquidityProviderFeeShare {
+  export type AsObject = {
+    party: string,
+    equityLikeShare: string,
+    averageEntryValuation: string,
   }
 }
 
 export class PriceMonitoringBounds extends jspb.Message {
-  getMinvalidprice(): number;
-  setMinvalidprice(value: number): void;
+  getMinValidPrice(): number;
+  setMinValidPrice(value: number): void;
 
-  getMaxvalidprice(): number;
-  setMaxvalidprice(value: number): void;
+  getMaxValidPrice(): number;
+  setMaxValidPrice(value: number): void;
 
   hasTrigger(): boolean;
   clearTrigger(): void;
   getTrigger(): markets_pb.PriceMonitoringTrigger | undefined;
   setTrigger(value?: markets_pb.PriceMonitoringTrigger): void;
 
-  getReferenceprice(): number;
-  setReferenceprice(value: number): void;
+  getReferencePrice(): number;
+  setReferencePrice(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PriceMonitoringBounds.AsObject;
@@ -1697,10 +1735,10 @@ export class PriceMonitoringBounds extends jspb.Message {
 
 export namespace PriceMonitoringBounds {
   export type AsObject = {
-    minvalidprice: number,
-    maxvalidprice: number,
+    minValidPrice: number,
+    maxValidPrice: number,
     trigger?: markets_pb.PriceMonitoringTrigger.AsObject,
-    referenceprice: number,
+    referencePrice: number,
   }
 }
 
@@ -1733,16 +1771,16 @@ export namespace ErrorDetail {
 }
 
 export class Transaction extends jspb.Message {
-  getInputdata(): Uint8Array | string;
-  getInputdata_asU8(): Uint8Array;
-  getInputdata_asB64(): string;
-  setInputdata(value: Uint8Array | string): void;
+  getInputData(): Uint8Array | string;
+  getInputData_asU8(): Uint8Array;
+  getInputData_asB64(): string;
+  setInputData(value: Uint8Array | string): void;
 
   getNonce(): number;
   setNonce(value: number): void;
 
-  getBlockheight(): number;
-  setBlockheight(value: number): void;
+  getBlockHeight(): number;
+  setBlockHeight(value: number): void;
 
   hasAddress(): boolean;
   clearAddress(): void;
@@ -1751,12 +1789,12 @@ export class Transaction extends jspb.Message {
   getAddress_asB64(): string;
   setAddress(value: Uint8Array | string): void;
 
-  hasPubkey(): boolean;
-  clearPubkey(): void;
-  getPubkey(): Uint8Array | string;
-  getPubkey_asU8(): Uint8Array;
-  getPubkey_asB64(): string;
-  setPubkey(value: Uint8Array | string): void;
+  hasPubKey(): boolean;
+  clearPubKey(): void;
+  getPubKey(): Uint8Array | string;
+  getPubKey_asU8(): Uint8Array;
+  getPubKey_asB64(): string;
+  setPubKey(value: Uint8Array | string): void;
 
   getFromCase(): Transaction.FromCase;
   serializeBinary(): Uint8Array;
@@ -1771,17 +1809,17 @@ export class Transaction extends jspb.Message {
 
 export namespace Transaction {
   export type AsObject = {
-    inputdata: Uint8Array | string,
+    inputData: Uint8Array | string,
     nonce: number,
-    blockheight: number,
+    blockHeight: number,
     address: Uint8Array | string,
-    pubkey: Uint8Array | string,
+    pubKey: Uint8Array | string,
   }
 
   export enum FromCase {
     FROM_NOT_SET = 0,
     ADDRESS = 1001,
-    PUBKEY = 1002,
+    PUB_KEY = 1002,
   }
 }
 
@@ -1926,11 +1964,11 @@ export namespace LiquidityOrder {
 }
 
 export class LiquidityProvisionSubmission extends jspb.Message {
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getCommitmentamount(): number;
-  setCommitmentamount(value: number): void;
+  getCommitmentAmount(): number;
+  setCommitmentAmount(value: number): void;
 
   getFee(): string;
   setFee(value: string): void;
@@ -1957,8 +1995,8 @@ export class LiquidityProvisionSubmission extends jspb.Message {
 
 export namespace LiquidityProvisionSubmission {
   export type AsObject = {
-    marketid: string,
-    commitmentamount: number,
+    marketId: string,
+    commitmentAmount: number,
     fee: string,
     sellsList: Array<LiquidityOrder.AsObject>,
     buysList: Array<LiquidityOrder.AsObject>,
@@ -1966,13 +2004,13 @@ export namespace LiquidityProvisionSubmission {
 }
 
 export class LiquidityOrderReference extends jspb.Message {
-  getOrderid(): string;
-  setOrderid(value: string): void;
+  getOrderId(): string;
+  setOrderId(value: string): void;
 
-  hasLiquidityorder(): boolean;
-  clearLiquidityorder(): void;
-  getLiquidityorder(): LiquidityOrder | undefined;
-  setLiquidityorder(value?: LiquidityOrder): void;
+  hasLiquidityOrder(): boolean;
+  clearLiquidityOrder(): void;
+  getLiquidityOrder(): LiquidityOrder | undefined;
+  setLiquidityOrder(value?: LiquidityOrder): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LiquidityOrderReference.AsObject;
@@ -1986,8 +2024,8 @@ export class LiquidityOrderReference extends jspb.Message {
 
 export namespace LiquidityOrderReference {
   export type AsObject = {
-    orderid: string,
-    liquidityorder?: LiquidityOrder.AsObject,
+    orderId: string,
+    liquidityOrder?: LiquidityOrder.AsObject,
   }
 }
 
@@ -1995,20 +2033,20 @@ export class LiquidityProvision extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
-  getCreatedat(): number;
-  setCreatedat(value: number): void;
+  getCreatedAt(): number;
+  setCreatedAt(value: number): void;
 
-  getUpdatedat(): number;
-  setUpdatedat(value: number): void;
+  getUpdatedAt(): number;
+  setUpdatedAt(value: number): void;
 
-  getMarketid(): string;
-  setMarketid(value: string): void;
+  getMarketId(): string;
+  setMarketId(value: string): void;
 
-  getCommitmentamount(): number;
-  setCommitmentamount(value: number): void;
+  getCommitmentAmount(): number;
+  setCommitmentAmount(value: number): void;
 
   getFee(): string;
   setFee(value: string): void;
@@ -2042,11 +2080,11 @@ export class LiquidityProvision extends jspb.Message {
 export namespace LiquidityProvision {
   export type AsObject = {
     id: string,
-    partyid: string,
-    createdat: number,
-    updatedat: number,
-    marketid: string,
-    commitmentamount: number,
+    partyId: string,
+    createdAt: number,
+    updatedAt: number,
+    marketId: string,
+    commitmentAmount: number,
     fee: string,
     sellsList: Array<LiquidityOrderReference.AsObject>,
     buysList: Array<LiquidityOrderReference.AsObject>,
@@ -2055,25 +2093,26 @@ export namespace LiquidityProvision {
   }
 
   export interface StatusMap {
-    LIQUIDITY_PROVISION_STATUS_UNSPECIFIED: 0;
-    LIQUIDITY_PROVISION_STATUS_ACTIVE: 1;
-    LIQUIDITY_PROVISION_STATUS_STOPPED: 2;
-    LIQUIDITY_PROVISION_STATUS_CANCELLED: 3;
-    LIQUIDITY_PROVISION_STATUS_REJECTED: 4;
+    STATUS_UNSPECIFIED: 0;
+    STATUS_ACTIVE: 1;
+    STATUS_STOPPED: 2;
+    STATUS_CANCELLED: 3;
+    STATUS_REJECTED: 4;
+    STATUS_UNDEPLOYED: 5;
   }
 
   export const Status: StatusMap;
 }
 
 export class EthereumConfig extends jspb.Message {
-  getNetworkid(): string;
-  setNetworkid(value: string): void;
+  getNetworkId(): string;
+  setNetworkId(value: string): void;
 
-  getChainid(): string;
-  setChainid(value: string): void;
+  getChainId(): string;
+  setChainId(value: string): void;
 
-  getBridgeaddress(): string;
-  setBridgeaddress(value: string): void;
+  getBridgeAddress(): string;
+  setBridgeAddress(value: string): void;
 
   getConfirmations(): number;
   setConfirmations(value: number): void;
@@ -2090,11 +2129,44 @@ export class EthereumConfig extends jspb.Message {
 
 export namespace EthereumConfig {
   export type AsObject = {
-    networkid: string,
-    chainid: string,
-    bridgeaddress: string,
+    networkId: string,
+    chainId: string,
+    bridgeAddress: string,
     confirmations: number,
   }
+}
+
+export class OracleDataSubmission extends jspb.Message {
+  getSource(): OracleDataSubmission.OracleSourceMap[keyof OracleDataSubmission.OracleSourceMap];
+  setSource(value: OracleDataSubmission.OracleSourceMap[keyof OracleDataSubmission.OracleSourceMap]): void;
+
+  getPayload(): Uint8Array | string;
+  getPayload_asU8(): Uint8Array;
+  getPayload_asB64(): string;
+  setPayload(value: Uint8Array | string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OracleDataSubmission.AsObject;
+  static toObject(includeInstance: boolean, msg: OracleDataSubmission): OracleDataSubmission.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OracleDataSubmission, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OracleDataSubmission;
+  static deserializeBinaryFromReader(message: OracleDataSubmission, reader: jspb.BinaryReader): OracleDataSubmission;
+}
+
+export namespace OracleDataSubmission {
+  export type AsObject = {
+    source: OracleDataSubmission.OracleSourceMap[keyof OracleDataSubmission.OracleSourceMap],
+    payload: Uint8Array | string,
+  }
+
+  export interface OracleSourceMap {
+    ORACLE_SOURCE_UNSPECIFIED: 0;
+    ORACLE_SOURCE_OPEN_ORACLE: 1;
+  }
+
+  export const OracleSource: OracleSourceMap;
 }
 
 export interface SideMap {
@@ -2137,7 +2209,7 @@ export interface PeggedReferenceMap {
 export const PeggedReference: PeggedReferenceMap;
 
 export interface OrderErrorMap {
-  ORDER_ERROR_NONE: 0;
+  ORDER_ERROR_UNSPECIFIED: 0;
   ORDER_ERROR_INVALID_MARKET_ID: 1;
   ORDER_ERROR_INVALID_ORDER_ID: 2;
   ORDER_ERROR_OUT_OF_SEQUENCE: 3;

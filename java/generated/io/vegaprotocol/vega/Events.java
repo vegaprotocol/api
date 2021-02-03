@@ -252,7 +252,7 @@ public final class Events {
     BUS_EVENT_TYPE_MARKET(101),
     /**
      * <pre>
-     * Event used to report failed transactions back to a user - excluded from the ALL type
+     * Event used to report failed transactions back to a user, this is excluded from the ALL type
      * </pre>
      *
      * <code>BUS_EVENT_TYPE_TX_ERROR = 201;</code>
@@ -487,7 +487,7 @@ public final class Events {
     public static final int BUS_EVENT_TYPE_MARKET_VALUE = 101;
     /**
      * <pre>
-     * Event used to report failed transactions back to a user - excluded from the ALL type
+     * Event used to report failed transactions back to a user, this is excluded from the ALL type
      * </pre>
      *
      * <code>BUS_EVENT_TYPE_TX_ERROR = 201;</code>
@@ -613,24 +613,24 @@ public final class Events {
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The marketId.
      */
-    java.lang.String getMarketID();
+    java.lang.String getMarketId();
     /**
      * <pre>
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The bytes for marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The bytes for marketId.
      */
     com.google.protobuf.ByteString
-        getMarketIDBytes();
+        getMarketIdBytes();
 
     /**
      * <pre>
-     * Payload is a unique information string.
+     * Payload is a unique information string
      * </pre>
      *
      * <code>string payload = 2 [json_name = "payload"];</code>
@@ -639,7 +639,7 @@ public final class Events {
     java.lang.String getPayload();
     /**
      * <pre>
-     * Payload is a unique information string.
+     * Payload is a unique information string
      * </pre>
      *
      * <code>string payload = 2 [json_name = "payload"];</code>
@@ -666,7 +666,7 @@ public final class Events {
       super(builder);
     }
     private MarketEvent() {
-      marketID_ = "";
+      marketId_ = "";
       payload_ = "";
     }
 
@@ -703,7 +703,7 @@ public final class Events {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              marketID_ = s;
+              marketId_ = s;
               break;
             }
             case 18: {
@@ -744,26 +744,26 @@ public final class Events {
               io.vegaprotocol.vega.Events.MarketEvent.class, io.vegaprotocol.vega.Events.MarketEvent.Builder.class);
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object marketID_;
+    public static final int MARKET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object marketId_;
     /**
      * <pre>
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The marketId.
      */
     @java.lang.Override
-    public java.lang.String getMarketID() {
-      java.lang.Object ref = marketID_;
+    public java.lang.String getMarketId() {
+      java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        marketID_ = s;
+        marketId_ = s;
         return s;
       }
     }
@@ -772,18 +772,18 @@ public final class Events {
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The bytes for marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The bytes for marketId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getMarketIDBytes() {
-      java.lang.Object ref = marketID_;
+        getMarketIdBytes() {
+      java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        marketID_ = b;
+        marketId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -794,7 +794,7 @@ public final class Events {
     private volatile java.lang.Object payload_;
     /**
      * <pre>
-     * Payload is a unique information string.
+     * Payload is a unique information string
      * </pre>
      *
      * <code>string payload = 2 [json_name = "payload"];</code>
@@ -815,7 +815,7 @@ public final class Events {
     }
     /**
      * <pre>
-     * Payload is a unique information string.
+     * Payload is a unique information string
      * </pre>
      *
      * <code>string payload = 2 [json_name = "payload"];</code>
@@ -850,8 +850,8 @@ public final class Events {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getMarketIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketID_);
+      if (!getMarketIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketId_);
       }
       if (!getPayloadBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, payload_);
@@ -865,8 +865,8 @@ public final class Events {
       if (size != -1) return size;
 
       size = 0;
-      if (!getMarketIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketID_);
+      if (!getMarketIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketId_);
       }
       if (!getPayloadBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, payload_);
@@ -886,8 +886,8 @@ public final class Events {
       }
       io.vegaprotocol.vega.Events.MarketEvent other = (io.vegaprotocol.vega.Events.MarketEvent) obj;
 
-      if (!getMarketID()
-          .equals(other.getMarketID())) return false;
+      if (!getMarketId()
+          .equals(other.getMarketId())) return false;
       if (!getPayload()
           .equals(other.getPayload())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -901,8 +901,8 @@ public final class Events {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
-      hash = (53 * hash) + getMarketID().hashCode();
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMarketId().hashCode();
       hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
       hash = (53 * hash) + getPayload().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1043,7 +1043,7 @@ public final class Events {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        marketID_ = "";
+        marketId_ = "";
 
         payload_ = "";
 
@@ -1073,7 +1073,7 @@ public final class Events {
       @java.lang.Override
       public io.vegaprotocol.vega.Events.MarketEvent buildPartial() {
         io.vegaprotocol.vega.Events.MarketEvent result = new io.vegaprotocol.vega.Events.MarketEvent(this);
-        result.marketID_ = marketID_;
+        result.marketId_ = marketId_;
         result.payload_ = payload_;
         onBuilt();
         return result;
@@ -1123,8 +1123,8 @@ public final class Events {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Events.MarketEvent other) {
         if (other == io.vegaprotocol.vega.Events.MarketEvent.getDefaultInstance()) return this;
-        if (!other.getMarketID().isEmpty()) {
-          marketID_ = other.marketID_;
+        if (!other.getMarketId().isEmpty()) {
+          marketId_ = other.marketId_;
           onChanged();
         }
         if (!other.getPayload().isEmpty()) {
@@ -1160,22 +1160,22 @@ public final class Events {
         return this;
       }
 
-      private java.lang.Object marketID_ = "";
+      private java.lang.Object marketId_ = "";
       /**
        * <pre>
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @return The marketID.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @return The marketId.
        */
-      public java.lang.String getMarketID() {
-        java.lang.Object ref = marketID_;
+      public java.lang.String getMarketId() {
+        java.lang.Object ref = marketId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          marketID_ = s;
+          marketId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1186,17 +1186,17 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @return The bytes for marketID.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @return The bytes for marketId.
        */
       public com.google.protobuf.ByteString
-          getMarketIDBytes() {
-        java.lang.Object ref = marketID_;
+          getMarketIdBytes() {
+        java.lang.Object ref = marketId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          marketID_ = b;
+          marketId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -1207,17 +1207,17 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @param value The marketID to set.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @param value The marketId to set.
        * @return This builder for chaining.
        */
-      public Builder setMarketID(
+      public Builder setMarketId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        marketID_ = value;
+        marketId_ = value;
         onChanged();
         return this;
       }
@@ -1226,12 +1226,12 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearMarketID() {
+      public Builder clearMarketId() {
 
-        marketID_ = getDefaultInstance().getMarketID();
+        marketId_ = getDefaultInstance().getMarketId();
         onChanged();
         return this;
       }
@@ -1240,18 +1240,18 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @param value The bytes for marketID to set.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @param value The bytes for marketId to set.
        * @return This builder for chaining.
        */
-      public Builder setMarketIDBytes(
+      public Builder setMarketIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        marketID_ = value;
+        marketId_ = value;
         onChanged();
         return this;
       }
@@ -1259,7 +1259,7 @@ public final class Events {
       private java.lang.Object payload_ = "";
       /**
        * <pre>
-       * Payload is a unique information string.
+       * Payload is a unique information string
        * </pre>
        *
        * <code>string payload = 2 [json_name = "payload"];</code>
@@ -1279,7 +1279,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Payload is a unique information string.
+       * Payload is a unique information string
        * </pre>
        *
        * <code>string payload = 2 [json_name = "payload"];</code>
@@ -1300,7 +1300,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Payload is a unique information string.
+       * Payload is a unique information string
        * </pre>
        *
        * <code>string payload = 2 [json_name = "payload"];</code>
@@ -1319,7 +1319,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Payload is a unique information string.
+       * Payload is a unique information string
        * </pre>
        *
        * <code>string payload = 2 [json_name = "payload"];</code>
@@ -1333,7 +1333,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Payload is a unique information string.
+       * Payload is a unique information string
        * </pre>
        *
        * <code>string payload = 2 [json_name = "payload"];</code>
@@ -1410,86 +1410,86 @@ public final class Events {
 
     /**
      * <pre>
-     * the party who had a tx fail
+     * Unique party identifier for the related party
      * </pre>
      *
-     * <code>string PartyID = 1 [json_name = "PartyID"];</code>
-     * @return The partyID.
+     * <code>string party_id = 1 [json_name = "partyId"];</code>
+     * @return The partyId.
      */
-    java.lang.String getPartyID();
+    java.lang.String getPartyId();
     /**
      * <pre>
-     * the party who had a tx fail
+     * Unique party identifier for the related party
      * </pre>
      *
-     * <code>string PartyID = 1 [json_name = "PartyID"];</code>
-     * @return The bytes for partyID.
+     * <code>string party_id = 1 [json_name = "partyId"];</code>
+     * @return The bytes for partyId.
      */
     com.google.protobuf.ByteString
-        getPartyIDBytes();
+        getPartyIdBytes();
 
     /**
      * <pre>
-     * error message describing what went wrong
+     * An error message describing what went wrong
      * </pre>
      *
-     * <code>string errMsg = 2 [json_name = "errMsg"];</code>
+     * <code>string err_msg = 2 [json_name = "errMsg"];</code>
      * @return The errMsg.
      */
     java.lang.String getErrMsg();
     /**
      * <pre>
-     * error message describing what went wrong
+     * An error message describing what went wrong
      * </pre>
      *
-     * <code>string errMsg = 2 [json_name = "errMsg"];</code>
+     * <code>string err_msg = 2 [json_name = "errMsg"];</code>
      * @return The bytes for errMsg.
      */
     com.google.protobuf.ByteString
         getErrMsgBytes();
 
     /**
-     * <code>.vega.OrderSubmission orderSubmission = 101 [json_name = "orderSubmission"];</code>
+     * <code>.vega.OrderSubmission order_submission = 101 [json_name = "orderSubmission"];</code>
      * @return Whether the orderSubmission field is set.
      */
     boolean hasOrderSubmission();
     /**
-     * <code>.vega.OrderSubmission orderSubmission = 101 [json_name = "orderSubmission"];</code>
+     * <code>.vega.OrderSubmission order_submission = 101 [json_name = "orderSubmission"];</code>
      * @return The orderSubmission.
      */
     io.vegaprotocol.vega.Vega.OrderSubmission getOrderSubmission();
     /**
-     * <code>.vega.OrderSubmission orderSubmission = 101 [json_name = "orderSubmission"];</code>
+     * <code>.vega.OrderSubmission order_submission = 101 [json_name = "orderSubmission"];</code>
      */
     io.vegaprotocol.vega.Vega.OrderSubmissionOrBuilder getOrderSubmissionOrBuilder();
 
     /**
-     * <code>.vega.OrderAmendment orderAmendment = 102 [json_name = "orderAmendment"];</code>
+     * <code>.vega.OrderAmendment order_amendment = 102 [json_name = "orderAmendment"];</code>
      * @return Whether the orderAmendment field is set.
      */
     boolean hasOrderAmendment();
     /**
-     * <code>.vega.OrderAmendment orderAmendment = 102 [json_name = "orderAmendment"];</code>
+     * <code>.vega.OrderAmendment order_amendment = 102 [json_name = "orderAmendment"];</code>
      * @return The orderAmendment.
      */
     io.vegaprotocol.vega.Vega.OrderAmendment getOrderAmendment();
     /**
-     * <code>.vega.OrderAmendment orderAmendment = 102 [json_name = "orderAmendment"];</code>
+     * <code>.vega.OrderAmendment order_amendment = 102 [json_name = "orderAmendment"];</code>
      */
     io.vegaprotocol.vega.Vega.OrderAmendmentOrBuilder getOrderAmendmentOrBuilder();
 
     /**
-     * <code>.vega.OrderCancellation orderCancellation = 103 [json_name = "orderCancellation"];</code>
+     * <code>.vega.OrderCancellation order_cancellation = 103 [json_name = "orderCancellation"];</code>
      * @return Whether the orderCancellation field is set.
      */
     boolean hasOrderCancellation();
     /**
-     * <code>.vega.OrderCancellation orderCancellation = 103 [json_name = "orderCancellation"];</code>
+     * <code>.vega.OrderCancellation order_cancellation = 103 [json_name = "orderCancellation"];</code>
      * @return The orderCancellation.
      */
     io.vegaprotocol.vega.Vega.OrderCancellation getOrderCancellation();
     /**
-     * <code>.vega.OrderCancellation orderCancellation = 103 [json_name = "orderCancellation"];</code>
+     * <code>.vega.OrderCancellation order_cancellation = 103 [json_name = "orderCancellation"];</code>
      */
     io.vegaprotocol.vega.Vega.OrderCancellationOrBuilder getOrderCancellationOrBuilder();
 
@@ -1538,7 +1538,7 @@ public final class Events {
       super(builder);
     }
     private TxErrorEvent() {
-      partyID_ = "";
+      partyId_ = "";
       errMsg_ = "";
     }
 
@@ -1575,7 +1575,7 @@ public final class Events {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              partyID_ = s;
+              partyId_ = s;
               break;
             }
             case 18: {
@@ -1691,9 +1691,9 @@ public final class Events {
     public enum TransactionCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      ORDERSUBMISSION(101),
-      ORDERAMENDMENT(102),
-      ORDERCANCELLATION(103),
+      ORDER_SUBMISSION(101),
+      ORDER_AMENDMENT(102),
+      ORDER_CANCELLATION(103),
       PROPOSAL(104),
       VOTE(105),
       TRANSACTION_NOT_SET(0);
@@ -1713,9 +1713,9 @@ public final class Events {
 
       public static TransactionCase forNumber(int value) {
         switch (value) {
-          case 101: return ORDERSUBMISSION;
-          case 102: return ORDERAMENDMENT;
-          case 103: return ORDERCANCELLATION;
+          case 101: return ORDER_SUBMISSION;
+          case 102: return ORDER_AMENDMENT;
+          case 103: return ORDER_CANCELLATION;
           case 104: return PROPOSAL;
           case 105: return VOTE;
           case 0: return TRANSACTION_NOT_SET;
@@ -1733,60 +1733,60 @@ public final class Events {
           transactionCase_);
     }
 
-    public static final int PARTYID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object partyID_;
+    public static final int PARTY_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object partyId_;
     /**
      * <pre>
-     * the party who had a tx fail
+     * Unique party identifier for the related party
      * </pre>
      *
-     * <code>string PartyID = 1 [json_name = "PartyID"];</code>
-     * @return The partyID.
+     * <code>string party_id = 1 [json_name = "partyId"];</code>
+     * @return The partyId.
      */
     @java.lang.Override
-    public java.lang.String getPartyID() {
-      java.lang.Object ref = partyID_;
+    public java.lang.String getPartyId() {
+      java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        partyID_ = s;
+        partyId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * the party who had a tx fail
+     * Unique party identifier for the related party
      * </pre>
      *
-     * <code>string PartyID = 1 [json_name = "PartyID"];</code>
-     * @return The bytes for partyID.
+     * <code>string party_id = 1 [json_name = "partyId"];</code>
+     * @return The bytes for partyId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getPartyIDBytes() {
-      java.lang.Object ref = partyID_;
+        getPartyIdBytes() {
+      java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        partyID_ = b;
+        partyId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int ERRMSG_FIELD_NUMBER = 2;
+    public static final int ERR_MSG_FIELD_NUMBER = 2;
     private volatile java.lang.Object errMsg_;
     /**
      * <pre>
-     * error message describing what went wrong
+     * An error message describing what went wrong
      * </pre>
      *
-     * <code>string errMsg = 2 [json_name = "errMsg"];</code>
+     * <code>string err_msg = 2 [json_name = "errMsg"];</code>
      * @return The errMsg.
      */
     @java.lang.Override
@@ -1804,10 +1804,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * error message describing what went wrong
+     * An error message describing what went wrong
      * </pre>
      *
-     * <code>string errMsg = 2 [json_name = "errMsg"];</code>
+     * <code>string err_msg = 2 [json_name = "errMsg"];</code>
      * @return The bytes for errMsg.
      */
     @java.lang.Override
@@ -1825,9 +1825,9 @@ public final class Events {
       }
     }
 
-    public static final int ORDERSUBMISSION_FIELD_NUMBER = 101;
+    public static final int ORDER_SUBMISSION_FIELD_NUMBER = 101;
     /**
-     * <code>.vega.OrderSubmission orderSubmission = 101 [json_name = "orderSubmission"];</code>
+     * <code>.vega.OrderSubmission order_submission = 101 [json_name = "orderSubmission"];</code>
      * @return Whether the orderSubmission field is set.
      */
     @java.lang.Override
@@ -1835,7 +1835,7 @@ public final class Events {
       return transactionCase_ == 101;
     }
     /**
-     * <code>.vega.OrderSubmission orderSubmission = 101 [json_name = "orderSubmission"];</code>
+     * <code>.vega.OrderSubmission order_submission = 101 [json_name = "orderSubmission"];</code>
      * @return The orderSubmission.
      */
     @java.lang.Override
@@ -1846,7 +1846,7 @@ public final class Events {
       return io.vegaprotocol.vega.Vega.OrderSubmission.getDefaultInstance();
     }
     /**
-     * <code>.vega.OrderSubmission orderSubmission = 101 [json_name = "orderSubmission"];</code>
+     * <code>.vega.OrderSubmission order_submission = 101 [json_name = "orderSubmission"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.OrderSubmissionOrBuilder getOrderSubmissionOrBuilder() {
@@ -1856,9 +1856,9 @@ public final class Events {
       return io.vegaprotocol.vega.Vega.OrderSubmission.getDefaultInstance();
     }
 
-    public static final int ORDERAMENDMENT_FIELD_NUMBER = 102;
+    public static final int ORDER_AMENDMENT_FIELD_NUMBER = 102;
     /**
-     * <code>.vega.OrderAmendment orderAmendment = 102 [json_name = "orderAmendment"];</code>
+     * <code>.vega.OrderAmendment order_amendment = 102 [json_name = "orderAmendment"];</code>
      * @return Whether the orderAmendment field is set.
      */
     @java.lang.Override
@@ -1866,7 +1866,7 @@ public final class Events {
       return transactionCase_ == 102;
     }
     /**
-     * <code>.vega.OrderAmendment orderAmendment = 102 [json_name = "orderAmendment"];</code>
+     * <code>.vega.OrderAmendment order_amendment = 102 [json_name = "orderAmendment"];</code>
      * @return The orderAmendment.
      */
     @java.lang.Override
@@ -1877,7 +1877,7 @@ public final class Events {
       return io.vegaprotocol.vega.Vega.OrderAmendment.getDefaultInstance();
     }
     /**
-     * <code>.vega.OrderAmendment orderAmendment = 102 [json_name = "orderAmendment"];</code>
+     * <code>.vega.OrderAmendment order_amendment = 102 [json_name = "orderAmendment"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.OrderAmendmentOrBuilder getOrderAmendmentOrBuilder() {
@@ -1887,9 +1887,9 @@ public final class Events {
       return io.vegaprotocol.vega.Vega.OrderAmendment.getDefaultInstance();
     }
 
-    public static final int ORDERCANCELLATION_FIELD_NUMBER = 103;
+    public static final int ORDER_CANCELLATION_FIELD_NUMBER = 103;
     /**
-     * <code>.vega.OrderCancellation orderCancellation = 103 [json_name = "orderCancellation"];</code>
+     * <code>.vega.OrderCancellation order_cancellation = 103 [json_name = "orderCancellation"];</code>
      * @return Whether the orderCancellation field is set.
      */
     @java.lang.Override
@@ -1897,7 +1897,7 @@ public final class Events {
       return transactionCase_ == 103;
     }
     /**
-     * <code>.vega.OrderCancellation orderCancellation = 103 [json_name = "orderCancellation"];</code>
+     * <code>.vega.OrderCancellation order_cancellation = 103 [json_name = "orderCancellation"];</code>
      * @return The orderCancellation.
      */
     @java.lang.Override
@@ -1908,7 +1908,7 @@ public final class Events {
       return io.vegaprotocol.vega.Vega.OrderCancellation.getDefaultInstance();
     }
     /**
-     * <code>.vega.OrderCancellation orderCancellation = 103 [json_name = "orderCancellation"];</code>
+     * <code>.vega.OrderCancellation order_cancellation = 103 [json_name = "orderCancellation"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.OrderCancellationOrBuilder getOrderCancellationOrBuilder() {
@@ -1994,8 +1994,8 @@ public final class Events {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getPartyIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, partyID_);
+      if (!getPartyIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, partyId_);
       }
       if (!getErrMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errMsg_);
@@ -2024,8 +2024,8 @@ public final class Events {
       if (size != -1) return size;
 
       size = 0;
-      if (!getPartyIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, partyID_);
+      if (!getPartyIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, partyId_);
       }
       if (!getErrMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errMsg_);
@@ -2065,8 +2065,8 @@ public final class Events {
       }
       io.vegaprotocol.vega.Events.TxErrorEvent other = (io.vegaprotocol.vega.Events.TxErrorEvent) obj;
 
-      if (!getPartyID()
-          .equals(other.getPartyID())) return false;
+      if (!getPartyId()
+          .equals(other.getPartyId())) return false;
       if (!getErrMsg()
           .equals(other.getErrMsg())) return false;
       if (!getTransactionCase().equals(other.getTransactionCase())) return false;
@@ -2105,21 +2105,21 @@ public final class Events {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PARTYID_FIELD_NUMBER;
-      hash = (53 * hash) + getPartyID().hashCode();
-      hash = (37 * hash) + ERRMSG_FIELD_NUMBER;
+      hash = (37 * hash) + PARTY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPartyId().hashCode();
+      hash = (37 * hash) + ERR_MSG_FIELD_NUMBER;
       hash = (53 * hash) + getErrMsg().hashCode();
       switch (transactionCase_) {
         case 101:
-          hash = (37 * hash) + ORDERSUBMISSION_FIELD_NUMBER;
+          hash = (37 * hash) + ORDER_SUBMISSION_FIELD_NUMBER;
           hash = (53 * hash) + getOrderSubmission().hashCode();
           break;
         case 102:
-          hash = (37 * hash) + ORDERAMENDMENT_FIELD_NUMBER;
+          hash = (37 * hash) + ORDER_AMENDMENT_FIELD_NUMBER;
           hash = (53 * hash) + getOrderAmendment().hashCode();
           break;
         case 103:
-          hash = (37 * hash) + ORDERCANCELLATION_FIELD_NUMBER;
+          hash = (37 * hash) + ORDER_CANCELLATION_FIELD_NUMBER;
           hash = (53 * hash) + getOrderCancellation().hashCode();
           break;
         case 104:
@@ -2266,7 +2266,7 @@ public final class Events {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        partyID_ = "";
+        partyId_ = "";
 
         errMsg_ = "";
 
@@ -2298,7 +2298,7 @@ public final class Events {
       @java.lang.Override
       public io.vegaprotocol.vega.Events.TxErrorEvent buildPartial() {
         io.vegaprotocol.vega.Events.TxErrorEvent result = new io.vegaprotocol.vega.Events.TxErrorEvent(this);
-        result.partyID_ = partyID_;
+        result.partyId_ = partyId_;
         result.errMsg_ = errMsg_;
         if (transactionCase_ == 101) {
           if (orderSubmissionBuilder_ == null) {
@@ -2384,8 +2384,8 @@ public final class Events {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Events.TxErrorEvent other) {
         if (other == io.vegaprotocol.vega.Events.TxErrorEvent.getDefaultInstance()) return this;
-        if (!other.getPartyID().isEmpty()) {
-          partyID_ = other.partyID_;
+        if (!other.getPartyId().isEmpty()) {
+          partyId_ = other.partyId_;
           onChanged();
         }
         if (!other.getErrMsg().isEmpty()) {
@@ -2393,15 +2393,15 @@ public final class Events {
           onChanged();
         }
         switch (other.getTransactionCase()) {
-          case ORDERSUBMISSION: {
+          case ORDER_SUBMISSION: {
             mergeOrderSubmission(other.getOrderSubmission());
             break;
           }
-          case ORDERAMENDMENT: {
+          case ORDER_AMENDMENT: {
             mergeOrderAmendment(other.getOrderAmendment());
             break;
           }
-          case ORDERCANCELLATION: {
+          case ORDER_CANCELLATION: {
             mergeOrderCancellation(other.getOrderCancellation());
             break;
           }
@@ -2461,22 +2461,22 @@ public final class Events {
       }
 
 
-      private java.lang.Object partyID_ = "";
+      private java.lang.Object partyId_ = "";
       /**
        * <pre>
-       * the party who had a tx fail
+       * Unique party identifier for the related party
        * </pre>
        *
-       * <code>string PartyID = 1 [json_name = "PartyID"];</code>
-       * @return The partyID.
+       * <code>string party_id = 1 [json_name = "partyId"];</code>
+       * @return The partyId.
        */
-      public java.lang.String getPartyID() {
-        java.lang.Object ref = partyID_;
+      public java.lang.String getPartyId() {
+        java.lang.Object ref = partyId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          partyID_ = s;
+          partyId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2484,20 +2484,20 @@ public final class Events {
       }
       /**
        * <pre>
-       * the party who had a tx fail
+       * Unique party identifier for the related party
        * </pre>
        *
-       * <code>string PartyID = 1 [json_name = "PartyID"];</code>
-       * @return The bytes for partyID.
+       * <code>string party_id = 1 [json_name = "partyId"];</code>
+       * @return The bytes for partyId.
        */
       public com.google.protobuf.ByteString
-          getPartyIDBytes() {
-        java.lang.Object ref = partyID_;
+          getPartyIdBytes() {
+        java.lang.Object ref = partyId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          partyID_ = b;
+          partyId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -2505,54 +2505,54 @@ public final class Events {
       }
       /**
        * <pre>
-       * the party who had a tx fail
+       * Unique party identifier for the related party
        * </pre>
        *
-       * <code>string PartyID = 1 [json_name = "PartyID"];</code>
-       * @param value The partyID to set.
+       * <code>string party_id = 1 [json_name = "partyId"];</code>
+       * @param value The partyId to set.
        * @return This builder for chaining.
        */
-      public Builder setPartyID(
+      public Builder setPartyId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        partyID_ = value;
+        partyId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * the party who had a tx fail
+       * Unique party identifier for the related party
        * </pre>
        *
-       * <code>string PartyID = 1 [json_name = "PartyID"];</code>
+       * <code>string party_id = 1 [json_name = "partyId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearPartyID() {
+      public Builder clearPartyId() {
 
-        partyID_ = getDefaultInstance().getPartyID();
+        partyId_ = getDefaultInstance().getPartyId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * the party who had a tx fail
+       * Unique party identifier for the related party
        * </pre>
        *
-       * <code>string PartyID = 1 [json_name = "PartyID"];</code>
-       * @param value The bytes for partyID to set.
+       * <code>string party_id = 1 [json_name = "partyId"];</code>
+       * @param value The bytes for partyId to set.
        * @return This builder for chaining.
        */
-      public Builder setPartyIDBytes(
+      public Builder setPartyIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        partyID_ = value;
+        partyId_ = value;
         onChanged();
         return this;
       }
@@ -2560,10 +2560,10 @@ public final class Events {
       private java.lang.Object errMsg_ = "";
       /**
        * <pre>
-       * error message describing what went wrong
+       * An error message describing what went wrong
        * </pre>
        *
-       * <code>string errMsg = 2 [json_name = "errMsg"];</code>
+       * <code>string err_msg = 2 [json_name = "errMsg"];</code>
        * @return The errMsg.
        */
       public java.lang.String getErrMsg() {
@@ -2580,10 +2580,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * error message describing what went wrong
+       * An error message describing what went wrong
        * </pre>
        *
-       * <code>string errMsg = 2 [json_name = "errMsg"];</code>
+       * <code>string err_msg = 2 [json_name = "errMsg"];</code>
        * @return The bytes for errMsg.
        */
       public com.google.protobuf.ByteString
@@ -2601,10 +2601,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * error message describing what went wrong
+       * An error message describing what went wrong
        * </pre>
        *
-       * <code>string errMsg = 2 [json_name = "errMsg"];</code>
+       * <code>string err_msg = 2 [json_name = "errMsg"];</code>
        * @param value The errMsg to set.
        * @return This builder for chaining.
        */
@@ -2620,10 +2620,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * error message describing what went wrong
+       * An error message describing what went wrong
        * </pre>
        *
-       * <code>string errMsg = 2 [json_name = "errMsg"];</code>
+       * <code>string err_msg = 2 [json_name = "errMsg"];</code>
        * @return This builder for chaining.
        */
       public Builder clearErrMsg() {
@@ -2634,10 +2634,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * error message describing what went wrong
+       * An error message describing what went wrong
        * </pre>
        *
-       * <code>string errMsg = 2 [json_name = "errMsg"];</code>
+       * <code>string err_msg = 2 [json_name = "errMsg"];</code>
        * @param value The bytes for errMsg to set.
        * @return This builder for chaining.
        */
@@ -2656,7 +2656,7 @@ public final class Events {
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.OrderSubmission, io.vegaprotocol.vega.Vega.OrderSubmission.Builder, io.vegaprotocol.vega.Vega.OrderSubmissionOrBuilder> orderSubmissionBuilder_;
       /**
-       * <code>.vega.OrderSubmission orderSubmission = 101 [json_name = "orderSubmission"];</code>
+       * <code>.vega.OrderSubmission order_submission = 101 [json_name = "orderSubmission"];</code>
        * @return Whether the orderSubmission field is set.
        */
       @java.lang.Override
@@ -2664,7 +2664,7 @@ public final class Events {
         return transactionCase_ == 101;
       }
       /**
-       * <code>.vega.OrderSubmission orderSubmission = 101 [json_name = "orderSubmission"];</code>
+       * <code>.vega.OrderSubmission order_submission = 101 [json_name = "orderSubmission"];</code>
        * @return The orderSubmission.
        */
       @java.lang.Override
@@ -2682,7 +2682,7 @@ public final class Events {
         }
       }
       /**
-       * <code>.vega.OrderSubmission orderSubmission = 101 [json_name = "orderSubmission"];</code>
+       * <code>.vega.OrderSubmission order_submission = 101 [json_name = "orderSubmission"];</code>
        */
       public Builder setOrderSubmission(io.vegaprotocol.vega.Vega.OrderSubmission value) {
         if (orderSubmissionBuilder_ == null) {
@@ -2698,7 +2698,7 @@ public final class Events {
         return this;
       }
       /**
-       * <code>.vega.OrderSubmission orderSubmission = 101 [json_name = "orderSubmission"];</code>
+       * <code>.vega.OrderSubmission order_submission = 101 [json_name = "orderSubmission"];</code>
        */
       public Builder setOrderSubmission(
           io.vegaprotocol.vega.Vega.OrderSubmission.Builder builderForValue) {
@@ -2712,7 +2712,7 @@ public final class Events {
         return this;
       }
       /**
-       * <code>.vega.OrderSubmission orderSubmission = 101 [json_name = "orderSubmission"];</code>
+       * <code>.vega.OrderSubmission order_submission = 101 [json_name = "orderSubmission"];</code>
        */
       public Builder mergeOrderSubmission(io.vegaprotocol.vega.Vega.OrderSubmission value) {
         if (orderSubmissionBuilder_ == null) {
@@ -2734,7 +2734,7 @@ public final class Events {
         return this;
       }
       /**
-       * <code>.vega.OrderSubmission orderSubmission = 101 [json_name = "orderSubmission"];</code>
+       * <code>.vega.OrderSubmission order_submission = 101 [json_name = "orderSubmission"];</code>
        */
       public Builder clearOrderSubmission() {
         if (orderSubmissionBuilder_ == null) {
@@ -2753,13 +2753,13 @@ public final class Events {
         return this;
       }
       /**
-       * <code>.vega.OrderSubmission orderSubmission = 101 [json_name = "orderSubmission"];</code>
+       * <code>.vega.OrderSubmission order_submission = 101 [json_name = "orderSubmission"];</code>
        */
       public io.vegaprotocol.vega.Vega.OrderSubmission.Builder getOrderSubmissionBuilder() {
         return getOrderSubmissionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.vega.OrderSubmission orderSubmission = 101 [json_name = "orderSubmission"];</code>
+       * <code>.vega.OrderSubmission order_submission = 101 [json_name = "orderSubmission"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Vega.OrderSubmissionOrBuilder getOrderSubmissionOrBuilder() {
@@ -2773,7 +2773,7 @@ public final class Events {
         }
       }
       /**
-       * <code>.vega.OrderSubmission orderSubmission = 101 [json_name = "orderSubmission"];</code>
+       * <code>.vega.OrderSubmission order_submission = 101 [json_name = "orderSubmission"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.OrderSubmission, io.vegaprotocol.vega.Vega.OrderSubmission.Builder, io.vegaprotocol.vega.Vega.OrderSubmissionOrBuilder>
@@ -2797,7 +2797,7 @@ public final class Events {
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.OrderAmendment, io.vegaprotocol.vega.Vega.OrderAmendment.Builder, io.vegaprotocol.vega.Vega.OrderAmendmentOrBuilder> orderAmendmentBuilder_;
       /**
-       * <code>.vega.OrderAmendment orderAmendment = 102 [json_name = "orderAmendment"];</code>
+       * <code>.vega.OrderAmendment order_amendment = 102 [json_name = "orderAmendment"];</code>
        * @return Whether the orderAmendment field is set.
        */
       @java.lang.Override
@@ -2805,7 +2805,7 @@ public final class Events {
         return transactionCase_ == 102;
       }
       /**
-       * <code>.vega.OrderAmendment orderAmendment = 102 [json_name = "orderAmendment"];</code>
+       * <code>.vega.OrderAmendment order_amendment = 102 [json_name = "orderAmendment"];</code>
        * @return The orderAmendment.
        */
       @java.lang.Override
@@ -2823,7 +2823,7 @@ public final class Events {
         }
       }
       /**
-       * <code>.vega.OrderAmendment orderAmendment = 102 [json_name = "orderAmendment"];</code>
+       * <code>.vega.OrderAmendment order_amendment = 102 [json_name = "orderAmendment"];</code>
        */
       public Builder setOrderAmendment(io.vegaprotocol.vega.Vega.OrderAmendment value) {
         if (orderAmendmentBuilder_ == null) {
@@ -2839,7 +2839,7 @@ public final class Events {
         return this;
       }
       /**
-       * <code>.vega.OrderAmendment orderAmendment = 102 [json_name = "orderAmendment"];</code>
+       * <code>.vega.OrderAmendment order_amendment = 102 [json_name = "orderAmendment"];</code>
        */
       public Builder setOrderAmendment(
           io.vegaprotocol.vega.Vega.OrderAmendment.Builder builderForValue) {
@@ -2853,7 +2853,7 @@ public final class Events {
         return this;
       }
       /**
-       * <code>.vega.OrderAmendment orderAmendment = 102 [json_name = "orderAmendment"];</code>
+       * <code>.vega.OrderAmendment order_amendment = 102 [json_name = "orderAmendment"];</code>
        */
       public Builder mergeOrderAmendment(io.vegaprotocol.vega.Vega.OrderAmendment value) {
         if (orderAmendmentBuilder_ == null) {
@@ -2875,7 +2875,7 @@ public final class Events {
         return this;
       }
       /**
-       * <code>.vega.OrderAmendment orderAmendment = 102 [json_name = "orderAmendment"];</code>
+       * <code>.vega.OrderAmendment order_amendment = 102 [json_name = "orderAmendment"];</code>
        */
       public Builder clearOrderAmendment() {
         if (orderAmendmentBuilder_ == null) {
@@ -2894,13 +2894,13 @@ public final class Events {
         return this;
       }
       /**
-       * <code>.vega.OrderAmendment orderAmendment = 102 [json_name = "orderAmendment"];</code>
+       * <code>.vega.OrderAmendment order_amendment = 102 [json_name = "orderAmendment"];</code>
        */
       public io.vegaprotocol.vega.Vega.OrderAmendment.Builder getOrderAmendmentBuilder() {
         return getOrderAmendmentFieldBuilder().getBuilder();
       }
       /**
-       * <code>.vega.OrderAmendment orderAmendment = 102 [json_name = "orderAmendment"];</code>
+       * <code>.vega.OrderAmendment order_amendment = 102 [json_name = "orderAmendment"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Vega.OrderAmendmentOrBuilder getOrderAmendmentOrBuilder() {
@@ -2914,7 +2914,7 @@ public final class Events {
         }
       }
       /**
-       * <code>.vega.OrderAmendment orderAmendment = 102 [json_name = "orderAmendment"];</code>
+       * <code>.vega.OrderAmendment order_amendment = 102 [json_name = "orderAmendment"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.OrderAmendment, io.vegaprotocol.vega.Vega.OrderAmendment.Builder, io.vegaprotocol.vega.Vega.OrderAmendmentOrBuilder>
@@ -2938,7 +2938,7 @@ public final class Events {
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.OrderCancellation, io.vegaprotocol.vega.Vega.OrderCancellation.Builder, io.vegaprotocol.vega.Vega.OrderCancellationOrBuilder> orderCancellationBuilder_;
       /**
-       * <code>.vega.OrderCancellation orderCancellation = 103 [json_name = "orderCancellation"];</code>
+       * <code>.vega.OrderCancellation order_cancellation = 103 [json_name = "orderCancellation"];</code>
        * @return Whether the orderCancellation field is set.
        */
       @java.lang.Override
@@ -2946,7 +2946,7 @@ public final class Events {
         return transactionCase_ == 103;
       }
       /**
-       * <code>.vega.OrderCancellation orderCancellation = 103 [json_name = "orderCancellation"];</code>
+       * <code>.vega.OrderCancellation order_cancellation = 103 [json_name = "orderCancellation"];</code>
        * @return The orderCancellation.
        */
       @java.lang.Override
@@ -2964,7 +2964,7 @@ public final class Events {
         }
       }
       /**
-       * <code>.vega.OrderCancellation orderCancellation = 103 [json_name = "orderCancellation"];</code>
+       * <code>.vega.OrderCancellation order_cancellation = 103 [json_name = "orderCancellation"];</code>
        */
       public Builder setOrderCancellation(io.vegaprotocol.vega.Vega.OrderCancellation value) {
         if (orderCancellationBuilder_ == null) {
@@ -2980,7 +2980,7 @@ public final class Events {
         return this;
       }
       /**
-       * <code>.vega.OrderCancellation orderCancellation = 103 [json_name = "orderCancellation"];</code>
+       * <code>.vega.OrderCancellation order_cancellation = 103 [json_name = "orderCancellation"];</code>
        */
       public Builder setOrderCancellation(
           io.vegaprotocol.vega.Vega.OrderCancellation.Builder builderForValue) {
@@ -2994,7 +2994,7 @@ public final class Events {
         return this;
       }
       /**
-       * <code>.vega.OrderCancellation orderCancellation = 103 [json_name = "orderCancellation"];</code>
+       * <code>.vega.OrderCancellation order_cancellation = 103 [json_name = "orderCancellation"];</code>
        */
       public Builder mergeOrderCancellation(io.vegaprotocol.vega.Vega.OrderCancellation value) {
         if (orderCancellationBuilder_ == null) {
@@ -3016,7 +3016,7 @@ public final class Events {
         return this;
       }
       /**
-       * <code>.vega.OrderCancellation orderCancellation = 103 [json_name = "orderCancellation"];</code>
+       * <code>.vega.OrderCancellation order_cancellation = 103 [json_name = "orderCancellation"];</code>
        */
       public Builder clearOrderCancellation() {
         if (orderCancellationBuilder_ == null) {
@@ -3035,13 +3035,13 @@ public final class Events {
         return this;
       }
       /**
-       * <code>.vega.OrderCancellation orderCancellation = 103 [json_name = "orderCancellation"];</code>
+       * <code>.vega.OrderCancellation order_cancellation = 103 [json_name = "orderCancellation"];</code>
        */
       public io.vegaprotocol.vega.Vega.OrderCancellation.Builder getOrderCancellationBuilder() {
         return getOrderCancellationFieldBuilder().getBuilder();
       }
       /**
-       * <code>.vega.OrderCancellation orderCancellation = 103 [json_name = "orderCancellation"];</code>
+       * <code>.vega.OrderCancellation order_cancellation = 103 [json_name = "orderCancellation"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Vega.OrderCancellationOrBuilder getOrderCancellationOrBuilder() {
@@ -3055,7 +3055,7 @@ public final class Events {
         }
       }
       /**
-       * <code>.vega.OrderCancellation orderCancellation = 103 [json_name = "orderCancellation"];</code>
+       * <code>.vega.OrderCancellation order_cancellation = 103 [json_name = "orderCancellation"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.OrderCancellation, io.vegaprotocol.vega.Vega.OrderCancellation.Builder, io.vegaprotocol.vega.Vega.OrderCancellationOrBuilder>
@@ -3933,7 +3933,7 @@ public final class Events {
 
     /**
      * <pre>
-     * 1 or more entries containing internal transfer information
+     * One or more entries containing internal transfer information
      * </pre>
      *
      * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -3942,7 +3942,7 @@ public final class Events {
         getResponsesList();
     /**
      * <pre>
-     * 1 or more entries containing internal transfer information
+     * One or more entries containing internal transfer information
      * </pre>
      *
      * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -3950,7 +3950,7 @@ public final class Events {
     io.vegaprotocol.vega.Vega.TransferResponse getResponses(int index);
     /**
      * <pre>
-     * 1 or more entries containing internal transfer information
+     * One or more entries containing internal transfer information
      * </pre>
      *
      * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -3958,7 +3958,7 @@ public final class Events {
     int getResponsesCount();
     /**
      * <pre>
-     * 1 or more entries containing internal transfer information
+     * One or more entries containing internal transfer information
      * </pre>
      *
      * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -3967,7 +3967,7 @@ public final class Events {
         getResponsesOrBuilderList();
     /**
      * <pre>
-     * 1 or more entries containing internal transfer information
+     * One or more entries containing internal transfer information
      * </pre>
      *
      * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4074,7 +4074,7 @@ public final class Events {
     private java.util.List<io.vegaprotocol.vega.Vega.TransferResponse> responses_;
     /**
      * <pre>
-     * 1 or more entries containing internal transfer information
+     * One or more entries containing internal transfer information
      * </pre>
      *
      * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4085,7 +4085,7 @@ public final class Events {
     }
     /**
      * <pre>
-     * 1 or more entries containing internal transfer information
+     * One or more entries containing internal transfer information
      * </pre>
      *
      * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4097,7 +4097,7 @@ public final class Events {
     }
     /**
      * <pre>
-     * 1 or more entries containing internal transfer information
+     * One or more entries containing internal transfer information
      * </pre>
      *
      * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4108,7 +4108,7 @@ public final class Events {
     }
     /**
      * <pre>
-     * 1 or more entries containing internal transfer information
+     * One or more entries containing internal transfer information
      * </pre>
      *
      * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4119,7 +4119,7 @@ public final class Events {
     }
     /**
      * <pre>
-     * 1 or more entries containing internal transfer information
+     * One or more entries containing internal transfer information
      * </pre>
      *
      * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4490,7 +4490,7 @@ public final class Events {
 
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4504,7 +4504,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4518,7 +4518,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4532,7 +4532,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4553,7 +4553,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4571,7 +4571,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4591,7 +4591,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4612,7 +4612,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4630,7 +4630,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4648,7 +4648,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4667,7 +4667,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4684,7 +4684,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4701,7 +4701,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4712,7 +4712,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4726,7 +4726,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4741,7 +4741,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4752,7 +4752,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4764,7 +4764,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * 1 or more entries containing internal transfer information
+       * One or more entries containing internal transfer information
        * </pre>
        *
        * <code>repeated .vega.TransferResponse responses = 1 [json_name = "responses"];</code>
@@ -4849,20 +4849,20 @@ public final class Events {
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The marketId.
      */
-    java.lang.String getMarketID();
+    java.lang.String getMarketId();
     /**
      * <pre>
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The bytes for marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The bytes for marketId.
      */
     com.google.protobuf.ByteString
-        getMarketIDBytes();
+        getMarketIdBytes();
 
     /**
      * <pre>
@@ -4890,7 +4890,7 @@ public final class Events {
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 markPrice = 4 [json_name = "markPrice"];</code>
+     * <code>uint64 mark_price = 4 [json_name = "markPrice"];</code>
      * @return The markPrice.
      */
     long getMarkPrice();
@@ -4912,7 +4912,7 @@ public final class Events {
       super(builder);
     }
     private PositionResolution() {
-      marketID_ = "";
+      marketId_ = "";
     }
 
     @java.lang.Override
@@ -4948,7 +4948,7 @@ public final class Events {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              marketID_ = s;
+              marketId_ = s;
               break;
             }
             case 16: {
@@ -4998,26 +4998,26 @@ public final class Events {
               io.vegaprotocol.vega.Events.PositionResolution.class, io.vegaprotocol.vega.Events.PositionResolution.Builder.class);
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object marketID_;
+    public static final int MARKET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object marketId_;
     /**
      * <pre>
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The marketId.
      */
     @java.lang.Override
-    public java.lang.String getMarketID() {
-      java.lang.Object ref = marketID_;
+    public java.lang.String getMarketId() {
+      java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        marketID_ = s;
+        marketId_ = s;
         return s;
       }
     }
@@ -5026,18 +5026,18 @@ public final class Events {
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The bytes for marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The bytes for marketId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getMarketIDBytes() {
-      java.lang.Object ref = marketID_;
+        getMarketIdBytes() {
+      java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        marketID_ = b;
+        marketId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -5074,7 +5074,7 @@ public final class Events {
       return closed_;
     }
 
-    public static final int MARKPRICE_FIELD_NUMBER = 4;
+    public static final int MARK_PRICE_FIELD_NUMBER = 4;
     private long markPrice_;
     /**
      * <pre>
@@ -5082,7 +5082,7 @@ public final class Events {
      * formatted price of `1.23456` assuming market configured to 5 decimal places
      * </pre>
      *
-     * <code>uint64 markPrice = 4 [json_name = "markPrice"];</code>
+     * <code>uint64 mark_price = 4 [json_name = "markPrice"];</code>
      * @return The markPrice.
      */
     @java.lang.Override
@@ -5104,8 +5104,8 @@ public final class Events {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getMarketIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketID_);
+      if (!getMarketIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketId_);
       }
       if (distressed_ != 0L) {
         output.writeInt64(2, distressed_);
@@ -5125,8 +5125,8 @@ public final class Events {
       if (size != -1) return size;
 
       size = 0;
-      if (!getMarketIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketID_);
+      if (!getMarketIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketId_);
       }
       if (distressed_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -5155,8 +5155,8 @@ public final class Events {
       }
       io.vegaprotocol.vega.Events.PositionResolution other = (io.vegaprotocol.vega.Events.PositionResolution) obj;
 
-      if (!getMarketID()
-          .equals(other.getMarketID())) return false;
+      if (!getMarketId()
+          .equals(other.getMarketId())) return false;
       if (getDistressed()
           != other.getDistressed()) return false;
       if (getClosed()
@@ -5174,15 +5174,15 @@ public final class Events {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
-      hash = (53 * hash) + getMarketID().hashCode();
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMarketId().hashCode();
       hash = (37 * hash) + DISTRESSED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getDistressed());
       hash = (37 * hash) + CLOSED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getClosed());
-      hash = (37 * hash) + MARKPRICE_FIELD_NUMBER;
+      hash = (37 * hash) + MARK_PRICE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMarkPrice());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -5322,7 +5322,7 @@ public final class Events {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        marketID_ = "";
+        marketId_ = "";
 
         distressed_ = 0L;
 
@@ -5356,7 +5356,7 @@ public final class Events {
       @java.lang.Override
       public io.vegaprotocol.vega.Events.PositionResolution buildPartial() {
         io.vegaprotocol.vega.Events.PositionResolution result = new io.vegaprotocol.vega.Events.PositionResolution(this);
-        result.marketID_ = marketID_;
+        result.marketId_ = marketId_;
         result.distressed_ = distressed_;
         result.closed_ = closed_;
         result.markPrice_ = markPrice_;
@@ -5408,8 +5408,8 @@ public final class Events {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Events.PositionResolution other) {
         if (other == io.vegaprotocol.vega.Events.PositionResolution.getDefaultInstance()) return this;
-        if (!other.getMarketID().isEmpty()) {
-          marketID_ = other.marketID_;
+        if (!other.getMarketId().isEmpty()) {
+          marketId_ = other.marketId_;
           onChanged();
         }
         if (other.getDistressed() != 0L) {
@@ -5450,22 +5450,22 @@ public final class Events {
         return this;
       }
 
-      private java.lang.Object marketID_ = "";
+      private java.lang.Object marketId_ = "";
       /**
        * <pre>
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @return The marketID.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @return The marketId.
        */
-      public java.lang.String getMarketID() {
-        java.lang.Object ref = marketID_;
+      public java.lang.String getMarketId() {
+        java.lang.Object ref = marketId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          marketID_ = s;
+          marketId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -5476,17 +5476,17 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @return The bytes for marketID.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @return The bytes for marketId.
        */
       public com.google.protobuf.ByteString
-          getMarketIDBytes() {
-        java.lang.Object ref = marketID_;
+          getMarketIdBytes() {
+        java.lang.Object ref = marketId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          marketID_ = b;
+          marketId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -5497,17 +5497,17 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @param value The marketID to set.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @param value The marketId to set.
        * @return This builder for chaining.
        */
-      public Builder setMarketID(
+      public Builder setMarketId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        marketID_ = value;
+        marketId_ = value;
         onChanged();
         return this;
       }
@@ -5516,12 +5516,12 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearMarketID() {
+      public Builder clearMarketId() {
 
-        marketID_ = getDefaultInstance().getMarketID();
+        marketId_ = getDefaultInstance().getMarketId();
         onChanged();
         return this;
       }
@@ -5530,18 +5530,18 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @param value The bytes for marketID to set.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @param value The bytes for marketId to set.
        * @return This builder for chaining.
        */
-      public Builder setMarketIDBytes(
+      public Builder setMarketIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        marketID_ = value;
+        marketId_ = value;
         onChanged();
         return this;
       }
@@ -5639,7 +5639,7 @@ public final class Events {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 markPrice = 4 [json_name = "markPrice"];</code>
+       * <code>uint64 mark_price = 4 [json_name = "markPrice"];</code>
        * @return The markPrice.
        */
       @java.lang.Override
@@ -5652,7 +5652,7 @@ public final class Events {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 markPrice = 4 [json_name = "markPrice"];</code>
+       * <code>uint64 mark_price = 4 [json_name = "markPrice"];</code>
        * @param value The markPrice to set.
        * @return This builder for chaining.
        */
@@ -5668,7 +5668,7 @@ public final class Events {
        * formatted price of `1.23456` assuming market configured to 5 decimal places
        * </pre>
        *
-       * <code>uint64 markPrice = 4 [json_name = "markPrice"];</code>
+       * <code>uint64 mark_price = 4 [json_name = "markPrice"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMarkPrice() {
@@ -5739,40 +5739,40 @@ public final class Events {
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The marketId.
      */
-    java.lang.String getMarketID();
+    java.lang.String getMarketId();
     /**
      * <pre>
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The bytes for marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The bytes for marketId.
      */
     com.google.protobuf.ByteString
-        getMarketIDBytes();
+        getMarketIdBytes();
 
     /**
      * <pre>
      * Party identifier (public key) for the event
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The partyId.
      */
-    java.lang.String getPartyID();
+    java.lang.String getPartyId();
     /**
      * <pre>
      * Party identifier (public key) for the event
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The bytes for partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The bytes for partyId.
      */
     com.google.protobuf.ByteString
-        getPartyIDBytes();
+        getPartyIdBytes();
 
     /**
      * <pre>
@@ -5801,8 +5801,8 @@ public final class Events {
       super(builder);
     }
     private LossSocialization() {
-      marketID_ = "";
-      partyID_ = "";
+      marketId_ = "";
+      partyId_ = "";
     }
 
     @java.lang.Override
@@ -5838,13 +5838,13 @@ public final class Events {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              marketID_ = s;
+              marketId_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              partyID_ = s;
+              partyId_ = s;
               break;
             }
             case 24: {
@@ -5884,26 +5884,26 @@ public final class Events {
               io.vegaprotocol.vega.Events.LossSocialization.class, io.vegaprotocol.vega.Events.LossSocialization.Builder.class);
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object marketID_;
+    public static final int MARKET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object marketId_;
     /**
      * <pre>
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The marketId.
      */
     @java.lang.Override
-    public java.lang.String getMarketID() {
-      java.lang.Object ref = marketID_;
+    public java.lang.String getMarketId() {
+      java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        marketID_ = s;
+        marketId_ = s;
         return s;
       }
     }
@@ -5912,44 +5912,44 @@ public final class Events {
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The bytes for marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The bytes for marketId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getMarketIDBytes() {
-      java.lang.Object ref = marketID_;
+        getMarketIdBytes() {
+      java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        marketID_ = b;
+        marketId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int PARTYID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object partyID_;
+    public static final int PARTY_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object partyId_;
     /**
      * <pre>
      * Party identifier (public key) for the event
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The partyId.
      */
     @java.lang.Override
-    public java.lang.String getPartyID() {
-      java.lang.Object ref = partyID_;
+    public java.lang.String getPartyId() {
+      java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        partyID_ = s;
+        partyId_ = s;
         return s;
       }
     }
@@ -5958,18 +5958,18 @@ public final class Events {
      * Party identifier (public key) for the event
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The bytes for partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The bytes for partyId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getPartyIDBytes() {
-      java.lang.Object ref = partyID_;
+        getPartyIdBytes() {
+      java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        partyID_ = b;
+        partyId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -6005,11 +6005,11 @@ public final class Events {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getMarketIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketID_);
+      if (!getMarketIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketId_);
       }
-      if (!getPartyIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partyID_);
+      if (!getPartyIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partyId_);
       }
       if (amount_ != 0L) {
         output.writeInt64(3, amount_);
@@ -6023,11 +6023,11 @@ public final class Events {
       if (size != -1) return size;
 
       size = 0;
-      if (!getMarketIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketID_);
+      if (!getMarketIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketId_);
       }
-      if (!getPartyIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partyID_);
+      if (!getPartyIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partyId_);
       }
       if (amount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -6048,10 +6048,10 @@ public final class Events {
       }
       io.vegaprotocol.vega.Events.LossSocialization other = (io.vegaprotocol.vega.Events.LossSocialization) obj;
 
-      if (!getMarketID()
-          .equals(other.getMarketID())) return false;
-      if (!getPartyID()
-          .equals(other.getPartyID())) return false;
+      if (!getMarketId()
+          .equals(other.getMarketId())) return false;
+      if (!getPartyId()
+          .equals(other.getPartyId())) return false;
       if (getAmount()
           != other.getAmount()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -6065,10 +6065,10 @@ public final class Events {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
-      hash = (53 * hash) + getMarketID().hashCode();
-      hash = (37 * hash) + PARTYID_FIELD_NUMBER;
-      hash = (53 * hash) + getPartyID().hashCode();
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMarketId().hashCode();
+      hash = (37 * hash) + PARTY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPartyId().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAmount());
@@ -6209,9 +6209,9 @@ public final class Events {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        marketID_ = "";
+        marketId_ = "";
 
-        partyID_ = "";
+        partyId_ = "";
 
         amount_ = 0L;
 
@@ -6241,8 +6241,8 @@ public final class Events {
       @java.lang.Override
       public io.vegaprotocol.vega.Events.LossSocialization buildPartial() {
         io.vegaprotocol.vega.Events.LossSocialization result = new io.vegaprotocol.vega.Events.LossSocialization(this);
-        result.marketID_ = marketID_;
-        result.partyID_ = partyID_;
+        result.marketId_ = marketId_;
+        result.partyId_ = partyId_;
         result.amount_ = amount_;
         onBuilt();
         return result;
@@ -6292,12 +6292,12 @@ public final class Events {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Events.LossSocialization other) {
         if (other == io.vegaprotocol.vega.Events.LossSocialization.getDefaultInstance()) return this;
-        if (!other.getMarketID().isEmpty()) {
-          marketID_ = other.marketID_;
+        if (!other.getMarketId().isEmpty()) {
+          marketId_ = other.marketId_;
           onChanged();
         }
-        if (!other.getPartyID().isEmpty()) {
-          partyID_ = other.partyID_;
+        if (!other.getPartyId().isEmpty()) {
+          partyId_ = other.partyId_;
           onChanged();
         }
         if (other.getAmount() != 0L) {
@@ -6332,22 +6332,22 @@ public final class Events {
         return this;
       }
 
-      private java.lang.Object marketID_ = "";
+      private java.lang.Object marketId_ = "";
       /**
        * <pre>
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @return The marketID.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @return The marketId.
        */
-      public java.lang.String getMarketID() {
-        java.lang.Object ref = marketID_;
+      public java.lang.String getMarketId() {
+        java.lang.Object ref = marketId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          marketID_ = s;
+          marketId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -6358,17 +6358,17 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @return The bytes for marketID.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @return The bytes for marketId.
        */
       public com.google.protobuf.ByteString
-          getMarketIDBytes() {
-        java.lang.Object ref = marketID_;
+          getMarketIdBytes() {
+        java.lang.Object ref = marketId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          marketID_ = b;
+          marketId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -6379,17 +6379,17 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @param value The marketID to set.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @param value The marketId to set.
        * @return This builder for chaining.
        */
-      public Builder setMarketID(
+      public Builder setMarketId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        marketID_ = value;
+        marketId_ = value;
         onChanged();
         return this;
       }
@@ -6398,12 +6398,12 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearMarketID() {
+      public Builder clearMarketId() {
 
-        marketID_ = getDefaultInstance().getMarketID();
+        marketId_ = getDefaultInstance().getMarketId();
         onChanged();
         return this;
       }
@@ -6412,38 +6412,38 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @param value The bytes for marketID to set.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @param value The bytes for marketId to set.
        * @return This builder for chaining.
        */
-      public Builder setMarketIDBytes(
+      public Builder setMarketIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        marketID_ = value;
+        marketId_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object partyID_ = "";
+      private java.lang.Object partyId_ = "";
       /**
        * <pre>
        * Party identifier (public key) for the event
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @return The partyID.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @return The partyId.
        */
-      public java.lang.String getPartyID() {
-        java.lang.Object ref = partyID_;
+      public java.lang.String getPartyId() {
+        java.lang.Object ref = partyId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          partyID_ = s;
+          partyId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -6454,17 +6454,17 @@ public final class Events {
        * Party identifier (public key) for the event
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @return The bytes for partyID.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @return The bytes for partyId.
        */
       public com.google.protobuf.ByteString
-          getPartyIDBytes() {
-        java.lang.Object ref = partyID_;
+          getPartyIdBytes() {
+        java.lang.Object ref = partyId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          partyID_ = b;
+          partyId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -6475,17 +6475,17 @@ public final class Events {
        * Party identifier (public key) for the event
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @param value The partyID to set.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @param value The partyId to set.
        * @return This builder for chaining.
        */
-      public Builder setPartyID(
+      public Builder setPartyId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        partyID_ = value;
+        partyId_ = value;
         onChanged();
         return this;
       }
@@ -6494,12 +6494,12 @@ public final class Events {
        * Party identifier (public key) for the event
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearPartyID() {
+      public Builder clearPartyId() {
 
-        partyID_ = getDefaultInstance().getPartyID();
+        partyId_ = getDefaultInstance().getPartyId();
         onChanged();
         return this;
       }
@@ -6508,18 +6508,18 @@ public final class Events {
        * Party identifier (public key) for the event
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @param value The bytes for partyID to set.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @param value The bytes for partyId to set.
        * @return This builder for chaining.
        */
-      public Builder setPartyIDBytes(
+      public Builder setPartyIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        partyID_ = value;
+        partyId_ = value;
         onChanged();
         return this;
       }
@@ -7241,40 +7241,40 @@ public final class Events {
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The marketId.
      */
-    java.lang.String getMarketID();
+    java.lang.String getMarketId();
     /**
      * <pre>
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The bytes for marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The bytes for marketId.
      */
     com.google.protobuf.ByteString
-        getMarketIDBytes();
+        getMarketIdBytes();
 
     /**
      * <pre>
      * Party identifier (public key) for the event
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The partyId.
      */
-    java.lang.String getPartyID();
+    java.lang.String getPartyId();
     /**
      * <pre>
      * Party identifier (public key) for the event
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The bytes for partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The bytes for partyId.
      */
     com.google.protobuf.ByteString
-        getPartyIDBytes();
+        getPartyIdBytes();
 
     /**
      * <pre>
@@ -7292,7 +7292,7 @@ public final class Events {
      * A collection of 1 or more trade settlements
      * </pre>
      *
-     * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+     * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
      */
     java.util.List<io.vegaprotocol.vega.Events.TradeSettlement>
         getTradeSettlementsList();
@@ -7301,7 +7301,7 @@ public final class Events {
      * A collection of 1 or more trade settlements
      * </pre>
      *
-     * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+     * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
      */
     io.vegaprotocol.vega.Events.TradeSettlement getTradeSettlements(int index);
     /**
@@ -7309,7 +7309,7 @@ public final class Events {
      * A collection of 1 or more trade settlements
      * </pre>
      *
-     * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+     * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
      */
     int getTradeSettlementsCount();
     /**
@@ -7317,7 +7317,7 @@ public final class Events {
      * A collection of 1 or more trade settlements
      * </pre>
      *
-     * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+     * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
      */
     java.util.List<? extends io.vegaprotocol.vega.Events.TradeSettlementOrBuilder>
         getTradeSettlementsOrBuilderList();
@@ -7326,7 +7326,7 @@ public final class Events {
      * A collection of 1 or more trade settlements
      * </pre>
      *
-     * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+     * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
      */
     io.vegaprotocol.vega.Events.TradeSettlementOrBuilder getTradeSettlementsOrBuilder(
         int index);
@@ -7348,8 +7348,8 @@ public final class Events {
       super(builder);
     }
     private SettlePosition() {
-      marketID_ = "";
-      partyID_ = "";
+      marketId_ = "";
+      partyId_ = "";
       tradeSettlements_ = java.util.Collections.emptyList();
     }
 
@@ -7387,13 +7387,13 @@ public final class Events {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              marketID_ = s;
+              marketId_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              partyID_ = s;
+              partyId_ = s;
               break;
             }
             case 24: {
@@ -7445,26 +7445,26 @@ public final class Events {
               io.vegaprotocol.vega.Events.SettlePosition.class, io.vegaprotocol.vega.Events.SettlePosition.Builder.class);
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object marketID_;
+    public static final int MARKET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object marketId_;
     /**
      * <pre>
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The marketId.
      */
     @java.lang.Override
-    public java.lang.String getMarketID() {
-      java.lang.Object ref = marketID_;
+    public java.lang.String getMarketId() {
+      java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        marketID_ = s;
+        marketId_ = s;
         return s;
       }
     }
@@ -7473,44 +7473,44 @@ public final class Events {
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The bytes for marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The bytes for marketId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getMarketIDBytes() {
-      java.lang.Object ref = marketID_;
+        getMarketIdBytes() {
+      java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        marketID_ = b;
+        marketId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int PARTYID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object partyID_;
+    public static final int PARTY_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object partyId_;
     /**
      * <pre>
      * Party identifier (public key) for the event
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The partyId.
      */
     @java.lang.Override
-    public java.lang.String getPartyID() {
-      java.lang.Object ref = partyID_;
+    public java.lang.String getPartyId() {
+      java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        partyID_ = s;
+        partyId_ = s;
         return s;
       }
     }
@@ -7519,18 +7519,18 @@ public final class Events {
      * Party identifier (public key) for the event
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The bytes for partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The bytes for partyId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getPartyIDBytes() {
-      java.lang.Object ref = partyID_;
+        getPartyIdBytes() {
+      java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        partyID_ = b;
+        partyId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -7553,14 +7553,14 @@ public final class Events {
       return price_;
     }
 
-    public static final int TRADESETTLEMENTS_FIELD_NUMBER = 4;
+    public static final int TRADE_SETTLEMENTS_FIELD_NUMBER = 4;
     private java.util.List<io.vegaprotocol.vega.Events.TradeSettlement> tradeSettlements_;
     /**
      * <pre>
      * A collection of 1 or more trade settlements
      * </pre>
      *
-     * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+     * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
      */
     @java.lang.Override
     public java.util.List<io.vegaprotocol.vega.Events.TradeSettlement> getTradeSettlementsList() {
@@ -7571,7 +7571,7 @@ public final class Events {
      * A collection of 1 or more trade settlements
      * </pre>
      *
-     * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+     * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
      */
     @java.lang.Override
     public java.util.List<? extends io.vegaprotocol.vega.Events.TradeSettlementOrBuilder>
@@ -7583,7 +7583,7 @@ public final class Events {
      * A collection of 1 or more trade settlements
      * </pre>
      *
-     * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+     * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
      */
     @java.lang.Override
     public int getTradeSettlementsCount() {
@@ -7594,7 +7594,7 @@ public final class Events {
      * A collection of 1 or more trade settlements
      * </pre>
      *
-     * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+     * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Events.TradeSettlement getTradeSettlements(int index) {
@@ -7605,7 +7605,7 @@ public final class Events {
      * A collection of 1 or more trade settlements
      * </pre>
      *
-     * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+     * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Events.TradeSettlementOrBuilder getTradeSettlementsOrBuilder(
@@ -7627,11 +7627,11 @@ public final class Events {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getMarketIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketID_);
+      if (!getMarketIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketId_);
       }
-      if (!getPartyIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partyID_);
+      if (!getPartyIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partyId_);
       }
       if (price_ != 0L) {
         output.writeUInt64(3, price_);
@@ -7648,11 +7648,11 @@ public final class Events {
       if (size != -1) return size;
 
       size = 0;
-      if (!getMarketIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketID_);
+      if (!getMarketIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketId_);
       }
-      if (!getPartyIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partyID_);
+      if (!getPartyIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partyId_);
       }
       if (price_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -7677,10 +7677,10 @@ public final class Events {
       }
       io.vegaprotocol.vega.Events.SettlePosition other = (io.vegaprotocol.vega.Events.SettlePosition) obj;
 
-      if (!getMarketID()
-          .equals(other.getMarketID())) return false;
-      if (!getPartyID()
-          .equals(other.getPartyID())) return false;
+      if (!getMarketId()
+          .equals(other.getMarketId())) return false;
+      if (!getPartyId()
+          .equals(other.getPartyId())) return false;
       if (getPrice()
           != other.getPrice()) return false;
       if (!getTradeSettlementsList()
@@ -7696,15 +7696,15 @@ public final class Events {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
-      hash = (53 * hash) + getMarketID().hashCode();
-      hash = (37 * hash) + PARTYID_FIELD_NUMBER;
-      hash = (53 * hash) + getPartyID().hashCode();
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMarketId().hashCode();
+      hash = (37 * hash) + PARTY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPartyId().hashCode();
       hash = (37 * hash) + PRICE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getPrice());
       if (getTradeSettlementsCount() > 0) {
-        hash = (37 * hash) + TRADESETTLEMENTS_FIELD_NUMBER;
+        hash = (37 * hash) + TRADE_SETTLEMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getTradeSettlementsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -7845,9 +7845,9 @@ public final class Events {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        marketID_ = "";
+        marketId_ = "";
 
-        partyID_ = "";
+        partyId_ = "";
 
         price_ = 0L;
 
@@ -7884,8 +7884,8 @@ public final class Events {
       public io.vegaprotocol.vega.Events.SettlePosition buildPartial() {
         io.vegaprotocol.vega.Events.SettlePosition result = new io.vegaprotocol.vega.Events.SettlePosition(this);
         int from_bitField0_ = bitField0_;
-        result.marketID_ = marketID_;
-        result.partyID_ = partyID_;
+        result.marketId_ = marketId_;
+        result.partyId_ = partyId_;
         result.price_ = price_;
         if (tradeSettlementsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -7944,12 +7944,12 @@ public final class Events {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Events.SettlePosition other) {
         if (other == io.vegaprotocol.vega.Events.SettlePosition.getDefaultInstance()) return this;
-        if (!other.getMarketID().isEmpty()) {
-          marketID_ = other.marketID_;
+        if (!other.getMarketId().isEmpty()) {
+          marketId_ = other.marketId_;
           onChanged();
         }
-        if (!other.getPartyID().isEmpty()) {
-          partyID_ = other.partyID_;
+        if (!other.getPartyId().isEmpty()) {
+          partyId_ = other.partyId_;
           onChanged();
         }
         if (other.getPrice() != 0L) {
@@ -8011,22 +8011,22 @@ public final class Events {
       }
       private int bitField0_;
 
-      private java.lang.Object marketID_ = "";
+      private java.lang.Object marketId_ = "";
       /**
        * <pre>
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @return The marketID.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @return The marketId.
        */
-      public java.lang.String getMarketID() {
-        java.lang.Object ref = marketID_;
+      public java.lang.String getMarketId() {
+        java.lang.Object ref = marketId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          marketID_ = s;
+          marketId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8037,17 +8037,17 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @return The bytes for marketID.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @return The bytes for marketId.
        */
       public com.google.protobuf.ByteString
-          getMarketIDBytes() {
-        java.lang.Object ref = marketID_;
+          getMarketIdBytes() {
+        java.lang.Object ref = marketId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          marketID_ = b;
+          marketId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -8058,17 +8058,17 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @param value The marketID to set.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @param value The marketId to set.
        * @return This builder for chaining.
        */
-      public Builder setMarketID(
+      public Builder setMarketId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        marketID_ = value;
+        marketId_ = value;
         onChanged();
         return this;
       }
@@ -8077,12 +8077,12 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearMarketID() {
+      public Builder clearMarketId() {
 
-        marketID_ = getDefaultInstance().getMarketID();
+        marketId_ = getDefaultInstance().getMarketId();
         onChanged();
         return this;
       }
@@ -8091,38 +8091,38 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @param value The bytes for marketID to set.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @param value The bytes for marketId to set.
        * @return This builder for chaining.
        */
-      public Builder setMarketIDBytes(
+      public Builder setMarketIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        marketID_ = value;
+        marketId_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object partyID_ = "";
+      private java.lang.Object partyId_ = "";
       /**
        * <pre>
        * Party identifier (public key) for the event
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @return The partyID.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @return The partyId.
        */
-      public java.lang.String getPartyID() {
-        java.lang.Object ref = partyID_;
+      public java.lang.String getPartyId() {
+        java.lang.Object ref = partyId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          partyID_ = s;
+          partyId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -8133,17 +8133,17 @@ public final class Events {
        * Party identifier (public key) for the event
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @return The bytes for partyID.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @return The bytes for partyId.
        */
       public com.google.protobuf.ByteString
-          getPartyIDBytes() {
-        java.lang.Object ref = partyID_;
+          getPartyIdBytes() {
+        java.lang.Object ref = partyId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          partyID_ = b;
+          partyId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -8154,17 +8154,17 @@ public final class Events {
        * Party identifier (public key) for the event
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @param value The partyID to set.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @param value The partyId to set.
        * @return This builder for chaining.
        */
-      public Builder setPartyID(
+      public Builder setPartyId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        partyID_ = value;
+        partyId_ = value;
         onChanged();
         return this;
       }
@@ -8173,12 +8173,12 @@ public final class Events {
        * Party identifier (public key) for the event
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearPartyID() {
+      public Builder clearPartyId() {
 
-        partyID_ = getDefaultInstance().getPartyID();
+        partyId_ = getDefaultInstance().getPartyId();
         onChanged();
         return this;
       }
@@ -8187,18 +8187,18 @@ public final class Events {
        * Party identifier (public key) for the event
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @param value The bytes for partyID to set.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @param value The bytes for partyId to set.
        * @return This builder for chaining.
        */
-      public Builder setPartyIDBytes(
+      public Builder setPartyIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        partyID_ = value;
+        partyId_ = value;
         onChanged();
         return this;
       }
@@ -8266,7 +8266,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.Events.TradeSettlement> getTradeSettlementsList() {
         if (tradeSettlementsBuilder_ == null) {
@@ -8280,7 +8280,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public int getTradeSettlementsCount() {
         if (tradeSettlementsBuilder_ == null) {
@@ -8294,7 +8294,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public io.vegaprotocol.vega.Events.TradeSettlement getTradeSettlements(int index) {
         if (tradeSettlementsBuilder_ == null) {
@@ -8308,7 +8308,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public Builder setTradeSettlements(
           int index, io.vegaprotocol.vega.Events.TradeSettlement value) {
@@ -8329,7 +8329,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public Builder setTradeSettlements(
           int index, io.vegaprotocol.vega.Events.TradeSettlement.Builder builderForValue) {
@@ -8347,7 +8347,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public Builder addTradeSettlements(io.vegaprotocol.vega.Events.TradeSettlement value) {
         if (tradeSettlementsBuilder_ == null) {
@@ -8367,7 +8367,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public Builder addTradeSettlements(
           int index, io.vegaprotocol.vega.Events.TradeSettlement value) {
@@ -8388,7 +8388,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public Builder addTradeSettlements(
           io.vegaprotocol.vega.Events.TradeSettlement.Builder builderForValue) {
@@ -8406,7 +8406,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public Builder addTradeSettlements(
           int index, io.vegaprotocol.vega.Events.TradeSettlement.Builder builderForValue) {
@@ -8424,7 +8424,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public Builder addAllTradeSettlements(
           java.lang.Iterable<? extends io.vegaprotocol.vega.Events.TradeSettlement> values) {
@@ -8443,7 +8443,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public Builder clearTradeSettlements() {
         if (tradeSettlementsBuilder_ == null) {
@@ -8460,7 +8460,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public Builder removeTradeSettlements(int index) {
         if (tradeSettlementsBuilder_ == null) {
@@ -8477,7 +8477,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public io.vegaprotocol.vega.Events.TradeSettlement.Builder getTradeSettlementsBuilder(
           int index) {
@@ -8488,7 +8488,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public io.vegaprotocol.vega.Events.TradeSettlementOrBuilder getTradeSettlementsOrBuilder(
           int index) {
@@ -8502,7 +8502,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public java.util.List<? extends io.vegaprotocol.vega.Events.TradeSettlementOrBuilder>
            getTradeSettlementsOrBuilderList() {
@@ -8517,7 +8517,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public io.vegaprotocol.vega.Events.TradeSettlement.Builder addTradeSettlementsBuilder() {
         return getTradeSettlementsFieldBuilder().addBuilder(
@@ -8528,7 +8528,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public io.vegaprotocol.vega.Events.TradeSettlement.Builder addTradeSettlementsBuilder(
           int index) {
@@ -8540,7 +8540,7 @@ public final class Events {
        * A collection of 1 or more trade settlements
        * </pre>
        *
-       * <code>repeated .vega.TradeSettlement tradeSettlements = 4 [json_name = "tradeSettlements"];</code>
+       * <code>repeated .vega.TradeSettlement trade_settlements = 4 [json_name = "tradeSettlements"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.Events.TradeSettlement.Builder>
            getTradeSettlementsBuilderList() {
@@ -8622,40 +8622,40 @@ public final class Events {
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The marketId.
      */
-    java.lang.String getMarketID();
+    java.lang.String getMarketId();
     /**
      * <pre>
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The bytes for marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The bytes for marketId.
      */
     com.google.protobuf.ByteString
-        getMarketIDBytes();
+        getMarketIdBytes();
 
     /**
      * <pre>
      * Party identifier (public key) for the event
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The partyId.
      */
-    java.lang.String getPartyID();
+    java.lang.String getPartyId();
     /**
      * <pre>
      * Party identifier (public key) for the event
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The bytes for partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The bytes for partyId.
      */
     com.google.protobuf.ByteString
-        getPartyIDBytes();
+        getPartyIdBytes();
 
     /**
      * <pre>
@@ -8696,8 +8696,8 @@ public final class Events {
       super(builder);
     }
     private SettleDistressed() {
-      marketID_ = "";
-      partyID_ = "";
+      marketId_ = "";
+      partyId_ = "";
     }
 
     @java.lang.Override
@@ -8733,13 +8733,13 @@ public final class Events {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              marketID_ = s;
+              marketId_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              partyID_ = s;
+              partyId_ = s;
               break;
             }
             case 24: {
@@ -8784,26 +8784,26 @@ public final class Events {
               io.vegaprotocol.vega.Events.SettleDistressed.class, io.vegaprotocol.vega.Events.SettleDistressed.Builder.class);
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object marketID_;
+    public static final int MARKET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object marketId_;
     /**
      * <pre>
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The marketId.
      */
     @java.lang.Override
-    public java.lang.String getMarketID() {
-      java.lang.Object ref = marketID_;
+    public java.lang.String getMarketId() {
+      java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        marketID_ = s;
+        marketId_ = s;
         return s;
       }
     }
@@ -8812,44 +8812,44 @@ public final class Events {
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The bytes for marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The bytes for marketId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getMarketIDBytes() {
-      java.lang.Object ref = marketID_;
+        getMarketIdBytes() {
+      java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        marketID_ = b;
+        marketId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int PARTYID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object partyID_;
+    public static final int PARTY_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object partyId_;
     /**
      * <pre>
      * Party identifier (public key) for the event
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The partyId.
      */
     @java.lang.Override
-    public java.lang.String getPartyID() {
-      java.lang.Object ref = partyID_;
+    public java.lang.String getPartyId() {
+      java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        partyID_ = s;
+        partyId_ = s;
         return s;
       }
     }
@@ -8858,18 +8858,18 @@ public final class Events {
      * Party identifier (public key) for the event
      * </pre>
      *
-     * <code>string partyID = 2 [json_name = "partyID"];</code>
-     * @return The bytes for partyID.
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The bytes for partyId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getPartyIDBytes() {
-      java.lang.Object ref = partyID_;
+        getPartyIdBytes() {
+      java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        partyID_ = b;
+        partyId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -8922,11 +8922,11 @@ public final class Events {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getMarketIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketID_);
+      if (!getMarketIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketId_);
       }
-      if (!getPartyIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partyID_);
+      if (!getPartyIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partyId_);
       }
       if (margin_ != 0L) {
         output.writeUInt64(3, margin_);
@@ -8943,11 +8943,11 @@ public final class Events {
       if (size != -1) return size;
 
       size = 0;
-      if (!getMarketIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketID_);
+      if (!getMarketIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketId_);
       }
-      if (!getPartyIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partyID_);
+      if (!getPartyIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partyId_);
       }
       if (margin_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -8972,10 +8972,10 @@ public final class Events {
       }
       io.vegaprotocol.vega.Events.SettleDistressed other = (io.vegaprotocol.vega.Events.SettleDistressed) obj;
 
-      if (!getMarketID()
-          .equals(other.getMarketID())) return false;
-      if (!getPartyID()
-          .equals(other.getPartyID())) return false;
+      if (!getMarketId()
+          .equals(other.getMarketId())) return false;
+      if (!getPartyId()
+          .equals(other.getPartyId())) return false;
       if (getMargin()
           != other.getMargin()) return false;
       if (getPrice()
@@ -8991,10 +8991,10 @@ public final class Events {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
-      hash = (53 * hash) + getMarketID().hashCode();
-      hash = (37 * hash) + PARTYID_FIELD_NUMBER;
-      hash = (53 * hash) + getPartyID().hashCode();
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMarketId().hashCode();
+      hash = (37 * hash) + PARTY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPartyId().hashCode();
       hash = (37 * hash) + MARGIN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMargin());
@@ -9138,9 +9138,9 @@ public final class Events {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        marketID_ = "";
+        marketId_ = "";
 
-        partyID_ = "";
+        partyId_ = "";
 
         margin_ = 0L;
 
@@ -9172,8 +9172,8 @@ public final class Events {
       @java.lang.Override
       public io.vegaprotocol.vega.Events.SettleDistressed buildPartial() {
         io.vegaprotocol.vega.Events.SettleDistressed result = new io.vegaprotocol.vega.Events.SettleDistressed(this);
-        result.marketID_ = marketID_;
-        result.partyID_ = partyID_;
+        result.marketId_ = marketId_;
+        result.partyId_ = partyId_;
         result.margin_ = margin_;
         result.price_ = price_;
         onBuilt();
@@ -9224,12 +9224,12 @@ public final class Events {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Events.SettleDistressed other) {
         if (other == io.vegaprotocol.vega.Events.SettleDistressed.getDefaultInstance()) return this;
-        if (!other.getMarketID().isEmpty()) {
-          marketID_ = other.marketID_;
+        if (!other.getMarketId().isEmpty()) {
+          marketId_ = other.marketId_;
           onChanged();
         }
-        if (!other.getPartyID().isEmpty()) {
-          partyID_ = other.partyID_;
+        if (!other.getPartyId().isEmpty()) {
+          partyId_ = other.partyId_;
           onChanged();
         }
         if (other.getMargin() != 0L) {
@@ -9267,22 +9267,22 @@ public final class Events {
         return this;
       }
 
-      private java.lang.Object marketID_ = "";
+      private java.lang.Object marketId_ = "";
       /**
        * <pre>
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @return The marketID.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @return The marketId.
        */
-      public java.lang.String getMarketID() {
-        java.lang.Object ref = marketID_;
+      public java.lang.String getMarketId() {
+        java.lang.Object ref = marketId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          marketID_ = s;
+          marketId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -9293,17 +9293,17 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @return The bytes for marketID.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @return The bytes for marketId.
        */
       public com.google.protobuf.ByteString
-          getMarketIDBytes() {
-        java.lang.Object ref = marketID_;
+          getMarketIdBytes() {
+        java.lang.Object ref = marketId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          marketID_ = b;
+          marketId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -9314,17 +9314,17 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @param value The marketID to set.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @param value The marketId to set.
        * @return This builder for chaining.
        */
-      public Builder setMarketID(
+      public Builder setMarketId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        marketID_ = value;
+        marketId_ = value;
         onChanged();
         return this;
       }
@@ -9333,12 +9333,12 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearMarketID() {
+      public Builder clearMarketId() {
 
-        marketID_ = getDefaultInstance().getMarketID();
+        marketId_ = getDefaultInstance().getMarketId();
         onChanged();
         return this;
       }
@@ -9347,38 +9347,38 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @param value The bytes for marketID to set.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @param value The bytes for marketId to set.
        * @return This builder for chaining.
        */
-      public Builder setMarketIDBytes(
+      public Builder setMarketIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        marketID_ = value;
+        marketId_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object partyID_ = "";
+      private java.lang.Object partyId_ = "";
       /**
        * <pre>
        * Party identifier (public key) for the event
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @return The partyID.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @return The partyId.
        */
-      public java.lang.String getPartyID() {
-        java.lang.Object ref = partyID_;
+      public java.lang.String getPartyId() {
+        java.lang.Object ref = partyId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          partyID_ = s;
+          partyId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -9389,17 +9389,17 @@ public final class Events {
        * Party identifier (public key) for the event
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @return The bytes for partyID.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @return The bytes for partyId.
        */
       public com.google.protobuf.ByteString
-          getPartyIDBytes() {
-        java.lang.Object ref = partyID_;
+          getPartyIdBytes() {
+        java.lang.Object ref = partyId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          partyID_ = b;
+          partyId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -9410,17 +9410,17 @@ public final class Events {
        * Party identifier (public key) for the event
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @param value The partyID to set.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @param value The partyId to set.
        * @return This builder for chaining.
        */
-      public Builder setPartyID(
+      public Builder setPartyId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        partyID_ = value;
+        partyId_ = value;
         onChanged();
         return this;
       }
@@ -9429,12 +9429,12 @@ public final class Events {
        * Party identifier (public key) for the event
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearPartyID() {
+      public Builder clearPartyId() {
 
-        partyID_ = getDefaultInstance().getPartyID();
+        partyId_ = getDefaultInstance().getPartyId();
         onChanged();
         return this;
       }
@@ -9443,18 +9443,18 @@ public final class Events {
        * Party identifier (public key) for the event
        * </pre>
        *
-       * <code>string partyID = 2 [json_name = "partyID"];</code>
-       * @param value The bytes for partyID to set.
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @param value The bytes for partyId to set.
        * @return This builder for chaining.
        */
-      public Builder setPartyIDBytes(
+      public Builder setPartyIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        partyID_ = value;
+        partyId_ = value;
         onChanged();
         return this;
       }
@@ -9612,20 +9612,20 @@ public final class Events {
      * Market identifier for the event
      * </pre>
      *
-     * <code>string ID = 1 [json_name = "ID"];</code>
-     * @return The iD.
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
      */
-    java.lang.String getID();
+    java.lang.String getId();
     /**
      * <pre>
      * Market identifier for the event
      * </pre>
      *
-     * <code>string ID = 1 [json_name = "ID"];</code>
-     * @return The bytes for iD.
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
-        getIDBytes();
+        getIdBytes();
 
     /**
      * <pre>
@@ -9654,7 +9654,7 @@ public final class Events {
       super(builder);
     }
     private MarketTick() {
-      iD_ = "";
+      id_ = "";
     }
 
     @java.lang.Override
@@ -9690,7 +9690,7 @@ public final class Events {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              iD_ = s;
+              id_ = s;
               break;
             }
             case 16: {
@@ -9731,25 +9731,25 @@ public final class Events {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object iD_;
+    private volatile java.lang.Object id_;
     /**
      * <pre>
      * Market identifier for the event
      * </pre>
      *
-     * <code>string ID = 1 [json_name = "ID"];</code>
-     * @return The iD.
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
      */
     @java.lang.Override
-    public java.lang.String getID() {
-      java.lang.Object ref = iD_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        iD_ = s;
+        id_ = s;
         return s;
       }
     }
@@ -9758,18 +9758,18 @@ public final class Events {
      * Market identifier for the event
      * </pre>
      *
-     * <code>string ID = 1 [json_name = "ID"];</code>
-     * @return The bytes for iD.
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getIDBytes() {
-      java.lang.Object ref = iD_;
+        getIdBytes() {
+      java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        iD_ = b;
+        id_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -9805,8 +9805,8 @@ public final class Events {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, iD_);
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (time_ != 0L) {
         output.writeInt64(2, time_);
@@ -9820,8 +9820,8 @@ public final class Events {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, iD_);
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (time_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -9842,8 +9842,8 @@ public final class Events {
       }
       io.vegaprotocol.vega.Events.MarketTick other = (io.vegaprotocol.vega.Events.MarketTick) obj;
 
-      if (!getID()
-          .equals(other.getID())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
       if (getTime()
           != other.getTime()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -9858,7 +9858,7 @@ public final class Events {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getID().hashCode();
+      hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTime());
@@ -9999,7 +9999,7 @@ public final class Events {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        iD_ = "";
+        id_ = "";
 
         time_ = 0L;
 
@@ -10029,7 +10029,7 @@ public final class Events {
       @java.lang.Override
       public io.vegaprotocol.vega.Events.MarketTick buildPartial() {
         io.vegaprotocol.vega.Events.MarketTick result = new io.vegaprotocol.vega.Events.MarketTick(this);
-        result.iD_ = iD_;
+        result.id_ = id_;
         result.time_ = time_;
         onBuilt();
         return result;
@@ -10079,8 +10079,8 @@ public final class Events {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Events.MarketTick other) {
         if (other == io.vegaprotocol.vega.Events.MarketTick.getDefaultInstance()) return this;
-        if (!other.getID().isEmpty()) {
-          iD_ = other.iD_;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
           onChanged();
         }
         if (other.getTime() != 0L) {
@@ -10115,22 +10115,22 @@ public final class Events {
         return this;
       }
 
-      private java.lang.Object iD_ = "";
+      private java.lang.Object id_ = "";
       /**
        * <pre>
        * Market identifier for the event
        * </pre>
        *
-       * <code>string ID = 1 [json_name = "ID"];</code>
-       * @return The iD.
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The id.
        */
-      public java.lang.String getID() {
-        java.lang.Object ref = iD_;
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          iD_ = s;
+          id_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -10141,17 +10141,17 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string ID = 1 [json_name = "ID"];</code>
-       * @return The bytes for iD.
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
-          getIDBytes() {
-        java.lang.Object ref = iD_;
+          getIdBytes() {
+        java.lang.Object ref = id_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          iD_ = b;
+          id_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -10162,17 +10162,17 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string ID = 1 [json_name = "ID"];</code>
-       * @param value The iD to set.
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setID(
+      public Builder setId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        iD_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
@@ -10181,12 +10181,12 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string ID = 1 [json_name = "ID"];</code>
+       * <code>string id = 1 [json_name = "id"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearID() {
+      public Builder clearId() {
 
-        iD_ = getDefaultInstance().getID();
+        id_ = getDefaultInstance().getId();
         onChanged();
         return this;
       }
@@ -10195,18 +10195,18 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string ID = 1 [json_name = "ID"];</code>
-       * @param value The bytes for iD to set.
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
-      public Builder setIDBytes(
+      public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        iD_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
@@ -10315,27 +10315,27 @@ public final class Events {
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The marketId.
      */
-    java.lang.String getMarketID();
+    java.lang.String getMarketId();
     /**
      * <pre>
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The bytes for marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The bytes for marketId.
      */
     com.google.protobuf.ByteString
-        getMarketIDBytes();
+        getMarketIdBytes();
 
     /**
      * <pre>
      * True if the event indicates an auction opening and False otherwise
      * </pre>
      *
-     * <code>bool openingAuction = 2 [json_name = "openingAuction"];</code>
+     * <code>bool opening_auction = 2 [json_name = "openingAuction"];</code>
      * @return The openingAuction.
      */
     boolean getOpeningAuction();
@@ -10406,7 +10406,7 @@ public final class Events {
       super(builder);
     }
     private AuctionEvent() {
-      marketID_ = "";
+      marketId_ = "";
       trigger_ = 0;
     }
 
@@ -10443,7 +10443,7 @@ public final class Events {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              marketID_ = s;
+              marketId_ = s;
               break;
             }
             case 16: {
@@ -10504,26 +10504,26 @@ public final class Events {
               io.vegaprotocol.vega.Events.AuctionEvent.class, io.vegaprotocol.vega.Events.AuctionEvent.Builder.class);
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object marketID_;
+    public static final int MARKET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object marketId_;
     /**
      * <pre>
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The marketId.
      */
     @java.lang.Override
-    public java.lang.String getMarketID() {
-      java.lang.Object ref = marketID_;
+    public java.lang.String getMarketId() {
+      java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        marketID_ = s;
+        marketId_ = s;
         return s;
       }
     }
@@ -10532,32 +10532,32 @@ public final class Events {
      * Market identifier for the event
      * </pre>
      *
-     * <code>string marketID = 1 [json_name = "marketID"];</code>
-     * @return The bytes for marketID.
+     * <code>string market_id = 1 [json_name = "marketId"];</code>
+     * @return The bytes for marketId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getMarketIDBytes() {
-      java.lang.Object ref = marketID_;
+        getMarketIdBytes() {
+      java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        marketID_ = b;
+        marketId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int OPENINGAUCTION_FIELD_NUMBER = 2;
+    public static final int OPENING_AUCTION_FIELD_NUMBER = 2;
     private boolean openingAuction_;
     /**
      * <pre>
      * True if the event indicates an auction opening and False otherwise
      * </pre>
      *
-     * <code>bool openingAuction = 2 [json_name = "openingAuction"];</code>
+     * <code>bool opening_auction = 2 [json_name = "openingAuction"];</code>
      * @return The openingAuction.
      */
     @java.lang.Override
@@ -10651,8 +10651,8 @@ public final class Events {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getMarketIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketID_);
+      if (!getMarketIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketId_);
       }
       if (openingAuction_ != false) {
         output.writeBool(2, openingAuction_);
@@ -10678,8 +10678,8 @@ public final class Events {
       if (size != -1) return size;
 
       size = 0;
-      if (!getMarketIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketID_);
+      if (!getMarketIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketId_);
       }
       if (openingAuction_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -10716,8 +10716,8 @@ public final class Events {
       }
       io.vegaprotocol.vega.Events.AuctionEvent other = (io.vegaprotocol.vega.Events.AuctionEvent) obj;
 
-      if (!getMarketID()
-          .equals(other.getMarketID())) return false;
+      if (!getMarketId()
+          .equals(other.getMarketId())) return false;
       if (getOpeningAuction()
           != other.getOpeningAuction()) return false;
       if (getLeave()
@@ -10738,9 +10738,9 @@ public final class Events {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
-      hash = (53 * hash) + getMarketID().hashCode();
-      hash = (37 * hash) + OPENINGAUCTION_FIELD_NUMBER;
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMarketId().hashCode();
+      hash = (37 * hash) + OPENING_AUCTION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getOpeningAuction());
       hash = (37 * hash) + LEAVE_FIELD_NUMBER;
@@ -10891,7 +10891,7 @@ public final class Events {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        marketID_ = "";
+        marketId_ = "";
 
         openingAuction_ = false;
 
@@ -10929,7 +10929,7 @@ public final class Events {
       @java.lang.Override
       public io.vegaprotocol.vega.Events.AuctionEvent buildPartial() {
         io.vegaprotocol.vega.Events.AuctionEvent result = new io.vegaprotocol.vega.Events.AuctionEvent(this);
-        result.marketID_ = marketID_;
+        result.marketId_ = marketId_;
         result.openingAuction_ = openingAuction_;
         result.leave_ = leave_;
         result.start_ = start_;
@@ -10983,8 +10983,8 @@ public final class Events {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Events.AuctionEvent other) {
         if (other == io.vegaprotocol.vega.Events.AuctionEvent.getDefaultInstance()) return this;
-        if (!other.getMarketID().isEmpty()) {
-          marketID_ = other.marketID_;
+        if (!other.getMarketId().isEmpty()) {
+          marketId_ = other.marketId_;
           onChanged();
         }
         if (other.getOpeningAuction() != false) {
@@ -11031,22 +11031,22 @@ public final class Events {
         return this;
       }
 
-      private java.lang.Object marketID_ = "";
+      private java.lang.Object marketId_ = "";
       /**
        * <pre>
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @return The marketID.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @return The marketId.
        */
-      public java.lang.String getMarketID() {
-        java.lang.Object ref = marketID_;
+      public java.lang.String getMarketId() {
+        java.lang.Object ref = marketId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          marketID_ = s;
+          marketId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -11057,17 +11057,17 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @return The bytes for marketID.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @return The bytes for marketId.
        */
       public com.google.protobuf.ByteString
-          getMarketIDBytes() {
-        java.lang.Object ref = marketID_;
+          getMarketIdBytes() {
+        java.lang.Object ref = marketId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          marketID_ = b;
+          marketId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -11078,17 +11078,17 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @param value The marketID to set.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @param value The marketId to set.
        * @return This builder for chaining.
        */
-      public Builder setMarketID(
+      public Builder setMarketId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        marketID_ = value;
+        marketId_ = value;
         onChanged();
         return this;
       }
@@ -11097,12 +11097,12 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearMarketID() {
+      public Builder clearMarketId() {
 
-        marketID_ = getDefaultInstance().getMarketID();
+        marketId_ = getDefaultInstance().getMarketId();
         onChanged();
         return this;
       }
@@ -11111,18 +11111,18 @@ public final class Events {
        * Market identifier for the event
        * </pre>
        *
-       * <code>string marketID = 1 [json_name = "marketID"];</code>
-       * @param value The bytes for marketID to set.
+       * <code>string market_id = 1 [json_name = "marketId"];</code>
+       * @param value The bytes for marketId to set.
        * @return This builder for chaining.
        */
-      public Builder setMarketIDBytes(
+      public Builder setMarketIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        marketID_ = value;
+        marketId_ = value;
         onChanged();
         return this;
       }
@@ -11133,7 +11133,7 @@ public final class Events {
        * True if the event indicates an auction opening and False otherwise
        * </pre>
        *
-       * <code>bool openingAuction = 2 [json_name = "openingAuction"];</code>
+       * <code>bool opening_auction = 2 [json_name = "openingAuction"];</code>
        * @return The openingAuction.
        */
       @java.lang.Override
@@ -11145,7 +11145,7 @@ public final class Events {
        * True if the event indicates an auction opening and False otherwise
        * </pre>
        *
-       * <code>bool openingAuction = 2 [json_name = "openingAuction"];</code>
+       * <code>bool opening_auction = 2 [json_name = "openingAuction"];</code>
        * @param value The openingAuction to set.
        * @return This builder for chaining.
        */
@@ -11160,7 +11160,7 @@ public final class Events {
        * True if the event indicates an auction opening and False otherwise
        * </pre>
        *
-       * <code>bool openingAuction = 2 [json_name = "openingAuction"];</code>
+       * <code>bool opening_auction = 2 [json_name = "openingAuction"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOpeningAuction() {
@@ -11434,20 +11434,20 @@ public final class Events {
      * A unique event identifier for the message
      * </pre>
      *
-     * <code>string ID = 1 [json_name = "ID"];</code>
-     * @return The iD.
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
      */
-    java.lang.String getID();
+    java.lang.String getId();
     /**
      * <pre>
      * A unique event identifier for the message
      * </pre>
      *
-     * <code>string ID = 1 [json_name = "ID"];</code>
-     * @return The bytes for iD.
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
-        getIDBytes();
+        getIdBytes();
 
     /**
      * <pre>
@@ -11490,82 +11490,82 @@ public final class Events {
 
     /**
      * <pre>
-     * Time update events, see [TimeUpdate](#vega.TimeUpdate)
+     * Time update events - See [TimeUpdate](#vega.TimeUpdate)
      * </pre>
      *
-     * <code>.vega.TimeUpdate timeUpdate = 101 [json_name = "timeUpdate"];</code>
+     * <code>.vega.TimeUpdate time_update = 101 [json_name = "timeUpdate"];</code>
      * @return Whether the timeUpdate field is set.
      */
     boolean hasTimeUpdate();
     /**
      * <pre>
-     * Time update events, see [TimeUpdate](#vega.TimeUpdate)
+     * Time update events - See [TimeUpdate](#vega.TimeUpdate)
      * </pre>
      *
-     * <code>.vega.TimeUpdate timeUpdate = 101 [json_name = "timeUpdate"];</code>
+     * <code>.vega.TimeUpdate time_update = 101 [json_name = "timeUpdate"];</code>
      * @return The timeUpdate.
      */
     io.vegaprotocol.vega.Events.TimeUpdate getTimeUpdate();
     /**
      * <pre>
-     * Time update events, see [TimeUpdate](#vega.TimeUpdate)
+     * Time update events - See [TimeUpdate](#vega.TimeUpdate)
      * </pre>
      *
-     * <code>.vega.TimeUpdate timeUpdate = 101 [json_name = "timeUpdate"];</code>
+     * <code>.vega.TimeUpdate time_update = 101 [json_name = "timeUpdate"];</code>
      */
     io.vegaprotocol.vega.Events.TimeUpdateOrBuilder getTimeUpdateOrBuilder();
 
     /**
      * <pre>
-     * Transfer responses update events, see [TransferResponses](#vega.TransferResponses)
+     * Transfer responses update events - See [TransferResponses](#vega.TransferResponses)
      * </pre>
      *
-     * <code>.vega.TransferResponses transferResponses = 102 [json_name = "transferResponses"];</code>
+     * <code>.vega.TransferResponses transfer_responses = 102 [json_name = "transferResponses"];</code>
      * @return Whether the transferResponses field is set.
      */
     boolean hasTransferResponses();
     /**
      * <pre>
-     * Transfer responses update events, see [TransferResponses](#vega.TransferResponses)
+     * Transfer responses update events - See [TransferResponses](#vega.TransferResponses)
      * </pre>
      *
-     * <code>.vega.TransferResponses transferResponses = 102 [json_name = "transferResponses"];</code>
+     * <code>.vega.TransferResponses transfer_responses = 102 [json_name = "transferResponses"];</code>
      * @return The transferResponses.
      */
     io.vegaprotocol.vega.Events.TransferResponses getTransferResponses();
     /**
      * <pre>
-     * Transfer responses update events, see [TransferResponses](#vega.TransferResponses)
+     * Transfer responses update events - See [TransferResponses](#vega.TransferResponses)
      * </pre>
      *
-     * <code>.vega.TransferResponses transferResponses = 102 [json_name = "transferResponses"];</code>
+     * <code>.vega.TransferResponses transfer_responses = 102 [json_name = "transferResponses"];</code>
      */
     io.vegaprotocol.vega.Events.TransferResponsesOrBuilder getTransferResponsesOrBuilder();
 
     /**
      * <pre>
-     * Position resolution events, see [PositionResolution](#vega.PositionResolution)
+     * Position resolution events - See [PositionResolution](#vega.PositionResolution)
      * </pre>
      *
-     * <code>.vega.PositionResolution positionResolution = 103 [json_name = "positionResolution"];</code>
+     * <code>.vega.PositionResolution position_resolution = 103 [json_name = "positionResolution"];</code>
      * @return Whether the positionResolution field is set.
      */
     boolean hasPositionResolution();
     /**
      * <pre>
-     * Position resolution events, see [PositionResolution](#vega.PositionResolution)
+     * Position resolution events - See [PositionResolution](#vega.PositionResolution)
      * </pre>
      *
-     * <code>.vega.PositionResolution positionResolution = 103 [json_name = "positionResolution"];</code>
+     * <code>.vega.PositionResolution position_resolution = 103 [json_name = "positionResolution"];</code>
      * @return The positionResolution.
      */
     io.vegaprotocol.vega.Events.PositionResolution getPositionResolution();
     /**
      * <pre>
-     * Position resolution events, see [PositionResolution](#vega.PositionResolution)
+     * Position resolution events - See [PositionResolution](#vega.PositionResolution)
      * </pre>
      *
-     * <code>.vega.PositionResolution positionResolution = 103 [json_name = "positionResolution"];</code>
+     * <code>.vega.PositionResolution position_resolution = 103 [json_name = "positionResolution"];</code>
      */
     io.vegaprotocol.vega.Events.PositionResolutionOrBuilder getPositionResolutionOrBuilder();
 
@@ -11682,7 +11682,7 @@ public final class Events {
      * Margin level update events
      * </pre>
      *
-     * <code>.vega.MarginLevels marginLevels = 108 [json_name = "marginLevels"];</code>
+     * <code>.vega.MarginLevels margin_levels = 108 [json_name = "marginLevels"];</code>
      * @return Whether the marginLevels field is set.
      */
     boolean hasMarginLevels();
@@ -11691,7 +11691,7 @@ public final class Events {
      * Margin level update events
      * </pre>
      *
-     * <code>.vega.MarginLevels marginLevels = 108 [json_name = "marginLevels"];</code>
+     * <code>.vega.MarginLevels margin_levels = 108 [json_name = "marginLevels"];</code>
      * @return The marginLevels.
      */
     io.vegaprotocol.vega.Vega.MarginLevels getMarginLevels();
@@ -11700,7 +11700,7 @@ public final class Events {
      * Margin level update events
      * </pre>
      *
-     * <code>.vega.MarginLevels marginLevels = 108 [json_name = "marginLevels"];</code>
+     * <code>.vega.MarginLevels margin_levels = 108 [json_name = "marginLevels"];</code>
      */
     io.vegaprotocol.vega.Vega.MarginLevelsOrBuilder getMarginLevelsOrBuilder();
 
@@ -11763,7 +11763,7 @@ public final class Events {
      * Market data events
      * </pre>
      *
-     * <code>.vega.MarketData marketData = 111 [json_name = "marketData"];</code>
+     * <code>.vega.MarketData market_data = 111 [json_name = "marketData"];</code>
      * @return Whether the marketData field is set.
      */
     boolean hasMarketData();
@@ -11772,7 +11772,7 @@ public final class Events {
      * Market data events
      * </pre>
      *
-     * <code>.vega.MarketData marketData = 111 [json_name = "marketData"];</code>
+     * <code>.vega.MarketData market_data = 111 [json_name = "marketData"];</code>
      * @return The marketData.
      */
     io.vegaprotocol.vega.Vega.MarketData getMarketData();
@@ -11781,7 +11781,7 @@ public final class Events {
      * Market data events
      * </pre>
      *
-     * <code>.vega.MarketData marketData = 111 [json_name = "marketData"];</code>
+     * <code>.vega.MarketData market_data = 111 [json_name = "marketData"];</code>
      */
     io.vegaprotocol.vega.Vega.MarketDataOrBuilder getMarketDataOrBuilder();
 
@@ -11790,7 +11790,7 @@ public final class Events {
      * Node signature events
      * </pre>
      *
-     * <code>.vega.NodeSignature nodeSignature = 112 [json_name = "nodeSignature"];</code>
+     * <code>.vega.NodeSignature node_signature = 112 [json_name = "nodeSignature"];</code>
      * @return Whether the nodeSignature field is set.
      */
     boolean hasNodeSignature();
@@ -11799,7 +11799,7 @@ public final class Events {
      * Node signature events
      * </pre>
      *
-     * <code>.vega.NodeSignature nodeSignature = 112 [json_name = "nodeSignature"];</code>
+     * <code>.vega.NodeSignature node_signature = 112 [json_name = "nodeSignature"];</code>
      * @return The nodeSignature.
      */
     io.vegaprotocol.vega.Vega.NodeSignature getNodeSignature();
@@ -11808,88 +11808,88 @@ public final class Events {
      * Node signature events
      * </pre>
      *
-     * <code>.vega.NodeSignature nodeSignature = 112 [json_name = "nodeSignature"];</code>
+     * <code>.vega.NodeSignature node_signature = 112 [json_name = "nodeSignature"];</code>
      */
     io.vegaprotocol.vega.Vega.NodeSignatureOrBuilder getNodeSignatureOrBuilder();
 
     /**
      * <pre>
-     * Loss socialization events, see [LossSocialization](#vega.LossSocialization)
+     * Loss socialization events - See [LossSocialization](#vega.LossSocialization)
      * </pre>
      *
-     * <code>.vega.LossSocialization lossSocialization = 113 [json_name = "lossSocialization"];</code>
+     * <code>.vega.LossSocialization loss_socialization = 113 [json_name = "lossSocialization"];</code>
      * @return Whether the lossSocialization field is set.
      */
     boolean hasLossSocialization();
     /**
      * <pre>
-     * Loss socialization events, see [LossSocialization](#vega.LossSocialization)
+     * Loss socialization events - See [LossSocialization](#vega.LossSocialization)
      * </pre>
      *
-     * <code>.vega.LossSocialization lossSocialization = 113 [json_name = "lossSocialization"];</code>
+     * <code>.vega.LossSocialization loss_socialization = 113 [json_name = "lossSocialization"];</code>
      * @return The lossSocialization.
      */
     io.vegaprotocol.vega.Events.LossSocialization getLossSocialization();
     /**
      * <pre>
-     * Loss socialization events, see [LossSocialization](#vega.LossSocialization)
+     * Loss socialization events - See [LossSocialization](#vega.LossSocialization)
      * </pre>
      *
-     * <code>.vega.LossSocialization lossSocialization = 113 [json_name = "lossSocialization"];</code>
+     * <code>.vega.LossSocialization loss_socialization = 113 [json_name = "lossSocialization"];</code>
      */
     io.vegaprotocol.vega.Events.LossSocializationOrBuilder getLossSocializationOrBuilder();
 
     /**
      * <pre>
-     * Position settlement events, see [SettlePosition](#vega.SettlePosition)
+     * Position settlement events - See [SettlePosition](#vega.SettlePosition)
      * </pre>
      *
-     * <code>.vega.SettlePosition settlePosition = 114 [json_name = "settlePosition"];</code>
+     * <code>.vega.SettlePosition settle_position = 114 [json_name = "settlePosition"];</code>
      * @return Whether the settlePosition field is set.
      */
     boolean hasSettlePosition();
     /**
      * <pre>
-     * Position settlement events, see [SettlePosition](#vega.SettlePosition)
+     * Position settlement events - See [SettlePosition](#vega.SettlePosition)
      * </pre>
      *
-     * <code>.vega.SettlePosition settlePosition = 114 [json_name = "settlePosition"];</code>
+     * <code>.vega.SettlePosition settle_position = 114 [json_name = "settlePosition"];</code>
      * @return The settlePosition.
      */
     io.vegaprotocol.vega.Events.SettlePosition getSettlePosition();
     /**
      * <pre>
-     * Position settlement events, see [SettlePosition](#vega.SettlePosition)
+     * Position settlement events - See [SettlePosition](#vega.SettlePosition)
      * </pre>
      *
-     * <code>.vega.SettlePosition settlePosition = 114 [json_name = "settlePosition"];</code>
+     * <code>.vega.SettlePosition settle_position = 114 [json_name = "settlePosition"];</code>
      */
     io.vegaprotocol.vega.Events.SettlePositionOrBuilder getSettlePositionOrBuilder();
 
     /**
      * <pre>
-     * Position distressed events, see [SettleDistressed](#vega.SettleDistressed)
+     * Position distressed events - See [SettleDistressed](#vega.SettleDistressed)
      * </pre>
      *
-     * <code>.vega.SettleDistressed settleDistressed = 115 [json_name = "settleDistressed"];</code>
+     * <code>.vega.SettleDistressed settle_distressed = 115 [json_name = "settleDistressed"];</code>
      * @return Whether the settleDistressed field is set.
      */
     boolean hasSettleDistressed();
     /**
      * <pre>
-     * Position distressed events, see [SettleDistressed](#vega.SettleDistressed)
+     * Position distressed events - See [SettleDistressed](#vega.SettleDistressed)
      * </pre>
      *
-     * <code>.vega.SettleDistressed settleDistressed = 115 [json_name = "settleDistressed"];</code>
+     * <code>.vega.SettleDistressed settle_distressed = 115 [json_name = "settleDistressed"];</code>
      * @return The settleDistressed.
      */
     io.vegaprotocol.vega.Events.SettleDistressed getSettleDistressed();
     /**
      * <pre>
-     * Position distressed events, see [SettleDistressed](#vega.SettleDistressed)
+     * Position distressed events - See [SettleDistressed](#vega.SettleDistressed)
      * </pre>
      *
-     * <code>.vega.SettleDistressed settleDistressed = 115 [json_name = "settleDistressed"];</code>
+     * <code>.vega.SettleDistressed settle_distressed = 115 [json_name = "settleDistressed"];</code>
      */
     io.vegaprotocol.vega.Events.SettleDistressedOrBuilder getSettleDistressedOrBuilder();
 
@@ -11898,7 +11898,7 @@ public final class Events {
      * Market created events
      * </pre>
      *
-     * <code>.vega.Market marketCreated = 116 [json_name = "marketCreated"];</code>
+     * <code>.vega.Market market_created = 116 [json_name = "marketCreated"];</code>
      * @return Whether the marketCreated field is set.
      */
     boolean hasMarketCreated();
@@ -11907,7 +11907,7 @@ public final class Events {
      * Market created events
      * </pre>
      *
-     * <code>.vega.Market marketCreated = 116 [json_name = "marketCreated"];</code>
+     * <code>.vega.Market market_created = 116 [json_name = "marketCreated"];</code>
      * @return The marketCreated.
      */
     io.vegaprotocol.vega.Markets.Market getMarketCreated();
@@ -11916,7 +11916,7 @@ public final class Events {
      * Market created events
      * </pre>
      *
-     * <code>.vega.Market marketCreated = 116 [json_name = "marketCreated"];</code>
+     * <code>.vega.Market market_created = 116 [json_name = "marketCreated"];</code>
      */
     io.vegaprotocol.vega.Markets.MarketOrBuilder getMarketCreatedOrBuilder();
 
@@ -11949,28 +11949,28 @@ public final class Events {
 
     /**
      * <pre>
-     * Market tick events, see [MarketTick](#vega.MarketTick)
+     * Market tick events - See [MarketTick](#vega.MarketTick)
      * </pre>
      *
-     * <code>.vega.MarketTick marketTick = 118 [json_name = "marketTick"];</code>
+     * <code>.vega.MarketTick market_tick = 118 [json_name = "marketTick"];</code>
      * @return Whether the marketTick field is set.
      */
     boolean hasMarketTick();
     /**
      * <pre>
-     * Market tick events, see [MarketTick](#vega.MarketTick)
+     * Market tick events - See [MarketTick](#vega.MarketTick)
      * </pre>
      *
-     * <code>.vega.MarketTick marketTick = 118 [json_name = "marketTick"];</code>
+     * <code>.vega.MarketTick market_tick = 118 [json_name = "marketTick"];</code>
      * @return The marketTick.
      */
     io.vegaprotocol.vega.Events.MarketTick getMarketTick();
     /**
      * <pre>
-     * Market tick events, see [MarketTick](#vega.MarketTick)
+     * Market tick events - See [MarketTick](#vega.MarketTick)
      * </pre>
      *
-     * <code>.vega.MarketTick marketTick = 118 [json_name = "marketTick"];</code>
+     * <code>.vega.MarketTick market_tick = 118 [json_name = "marketTick"];</code>
      */
     io.vegaprotocol.vega.Events.MarketTickOrBuilder getMarketTickOrBuilder();
 
@@ -12030,7 +12030,7 @@ public final class Events {
 
     /**
      * <pre>
-     * Auction events, see [AuctionEvent](#vega.AuctionEvent)
+     * Auction events - See [AuctionEvent](#vega.AuctionEvent)
      * </pre>
      *
      * <code>.vega.AuctionEvent auction = 121 [json_name = "auction"];</code>
@@ -12039,7 +12039,7 @@ public final class Events {
     boolean hasAuction();
     /**
      * <pre>
-     * Auction events, see [AuctionEvent](#vega.AuctionEvent)
+     * Auction events - See [AuctionEvent](#vega.AuctionEvent)
      * </pre>
      *
      * <code>.vega.AuctionEvent auction = 121 [json_name = "auction"];</code>
@@ -12048,7 +12048,7 @@ public final class Events {
     io.vegaprotocol.vega.Events.AuctionEvent getAuction();
     /**
      * <pre>
-     * Auction events, see [AuctionEvent](#vega.AuctionEvent)
+     * Auction events - See [AuctionEvent](#vega.AuctionEvent)
      * </pre>
      *
      * <code>.vega.AuctionEvent auction = 121 [json_name = "auction"];</code>
@@ -12060,7 +12060,7 @@ public final class Events {
      * Risk factor events
      * </pre>
      *
-     * <code>.vega.RiskFactor riskFactor = 122 [json_name = "riskFactor"];</code>
+     * <code>.vega.RiskFactor risk_factor = 122 [json_name = "riskFactor"];</code>
      * @return Whether the riskFactor field is set.
      */
     boolean hasRiskFactor();
@@ -12069,7 +12069,7 @@ public final class Events {
      * Risk factor events
      * </pre>
      *
-     * <code>.vega.RiskFactor riskFactor = 122 [json_name = "riskFactor"];</code>
+     * <code>.vega.RiskFactor risk_factor = 122 [json_name = "riskFactor"];</code>
      * @return The riskFactor.
      */
     io.vegaprotocol.vega.Vega.RiskFactor getRiskFactor();
@@ -12078,7 +12078,7 @@ public final class Events {
      * Risk factor events
      * </pre>
      *
-     * <code>.vega.RiskFactor riskFactor = 122 [json_name = "riskFactor"];</code>
+     * <code>.vega.RiskFactor risk_factor = 122 [json_name = "riskFactor"];</code>
      */
     io.vegaprotocol.vega.Vega.RiskFactorOrBuilder getRiskFactorOrBuilder();
 
@@ -12087,7 +12087,7 @@ public final class Events {
      * Network parameter events
      * </pre>
      *
-     * <code>.vega.NetworkParameter networkParameter = 123 [json_name = "networkParameter"];</code>
+     * <code>.vega.NetworkParameter network_parameter = 123 [json_name = "networkParameter"];</code>
      * @return Whether the networkParameter field is set.
      */
     boolean hasNetworkParameter();
@@ -12096,7 +12096,7 @@ public final class Events {
      * Network parameter events
      * </pre>
      *
-     * <code>.vega.NetworkParameter networkParameter = 123 [json_name = "networkParameter"];</code>
+     * <code>.vega.NetworkParameter network_parameter = 123 [json_name = "networkParameter"];</code>
      * @return The networkParameter.
      */
     io.vegaprotocol.vega.Vega.NetworkParameter getNetworkParameter();
@@ -12105,7 +12105,7 @@ public final class Events {
      * Network parameter events
      * </pre>
      *
-     * <code>.vega.NetworkParameter networkParameter = 123 [json_name = "networkParameter"];</code>
+     * <code>.vega.NetworkParameter network_parameter = 123 [json_name = "networkParameter"];</code>
      */
     io.vegaprotocol.vega.Vega.NetworkParameterOrBuilder getNetworkParameterOrBuilder();
 
@@ -12114,7 +12114,7 @@ public final class Events {
      * LiquidityProvision  events
      * </pre>
      *
-     * <code>.vega.LiquidityProvision liquidityProvision = 124 [json_name = "liquidityProvision"];</code>
+     * <code>.vega.LiquidityProvision liquidity_provision = 124 [json_name = "liquidityProvision"];</code>
      * @return Whether the liquidityProvision field is set.
      */
     boolean hasLiquidityProvision();
@@ -12123,7 +12123,7 @@ public final class Events {
      * LiquidityProvision  events
      * </pre>
      *
-     * <code>.vega.LiquidityProvision liquidityProvision = 124 [json_name = "liquidityProvision"];</code>
+     * <code>.vega.LiquidityProvision liquidity_provision = 124 [json_name = "liquidityProvision"];</code>
      * @return The liquidityProvision.
      */
     io.vegaprotocol.vega.Vega.LiquidityProvision getLiquidityProvision();
@@ -12132,7 +12132,7 @@ public final class Events {
      * LiquidityProvision  events
      * </pre>
      *
-     * <code>.vega.LiquidityProvision liquidityProvision = 124 [json_name = "liquidityProvision"];</code>
+     * <code>.vega.LiquidityProvision liquidity_provision = 124 [json_name = "liquidityProvision"];</code>
      */
     io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder getLiquidityProvisionOrBuilder();
 
@@ -12141,7 +12141,7 @@ public final class Events {
      * Market created events
      * </pre>
      *
-     * <code>.vega.Market marketUpdated = 125 [json_name = "marketUpdated"];</code>
+     * <code>.vega.Market market_updated = 125 [json_name = "marketUpdated"];</code>
      * @return Whether the marketUpdated field is set.
      */
     boolean hasMarketUpdated();
@@ -12150,7 +12150,7 @@ public final class Events {
      * Market created events
      * </pre>
      *
-     * <code>.vega.Market marketUpdated = 125 [json_name = "marketUpdated"];</code>
+     * <code>.vega.Market market_updated = 125 [json_name = "marketUpdated"];</code>
      * @return The marketUpdated.
      */
     io.vegaprotocol.vega.Markets.Market getMarketUpdated();
@@ -12159,13 +12159,13 @@ public final class Events {
      * Market created events
      * </pre>
      *
-     * <code>.vega.Market marketUpdated = 125 [json_name = "marketUpdated"];</code>
+     * <code>.vega.Market market_updated = 125 [json_name = "marketUpdated"];</code>
      */
     io.vegaprotocol.vega.Markets.MarketOrBuilder getMarketUpdatedOrBuilder();
 
     /**
      * <pre>
-     * Market tick events, see [MarketEvent](#vega.MarketEvent)
+     * Market tick events - See [MarketEvent](#vega.MarketEvent)
      * </pre>
      *
      * <code>.vega.MarketEvent market = 1001 [json_name = "market"];</code>
@@ -12174,7 +12174,7 @@ public final class Events {
     boolean hasMarket();
     /**
      * <pre>
-     * Market tick events, see [MarketEvent](#vega.MarketEvent)
+     * Market tick events - See [MarketEvent](#vega.MarketEvent)
      * </pre>
      *
      * <code>.vega.MarketEvent market = 1001 [json_name = "market"];</code>
@@ -12183,7 +12183,7 @@ public final class Events {
     io.vegaprotocol.vega.Events.MarketEvent getMarket();
     /**
      * <pre>
-     * Market tick events, see [MarketEvent](#vega.MarketEvent)
+     * Market tick events - See [MarketEvent](#vega.MarketEvent)
      * </pre>
      *
      * <code>.vega.MarketEvent market = 1001 [json_name = "market"];</code>
@@ -12192,28 +12192,28 @@ public final class Events {
 
     /**
      * <pre>
-     * Transaction error events - separate category, not included in ALL events
+     * Transaction error events, not included in the ALL event type
      * </pre>
      *
-     * <code>.vega.TxErrorEvent txErrEvent = 2001 [json_name = "txErrEvent"];</code>
+     * <code>.vega.TxErrorEvent tx_err_event = 2001 [json_name = "txErrEvent"];</code>
      * @return Whether the txErrEvent field is set.
      */
     boolean hasTxErrEvent();
     /**
      * <pre>
-     * Transaction error events - separate category, not included in ALL events
+     * Transaction error events, not included in the ALL event type
      * </pre>
      *
-     * <code>.vega.TxErrorEvent txErrEvent = 2001 [json_name = "txErrEvent"];</code>
+     * <code>.vega.TxErrorEvent tx_err_event = 2001 [json_name = "txErrEvent"];</code>
      * @return The txErrEvent.
      */
     io.vegaprotocol.vega.Events.TxErrorEvent getTxErrEvent();
     /**
      * <pre>
-     * Transaction error events - separate category, not included in ALL events
+     * Transaction error events, not included in the ALL event type
      * </pre>
      *
-     * <code>.vega.TxErrorEvent txErrEvent = 2001 [json_name = "txErrEvent"];</code>
+     * <code>.vega.TxErrorEvent tx_err_event = 2001 [json_name = "txErrEvent"];</code>
      */
     io.vegaprotocol.vega.Events.TxErrorEventOrBuilder getTxErrEventOrBuilder();
 
@@ -12236,7 +12236,7 @@ public final class Events {
       super(builder);
     }
     private BusEvent() {
-      iD_ = "";
+      id_ = "";
       block_ = "";
       type_ = 0;
     }
@@ -12274,7 +12274,7 @@ public final class Events {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              iD_ = s;
+              id_ = s;
               break;
             }
             case 18: {
@@ -12704,33 +12704,33 @@ public final class Events {
     public enum EventCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      TIMEUPDATE(101),
-      TRANSFERRESPONSES(102),
-      POSITIONRESOLUTION(103),
+      TIME_UPDATE(101),
+      TRANSFER_RESPONSES(102),
+      POSITION_RESOLUTION(103),
       ORDER(104),
       ACCOUNT(105),
       PARTY(106),
       TRADE(107),
-      MARGINLEVELS(108),
+      MARGIN_LEVELS(108),
       PROPOSAL(109),
       VOTE(110),
-      MARKETDATA(111),
-      NODESIGNATURE(112),
-      LOSSSOCIALIZATION(113),
-      SETTLEPOSITION(114),
-      SETTLEDISTRESSED(115),
-      MARKETCREATED(116),
+      MARKET_DATA(111),
+      NODE_SIGNATURE(112),
+      LOSS_SOCIALIZATION(113),
+      SETTLE_POSITION(114),
+      SETTLE_DISTRESSED(115),
+      MARKET_CREATED(116),
       ASSET(117),
-      MARKETTICK(118),
+      MARKET_TICK(118),
       WITHDRAWAL(119),
       DEPOSIT(120),
       AUCTION(121),
-      RISKFACTOR(122),
-      NETWORKPARAMETER(123),
-      LIQUIDITYPROVISION(124),
-      MARKETUPDATED(125),
+      RISK_FACTOR(122),
+      NETWORK_PARAMETER(123),
+      LIQUIDITY_PROVISION(124),
+      MARKET_UPDATED(125),
       MARKET(1001),
-      TXERREVENT(2001),
+      TX_ERR_EVENT(2001),
       EVENT_NOT_SET(0);
       private final int value;
       private EventCase(int value) {
@@ -12748,33 +12748,33 @@ public final class Events {
 
       public static EventCase forNumber(int value) {
         switch (value) {
-          case 101: return TIMEUPDATE;
-          case 102: return TRANSFERRESPONSES;
-          case 103: return POSITIONRESOLUTION;
+          case 101: return TIME_UPDATE;
+          case 102: return TRANSFER_RESPONSES;
+          case 103: return POSITION_RESOLUTION;
           case 104: return ORDER;
           case 105: return ACCOUNT;
           case 106: return PARTY;
           case 107: return TRADE;
-          case 108: return MARGINLEVELS;
+          case 108: return MARGIN_LEVELS;
           case 109: return PROPOSAL;
           case 110: return VOTE;
-          case 111: return MARKETDATA;
-          case 112: return NODESIGNATURE;
-          case 113: return LOSSSOCIALIZATION;
-          case 114: return SETTLEPOSITION;
-          case 115: return SETTLEDISTRESSED;
-          case 116: return MARKETCREATED;
+          case 111: return MARKET_DATA;
+          case 112: return NODE_SIGNATURE;
+          case 113: return LOSS_SOCIALIZATION;
+          case 114: return SETTLE_POSITION;
+          case 115: return SETTLE_DISTRESSED;
+          case 116: return MARKET_CREATED;
           case 117: return ASSET;
-          case 118: return MARKETTICK;
+          case 118: return MARKET_TICK;
           case 119: return WITHDRAWAL;
           case 120: return DEPOSIT;
           case 121: return AUCTION;
-          case 122: return RISKFACTOR;
-          case 123: return NETWORKPARAMETER;
-          case 124: return LIQUIDITYPROVISION;
-          case 125: return MARKETUPDATED;
+          case 122: return RISK_FACTOR;
+          case 123: return NETWORK_PARAMETER;
+          case 124: return LIQUIDITY_PROVISION;
+          case 125: return MARKET_UPDATED;
           case 1001: return MARKET;
-          case 2001: return TXERREVENT;
+          case 2001: return TX_ERR_EVENT;
           case 0: return EVENT_NOT_SET;
           default: return null;
         }
@@ -12791,25 +12791,25 @@ public final class Events {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object iD_;
+    private volatile java.lang.Object id_;
     /**
      * <pre>
      * A unique event identifier for the message
      * </pre>
      *
-     * <code>string ID = 1 [json_name = "ID"];</code>
-     * @return The iD.
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
      */
     @java.lang.Override
-    public java.lang.String getID() {
-      java.lang.Object ref = iD_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        iD_ = s;
+        id_ = s;
         return s;
       }
     }
@@ -12818,18 +12818,18 @@ public final class Events {
      * A unique event identifier for the message
      * </pre>
      *
-     * <code>string ID = 1 [json_name = "ID"];</code>
-     * @return The bytes for iD.
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getIDBytes() {
-      java.lang.Object ref = iD_;
+        getIdBytes() {
+      java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        iD_ = b;
+        id_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -12909,13 +12909,13 @@ public final class Events {
       return result == null ? io.vegaprotocol.vega.Events.BusEventType.UNRECOGNIZED : result;
     }
 
-    public static final int TIMEUPDATE_FIELD_NUMBER = 101;
+    public static final int TIME_UPDATE_FIELD_NUMBER = 101;
     /**
      * <pre>
-     * Time update events, see [TimeUpdate](#vega.TimeUpdate)
+     * Time update events - See [TimeUpdate](#vega.TimeUpdate)
      * </pre>
      *
-     * <code>.vega.TimeUpdate timeUpdate = 101 [json_name = "timeUpdate"];</code>
+     * <code>.vega.TimeUpdate time_update = 101 [json_name = "timeUpdate"];</code>
      * @return Whether the timeUpdate field is set.
      */
     @java.lang.Override
@@ -12924,10 +12924,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * Time update events, see [TimeUpdate](#vega.TimeUpdate)
+     * Time update events - See [TimeUpdate](#vega.TimeUpdate)
      * </pre>
      *
-     * <code>.vega.TimeUpdate timeUpdate = 101 [json_name = "timeUpdate"];</code>
+     * <code>.vega.TimeUpdate time_update = 101 [json_name = "timeUpdate"];</code>
      * @return The timeUpdate.
      */
     @java.lang.Override
@@ -12939,10 +12939,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * Time update events, see [TimeUpdate](#vega.TimeUpdate)
+     * Time update events - See [TimeUpdate](#vega.TimeUpdate)
      * </pre>
      *
-     * <code>.vega.TimeUpdate timeUpdate = 101 [json_name = "timeUpdate"];</code>
+     * <code>.vega.TimeUpdate time_update = 101 [json_name = "timeUpdate"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Events.TimeUpdateOrBuilder getTimeUpdateOrBuilder() {
@@ -12952,13 +12952,13 @@ public final class Events {
       return io.vegaprotocol.vega.Events.TimeUpdate.getDefaultInstance();
     }
 
-    public static final int TRANSFERRESPONSES_FIELD_NUMBER = 102;
+    public static final int TRANSFER_RESPONSES_FIELD_NUMBER = 102;
     /**
      * <pre>
-     * Transfer responses update events, see [TransferResponses](#vega.TransferResponses)
+     * Transfer responses update events - See [TransferResponses](#vega.TransferResponses)
      * </pre>
      *
-     * <code>.vega.TransferResponses transferResponses = 102 [json_name = "transferResponses"];</code>
+     * <code>.vega.TransferResponses transfer_responses = 102 [json_name = "transferResponses"];</code>
      * @return Whether the transferResponses field is set.
      */
     @java.lang.Override
@@ -12967,10 +12967,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * Transfer responses update events, see [TransferResponses](#vega.TransferResponses)
+     * Transfer responses update events - See [TransferResponses](#vega.TransferResponses)
      * </pre>
      *
-     * <code>.vega.TransferResponses transferResponses = 102 [json_name = "transferResponses"];</code>
+     * <code>.vega.TransferResponses transfer_responses = 102 [json_name = "transferResponses"];</code>
      * @return The transferResponses.
      */
     @java.lang.Override
@@ -12982,10 +12982,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * Transfer responses update events, see [TransferResponses](#vega.TransferResponses)
+     * Transfer responses update events - See [TransferResponses](#vega.TransferResponses)
      * </pre>
      *
-     * <code>.vega.TransferResponses transferResponses = 102 [json_name = "transferResponses"];</code>
+     * <code>.vega.TransferResponses transfer_responses = 102 [json_name = "transferResponses"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Events.TransferResponsesOrBuilder getTransferResponsesOrBuilder() {
@@ -12995,13 +12995,13 @@ public final class Events {
       return io.vegaprotocol.vega.Events.TransferResponses.getDefaultInstance();
     }
 
-    public static final int POSITIONRESOLUTION_FIELD_NUMBER = 103;
+    public static final int POSITION_RESOLUTION_FIELD_NUMBER = 103;
     /**
      * <pre>
-     * Position resolution events, see [PositionResolution](#vega.PositionResolution)
+     * Position resolution events - See [PositionResolution](#vega.PositionResolution)
      * </pre>
      *
-     * <code>.vega.PositionResolution positionResolution = 103 [json_name = "positionResolution"];</code>
+     * <code>.vega.PositionResolution position_resolution = 103 [json_name = "positionResolution"];</code>
      * @return Whether the positionResolution field is set.
      */
     @java.lang.Override
@@ -13010,10 +13010,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * Position resolution events, see [PositionResolution](#vega.PositionResolution)
+     * Position resolution events - See [PositionResolution](#vega.PositionResolution)
      * </pre>
      *
-     * <code>.vega.PositionResolution positionResolution = 103 [json_name = "positionResolution"];</code>
+     * <code>.vega.PositionResolution position_resolution = 103 [json_name = "positionResolution"];</code>
      * @return The positionResolution.
      */
     @java.lang.Override
@@ -13025,10 +13025,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * Position resolution events, see [PositionResolution](#vega.PositionResolution)
+     * Position resolution events - See [PositionResolution](#vega.PositionResolution)
      * </pre>
      *
-     * <code>.vega.PositionResolution positionResolution = 103 [json_name = "positionResolution"];</code>
+     * <code>.vega.PositionResolution position_resolution = 103 [json_name = "positionResolution"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Events.PositionResolutionOrBuilder getPositionResolutionOrBuilder() {
@@ -13210,13 +13210,13 @@ public final class Events {
       return io.vegaprotocol.vega.Vega.Trade.getDefaultInstance();
     }
 
-    public static final int MARGINLEVELS_FIELD_NUMBER = 108;
+    public static final int MARGIN_LEVELS_FIELD_NUMBER = 108;
     /**
      * <pre>
      * Margin level update events
      * </pre>
      *
-     * <code>.vega.MarginLevels marginLevels = 108 [json_name = "marginLevels"];</code>
+     * <code>.vega.MarginLevels margin_levels = 108 [json_name = "marginLevels"];</code>
      * @return Whether the marginLevels field is set.
      */
     @java.lang.Override
@@ -13228,7 +13228,7 @@ public final class Events {
      * Margin level update events
      * </pre>
      *
-     * <code>.vega.MarginLevels marginLevels = 108 [json_name = "marginLevels"];</code>
+     * <code>.vega.MarginLevels margin_levels = 108 [json_name = "marginLevels"];</code>
      * @return The marginLevels.
      */
     @java.lang.Override
@@ -13243,7 +13243,7 @@ public final class Events {
      * Margin level update events
      * </pre>
      *
-     * <code>.vega.MarginLevels marginLevels = 108 [json_name = "marginLevels"];</code>
+     * <code>.vega.MarginLevels margin_levels = 108 [json_name = "marginLevels"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.MarginLevelsOrBuilder getMarginLevelsOrBuilder() {
@@ -13339,13 +13339,13 @@ public final class Events {
       return io.vegaprotocol.vega.Governance.Vote.getDefaultInstance();
     }
 
-    public static final int MARKETDATA_FIELD_NUMBER = 111;
+    public static final int MARKET_DATA_FIELD_NUMBER = 111;
     /**
      * <pre>
      * Market data events
      * </pre>
      *
-     * <code>.vega.MarketData marketData = 111 [json_name = "marketData"];</code>
+     * <code>.vega.MarketData market_data = 111 [json_name = "marketData"];</code>
      * @return Whether the marketData field is set.
      */
     @java.lang.Override
@@ -13357,7 +13357,7 @@ public final class Events {
      * Market data events
      * </pre>
      *
-     * <code>.vega.MarketData marketData = 111 [json_name = "marketData"];</code>
+     * <code>.vega.MarketData market_data = 111 [json_name = "marketData"];</code>
      * @return The marketData.
      */
     @java.lang.Override
@@ -13372,7 +13372,7 @@ public final class Events {
      * Market data events
      * </pre>
      *
-     * <code>.vega.MarketData marketData = 111 [json_name = "marketData"];</code>
+     * <code>.vega.MarketData market_data = 111 [json_name = "marketData"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.MarketDataOrBuilder getMarketDataOrBuilder() {
@@ -13382,13 +13382,13 @@ public final class Events {
       return io.vegaprotocol.vega.Vega.MarketData.getDefaultInstance();
     }
 
-    public static final int NODESIGNATURE_FIELD_NUMBER = 112;
+    public static final int NODE_SIGNATURE_FIELD_NUMBER = 112;
     /**
      * <pre>
      * Node signature events
      * </pre>
      *
-     * <code>.vega.NodeSignature nodeSignature = 112 [json_name = "nodeSignature"];</code>
+     * <code>.vega.NodeSignature node_signature = 112 [json_name = "nodeSignature"];</code>
      * @return Whether the nodeSignature field is set.
      */
     @java.lang.Override
@@ -13400,7 +13400,7 @@ public final class Events {
      * Node signature events
      * </pre>
      *
-     * <code>.vega.NodeSignature nodeSignature = 112 [json_name = "nodeSignature"];</code>
+     * <code>.vega.NodeSignature node_signature = 112 [json_name = "nodeSignature"];</code>
      * @return The nodeSignature.
      */
     @java.lang.Override
@@ -13415,7 +13415,7 @@ public final class Events {
      * Node signature events
      * </pre>
      *
-     * <code>.vega.NodeSignature nodeSignature = 112 [json_name = "nodeSignature"];</code>
+     * <code>.vega.NodeSignature node_signature = 112 [json_name = "nodeSignature"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.NodeSignatureOrBuilder getNodeSignatureOrBuilder() {
@@ -13425,13 +13425,13 @@ public final class Events {
       return io.vegaprotocol.vega.Vega.NodeSignature.getDefaultInstance();
     }
 
-    public static final int LOSSSOCIALIZATION_FIELD_NUMBER = 113;
+    public static final int LOSS_SOCIALIZATION_FIELD_NUMBER = 113;
     /**
      * <pre>
-     * Loss socialization events, see [LossSocialization](#vega.LossSocialization)
+     * Loss socialization events - See [LossSocialization](#vega.LossSocialization)
      * </pre>
      *
-     * <code>.vega.LossSocialization lossSocialization = 113 [json_name = "lossSocialization"];</code>
+     * <code>.vega.LossSocialization loss_socialization = 113 [json_name = "lossSocialization"];</code>
      * @return Whether the lossSocialization field is set.
      */
     @java.lang.Override
@@ -13440,10 +13440,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * Loss socialization events, see [LossSocialization](#vega.LossSocialization)
+     * Loss socialization events - See [LossSocialization](#vega.LossSocialization)
      * </pre>
      *
-     * <code>.vega.LossSocialization lossSocialization = 113 [json_name = "lossSocialization"];</code>
+     * <code>.vega.LossSocialization loss_socialization = 113 [json_name = "lossSocialization"];</code>
      * @return The lossSocialization.
      */
     @java.lang.Override
@@ -13455,10 +13455,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * Loss socialization events, see [LossSocialization](#vega.LossSocialization)
+     * Loss socialization events - See [LossSocialization](#vega.LossSocialization)
      * </pre>
      *
-     * <code>.vega.LossSocialization lossSocialization = 113 [json_name = "lossSocialization"];</code>
+     * <code>.vega.LossSocialization loss_socialization = 113 [json_name = "lossSocialization"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Events.LossSocializationOrBuilder getLossSocializationOrBuilder() {
@@ -13468,13 +13468,13 @@ public final class Events {
       return io.vegaprotocol.vega.Events.LossSocialization.getDefaultInstance();
     }
 
-    public static final int SETTLEPOSITION_FIELD_NUMBER = 114;
+    public static final int SETTLE_POSITION_FIELD_NUMBER = 114;
     /**
      * <pre>
-     * Position settlement events, see [SettlePosition](#vega.SettlePosition)
+     * Position settlement events - See [SettlePosition](#vega.SettlePosition)
      * </pre>
      *
-     * <code>.vega.SettlePosition settlePosition = 114 [json_name = "settlePosition"];</code>
+     * <code>.vega.SettlePosition settle_position = 114 [json_name = "settlePosition"];</code>
      * @return Whether the settlePosition field is set.
      */
     @java.lang.Override
@@ -13483,10 +13483,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * Position settlement events, see [SettlePosition](#vega.SettlePosition)
+     * Position settlement events - See [SettlePosition](#vega.SettlePosition)
      * </pre>
      *
-     * <code>.vega.SettlePosition settlePosition = 114 [json_name = "settlePosition"];</code>
+     * <code>.vega.SettlePosition settle_position = 114 [json_name = "settlePosition"];</code>
      * @return The settlePosition.
      */
     @java.lang.Override
@@ -13498,10 +13498,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * Position settlement events, see [SettlePosition](#vega.SettlePosition)
+     * Position settlement events - See [SettlePosition](#vega.SettlePosition)
      * </pre>
      *
-     * <code>.vega.SettlePosition settlePosition = 114 [json_name = "settlePosition"];</code>
+     * <code>.vega.SettlePosition settle_position = 114 [json_name = "settlePosition"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Events.SettlePositionOrBuilder getSettlePositionOrBuilder() {
@@ -13511,13 +13511,13 @@ public final class Events {
       return io.vegaprotocol.vega.Events.SettlePosition.getDefaultInstance();
     }
 
-    public static final int SETTLEDISTRESSED_FIELD_NUMBER = 115;
+    public static final int SETTLE_DISTRESSED_FIELD_NUMBER = 115;
     /**
      * <pre>
-     * Position distressed events, see [SettleDistressed](#vega.SettleDistressed)
+     * Position distressed events - See [SettleDistressed](#vega.SettleDistressed)
      * </pre>
      *
-     * <code>.vega.SettleDistressed settleDistressed = 115 [json_name = "settleDistressed"];</code>
+     * <code>.vega.SettleDistressed settle_distressed = 115 [json_name = "settleDistressed"];</code>
      * @return Whether the settleDistressed field is set.
      */
     @java.lang.Override
@@ -13526,10 +13526,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * Position distressed events, see [SettleDistressed](#vega.SettleDistressed)
+     * Position distressed events - See [SettleDistressed](#vega.SettleDistressed)
      * </pre>
      *
-     * <code>.vega.SettleDistressed settleDistressed = 115 [json_name = "settleDistressed"];</code>
+     * <code>.vega.SettleDistressed settle_distressed = 115 [json_name = "settleDistressed"];</code>
      * @return The settleDistressed.
      */
     @java.lang.Override
@@ -13541,10 +13541,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * Position distressed events, see [SettleDistressed](#vega.SettleDistressed)
+     * Position distressed events - See [SettleDistressed](#vega.SettleDistressed)
      * </pre>
      *
-     * <code>.vega.SettleDistressed settleDistressed = 115 [json_name = "settleDistressed"];</code>
+     * <code>.vega.SettleDistressed settle_distressed = 115 [json_name = "settleDistressed"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Events.SettleDistressedOrBuilder getSettleDistressedOrBuilder() {
@@ -13554,13 +13554,13 @@ public final class Events {
       return io.vegaprotocol.vega.Events.SettleDistressed.getDefaultInstance();
     }
 
-    public static final int MARKETCREATED_FIELD_NUMBER = 116;
+    public static final int MARKET_CREATED_FIELD_NUMBER = 116;
     /**
      * <pre>
      * Market created events
      * </pre>
      *
-     * <code>.vega.Market marketCreated = 116 [json_name = "marketCreated"];</code>
+     * <code>.vega.Market market_created = 116 [json_name = "marketCreated"];</code>
      * @return Whether the marketCreated field is set.
      */
     @java.lang.Override
@@ -13572,7 +13572,7 @@ public final class Events {
      * Market created events
      * </pre>
      *
-     * <code>.vega.Market marketCreated = 116 [json_name = "marketCreated"];</code>
+     * <code>.vega.Market market_created = 116 [json_name = "marketCreated"];</code>
      * @return The marketCreated.
      */
     @java.lang.Override
@@ -13587,7 +13587,7 @@ public final class Events {
      * Market created events
      * </pre>
      *
-     * <code>.vega.Market marketCreated = 116 [json_name = "marketCreated"];</code>
+     * <code>.vega.Market market_created = 116 [json_name = "marketCreated"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Markets.MarketOrBuilder getMarketCreatedOrBuilder() {
@@ -13640,13 +13640,13 @@ public final class Events {
       return io.vegaprotocol.vega.Assets.Asset.getDefaultInstance();
     }
 
-    public static final int MARKETTICK_FIELD_NUMBER = 118;
+    public static final int MARKET_TICK_FIELD_NUMBER = 118;
     /**
      * <pre>
-     * Market tick events, see [MarketTick](#vega.MarketTick)
+     * Market tick events - See [MarketTick](#vega.MarketTick)
      * </pre>
      *
-     * <code>.vega.MarketTick marketTick = 118 [json_name = "marketTick"];</code>
+     * <code>.vega.MarketTick market_tick = 118 [json_name = "marketTick"];</code>
      * @return Whether the marketTick field is set.
      */
     @java.lang.Override
@@ -13655,10 +13655,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * Market tick events, see [MarketTick](#vega.MarketTick)
+     * Market tick events - See [MarketTick](#vega.MarketTick)
      * </pre>
      *
-     * <code>.vega.MarketTick marketTick = 118 [json_name = "marketTick"];</code>
+     * <code>.vega.MarketTick market_tick = 118 [json_name = "marketTick"];</code>
      * @return The marketTick.
      */
     @java.lang.Override
@@ -13670,10 +13670,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * Market tick events, see [MarketTick](#vega.MarketTick)
+     * Market tick events - See [MarketTick](#vega.MarketTick)
      * </pre>
      *
-     * <code>.vega.MarketTick marketTick = 118 [json_name = "marketTick"];</code>
+     * <code>.vega.MarketTick market_tick = 118 [json_name = "marketTick"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Events.MarketTickOrBuilder getMarketTickOrBuilder() {
@@ -13772,7 +13772,7 @@ public final class Events {
     public static final int AUCTION_FIELD_NUMBER = 121;
     /**
      * <pre>
-     * Auction events, see [AuctionEvent](#vega.AuctionEvent)
+     * Auction events - See [AuctionEvent](#vega.AuctionEvent)
      * </pre>
      *
      * <code>.vega.AuctionEvent auction = 121 [json_name = "auction"];</code>
@@ -13784,7 +13784,7 @@ public final class Events {
     }
     /**
      * <pre>
-     * Auction events, see [AuctionEvent](#vega.AuctionEvent)
+     * Auction events - See [AuctionEvent](#vega.AuctionEvent)
      * </pre>
      *
      * <code>.vega.AuctionEvent auction = 121 [json_name = "auction"];</code>
@@ -13799,7 +13799,7 @@ public final class Events {
     }
     /**
      * <pre>
-     * Auction events, see [AuctionEvent](#vega.AuctionEvent)
+     * Auction events - See [AuctionEvent](#vega.AuctionEvent)
      * </pre>
      *
      * <code>.vega.AuctionEvent auction = 121 [json_name = "auction"];</code>
@@ -13812,13 +13812,13 @@ public final class Events {
       return io.vegaprotocol.vega.Events.AuctionEvent.getDefaultInstance();
     }
 
-    public static final int RISKFACTOR_FIELD_NUMBER = 122;
+    public static final int RISK_FACTOR_FIELD_NUMBER = 122;
     /**
      * <pre>
      * Risk factor events
      * </pre>
      *
-     * <code>.vega.RiskFactor riskFactor = 122 [json_name = "riskFactor"];</code>
+     * <code>.vega.RiskFactor risk_factor = 122 [json_name = "riskFactor"];</code>
      * @return Whether the riskFactor field is set.
      */
     @java.lang.Override
@@ -13830,7 +13830,7 @@ public final class Events {
      * Risk factor events
      * </pre>
      *
-     * <code>.vega.RiskFactor riskFactor = 122 [json_name = "riskFactor"];</code>
+     * <code>.vega.RiskFactor risk_factor = 122 [json_name = "riskFactor"];</code>
      * @return The riskFactor.
      */
     @java.lang.Override
@@ -13845,7 +13845,7 @@ public final class Events {
      * Risk factor events
      * </pre>
      *
-     * <code>.vega.RiskFactor riskFactor = 122 [json_name = "riskFactor"];</code>
+     * <code>.vega.RiskFactor risk_factor = 122 [json_name = "riskFactor"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.RiskFactorOrBuilder getRiskFactorOrBuilder() {
@@ -13855,13 +13855,13 @@ public final class Events {
       return io.vegaprotocol.vega.Vega.RiskFactor.getDefaultInstance();
     }
 
-    public static final int NETWORKPARAMETER_FIELD_NUMBER = 123;
+    public static final int NETWORK_PARAMETER_FIELD_NUMBER = 123;
     /**
      * <pre>
      * Network parameter events
      * </pre>
      *
-     * <code>.vega.NetworkParameter networkParameter = 123 [json_name = "networkParameter"];</code>
+     * <code>.vega.NetworkParameter network_parameter = 123 [json_name = "networkParameter"];</code>
      * @return Whether the networkParameter field is set.
      */
     @java.lang.Override
@@ -13873,7 +13873,7 @@ public final class Events {
      * Network parameter events
      * </pre>
      *
-     * <code>.vega.NetworkParameter networkParameter = 123 [json_name = "networkParameter"];</code>
+     * <code>.vega.NetworkParameter network_parameter = 123 [json_name = "networkParameter"];</code>
      * @return The networkParameter.
      */
     @java.lang.Override
@@ -13888,7 +13888,7 @@ public final class Events {
      * Network parameter events
      * </pre>
      *
-     * <code>.vega.NetworkParameter networkParameter = 123 [json_name = "networkParameter"];</code>
+     * <code>.vega.NetworkParameter network_parameter = 123 [json_name = "networkParameter"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.NetworkParameterOrBuilder getNetworkParameterOrBuilder() {
@@ -13898,13 +13898,13 @@ public final class Events {
       return io.vegaprotocol.vega.Vega.NetworkParameter.getDefaultInstance();
     }
 
-    public static final int LIQUIDITYPROVISION_FIELD_NUMBER = 124;
+    public static final int LIQUIDITY_PROVISION_FIELD_NUMBER = 124;
     /**
      * <pre>
      * LiquidityProvision  events
      * </pre>
      *
-     * <code>.vega.LiquidityProvision liquidityProvision = 124 [json_name = "liquidityProvision"];</code>
+     * <code>.vega.LiquidityProvision liquidity_provision = 124 [json_name = "liquidityProvision"];</code>
      * @return Whether the liquidityProvision field is set.
      */
     @java.lang.Override
@@ -13916,7 +13916,7 @@ public final class Events {
      * LiquidityProvision  events
      * </pre>
      *
-     * <code>.vega.LiquidityProvision liquidityProvision = 124 [json_name = "liquidityProvision"];</code>
+     * <code>.vega.LiquidityProvision liquidity_provision = 124 [json_name = "liquidityProvision"];</code>
      * @return The liquidityProvision.
      */
     @java.lang.Override
@@ -13931,7 +13931,7 @@ public final class Events {
      * LiquidityProvision  events
      * </pre>
      *
-     * <code>.vega.LiquidityProvision liquidityProvision = 124 [json_name = "liquidityProvision"];</code>
+     * <code>.vega.LiquidityProvision liquidity_provision = 124 [json_name = "liquidityProvision"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder getLiquidityProvisionOrBuilder() {
@@ -13941,13 +13941,13 @@ public final class Events {
       return io.vegaprotocol.vega.Vega.LiquidityProvision.getDefaultInstance();
     }
 
-    public static final int MARKETUPDATED_FIELD_NUMBER = 125;
+    public static final int MARKET_UPDATED_FIELD_NUMBER = 125;
     /**
      * <pre>
      * Market created events
      * </pre>
      *
-     * <code>.vega.Market marketUpdated = 125 [json_name = "marketUpdated"];</code>
+     * <code>.vega.Market market_updated = 125 [json_name = "marketUpdated"];</code>
      * @return Whether the marketUpdated field is set.
      */
     @java.lang.Override
@@ -13959,7 +13959,7 @@ public final class Events {
      * Market created events
      * </pre>
      *
-     * <code>.vega.Market marketUpdated = 125 [json_name = "marketUpdated"];</code>
+     * <code>.vega.Market market_updated = 125 [json_name = "marketUpdated"];</code>
      * @return The marketUpdated.
      */
     @java.lang.Override
@@ -13974,7 +13974,7 @@ public final class Events {
      * Market created events
      * </pre>
      *
-     * <code>.vega.Market marketUpdated = 125 [json_name = "marketUpdated"];</code>
+     * <code>.vega.Market market_updated = 125 [json_name = "marketUpdated"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Markets.MarketOrBuilder getMarketUpdatedOrBuilder() {
@@ -13987,7 +13987,7 @@ public final class Events {
     public static final int MARKET_FIELD_NUMBER = 1001;
     /**
      * <pre>
-     * Market tick events, see [MarketEvent](#vega.MarketEvent)
+     * Market tick events - See [MarketEvent](#vega.MarketEvent)
      * </pre>
      *
      * <code>.vega.MarketEvent market = 1001 [json_name = "market"];</code>
@@ -13999,7 +13999,7 @@ public final class Events {
     }
     /**
      * <pre>
-     * Market tick events, see [MarketEvent](#vega.MarketEvent)
+     * Market tick events - See [MarketEvent](#vega.MarketEvent)
      * </pre>
      *
      * <code>.vega.MarketEvent market = 1001 [json_name = "market"];</code>
@@ -14014,7 +14014,7 @@ public final class Events {
     }
     /**
      * <pre>
-     * Market tick events, see [MarketEvent](#vega.MarketEvent)
+     * Market tick events - See [MarketEvent](#vega.MarketEvent)
      * </pre>
      *
      * <code>.vega.MarketEvent market = 1001 [json_name = "market"];</code>
@@ -14027,13 +14027,13 @@ public final class Events {
       return io.vegaprotocol.vega.Events.MarketEvent.getDefaultInstance();
     }
 
-    public static final int TXERREVENT_FIELD_NUMBER = 2001;
+    public static final int TX_ERR_EVENT_FIELD_NUMBER = 2001;
     /**
      * <pre>
-     * Transaction error events - separate category, not included in ALL events
+     * Transaction error events, not included in the ALL event type
      * </pre>
      *
-     * <code>.vega.TxErrorEvent txErrEvent = 2001 [json_name = "txErrEvent"];</code>
+     * <code>.vega.TxErrorEvent tx_err_event = 2001 [json_name = "txErrEvent"];</code>
      * @return Whether the txErrEvent field is set.
      */
     @java.lang.Override
@@ -14042,10 +14042,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * Transaction error events - separate category, not included in ALL events
+     * Transaction error events, not included in the ALL event type
      * </pre>
      *
-     * <code>.vega.TxErrorEvent txErrEvent = 2001 [json_name = "txErrEvent"];</code>
+     * <code>.vega.TxErrorEvent tx_err_event = 2001 [json_name = "txErrEvent"];</code>
      * @return The txErrEvent.
      */
     @java.lang.Override
@@ -14057,10 +14057,10 @@ public final class Events {
     }
     /**
      * <pre>
-     * Transaction error events - separate category, not included in ALL events
+     * Transaction error events, not included in the ALL event type
      * </pre>
      *
-     * <code>.vega.TxErrorEvent txErrEvent = 2001 [json_name = "txErrEvent"];</code>
+     * <code>.vega.TxErrorEvent tx_err_event = 2001 [json_name = "txErrEvent"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Events.TxErrorEventOrBuilder getTxErrEventOrBuilder() {
@@ -14084,8 +14084,8 @@ public final class Events {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, iD_);
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (!getBlockBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, block_);
@@ -14183,8 +14183,8 @@ public final class Events {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, iD_);
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (!getBlockBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, block_);
@@ -14316,8 +14316,8 @@ public final class Events {
       }
       io.vegaprotocol.vega.Events.BusEvent other = (io.vegaprotocol.vega.Events.BusEvent) obj;
 
-      if (!getID()
-          .equals(other.getID())) return false;
+      if (!getId()
+          .equals(other.getId())) return false;
       if (!getBlock()
           .equals(other.getBlock())) return false;
       if (type_ != other.type_) return false;
@@ -14446,22 +14446,22 @@ public final class Events {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getID().hashCode();
+      hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + BLOCK_FIELD_NUMBER;
       hash = (53 * hash) + getBlock().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
       switch (eventCase_) {
         case 101:
-          hash = (37 * hash) + TIMEUPDATE_FIELD_NUMBER;
+          hash = (37 * hash) + TIME_UPDATE_FIELD_NUMBER;
           hash = (53 * hash) + getTimeUpdate().hashCode();
           break;
         case 102:
-          hash = (37 * hash) + TRANSFERRESPONSES_FIELD_NUMBER;
+          hash = (37 * hash) + TRANSFER_RESPONSES_FIELD_NUMBER;
           hash = (53 * hash) + getTransferResponses().hashCode();
           break;
         case 103:
-          hash = (37 * hash) + POSITIONRESOLUTION_FIELD_NUMBER;
+          hash = (37 * hash) + POSITION_RESOLUTION_FIELD_NUMBER;
           hash = (53 * hash) + getPositionResolution().hashCode();
           break;
         case 104:
@@ -14481,7 +14481,7 @@ public final class Events {
           hash = (53 * hash) + getTrade().hashCode();
           break;
         case 108:
-          hash = (37 * hash) + MARGINLEVELS_FIELD_NUMBER;
+          hash = (37 * hash) + MARGIN_LEVELS_FIELD_NUMBER;
           hash = (53 * hash) + getMarginLevels().hashCode();
           break;
         case 109:
@@ -14493,27 +14493,27 @@ public final class Events {
           hash = (53 * hash) + getVote().hashCode();
           break;
         case 111:
-          hash = (37 * hash) + MARKETDATA_FIELD_NUMBER;
+          hash = (37 * hash) + MARKET_DATA_FIELD_NUMBER;
           hash = (53 * hash) + getMarketData().hashCode();
           break;
         case 112:
-          hash = (37 * hash) + NODESIGNATURE_FIELD_NUMBER;
+          hash = (37 * hash) + NODE_SIGNATURE_FIELD_NUMBER;
           hash = (53 * hash) + getNodeSignature().hashCode();
           break;
         case 113:
-          hash = (37 * hash) + LOSSSOCIALIZATION_FIELD_NUMBER;
+          hash = (37 * hash) + LOSS_SOCIALIZATION_FIELD_NUMBER;
           hash = (53 * hash) + getLossSocialization().hashCode();
           break;
         case 114:
-          hash = (37 * hash) + SETTLEPOSITION_FIELD_NUMBER;
+          hash = (37 * hash) + SETTLE_POSITION_FIELD_NUMBER;
           hash = (53 * hash) + getSettlePosition().hashCode();
           break;
         case 115:
-          hash = (37 * hash) + SETTLEDISTRESSED_FIELD_NUMBER;
+          hash = (37 * hash) + SETTLE_DISTRESSED_FIELD_NUMBER;
           hash = (53 * hash) + getSettleDistressed().hashCode();
           break;
         case 116:
-          hash = (37 * hash) + MARKETCREATED_FIELD_NUMBER;
+          hash = (37 * hash) + MARKET_CREATED_FIELD_NUMBER;
           hash = (53 * hash) + getMarketCreated().hashCode();
           break;
         case 117:
@@ -14521,7 +14521,7 @@ public final class Events {
           hash = (53 * hash) + getAsset().hashCode();
           break;
         case 118:
-          hash = (37 * hash) + MARKETTICK_FIELD_NUMBER;
+          hash = (37 * hash) + MARKET_TICK_FIELD_NUMBER;
           hash = (53 * hash) + getMarketTick().hashCode();
           break;
         case 119:
@@ -14537,19 +14537,19 @@ public final class Events {
           hash = (53 * hash) + getAuction().hashCode();
           break;
         case 122:
-          hash = (37 * hash) + RISKFACTOR_FIELD_NUMBER;
+          hash = (37 * hash) + RISK_FACTOR_FIELD_NUMBER;
           hash = (53 * hash) + getRiskFactor().hashCode();
           break;
         case 123:
-          hash = (37 * hash) + NETWORKPARAMETER_FIELD_NUMBER;
+          hash = (37 * hash) + NETWORK_PARAMETER_FIELD_NUMBER;
           hash = (53 * hash) + getNetworkParameter().hashCode();
           break;
         case 124:
-          hash = (37 * hash) + LIQUIDITYPROVISION_FIELD_NUMBER;
+          hash = (37 * hash) + LIQUIDITY_PROVISION_FIELD_NUMBER;
           hash = (53 * hash) + getLiquidityProvision().hashCode();
           break;
         case 125:
-          hash = (37 * hash) + MARKETUPDATED_FIELD_NUMBER;
+          hash = (37 * hash) + MARKET_UPDATED_FIELD_NUMBER;
           hash = (53 * hash) + getMarketUpdated().hashCode();
           break;
         case 1001:
@@ -14557,7 +14557,7 @@ public final class Events {
           hash = (53 * hash) + getMarket().hashCode();
           break;
         case 2001:
-          hash = (37 * hash) + TXERREVENT_FIELD_NUMBER;
+          hash = (37 * hash) + TX_ERR_EVENT_FIELD_NUMBER;
           hash = (53 * hash) + getTxErrEvent().hashCode();
           break;
         case 0:
@@ -14700,7 +14700,7 @@ public final class Events {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        iD_ = "";
+        id_ = "";
 
         block_ = "";
 
@@ -14734,7 +14734,7 @@ public final class Events {
       @java.lang.Override
       public io.vegaprotocol.vega.Events.BusEvent buildPartial() {
         io.vegaprotocol.vega.Events.BusEvent result = new io.vegaprotocol.vega.Events.BusEvent(this);
-        result.iD_ = iD_;
+        result.id_ = id_;
         result.block_ = block_;
         result.type_ = type_;
         if (eventCase_ == 101) {
@@ -14975,8 +14975,8 @@ public final class Events {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Events.BusEvent other) {
         if (other == io.vegaprotocol.vega.Events.BusEvent.getDefaultInstance()) return this;
-        if (!other.getID().isEmpty()) {
-          iD_ = other.iD_;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
           onChanged();
         }
         if (!other.getBlock().isEmpty()) {
@@ -14987,15 +14987,15 @@ public final class Events {
           setTypeValue(other.getTypeValue());
         }
         switch (other.getEventCase()) {
-          case TIMEUPDATE: {
+          case TIME_UPDATE: {
             mergeTimeUpdate(other.getTimeUpdate());
             break;
           }
-          case TRANSFERRESPONSES: {
+          case TRANSFER_RESPONSES: {
             mergeTransferResponses(other.getTransferResponses());
             break;
           }
-          case POSITIONRESOLUTION: {
+          case POSITION_RESOLUTION: {
             mergePositionResolution(other.getPositionResolution());
             break;
           }
@@ -15015,7 +15015,7 @@ public final class Events {
             mergeTrade(other.getTrade());
             break;
           }
-          case MARGINLEVELS: {
+          case MARGIN_LEVELS: {
             mergeMarginLevels(other.getMarginLevels());
             break;
           }
@@ -15027,27 +15027,27 @@ public final class Events {
             mergeVote(other.getVote());
             break;
           }
-          case MARKETDATA: {
+          case MARKET_DATA: {
             mergeMarketData(other.getMarketData());
             break;
           }
-          case NODESIGNATURE: {
+          case NODE_SIGNATURE: {
             mergeNodeSignature(other.getNodeSignature());
             break;
           }
-          case LOSSSOCIALIZATION: {
+          case LOSS_SOCIALIZATION: {
             mergeLossSocialization(other.getLossSocialization());
             break;
           }
-          case SETTLEPOSITION: {
+          case SETTLE_POSITION: {
             mergeSettlePosition(other.getSettlePosition());
             break;
           }
-          case SETTLEDISTRESSED: {
+          case SETTLE_DISTRESSED: {
             mergeSettleDistressed(other.getSettleDistressed());
             break;
           }
-          case MARKETCREATED: {
+          case MARKET_CREATED: {
             mergeMarketCreated(other.getMarketCreated());
             break;
           }
@@ -15055,7 +15055,7 @@ public final class Events {
             mergeAsset(other.getAsset());
             break;
           }
-          case MARKETTICK: {
+          case MARKET_TICK: {
             mergeMarketTick(other.getMarketTick());
             break;
           }
@@ -15071,19 +15071,19 @@ public final class Events {
             mergeAuction(other.getAuction());
             break;
           }
-          case RISKFACTOR: {
+          case RISK_FACTOR: {
             mergeRiskFactor(other.getRiskFactor());
             break;
           }
-          case NETWORKPARAMETER: {
+          case NETWORK_PARAMETER: {
             mergeNetworkParameter(other.getNetworkParameter());
             break;
           }
-          case LIQUIDITYPROVISION: {
+          case LIQUIDITY_PROVISION: {
             mergeLiquidityProvision(other.getLiquidityProvision());
             break;
           }
-          case MARKETUPDATED: {
+          case MARKET_UPDATED: {
             mergeMarketUpdated(other.getMarketUpdated());
             break;
           }
@@ -15091,7 +15091,7 @@ public final class Events {
             mergeMarket(other.getMarket());
             break;
           }
-          case TXERREVENT: {
+          case TX_ERR_EVENT: {
             mergeTxErrEvent(other.getTxErrEvent());
             break;
           }
@@ -15143,22 +15143,22 @@ public final class Events {
       }
 
 
-      private java.lang.Object iD_ = "";
+      private java.lang.Object id_ = "";
       /**
        * <pre>
        * A unique event identifier for the message
        * </pre>
        *
-       * <code>string ID = 1 [json_name = "ID"];</code>
-       * @return The iD.
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The id.
        */
-      public java.lang.String getID() {
-        java.lang.Object ref = iD_;
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          iD_ = s;
+          id_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -15169,17 +15169,17 @@ public final class Events {
        * A unique event identifier for the message
        * </pre>
        *
-       * <code>string ID = 1 [json_name = "ID"];</code>
-       * @return The bytes for iD.
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
-          getIDBytes() {
-        java.lang.Object ref = iD_;
+          getIdBytes() {
+        java.lang.Object ref = id_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          iD_ = b;
+          id_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -15190,17 +15190,17 @@ public final class Events {
        * A unique event identifier for the message
        * </pre>
        *
-       * <code>string ID = 1 [json_name = "ID"];</code>
-       * @param value The iD to set.
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setID(
+      public Builder setId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        iD_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
@@ -15209,12 +15209,12 @@ public final class Events {
        * A unique event identifier for the message
        * </pre>
        *
-       * <code>string ID = 1 [json_name = "ID"];</code>
+       * <code>string id = 1 [json_name = "id"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearID() {
+      public Builder clearId() {
 
-        iD_ = getDefaultInstance().getID();
+        id_ = getDefaultInstance().getId();
         onChanged();
         return this;
       }
@@ -15223,18 +15223,18 @@ public final class Events {
        * A unique event identifier for the message
        * </pre>
        *
-       * <code>string ID = 1 [json_name = "ID"];</code>
-       * @param value The bytes for iD to set.
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
-      public Builder setIDBytes(
+      public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        iD_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
@@ -15413,10 +15413,10 @@ public final class Events {
           io.vegaprotocol.vega.Events.TimeUpdate, io.vegaprotocol.vega.Events.TimeUpdate.Builder, io.vegaprotocol.vega.Events.TimeUpdateOrBuilder> timeUpdateBuilder_;
       /**
        * <pre>
-       * Time update events, see [TimeUpdate](#vega.TimeUpdate)
+       * Time update events - See [TimeUpdate](#vega.TimeUpdate)
        * </pre>
        *
-       * <code>.vega.TimeUpdate timeUpdate = 101 [json_name = "timeUpdate"];</code>
+       * <code>.vega.TimeUpdate time_update = 101 [json_name = "timeUpdate"];</code>
        * @return Whether the timeUpdate field is set.
        */
       @java.lang.Override
@@ -15425,10 +15425,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Time update events, see [TimeUpdate](#vega.TimeUpdate)
+       * Time update events - See [TimeUpdate](#vega.TimeUpdate)
        * </pre>
        *
-       * <code>.vega.TimeUpdate timeUpdate = 101 [json_name = "timeUpdate"];</code>
+       * <code>.vega.TimeUpdate time_update = 101 [json_name = "timeUpdate"];</code>
        * @return The timeUpdate.
        */
       @java.lang.Override
@@ -15447,10 +15447,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Time update events, see [TimeUpdate](#vega.TimeUpdate)
+       * Time update events - See [TimeUpdate](#vega.TimeUpdate)
        * </pre>
        *
-       * <code>.vega.TimeUpdate timeUpdate = 101 [json_name = "timeUpdate"];</code>
+       * <code>.vega.TimeUpdate time_update = 101 [json_name = "timeUpdate"];</code>
        */
       public Builder setTimeUpdate(io.vegaprotocol.vega.Events.TimeUpdate value) {
         if (timeUpdateBuilder_ == null) {
@@ -15467,10 +15467,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Time update events, see [TimeUpdate](#vega.TimeUpdate)
+       * Time update events - See [TimeUpdate](#vega.TimeUpdate)
        * </pre>
        *
-       * <code>.vega.TimeUpdate timeUpdate = 101 [json_name = "timeUpdate"];</code>
+       * <code>.vega.TimeUpdate time_update = 101 [json_name = "timeUpdate"];</code>
        */
       public Builder setTimeUpdate(
           io.vegaprotocol.vega.Events.TimeUpdate.Builder builderForValue) {
@@ -15485,10 +15485,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Time update events, see [TimeUpdate](#vega.TimeUpdate)
+       * Time update events - See [TimeUpdate](#vega.TimeUpdate)
        * </pre>
        *
-       * <code>.vega.TimeUpdate timeUpdate = 101 [json_name = "timeUpdate"];</code>
+       * <code>.vega.TimeUpdate time_update = 101 [json_name = "timeUpdate"];</code>
        */
       public Builder mergeTimeUpdate(io.vegaprotocol.vega.Events.TimeUpdate value) {
         if (timeUpdateBuilder_ == null) {
@@ -15511,10 +15511,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Time update events, see [TimeUpdate](#vega.TimeUpdate)
+       * Time update events - See [TimeUpdate](#vega.TimeUpdate)
        * </pre>
        *
-       * <code>.vega.TimeUpdate timeUpdate = 101 [json_name = "timeUpdate"];</code>
+       * <code>.vega.TimeUpdate time_update = 101 [json_name = "timeUpdate"];</code>
        */
       public Builder clearTimeUpdate() {
         if (timeUpdateBuilder_ == null) {
@@ -15534,20 +15534,20 @@ public final class Events {
       }
       /**
        * <pre>
-       * Time update events, see [TimeUpdate](#vega.TimeUpdate)
+       * Time update events - See [TimeUpdate](#vega.TimeUpdate)
        * </pre>
        *
-       * <code>.vega.TimeUpdate timeUpdate = 101 [json_name = "timeUpdate"];</code>
+       * <code>.vega.TimeUpdate time_update = 101 [json_name = "timeUpdate"];</code>
        */
       public io.vegaprotocol.vega.Events.TimeUpdate.Builder getTimeUpdateBuilder() {
         return getTimeUpdateFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Time update events, see [TimeUpdate](#vega.TimeUpdate)
+       * Time update events - See [TimeUpdate](#vega.TimeUpdate)
        * </pre>
        *
-       * <code>.vega.TimeUpdate timeUpdate = 101 [json_name = "timeUpdate"];</code>
+       * <code>.vega.TimeUpdate time_update = 101 [json_name = "timeUpdate"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Events.TimeUpdateOrBuilder getTimeUpdateOrBuilder() {
@@ -15562,10 +15562,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Time update events, see [TimeUpdate](#vega.TimeUpdate)
+       * Time update events - See [TimeUpdate](#vega.TimeUpdate)
        * </pre>
        *
-       * <code>.vega.TimeUpdate timeUpdate = 101 [json_name = "timeUpdate"];</code>
+       * <code>.vega.TimeUpdate time_update = 101 [json_name = "timeUpdate"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Events.TimeUpdate, io.vegaprotocol.vega.Events.TimeUpdate.Builder, io.vegaprotocol.vega.Events.TimeUpdateOrBuilder>
@@ -15590,10 +15590,10 @@ public final class Events {
           io.vegaprotocol.vega.Events.TransferResponses, io.vegaprotocol.vega.Events.TransferResponses.Builder, io.vegaprotocol.vega.Events.TransferResponsesOrBuilder> transferResponsesBuilder_;
       /**
        * <pre>
-       * Transfer responses update events, see [TransferResponses](#vega.TransferResponses)
+       * Transfer responses update events - See [TransferResponses](#vega.TransferResponses)
        * </pre>
        *
-       * <code>.vega.TransferResponses transferResponses = 102 [json_name = "transferResponses"];</code>
+       * <code>.vega.TransferResponses transfer_responses = 102 [json_name = "transferResponses"];</code>
        * @return Whether the transferResponses field is set.
        */
       @java.lang.Override
@@ -15602,10 +15602,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Transfer responses update events, see [TransferResponses](#vega.TransferResponses)
+       * Transfer responses update events - See [TransferResponses](#vega.TransferResponses)
        * </pre>
        *
-       * <code>.vega.TransferResponses transferResponses = 102 [json_name = "transferResponses"];</code>
+       * <code>.vega.TransferResponses transfer_responses = 102 [json_name = "transferResponses"];</code>
        * @return The transferResponses.
        */
       @java.lang.Override
@@ -15624,10 +15624,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Transfer responses update events, see [TransferResponses](#vega.TransferResponses)
+       * Transfer responses update events - See [TransferResponses](#vega.TransferResponses)
        * </pre>
        *
-       * <code>.vega.TransferResponses transferResponses = 102 [json_name = "transferResponses"];</code>
+       * <code>.vega.TransferResponses transfer_responses = 102 [json_name = "transferResponses"];</code>
        */
       public Builder setTransferResponses(io.vegaprotocol.vega.Events.TransferResponses value) {
         if (transferResponsesBuilder_ == null) {
@@ -15644,10 +15644,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Transfer responses update events, see [TransferResponses](#vega.TransferResponses)
+       * Transfer responses update events - See [TransferResponses](#vega.TransferResponses)
        * </pre>
        *
-       * <code>.vega.TransferResponses transferResponses = 102 [json_name = "transferResponses"];</code>
+       * <code>.vega.TransferResponses transfer_responses = 102 [json_name = "transferResponses"];</code>
        */
       public Builder setTransferResponses(
           io.vegaprotocol.vega.Events.TransferResponses.Builder builderForValue) {
@@ -15662,10 +15662,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Transfer responses update events, see [TransferResponses](#vega.TransferResponses)
+       * Transfer responses update events - See [TransferResponses](#vega.TransferResponses)
        * </pre>
        *
-       * <code>.vega.TransferResponses transferResponses = 102 [json_name = "transferResponses"];</code>
+       * <code>.vega.TransferResponses transfer_responses = 102 [json_name = "transferResponses"];</code>
        */
       public Builder mergeTransferResponses(io.vegaprotocol.vega.Events.TransferResponses value) {
         if (transferResponsesBuilder_ == null) {
@@ -15688,10 +15688,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Transfer responses update events, see [TransferResponses](#vega.TransferResponses)
+       * Transfer responses update events - See [TransferResponses](#vega.TransferResponses)
        * </pre>
        *
-       * <code>.vega.TransferResponses transferResponses = 102 [json_name = "transferResponses"];</code>
+       * <code>.vega.TransferResponses transfer_responses = 102 [json_name = "transferResponses"];</code>
        */
       public Builder clearTransferResponses() {
         if (transferResponsesBuilder_ == null) {
@@ -15711,20 +15711,20 @@ public final class Events {
       }
       /**
        * <pre>
-       * Transfer responses update events, see [TransferResponses](#vega.TransferResponses)
+       * Transfer responses update events - See [TransferResponses](#vega.TransferResponses)
        * </pre>
        *
-       * <code>.vega.TransferResponses transferResponses = 102 [json_name = "transferResponses"];</code>
+       * <code>.vega.TransferResponses transfer_responses = 102 [json_name = "transferResponses"];</code>
        */
       public io.vegaprotocol.vega.Events.TransferResponses.Builder getTransferResponsesBuilder() {
         return getTransferResponsesFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Transfer responses update events, see [TransferResponses](#vega.TransferResponses)
+       * Transfer responses update events - See [TransferResponses](#vega.TransferResponses)
        * </pre>
        *
-       * <code>.vega.TransferResponses transferResponses = 102 [json_name = "transferResponses"];</code>
+       * <code>.vega.TransferResponses transfer_responses = 102 [json_name = "transferResponses"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Events.TransferResponsesOrBuilder getTransferResponsesOrBuilder() {
@@ -15739,10 +15739,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Transfer responses update events, see [TransferResponses](#vega.TransferResponses)
+       * Transfer responses update events - See [TransferResponses](#vega.TransferResponses)
        * </pre>
        *
-       * <code>.vega.TransferResponses transferResponses = 102 [json_name = "transferResponses"];</code>
+       * <code>.vega.TransferResponses transfer_responses = 102 [json_name = "transferResponses"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Events.TransferResponses, io.vegaprotocol.vega.Events.TransferResponses.Builder, io.vegaprotocol.vega.Events.TransferResponsesOrBuilder>
@@ -15767,10 +15767,10 @@ public final class Events {
           io.vegaprotocol.vega.Events.PositionResolution, io.vegaprotocol.vega.Events.PositionResolution.Builder, io.vegaprotocol.vega.Events.PositionResolutionOrBuilder> positionResolutionBuilder_;
       /**
        * <pre>
-       * Position resolution events, see [PositionResolution](#vega.PositionResolution)
+       * Position resolution events - See [PositionResolution](#vega.PositionResolution)
        * </pre>
        *
-       * <code>.vega.PositionResolution positionResolution = 103 [json_name = "positionResolution"];</code>
+       * <code>.vega.PositionResolution position_resolution = 103 [json_name = "positionResolution"];</code>
        * @return Whether the positionResolution field is set.
        */
       @java.lang.Override
@@ -15779,10 +15779,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position resolution events, see [PositionResolution](#vega.PositionResolution)
+       * Position resolution events - See [PositionResolution](#vega.PositionResolution)
        * </pre>
        *
-       * <code>.vega.PositionResolution positionResolution = 103 [json_name = "positionResolution"];</code>
+       * <code>.vega.PositionResolution position_resolution = 103 [json_name = "positionResolution"];</code>
        * @return The positionResolution.
        */
       @java.lang.Override
@@ -15801,10 +15801,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position resolution events, see [PositionResolution](#vega.PositionResolution)
+       * Position resolution events - See [PositionResolution](#vega.PositionResolution)
        * </pre>
        *
-       * <code>.vega.PositionResolution positionResolution = 103 [json_name = "positionResolution"];</code>
+       * <code>.vega.PositionResolution position_resolution = 103 [json_name = "positionResolution"];</code>
        */
       public Builder setPositionResolution(io.vegaprotocol.vega.Events.PositionResolution value) {
         if (positionResolutionBuilder_ == null) {
@@ -15821,10 +15821,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position resolution events, see [PositionResolution](#vega.PositionResolution)
+       * Position resolution events - See [PositionResolution](#vega.PositionResolution)
        * </pre>
        *
-       * <code>.vega.PositionResolution positionResolution = 103 [json_name = "positionResolution"];</code>
+       * <code>.vega.PositionResolution position_resolution = 103 [json_name = "positionResolution"];</code>
        */
       public Builder setPositionResolution(
           io.vegaprotocol.vega.Events.PositionResolution.Builder builderForValue) {
@@ -15839,10 +15839,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position resolution events, see [PositionResolution](#vega.PositionResolution)
+       * Position resolution events - See [PositionResolution](#vega.PositionResolution)
        * </pre>
        *
-       * <code>.vega.PositionResolution positionResolution = 103 [json_name = "positionResolution"];</code>
+       * <code>.vega.PositionResolution position_resolution = 103 [json_name = "positionResolution"];</code>
        */
       public Builder mergePositionResolution(io.vegaprotocol.vega.Events.PositionResolution value) {
         if (positionResolutionBuilder_ == null) {
@@ -15865,10 +15865,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position resolution events, see [PositionResolution](#vega.PositionResolution)
+       * Position resolution events - See [PositionResolution](#vega.PositionResolution)
        * </pre>
        *
-       * <code>.vega.PositionResolution positionResolution = 103 [json_name = "positionResolution"];</code>
+       * <code>.vega.PositionResolution position_resolution = 103 [json_name = "positionResolution"];</code>
        */
       public Builder clearPositionResolution() {
         if (positionResolutionBuilder_ == null) {
@@ -15888,20 +15888,20 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position resolution events, see [PositionResolution](#vega.PositionResolution)
+       * Position resolution events - See [PositionResolution](#vega.PositionResolution)
        * </pre>
        *
-       * <code>.vega.PositionResolution positionResolution = 103 [json_name = "positionResolution"];</code>
+       * <code>.vega.PositionResolution position_resolution = 103 [json_name = "positionResolution"];</code>
        */
       public io.vegaprotocol.vega.Events.PositionResolution.Builder getPositionResolutionBuilder() {
         return getPositionResolutionFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Position resolution events, see [PositionResolution](#vega.PositionResolution)
+       * Position resolution events - See [PositionResolution](#vega.PositionResolution)
        * </pre>
        *
-       * <code>.vega.PositionResolution positionResolution = 103 [json_name = "positionResolution"];</code>
+       * <code>.vega.PositionResolution position_resolution = 103 [json_name = "positionResolution"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Events.PositionResolutionOrBuilder getPositionResolutionOrBuilder() {
@@ -15916,10 +15916,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position resolution events, see [PositionResolution](#vega.PositionResolution)
+       * Position resolution events - See [PositionResolution](#vega.PositionResolution)
        * </pre>
        *
-       * <code>.vega.PositionResolution positionResolution = 103 [json_name = "positionResolution"];</code>
+       * <code>.vega.PositionResolution position_resolution = 103 [json_name = "positionResolution"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Events.PositionResolution, io.vegaprotocol.vega.Events.PositionResolution.Builder, io.vegaprotocol.vega.Events.PositionResolutionOrBuilder>
@@ -16655,7 +16655,7 @@ public final class Events {
        * Margin level update events
        * </pre>
        *
-       * <code>.vega.MarginLevels marginLevels = 108 [json_name = "marginLevels"];</code>
+       * <code>.vega.MarginLevels margin_levels = 108 [json_name = "marginLevels"];</code>
        * @return Whether the marginLevels field is set.
        */
       @java.lang.Override
@@ -16667,7 +16667,7 @@ public final class Events {
        * Margin level update events
        * </pre>
        *
-       * <code>.vega.MarginLevels marginLevels = 108 [json_name = "marginLevels"];</code>
+       * <code>.vega.MarginLevels margin_levels = 108 [json_name = "marginLevels"];</code>
        * @return The marginLevels.
        */
       @java.lang.Override
@@ -16689,7 +16689,7 @@ public final class Events {
        * Margin level update events
        * </pre>
        *
-       * <code>.vega.MarginLevels marginLevels = 108 [json_name = "marginLevels"];</code>
+       * <code>.vega.MarginLevels margin_levels = 108 [json_name = "marginLevels"];</code>
        */
       public Builder setMarginLevels(io.vegaprotocol.vega.Vega.MarginLevels value) {
         if (marginLevelsBuilder_ == null) {
@@ -16709,7 +16709,7 @@ public final class Events {
        * Margin level update events
        * </pre>
        *
-       * <code>.vega.MarginLevels marginLevels = 108 [json_name = "marginLevels"];</code>
+       * <code>.vega.MarginLevels margin_levels = 108 [json_name = "marginLevels"];</code>
        */
       public Builder setMarginLevels(
           io.vegaprotocol.vega.Vega.MarginLevels.Builder builderForValue) {
@@ -16727,7 +16727,7 @@ public final class Events {
        * Margin level update events
        * </pre>
        *
-       * <code>.vega.MarginLevels marginLevels = 108 [json_name = "marginLevels"];</code>
+       * <code>.vega.MarginLevels margin_levels = 108 [json_name = "marginLevels"];</code>
        */
       public Builder mergeMarginLevels(io.vegaprotocol.vega.Vega.MarginLevels value) {
         if (marginLevelsBuilder_ == null) {
@@ -16753,7 +16753,7 @@ public final class Events {
        * Margin level update events
        * </pre>
        *
-       * <code>.vega.MarginLevels marginLevels = 108 [json_name = "marginLevels"];</code>
+       * <code>.vega.MarginLevels margin_levels = 108 [json_name = "marginLevels"];</code>
        */
       public Builder clearMarginLevels() {
         if (marginLevelsBuilder_ == null) {
@@ -16776,7 +16776,7 @@ public final class Events {
        * Margin level update events
        * </pre>
        *
-       * <code>.vega.MarginLevels marginLevels = 108 [json_name = "marginLevels"];</code>
+       * <code>.vega.MarginLevels margin_levels = 108 [json_name = "marginLevels"];</code>
        */
       public io.vegaprotocol.vega.Vega.MarginLevels.Builder getMarginLevelsBuilder() {
         return getMarginLevelsFieldBuilder().getBuilder();
@@ -16786,7 +16786,7 @@ public final class Events {
        * Margin level update events
        * </pre>
        *
-       * <code>.vega.MarginLevels marginLevels = 108 [json_name = "marginLevels"];</code>
+       * <code>.vega.MarginLevels margin_levels = 108 [json_name = "marginLevels"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Vega.MarginLevelsOrBuilder getMarginLevelsOrBuilder() {
@@ -16804,7 +16804,7 @@ public final class Events {
        * Margin level update events
        * </pre>
        *
-       * <code>.vega.MarginLevels marginLevels = 108 [json_name = "marginLevels"];</code>
+       * <code>.vega.MarginLevels margin_levels = 108 [json_name = "marginLevels"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.MarginLevels, io.vegaprotocol.vega.Vega.MarginLevels.Builder, io.vegaprotocol.vega.Vega.MarginLevelsOrBuilder>
@@ -17186,7 +17186,7 @@ public final class Events {
        * Market data events
        * </pre>
        *
-       * <code>.vega.MarketData marketData = 111 [json_name = "marketData"];</code>
+       * <code>.vega.MarketData market_data = 111 [json_name = "marketData"];</code>
        * @return Whether the marketData field is set.
        */
       @java.lang.Override
@@ -17198,7 +17198,7 @@ public final class Events {
        * Market data events
        * </pre>
        *
-       * <code>.vega.MarketData marketData = 111 [json_name = "marketData"];</code>
+       * <code>.vega.MarketData market_data = 111 [json_name = "marketData"];</code>
        * @return The marketData.
        */
       @java.lang.Override
@@ -17220,7 +17220,7 @@ public final class Events {
        * Market data events
        * </pre>
        *
-       * <code>.vega.MarketData marketData = 111 [json_name = "marketData"];</code>
+       * <code>.vega.MarketData market_data = 111 [json_name = "marketData"];</code>
        */
       public Builder setMarketData(io.vegaprotocol.vega.Vega.MarketData value) {
         if (marketDataBuilder_ == null) {
@@ -17240,7 +17240,7 @@ public final class Events {
        * Market data events
        * </pre>
        *
-       * <code>.vega.MarketData marketData = 111 [json_name = "marketData"];</code>
+       * <code>.vega.MarketData market_data = 111 [json_name = "marketData"];</code>
        */
       public Builder setMarketData(
           io.vegaprotocol.vega.Vega.MarketData.Builder builderForValue) {
@@ -17258,7 +17258,7 @@ public final class Events {
        * Market data events
        * </pre>
        *
-       * <code>.vega.MarketData marketData = 111 [json_name = "marketData"];</code>
+       * <code>.vega.MarketData market_data = 111 [json_name = "marketData"];</code>
        */
       public Builder mergeMarketData(io.vegaprotocol.vega.Vega.MarketData value) {
         if (marketDataBuilder_ == null) {
@@ -17284,7 +17284,7 @@ public final class Events {
        * Market data events
        * </pre>
        *
-       * <code>.vega.MarketData marketData = 111 [json_name = "marketData"];</code>
+       * <code>.vega.MarketData market_data = 111 [json_name = "marketData"];</code>
        */
       public Builder clearMarketData() {
         if (marketDataBuilder_ == null) {
@@ -17307,7 +17307,7 @@ public final class Events {
        * Market data events
        * </pre>
        *
-       * <code>.vega.MarketData marketData = 111 [json_name = "marketData"];</code>
+       * <code>.vega.MarketData market_data = 111 [json_name = "marketData"];</code>
        */
       public io.vegaprotocol.vega.Vega.MarketData.Builder getMarketDataBuilder() {
         return getMarketDataFieldBuilder().getBuilder();
@@ -17317,7 +17317,7 @@ public final class Events {
        * Market data events
        * </pre>
        *
-       * <code>.vega.MarketData marketData = 111 [json_name = "marketData"];</code>
+       * <code>.vega.MarketData market_data = 111 [json_name = "marketData"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Vega.MarketDataOrBuilder getMarketDataOrBuilder() {
@@ -17335,7 +17335,7 @@ public final class Events {
        * Market data events
        * </pre>
        *
-       * <code>.vega.MarketData marketData = 111 [json_name = "marketData"];</code>
+       * <code>.vega.MarketData market_data = 111 [json_name = "marketData"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.MarketData, io.vegaprotocol.vega.Vega.MarketData.Builder, io.vegaprotocol.vega.Vega.MarketDataOrBuilder>
@@ -17363,7 +17363,7 @@ public final class Events {
        * Node signature events
        * </pre>
        *
-       * <code>.vega.NodeSignature nodeSignature = 112 [json_name = "nodeSignature"];</code>
+       * <code>.vega.NodeSignature node_signature = 112 [json_name = "nodeSignature"];</code>
        * @return Whether the nodeSignature field is set.
        */
       @java.lang.Override
@@ -17375,7 +17375,7 @@ public final class Events {
        * Node signature events
        * </pre>
        *
-       * <code>.vega.NodeSignature nodeSignature = 112 [json_name = "nodeSignature"];</code>
+       * <code>.vega.NodeSignature node_signature = 112 [json_name = "nodeSignature"];</code>
        * @return The nodeSignature.
        */
       @java.lang.Override
@@ -17397,7 +17397,7 @@ public final class Events {
        * Node signature events
        * </pre>
        *
-       * <code>.vega.NodeSignature nodeSignature = 112 [json_name = "nodeSignature"];</code>
+       * <code>.vega.NodeSignature node_signature = 112 [json_name = "nodeSignature"];</code>
        */
       public Builder setNodeSignature(io.vegaprotocol.vega.Vega.NodeSignature value) {
         if (nodeSignatureBuilder_ == null) {
@@ -17417,7 +17417,7 @@ public final class Events {
        * Node signature events
        * </pre>
        *
-       * <code>.vega.NodeSignature nodeSignature = 112 [json_name = "nodeSignature"];</code>
+       * <code>.vega.NodeSignature node_signature = 112 [json_name = "nodeSignature"];</code>
        */
       public Builder setNodeSignature(
           io.vegaprotocol.vega.Vega.NodeSignature.Builder builderForValue) {
@@ -17435,7 +17435,7 @@ public final class Events {
        * Node signature events
        * </pre>
        *
-       * <code>.vega.NodeSignature nodeSignature = 112 [json_name = "nodeSignature"];</code>
+       * <code>.vega.NodeSignature node_signature = 112 [json_name = "nodeSignature"];</code>
        */
       public Builder mergeNodeSignature(io.vegaprotocol.vega.Vega.NodeSignature value) {
         if (nodeSignatureBuilder_ == null) {
@@ -17461,7 +17461,7 @@ public final class Events {
        * Node signature events
        * </pre>
        *
-       * <code>.vega.NodeSignature nodeSignature = 112 [json_name = "nodeSignature"];</code>
+       * <code>.vega.NodeSignature node_signature = 112 [json_name = "nodeSignature"];</code>
        */
       public Builder clearNodeSignature() {
         if (nodeSignatureBuilder_ == null) {
@@ -17484,7 +17484,7 @@ public final class Events {
        * Node signature events
        * </pre>
        *
-       * <code>.vega.NodeSignature nodeSignature = 112 [json_name = "nodeSignature"];</code>
+       * <code>.vega.NodeSignature node_signature = 112 [json_name = "nodeSignature"];</code>
        */
       public io.vegaprotocol.vega.Vega.NodeSignature.Builder getNodeSignatureBuilder() {
         return getNodeSignatureFieldBuilder().getBuilder();
@@ -17494,7 +17494,7 @@ public final class Events {
        * Node signature events
        * </pre>
        *
-       * <code>.vega.NodeSignature nodeSignature = 112 [json_name = "nodeSignature"];</code>
+       * <code>.vega.NodeSignature node_signature = 112 [json_name = "nodeSignature"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Vega.NodeSignatureOrBuilder getNodeSignatureOrBuilder() {
@@ -17512,7 +17512,7 @@ public final class Events {
        * Node signature events
        * </pre>
        *
-       * <code>.vega.NodeSignature nodeSignature = 112 [json_name = "nodeSignature"];</code>
+       * <code>.vega.NodeSignature node_signature = 112 [json_name = "nodeSignature"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.NodeSignature, io.vegaprotocol.vega.Vega.NodeSignature.Builder, io.vegaprotocol.vega.Vega.NodeSignatureOrBuilder>
@@ -17537,10 +17537,10 @@ public final class Events {
           io.vegaprotocol.vega.Events.LossSocialization, io.vegaprotocol.vega.Events.LossSocialization.Builder, io.vegaprotocol.vega.Events.LossSocializationOrBuilder> lossSocializationBuilder_;
       /**
        * <pre>
-       * Loss socialization events, see [LossSocialization](#vega.LossSocialization)
+       * Loss socialization events - See [LossSocialization](#vega.LossSocialization)
        * </pre>
        *
-       * <code>.vega.LossSocialization lossSocialization = 113 [json_name = "lossSocialization"];</code>
+       * <code>.vega.LossSocialization loss_socialization = 113 [json_name = "lossSocialization"];</code>
        * @return Whether the lossSocialization field is set.
        */
       @java.lang.Override
@@ -17549,10 +17549,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Loss socialization events, see [LossSocialization](#vega.LossSocialization)
+       * Loss socialization events - See [LossSocialization](#vega.LossSocialization)
        * </pre>
        *
-       * <code>.vega.LossSocialization lossSocialization = 113 [json_name = "lossSocialization"];</code>
+       * <code>.vega.LossSocialization loss_socialization = 113 [json_name = "lossSocialization"];</code>
        * @return The lossSocialization.
        */
       @java.lang.Override
@@ -17571,10 +17571,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Loss socialization events, see [LossSocialization](#vega.LossSocialization)
+       * Loss socialization events - See [LossSocialization](#vega.LossSocialization)
        * </pre>
        *
-       * <code>.vega.LossSocialization lossSocialization = 113 [json_name = "lossSocialization"];</code>
+       * <code>.vega.LossSocialization loss_socialization = 113 [json_name = "lossSocialization"];</code>
        */
       public Builder setLossSocialization(io.vegaprotocol.vega.Events.LossSocialization value) {
         if (lossSocializationBuilder_ == null) {
@@ -17591,10 +17591,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Loss socialization events, see [LossSocialization](#vega.LossSocialization)
+       * Loss socialization events - See [LossSocialization](#vega.LossSocialization)
        * </pre>
        *
-       * <code>.vega.LossSocialization lossSocialization = 113 [json_name = "lossSocialization"];</code>
+       * <code>.vega.LossSocialization loss_socialization = 113 [json_name = "lossSocialization"];</code>
        */
       public Builder setLossSocialization(
           io.vegaprotocol.vega.Events.LossSocialization.Builder builderForValue) {
@@ -17609,10 +17609,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Loss socialization events, see [LossSocialization](#vega.LossSocialization)
+       * Loss socialization events - See [LossSocialization](#vega.LossSocialization)
        * </pre>
        *
-       * <code>.vega.LossSocialization lossSocialization = 113 [json_name = "lossSocialization"];</code>
+       * <code>.vega.LossSocialization loss_socialization = 113 [json_name = "lossSocialization"];</code>
        */
       public Builder mergeLossSocialization(io.vegaprotocol.vega.Events.LossSocialization value) {
         if (lossSocializationBuilder_ == null) {
@@ -17635,10 +17635,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Loss socialization events, see [LossSocialization](#vega.LossSocialization)
+       * Loss socialization events - See [LossSocialization](#vega.LossSocialization)
        * </pre>
        *
-       * <code>.vega.LossSocialization lossSocialization = 113 [json_name = "lossSocialization"];</code>
+       * <code>.vega.LossSocialization loss_socialization = 113 [json_name = "lossSocialization"];</code>
        */
       public Builder clearLossSocialization() {
         if (lossSocializationBuilder_ == null) {
@@ -17658,20 +17658,20 @@ public final class Events {
       }
       /**
        * <pre>
-       * Loss socialization events, see [LossSocialization](#vega.LossSocialization)
+       * Loss socialization events - See [LossSocialization](#vega.LossSocialization)
        * </pre>
        *
-       * <code>.vega.LossSocialization lossSocialization = 113 [json_name = "lossSocialization"];</code>
+       * <code>.vega.LossSocialization loss_socialization = 113 [json_name = "lossSocialization"];</code>
        */
       public io.vegaprotocol.vega.Events.LossSocialization.Builder getLossSocializationBuilder() {
         return getLossSocializationFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Loss socialization events, see [LossSocialization](#vega.LossSocialization)
+       * Loss socialization events - See [LossSocialization](#vega.LossSocialization)
        * </pre>
        *
-       * <code>.vega.LossSocialization lossSocialization = 113 [json_name = "lossSocialization"];</code>
+       * <code>.vega.LossSocialization loss_socialization = 113 [json_name = "lossSocialization"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Events.LossSocializationOrBuilder getLossSocializationOrBuilder() {
@@ -17686,10 +17686,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Loss socialization events, see [LossSocialization](#vega.LossSocialization)
+       * Loss socialization events - See [LossSocialization](#vega.LossSocialization)
        * </pre>
        *
-       * <code>.vega.LossSocialization lossSocialization = 113 [json_name = "lossSocialization"];</code>
+       * <code>.vega.LossSocialization loss_socialization = 113 [json_name = "lossSocialization"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Events.LossSocialization, io.vegaprotocol.vega.Events.LossSocialization.Builder, io.vegaprotocol.vega.Events.LossSocializationOrBuilder>
@@ -17714,10 +17714,10 @@ public final class Events {
           io.vegaprotocol.vega.Events.SettlePosition, io.vegaprotocol.vega.Events.SettlePosition.Builder, io.vegaprotocol.vega.Events.SettlePositionOrBuilder> settlePositionBuilder_;
       /**
        * <pre>
-       * Position settlement events, see [SettlePosition](#vega.SettlePosition)
+       * Position settlement events - See [SettlePosition](#vega.SettlePosition)
        * </pre>
        *
-       * <code>.vega.SettlePosition settlePosition = 114 [json_name = "settlePosition"];</code>
+       * <code>.vega.SettlePosition settle_position = 114 [json_name = "settlePosition"];</code>
        * @return Whether the settlePosition field is set.
        */
       @java.lang.Override
@@ -17726,10 +17726,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position settlement events, see [SettlePosition](#vega.SettlePosition)
+       * Position settlement events - See [SettlePosition](#vega.SettlePosition)
        * </pre>
        *
-       * <code>.vega.SettlePosition settlePosition = 114 [json_name = "settlePosition"];</code>
+       * <code>.vega.SettlePosition settle_position = 114 [json_name = "settlePosition"];</code>
        * @return The settlePosition.
        */
       @java.lang.Override
@@ -17748,10 +17748,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position settlement events, see [SettlePosition](#vega.SettlePosition)
+       * Position settlement events - See [SettlePosition](#vega.SettlePosition)
        * </pre>
        *
-       * <code>.vega.SettlePosition settlePosition = 114 [json_name = "settlePosition"];</code>
+       * <code>.vega.SettlePosition settle_position = 114 [json_name = "settlePosition"];</code>
        */
       public Builder setSettlePosition(io.vegaprotocol.vega.Events.SettlePosition value) {
         if (settlePositionBuilder_ == null) {
@@ -17768,10 +17768,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position settlement events, see [SettlePosition](#vega.SettlePosition)
+       * Position settlement events - See [SettlePosition](#vega.SettlePosition)
        * </pre>
        *
-       * <code>.vega.SettlePosition settlePosition = 114 [json_name = "settlePosition"];</code>
+       * <code>.vega.SettlePosition settle_position = 114 [json_name = "settlePosition"];</code>
        */
       public Builder setSettlePosition(
           io.vegaprotocol.vega.Events.SettlePosition.Builder builderForValue) {
@@ -17786,10 +17786,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position settlement events, see [SettlePosition](#vega.SettlePosition)
+       * Position settlement events - See [SettlePosition](#vega.SettlePosition)
        * </pre>
        *
-       * <code>.vega.SettlePosition settlePosition = 114 [json_name = "settlePosition"];</code>
+       * <code>.vega.SettlePosition settle_position = 114 [json_name = "settlePosition"];</code>
        */
       public Builder mergeSettlePosition(io.vegaprotocol.vega.Events.SettlePosition value) {
         if (settlePositionBuilder_ == null) {
@@ -17812,10 +17812,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position settlement events, see [SettlePosition](#vega.SettlePosition)
+       * Position settlement events - See [SettlePosition](#vega.SettlePosition)
        * </pre>
        *
-       * <code>.vega.SettlePosition settlePosition = 114 [json_name = "settlePosition"];</code>
+       * <code>.vega.SettlePosition settle_position = 114 [json_name = "settlePosition"];</code>
        */
       public Builder clearSettlePosition() {
         if (settlePositionBuilder_ == null) {
@@ -17835,20 +17835,20 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position settlement events, see [SettlePosition](#vega.SettlePosition)
+       * Position settlement events - See [SettlePosition](#vega.SettlePosition)
        * </pre>
        *
-       * <code>.vega.SettlePosition settlePosition = 114 [json_name = "settlePosition"];</code>
+       * <code>.vega.SettlePosition settle_position = 114 [json_name = "settlePosition"];</code>
        */
       public io.vegaprotocol.vega.Events.SettlePosition.Builder getSettlePositionBuilder() {
         return getSettlePositionFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Position settlement events, see [SettlePosition](#vega.SettlePosition)
+       * Position settlement events - See [SettlePosition](#vega.SettlePosition)
        * </pre>
        *
-       * <code>.vega.SettlePosition settlePosition = 114 [json_name = "settlePosition"];</code>
+       * <code>.vega.SettlePosition settle_position = 114 [json_name = "settlePosition"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Events.SettlePositionOrBuilder getSettlePositionOrBuilder() {
@@ -17863,10 +17863,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position settlement events, see [SettlePosition](#vega.SettlePosition)
+       * Position settlement events - See [SettlePosition](#vega.SettlePosition)
        * </pre>
        *
-       * <code>.vega.SettlePosition settlePosition = 114 [json_name = "settlePosition"];</code>
+       * <code>.vega.SettlePosition settle_position = 114 [json_name = "settlePosition"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Events.SettlePosition, io.vegaprotocol.vega.Events.SettlePosition.Builder, io.vegaprotocol.vega.Events.SettlePositionOrBuilder>
@@ -17891,10 +17891,10 @@ public final class Events {
           io.vegaprotocol.vega.Events.SettleDistressed, io.vegaprotocol.vega.Events.SettleDistressed.Builder, io.vegaprotocol.vega.Events.SettleDistressedOrBuilder> settleDistressedBuilder_;
       /**
        * <pre>
-       * Position distressed events, see [SettleDistressed](#vega.SettleDistressed)
+       * Position distressed events - See [SettleDistressed](#vega.SettleDistressed)
        * </pre>
        *
-       * <code>.vega.SettleDistressed settleDistressed = 115 [json_name = "settleDistressed"];</code>
+       * <code>.vega.SettleDistressed settle_distressed = 115 [json_name = "settleDistressed"];</code>
        * @return Whether the settleDistressed field is set.
        */
       @java.lang.Override
@@ -17903,10 +17903,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position distressed events, see [SettleDistressed](#vega.SettleDistressed)
+       * Position distressed events - See [SettleDistressed](#vega.SettleDistressed)
        * </pre>
        *
-       * <code>.vega.SettleDistressed settleDistressed = 115 [json_name = "settleDistressed"];</code>
+       * <code>.vega.SettleDistressed settle_distressed = 115 [json_name = "settleDistressed"];</code>
        * @return The settleDistressed.
        */
       @java.lang.Override
@@ -17925,10 +17925,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position distressed events, see [SettleDistressed](#vega.SettleDistressed)
+       * Position distressed events - See [SettleDistressed](#vega.SettleDistressed)
        * </pre>
        *
-       * <code>.vega.SettleDistressed settleDistressed = 115 [json_name = "settleDistressed"];</code>
+       * <code>.vega.SettleDistressed settle_distressed = 115 [json_name = "settleDistressed"];</code>
        */
       public Builder setSettleDistressed(io.vegaprotocol.vega.Events.SettleDistressed value) {
         if (settleDistressedBuilder_ == null) {
@@ -17945,10 +17945,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position distressed events, see [SettleDistressed](#vega.SettleDistressed)
+       * Position distressed events - See [SettleDistressed](#vega.SettleDistressed)
        * </pre>
        *
-       * <code>.vega.SettleDistressed settleDistressed = 115 [json_name = "settleDistressed"];</code>
+       * <code>.vega.SettleDistressed settle_distressed = 115 [json_name = "settleDistressed"];</code>
        */
       public Builder setSettleDistressed(
           io.vegaprotocol.vega.Events.SettleDistressed.Builder builderForValue) {
@@ -17963,10 +17963,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position distressed events, see [SettleDistressed](#vega.SettleDistressed)
+       * Position distressed events - See [SettleDistressed](#vega.SettleDistressed)
        * </pre>
        *
-       * <code>.vega.SettleDistressed settleDistressed = 115 [json_name = "settleDistressed"];</code>
+       * <code>.vega.SettleDistressed settle_distressed = 115 [json_name = "settleDistressed"];</code>
        */
       public Builder mergeSettleDistressed(io.vegaprotocol.vega.Events.SettleDistressed value) {
         if (settleDistressedBuilder_ == null) {
@@ -17989,10 +17989,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position distressed events, see [SettleDistressed](#vega.SettleDistressed)
+       * Position distressed events - See [SettleDistressed](#vega.SettleDistressed)
        * </pre>
        *
-       * <code>.vega.SettleDistressed settleDistressed = 115 [json_name = "settleDistressed"];</code>
+       * <code>.vega.SettleDistressed settle_distressed = 115 [json_name = "settleDistressed"];</code>
        */
       public Builder clearSettleDistressed() {
         if (settleDistressedBuilder_ == null) {
@@ -18012,20 +18012,20 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position distressed events, see [SettleDistressed](#vega.SettleDistressed)
+       * Position distressed events - See [SettleDistressed](#vega.SettleDistressed)
        * </pre>
        *
-       * <code>.vega.SettleDistressed settleDistressed = 115 [json_name = "settleDistressed"];</code>
+       * <code>.vega.SettleDistressed settle_distressed = 115 [json_name = "settleDistressed"];</code>
        */
       public io.vegaprotocol.vega.Events.SettleDistressed.Builder getSettleDistressedBuilder() {
         return getSettleDistressedFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Position distressed events, see [SettleDistressed](#vega.SettleDistressed)
+       * Position distressed events - See [SettleDistressed](#vega.SettleDistressed)
        * </pre>
        *
-       * <code>.vega.SettleDistressed settleDistressed = 115 [json_name = "settleDistressed"];</code>
+       * <code>.vega.SettleDistressed settle_distressed = 115 [json_name = "settleDistressed"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Events.SettleDistressedOrBuilder getSettleDistressedOrBuilder() {
@@ -18040,10 +18040,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Position distressed events, see [SettleDistressed](#vega.SettleDistressed)
+       * Position distressed events - See [SettleDistressed](#vega.SettleDistressed)
        * </pre>
        *
-       * <code>.vega.SettleDistressed settleDistressed = 115 [json_name = "settleDistressed"];</code>
+       * <code>.vega.SettleDistressed settle_distressed = 115 [json_name = "settleDistressed"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Events.SettleDistressed, io.vegaprotocol.vega.Events.SettleDistressed.Builder, io.vegaprotocol.vega.Events.SettleDistressedOrBuilder>
@@ -18071,7 +18071,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketCreated = 116 [json_name = "marketCreated"];</code>
+       * <code>.vega.Market market_created = 116 [json_name = "marketCreated"];</code>
        * @return Whether the marketCreated field is set.
        */
       @java.lang.Override
@@ -18083,7 +18083,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketCreated = 116 [json_name = "marketCreated"];</code>
+       * <code>.vega.Market market_created = 116 [json_name = "marketCreated"];</code>
        * @return The marketCreated.
        */
       @java.lang.Override
@@ -18105,7 +18105,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketCreated = 116 [json_name = "marketCreated"];</code>
+       * <code>.vega.Market market_created = 116 [json_name = "marketCreated"];</code>
        */
       public Builder setMarketCreated(io.vegaprotocol.vega.Markets.Market value) {
         if (marketCreatedBuilder_ == null) {
@@ -18125,7 +18125,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketCreated = 116 [json_name = "marketCreated"];</code>
+       * <code>.vega.Market market_created = 116 [json_name = "marketCreated"];</code>
        */
       public Builder setMarketCreated(
           io.vegaprotocol.vega.Markets.Market.Builder builderForValue) {
@@ -18143,7 +18143,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketCreated = 116 [json_name = "marketCreated"];</code>
+       * <code>.vega.Market market_created = 116 [json_name = "marketCreated"];</code>
        */
       public Builder mergeMarketCreated(io.vegaprotocol.vega.Markets.Market value) {
         if (marketCreatedBuilder_ == null) {
@@ -18169,7 +18169,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketCreated = 116 [json_name = "marketCreated"];</code>
+       * <code>.vega.Market market_created = 116 [json_name = "marketCreated"];</code>
        */
       public Builder clearMarketCreated() {
         if (marketCreatedBuilder_ == null) {
@@ -18192,7 +18192,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketCreated = 116 [json_name = "marketCreated"];</code>
+       * <code>.vega.Market market_created = 116 [json_name = "marketCreated"];</code>
        */
       public io.vegaprotocol.vega.Markets.Market.Builder getMarketCreatedBuilder() {
         return getMarketCreatedFieldBuilder().getBuilder();
@@ -18202,7 +18202,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketCreated = 116 [json_name = "marketCreated"];</code>
+       * <code>.vega.Market market_created = 116 [json_name = "marketCreated"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Markets.MarketOrBuilder getMarketCreatedOrBuilder() {
@@ -18220,7 +18220,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketCreated = 116 [json_name = "marketCreated"];</code>
+       * <code>.vega.Market market_created = 116 [json_name = "marketCreated"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.Market, io.vegaprotocol.vega.Markets.Market.Builder, io.vegaprotocol.vega.Markets.MarketOrBuilder>
@@ -18422,10 +18422,10 @@ public final class Events {
           io.vegaprotocol.vega.Events.MarketTick, io.vegaprotocol.vega.Events.MarketTick.Builder, io.vegaprotocol.vega.Events.MarketTickOrBuilder> marketTickBuilder_;
       /**
        * <pre>
-       * Market tick events, see [MarketTick](#vega.MarketTick)
+       * Market tick events - See [MarketTick](#vega.MarketTick)
        * </pre>
        *
-       * <code>.vega.MarketTick marketTick = 118 [json_name = "marketTick"];</code>
+       * <code>.vega.MarketTick market_tick = 118 [json_name = "marketTick"];</code>
        * @return Whether the marketTick field is set.
        */
       @java.lang.Override
@@ -18434,10 +18434,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Market tick events, see [MarketTick](#vega.MarketTick)
+       * Market tick events - See [MarketTick](#vega.MarketTick)
        * </pre>
        *
-       * <code>.vega.MarketTick marketTick = 118 [json_name = "marketTick"];</code>
+       * <code>.vega.MarketTick market_tick = 118 [json_name = "marketTick"];</code>
        * @return The marketTick.
        */
       @java.lang.Override
@@ -18456,10 +18456,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Market tick events, see [MarketTick](#vega.MarketTick)
+       * Market tick events - See [MarketTick](#vega.MarketTick)
        * </pre>
        *
-       * <code>.vega.MarketTick marketTick = 118 [json_name = "marketTick"];</code>
+       * <code>.vega.MarketTick market_tick = 118 [json_name = "marketTick"];</code>
        */
       public Builder setMarketTick(io.vegaprotocol.vega.Events.MarketTick value) {
         if (marketTickBuilder_ == null) {
@@ -18476,10 +18476,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Market tick events, see [MarketTick](#vega.MarketTick)
+       * Market tick events - See [MarketTick](#vega.MarketTick)
        * </pre>
        *
-       * <code>.vega.MarketTick marketTick = 118 [json_name = "marketTick"];</code>
+       * <code>.vega.MarketTick market_tick = 118 [json_name = "marketTick"];</code>
        */
       public Builder setMarketTick(
           io.vegaprotocol.vega.Events.MarketTick.Builder builderForValue) {
@@ -18494,10 +18494,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Market tick events, see [MarketTick](#vega.MarketTick)
+       * Market tick events - See [MarketTick](#vega.MarketTick)
        * </pre>
        *
-       * <code>.vega.MarketTick marketTick = 118 [json_name = "marketTick"];</code>
+       * <code>.vega.MarketTick market_tick = 118 [json_name = "marketTick"];</code>
        */
       public Builder mergeMarketTick(io.vegaprotocol.vega.Events.MarketTick value) {
         if (marketTickBuilder_ == null) {
@@ -18520,10 +18520,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Market tick events, see [MarketTick](#vega.MarketTick)
+       * Market tick events - See [MarketTick](#vega.MarketTick)
        * </pre>
        *
-       * <code>.vega.MarketTick marketTick = 118 [json_name = "marketTick"];</code>
+       * <code>.vega.MarketTick market_tick = 118 [json_name = "marketTick"];</code>
        */
       public Builder clearMarketTick() {
         if (marketTickBuilder_ == null) {
@@ -18543,20 +18543,20 @@ public final class Events {
       }
       /**
        * <pre>
-       * Market tick events, see [MarketTick](#vega.MarketTick)
+       * Market tick events - See [MarketTick](#vega.MarketTick)
        * </pre>
        *
-       * <code>.vega.MarketTick marketTick = 118 [json_name = "marketTick"];</code>
+       * <code>.vega.MarketTick market_tick = 118 [json_name = "marketTick"];</code>
        */
       public io.vegaprotocol.vega.Events.MarketTick.Builder getMarketTickBuilder() {
         return getMarketTickFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Market tick events, see [MarketTick](#vega.MarketTick)
+       * Market tick events - See [MarketTick](#vega.MarketTick)
        * </pre>
        *
-       * <code>.vega.MarketTick marketTick = 118 [json_name = "marketTick"];</code>
+       * <code>.vega.MarketTick market_tick = 118 [json_name = "marketTick"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Events.MarketTickOrBuilder getMarketTickOrBuilder() {
@@ -18571,10 +18571,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Market tick events, see [MarketTick](#vega.MarketTick)
+       * Market tick events - See [MarketTick](#vega.MarketTick)
        * </pre>
        *
-       * <code>.vega.MarketTick marketTick = 118 [json_name = "marketTick"];</code>
+       * <code>.vega.MarketTick market_tick = 118 [json_name = "marketTick"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Events.MarketTick, io.vegaprotocol.vega.Events.MarketTick.Builder, io.vegaprotocol.vega.Events.MarketTickOrBuilder>
@@ -18953,7 +18953,7 @@ public final class Events {
           io.vegaprotocol.vega.Events.AuctionEvent, io.vegaprotocol.vega.Events.AuctionEvent.Builder, io.vegaprotocol.vega.Events.AuctionEventOrBuilder> auctionBuilder_;
       /**
        * <pre>
-       * Auction events, see [AuctionEvent](#vega.AuctionEvent)
+       * Auction events - See [AuctionEvent](#vega.AuctionEvent)
        * </pre>
        *
        * <code>.vega.AuctionEvent auction = 121 [json_name = "auction"];</code>
@@ -18965,7 +18965,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Auction events, see [AuctionEvent](#vega.AuctionEvent)
+       * Auction events - See [AuctionEvent](#vega.AuctionEvent)
        * </pre>
        *
        * <code>.vega.AuctionEvent auction = 121 [json_name = "auction"];</code>
@@ -18987,7 +18987,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Auction events, see [AuctionEvent](#vega.AuctionEvent)
+       * Auction events - See [AuctionEvent](#vega.AuctionEvent)
        * </pre>
        *
        * <code>.vega.AuctionEvent auction = 121 [json_name = "auction"];</code>
@@ -19007,7 +19007,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Auction events, see [AuctionEvent](#vega.AuctionEvent)
+       * Auction events - See [AuctionEvent](#vega.AuctionEvent)
        * </pre>
        *
        * <code>.vega.AuctionEvent auction = 121 [json_name = "auction"];</code>
@@ -19025,7 +19025,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Auction events, see [AuctionEvent](#vega.AuctionEvent)
+       * Auction events - See [AuctionEvent](#vega.AuctionEvent)
        * </pre>
        *
        * <code>.vega.AuctionEvent auction = 121 [json_name = "auction"];</code>
@@ -19051,7 +19051,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Auction events, see [AuctionEvent](#vega.AuctionEvent)
+       * Auction events - See [AuctionEvent](#vega.AuctionEvent)
        * </pre>
        *
        * <code>.vega.AuctionEvent auction = 121 [json_name = "auction"];</code>
@@ -19074,7 +19074,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Auction events, see [AuctionEvent](#vega.AuctionEvent)
+       * Auction events - See [AuctionEvent](#vega.AuctionEvent)
        * </pre>
        *
        * <code>.vega.AuctionEvent auction = 121 [json_name = "auction"];</code>
@@ -19084,7 +19084,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Auction events, see [AuctionEvent](#vega.AuctionEvent)
+       * Auction events - See [AuctionEvent](#vega.AuctionEvent)
        * </pre>
        *
        * <code>.vega.AuctionEvent auction = 121 [json_name = "auction"];</code>
@@ -19102,7 +19102,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Auction events, see [AuctionEvent](#vega.AuctionEvent)
+       * Auction events - See [AuctionEvent](#vega.AuctionEvent)
        * </pre>
        *
        * <code>.vega.AuctionEvent auction = 121 [json_name = "auction"];</code>
@@ -19133,7 +19133,7 @@ public final class Events {
        * Risk factor events
        * </pre>
        *
-       * <code>.vega.RiskFactor riskFactor = 122 [json_name = "riskFactor"];</code>
+       * <code>.vega.RiskFactor risk_factor = 122 [json_name = "riskFactor"];</code>
        * @return Whether the riskFactor field is set.
        */
       @java.lang.Override
@@ -19145,7 +19145,7 @@ public final class Events {
        * Risk factor events
        * </pre>
        *
-       * <code>.vega.RiskFactor riskFactor = 122 [json_name = "riskFactor"];</code>
+       * <code>.vega.RiskFactor risk_factor = 122 [json_name = "riskFactor"];</code>
        * @return The riskFactor.
        */
       @java.lang.Override
@@ -19167,7 +19167,7 @@ public final class Events {
        * Risk factor events
        * </pre>
        *
-       * <code>.vega.RiskFactor riskFactor = 122 [json_name = "riskFactor"];</code>
+       * <code>.vega.RiskFactor risk_factor = 122 [json_name = "riskFactor"];</code>
        */
       public Builder setRiskFactor(io.vegaprotocol.vega.Vega.RiskFactor value) {
         if (riskFactorBuilder_ == null) {
@@ -19187,7 +19187,7 @@ public final class Events {
        * Risk factor events
        * </pre>
        *
-       * <code>.vega.RiskFactor riskFactor = 122 [json_name = "riskFactor"];</code>
+       * <code>.vega.RiskFactor risk_factor = 122 [json_name = "riskFactor"];</code>
        */
       public Builder setRiskFactor(
           io.vegaprotocol.vega.Vega.RiskFactor.Builder builderForValue) {
@@ -19205,7 +19205,7 @@ public final class Events {
        * Risk factor events
        * </pre>
        *
-       * <code>.vega.RiskFactor riskFactor = 122 [json_name = "riskFactor"];</code>
+       * <code>.vega.RiskFactor risk_factor = 122 [json_name = "riskFactor"];</code>
        */
       public Builder mergeRiskFactor(io.vegaprotocol.vega.Vega.RiskFactor value) {
         if (riskFactorBuilder_ == null) {
@@ -19231,7 +19231,7 @@ public final class Events {
        * Risk factor events
        * </pre>
        *
-       * <code>.vega.RiskFactor riskFactor = 122 [json_name = "riskFactor"];</code>
+       * <code>.vega.RiskFactor risk_factor = 122 [json_name = "riskFactor"];</code>
        */
       public Builder clearRiskFactor() {
         if (riskFactorBuilder_ == null) {
@@ -19254,7 +19254,7 @@ public final class Events {
        * Risk factor events
        * </pre>
        *
-       * <code>.vega.RiskFactor riskFactor = 122 [json_name = "riskFactor"];</code>
+       * <code>.vega.RiskFactor risk_factor = 122 [json_name = "riskFactor"];</code>
        */
       public io.vegaprotocol.vega.Vega.RiskFactor.Builder getRiskFactorBuilder() {
         return getRiskFactorFieldBuilder().getBuilder();
@@ -19264,7 +19264,7 @@ public final class Events {
        * Risk factor events
        * </pre>
        *
-       * <code>.vega.RiskFactor riskFactor = 122 [json_name = "riskFactor"];</code>
+       * <code>.vega.RiskFactor risk_factor = 122 [json_name = "riskFactor"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Vega.RiskFactorOrBuilder getRiskFactorOrBuilder() {
@@ -19282,7 +19282,7 @@ public final class Events {
        * Risk factor events
        * </pre>
        *
-       * <code>.vega.RiskFactor riskFactor = 122 [json_name = "riskFactor"];</code>
+       * <code>.vega.RiskFactor risk_factor = 122 [json_name = "riskFactor"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.RiskFactor, io.vegaprotocol.vega.Vega.RiskFactor.Builder, io.vegaprotocol.vega.Vega.RiskFactorOrBuilder>
@@ -19310,7 +19310,7 @@ public final class Events {
        * Network parameter events
        * </pre>
        *
-       * <code>.vega.NetworkParameter networkParameter = 123 [json_name = "networkParameter"];</code>
+       * <code>.vega.NetworkParameter network_parameter = 123 [json_name = "networkParameter"];</code>
        * @return Whether the networkParameter field is set.
        */
       @java.lang.Override
@@ -19322,7 +19322,7 @@ public final class Events {
        * Network parameter events
        * </pre>
        *
-       * <code>.vega.NetworkParameter networkParameter = 123 [json_name = "networkParameter"];</code>
+       * <code>.vega.NetworkParameter network_parameter = 123 [json_name = "networkParameter"];</code>
        * @return The networkParameter.
        */
       @java.lang.Override
@@ -19344,7 +19344,7 @@ public final class Events {
        * Network parameter events
        * </pre>
        *
-       * <code>.vega.NetworkParameter networkParameter = 123 [json_name = "networkParameter"];</code>
+       * <code>.vega.NetworkParameter network_parameter = 123 [json_name = "networkParameter"];</code>
        */
       public Builder setNetworkParameter(io.vegaprotocol.vega.Vega.NetworkParameter value) {
         if (networkParameterBuilder_ == null) {
@@ -19364,7 +19364,7 @@ public final class Events {
        * Network parameter events
        * </pre>
        *
-       * <code>.vega.NetworkParameter networkParameter = 123 [json_name = "networkParameter"];</code>
+       * <code>.vega.NetworkParameter network_parameter = 123 [json_name = "networkParameter"];</code>
        */
       public Builder setNetworkParameter(
           io.vegaprotocol.vega.Vega.NetworkParameter.Builder builderForValue) {
@@ -19382,7 +19382,7 @@ public final class Events {
        * Network parameter events
        * </pre>
        *
-       * <code>.vega.NetworkParameter networkParameter = 123 [json_name = "networkParameter"];</code>
+       * <code>.vega.NetworkParameter network_parameter = 123 [json_name = "networkParameter"];</code>
        */
       public Builder mergeNetworkParameter(io.vegaprotocol.vega.Vega.NetworkParameter value) {
         if (networkParameterBuilder_ == null) {
@@ -19408,7 +19408,7 @@ public final class Events {
        * Network parameter events
        * </pre>
        *
-       * <code>.vega.NetworkParameter networkParameter = 123 [json_name = "networkParameter"];</code>
+       * <code>.vega.NetworkParameter network_parameter = 123 [json_name = "networkParameter"];</code>
        */
       public Builder clearNetworkParameter() {
         if (networkParameterBuilder_ == null) {
@@ -19431,7 +19431,7 @@ public final class Events {
        * Network parameter events
        * </pre>
        *
-       * <code>.vega.NetworkParameter networkParameter = 123 [json_name = "networkParameter"];</code>
+       * <code>.vega.NetworkParameter network_parameter = 123 [json_name = "networkParameter"];</code>
        */
       public io.vegaprotocol.vega.Vega.NetworkParameter.Builder getNetworkParameterBuilder() {
         return getNetworkParameterFieldBuilder().getBuilder();
@@ -19441,7 +19441,7 @@ public final class Events {
        * Network parameter events
        * </pre>
        *
-       * <code>.vega.NetworkParameter networkParameter = 123 [json_name = "networkParameter"];</code>
+       * <code>.vega.NetworkParameter network_parameter = 123 [json_name = "networkParameter"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Vega.NetworkParameterOrBuilder getNetworkParameterOrBuilder() {
@@ -19459,7 +19459,7 @@ public final class Events {
        * Network parameter events
        * </pre>
        *
-       * <code>.vega.NetworkParameter networkParameter = 123 [json_name = "networkParameter"];</code>
+       * <code>.vega.NetworkParameter network_parameter = 123 [json_name = "networkParameter"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.NetworkParameter, io.vegaprotocol.vega.Vega.NetworkParameter.Builder, io.vegaprotocol.vega.Vega.NetworkParameterOrBuilder>
@@ -19487,7 +19487,7 @@ public final class Events {
        * LiquidityProvision  events
        * </pre>
        *
-       * <code>.vega.LiquidityProvision liquidityProvision = 124 [json_name = "liquidityProvision"];</code>
+       * <code>.vega.LiquidityProvision liquidity_provision = 124 [json_name = "liquidityProvision"];</code>
        * @return Whether the liquidityProvision field is set.
        */
       @java.lang.Override
@@ -19499,7 +19499,7 @@ public final class Events {
        * LiquidityProvision  events
        * </pre>
        *
-       * <code>.vega.LiquidityProvision liquidityProvision = 124 [json_name = "liquidityProvision"];</code>
+       * <code>.vega.LiquidityProvision liquidity_provision = 124 [json_name = "liquidityProvision"];</code>
        * @return The liquidityProvision.
        */
       @java.lang.Override
@@ -19521,7 +19521,7 @@ public final class Events {
        * LiquidityProvision  events
        * </pre>
        *
-       * <code>.vega.LiquidityProvision liquidityProvision = 124 [json_name = "liquidityProvision"];</code>
+       * <code>.vega.LiquidityProvision liquidity_provision = 124 [json_name = "liquidityProvision"];</code>
        */
       public Builder setLiquidityProvision(io.vegaprotocol.vega.Vega.LiquidityProvision value) {
         if (liquidityProvisionBuilder_ == null) {
@@ -19541,7 +19541,7 @@ public final class Events {
        * LiquidityProvision  events
        * </pre>
        *
-       * <code>.vega.LiquidityProvision liquidityProvision = 124 [json_name = "liquidityProvision"];</code>
+       * <code>.vega.LiquidityProvision liquidity_provision = 124 [json_name = "liquidityProvision"];</code>
        */
       public Builder setLiquidityProvision(
           io.vegaprotocol.vega.Vega.LiquidityProvision.Builder builderForValue) {
@@ -19559,7 +19559,7 @@ public final class Events {
        * LiquidityProvision  events
        * </pre>
        *
-       * <code>.vega.LiquidityProvision liquidityProvision = 124 [json_name = "liquidityProvision"];</code>
+       * <code>.vega.LiquidityProvision liquidity_provision = 124 [json_name = "liquidityProvision"];</code>
        */
       public Builder mergeLiquidityProvision(io.vegaprotocol.vega.Vega.LiquidityProvision value) {
         if (liquidityProvisionBuilder_ == null) {
@@ -19585,7 +19585,7 @@ public final class Events {
        * LiquidityProvision  events
        * </pre>
        *
-       * <code>.vega.LiquidityProvision liquidityProvision = 124 [json_name = "liquidityProvision"];</code>
+       * <code>.vega.LiquidityProvision liquidity_provision = 124 [json_name = "liquidityProvision"];</code>
        */
       public Builder clearLiquidityProvision() {
         if (liquidityProvisionBuilder_ == null) {
@@ -19608,7 +19608,7 @@ public final class Events {
        * LiquidityProvision  events
        * </pre>
        *
-       * <code>.vega.LiquidityProvision liquidityProvision = 124 [json_name = "liquidityProvision"];</code>
+       * <code>.vega.LiquidityProvision liquidity_provision = 124 [json_name = "liquidityProvision"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityProvision.Builder getLiquidityProvisionBuilder() {
         return getLiquidityProvisionFieldBuilder().getBuilder();
@@ -19618,7 +19618,7 @@ public final class Events {
        * LiquidityProvision  events
        * </pre>
        *
-       * <code>.vega.LiquidityProvision liquidityProvision = 124 [json_name = "liquidityProvision"];</code>
+       * <code>.vega.LiquidityProvision liquidity_provision = 124 [json_name = "liquidityProvision"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder getLiquidityProvisionOrBuilder() {
@@ -19636,7 +19636,7 @@ public final class Events {
        * LiquidityProvision  events
        * </pre>
        *
-       * <code>.vega.LiquidityProvision liquidityProvision = 124 [json_name = "liquidityProvision"];</code>
+       * <code>.vega.LiquidityProvision liquidity_provision = 124 [json_name = "liquidityProvision"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.LiquidityProvision, io.vegaprotocol.vega.Vega.LiquidityProvision.Builder, io.vegaprotocol.vega.Vega.LiquidityProvisionOrBuilder>
@@ -19664,7 +19664,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketUpdated = 125 [json_name = "marketUpdated"];</code>
+       * <code>.vega.Market market_updated = 125 [json_name = "marketUpdated"];</code>
        * @return Whether the marketUpdated field is set.
        */
       @java.lang.Override
@@ -19676,7 +19676,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketUpdated = 125 [json_name = "marketUpdated"];</code>
+       * <code>.vega.Market market_updated = 125 [json_name = "marketUpdated"];</code>
        * @return The marketUpdated.
        */
       @java.lang.Override
@@ -19698,7 +19698,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketUpdated = 125 [json_name = "marketUpdated"];</code>
+       * <code>.vega.Market market_updated = 125 [json_name = "marketUpdated"];</code>
        */
       public Builder setMarketUpdated(io.vegaprotocol.vega.Markets.Market value) {
         if (marketUpdatedBuilder_ == null) {
@@ -19718,7 +19718,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketUpdated = 125 [json_name = "marketUpdated"];</code>
+       * <code>.vega.Market market_updated = 125 [json_name = "marketUpdated"];</code>
        */
       public Builder setMarketUpdated(
           io.vegaprotocol.vega.Markets.Market.Builder builderForValue) {
@@ -19736,7 +19736,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketUpdated = 125 [json_name = "marketUpdated"];</code>
+       * <code>.vega.Market market_updated = 125 [json_name = "marketUpdated"];</code>
        */
       public Builder mergeMarketUpdated(io.vegaprotocol.vega.Markets.Market value) {
         if (marketUpdatedBuilder_ == null) {
@@ -19762,7 +19762,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketUpdated = 125 [json_name = "marketUpdated"];</code>
+       * <code>.vega.Market market_updated = 125 [json_name = "marketUpdated"];</code>
        */
       public Builder clearMarketUpdated() {
         if (marketUpdatedBuilder_ == null) {
@@ -19785,7 +19785,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketUpdated = 125 [json_name = "marketUpdated"];</code>
+       * <code>.vega.Market market_updated = 125 [json_name = "marketUpdated"];</code>
        */
       public io.vegaprotocol.vega.Markets.Market.Builder getMarketUpdatedBuilder() {
         return getMarketUpdatedFieldBuilder().getBuilder();
@@ -19795,7 +19795,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketUpdated = 125 [json_name = "marketUpdated"];</code>
+       * <code>.vega.Market market_updated = 125 [json_name = "marketUpdated"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Markets.MarketOrBuilder getMarketUpdatedOrBuilder() {
@@ -19813,7 +19813,7 @@ public final class Events {
        * Market created events
        * </pre>
        *
-       * <code>.vega.Market marketUpdated = 125 [json_name = "marketUpdated"];</code>
+       * <code>.vega.Market market_updated = 125 [json_name = "marketUpdated"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.Market, io.vegaprotocol.vega.Markets.Market.Builder, io.vegaprotocol.vega.Markets.MarketOrBuilder>
@@ -19838,7 +19838,7 @@ public final class Events {
           io.vegaprotocol.vega.Events.MarketEvent, io.vegaprotocol.vega.Events.MarketEvent.Builder, io.vegaprotocol.vega.Events.MarketEventOrBuilder> marketBuilder_;
       /**
        * <pre>
-       * Market tick events, see [MarketEvent](#vega.MarketEvent)
+       * Market tick events - See [MarketEvent](#vega.MarketEvent)
        * </pre>
        *
        * <code>.vega.MarketEvent market = 1001 [json_name = "market"];</code>
@@ -19850,7 +19850,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Market tick events, see [MarketEvent](#vega.MarketEvent)
+       * Market tick events - See [MarketEvent](#vega.MarketEvent)
        * </pre>
        *
        * <code>.vega.MarketEvent market = 1001 [json_name = "market"];</code>
@@ -19872,7 +19872,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Market tick events, see [MarketEvent](#vega.MarketEvent)
+       * Market tick events - See [MarketEvent](#vega.MarketEvent)
        * </pre>
        *
        * <code>.vega.MarketEvent market = 1001 [json_name = "market"];</code>
@@ -19892,7 +19892,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Market tick events, see [MarketEvent](#vega.MarketEvent)
+       * Market tick events - See [MarketEvent](#vega.MarketEvent)
        * </pre>
        *
        * <code>.vega.MarketEvent market = 1001 [json_name = "market"];</code>
@@ -19910,7 +19910,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Market tick events, see [MarketEvent](#vega.MarketEvent)
+       * Market tick events - See [MarketEvent](#vega.MarketEvent)
        * </pre>
        *
        * <code>.vega.MarketEvent market = 1001 [json_name = "market"];</code>
@@ -19936,7 +19936,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Market tick events, see [MarketEvent](#vega.MarketEvent)
+       * Market tick events - See [MarketEvent](#vega.MarketEvent)
        * </pre>
        *
        * <code>.vega.MarketEvent market = 1001 [json_name = "market"];</code>
@@ -19959,7 +19959,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Market tick events, see [MarketEvent](#vega.MarketEvent)
+       * Market tick events - See [MarketEvent](#vega.MarketEvent)
        * </pre>
        *
        * <code>.vega.MarketEvent market = 1001 [json_name = "market"];</code>
@@ -19969,7 +19969,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Market tick events, see [MarketEvent](#vega.MarketEvent)
+       * Market tick events - See [MarketEvent](#vega.MarketEvent)
        * </pre>
        *
        * <code>.vega.MarketEvent market = 1001 [json_name = "market"];</code>
@@ -19987,7 +19987,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * Market tick events, see [MarketEvent](#vega.MarketEvent)
+       * Market tick events - See [MarketEvent](#vega.MarketEvent)
        * </pre>
        *
        * <code>.vega.MarketEvent market = 1001 [json_name = "market"];</code>
@@ -20015,10 +20015,10 @@ public final class Events {
           io.vegaprotocol.vega.Events.TxErrorEvent, io.vegaprotocol.vega.Events.TxErrorEvent.Builder, io.vegaprotocol.vega.Events.TxErrorEventOrBuilder> txErrEventBuilder_;
       /**
        * <pre>
-       * Transaction error events - separate category, not included in ALL events
+       * Transaction error events, not included in the ALL event type
        * </pre>
        *
-       * <code>.vega.TxErrorEvent txErrEvent = 2001 [json_name = "txErrEvent"];</code>
+       * <code>.vega.TxErrorEvent tx_err_event = 2001 [json_name = "txErrEvent"];</code>
        * @return Whether the txErrEvent field is set.
        */
       @java.lang.Override
@@ -20027,10 +20027,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Transaction error events - separate category, not included in ALL events
+       * Transaction error events, not included in the ALL event type
        * </pre>
        *
-       * <code>.vega.TxErrorEvent txErrEvent = 2001 [json_name = "txErrEvent"];</code>
+       * <code>.vega.TxErrorEvent tx_err_event = 2001 [json_name = "txErrEvent"];</code>
        * @return The txErrEvent.
        */
       @java.lang.Override
@@ -20049,10 +20049,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Transaction error events - separate category, not included in ALL events
+       * Transaction error events, not included in the ALL event type
        * </pre>
        *
-       * <code>.vega.TxErrorEvent txErrEvent = 2001 [json_name = "txErrEvent"];</code>
+       * <code>.vega.TxErrorEvent tx_err_event = 2001 [json_name = "txErrEvent"];</code>
        */
       public Builder setTxErrEvent(io.vegaprotocol.vega.Events.TxErrorEvent value) {
         if (txErrEventBuilder_ == null) {
@@ -20069,10 +20069,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Transaction error events - separate category, not included in ALL events
+       * Transaction error events, not included in the ALL event type
        * </pre>
        *
-       * <code>.vega.TxErrorEvent txErrEvent = 2001 [json_name = "txErrEvent"];</code>
+       * <code>.vega.TxErrorEvent tx_err_event = 2001 [json_name = "txErrEvent"];</code>
        */
       public Builder setTxErrEvent(
           io.vegaprotocol.vega.Events.TxErrorEvent.Builder builderForValue) {
@@ -20087,10 +20087,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Transaction error events - separate category, not included in ALL events
+       * Transaction error events, not included in the ALL event type
        * </pre>
        *
-       * <code>.vega.TxErrorEvent txErrEvent = 2001 [json_name = "txErrEvent"];</code>
+       * <code>.vega.TxErrorEvent tx_err_event = 2001 [json_name = "txErrEvent"];</code>
        */
       public Builder mergeTxErrEvent(io.vegaprotocol.vega.Events.TxErrorEvent value) {
         if (txErrEventBuilder_ == null) {
@@ -20113,10 +20113,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Transaction error events - separate category, not included in ALL events
+       * Transaction error events, not included in the ALL event type
        * </pre>
        *
-       * <code>.vega.TxErrorEvent txErrEvent = 2001 [json_name = "txErrEvent"];</code>
+       * <code>.vega.TxErrorEvent tx_err_event = 2001 [json_name = "txErrEvent"];</code>
        */
       public Builder clearTxErrEvent() {
         if (txErrEventBuilder_ == null) {
@@ -20136,20 +20136,20 @@ public final class Events {
       }
       /**
        * <pre>
-       * Transaction error events - separate category, not included in ALL events
+       * Transaction error events, not included in the ALL event type
        * </pre>
        *
-       * <code>.vega.TxErrorEvent txErrEvent = 2001 [json_name = "txErrEvent"];</code>
+       * <code>.vega.TxErrorEvent tx_err_event = 2001 [json_name = "txErrEvent"];</code>
        */
       public io.vegaprotocol.vega.Events.TxErrorEvent.Builder getTxErrEventBuilder() {
         return getTxErrEventFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Transaction error events - separate category, not included in ALL events
+       * Transaction error events, not included in the ALL event type
        * </pre>
        *
-       * <code>.vega.TxErrorEvent txErrEvent = 2001 [json_name = "txErrEvent"];</code>
+       * <code>.vega.TxErrorEvent tx_err_event = 2001 [json_name = "txErrEvent"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Events.TxErrorEventOrBuilder getTxErrEventOrBuilder() {
@@ -20164,10 +20164,10 @@ public final class Events {
       }
       /**
        * <pre>
-       * Transaction error events - separate category, not included in ALL events
+       * Transaction error events, not included in the ALL event type
        * </pre>
        *
-       * <code>.vega.TxErrorEvent txErrEvent = 2001 [json_name = "txErrEvent"];</code>
+       * <code>.vega.TxErrorEvent tx_err_event = 2001 [json_name = "txErrEvent"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Events.TxErrorEvent, io.vegaprotocol.vega.Events.TxErrorEvent.Builder, io.vegaprotocol.vega.Events.TxErrorEventOrBuilder>
@@ -20311,105 +20311,106 @@ public final class Events {
     java.lang.String[] descriptorData = {
       "\n\014events.proto\022\004vega\032\rmarkets.proto\032\014ass" +
       "ets.proto\032\020governance.proto\032\nvega.proto\"" +
-      "C\n\013MarketEvent\022\032\n\010marketID\030\001 \001(\tR\010market" +
-      "ID\022\030\n\007payload\030\002 \001(\tR\007payload\"\353\002\n\014TxError" +
-      "Event\022\030\n\007PartyID\030\001 \001(\tR\007PartyID\022\026\n\006errMs" +
-      "g\030\002 \001(\tR\006errMsg\022A\n\017orderSubmission\030e \001(\013" +
-      "2\025.vega.OrderSubmissionH\000R\017orderSubmissi" +
-      "on\022>\n\016orderAmendment\030f \001(\0132\024.vega.OrderA" +
-      "mendmentH\000R\016orderAmendment\022G\n\021orderCance" +
-      "llation\030g \001(\0132\027.vega.OrderCancellationH\000" +
-      "R\021orderCancellation\022,\n\010proposal\030h \001(\0132\016." +
-      "vega.ProposalH\000R\010proposal\022 \n\004vote\030i \001(\0132" +
-      "\n.vega.VoteH\000R\004voteB\r\n\013transaction\"*\n\nTi" +
-      "meUpdate\022\034\n\ttimestamp\030\001 \001(\003R\ttimestamp\"I" +
-      "\n\021TransferResponses\0224\n\tresponses\030\001 \003(\0132\026" +
-      ".vega.TransferResponseR\tresponses\"\206\001\n\022Po" +
-      "sitionResolution\022\032\n\010marketID\030\001 \001(\tR\010mark" +
-      "etID\022\036\n\ndistressed\030\002 \001(\003R\ndistressed\022\026\n\006" +
-      "closed\030\003 \001(\003R\006closed\022\034\n\tmarkPrice\030\004 \001(\004R" +
-      "\tmarkPrice\"a\n\021LossSocialization\022\032\n\010marke" +
-      "tID\030\001 \001(\tR\010marketID\022\030\n\007partyID\030\002 \001(\tR\007pa" +
-      "rtyID\022\026\n\006amount\030\003 \001(\003R\006amount\";\n\017TradeSe" +
-      "ttlement\022\022\n\004size\030\001 \001(\003R\004size\022\024\n\005price\030\002 " +
-      "\001(\004R\005price\"\237\001\n\016SettlePosition\022\032\n\010marketI" +
-      "D\030\001 \001(\tR\010marketID\022\030\n\007partyID\030\002 \001(\tR\007part" +
-      "yID\022\024\n\005price\030\003 \001(\004R\005price\022A\n\020tradeSettle" +
-      "ments\030\004 \003(\0132\025.vega.TradeSettlementR\020trad" +
-      "eSettlements\"v\n\020SettleDistressed\022\032\n\010mark" +
-      "etID\030\001 \001(\tR\010marketID\022\030\n\007partyID\030\002 \001(\tR\007p" +
-      "artyID\022\026\n\006margin\030\003 \001(\004R\006margin\022\024\n\005price\030" +
-      "\004 \001(\004R\005price\"0\n\nMarketTick\022\016\n\002ID\030\001 \001(\tR\002" +
-      "ID\022\022\n\004time\030\002 \001(\003R\004time\"\300\001\n\014AuctionEvent\022" +
-      "\032\n\010marketID\030\001 \001(\tR\010marketID\022&\n\016openingAu" +
-      "ction\030\002 \001(\010R\016openingAuction\022\024\n\005leave\030\003 \001" +
-      "(\010R\005leave\022\024\n\005start\030\004 \001(\003R\005start\022\020\n\003end\030\005" +
-      " \001(\003R\003end\022.\n\007trigger\030\006 \001(\0162\024.vega.Auctio" +
-      "nTriggerR\007trigger\"\215\014\n\010BusEvent\022\016\n\002ID\030\001 \001" +
-      "(\tR\002ID\022\024\n\005block\030\002 \001(\tR\005block\022&\n\004type\030\003 \001" +
-      "(\0162\022.vega.BusEventTypeR\004type\0222\n\ntimeUpda" +
-      "te\030e \001(\0132\020.vega.TimeUpdateH\000R\ntimeUpdate" +
-      "\022G\n\021transferResponses\030f \001(\0132\027.vega.Trans" +
-      "ferResponsesH\000R\021transferResponses\022J\n\022pos" +
-      "itionResolution\030g \001(\0132\030.vega.PositionRes" +
-      "olutionH\000R\022positionResolution\022#\n\005order\030h" +
-      " \001(\0132\013.vega.OrderH\000R\005order\022)\n\007account\030i " +
-      "\001(\0132\r.vega.AccountH\000R\007account\022#\n\005party\030j" +
-      " \001(\0132\013.vega.PartyH\000R\005party\022#\n\005trade\030k \001(" +
-      "\0132\013.vega.TradeH\000R\005trade\0228\n\014marginLevels\030" +
-      "l \001(\0132\022.vega.MarginLevelsH\000R\014marginLevel" +
-      "s\022,\n\010proposal\030m \001(\0132\016.vega.ProposalH\000R\010p" +
-      "roposal\022 \n\004vote\030n \001(\0132\n.vega.VoteH\000R\004vot" +
-      "e\0222\n\nmarketData\030o \001(\0132\020.vega.MarketDataH" +
-      "\000R\nmarketData\022;\n\rnodeSignature\030p \001(\0132\023.v" +
-      "ega.NodeSignatureH\000R\rnodeSignature\022G\n\021lo" +
-      "ssSocialization\030q \001(\0132\027.vega.LossSociali" +
-      "zationH\000R\021lossSocialization\022>\n\016settlePos" +
-      "ition\030r \001(\0132\024.vega.SettlePositionH\000R\016set" +
-      "tlePosition\022D\n\020settleDistressed\030s \001(\0132\026." +
-      "vega.SettleDistressedH\000R\020settleDistresse" +
-      "d\0224\n\rmarketCreated\030t \001(\0132\014.vega.MarketH\000" +
-      "R\rmarketCreated\022#\n\005asset\030u \001(\0132\013.vega.As" +
-      "setH\000R\005asset\0222\n\nmarketTick\030v \001(\0132\020.vega." +
-      "MarketTickH\000R\nmarketTick\0222\n\nwithdrawal\030w" +
-      " \001(\0132\020.vega.WithdrawalH\000R\nwithdrawal\022)\n\007" +
-      "deposit\030x \001(\0132\r.vega.DepositH\000R\007deposit\022" +
-      ".\n\007auction\030y \001(\0132\022.vega.AuctionEventH\000R\007" +
-      "auction\0222\n\nriskFactor\030z \001(\0132\020.vega.RiskF" +
-      "actorH\000R\nriskFactor\022D\n\020networkParameter\030" +
-      "{ \001(\0132\026.vega.NetworkParameterH\000R\020network" +
-      "Parameter\022J\n\022liquidityProvision\030| \001(\0132\030." +
-      "vega.LiquidityProvisionH\000R\022liquidityProv" +
-      "ision\0224\n\rmarketUpdated\030} \001(\0132\014.vega.Mark" +
-      "etH\000R\rmarketUpdated\022,\n\006market\030\351\007 \001(\0132\021.v" +
-      "ega.MarketEventH\000R\006market\0225\n\ntxErrEvent\030" +
-      "\321\017 \001(\0132\022.vega.TxErrorEventH\000R\ntxErrEvent" +
-      "B\007\n\005event*\251\007\n\014BusEventType\022\036\n\032BUS_EVENT_" +
-      "TYPE_UNSPECIFIED\020\000\022\026\n\022BUS_EVENT_TYPE_ALL" +
-      "\020\001\022\036\n\032BUS_EVENT_TYPE_TIME_UPDATE\020\002\022%\n!BU" +
-      "S_EVENT_TYPE_TRANSFER_RESPONSES\020\003\022&\n\"BUS" +
-      "_EVENT_TYPE_POSITION_RESOLUTION\020\004\022\030\n\024BUS" +
-      "_EVENT_TYPE_ORDER\020\005\022\032\n\026BUS_EVENT_TYPE_AC" +
-      "COUNT\020\006\022\030\n\024BUS_EVENT_TYPE_PARTY\020\007\022\030\n\024BUS" +
-      "_EVENT_TYPE_TRADE\020\010\022 \n\034BUS_EVENT_TYPE_MA" +
-      "RGIN_LEVELS\020\t\022\033\n\027BUS_EVENT_TYPE_PROPOSAL" +
-      "\020\n\022\027\n\023BUS_EVENT_TYPE_VOTE\020\013\022\036\n\032BUS_EVENT" +
-      "_TYPE_MARKET_DATA\020\014\022!\n\035BUS_EVENT_TYPE_NO" +
-      "DE_SIGNATURE\020\r\022%\n!BUS_EVENT_TYPE_LOSS_SO" +
-      "CIALIZATION\020\016\022\"\n\036BUS_EVENT_TYPE_SETTLE_P" +
-      "OSITION\020\017\022$\n BUS_EVENT_TYPE_SETTLE_DISTR" +
-      "ESSED\020\020\022!\n\035BUS_EVENT_TYPE_MARKET_CREATED" +
-      "\020\021\022\030\n\024BUS_EVENT_TYPE_ASSET\020\022\022\036\n\032BUS_EVEN" +
-      "T_TYPE_MARKET_TICK\020\023\022\035\n\031BUS_EVENT_TYPE_W" +
-      "ITHDRAWAL\020\024\022\032\n\026BUS_EVENT_TYPE_DEPOSIT\020\025\022" +
-      "\032\n\026BUS_EVENT_TYPE_AUCTION\020\026\022\036\n\032BUS_EVENT" +
-      "_TYPE_RISK_FACTOR\020\027\022$\n BUS_EVENT_TYPE_NE" +
-      "TWORK_PARAMETER\020\030\022&\n\"BUS_EVENT_TYPE_LIQU" +
-      "IDITY_PROVISION\020\031\022!\n\035BUS_EVENT_TYPE_MARK" +
-      "ET_UPDATED\020\032\022\031\n\025BUS_EVENT_TYPE_MARKET\020e\022" +
-      "\034\n\027BUS_EVENT_TYPE_TX_ERROR\020\311\001B7\n\024io.vega" +
-      "protocol.vegaZ\037code.vegaprotocol.io/vega" +
-      "/protob\006proto3"
+      "D\n\013MarketEvent\022\033\n\tmarket_id\030\001 \001(\tR\010marke" +
+      "tId\022\030\n\007payload\030\002 \001(\tR\007payload\"\360\002\n\014TxErro" +
+      "rEvent\022\031\n\010party_id\030\001 \001(\tR\007partyId\022\027\n\007err" +
+      "_msg\030\002 \001(\tR\006errMsg\022B\n\020order_submission\030e" +
+      " \001(\0132\025.vega.OrderSubmissionH\000R\017orderSubm" +
+      "ission\022?\n\017order_amendment\030f \001(\0132\024.vega.O" +
+      "rderAmendmentH\000R\016orderAmendment\022H\n\022order" +
+      "_cancellation\030g \001(\0132\027.vega.OrderCancella" +
+      "tionH\000R\021orderCancellation\022,\n\010proposal\030h " +
+      "\001(\0132\016.vega.ProposalH\000R\010proposal\022 \n\004vote\030" +
+      "i \001(\0132\n.vega.VoteH\000R\004voteB\r\n\013transaction" +
+      "\"*\n\nTimeUpdate\022\034\n\ttimestamp\030\001 \001(\003R\ttimes" +
+      "tamp\"I\n\021TransferResponses\0224\n\tresponses\030\001" +
+      " \003(\0132\026.vega.TransferResponseR\tresponses\"" +
+      "\210\001\n\022PositionResolution\022\033\n\tmarket_id\030\001 \001(" +
+      "\tR\010marketId\022\036\n\ndistressed\030\002 \001(\003R\ndistres" +
+      "sed\022\026\n\006closed\030\003 \001(\003R\006closed\022\035\n\nmark_pric" +
+      "e\030\004 \001(\004R\tmarkPrice\"c\n\021LossSocialization\022" +
+      "\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\031\n\010party_id" +
+      "\030\002 \001(\tR\007partyId\022\026\n\006amount\030\003 \001(\003R\006amount\"" +
+      ";\n\017TradeSettlement\022\022\n\004size\030\001 \001(\003R\004size\022\024" +
+      "\n\005price\030\002 \001(\004R\005price\"\242\001\n\016SettlePosition\022" +
+      "\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\031\n\010party_id" +
+      "\030\002 \001(\tR\007partyId\022\024\n\005price\030\003 \001(\004R\005price\022B\n" +
+      "\021trade_settlements\030\004 \003(\0132\025.vega.TradeSet" +
+      "tlementR\020tradeSettlements\"x\n\020SettleDistr" +
+      "essed\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\031\n\010pa" +
+      "rty_id\030\002 \001(\tR\007partyId\022\026\n\006margin\030\003 \001(\004R\006m" +
+      "argin\022\024\n\005price\030\004 \001(\004R\005price\"0\n\nMarketTic" +
+      "k\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004time\030\002 \001(\003R\004time\"\302\001" +
+      "\n\014AuctionEvent\022\033\n\tmarket_id\030\001 \001(\tR\010marke" +
+      "tId\022\'\n\017opening_auction\030\002 \001(\010R\016openingAuc" +
+      "tion\022\024\n\005leave\030\003 \001(\010R\005leave\022\024\n\005start\030\004 \001(" +
+      "\003R\005start\022\020\n\003end\030\005 \001(\003R\003end\022.\n\007trigger\030\006 " +
+      "\001(\0162\024.vega.AuctionTriggerR\007trigger\"\236\014\n\010B" +
+      "usEvent\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005block\030\002 \001(\tR\005" +
+      "block\022&\n\004type\030\003 \001(\0162\022.vega.BusEventTypeR" +
+      "\004type\0223\n\013time_update\030e \001(\0132\020.vega.TimeUp" +
+      "dateH\000R\ntimeUpdate\022H\n\022transfer_responses" +
+      "\030f \001(\0132\027.vega.TransferResponsesH\000R\021trans" +
+      "ferResponses\022K\n\023position_resolution\030g \001(" +
+      "\0132\030.vega.PositionResolutionH\000R\022positionR" +
+      "esolution\022#\n\005order\030h \001(\0132\013.vega.OrderH\000R" +
+      "\005order\022)\n\007account\030i \001(\0132\r.vega.AccountH\000" +
+      "R\007account\022#\n\005party\030j \001(\0132\013.vega.PartyH\000R" +
+      "\005party\022#\n\005trade\030k \001(\0132\013.vega.TradeH\000R\005tr" +
+      "ade\0229\n\rmargin_levels\030l \001(\0132\022.vega.Margin" +
+      "LevelsH\000R\014marginLevels\022,\n\010proposal\030m \001(\013" +
+      "2\016.vega.ProposalH\000R\010proposal\022 \n\004vote\030n \001" +
+      "(\0132\n.vega.VoteH\000R\004vote\0223\n\013market_data\030o " +
+      "\001(\0132\020.vega.MarketDataH\000R\nmarketData\022<\n\016n" +
+      "ode_signature\030p \001(\0132\023.vega.NodeSignature" +
+      "H\000R\rnodeSignature\022H\n\022loss_socialization\030" +
+      "q \001(\0132\027.vega.LossSocializationH\000R\021lossSo" +
+      "cialization\022?\n\017settle_position\030r \001(\0132\024.v" +
+      "ega.SettlePositionH\000R\016settlePosition\022E\n\021" +
+      "settle_distressed\030s \001(\0132\026.vega.SettleDis" +
+      "tressedH\000R\020settleDistressed\0225\n\016market_cr" +
+      "eated\030t \001(\0132\014.vega.MarketH\000R\rmarketCreat" +
+      "ed\022#\n\005asset\030u \001(\0132\013.vega.AssetH\000R\005asset\022" +
+      "3\n\013market_tick\030v \001(\0132\020.vega.MarketTickH\000" +
+      "R\nmarketTick\0222\n\nwithdrawal\030w \001(\0132\020.vega." +
+      "WithdrawalH\000R\nwithdrawal\022)\n\007deposit\030x \001(" +
+      "\0132\r.vega.DepositH\000R\007deposit\022.\n\007auction\030y" +
+      " \001(\0132\022.vega.AuctionEventH\000R\007auction\0223\n\013r" +
+      "isk_factor\030z \001(\0132\020.vega.RiskFactorH\000R\nri" +
+      "skFactor\022E\n\021network_parameter\030{ \001(\0132\026.ve" +
+      "ga.NetworkParameterH\000R\020networkParameter\022" +
+      "K\n\023liquidity_provision\030| \001(\0132\030.vega.Liqu" +
+      "idityProvisionH\000R\022liquidityProvision\0225\n\016" +
+      "market_updated\030} \001(\0132\014.vega.MarketH\000R\rma" +
+      "rketUpdated\022,\n\006market\030\351\007 \001(\0132\021.vega.Mark" +
+      "etEventH\000R\006market\0227\n\014tx_err_event\030\321\017 \001(\013" +
+      "2\022.vega.TxErrorEventH\000R\ntxErrEventB\007\n\005ev" +
+      "ent*\251\007\n\014BusEventType\022\036\n\032BUS_EVENT_TYPE_U" +
+      "NSPECIFIED\020\000\022\026\n\022BUS_EVENT_TYPE_ALL\020\001\022\036\n\032" +
+      "BUS_EVENT_TYPE_TIME_UPDATE\020\002\022%\n!BUS_EVEN" +
+      "T_TYPE_TRANSFER_RESPONSES\020\003\022&\n\"BUS_EVENT" +
+      "_TYPE_POSITION_RESOLUTION\020\004\022\030\n\024BUS_EVENT" +
+      "_TYPE_ORDER\020\005\022\032\n\026BUS_EVENT_TYPE_ACCOUNT\020" +
+      "\006\022\030\n\024BUS_EVENT_TYPE_PARTY\020\007\022\030\n\024BUS_EVENT" +
+      "_TYPE_TRADE\020\010\022 \n\034BUS_EVENT_TYPE_MARGIN_L" +
+      "EVELS\020\t\022\033\n\027BUS_EVENT_TYPE_PROPOSAL\020\n\022\027\n\023" +
+      "BUS_EVENT_TYPE_VOTE\020\013\022\036\n\032BUS_EVENT_TYPE_" +
+      "MARKET_DATA\020\014\022!\n\035BUS_EVENT_TYPE_NODE_SIG" +
+      "NATURE\020\r\022%\n!BUS_EVENT_TYPE_LOSS_SOCIALIZ" +
+      "ATION\020\016\022\"\n\036BUS_EVENT_TYPE_SETTLE_POSITIO" +
+      "N\020\017\022$\n BUS_EVENT_TYPE_SETTLE_DISTRESSED\020" +
+      "\020\022!\n\035BUS_EVENT_TYPE_MARKET_CREATED\020\021\022\030\n\024" +
+      "BUS_EVENT_TYPE_ASSET\020\022\022\036\n\032BUS_EVENT_TYPE" +
+      "_MARKET_TICK\020\023\022\035\n\031BUS_EVENT_TYPE_WITHDRA" +
+      "WAL\020\024\022\032\n\026BUS_EVENT_TYPE_DEPOSIT\020\025\022\032\n\026BUS" +
+      "_EVENT_TYPE_AUCTION\020\026\022\036\n\032BUS_EVENT_TYPE_" +
+      "RISK_FACTOR\020\027\022$\n BUS_EVENT_TYPE_NETWORK_" +
+      "PARAMETER\020\030\022&\n\"BUS_EVENT_TYPE_LIQUIDITY_" +
+      "PROVISION\020\031\022!\n\035BUS_EVENT_TYPE_MARKET_UPD" +
+      "ATED\020\032\022\031\n\025BUS_EVENT_TYPE_MARKET\020e\022\034\n\027BUS" +
+      "_EVENT_TYPE_TX_ERROR\020\311\001B7\n\024io.vegaprotoc" +
+      "ol.vegaZ\037code.vegaprotocol.io/vega/proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20424,13 +20425,13 @@ public final class Events {
     internal_static_vega_MarketEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_MarketEvent_descriptor,
-        new java.lang.String[] { "MarketID", "Payload", });
+        new java.lang.String[] { "MarketId", "Payload", });
     internal_static_vega_TxErrorEvent_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_vega_TxErrorEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_TxErrorEvent_descriptor,
-        new java.lang.String[] { "PartyID", "ErrMsg", "OrderSubmission", "OrderAmendment", "OrderCancellation", "Proposal", "Vote", "Transaction", });
+        new java.lang.String[] { "PartyId", "ErrMsg", "OrderSubmission", "OrderAmendment", "OrderCancellation", "Proposal", "Vote", "Transaction", });
     internal_static_vega_TimeUpdate_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_vega_TimeUpdate_fieldAccessorTable = new
@@ -20448,13 +20449,13 @@ public final class Events {
     internal_static_vega_PositionResolution_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_PositionResolution_descriptor,
-        new java.lang.String[] { "MarketID", "Distressed", "Closed", "MarkPrice", });
+        new java.lang.String[] { "MarketId", "Distressed", "Closed", "MarkPrice", });
     internal_static_vega_LossSocialization_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_vega_LossSocialization_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_LossSocialization_descriptor,
-        new java.lang.String[] { "MarketID", "PartyID", "Amount", });
+        new java.lang.String[] { "MarketId", "PartyId", "Amount", });
     internal_static_vega_TradeSettlement_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_vega_TradeSettlement_fieldAccessorTable = new
@@ -20466,31 +20467,31 @@ public final class Events {
     internal_static_vega_SettlePosition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_SettlePosition_descriptor,
-        new java.lang.String[] { "MarketID", "PartyID", "Price", "TradeSettlements", });
+        new java.lang.String[] { "MarketId", "PartyId", "Price", "TradeSettlements", });
     internal_static_vega_SettleDistressed_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_vega_SettleDistressed_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_SettleDistressed_descriptor,
-        new java.lang.String[] { "MarketID", "PartyID", "Margin", "Price", });
+        new java.lang.String[] { "MarketId", "PartyId", "Margin", "Price", });
     internal_static_vega_MarketTick_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_vega_MarketTick_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_MarketTick_descriptor,
-        new java.lang.String[] { "ID", "Time", });
+        new java.lang.String[] { "Id", "Time", });
     internal_static_vega_AuctionEvent_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_vega_AuctionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_AuctionEvent_descriptor,
-        new java.lang.String[] { "MarketID", "OpeningAuction", "Leave", "Start", "End", "Trigger", });
+        new java.lang.String[] { "MarketId", "OpeningAuction", "Leave", "Start", "End", "Trigger", });
     internal_static_vega_BusEvent_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_vega_BusEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_BusEvent_descriptor,
-        new java.lang.String[] { "ID", "Block", "Type", "TimeUpdate", "TransferResponses", "PositionResolution", "Order", "Account", "Party", "Trade", "MarginLevels", "Proposal", "Vote", "MarketData", "NodeSignature", "LossSocialization", "SettlePosition", "SettleDistressed", "MarketCreated", "Asset", "MarketTick", "Withdrawal", "Deposit", "Auction", "RiskFactor", "NetworkParameter", "LiquidityProvision", "MarketUpdated", "Market", "TxErrEvent", "Event", });
+        new java.lang.String[] { "Id", "Block", "Type", "TimeUpdate", "TransferResponses", "PositionResolution", "Order", "Account", "Party", "Trade", "MarginLevels", "Proposal", "Vote", "MarketData", "NodeSignature", "LossSocialization", "SettlePosition", "SettleDistressed", "MarketCreated", "Asset", "MarketTick", "Withdrawal", "Deposit", "Auction", "RiskFactor", "NetworkParameter", "LiquidityProvision", "MarketUpdated", "Market", "TxErrEvent", "Event", });
     io.vegaprotocol.vega.Markets.getDescriptor();
     io.vegaprotocol.vega.Assets.getDescriptor();
     io.vegaprotocol.vega.Governance.getDescriptor();

@@ -1,18 +1,15 @@
 // GENERATED CODE -- DO NOT EDIT!
 
-// package: api
+// package: api.v1
 // file: api/trading.proto
 
 import * as api_trading_pb from "../api/trading_pb";
-import * as vega_pb from "../vega_pb";
-import * as governance_pb from "../governance_pb";
-import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
 import * as grpc from "grpc";
 
-interface ItradingService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
-  prepareSubmitOrder: grpc.MethodDefinition<api_trading_pb.SubmitOrderRequest, api_trading_pb.PrepareSubmitOrderResponse>;
-  prepareCancelOrder: grpc.MethodDefinition<api_trading_pb.CancelOrderRequest, api_trading_pb.PrepareCancelOrderResponse>;
-  prepareAmendOrder: grpc.MethodDefinition<api_trading_pb.AmendOrderRequest, api_trading_pb.PrepareAmendOrderResponse>;
+interface ITradingServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
+  prepareSubmitOrder: grpc.MethodDefinition<api_trading_pb.PrepareSubmitOrderRequest, api_trading_pb.PrepareSubmitOrderResponse>;
+  prepareCancelOrder: grpc.MethodDefinition<api_trading_pb.PrepareCancelOrderRequest, api_trading_pb.PrepareCancelOrderResponse>;
+  prepareAmendOrder: grpc.MethodDefinition<api_trading_pb.PrepareAmendOrderRequest, api_trading_pb.PrepareAmendOrderResponse>;
   prepareWithdraw: grpc.MethodDefinition<api_trading_pb.PrepareWithdrawRequest, api_trading_pb.PrepareWithdrawResponse>;
   submitTransaction: grpc.MethodDefinition<api_trading_pb.SubmitTransactionRequest, api_trading_pb.SubmitTransactionResponse>;
   prepareProposal: grpc.MethodDefinition<api_trading_pb.PrepareProposalRequest, api_trading_pb.PrepareProposalResponse>;
@@ -21,12 +18,12 @@ interface ItradingService extends grpc.ServiceDefinition<grpc.UntypedServiceImpl
   prepareLiquidityProvision: grpc.MethodDefinition<api_trading_pb.PrepareLiquidityProvisionRequest, api_trading_pb.PrepareLiquidityProvisionResponse>;
 }
 
-export const tradingService: ItradingService;
+export const TradingServiceService: ITradingServiceService;
 
-export interface ItradingServer extends grpc.UntypedServiceImplementation {
-  prepareSubmitOrder: grpc.handleUnaryCall<api_trading_pb.SubmitOrderRequest, api_trading_pb.PrepareSubmitOrderResponse>;
-  prepareCancelOrder: grpc.handleUnaryCall<api_trading_pb.CancelOrderRequest, api_trading_pb.PrepareCancelOrderResponse>;
-  prepareAmendOrder: grpc.handleUnaryCall<api_trading_pb.AmendOrderRequest, api_trading_pb.PrepareAmendOrderResponse>;
+export interface ITradingServiceServer extends grpc.UntypedServiceImplementation {
+  prepareSubmitOrder: grpc.handleUnaryCall<api_trading_pb.PrepareSubmitOrderRequest, api_trading_pb.PrepareSubmitOrderResponse>;
+  prepareCancelOrder: grpc.handleUnaryCall<api_trading_pb.PrepareCancelOrderRequest, api_trading_pb.PrepareCancelOrderResponse>;
+  prepareAmendOrder: grpc.handleUnaryCall<api_trading_pb.PrepareAmendOrderRequest, api_trading_pb.PrepareAmendOrderResponse>;
   prepareWithdraw: grpc.handleUnaryCall<api_trading_pb.PrepareWithdrawRequest, api_trading_pb.PrepareWithdrawResponse>;
   submitTransaction: grpc.handleUnaryCall<api_trading_pb.SubmitTransactionRequest, api_trading_pb.SubmitTransactionResponse>;
   prepareProposal: grpc.handleUnaryCall<api_trading_pb.PrepareProposalRequest, api_trading_pb.PrepareProposalResponse>;
@@ -35,17 +32,17 @@ export interface ItradingServer extends grpc.UntypedServiceImplementation {
   prepareLiquidityProvision: grpc.handleUnaryCall<api_trading_pb.PrepareLiquidityProvisionRequest, api_trading_pb.PrepareLiquidityProvisionResponse>;
 }
 
-export class tradingClient extends grpc.Client {
+export class TradingServiceClient extends grpc.Client {
   constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
-  prepareSubmitOrder(argument: api_trading_pb.SubmitOrderRequest, callback: grpc.requestCallback<api_trading_pb.PrepareSubmitOrderResponse>): grpc.ClientUnaryCall;
-  prepareSubmitOrder(argument: api_trading_pb.SubmitOrderRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareSubmitOrderResponse>): grpc.ClientUnaryCall;
-  prepareSubmitOrder(argument: api_trading_pb.SubmitOrderRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareSubmitOrderResponse>): grpc.ClientUnaryCall;
-  prepareCancelOrder(argument: api_trading_pb.CancelOrderRequest, callback: grpc.requestCallback<api_trading_pb.PrepareCancelOrderResponse>): grpc.ClientUnaryCall;
-  prepareCancelOrder(argument: api_trading_pb.CancelOrderRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareCancelOrderResponse>): grpc.ClientUnaryCall;
-  prepareCancelOrder(argument: api_trading_pb.CancelOrderRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareCancelOrderResponse>): grpc.ClientUnaryCall;
-  prepareAmendOrder(argument: api_trading_pb.AmendOrderRequest, callback: grpc.requestCallback<api_trading_pb.PrepareAmendOrderResponse>): grpc.ClientUnaryCall;
-  prepareAmendOrder(argument: api_trading_pb.AmendOrderRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareAmendOrderResponse>): grpc.ClientUnaryCall;
-  prepareAmendOrder(argument: api_trading_pb.AmendOrderRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareAmendOrderResponse>): grpc.ClientUnaryCall;
+  prepareSubmitOrder(argument: api_trading_pb.PrepareSubmitOrderRequest, callback: grpc.requestCallback<api_trading_pb.PrepareSubmitOrderResponse>): grpc.ClientUnaryCall;
+  prepareSubmitOrder(argument: api_trading_pb.PrepareSubmitOrderRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareSubmitOrderResponse>): grpc.ClientUnaryCall;
+  prepareSubmitOrder(argument: api_trading_pb.PrepareSubmitOrderRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareSubmitOrderResponse>): grpc.ClientUnaryCall;
+  prepareCancelOrder(argument: api_trading_pb.PrepareCancelOrderRequest, callback: grpc.requestCallback<api_trading_pb.PrepareCancelOrderResponse>): grpc.ClientUnaryCall;
+  prepareCancelOrder(argument: api_trading_pb.PrepareCancelOrderRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareCancelOrderResponse>): grpc.ClientUnaryCall;
+  prepareCancelOrder(argument: api_trading_pb.PrepareCancelOrderRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareCancelOrderResponse>): grpc.ClientUnaryCall;
+  prepareAmendOrder(argument: api_trading_pb.PrepareAmendOrderRequest, callback: grpc.requestCallback<api_trading_pb.PrepareAmendOrderResponse>): grpc.ClientUnaryCall;
+  prepareAmendOrder(argument: api_trading_pb.PrepareAmendOrderRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareAmendOrderResponse>): grpc.ClientUnaryCall;
+  prepareAmendOrder(argument: api_trading_pb.PrepareAmendOrderRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareAmendOrderResponse>): grpc.ClientUnaryCall;
   prepareWithdraw(argument: api_trading_pb.PrepareWithdrawRequest, callback: grpc.requestCallback<api_trading_pb.PrepareWithdrawResponse>): grpc.ClientUnaryCall;
   prepareWithdraw(argument: api_trading_pb.PrepareWithdrawRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareWithdrawResponse>): grpc.ClientUnaryCall;
   prepareWithdraw(argument: api_trading_pb.PrepareWithdrawRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareWithdrawResponse>): grpc.ClientUnaryCall;
@@ -66,24 +63,24 @@ export class tradingClient extends grpc.Client {
   prepareLiquidityProvision(argument: api_trading_pb.PrepareLiquidityProvisionRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareLiquidityProvisionResponse>): grpc.ClientUnaryCall;
 }
 
-interface Itrading_dataService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
+interface ITradingDataServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
   marketAccounts: grpc.MethodDefinition<api_trading_pb.MarketAccountsRequest, api_trading_pb.MarketAccountsResponse>;
   partyAccounts: grpc.MethodDefinition<api_trading_pb.PartyAccountsRequest, api_trading_pb.PartyAccountsResponse>;
   feeInfrastructureAccounts: grpc.MethodDefinition<api_trading_pb.FeeInfrastructureAccountsRequest, api_trading_pb.FeeInfrastructureAccountsResponse>;
   candles: grpc.MethodDefinition<api_trading_pb.CandlesRequest, api_trading_pb.CandlesResponse>;
   marketDataByID: grpc.MethodDefinition<api_trading_pb.MarketDataByIDRequest, api_trading_pb.MarketDataByIDResponse>;
-  marketsData: grpc.MethodDefinition<google_protobuf_empty_pb.Empty, api_trading_pb.MarketsDataResponse>;
+  marketsData: grpc.MethodDefinition<api_trading_pb.MarketsDataRequest, api_trading_pb.MarketsDataResponse>;
   marketByID: grpc.MethodDefinition<api_trading_pb.MarketByIDRequest, api_trading_pb.MarketByIDResponse>;
   marketDepth: grpc.MethodDefinition<api_trading_pb.MarketDepthRequest, api_trading_pb.MarketDepthResponse>;
-  markets: grpc.MethodDefinition<google_protobuf_empty_pb.Empty, api_trading_pb.MarketsResponse>;
-  orderByMarketAndID: grpc.MethodDefinition<api_trading_pb.OrderByMarketAndIdRequest, api_trading_pb.OrderByMarketAndIdResponse>;
+  markets: grpc.MethodDefinition<api_trading_pb.MarketsRequest, api_trading_pb.MarketsResponse>;
+  orderByMarketAndID: grpc.MethodDefinition<api_trading_pb.OrderByMarketAndIDRequest, api_trading_pb.OrderByMarketAndIDResponse>;
   orderByReference: grpc.MethodDefinition<api_trading_pb.OrderByReferenceRequest, api_trading_pb.OrderByReferenceResponse>;
   ordersByMarket: grpc.MethodDefinition<api_trading_pb.OrdersByMarketRequest, api_trading_pb.OrdersByMarketResponse>;
   ordersByParty: grpc.MethodDefinition<api_trading_pb.OrdersByPartyRequest, api_trading_pb.OrdersByPartyResponse>;
-  orderByID: grpc.MethodDefinition<api_trading_pb.OrderByIDRequest, vega_pb.Order>;
-  orderVersionsByID: grpc.MethodDefinition<api_trading_pb.OrderVersionsByIDRequest, api_trading_pb.OrderVersionsResponse>;
+  orderByID: grpc.MethodDefinition<api_trading_pb.OrderByIDRequest, api_trading_pb.OrderByIDResponse>;
+  orderVersionsByID: grpc.MethodDefinition<api_trading_pb.OrderVersionsByIDRequest, api_trading_pb.OrderVersionsByIDResponse>;
   marginLevels: grpc.MethodDefinition<api_trading_pb.MarginLevelsRequest, api_trading_pb.MarginLevelsResponse>;
-  parties: grpc.MethodDefinition<google_protobuf_empty_pb.Empty, api_trading_pb.PartiesResponse>;
+  parties: grpc.MethodDefinition<api_trading_pb.PartiesRequest, api_trading_pb.PartiesResponse>;
   partyByID: grpc.MethodDefinition<api_trading_pb.PartyByIDRequest, api_trading_pb.PartyByIDResponse>;
   positionsByParty: grpc.MethodDefinition<api_trading_pb.PositionsByPartyRequest, api_trading_pb.PositionsByPartyResponse>;
   lastTrade: grpc.MethodDefinition<api_trading_pb.LastTradeRequest, api_trading_pb.LastTradeResponse>;
@@ -99,23 +96,23 @@ interface Itrading_dataService extends grpc.ServiceDefinition<grpc.UntypedServic
   getNewAssetProposals: grpc.MethodDefinition<api_trading_pb.GetNewAssetProposalsRequest, api_trading_pb.GetNewAssetProposalsResponse>;
   getProposalByID: grpc.MethodDefinition<api_trading_pb.GetProposalByIDRequest, api_trading_pb.GetProposalByIDResponse>;
   getProposalByReference: grpc.MethodDefinition<api_trading_pb.GetProposalByReferenceRequest, api_trading_pb.GetProposalByReferenceResponse>;
-  observeGovernance: grpc.MethodDefinition<google_protobuf_empty_pb.Empty, governance_pb.GovernanceData>;
-  observePartyProposals: grpc.MethodDefinition<api_trading_pb.ObservePartyProposalsRequest, governance_pb.GovernanceData>;
-  observePartyVotes: grpc.MethodDefinition<api_trading_pb.ObservePartyVotesRequest, governance_pb.Vote>;
-  observeProposalVotes: grpc.MethodDefinition<api_trading_pb.ObserveProposalVotesRequest, governance_pb.Vote>;
-  observeEventBus: grpc.MethodDefinition<api_trading_pb.ObserveEventsRequest, api_trading_pb.ObserveEventsResponse>;
-  statistics: grpc.MethodDefinition<google_protobuf_empty_pb.Empty, vega_pb.Statistics>;
-  getVegaTime: grpc.MethodDefinition<google_protobuf_empty_pb.Empty, api_trading_pb.VegaTimeResponse>;
-  accountsSubscribe: grpc.MethodDefinition<api_trading_pb.AccountsSubscribeRequest, vega_pb.Account>;
-  candlesSubscribe: grpc.MethodDefinition<api_trading_pb.CandlesSubscribeRequest, vega_pb.Candle>;
-  marginLevelsSubscribe: grpc.MethodDefinition<api_trading_pb.MarginLevelsSubscribeRequest, vega_pb.MarginLevels>;
-  marketDepthSubscribe: grpc.MethodDefinition<api_trading_pb.MarketDepthSubscribeRequest, vega_pb.MarketDepth>;
-  marketDepthUpdatesSubscribe: grpc.MethodDefinition<api_trading_pb.MarketDepthUpdatesSubscribeRequest, vega_pb.MarketDepthUpdate>;
-  marketsDataSubscribe: grpc.MethodDefinition<api_trading_pb.MarketsDataSubscribeRequest, vega_pb.MarketData>;
-  ordersSubscribe: grpc.MethodDefinition<api_trading_pb.OrdersSubscribeRequest, api_trading_pb.OrdersStream>;
-  positionsSubscribe: grpc.MethodDefinition<api_trading_pb.PositionsSubscribeRequest, vega_pb.Position>;
-  tradesSubscribe: grpc.MethodDefinition<api_trading_pb.TradesSubscribeRequest, api_trading_pb.TradesStream>;
-  transferResponsesSubscribe: grpc.MethodDefinition<google_protobuf_empty_pb.Empty, vega_pb.TransferResponse>;
+  observeGovernance: grpc.MethodDefinition<api_trading_pb.ObserveGovernanceRequest, api_trading_pb.ObserveGovernanceResponse>;
+  observePartyProposals: grpc.MethodDefinition<api_trading_pb.ObservePartyProposalsRequest, api_trading_pb.ObservePartyProposalsResponse>;
+  observePartyVotes: grpc.MethodDefinition<api_trading_pb.ObservePartyVotesRequest, api_trading_pb.ObservePartyVotesResponse>;
+  observeProposalVotes: grpc.MethodDefinition<api_trading_pb.ObserveProposalVotesRequest, api_trading_pb.ObserveProposalVotesResponse>;
+  observeEventBus: grpc.MethodDefinition<api_trading_pb.ObserveEventBusRequest, api_trading_pb.ObserveEventBusResponse>;
+  statistics: grpc.MethodDefinition<api_trading_pb.StatisticsRequest, api_trading_pb.StatisticsResponse>;
+  getVegaTime: grpc.MethodDefinition<api_trading_pb.GetVegaTimeRequest, api_trading_pb.GetVegaTimeResponse>;
+  accountsSubscribe: grpc.MethodDefinition<api_trading_pb.AccountsSubscribeRequest, api_trading_pb.AccountsSubscribeResponse>;
+  candlesSubscribe: grpc.MethodDefinition<api_trading_pb.CandlesSubscribeRequest, api_trading_pb.CandlesSubscribeResponse>;
+  marginLevelsSubscribe: grpc.MethodDefinition<api_trading_pb.MarginLevelsSubscribeRequest, api_trading_pb.MarginLevelsSubscribeResponse>;
+  marketDepthSubscribe: grpc.MethodDefinition<api_trading_pb.MarketDepthSubscribeRequest, api_trading_pb.MarketDepthSubscribeResponse>;
+  marketDepthUpdatesSubscribe: grpc.MethodDefinition<api_trading_pb.MarketDepthUpdatesSubscribeRequest, api_trading_pb.MarketDepthUpdatesSubscribeResponse>;
+  marketsDataSubscribe: grpc.MethodDefinition<api_trading_pb.MarketsDataSubscribeRequest, api_trading_pb.MarketsDataSubscribeResponse>;
+  ordersSubscribe: grpc.MethodDefinition<api_trading_pb.OrdersSubscribeRequest, api_trading_pb.OrdersSubscribeResponse>;
+  positionsSubscribe: grpc.MethodDefinition<api_trading_pb.PositionsSubscribeRequest, api_trading_pb.PositionsSubscribeResponse>;
+  tradesSubscribe: grpc.MethodDefinition<api_trading_pb.TradesSubscribeRequest, api_trading_pb.TradesSubscribeResponse>;
+  transferResponsesSubscribe: grpc.MethodDefinition<api_trading_pb.TransferResponsesSubscribeRequest, api_trading_pb.TransferResponsesSubscribeResponse>;
   getNodeSignaturesAggregate: grpc.MethodDefinition<api_trading_pb.GetNodeSignaturesAggregateRequest, api_trading_pb.GetNodeSignaturesAggregateResponse>;
   assetByID: grpc.MethodDefinition<api_trading_pb.AssetByIDRequest, api_trading_pb.AssetByIDResponse>;
   assets: grpc.MethodDefinition<api_trading_pb.AssetsRequest, api_trading_pb.AssetsResponse>;
@@ -130,26 +127,26 @@ interface Itrading_dataService extends grpc.ServiceDefinition<grpc.UntypedServic
   liquidityProvisions: grpc.MethodDefinition<api_trading_pb.LiquidityProvisionsRequest, api_trading_pb.LiquidityProvisionsResponse>;
 }
 
-export const trading_dataService: Itrading_dataService;
+export const TradingDataServiceService: ITradingDataServiceService;
 
-export interface Itrading_dataServer extends grpc.UntypedServiceImplementation {
+export interface ITradingDataServiceServer extends grpc.UntypedServiceImplementation {
   marketAccounts: grpc.handleUnaryCall<api_trading_pb.MarketAccountsRequest, api_trading_pb.MarketAccountsResponse>;
   partyAccounts: grpc.handleUnaryCall<api_trading_pb.PartyAccountsRequest, api_trading_pb.PartyAccountsResponse>;
   feeInfrastructureAccounts: grpc.handleUnaryCall<api_trading_pb.FeeInfrastructureAccountsRequest, api_trading_pb.FeeInfrastructureAccountsResponse>;
   candles: grpc.handleUnaryCall<api_trading_pb.CandlesRequest, api_trading_pb.CandlesResponse>;
   marketDataByID: grpc.handleUnaryCall<api_trading_pb.MarketDataByIDRequest, api_trading_pb.MarketDataByIDResponse>;
-  marketsData: grpc.handleUnaryCall<google_protobuf_empty_pb.Empty, api_trading_pb.MarketsDataResponse>;
+  marketsData: grpc.handleUnaryCall<api_trading_pb.MarketsDataRequest, api_trading_pb.MarketsDataResponse>;
   marketByID: grpc.handleUnaryCall<api_trading_pb.MarketByIDRequest, api_trading_pb.MarketByIDResponse>;
   marketDepth: grpc.handleUnaryCall<api_trading_pb.MarketDepthRequest, api_trading_pb.MarketDepthResponse>;
-  markets: grpc.handleUnaryCall<google_protobuf_empty_pb.Empty, api_trading_pb.MarketsResponse>;
-  orderByMarketAndID: grpc.handleUnaryCall<api_trading_pb.OrderByMarketAndIdRequest, api_trading_pb.OrderByMarketAndIdResponse>;
+  markets: grpc.handleUnaryCall<api_trading_pb.MarketsRequest, api_trading_pb.MarketsResponse>;
+  orderByMarketAndID: grpc.handleUnaryCall<api_trading_pb.OrderByMarketAndIDRequest, api_trading_pb.OrderByMarketAndIDResponse>;
   orderByReference: grpc.handleUnaryCall<api_trading_pb.OrderByReferenceRequest, api_trading_pb.OrderByReferenceResponse>;
   ordersByMarket: grpc.handleUnaryCall<api_trading_pb.OrdersByMarketRequest, api_trading_pb.OrdersByMarketResponse>;
   ordersByParty: grpc.handleUnaryCall<api_trading_pb.OrdersByPartyRequest, api_trading_pb.OrdersByPartyResponse>;
-  orderByID: grpc.handleUnaryCall<api_trading_pb.OrderByIDRequest, vega_pb.Order>;
-  orderVersionsByID: grpc.handleUnaryCall<api_trading_pb.OrderVersionsByIDRequest, api_trading_pb.OrderVersionsResponse>;
+  orderByID: grpc.handleUnaryCall<api_trading_pb.OrderByIDRequest, api_trading_pb.OrderByIDResponse>;
+  orderVersionsByID: grpc.handleUnaryCall<api_trading_pb.OrderVersionsByIDRequest, api_trading_pb.OrderVersionsByIDResponse>;
   marginLevels: grpc.handleUnaryCall<api_trading_pb.MarginLevelsRequest, api_trading_pb.MarginLevelsResponse>;
-  parties: grpc.handleUnaryCall<google_protobuf_empty_pb.Empty, api_trading_pb.PartiesResponse>;
+  parties: grpc.handleUnaryCall<api_trading_pb.PartiesRequest, api_trading_pb.PartiesResponse>;
   partyByID: grpc.handleUnaryCall<api_trading_pb.PartyByIDRequest, api_trading_pb.PartyByIDResponse>;
   positionsByParty: grpc.handleUnaryCall<api_trading_pb.PositionsByPartyRequest, api_trading_pb.PositionsByPartyResponse>;
   lastTrade: grpc.handleUnaryCall<api_trading_pb.LastTradeRequest, api_trading_pb.LastTradeResponse>;
@@ -165,23 +162,23 @@ export interface Itrading_dataServer extends grpc.UntypedServiceImplementation {
   getNewAssetProposals: grpc.handleUnaryCall<api_trading_pb.GetNewAssetProposalsRequest, api_trading_pb.GetNewAssetProposalsResponse>;
   getProposalByID: grpc.handleUnaryCall<api_trading_pb.GetProposalByIDRequest, api_trading_pb.GetProposalByIDResponse>;
   getProposalByReference: grpc.handleUnaryCall<api_trading_pb.GetProposalByReferenceRequest, api_trading_pb.GetProposalByReferenceResponse>;
-  observeGovernance: grpc.handleServerStreamingCall<google_protobuf_empty_pb.Empty, governance_pb.GovernanceData>;
-  observePartyProposals: grpc.handleServerStreamingCall<api_trading_pb.ObservePartyProposalsRequest, governance_pb.GovernanceData>;
-  observePartyVotes: grpc.handleServerStreamingCall<api_trading_pb.ObservePartyVotesRequest, governance_pb.Vote>;
-  observeProposalVotes: grpc.handleServerStreamingCall<api_trading_pb.ObserveProposalVotesRequest, governance_pb.Vote>;
-  observeEventBus: grpc.handleBidiStreamingCall<api_trading_pb.ObserveEventsRequest, api_trading_pb.ObserveEventsResponse>;
-  statistics: grpc.handleUnaryCall<google_protobuf_empty_pb.Empty, vega_pb.Statistics>;
-  getVegaTime: grpc.handleUnaryCall<google_protobuf_empty_pb.Empty, api_trading_pb.VegaTimeResponse>;
-  accountsSubscribe: grpc.handleServerStreamingCall<api_trading_pb.AccountsSubscribeRequest, vega_pb.Account>;
-  candlesSubscribe: grpc.handleServerStreamingCall<api_trading_pb.CandlesSubscribeRequest, vega_pb.Candle>;
-  marginLevelsSubscribe: grpc.handleServerStreamingCall<api_trading_pb.MarginLevelsSubscribeRequest, vega_pb.MarginLevels>;
-  marketDepthSubscribe: grpc.handleServerStreamingCall<api_trading_pb.MarketDepthSubscribeRequest, vega_pb.MarketDepth>;
-  marketDepthUpdatesSubscribe: grpc.handleServerStreamingCall<api_trading_pb.MarketDepthUpdatesSubscribeRequest, vega_pb.MarketDepthUpdate>;
-  marketsDataSubscribe: grpc.handleServerStreamingCall<api_trading_pb.MarketsDataSubscribeRequest, vega_pb.MarketData>;
-  ordersSubscribe: grpc.handleServerStreamingCall<api_trading_pb.OrdersSubscribeRequest, api_trading_pb.OrdersStream>;
-  positionsSubscribe: grpc.handleServerStreamingCall<api_trading_pb.PositionsSubscribeRequest, vega_pb.Position>;
-  tradesSubscribe: grpc.handleServerStreamingCall<api_trading_pb.TradesSubscribeRequest, api_trading_pb.TradesStream>;
-  transferResponsesSubscribe: grpc.handleServerStreamingCall<google_protobuf_empty_pb.Empty, vega_pb.TransferResponse>;
+  observeGovernance: grpc.handleServerStreamingCall<api_trading_pb.ObserveGovernanceRequest, api_trading_pb.ObserveGovernanceResponse>;
+  observePartyProposals: grpc.handleServerStreamingCall<api_trading_pb.ObservePartyProposalsRequest, api_trading_pb.ObservePartyProposalsResponse>;
+  observePartyVotes: grpc.handleServerStreamingCall<api_trading_pb.ObservePartyVotesRequest, api_trading_pb.ObservePartyVotesResponse>;
+  observeProposalVotes: grpc.handleServerStreamingCall<api_trading_pb.ObserveProposalVotesRequest, api_trading_pb.ObserveProposalVotesResponse>;
+  observeEventBus: grpc.handleBidiStreamingCall<api_trading_pb.ObserveEventBusRequest, api_trading_pb.ObserveEventBusResponse>;
+  statistics: grpc.handleUnaryCall<api_trading_pb.StatisticsRequest, api_trading_pb.StatisticsResponse>;
+  getVegaTime: grpc.handleUnaryCall<api_trading_pb.GetVegaTimeRequest, api_trading_pb.GetVegaTimeResponse>;
+  accountsSubscribe: grpc.handleServerStreamingCall<api_trading_pb.AccountsSubscribeRequest, api_trading_pb.AccountsSubscribeResponse>;
+  candlesSubscribe: grpc.handleServerStreamingCall<api_trading_pb.CandlesSubscribeRequest, api_trading_pb.CandlesSubscribeResponse>;
+  marginLevelsSubscribe: grpc.handleServerStreamingCall<api_trading_pb.MarginLevelsSubscribeRequest, api_trading_pb.MarginLevelsSubscribeResponse>;
+  marketDepthSubscribe: grpc.handleServerStreamingCall<api_trading_pb.MarketDepthSubscribeRequest, api_trading_pb.MarketDepthSubscribeResponse>;
+  marketDepthUpdatesSubscribe: grpc.handleServerStreamingCall<api_trading_pb.MarketDepthUpdatesSubscribeRequest, api_trading_pb.MarketDepthUpdatesSubscribeResponse>;
+  marketsDataSubscribe: grpc.handleServerStreamingCall<api_trading_pb.MarketsDataSubscribeRequest, api_trading_pb.MarketsDataSubscribeResponse>;
+  ordersSubscribe: grpc.handleServerStreamingCall<api_trading_pb.OrdersSubscribeRequest, api_trading_pb.OrdersSubscribeResponse>;
+  positionsSubscribe: grpc.handleServerStreamingCall<api_trading_pb.PositionsSubscribeRequest, api_trading_pb.PositionsSubscribeResponse>;
+  tradesSubscribe: grpc.handleServerStreamingCall<api_trading_pb.TradesSubscribeRequest, api_trading_pb.TradesSubscribeResponse>;
+  transferResponsesSubscribe: grpc.handleServerStreamingCall<api_trading_pb.TransferResponsesSubscribeRequest, api_trading_pb.TransferResponsesSubscribeResponse>;
   getNodeSignaturesAggregate: grpc.handleUnaryCall<api_trading_pb.GetNodeSignaturesAggregateRequest, api_trading_pb.GetNodeSignaturesAggregateResponse>;
   assetByID: grpc.handleUnaryCall<api_trading_pb.AssetByIDRequest, api_trading_pb.AssetByIDResponse>;
   assets: grpc.handleUnaryCall<api_trading_pb.AssetsRequest, api_trading_pb.AssetsResponse>;
@@ -196,7 +193,7 @@ export interface Itrading_dataServer extends grpc.UntypedServiceImplementation {
   liquidityProvisions: grpc.handleUnaryCall<api_trading_pb.LiquidityProvisionsRequest, api_trading_pb.LiquidityProvisionsResponse>;
 }
 
-export class trading_dataClient extends grpc.Client {
+export class TradingDataServiceClient extends grpc.Client {
   constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
   marketAccounts(argument: api_trading_pb.MarketAccountsRequest, callback: grpc.requestCallback<api_trading_pb.MarketAccountsResponse>): grpc.ClientUnaryCall;
   marketAccounts(argument: api_trading_pb.MarketAccountsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarketAccountsResponse>): grpc.ClientUnaryCall;
@@ -213,21 +210,21 @@ export class trading_dataClient extends grpc.Client {
   marketDataByID(argument: api_trading_pb.MarketDataByIDRequest, callback: grpc.requestCallback<api_trading_pb.MarketDataByIDResponse>): grpc.ClientUnaryCall;
   marketDataByID(argument: api_trading_pb.MarketDataByIDRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarketDataByIDResponse>): grpc.ClientUnaryCall;
   marketDataByID(argument: api_trading_pb.MarketDataByIDRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarketDataByIDResponse>): grpc.ClientUnaryCall;
-  marketsData(argument: google_protobuf_empty_pb.Empty, callback: grpc.requestCallback<api_trading_pb.MarketsDataResponse>): grpc.ClientUnaryCall;
-  marketsData(argument: google_protobuf_empty_pb.Empty, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarketsDataResponse>): grpc.ClientUnaryCall;
-  marketsData(argument: google_protobuf_empty_pb.Empty, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarketsDataResponse>): grpc.ClientUnaryCall;
+  marketsData(argument: api_trading_pb.MarketsDataRequest, callback: grpc.requestCallback<api_trading_pb.MarketsDataResponse>): grpc.ClientUnaryCall;
+  marketsData(argument: api_trading_pb.MarketsDataRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarketsDataResponse>): grpc.ClientUnaryCall;
+  marketsData(argument: api_trading_pb.MarketsDataRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarketsDataResponse>): grpc.ClientUnaryCall;
   marketByID(argument: api_trading_pb.MarketByIDRequest, callback: grpc.requestCallback<api_trading_pb.MarketByIDResponse>): grpc.ClientUnaryCall;
   marketByID(argument: api_trading_pb.MarketByIDRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarketByIDResponse>): grpc.ClientUnaryCall;
   marketByID(argument: api_trading_pb.MarketByIDRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarketByIDResponse>): grpc.ClientUnaryCall;
   marketDepth(argument: api_trading_pb.MarketDepthRequest, callback: grpc.requestCallback<api_trading_pb.MarketDepthResponse>): grpc.ClientUnaryCall;
   marketDepth(argument: api_trading_pb.MarketDepthRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarketDepthResponse>): grpc.ClientUnaryCall;
   marketDepth(argument: api_trading_pb.MarketDepthRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarketDepthResponse>): grpc.ClientUnaryCall;
-  markets(argument: google_protobuf_empty_pb.Empty, callback: grpc.requestCallback<api_trading_pb.MarketsResponse>): grpc.ClientUnaryCall;
-  markets(argument: google_protobuf_empty_pb.Empty, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarketsResponse>): grpc.ClientUnaryCall;
-  markets(argument: google_protobuf_empty_pb.Empty, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarketsResponse>): grpc.ClientUnaryCall;
-  orderByMarketAndID(argument: api_trading_pb.OrderByMarketAndIdRequest, callback: grpc.requestCallback<api_trading_pb.OrderByMarketAndIdResponse>): grpc.ClientUnaryCall;
-  orderByMarketAndID(argument: api_trading_pb.OrderByMarketAndIdRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OrderByMarketAndIdResponse>): grpc.ClientUnaryCall;
-  orderByMarketAndID(argument: api_trading_pb.OrderByMarketAndIdRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OrderByMarketAndIdResponse>): grpc.ClientUnaryCall;
+  markets(argument: api_trading_pb.MarketsRequest, callback: grpc.requestCallback<api_trading_pb.MarketsResponse>): grpc.ClientUnaryCall;
+  markets(argument: api_trading_pb.MarketsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarketsResponse>): grpc.ClientUnaryCall;
+  markets(argument: api_trading_pb.MarketsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarketsResponse>): grpc.ClientUnaryCall;
+  orderByMarketAndID(argument: api_trading_pb.OrderByMarketAndIDRequest, callback: grpc.requestCallback<api_trading_pb.OrderByMarketAndIDResponse>): grpc.ClientUnaryCall;
+  orderByMarketAndID(argument: api_trading_pb.OrderByMarketAndIDRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OrderByMarketAndIDResponse>): grpc.ClientUnaryCall;
+  orderByMarketAndID(argument: api_trading_pb.OrderByMarketAndIDRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OrderByMarketAndIDResponse>): grpc.ClientUnaryCall;
   orderByReference(argument: api_trading_pb.OrderByReferenceRequest, callback: grpc.requestCallback<api_trading_pb.OrderByReferenceResponse>): grpc.ClientUnaryCall;
   orderByReference(argument: api_trading_pb.OrderByReferenceRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OrderByReferenceResponse>): grpc.ClientUnaryCall;
   orderByReference(argument: api_trading_pb.OrderByReferenceRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OrderByReferenceResponse>): grpc.ClientUnaryCall;
@@ -237,18 +234,18 @@ export class trading_dataClient extends grpc.Client {
   ordersByParty(argument: api_trading_pb.OrdersByPartyRequest, callback: grpc.requestCallback<api_trading_pb.OrdersByPartyResponse>): grpc.ClientUnaryCall;
   ordersByParty(argument: api_trading_pb.OrdersByPartyRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OrdersByPartyResponse>): grpc.ClientUnaryCall;
   ordersByParty(argument: api_trading_pb.OrdersByPartyRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OrdersByPartyResponse>): grpc.ClientUnaryCall;
-  orderByID(argument: api_trading_pb.OrderByIDRequest, callback: grpc.requestCallback<vega_pb.Order>): grpc.ClientUnaryCall;
-  orderByID(argument: api_trading_pb.OrderByIDRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<vega_pb.Order>): grpc.ClientUnaryCall;
-  orderByID(argument: api_trading_pb.OrderByIDRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<vega_pb.Order>): grpc.ClientUnaryCall;
-  orderVersionsByID(argument: api_trading_pb.OrderVersionsByIDRequest, callback: grpc.requestCallback<api_trading_pb.OrderVersionsResponse>): grpc.ClientUnaryCall;
-  orderVersionsByID(argument: api_trading_pb.OrderVersionsByIDRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OrderVersionsResponse>): grpc.ClientUnaryCall;
-  orderVersionsByID(argument: api_trading_pb.OrderVersionsByIDRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OrderVersionsResponse>): grpc.ClientUnaryCall;
+  orderByID(argument: api_trading_pb.OrderByIDRequest, callback: grpc.requestCallback<api_trading_pb.OrderByIDResponse>): grpc.ClientUnaryCall;
+  orderByID(argument: api_trading_pb.OrderByIDRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OrderByIDResponse>): grpc.ClientUnaryCall;
+  orderByID(argument: api_trading_pb.OrderByIDRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OrderByIDResponse>): grpc.ClientUnaryCall;
+  orderVersionsByID(argument: api_trading_pb.OrderVersionsByIDRequest, callback: grpc.requestCallback<api_trading_pb.OrderVersionsByIDResponse>): grpc.ClientUnaryCall;
+  orderVersionsByID(argument: api_trading_pb.OrderVersionsByIDRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OrderVersionsByIDResponse>): grpc.ClientUnaryCall;
+  orderVersionsByID(argument: api_trading_pb.OrderVersionsByIDRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OrderVersionsByIDResponse>): grpc.ClientUnaryCall;
   marginLevels(argument: api_trading_pb.MarginLevelsRequest, callback: grpc.requestCallback<api_trading_pb.MarginLevelsResponse>): grpc.ClientUnaryCall;
   marginLevels(argument: api_trading_pb.MarginLevelsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarginLevelsResponse>): grpc.ClientUnaryCall;
   marginLevels(argument: api_trading_pb.MarginLevelsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.MarginLevelsResponse>): grpc.ClientUnaryCall;
-  parties(argument: google_protobuf_empty_pb.Empty, callback: grpc.requestCallback<api_trading_pb.PartiesResponse>): grpc.ClientUnaryCall;
-  parties(argument: google_protobuf_empty_pb.Empty, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PartiesResponse>): grpc.ClientUnaryCall;
-  parties(argument: google_protobuf_empty_pb.Empty, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PartiesResponse>): grpc.ClientUnaryCall;
+  parties(argument: api_trading_pb.PartiesRequest, callback: grpc.requestCallback<api_trading_pb.PartiesResponse>): grpc.ClientUnaryCall;
+  parties(argument: api_trading_pb.PartiesRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PartiesResponse>): grpc.ClientUnaryCall;
+  parties(argument: api_trading_pb.PartiesRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PartiesResponse>): grpc.ClientUnaryCall;
   partyByID(argument: api_trading_pb.PartyByIDRequest, callback: grpc.requestCallback<api_trading_pb.PartyByIDResponse>): grpc.ClientUnaryCall;
   partyByID(argument: api_trading_pb.PartyByIDRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PartyByIDResponse>): grpc.ClientUnaryCall;
   partyByID(argument: api_trading_pb.PartyByIDRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PartyByIDResponse>): grpc.ClientUnaryCall;
@@ -294,42 +291,42 @@ export class trading_dataClient extends grpc.Client {
   getProposalByReference(argument: api_trading_pb.GetProposalByReferenceRequest, callback: grpc.requestCallback<api_trading_pb.GetProposalByReferenceResponse>): grpc.ClientUnaryCall;
   getProposalByReference(argument: api_trading_pb.GetProposalByReferenceRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.GetProposalByReferenceResponse>): grpc.ClientUnaryCall;
   getProposalByReference(argument: api_trading_pb.GetProposalByReferenceRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.GetProposalByReferenceResponse>): grpc.ClientUnaryCall;
-  observeGovernance(argument: google_protobuf_empty_pb.Empty, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<governance_pb.GovernanceData>;
-  observeGovernance(argument: google_protobuf_empty_pb.Empty, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<governance_pb.GovernanceData>;
-  observePartyProposals(argument: api_trading_pb.ObservePartyProposalsRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<governance_pb.GovernanceData>;
-  observePartyProposals(argument: api_trading_pb.ObservePartyProposalsRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<governance_pb.GovernanceData>;
-  observePartyVotes(argument: api_trading_pb.ObservePartyVotesRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<governance_pb.Vote>;
-  observePartyVotes(argument: api_trading_pb.ObservePartyVotesRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<governance_pb.Vote>;
-  observeProposalVotes(argument: api_trading_pb.ObserveProposalVotesRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<governance_pb.Vote>;
-  observeProposalVotes(argument: api_trading_pb.ObserveProposalVotesRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<governance_pb.Vote>;
-  observeEventBus(metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientDuplexStream<api_trading_pb.ObserveEventsRequest, api_trading_pb.ObserveEventsResponse>;
-  observeEventBus(metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientDuplexStream<api_trading_pb.ObserveEventsRequest, api_trading_pb.ObserveEventsResponse>;
-  statistics(argument: google_protobuf_empty_pb.Empty, callback: grpc.requestCallback<vega_pb.Statistics>): grpc.ClientUnaryCall;
-  statistics(argument: google_protobuf_empty_pb.Empty, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<vega_pb.Statistics>): grpc.ClientUnaryCall;
-  statistics(argument: google_protobuf_empty_pb.Empty, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<vega_pb.Statistics>): grpc.ClientUnaryCall;
-  getVegaTime(argument: google_protobuf_empty_pb.Empty, callback: grpc.requestCallback<api_trading_pb.VegaTimeResponse>): grpc.ClientUnaryCall;
-  getVegaTime(argument: google_protobuf_empty_pb.Empty, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.VegaTimeResponse>): grpc.ClientUnaryCall;
-  getVegaTime(argument: google_protobuf_empty_pb.Empty, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.VegaTimeResponse>): grpc.ClientUnaryCall;
-  accountsSubscribe(argument: api_trading_pb.AccountsSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<vega_pb.Account>;
-  accountsSubscribe(argument: api_trading_pb.AccountsSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<vega_pb.Account>;
-  candlesSubscribe(argument: api_trading_pb.CandlesSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<vega_pb.Candle>;
-  candlesSubscribe(argument: api_trading_pb.CandlesSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<vega_pb.Candle>;
-  marginLevelsSubscribe(argument: api_trading_pb.MarginLevelsSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<vega_pb.MarginLevels>;
-  marginLevelsSubscribe(argument: api_trading_pb.MarginLevelsSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<vega_pb.MarginLevels>;
-  marketDepthSubscribe(argument: api_trading_pb.MarketDepthSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<vega_pb.MarketDepth>;
-  marketDepthSubscribe(argument: api_trading_pb.MarketDepthSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<vega_pb.MarketDepth>;
-  marketDepthUpdatesSubscribe(argument: api_trading_pb.MarketDepthUpdatesSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<vega_pb.MarketDepthUpdate>;
-  marketDepthUpdatesSubscribe(argument: api_trading_pb.MarketDepthUpdatesSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<vega_pb.MarketDepthUpdate>;
-  marketsDataSubscribe(argument: api_trading_pb.MarketsDataSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<vega_pb.MarketData>;
-  marketsDataSubscribe(argument: api_trading_pb.MarketsDataSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<vega_pb.MarketData>;
-  ordersSubscribe(argument: api_trading_pb.OrdersSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.OrdersStream>;
-  ordersSubscribe(argument: api_trading_pb.OrdersSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.OrdersStream>;
-  positionsSubscribe(argument: api_trading_pb.PositionsSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<vega_pb.Position>;
-  positionsSubscribe(argument: api_trading_pb.PositionsSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<vega_pb.Position>;
-  tradesSubscribe(argument: api_trading_pb.TradesSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.TradesStream>;
-  tradesSubscribe(argument: api_trading_pb.TradesSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.TradesStream>;
-  transferResponsesSubscribe(argument: google_protobuf_empty_pb.Empty, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<vega_pb.TransferResponse>;
-  transferResponsesSubscribe(argument: google_protobuf_empty_pb.Empty, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<vega_pb.TransferResponse>;
+  observeGovernance(argument: api_trading_pb.ObserveGovernanceRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.ObserveGovernanceResponse>;
+  observeGovernance(argument: api_trading_pb.ObserveGovernanceRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.ObserveGovernanceResponse>;
+  observePartyProposals(argument: api_trading_pb.ObservePartyProposalsRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.ObservePartyProposalsResponse>;
+  observePartyProposals(argument: api_trading_pb.ObservePartyProposalsRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.ObservePartyProposalsResponse>;
+  observePartyVotes(argument: api_trading_pb.ObservePartyVotesRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.ObservePartyVotesResponse>;
+  observePartyVotes(argument: api_trading_pb.ObservePartyVotesRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.ObservePartyVotesResponse>;
+  observeProposalVotes(argument: api_trading_pb.ObserveProposalVotesRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.ObserveProposalVotesResponse>;
+  observeProposalVotes(argument: api_trading_pb.ObserveProposalVotesRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.ObserveProposalVotesResponse>;
+  observeEventBus(metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientDuplexStream<api_trading_pb.ObserveEventBusRequest, api_trading_pb.ObserveEventBusResponse>;
+  observeEventBus(metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientDuplexStream<api_trading_pb.ObserveEventBusRequest, api_trading_pb.ObserveEventBusResponse>;
+  statistics(argument: api_trading_pb.StatisticsRequest, callback: grpc.requestCallback<api_trading_pb.StatisticsResponse>): grpc.ClientUnaryCall;
+  statistics(argument: api_trading_pb.StatisticsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.StatisticsResponse>): grpc.ClientUnaryCall;
+  statistics(argument: api_trading_pb.StatisticsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.StatisticsResponse>): grpc.ClientUnaryCall;
+  getVegaTime(argument: api_trading_pb.GetVegaTimeRequest, callback: grpc.requestCallback<api_trading_pb.GetVegaTimeResponse>): grpc.ClientUnaryCall;
+  getVegaTime(argument: api_trading_pb.GetVegaTimeRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.GetVegaTimeResponse>): grpc.ClientUnaryCall;
+  getVegaTime(argument: api_trading_pb.GetVegaTimeRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.GetVegaTimeResponse>): grpc.ClientUnaryCall;
+  accountsSubscribe(argument: api_trading_pb.AccountsSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.AccountsSubscribeResponse>;
+  accountsSubscribe(argument: api_trading_pb.AccountsSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.AccountsSubscribeResponse>;
+  candlesSubscribe(argument: api_trading_pb.CandlesSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.CandlesSubscribeResponse>;
+  candlesSubscribe(argument: api_trading_pb.CandlesSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.CandlesSubscribeResponse>;
+  marginLevelsSubscribe(argument: api_trading_pb.MarginLevelsSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.MarginLevelsSubscribeResponse>;
+  marginLevelsSubscribe(argument: api_trading_pb.MarginLevelsSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.MarginLevelsSubscribeResponse>;
+  marketDepthSubscribe(argument: api_trading_pb.MarketDepthSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.MarketDepthSubscribeResponse>;
+  marketDepthSubscribe(argument: api_trading_pb.MarketDepthSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.MarketDepthSubscribeResponse>;
+  marketDepthUpdatesSubscribe(argument: api_trading_pb.MarketDepthUpdatesSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.MarketDepthUpdatesSubscribeResponse>;
+  marketDepthUpdatesSubscribe(argument: api_trading_pb.MarketDepthUpdatesSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.MarketDepthUpdatesSubscribeResponse>;
+  marketsDataSubscribe(argument: api_trading_pb.MarketsDataSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.MarketsDataSubscribeResponse>;
+  marketsDataSubscribe(argument: api_trading_pb.MarketsDataSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.MarketsDataSubscribeResponse>;
+  ordersSubscribe(argument: api_trading_pb.OrdersSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.OrdersSubscribeResponse>;
+  ordersSubscribe(argument: api_trading_pb.OrdersSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.OrdersSubscribeResponse>;
+  positionsSubscribe(argument: api_trading_pb.PositionsSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.PositionsSubscribeResponse>;
+  positionsSubscribe(argument: api_trading_pb.PositionsSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.PositionsSubscribeResponse>;
+  tradesSubscribe(argument: api_trading_pb.TradesSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.TradesSubscribeResponse>;
+  tradesSubscribe(argument: api_trading_pb.TradesSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.TradesSubscribeResponse>;
+  transferResponsesSubscribe(argument: api_trading_pb.TransferResponsesSubscribeRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.TransferResponsesSubscribeResponse>;
+  transferResponsesSubscribe(argument: api_trading_pb.TransferResponsesSubscribeRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<api_trading_pb.TransferResponsesSubscribeResponse>;
   getNodeSignaturesAggregate(argument: api_trading_pb.GetNodeSignaturesAggregateRequest, callback: grpc.requestCallback<api_trading_pb.GetNodeSignaturesAggregateResponse>): grpc.ClientUnaryCall;
   getNodeSignaturesAggregate(argument: api_trading_pb.GetNodeSignaturesAggregateRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.GetNodeSignaturesAggregateResponse>): grpc.ClientUnaryCall;
   getNodeSignaturesAggregate(argument: api_trading_pb.GetNodeSignaturesAggregateRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.GetNodeSignaturesAggregateResponse>): grpc.ClientUnaryCall;

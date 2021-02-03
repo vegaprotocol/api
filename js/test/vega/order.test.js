@@ -45,7 +45,7 @@ test('A basic order can be constructed and serialised to an unsigned tx', t => {
     const hardcodedExpectedOutput =  new Uint8Array([18, 14, 116, 101, 115, 116, 45, 109, 97, 114, 107, 101, 116, 45, 105, 100, 32, 10, 40, 20, 48, 1])
 
     const order = new vega.OrderSubmission()
-    order.setMarketid('test-market-id')
+    order.setMarketId('test-market-id')
     order.setPrice(10)
     order.setSize(20)
     order.setSide(vega.Side.SIDE_BUY)
@@ -59,7 +59,7 @@ test('A basic order can be deserialised', t => {
 
     const order = new vega.OrderSubmission.deserializeBinary(existingSerializedOrder)
 
-    t.equal(order.getMarketid(), 'test-market-id')
+    t.equal(order.getMarketId(), 'test-market-id')
     t.equal(order.getPrice(), 10)
     t.equal(order.getSize(), 20)
     t.equal(order.getSide(), vega.Side.SIDE_BUY)
@@ -94,9 +94,9 @@ test('Order Validation: An order expiry date must be a number', t => {
 
     const order = new vega.OrderSubmission()
 
-    order.setExpiresat(dateShouldBeANumber)
+    order.setExpiresAt(dateShouldBeANumber)
 
-    t.equal(order.getExpiresat(), dateShouldBeANumber)
+    t.equal(order.getExpiresAt(), dateShouldBeANumber)
     t.throws(() => {
         order.serializeBinary()
     },'Assertion failed', 'An order with a date set to a string should fail to serialise')
@@ -110,8 +110,8 @@ test('Order can be a pegged order when an order peg is provided', t => {
     const orderPeg = new vega.PeggedOrder()
     orderPeg.setOffset(1)
 
-    order.setPeggedorder(orderPeg)
-    t.deepEqual(order.getPeggedorder(), orderPeg)
+    order.setPeggedOrder(orderPeg)
+    t.deepEqual(order.getPeggedOrder(), orderPeg)
 
     t.doesNotThrow(() => {
         order.serializeBinary()
@@ -139,19 +139,19 @@ test('Submit Order', t => {
     }
 
     const sub = new vega.OrderSubmission()
-    sub.setExpiresat(2000000000000000000)
-    sub.setMarketid("AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPP")
-    sub.setPartyid("1122aabb") // a public key
+    sub.setExpiresAt(2000000000000000000)
+    sub.setMarketId("AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPP")
+    sub.setPartyId("1122aabb") // a public key
     sub.setPrice(99912345)
-    sub.setSide(vega.Side.SIDE_BUY)
-    sub.setSize(1)
-    sub.setTimeinforce(vega.Order.TimeInForce.TIF_GTT)
-    sub.setType(vega.Order.Type.TYPE_LIMIT)
+    sub.setSide(vega.Side.SIDE_BUY) // 1
+    sub.setSize(555)
+    sub.setTimeInForce(vega.Order.TimeInForce.TIME_IN_FORCE_FOK) // 4
+    sub.setType(vega.Order.Type.TYPE_MARKET) // 2
 
-    const req1 = new api.trading.SubmitOrderRequest();
+    const req1 = new api.trading.PrepareSubmitOrderRequest();
     req1.setSubmission(sub)
 
-    const req2 = api.trading.SubmitOrderRequest.deserializeBinary(req1.serializeBinary())
+    const req2 = api.trading.PrepareSubmitOrderRequest.deserializeBinary(req1.serializeBinary())
 
     // For some reason, nested wrappers can be null or {}.
     req2.wrappers_["1"].wrappers_ = {};
