@@ -1,6 +1,8 @@
+---
+
 name: Javascript tests
 
-on:
+"on":
   push:
     branches:
       - develop
@@ -28,29 +30,29 @@ jobs:
       matrix:
         node-version: [10.x, 12.x, 14.x]
     steps:
-    - name: Check out code
-      uses: actions/checkout@v2
+      - name: Check out code
+        uses: actions/checkout@v2
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Install
-      run: |
-        cd js
-        npm ci
+      - name: Install
+        run: |
+          cd js
+          npm ci
 
-    - name: Lint
-      run: |
-        cd js
-        npm run lint
+      - name: Lint
+        run: |
+          cd js
+          npm run lint
 
-    - name: Test
-      env:
-        CI: true
-        GRPC_NODE: ${{ secrets.GRPC_NODE }}
-        WALLETSERVER: ${{ secrets.WALLETSERVER }}
-      run: |
-        cd js
-        npm test
+      - name: Test
+        env:
+          CI: true
+          GRPC_NODE: ${{ secrets.GRPC_NODE }}
+          WALLETSERVER: ${{ secrets.WALLETSERVER }}
+        run: |
+          cd js
+          npm test

@@ -1,0 +1,36 @@
+---
+
+name: YAML lint
+
+"on":
+  pull_request:
+    branches:
+      - develop
+      - master
+    paths-ignore:
+      - "cpp/**"
+      - "go/**"
+      - "java/**"
+      - "js/**"
+      - "python/**"
+
+jobs:
+
+  yamllint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: yaml-lint
+        uses: ibiqlik/action-yamllint@v3
+        with:
+          file_or_dir: |
+            .github/**/*.yml
+            buf.yaml
+            buf.gen.yaml
+          config_data: |
+            extends: default
+            rules:
+              line-length:
+                max: 160
