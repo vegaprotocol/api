@@ -1,13 +1,14 @@
-name: latest proto docker image push to dockerhub
+name: Docker proto release versioned image to DockerHub
 
 on:
   push:
-    branches:
-      - develop
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+      - "v[0-9]+.[0-9]+.[0-9]+-pre[0-9]+"
 
 jobs:
 
-  docker-latest:
+  docker-release:
     runs-on: ubuntu-latest
     steps:
     - name: Check out code
@@ -27,7 +28,7 @@ jobs:
 
     - name: Set docker tag
       id: vars
-      run: echo ::set-output name=tag::latest
+      run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
 
     - name: Build and push
       id: docker_build

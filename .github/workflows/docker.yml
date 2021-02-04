@@ -1,16 +1,6 @@
 name: Docker tests
 
 on:
-  push:
-    branches:
-      - develop
-      - master
-    paths-ignore:
-      - "cpp/**"
-      - "go/**"
-      - "java/**"
-      - "js/**"
-      - "python/**"
   pull_request:
     branches:
       - develop
