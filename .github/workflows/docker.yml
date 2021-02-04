@@ -40,6 +40,5 @@ jobs:
       id: docker_build
       uses: docker/build-push-action@v2
       with:
-        platforms: binfmt_misc
         push: false
         tags: tmp/proto:latest
