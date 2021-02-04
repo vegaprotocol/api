@@ -25,10 +25,6 @@ jobs:
       - name: yaml-lint
         uses: ibiqlik/action-yamllint@v3
         with:
-          file_or_dir: >
-            .github/**/*.yml
-            buf.yaml
-            buf.gen.yaml
           config_data: |
             extends: default
             rules:
