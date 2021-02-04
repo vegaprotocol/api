@@ -1,6 +1,6 @@
 {
   "name": "@vegaprotocol/vega-grpc",
-  "version": "0.30.2",
+  "version": "0.31.0-pre1",
   "description": "A gRPC client for Vega Protocol",
   "main": "index.js",
   "types": "./index.d.ts",
