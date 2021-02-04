@@ -1,0 +1,6 @@
+# Exclude auto-generated code, avoid sending it all to the Docker daemon during image build.
+cpp
+go
+java
+js
+python
