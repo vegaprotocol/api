@@ -1,6 +1,8 @@
+---
+
 name: Python Release to test PyPI
 
-on:
+"on":
   push:
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+-a[0-9]+"
@@ -10,28 +12,28 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out code
-      uses: actions/checkout@v2
+      - name: Check out code
+        uses: actions/checkout@v2
 
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
 
-    - name: Push release to test PyPI
-      env:
-        TWINE_USERNAME: __token__
-        TWINE_PASSWORD: ${{ secrets.TWINE_TEST_PASSWORD }}
-      run: |
-        cd python
-        github_tag="${GITHUB_REF/refs\/tags\/v/}"
-        sed --in-place -e 's#^VERSION.*$#VERSION = "'"$github_tag"'"#' setup.py
-        setuppy_tag="$(python -c "$(awk '/^VERSION = /' setup.py); print(VERSION)")"
-        if test "$github_tag" '!=' "$setuppy_tag" ; then
-          echo "Tags do not match."
-          echo "Github:   $github_tag"
-          echo "setup.py: $setuppy_tag"
-          exit 1
-        fi
-        command -v twine 1>/dev/null || pip install twine
-        make dist_test
+      - name: Push release to test PyPI
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.TWINE_TEST_PASSWORD }}
+        run: |
+          cd python
+          github_tag="${GITHUB_REF/refs\/tags\/v/}"
+          sed --in-place -e 's#^VERSION.*$#VERSION = "'"$github_tag"'"#' setup.py
+          setuppy_tag="$(python -c "$(awk '/^VERSION = /' setup.py); print(VERSION)")"
+          if test "$github_tag" '!=' "$setuppy_tag" ; then
+            echo "Tags do not match."
+            echo "Github:   $github_tag"
+            echo "setup.py: $setuppy_tag"
+            exit 1
+          fi
+          command -v twine 1>/dev/null || pip install twine
+          make dist_test
