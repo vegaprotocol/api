@@ -1,4 +1,4 @@
-name: latest proto docker image push to dockerhub
+name: Docker proto release latest image to DockerHub
 
 on:
   push:
@@ -34,6 +34,7 @@ jobs:
       id: docker_build
       uses: docker/build-push-action@v2
       with:
+        platforms: binfmt_misc
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/proto:${{ steps.vars.outputs.tag }}
 
