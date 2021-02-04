@@ -1,6 +1,6 @@
 ---
 
-name: latest proto docker image push to dockerhub
+name: Docker proto release latest image to DockerHub
 
 "on":
   push:
