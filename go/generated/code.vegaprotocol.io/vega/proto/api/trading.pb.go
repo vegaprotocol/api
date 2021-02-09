@@ -4,11 +4,12 @@
 package api
 
 import (
-	proto1 "github.com/vegaprotocol/api-clients/go/generated/code.vegaprotocol.io/vega/proto"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/mwitkow/go-proto-validators"
-	math "math"
+	proto1 "github.com/vegaprotocol/api-clients/go/generated/code.vegaprotocol.io/vega/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

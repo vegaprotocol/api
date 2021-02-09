@@ -7,10 +7,10 @@ import (
 	fmt "fmt"
 	math "math"
 
-	_ "github.com/vegaprotocol/api-clients/go/generated/code.vegaprotocol.io/vega/proto"
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
+	_ "github.com/vegaprotocol/api-clients/go/generated/code.vegaprotocol.io/vega/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
