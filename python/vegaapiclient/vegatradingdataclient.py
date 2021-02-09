@@ -18,7 +18,7 @@ class VegaTradingDataClient(object):
             channel = grpc.insecure_channel(self.url)
             grpc.channel_ready_future(channel).result(timeout=10)
 
-        self._trading_data = trading_grpc.trading_dataStub(channel)
+        self._trading_data = trading_grpc.TradingDataServiceStub(channel)
 
     def __getattr__(self, funcname):
         return getattr(self._trading_data, funcname)

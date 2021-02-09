@@ -3,12 +3,9 @@
 import grpc
 
 from . import trading_pb2 as api_dot_trading__pb2
-from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
-from .. import governance_pb2 as governance__pb2
-from .. import vega_pb2 as vega__pb2
 
 
-class tradingStub(object):
+class TradingServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -18,53 +15,53 @@ class tradingStub(object):
             channel: A grpc.Channel.
         """
         self.PrepareSubmitOrder = channel.unary_unary(
-                '/api.trading/PrepareSubmitOrder',
-                request_serializer=api_dot_trading__pb2.SubmitOrderRequest.SerializeToString,
+                '/api.v1.TradingService/PrepareSubmitOrder',
+                request_serializer=api_dot_trading__pb2.PrepareSubmitOrderRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.PrepareSubmitOrderResponse.FromString,
                 )
         self.PrepareCancelOrder = channel.unary_unary(
-                '/api.trading/PrepareCancelOrder',
-                request_serializer=api_dot_trading__pb2.CancelOrderRequest.SerializeToString,
+                '/api.v1.TradingService/PrepareCancelOrder',
+                request_serializer=api_dot_trading__pb2.PrepareCancelOrderRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.PrepareCancelOrderResponse.FromString,
                 )
         self.PrepareAmendOrder = channel.unary_unary(
-                '/api.trading/PrepareAmendOrder',
-                request_serializer=api_dot_trading__pb2.AmendOrderRequest.SerializeToString,
+                '/api.v1.TradingService/PrepareAmendOrder',
+                request_serializer=api_dot_trading__pb2.PrepareAmendOrderRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.PrepareAmendOrderResponse.FromString,
                 )
         self.PrepareWithdraw = channel.unary_unary(
-                '/api.trading/PrepareWithdraw',
+                '/api.v1.TradingService/PrepareWithdraw',
                 request_serializer=api_dot_trading__pb2.PrepareWithdrawRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.PrepareWithdrawResponse.FromString,
                 )
         self.SubmitTransaction = channel.unary_unary(
-                '/api.trading/SubmitTransaction',
+                '/api.v1.TradingService/SubmitTransaction',
                 request_serializer=api_dot_trading__pb2.SubmitTransactionRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.SubmitTransactionResponse.FromString,
                 )
         self.PrepareProposal = channel.unary_unary(
-                '/api.trading/PrepareProposal',
+                '/api.v1.TradingService/PrepareProposal',
                 request_serializer=api_dot_trading__pb2.PrepareProposalRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.PrepareProposalResponse.FromString,
                 )
         self.PrepareVote = channel.unary_unary(
-                '/api.trading/PrepareVote',
+                '/api.v1.TradingService/PrepareVote',
                 request_serializer=api_dot_trading__pb2.PrepareVoteRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.PrepareVoteResponse.FromString,
                 )
         self.PropagateChainEvent = channel.unary_unary(
-                '/api.trading/PropagateChainEvent',
+                '/api.v1.TradingService/PropagateChainEvent',
                 request_serializer=api_dot_trading__pb2.PropagateChainEventRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.PropagateChainEventResponse.FromString,
                 )
         self.PrepareLiquidityProvision = channel.unary_unary(
-                '/api.trading/PrepareLiquidityProvision',
+                '/api.v1.TradingService/PrepareLiquidityProvision',
                 request_serializer=api_dot_trading__pb2.PrepareLiquidityProvisionRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.PrepareLiquidityProvisionResponse.FromString,
                 )
 
 
-class tradingServicer(object):
+class TradingServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def PrepareSubmitOrder(self, request, context):
@@ -124,27 +121,28 @@ class tradingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def PrepareLiquidityProvision(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Prepare a liquidity provision request
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_tradingServicer_to_server(servicer, server):
+def add_TradingServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'PrepareSubmitOrder': grpc.unary_unary_rpc_method_handler(
                     servicer.PrepareSubmitOrder,
-                    request_deserializer=api_dot_trading__pb2.SubmitOrderRequest.FromString,
+                    request_deserializer=api_dot_trading__pb2.PrepareSubmitOrderRequest.FromString,
                     response_serializer=api_dot_trading__pb2.PrepareSubmitOrderResponse.SerializeToString,
             ),
             'PrepareCancelOrder': grpc.unary_unary_rpc_method_handler(
                     servicer.PrepareCancelOrder,
-                    request_deserializer=api_dot_trading__pb2.CancelOrderRequest.FromString,
+                    request_deserializer=api_dot_trading__pb2.PrepareCancelOrderRequest.FromString,
                     response_serializer=api_dot_trading__pb2.PrepareCancelOrderResponse.SerializeToString,
             ),
             'PrepareAmendOrder': grpc.unary_unary_rpc_method_handler(
                     servicer.PrepareAmendOrder,
-                    request_deserializer=api_dot_trading__pb2.AmendOrderRequest.FromString,
+                    request_deserializer=api_dot_trading__pb2.PrepareAmendOrderRequest.FromString,
                     response_serializer=api_dot_trading__pb2.PrepareAmendOrderResponse.SerializeToString,
             ),
             'PrepareWithdraw': grpc.unary_unary_rpc_method_handler(
@@ -179,12 +177,12 @@ def add_tradingServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'api.trading', rpc_method_handlers)
+            'api.v1.TradingService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class trading(object):
+class TradingService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -198,8 +196,8 @@ class trading(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading/PrepareSubmitOrder',
-            api_dot_trading__pb2.SubmitOrderRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingService/PrepareSubmitOrder',
+            api_dot_trading__pb2.PrepareSubmitOrderRequest.SerializeToString,
             api_dot_trading__pb2.PrepareSubmitOrderResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -215,8 +213,8 @@ class trading(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading/PrepareCancelOrder',
-            api_dot_trading__pb2.CancelOrderRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingService/PrepareCancelOrder',
+            api_dot_trading__pb2.PrepareCancelOrderRequest.SerializeToString,
             api_dot_trading__pb2.PrepareCancelOrderResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -232,8 +230,8 @@ class trading(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading/PrepareAmendOrder',
-            api_dot_trading__pb2.AmendOrderRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingService/PrepareAmendOrder',
+            api_dot_trading__pb2.PrepareAmendOrderRequest.SerializeToString,
             api_dot_trading__pb2.PrepareAmendOrderResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -249,7 +247,7 @@ class trading(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading/PrepareWithdraw',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingService/PrepareWithdraw',
             api_dot_trading__pb2.PrepareWithdrawRequest.SerializeToString,
             api_dot_trading__pb2.PrepareWithdrawResponse.FromString,
             options, channel_credentials,
@@ -266,7 +264,7 @@ class trading(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading/SubmitTransaction',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingService/SubmitTransaction',
             api_dot_trading__pb2.SubmitTransactionRequest.SerializeToString,
             api_dot_trading__pb2.SubmitTransactionResponse.FromString,
             options, channel_credentials,
@@ -283,7 +281,7 @@ class trading(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading/PrepareProposal',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingService/PrepareProposal',
             api_dot_trading__pb2.PrepareProposalRequest.SerializeToString,
             api_dot_trading__pb2.PrepareProposalResponse.FromString,
             options, channel_credentials,
@@ -300,7 +298,7 @@ class trading(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading/PrepareVote',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingService/PrepareVote',
             api_dot_trading__pb2.PrepareVoteRequest.SerializeToString,
             api_dot_trading__pb2.PrepareVoteResponse.FromString,
             options, channel_credentials,
@@ -317,7 +315,7 @@ class trading(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading/PropagateChainEvent',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingService/PropagateChainEvent',
             api_dot_trading__pb2.PropagateChainEventRequest.SerializeToString,
             api_dot_trading__pb2.PropagateChainEventResponse.FromString,
             options, channel_credentials,
@@ -334,14 +332,14 @@ class trading(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading/PrepareLiquidityProvision',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingService/PrepareLiquidityProvision',
             api_dot_trading__pb2.PrepareLiquidityProvisionRequest.SerializeToString,
             api_dot_trading__pb2.PrepareLiquidityProvisionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
 
-class trading_dataStub(object):
+class TradingDataServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -351,313 +349,313 @@ class trading_dataStub(object):
             channel: A grpc.Channel.
         """
         self.MarketAccounts = channel.unary_unary(
-                '/api.trading_data/MarketAccounts',
+                '/api.v1.TradingDataService/MarketAccounts',
                 request_serializer=api_dot_trading__pb2.MarketAccountsRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.MarketAccountsResponse.FromString,
                 )
         self.PartyAccounts = channel.unary_unary(
-                '/api.trading_data/PartyAccounts',
+                '/api.v1.TradingDataService/PartyAccounts',
                 request_serializer=api_dot_trading__pb2.PartyAccountsRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.PartyAccountsResponse.FromString,
                 )
         self.FeeInfrastructureAccounts = channel.unary_unary(
-                '/api.trading_data/FeeInfrastructureAccounts',
+                '/api.v1.TradingDataService/FeeInfrastructureAccounts',
                 request_serializer=api_dot_trading__pb2.FeeInfrastructureAccountsRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.FeeInfrastructureAccountsResponse.FromString,
                 )
         self.Candles = channel.unary_unary(
-                '/api.trading_data/Candles',
+                '/api.v1.TradingDataService/Candles',
                 request_serializer=api_dot_trading__pb2.CandlesRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.CandlesResponse.FromString,
                 )
         self.MarketDataByID = channel.unary_unary(
-                '/api.trading_data/MarketDataByID',
+                '/api.v1.TradingDataService/MarketDataByID',
                 request_serializer=api_dot_trading__pb2.MarketDataByIDRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.MarketDataByIDResponse.FromString,
                 )
         self.MarketsData = channel.unary_unary(
-                '/api.trading_data/MarketsData',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                '/api.v1.TradingDataService/MarketsData',
+                request_serializer=api_dot_trading__pb2.MarketsDataRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.MarketsDataResponse.FromString,
                 )
         self.MarketByID = channel.unary_unary(
-                '/api.trading_data/MarketByID',
+                '/api.v1.TradingDataService/MarketByID',
                 request_serializer=api_dot_trading__pb2.MarketByIDRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.MarketByIDResponse.FromString,
                 )
         self.MarketDepth = channel.unary_unary(
-                '/api.trading_data/MarketDepth',
+                '/api.v1.TradingDataService/MarketDepth',
                 request_serializer=api_dot_trading__pb2.MarketDepthRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.MarketDepthResponse.FromString,
                 )
         self.Markets = channel.unary_unary(
-                '/api.trading_data/Markets',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                '/api.v1.TradingDataService/Markets',
+                request_serializer=api_dot_trading__pb2.MarketsRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.MarketsResponse.FromString,
                 )
         self.OrderByMarketAndID = channel.unary_unary(
-                '/api.trading_data/OrderByMarketAndID',
-                request_serializer=api_dot_trading__pb2.OrderByMarketAndIdRequest.SerializeToString,
-                response_deserializer=api_dot_trading__pb2.OrderByMarketAndIdResponse.FromString,
+                '/api.v1.TradingDataService/OrderByMarketAndID',
+                request_serializer=api_dot_trading__pb2.OrderByMarketAndIDRequest.SerializeToString,
+                response_deserializer=api_dot_trading__pb2.OrderByMarketAndIDResponse.FromString,
                 )
         self.OrderByReference = channel.unary_unary(
-                '/api.trading_data/OrderByReference',
+                '/api.v1.TradingDataService/OrderByReference',
                 request_serializer=api_dot_trading__pb2.OrderByReferenceRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.OrderByReferenceResponse.FromString,
                 )
         self.OrdersByMarket = channel.unary_unary(
-                '/api.trading_data/OrdersByMarket',
+                '/api.v1.TradingDataService/OrdersByMarket',
                 request_serializer=api_dot_trading__pb2.OrdersByMarketRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.OrdersByMarketResponse.FromString,
                 )
         self.OrdersByParty = channel.unary_unary(
-                '/api.trading_data/OrdersByParty',
+                '/api.v1.TradingDataService/OrdersByParty',
                 request_serializer=api_dot_trading__pb2.OrdersByPartyRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.OrdersByPartyResponse.FromString,
                 )
         self.OrderByID = channel.unary_unary(
-                '/api.trading_data/OrderByID',
+                '/api.v1.TradingDataService/OrderByID',
                 request_serializer=api_dot_trading__pb2.OrderByIDRequest.SerializeToString,
-                response_deserializer=vega__pb2.Order.FromString,
+                response_deserializer=api_dot_trading__pb2.OrderByIDResponse.FromString,
                 )
         self.OrderVersionsByID = channel.unary_unary(
-                '/api.trading_data/OrderVersionsByID',
+                '/api.v1.TradingDataService/OrderVersionsByID',
                 request_serializer=api_dot_trading__pb2.OrderVersionsByIDRequest.SerializeToString,
-                response_deserializer=api_dot_trading__pb2.OrderVersionsResponse.FromString,
+                response_deserializer=api_dot_trading__pb2.OrderVersionsByIDResponse.FromString,
                 )
         self.MarginLevels = channel.unary_unary(
-                '/api.trading_data/MarginLevels',
+                '/api.v1.TradingDataService/MarginLevels',
                 request_serializer=api_dot_trading__pb2.MarginLevelsRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.MarginLevelsResponse.FromString,
                 )
         self.Parties = channel.unary_unary(
-                '/api.trading_data/Parties',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                '/api.v1.TradingDataService/Parties',
+                request_serializer=api_dot_trading__pb2.PartiesRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.PartiesResponse.FromString,
                 )
         self.PartyByID = channel.unary_unary(
-                '/api.trading_data/PartyByID',
+                '/api.v1.TradingDataService/PartyByID',
                 request_serializer=api_dot_trading__pb2.PartyByIDRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.PartyByIDResponse.FromString,
                 )
         self.PositionsByParty = channel.unary_unary(
-                '/api.trading_data/PositionsByParty',
+                '/api.v1.TradingDataService/PositionsByParty',
                 request_serializer=api_dot_trading__pb2.PositionsByPartyRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.PositionsByPartyResponse.FromString,
                 )
         self.LastTrade = channel.unary_unary(
-                '/api.trading_data/LastTrade',
+                '/api.v1.TradingDataService/LastTrade',
                 request_serializer=api_dot_trading__pb2.LastTradeRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.LastTradeResponse.FromString,
                 )
         self.TradesByMarket = channel.unary_unary(
-                '/api.trading_data/TradesByMarket',
+                '/api.v1.TradingDataService/TradesByMarket',
                 request_serializer=api_dot_trading__pb2.TradesByMarketRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.TradesByMarketResponse.FromString,
                 )
         self.TradesByOrder = channel.unary_unary(
-                '/api.trading_data/TradesByOrder',
+                '/api.v1.TradingDataService/TradesByOrder',
                 request_serializer=api_dot_trading__pb2.TradesByOrderRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.TradesByOrderResponse.FromString,
                 )
         self.TradesByParty = channel.unary_unary(
-                '/api.trading_data/TradesByParty',
+                '/api.v1.TradingDataService/TradesByParty',
                 request_serializer=api_dot_trading__pb2.TradesByPartyRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.TradesByPartyResponse.FromString,
                 )
         self.GetProposals = channel.unary_unary(
-                '/api.trading_data/GetProposals',
+                '/api.v1.TradingDataService/GetProposals',
                 request_serializer=api_dot_trading__pb2.GetProposalsRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.GetProposalsResponse.FromString,
                 )
         self.GetProposalsByParty = channel.unary_unary(
-                '/api.trading_data/GetProposalsByParty',
+                '/api.v1.TradingDataService/GetProposalsByParty',
                 request_serializer=api_dot_trading__pb2.GetProposalsByPartyRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.GetProposalsByPartyResponse.FromString,
                 )
         self.GetVotesByParty = channel.unary_unary(
-                '/api.trading_data/GetVotesByParty',
+                '/api.v1.TradingDataService/GetVotesByParty',
                 request_serializer=api_dot_trading__pb2.GetVotesByPartyRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.GetVotesByPartyResponse.FromString,
                 )
         self.GetNewMarketProposals = channel.unary_unary(
-                '/api.trading_data/GetNewMarketProposals',
+                '/api.v1.TradingDataService/GetNewMarketProposals',
                 request_serializer=api_dot_trading__pb2.GetNewMarketProposalsRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.GetNewMarketProposalsResponse.FromString,
                 )
         self.GetUpdateMarketProposals = channel.unary_unary(
-                '/api.trading_data/GetUpdateMarketProposals',
+                '/api.v1.TradingDataService/GetUpdateMarketProposals',
                 request_serializer=api_dot_trading__pb2.GetUpdateMarketProposalsRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.GetUpdateMarketProposalsResponse.FromString,
                 )
         self.GetNetworkParametersProposals = channel.unary_unary(
-                '/api.trading_data/GetNetworkParametersProposals',
+                '/api.v1.TradingDataService/GetNetworkParametersProposals',
                 request_serializer=api_dot_trading__pb2.GetNetworkParametersProposalsRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.GetNetworkParametersProposalsResponse.FromString,
                 )
         self.GetNewAssetProposals = channel.unary_unary(
-                '/api.trading_data/GetNewAssetProposals',
+                '/api.v1.TradingDataService/GetNewAssetProposals',
                 request_serializer=api_dot_trading__pb2.GetNewAssetProposalsRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.GetNewAssetProposalsResponse.FromString,
                 )
         self.GetProposalByID = channel.unary_unary(
-                '/api.trading_data/GetProposalByID',
+                '/api.v1.TradingDataService/GetProposalByID',
                 request_serializer=api_dot_trading__pb2.GetProposalByIDRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.GetProposalByIDResponse.FromString,
                 )
         self.GetProposalByReference = channel.unary_unary(
-                '/api.trading_data/GetProposalByReference',
+                '/api.v1.TradingDataService/GetProposalByReference',
                 request_serializer=api_dot_trading__pb2.GetProposalByReferenceRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.GetProposalByReferenceResponse.FromString,
                 )
         self.ObserveGovernance = channel.unary_stream(
-                '/api.trading_data/ObserveGovernance',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-                response_deserializer=governance__pb2.GovernanceData.FromString,
+                '/api.v1.TradingDataService/ObserveGovernance',
+                request_serializer=api_dot_trading__pb2.ObserveGovernanceRequest.SerializeToString,
+                response_deserializer=api_dot_trading__pb2.ObserveGovernanceResponse.FromString,
                 )
         self.ObservePartyProposals = channel.unary_stream(
-                '/api.trading_data/ObservePartyProposals',
+                '/api.v1.TradingDataService/ObservePartyProposals',
                 request_serializer=api_dot_trading__pb2.ObservePartyProposalsRequest.SerializeToString,
-                response_deserializer=governance__pb2.GovernanceData.FromString,
+                response_deserializer=api_dot_trading__pb2.ObservePartyProposalsResponse.FromString,
                 )
         self.ObservePartyVotes = channel.unary_stream(
-                '/api.trading_data/ObservePartyVotes',
+                '/api.v1.TradingDataService/ObservePartyVotes',
                 request_serializer=api_dot_trading__pb2.ObservePartyVotesRequest.SerializeToString,
-                response_deserializer=governance__pb2.Vote.FromString,
+                response_deserializer=api_dot_trading__pb2.ObservePartyVotesResponse.FromString,
                 )
         self.ObserveProposalVotes = channel.unary_stream(
-                '/api.trading_data/ObserveProposalVotes',
+                '/api.v1.TradingDataService/ObserveProposalVotes',
                 request_serializer=api_dot_trading__pb2.ObserveProposalVotesRequest.SerializeToString,
-                response_deserializer=governance__pb2.Vote.FromString,
+                response_deserializer=api_dot_trading__pb2.ObserveProposalVotesResponse.FromString,
                 )
         self.ObserveEventBus = channel.stream_stream(
-                '/api.trading_data/ObserveEventBus',
-                request_serializer=api_dot_trading__pb2.ObserveEventsRequest.SerializeToString,
-                response_deserializer=api_dot_trading__pb2.ObserveEventsResponse.FromString,
+                '/api.v1.TradingDataService/ObserveEventBus',
+                request_serializer=api_dot_trading__pb2.ObserveEventBusRequest.SerializeToString,
+                response_deserializer=api_dot_trading__pb2.ObserveEventBusResponse.FromString,
                 )
         self.Statistics = channel.unary_unary(
-                '/api.trading_data/Statistics',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-                response_deserializer=vega__pb2.Statistics.FromString,
+                '/api.v1.TradingDataService/Statistics',
+                request_serializer=api_dot_trading__pb2.StatisticsRequest.SerializeToString,
+                response_deserializer=api_dot_trading__pb2.StatisticsResponse.FromString,
                 )
         self.GetVegaTime = channel.unary_unary(
-                '/api.trading_data/GetVegaTime',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-                response_deserializer=api_dot_trading__pb2.VegaTimeResponse.FromString,
+                '/api.v1.TradingDataService/GetVegaTime',
+                request_serializer=api_dot_trading__pb2.GetVegaTimeRequest.SerializeToString,
+                response_deserializer=api_dot_trading__pb2.GetVegaTimeResponse.FromString,
                 )
         self.AccountsSubscribe = channel.unary_stream(
-                '/api.trading_data/AccountsSubscribe',
+                '/api.v1.TradingDataService/AccountsSubscribe',
                 request_serializer=api_dot_trading__pb2.AccountsSubscribeRequest.SerializeToString,
-                response_deserializer=vega__pb2.Account.FromString,
+                response_deserializer=api_dot_trading__pb2.AccountsSubscribeResponse.FromString,
                 )
         self.CandlesSubscribe = channel.unary_stream(
-                '/api.trading_data/CandlesSubscribe',
+                '/api.v1.TradingDataService/CandlesSubscribe',
                 request_serializer=api_dot_trading__pb2.CandlesSubscribeRequest.SerializeToString,
-                response_deserializer=vega__pb2.Candle.FromString,
+                response_deserializer=api_dot_trading__pb2.CandlesSubscribeResponse.FromString,
                 )
         self.MarginLevelsSubscribe = channel.unary_stream(
-                '/api.trading_data/MarginLevelsSubscribe',
+                '/api.v1.TradingDataService/MarginLevelsSubscribe',
                 request_serializer=api_dot_trading__pb2.MarginLevelsSubscribeRequest.SerializeToString,
-                response_deserializer=vega__pb2.MarginLevels.FromString,
+                response_deserializer=api_dot_trading__pb2.MarginLevelsSubscribeResponse.FromString,
                 )
         self.MarketDepthSubscribe = channel.unary_stream(
-                '/api.trading_data/MarketDepthSubscribe',
+                '/api.v1.TradingDataService/MarketDepthSubscribe',
                 request_serializer=api_dot_trading__pb2.MarketDepthSubscribeRequest.SerializeToString,
-                response_deserializer=vega__pb2.MarketDepth.FromString,
+                response_deserializer=api_dot_trading__pb2.MarketDepthSubscribeResponse.FromString,
                 )
         self.MarketDepthUpdatesSubscribe = channel.unary_stream(
-                '/api.trading_data/MarketDepthUpdatesSubscribe',
+                '/api.v1.TradingDataService/MarketDepthUpdatesSubscribe',
                 request_serializer=api_dot_trading__pb2.MarketDepthUpdatesSubscribeRequest.SerializeToString,
-                response_deserializer=vega__pb2.MarketDepthUpdate.FromString,
+                response_deserializer=api_dot_trading__pb2.MarketDepthUpdatesSubscribeResponse.FromString,
                 )
         self.MarketsDataSubscribe = channel.unary_stream(
-                '/api.trading_data/MarketsDataSubscribe',
+                '/api.v1.TradingDataService/MarketsDataSubscribe',
                 request_serializer=api_dot_trading__pb2.MarketsDataSubscribeRequest.SerializeToString,
-                response_deserializer=vega__pb2.MarketData.FromString,
+                response_deserializer=api_dot_trading__pb2.MarketsDataSubscribeResponse.FromString,
                 )
         self.OrdersSubscribe = channel.unary_stream(
-                '/api.trading_data/OrdersSubscribe',
+                '/api.v1.TradingDataService/OrdersSubscribe',
                 request_serializer=api_dot_trading__pb2.OrdersSubscribeRequest.SerializeToString,
-                response_deserializer=api_dot_trading__pb2.OrdersStream.FromString,
+                response_deserializer=api_dot_trading__pb2.OrdersSubscribeResponse.FromString,
                 )
         self.PositionsSubscribe = channel.unary_stream(
-                '/api.trading_data/PositionsSubscribe',
+                '/api.v1.TradingDataService/PositionsSubscribe',
                 request_serializer=api_dot_trading__pb2.PositionsSubscribeRequest.SerializeToString,
-                response_deserializer=vega__pb2.Position.FromString,
+                response_deserializer=api_dot_trading__pb2.PositionsSubscribeResponse.FromString,
                 )
         self.TradesSubscribe = channel.unary_stream(
-                '/api.trading_data/TradesSubscribe',
+                '/api.v1.TradingDataService/TradesSubscribe',
                 request_serializer=api_dot_trading__pb2.TradesSubscribeRequest.SerializeToString,
-                response_deserializer=api_dot_trading__pb2.TradesStream.FromString,
+                response_deserializer=api_dot_trading__pb2.TradesSubscribeResponse.FromString,
                 )
         self.TransferResponsesSubscribe = channel.unary_stream(
-                '/api.trading_data/TransferResponsesSubscribe',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-                response_deserializer=vega__pb2.TransferResponse.FromString,
+                '/api.v1.TradingDataService/TransferResponsesSubscribe',
+                request_serializer=api_dot_trading__pb2.TransferResponsesSubscribeRequest.SerializeToString,
+                response_deserializer=api_dot_trading__pb2.TransferResponsesSubscribeResponse.FromString,
                 )
         self.GetNodeSignaturesAggregate = channel.unary_unary(
-                '/api.trading_data/GetNodeSignaturesAggregate',
+                '/api.v1.TradingDataService/GetNodeSignaturesAggregate',
                 request_serializer=api_dot_trading__pb2.GetNodeSignaturesAggregateRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.GetNodeSignaturesAggregateResponse.FromString,
                 )
         self.AssetByID = channel.unary_unary(
-                '/api.trading_data/AssetByID',
+                '/api.v1.TradingDataService/AssetByID',
                 request_serializer=api_dot_trading__pb2.AssetByIDRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.AssetByIDResponse.FromString,
                 )
         self.Assets = channel.unary_unary(
-                '/api.trading_data/Assets',
+                '/api.v1.TradingDataService/Assets',
                 request_serializer=api_dot_trading__pb2.AssetsRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.AssetsResponse.FromString,
                 )
         self.EstimateFee = channel.unary_unary(
-                '/api.trading_data/EstimateFee',
+                '/api.v1.TradingDataService/EstimateFee',
                 request_serializer=api_dot_trading__pb2.EstimateFeeRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.EstimateFeeResponse.FromString,
                 )
         self.EstimateMargin = channel.unary_unary(
-                '/api.trading_data/EstimateMargin',
+                '/api.v1.TradingDataService/EstimateMargin',
                 request_serializer=api_dot_trading__pb2.EstimateMarginRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.EstimateMarginResponse.FromString,
                 )
         self.ERC20WithdrawalApproval = channel.unary_unary(
-                '/api.trading_data/ERC20WithdrawalApproval',
+                '/api.v1.TradingDataService/ERC20WithdrawalApproval',
                 request_serializer=api_dot_trading__pb2.ERC20WithdrawalApprovalRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.ERC20WithdrawalApprovalResponse.FromString,
                 )
         self.Withdrawal = channel.unary_unary(
-                '/api.trading_data/Withdrawal',
+                '/api.v1.TradingDataService/Withdrawal',
                 request_serializer=api_dot_trading__pb2.WithdrawalRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.WithdrawalResponse.FromString,
                 )
         self.Withdrawals = channel.unary_unary(
-                '/api.trading_data/Withdrawals',
+                '/api.v1.TradingDataService/Withdrawals',
                 request_serializer=api_dot_trading__pb2.WithdrawalsRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.WithdrawalsResponse.FromString,
                 )
         self.Deposit = channel.unary_unary(
-                '/api.trading_data/Deposit',
+                '/api.v1.TradingDataService/Deposit',
                 request_serializer=api_dot_trading__pb2.DepositRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.DepositResponse.FromString,
                 )
         self.Deposits = channel.unary_unary(
-                '/api.trading_data/Deposits',
+                '/api.v1.TradingDataService/Deposits',
                 request_serializer=api_dot_trading__pb2.DepositsRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.DepositsResponse.FromString,
                 )
         self.NetworkParameters = channel.unary_unary(
-                '/api.trading_data/NetworkParameters',
+                '/api.v1.TradingDataService/NetworkParameters',
                 request_serializer=api_dot_trading__pb2.NetworkParametersRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.NetworkParametersResponse.FromString,
                 )
         self.LiquidityProvisions = channel.unary_unary(
-                '/api.trading_data/LiquidityProvisions',
+                '/api.v1.TradingDataService/LiquidityProvisions',
                 request_serializer=api_dot_trading__pb2.LiquidityProvisionsRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.LiquidityProvisionsResponse.FromString,
                 )
 
 
-class trading_dataServicer(object):
+class TradingDataServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def MarketAccounts(self, request, context):
@@ -677,7 +675,7 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def FeeInfrastructureAccounts(self, request, context):
-        """Get the list of infrastructure fees accounts filter eventually by assets
+        """Get a list of infrastructure fees accounts filter eventually by assets
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -695,7 +693,7 @@ class trading_dataServicer(object):
     def MarketDataByID(self, request, context):
         """-- Market Data --
 
-        Get Market Data by MarketID
+        Get Market Data by Market ID
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -734,7 +732,7 @@ class trading_dataServicer(object):
     def OrderByMarketAndID(self, request, context):
         """-- Orders --
 
-        Get an Order by Market and OrderID
+        Get an Order by Market and Order ID
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -762,7 +760,7 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def OrderByID(self, request, context):
-        """Get a specific order by orderID
+        """Get a specific order by order ID
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -778,7 +776,7 @@ class trading_dataServicer(object):
     def MarginLevels(self, request, context):
         """-- Parties --
 
-        Get Margin Levels by PartyID
+        Get Margin Levels by Party ID
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -940,7 +938,7 @@ class trading_dataServicer(object):
     def Statistics(self, request, context):
         """-- Misc --
 
-        Get Statistics
+        Get Statistics on Vega
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -982,7 +980,7 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def MarketDepthUpdatesSubscribe(self, request, context):
-        """Subscribe to a stream of Market Depth PriceLevel Updates
+        """Subscribe to a stream of Market Depth Price Level Updates
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1024,21 +1022,21 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetNodeSignaturesAggregate(self, request, context):
-        """Get an aggregate of signatures from all the nodes of the network.
+        """Get an aggregate of signatures from all the nodes of the network
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def AssetByID(self, request, context):
-        """Get an asset by its identifier.
+        """Get an asset by its identifier
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Assets(self, request, context):
-        """Get a list of all assets on Vega.
+        """Get a list of all assets on Vega
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1059,7 +1057,7 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ERC20WithdrawalApproval(self, request, context):
-        """Get the bundle approval for an ERC20 withdrawal
+        """Get the bundle approval for an ERC20 withdrawal,
         these data are being used to bundle the call to the smart contract on the ethereum bridge
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -1067,7 +1065,7 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Withdrawal(self, request, context):
-        """Get a withdrawal by its ID
+        """Get a withdrawal by its identifier
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1081,14 +1079,14 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Deposit(self, request, context):
-        """Get a deposit by its ID
+        """Get a deposit by its identifier
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Deposits(self, request, context):
-        """Get withdrawals for a party
+        """Get deposits for a party
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1109,7 +1107,7 @@ class trading_dataServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_trading_dataServicer_to_server(servicer, server):
+def add_TradingDataServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'MarketAccounts': grpc.unary_unary_rpc_method_handler(
                     servicer.MarketAccounts,
@@ -1138,7 +1136,7 @@ def add_trading_dataServicer_to_server(servicer, server):
             ),
             'MarketsData': grpc.unary_unary_rpc_method_handler(
                     servicer.MarketsData,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    request_deserializer=api_dot_trading__pb2.MarketsDataRequest.FromString,
                     response_serializer=api_dot_trading__pb2.MarketsDataResponse.SerializeToString,
             ),
             'MarketByID': grpc.unary_unary_rpc_method_handler(
@@ -1153,13 +1151,13 @@ def add_trading_dataServicer_to_server(servicer, server):
             ),
             'Markets': grpc.unary_unary_rpc_method_handler(
                     servicer.Markets,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    request_deserializer=api_dot_trading__pb2.MarketsRequest.FromString,
                     response_serializer=api_dot_trading__pb2.MarketsResponse.SerializeToString,
             ),
             'OrderByMarketAndID': grpc.unary_unary_rpc_method_handler(
                     servicer.OrderByMarketAndID,
-                    request_deserializer=api_dot_trading__pb2.OrderByMarketAndIdRequest.FromString,
-                    response_serializer=api_dot_trading__pb2.OrderByMarketAndIdResponse.SerializeToString,
+                    request_deserializer=api_dot_trading__pb2.OrderByMarketAndIDRequest.FromString,
+                    response_serializer=api_dot_trading__pb2.OrderByMarketAndIDResponse.SerializeToString,
             ),
             'OrderByReference': grpc.unary_unary_rpc_method_handler(
                     servicer.OrderByReference,
@@ -1179,12 +1177,12 @@ def add_trading_dataServicer_to_server(servicer, server):
             'OrderByID': grpc.unary_unary_rpc_method_handler(
                     servicer.OrderByID,
                     request_deserializer=api_dot_trading__pb2.OrderByIDRequest.FromString,
-                    response_serializer=vega__pb2.Order.SerializeToString,
+                    response_serializer=api_dot_trading__pb2.OrderByIDResponse.SerializeToString,
             ),
             'OrderVersionsByID': grpc.unary_unary_rpc_method_handler(
                     servicer.OrderVersionsByID,
                     request_deserializer=api_dot_trading__pb2.OrderVersionsByIDRequest.FromString,
-                    response_serializer=api_dot_trading__pb2.OrderVersionsResponse.SerializeToString,
+                    response_serializer=api_dot_trading__pb2.OrderVersionsByIDResponse.SerializeToString,
             ),
             'MarginLevels': grpc.unary_unary_rpc_method_handler(
                     servicer.MarginLevels,
@@ -1193,7 +1191,7 @@ def add_trading_dataServicer_to_server(servicer, server):
             ),
             'Parties': grpc.unary_unary_rpc_method_handler(
                     servicer.Parties,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    request_deserializer=api_dot_trading__pb2.PartiesRequest.FromString,
                     response_serializer=api_dot_trading__pb2.PartiesResponse.SerializeToString,
             ),
             'PartyByID': grpc.unary_unary_rpc_method_handler(
@@ -1273,88 +1271,88 @@ def add_trading_dataServicer_to_server(servicer, server):
             ),
             'ObserveGovernance': grpc.unary_stream_rpc_method_handler(
                     servicer.ObserveGovernance,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                    response_serializer=governance__pb2.GovernanceData.SerializeToString,
+                    request_deserializer=api_dot_trading__pb2.ObserveGovernanceRequest.FromString,
+                    response_serializer=api_dot_trading__pb2.ObserveGovernanceResponse.SerializeToString,
             ),
             'ObservePartyProposals': grpc.unary_stream_rpc_method_handler(
                     servicer.ObservePartyProposals,
                     request_deserializer=api_dot_trading__pb2.ObservePartyProposalsRequest.FromString,
-                    response_serializer=governance__pb2.GovernanceData.SerializeToString,
+                    response_serializer=api_dot_trading__pb2.ObservePartyProposalsResponse.SerializeToString,
             ),
             'ObservePartyVotes': grpc.unary_stream_rpc_method_handler(
                     servicer.ObservePartyVotes,
                     request_deserializer=api_dot_trading__pb2.ObservePartyVotesRequest.FromString,
-                    response_serializer=governance__pb2.Vote.SerializeToString,
+                    response_serializer=api_dot_trading__pb2.ObservePartyVotesResponse.SerializeToString,
             ),
             'ObserveProposalVotes': grpc.unary_stream_rpc_method_handler(
                     servicer.ObserveProposalVotes,
                     request_deserializer=api_dot_trading__pb2.ObserveProposalVotesRequest.FromString,
-                    response_serializer=governance__pb2.Vote.SerializeToString,
+                    response_serializer=api_dot_trading__pb2.ObserveProposalVotesResponse.SerializeToString,
             ),
             'ObserveEventBus': grpc.stream_stream_rpc_method_handler(
                     servicer.ObserveEventBus,
-                    request_deserializer=api_dot_trading__pb2.ObserveEventsRequest.FromString,
-                    response_serializer=api_dot_trading__pb2.ObserveEventsResponse.SerializeToString,
+                    request_deserializer=api_dot_trading__pb2.ObserveEventBusRequest.FromString,
+                    response_serializer=api_dot_trading__pb2.ObserveEventBusResponse.SerializeToString,
             ),
             'Statistics': grpc.unary_unary_rpc_method_handler(
                     servicer.Statistics,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                    response_serializer=vega__pb2.Statistics.SerializeToString,
+                    request_deserializer=api_dot_trading__pb2.StatisticsRequest.FromString,
+                    response_serializer=api_dot_trading__pb2.StatisticsResponse.SerializeToString,
             ),
             'GetVegaTime': grpc.unary_unary_rpc_method_handler(
                     servicer.GetVegaTime,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                    response_serializer=api_dot_trading__pb2.VegaTimeResponse.SerializeToString,
+                    request_deserializer=api_dot_trading__pb2.GetVegaTimeRequest.FromString,
+                    response_serializer=api_dot_trading__pb2.GetVegaTimeResponse.SerializeToString,
             ),
             'AccountsSubscribe': grpc.unary_stream_rpc_method_handler(
                     servicer.AccountsSubscribe,
                     request_deserializer=api_dot_trading__pb2.AccountsSubscribeRequest.FromString,
-                    response_serializer=vega__pb2.Account.SerializeToString,
+                    response_serializer=api_dot_trading__pb2.AccountsSubscribeResponse.SerializeToString,
             ),
             'CandlesSubscribe': grpc.unary_stream_rpc_method_handler(
                     servicer.CandlesSubscribe,
                     request_deserializer=api_dot_trading__pb2.CandlesSubscribeRequest.FromString,
-                    response_serializer=vega__pb2.Candle.SerializeToString,
+                    response_serializer=api_dot_trading__pb2.CandlesSubscribeResponse.SerializeToString,
             ),
             'MarginLevelsSubscribe': grpc.unary_stream_rpc_method_handler(
                     servicer.MarginLevelsSubscribe,
                     request_deserializer=api_dot_trading__pb2.MarginLevelsSubscribeRequest.FromString,
-                    response_serializer=vega__pb2.MarginLevels.SerializeToString,
+                    response_serializer=api_dot_trading__pb2.MarginLevelsSubscribeResponse.SerializeToString,
             ),
             'MarketDepthSubscribe': grpc.unary_stream_rpc_method_handler(
                     servicer.MarketDepthSubscribe,
                     request_deserializer=api_dot_trading__pb2.MarketDepthSubscribeRequest.FromString,
-                    response_serializer=vega__pb2.MarketDepth.SerializeToString,
+                    response_serializer=api_dot_trading__pb2.MarketDepthSubscribeResponse.SerializeToString,
             ),
             'MarketDepthUpdatesSubscribe': grpc.unary_stream_rpc_method_handler(
                     servicer.MarketDepthUpdatesSubscribe,
                     request_deserializer=api_dot_trading__pb2.MarketDepthUpdatesSubscribeRequest.FromString,
-                    response_serializer=vega__pb2.MarketDepthUpdate.SerializeToString,
+                    response_serializer=api_dot_trading__pb2.MarketDepthUpdatesSubscribeResponse.SerializeToString,
             ),
             'MarketsDataSubscribe': grpc.unary_stream_rpc_method_handler(
                     servicer.MarketsDataSubscribe,
                     request_deserializer=api_dot_trading__pb2.MarketsDataSubscribeRequest.FromString,
-                    response_serializer=vega__pb2.MarketData.SerializeToString,
+                    response_serializer=api_dot_trading__pb2.MarketsDataSubscribeResponse.SerializeToString,
             ),
             'OrdersSubscribe': grpc.unary_stream_rpc_method_handler(
                     servicer.OrdersSubscribe,
                     request_deserializer=api_dot_trading__pb2.OrdersSubscribeRequest.FromString,
-                    response_serializer=api_dot_trading__pb2.OrdersStream.SerializeToString,
+                    response_serializer=api_dot_trading__pb2.OrdersSubscribeResponse.SerializeToString,
             ),
             'PositionsSubscribe': grpc.unary_stream_rpc_method_handler(
                     servicer.PositionsSubscribe,
                     request_deserializer=api_dot_trading__pb2.PositionsSubscribeRequest.FromString,
-                    response_serializer=vega__pb2.Position.SerializeToString,
+                    response_serializer=api_dot_trading__pb2.PositionsSubscribeResponse.SerializeToString,
             ),
             'TradesSubscribe': grpc.unary_stream_rpc_method_handler(
                     servicer.TradesSubscribe,
                     request_deserializer=api_dot_trading__pb2.TradesSubscribeRequest.FromString,
-                    response_serializer=api_dot_trading__pb2.TradesStream.SerializeToString,
+                    response_serializer=api_dot_trading__pb2.TradesSubscribeResponse.SerializeToString,
             ),
             'TransferResponsesSubscribe': grpc.unary_stream_rpc_method_handler(
                     servicer.TransferResponsesSubscribe,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                    response_serializer=vega__pb2.TransferResponse.SerializeToString,
+                    request_deserializer=api_dot_trading__pb2.TransferResponsesSubscribeRequest.FromString,
+                    response_serializer=api_dot_trading__pb2.TransferResponsesSubscribeResponse.SerializeToString,
             ),
             'GetNodeSignaturesAggregate': grpc.unary_unary_rpc_method_handler(
                     servicer.GetNodeSignaturesAggregate,
@@ -1418,12 +1416,12 @@ def add_trading_dataServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'api.trading_data', rpc_method_handlers)
+            'api.v1.TradingDataService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class trading_data(object):
+class TradingDataService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -1437,7 +1435,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/MarketAccounts',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/MarketAccounts',
             api_dot_trading__pb2.MarketAccountsRequest.SerializeToString,
             api_dot_trading__pb2.MarketAccountsResponse.FromString,
             options, channel_credentials,
@@ -1454,7 +1452,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/PartyAccounts',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/PartyAccounts',
             api_dot_trading__pb2.PartyAccountsRequest.SerializeToString,
             api_dot_trading__pb2.PartyAccountsResponse.FromString,
             options, channel_credentials,
@@ -1471,7 +1469,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/FeeInfrastructureAccounts',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/FeeInfrastructureAccounts',
             api_dot_trading__pb2.FeeInfrastructureAccountsRequest.SerializeToString,
             api_dot_trading__pb2.FeeInfrastructureAccountsResponse.FromString,
             options, channel_credentials,
@@ -1488,7 +1486,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/Candles',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/Candles',
             api_dot_trading__pb2.CandlesRequest.SerializeToString,
             api_dot_trading__pb2.CandlesResponse.FromString,
             options, channel_credentials,
@@ -1505,7 +1503,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/MarketDataByID',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/MarketDataByID',
             api_dot_trading__pb2.MarketDataByIDRequest.SerializeToString,
             api_dot_trading__pb2.MarketDataByIDResponse.FromString,
             options, channel_credentials,
@@ -1522,8 +1520,8 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/MarketsData',
-            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/MarketsData',
+            api_dot_trading__pb2.MarketsDataRequest.SerializeToString,
             api_dot_trading__pb2.MarketsDataResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -1539,7 +1537,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/MarketByID',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/MarketByID',
             api_dot_trading__pb2.MarketByIDRequest.SerializeToString,
             api_dot_trading__pb2.MarketByIDResponse.FromString,
             options, channel_credentials,
@@ -1556,7 +1554,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/MarketDepth',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/MarketDepth',
             api_dot_trading__pb2.MarketDepthRequest.SerializeToString,
             api_dot_trading__pb2.MarketDepthResponse.FromString,
             options, channel_credentials,
@@ -1573,8 +1571,8 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/Markets',
-            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/Markets',
+            api_dot_trading__pb2.MarketsRequest.SerializeToString,
             api_dot_trading__pb2.MarketsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -1590,9 +1588,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/OrderByMarketAndID',
-            api_dot_trading__pb2.OrderByMarketAndIdRequest.SerializeToString,
-            api_dot_trading__pb2.OrderByMarketAndIdResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/OrderByMarketAndID',
+            api_dot_trading__pb2.OrderByMarketAndIDRequest.SerializeToString,
+            api_dot_trading__pb2.OrderByMarketAndIDResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1607,7 +1605,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/OrderByReference',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/OrderByReference',
             api_dot_trading__pb2.OrderByReferenceRequest.SerializeToString,
             api_dot_trading__pb2.OrderByReferenceResponse.FromString,
             options, channel_credentials,
@@ -1624,7 +1622,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/OrdersByMarket',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/OrdersByMarket',
             api_dot_trading__pb2.OrdersByMarketRequest.SerializeToString,
             api_dot_trading__pb2.OrdersByMarketResponse.FromString,
             options, channel_credentials,
@@ -1641,7 +1639,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/OrdersByParty',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/OrdersByParty',
             api_dot_trading__pb2.OrdersByPartyRequest.SerializeToString,
             api_dot_trading__pb2.OrdersByPartyResponse.FromString,
             options, channel_credentials,
@@ -1658,9 +1656,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/OrderByID',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/OrderByID',
             api_dot_trading__pb2.OrderByIDRequest.SerializeToString,
-            vega__pb2.Order.FromString,
+            api_dot_trading__pb2.OrderByIDResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1675,9 +1673,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/OrderVersionsByID',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/OrderVersionsByID',
             api_dot_trading__pb2.OrderVersionsByIDRequest.SerializeToString,
-            api_dot_trading__pb2.OrderVersionsResponse.FromString,
+            api_dot_trading__pb2.OrderVersionsByIDResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1692,7 +1690,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/MarginLevels',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/MarginLevels',
             api_dot_trading__pb2.MarginLevelsRequest.SerializeToString,
             api_dot_trading__pb2.MarginLevelsResponse.FromString,
             options, channel_credentials,
@@ -1709,8 +1707,8 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/Parties',
-            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/Parties',
+            api_dot_trading__pb2.PartiesRequest.SerializeToString,
             api_dot_trading__pb2.PartiesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -1726,7 +1724,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/PartyByID',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/PartyByID',
             api_dot_trading__pb2.PartyByIDRequest.SerializeToString,
             api_dot_trading__pb2.PartyByIDResponse.FromString,
             options, channel_credentials,
@@ -1743,7 +1741,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/PositionsByParty',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/PositionsByParty',
             api_dot_trading__pb2.PositionsByPartyRequest.SerializeToString,
             api_dot_trading__pb2.PositionsByPartyResponse.FromString,
             options, channel_credentials,
@@ -1760,7 +1758,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/LastTrade',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/LastTrade',
             api_dot_trading__pb2.LastTradeRequest.SerializeToString,
             api_dot_trading__pb2.LastTradeResponse.FromString,
             options, channel_credentials,
@@ -1777,7 +1775,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/TradesByMarket',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/TradesByMarket',
             api_dot_trading__pb2.TradesByMarketRequest.SerializeToString,
             api_dot_trading__pb2.TradesByMarketResponse.FromString,
             options, channel_credentials,
@@ -1794,7 +1792,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/TradesByOrder',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/TradesByOrder',
             api_dot_trading__pb2.TradesByOrderRequest.SerializeToString,
             api_dot_trading__pb2.TradesByOrderResponse.FromString,
             options, channel_credentials,
@@ -1811,7 +1809,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/TradesByParty',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/TradesByParty',
             api_dot_trading__pb2.TradesByPartyRequest.SerializeToString,
             api_dot_trading__pb2.TradesByPartyResponse.FromString,
             options, channel_credentials,
@@ -1828,7 +1826,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetProposals',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/GetProposals',
             api_dot_trading__pb2.GetProposalsRequest.SerializeToString,
             api_dot_trading__pb2.GetProposalsResponse.FromString,
             options, channel_credentials,
@@ -1845,7 +1843,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetProposalsByParty',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/GetProposalsByParty',
             api_dot_trading__pb2.GetProposalsByPartyRequest.SerializeToString,
             api_dot_trading__pb2.GetProposalsByPartyResponse.FromString,
             options, channel_credentials,
@@ -1862,7 +1860,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetVotesByParty',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/GetVotesByParty',
             api_dot_trading__pb2.GetVotesByPartyRequest.SerializeToString,
             api_dot_trading__pb2.GetVotesByPartyResponse.FromString,
             options, channel_credentials,
@@ -1879,7 +1877,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetNewMarketProposals',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/GetNewMarketProposals',
             api_dot_trading__pb2.GetNewMarketProposalsRequest.SerializeToString,
             api_dot_trading__pb2.GetNewMarketProposalsResponse.FromString,
             options, channel_credentials,
@@ -1896,7 +1894,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetUpdateMarketProposals',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/GetUpdateMarketProposals',
             api_dot_trading__pb2.GetUpdateMarketProposalsRequest.SerializeToString,
             api_dot_trading__pb2.GetUpdateMarketProposalsResponse.FromString,
             options, channel_credentials,
@@ -1913,7 +1911,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetNetworkParametersProposals',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/GetNetworkParametersProposals',
             api_dot_trading__pb2.GetNetworkParametersProposalsRequest.SerializeToString,
             api_dot_trading__pb2.GetNetworkParametersProposalsResponse.FromString,
             options, channel_credentials,
@@ -1930,7 +1928,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetNewAssetProposals',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/GetNewAssetProposals',
             api_dot_trading__pb2.GetNewAssetProposalsRequest.SerializeToString,
             api_dot_trading__pb2.GetNewAssetProposalsResponse.FromString,
             options, channel_credentials,
@@ -1947,7 +1945,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetProposalByID',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/GetProposalByID',
             api_dot_trading__pb2.GetProposalByIDRequest.SerializeToString,
             api_dot_trading__pb2.GetProposalByIDResponse.FromString,
             options, channel_credentials,
@@ -1964,7 +1962,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetProposalByReference',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/GetProposalByReference',
             api_dot_trading__pb2.GetProposalByReferenceRequest.SerializeToString,
             api_dot_trading__pb2.GetProposalByReferenceResponse.FromString,
             options, channel_credentials,
@@ -1981,9 +1979,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/api.trading_data/ObserveGovernance',
-            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            governance__pb2.GovernanceData.FromString,
+        return grpc.experimental.unary_stream(request, target, '/api.v1.TradingDataService/ObserveGovernance',
+            api_dot_trading__pb2.ObserveGovernanceRequest.SerializeToString,
+            api_dot_trading__pb2.ObserveGovernanceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1998,9 +1996,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/api.trading_data/ObservePartyProposals',
+        return grpc.experimental.unary_stream(request, target, '/api.v1.TradingDataService/ObservePartyProposals',
             api_dot_trading__pb2.ObservePartyProposalsRequest.SerializeToString,
-            governance__pb2.GovernanceData.FromString,
+            api_dot_trading__pb2.ObservePartyProposalsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2015,9 +2013,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/api.trading_data/ObservePartyVotes',
+        return grpc.experimental.unary_stream(request, target, '/api.v1.TradingDataService/ObservePartyVotes',
             api_dot_trading__pb2.ObservePartyVotesRequest.SerializeToString,
-            governance__pb2.Vote.FromString,
+            api_dot_trading__pb2.ObservePartyVotesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2032,9 +2030,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/api.trading_data/ObserveProposalVotes',
+        return grpc.experimental.unary_stream(request, target, '/api.v1.TradingDataService/ObserveProposalVotes',
             api_dot_trading__pb2.ObserveProposalVotesRequest.SerializeToString,
-            governance__pb2.Vote.FromString,
+            api_dot_trading__pb2.ObserveProposalVotesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2049,9 +2047,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.stream_stream(request_iterator, target, '/api.trading_data/ObserveEventBus',
-            api_dot_trading__pb2.ObserveEventsRequest.SerializeToString,
-            api_dot_trading__pb2.ObserveEventsResponse.FromString,
+        return grpc.experimental.stream_stream(request_iterator, target, '/api.v1.TradingDataService/ObserveEventBus',
+            api_dot_trading__pb2.ObserveEventBusRequest.SerializeToString,
+            api_dot_trading__pb2.ObserveEventBusResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2066,9 +2064,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/Statistics',
-            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            vega__pb2.Statistics.FromString,
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/Statistics',
+            api_dot_trading__pb2.StatisticsRequest.SerializeToString,
+            api_dot_trading__pb2.StatisticsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2083,9 +2081,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetVegaTime',
-            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            api_dot_trading__pb2.VegaTimeResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/GetVegaTime',
+            api_dot_trading__pb2.GetVegaTimeRequest.SerializeToString,
+            api_dot_trading__pb2.GetVegaTimeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2100,9 +2098,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/api.trading_data/AccountsSubscribe',
+        return grpc.experimental.unary_stream(request, target, '/api.v1.TradingDataService/AccountsSubscribe',
             api_dot_trading__pb2.AccountsSubscribeRequest.SerializeToString,
-            vega__pb2.Account.FromString,
+            api_dot_trading__pb2.AccountsSubscribeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2117,9 +2115,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/api.trading_data/CandlesSubscribe',
+        return grpc.experimental.unary_stream(request, target, '/api.v1.TradingDataService/CandlesSubscribe',
             api_dot_trading__pb2.CandlesSubscribeRequest.SerializeToString,
-            vega__pb2.Candle.FromString,
+            api_dot_trading__pb2.CandlesSubscribeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2134,9 +2132,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/api.trading_data/MarginLevelsSubscribe',
+        return grpc.experimental.unary_stream(request, target, '/api.v1.TradingDataService/MarginLevelsSubscribe',
             api_dot_trading__pb2.MarginLevelsSubscribeRequest.SerializeToString,
-            vega__pb2.MarginLevels.FromString,
+            api_dot_trading__pb2.MarginLevelsSubscribeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2151,9 +2149,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/api.trading_data/MarketDepthSubscribe',
+        return grpc.experimental.unary_stream(request, target, '/api.v1.TradingDataService/MarketDepthSubscribe',
             api_dot_trading__pb2.MarketDepthSubscribeRequest.SerializeToString,
-            vega__pb2.MarketDepth.FromString,
+            api_dot_trading__pb2.MarketDepthSubscribeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2168,9 +2166,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/api.trading_data/MarketDepthUpdatesSubscribe',
+        return grpc.experimental.unary_stream(request, target, '/api.v1.TradingDataService/MarketDepthUpdatesSubscribe',
             api_dot_trading__pb2.MarketDepthUpdatesSubscribeRequest.SerializeToString,
-            vega__pb2.MarketDepthUpdate.FromString,
+            api_dot_trading__pb2.MarketDepthUpdatesSubscribeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2185,9 +2183,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/api.trading_data/MarketsDataSubscribe',
+        return grpc.experimental.unary_stream(request, target, '/api.v1.TradingDataService/MarketsDataSubscribe',
             api_dot_trading__pb2.MarketsDataSubscribeRequest.SerializeToString,
-            vega__pb2.MarketData.FromString,
+            api_dot_trading__pb2.MarketsDataSubscribeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2202,9 +2200,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/api.trading_data/OrdersSubscribe',
+        return grpc.experimental.unary_stream(request, target, '/api.v1.TradingDataService/OrdersSubscribe',
             api_dot_trading__pb2.OrdersSubscribeRequest.SerializeToString,
-            api_dot_trading__pb2.OrdersStream.FromString,
+            api_dot_trading__pb2.OrdersSubscribeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2219,9 +2217,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/api.trading_data/PositionsSubscribe',
+        return grpc.experimental.unary_stream(request, target, '/api.v1.TradingDataService/PositionsSubscribe',
             api_dot_trading__pb2.PositionsSubscribeRequest.SerializeToString,
-            vega__pb2.Position.FromString,
+            api_dot_trading__pb2.PositionsSubscribeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2236,9 +2234,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/api.trading_data/TradesSubscribe',
+        return grpc.experimental.unary_stream(request, target, '/api.v1.TradingDataService/TradesSubscribe',
             api_dot_trading__pb2.TradesSubscribeRequest.SerializeToString,
-            api_dot_trading__pb2.TradesStream.FromString,
+            api_dot_trading__pb2.TradesSubscribeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2253,9 +2251,9 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/api.trading_data/TransferResponsesSubscribe',
-            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            vega__pb2.TransferResponse.FromString,
+        return grpc.experimental.unary_stream(request, target, '/api.v1.TradingDataService/TransferResponsesSubscribe',
+            api_dot_trading__pb2.TransferResponsesSubscribeRequest.SerializeToString,
+            api_dot_trading__pb2.TransferResponsesSubscribeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2270,7 +2268,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/GetNodeSignaturesAggregate',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/GetNodeSignaturesAggregate',
             api_dot_trading__pb2.GetNodeSignaturesAggregateRequest.SerializeToString,
             api_dot_trading__pb2.GetNodeSignaturesAggregateResponse.FromString,
             options, channel_credentials,
@@ -2287,7 +2285,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/AssetByID',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/AssetByID',
             api_dot_trading__pb2.AssetByIDRequest.SerializeToString,
             api_dot_trading__pb2.AssetByIDResponse.FromString,
             options, channel_credentials,
@@ -2304,7 +2302,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/Assets',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/Assets',
             api_dot_trading__pb2.AssetsRequest.SerializeToString,
             api_dot_trading__pb2.AssetsResponse.FromString,
             options, channel_credentials,
@@ -2321,7 +2319,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/EstimateFee',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/EstimateFee',
             api_dot_trading__pb2.EstimateFeeRequest.SerializeToString,
             api_dot_trading__pb2.EstimateFeeResponse.FromString,
             options, channel_credentials,
@@ -2338,7 +2336,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/EstimateMargin',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/EstimateMargin',
             api_dot_trading__pb2.EstimateMarginRequest.SerializeToString,
             api_dot_trading__pb2.EstimateMarginResponse.FromString,
             options, channel_credentials,
@@ -2355,7 +2353,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/ERC20WithdrawalApproval',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/ERC20WithdrawalApproval',
             api_dot_trading__pb2.ERC20WithdrawalApprovalRequest.SerializeToString,
             api_dot_trading__pb2.ERC20WithdrawalApprovalResponse.FromString,
             options, channel_credentials,
@@ -2372,7 +2370,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/Withdrawal',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/Withdrawal',
             api_dot_trading__pb2.WithdrawalRequest.SerializeToString,
             api_dot_trading__pb2.WithdrawalResponse.FromString,
             options, channel_credentials,
@@ -2389,7 +2387,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/Withdrawals',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/Withdrawals',
             api_dot_trading__pb2.WithdrawalsRequest.SerializeToString,
             api_dot_trading__pb2.WithdrawalsResponse.FromString,
             options, channel_credentials,
@@ -2406,7 +2404,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/Deposit',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/Deposit',
             api_dot_trading__pb2.DepositRequest.SerializeToString,
             api_dot_trading__pb2.DepositResponse.FromString,
             options, channel_credentials,
@@ -2423,7 +2421,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/Deposits',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/Deposits',
             api_dot_trading__pb2.DepositsRequest.SerializeToString,
             api_dot_trading__pb2.DepositsResponse.FromString,
             options, channel_credentials,
@@ -2440,7 +2438,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/NetworkParameters',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/NetworkParameters',
             api_dot_trading__pb2.NetworkParametersRequest.SerializeToString,
             api_dot_trading__pb2.NetworkParametersResponse.FromString,
             options, channel_credentials,
@@ -2457,7 +2455,7 @@ class trading_data(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.trading_data/LiquidityProvisions',
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/LiquidityProvisions',
             api_dot_trading__pb2.LiquidityProvisionsRequest.SerializeToString,
             api_dot_trading__pb2.LiquidityProvisionsResponse.FromString,
             options, channel_credentials,

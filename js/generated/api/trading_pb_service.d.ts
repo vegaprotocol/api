@@ -1,718 +1,715 @@
-// package: api
+// package: api.v1
 // file: api/trading.proto
 
 import * as api_trading_pb from "../api/trading_pb";
-import * as vega_pb from "../vega_pb";
-import * as governance_pb from "../governance_pb";
-import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
-type tradingPrepareSubmitOrder = {
+type TradingServicePrepareSubmitOrder = {
   readonly methodName: string;
-  readonly service: typeof trading;
+  readonly service: typeof TradingService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_trading_pb.SubmitOrderRequest;
+  readonly requestType: typeof api_trading_pb.PrepareSubmitOrderRequest;
   readonly responseType: typeof api_trading_pb.PrepareSubmitOrderResponse;
 };
 
-type tradingPrepareCancelOrder = {
+type TradingServicePrepareCancelOrder = {
   readonly methodName: string;
-  readonly service: typeof trading;
+  readonly service: typeof TradingService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_trading_pb.CancelOrderRequest;
+  readonly requestType: typeof api_trading_pb.PrepareCancelOrderRequest;
   readonly responseType: typeof api_trading_pb.PrepareCancelOrderResponse;
 };
 
-type tradingPrepareAmendOrder = {
+type TradingServicePrepareAmendOrder = {
   readonly methodName: string;
-  readonly service: typeof trading;
+  readonly service: typeof TradingService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_trading_pb.AmendOrderRequest;
+  readonly requestType: typeof api_trading_pb.PrepareAmendOrderRequest;
   readonly responseType: typeof api_trading_pb.PrepareAmendOrderResponse;
 };
 
-type tradingPrepareWithdraw = {
+type TradingServicePrepareWithdraw = {
   readonly methodName: string;
-  readonly service: typeof trading;
+  readonly service: typeof TradingService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.PrepareWithdrawRequest;
   readonly responseType: typeof api_trading_pb.PrepareWithdrawResponse;
 };
 
-type tradingSubmitTransaction = {
+type TradingServiceSubmitTransaction = {
   readonly methodName: string;
-  readonly service: typeof trading;
+  readonly service: typeof TradingService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.SubmitTransactionRequest;
   readonly responseType: typeof api_trading_pb.SubmitTransactionResponse;
 };
 
-type tradingPrepareProposal = {
+type TradingServicePrepareProposal = {
   readonly methodName: string;
-  readonly service: typeof trading;
+  readonly service: typeof TradingService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.PrepareProposalRequest;
   readonly responseType: typeof api_trading_pb.PrepareProposalResponse;
 };
 
-type tradingPrepareVote = {
+type TradingServicePrepareVote = {
   readonly methodName: string;
-  readonly service: typeof trading;
+  readonly service: typeof TradingService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.PrepareVoteRequest;
   readonly responseType: typeof api_trading_pb.PrepareVoteResponse;
 };
 
-type tradingPropagateChainEvent = {
+type TradingServicePropagateChainEvent = {
   readonly methodName: string;
-  readonly service: typeof trading;
+  readonly service: typeof TradingService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.PropagateChainEventRequest;
   readonly responseType: typeof api_trading_pb.PropagateChainEventResponse;
 };
 
-type tradingPrepareLiquidityProvision = {
+type TradingServicePrepareLiquidityProvision = {
   readonly methodName: string;
-  readonly service: typeof trading;
+  readonly service: typeof TradingService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.PrepareLiquidityProvisionRequest;
   readonly responseType: typeof api_trading_pb.PrepareLiquidityProvisionResponse;
 };
 
-export class trading {
+export class TradingService {
   static readonly serviceName: string;
-  static readonly PrepareSubmitOrder: tradingPrepareSubmitOrder;
-  static readonly PrepareCancelOrder: tradingPrepareCancelOrder;
-  static readonly PrepareAmendOrder: tradingPrepareAmendOrder;
-  static readonly PrepareWithdraw: tradingPrepareWithdraw;
-  static readonly SubmitTransaction: tradingSubmitTransaction;
-  static readonly PrepareProposal: tradingPrepareProposal;
-  static readonly PrepareVote: tradingPrepareVote;
-  static readonly PropagateChainEvent: tradingPropagateChainEvent;
-  static readonly PrepareLiquidityProvision: tradingPrepareLiquidityProvision;
+  static readonly PrepareSubmitOrder: TradingServicePrepareSubmitOrder;
+  static readonly PrepareCancelOrder: TradingServicePrepareCancelOrder;
+  static readonly PrepareAmendOrder: TradingServicePrepareAmendOrder;
+  static readonly PrepareWithdraw: TradingServicePrepareWithdraw;
+  static readonly SubmitTransaction: TradingServiceSubmitTransaction;
+  static readonly PrepareProposal: TradingServicePrepareProposal;
+  static readonly PrepareVote: TradingServicePrepareVote;
+  static readonly PropagateChainEvent: TradingServicePropagateChainEvent;
+  static readonly PrepareLiquidityProvision: TradingServicePrepareLiquidityProvision;
 }
 
-type trading_dataMarketAccounts = {
+type TradingDataServiceMarketAccounts = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.MarketAccountsRequest;
   readonly responseType: typeof api_trading_pb.MarketAccountsResponse;
 };
 
-type trading_dataPartyAccounts = {
+type TradingDataServicePartyAccounts = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.PartyAccountsRequest;
   readonly responseType: typeof api_trading_pb.PartyAccountsResponse;
 };
 
-type trading_dataFeeInfrastructureAccounts = {
+type TradingDataServiceFeeInfrastructureAccounts = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.FeeInfrastructureAccountsRequest;
   readonly responseType: typeof api_trading_pb.FeeInfrastructureAccountsResponse;
 };
 
-type trading_dataCandles = {
+type TradingDataServiceCandles = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.CandlesRequest;
   readonly responseType: typeof api_trading_pb.CandlesResponse;
 };
 
-type trading_dataMarketDataByID = {
+type TradingDataServiceMarketDataByID = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.MarketDataByIDRequest;
   readonly responseType: typeof api_trading_pb.MarketDataByIDResponse;
 };
 
-type trading_dataMarketsData = {
+type TradingDataServiceMarketsData = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof google_protobuf_empty_pb.Empty;
+  readonly requestType: typeof api_trading_pb.MarketsDataRequest;
   readonly responseType: typeof api_trading_pb.MarketsDataResponse;
 };
 
-type trading_dataMarketByID = {
+type TradingDataServiceMarketByID = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.MarketByIDRequest;
   readonly responseType: typeof api_trading_pb.MarketByIDResponse;
 };
 
-type trading_dataMarketDepth = {
+type TradingDataServiceMarketDepth = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.MarketDepthRequest;
   readonly responseType: typeof api_trading_pb.MarketDepthResponse;
 };
 
-type trading_dataMarkets = {
+type TradingDataServiceMarkets = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof google_protobuf_empty_pb.Empty;
+  readonly requestType: typeof api_trading_pb.MarketsRequest;
   readonly responseType: typeof api_trading_pb.MarketsResponse;
 };
 
-type trading_dataOrderByMarketAndID = {
+type TradingDataServiceOrderByMarketAndID = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_trading_pb.OrderByMarketAndIdRequest;
-  readonly responseType: typeof api_trading_pb.OrderByMarketAndIdResponse;
+  readonly requestType: typeof api_trading_pb.OrderByMarketAndIDRequest;
+  readonly responseType: typeof api_trading_pb.OrderByMarketAndIDResponse;
 };
 
-type trading_dataOrderByReference = {
+type TradingDataServiceOrderByReference = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.OrderByReferenceRequest;
   readonly responseType: typeof api_trading_pb.OrderByReferenceResponse;
 };
 
-type trading_dataOrdersByMarket = {
+type TradingDataServiceOrdersByMarket = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.OrdersByMarketRequest;
   readonly responseType: typeof api_trading_pb.OrdersByMarketResponse;
 };
 
-type trading_dataOrdersByParty = {
+type TradingDataServiceOrdersByParty = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.OrdersByPartyRequest;
   readonly responseType: typeof api_trading_pb.OrdersByPartyResponse;
 };
 
-type trading_dataOrderByID = {
+type TradingDataServiceOrderByID = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.OrderByIDRequest;
-  readonly responseType: typeof vega_pb.Order;
+  readonly responseType: typeof api_trading_pb.OrderByIDResponse;
 };
 
-type trading_dataOrderVersionsByID = {
+type TradingDataServiceOrderVersionsByID = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.OrderVersionsByIDRequest;
-  readonly responseType: typeof api_trading_pb.OrderVersionsResponse;
+  readonly responseType: typeof api_trading_pb.OrderVersionsByIDResponse;
 };
 
-type trading_dataMarginLevels = {
+type TradingDataServiceMarginLevels = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.MarginLevelsRequest;
   readonly responseType: typeof api_trading_pb.MarginLevelsResponse;
 };
 
-type trading_dataParties = {
+type TradingDataServiceParties = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof google_protobuf_empty_pb.Empty;
+  readonly requestType: typeof api_trading_pb.PartiesRequest;
   readonly responseType: typeof api_trading_pb.PartiesResponse;
 };
 
-type trading_dataPartyByID = {
+type TradingDataServicePartyByID = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.PartyByIDRequest;
   readonly responseType: typeof api_trading_pb.PartyByIDResponse;
 };
 
-type trading_dataPositionsByParty = {
+type TradingDataServicePositionsByParty = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.PositionsByPartyRequest;
   readonly responseType: typeof api_trading_pb.PositionsByPartyResponse;
 };
 
-type trading_dataLastTrade = {
+type TradingDataServiceLastTrade = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.LastTradeRequest;
   readonly responseType: typeof api_trading_pb.LastTradeResponse;
 };
 
-type trading_dataTradesByMarket = {
+type TradingDataServiceTradesByMarket = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.TradesByMarketRequest;
   readonly responseType: typeof api_trading_pb.TradesByMarketResponse;
 };
 
-type trading_dataTradesByOrder = {
+type TradingDataServiceTradesByOrder = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.TradesByOrderRequest;
   readonly responseType: typeof api_trading_pb.TradesByOrderResponse;
 };
 
-type trading_dataTradesByParty = {
+type TradingDataServiceTradesByParty = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.TradesByPartyRequest;
   readonly responseType: typeof api_trading_pb.TradesByPartyResponse;
 };
 
-type trading_dataGetProposals = {
+type TradingDataServiceGetProposals = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.GetProposalsRequest;
   readonly responseType: typeof api_trading_pb.GetProposalsResponse;
 };
 
-type trading_dataGetProposalsByParty = {
+type TradingDataServiceGetProposalsByParty = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.GetProposalsByPartyRequest;
   readonly responseType: typeof api_trading_pb.GetProposalsByPartyResponse;
 };
 
-type trading_dataGetVotesByParty = {
+type TradingDataServiceGetVotesByParty = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.GetVotesByPartyRequest;
   readonly responseType: typeof api_trading_pb.GetVotesByPartyResponse;
 };
 
-type trading_dataGetNewMarketProposals = {
+type TradingDataServiceGetNewMarketProposals = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.GetNewMarketProposalsRequest;
   readonly responseType: typeof api_trading_pb.GetNewMarketProposalsResponse;
 };
 
-type trading_dataGetUpdateMarketProposals = {
+type TradingDataServiceGetUpdateMarketProposals = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.GetUpdateMarketProposalsRequest;
   readonly responseType: typeof api_trading_pb.GetUpdateMarketProposalsResponse;
 };
 
-type trading_dataGetNetworkParametersProposals = {
+type TradingDataServiceGetNetworkParametersProposals = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.GetNetworkParametersProposalsRequest;
   readonly responseType: typeof api_trading_pb.GetNetworkParametersProposalsResponse;
 };
 
-type trading_dataGetNewAssetProposals = {
+type TradingDataServiceGetNewAssetProposals = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.GetNewAssetProposalsRequest;
   readonly responseType: typeof api_trading_pb.GetNewAssetProposalsResponse;
 };
 
-type trading_dataGetProposalByID = {
+type TradingDataServiceGetProposalByID = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.GetProposalByIDRequest;
   readonly responseType: typeof api_trading_pb.GetProposalByIDResponse;
 };
 
-type trading_dataGetProposalByReference = {
+type TradingDataServiceGetProposalByReference = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.GetProposalByReferenceRequest;
   readonly responseType: typeof api_trading_pb.GetProposalByReferenceResponse;
 };
 
-type trading_dataObserveGovernance = {
+type TradingDataServiceObserveGovernance = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: true;
-  readonly requestType: typeof google_protobuf_empty_pb.Empty;
-  readonly responseType: typeof governance_pb.GovernanceData;
+  readonly requestType: typeof api_trading_pb.ObserveGovernanceRequest;
+  readonly responseType: typeof api_trading_pb.ObserveGovernanceResponse;
 };
 
-type trading_dataObservePartyProposals = {
+type TradingDataServiceObservePartyProposals = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof api_trading_pb.ObservePartyProposalsRequest;
-  readonly responseType: typeof governance_pb.GovernanceData;
+  readonly responseType: typeof api_trading_pb.ObservePartyProposalsResponse;
 };
 
-type trading_dataObservePartyVotes = {
+type TradingDataServiceObservePartyVotes = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof api_trading_pb.ObservePartyVotesRequest;
-  readonly responseType: typeof governance_pb.Vote;
+  readonly responseType: typeof api_trading_pb.ObservePartyVotesResponse;
 };
 
-type trading_dataObserveProposalVotes = {
+type TradingDataServiceObserveProposalVotes = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof api_trading_pb.ObserveProposalVotesRequest;
-  readonly responseType: typeof governance_pb.Vote;
+  readonly responseType: typeof api_trading_pb.ObserveProposalVotesResponse;
 };
 
-type trading_dataObserveEventBus = {
+type TradingDataServiceObserveEventBus = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: true;
   readonly responseStream: true;
-  readonly requestType: typeof api_trading_pb.ObserveEventsRequest;
-  readonly responseType: typeof api_trading_pb.ObserveEventsResponse;
+  readonly requestType: typeof api_trading_pb.ObserveEventBusRequest;
+  readonly responseType: typeof api_trading_pb.ObserveEventBusResponse;
 };
 
-type trading_dataStatistics = {
+type TradingDataServiceStatistics = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof google_protobuf_empty_pb.Empty;
-  readonly responseType: typeof vega_pb.Statistics;
+  readonly requestType: typeof api_trading_pb.StatisticsRequest;
+  readonly responseType: typeof api_trading_pb.StatisticsResponse;
 };
 
-type trading_dataGetVegaTime = {
+type TradingDataServiceGetVegaTime = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof google_protobuf_empty_pb.Empty;
-  readonly responseType: typeof api_trading_pb.VegaTimeResponse;
+  readonly requestType: typeof api_trading_pb.GetVegaTimeRequest;
+  readonly responseType: typeof api_trading_pb.GetVegaTimeResponse;
 };
 
-type trading_dataAccountsSubscribe = {
+type TradingDataServiceAccountsSubscribe = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof api_trading_pb.AccountsSubscribeRequest;
-  readonly responseType: typeof vega_pb.Account;
+  readonly responseType: typeof api_trading_pb.AccountsSubscribeResponse;
 };
 
-type trading_dataCandlesSubscribe = {
+type TradingDataServiceCandlesSubscribe = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof api_trading_pb.CandlesSubscribeRequest;
-  readonly responseType: typeof vega_pb.Candle;
+  readonly responseType: typeof api_trading_pb.CandlesSubscribeResponse;
 };
 
-type trading_dataMarginLevelsSubscribe = {
+type TradingDataServiceMarginLevelsSubscribe = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof api_trading_pb.MarginLevelsSubscribeRequest;
-  readonly responseType: typeof vega_pb.MarginLevels;
+  readonly responseType: typeof api_trading_pb.MarginLevelsSubscribeResponse;
 };
 
-type trading_dataMarketDepthSubscribe = {
+type TradingDataServiceMarketDepthSubscribe = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof api_trading_pb.MarketDepthSubscribeRequest;
-  readonly responseType: typeof vega_pb.MarketDepth;
+  readonly responseType: typeof api_trading_pb.MarketDepthSubscribeResponse;
 };
 
-type trading_dataMarketDepthUpdatesSubscribe = {
+type TradingDataServiceMarketDepthUpdatesSubscribe = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof api_trading_pb.MarketDepthUpdatesSubscribeRequest;
-  readonly responseType: typeof vega_pb.MarketDepthUpdate;
+  readonly responseType: typeof api_trading_pb.MarketDepthUpdatesSubscribeResponse;
 };
 
-type trading_dataMarketsDataSubscribe = {
+type TradingDataServiceMarketsDataSubscribe = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof api_trading_pb.MarketsDataSubscribeRequest;
-  readonly responseType: typeof vega_pb.MarketData;
+  readonly responseType: typeof api_trading_pb.MarketsDataSubscribeResponse;
 };
 
-type trading_dataOrdersSubscribe = {
+type TradingDataServiceOrdersSubscribe = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof api_trading_pb.OrdersSubscribeRequest;
-  readonly responseType: typeof api_trading_pb.OrdersStream;
+  readonly responseType: typeof api_trading_pb.OrdersSubscribeResponse;
 };
 
-type trading_dataPositionsSubscribe = {
+type TradingDataServicePositionsSubscribe = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof api_trading_pb.PositionsSubscribeRequest;
-  readonly responseType: typeof vega_pb.Position;
+  readonly responseType: typeof api_trading_pb.PositionsSubscribeResponse;
 };
 
-type trading_dataTradesSubscribe = {
+type TradingDataServiceTradesSubscribe = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: true;
   readonly requestType: typeof api_trading_pb.TradesSubscribeRequest;
-  readonly responseType: typeof api_trading_pb.TradesStream;
+  readonly responseType: typeof api_trading_pb.TradesSubscribeResponse;
 };
 
-type trading_dataTransferResponsesSubscribe = {
+type TradingDataServiceTransferResponsesSubscribe = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: true;
-  readonly requestType: typeof google_protobuf_empty_pb.Empty;
-  readonly responseType: typeof vega_pb.TransferResponse;
+  readonly requestType: typeof api_trading_pb.TransferResponsesSubscribeRequest;
+  readonly responseType: typeof api_trading_pb.TransferResponsesSubscribeResponse;
 };
 
-type trading_dataGetNodeSignaturesAggregate = {
+type TradingDataServiceGetNodeSignaturesAggregate = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.GetNodeSignaturesAggregateRequest;
   readonly responseType: typeof api_trading_pb.GetNodeSignaturesAggregateResponse;
 };
 
-type trading_dataAssetByID = {
+type TradingDataServiceAssetByID = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.AssetByIDRequest;
   readonly responseType: typeof api_trading_pb.AssetByIDResponse;
 };
 
-type trading_dataAssets = {
+type TradingDataServiceAssets = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.AssetsRequest;
   readonly responseType: typeof api_trading_pb.AssetsResponse;
 };
 
-type trading_dataEstimateFee = {
+type TradingDataServiceEstimateFee = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.EstimateFeeRequest;
   readonly responseType: typeof api_trading_pb.EstimateFeeResponse;
 };
 
-type trading_dataEstimateMargin = {
+type TradingDataServiceEstimateMargin = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.EstimateMarginRequest;
   readonly responseType: typeof api_trading_pb.EstimateMarginResponse;
 };
 
-type trading_dataERC20WithdrawalApproval = {
+type TradingDataServiceERC20WithdrawalApproval = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.ERC20WithdrawalApprovalRequest;
   readonly responseType: typeof api_trading_pb.ERC20WithdrawalApprovalResponse;
 };
 
-type trading_dataWithdrawal = {
+type TradingDataServiceWithdrawal = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.WithdrawalRequest;
   readonly responseType: typeof api_trading_pb.WithdrawalResponse;
 };
 
-type trading_dataWithdrawals = {
+type TradingDataServiceWithdrawals = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.WithdrawalsRequest;
   readonly responseType: typeof api_trading_pb.WithdrawalsResponse;
 };
 
-type trading_dataDeposit = {
+type TradingDataServiceDeposit = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.DepositRequest;
   readonly responseType: typeof api_trading_pb.DepositResponse;
 };
 
-type trading_dataDeposits = {
+type TradingDataServiceDeposits = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.DepositsRequest;
   readonly responseType: typeof api_trading_pb.DepositsResponse;
 };
 
-type trading_dataNetworkParameters = {
+type TradingDataServiceNetworkParameters = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.NetworkParametersRequest;
   readonly responseType: typeof api_trading_pb.NetworkParametersResponse;
 };
 
-type trading_dataLiquidityProvisions = {
+type TradingDataServiceLiquidityProvisions = {
   readonly methodName: string;
-  readonly service: typeof trading_data;
+  readonly service: typeof TradingDataService;
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof api_trading_pb.LiquidityProvisionsRequest;
   readonly responseType: typeof api_trading_pb.LiquidityProvisionsResponse;
 };
 
-export class trading_data {
+export class TradingDataService {
   static readonly serviceName: string;
-  static readonly MarketAccounts: trading_dataMarketAccounts;
-  static readonly PartyAccounts: trading_dataPartyAccounts;
-  static readonly FeeInfrastructureAccounts: trading_dataFeeInfrastructureAccounts;
-  static readonly Candles: trading_dataCandles;
-  static readonly MarketDataByID: trading_dataMarketDataByID;
-  static readonly MarketsData: trading_dataMarketsData;
-  static readonly MarketByID: trading_dataMarketByID;
-  static readonly MarketDepth: trading_dataMarketDepth;
-  static readonly Markets: trading_dataMarkets;
-  static readonly OrderByMarketAndID: trading_dataOrderByMarketAndID;
-  static readonly OrderByReference: trading_dataOrderByReference;
-  static readonly OrdersByMarket: trading_dataOrdersByMarket;
-  static readonly OrdersByParty: trading_dataOrdersByParty;
-  static readonly OrderByID: trading_dataOrderByID;
-  static readonly OrderVersionsByID: trading_dataOrderVersionsByID;
-  static readonly MarginLevels: trading_dataMarginLevels;
-  static readonly Parties: trading_dataParties;
-  static readonly PartyByID: trading_dataPartyByID;
-  static readonly PositionsByParty: trading_dataPositionsByParty;
-  static readonly LastTrade: trading_dataLastTrade;
-  static readonly TradesByMarket: trading_dataTradesByMarket;
-  static readonly TradesByOrder: trading_dataTradesByOrder;
-  static readonly TradesByParty: trading_dataTradesByParty;
-  static readonly GetProposals: trading_dataGetProposals;
-  static readonly GetProposalsByParty: trading_dataGetProposalsByParty;
-  static readonly GetVotesByParty: trading_dataGetVotesByParty;
-  static readonly GetNewMarketProposals: trading_dataGetNewMarketProposals;
-  static readonly GetUpdateMarketProposals: trading_dataGetUpdateMarketProposals;
-  static readonly GetNetworkParametersProposals: trading_dataGetNetworkParametersProposals;
-  static readonly GetNewAssetProposals: trading_dataGetNewAssetProposals;
-  static readonly GetProposalByID: trading_dataGetProposalByID;
-  static readonly GetProposalByReference: trading_dataGetProposalByReference;
-  static readonly ObserveGovernance: trading_dataObserveGovernance;
-  static readonly ObservePartyProposals: trading_dataObservePartyProposals;
-  static readonly ObservePartyVotes: trading_dataObservePartyVotes;
-  static readonly ObserveProposalVotes: trading_dataObserveProposalVotes;
-  static readonly ObserveEventBus: trading_dataObserveEventBus;
-  static readonly Statistics: trading_dataStatistics;
-  static readonly GetVegaTime: trading_dataGetVegaTime;
-  static readonly AccountsSubscribe: trading_dataAccountsSubscribe;
-  static readonly CandlesSubscribe: trading_dataCandlesSubscribe;
-  static readonly MarginLevelsSubscribe: trading_dataMarginLevelsSubscribe;
-  static readonly MarketDepthSubscribe: trading_dataMarketDepthSubscribe;
-  static readonly MarketDepthUpdatesSubscribe: trading_dataMarketDepthUpdatesSubscribe;
-  static readonly MarketsDataSubscribe: trading_dataMarketsDataSubscribe;
-  static readonly OrdersSubscribe: trading_dataOrdersSubscribe;
-  static readonly PositionsSubscribe: trading_dataPositionsSubscribe;
-  static readonly TradesSubscribe: trading_dataTradesSubscribe;
-  static readonly TransferResponsesSubscribe: trading_dataTransferResponsesSubscribe;
-  static readonly GetNodeSignaturesAggregate: trading_dataGetNodeSignaturesAggregate;
-  static readonly AssetByID: trading_dataAssetByID;
-  static readonly Assets: trading_dataAssets;
-  static readonly EstimateFee: trading_dataEstimateFee;
-  static readonly EstimateMargin: trading_dataEstimateMargin;
-  static readonly ERC20WithdrawalApproval: trading_dataERC20WithdrawalApproval;
-  static readonly Withdrawal: trading_dataWithdrawal;
-  static readonly Withdrawals: trading_dataWithdrawals;
-  static readonly Deposit: trading_dataDeposit;
-  static readonly Deposits: trading_dataDeposits;
-  static readonly NetworkParameters: trading_dataNetworkParameters;
-  static readonly LiquidityProvisions: trading_dataLiquidityProvisions;
+  static readonly MarketAccounts: TradingDataServiceMarketAccounts;
+  static readonly PartyAccounts: TradingDataServicePartyAccounts;
+  static readonly FeeInfrastructureAccounts: TradingDataServiceFeeInfrastructureAccounts;
+  static readonly Candles: TradingDataServiceCandles;
+  static readonly MarketDataByID: TradingDataServiceMarketDataByID;
+  static readonly MarketsData: TradingDataServiceMarketsData;
+  static readonly MarketByID: TradingDataServiceMarketByID;
+  static readonly MarketDepth: TradingDataServiceMarketDepth;
+  static readonly Markets: TradingDataServiceMarkets;
+  static readonly OrderByMarketAndID: TradingDataServiceOrderByMarketAndID;
+  static readonly OrderByReference: TradingDataServiceOrderByReference;
+  static readonly OrdersByMarket: TradingDataServiceOrdersByMarket;
+  static readonly OrdersByParty: TradingDataServiceOrdersByParty;
+  static readonly OrderByID: TradingDataServiceOrderByID;
+  static readonly OrderVersionsByID: TradingDataServiceOrderVersionsByID;
+  static readonly MarginLevels: TradingDataServiceMarginLevels;
+  static readonly Parties: TradingDataServiceParties;
+  static readonly PartyByID: TradingDataServicePartyByID;
+  static readonly PositionsByParty: TradingDataServicePositionsByParty;
+  static readonly LastTrade: TradingDataServiceLastTrade;
+  static readonly TradesByMarket: TradingDataServiceTradesByMarket;
+  static readonly TradesByOrder: TradingDataServiceTradesByOrder;
+  static readonly TradesByParty: TradingDataServiceTradesByParty;
+  static readonly GetProposals: TradingDataServiceGetProposals;
+  static readonly GetProposalsByParty: TradingDataServiceGetProposalsByParty;
+  static readonly GetVotesByParty: TradingDataServiceGetVotesByParty;
+  static readonly GetNewMarketProposals: TradingDataServiceGetNewMarketProposals;
+  static readonly GetUpdateMarketProposals: TradingDataServiceGetUpdateMarketProposals;
+  static readonly GetNetworkParametersProposals: TradingDataServiceGetNetworkParametersProposals;
+  static readonly GetNewAssetProposals: TradingDataServiceGetNewAssetProposals;
+  static readonly GetProposalByID: TradingDataServiceGetProposalByID;
+  static readonly GetProposalByReference: TradingDataServiceGetProposalByReference;
+  static readonly ObserveGovernance: TradingDataServiceObserveGovernance;
+  static readonly ObservePartyProposals: TradingDataServiceObservePartyProposals;
+  static readonly ObservePartyVotes: TradingDataServiceObservePartyVotes;
+  static readonly ObserveProposalVotes: TradingDataServiceObserveProposalVotes;
+  static readonly ObserveEventBus: TradingDataServiceObserveEventBus;
+  static readonly Statistics: TradingDataServiceStatistics;
+  static readonly GetVegaTime: TradingDataServiceGetVegaTime;
+  static readonly AccountsSubscribe: TradingDataServiceAccountsSubscribe;
+  static readonly CandlesSubscribe: TradingDataServiceCandlesSubscribe;
+  static readonly MarginLevelsSubscribe: TradingDataServiceMarginLevelsSubscribe;
+  static readonly MarketDepthSubscribe: TradingDataServiceMarketDepthSubscribe;
+  static readonly MarketDepthUpdatesSubscribe: TradingDataServiceMarketDepthUpdatesSubscribe;
+  static readonly MarketsDataSubscribe: TradingDataServiceMarketsDataSubscribe;
+  static readonly OrdersSubscribe: TradingDataServiceOrdersSubscribe;
+  static readonly PositionsSubscribe: TradingDataServicePositionsSubscribe;
+  static readonly TradesSubscribe: TradingDataServiceTradesSubscribe;
+  static readonly TransferResponsesSubscribe: TradingDataServiceTransferResponsesSubscribe;
+  static readonly GetNodeSignaturesAggregate: TradingDataServiceGetNodeSignaturesAggregate;
+  static readonly AssetByID: TradingDataServiceAssetByID;
+  static readonly Assets: TradingDataServiceAssets;
+  static readonly EstimateFee: TradingDataServiceEstimateFee;
+  static readonly EstimateMargin: TradingDataServiceEstimateMargin;
+  static readonly ERC20WithdrawalApproval: TradingDataServiceERC20WithdrawalApproval;
+  static readonly Withdrawal: TradingDataServiceWithdrawal;
+  static readonly Withdrawals: TradingDataServiceWithdrawals;
+  static readonly Deposit: TradingDataServiceDeposit;
+  static readonly Deposits: TradingDataServiceDeposits;
+  static readonly NetworkParameters: TradingDataServiceNetworkParameters;
+  static readonly LiquidityProvisions: TradingDataServiceLiquidityProvisions;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -743,35 +740,35 @@ interface BidirectionalStream<ReqT, ResT> {
   on(type: 'status', handler: (status: Status) => void): BidirectionalStream<ReqT, ResT>;
 }
 
-export class tradingClient {
+export class TradingServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
   prepareSubmitOrder(
-    requestMessage: api_trading_pb.SubmitOrderRequest,
+    requestMessage: api_trading_pb.PrepareSubmitOrderRequest,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.PrepareSubmitOrderResponse|null) => void
   ): UnaryResponse;
   prepareSubmitOrder(
-    requestMessage: api_trading_pb.SubmitOrderRequest,
+    requestMessage: api_trading_pb.PrepareSubmitOrderRequest,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.PrepareSubmitOrderResponse|null) => void
   ): UnaryResponse;
   prepareCancelOrder(
-    requestMessage: api_trading_pb.CancelOrderRequest,
+    requestMessage: api_trading_pb.PrepareCancelOrderRequest,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.PrepareCancelOrderResponse|null) => void
   ): UnaryResponse;
   prepareCancelOrder(
-    requestMessage: api_trading_pb.CancelOrderRequest,
+    requestMessage: api_trading_pb.PrepareCancelOrderRequest,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.PrepareCancelOrderResponse|null) => void
   ): UnaryResponse;
   prepareAmendOrder(
-    requestMessage: api_trading_pb.AmendOrderRequest,
+    requestMessage: api_trading_pb.PrepareAmendOrderRequest,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.PrepareAmendOrderResponse|null) => void
   ): UnaryResponse;
   prepareAmendOrder(
-    requestMessage: api_trading_pb.AmendOrderRequest,
+    requestMessage: api_trading_pb.PrepareAmendOrderRequest,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.PrepareAmendOrderResponse|null) => void
   ): UnaryResponse;
   prepareWithdraw(
@@ -830,7 +827,7 @@ export class tradingClient {
   ): UnaryResponse;
 }
 
-export class trading_dataClient {
+export class TradingDataServiceClient {
   readonly serviceHost: string;
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
@@ -880,12 +877,12 @@ export class trading_dataClient {
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.MarketDataByIDResponse|null) => void
   ): UnaryResponse;
   marketsData(
-    requestMessage: google_protobuf_empty_pb.Empty,
+    requestMessage: api_trading_pb.MarketsDataRequest,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.MarketsDataResponse|null) => void
   ): UnaryResponse;
   marketsData(
-    requestMessage: google_protobuf_empty_pb.Empty,
+    requestMessage: api_trading_pb.MarketsDataRequest,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.MarketsDataResponse|null) => void
   ): UnaryResponse;
   marketByID(
@@ -907,22 +904,22 @@ export class trading_dataClient {
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.MarketDepthResponse|null) => void
   ): UnaryResponse;
   markets(
-    requestMessage: google_protobuf_empty_pb.Empty,
+    requestMessage: api_trading_pb.MarketsRequest,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.MarketsResponse|null) => void
   ): UnaryResponse;
   markets(
-    requestMessage: google_protobuf_empty_pb.Empty,
+    requestMessage: api_trading_pb.MarketsRequest,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.MarketsResponse|null) => void
   ): UnaryResponse;
   orderByMarketAndID(
-    requestMessage: api_trading_pb.OrderByMarketAndIdRequest,
+    requestMessage: api_trading_pb.OrderByMarketAndIDRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_trading_pb.OrderByMarketAndIdResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.OrderByMarketAndIDResponse|null) => void
   ): UnaryResponse;
   orderByMarketAndID(
-    requestMessage: api_trading_pb.OrderByMarketAndIdRequest,
-    callback: (error: ServiceError|null, responseMessage: api_trading_pb.OrderByMarketAndIdResponse|null) => void
+    requestMessage: api_trading_pb.OrderByMarketAndIDRequest,
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.OrderByMarketAndIDResponse|null) => void
   ): UnaryResponse;
   orderByReference(
     requestMessage: api_trading_pb.OrderByReferenceRequest,
@@ -954,20 +951,20 @@ export class trading_dataClient {
   orderByID(
     requestMessage: api_trading_pb.OrderByIDRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: vega_pb.Order|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.OrderByIDResponse|null) => void
   ): UnaryResponse;
   orderByID(
     requestMessage: api_trading_pb.OrderByIDRequest,
-    callback: (error: ServiceError|null, responseMessage: vega_pb.Order|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.OrderByIDResponse|null) => void
   ): UnaryResponse;
   orderVersionsByID(
     requestMessage: api_trading_pb.OrderVersionsByIDRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_trading_pb.OrderVersionsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.OrderVersionsByIDResponse|null) => void
   ): UnaryResponse;
   orderVersionsByID(
     requestMessage: api_trading_pb.OrderVersionsByIDRequest,
-    callback: (error: ServiceError|null, responseMessage: api_trading_pb.OrderVersionsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.OrderVersionsByIDResponse|null) => void
   ): UnaryResponse;
   marginLevels(
     requestMessage: api_trading_pb.MarginLevelsRequest,
@@ -979,12 +976,12 @@ export class trading_dataClient {
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.MarginLevelsResponse|null) => void
   ): UnaryResponse;
   parties(
-    requestMessage: google_protobuf_empty_pb.Empty,
+    requestMessage: api_trading_pb.PartiesRequest,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.PartiesResponse|null) => void
   ): UnaryResponse;
   parties(
-    requestMessage: google_protobuf_empty_pb.Empty,
+    requestMessage: api_trading_pb.PartiesRequest,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.PartiesResponse|null) => void
   ): UnaryResponse;
   partyByID(
@@ -1122,39 +1119,39 @@ export class trading_dataClient {
     requestMessage: api_trading_pb.GetProposalByReferenceRequest,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.GetProposalByReferenceResponse|null) => void
   ): UnaryResponse;
-  observeGovernance(requestMessage: google_protobuf_empty_pb.Empty, metadata?: grpc.Metadata): ResponseStream<governance_pb.GovernanceData>;
-  observePartyProposals(requestMessage: api_trading_pb.ObservePartyProposalsRequest, metadata?: grpc.Metadata): ResponseStream<governance_pb.GovernanceData>;
-  observePartyVotes(requestMessage: api_trading_pb.ObservePartyVotesRequest, metadata?: grpc.Metadata): ResponseStream<governance_pb.Vote>;
-  observeProposalVotes(requestMessage: api_trading_pb.ObserveProposalVotesRequest, metadata?: grpc.Metadata): ResponseStream<governance_pb.Vote>;
-  observeEventBus(metadata?: grpc.Metadata): BidirectionalStream<api_trading_pb.ObserveEventsRequest, api_trading_pb.ObserveEventsResponse>;
+  observeGovernance(requestMessage: api_trading_pb.ObserveGovernanceRequest, metadata?: grpc.Metadata): ResponseStream<api_trading_pb.ObserveGovernanceResponse>;
+  observePartyProposals(requestMessage: api_trading_pb.ObservePartyProposalsRequest, metadata?: grpc.Metadata): ResponseStream<api_trading_pb.ObservePartyProposalsResponse>;
+  observePartyVotes(requestMessage: api_trading_pb.ObservePartyVotesRequest, metadata?: grpc.Metadata): ResponseStream<api_trading_pb.ObservePartyVotesResponse>;
+  observeProposalVotes(requestMessage: api_trading_pb.ObserveProposalVotesRequest, metadata?: grpc.Metadata): ResponseStream<api_trading_pb.ObserveProposalVotesResponse>;
+  observeEventBus(metadata?: grpc.Metadata): BidirectionalStream<api_trading_pb.ObserveEventBusRequest, api_trading_pb.ObserveEventBusResponse>;
   statistics(
-    requestMessage: google_protobuf_empty_pb.Empty,
+    requestMessage: api_trading_pb.StatisticsRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: vega_pb.Statistics|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.StatisticsResponse|null) => void
   ): UnaryResponse;
   statistics(
-    requestMessage: google_protobuf_empty_pb.Empty,
-    callback: (error: ServiceError|null, responseMessage: vega_pb.Statistics|null) => void
+    requestMessage: api_trading_pb.StatisticsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.StatisticsResponse|null) => void
   ): UnaryResponse;
   getVegaTime(
-    requestMessage: google_protobuf_empty_pb.Empty,
+    requestMessage: api_trading_pb.GetVegaTimeRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_trading_pb.VegaTimeResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.GetVegaTimeResponse|null) => void
   ): UnaryResponse;
   getVegaTime(
-    requestMessage: google_protobuf_empty_pb.Empty,
-    callback: (error: ServiceError|null, responseMessage: api_trading_pb.VegaTimeResponse|null) => void
+    requestMessage: api_trading_pb.GetVegaTimeRequest,
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.GetVegaTimeResponse|null) => void
   ): UnaryResponse;
-  accountsSubscribe(requestMessage: api_trading_pb.AccountsSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<vega_pb.Account>;
-  candlesSubscribe(requestMessage: api_trading_pb.CandlesSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<vega_pb.Candle>;
-  marginLevelsSubscribe(requestMessage: api_trading_pb.MarginLevelsSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<vega_pb.MarginLevels>;
-  marketDepthSubscribe(requestMessage: api_trading_pb.MarketDepthSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<vega_pb.MarketDepth>;
-  marketDepthUpdatesSubscribe(requestMessage: api_trading_pb.MarketDepthUpdatesSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<vega_pb.MarketDepthUpdate>;
-  marketsDataSubscribe(requestMessage: api_trading_pb.MarketsDataSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<vega_pb.MarketData>;
-  ordersSubscribe(requestMessage: api_trading_pb.OrdersSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<api_trading_pb.OrdersStream>;
-  positionsSubscribe(requestMessage: api_trading_pb.PositionsSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<vega_pb.Position>;
-  tradesSubscribe(requestMessage: api_trading_pb.TradesSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<api_trading_pb.TradesStream>;
-  transferResponsesSubscribe(requestMessage: google_protobuf_empty_pb.Empty, metadata?: grpc.Metadata): ResponseStream<vega_pb.TransferResponse>;
+  accountsSubscribe(requestMessage: api_trading_pb.AccountsSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<api_trading_pb.AccountsSubscribeResponse>;
+  candlesSubscribe(requestMessage: api_trading_pb.CandlesSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<api_trading_pb.CandlesSubscribeResponse>;
+  marginLevelsSubscribe(requestMessage: api_trading_pb.MarginLevelsSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<api_trading_pb.MarginLevelsSubscribeResponse>;
+  marketDepthSubscribe(requestMessage: api_trading_pb.MarketDepthSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<api_trading_pb.MarketDepthSubscribeResponse>;
+  marketDepthUpdatesSubscribe(requestMessage: api_trading_pb.MarketDepthUpdatesSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<api_trading_pb.MarketDepthUpdatesSubscribeResponse>;
+  marketsDataSubscribe(requestMessage: api_trading_pb.MarketsDataSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<api_trading_pb.MarketsDataSubscribeResponse>;
+  ordersSubscribe(requestMessage: api_trading_pb.OrdersSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<api_trading_pb.OrdersSubscribeResponse>;
+  positionsSubscribe(requestMessage: api_trading_pb.PositionsSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<api_trading_pb.PositionsSubscribeResponse>;
+  tradesSubscribe(requestMessage: api_trading_pb.TradesSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<api_trading_pb.TradesSubscribeResponse>;
+  transferResponsesSubscribe(requestMessage: api_trading_pb.TransferResponsesSubscribeRequest, metadata?: grpc.Metadata): ResponseStream<api_trading_pb.TransferResponsesSubscribeResponse>;
   getNodeSignaturesAggregate(
     requestMessage: api_trading_pb.GetNodeSignaturesAggregateRequest,
     metadata: grpc.Metadata,

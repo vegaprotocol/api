@@ -26,9 +26,9 @@
 #include <grpcpp/impl/codegen/stub_options.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
 
-namespace vega {
+namespace tm {
 
-}  // namespace vega
+}  // namespace tm
 
 
 #endif  // GRPC_tm_2freplay_2eproto__INCLUDED

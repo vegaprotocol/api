@@ -1,38 +1,38 @@
-// package: vega
+// package: tm
 // file: tm/replay.proto
 
 import * as jspb from "google-protobuf";
 
 export class TmEvent extends jspb.Message {
-  hasReqinitchain(): boolean;
-  clearReqinitchain(): void;
-  getReqinitchain(): RequestInitChain | undefined;
-  setReqinitchain(value?: RequestInitChain): void;
+  hasReqInitChain(): boolean;
+  clearReqInitChain(): void;
+  getReqInitChain(): RequestInitChain | undefined;
+  setReqInitChain(value?: RequestInitChain): void;
 
-  hasResinitchain(): boolean;
-  clearResinitchain(): void;
-  getResinitchain(): ResponseInitChain | undefined;
-  setResinitchain(value?: ResponseInitChain): void;
+  hasResInitChain(): boolean;
+  clearResInitChain(): void;
+  getResInitChain(): ResponseInitChain | undefined;
+  setResInitChain(value?: ResponseInitChain): void;
 
-  hasReqdelivertx(): boolean;
-  clearReqdelivertx(): void;
-  getReqdelivertx(): RequestDeliverTx | undefined;
-  setReqdelivertx(value?: RequestDeliverTx): void;
+  hasReqDeliverTx(): boolean;
+  clearReqDeliverTx(): void;
+  getReqDeliverTx(): RequestDeliverTx | undefined;
+  setReqDeliverTx(value?: RequestDeliverTx): void;
 
-  hasResdelivertx(): boolean;
-  clearResdelivertx(): void;
-  getResdelivertx(): ResponseDeliverTx | undefined;
-  setResdelivertx(value?: ResponseDeliverTx): void;
+  hasResDeliverTx(): boolean;
+  clearResDeliverTx(): void;
+  getResDeliverTx(): ResponseDeliverTx | undefined;
+  setResDeliverTx(value?: ResponseDeliverTx): void;
 
-  hasReqbeginblock(): boolean;
-  clearReqbeginblock(): void;
-  getReqbeginblock(): RequestBeginBlock | undefined;
-  setReqbeginblock(value?: RequestBeginBlock): void;
+  hasReqBeginBlock(): boolean;
+  clearReqBeginBlock(): void;
+  getReqBeginBlock(): RequestBeginBlock | undefined;
+  setReqBeginBlock(value?: RequestBeginBlock): void;
 
-  hasResbeginblock(): boolean;
-  clearResbeginblock(): void;
-  getResbeginblock(): ResponseBeginBlock | undefined;
-  setResbeginblock(value?: ResponseBeginBlock): void;
+  hasResBeginBlock(): boolean;
+  clearResBeginBlock(): void;
+  getResBeginBlock(): ResponseBeginBlock | undefined;
+  setResBeginBlock(value?: ResponseBeginBlock): void;
 
   getActionCase(): TmEvent.ActionCase;
   serializeBinary(): Uint8Array;
@@ -47,22 +47,22 @@ export class TmEvent extends jspb.Message {
 
 export namespace TmEvent {
   export type AsObject = {
-    reqinitchain?: RequestInitChain.AsObject,
-    resinitchain?: ResponseInitChain.AsObject,
-    reqdelivertx?: RequestDeliverTx.AsObject,
-    resdelivertx?: ResponseDeliverTx.AsObject,
-    reqbeginblock?: RequestBeginBlock.AsObject,
-    resbeginblock?: ResponseBeginBlock.AsObject,
+    reqInitChain?: RequestInitChain.AsObject,
+    resInitChain?: ResponseInitChain.AsObject,
+    reqDeliverTx?: RequestDeliverTx.AsObject,
+    resDeliverTx?: ResponseDeliverTx.AsObject,
+    reqBeginBlock?: RequestBeginBlock.AsObject,
+    resBeginBlock?: ResponseBeginBlock.AsObject,
   }
 
   export enum ActionCase {
     ACTION_NOT_SET = 0,
-    REQINITCHAIN = 1,
-    RESINITCHAIN = 2,
-    REQDELIVERTX = 3,
-    RESDELIVERTX = 4,
-    REQBEGINBLOCK = 5,
-    RESBEGINBLOCK = 6,
+    REQ_INIT_CHAIN = 1,
+    RES_INIT_CHAIN = 2,
+    REQ_DELIVER_TX = 3,
+    RES_DELIVER_TX = 4,
+    REQ_BEGIN_BLOCK = 5,
+    RES_BEGIN_BLOCK = 6,
   }
 }
 
@@ -70,26 +70,26 @@ export class RequestInitChain extends jspb.Message {
   getTime(): number;
   setTime(value: number): void;
 
-  getChainid(): string;
-  setChainid(value: string): void;
+  getChainId(): string;
+  setChainId(value: string): void;
 
-  hasConsensusparams(): boolean;
-  clearConsensusparams(): void;
-  getConsensusparams(): ConsensusParams | undefined;
-  setConsensusparams(value?: ConsensusParams): void;
+  hasConsensusParams(): boolean;
+  clearConsensusParams(): void;
+  getConsensusParams(): ConsensusParams | undefined;
+  setConsensusParams(value?: ConsensusParams): void;
 
   clearValidatorsList(): void;
   getValidatorsList(): Array<ValidatorUpdate>;
   setValidatorsList(value: Array<ValidatorUpdate>): void;
   addValidators(value?: ValidatorUpdate, index?: number): ValidatorUpdate;
 
-  getAppstatebytes(): Uint8Array | string;
-  getAppstatebytes_asU8(): Uint8Array;
-  getAppstatebytes_asB64(): string;
-  setAppstatebytes(value: Uint8Array | string): void;
+  getAppStateBytes(): Uint8Array | string;
+  getAppStateBytes_asU8(): Uint8Array;
+  getAppStateBytes_asB64(): string;
+  setAppStateBytes(value: Uint8Array | string): void;
 
-  getInitialheight(): number;
-  setInitialheight(value: number): void;
+  getInitialHeight(): number;
+  setInitialHeight(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RequestInitChain.AsObject;
@@ -104,11 +104,11 @@ export class RequestInitChain extends jspb.Message {
 export namespace RequestInitChain {
   export type AsObject = {
     time: number,
-    chainid: string,
-    consensusparams?: ConsensusParams.AsObject,
+    chainId: string,
+    consensusParams?: ConsensusParams.AsObject,
     validatorsList: Array<ValidatorUpdate.AsObject>,
-    appstatebytes: Uint8Array | string,
-    initialheight: number,
+    appStateBytes: Uint8Array | string,
+    initialHeight: number,
   }
 }
 
@@ -123,15 +123,15 @@ export class RequestBeginBlock extends jspb.Message {
   getHeader(): Header | undefined;
   setHeader(value?: Header): void;
 
-  hasLastcommitinfo(): boolean;
-  clearLastcommitinfo(): void;
-  getLastcommitinfo(): LastCommitInfo | undefined;
-  setLastcommitinfo(value?: LastCommitInfo): void;
+  hasLastCommitInfo(): boolean;
+  clearLastCommitInfo(): void;
+  getLastCommitInfo(): LastCommitInfo | undefined;
+  setLastCommitInfo(value?: LastCommitInfo): void;
 
-  clearByzantinevalidatorsList(): void;
-  getByzantinevalidatorsList(): Array<Evidence>;
-  setByzantinevalidatorsList(value: Array<Evidence>): void;
-  addByzantinevalidators(value?: Evidence, index?: number): Evidence;
+  clearByzantineValidatorsList(): void;
+  getByzantineValidatorsList(): Array<Evidence>;
+  setByzantineValidatorsList(value: Array<Evidence>): void;
+  addByzantineValidators(value?: Evidence, index?: number): Evidence;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RequestBeginBlock.AsObject;
@@ -147,8 +147,8 @@ export namespace RequestBeginBlock {
   export type AsObject = {
     hash: Uint8Array | string,
     header?: Header.AsObject,
-    lastcommitinfo?: LastCommitInfo.AsObject,
-    byzantinevalidatorsList: Array<Evidence.AsObject>,
+    lastCommitInfo?: LastCommitInfo.AsObject,
+    byzantineValidatorsList: Array<Evidence.AsObject>,
   }
 }
 
@@ -175,20 +175,20 @@ export namespace RequestDeliverTx {
 }
 
 export class ResponseInitChain extends jspb.Message {
-  hasConsensusparams(): boolean;
-  clearConsensusparams(): void;
-  getConsensusparams(): ConsensusParams | undefined;
-  setConsensusparams(value?: ConsensusParams): void;
+  hasConsensusParams(): boolean;
+  clearConsensusParams(): void;
+  getConsensusParams(): ConsensusParams | undefined;
+  setConsensusParams(value?: ConsensusParams): void;
 
   clearValidatorsList(): void;
   getValidatorsList(): Array<ValidatorUpdate>;
   setValidatorsList(value: Array<ValidatorUpdate>): void;
   addValidators(value?: ValidatorUpdate, index?: number): ValidatorUpdate;
 
-  getApphash(): Uint8Array | string;
-  getApphash_asU8(): Uint8Array;
-  getApphash_asB64(): string;
-  setApphash(value: Uint8Array | string): void;
+  getAppHash(): Uint8Array | string;
+  getAppHash_asU8(): Uint8Array;
+  getAppHash_asB64(): string;
+  setAppHash(value: Uint8Array | string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResponseInitChain.AsObject;
@@ -202,9 +202,9 @@ export class ResponseInitChain extends jspb.Message {
 
 export namespace ResponseInitChain {
   export type AsObject = {
-    consensusparams?: ConsensusParams.AsObject,
+    consensusParams?: ConsensusParams.AsObject,
     validatorsList: Array<ValidatorUpdate.AsObject>,
-    apphash: Uint8Array | string,
+    appHash: Uint8Array | string,
   }
 }
 
@@ -245,11 +245,11 @@ export class ResponseDeliverTx extends jspb.Message {
   getInfo(): string;
   setInfo(value: string): void;
 
-  getGaswanted(): number;
-  setGaswanted(value: number): void;
+  getGasWanted(): number;
+  setGasWanted(value: number): void;
 
-  getGasused(): number;
-  setGasused(value: number): void;
+  getGasUsed(): number;
+  setGasUsed(value: number): void;
 
   clearEventsList(): void;
   getEventsList(): Array<Event>;
@@ -275,8 +275,8 @@ export namespace ResponseDeliverTx {
     data: Uint8Array | string,
     log: string,
     info: string,
-    gaswanted: number,
-    gasused: number,
+    gasWanted: number,
+    gasUsed: number,
     eventsList: Array<Event.AsObject>,
     codespace: string,
   }
@@ -407,11 +407,11 @@ export namespace ConsensusParams {
 }
 
 export class BlockParams extends jspb.Message {
-  getMaxbytes(): number;
-  setMaxbytes(value: number): void;
+  getMaxBytes(): number;
+  setMaxBytes(value: number): void;
 
-  getMaxgas(): number;
-  setMaxgas(value: number): void;
+  getMaxGas(): number;
+  setMaxGas(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BlockParams.AsObject;
@@ -425,8 +425,8 @@ export class BlockParams extends jspb.Message {
 
 export namespace BlockParams {
   export type AsObject = {
-    maxbytes: number,
-    maxgas: number,
+    maxBytes: number,
+    maxGas: number,
   }
 }
 
@@ -445,8 +445,8 @@ export class Evidence extends jspb.Message {
   getTime(): number;
   setTime(value: number): void;
 
-  getTotalvotingpower(): number;
-  setTotalvotingpower(value: number): void;
+  getTotalVotingPower(): number;
+  setTotalVotingPower(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Evidence.AsObject;
@@ -464,7 +464,7 @@ export namespace Evidence {
     validator?: Validator.AsObject,
     height: number,
     time: number,
-    totalvotingpower: number,
+    totalVotingPower: number,
   }
 }
 
@@ -526,8 +526,8 @@ export class VoteInfo extends jspb.Message {
   getValidator(): Validator | undefined;
   setValidator(value?: Validator): void;
 
-  getSignedlastblock(): boolean;
-  setSignedlastblock(value: boolean): void;
+  getSignedLastBlock(): boolean;
+  setSignedLastBlock(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VoteInfo.AsObject;
@@ -542,16 +542,16 @@ export class VoteInfo extends jspb.Message {
 export namespace VoteInfo {
   export type AsObject = {
     validator?: Validator.AsObject,
-    signedlastblock: boolean,
+    signedLastBlock: boolean,
   }
 }
 
 export class EvidenceParams extends jspb.Message {
-  getMaxagenumblocks(): number;
-  setMaxagenumblocks(value: number): void;
+  getMaxAgeNumBlocks(): number;
+  setMaxAgeNumBlocks(value: number): void;
 
-  getMaxageduration(): number;
-  setMaxageduration(value: number): void;
+  getMaxAgeDuration(): number;
+  setMaxAgeDuration(value: number): void;
 
   getMaxNum(): number;
   setMaxNum(value: number): void;
@@ -568,17 +568,17 @@ export class EvidenceParams extends jspb.Message {
 
 export namespace EvidenceParams {
   export type AsObject = {
-    maxagenumblocks: number,
-    maxageduration: number,
+    maxAgeNumBlocks: number,
+    maxAgeDuration: number,
     maxNum: number,
   }
 }
 
 export class ValidatorParams extends jspb.Message {
-  clearPubkeytypesList(): void;
-  getPubkeytypesList(): Array<string>;
-  setPubkeytypesList(value: Array<string>): void;
-  addPubkeytypes(value: string, index?: number): string;
+  clearPubKeyTypesList(): void;
+  getPubKeyTypesList(): Array<string>;
+  setPubKeyTypesList(value: Array<string>): void;
+  addPubKeyTypes(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ValidatorParams.AsObject;
@@ -592,13 +592,13 @@ export class ValidatorParams extends jspb.Message {
 
 export namespace ValidatorParams {
   export type AsObject = {
-    pubkeytypesList: Array<string>,
+    pubKeyTypesList: Array<string>,
   }
 }
 
 export class VersionParams extends jspb.Message {
-  getAppversion(): number;
-  setAppversion(value: number): void;
+  getAppVersion(): number;
+  setAppVersion(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VersionParams.AsObject;
@@ -612,13 +612,13 @@ export class VersionParams extends jspb.Message {
 
 export namespace VersionParams {
   export type AsObject = {
-    appversion: number,
+    appVersion: number,
   }
 }
 
 export class Header extends jspb.Message {
-  getChainid(): string;
-  setChainid(value: string): void;
+  getChainId(): string;
+  setChainId(value: string): void;
 
   getHeight(): number;
   setHeight(value: number): void;
@@ -638,7 +638,7 @@ export class Header extends jspb.Message {
 
 export namespace Header {
   export type AsObject = {
-    chainid: string,
+    chainId: string,
     height: number,
     time: number,
   }

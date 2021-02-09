@@ -1,6 +1,8 @@
+---
+
 name: Python tests
 
-on:
+"on":
   push:
     branches:
       - develop
@@ -26,55 +28,55 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.6, 3.7, 3.8]
+        python-version: ["3.6", "3.7", "3.8"]
     steps:
-    - name: Check out code
-      uses: actions/checkout@v2
+      - name: Check out code
+        uses: actions/checkout@v2
 
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
 
-    - name: Lint with flake8
-      run: |
-        cd python
-        command -v flake8 1>/dev/null || pip install flake8
-        make flake8
+      - name: Lint with flake8
+        run: |
+          cd python
+          command -v flake8 1>/dev/null || pip install flake8
+          make flake8
 
-    - name: Lint with black
-      run: |
-        cd python
-        command -v black 1>/dev/null || pip install black
-        make black
+      - name: Lint with black
+        run: |
+          cd python
+          command -v black 1>/dev/null || pip install black
+          make black
 
-    - name: Test with pytest
-      env:
-        GRPC_NODE: ${{ secrets.GRPC_NODE }}
-        FAUCETSERVER: ${{ secrets.FAUCETSERVER }}
-        WALLETSERVER: ${{ secrets.WALLETSERVER }}
-      run: |
-        cd python
-        command -v pipenv 1>/dev/null || pip install pipenv
-        make test
+      - name: Test with pytest
+        env:
+          GRPC_NODE: ${{ secrets.GRPC_NODE }}
+          FAUCETSERVER: ${{ secrets.FAUCETSERVER }}
+          WALLETSERVER: ${{ secrets.WALLETSERVER }}
+        run: |
+          cd python
+          command -v pipenv 1>/dev/null || pip install pipenv
+          make test
 
-    - name: Coverage with pytest
-      env:
-        GRPC_NODE: ${{ secrets.GRPC_NODE }}
-        FAUCETSERVER: ${{ secrets.FAUCETSERVER }}
-        WALLETSERVER: ${{ secrets.WALLETSERVER }}
-      run: |
-        cd python
-        make coverage
+      - name: Coverage with pytest
+        env:
+          GRPC_NODE: ${{ secrets.GRPC_NODE }}
+          FAUCETSERVER: ${{ secrets.FAUCETSERVER }}
+          WALLETSERVER: ${{ secrets.WALLETSERVER }}
+        run: |
+          cd python
+          make coverage
 
-    - name: Type-check with mypy
-      run: |
-        cd python
-        command -v mypy 1>/dev/null || pip install mypy
-        make mypy
+      - name: Type-check with mypy
+        run: |
+          cd python
+          command -v mypy 1>/dev/null || pip install mypy
+          make mypy
 
-    - name: Check archive file counts
-      run: |
-        cd python
-        python3 setup.py sdist bdist_wheel
-        make check_dist
+      - name: Check archive file counts
+        run: |
+          cd python
+          python3 setup.py sdist bdist_wheel
+          make check_dist

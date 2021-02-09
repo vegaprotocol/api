@@ -1,3 +1,3 @@
-// package: vega
+// package: tm
 // file: tm/replay.proto
 

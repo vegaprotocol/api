@@ -21,20 +21,20 @@ def test_SubmitOrder(
     (walletclient, _, _, pubKey) = walletClientWalletKeypair  # noqa: F811
 
     # Get a market
-    req = vac.api.trading.MarketByIDRequest(marketID="076BB86A5AA41E3E")
+    req = vac.api.trading.MarketByIDRequest(market_id="076BB86A5AA41E3E")
     market = tradingdata.MarketByID(req).market
 
     # Prepare the SubmitOrder
     now = int(tradingdata.GetVegaTime(Empty()).timestamp)
-    request = vac.api.trading.SubmitOrderRequest(
+    request = vac.api.trading.PrepareSubmitOrderRequest(
         submission=vac.vega.OrderSubmission(
-            expiresAt=now + 120000000000,
-            marketID=market.id,
-            partyID=pubKey,
+            expires_at=now + 120000000000,
+            market_id=market.id,
+            party_id=pubKey,
             price=10,
             side=vac.vega.Side.SIDE_BUY,
             size=1,
-            timeInForce=vac.vega.Order.TimeInForce.TIF_GTT,
+            time_in_force=vac.vega.Order.TimeInForce.TIME_IN_FORCE_GTT,
             type=vac.vega.Order.Type.TYPE_LIMIT,
             reference=str(uuid.uuid4()),
         )

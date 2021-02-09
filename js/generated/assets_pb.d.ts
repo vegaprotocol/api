@@ -13,8 +13,8 @@ export class Asset extends jspb.Message {
   getSymbol(): string;
   setSymbol(value: string): void;
 
-  getTotalsupply(): string;
-  setTotalsupply(value: string): void;
+  getTotalSupply(): string;
+  setTotalSupply(value: string): void;
 
   getDecimals(): number;
   setDecimals(value: number): void;
@@ -39,17 +39,17 @@ export namespace Asset {
     id: string,
     name: string,
     symbol: string,
-    totalsupply: string,
+    totalSupply: string,
     decimals: number,
     source?: AssetSource.AsObject,
   }
 }
 
 export class AssetSource extends jspb.Message {
-  hasBuiltinasset(): boolean;
-  clearBuiltinasset(): void;
-  getBuiltinasset(): BuiltinAsset | undefined;
-  setBuiltinasset(value?: BuiltinAsset): void;
+  hasBuiltinAsset(): boolean;
+  clearBuiltinAsset(): void;
+  getBuiltinAsset(): BuiltinAsset | undefined;
+  setBuiltinAsset(value?: BuiltinAsset): void;
 
   hasErc20(): boolean;
   clearErc20(): void;
@@ -69,13 +69,13 @@ export class AssetSource extends jspb.Message {
 
 export namespace AssetSource {
   export type AsObject = {
-    builtinasset?: BuiltinAsset.AsObject,
+    builtinAsset?: BuiltinAsset.AsObject,
     erc20?: ERC20.AsObject,
   }
 
   export enum SourceCase {
     SOURCE_NOT_SET = 0,
-    BUILTINASSET = 1,
+    BUILTIN_ASSET = 1,
     ERC20 = 2,
   }
 }
@@ -87,14 +87,14 @@ export class BuiltinAsset extends jspb.Message {
   getSymbol(): string;
   setSymbol(value: string): void;
 
-  getTotalsupply(): string;
-  setTotalsupply(value: string): void;
+  getTotalSupply(): string;
+  setTotalSupply(value: string): void;
 
   getDecimals(): number;
   setDecimals(value: number): void;
 
-  getMaxfaucetamountmint(): string;
-  setMaxfaucetamountmint(value: string): void;
+  getMaxFaucetAmountMint(): string;
+  setMaxFaucetAmountMint(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BuiltinAsset.AsObject;
@@ -110,15 +110,15 @@ export namespace BuiltinAsset {
   export type AsObject = {
     name: string,
     symbol: string,
-    totalsupply: string,
+    totalSupply: string,
     decimals: number,
-    maxfaucetamountmint: string,
+    maxFaucetAmountMint: string,
   }
 }
 
 export class ERC20 extends jspb.Message {
-  getContractaddress(): string;
-  setContractaddress(value: string): void;
+  getContractAddress(): string;
+  setContractAddress(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ERC20.AsObject;
@@ -132,7 +132,7 @@ export class ERC20 extends jspb.Message {
 
 export namespace ERC20 {
   export type AsObject = {
-    contractaddress: string,
+    contractAddress: string,
   }
 }
 

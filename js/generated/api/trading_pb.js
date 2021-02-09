@@ -26,132 +26,151 @@ var assets_pb = require('../assets_pb.js');
 goog.object.extend(proto, assets_pb);
 var events_pb = require('../events_pb.js');
 goog.object.extend(proto, events_pb);
-var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
-goog.object.extend(proto, google_protobuf_empty_pb);
 var github_com_mwitkow_go$proto$validators_validator_pb = require('../github.com/mwitkow/go-proto-validators/validator_pb.js');
 goog.object.extend(proto, github_com_mwitkow_go$proto$validators_validator_pb);
-goog.exportSymbol('proto.api.AccountsSubscribeRequest', null, global);
-goog.exportSymbol('proto.api.AmendOrderRequest', null, global);
-goog.exportSymbol('proto.api.AssetByIDRequest', null, global);
-goog.exportSymbol('proto.api.AssetByIDResponse', null, global);
-goog.exportSymbol('proto.api.AssetsRequest', null, global);
-goog.exportSymbol('proto.api.AssetsResponse', null, global);
-goog.exportSymbol('proto.api.CancelOrderRequest', null, global);
-goog.exportSymbol('proto.api.CandlesRequest', null, global);
-goog.exportSymbol('proto.api.CandlesResponse', null, global);
-goog.exportSymbol('proto.api.CandlesSubscribeRequest', null, global);
-goog.exportSymbol('proto.api.DepositRequest', null, global);
-goog.exportSymbol('proto.api.DepositResponse', null, global);
-goog.exportSymbol('proto.api.DepositsRequest', null, global);
-goog.exportSymbol('proto.api.DepositsResponse', null, global);
-goog.exportSymbol('proto.api.ERC20WithdrawalApprovalRequest', null, global);
-goog.exportSymbol('proto.api.ERC20WithdrawalApprovalResponse', null, global);
-goog.exportSymbol('proto.api.EstimateFeeRequest', null, global);
-goog.exportSymbol('proto.api.EstimateFeeResponse', null, global);
-goog.exportSymbol('proto.api.EstimateMarginRequest', null, global);
-goog.exportSymbol('proto.api.EstimateMarginResponse', null, global);
-goog.exportSymbol('proto.api.FeeInfrastructureAccountsRequest', null, global);
-goog.exportSymbol('proto.api.FeeInfrastructureAccountsResponse', null, global);
-goog.exportSymbol('proto.api.GetNetworkParametersProposalsRequest', null, global);
-goog.exportSymbol('proto.api.GetNetworkParametersProposalsResponse', null, global);
-goog.exportSymbol('proto.api.GetNewAssetProposalsRequest', null, global);
-goog.exportSymbol('proto.api.GetNewAssetProposalsResponse', null, global);
-goog.exportSymbol('proto.api.GetNewMarketProposalsRequest', null, global);
-goog.exportSymbol('proto.api.GetNewMarketProposalsResponse', null, global);
-goog.exportSymbol('proto.api.GetNodeSignaturesAggregateRequest', null, global);
-goog.exportSymbol('proto.api.GetNodeSignaturesAggregateResponse', null, global);
-goog.exportSymbol('proto.api.GetProposalByIDRequest', null, global);
-goog.exportSymbol('proto.api.GetProposalByIDResponse', null, global);
-goog.exportSymbol('proto.api.GetProposalByReferenceRequest', null, global);
-goog.exportSymbol('proto.api.GetProposalByReferenceResponse', null, global);
-goog.exportSymbol('proto.api.GetProposalsByPartyRequest', null, global);
-goog.exportSymbol('proto.api.GetProposalsByPartyResponse', null, global);
-goog.exportSymbol('proto.api.GetProposalsRequest', null, global);
-goog.exportSymbol('proto.api.GetProposalsResponse', null, global);
-goog.exportSymbol('proto.api.GetUpdateMarketProposalsRequest', null, global);
-goog.exportSymbol('proto.api.GetUpdateMarketProposalsResponse', null, global);
-goog.exportSymbol('proto.api.GetVotesByPartyRequest', null, global);
-goog.exportSymbol('proto.api.GetVotesByPartyResponse', null, global);
-goog.exportSymbol('proto.api.LastTradeRequest', null, global);
-goog.exportSymbol('proto.api.LastTradeResponse', null, global);
-goog.exportSymbol('proto.api.LiquidityProvisionsRequest', null, global);
-goog.exportSymbol('proto.api.LiquidityProvisionsResponse', null, global);
-goog.exportSymbol('proto.api.MarginLevelsRequest', null, global);
-goog.exportSymbol('proto.api.MarginLevelsResponse', null, global);
-goog.exportSymbol('proto.api.MarginLevelsSubscribeRequest', null, global);
-goog.exportSymbol('proto.api.MarketAccountsRequest', null, global);
-goog.exportSymbol('proto.api.MarketAccountsResponse', null, global);
-goog.exportSymbol('proto.api.MarketByIDRequest', null, global);
-goog.exportSymbol('proto.api.MarketByIDResponse', null, global);
-goog.exportSymbol('proto.api.MarketDataByIDRequest', null, global);
-goog.exportSymbol('proto.api.MarketDataByIDResponse', null, global);
-goog.exportSymbol('proto.api.MarketDepthRequest', null, global);
-goog.exportSymbol('proto.api.MarketDepthResponse', null, global);
-goog.exportSymbol('proto.api.MarketDepthSubscribeRequest', null, global);
-goog.exportSymbol('proto.api.MarketDepthUpdatesSubscribeRequest', null, global);
-goog.exportSymbol('proto.api.MarketsDataResponse', null, global);
-goog.exportSymbol('proto.api.MarketsDataSubscribeRequest', null, global);
-goog.exportSymbol('proto.api.MarketsResponse', null, global);
-goog.exportSymbol('proto.api.NetworkParametersRequest', null, global);
-goog.exportSymbol('proto.api.NetworkParametersResponse', null, global);
-goog.exportSymbol('proto.api.ObserveEventsRequest', null, global);
-goog.exportSymbol('proto.api.ObserveEventsResponse', null, global);
-goog.exportSymbol('proto.api.ObservePartyProposalsRequest', null, global);
-goog.exportSymbol('proto.api.ObservePartyVotesRequest', null, global);
-goog.exportSymbol('proto.api.ObserveProposalVotesRequest', null, global);
-goog.exportSymbol('proto.api.OptionalProposalState', null, global);
-goog.exportSymbol('proto.api.OrderByIDRequest', null, global);
-goog.exportSymbol('proto.api.OrderByMarketAndIdRequest', null, global);
-goog.exportSymbol('proto.api.OrderByMarketAndIdResponse', null, global);
-goog.exportSymbol('proto.api.OrderByReferenceRequest', null, global);
-goog.exportSymbol('proto.api.OrderByReferenceResponse', null, global);
-goog.exportSymbol('proto.api.OrderVersionsByIDRequest', null, global);
-goog.exportSymbol('proto.api.OrderVersionsResponse', null, global);
-goog.exportSymbol('proto.api.OrdersByMarketRequest', null, global);
-goog.exportSymbol('proto.api.OrdersByMarketResponse', null, global);
-goog.exportSymbol('proto.api.OrdersByPartyRequest', null, global);
-goog.exportSymbol('proto.api.OrdersByPartyResponse', null, global);
-goog.exportSymbol('proto.api.OrdersStream', null, global);
-goog.exportSymbol('proto.api.OrdersSubscribeRequest', null, global);
-goog.exportSymbol('proto.api.Pagination', null, global);
-goog.exportSymbol('proto.api.PartiesResponse', null, global);
-goog.exportSymbol('proto.api.PartyAccountsRequest', null, global);
-goog.exportSymbol('proto.api.PartyAccountsResponse', null, global);
-goog.exportSymbol('proto.api.PartyByIDRequest', null, global);
-goog.exportSymbol('proto.api.PartyByIDResponse', null, global);
-goog.exportSymbol('proto.api.PositionsByPartyRequest', null, global);
-goog.exportSymbol('proto.api.PositionsByPartyResponse', null, global);
-goog.exportSymbol('proto.api.PositionsSubscribeRequest', null, global);
-goog.exportSymbol('proto.api.PrepareAmendOrderResponse', null, global);
-goog.exportSymbol('proto.api.PrepareCancelOrderResponse', null, global);
-goog.exportSymbol('proto.api.PrepareLiquidityProvisionRequest', null, global);
-goog.exportSymbol('proto.api.PrepareLiquidityProvisionResponse', null, global);
-goog.exportSymbol('proto.api.PrepareProposalRequest', null, global);
-goog.exportSymbol('proto.api.PrepareProposalResponse', null, global);
-goog.exportSymbol('proto.api.PrepareSubmitOrderResponse', null, global);
-goog.exportSymbol('proto.api.PrepareVoteRequest', null, global);
-goog.exportSymbol('proto.api.PrepareVoteResponse', null, global);
-goog.exportSymbol('proto.api.PrepareWithdrawRequest', null, global);
-goog.exportSymbol('proto.api.PrepareWithdrawResponse', null, global);
-goog.exportSymbol('proto.api.PropagateChainEventRequest', null, global);
-goog.exportSymbol('proto.api.PropagateChainEventResponse', null, global);
-goog.exportSymbol('proto.api.SubmitOrderRequest', null, global);
-goog.exportSymbol('proto.api.SubmitTransactionRequest', null, global);
-goog.exportSymbol('proto.api.SubmitTransactionRequest.Type', null, global);
-goog.exportSymbol('proto.api.SubmitTransactionResponse', null, global);
-goog.exportSymbol('proto.api.TradesByMarketRequest', null, global);
-goog.exportSymbol('proto.api.TradesByMarketResponse', null, global);
-goog.exportSymbol('proto.api.TradesByOrderRequest', null, global);
-goog.exportSymbol('proto.api.TradesByOrderResponse', null, global);
-goog.exportSymbol('proto.api.TradesByPartyRequest', null, global);
-goog.exportSymbol('proto.api.TradesByPartyResponse', null, global);
-goog.exportSymbol('proto.api.TradesStream', null, global);
-goog.exportSymbol('proto.api.TradesSubscribeRequest', null, global);
-goog.exportSymbol('proto.api.VegaTimeResponse', null, global);
-goog.exportSymbol('proto.api.WithdrawalRequest', null, global);
-goog.exportSymbol('proto.api.WithdrawalResponse', null, global);
-goog.exportSymbol('proto.api.WithdrawalsRequest', null, global);
-goog.exportSymbol('proto.api.WithdrawalsResponse', null, global);
+goog.exportSymbol('proto.api.v1.AccountsSubscribeRequest', null, global);
+goog.exportSymbol('proto.api.v1.AccountsSubscribeResponse', null, global);
+goog.exportSymbol('proto.api.v1.AssetByIDRequest', null, global);
+goog.exportSymbol('proto.api.v1.AssetByIDResponse', null, global);
+goog.exportSymbol('proto.api.v1.AssetsRequest', null, global);
+goog.exportSymbol('proto.api.v1.AssetsResponse', null, global);
+goog.exportSymbol('proto.api.v1.CandlesRequest', null, global);
+goog.exportSymbol('proto.api.v1.CandlesResponse', null, global);
+goog.exportSymbol('proto.api.v1.CandlesSubscribeRequest', null, global);
+goog.exportSymbol('proto.api.v1.CandlesSubscribeResponse', null, global);
+goog.exportSymbol('proto.api.v1.DepositRequest', null, global);
+goog.exportSymbol('proto.api.v1.DepositResponse', null, global);
+goog.exportSymbol('proto.api.v1.DepositsRequest', null, global);
+goog.exportSymbol('proto.api.v1.DepositsResponse', null, global);
+goog.exportSymbol('proto.api.v1.ERC20WithdrawalApprovalRequest', null, global);
+goog.exportSymbol('proto.api.v1.ERC20WithdrawalApprovalResponse', null, global);
+goog.exportSymbol('proto.api.v1.EstimateFeeRequest', null, global);
+goog.exportSymbol('proto.api.v1.EstimateFeeResponse', null, global);
+goog.exportSymbol('proto.api.v1.EstimateMarginRequest', null, global);
+goog.exportSymbol('proto.api.v1.EstimateMarginResponse', null, global);
+goog.exportSymbol('proto.api.v1.FeeInfrastructureAccountsRequest', null, global);
+goog.exportSymbol('proto.api.v1.FeeInfrastructureAccountsResponse', null, global);
+goog.exportSymbol('proto.api.v1.GetNetworkParametersProposalsRequest', null, global);
+goog.exportSymbol('proto.api.v1.GetNetworkParametersProposalsResponse', null, global);
+goog.exportSymbol('proto.api.v1.GetNewAssetProposalsRequest', null, global);
+goog.exportSymbol('proto.api.v1.GetNewAssetProposalsResponse', null, global);
+goog.exportSymbol('proto.api.v1.GetNewMarketProposalsRequest', null, global);
+goog.exportSymbol('proto.api.v1.GetNewMarketProposalsResponse', null, global);
+goog.exportSymbol('proto.api.v1.GetNodeSignaturesAggregateRequest', null, global);
+goog.exportSymbol('proto.api.v1.GetNodeSignaturesAggregateResponse', null, global);
+goog.exportSymbol('proto.api.v1.GetProposalByIDRequest', null, global);
+goog.exportSymbol('proto.api.v1.GetProposalByIDResponse', null, global);
+goog.exportSymbol('proto.api.v1.GetProposalByReferenceRequest', null, global);
+goog.exportSymbol('proto.api.v1.GetProposalByReferenceResponse', null, global);
+goog.exportSymbol('proto.api.v1.GetProposalsByPartyRequest', null, global);
+goog.exportSymbol('proto.api.v1.GetProposalsByPartyResponse', null, global);
+goog.exportSymbol('proto.api.v1.GetProposalsRequest', null, global);
+goog.exportSymbol('proto.api.v1.GetProposalsResponse', null, global);
+goog.exportSymbol('proto.api.v1.GetUpdateMarketProposalsRequest', null, global);
+goog.exportSymbol('proto.api.v1.GetUpdateMarketProposalsResponse', null, global);
+goog.exportSymbol('proto.api.v1.GetVegaTimeRequest', null, global);
+goog.exportSymbol('proto.api.v1.GetVegaTimeResponse', null, global);
+goog.exportSymbol('proto.api.v1.GetVotesByPartyRequest', null, global);
+goog.exportSymbol('proto.api.v1.GetVotesByPartyResponse', null, global);
+goog.exportSymbol('proto.api.v1.LastTradeRequest', null, global);
+goog.exportSymbol('proto.api.v1.LastTradeResponse', null, global);
+goog.exportSymbol('proto.api.v1.LiquidityProvisionsRequest', null, global);
+goog.exportSymbol('proto.api.v1.LiquidityProvisionsResponse', null, global);
+goog.exportSymbol('proto.api.v1.MarginLevelsRequest', null, global);
+goog.exportSymbol('proto.api.v1.MarginLevelsResponse', null, global);
+goog.exportSymbol('proto.api.v1.MarginLevelsSubscribeRequest', null, global);
+goog.exportSymbol('proto.api.v1.MarginLevelsSubscribeResponse', null, global);
+goog.exportSymbol('proto.api.v1.MarketAccountsRequest', null, global);
+goog.exportSymbol('proto.api.v1.MarketAccountsResponse', null, global);
+goog.exportSymbol('proto.api.v1.MarketByIDRequest', null, global);
+goog.exportSymbol('proto.api.v1.MarketByIDResponse', null, global);
+goog.exportSymbol('proto.api.v1.MarketDataByIDRequest', null, global);
+goog.exportSymbol('proto.api.v1.MarketDataByIDResponse', null, global);
+goog.exportSymbol('proto.api.v1.MarketDepthRequest', null, global);
+goog.exportSymbol('proto.api.v1.MarketDepthResponse', null, global);
+goog.exportSymbol('proto.api.v1.MarketDepthSubscribeRequest', null, global);
+goog.exportSymbol('proto.api.v1.MarketDepthSubscribeResponse', null, global);
+goog.exportSymbol('proto.api.v1.MarketDepthUpdatesSubscribeRequest', null, global);
+goog.exportSymbol('proto.api.v1.MarketDepthUpdatesSubscribeResponse', null, global);
+goog.exportSymbol('proto.api.v1.MarketsDataRequest', null, global);
+goog.exportSymbol('proto.api.v1.MarketsDataResponse', null, global);
+goog.exportSymbol('proto.api.v1.MarketsDataSubscribeRequest', null, global);
+goog.exportSymbol('proto.api.v1.MarketsDataSubscribeResponse', null, global);
+goog.exportSymbol('proto.api.v1.MarketsRequest', null, global);
+goog.exportSymbol('proto.api.v1.MarketsResponse', null, global);
+goog.exportSymbol('proto.api.v1.NetworkParametersRequest', null, global);
+goog.exportSymbol('proto.api.v1.NetworkParametersResponse', null, global);
+goog.exportSymbol('proto.api.v1.ObserveEventBusRequest', null, global);
+goog.exportSymbol('proto.api.v1.ObserveEventBusResponse', null, global);
+goog.exportSymbol('proto.api.v1.ObserveGovernanceRequest', null, global);
+goog.exportSymbol('proto.api.v1.ObserveGovernanceResponse', null, global);
+goog.exportSymbol('proto.api.v1.ObservePartyProposalsRequest', null, global);
+goog.exportSymbol('proto.api.v1.ObservePartyProposalsResponse', null, global);
+goog.exportSymbol('proto.api.v1.ObservePartyVotesRequest', null, global);
+goog.exportSymbol('proto.api.v1.ObservePartyVotesResponse', null, global);
+goog.exportSymbol('proto.api.v1.ObserveProposalVotesRequest', null, global);
+goog.exportSymbol('proto.api.v1.ObserveProposalVotesResponse', null, global);
+goog.exportSymbol('proto.api.v1.OptionalProposalState', null, global);
+goog.exportSymbol('proto.api.v1.OrderByIDRequest', null, global);
+goog.exportSymbol('proto.api.v1.OrderByIDResponse', null, global);
+goog.exportSymbol('proto.api.v1.OrderByMarketAndIDRequest', null, global);
+goog.exportSymbol('proto.api.v1.OrderByMarketAndIDResponse', null, global);
+goog.exportSymbol('proto.api.v1.OrderByReferenceRequest', null, global);
+goog.exportSymbol('proto.api.v1.OrderByReferenceResponse', null, global);
+goog.exportSymbol('proto.api.v1.OrderVersionsByIDRequest', null, global);
+goog.exportSymbol('proto.api.v1.OrderVersionsByIDResponse', null, global);
+goog.exportSymbol('proto.api.v1.OrdersByMarketRequest', null, global);
+goog.exportSymbol('proto.api.v1.OrdersByMarketResponse', null, global);
+goog.exportSymbol('proto.api.v1.OrdersByPartyRequest', null, global);
+goog.exportSymbol('proto.api.v1.OrdersByPartyResponse', null, global);
+goog.exportSymbol('proto.api.v1.OrdersSubscribeRequest', null, global);
+goog.exportSymbol('proto.api.v1.OrdersSubscribeResponse', null, global);
+goog.exportSymbol('proto.api.v1.Pagination', null, global);
+goog.exportSymbol('proto.api.v1.PartiesRequest', null, global);
+goog.exportSymbol('proto.api.v1.PartiesResponse', null, global);
+goog.exportSymbol('proto.api.v1.PartyAccountsRequest', null, global);
+goog.exportSymbol('proto.api.v1.PartyAccountsResponse', null, global);
+goog.exportSymbol('proto.api.v1.PartyByIDRequest', null, global);
+goog.exportSymbol('proto.api.v1.PartyByIDResponse', null, global);
+goog.exportSymbol('proto.api.v1.PositionsByPartyRequest', null, global);
+goog.exportSymbol('proto.api.v1.PositionsByPartyResponse', null, global);
+goog.exportSymbol('proto.api.v1.PositionsSubscribeRequest', null, global);
+goog.exportSymbol('proto.api.v1.PositionsSubscribeResponse', null, global);
+goog.exportSymbol('proto.api.v1.PrepareAmendOrderRequest', null, global);
+goog.exportSymbol('proto.api.v1.PrepareAmendOrderResponse', null, global);
+goog.exportSymbol('proto.api.v1.PrepareCancelOrderRequest', null, global);
+goog.exportSymbol('proto.api.v1.PrepareCancelOrderResponse', null, global);
+goog.exportSymbol('proto.api.v1.PrepareLiquidityProvisionRequest', null, global);
+goog.exportSymbol('proto.api.v1.PrepareLiquidityProvisionResponse', null, global);
+goog.exportSymbol('proto.api.v1.PrepareProposalRequest', null, global);
+goog.exportSymbol('proto.api.v1.PrepareProposalResponse', null, global);
+goog.exportSymbol('proto.api.v1.PrepareSubmitOrderRequest', null, global);
+goog.exportSymbol('proto.api.v1.PrepareSubmitOrderResponse', null, global);
+goog.exportSymbol('proto.api.v1.PrepareVoteRequest', null, global);
+goog.exportSymbol('proto.api.v1.PrepareVoteResponse', null, global);
+goog.exportSymbol('proto.api.v1.PrepareWithdrawRequest', null, global);
+goog.exportSymbol('proto.api.v1.PrepareWithdrawResponse', null, global);
+goog.exportSymbol('proto.api.v1.PropagateChainEventRequest', null, global);
+goog.exportSymbol('proto.api.v1.PropagateChainEventResponse', null, global);
+goog.exportSymbol('proto.api.v1.StatisticsRequest', null, global);
+goog.exportSymbol('proto.api.v1.StatisticsResponse', null, global);
+goog.exportSymbol('proto.api.v1.SubmitTransactionRequest', null, global);
+goog.exportSymbol('proto.api.v1.SubmitTransactionRequest.Type', null, global);
+goog.exportSymbol('proto.api.v1.SubmitTransactionResponse', null, global);
+goog.exportSymbol('proto.api.v1.TradesByMarketRequest', null, global);
+goog.exportSymbol('proto.api.v1.TradesByMarketResponse', null, global);
+goog.exportSymbol('proto.api.v1.TradesByOrderRequest', null, global);
+goog.exportSymbol('proto.api.v1.TradesByOrderResponse', null, global);
+goog.exportSymbol('proto.api.v1.TradesByPartyRequest', null, global);
+goog.exportSymbol('proto.api.v1.TradesByPartyResponse', null, global);
+goog.exportSymbol('proto.api.v1.TradesSubscribeRequest', null, global);
+goog.exportSymbol('proto.api.v1.TradesSubscribeResponse', null, global);
+goog.exportSymbol('proto.api.v1.TransferResponsesSubscribeRequest', null, global);
+goog.exportSymbol('proto.api.v1.TransferResponsesSubscribeResponse', null, global);
+goog.exportSymbol('proto.api.v1.WithdrawalRequest', null, global);
+goog.exportSymbol('proto.api.v1.WithdrawalResponse', null, global);
+goog.exportSymbol('proto.api.v1.WithdrawalsRequest', null, global);
+goog.exportSymbol('proto.api.v1.WithdrawalsResponse', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -162,16 +181,16 @@ goog.exportSymbol('proto.api.WithdrawalsResponse', null, global);
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PropagateChainEventRequest = function(opt_data) {
+proto.api.v1.PropagateChainEventRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PropagateChainEventRequest, jspb.Message);
+goog.inherits(proto.api.v1.PropagateChainEventRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PropagateChainEventRequest.displayName = 'proto.api.PropagateChainEventRequest';
+  proto.api.v1.PropagateChainEventRequest.displayName = 'proto.api.v1.PropagateChainEventRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -183,16 +202,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PropagateChainEventResponse = function(opt_data) {
+proto.api.v1.PropagateChainEventResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PropagateChainEventResponse, jspb.Message);
+goog.inherits(proto.api.v1.PropagateChainEventResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PropagateChainEventResponse.displayName = 'proto.api.PropagateChainEventResponse';
+  proto.api.v1.PropagateChainEventResponse.displayName = 'proto.api.v1.PropagateChainEventResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -204,16 +223,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.SubmitTransactionRequest = function(opt_data) {
+proto.api.v1.SubmitTransactionRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.SubmitTransactionRequest, jspb.Message);
+goog.inherits(proto.api.v1.SubmitTransactionRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.SubmitTransactionRequest.displayName = 'proto.api.SubmitTransactionRequest';
+  proto.api.v1.SubmitTransactionRequest.displayName = 'proto.api.v1.SubmitTransactionRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -225,16 +244,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.SubmitTransactionResponse = function(opt_data) {
+proto.api.v1.SubmitTransactionResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.SubmitTransactionResponse, jspb.Message);
+goog.inherits(proto.api.v1.SubmitTransactionResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.SubmitTransactionResponse.displayName = 'proto.api.SubmitTransactionResponse';
+  proto.api.v1.SubmitTransactionResponse.displayName = 'proto.api.v1.SubmitTransactionResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -246,16 +265,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PrepareWithdrawRequest = function(opt_data) {
+proto.api.v1.PrepareWithdrawRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PrepareWithdrawRequest, jspb.Message);
+goog.inherits(proto.api.v1.PrepareWithdrawRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PrepareWithdrawRequest.displayName = 'proto.api.PrepareWithdrawRequest';
+  proto.api.v1.PrepareWithdrawRequest.displayName = 'proto.api.v1.PrepareWithdrawRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -267,16 +286,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PrepareWithdrawResponse = function(opt_data) {
+proto.api.v1.PrepareWithdrawResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PrepareWithdrawResponse, jspb.Message);
+goog.inherits(proto.api.v1.PrepareWithdrawResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PrepareWithdrawResponse.displayName = 'proto.api.PrepareWithdrawResponse';
+  proto.api.v1.PrepareWithdrawResponse.displayName = 'proto.api.v1.PrepareWithdrawResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -288,16 +307,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PrepareSubmitOrderResponse = function(opt_data) {
+proto.api.v1.PrepareSubmitOrderResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PrepareSubmitOrderResponse, jspb.Message);
+goog.inherits(proto.api.v1.PrepareSubmitOrderResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PrepareSubmitOrderResponse.displayName = 'proto.api.PrepareSubmitOrderResponse';
+  proto.api.v1.PrepareSubmitOrderResponse.displayName = 'proto.api.v1.PrepareSubmitOrderResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -309,16 +328,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PrepareCancelOrderResponse = function(opt_data) {
+proto.api.v1.PrepareCancelOrderResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PrepareCancelOrderResponse, jspb.Message);
+goog.inherits(proto.api.v1.PrepareCancelOrderResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PrepareCancelOrderResponse.displayName = 'proto.api.PrepareCancelOrderResponse';
+  proto.api.v1.PrepareCancelOrderResponse.displayName = 'proto.api.v1.PrepareCancelOrderResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -330,16 +349,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PrepareAmendOrderResponse = function(opt_data) {
+proto.api.v1.PrepareAmendOrderResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PrepareAmendOrderResponse, jspb.Message);
+goog.inherits(proto.api.v1.PrepareAmendOrderResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PrepareAmendOrderResponse.displayName = 'proto.api.PrepareAmendOrderResponse';
+  proto.api.v1.PrepareAmendOrderResponse.displayName = 'proto.api.v1.PrepareAmendOrderResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -351,16 +370,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.SubmitOrderRequest = function(opt_data) {
+proto.api.v1.PrepareSubmitOrderRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.SubmitOrderRequest, jspb.Message);
+goog.inherits(proto.api.v1.PrepareSubmitOrderRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.SubmitOrderRequest.displayName = 'proto.api.SubmitOrderRequest';
+  proto.api.v1.PrepareSubmitOrderRequest.displayName = 'proto.api.v1.PrepareSubmitOrderRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -372,16 +391,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.CancelOrderRequest = function(opt_data) {
+proto.api.v1.PrepareCancelOrderRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.CancelOrderRequest, jspb.Message);
+goog.inherits(proto.api.v1.PrepareCancelOrderRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.CancelOrderRequest.displayName = 'proto.api.CancelOrderRequest';
+  proto.api.v1.PrepareCancelOrderRequest.displayName = 'proto.api.v1.PrepareCancelOrderRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -393,16 +412,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.AmendOrderRequest = function(opt_data) {
+proto.api.v1.PrepareAmendOrderRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.AmendOrderRequest, jspb.Message);
+goog.inherits(proto.api.v1.PrepareAmendOrderRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.AmendOrderRequest.displayName = 'proto.api.AmendOrderRequest';
+  proto.api.v1.PrepareAmendOrderRequest.displayName = 'proto.api.v1.PrepareAmendOrderRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -414,16 +433,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.AssetsRequest = function(opt_data) {
+proto.api.v1.AssetsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.AssetsRequest, jspb.Message);
+goog.inherits(proto.api.v1.AssetsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.AssetsRequest.displayName = 'proto.api.AssetsRequest';
+  proto.api.v1.AssetsRequest.displayName = 'proto.api.v1.AssetsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -435,16 +454,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.AssetsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.AssetsResponse.repeatedFields_, null);
+proto.api.v1.AssetsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.AssetsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.AssetsResponse, jspb.Message);
+goog.inherits(proto.api.v1.AssetsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.AssetsResponse.displayName = 'proto.api.AssetsResponse';
+  proto.api.v1.AssetsResponse.displayName = 'proto.api.v1.AssetsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -456,16 +475,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.AssetByIDRequest = function(opt_data) {
+proto.api.v1.AssetByIDRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.AssetByIDRequest, jspb.Message);
+goog.inherits(proto.api.v1.AssetByIDRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.AssetByIDRequest.displayName = 'proto.api.AssetByIDRequest';
+  proto.api.v1.AssetByIDRequest.displayName = 'proto.api.v1.AssetByIDRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -477,16 +496,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.AssetByIDResponse = function(opt_data) {
+proto.api.v1.AssetByIDResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.AssetByIDResponse, jspb.Message);
+goog.inherits(proto.api.v1.AssetByIDResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.AssetByIDResponse.displayName = 'proto.api.AssetByIDResponse';
+  proto.api.v1.AssetByIDResponse.displayName = 'proto.api.v1.AssetByIDResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -498,16 +517,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetNodeSignaturesAggregateRequest = function(opt_data) {
+proto.api.v1.GetNodeSignaturesAggregateRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.GetNodeSignaturesAggregateRequest, jspb.Message);
+goog.inherits(proto.api.v1.GetNodeSignaturesAggregateRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetNodeSignaturesAggregateRequest.displayName = 'proto.api.GetNodeSignaturesAggregateRequest';
+  proto.api.v1.GetNodeSignaturesAggregateRequest.displayName = 'proto.api.v1.GetNodeSignaturesAggregateRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -519,16 +538,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetNodeSignaturesAggregateResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetNodeSignaturesAggregateResponse.repeatedFields_, null);
+proto.api.v1.GetNodeSignaturesAggregateResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.GetNodeSignaturesAggregateResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.GetNodeSignaturesAggregateResponse, jspb.Message);
+goog.inherits(proto.api.v1.GetNodeSignaturesAggregateResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetNodeSignaturesAggregateResponse.displayName = 'proto.api.GetNodeSignaturesAggregateResponse';
+  proto.api.v1.GetNodeSignaturesAggregateResponse.displayName = 'proto.api.v1.GetNodeSignaturesAggregateResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -540,16 +559,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.OptionalProposalState = function(opt_data) {
+proto.api.v1.OptionalProposalState = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.OptionalProposalState, jspb.Message);
+goog.inherits(proto.api.v1.OptionalProposalState, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.OptionalProposalState.displayName = 'proto.api.OptionalProposalState';
+  proto.api.v1.OptionalProposalState.displayName = 'proto.api.v1.OptionalProposalState';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -561,16 +580,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetProposalsRequest = function(opt_data) {
+proto.api.v1.GetProposalsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.GetProposalsRequest, jspb.Message);
+goog.inherits(proto.api.v1.GetProposalsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetProposalsRequest.displayName = 'proto.api.GetProposalsRequest';
+  proto.api.v1.GetProposalsRequest.displayName = 'proto.api.v1.GetProposalsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -582,16 +601,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetProposalsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetProposalsResponse.repeatedFields_, null);
+proto.api.v1.GetProposalsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.GetProposalsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.GetProposalsResponse, jspb.Message);
+goog.inherits(proto.api.v1.GetProposalsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetProposalsResponse.displayName = 'proto.api.GetProposalsResponse';
+  proto.api.v1.GetProposalsResponse.displayName = 'proto.api.v1.GetProposalsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -603,16 +622,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetProposalsByPartyRequest = function(opt_data) {
+proto.api.v1.GetProposalsByPartyRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.GetProposalsByPartyRequest, jspb.Message);
+goog.inherits(proto.api.v1.GetProposalsByPartyRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetProposalsByPartyRequest.displayName = 'proto.api.GetProposalsByPartyRequest';
+  proto.api.v1.GetProposalsByPartyRequest.displayName = 'proto.api.v1.GetProposalsByPartyRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -624,16 +643,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetProposalsByPartyResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetProposalsByPartyResponse.repeatedFields_, null);
+proto.api.v1.GetProposalsByPartyResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.GetProposalsByPartyResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.GetProposalsByPartyResponse, jspb.Message);
+goog.inherits(proto.api.v1.GetProposalsByPartyResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetProposalsByPartyResponse.displayName = 'proto.api.GetProposalsByPartyResponse';
+  proto.api.v1.GetProposalsByPartyResponse.displayName = 'proto.api.v1.GetProposalsByPartyResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -645,16 +664,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetVotesByPartyRequest = function(opt_data) {
+proto.api.v1.GetVotesByPartyRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.GetVotesByPartyRequest, jspb.Message);
+goog.inherits(proto.api.v1.GetVotesByPartyRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetVotesByPartyRequest.displayName = 'proto.api.GetVotesByPartyRequest';
+  proto.api.v1.GetVotesByPartyRequest.displayName = 'proto.api.v1.GetVotesByPartyRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -666,16 +685,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetVotesByPartyResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetVotesByPartyResponse.repeatedFields_, null);
+proto.api.v1.GetVotesByPartyResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.GetVotesByPartyResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.GetVotesByPartyResponse, jspb.Message);
+goog.inherits(proto.api.v1.GetVotesByPartyResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetVotesByPartyResponse.displayName = 'proto.api.GetVotesByPartyResponse';
+  proto.api.v1.GetVotesByPartyResponse.displayName = 'proto.api.v1.GetVotesByPartyResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -687,16 +706,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetNewMarketProposalsRequest = function(opt_data) {
+proto.api.v1.GetNewMarketProposalsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.GetNewMarketProposalsRequest, jspb.Message);
+goog.inherits(proto.api.v1.GetNewMarketProposalsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetNewMarketProposalsRequest.displayName = 'proto.api.GetNewMarketProposalsRequest';
+  proto.api.v1.GetNewMarketProposalsRequest.displayName = 'proto.api.v1.GetNewMarketProposalsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -708,16 +727,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetNewMarketProposalsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetNewMarketProposalsResponse.repeatedFields_, null);
+proto.api.v1.GetNewMarketProposalsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.GetNewMarketProposalsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.GetNewMarketProposalsResponse, jspb.Message);
+goog.inherits(proto.api.v1.GetNewMarketProposalsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetNewMarketProposalsResponse.displayName = 'proto.api.GetNewMarketProposalsResponse';
+  proto.api.v1.GetNewMarketProposalsResponse.displayName = 'proto.api.v1.GetNewMarketProposalsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -729,16 +748,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetUpdateMarketProposalsRequest = function(opt_data) {
+proto.api.v1.GetUpdateMarketProposalsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.GetUpdateMarketProposalsRequest, jspb.Message);
+goog.inherits(proto.api.v1.GetUpdateMarketProposalsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetUpdateMarketProposalsRequest.displayName = 'proto.api.GetUpdateMarketProposalsRequest';
+  proto.api.v1.GetUpdateMarketProposalsRequest.displayName = 'proto.api.v1.GetUpdateMarketProposalsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -750,16 +769,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetUpdateMarketProposalsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetUpdateMarketProposalsResponse.repeatedFields_, null);
+proto.api.v1.GetUpdateMarketProposalsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.GetUpdateMarketProposalsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.GetUpdateMarketProposalsResponse, jspb.Message);
+goog.inherits(proto.api.v1.GetUpdateMarketProposalsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetUpdateMarketProposalsResponse.displayName = 'proto.api.GetUpdateMarketProposalsResponse';
+  proto.api.v1.GetUpdateMarketProposalsResponse.displayName = 'proto.api.v1.GetUpdateMarketProposalsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -771,16 +790,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetNetworkParametersProposalsRequest = function(opt_data) {
+proto.api.v1.GetNetworkParametersProposalsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.GetNetworkParametersProposalsRequest, jspb.Message);
+goog.inherits(proto.api.v1.GetNetworkParametersProposalsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetNetworkParametersProposalsRequest.displayName = 'proto.api.GetNetworkParametersProposalsRequest';
+  proto.api.v1.GetNetworkParametersProposalsRequest.displayName = 'proto.api.v1.GetNetworkParametersProposalsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -792,16 +811,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetNetworkParametersProposalsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetNetworkParametersProposalsResponse.repeatedFields_, null);
+proto.api.v1.GetNetworkParametersProposalsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.GetNetworkParametersProposalsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.GetNetworkParametersProposalsResponse, jspb.Message);
+goog.inherits(proto.api.v1.GetNetworkParametersProposalsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetNetworkParametersProposalsResponse.displayName = 'proto.api.GetNetworkParametersProposalsResponse';
+  proto.api.v1.GetNetworkParametersProposalsResponse.displayName = 'proto.api.v1.GetNetworkParametersProposalsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -813,16 +832,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetNewAssetProposalsRequest = function(opt_data) {
+proto.api.v1.GetNewAssetProposalsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.GetNewAssetProposalsRequest, jspb.Message);
+goog.inherits(proto.api.v1.GetNewAssetProposalsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetNewAssetProposalsRequest.displayName = 'proto.api.GetNewAssetProposalsRequest';
+  proto.api.v1.GetNewAssetProposalsRequest.displayName = 'proto.api.v1.GetNewAssetProposalsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -834,16 +853,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetNewAssetProposalsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.GetNewAssetProposalsResponse.repeatedFields_, null);
+proto.api.v1.GetNewAssetProposalsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.GetNewAssetProposalsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.GetNewAssetProposalsResponse, jspb.Message);
+goog.inherits(proto.api.v1.GetNewAssetProposalsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetNewAssetProposalsResponse.displayName = 'proto.api.GetNewAssetProposalsResponse';
+  proto.api.v1.GetNewAssetProposalsResponse.displayName = 'proto.api.v1.GetNewAssetProposalsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -855,16 +874,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetProposalByIDRequest = function(opt_data) {
+proto.api.v1.GetProposalByIDRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.GetProposalByIDRequest, jspb.Message);
+goog.inherits(proto.api.v1.GetProposalByIDRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetProposalByIDRequest.displayName = 'proto.api.GetProposalByIDRequest';
+  proto.api.v1.GetProposalByIDRequest.displayName = 'proto.api.v1.GetProposalByIDRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -876,16 +895,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetProposalByIDResponse = function(opt_data) {
+proto.api.v1.GetProposalByIDResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.GetProposalByIDResponse, jspb.Message);
+goog.inherits(proto.api.v1.GetProposalByIDResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetProposalByIDResponse.displayName = 'proto.api.GetProposalByIDResponse';
+  proto.api.v1.GetProposalByIDResponse.displayName = 'proto.api.v1.GetProposalByIDResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -897,16 +916,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetProposalByReferenceRequest = function(opt_data) {
+proto.api.v1.GetProposalByReferenceRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.GetProposalByReferenceRequest, jspb.Message);
+goog.inherits(proto.api.v1.GetProposalByReferenceRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetProposalByReferenceRequest.displayName = 'proto.api.GetProposalByReferenceRequest';
+  proto.api.v1.GetProposalByReferenceRequest.displayName = 'proto.api.v1.GetProposalByReferenceRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -918,16 +937,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetProposalByReferenceResponse = function(opt_data) {
+proto.api.v1.GetProposalByReferenceResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.GetProposalByReferenceResponse, jspb.Message);
+goog.inherits(proto.api.v1.GetProposalByReferenceResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.GetProposalByReferenceResponse.displayName = 'proto.api.GetProposalByReferenceResponse';
+  proto.api.v1.GetProposalByReferenceResponse.displayName = 'proto.api.v1.GetProposalByReferenceResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -939,16 +958,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.ObservePartyProposalsRequest = function(opt_data) {
+proto.api.v1.ObserveGovernanceRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.ObservePartyProposalsRequest, jspb.Message);
+goog.inherits(proto.api.v1.ObserveGovernanceRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.ObservePartyProposalsRequest.displayName = 'proto.api.ObservePartyProposalsRequest';
+  proto.api.v1.ObserveGovernanceRequest.displayName = 'proto.api.v1.ObserveGovernanceRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -960,16 +979,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.ObserveProposalVotesRequest = function(opt_data) {
+proto.api.v1.ObserveGovernanceResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.ObserveProposalVotesRequest, jspb.Message);
+goog.inherits(proto.api.v1.ObserveGovernanceResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.ObserveProposalVotesRequest.displayName = 'proto.api.ObserveProposalVotesRequest';
+  proto.api.v1.ObserveGovernanceResponse.displayName = 'proto.api.v1.ObserveGovernanceResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -981,16 +1000,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.ObservePartyVotesRequest = function(opt_data) {
+proto.api.v1.ObservePartyProposalsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.ObservePartyVotesRequest, jspb.Message);
+goog.inherits(proto.api.v1.ObservePartyProposalsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.ObservePartyVotesRequest.displayName = 'proto.api.ObservePartyVotesRequest';
+  proto.api.v1.ObservePartyProposalsRequest.displayName = 'proto.api.v1.ObservePartyProposalsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1002,16 +1021,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.MarginLevelsSubscribeRequest = function(opt_data) {
+proto.api.v1.ObservePartyProposalsResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.MarginLevelsSubscribeRequest, jspb.Message);
+goog.inherits(proto.api.v1.ObservePartyProposalsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.MarginLevelsSubscribeRequest.displayName = 'proto.api.MarginLevelsSubscribeRequest';
+  proto.api.v1.ObservePartyProposalsResponse.displayName = 'proto.api.v1.ObservePartyProposalsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1023,16 +1042,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.MarginLevelsRequest = function(opt_data) {
+proto.api.v1.ObserveProposalVotesRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.MarginLevelsRequest, jspb.Message);
+goog.inherits(proto.api.v1.ObserveProposalVotesRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.MarginLevelsRequest.displayName = 'proto.api.MarginLevelsRequest';
+  proto.api.v1.ObserveProposalVotesRequest.displayName = 'proto.api.v1.ObserveProposalVotesRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1044,16 +1063,226 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.MarginLevelsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.MarginLevelsResponse.repeatedFields_, null);
+proto.api.v1.ObserveProposalVotesResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.ObserveProposalVotesResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.ObserveProposalVotesResponse.displayName = 'proto.api.v1.ObserveProposalVotesResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.ObservePartyVotesRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.ObservePartyVotesRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.ObservePartyVotesRequest.displayName = 'proto.api.v1.ObservePartyVotesRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.ObservePartyVotesResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.ObservePartyVotesResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.ObservePartyVotesResponse.displayName = 'proto.api.v1.ObservePartyVotesResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.MarginLevelsSubscribeRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.MarginLevelsSubscribeRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.MarginLevelsSubscribeRequest.displayName = 'proto.api.v1.MarginLevelsSubscribeRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.MarginLevelsSubscribeResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.MarginLevelsSubscribeResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.MarginLevelsSubscribeResponse.displayName = 'proto.api.v1.MarginLevelsSubscribeResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.MarginLevelsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.MarginLevelsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.MarginLevelsRequest.displayName = 'proto.api.v1.MarginLevelsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.MarginLevelsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.MarginLevelsResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1.MarginLevelsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.MarginLevelsResponse.displayName = 'proto.api.v1.MarginLevelsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.MarketsDataSubscribeRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.MarketsDataSubscribeRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.MarketsDataSubscribeRequest.displayName = 'proto.api.v1.MarketsDataSubscribeRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.MarketsDataSubscribeResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.MarketsDataSubscribeResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.MarketsDataSubscribeResponse.displayName = 'proto.api.v1.MarketsDataSubscribeResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.MarketDataByIDRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.MarketDataByIDRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.MarketDataByIDRequest.displayName = 'proto.api.v1.MarketDataByIDRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.MarketDataByIDResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.MarginLevelsResponse, jspb.Message);
+goog.inherits(proto.api.v1.MarketDataByIDResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.MarginLevelsResponse.displayName = 'proto.api.MarginLevelsResponse';
+  proto.api.v1.MarketDataByIDResponse.displayName = 'proto.api.v1.MarketDataByIDResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1065,16 +1294,37 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.MarketsDataSubscribeRequest = function(opt_data) {
+proto.api.v1.MarketsDataRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.MarketsDataRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.MarketsDataRequest.displayName = 'proto.api.v1.MarketsDataRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.MarketsDataResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.MarketsDataResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.MarketsDataSubscribeRequest, jspb.Message);
+goog.inherits(proto.api.v1.MarketsDataResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.MarketsDataSubscribeRequest.displayName = 'proto.api.MarketsDataSubscribeRequest';
+  proto.api.v1.MarketsDataResponse.displayName = 'proto.api.v1.MarketsDataResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1086,16 +1336,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.MarketDataByIDRequest = function(opt_data) {
+proto.api.v1.LastTradeRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.MarketDataByIDRequest, jspb.Message);
+goog.inherits(proto.api.v1.LastTradeRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.MarketDataByIDRequest.displayName = 'proto.api.MarketDataByIDRequest';
+  proto.api.v1.LastTradeRequest.displayName = 'proto.api.v1.LastTradeRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1107,16 +1357,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.MarketDataByIDResponse = function(opt_data) {
+proto.api.v1.LastTradeResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.MarketDataByIDResponse, jspb.Message);
+goog.inherits(proto.api.v1.LastTradeResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.MarketDataByIDResponse.displayName = 'proto.api.MarketDataByIDResponse';
+  proto.api.v1.LastTradeResponse.displayName = 'proto.api.v1.LastTradeResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1128,16 +1378,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.MarketsDataResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.MarketsDataResponse.repeatedFields_, null);
+proto.api.v1.MarketByIDRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.MarketsDataResponse, jspb.Message);
+goog.inherits(proto.api.v1.MarketByIDRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.MarketsDataResponse.displayName = 'proto.api.MarketsDataResponse';
+  proto.api.v1.MarketByIDRequest.displayName = 'proto.api.v1.MarketByIDRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1149,16 +1399,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.LastTradeRequest = function(opt_data) {
+proto.api.v1.MarketByIDResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.LastTradeRequest, jspb.Message);
+goog.inherits(proto.api.v1.MarketByIDResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.LastTradeRequest.displayName = 'proto.api.LastTradeRequest';
+  proto.api.v1.MarketByIDResponse.displayName = 'proto.api.v1.MarketByIDResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1170,16 +1420,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.LastTradeResponse = function(opt_data) {
+proto.api.v1.PartyByIDRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.LastTradeResponse, jspb.Message);
+goog.inherits(proto.api.v1.PartyByIDRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.LastTradeResponse.displayName = 'proto.api.LastTradeResponse';
+  proto.api.v1.PartyByIDRequest.displayName = 'proto.api.v1.PartyByIDRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1191,16 +1441,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.MarketByIDRequest = function(opt_data) {
+proto.api.v1.PartyByIDResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.MarketByIDRequest, jspb.Message);
+goog.inherits(proto.api.v1.PartyByIDResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.MarketByIDRequest.displayName = 'proto.api.MarketByIDRequest';
+  proto.api.v1.PartyByIDResponse.displayName = 'proto.api.v1.PartyByIDResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1212,16 +1462,37 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.MarketByIDResponse = function(opt_data) {
+proto.api.v1.PartiesRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.PartiesRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.PartiesRequest.displayName = 'proto.api.v1.PartiesRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.PartiesResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.PartiesResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.MarketByIDResponse, jspb.Message);
+goog.inherits(proto.api.v1.PartiesResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.MarketByIDResponse.displayName = 'proto.api.MarketByIDResponse';
+  proto.api.v1.PartiesResponse.displayName = 'proto.api.v1.PartiesResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1233,16 +1504,37 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PartyByIDRequest = function(opt_data) {
+proto.api.v1.TradesByPartyRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.TradesByPartyRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.TradesByPartyRequest.displayName = 'proto.api.v1.TradesByPartyRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.TradesByPartyResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.TradesByPartyResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.PartyByIDRequest, jspb.Message);
+goog.inherits(proto.api.v1.TradesByPartyResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PartyByIDRequest.displayName = 'proto.api.PartyByIDRequest';
+  proto.api.v1.TradesByPartyResponse.displayName = 'proto.api.v1.TradesByPartyResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1254,16 +1546,37 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PartyByIDResponse = function(opt_data) {
+proto.api.v1.TradesByOrderRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.TradesByOrderRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.TradesByOrderRequest.displayName = 'proto.api.v1.TradesByOrderRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.TradesByOrderResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.TradesByOrderResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.PartyByIDResponse, jspb.Message);
+goog.inherits(proto.api.v1.TradesByOrderResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PartyByIDResponse.displayName = 'proto.api.PartyByIDResponse';
+  proto.api.v1.TradesByOrderResponse.displayName = 'proto.api.v1.TradesByOrderResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1275,16 +1588,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PartiesResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.PartiesResponse.repeatedFields_, null);
+proto.api.v1.AccountsSubscribeRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PartiesResponse, jspb.Message);
+goog.inherits(proto.api.v1.AccountsSubscribeRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PartiesResponse.displayName = 'proto.api.PartiesResponse';
+  proto.api.v1.AccountsSubscribeRequest.displayName = 'proto.api.v1.AccountsSubscribeRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1296,16 +1609,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.TradesByPartyRequest = function(opt_data) {
+proto.api.v1.AccountsSubscribeResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.TradesByPartyRequest, jspb.Message);
+goog.inherits(proto.api.v1.AccountsSubscribeResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.TradesByPartyRequest.displayName = 'proto.api.TradesByPartyRequest';
+  proto.api.v1.AccountsSubscribeResponse.displayName = 'proto.api.v1.AccountsSubscribeResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1317,16 +1630,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.TradesByPartyResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.TradesByPartyResponse.repeatedFields_, null);
+proto.api.v1.OrdersSubscribeRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.TradesByPartyResponse, jspb.Message);
+goog.inherits(proto.api.v1.OrdersSubscribeRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.TradesByPartyResponse.displayName = 'proto.api.TradesByPartyResponse';
+  proto.api.v1.OrdersSubscribeRequest.displayName = 'proto.api.v1.OrdersSubscribeRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1338,16 +1651,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.TradesByOrderRequest = function(opt_data) {
+proto.api.v1.TradesSubscribeRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.TradesByOrderRequest, jspb.Message);
+goog.inherits(proto.api.v1.TradesSubscribeRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.TradesByOrderRequest.displayName = 'proto.api.TradesByOrderRequest';
+  proto.api.v1.TradesSubscribeRequest.displayName = 'proto.api.v1.TradesSubscribeRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1359,16 +1672,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.TradesByOrderResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.TradesByOrderResponse.repeatedFields_, null);
+proto.api.v1.CandlesSubscribeRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.TradesByOrderResponse, jspb.Message);
+goog.inherits(proto.api.v1.CandlesSubscribeRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.TradesByOrderResponse.displayName = 'proto.api.TradesByOrderResponse';
+  proto.api.v1.CandlesSubscribeRequest.displayName = 'proto.api.v1.CandlesSubscribeRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1380,16 +1693,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.AccountsSubscribeRequest = function(opt_data) {
+proto.api.v1.CandlesSubscribeResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.AccountsSubscribeRequest, jspb.Message);
+goog.inherits(proto.api.v1.CandlesSubscribeResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.AccountsSubscribeRequest.displayName = 'proto.api.AccountsSubscribeRequest';
+  proto.api.v1.CandlesSubscribeResponse.displayName = 'proto.api.v1.CandlesSubscribeResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1401,16 +1714,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.OrdersSubscribeRequest = function(opt_data) {
+proto.api.v1.MarketDepthSubscribeRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.OrdersSubscribeRequest, jspb.Message);
+goog.inherits(proto.api.v1.MarketDepthSubscribeRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.OrdersSubscribeRequest.displayName = 'proto.api.OrdersSubscribeRequest';
+  proto.api.v1.MarketDepthSubscribeRequest.displayName = 'proto.api.v1.MarketDepthSubscribeRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1422,16 +1735,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.TradesSubscribeRequest = function(opt_data) {
+proto.api.v1.MarketDepthSubscribeResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.TradesSubscribeRequest, jspb.Message);
+goog.inherits(proto.api.v1.MarketDepthSubscribeResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.TradesSubscribeRequest.displayName = 'proto.api.TradesSubscribeRequest';
+  proto.api.v1.MarketDepthSubscribeResponse.displayName = 'proto.api.v1.MarketDepthSubscribeResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1443,16 +1756,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.CandlesSubscribeRequest = function(opt_data) {
+proto.api.v1.MarketDepthUpdatesSubscribeRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.CandlesSubscribeRequest, jspb.Message);
+goog.inherits(proto.api.v1.MarketDepthUpdatesSubscribeRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.CandlesSubscribeRequest.displayName = 'proto.api.CandlesSubscribeRequest';
+  proto.api.v1.MarketDepthUpdatesSubscribeRequest.displayName = 'proto.api.v1.MarketDepthUpdatesSubscribeRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1464,16 +1777,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.MarketDepthSubscribeRequest = function(opt_data) {
+proto.api.v1.MarketDepthUpdatesSubscribeResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.MarketDepthSubscribeRequest, jspb.Message);
+goog.inherits(proto.api.v1.MarketDepthUpdatesSubscribeResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.MarketDepthSubscribeRequest.displayName = 'proto.api.MarketDepthSubscribeRequest';
+  proto.api.v1.MarketDepthUpdatesSubscribeResponse.displayName = 'proto.api.v1.MarketDepthUpdatesSubscribeResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1485,16 +1798,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.MarketDepthUpdatesSubscribeRequest = function(opt_data) {
+proto.api.v1.PositionsSubscribeRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.MarketDepthUpdatesSubscribeRequest, jspb.Message);
+goog.inherits(proto.api.v1.PositionsSubscribeRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.MarketDepthUpdatesSubscribeRequest.displayName = 'proto.api.MarketDepthUpdatesSubscribeRequest';
+  proto.api.v1.PositionsSubscribeRequest.displayName = 'proto.api.v1.PositionsSubscribeRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1506,16 +1819,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PositionsSubscribeRequest = function(opt_data) {
+proto.api.v1.PositionsSubscribeResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PositionsSubscribeRequest, jspb.Message);
+goog.inherits(proto.api.v1.PositionsSubscribeResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PositionsSubscribeRequest.displayName = 'proto.api.PositionsSubscribeRequest';
+  proto.api.v1.PositionsSubscribeResponse.displayName = 'proto.api.v1.PositionsSubscribeResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1527,16 +1840,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.OrdersByMarketRequest = function(opt_data) {
+proto.api.v1.OrdersByMarketRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.OrdersByMarketRequest, jspb.Message);
+goog.inherits(proto.api.v1.OrdersByMarketRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.OrdersByMarketRequest.displayName = 'proto.api.OrdersByMarketRequest';
+  proto.api.v1.OrdersByMarketRequest.displayName = 'proto.api.v1.OrdersByMarketRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1548,16 +1861,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.OrdersByMarketResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.OrdersByMarketResponse.repeatedFields_, null);
+proto.api.v1.OrdersByMarketResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.OrdersByMarketResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.OrdersByMarketResponse, jspb.Message);
+goog.inherits(proto.api.v1.OrdersByMarketResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.OrdersByMarketResponse.displayName = 'proto.api.OrdersByMarketResponse';
+  proto.api.v1.OrdersByMarketResponse.displayName = 'proto.api.v1.OrdersByMarketResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1569,16 +1882,37 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.OrdersByPartyRequest = function(opt_data) {
+proto.api.v1.OrdersByPartyRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.OrdersByPartyRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.OrdersByPartyRequest.displayName = 'proto.api.v1.OrdersByPartyRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.OrdersByPartyResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.OrdersByPartyResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.OrdersByPartyRequest, jspb.Message);
+goog.inherits(proto.api.v1.OrdersByPartyResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.OrdersByPartyRequest.displayName = 'proto.api.OrdersByPartyRequest';
+  proto.api.v1.OrdersByPartyResponse.displayName = 'proto.api.v1.OrdersByPartyResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1590,16 +1924,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.OrdersByPartyResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.OrdersByPartyResponse.repeatedFields_, null);
+proto.api.v1.OrderByMarketAndIDRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.OrdersByPartyResponse, jspb.Message);
+goog.inherits(proto.api.v1.OrderByMarketAndIDRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.OrdersByPartyResponse.displayName = 'proto.api.OrdersByPartyResponse';
+  proto.api.v1.OrderByMarketAndIDRequest.displayName = 'proto.api.v1.OrderByMarketAndIDRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1611,16 +1945,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.OrderByMarketAndIdRequest = function(opt_data) {
+proto.api.v1.OrderByMarketAndIDResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.OrderByMarketAndIdRequest, jspb.Message);
+goog.inherits(proto.api.v1.OrderByMarketAndIDResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.OrderByMarketAndIdRequest.displayName = 'proto.api.OrderByMarketAndIdRequest';
+  proto.api.v1.OrderByMarketAndIDResponse.displayName = 'proto.api.v1.OrderByMarketAndIDResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1632,16 +1966,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.OrderByMarketAndIdResponse = function(opt_data) {
+proto.api.v1.OrderByReferenceRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.OrderByMarketAndIdResponse, jspb.Message);
+goog.inherits(proto.api.v1.OrderByReferenceRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.OrderByMarketAndIdResponse.displayName = 'proto.api.OrderByMarketAndIdResponse';
+  proto.api.v1.OrderByReferenceRequest.displayName = 'proto.api.v1.OrderByReferenceRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1653,16 +1987,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.OrderByReferenceRequest = function(opt_data) {
+proto.api.v1.OrderByReferenceResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.OrderByReferenceRequest, jspb.Message);
+goog.inherits(proto.api.v1.OrderByReferenceResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.OrderByReferenceRequest.displayName = 'proto.api.OrderByReferenceRequest';
+  proto.api.v1.OrderByReferenceResponse.displayName = 'proto.api.v1.OrderByReferenceResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1674,16 +2008,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.OrderByReferenceResponse = function(opt_data) {
+proto.api.v1.MarketsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.OrderByReferenceResponse, jspb.Message);
+goog.inherits(proto.api.v1.MarketsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.OrderByReferenceResponse.displayName = 'proto.api.OrderByReferenceResponse';
+  proto.api.v1.MarketsRequest.displayName = 'proto.api.v1.MarketsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1695,16 +2029,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.MarketsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.MarketsResponse.repeatedFields_, null);
+proto.api.v1.MarketsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.MarketsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.MarketsResponse, jspb.Message);
+goog.inherits(proto.api.v1.MarketsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.MarketsResponse.displayName = 'proto.api.MarketsResponse';
+  proto.api.v1.MarketsResponse.displayName = 'proto.api.v1.MarketsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1716,16 +2050,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.CandlesRequest = function(opt_data) {
+proto.api.v1.CandlesRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.CandlesRequest, jspb.Message);
+goog.inherits(proto.api.v1.CandlesRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.CandlesRequest.displayName = 'proto.api.CandlesRequest';
+  proto.api.v1.CandlesRequest.displayName = 'proto.api.v1.CandlesRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1737,16 +2071,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.CandlesResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.CandlesResponse.repeatedFields_, null);
+proto.api.v1.CandlesResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.CandlesResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.CandlesResponse, jspb.Message);
+goog.inherits(proto.api.v1.CandlesResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.CandlesResponse.displayName = 'proto.api.CandlesResponse';
+  proto.api.v1.CandlesResponse.displayName = 'proto.api.v1.CandlesResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1758,16 +2092,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.MarketDepthRequest = function(opt_data) {
+proto.api.v1.MarketDepthRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.MarketDepthRequest, jspb.Message);
+goog.inherits(proto.api.v1.MarketDepthRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.MarketDepthRequest.displayName = 'proto.api.MarketDepthRequest';
+  proto.api.v1.MarketDepthRequest.displayName = 'proto.api.v1.MarketDepthRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1779,16 +2113,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.MarketDepthResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.MarketDepthResponse.repeatedFields_, null);
+proto.api.v1.MarketDepthResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.MarketDepthResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.MarketDepthResponse, jspb.Message);
+goog.inherits(proto.api.v1.MarketDepthResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.MarketDepthResponse.displayName = 'proto.api.MarketDepthResponse';
+  proto.api.v1.MarketDepthResponse.displayName = 'proto.api.v1.MarketDepthResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1800,16 +2134,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.TradesByMarketRequest = function(opt_data) {
+proto.api.v1.TradesByMarketRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.TradesByMarketRequest, jspb.Message);
+goog.inherits(proto.api.v1.TradesByMarketRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.TradesByMarketRequest.displayName = 'proto.api.TradesByMarketRequest';
+  proto.api.v1.TradesByMarketRequest.displayName = 'proto.api.v1.TradesByMarketRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1821,16 +2155,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.TradesByMarketResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.TradesByMarketResponse.repeatedFields_, null);
+proto.api.v1.TradesByMarketResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.TradesByMarketResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.TradesByMarketResponse, jspb.Message);
+goog.inherits(proto.api.v1.TradesByMarketResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.TradesByMarketResponse.displayName = 'proto.api.TradesByMarketResponse';
+  proto.api.v1.TradesByMarketResponse.displayName = 'proto.api.v1.TradesByMarketResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1842,16 +2176,37 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PositionsByPartyRequest = function(opt_data) {
+proto.api.v1.PositionsByPartyRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.PositionsByPartyRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.PositionsByPartyRequest.displayName = 'proto.api.v1.PositionsByPartyRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.PositionsByPartyResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.PositionsByPartyResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.PositionsByPartyRequest, jspb.Message);
+goog.inherits(proto.api.v1.PositionsByPartyResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PositionsByPartyRequest.displayName = 'proto.api.PositionsByPartyRequest';
+  proto.api.v1.PositionsByPartyResponse.displayName = 'proto.api.v1.PositionsByPartyResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1863,16 +2218,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PositionsByPartyResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.PositionsByPartyResponse.repeatedFields_, null);
+proto.api.v1.GetVegaTimeRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PositionsByPartyResponse, jspb.Message);
+goog.inherits(proto.api.v1.GetVegaTimeRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PositionsByPartyResponse.displayName = 'proto.api.PositionsByPartyResponse';
+  proto.api.v1.GetVegaTimeRequest.displayName = 'proto.api.v1.GetVegaTimeRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1884,16 +2239,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.VegaTimeResponse = function(opt_data) {
+proto.api.v1.GetVegaTimeResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.VegaTimeResponse, jspb.Message);
+goog.inherits(proto.api.v1.GetVegaTimeResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.VegaTimeResponse.displayName = 'proto.api.VegaTimeResponse';
+  proto.api.v1.GetVegaTimeResponse.displayName = 'proto.api.v1.GetVegaTimeResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1905,16 +2260,58 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.Pagination = function(opt_data) {
+proto.api.v1.Pagination = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.Pagination, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.Pagination.displayName = 'proto.api.v1.Pagination';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.OrdersSubscribeResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.OrdersSubscribeResponse.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1.OrdersSubscribeResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.OrdersSubscribeResponse.displayName = 'proto.api.v1.OrdersSubscribeResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.TradesSubscribeResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.TradesSubscribeResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.Pagination, jspb.Message);
+goog.inherits(proto.api.v1.TradesSubscribeResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.Pagination.displayName = 'proto.api.Pagination';
+  proto.api.v1.TradesSubscribeResponse.displayName = 'proto.api.v1.TradesSubscribeResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1926,16 +2323,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.OrdersStream = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.OrdersStream.repeatedFields_, null);
+proto.api.v1.TransferResponsesSubscribeRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.OrdersStream, jspb.Message);
+goog.inherits(proto.api.v1.TransferResponsesSubscribeRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.OrdersStream.displayName = 'proto.api.OrdersStream';
+  proto.api.v1.TransferResponsesSubscribeRequest.displayName = 'proto.api.v1.TransferResponsesSubscribeRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1947,16 +2344,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.TradesStream = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.TradesStream.repeatedFields_, null);
+proto.api.v1.TransferResponsesSubscribeResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.TradesStream, jspb.Message);
+goog.inherits(proto.api.v1.TransferResponsesSubscribeResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.TradesStream.displayName = 'proto.api.TradesStream';
+  proto.api.v1.TransferResponsesSubscribeResponse.displayName = 'proto.api.v1.TransferResponsesSubscribeResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1968,16 +2365,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PartyAccountsRequest = function(opt_data) {
+proto.api.v1.PartyAccountsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PartyAccountsRequest, jspb.Message);
+goog.inherits(proto.api.v1.PartyAccountsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PartyAccountsRequest.displayName = 'proto.api.PartyAccountsRequest';
+  proto.api.v1.PartyAccountsRequest.displayName = 'proto.api.v1.PartyAccountsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1989,16 +2386,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PartyAccountsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.PartyAccountsResponse.repeatedFields_, null);
+proto.api.v1.PartyAccountsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.PartyAccountsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.PartyAccountsResponse, jspb.Message);
+goog.inherits(proto.api.v1.PartyAccountsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PartyAccountsResponse.displayName = 'proto.api.PartyAccountsResponse';
+  proto.api.v1.PartyAccountsResponse.displayName = 'proto.api.v1.PartyAccountsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2010,16 +2407,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.MarketAccountsRequest = function(opt_data) {
+proto.api.v1.MarketAccountsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.MarketAccountsRequest, jspb.Message);
+goog.inherits(proto.api.v1.MarketAccountsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.MarketAccountsRequest.displayName = 'proto.api.MarketAccountsRequest';
+  proto.api.v1.MarketAccountsRequest.displayName = 'proto.api.v1.MarketAccountsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2031,16 +2428,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.MarketAccountsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.MarketAccountsResponse.repeatedFields_, null);
+proto.api.v1.MarketAccountsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.MarketAccountsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.MarketAccountsResponse, jspb.Message);
+goog.inherits(proto.api.v1.MarketAccountsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.MarketAccountsResponse.displayName = 'proto.api.MarketAccountsResponse';
+  proto.api.v1.MarketAccountsResponse.displayName = 'proto.api.v1.MarketAccountsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2052,16 +2449,37 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.FeeInfrastructureAccountsRequest = function(opt_data) {
+proto.api.v1.FeeInfrastructureAccountsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.FeeInfrastructureAccountsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.FeeInfrastructureAccountsRequest.displayName = 'proto.api.v1.FeeInfrastructureAccountsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.FeeInfrastructureAccountsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.FeeInfrastructureAccountsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.FeeInfrastructureAccountsRequest, jspb.Message);
+goog.inherits(proto.api.v1.FeeInfrastructureAccountsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.FeeInfrastructureAccountsRequest.displayName = 'proto.api.FeeInfrastructureAccountsRequest';
+  proto.api.v1.FeeInfrastructureAccountsResponse.displayName = 'proto.api.v1.FeeInfrastructureAccountsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2073,16 +2491,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.FeeInfrastructureAccountsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.FeeInfrastructureAccountsResponse.repeatedFields_, null);
+proto.api.v1.PrepareProposalRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.FeeInfrastructureAccountsResponse, jspb.Message);
+goog.inherits(proto.api.v1.PrepareProposalRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.FeeInfrastructureAccountsResponse.displayName = 'proto.api.FeeInfrastructureAccountsResponse';
+  proto.api.v1.PrepareProposalRequest.displayName = 'proto.api.v1.PrepareProposalRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2094,16 +2512,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PrepareProposalRequest = function(opt_data) {
+proto.api.v1.PrepareProposalResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PrepareProposalRequest, jspb.Message);
+goog.inherits(proto.api.v1.PrepareProposalResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PrepareProposalRequest.displayName = 'proto.api.PrepareProposalRequest';
+  proto.api.v1.PrepareProposalResponse.displayName = 'proto.api.v1.PrepareProposalResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2115,16 +2533,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PrepareProposalResponse = function(opt_data) {
+proto.api.v1.PrepareVoteRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PrepareProposalResponse, jspb.Message);
+goog.inherits(proto.api.v1.PrepareVoteRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PrepareProposalResponse.displayName = 'proto.api.PrepareProposalResponse';
+  proto.api.v1.PrepareVoteRequest.displayName = 'proto.api.v1.PrepareVoteRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2136,16 +2554,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PrepareVoteRequest = function(opt_data) {
+proto.api.v1.PrepareVoteResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PrepareVoteRequest, jspb.Message);
+goog.inherits(proto.api.v1.PrepareVoteResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PrepareVoteRequest.displayName = 'proto.api.PrepareVoteRequest';
+  proto.api.v1.PrepareVoteResponse.displayName = 'proto.api.v1.PrepareVoteResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2157,16 +2575,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PrepareVoteResponse = function(opt_data) {
+proto.api.v1.PrepareLiquidityProvisionRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PrepareVoteResponse, jspb.Message);
+goog.inherits(proto.api.v1.PrepareLiquidityProvisionRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PrepareVoteResponse.displayName = 'proto.api.PrepareVoteResponse';
+  proto.api.v1.PrepareLiquidityProvisionRequest.displayName = 'proto.api.v1.PrepareLiquidityProvisionRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2178,16 +2596,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PrepareLiquidityProvisionRequest = function(opt_data) {
+proto.api.v1.PrepareLiquidityProvisionResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PrepareLiquidityProvisionRequest, jspb.Message);
+goog.inherits(proto.api.v1.PrepareLiquidityProvisionResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PrepareLiquidityProvisionRequest.displayName = 'proto.api.PrepareLiquidityProvisionRequest';
+  proto.api.v1.PrepareLiquidityProvisionResponse.displayName = 'proto.api.v1.PrepareLiquidityProvisionResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2199,16 +2617,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.PrepareLiquidityProvisionResponse = function(opt_data) {
+proto.api.v1.OrderByIDRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.PrepareLiquidityProvisionResponse, jspb.Message);
+goog.inherits(proto.api.v1.OrderByIDRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.PrepareLiquidityProvisionResponse.displayName = 'proto.api.PrepareLiquidityProvisionResponse';
+  proto.api.v1.OrderByIDRequest.displayName = 'proto.api.v1.OrderByIDRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2220,16 +2638,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.OrderByIDRequest = function(opt_data) {
+proto.api.v1.OrderByIDResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.OrderByIDRequest, jspb.Message);
+goog.inherits(proto.api.v1.OrderByIDResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.OrderByIDRequest.displayName = 'proto.api.OrderByIDRequest';
+  proto.api.v1.OrderByIDResponse.displayName = 'proto.api.v1.OrderByIDResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2241,16 +2659,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.OrderVersionsByIDRequest = function(opt_data) {
+proto.api.v1.OrderVersionsByIDRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.OrderVersionsByIDRequest, jspb.Message);
+goog.inherits(proto.api.v1.OrderVersionsByIDRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.OrderVersionsByIDRequest.displayName = 'proto.api.OrderVersionsByIDRequest';
+  proto.api.v1.OrderVersionsByIDRequest.displayName = 'proto.api.v1.OrderVersionsByIDRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2262,16 +2680,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.OrderVersionsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.OrderVersionsResponse.repeatedFields_, null);
+proto.api.v1.OrderVersionsByIDResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.OrderVersionsByIDResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.OrderVersionsResponse, jspb.Message);
+goog.inherits(proto.api.v1.OrderVersionsByIDResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.OrderVersionsResponse.displayName = 'proto.api.OrderVersionsResponse';
+  proto.api.v1.OrderVersionsByIDResponse.displayName = 'proto.api.v1.OrderVersionsByIDResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2283,16 +2701,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.EstimateFeeRequest = function(opt_data) {
+proto.api.v1.EstimateFeeRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.EstimateFeeRequest, jspb.Message);
+goog.inherits(proto.api.v1.EstimateFeeRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.EstimateFeeRequest.displayName = 'proto.api.EstimateFeeRequest';
+  proto.api.v1.EstimateFeeRequest.displayName = 'proto.api.v1.EstimateFeeRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2304,16 +2722,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.EstimateFeeResponse = function(opt_data) {
+proto.api.v1.EstimateFeeResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.EstimateFeeResponse, jspb.Message);
+goog.inherits(proto.api.v1.EstimateFeeResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.EstimateFeeResponse.displayName = 'proto.api.EstimateFeeResponse';
+  proto.api.v1.EstimateFeeResponse.displayName = 'proto.api.v1.EstimateFeeResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2325,16 +2743,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.EstimateMarginRequest = function(opt_data) {
+proto.api.v1.EstimateMarginRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.EstimateMarginRequest, jspb.Message);
+goog.inherits(proto.api.v1.EstimateMarginRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.EstimateMarginRequest.displayName = 'proto.api.EstimateMarginRequest';
+  proto.api.v1.EstimateMarginRequest.displayName = 'proto.api.v1.EstimateMarginRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2346,16 +2764,58 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.EstimateMarginResponse = function(opt_data) {
+proto.api.v1.EstimateMarginResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.v1.EstimateMarginResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.EstimateMarginResponse.displayName = 'proto.api.v1.EstimateMarginResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.ObserveEventBusRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.ObserveEventBusRequest.repeatedFields_, null);
+};
+goog.inherits(proto.api.v1.ObserveEventBusRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.api.v1.ObserveEventBusRequest.displayName = 'proto.api.v1.ObserveEventBusRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.v1.ObserveEventBusResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.ObserveEventBusResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.EstimateMarginResponse, jspb.Message);
+goog.inherits(proto.api.v1.ObserveEventBusResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.EstimateMarginResponse.displayName = 'proto.api.EstimateMarginResponse';
+  proto.api.v1.ObserveEventBusResponse.displayName = 'proto.api.v1.ObserveEventBusResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2367,16 +2827,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.ObserveEventsRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.ObserveEventsRequest.repeatedFields_, null);
+proto.api.v1.StatisticsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.ObserveEventsRequest, jspb.Message);
+goog.inherits(proto.api.v1.StatisticsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.ObserveEventsRequest.displayName = 'proto.api.ObserveEventsRequest';
+  proto.api.v1.StatisticsRequest.displayName = 'proto.api.v1.StatisticsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2388,16 +2848,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.ObserveEventsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.ObserveEventsResponse.repeatedFields_, null);
+proto.api.v1.StatisticsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.ObserveEventsResponse, jspb.Message);
+goog.inherits(proto.api.v1.StatisticsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.ObserveEventsResponse.displayName = 'proto.api.ObserveEventsResponse';
+  proto.api.v1.StatisticsResponse.displayName = 'proto.api.v1.StatisticsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2409,16 +2869,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.WithdrawalsRequest = function(opt_data) {
+proto.api.v1.WithdrawalsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.WithdrawalsRequest, jspb.Message);
+goog.inherits(proto.api.v1.WithdrawalsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.WithdrawalsRequest.displayName = 'proto.api.WithdrawalsRequest';
+  proto.api.v1.WithdrawalsRequest.displayName = 'proto.api.v1.WithdrawalsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2430,16 +2890,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.WithdrawalsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.WithdrawalsResponse.repeatedFields_, null);
+proto.api.v1.WithdrawalsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.WithdrawalsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.WithdrawalsResponse, jspb.Message);
+goog.inherits(proto.api.v1.WithdrawalsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.WithdrawalsResponse.displayName = 'proto.api.WithdrawalsResponse';
+  proto.api.v1.WithdrawalsResponse.displayName = 'proto.api.v1.WithdrawalsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2451,16 +2911,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.WithdrawalRequest = function(opt_data) {
+proto.api.v1.WithdrawalRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.WithdrawalRequest, jspb.Message);
+goog.inherits(proto.api.v1.WithdrawalRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.WithdrawalRequest.displayName = 'proto.api.WithdrawalRequest';
+  proto.api.v1.WithdrawalRequest.displayName = 'proto.api.v1.WithdrawalRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2472,16 +2932,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.WithdrawalResponse = function(opt_data) {
+proto.api.v1.WithdrawalResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.WithdrawalResponse, jspb.Message);
+goog.inherits(proto.api.v1.WithdrawalResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.WithdrawalResponse.displayName = 'proto.api.WithdrawalResponse';
+  proto.api.v1.WithdrawalResponse.displayName = 'proto.api.v1.WithdrawalResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2493,16 +2953,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.ERC20WithdrawalApprovalRequest = function(opt_data) {
+proto.api.v1.ERC20WithdrawalApprovalRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.ERC20WithdrawalApprovalRequest, jspb.Message);
+goog.inherits(proto.api.v1.ERC20WithdrawalApprovalRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.ERC20WithdrawalApprovalRequest.displayName = 'proto.api.ERC20WithdrawalApprovalRequest';
+  proto.api.v1.ERC20WithdrawalApprovalRequest.displayName = 'proto.api.v1.ERC20WithdrawalApprovalRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2514,16 +2974,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.ERC20WithdrawalApprovalResponse = function(opt_data) {
+proto.api.v1.ERC20WithdrawalApprovalResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.ERC20WithdrawalApprovalResponse, jspb.Message);
+goog.inherits(proto.api.v1.ERC20WithdrawalApprovalResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.ERC20WithdrawalApprovalResponse.displayName = 'proto.api.ERC20WithdrawalApprovalResponse';
+  proto.api.v1.ERC20WithdrawalApprovalResponse.displayName = 'proto.api.v1.ERC20WithdrawalApprovalResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2535,16 +2995,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.DepositsRequest = function(opt_data) {
+proto.api.v1.DepositsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.DepositsRequest, jspb.Message);
+goog.inherits(proto.api.v1.DepositsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.DepositsRequest.displayName = 'proto.api.DepositsRequest';
+  proto.api.v1.DepositsRequest.displayName = 'proto.api.v1.DepositsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2556,16 +3016,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.DepositsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.DepositsResponse.repeatedFields_, null);
+proto.api.v1.DepositsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.DepositsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.DepositsResponse, jspb.Message);
+goog.inherits(proto.api.v1.DepositsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.DepositsResponse.displayName = 'proto.api.DepositsResponse';
+  proto.api.v1.DepositsResponse.displayName = 'proto.api.v1.DepositsResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2577,16 +3037,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.DepositRequest = function(opt_data) {
+proto.api.v1.DepositRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.DepositRequest, jspb.Message);
+goog.inherits(proto.api.v1.DepositRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.DepositRequest.displayName = 'proto.api.DepositRequest';
+  proto.api.v1.DepositRequest.displayName = 'proto.api.v1.DepositRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2598,16 +3058,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.DepositResponse = function(opt_data) {
+proto.api.v1.DepositResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.DepositResponse, jspb.Message);
+goog.inherits(proto.api.v1.DepositResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.DepositResponse.displayName = 'proto.api.DepositResponse';
+  proto.api.v1.DepositResponse.displayName = 'proto.api.v1.DepositResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2619,16 +3079,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.NetworkParametersRequest = function(opt_data) {
+proto.api.v1.NetworkParametersRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.NetworkParametersRequest, jspb.Message);
+goog.inherits(proto.api.v1.NetworkParametersRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.NetworkParametersRequest.displayName = 'proto.api.NetworkParametersRequest';
+  proto.api.v1.NetworkParametersRequest.displayName = 'proto.api.v1.NetworkParametersRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2640,16 +3100,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.NetworkParametersResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.NetworkParametersResponse.repeatedFields_, null);
+proto.api.v1.NetworkParametersResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.NetworkParametersResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.NetworkParametersResponse, jspb.Message);
+goog.inherits(proto.api.v1.NetworkParametersResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.NetworkParametersResponse.displayName = 'proto.api.NetworkParametersResponse';
+  proto.api.v1.NetworkParametersResponse.displayName = 'proto.api.v1.NetworkParametersResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2661,16 +3121,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.LiquidityProvisionsRequest = function(opt_data) {
+proto.api.v1.LiquidityProvisionsRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.LiquidityProvisionsRequest, jspb.Message);
+goog.inherits(proto.api.v1.LiquidityProvisionsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.LiquidityProvisionsRequest.displayName = 'proto.api.LiquidityProvisionsRequest';
+  proto.api.v1.LiquidityProvisionsRequest.displayName = 'proto.api.v1.LiquidityProvisionsRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2682,16 +3142,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.LiquidityProvisionsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.LiquidityProvisionsResponse.repeatedFields_, null);
+proto.api.v1.LiquidityProvisionsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.v1.LiquidityProvisionsResponse.repeatedFields_, null);
 };
-goog.inherits(proto.api.LiquidityProvisionsResponse, jspb.Message);
+goog.inherits(proto.api.v1.LiquidityProvisionsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.api.LiquidityProvisionsResponse.displayName = 'proto.api.LiquidityProvisionsResponse';
+  proto.api.v1.LiquidityProvisionsResponse.displayName = 'proto.api.v1.LiquidityProvisionsResponse';
 }
 
 
@@ -2709,8 +3169,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PropagateChainEventRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PropagateChainEventRequest.toObject(opt_includeInstance, this);
+proto.api.v1.PropagateChainEventRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PropagateChainEventRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -2719,14 +3179,14 @@ proto.api.PropagateChainEventRequest.prototype.toObject = function(opt_includeIn
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PropagateChainEventRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.PropagateChainEventRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PropagateChainEventRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.PropagateChainEventRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     evt: (f = msg.getEvt()) && chain_events_pb.ChainEvent.toObject(includeInstance, f),
-    pubkey: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    pubKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
     signature: msg.getSignature_asB64()
   };
 
@@ -2741,23 +3201,23 @@ proto.api.PropagateChainEventRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PropagateChainEventRequest}
+ * @return {!proto.api.v1.PropagateChainEventRequest}
  */
-proto.api.PropagateChainEventRequest.deserializeBinary = function(bytes) {
+proto.api.v1.PropagateChainEventRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PropagateChainEventRequest;
-  return proto.api.PropagateChainEventRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PropagateChainEventRequest;
+  return proto.api.v1.PropagateChainEventRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PropagateChainEventRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PropagateChainEventRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PropagateChainEventRequest}
+ * @return {!proto.api.v1.PropagateChainEventRequest}
  */
-proto.api.PropagateChainEventRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PropagateChainEventRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2771,7 +3231,7 @@ proto.api.PropagateChainEventRequest.deserializeBinaryFromReader = function(msg,
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPubkey(value);
+      msg.setPubKey(value);
       break;
     case 3:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
@@ -2790,9 +3250,9 @@ proto.api.PropagateChainEventRequest.deserializeBinaryFromReader = function(msg,
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PropagateChainEventRequest.prototype.serializeBinary = function() {
+proto.api.v1.PropagateChainEventRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PropagateChainEventRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PropagateChainEventRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2800,11 +3260,11 @@ proto.api.PropagateChainEventRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PropagateChainEventRequest} message
+ * @param {!proto.api.v1.PropagateChainEventRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PropagateChainEventRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PropagateChainEventRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getEvt();
   if (f != null) {
@@ -2814,7 +3274,7 @@ proto.api.PropagateChainEventRequest.serializeBinaryToWriter = function(message,
       chain_events_pb.ChainEvent.serializeBinaryToWriter
     );
   }
-  f = message.getPubkey();
+  f = message.getPubKey();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -2835,7 +3295,7 @@ proto.api.PropagateChainEventRequest.serializeBinaryToWriter = function(message,
  * optional vega.ChainEvent evt = 1;
  * @return {?proto.vega.ChainEvent}
  */
-proto.api.PropagateChainEventRequest.prototype.getEvt = function() {
+proto.api.v1.PropagateChainEventRequest.prototype.getEvt = function() {
   return /** @type{?proto.vega.ChainEvent} */ (
     jspb.Message.getWrapperField(this, chain_events_pb.ChainEvent, 1));
 };
@@ -2843,18 +3303,18 @@ proto.api.PropagateChainEventRequest.prototype.getEvt = function() {
 
 /**
  * @param {?proto.vega.ChainEvent|undefined} value
- * @return {!proto.api.PropagateChainEventRequest} returns this
+ * @return {!proto.api.v1.PropagateChainEventRequest} returns this
 */
-proto.api.PropagateChainEventRequest.prototype.setEvt = function(value) {
+proto.api.v1.PropagateChainEventRequest.prototype.setEvt = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.PropagateChainEventRequest} returns this
+ * @return {!proto.api.v1.PropagateChainEventRequest} returns this
  */
-proto.api.PropagateChainEventRequest.prototype.clearEvt = function() {
+proto.api.v1.PropagateChainEventRequest.prototype.clearEvt = function() {
   return this.setEvt(undefined);
 };
 
@@ -2863,25 +3323,25 @@ proto.api.PropagateChainEventRequest.prototype.clearEvt = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.PropagateChainEventRequest.prototype.hasEvt = function() {
+proto.api.v1.PropagateChainEventRequest.prototype.hasEvt = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string pubKey = 2;
+ * optional string pub_key = 2;
  * @return {string}
  */
-proto.api.PropagateChainEventRequest.prototype.getPubkey = function() {
+proto.api.v1.PropagateChainEventRequest.prototype.getPubKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.PropagateChainEventRequest} returns this
+ * @return {!proto.api.v1.PropagateChainEventRequest} returns this
  */
-proto.api.PropagateChainEventRequest.prototype.setPubkey = function(value) {
+proto.api.v1.PropagateChainEventRequest.prototype.setPubKey = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -2890,7 +3350,7 @@ proto.api.PropagateChainEventRequest.prototype.setPubkey = function(value) {
  * optional bytes signature = 3;
  * @return {!(string|Uint8Array)}
  */
-proto.api.PropagateChainEventRequest.prototype.getSignature = function() {
+proto.api.v1.PropagateChainEventRequest.prototype.getSignature = function() {
   return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -2900,7 +3360,7 @@ proto.api.PropagateChainEventRequest.prototype.getSignature = function() {
  * This is a type-conversion wrapper around `getSignature()`
  * @return {string}
  */
-proto.api.PropagateChainEventRequest.prototype.getSignature_asB64 = function() {
+proto.api.v1.PropagateChainEventRequest.prototype.getSignature_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
       this.getSignature()));
 };
@@ -2913,7 +3373,7 @@ proto.api.PropagateChainEventRequest.prototype.getSignature_asB64 = function() {
  * This is a type-conversion wrapper around `getSignature()`
  * @return {!Uint8Array}
  */
-proto.api.PropagateChainEventRequest.prototype.getSignature_asU8 = function() {
+proto.api.v1.PropagateChainEventRequest.prototype.getSignature_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
       this.getSignature()));
 };
@@ -2921,9 +3381,9 @@ proto.api.PropagateChainEventRequest.prototype.getSignature_asU8 = function() {
 
 /**
  * @param {!(string|Uint8Array)} value
- * @return {!proto.api.PropagateChainEventRequest} returns this
+ * @return {!proto.api.v1.PropagateChainEventRequest} returns this
  */
-proto.api.PropagateChainEventRequest.prototype.setSignature = function(value) {
+proto.api.v1.PropagateChainEventRequest.prototype.setSignature = function(value) {
   return jspb.Message.setProto3BytesField(this, 3, value);
 };
 
@@ -2944,8 +3404,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PropagateChainEventResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PropagateChainEventResponse.toObject(opt_includeInstance, this);
+proto.api.v1.PropagateChainEventResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PropagateChainEventResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -2954,11 +3414,11 @@ proto.api.PropagateChainEventResponse.prototype.toObject = function(opt_includeI
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PropagateChainEventResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.PropagateChainEventResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PropagateChainEventResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.PropagateChainEventResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     success: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
@@ -2974,23 +3434,23 @@ proto.api.PropagateChainEventResponse.toObject = function(includeInstance, msg) 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PropagateChainEventResponse}
+ * @return {!proto.api.v1.PropagateChainEventResponse}
  */
-proto.api.PropagateChainEventResponse.deserializeBinary = function(bytes) {
+proto.api.v1.PropagateChainEventResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PropagateChainEventResponse;
-  return proto.api.PropagateChainEventResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PropagateChainEventResponse;
+  return proto.api.v1.PropagateChainEventResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PropagateChainEventResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PropagateChainEventResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PropagateChainEventResponse}
+ * @return {!proto.api.v1.PropagateChainEventResponse}
  */
-proto.api.PropagateChainEventResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PropagateChainEventResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3014,9 +3474,9 @@ proto.api.PropagateChainEventResponse.deserializeBinaryFromReader = function(msg
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PropagateChainEventResponse.prototype.serializeBinary = function() {
+proto.api.v1.PropagateChainEventResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PropagateChainEventResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PropagateChainEventResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3024,11 +3484,11 @@ proto.api.PropagateChainEventResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PropagateChainEventResponse} message
+ * @param {!proto.api.v1.PropagateChainEventResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PropagateChainEventResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PropagateChainEventResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSuccess();
   if (f) {
@@ -3044,16 +3504,16 @@ proto.api.PropagateChainEventResponse.serializeBinaryToWriter = function(message
  * optional bool success = 1;
  * @return {boolean}
  */
-proto.api.PropagateChainEventResponse.prototype.getSuccess = function() {
+proto.api.v1.PropagateChainEventResponse.prototype.getSuccess = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.api.PropagateChainEventResponse} returns this
+ * @return {!proto.api.v1.PropagateChainEventResponse} returns this
  */
-proto.api.PropagateChainEventResponse.prototype.setSuccess = function(value) {
+proto.api.v1.PropagateChainEventResponse.prototype.setSuccess = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
@@ -3074,8 +3534,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.SubmitTransactionRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.SubmitTransactionRequest.toObject(opt_includeInstance, this);
+proto.api.v1.SubmitTransactionRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.SubmitTransactionRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -3084,11 +3544,11 @@ proto.api.SubmitTransactionRequest.prototype.toObject = function(opt_includeInst
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.SubmitTransactionRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.SubmitTransactionRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.SubmitTransactionRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.SubmitTransactionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     tx: (f = msg.getTx()) && vega_pb.SignedBundle.toObject(includeInstance, f),
     type: jspb.Message.getFieldWithDefault(msg, 2, 0)
@@ -3105,23 +3565,23 @@ proto.api.SubmitTransactionRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.SubmitTransactionRequest}
+ * @return {!proto.api.v1.SubmitTransactionRequest}
  */
-proto.api.SubmitTransactionRequest.deserializeBinary = function(bytes) {
+proto.api.v1.SubmitTransactionRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.SubmitTransactionRequest;
-  return proto.api.SubmitTransactionRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.SubmitTransactionRequest;
+  return proto.api.v1.SubmitTransactionRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.SubmitTransactionRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.SubmitTransactionRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.SubmitTransactionRequest}
+ * @return {!proto.api.v1.SubmitTransactionRequest}
  */
-proto.api.SubmitTransactionRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.SubmitTransactionRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3134,7 +3594,7 @@ proto.api.SubmitTransactionRequest.deserializeBinaryFromReader = function(msg, r
       msg.setTx(value);
       break;
     case 2:
-      var value = /** @type {!proto.api.SubmitTransactionRequest.Type} */ (reader.readEnum());
+      var value = /** @type {!proto.api.v1.SubmitTransactionRequest.Type} */ (reader.readEnum());
       msg.setType(value);
       break;
     default:
@@ -3150,9 +3610,9 @@ proto.api.SubmitTransactionRequest.deserializeBinaryFromReader = function(msg, r
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.SubmitTransactionRequest.prototype.serializeBinary = function() {
+proto.api.v1.SubmitTransactionRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.SubmitTransactionRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.SubmitTransactionRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3160,11 +3620,11 @@ proto.api.SubmitTransactionRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.SubmitTransactionRequest} message
+ * @param {!proto.api.v1.SubmitTransactionRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.SubmitTransactionRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.SubmitTransactionRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTx();
   if (f != null) {
@@ -3187,7 +3647,7 @@ proto.api.SubmitTransactionRequest.serializeBinaryToWriter = function(message, w
 /**
  * @enum {number}
  */
-proto.api.SubmitTransactionRequest.Type = {
+proto.api.v1.SubmitTransactionRequest.Type = {
   TYPE_UNSPECIFIED: 0,
   TYPE_ASYNC: 1,
   TYPE_SYNC: 2,
@@ -3198,7 +3658,7 @@ proto.api.SubmitTransactionRequest.Type = {
  * optional vega.SignedBundle tx = 1;
  * @return {?proto.vega.SignedBundle}
  */
-proto.api.SubmitTransactionRequest.prototype.getTx = function() {
+proto.api.v1.SubmitTransactionRequest.prototype.getTx = function() {
   return /** @type{?proto.vega.SignedBundle} */ (
     jspb.Message.getWrapperField(this, vega_pb.SignedBundle, 1));
 };
@@ -3206,18 +3666,18 @@ proto.api.SubmitTransactionRequest.prototype.getTx = function() {
 
 /**
  * @param {?proto.vega.SignedBundle|undefined} value
- * @return {!proto.api.SubmitTransactionRequest} returns this
+ * @return {!proto.api.v1.SubmitTransactionRequest} returns this
 */
-proto.api.SubmitTransactionRequest.prototype.setTx = function(value) {
+proto.api.v1.SubmitTransactionRequest.prototype.setTx = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.SubmitTransactionRequest} returns this
+ * @return {!proto.api.v1.SubmitTransactionRequest} returns this
  */
-proto.api.SubmitTransactionRequest.prototype.clearTx = function() {
+proto.api.v1.SubmitTransactionRequest.prototype.clearTx = function() {
   return this.setTx(undefined);
 };
 
@@ -3226,25 +3686,25 @@ proto.api.SubmitTransactionRequest.prototype.clearTx = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.SubmitTransactionRequest.prototype.hasTx = function() {
+proto.api.v1.SubmitTransactionRequest.prototype.hasTx = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
  * optional Type type = 2;
- * @return {!proto.api.SubmitTransactionRequest.Type}
+ * @return {!proto.api.v1.SubmitTransactionRequest.Type}
  */
-proto.api.SubmitTransactionRequest.prototype.getType = function() {
-  return /** @type {!proto.api.SubmitTransactionRequest.Type} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+proto.api.v1.SubmitTransactionRequest.prototype.getType = function() {
+  return /** @type {!proto.api.v1.SubmitTransactionRequest.Type} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {!proto.api.SubmitTransactionRequest.Type} value
- * @return {!proto.api.SubmitTransactionRequest} returns this
+ * @param {!proto.api.v1.SubmitTransactionRequest.Type} value
+ * @return {!proto.api.v1.SubmitTransactionRequest} returns this
  */
-proto.api.SubmitTransactionRequest.prototype.setType = function(value) {
+proto.api.v1.SubmitTransactionRequest.prototype.setType = function(value) {
   return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
@@ -3265,8 +3725,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.SubmitTransactionResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.SubmitTransactionResponse.toObject(opt_includeInstance, this);
+proto.api.v1.SubmitTransactionResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.SubmitTransactionResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -3275,11 +3735,11 @@ proto.api.SubmitTransactionResponse.prototype.toObject = function(opt_includeIns
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.SubmitTransactionResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.SubmitTransactionResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.SubmitTransactionResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.SubmitTransactionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     success: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
@@ -3295,23 +3755,23 @@ proto.api.SubmitTransactionResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.SubmitTransactionResponse}
+ * @return {!proto.api.v1.SubmitTransactionResponse}
  */
-proto.api.SubmitTransactionResponse.deserializeBinary = function(bytes) {
+proto.api.v1.SubmitTransactionResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.SubmitTransactionResponse;
-  return proto.api.SubmitTransactionResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.SubmitTransactionResponse;
+  return proto.api.v1.SubmitTransactionResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.SubmitTransactionResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.SubmitTransactionResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.SubmitTransactionResponse}
+ * @return {!proto.api.v1.SubmitTransactionResponse}
  */
-proto.api.SubmitTransactionResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.SubmitTransactionResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3335,9 +3795,9 @@ proto.api.SubmitTransactionResponse.deserializeBinaryFromReader = function(msg, 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.SubmitTransactionResponse.prototype.serializeBinary = function() {
+proto.api.v1.SubmitTransactionResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.SubmitTransactionResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.SubmitTransactionResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3345,11 +3805,11 @@ proto.api.SubmitTransactionResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.SubmitTransactionResponse} message
+ * @param {!proto.api.v1.SubmitTransactionResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.SubmitTransactionResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.SubmitTransactionResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSuccess();
   if (f) {
@@ -3365,16 +3825,16 @@ proto.api.SubmitTransactionResponse.serializeBinaryToWriter = function(message, 
  * optional bool success = 1;
  * @return {boolean}
  */
-proto.api.SubmitTransactionResponse.prototype.getSuccess = function() {
+proto.api.v1.SubmitTransactionResponse.prototype.getSuccess = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.api.SubmitTransactionResponse} returns this
+ * @return {!proto.api.v1.SubmitTransactionResponse} returns this
  */
-proto.api.SubmitTransactionResponse.prototype.setSuccess = function(value) {
+proto.api.v1.SubmitTransactionResponse.prototype.setSuccess = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
@@ -3395,8 +3855,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PrepareWithdrawRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PrepareWithdrawRequest.toObject(opt_includeInstance, this);
+proto.api.v1.PrepareWithdrawRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PrepareWithdrawRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -3405,11 +3865,11 @@ proto.api.PrepareWithdrawRequest.prototype.toObject = function(opt_includeInstan
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PrepareWithdrawRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.PrepareWithdrawRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareWithdrawRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.PrepareWithdrawRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     withdraw: (f = msg.getWithdraw()) && vega_pb.WithdrawSubmission.toObject(includeInstance, f)
   };
@@ -3425,23 +3885,23 @@ proto.api.PrepareWithdrawRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PrepareWithdrawRequest}
+ * @return {!proto.api.v1.PrepareWithdrawRequest}
  */
-proto.api.PrepareWithdrawRequest.deserializeBinary = function(bytes) {
+proto.api.v1.PrepareWithdrawRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PrepareWithdrawRequest;
-  return proto.api.PrepareWithdrawRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PrepareWithdrawRequest;
+  return proto.api.v1.PrepareWithdrawRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PrepareWithdrawRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PrepareWithdrawRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PrepareWithdrawRequest}
+ * @return {!proto.api.v1.PrepareWithdrawRequest}
  */
-proto.api.PrepareWithdrawRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PrepareWithdrawRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3466,9 +3926,9 @@ proto.api.PrepareWithdrawRequest.deserializeBinaryFromReader = function(msg, rea
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PrepareWithdrawRequest.prototype.serializeBinary = function() {
+proto.api.v1.PrepareWithdrawRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PrepareWithdrawRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PrepareWithdrawRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3476,11 +3936,11 @@ proto.api.PrepareWithdrawRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PrepareWithdrawRequest} message
+ * @param {!proto.api.v1.PrepareWithdrawRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareWithdrawRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PrepareWithdrawRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getWithdraw();
   if (f != null) {
@@ -3497,7 +3957,7 @@ proto.api.PrepareWithdrawRequest.serializeBinaryToWriter = function(message, wri
  * optional vega.WithdrawSubmission withdraw = 1;
  * @return {?proto.vega.WithdrawSubmission}
  */
-proto.api.PrepareWithdrawRequest.prototype.getWithdraw = function() {
+proto.api.v1.PrepareWithdrawRequest.prototype.getWithdraw = function() {
   return /** @type{?proto.vega.WithdrawSubmission} */ (
     jspb.Message.getWrapperField(this, vega_pb.WithdrawSubmission, 1));
 };
@@ -3505,18 +3965,18 @@ proto.api.PrepareWithdrawRequest.prototype.getWithdraw = function() {
 
 /**
  * @param {?proto.vega.WithdrawSubmission|undefined} value
- * @return {!proto.api.PrepareWithdrawRequest} returns this
+ * @return {!proto.api.v1.PrepareWithdrawRequest} returns this
 */
-proto.api.PrepareWithdrawRequest.prototype.setWithdraw = function(value) {
+proto.api.v1.PrepareWithdrawRequest.prototype.setWithdraw = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.PrepareWithdrawRequest} returns this
+ * @return {!proto.api.v1.PrepareWithdrawRequest} returns this
  */
-proto.api.PrepareWithdrawRequest.prototype.clearWithdraw = function() {
+proto.api.v1.PrepareWithdrawRequest.prototype.clearWithdraw = function() {
   return this.setWithdraw(undefined);
 };
 
@@ -3525,7 +3985,7 @@ proto.api.PrepareWithdrawRequest.prototype.clearWithdraw = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.PrepareWithdrawRequest.prototype.hasWithdraw = function() {
+proto.api.v1.PrepareWithdrawRequest.prototype.hasWithdraw = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -3546,8 +4006,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PrepareWithdrawResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PrepareWithdrawResponse.toObject(opt_includeInstance, this);
+proto.api.v1.PrepareWithdrawResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PrepareWithdrawResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -3556,11 +4016,11 @@ proto.api.PrepareWithdrawResponse.prototype.toObject = function(opt_includeInsta
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PrepareWithdrawResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.PrepareWithdrawResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareWithdrawResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.PrepareWithdrawResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     blob: msg.getBlob_asB64()
   };
@@ -3576,23 +4036,23 @@ proto.api.PrepareWithdrawResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PrepareWithdrawResponse}
+ * @return {!proto.api.v1.PrepareWithdrawResponse}
  */
-proto.api.PrepareWithdrawResponse.deserializeBinary = function(bytes) {
+proto.api.v1.PrepareWithdrawResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PrepareWithdrawResponse;
-  return proto.api.PrepareWithdrawResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PrepareWithdrawResponse;
+  return proto.api.v1.PrepareWithdrawResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PrepareWithdrawResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PrepareWithdrawResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PrepareWithdrawResponse}
+ * @return {!proto.api.v1.PrepareWithdrawResponse}
  */
-proto.api.PrepareWithdrawResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PrepareWithdrawResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3616,9 +4076,9 @@ proto.api.PrepareWithdrawResponse.deserializeBinaryFromReader = function(msg, re
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PrepareWithdrawResponse.prototype.serializeBinary = function() {
+proto.api.v1.PrepareWithdrawResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PrepareWithdrawResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PrepareWithdrawResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3626,11 +4086,11 @@ proto.api.PrepareWithdrawResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PrepareWithdrawResponse} message
+ * @param {!proto.api.v1.PrepareWithdrawResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareWithdrawResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PrepareWithdrawResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getBlob_asU8();
   if (f.length > 0) {
@@ -3646,7 +4106,7 @@ proto.api.PrepareWithdrawResponse.serializeBinaryToWriter = function(message, wr
  * optional bytes blob = 1;
  * @return {!(string|Uint8Array)}
  */
-proto.api.PrepareWithdrawResponse.prototype.getBlob = function() {
+proto.api.v1.PrepareWithdrawResponse.prototype.getBlob = function() {
   return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -3656,7 +4116,7 @@ proto.api.PrepareWithdrawResponse.prototype.getBlob = function() {
  * This is a type-conversion wrapper around `getBlob()`
  * @return {string}
  */
-proto.api.PrepareWithdrawResponse.prototype.getBlob_asB64 = function() {
+proto.api.v1.PrepareWithdrawResponse.prototype.getBlob_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
       this.getBlob()));
 };
@@ -3669,7 +4129,7 @@ proto.api.PrepareWithdrawResponse.prototype.getBlob_asB64 = function() {
  * This is a type-conversion wrapper around `getBlob()`
  * @return {!Uint8Array}
  */
-proto.api.PrepareWithdrawResponse.prototype.getBlob_asU8 = function() {
+proto.api.v1.PrepareWithdrawResponse.prototype.getBlob_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
       this.getBlob()));
 };
@@ -3677,9 +4137,9 @@ proto.api.PrepareWithdrawResponse.prototype.getBlob_asU8 = function() {
 
 /**
  * @param {!(string|Uint8Array)} value
- * @return {!proto.api.PrepareWithdrawResponse} returns this
+ * @return {!proto.api.v1.PrepareWithdrawResponse} returns this
  */
-proto.api.PrepareWithdrawResponse.prototype.setBlob = function(value) {
+proto.api.v1.PrepareWithdrawResponse.prototype.setBlob = function(value) {
   return jspb.Message.setProto3BytesField(this, 1, value);
 };
 
@@ -3700,8 +4160,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PrepareSubmitOrderResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PrepareSubmitOrderResponse.toObject(opt_includeInstance, this);
+proto.api.v1.PrepareSubmitOrderResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PrepareSubmitOrderResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -3710,14 +4170,14 @@ proto.api.PrepareSubmitOrderResponse.prototype.toObject = function(opt_includeIn
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PrepareSubmitOrderResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.PrepareSubmitOrderResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareSubmitOrderResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.PrepareSubmitOrderResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     blob: msg.getBlob_asB64(),
-    submitid: jspb.Message.getFieldWithDefault(msg, 2, "")
+    submitId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -3731,23 +4191,23 @@ proto.api.PrepareSubmitOrderResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PrepareSubmitOrderResponse}
+ * @return {!proto.api.v1.PrepareSubmitOrderResponse}
  */
-proto.api.PrepareSubmitOrderResponse.deserializeBinary = function(bytes) {
+proto.api.v1.PrepareSubmitOrderResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PrepareSubmitOrderResponse;
-  return proto.api.PrepareSubmitOrderResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PrepareSubmitOrderResponse;
+  return proto.api.v1.PrepareSubmitOrderResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PrepareSubmitOrderResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PrepareSubmitOrderResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PrepareSubmitOrderResponse}
+ * @return {!proto.api.v1.PrepareSubmitOrderResponse}
  */
-proto.api.PrepareSubmitOrderResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PrepareSubmitOrderResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3760,7 +4220,7 @@ proto.api.PrepareSubmitOrderResponse.deserializeBinaryFromReader = function(msg,
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSubmitid(value);
+      msg.setSubmitId(value);
       break;
     default:
       reader.skipField();
@@ -3775,9 +4235,9 @@ proto.api.PrepareSubmitOrderResponse.deserializeBinaryFromReader = function(msg,
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PrepareSubmitOrderResponse.prototype.serializeBinary = function() {
+proto.api.v1.PrepareSubmitOrderResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PrepareSubmitOrderResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PrepareSubmitOrderResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3785,11 +4245,11 @@ proto.api.PrepareSubmitOrderResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PrepareSubmitOrderResponse} message
+ * @param {!proto.api.v1.PrepareSubmitOrderResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareSubmitOrderResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PrepareSubmitOrderResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getBlob_asU8();
   if (f.length > 0) {
@@ -3798,7 +4258,7 @@ proto.api.PrepareSubmitOrderResponse.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = message.getSubmitid();
+  f = message.getSubmitId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -3812,7 +4272,7 @@ proto.api.PrepareSubmitOrderResponse.serializeBinaryToWriter = function(message,
  * optional bytes blob = 1;
  * @return {!(string|Uint8Array)}
  */
-proto.api.PrepareSubmitOrderResponse.prototype.getBlob = function() {
+proto.api.v1.PrepareSubmitOrderResponse.prototype.getBlob = function() {
   return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -3822,7 +4282,7 @@ proto.api.PrepareSubmitOrderResponse.prototype.getBlob = function() {
  * This is a type-conversion wrapper around `getBlob()`
  * @return {string}
  */
-proto.api.PrepareSubmitOrderResponse.prototype.getBlob_asB64 = function() {
+proto.api.v1.PrepareSubmitOrderResponse.prototype.getBlob_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
       this.getBlob()));
 };
@@ -3835,7 +4295,7 @@ proto.api.PrepareSubmitOrderResponse.prototype.getBlob_asB64 = function() {
  * This is a type-conversion wrapper around `getBlob()`
  * @return {!Uint8Array}
  */
-proto.api.PrepareSubmitOrderResponse.prototype.getBlob_asU8 = function() {
+proto.api.v1.PrepareSubmitOrderResponse.prototype.getBlob_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
       this.getBlob()));
 };
@@ -3843,27 +4303,27 @@ proto.api.PrepareSubmitOrderResponse.prototype.getBlob_asU8 = function() {
 
 /**
  * @param {!(string|Uint8Array)} value
- * @return {!proto.api.PrepareSubmitOrderResponse} returns this
+ * @return {!proto.api.v1.PrepareSubmitOrderResponse} returns this
  */
-proto.api.PrepareSubmitOrderResponse.prototype.setBlob = function(value) {
+proto.api.v1.PrepareSubmitOrderResponse.prototype.setBlob = function(value) {
   return jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
 /**
- * optional string submitID = 2;
+ * optional string submit_id = 2;
  * @return {string}
  */
-proto.api.PrepareSubmitOrderResponse.prototype.getSubmitid = function() {
+proto.api.v1.PrepareSubmitOrderResponse.prototype.getSubmitId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.PrepareSubmitOrderResponse} returns this
+ * @return {!proto.api.v1.PrepareSubmitOrderResponse} returns this
  */
-proto.api.PrepareSubmitOrderResponse.prototype.setSubmitid = function(value) {
+proto.api.v1.PrepareSubmitOrderResponse.prototype.setSubmitId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -3884,8 +4344,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PrepareCancelOrderResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PrepareCancelOrderResponse.toObject(opt_includeInstance, this);
+proto.api.v1.PrepareCancelOrderResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PrepareCancelOrderResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -3894,11 +4354,11 @@ proto.api.PrepareCancelOrderResponse.prototype.toObject = function(opt_includeIn
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PrepareCancelOrderResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.PrepareCancelOrderResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareCancelOrderResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.PrepareCancelOrderResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     blob: msg.getBlob_asB64()
   };
@@ -3914,23 +4374,23 @@ proto.api.PrepareCancelOrderResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PrepareCancelOrderResponse}
+ * @return {!proto.api.v1.PrepareCancelOrderResponse}
  */
-proto.api.PrepareCancelOrderResponse.deserializeBinary = function(bytes) {
+proto.api.v1.PrepareCancelOrderResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PrepareCancelOrderResponse;
-  return proto.api.PrepareCancelOrderResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PrepareCancelOrderResponse;
+  return proto.api.v1.PrepareCancelOrderResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PrepareCancelOrderResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PrepareCancelOrderResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PrepareCancelOrderResponse}
+ * @return {!proto.api.v1.PrepareCancelOrderResponse}
  */
-proto.api.PrepareCancelOrderResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PrepareCancelOrderResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3954,9 +4414,9 @@ proto.api.PrepareCancelOrderResponse.deserializeBinaryFromReader = function(msg,
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PrepareCancelOrderResponse.prototype.serializeBinary = function() {
+proto.api.v1.PrepareCancelOrderResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PrepareCancelOrderResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PrepareCancelOrderResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -3964,11 +4424,11 @@ proto.api.PrepareCancelOrderResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PrepareCancelOrderResponse} message
+ * @param {!proto.api.v1.PrepareCancelOrderResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareCancelOrderResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PrepareCancelOrderResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getBlob_asU8();
   if (f.length > 0) {
@@ -3984,7 +4444,7 @@ proto.api.PrepareCancelOrderResponse.serializeBinaryToWriter = function(message,
  * optional bytes blob = 1;
  * @return {!(string|Uint8Array)}
  */
-proto.api.PrepareCancelOrderResponse.prototype.getBlob = function() {
+proto.api.v1.PrepareCancelOrderResponse.prototype.getBlob = function() {
   return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -3994,7 +4454,7 @@ proto.api.PrepareCancelOrderResponse.prototype.getBlob = function() {
  * This is a type-conversion wrapper around `getBlob()`
  * @return {string}
  */
-proto.api.PrepareCancelOrderResponse.prototype.getBlob_asB64 = function() {
+proto.api.v1.PrepareCancelOrderResponse.prototype.getBlob_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
       this.getBlob()));
 };
@@ -4007,7 +4467,7 @@ proto.api.PrepareCancelOrderResponse.prototype.getBlob_asB64 = function() {
  * This is a type-conversion wrapper around `getBlob()`
  * @return {!Uint8Array}
  */
-proto.api.PrepareCancelOrderResponse.prototype.getBlob_asU8 = function() {
+proto.api.v1.PrepareCancelOrderResponse.prototype.getBlob_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
       this.getBlob()));
 };
@@ -4015,9 +4475,9 @@ proto.api.PrepareCancelOrderResponse.prototype.getBlob_asU8 = function() {
 
 /**
  * @param {!(string|Uint8Array)} value
- * @return {!proto.api.PrepareCancelOrderResponse} returns this
+ * @return {!proto.api.v1.PrepareCancelOrderResponse} returns this
  */
-proto.api.PrepareCancelOrderResponse.prototype.setBlob = function(value) {
+proto.api.v1.PrepareCancelOrderResponse.prototype.setBlob = function(value) {
   return jspb.Message.setProto3BytesField(this, 1, value);
 };
 
@@ -4038,8 +4498,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PrepareAmendOrderResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PrepareAmendOrderResponse.toObject(opt_includeInstance, this);
+proto.api.v1.PrepareAmendOrderResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PrepareAmendOrderResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -4048,11 +4508,11 @@ proto.api.PrepareAmendOrderResponse.prototype.toObject = function(opt_includeIns
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PrepareAmendOrderResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.PrepareAmendOrderResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareAmendOrderResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.PrepareAmendOrderResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     blob: msg.getBlob_asB64()
   };
@@ -4068,23 +4528,23 @@ proto.api.PrepareAmendOrderResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PrepareAmendOrderResponse}
+ * @return {!proto.api.v1.PrepareAmendOrderResponse}
  */
-proto.api.PrepareAmendOrderResponse.deserializeBinary = function(bytes) {
+proto.api.v1.PrepareAmendOrderResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PrepareAmendOrderResponse;
-  return proto.api.PrepareAmendOrderResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PrepareAmendOrderResponse;
+  return proto.api.v1.PrepareAmendOrderResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PrepareAmendOrderResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PrepareAmendOrderResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PrepareAmendOrderResponse}
+ * @return {!proto.api.v1.PrepareAmendOrderResponse}
  */
-proto.api.PrepareAmendOrderResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PrepareAmendOrderResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4108,9 +4568,9 @@ proto.api.PrepareAmendOrderResponse.deserializeBinaryFromReader = function(msg, 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PrepareAmendOrderResponse.prototype.serializeBinary = function() {
+proto.api.v1.PrepareAmendOrderResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PrepareAmendOrderResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PrepareAmendOrderResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4118,11 +4578,11 @@ proto.api.PrepareAmendOrderResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PrepareAmendOrderResponse} message
+ * @param {!proto.api.v1.PrepareAmendOrderResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareAmendOrderResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PrepareAmendOrderResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getBlob_asU8();
   if (f.length > 0) {
@@ -4138,7 +4598,7 @@ proto.api.PrepareAmendOrderResponse.serializeBinaryToWriter = function(message, 
  * optional bytes blob = 1;
  * @return {!(string|Uint8Array)}
  */
-proto.api.PrepareAmendOrderResponse.prototype.getBlob = function() {
+proto.api.v1.PrepareAmendOrderResponse.prototype.getBlob = function() {
   return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -4148,7 +4608,7 @@ proto.api.PrepareAmendOrderResponse.prototype.getBlob = function() {
  * This is a type-conversion wrapper around `getBlob()`
  * @return {string}
  */
-proto.api.PrepareAmendOrderResponse.prototype.getBlob_asB64 = function() {
+proto.api.v1.PrepareAmendOrderResponse.prototype.getBlob_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
       this.getBlob()));
 };
@@ -4161,7 +4621,7 @@ proto.api.PrepareAmendOrderResponse.prototype.getBlob_asB64 = function() {
  * This is a type-conversion wrapper around `getBlob()`
  * @return {!Uint8Array}
  */
-proto.api.PrepareAmendOrderResponse.prototype.getBlob_asU8 = function() {
+proto.api.v1.PrepareAmendOrderResponse.prototype.getBlob_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
       this.getBlob()));
 };
@@ -4169,9 +4629,9 @@ proto.api.PrepareAmendOrderResponse.prototype.getBlob_asU8 = function() {
 
 /**
  * @param {!(string|Uint8Array)} value
- * @return {!proto.api.PrepareAmendOrderResponse} returns this
+ * @return {!proto.api.v1.PrepareAmendOrderResponse} returns this
  */
-proto.api.PrepareAmendOrderResponse.prototype.setBlob = function(value) {
+proto.api.v1.PrepareAmendOrderResponse.prototype.setBlob = function(value) {
   return jspb.Message.setProto3BytesField(this, 1, value);
 };
 
@@ -4192,8 +4652,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.SubmitOrderRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.SubmitOrderRequest.toObject(opt_includeInstance, this);
+proto.api.v1.PrepareSubmitOrderRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PrepareSubmitOrderRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -4202,11 +4662,11 @@ proto.api.SubmitOrderRequest.prototype.toObject = function(opt_includeInstance) 
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.SubmitOrderRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.PrepareSubmitOrderRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.SubmitOrderRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.PrepareSubmitOrderRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     submission: (f = msg.getSubmission()) && vega_pb.OrderSubmission.toObject(includeInstance, f)
   };
@@ -4222,23 +4682,23 @@ proto.api.SubmitOrderRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.SubmitOrderRequest}
+ * @return {!proto.api.v1.PrepareSubmitOrderRequest}
  */
-proto.api.SubmitOrderRequest.deserializeBinary = function(bytes) {
+proto.api.v1.PrepareSubmitOrderRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.SubmitOrderRequest;
-  return proto.api.SubmitOrderRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PrepareSubmitOrderRequest;
+  return proto.api.v1.PrepareSubmitOrderRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.SubmitOrderRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PrepareSubmitOrderRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.SubmitOrderRequest}
+ * @return {!proto.api.v1.PrepareSubmitOrderRequest}
  */
-proto.api.SubmitOrderRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PrepareSubmitOrderRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4263,9 +4723,9 @@ proto.api.SubmitOrderRequest.deserializeBinaryFromReader = function(msg, reader)
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.SubmitOrderRequest.prototype.serializeBinary = function() {
+proto.api.v1.PrepareSubmitOrderRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.SubmitOrderRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PrepareSubmitOrderRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4273,11 +4733,11 @@ proto.api.SubmitOrderRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.SubmitOrderRequest} message
+ * @param {!proto.api.v1.PrepareSubmitOrderRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.SubmitOrderRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PrepareSubmitOrderRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSubmission();
   if (f != null) {
@@ -4294,7 +4754,7 @@ proto.api.SubmitOrderRequest.serializeBinaryToWriter = function(message, writer)
  * optional vega.OrderSubmission submission = 1;
  * @return {?proto.vega.OrderSubmission}
  */
-proto.api.SubmitOrderRequest.prototype.getSubmission = function() {
+proto.api.v1.PrepareSubmitOrderRequest.prototype.getSubmission = function() {
   return /** @type{?proto.vega.OrderSubmission} */ (
     jspb.Message.getWrapperField(this, vega_pb.OrderSubmission, 1));
 };
@@ -4302,18 +4762,18 @@ proto.api.SubmitOrderRequest.prototype.getSubmission = function() {
 
 /**
  * @param {?proto.vega.OrderSubmission|undefined} value
- * @return {!proto.api.SubmitOrderRequest} returns this
+ * @return {!proto.api.v1.PrepareSubmitOrderRequest} returns this
 */
-proto.api.SubmitOrderRequest.prototype.setSubmission = function(value) {
+proto.api.v1.PrepareSubmitOrderRequest.prototype.setSubmission = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.SubmitOrderRequest} returns this
+ * @return {!proto.api.v1.PrepareSubmitOrderRequest} returns this
  */
-proto.api.SubmitOrderRequest.prototype.clearSubmission = function() {
+proto.api.v1.PrepareSubmitOrderRequest.prototype.clearSubmission = function() {
   return this.setSubmission(undefined);
 };
 
@@ -4322,7 +4782,7 @@ proto.api.SubmitOrderRequest.prototype.clearSubmission = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.SubmitOrderRequest.prototype.hasSubmission = function() {
+proto.api.v1.PrepareSubmitOrderRequest.prototype.hasSubmission = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -4343,8 +4803,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.CancelOrderRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.CancelOrderRequest.toObject(opt_includeInstance, this);
+proto.api.v1.PrepareCancelOrderRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PrepareCancelOrderRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -4353,11 +4813,11 @@ proto.api.CancelOrderRequest.prototype.toObject = function(opt_includeInstance) 
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.CancelOrderRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.PrepareCancelOrderRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.CancelOrderRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.PrepareCancelOrderRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     cancellation: (f = msg.getCancellation()) && vega_pb.OrderCancellation.toObject(includeInstance, f)
   };
@@ -4373,23 +4833,23 @@ proto.api.CancelOrderRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.CancelOrderRequest}
+ * @return {!proto.api.v1.PrepareCancelOrderRequest}
  */
-proto.api.CancelOrderRequest.deserializeBinary = function(bytes) {
+proto.api.v1.PrepareCancelOrderRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.CancelOrderRequest;
-  return proto.api.CancelOrderRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PrepareCancelOrderRequest;
+  return proto.api.v1.PrepareCancelOrderRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.CancelOrderRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PrepareCancelOrderRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.CancelOrderRequest}
+ * @return {!proto.api.v1.PrepareCancelOrderRequest}
  */
-proto.api.CancelOrderRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PrepareCancelOrderRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4414,9 +4874,9 @@ proto.api.CancelOrderRequest.deserializeBinaryFromReader = function(msg, reader)
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.CancelOrderRequest.prototype.serializeBinary = function() {
+proto.api.v1.PrepareCancelOrderRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.CancelOrderRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PrepareCancelOrderRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4424,11 +4884,11 @@ proto.api.CancelOrderRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.CancelOrderRequest} message
+ * @param {!proto.api.v1.PrepareCancelOrderRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.CancelOrderRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PrepareCancelOrderRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getCancellation();
   if (f != null) {
@@ -4445,7 +4905,7 @@ proto.api.CancelOrderRequest.serializeBinaryToWriter = function(message, writer)
  * optional vega.OrderCancellation cancellation = 1;
  * @return {?proto.vega.OrderCancellation}
  */
-proto.api.CancelOrderRequest.prototype.getCancellation = function() {
+proto.api.v1.PrepareCancelOrderRequest.prototype.getCancellation = function() {
   return /** @type{?proto.vega.OrderCancellation} */ (
     jspb.Message.getWrapperField(this, vega_pb.OrderCancellation, 1));
 };
@@ -4453,18 +4913,18 @@ proto.api.CancelOrderRequest.prototype.getCancellation = function() {
 
 /**
  * @param {?proto.vega.OrderCancellation|undefined} value
- * @return {!proto.api.CancelOrderRequest} returns this
+ * @return {!proto.api.v1.PrepareCancelOrderRequest} returns this
 */
-proto.api.CancelOrderRequest.prototype.setCancellation = function(value) {
+proto.api.v1.PrepareCancelOrderRequest.prototype.setCancellation = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.CancelOrderRequest} returns this
+ * @return {!proto.api.v1.PrepareCancelOrderRequest} returns this
  */
-proto.api.CancelOrderRequest.prototype.clearCancellation = function() {
+proto.api.v1.PrepareCancelOrderRequest.prototype.clearCancellation = function() {
   return this.setCancellation(undefined);
 };
 
@@ -4473,7 +4933,7 @@ proto.api.CancelOrderRequest.prototype.clearCancellation = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.CancelOrderRequest.prototype.hasCancellation = function() {
+proto.api.v1.PrepareCancelOrderRequest.prototype.hasCancellation = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -4494,8 +4954,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.AmendOrderRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.AmendOrderRequest.toObject(opt_includeInstance, this);
+proto.api.v1.PrepareAmendOrderRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PrepareAmendOrderRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -4504,11 +4964,11 @@ proto.api.AmendOrderRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.AmendOrderRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.PrepareAmendOrderRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.AmendOrderRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.PrepareAmendOrderRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     amendment: (f = msg.getAmendment()) && vega_pb.OrderAmendment.toObject(includeInstance, f)
   };
@@ -4524,23 +4984,23 @@ proto.api.AmendOrderRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.AmendOrderRequest}
+ * @return {!proto.api.v1.PrepareAmendOrderRequest}
  */
-proto.api.AmendOrderRequest.deserializeBinary = function(bytes) {
+proto.api.v1.PrepareAmendOrderRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.AmendOrderRequest;
-  return proto.api.AmendOrderRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PrepareAmendOrderRequest;
+  return proto.api.v1.PrepareAmendOrderRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.AmendOrderRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PrepareAmendOrderRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.AmendOrderRequest}
+ * @return {!proto.api.v1.PrepareAmendOrderRequest}
  */
-proto.api.AmendOrderRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PrepareAmendOrderRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4565,9 +5025,9 @@ proto.api.AmendOrderRequest.deserializeBinaryFromReader = function(msg, reader) 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.AmendOrderRequest.prototype.serializeBinary = function() {
+proto.api.v1.PrepareAmendOrderRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.AmendOrderRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PrepareAmendOrderRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4575,11 +5035,11 @@ proto.api.AmendOrderRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.AmendOrderRequest} message
+ * @param {!proto.api.v1.PrepareAmendOrderRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.AmendOrderRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PrepareAmendOrderRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAmendment();
   if (f != null) {
@@ -4596,7 +5056,7 @@ proto.api.AmendOrderRequest.serializeBinaryToWriter = function(message, writer) 
  * optional vega.OrderAmendment amendment = 1;
  * @return {?proto.vega.OrderAmendment}
  */
-proto.api.AmendOrderRequest.prototype.getAmendment = function() {
+proto.api.v1.PrepareAmendOrderRequest.prototype.getAmendment = function() {
   return /** @type{?proto.vega.OrderAmendment} */ (
     jspb.Message.getWrapperField(this, vega_pb.OrderAmendment, 1));
 };
@@ -4604,18 +5064,18 @@ proto.api.AmendOrderRequest.prototype.getAmendment = function() {
 
 /**
  * @param {?proto.vega.OrderAmendment|undefined} value
- * @return {!proto.api.AmendOrderRequest} returns this
+ * @return {!proto.api.v1.PrepareAmendOrderRequest} returns this
 */
-proto.api.AmendOrderRequest.prototype.setAmendment = function(value) {
+proto.api.v1.PrepareAmendOrderRequest.prototype.setAmendment = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.AmendOrderRequest} returns this
+ * @return {!proto.api.v1.PrepareAmendOrderRequest} returns this
  */
-proto.api.AmendOrderRequest.prototype.clearAmendment = function() {
+proto.api.v1.PrepareAmendOrderRequest.prototype.clearAmendment = function() {
   return this.setAmendment(undefined);
 };
 
@@ -4624,7 +5084,7 @@ proto.api.AmendOrderRequest.prototype.clearAmendment = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.AmendOrderRequest.prototype.hasAmendment = function() {
+proto.api.v1.PrepareAmendOrderRequest.prototype.hasAmendment = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -4645,8 +5105,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.AssetsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.AssetsRequest.toObject(opt_includeInstance, this);
+proto.api.v1.AssetsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.AssetsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -4655,11 +5115,11 @@ proto.api.AssetsRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.AssetsRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.AssetsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.AssetsRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.AssetsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -4675,23 +5135,23 @@ proto.api.AssetsRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.AssetsRequest}
+ * @return {!proto.api.v1.AssetsRequest}
  */
-proto.api.AssetsRequest.deserializeBinary = function(bytes) {
+proto.api.v1.AssetsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.AssetsRequest;
-  return proto.api.AssetsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.AssetsRequest;
+  return proto.api.v1.AssetsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.AssetsRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.AssetsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.AssetsRequest}
+ * @return {!proto.api.v1.AssetsRequest}
  */
-proto.api.AssetsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.AssetsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4711,9 +5171,9 @@ proto.api.AssetsRequest.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.AssetsRequest.prototype.serializeBinary = function() {
+proto.api.v1.AssetsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.AssetsRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.AssetsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4721,11 +5181,11 @@ proto.api.AssetsRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.AssetsRequest} message
+ * @param {!proto.api.v1.AssetsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.AssetsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.AssetsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -4736,7 +5196,7 @@ proto.api.AssetsRequest.serializeBinaryToWriter = function(message, writer) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.AssetsResponse.repeatedFields_ = [1];
+proto.api.v1.AssetsResponse.repeatedFields_ = [1];
 
 
 
@@ -4753,8 +5213,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.AssetsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.AssetsResponse.toObject(opt_includeInstance, this);
+proto.api.v1.AssetsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.AssetsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -4763,11 +5223,11 @@ proto.api.AssetsResponse.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.AssetsResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.AssetsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.AssetsResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.AssetsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     assetsList: jspb.Message.toObjectList(msg.getAssetsList(),
     assets_pb.Asset.toObject, includeInstance)
@@ -4784,23 +5244,23 @@ proto.api.AssetsResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.AssetsResponse}
+ * @return {!proto.api.v1.AssetsResponse}
  */
-proto.api.AssetsResponse.deserializeBinary = function(bytes) {
+proto.api.v1.AssetsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.AssetsResponse;
-  return proto.api.AssetsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.AssetsResponse;
+  return proto.api.v1.AssetsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.AssetsResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.AssetsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.AssetsResponse}
+ * @return {!proto.api.v1.AssetsResponse}
  */
-proto.api.AssetsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.AssetsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4825,9 +5285,9 @@ proto.api.AssetsResponse.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.AssetsResponse.prototype.serializeBinary = function() {
+proto.api.v1.AssetsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.AssetsResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.AssetsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4835,11 +5295,11 @@ proto.api.AssetsResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.AssetsResponse} message
+ * @param {!proto.api.v1.AssetsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.AssetsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.AssetsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAssetsList();
   if (f.length > 0) {
@@ -4856,7 +5316,7 @@ proto.api.AssetsResponse.serializeBinaryToWriter = function(message, writer) {
  * repeated vega.Asset assets = 1;
  * @return {!Array<!proto.vega.Asset>}
  */
-proto.api.AssetsResponse.prototype.getAssetsList = function() {
+proto.api.v1.AssetsResponse.prototype.getAssetsList = function() {
   return /** @type{!Array<!proto.vega.Asset>} */ (
     jspb.Message.getRepeatedWrapperField(this, assets_pb.Asset, 1));
 };
@@ -4864,9 +5324,9 @@ proto.api.AssetsResponse.prototype.getAssetsList = function() {
 
 /**
  * @param {!Array<!proto.vega.Asset>} value
- * @return {!proto.api.AssetsResponse} returns this
+ * @return {!proto.api.v1.AssetsResponse} returns this
 */
-proto.api.AssetsResponse.prototype.setAssetsList = function(value) {
+proto.api.v1.AssetsResponse.prototype.setAssetsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -4876,16 +5336,16 @@ proto.api.AssetsResponse.prototype.setAssetsList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Asset}
  */
-proto.api.AssetsResponse.prototype.addAssets = function(opt_value, opt_index) {
+proto.api.v1.AssetsResponse.prototype.addAssets = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Asset, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.AssetsResponse} returns this
+ * @return {!proto.api.v1.AssetsResponse} returns this
  */
-proto.api.AssetsResponse.prototype.clearAssetsList = function() {
+proto.api.v1.AssetsResponse.prototype.clearAssetsList = function() {
   return this.setAssetsList([]);
 };
 
@@ -4906,8 +5366,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.AssetByIDRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.AssetByIDRequest.toObject(opt_includeInstance, this);
+proto.api.v1.AssetByIDRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.AssetByIDRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -4916,11 +5376,11 @@ proto.api.AssetByIDRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.AssetByIDRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.AssetByIDRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.AssetByIDRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.AssetByIDRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
@@ -4936,23 +5396,23 @@ proto.api.AssetByIDRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.AssetByIDRequest}
+ * @return {!proto.api.v1.AssetByIDRequest}
  */
-proto.api.AssetByIDRequest.deserializeBinary = function(bytes) {
+proto.api.v1.AssetByIDRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.AssetByIDRequest;
-  return proto.api.AssetByIDRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.AssetByIDRequest;
+  return proto.api.v1.AssetByIDRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.AssetByIDRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.AssetByIDRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.AssetByIDRequest}
+ * @return {!proto.api.v1.AssetByIDRequest}
  */
-proto.api.AssetByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.AssetByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4976,9 +5436,9 @@ proto.api.AssetByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.AssetByIDRequest.prototype.serializeBinary = function() {
+proto.api.v1.AssetByIDRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.AssetByIDRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.AssetByIDRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4986,11 +5446,11 @@ proto.api.AssetByIDRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.AssetByIDRequest} message
+ * @param {!proto.api.v1.AssetByIDRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.AssetByIDRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.AssetByIDRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
   if (f.length > 0) {
@@ -5003,19 +5463,19 @@ proto.api.AssetByIDRequest.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string ID = 1;
+ * optional string id = 1;
  * @return {string}
  */
-proto.api.AssetByIDRequest.prototype.getId = function() {
+proto.api.v1.AssetByIDRequest.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.AssetByIDRequest} returns this
+ * @return {!proto.api.v1.AssetByIDRequest} returns this
  */
-proto.api.AssetByIDRequest.prototype.setId = function(value) {
+proto.api.v1.AssetByIDRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -5036,8 +5496,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.AssetByIDResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.AssetByIDResponse.toObject(opt_includeInstance, this);
+proto.api.v1.AssetByIDResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.AssetByIDResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -5046,11 +5506,11 @@ proto.api.AssetByIDResponse.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.AssetByIDResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.AssetByIDResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.AssetByIDResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.AssetByIDResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     asset: (f = msg.getAsset()) && assets_pb.Asset.toObject(includeInstance, f)
   };
@@ -5066,23 +5526,23 @@ proto.api.AssetByIDResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.AssetByIDResponse}
+ * @return {!proto.api.v1.AssetByIDResponse}
  */
-proto.api.AssetByIDResponse.deserializeBinary = function(bytes) {
+proto.api.v1.AssetByIDResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.AssetByIDResponse;
-  return proto.api.AssetByIDResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.AssetByIDResponse;
+  return proto.api.v1.AssetByIDResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.AssetByIDResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.AssetByIDResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.AssetByIDResponse}
+ * @return {!proto.api.v1.AssetByIDResponse}
  */
-proto.api.AssetByIDResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.AssetByIDResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -5107,9 +5567,9 @@ proto.api.AssetByIDResponse.deserializeBinaryFromReader = function(msg, reader) 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.AssetByIDResponse.prototype.serializeBinary = function() {
+proto.api.v1.AssetByIDResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.AssetByIDResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.AssetByIDResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -5117,11 +5577,11 @@ proto.api.AssetByIDResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.AssetByIDResponse} message
+ * @param {!proto.api.v1.AssetByIDResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.AssetByIDResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.AssetByIDResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAsset();
   if (f != null) {
@@ -5138,7 +5598,7 @@ proto.api.AssetByIDResponse.serializeBinaryToWriter = function(message, writer) 
  * optional vega.Asset asset = 1;
  * @return {?proto.vega.Asset}
  */
-proto.api.AssetByIDResponse.prototype.getAsset = function() {
+proto.api.v1.AssetByIDResponse.prototype.getAsset = function() {
   return /** @type{?proto.vega.Asset} */ (
     jspb.Message.getWrapperField(this, assets_pb.Asset, 1));
 };
@@ -5146,18 +5606,18 @@ proto.api.AssetByIDResponse.prototype.getAsset = function() {
 
 /**
  * @param {?proto.vega.Asset|undefined} value
- * @return {!proto.api.AssetByIDResponse} returns this
+ * @return {!proto.api.v1.AssetByIDResponse} returns this
 */
-proto.api.AssetByIDResponse.prototype.setAsset = function(value) {
+proto.api.v1.AssetByIDResponse.prototype.setAsset = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.AssetByIDResponse} returns this
+ * @return {!proto.api.v1.AssetByIDResponse} returns this
  */
-proto.api.AssetByIDResponse.prototype.clearAsset = function() {
+proto.api.v1.AssetByIDResponse.prototype.clearAsset = function() {
   return this.setAsset(undefined);
 };
 
@@ -5166,7 +5626,7 @@ proto.api.AssetByIDResponse.prototype.clearAsset = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.AssetByIDResponse.prototype.hasAsset = function() {
+proto.api.v1.AssetByIDResponse.prototype.hasAsset = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -5187,8 +5647,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetNodeSignaturesAggregateRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetNodeSignaturesAggregateRequest.toObject(opt_includeInstance, this);
+proto.api.v1.GetNodeSignaturesAggregateRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetNodeSignaturesAggregateRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -5197,11 +5657,11 @@ proto.api.GetNodeSignaturesAggregateRequest.prototype.toObject = function(opt_in
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetNodeSignaturesAggregateRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetNodeSignaturesAggregateRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetNodeSignaturesAggregateRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.GetNodeSignaturesAggregateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
@@ -5217,23 +5677,23 @@ proto.api.GetNodeSignaturesAggregateRequest.toObject = function(includeInstance,
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetNodeSignaturesAggregateRequest}
+ * @return {!proto.api.v1.GetNodeSignaturesAggregateRequest}
  */
-proto.api.GetNodeSignaturesAggregateRequest.deserializeBinary = function(bytes) {
+proto.api.v1.GetNodeSignaturesAggregateRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetNodeSignaturesAggregateRequest;
-  return proto.api.GetNodeSignaturesAggregateRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetNodeSignaturesAggregateRequest;
+  return proto.api.v1.GetNodeSignaturesAggregateRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetNodeSignaturesAggregateRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetNodeSignaturesAggregateRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetNodeSignaturesAggregateRequest}
+ * @return {!proto.api.v1.GetNodeSignaturesAggregateRequest}
  */
-proto.api.GetNodeSignaturesAggregateRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetNodeSignaturesAggregateRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -5257,9 +5717,9 @@ proto.api.GetNodeSignaturesAggregateRequest.deserializeBinaryFromReader = functi
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetNodeSignaturesAggregateRequest.prototype.serializeBinary = function() {
+proto.api.v1.GetNodeSignaturesAggregateRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetNodeSignaturesAggregateRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetNodeSignaturesAggregateRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -5267,11 +5727,11 @@ proto.api.GetNodeSignaturesAggregateRequest.prototype.serializeBinary = function
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetNodeSignaturesAggregateRequest} message
+ * @param {!proto.api.v1.GetNodeSignaturesAggregateRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetNodeSignaturesAggregateRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetNodeSignaturesAggregateRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
   if (f.length > 0) {
@@ -5284,19 +5744,19 @@ proto.api.GetNodeSignaturesAggregateRequest.serializeBinaryToWriter = function(m
 
 
 /**
- * optional string ID = 1;
+ * optional string id = 1;
  * @return {string}
  */
-proto.api.GetNodeSignaturesAggregateRequest.prototype.getId = function() {
+proto.api.v1.GetNodeSignaturesAggregateRequest.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.GetNodeSignaturesAggregateRequest} returns this
+ * @return {!proto.api.v1.GetNodeSignaturesAggregateRequest} returns this
  */
-proto.api.GetNodeSignaturesAggregateRequest.prototype.setId = function(value) {
+proto.api.v1.GetNodeSignaturesAggregateRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -5307,7 +5767,7 @@ proto.api.GetNodeSignaturesAggregateRequest.prototype.setId = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.GetNodeSignaturesAggregateResponse.repeatedFields_ = [1];
+proto.api.v1.GetNodeSignaturesAggregateResponse.repeatedFields_ = [1];
 
 
 
@@ -5324,8 +5784,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetNodeSignaturesAggregateResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetNodeSignaturesAggregateResponse.toObject(opt_includeInstance, this);
+proto.api.v1.GetNodeSignaturesAggregateResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetNodeSignaturesAggregateResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -5334,11 +5794,11 @@ proto.api.GetNodeSignaturesAggregateResponse.prototype.toObject = function(opt_i
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetNodeSignaturesAggregateResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetNodeSignaturesAggregateResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetNodeSignaturesAggregateResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.GetNodeSignaturesAggregateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     signaturesList: jspb.Message.toObjectList(msg.getSignaturesList(),
     vega_pb.NodeSignature.toObject, includeInstance)
@@ -5355,23 +5815,23 @@ proto.api.GetNodeSignaturesAggregateResponse.toObject = function(includeInstance
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetNodeSignaturesAggregateResponse}
+ * @return {!proto.api.v1.GetNodeSignaturesAggregateResponse}
  */
-proto.api.GetNodeSignaturesAggregateResponse.deserializeBinary = function(bytes) {
+proto.api.v1.GetNodeSignaturesAggregateResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetNodeSignaturesAggregateResponse;
-  return proto.api.GetNodeSignaturesAggregateResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetNodeSignaturesAggregateResponse;
+  return proto.api.v1.GetNodeSignaturesAggregateResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetNodeSignaturesAggregateResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetNodeSignaturesAggregateResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetNodeSignaturesAggregateResponse}
+ * @return {!proto.api.v1.GetNodeSignaturesAggregateResponse}
  */
-proto.api.GetNodeSignaturesAggregateResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetNodeSignaturesAggregateResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -5396,9 +5856,9 @@ proto.api.GetNodeSignaturesAggregateResponse.deserializeBinaryFromReader = funct
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetNodeSignaturesAggregateResponse.prototype.serializeBinary = function() {
+proto.api.v1.GetNodeSignaturesAggregateResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetNodeSignaturesAggregateResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetNodeSignaturesAggregateResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -5406,11 +5866,11 @@ proto.api.GetNodeSignaturesAggregateResponse.prototype.serializeBinary = functio
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetNodeSignaturesAggregateResponse} message
+ * @param {!proto.api.v1.GetNodeSignaturesAggregateResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetNodeSignaturesAggregateResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetNodeSignaturesAggregateResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSignaturesList();
   if (f.length > 0) {
@@ -5427,7 +5887,7 @@ proto.api.GetNodeSignaturesAggregateResponse.serializeBinaryToWriter = function(
  * repeated vega.NodeSignature signatures = 1;
  * @return {!Array<!proto.vega.NodeSignature>}
  */
-proto.api.GetNodeSignaturesAggregateResponse.prototype.getSignaturesList = function() {
+proto.api.v1.GetNodeSignaturesAggregateResponse.prototype.getSignaturesList = function() {
   return /** @type{!Array<!proto.vega.NodeSignature>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.NodeSignature, 1));
 };
@@ -5435,9 +5895,9 @@ proto.api.GetNodeSignaturesAggregateResponse.prototype.getSignaturesList = funct
 
 /**
  * @param {!Array<!proto.vega.NodeSignature>} value
- * @return {!proto.api.GetNodeSignaturesAggregateResponse} returns this
+ * @return {!proto.api.v1.GetNodeSignaturesAggregateResponse} returns this
 */
-proto.api.GetNodeSignaturesAggregateResponse.prototype.setSignaturesList = function(value) {
+proto.api.v1.GetNodeSignaturesAggregateResponse.prototype.setSignaturesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -5447,16 +5907,16 @@ proto.api.GetNodeSignaturesAggregateResponse.prototype.setSignaturesList = funct
  * @param {number=} opt_index
  * @return {!proto.vega.NodeSignature}
  */
-proto.api.GetNodeSignaturesAggregateResponse.prototype.addSignatures = function(opt_value, opt_index) {
+proto.api.v1.GetNodeSignaturesAggregateResponse.prototype.addSignatures = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.NodeSignature, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.GetNodeSignaturesAggregateResponse} returns this
+ * @return {!proto.api.v1.GetNodeSignaturesAggregateResponse} returns this
  */
-proto.api.GetNodeSignaturesAggregateResponse.prototype.clearSignaturesList = function() {
+proto.api.v1.GetNodeSignaturesAggregateResponse.prototype.clearSignaturesList = function() {
   return this.setSignaturesList([]);
 };
 
@@ -5477,8 +5937,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.OptionalProposalState.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.OptionalProposalState.toObject(opt_includeInstance, this);
+proto.api.v1.OptionalProposalState.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.OptionalProposalState.toObject(opt_includeInstance, this);
 };
 
 
@@ -5487,11 +5947,11 @@ proto.api.OptionalProposalState.prototype.toObject = function(opt_includeInstanc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.OptionalProposalState} msg The msg instance to transform.
+ * @param {!proto.api.v1.OptionalProposalState} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OptionalProposalState.toObject = function(includeInstance, msg) {
+proto.api.v1.OptionalProposalState.toObject = function(includeInstance, msg) {
   var f, obj = {
     value: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
@@ -5507,23 +5967,23 @@ proto.api.OptionalProposalState.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.OptionalProposalState}
+ * @return {!proto.api.v1.OptionalProposalState}
  */
-proto.api.OptionalProposalState.deserializeBinary = function(bytes) {
+proto.api.v1.OptionalProposalState.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.OptionalProposalState;
-  return proto.api.OptionalProposalState.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.OptionalProposalState;
+  return proto.api.v1.OptionalProposalState.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.OptionalProposalState} msg The message object to deserialize into.
+ * @param {!proto.api.v1.OptionalProposalState} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.OptionalProposalState}
+ * @return {!proto.api.v1.OptionalProposalState}
  */
-proto.api.OptionalProposalState.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.OptionalProposalState.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -5547,9 +6007,9 @@ proto.api.OptionalProposalState.deserializeBinaryFromReader = function(msg, read
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.OptionalProposalState.prototype.serializeBinary = function() {
+proto.api.v1.OptionalProposalState.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.OptionalProposalState.serializeBinaryToWriter(this, writer);
+  proto.api.v1.OptionalProposalState.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -5557,11 +6017,11 @@ proto.api.OptionalProposalState.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.OptionalProposalState} message
+ * @param {!proto.api.v1.OptionalProposalState} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OptionalProposalState.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.OptionalProposalState.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getValue();
   if (f !== 0.0) {
@@ -5577,16 +6037,16 @@ proto.api.OptionalProposalState.serializeBinaryToWriter = function(message, writ
  * optional vega.Proposal.State value = 1;
  * @return {!proto.vega.Proposal.State}
  */
-proto.api.OptionalProposalState.prototype.getValue = function() {
+proto.api.v1.OptionalProposalState.prototype.getValue = function() {
   return /** @type {!proto.vega.Proposal.State} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
  * @param {!proto.vega.Proposal.State} value
- * @return {!proto.api.OptionalProposalState} returns this
+ * @return {!proto.api.v1.OptionalProposalState} returns this
  */
-proto.api.OptionalProposalState.prototype.setValue = function(value) {
+proto.api.v1.OptionalProposalState.prototype.setValue = function(value) {
   return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
@@ -5607,8 +6067,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetProposalsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetProposalsRequest.toObject(opt_includeInstance, this);
+proto.api.v1.GetProposalsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetProposalsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -5617,13 +6077,13 @@ proto.api.GetProposalsRequest.prototype.toObject = function(opt_includeInstance)
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetProposalsRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetProposalsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalsRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.GetProposalsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    selectinstate: (f = msg.getSelectinstate()) && proto.api.OptionalProposalState.toObject(includeInstance, f)
+    selectInState: (f = msg.getSelectInState()) && proto.api.v1.OptionalProposalState.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5637,23 +6097,23 @@ proto.api.GetProposalsRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetProposalsRequest}
+ * @return {!proto.api.v1.GetProposalsRequest}
  */
-proto.api.GetProposalsRequest.deserializeBinary = function(bytes) {
+proto.api.v1.GetProposalsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetProposalsRequest;
-  return proto.api.GetProposalsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetProposalsRequest;
+  return proto.api.v1.GetProposalsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetProposalsRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetProposalsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetProposalsRequest}
+ * @return {!proto.api.v1.GetProposalsRequest}
  */
-proto.api.GetProposalsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetProposalsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -5661,9 +6121,9 @@ proto.api.GetProposalsRequest.deserializeBinaryFromReader = function(msg, reader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.api.OptionalProposalState;
-      reader.readMessage(value,proto.api.OptionalProposalState.deserializeBinaryFromReader);
-      msg.setSelectinstate(value);
+      var value = new proto.api.v1.OptionalProposalState;
+      reader.readMessage(value,proto.api.v1.OptionalProposalState.deserializeBinaryFromReader);
+      msg.setSelectInState(value);
       break;
     default:
       reader.skipField();
@@ -5678,9 +6138,9 @@ proto.api.GetProposalsRequest.deserializeBinaryFromReader = function(msg, reader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetProposalsRequest.prototype.serializeBinary = function() {
+proto.api.v1.GetProposalsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetProposalsRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetProposalsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -5688,48 +6148,48 @@ proto.api.GetProposalsRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetProposalsRequest} message
+ * @param {!proto.api.v1.GetProposalsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetProposalsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSelectinstate();
+  f = message.getSelectInState();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      proto.api.OptionalProposalState.serializeBinaryToWriter
+      proto.api.v1.OptionalProposalState.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional OptionalProposalState selectInState = 1;
- * @return {?proto.api.OptionalProposalState}
+ * optional OptionalProposalState select_in_state = 1;
+ * @return {?proto.api.v1.OptionalProposalState}
  */
-proto.api.GetProposalsRequest.prototype.getSelectinstate = function() {
-  return /** @type{?proto.api.OptionalProposalState} */ (
-    jspb.Message.getWrapperField(this, proto.api.OptionalProposalState, 1));
+proto.api.v1.GetProposalsRequest.prototype.getSelectInState = function() {
+  return /** @type{?proto.api.v1.OptionalProposalState} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1.OptionalProposalState, 1));
 };
 
 
 /**
- * @param {?proto.api.OptionalProposalState|undefined} value
- * @return {!proto.api.GetProposalsRequest} returns this
+ * @param {?proto.api.v1.OptionalProposalState|undefined} value
+ * @return {!proto.api.v1.GetProposalsRequest} returns this
 */
-proto.api.GetProposalsRequest.prototype.setSelectinstate = function(value) {
+proto.api.v1.GetProposalsRequest.prototype.setSelectInState = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.GetProposalsRequest} returns this
+ * @return {!proto.api.v1.GetProposalsRequest} returns this
  */
-proto.api.GetProposalsRequest.prototype.clearSelectinstate = function() {
-  return this.setSelectinstate(undefined);
+proto.api.v1.GetProposalsRequest.prototype.clearSelectInState = function() {
+  return this.setSelectInState(undefined);
 };
 
 
@@ -5737,7 +6197,7 @@ proto.api.GetProposalsRequest.prototype.clearSelectinstate = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.GetProposalsRequest.prototype.hasSelectinstate = function() {
+proto.api.v1.GetProposalsRequest.prototype.hasSelectInState = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -5748,7 +6208,7 @@ proto.api.GetProposalsRequest.prototype.hasSelectinstate = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.api.GetProposalsResponse.repeatedFields_ = [1];
+proto.api.v1.GetProposalsResponse.repeatedFields_ = [1];
 
 
 
@@ -5765,8 +6225,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetProposalsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetProposalsResponse.toObject(opt_includeInstance, this);
+proto.api.v1.GetProposalsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetProposalsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -5775,11 +6235,11 @@ proto.api.GetProposalsResponse.prototype.toObject = function(opt_includeInstance
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetProposalsResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetProposalsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalsResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.GetProposalsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     dataList: jspb.Message.toObjectList(msg.getDataList(),
     governance_pb.GovernanceData.toObject, includeInstance)
@@ -5796,23 +6256,23 @@ proto.api.GetProposalsResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetProposalsResponse}
+ * @return {!proto.api.v1.GetProposalsResponse}
  */
-proto.api.GetProposalsResponse.deserializeBinary = function(bytes) {
+proto.api.v1.GetProposalsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetProposalsResponse;
-  return proto.api.GetProposalsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetProposalsResponse;
+  return proto.api.v1.GetProposalsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetProposalsResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetProposalsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetProposalsResponse}
+ * @return {!proto.api.v1.GetProposalsResponse}
  */
-proto.api.GetProposalsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetProposalsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -5837,9 +6297,9 @@ proto.api.GetProposalsResponse.deserializeBinaryFromReader = function(msg, reade
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetProposalsResponse.prototype.serializeBinary = function() {
+proto.api.v1.GetProposalsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetProposalsResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetProposalsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -5847,11 +6307,11 @@ proto.api.GetProposalsResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetProposalsResponse} message
+ * @param {!proto.api.v1.GetProposalsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetProposalsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDataList();
   if (f.length > 0) {
@@ -5868,7 +6328,7 @@ proto.api.GetProposalsResponse.serializeBinaryToWriter = function(message, write
  * repeated vega.GovernanceData data = 1;
  * @return {!Array<!proto.vega.GovernanceData>}
  */
-proto.api.GetProposalsResponse.prototype.getDataList = function() {
+proto.api.v1.GetProposalsResponse.prototype.getDataList = function() {
   return /** @type{!Array<!proto.vega.GovernanceData>} */ (
     jspb.Message.getRepeatedWrapperField(this, governance_pb.GovernanceData, 1));
 };
@@ -5876,9 +6336,9 @@ proto.api.GetProposalsResponse.prototype.getDataList = function() {
 
 /**
  * @param {!Array<!proto.vega.GovernanceData>} value
- * @return {!proto.api.GetProposalsResponse} returns this
+ * @return {!proto.api.v1.GetProposalsResponse} returns this
 */
-proto.api.GetProposalsResponse.prototype.setDataList = function(value) {
+proto.api.v1.GetProposalsResponse.prototype.setDataList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -5888,16 +6348,16 @@ proto.api.GetProposalsResponse.prototype.setDataList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.GovernanceData}
  */
-proto.api.GetProposalsResponse.prototype.addData = function(opt_value, opt_index) {
+proto.api.v1.GetProposalsResponse.prototype.addData = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.GovernanceData, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.GetProposalsResponse} returns this
+ * @return {!proto.api.v1.GetProposalsResponse} returns this
  */
-proto.api.GetProposalsResponse.prototype.clearDataList = function() {
+proto.api.v1.GetProposalsResponse.prototype.clearDataList = function() {
   return this.setDataList([]);
 };
 
@@ -5918,8 +6378,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetProposalsByPartyRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetProposalsByPartyRequest.toObject(opt_includeInstance, this);
+proto.api.v1.GetProposalsByPartyRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetProposalsByPartyRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -5928,14 +6388,14 @@ proto.api.GetProposalsByPartyRequest.prototype.toObject = function(opt_includeIn
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetProposalsByPartyRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetProposalsByPartyRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalsByPartyRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.GetProposalsByPartyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partyid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    selectinstate: (f = msg.getSelectinstate()) && proto.api.OptionalProposalState.toObject(includeInstance, f)
+    partyId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    selectInState: (f = msg.getSelectInState()) && proto.api.v1.OptionalProposalState.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5949,23 +6409,23 @@ proto.api.GetProposalsByPartyRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetProposalsByPartyRequest}
+ * @return {!proto.api.v1.GetProposalsByPartyRequest}
  */
-proto.api.GetProposalsByPartyRequest.deserializeBinary = function(bytes) {
+proto.api.v1.GetProposalsByPartyRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetProposalsByPartyRequest;
-  return proto.api.GetProposalsByPartyRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetProposalsByPartyRequest;
+  return proto.api.v1.GetProposalsByPartyRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetProposalsByPartyRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetProposalsByPartyRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetProposalsByPartyRequest}
+ * @return {!proto.api.v1.GetProposalsByPartyRequest}
  */
-proto.api.GetProposalsByPartyRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetProposalsByPartyRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -5974,12 +6434,12 @@ proto.api.GetProposalsByPartyRequest.deserializeBinaryFromReader = function(msg,
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     case 2:
-      var value = new proto.api.OptionalProposalState;
-      reader.readMessage(value,proto.api.OptionalProposalState.deserializeBinaryFromReader);
-      msg.setSelectinstate(value);
+      var value = new proto.api.v1.OptionalProposalState;
+      reader.readMessage(value,proto.api.v1.OptionalProposalState.deserializeBinaryFromReader);
+      msg.setSelectInState(value);
       break;
     default:
       reader.skipField();
@@ -5994,9 +6454,9 @@ proto.api.GetProposalsByPartyRequest.deserializeBinaryFromReader = function(msg,
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetProposalsByPartyRequest.prototype.serializeBinary = function() {
+proto.api.v1.GetProposalsByPartyRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetProposalsByPartyRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetProposalsByPartyRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -6004,73 +6464,73 @@ proto.api.GetProposalsByPartyRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetProposalsByPartyRequest} message
+ * @param {!proto.api.v1.GetProposalsByPartyRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalsByPartyRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetProposalsByPartyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getSelectinstate();
+  f = message.getSelectInState();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
-      proto.api.OptionalProposalState.serializeBinaryToWriter
+      proto.api.v1.OptionalProposalState.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string partyID = 1;
+ * optional string party_id = 1;
  * @return {string}
  */
-proto.api.GetProposalsByPartyRequest.prototype.getPartyid = function() {
+proto.api.v1.GetProposalsByPartyRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.GetProposalsByPartyRequest} returns this
+ * @return {!proto.api.v1.GetProposalsByPartyRequest} returns this
  */
-proto.api.GetProposalsByPartyRequest.prototype.setPartyid = function(value) {
+proto.api.v1.GetProposalsByPartyRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional OptionalProposalState selectInState = 2;
- * @return {?proto.api.OptionalProposalState}
+ * optional OptionalProposalState select_in_state = 2;
+ * @return {?proto.api.v1.OptionalProposalState}
  */
-proto.api.GetProposalsByPartyRequest.prototype.getSelectinstate = function() {
-  return /** @type{?proto.api.OptionalProposalState} */ (
-    jspb.Message.getWrapperField(this, proto.api.OptionalProposalState, 2));
+proto.api.v1.GetProposalsByPartyRequest.prototype.getSelectInState = function() {
+  return /** @type{?proto.api.v1.OptionalProposalState} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1.OptionalProposalState, 2));
 };
 
 
 /**
- * @param {?proto.api.OptionalProposalState|undefined} value
- * @return {!proto.api.GetProposalsByPartyRequest} returns this
+ * @param {?proto.api.v1.OptionalProposalState|undefined} value
+ * @return {!proto.api.v1.GetProposalsByPartyRequest} returns this
 */
-proto.api.GetProposalsByPartyRequest.prototype.setSelectinstate = function(value) {
+proto.api.v1.GetProposalsByPartyRequest.prototype.setSelectInState = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.GetProposalsByPartyRequest} returns this
+ * @return {!proto.api.v1.GetProposalsByPartyRequest} returns this
  */
-proto.api.GetProposalsByPartyRequest.prototype.clearSelectinstate = function() {
-  return this.setSelectinstate(undefined);
+proto.api.v1.GetProposalsByPartyRequest.prototype.clearSelectInState = function() {
+  return this.setSelectInState(undefined);
 };
 
 
@@ -6078,7 +6538,7 @@ proto.api.GetProposalsByPartyRequest.prototype.clearSelectinstate = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.GetProposalsByPartyRequest.prototype.hasSelectinstate = function() {
+proto.api.v1.GetProposalsByPartyRequest.prototype.hasSelectInState = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -6089,7 +6549,7 @@ proto.api.GetProposalsByPartyRequest.prototype.hasSelectinstate = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.api.GetProposalsByPartyResponse.repeatedFields_ = [1];
+proto.api.v1.GetProposalsByPartyResponse.repeatedFields_ = [1];
 
 
 
@@ -6106,8 +6566,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetProposalsByPartyResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetProposalsByPartyResponse.toObject(opt_includeInstance, this);
+proto.api.v1.GetProposalsByPartyResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetProposalsByPartyResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -6116,11 +6576,11 @@ proto.api.GetProposalsByPartyResponse.prototype.toObject = function(opt_includeI
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetProposalsByPartyResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetProposalsByPartyResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalsByPartyResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.GetProposalsByPartyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     dataList: jspb.Message.toObjectList(msg.getDataList(),
     governance_pb.GovernanceData.toObject, includeInstance)
@@ -6137,23 +6597,23 @@ proto.api.GetProposalsByPartyResponse.toObject = function(includeInstance, msg) 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetProposalsByPartyResponse}
+ * @return {!proto.api.v1.GetProposalsByPartyResponse}
  */
-proto.api.GetProposalsByPartyResponse.deserializeBinary = function(bytes) {
+proto.api.v1.GetProposalsByPartyResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetProposalsByPartyResponse;
-  return proto.api.GetProposalsByPartyResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetProposalsByPartyResponse;
+  return proto.api.v1.GetProposalsByPartyResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetProposalsByPartyResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetProposalsByPartyResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetProposalsByPartyResponse}
+ * @return {!proto.api.v1.GetProposalsByPartyResponse}
  */
-proto.api.GetProposalsByPartyResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetProposalsByPartyResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -6178,9 +6638,9 @@ proto.api.GetProposalsByPartyResponse.deserializeBinaryFromReader = function(msg
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetProposalsByPartyResponse.prototype.serializeBinary = function() {
+proto.api.v1.GetProposalsByPartyResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetProposalsByPartyResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetProposalsByPartyResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -6188,11 +6648,11 @@ proto.api.GetProposalsByPartyResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetProposalsByPartyResponse} message
+ * @param {!proto.api.v1.GetProposalsByPartyResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalsByPartyResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetProposalsByPartyResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDataList();
   if (f.length > 0) {
@@ -6209,7 +6669,7 @@ proto.api.GetProposalsByPartyResponse.serializeBinaryToWriter = function(message
  * repeated vega.GovernanceData data = 1;
  * @return {!Array<!proto.vega.GovernanceData>}
  */
-proto.api.GetProposalsByPartyResponse.prototype.getDataList = function() {
+proto.api.v1.GetProposalsByPartyResponse.prototype.getDataList = function() {
   return /** @type{!Array<!proto.vega.GovernanceData>} */ (
     jspb.Message.getRepeatedWrapperField(this, governance_pb.GovernanceData, 1));
 };
@@ -6217,9 +6677,9 @@ proto.api.GetProposalsByPartyResponse.prototype.getDataList = function() {
 
 /**
  * @param {!Array<!proto.vega.GovernanceData>} value
- * @return {!proto.api.GetProposalsByPartyResponse} returns this
+ * @return {!proto.api.v1.GetProposalsByPartyResponse} returns this
 */
-proto.api.GetProposalsByPartyResponse.prototype.setDataList = function(value) {
+proto.api.v1.GetProposalsByPartyResponse.prototype.setDataList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -6229,16 +6689,16 @@ proto.api.GetProposalsByPartyResponse.prototype.setDataList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.GovernanceData}
  */
-proto.api.GetProposalsByPartyResponse.prototype.addData = function(opt_value, opt_index) {
+proto.api.v1.GetProposalsByPartyResponse.prototype.addData = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.GovernanceData, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.GetProposalsByPartyResponse} returns this
+ * @return {!proto.api.v1.GetProposalsByPartyResponse} returns this
  */
-proto.api.GetProposalsByPartyResponse.prototype.clearDataList = function() {
+proto.api.v1.GetProposalsByPartyResponse.prototype.clearDataList = function() {
   return this.setDataList([]);
 };
 
@@ -6259,8 +6719,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetVotesByPartyRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetVotesByPartyRequest.toObject(opt_includeInstance, this);
+proto.api.v1.GetVotesByPartyRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetVotesByPartyRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -6269,13 +6729,13 @@ proto.api.GetVotesByPartyRequest.prototype.toObject = function(opt_includeInstan
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetVotesByPartyRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetVotesByPartyRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetVotesByPartyRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.GetVotesByPartyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partyid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    partyId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -6289,23 +6749,23 @@ proto.api.GetVotesByPartyRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetVotesByPartyRequest}
+ * @return {!proto.api.v1.GetVotesByPartyRequest}
  */
-proto.api.GetVotesByPartyRequest.deserializeBinary = function(bytes) {
+proto.api.v1.GetVotesByPartyRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetVotesByPartyRequest;
-  return proto.api.GetVotesByPartyRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetVotesByPartyRequest;
+  return proto.api.v1.GetVotesByPartyRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetVotesByPartyRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetVotesByPartyRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetVotesByPartyRequest}
+ * @return {!proto.api.v1.GetVotesByPartyRequest}
  */
-proto.api.GetVotesByPartyRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetVotesByPartyRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -6314,7 +6774,7 @@ proto.api.GetVotesByPartyRequest.deserializeBinaryFromReader = function(msg, rea
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     default:
       reader.skipField();
@@ -6329,9 +6789,9 @@ proto.api.GetVotesByPartyRequest.deserializeBinaryFromReader = function(msg, rea
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetVotesByPartyRequest.prototype.serializeBinary = function() {
+proto.api.v1.GetVotesByPartyRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetVotesByPartyRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetVotesByPartyRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -6339,13 +6799,13 @@ proto.api.GetVotesByPartyRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetVotesByPartyRequest} message
+ * @param {!proto.api.v1.GetVotesByPartyRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetVotesByPartyRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetVotesByPartyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -6356,19 +6816,19 @@ proto.api.GetVotesByPartyRequest.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional string partyID = 1;
+ * optional string party_id = 1;
  * @return {string}
  */
-proto.api.GetVotesByPartyRequest.prototype.getPartyid = function() {
+proto.api.v1.GetVotesByPartyRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.GetVotesByPartyRequest} returns this
+ * @return {!proto.api.v1.GetVotesByPartyRequest} returns this
  */
-proto.api.GetVotesByPartyRequest.prototype.setPartyid = function(value) {
+proto.api.v1.GetVotesByPartyRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -6379,7 +6839,7 @@ proto.api.GetVotesByPartyRequest.prototype.setPartyid = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.GetVotesByPartyResponse.repeatedFields_ = [1];
+proto.api.v1.GetVotesByPartyResponse.repeatedFields_ = [1];
 
 
 
@@ -6396,8 +6856,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetVotesByPartyResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetVotesByPartyResponse.toObject(opt_includeInstance, this);
+proto.api.v1.GetVotesByPartyResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetVotesByPartyResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -6406,11 +6866,11 @@ proto.api.GetVotesByPartyResponse.prototype.toObject = function(opt_includeInsta
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetVotesByPartyResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetVotesByPartyResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetVotesByPartyResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.GetVotesByPartyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     votesList: jspb.Message.toObjectList(msg.getVotesList(),
     governance_pb.Vote.toObject, includeInstance)
@@ -6427,23 +6887,23 @@ proto.api.GetVotesByPartyResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetVotesByPartyResponse}
+ * @return {!proto.api.v1.GetVotesByPartyResponse}
  */
-proto.api.GetVotesByPartyResponse.deserializeBinary = function(bytes) {
+proto.api.v1.GetVotesByPartyResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetVotesByPartyResponse;
-  return proto.api.GetVotesByPartyResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetVotesByPartyResponse;
+  return proto.api.v1.GetVotesByPartyResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetVotesByPartyResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetVotesByPartyResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetVotesByPartyResponse}
+ * @return {!proto.api.v1.GetVotesByPartyResponse}
  */
-proto.api.GetVotesByPartyResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetVotesByPartyResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -6468,9 +6928,9 @@ proto.api.GetVotesByPartyResponse.deserializeBinaryFromReader = function(msg, re
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetVotesByPartyResponse.prototype.serializeBinary = function() {
+proto.api.v1.GetVotesByPartyResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetVotesByPartyResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetVotesByPartyResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -6478,11 +6938,11 @@ proto.api.GetVotesByPartyResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetVotesByPartyResponse} message
+ * @param {!proto.api.v1.GetVotesByPartyResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetVotesByPartyResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetVotesByPartyResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getVotesList();
   if (f.length > 0) {
@@ -6499,7 +6959,7 @@ proto.api.GetVotesByPartyResponse.serializeBinaryToWriter = function(message, wr
  * repeated vega.Vote votes = 1;
  * @return {!Array<!proto.vega.Vote>}
  */
-proto.api.GetVotesByPartyResponse.prototype.getVotesList = function() {
+proto.api.v1.GetVotesByPartyResponse.prototype.getVotesList = function() {
   return /** @type{!Array<!proto.vega.Vote>} */ (
     jspb.Message.getRepeatedWrapperField(this, governance_pb.Vote, 1));
 };
@@ -6507,9 +6967,9 @@ proto.api.GetVotesByPartyResponse.prototype.getVotesList = function() {
 
 /**
  * @param {!Array<!proto.vega.Vote>} value
- * @return {!proto.api.GetVotesByPartyResponse} returns this
+ * @return {!proto.api.v1.GetVotesByPartyResponse} returns this
 */
-proto.api.GetVotesByPartyResponse.prototype.setVotesList = function(value) {
+proto.api.v1.GetVotesByPartyResponse.prototype.setVotesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -6519,16 +6979,16 @@ proto.api.GetVotesByPartyResponse.prototype.setVotesList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Vote}
  */
-proto.api.GetVotesByPartyResponse.prototype.addVotes = function(opt_value, opt_index) {
+proto.api.v1.GetVotesByPartyResponse.prototype.addVotes = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Vote, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.GetVotesByPartyResponse} returns this
+ * @return {!proto.api.v1.GetVotesByPartyResponse} returns this
  */
-proto.api.GetVotesByPartyResponse.prototype.clearVotesList = function() {
+proto.api.v1.GetVotesByPartyResponse.prototype.clearVotesList = function() {
   return this.setVotesList([]);
 };
 
@@ -6549,8 +7009,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetNewMarketProposalsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetNewMarketProposalsRequest.toObject(opt_includeInstance, this);
+proto.api.v1.GetNewMarketProposalsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetNewMarketProposalsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -6559,13 +7019,13 @@ proto.api.GetNewMarketProposalsRequest.prototype.toObject = function(opt_include
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetNewMarketProposalsRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetNewMarketProposalsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetNewMarketProposalsRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.GetNewMarketProposalsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    selectinstate: (f = msg.getSelectinstate()) && proto.api.OptionalProposalState.toObject(includeInstance, f)
+    selectInState: (f = msg.getSelectInState()) && proto.api.v1.OptionalProposalState.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6579,23 +7039,23 @@ proto.api.GetNewMarketProposalsRequest.toObject = function(includeInstance, msg)
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetNewMarketProposalsRequest}
+ * @return {!proto.api.v1.GetNewMarketProposalsRequest}
  */
-proto.api.GetNewMarketProposalsRequest.deserializeBinary = function(bytes) {
+proto.api.v1.GetNewMarketProposalsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetNewMarketProposalsRequest;
-  return proto.api.GetNewMarketProposalsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetNewMarketProposalsRequest;
+  return proto.api.v1.GetNewMarketProposalsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetNewMarketProposalsRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetNewMarketProposalsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetNewMarketProposalsRequest}
+ * @return {!proto.api.v1.GetNewMarketProposalsRequest}
  */
-proto.api.GetNewMarketProposalsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetNewMarketProposalsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -6603,9 +7063,9 @@ proto.api.GetNewMarketProposalsRequest.deserializeBinaryFromReader = function(ms
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.api.OptionalProposalState;
-      reader.readMessage(value,proto.api.OptionalProposalState.deserializeBinaryFromReader);
-      msg.setSelectinstate(value);
+      var value = new proto.api.v1.OptionalProposalState;
+      reader.readMessage(value,proto.api.v1.OptionalProposalState.deserializeBinaryFromReader);
+      msg.setSelectInState(value);
       break;
     default:
       reader.skipField();
@@ -6620,9 +7080,9 @@ proto.api.GetNewMarketProposalsRequest.deserializeBinaryFromReader = function(ms
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetNewMarketProposalsRequest.prototype.serializeBinary = function() {
+proto.api.v1.GetNewMarketProposalsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetNewMarketProposalsRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetNewMarketProposalsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -6630,48 +7090,48 @@ proto.api.GetNewMarketProposalsRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetNewMarketProposalsRequest} message
+ * @param {!proto.api.v1.GetNewMarketProposalsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetNewMarketProposalsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetNewMarketProposalsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSelectinstate();
+  f = message.getSelectInState();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      proto.api.OptionalProposalState.serializeBinaryToWriter
+      proto.api.v1.OptionalProposalState.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional OptionalProposalState selectInState = 1;
- * @return {?proto.api.OptionalProposalState}
+ * optional OptionalProposalState select_in_state = 1;
+ * @return {?proto.api.v1.OptionalProposalState}
  */
-proto.api.GetNewMarketProposalsRequest.prototype.getSelectinstate = function() {
-  return /** @type{?proto.api.OptionalProposalState} */ (
-    jspb.Message.getWrapperField(this, proto.api.OptionalProposalState, 1));
+proto.api.v1.GetNewMarketProposalsRequest.prototype.getSelectInState = function() {
+  return /** @type{?proto.api.v1.OptionalProposalState} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1.OptionalProposalState, 1));
 };
 
 
 /**
- * @param {?proto.api.OptionalProposalState|undefined} value
- * @return {!proto.api.GetNewMarketProposalsRequest} returns this
+ * @param {?proto.api.v1.OptionalProposalState|undefined} value
+ * @return {!proto.api.v1.GetNewMarketProposalsRequest} returns this
 */
-proto.api.GetNewMarketProposalsRequest.prototype.setSelectinstate = function(value) {
+proto.api.v1.GetNewMarketProposalsRequest.prototype.setSelectInState = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.GetNewMarketProposalsRequest} returns this
+ * @return {!proto.api.v1.GetNewMarketProposalsRequest} returns this
  */
-proto.api.GetNewMarketProposalsRequest.prototype.clearSelectinstate = function() {
-  return this.setSelectinstate(undefined);
+proto.api.v1.GetNewMarketProposalsRequest.prototype.clearSelectInState = function() {
+  return this.setSelectInState(undefined);
 };
 
 
@@ -6679,7 +7139,7 @@ proto.api.GetNewMarketProposalsRequest.prototype.clearSelectinstate = function()
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.GetNewMarketProposalsRequest.prototype.hasSelectinstate = function() {
+proto.api.v1.GetNewMarketProposalsRequest.prototype.hasSelectInState = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -6690,7 +7150,7 @@ proto.api.GetNewMarketProposalsRequest.prototype.hasSelectinstate = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.api.GetNewMarketProposalsResponse.repeatedFields_ = [1];
+proto.api.v1.GetNewMarketProposalsResponse.repeatedFields_ = [1];
 
 
 
@@ -6707,8 +7167,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetNewMarketProposalsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetNewMarketProposalsResponse.toObject(opt_includeInstance, this);
+proto.api.v1.GetNewMarketProposalsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetNewMarketProposalsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -6717,11 +7177,11 @@ proto.api.GetNewMarketProposalsResponse.prototype.toObject = function(opt_includ
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetNewMarketProposalsResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetNewMarketProposalsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetNewMarketProposalsResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.GetNewMarketProposalsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     dataList: jspb.Message.toObjectList(msg.getDataList(),
     governance_pb.GovernanceData.toObject, includeInstance)
@@ -6738,23 +7198,23 @@ proto.api.GetNewMarketProposalsResponse.toObject = function(includeInstance, msg
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetNewMarketProposalsResponse}
+ * @return {!proto.api.v1.GetNewMarketProposalsResponse}
  */
-proto.api.GetNewMarketProposalsResponse.deserializeBinary = function(bytes) {
+proto.api.v1.GetNewMarketProposalsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetNewMarketProposalsResponse;
-  return proto.api.GetNewMarketProposalsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetNewMarketProposalsResponse;
+  return proto.api.v1.GetNewMarketProposalsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetNewMarketProposalsResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetNewMarketProposalsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetNewMarketProposalsResponse}
+ * @return {!proto.api.v1.GetNewMarketProposalsResponse}
  */
-proto.api.GetNewMarketProposalsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetNewMarketProposalsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -6779,9 +7239,9 @@ proto.api.GetNewMarketProposalsResponse.deserializeBinaryFromReader = function(m
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetNewMarketProposalsResponse.prototype.serializeBinary = function() {
+proto.api.v1.GetNewMarketProposalsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetNewMarketProposalsResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetNewMarketProposalsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -6789,11 +7249,11 @@ proto.api.GetNewMarketProposalsResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetNewMarketProposalsResponse} message
+ * @param {!proto.api.v1.GetNewMarketProposalsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetNewMarketProposalsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetNewMarketProposalsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDataList();
   if (f.length > 0) {
@@ -6810,7 +7270,7 @@ proto.api.GetNewMarketProposalsResponse.serializeBinaryToWriter = function(messa
  * repeated vega.GovernanceData data = 1;
  * @return {!Array<!proto.vega.GovernanceData>}
  */
-proto.api.GetNewMarketProposalsResponse.prototype.getDataList = function() {
+proto.api.v1.GetNewMarketProposalsResponse.prototype.getDataList = function() {
   return /** @type{!Array<!proto.vega.GovernanceData>} */ (
     jspb.Message.getRepeatedWrapperField(this, governance_pb.GovernanceData, 1));
 };
@@ -6818,9 +7278,9 @@ proto.api.GetNewMarketProposalsResponse.prototype.getDataList = function() {
 
 /**
  * @param {!Array<!proto.vega.GovernanceData>} value
- * @return {!proto.api.GetNewMarketProposalsResponse} returns this
+ * @return {!proto.api.v1.GetNewMarketProposalsResponse} returns this
 */
-proto.api.GetNewMarketProposalsResponse.prototype.setDataList = function(value) {
+proto.api.v1.GetNewMarketProposalsResponse.prototype.setDataList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -6830,16 +7290,16 @@ proto.api.GetNewMarketProposalsResponse.prototype.setDataList = function(value) 
  * @param {number=} opt_index
  * @return {!proto.vega.GovernanceData}
  */
-proto.api.GetNewMarketProposalsResponse.prototype.addData = function(opt_value, opt_index) {
+proto.api.v1.GetNewMarketProposalsResponse.prototype.addData = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.GovernanceData, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.GetNewMarketProposalsResponse} returns this
+ * @return {!proto.api.v1.GetNewMarketProposalsResponse} returns this
  */
-proto.api.GetNewMarketProposalsResponse.prototype.clearDataList = function() {
+proto.api.v1.GetNewMarketProposalsResponse.prototype.clearDataList = function() {
   return this.setDataList([]);
 };
 
@@ -6860,8 +7320,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetUpdateMarketProposalsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetUpdateMarketProposalsRequest.toObject(opt_includeInstance, this);
+proto.api.v1.GetUpdateMarketProposalsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetUpdateMarketProposalsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -6870,14 +7330,14 @@ proto.api.GetUpdateMarketProposalsRequest.prototype.toObject = function(opt_incl
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetUpdateMarketProposalsRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetUpdateMarketProposalsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetUpdateMarketProposalsRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.GetUpdateMarketProposalsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    selectinstate: (f = msg.getSelectinstate()) && proto.api.OptionalProposalState.toObject(includeInstance, f)
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    selectInState: (f = msg.getSelectInState()) && proto.api.v1.OptionalProposalState.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6891,23 +7351,23 @@ proto.api.GetUpdateMarketProposalsRequest.toObject = function(includeInstance, m
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetUpdateMarketProposalsRequest}
+ * @return {!proto.api.v1.GetUpdateMarketProposalsRequest}
  */
-proto.api.GetUpdateMarketProposalsRequest.deserializeBinary = function(bytes) {
+proto.api.v1.GetUpdateMarketProposalsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetUpdateMarketProposalsRequest;
-  return proto.api.GetUpdateMarketProposalsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetUpdateMarketProposalsRequest;
+  return proto.api.v1.GetUpdateMarketProposalsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetUpdateMarketProposalsRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetUpdateMarketProposalsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetUpdateMarketProposalsRequest}
+ * @return {!proto.api.v1.GetUpdateMarketProposalsRequest}
  */
-proto.api.GetUpdateMarketProposalsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetUpdateMarketProposalsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -6916,12 +7376,12 @@ proto.api.GetUpdateMarketProposalsRequest.deserializeBinaryFromReader = function
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
-      var value = new proto.api.OptionalProposalState;
-      reader.readMessage(value,proto.api.OptionalProposalState.deserializeBinaryFromReader);
-      msg.setSelectinstate(value);
+      var value = new proto.api.v1.OptionalProposalState;
+      reader.readMessage(value,proto.api.v1.OptionalProposalState.deserializeBinaryFromReader);
+      msg.setSelectInState(value);
       break;
     default:
       reader.skipField();
@@ -6936,9 +7396,9 @@ proto.api.GetUpdateMarketProposalsRequest.deserializeBinaryFromReader = function
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetUpdateMarketProposalsRequest.prototype.serializeBinary = function() {
+proto.api.v1.GetUpdateMarketProposalsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetUpdateMarketProposalsRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetUpdateMarketProposalsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -6946,73 +7406,73 @@ proto.api.GetUpdateMarketProposalsRequest.prototype.serializeBinary = function()
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetUpdateMarketProposalsRequest} message
+ * @param {!proto.api.v1.GetUpdateMarketProposalsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetUpdateMarketProposalsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetUpdateMarketProposalsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getSelectinstate();
+  f = message.getSelectInState();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
-      proto.api.OptionalProposalState.serializeBinaryToWriter
+      proto.api.v1.OptionalProposalState.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.api.GetUpdateMarketProposalsRequest.prototype.getMarketid = function() {
+proto.api.v1.GetUpdateMarketProposalsRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.GetUpdateMarketProposalsRequest} returns this
+ * @return {!proto.api.v1.GetUpdateMarketProposalsRequest} returns this
  */
-proto.api.GetUpdateMarketProposalsRequest.prototype.setMarketid = function(value) {
+proto.api.v1.GetUpdateMarketProposalsRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional OptionalProposalState selectInState = 2;
- * @return {?proto.api.OptionalProposalState}
+ * optional OptionalProposalState select_in_state = 2;
+ * @return {?proto.api.v1.OptionalProposalState}
  */
-proto.api.GetUpdateMarketProposalsRequest.prototype.getSelectinstate = function() {
-  return /** @type{?proto.api.OptionalProposalState} */ (
-    jspb.Message.getWrapperField(this, proto.api.OptionalProposalState, 2));
+proto.api.v1.GetUpdateMarketProposalsRequest.prototype.getSelectInState = function() {
+  return /** @type{?proto.api.v1.OptionalProposalState} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1.OptionalProposalState, 2));
 };
 
 
 /**
- * @param {?proto.api.OptionalProposalState|undefined} value
- * @return {!proto.api.GetUpdateMarketProposalsRequest} returns this
+ * @param {?proto.api.v1.OptionalProposalState|undefined} value
+ * @return {!proto.api.v1.GetUpdateMarketProposalsRequest} returns this
 */
-proto.api.GetUpdateMarketProposalsRequest.prototype.setSelectinstate = function(value) {
+proto.api.v1.GetUpdateMarketProposalsRequest.prototype.setSelectInState = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.GetUpdateMarketProposalsRequest} returns this
+ * @return {!proto.api.v1.GetUpdateMarketProposalsRequest} returns this
  */
-proto.api.GetUpdateMarketProposalsRequest.prototype.clearSelectinstate = function() {
-  return this.setSelectinstate(undefined);
+proto.api.v1.GetUpdateMarketProposalsRequest.prototype.clearSelectInState = function() {
+  return this.setSelectInState(undefined);
 };
 
 
@@ -7020,7 +7480,7 @@ proto.api.GetUpdateMarketProposalsRequest.prototype.clearSelectinstate = functio
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.GetUpdateMarketProposalsRequest.prototype.hasSelectinstate = function() {
+proto.api.v1.GetUpdateMarketProposalsRequest.prototype.hasSelectInState = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -7031,7 +7491,7 @@ proto.api.GetUpdateMarketProposalsRequest.prototype.hasSelectinstate = function(
  * @private {!Array<number>}
  * @const
  */
-proto.api.GetUpdateMarketProposalsResponse.repeatedFields_ = [1];
+proto.api.v1.GetUpdateMarketProposalsResponse.repeatedFields_ = [1];
 
 
 
@@ -7048,8 +7508,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetUpdateMarketProposalsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetUpdateMarketProposalsResponse.toObject(opt_includeInstance, this);
+proto.api.v1.GetUpdateMarketProposalsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetUpdateMarketProposalsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -7058,11 +7518,11 @@ proto.api.GetUpdateMarketProposalsResponse.prototype.toObject = function(opt_inc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetUpdateMarketProposalsResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetUpdateMarketProposalsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetUpdateMarketProposalsResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.GetUpdateMarketProposalsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     dataList: jspb.Message.toObjectList(msg.getDataList(),
     governance_pb.GovernanceData.toObject, includeInstance)
@@ -7079,23 +7539,23 @@ proto.api.GetUpdateMarketProposalsResponse.toObject = function(includeInstance, 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetUpdateMarketProposalsResponse}
+ * @return {!proto.api.v1.GetUpdateMarketProposalsResponse}
  */
-proto.api.GetUpdateMarketProposalsResponse.deserializeBinary = function(bytes) {
+proto.api.v1.GetUpdateMarketProposalsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetUpdateMarketProposalsResponse;
-  return proto.api.GetUpdateMarketProposalsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetUpdateMarketProposalsResponse;
+  return proto.api.v1.GetUpdateMarketProposalsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetUpdateMarketProposalsResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetUpdateMarketProposalsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetUpdateMarketProposalsResponse}
+ * @return {!proto.api.v1.GetUpdateMarketProposalsResponse}
  */
-proto.api.GetUpdateMarketProposalsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetUpdateMarketProposalsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -7120,9 +7580,9 @@ proto.api.GetUpdateMarketProposalsResponse.deserializeBinaryFromReader = functio
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetUpdateMarketProposalsResponse.prototype.serializeBinary = function() {
+proto.api.v1.GetUpdateMarketProposalsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetUpdateMarketProposalsResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetUpdateMarketProposalsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -7130,11 +7590,11 @@ proto.api.GetUpdateMarketProposalsResponse.prototype.serializeBinary = function(
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetUpdateMarketProposalsResponse} message
+ * @param {!proto.api.v1.GetUpdateMarketProposalsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetUpdateMarketProposalsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetUpdateMarketProposalsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDataList();
   if (f.length > 0) {
@@ -7151,7 +7611,7 @@ proto.api.GetUpdateMarketProposalsResponse.serializeBinaryToWriter = function(me
  * repeated vega.GovernanceData data = 1;
  * @return {!Array<!proto.vega.GovernanceData>}
  */
-proto.api.GetUpdateMarketProposalsResponse.prototype.getDataList = function() {
+proto.api.v1.GetUpdateMarketProposalsResponse.prototype.getDataList = function() {
   return /** @type{!Array<!proto.vega.GovernanceData>} */ (
     jspb.Message.getRepeatedWrapperField(this, governance_pb.GovernanceData, 1));
 };
@@ -7159,9 +7619,9 @@ proto.api.GetUpdateMarketProposalsResponse.prototype.getDataList = function() {
 
 /**
  * @param {!Array<!proto.vega.GovernanceData>} value
- * @return {!proto.api.GetUpdateMarketProposalsResponse} returns this
+ * @return {!proto.api.v1.GetUpdateMarketProposalsResponse} returns this
 */
-proto.api.GetUpdateMarketProposalsResponse.prototype.setDataList = function(value) {
+proto.api.v1.GetUpdateMarketProposalsResponse.prototype.setDataList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -7171,16 +7631,16 @@ proto.api.GetUpdateMarketProposalsResponse.prototype.setDataList = function(valu
  * @param {number=} opt_index
  * @return {!proto.vega.GovernanceData}
  */
-proto.api.GetUpdateMarketProposalsResponse.prototype.addData = function(opt_value, opt_index) {
+proto.api.v1.GetUpdateMarketProposalsResponse.prototype.addData = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.GovernanceData, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.GetUpdateMarketProposalsResponse} returns this
+ * @return {!proto.api.v1.GetUpdateMarketProposalsResponse} returns this
  */
-proto.api.GetUpdateMarketProposalsResponse.prototype.clearDataList = function() {
+proto.api.v1.GetUpdateMarketProposalsResponse.prototype.clearDataList = function() {
   return this.setDataList([]);
 };
 
@@ -7201,8 +7661,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetNetworkParametersProposalsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetNetworkParametersProposalsRequest.toObject(opt_includeInstance, this);
+proto.api.v1.GetNetworkParametersProposalsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetNetworkParametersProposalsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -7211,13 +7671,13 @@ proto.api.GetNetworkParametersProposalsRequest.prototype.toObject = function(opt
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetNetworkParametersProposalsRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetNetworkParametersProposalsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetNetworkParametersProposalsRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.GetNetworkParametersProposalsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    selectinstate: (f = msg.getSelectinstate()) && proto.api.OptionalProposalState.toObject(includeInstance, f)
+    selectInState: (f = msg.getSelectInState()) && proto.api.v1.OptionalProposalState.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7231,23 +7691,23 @@ proto.api.GetNetworkParametersProposalsRequest.toObject = function(includeInstan
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetNetworkParametersProposalsRequest}
+ * @return {!proto.api.v1.GetNetworkParametersProposalsRequest}
  */
-proto.api.GetNetworkParametersProposalsRequest.deserializeBinary = function(bytes) {
+proto.api.v1.GetNetworkParametersProposalsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetNetworkParametersProposalsRequest;
-  return proto.api.GetNetworkParametersProposalsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetNetworkParametersProposalsRequest;
+  return proto.api.v1.GetNetworkParametersProposalsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetNetworkParametersProposalsRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetNetworkParametersProposalsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetNetworkParametersProposalsRequest}
+ * @return {!proto.api.v1.GetNetworkParametersProposalsRequest}
  */
-proto.api.GetNetworkParametersProposalsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetNetworkParametersProposalsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -7255,9 +7715,9 @@ proto.api.GetNetworkParametersProposalsRequest.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.api.OptionalProposalState;
-      reader.readMessage(value,proto.api.OptionalProposalState.deserializeBinaryFromReader);
-      msg.setSelectinstate(value);
+      var value = new proto.api.v1.OptionalProposalState;
+      reader.readMessage(value,proto.api.v1.OptionalProposalState.deserializeBinaryFromReader);
+      msg.setSelectInState(value);
       break;
     default:
       reader.skipField();
@@ -7272,9 +7732,9 @@ proto.api.GetNetworkParametersProposalsRequest.deserializeBinaryFromReader = fun
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetNetworkParametersProposalsRequest.prototype.serializeBinary = function() {
+proto.api.v1.GetNetworkParametersProposalsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetNetworkParametersProposalsRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetNetworkParametersProposalsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -7282,48 +7742,48 @@ proto.api.GetNetworkParametersProposalsRequest.prototype.serializeBinary = funct
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetNetworkParametersProposalsRequest} message
+ * @param {!proto.api.v1.GetNetworkParametersProposalsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetNetworkParametersProposalsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetNetworkParametersProposalsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSelectinstate();
+  f = message.getSelectInState();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      proto.api.OptionalProposalState.serializeBinaryToWriter
+      proto.api.v1.OptionalProposalState.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional OptionalProposalState selectInState = 1;
- * @return {?proto.api.OptionalProposalState}
+ * optional OptionalProposalState select_in_state = 1;
+ * @return {?proto.api.v1.OptionalProposalState}
  */
-proto.api.GetNetworkParametersProposalsRequest.prototype.getSelectinstate = function() {
-  return /** @type{?proto.api.OptionalProposalState} */ (
-    jspb.Message.getWrapperField(this, proto.api.OptionalProposalState, 1));
+proto.api.v1.GetNetworkParametersProposalsRequest.prototype.getSelectInState = function() {
+  return /** @type{?proto.api.v1.OptionalProposalState} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1.OptionalProposalState, 1));
 };
 
 
 /**
- * @param {?proto.api.OptionalProposalState|undefined} value
- * @return {!proto.api.GetNetworkParametersProposalsRequest} returns this
+ * @param {?proto.api.v1.OptionalProposalState|undefined} value
+ * @return {!proto.api.v1.GetNetworkParametersProposalsRequest} returns this
 */
-proto.api.GetNetworkParametersProposalsRequest.prototype.setSelectinstate = function(value) {
+proto.api.v1.GetNetworkParametersProposalsRequest.prototype.setSelectInState = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.GetNetworkParametersProposalsRequest} returns this
+ * @return {!proto.api.v1.GetNetworkParametersProposalsRequest} returns this
  */
-proto.api.GetNetworkParametersProposalsRequest.prototype.clearSelectinstate = function() {
-  return this.setSelectinstate(undefined);
+proto.api.v1.GetNetworkParametersProposalsRequest.prototype.clearSelectInState = function() {
+  return this.setSelectInState(undefined);
 };
 
 
@@ -7331,7 +7791,7 @@ proto.api.GetNetworkParametersProposalsRequest.prototype.clearSelectinstate = fu
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.GetNetworkParametersProposalsRequest.prototype.hasSelectinstate = function() {
+proto.api.v1.GetNetworkParametersProposalsRequest.prototype.hasSelectInState = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -7342,7 +7802,7 @@ proto.api.GetNetworkParametersProposalsRequest.prototype.hasSelectinstate = func
  * @private {!Array<number>}
  * @const
  */
-proto.api.GetNetworkParametersProposalsResponse.repeatedFields_ = [1];
+proto.api.v1.GetNetworkParametersProposalsResponse.repeatedFields_ = [1];
 
 
 
@@ -7359,8 +7819,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetNetworkParametersProposalsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetNetworkParametersProposalsResponse.toObject(opt_includeInstance, this);
+proto.api.v1.GetNetworkParametersProposalsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetNetworkParametersProposalsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -7369,11 +7829,11 @@ proto.api.GetNetworkParametersProposalsResponse.prototype.toObject = function(op
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetNetworkParametersProposalsResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetNetworkParametersProposalsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetNetworkParametersProposalsResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.GetNetworkParametersProposalsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     dataList: jspb.Message.toObjectList(msg.getDataList(),
     governance_pb.GovernanceData.toObject, includeInstance)
@@ -7390,23 +7850,23 @@ proto.api.GetNetworkParametersProposalsResponse.toObject = function(includeInsta
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetNetworkParametersProposalsResponse}
+ * @return {!proto.api.v1.GetNetworkParametersProposalsResponse}
  */
-proto.api.GetNetworkParametersProposalsResponse.deserializeBinary = function(bytes) {
+proto.api.v1.GetNetworkParametersProposalsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetNetworkParametersProposalsResponse;
-  return proto.api.GetNetworkParametersProposalsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetNetworkParametersProposalsResponse;
+  return proto.api.v1.GetNetworkParametersProposalsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetNetworkParametersProposalsResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetNetworkParametersProposalsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetNetworkParametersProposalsResponse}
+ * @return {!proto.api.v1.GetNetworkParametersProposalsResponse}
  */
-proto.api.GetNetworkParametersProposalsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetNetworkParametersProposalsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -7431,9 +7891,9 @@ proto.api.GetNetworkParametersProposalsResponse.deserializeBinaryFromReader = fu
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetNetworkParametersProposalsResponse.prototype.serializeBinary = function() {
+proto.api.v1.GetNetworkParametersProposalsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetNetworkParametersProposalsResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetNetworkParametersProposalsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -7441,11 +7901,11 @@ proto.api.GetNetworkParametersProposalsResponse.prototype.serializeBinary = func
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetNetworkParametersProposalsResponse} message
+ * @param {!proto.api.v1.GetNetworkParametersProposalsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetNetworkParametersProposalsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetNetworkParametersProposalsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDataList();
   if (f.length > 0) {
@@ -7462,7 +7922,7 @@ proto.api.GetNetworkParametersProposalsResponse.serializeBinaryToWriter = functi
  * repeated vega.GovernanceData data = 1;
  * @return {!Array<!proto.vega.GovernanceData>}
  */
-proto.api.GetNetworkParametersProposalsResponse.prototype.getDataList = function() {
+proto.api.v1.GetNetworkParametersProposalsResponse.prototype.getDataList = function() {
   return /** @type{!Array<!proto.vega.GovernanceData>} */ (
     jspb.Message.getRepeatedWrapperField(this, governance_pb.GovernanceData, 1));
 };
@@ -7470,9 +7930,9 @@ proto.api.GetNetworkParametersProposalsResponse.prototype.getDataList = function
 
 /**
  * @param {!Array<!proto.vega.GovernanceData>} value
- * @return {!proto.api.GetNetworkParametersProposalsResponse} returns this
+ * @return {!proto.api.v1.GetNetworkParametersProposalsResponse} returns this
 */
-proto.api.GetNetworkParametersProposalsResponse.prototype.setDataList = function(value) {
+proto.api.v1.GetNetworkParametersProposalsResponse.prototype.setDataList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -7482,16 +7942,16 @@ proto.api.GetNetworkParametersProposalsResponse.prototype.setDataList = function
  * @param {number=} opt_index
  * @return {!proto.vega.GovernanceData}
  */
-proto.api.GetNetworkParametersProposalsResponse.prototype.addData = function(opt_value, opt_index) {
+proto.api.v1.GetNetworkParametersProposalsResponse.prototype.addData = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.GovernanceData, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.GetNetworkParametersProposalsResponse} returns this
+ * @return {!proto.api.v1.GetNetworkParametersProposalsResponse} returns this
  */
-proto.api.GetNetworkParametersProposalsResponse.prototype.clearDataList = function() {
+proto.api.v1.GetNetworkParametersProposalsResponse.prototype.clearDataList = function() {
   return this.setDataList([]);
 };
 
@@ -7512,8 +7972,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetNewAssetProposalsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetNewAssetProposalsRequest.toObject(opt_includeInstance, this);
+proto.api.v1.GetNewAssetProposalsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetNewAssetProposalsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -7522,13 +7982,13 @@ proto.api.GetNewAssetProposalsRequest.prototype.toObject = function(opt_includeI
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetNewAssetProposalsRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetNewAssetProposalsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetNewAssetProposalsRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.GetNewAssetProposalsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    selectinstate: (f = msg.getSelectinstate()) && proto.api.OptionalProposalState.toObject(includeInstance, f)
+    selectInState: (f = msg.getSelectInState()) && proto.api.v1.OptionalProposalState.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7542,23 +8002,23 @@ proto.api.GetNewAssetProposalsRequest.toObject = function(includeInstance, msg) 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetNewAssetProposalsRequest}
+ * @return {!proto.api.v1.GetNewAssetProposalsRequest}
  */
-proto.api.GetNewAssetProposalsRequest.deserializeBinary = function(bytes) {
+proto.api.v1.GetNewAssetProposalsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetNewAssetProposalsRequest;
-  return proto.api.GetNewAssetProposalsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetNewAssetProposalsRequest;
+  return proto.api.v1.GetNewAssetProposalsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetNewAssetProposalsRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetNewAssetProposalsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetNewAssetProposalsRequest}
+ * @return {!proto.api.v1.GetNewAssetProposalsRequest}
  */
-proto.api.GetNewAssetProposalsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetNewAssetProposalsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -7566,9 +8026,9 @@ proto.api.GetNewAssetProposalsRequest.deserializeBinaryFromReader = function(msg
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.api.OptionalProposalState;
-      reader.readMessage(value,proto.api.OptionalProposalState.deserializeBinaryFromReader);
-      msg.setSelectinstate(value);
+      var value = new proto.api.v1.OptionalProposalState;
+      reader.readMessage(value,proto.api.v1.OptionalProposalState.deserializeBinaryFromReader);
+      msg.setSelectInState(value);
       break;
     default:
       reader.skipField();
@@ -7583,9 +8043,9 @@ proto.api.GetNewAssetProposalsRequest.deserializeBinaryFromReader = function(msg
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetNewAssetProposalsRequest.prototype.serializeBinary = function() {
+proto.api.v1.GetNewAssetProposalsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetNewAssetProposalsRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetNewAssetProposalsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -7593,48 +8053,48 @@ proto.api.GetNewAssetProposalsRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetNewAssetProposalsRequest} message
+ * @param {!proto.api.v1.GetNewAssetProposalsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetNewAssetProposalsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetNewAssetProposalsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSelectinstate();
+  f = message.getSelectInState();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      proto.api.OptionalProposalState.serializeBinaryToWriter
+      proto.api.v1.OptionalProposalState.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional OptionalProposalState selectInState = 1;
- * @return {?proto.api.OptionalProposalState}
+ * optional OptionalProposalState select_in_state = 1;
+ * @return {?proto.api.v1.OptionalProposalState}
  */
-proto.api.GetNewAssetProposalsRequest.prototype.getSelectinstate = function() {
-  return /** @type{?proto.api.OptionalProposalState} */ (
-    jspb.Message.getWrapperField(this, proto.api.OptionalProposalState, 1));
+proto.api.v1.GetNewAssetProposalsRequest.prototype.getSelectInState = function() {
+  return /** @type{?proto.api.v1.OptionalProposalState} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1.OptionalProposalState, 1));
 };
 
 
 /**
- * @param {?proto.api.OptionalProposalState|undefined} value
- * @return {!proto.api.GetNewAssetProposalsRequest} returns this
+ * @param {?proto.api.v1.OptionalProposalState|undefined} value
+ * @return {!proto.api.v1.GetNewAssetProposalsRequest} returns this
 */
-proto.api.GetNewAssetProposalsRequest.prototype.setSelectinstate = function(value) {
+proto.api.v1.GetNewAssetProposalsRequest.prototype.setSelectInState = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.GetNewAssetProposalsRequest} returns this
+ * @return {!proto.api.v1.GetNewAssetProposalsRequest} returns this
  */
-proto.api.GetNewAssetProposalsRequest.prototype.clearSelectinstate = function() {
-  return this.setSelectinstate(undefined);
+proto.api.v1.GetNewAssetProposalsRequest.prototype.clearSelectInState = function() {
+  return this.setSelectInState(undefined);
 };
 
 
@@ -7642,7 +8102,7 @@ proto.api.GetNewAssetProposalsRequest.prototype.clearSelectinstate = function() 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.GetNewAssetProposalsRequest.prototype.hasSelectinstate = function() {
+proto.api.v1.GetNewAssetProposalsRequest.prototype.hasSelectInState = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -7653,7 +8113,7 @@ proto.api.GetNewAssetProposalsRequest.prototype.hasSelectinstate = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.api.GetNewAssetProposalsResponse.repeatedFields_ = [1];
+proto.api.v1.GetNewAssetProposalsResponse.repeatedFields_ = [1];
 
 
 
@@ -7670,8 +8130,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetNewAssetProposalsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetNewAssetProposalsResponse.toObject(opt_includeInstance, this);
+proto.api.v1.GetNewAssetProposalsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetNewAssetProposalsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -7680,11 +8140,11 @@ proto.api.GetNewAssetProposalsResponse.prototype.toObject = function(opt_include
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetNewAssetProposalsResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetNewAssetProposalsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetNewAssetProposalsResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.GetNewAssetProposalsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     dataList: jspb.Message.toObjectList(msg.getDataList(),
     governance_pb.GovernanceData.toObject, includeInstance)
@@ -7701,23 +8161,23 @@ proto.api.GetNewAssetProposalsResponse.toObject = function(includeInstance, msg)
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetNewAssetProposalsResponse}
+ * @return {!proto.api.v1.GetNewAssetProposalsResponse}
  */
-proto.api.GetNewAssetProposalsResponse.deserializeBinary = function(bytes) {
+proto.api.v1.GetNewAssetProposalsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetNewAssetProposalsResponse;
-  return proto.api.GetNewAssetProposalsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetNewAssetProposalsResponse;
+  return proto.api.v1.GetNewAssetProposalsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetNewAssetProposalsResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetNewAssetProposalsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetNewAssetProposalsResponse}
+ * @return {!proto.api.v1.GetNewAssetProposalsResponse}
  */
-proto.api.GetNewAssetProposalsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetNewAssetProposalsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -7742,9 +8202,9 @@ proto.api.GetNewAssetProposalsResponse.deserializeBinaryFromReader = function(ms
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetNewAssetProposalsResponse.prototype.serializeBinary = function() {
+proto.api.v1.GetNewAssetProposalsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetNewAssetProposalsResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetNewAssetProposalsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -7752,11 +8212,11 @@ proto.api.GetNewAssetProposalsResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetNewAssetProposalsResponse} message
+ * @param {!proto.api.v1.GetNewAssetProposalsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetNewAssetProposalsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetNewAssetProposalsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDataList();
   if (f.length > 0) {
@@ -7773,7 +8233,7 @@ proto.api.GetNewAssetProposalsResponse.serializeBinaryToWriter = function(messag
  * repeated vega.GovernanceData data = 1;
  * @return {!Array<!proto.vega.GovernanceData>}
  */
-proto.api.GetNewAssetProposalsResponse.prototype.getDataList = function() {
+proto.api.v1.GetNewAssetProposalsResponse.prototype.getDataList = function() {
   return /** @type{!Array<!proto.vega.GovernanceData>} */ (
     jspb.Message.getRepeatedWrapperField(this, governance_pb.GovernanceData, 1));
 };
@@ -7781,9 +8241,9 @@ proto.api.GetNewAssetProposalsResponse.prototype.getDataList = function() {
 
 /**
  * @param {!Array<!proto.vega.GovernanceData>} value
- * @return {!proto.api.GetNewAssetProposalsResponse} returns this
+ * @return {!proto.api.v1.GetNewAssetProposalsResponse} returns this
 */
-proto.api.GetNewAssetProposalsResponse.prototype.setDataList = function(value) {
+proto.api.v1.GetNewAssetProposalsResponse.prototype.setDataList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -7793,16 +8253,16 @@ proto.api.GetNewAssetProposalsResponse.prototype.setDataList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.GovernanceData}
  */
-proto.api.GetNewAssetProposalsResponse.prototype.addData = function(opt_value, opt_index) {
+proto.api.v1.GetNewAssetProposalsResponse.prototype.addData = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.GovernanceData, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.GetNewAssetProposalsResponse} returns this
+ * @return {!proto.api.v1.GetNewAssetProposalsResponse} returns this
  */
-proto.api.GetNewAssetProposalsResponse.prototype.clearDataList = function() {
+proto.api.v1.GetNewAssetProposalsResponse.prototype.clearDataList = function() {
   return this.setDataList([]);
 };
 
@@ -7823,8 +8283,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetProposalByIDRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetProposalByIDRequest.toObject(opt_includeInstance, this);
+proto.api.v1.GetProposalByIDRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetProposalByIDRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -7833,13 +8293,13 @@ proto.api.GetProposalByIDRequest.prototype.toObject = function(opt_includeInstan
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetProposalByIDRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetProposalByIDRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalByIDRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.GetProposalByIDRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    proposalid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    proposalId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -7853,23 +8313,23 @@ proto.api.GetProposalByIDRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetProposalByIDRequest}
+ * @return {!proto.api.v1.GetProposalByIDRequest}
  */
-proto.api.GetProposalByIDRequest.deserializeBinary = function(bytes) {
+proto.api.v1.GetProposalByIDRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetProposalByIDRequest;
-  return proto.api.GetProposalByIDRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetProposalByIDRequest;
+  return proto.api.v1.GetProposalByIDRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetProposalByIDRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetProposalByIDRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetProposalByIDRequest}
+ * @return {!proto.api.v1.GetProposalByIDRequest}
  */
-proto.api.GetProposalByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetProposalByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -7878,7 +8338,7 @@ proto.api.GetProposalByIDRequest.deserializeBinaryFromReader = function(msg, rea
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setProposalid(value);
+      msg.setProposalId(value);
       break;
     default:
       reader.skipField();
@@ -7893,9 +8353,9 @@ proto.api.GetProposalByIDRequest.deserializeBinaryFromReader = function(msg, rea
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetProposalByIDRequest.prototype.serializeBinary = function() {
+proto.api.v1.GetProposalByIDRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetProposalByIDRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetProposalByIDRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -7903,13 +8363,13 @@ proto.api.GetProposalByIDRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetProposalByIDRequest} message
+ * @param {!proto.api.v1.GetProposalByIDRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalByIDRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetProposalByIDRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getProposalid();
+  f = message.getProposalId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -7920,19 +8380,19 @@ proto.api.GetProposalByIDRequest.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional string proposalID = 1;
+ * optional string proposal_id = 1;
  * @return {string}
  */
-proto.api.GetProposalByIDRequest.prototype.getProposalid = function() {
+proto.api.v1.GetProposalByIDRequest.prototype.getProposalId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.GetProposalByIDRequest} returns this
+ * @return {!proto.api.v1.GetProposalByIDRequest} returns this
  */
-proto.api.GetProposalByIDRequest.prototype.setProposalid = function(value) {
+proto.api.v1.GetProposalByIDRequest.prototype.setProposalId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -7953,8 +8413,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetProposalByIDResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetProposalByIDResponse.toObject(opt_includeInstance, this);
+proto.api.v1.GetProposalByIDResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetProposalByIDResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -7963,11 +8423,11 @@ proto.api.GetProposalByIDResponse.prototype.toObject = function(opt_includeInsta
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetProposalByIDResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetProposalByIDResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalByIDResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.GetProposalByIDResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     data: (f = msg.getData()) && governance_pb.GovernanceData.toObject(includeInstance, f)
   };
@@ -7983,23 +8443,23 @@ proto.api.GetProposalByIDResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetProposalByIDResponse}
+ * @return {!proto.api.v1.GetProposalByIDResponse}
  */
-proto.api.GetProposalByIDResponse.deserializeBinary = function(bytes) {
+proto.api.v1.GetProposalByIDResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetProposalByIDResponse;
-  return proto.api.GetProposalByIDResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetProposalByIDResponse;
+  return proto.api.v1.GetProposalByIDResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetProposalByIDResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetProposalByIDResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetProposalByIDResponse}
+ * @return {!proto.api.v1.GetProposalByIDResponse}
  */
-proto.api.GetProposalByIDResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetProposalByIDResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8024,9 +8484,9 @@ proto.api.GetProposalByIDResponse.deserializeBinaryFromReader = function(msg, re
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetProposalByIDResponse.prototype.serializeBinary = function() {
+proto.api.v1.GetProposalByIDResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetProposalByIDResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetProposalByIDResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8034,11 +8494,11 @@ proto.api.GetProposalByIDResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetProposalByIDResponse} message
+ * @param {!proto.api.v1.GetProposalByIDResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalByIDResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetProposalByIDResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getData();
   if (f != null) {
@@ -8055,7 +8515,7 @@ proto.api.GetProposalByIDResponse.serializeBinaryToWriter = function(message, wr
  * optional vega.GovernanceData data = 1;
  * @return {?proto.vega.GovernanceData}
  */
-proto.api.GetProposalByIDResponse.prototype.getData = function() {
+proto.api.v1.GetProposalByIDResponse.prototype.getData = function() {
   return /** @type{?proto.vega.GovernanceData} */ (
     jspb.Message.getWrapperField(this, governance_pb.GovernanceData, 1));
 };
@@ -8063,18 +8523,18 @@ proto.api.GetProposalByIDResponse.prototype.getData = function() {
 
 /**
  * @param {?proto.vega.GovernanceData|undefined} value
- * @return {!proto.api.GetProposalByIDResponse} returns this
+ * @return {!proto.api.v1.GetProposalByIDResponse} returns this
 */
-proto.api.GetProposalByIDResponse.prototype.setData = function(value) {
+proto.api.v1.GetProposalByIDResponse.prototype.setData = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.GetProposalByIDResponse} returns this
+ * @return {!proto.api.v1.GetProposalByIDResponse} returns this
  */
-proto.api.GetProposalByIDResponse.prototype.clearData = function() {
+proto.api.v1.GetProposalByIDResponse.prototype.clearData = function() {
   return this.setData(undefined);
 };
 
@@ -8083,7 +8543,7 @@ proto.api.GetProposalByIDResponse.prototype.clearData = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.GetProposalByIDResponse.prototype.hasData = function() {
+proto.api.v1.GetProposalByIDResponse.prototype.hasData = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -8104,8 +8564,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetProposalByReferenceRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetProposalByReferenceRequest.toObject(opt_includeInstance, this);
+proto.api.v1.GetProposalByReferenceRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetProposalByReferenceRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -8114,11 +8574,11 @@ proto.api.GetProposalByReferenceRequest.prototype.toObject = function(opt_includ
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetProposalByReferenceRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetProposalByReferenceRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalByReferenceRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.GetProposalByReferenceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     reference: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
@@ -8134,23 +8594,23 @@ proto.api.GetProposalByReferenceRequest.toObject = function(includeInstance, msg
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetProposalByReferenceRequest}
+ * @return {!proto.api.v1.GetProposalByReferenceRequest}
  */
-proto.api.GetProposalByReferenceRequest.deserializeBinary = function(bytes) {
+proto.api.v1.GetProposalByReferenceRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetProposalByReferenceRequest;
-  return proto.api.GetProposalByReferenceRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetProposalByReferenceRequest;
+  return proto.api.v1.GetProposalByReferenceRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetProposalByReferenceRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetProposalByReferenceRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetProposalByReferenceRequest}
+ * @return {!proto.api.v1.GetProposalByReferenceRequest}
  */
-proto.api.GetProposalByReferenceRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetProposalByReferenceRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8174,9 +8634,9 @@ proto.api.GetProposalByReferenceRequest.deserializeBinaryFromReader = function(m
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetProposalByReferenceRequest.prototype.serializeBinary = function() {
+proto.api.v1.GetProposalByReferenceRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetProposalByReferenceRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetProposalByReferenceRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8184,11 +8644,11 @@ proto.api.GetProposalByReferenceRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetProposalByReferenceRequest} message
+ * @param {!proto.api.v1.GetProposalByReferenceRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalByReferenceRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetProposalByReferenceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getReference();
   if (f.length > 0) {
@@ -8204,16 +8664,16 @@ proto.api.GetProposalByReferenceRequest.serializeBinaryToWriter = function(messa
  * optional string reference = 1;
  * @return {string}
  */
-proto.api.GetProposalByReferenceRequest.prototype.getReference = function() {
+proto.api.v1.GetProposalByReferenceRequest.prototype.getReference = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.GetProposalByReferenceRequest} returns this
+ * @return {!proto.api.v1.GetProposalByReferenceRequest} returns this
  */
-proto.api.GetProposalByReferenceRequest.prototype.setReference = function(value) {
+proto.api.v1.GetProposalByReferenceRequest.prototype.setReference = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -8234,8 +8694,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetProposalByReferenceResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetProposalByReferenceResponse.toObject(opt_includeInstance, this);
+proto.api.v1.GetProposalByReferenceResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetProposalByReferenceResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -8244,11 +8704,11 @@ proto.api.GetProposalByReferenceResponse.prototype.toObject = function(opt_inclu
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetProposalByReferenceResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetProposalByReferenceResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalByReferenceResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.GetProposalByReferenceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     data: (f = msg.getData()) && governance_pb.GovernanceData.toObject(includeInstance, f)
   };
@@ -8264,23 +8724,23 @@ proto.api.GetProposalByReferenceResponse.toObject = function(includeInstance, ms
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetProposalByReferenceResponse}
+ * @return {!proto.api.v1.GetProposalByReferenceResponse}
  */
-proto.api.GetProposalByReferenceResponse.deserializeBinary = function(bytes) {
+proto.api.v1.GetProposalByReferenceResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetProposalByReferenceResponse;
-  return proto.api.GetProposalByReferenceResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetProposalByReferenceResponse;
+  return proto.api.v1.GetProposalByReferenceResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetProposalByReferenceResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetProposalByReferenceResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetProposalByReferenceResponse}
+ * @return {!proto.api.v1.GetProposalByReferenceResponse}
  */
-proto.api.GetProposalByReferenceResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetProposalByReferenceResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8305,9 +8765,9 @@ proto.api.GetProposalByReferenceResponse.deserializeBinaryFromReader = function(
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetProposalByReferenceResponse.prototype.serializeBinary = function() {
+proto.api.v1.GetProposalByReferenceResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetProposalByReferenceResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetProposalByReferenceResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8315,11 +8775,11 @@ proto.api.GetProposalByReferenceResponse.prototype.serializeBinary = function() 
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetProposalByReferenceResponse} message
+ * @param {!proto.api.v1.GetProposalByReferenceResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProposalByReferenceResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetProposalByReferenceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getData();
   if (f != null) {
@@ -8336,7 +8796,7 @@ proto.api.GetProposalByReferenceResponse.serializeBinaryToWriter = function(mess
  * optional vega.GovernanceData data = 1;
  * @return {?proto.vega.GovernanceData}
  */
-proto.api.GetProposalByReferenceResponse.prototype.getData = function() {
+proto.api.v1.GetProposalByReferenceResponse.prototype.getData = function() {
   return /** @type{?proto.vega.GovernanceData} */ (
     jspb.Message.getWrapperField(this, governance_pb.GovernanceData, 1));
 };
@@ -8344,18 +8804,18 @@ proto.api.GetProposalByReferenceResponse.prototype.getData = function() {
 
 /**
  * @param {?proto.vega.GovernanceData|undefined} value
- * @return {!proto.api.GetProposalByReferenceResponse} returns this
+ * @return {!proto.api.v1.GetProposalByReferenceResponse} returns this
 */
-proto.api.GetProposalByReferenceResponse.prototype.setData = function(value) {
+proto.api.v1.GetProposalByReferenceResponse.prototype.setData = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.GetProposalByReferenceResponse} returns this
+ * @return {!proto.api.v1.GetProposalByReferenceResponse} returns this
  */
-proto.api.GetProposalByReferenceResponse.prototype.clearData = function() {
+proto.api.v1.GetProposalByReferenceResponse.prototype.clearData = function() {
   return this.setData(undefined);
 };
 
@@ -8364,7 +8824,7 @@ proto.api.GetProposalByReferenceResponse.prototype.clearData = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.GetProposalByReferenceResponse.prototype.hasData = function() {
+proto.api.v1.GetProposalByReferenceResponse.prototype.hasData = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -8385,8 +8845,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.ObservePartyProposalsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.ObservePartyProposalsRequest.toObject(opt_includeInstance, this);
+proto.api.v1.ObserveGovernanceRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.ObserveGovernanceRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -8395,13 +8855,13 @@ proto.api.ObservePartyProposalsRequest.prototype.toObject = function(opt_include
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.ObservePartyProposalsRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.ObserveGovernanceRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.ObservePartyProposalsRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.ObserveGovernanceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partyid: jspb.Message.getFieldWithDefault(msg, 1, "")
+
   };
 
   if (includeInstance) {
@@ -8415,23 +8875,124 @@ proto.api.ObservePartyProposalsRequest.toObject = function(includeInstance, msg)
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.ObservePartyProposalsRequest}
+ * @return {!proto.api.v1.ObserveGovernanceRequest}
  */
-proto.api.ObservePartyProposalsRequest.deserializeBinary = function(bytes) {
+proto.api.v1.ObserveGovernanceRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.ObservePartyProposalsRequest;
-  return proto.api.ObservePartyProposalsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.ObserveGovernanceRequest;
+  return proto.api.v1.ObserveGovernanceRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.ObservePartyProposalsRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.ObserveGovernanceRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.ObservePartyProposalsRequest}
+ * @return {!proto.api.v1.ObserveGovernanceRequest}
  */
-proto.api.ObservePartyProposalsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.ObserveGovernanceRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.ObserveGovernanceRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.ObserveGovernanceRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.ObserveGovernanceRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.ObserveGovernanceRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.ObserveGovernanceResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.ObserveGovernanceResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.ObserveGovernanceResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.ObserveGovernanceResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    data: (f = msg.getData()) && governance_pb.GovernanceData.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.ObserveGovernanceResponse}
+ */
+proto.api.v1.ObserveGovernanceResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.ObserveGovernanceResponse;
+  return proto.api.v1.ObserveGovernanceResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.ObserveGovernanceResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.ObserveGovernanceResponse}
+ */
+proto.api.v1.ObserveGovernanceResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8439,8 +9000,9 @@ proto.api.ObservePartyProposalsRequest.deserializeBinaryFromReader = function(ms
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      var value = new governance_pb.GovernanceData;
+      reader.readMessage(value,governance_pb.GovernanceData.deserializeBinaryFromReader);
+      msg.setData(value);
       break;
     default:
       reader.skipField();
@@ -8455,9 +9017,9 @@ proto.api.ObservePartyProposalsRequest.deserializeBinaryFromReader = function(ms
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.ObservePartyProposalsRequest.prototype.serializeBinary = function() {
+proto.api.v1.ObserveGovernanceResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.ObservePartyProposalsRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.ObserveGovernanceResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8465,13 +9027,163 @@ proto.api.ObservePartyProposalsRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.ObservePartyProposalsRequest} message
+ * @param {!proto.api.v1.ObserveGovernanceResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.ObservePartyProposalsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.ObserveGovernanceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPartyid();
+  f = message.getData();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      governance_pb.GovernanceData.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional vega.GovernanceData data = 1;
+ * @return {?proto.vega.GovernanceData}
+ */
+proto.api.v1.ObserveGovernanceResponse.prototype.getData = function() {
+  return /** @type{?proto.vega.GovernanceData} */ (
+    jspb.Message.getWrapperField(this, governance_pb.GovernanceData, 1));
+};
+
+
+/**
+ * @param {?proto.vega.GovernanceData|undefined} value
+ * @return {!proto.api.v1.ObserveGovernanceResponse} returns this
+*/
+proto.api.v1.ObserveGovernanceResponse.prototype.setData = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1.ObserveGovernanceResponse} returns this
+ */
+proto.api.v1.ObserveGovernanceResponse.prototype.clearData = function() {
+  return this.setData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1.ObserveGovernanceResponse.prototype.hasData = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.ObservePartyProposalsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.ObservePartyProposalsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.ObservePartyProposalsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.ObservePartyProposalsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    partyId: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.ObservePartyProposalsRequest}
+ */
+proto.api.v1.ObservePartyProposalsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.ObservePartyProposalsRequest;
+  return proto.api.v1.ObservePartyProposalsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.ObservePartyProposalsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.ObservePartyProposalsRequest}
+ */
+proto.api.v1.ObservePartyProposalsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPartyId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.ObservePartyProposalsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.ObservePartyProposalsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.ObservePartyProposalsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.ObservePartyProposalsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -8482,19 +9194,19 @@ proto.api.ObservePartyProposalsRequest.serializeBinaryToWriter = function(messag
 
 
 /**
- * optional string partyID = 1;
+ * optional string party_id = 1;
  * @return {string}
  */
-proto.api.ObservePartyProposalsRequest.prototype.getPartyid = function() {
+proto.api.v1.ObservePartyProposalsRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.ObservePartyProposalsRequest} returns this
+ * @return {!proto.api.v1.ObservePartyProposalsRequest} returns this
  */
-proto.api.ObservePartyProposalsRequest.prototype.setPartyid = function(value) {
+proto.api.v1.ObservePartyProposalsRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -8515,8 +9227,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.ObserveProposalVotesRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.ObserveProposalVotesRequest.toObject(opt_includeInstance, this);
+proto.api.v1.ObservePartyProposalsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.ObservePartyProposalsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -8525,13 +9237,13 @@ proto.api.ObserveProposalVotesRequest.prototype.toObject = function(opt_includeI
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.ObserveProposalVotesRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.ObservePartyProposalsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.ObserveProposalVotesRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.ObservePartyProposalsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    proposalid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    data: (f = msg.getData()) && governance_pb.GovernanceData.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8545,23 +9257,23 @@ proto.api.ObserveProposalVotesRequest.toObject = function(includeInstance, msg) 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.ObserveProposalVotesRequest}
+ * @return {!proto.api.v1.ObservePartyProposalsResponse}
  */
-proto.api.ObserveProposalVotesRequest.deserializeBinary = function(bytes) {
+proto.api.v1.ObservePartyProposalsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.ObserveProposalVotesRequest;
-  return proto.api.ObserveProposalVotesRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.ObservePartyProposalsResponse;
+  return proto.api.v1.ObservePartyProposalsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.ObserveProposalVotesRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.ObservePartyProposalsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.ObserveProposalVotesRequest}
+ * @return {!proto.api.v1.ObservePartyProposalsResponse}
  */
-proto.api.ObserveProposalVotesRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.ObservePartyProposalsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8569,8 +9281,9 @@ proto.api.ObserveProposalVotesRequest.deserializeBinaryFromReader = function(msg
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setProposalid(value);
+      var value = new governance_pb.GovernanceData;
+      reader.readMessage(value,governance_pb.GovernanceData.deserializeBinaryFromReader);
+      msg.setData(value);
       break;
     default:
       reader.skipField();
@@ -8585,9 +9298,9 @@ proto.api.ObserveProposalVotesRequest.deserializeBinaryFromReader = function(msg
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.ObserveProposalVotesRequest.prototype.serializeBinary = function() {
+proto.api.v1.ObservePartyProposalsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.ObserveProposalVotesRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.ObservePartyProposalsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8595,13 +9308,163 @@ proto.api.ObserveProposalVotesRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.ObserveProposalVotesRequest} message
+ * @param {!proto.api.v1.ObservePartyProposalsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.ObserveProposalVotesRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.ObservePartyProposalsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getProposalid();
+  f = message.getData();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      governance_pb.GovernanceData.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional vega.GovernanceData data = 1;
+ * @return {?proto.vega.GovernanceData}
+ */
+proto.api.v1.ObservePartyProposalsResponse.prototype.getData = function() {
+  return /** @type{?proto.vega.GovernanceData} */ (
+    jspb.Message.getWrapperField(this, governance_pb.GovernanceData, 1));
+};
+
+
+/**
+ * @param {?proto.vega.GovernanceData|undefined} value
+ * @return {!proto.api.v1.ObservePartyProposalsResponse} returns this
+*/
+proto.api.v1.ObservePartyProposalsResponse.prototype.setData = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1.ObservePartyProposalsResponse} returns this
+ */
+proto.api.v1.ObservePartyProposalsResponse.prototype.clearData = function() {
+  return this.setData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1.ObservePartyProposalsResponse.prototype.hasData = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.ObserveProposalVotesRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.ObserveProposalVotesRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.ObserveProposalVotesRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.ObserveProposalVotesRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    proposalId: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.ObserveProposalVotesRequest}
+ */
+proto.api.v1.ObserveProposalVotesRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.ObserveProposalVotesRequest;
+  return proto.api.v1.ObserveProposalVotesRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.ObserveProposalVotesRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.ObserveProposalVotesRequest}
+ */
+proto.api.v1.ObserveProposalVotesRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProposalId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.ObserveProposalVotesRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.ObserveProposalVotesRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.ObserveProposalVotesRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.ObserveProposalVotesRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getProposalId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -8612,19 +9475,19 @@ proto.api.ObserveProposalVotesRequest.serializeBinaryToWriter = function(message
 
 
 /**
- * optional string proposalID = 1;
+ * optional string proposal_id = 1;
  * @return {string}
  */
-proto.api.ObserveProposalVotesRequest.prototype.getProposalid = function() {
+proto.api.v1.ObserveProposalVotesRequest.prototype.getProposalId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.ObserveProposalVotesRequest} returns this
+ * @return {!proto.api.v1.ObserveProposalVotesRequest} returns this
  */
-proto.api.ObserveProposalVotesRequest.prototype.setProposalid = function(value) {
+proto.api.v1.ObserveProposalVotesRequest.prototype.setProposalId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -8645,8 +9508,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.ObservePartyVotesRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.ObservePartyVotesRequest.toObject(opt_includeInstance, this);
+proto.api.v1.ObserveProposalVotesResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.ObserveProposalVotesResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -8655,13 +9518,13 @@ proto.api.ObservePartyVotesRequest.prototype.toObject = function(opt_includeInst
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.ObservePartyVotesRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.ObserveProposalVotesResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.ObservePartyVotesRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.ObserveProposalVotesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partyid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    vote: (f = msg.getVote()) && governance_pb.Vote.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8675,23 +9538,23 @@ proto.api.ObservePartyVotesRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.ObservePartyVotesRequest}
+ * @return {!proto.api.v1.ObserveProposalVotesResponse}
  */
-proto.api.ObservePartyVotesRequest.deserializeBinary = function(bytes) {
+proto.api.v1.ObserveProposalVotesResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.ObservePartyVotesRequest;
-  return proto.api.ObservePartyVotesRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.ObserveProposalVotesResponse;
+  return proto.api.v1.ObserveProposalVotesResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.ObservePartyVotesRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.ObserveProposalVotesResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.ObservePartyVotesRequest}
+ * @return {!proto.api.v1.ObserveProposalVotesResponse}
  */
-proto.api.ObservePartyVotesRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.ObserveProposalVotesResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8699,8 +9562,9 @@ proto.api.ObservePartyVotesRequest.deserializeBinaryFromReader = function(msg, r
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      var value = new governance_pb.Vote;
+      reader.readMessage(value,governance_pb.Vote.deserializeBinaryFromReader);
+      msg.setVote(value);
       break;
     default:
       reader.skipField();
@@ -8715,9 +9579,9 @@ proto.api.ObservePartyVotesRequest.deserializeBinaryFromReader = function(msg, r
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.ObservePartyVotesRequest.prototype.serializeBinary = function() {
+proto.api.v1.ObserveProposalVotesResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.ObservePartyVotesRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.ObserveProposalVotesResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8725,13 +9589,163 @@ proto.api.ObservePartyVotesRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.ObservePartyVotesRequest} message
+ * @param {!proto.api.v1.ObserveProposalVotesResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.ObservePartyVotesRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.ObserveProposalVotesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPartyid();
+  f = message.getVote();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      governance_pb.Vote.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional vega.Vote vote = 1;
+ * @return {?proto.vega.Vote}
+ */
+proto.api.v1.ObserveProposalVotesResponse.prototype.getVote = function() {
+  return /** @type{?proto.vega.Vote} */ (
+    jspb.Message.getWrapperField(this, governance_pb.Vote, 1));
+};
+
+
+/**
+ * @param {?proto.vega.Vote|undefined} value
+ * @return {!proto.api.v1.ObserveProposalVotesResponse} returns this
+*/
+proto.api.v1.ObserveProposalVotesResponse.prototype.setVote = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1.ObserveProposalVotesResponse} returns this
+ */
+proto.api.v1.ObserveProposalVotesResponse.prototype.clearVote = function() {
+  return this.setVote(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1.ObserveProposalVotesResponse.prototype.hasVote = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.ObservePartyVotesRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.ObservePartyVotesRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.ObservePartyVotesRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.ObservePartyVotesRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    partyId: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.ObservePartyVotesRequest}
+ */
+proto.api.v1.ObservePartyVotesRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.ObservePartyVotesRequest;
+  return proto.api.v1.ObservePartyVotesRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.ObservePartyVotesRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.ObservePartyVotesRequest}
+ */
+proto.api.v1.ObservePartyVotesRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPartyId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.ObservePartyVotesRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.ObservePartyVotesRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.ObservePartyVotesRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.ObservePartyVotesRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -8742,19 +9756,19 @@ proto.api.ObservePartyVotesRequest.serializeBinaryToWriter = function(message, w
 
 
 /**
- * optional string partyID = 1;
+ * optional string party_id = 1;
  * @return {string}
  */
-proto.api.ObservePartyVotesRequest.prototype.getPartyid = function() {
+proto.api.v1.ObservePartyVotesRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.ObservePartyVotesRequest} returns this
+ * @return {!proto.api.v1.ObservePartyVotesRequest} returns this
  */
-proto.api.ObservePartyVotesRequest.prototype.setPartyid = function(value) {
+proto.api.v1.ObservePartyVotesRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -8775,8 +9789,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.MarginLevelsSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.MarginLevelsSubscribeRequest.toObject(opt_includeInstance, this);
+proto.api.v1.ObservePartyVotesResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.ObservePartyVotesResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -8785,14 +9799,13 @@ proto.api.MarginLevelsSubscribeRequest.prototype.toObject = function(opt_include
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.MarginLevelsSubscribeRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.ObservePartyVotesResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarginLevelsSubscribeRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.ObservePartyVotesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partyid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    marketid: jspb.Message.getFieldWithDefault(msg, 2, "")
+    vote: (f = msg.getVote()) && governance_pb.Vote.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8806,23 +9819,175 @@ proto.api.MarginLevelsSubscribeRequest.toObject = function(includeInstance, msg)
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.MarginLevelsSubscribeRequest}
+ * @return {!proto.api.v1.ObservePartyVotesResponse}
  */
-proto.api.MarginLevelsSubscribeRequest.deserializeBinary = function(bytes) {
+proto.api.v1.ObservePartyVotesResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.MarginLevelsSubscribeRequest;
-  return proto.api.MarginLevelsSubscribeRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.ObservePartyVotesResponse;
+  return proto.api.v1.ObservePartyVotesResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.MarginLevelsSubscribeRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.ObservePartyVotesResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.MarginLevelsSubscribeRequest}
+ * @return {!proto.api.v1.ObservePartyVotesResponse}
  */
-proto.api.MarginLevelsSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.ObservePartyVotesResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new governance_pb.Vote;
+      reader.readMessage(value,governance_pb.Vote.deserializeBinaryFromReader);
+      msg.setVote(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.ObservePartyVotesResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.ObservePartyVotesResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.ObservePartyVotesResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.ObservePartyVotesResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getVote();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      governance_pb.Vote.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional vega.Vote vote = 1;
+ * @return {?proto.vega.Vote}
+ */
+proto.api.v1.ObservePartyVotesResponse.prototype.getVote = function() {
+  return /** @type{?proto.vega.Vote} */ (
+    jspb.Message.getWrapperField(this, governance_pb.Vote, 1));
+};
+
+
+/**
+ * @param {?proto.vega.Vote|undefined} value
+ * @return {!proto.api.v1.ObservePartyVotesResponse} returns this
+*/
+proto.api.v1.ObservePartyVotesResponse.prototype.setVote = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1.ObservePartyVotesResponse} returns this
+ */
+proto.api.v1.ObservePartyVotesResponse.prototype.clearVote = function() {
+  return this.setVote(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1.ObservePartyVotesResponse.prototype.hasVote = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.MarginLevelsSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarginLevelsSubscribeRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.MarginLevelsSubscribeRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.MarginLevelsSubscribeRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    partyId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.MarginLevelsSubscribeRequest}
+ */
+proto.api.v1.MarginLevelsSubscribeRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.MarginLevelsSubscribeRequest;
+  return proto.api.v1.MarginLevelsSubscribeRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.MarginLevelsSubscribeRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.MarginLevelsSubscribeRequest}
+ */
+proto.api.v1.MarginLevelsSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8831,11 +9996,11 @@ proto.api.MarginLevelsSubscribeRequest.deserializeBinaryFromReader = function(ms
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     default:
       reader.skipField();
@@ -8850,9 +10015,9 @@ proto.api.MarginLevelsSubscribeRequest.deserializeBinaryFromReader = function(ms
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.MarginLevelsSubscribeRequest.prototype.serializeBinary = function() {
+proto.api.v1.MarginLevelsSubscribeRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.MarginLevelsSubscribeRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.MarginLevelsSubscribeRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8860,20 +10025,20 @@ proto.api.MarginLevelsSubscribeRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.MarginLevelsSubscribeRequest} message
+ * @param {!proto.api.v1.MarginLevelsSubscribeRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarginLevelsSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.MarginLevelsSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -8884,37 +10049,37 @@ proto.api.MarginLevelsSubscribeRequest.serializeBinaryToWriter = function(messag
 
 
 /**
- * optional string partyID = 1;
+ * optional string party_id = 1;
  * @return {string}
  */
-proto.api.MarginLevelsSubscribeRequest.prototype.getPartyid = function() {
+proto.api.v1.MarginLevelsSubscribeRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.MarginLevelsSubscribeRequest} returns this
+ * @return {!proto.api.v1.MarginLevelsSubscribeRequest} returns this
  */
-proto.api.MarginLevelsSubscribeRequest.prototype.setPartyid = function(value) {
+proto.api.v1.MarginLevelsSubscribeRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string marketID = 2;
+ * optional string market_id = 2;
  * @return {string}
  */
-proto.api.MarginLevelsSubscribeRequest.prototype.getMarketid = function() {
+proto.api.v1.MarginLevelsSubscribeRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.MarginLevelsSubscribeRequest} returns this
+ * @return {!proto.api.v1.MarginLevelsSubscribeRequest} returns this
  */
-proto.api.MarginLevelsSubscribeRequest.prototype.setMarketid = function(value) {
+proto.api.v1.MarginLevelsSubscribeRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -8935,8 +10100,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.MarginLevelsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.MarginLevelsRequest.toObject(opt_includeInstance, this);
+proto.api.v1.MarginLevelsSubscribeResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarginLevelsSubscribeResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -8945,14 +10110,13 @@ proto.api.MarginLevelsRequest.prototype.toObject = function(opt_includeInstance)
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.MarginLevelsRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.MarginLevelsSubscribeResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarginLevelsRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.MarginLevelsSubscribeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partyid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    marketid: jspb.Message.getFieldWithDefault(msg, 2, "")
+    marginLevels: (f = msg.getMarginLevels()) && vega_pb.MarginLevels.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8966,23 +10130,23 @@ proto.api.MarginLevelsRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.MarginLevelsRequest}
+ * @return {!proto.api.v1.MarginLevelsSubscribeResponse}
  */
-proto.api.MarginLevelsRequest.deserializeBinary = function(bytes) {
+proto.api.v1.MarginLevelsSubscribeResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.MarginLevelsRequest;
-  return proto.api.MarginLevelsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.MarginLevelsSubscribeResponse;
+  return proto.api.v1.MarginLevelsSubscribeResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.MarginLevelsRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.MarginLevelsSubscribeResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.MarginLevelsRequest}
+ * @return {!proto.api.v1.MarginLevelsSubscribeResponse}
  */
-proto.api.MarginLevelsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.MarginLevelsSubscribeResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8990,12 +10154,9 @@ proto.api.MarginLevelsRequest.deserializeBinaryFromReader = function(msg, reader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      var value = new vega_pb.MarginLevels;
+      reader.readMessage(value,vega_pb.MarginLevels.deserializeBinaryFromReader);
+      msg.setMarginLevels(value);
       break;
     default:
       reader.skipField();
@@ -9010,9 +10171,9 @@ proto.api.MarginLevelsRequest.deserializeBinaryFromReader = function(msg, reader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.MarginLevelsRequest.prototype.serializeBinary = function() {
+proto.api.v1.MarginLevelsSubscribeResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.MarginLevelsRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.MarginLevelsSubscribeResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -9020,20 +10181,175 @@ proto.api.MarginLevelsRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.MarginLevelsRequest} message
+ * @param {!proto.api.v1.MarginLevelsSubscribeResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarginLevelsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.MarginLevelsSubscribeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPartyid();
+  f = message.getMarginLevels();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      vega_pb.MarginLevels.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional vega.MarginLevels margin_levels = 1;
+ * @return {?proto.vega.MarginLevels}
+ */
+proto.api.v1.MarginLevelsSubscribeResponse.prototype.getMarginLevels = function() {
+  return /** @type{?proto.vega.MarginLevels} */ (
+    jspb.Message.getWrapperField(this, vega_pb.MarginLevels, 1));
+};
+
+
+/**
+ * @param {?proto.vega.MarginLevels|undefined} value
+ * @return {!proto.api.v1.MarginLevelsSubscribeResponse} returns this
+*/
+proto.api.v1.MarginLevelsSubscribeResponse.prototype.setMarginLevels = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1.MarginLevelsSubscribeResponse} returns this
+ */
+proto.api.v1.MarginLevelsSubscribeResponse.prototype.clearMarginLevels = function() {
+  return this.setMarginLevels(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1.MarginLevelsSubscribeResponse.prototype.hasMarginLevels = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.MarginLevelsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarginLevelsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.MarginLevelsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.MarginLevelsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    partyId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.MarginLevelsRequest}
+ */
+proto.api.v1.MarginLevelsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.MarginLevelsRequest;
+  return proto.api.v1.MarginLevelsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.MarginLevelsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.MarginLevelsRequest}
+ */
+proto.api.v1.MarginLevelsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPartyId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMarketId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.MarginLevelsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.MarginLevelsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.MarginLevelsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.MarginLevelsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -9044,37 +10360,37 @@ proto.api.MarginLevelsRequest.serializeBinaryToWriter = function(message, writer
 
 
 /**
- * optional string partyID = 1;
+ * optional string party_id = 1;
  * @return {string}
  */
-proto.api.MarginLevelsRequest.prototype.getPartyid = function() {
+proto.api.v1.MarginLevelsRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.MarginLevelsRequest} returns this
+ * @return {!proto.api.v1.MarginLevelsRequest} returns this
  */
-proto.api.MarginLevelsRequest.prototype.setPartyid = function(value) {
+proto.api.v1.MarginLevelsRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string marketID = 2;
+ * optional string market_id = 2;
  * @return {string}
  */
-proto.api.MarginLevelsRequest.prototype.getMarketid = function() {
+proto.api.v1.MarginLevelsRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.MarginLevelsRequest} returns this
+ * @return {!proto.api.v1.MarginLevelsRequest} returns this
  */
-proto.api.MarginLevelsRequest.prototype.setMarketid = function(value) {
+proto.api.v1.MarginLevelsRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -9085,7 +10401,7 @@ proto.api.MarginLevelsRequest.prototype.setMarketid = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.MarginLevelsResponse.repeatedFields_ = [1];
+proto.api.v1.MarginLevelsResponse.repeatedFields_ = [1];
 
 
 
@@ -9102,8 +10418,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.MarginLevelsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.MarginLevelsResponse.toObject(opt_includeInstance, this);
+proto.api.v1.MarginLevelsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarginLevelsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -9112,13 +10428,13 @@ proto.api.MarginLevelsResponse.prototype.toObject = function(opt_includeInstance
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.MarginLevelsResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.MarginLevelsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarginLevelsResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.MarginLevelsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marginlevelsList: jspb.Message.toObjectList(msg.getMarginlevelsList(),
+    marginLevelsList: jspb.Message.toObjectList(msg.getMarginLevelsList(),
     vega_pb.MarginLevels.toObject, includeInstance)
   };
 
@@ -9133,23 +10449,23 @@ proto.api.MarginLevelsResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.MarginLevelsResponse}
+ * @return {!proto.api.v1.MarginLevelsResponse}
  */
-proto.api.MarginLevelsResponse.deserializeBinary = function(bytes) {
+proto.api.v1.MarginLevelsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.MarginLevelsResponse;
-  return proto.api.MarginLevelsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.MarginLevelsResponse;
+  return proto.api.v1.MarginLevelsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.MarginLevelsResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.MarginLevelsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.MarginLevelsResponse}
+ * @return {!proto.api.v1.MarginLevelsResponse}
  */
-proto.api.MarginLevelsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.MarginLevelsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -9159,7 +10475,7 @@ proto.api.MarginLevelsResponse.deserializeBinaryFromReader = function(msg, reade
     case 1:
       var value = new vega_pb.MarginLevels;
       reader.readMessage(value,vega_pb.MarginLevels.deserializeBinaryFromReader);
-      msg.addMarginlevels(value);
+      msg.addMarginLevels(value);
       break;
     default:
       reader.skipField();
@@ -9174,9 +10490,9 @@ proto.api.MarginLevelsResponse.deserializeBinaryFromReader = function(msg, reade
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.MarginLevelsResponse.prototype.serializeBinary = function() {
+proto.api.v1.MarginLevelsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.MarginLevelsResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.MarginLevelsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -9184,13 +10500,13 @@ proto.api.MarginLevelsResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.MarginLevelsResponse} message
+ * @param {!proto.api.v1.MarginLevelsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarginLevelsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.MarginLevelsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarginlevelsList();
+  f = message.getMarginLevelsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -9202,10 +10518,10 @@ proto.api.MarginLevelsResponse.serializeBinaryToWriter = function(message, write
 
 
 /**
- * repeated vega.MarginLevels marginLevels = 1;
+ * repeated vega.MarginLevels margin_levels = 1;
  * @return {!Array<!proto.vega.MarginLevels>}
  */
-proto.api.MarginLevelsResponse.prototype.getMarginlevelsList = function() {
+proto.api.v1.MarginLevelsResponse.prototype.getMarginLevelsList = function() {
   return /** @type{!Array<!proto.vega.MarginLevels>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.MarginLevels, 1));
 };
@@ -9213,9 +10529,9 @@ proto.api.MarginLevelsResponse.prototype.getMarginlevelsList = function() {
 
 /**
  * @param {!Array<!proto.vega.MarginLevels>} value
- * @return {!proto.api.MarginLevelsResponse} returns this
+ * @return {!proto.api.v1.MarginLevelsResponse} returns this
 */
-proto.api.MarginLevelsResponse.prototype.setMarginlevelsList = function(value) {
+proto.api.v1.MarginLevelsResponse.prototype.setMarginLevelsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -9225,17 +10541,17 @@ proto.api.MarginLevelsResponse.prototype.setMarginlevelsList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.MarginLevels}
  */
-proto.api.MarginLevelsResponse.prototype.addMarginlevels = function(opt_value, opt_index) {
+proto.api.v1.MarginLevelsResponse.prototype.addMarginLevels = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.MarginLevels, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.MarginLevelsResponse} returns this
+ * @return {!proto.api.v1.MarginLevelsResponse} returns this
  */
-proto.api.MarginLevelsResponse.prototype.clearMarginlevelsList = function() {
-  return this.setMarginlevelsList([]);
+proto.api.v1.MarginLevelsResponse.prototype.clearMarginLevelsList = function() {
+  return this.setMarginLevelsList([]);
 };
 
 
@@ -9255,8 +10571,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.MarketsDataSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.MarketsDataSubscribeRequest.toObject(opt_includeInstance, this);
+proto.api.v1.MarketsDataSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketsDataSubscribeRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -9265,13 +10581,13 @@ proto.api.MarketsDataSubscribeRequest.prototype.toObject = function(opt_includeI
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.MarketsDataSubscribeRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.MarketsDataSubscribeRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketsDataSubscribeRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.MarketsDataSubscribeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -9285,23 +10601,23 @@ proto.api.MarketsDataSubscribeRequest.toObject = function(includeInstance, msg) 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.MarketsDataSubscribeRequest}
+ * @return {!proto.api.v1.MarketsDataSubscribeRequest}
  */
-proto.api.MarketsDataSubscribeRequest.deserializeBinary = function(bytes) {
+proto.api.v1.MarketsDataSubscribeRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.MarketsDataSubscribeRequest;
-  return proto.api.MarketsDataSubscribeRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.MarketsDataSubscribeRequest;
+  return proto.api.v1.MarketsDataSubscribeRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.MarketsDataSubscribeRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.MarketsDataSubscribeRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.MarketsDataSubscribeRequest}
+ * @return {!proto.api.v1.MarketsDataSubscribeRequest}
  */
-proto.api.MarketsDataSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.MarketsDataSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -9310,7 +10626,7 @@ proto.api.MarketsDataSubscribeRequest.deserializeBinaryFromReader = function(msg
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     default:
       reader.skipField();
@@ -9325,9 +10641,9 @@ proto.api.MarketsDataSubscribeRequest.deserializeBinaryFromReader = function(msg
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.MarketsDataSubscribeRequest.prototype.serializeBinary = function() {
+proto.api.v1.MarketsDataSubscribeRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.MarketsDataSubscribeRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.MarketsDataSubscribeRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -9335,13 +10651,13 @@ proto.api.MarketsDataSubscribeRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.MarketsDataSubscribeRequest} message
+ * @param {!proto.api.v1.MarketsDataSubscribeRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketsDataSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.MarketsDataSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -9352,19 +10668,19 @@ proto.api.MarketsDataSubscribeRequest.serializeBinaryToWriter = function(message
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.api.MarketsDataSubscribeRequest.prototype.getMarketid = function() {
+proto.api.v1.MarketsDataSubscribeRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.MarketsDataSubscribeRequest} returns this
+ * @return {!proto.api.v1.MarketsDataSubscribeRequest} returns this
  */
-proto.api.MarketsDataSubscribeRequest.prototype.setMarketid = function(value) {
+proto.api.v1.MarketsDataSubscribeRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -9385,8 +10701,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.MarketDataByIDRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.MarketDataByIDRequest.toObject(opt_includeInstance, this);
+proto.api.v1.MarketsDataSubscribeResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketsDataSubscribeResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -9395,13 +10711,13 @@ proto.api.MarketDataByIDRequest.prototype.toObject = function(opt_includeInstanc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.MarketDataByIDRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.MarketsDataSubscribeResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketDataByIDRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.MarketsDataSubscribeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    marketData: (f = msg.getMarketData()) && vega_pb.MarketData.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9415,153 +10731,23 @@ proto.api.MarketDataByIDRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.MarketDataByIDRequest}
+ * @return {!proto.api.v1.MarketsDataSubscribeResponse}
  */
-proto.api.MarketDataByIDRequest.deserializeBinary = function(bytes) {
+proto.api.v1.MarketsDataSubscribeResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.MarketDataByIDRequest;
-  return proto.api.MarketDataByIDRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.MarketsDataSubscribeResponse;
+  return proto.api.v1.MarketsDataSubscribeResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.MarketDataByIDRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.MarketsDataSubscribeResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.MarketDataByIDRequest}
+ * @return {!proto.api.v1.MarketsDataSubscribeResponse}
  */
-proto.api.MarketDataByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.api.MarketDataByIDRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.api.MarketDataByIDRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.api.MarketDataByIDRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.api.MarketDataByIDRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getMarketid();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string marketID = 1;
- * @return {string}
- */
-proto.api.MarketDataByIDRequest.prototype.getMarketid = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.MarketDataByIDRequest} returns this
- */
-proto.api.MarketDataByIDRequest.prototype.setMarketid = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.api.MarketDataByIDResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.MarketDataByIDResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.api.MarketDataByIDResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.api.MarketDataByIDResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    marketdata: (f = msg.getMarketdata()) && vega_pb.MarketData.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.MarketDataByIDResponse}
- */
-proto.api.MarketDataByIDResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.MarketDataByIDResponse;
-  return proto.api.MarketDataByIDResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.api.MarketDataByIDResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.MarketDataByIDResponse}
- */
-proto.api.MarketDataByIDResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.MarketsDataSubscribeResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -9571,7 +10757,7 @@ proto.api.MarketDataByIDResponse.deserializeBinaryFromReader = function(msg, rea
     case 1:
       var value = new vega_pb.MarketData;
       reader.readMessage(value,vega_pb.MarketData.deserializeBinaryFromReader);
-      msg.setMarketdata(value);
+      msg.setMarketData(value);
       break;
     default:
       reader.skipField();
@@ -9586,9 +10772,9 @@ proto.api.MarketDataByIDResponse.deserializeBinaryFromReader = function(msg, rea
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.MarketDataByIDResponse.prototype.serializeBinary = function() {
+proto.api.v1.MarketsDataSubscribeResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.MarketDataByIDResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.MarketsDataSubscribeResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -9596,13 +10782,13 @@ proto.api.MarketDataByIDResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.MarketDataByIDResponse} message
+ * @param {!proto.api.v1.MarketsDataSubscribeResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketDataByIDResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.MarketsDataSubscribeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketdata();
+  f = message.getMarketData();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -9614,10 +10800,10 @@ proto.api.MarketDataByIDResponse.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional vega.MarketData marketData = 1;
+ * optional vega.MarketData market_data = 1;
  * @return {?proto.vega.MarketData}
  */
-proto.api.MarketDataByIDResponse.prototype.getMarketdata = function() {
+proto.api.v1.MarketsDataSubscribeResponse.prototype.getMarketData = function() {
   return /** @type{?proto.vega.MarketData} */ (
     jspb.Message.getWrapperField(this, vega_pb.MarketData, 1));
 };
@@ -9625,19 +10811,19 @@ proto.api.MarketDataByIDResponse.prototype.getMarketdata = function() {
 
 /**
  * @param {?proto.vega.MarketData|undefined} value
- * @return {!proto.api.MarketDataByIDResponse} returns this
+ * @return {!proto.api.v1.MarketsDataSubscribeResponse} returns this
 */
-proto.api.MarketDataByIDResponse.prototype.setMarketdata = function(value) {
+proto.api.v1.MarketsDataSubscribeResponse.prototype.setMarketData = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.MarketDataByIDResponse} returns this
+ * @return {!proto.api.v1.MarketsDataSubscribeResponse} returns this
  */
-proto.api.MarketDataByIDResponse.prototype.clearMarketdata = function() {
-  return this.setMarketdata(undefined);
+proto.api.v1.MarketsDataSubscribeResponse.prototype.clearMarketData = function() {
+  return this.setMarketData(undefined);
 };
 
 
@@ -9645,18 +10831,11 @@ proto.api.MarketDataByIDResponse.prototype.clearMarketdata = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.MarketDataByIDResponse.prototype.hasMarketdata = function() {
+proto.api.v1.MarketsDataSubscribeResponse.prototype.hasMarketData = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.MarketsDataResponse.repeatedFields_ = [1];
 
 
 
@@ -9673,8 +10852,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.MarketsDataResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.MarketsDataResponse.toObject(opt_includeInstance, this);
+proto.api.v1.MarketDataByIDRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketDataByIDRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -9683,13 +10862,402 @@ proto.api.MarketsDataResponse.prototype.toObject = function(opt_includeInstance)
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.MarketsDataResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.MarketDataByIDRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketsDataResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.MarketDataByIDRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketsdataList: jspb.Message.toObjectList(msg.getMarketsdataList(),
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.MarketDataByIDRequest}
+ */
+proto.api.v1.MarketDataByIDRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.MarketDataByIDRequest;
+  return proto.api.v1.MarketDataByIDRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.MarketDataByIDRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.MarketDataByIDRequest}
+ */
+proto.api.v1.MarketDataByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMarketId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.MarketDataByIDRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.MarketDataByIDRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.MarketDataByIDRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.MarketDataByIDRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMarketId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string market_id = 1;
+ * @return {string}
+ */
+proto.api.v1.MarketDataByIDRequest.prototype.getMarketId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1.MarketDataByIDRequest} returns this
+ */
+proto.api.v1.MarketDataByIDRequest.prototype.setMarketId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.MarketDataByIDResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketDataByIDResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.MarketDataByIDResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.MarketDataByIDResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    marketData: (f = msg.getMarketData()) && vega_pb.MarketData.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.MarketDataByIDResponse}
+ */
+proto.api.v1.MarketDataByIDResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.MarketDataByIDResponse;
+  return proto.api.v1.MarketDataByIDResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.MarketDataByIDResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.MarketDataByIDResponse}
+ */
+proto.api.v1.MarketDataByIDResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new vega_pb.MarketData;
+      reader.readMessage(value,vega_pb.MarketData.deserializeBinaryFromReader);
+      msg.setMarketData(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.MarketDataByIDResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.MarketDataByIDResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.MarketDataByIDResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.MarketDataByIDResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMarketData();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      vega_pb.MarketData.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional vega.MarketData market_data = 1;
+ * @return {?proto.vega.MarketData}
+ */
+proto.api.v1.MarketDataByIDResponse.prototype.getMarketData = function() {
+  return /** @type{?proto.vega.MarketData} */ (
+    jspb.Message.getWrapperField(this, vega_pb.MarketData, 1));
+};
+
+
+/**
+ * @param {?proto.vega.MarketData|undefined} value
+ * @return {!proto.api.v1.MarketDataByIDResponse} returns this
+*/
+proto.api.v1.MarketDataByIDResponse.prototype.setMarketData = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1.MarketDataByIDResponse} returns this
+ */
+proto.api.v1.MarketDataByIDResponse.prototype.clearMarketData = function() {
+  return this.setMarketData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1.MarketDataByIDResponse.prototype.hasMarketData = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.MarketsDataRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketsDataRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.MarketsDataRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.MarketsDataRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.MarketsDataRequest}
+ */
+proto.api.v1.MarketsDataRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.MarketsDataRequest;
+  return proto.api.v1.MarketsDataRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.MarketsDataRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.MarketsDataRequest}
+ */
+proto.api.v1.MarketsDataRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.MarketsDataRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.MarketsDataRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.MarketsDataRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.MarketsDataRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1.MarketsDataResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.MarketsDataResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketsDataResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.MarketsDataResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.MarketsDataResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    marketsDataList: jspb.Message.toObjectList(msg.getMarketsDataList(),
     vega_pb.MarketData.toObject, includeInstance)
   };
 
@@ -9704,23 +11272,23 @@ proto.api.MarketsDataResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.MarketsDataResponse}
+ * @return {!proto.api.v1.MarketsDataResponse}
  */
-proto.api.MarketsDataResponse.deserializeBinary = function(bytes) {
+proto.api.v1.MarketsDataResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.MarketsDataResponse;
-  return proto.api.MarketsDataResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.MarketsDataResponse;
+  return proto.api.v1.MarketsDataResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.MarketsDataResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.MarketsDataResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.MarketsDataResponse}
+ * @return {!proto.api.v1.MarketsDataResponse}
  */
-proto.api.MarketsDataResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.MarketsDataResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -9730,7 +11298,7 @@ proto.api.MarketsDataResponse.deserializeBinaryFromReader = function(msg, reader
     case 1:
       var value = new vega_pb.MarketData;
       reader.readMessage(value,vega_pb.MarketData.deserializeBinaryFromReader);
-      msg.addMarketsdata(value);
+      msg.addMarketsData(value);
       break;
     default:
       reader.skipField();
@@ -9745,9 +11313,9 @@ proto.api.MarketsDataResponse.deserializeBinaryFromReader = function(msg, reader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.MarketsDataResponse.prototype.serializeBinary = function() {
+proto.api.v1.MarketsDataResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.MarketsDataResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.MarketsDataResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -9755,13 +11323,13 @@ proto.api.MarketsDataResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.MarketsDataResponse} message
+ * @param {!proto.api.v1.MarketsDataResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketsDataResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.MarketsDataResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketsdataList();
+  f = message.getMarketsDataList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -9773,10 +11341,10 @@ proto.api.MarketsDataResponse.serializeBinaryToWriter = function(message, writer
 
 
 /**
- * repeated vega.MarketData marketsData = 1;
+ * repeated vega.MarketData markets_data = 1;
  * @return {!Array<!proto.vega.MarketData>}
  */
-proto.api.MarketsDataResponse.prototype.getMarketsdataList = function() {
+proto.api.v1.MarketsDataResponse.prototype.getMarketsDataList = function() {
   return /** @type{!Array<!proto.vega.MarketData>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.MarketData, 1));
 };
@@ -9784,9 +11352,9 @@ proto.api.MarketsDataResponse.prototype.getMarketsdataList = function() {
 
 /**
  * @param {!Array<!proto.vega.MarketData>} value
- * @return {!proto.api.MarketsDataResponse} returns this
+ * @return {!proto.api.v1.MarketsDataResponse} returns this
 */
-proto.api.MarketsDataResponse.prototype.setMarketsdataList = function(value) {
+proto.api.v1.MarketsDataResponse.prototype.setMarketsDataList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -9796,17 +11364,17 @@ proto.api.MarketsDataResponse.prototype.setMarketsdataList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.MarketData}
  */
-proto.api.MarketsDataResponse.prototype.addMarketsdata = function(opt_value, opt_index) {
+proto.api.v1.MarketsDataResponse.prototype.addMarketsData = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.MarketData, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.MarketsDataResponse} returns this
+ * @return {!proto.api.v1.MarketsDataResponse} returns this
  */
-proto.api.MarketsDataResponse.prototype.clearMarketsdataList = function() {
-  return this.setMarketsdataList([]);
+proto.api.v1.MarketsDataResponse.prototype.clearMarketsDataList = function() {
+  return this.setMarketsDataList([]);
 };
 
 
@@ -9826,8 +11394,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.LastTradeRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.LastTradeRequest.toObject(opt_includeInstance, this);
+proto.api.v1.LastTradeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.LastTradeRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -9836,13 +11404,13 @@ proto.api.LastTradeRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.LastTradeRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.LastTradeRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.LastTradeRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.LastTradeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -9856,23 +11424,23 @@ proto.api.LastTradeRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.LastTradeRequest}
+ * @return {!proto.api.v1.LastTradeRequest}
  */
-proto.api.LastTradeRequest.deserializeBinary = function(bytes) {
+proto.api.v1.LastTradeRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.LastTradeRequest;
-  return proto.api.LastTradeRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.LastTradeRequest;
+  return proto.api.v1.LastTradeRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.LastTradeRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.LastTradeRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.LastTradeRequest}
+ * @return {!proto.api.v1.LastTradeRequest}
  */
-proto.api.LastTradeRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.LastTradeRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -9881,7 +11449,7 @@ proto.api.LastTradeRequest.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     default:
       reader.skipField();
@@ -9896,9 +11464,9 @@ proto.api.LastTradeRequest.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.LastTradeRequest.prototype.serializeBinary = function() {
+proto.api.v1.LastTradeRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.LastTradeRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.LastTradeRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -9906,13 +11474,13 @@ proto.api.LastTradeRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.LastTradeRequest} message
+ * @param {!proto.api.v1.LastTradeRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.LastTradeRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.LastTradeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -9923,19 +11491,19 @@ proto.api.LastTradeRequest.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.api.LastTradeRequest.prototype.getMarketid = function() {
+proto.api.v1.LastTradeRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.LastTradeRequest} returns this
+ * @return {!proto.api.v1.LastTradeRequest} returns this
  */
-proto.api.LastTradeRequest.prototype.setMarketid = function(value) {
+proto.api.v1.LastTradeRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -9956,8 +11524,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.LastTradeResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.LastTradeResponse.toObject(opt_includeInstance, this);
+proto.api.v1.LastTradeResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.LastTradeResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -9966,11 +11534,11 @@ proto.api.LastTradeResponse.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.LastTradeResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.LastTradeResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.LastTradeResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.LastTradeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     trade: (f = msg.getTrade()) && vega_pb.Trade.toObject(includeInstance, f)
   };
@@ -9986,23 +11554,23 @@ proto.api.LastTradeResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.LastTradeResponse}
+ * @return {!proto.api.v1.LastTradeResponse}
  */
-proto.api.LastTradeResponse.deserializeBinary = function(bytes) {
+proto.api.v1.LastTradeResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.LastTradeResponse;
-  return proto.api.LastTradeResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.LastTradeResponse;
+  return proto.api.v1.LastTradeResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.LastTradeResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.LastTradeResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.LastTradeResponse}
+ * @return {!proto.api.v1.LastTradeResponse}
  */
-proto.api.LastTradeResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.LastTradeResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -10027,9 +11595,9 @@ proto.api.LastTradeResponse.deserializeBinaryFromReader = function(msg, reader) 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.LastTradeResponse.prototype.serializeBinary = function() {
+proto.api.v1.LastTradeResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.LastTradeResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.LastTradeResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -10037,11 +11605,11 @@ proto.api.LastTradeResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.LastTradeResponse} message
+ * @param {!proto.api.v1.LastTradeResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.LastTradeResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.LastTradeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTrade();
   if (f != null) {
@@ -10058,7 +11626,7 @@ proto.api.LastTradeResponse.serializeBinaryToWriter = function(message, writer) 
  * optional vega.Trade trade = 1;
  * @return {?proto.vega.Trade}
  */
-proto.api.LastTradeResponse.prototype.getTrade = function() {
+proto.api.v1.LastTradeResponse.prototype.getTrade = function() {
   return /** @type{?proto.vega.Trade} */ (
     jspb.Message.getWrapperField(this, vega_pb.Trade, 1));
 };
@@ -10066,18 +11634,18 @@ proto.api.LastTradeResponse.prototype.getTrade = function() {
 
 /**
  * @param {?proto.vega.Trade|undefined} value
- * @return {!proto.api.LastTradeResponse} returns this
+ * @return {!proto.api.v1.LastTradeResponse} returns this
 */
-proto.api.LastTradeResponse.prototype.setTrade = function(value) {
+proto.api.v1.LastTradeResponse.prototype.setTrade = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.LastTradeResponse} returns this
+ * @return {!proto.api.v1.LastTradeResponse} returns this
  */
-proto.api.LastTradeResponse.prototype.clearTrade = function() {
+proto.api.v1.LastTradeResponse.prototype.clearTrade = function() {
   return this.setTrade(undefined);
 };
 
@@ -10086,7 +11654,7 @@ proto.api.LastTradeResponse.prototype.clearTrade = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.LastTradeResponse.prototype.hasTrade = function() {
+proto.api.v1.LastTradeResponse.prototype.hasTrade = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -10107,8 +11675,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.MarketByIDRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.MarketByIDRequest.toObject(opt_includeInstance, this);
+proto.api.v1.MarketByIDRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketByIDRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -10117,13 +11685,13 @@ proto.api.MarketByIDRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.MarketByIDRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.MarketByIDRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketByIDRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.MarketByIDRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -10137,23 +11705,23 @@ proto.api.MarketByIDRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.MarketByIDRequest}
+ * @return {!proto.api.v1.MarketByIDRequest}
  */
-proto.api.MarketByIDRequest.deserializeBinary = function(bytes) {
+proto.api.v1.MarketByIDRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.MarketByIDRequest;
-  return proto.api.MarketByIDRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.MarketByIDRequest;
+  return proto.api.v1.MarketByIDRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.MarketByIDRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.MarketByIDRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.MarketByIDRequest}
+ * @return {!proto.api.v1.MarketByIDRequest}
  */
-proto.api.MarketByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.MarketByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -10162,7 +11730,7 @@ proto.api.MarketByIDRequest.deserializeBinaryFromReader = function(msg, reader) 
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     default:
       reader.skipField();
@@ -10177,9 +11745,9 @@ proto.api.MarketByIDRequest.deserializeBinaryFromReader = function(msg, reader) 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.MarketByIDRequest.prototype.serializeBinary = function() {
+proto.api.v1.MarketByIDRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.MarketByIDRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.MarketByIDRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -10187,13 +11755,13 @@ proto.api.MarketByIDRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.MarketByIDRequest} message
+ * @param {!proto.api.v1.MarketByIDRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketByIDRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.MarketByIDRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -10204,19 +11772,19 @@ proto.api.MarketByIDRequest.serializeBinaryToWriter = function(message, writer) 
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.api.MarketByIDRequest.prototype.getMarketid = function() {
+proto.api.v1.MarketByIDRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.MarketByIDRequest} returns this
+ * @return {!proto.api.v1.MarketByIDRequest} returns this
  */
-proto.api.MarketByIDRequest.prototype.setMarketid = function(value) {
+proto.api.v1.MarketByIDRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -10237,8 +11805,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.MarketByIDResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.MarketByIDResponse.toObject(opt_includeInstance, this);
+proto.api.v1.MarketByIDResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketByIDResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -10247,11 +11815,11 @@ proto.api.MarketByIDResponse.prototype.toObject = function(opt_includeInstance) 
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.MarketByIDResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.MarketByIDResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketByIDResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.MarketByIDResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     market: (f = msg.getMarket()) && markets_pb.Market.toObject(includeInstance, f)
   };
@@ -10267,23 +11835,23 @@ proto.api.MarketByIDResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.MarketByIDResponse}
+ * @return {!proto.api.v1.MarketByIDResponse}
  */
-proto.api.MarketByIDResponse.deserializeBinary = function(bytes) {
+proto.api.v1.MarketByIDResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.MarketByIDResponse;
-  return proto.api.MarketByIDResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.MarketByIDResponse;
+  return proto.api.v1.MarketByIDResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.MarketByIDResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.MarketByIDResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.MarketByIDResponse}
+ * @return {!proto.api.v1.MarketByIDResponse}
  */
-proto.api.MarketByIDResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.MarketByIDResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -10308,9 +11876,9 @@ proto.api.MarketByIDResponse.deserializeBinaryFromReader = function(msg, reader)
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.MarketByIDResponse.prototype.serializeBinary = function() {
+proto.api.v1.MarketByIDResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.MarketByIDResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.MarketByIDResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -10318,11 +11886,11 @@ proto.api.MarketByIDResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.MarketByIDResponse} message
+ * @param {!proto.api.v1.MarketByIDResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketByIDResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.MarketByIDResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getMarket();
   if (f != null) {
@@ -10339,7 +11907,7 @@ proto.api.MarketByIDResponse.serializeBinaryToWriter = function(message, writer)
  * optional vega.Market market = 1;
  * @return {?proto.vega.Market}
  */
-proto.api.MarketByIDResponse.prototype.getMarket = function() {
+proto.api.v1.MarketByIDResponse.prototype.getMarket = function() {
   return /** @type{?proto.vega.Market} */ (
     jspb.Message.getWrapperField(this, markets_pb.Market, 1));
 };
@@ -10347,18 +11915,18 @@ proto.api.MarketByIDResponse.prototype.getMarket = function() {
 
 /**
  * @param {?proto.vega.Market|undefined} value
- * @return {!proto.api.MarketByIDResponse} returns this
+ * @return {!proto.api.v1.MarketByIDResponse} returns this
 */
-proto.api.MarketByIDResponse.prototype.setMarket = function(value) {
+proto.api.v1.MarketByIDResponse.prototype.setMarket = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.MarketByIDResponse} returns this
+ * @return {!proto.api.v1.MarketByIDResponse} returns this
  */
-proto.api.MarketByIDResponse.prototype.clearMarket = function() {
+proto.api.v1.MarketByIDResponse.prototype.clearMarket = function() {
   return this.setMarket(undefined);
 };
 
@@ -10367,7 +11935,7 @@ proto.api.MarketByIDResponse.prototype.clearMarket = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.MarketByIDResponse.prototype.hasMarket = function() {
+proto.api.v1.MarketByIDResponse.prototype.hasMarket = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -10388,8 +11956,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PartyByIDRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PartyByIDRequest.toObject(opt_includeInstance, this);
+proto.api.v1.PartyByIDRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PartyByIDRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -10398,13 +11966,13 @@ proto.api.PartyByIDRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PartyByIDRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.PartyByIDRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PartyByIDRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.PartyByIDRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partyid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    partyId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -10418,23 +11986,23 @@ proto.api.PartyByIDRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PartyByIDRequest}
+ * @return {!proto.api.v1.PartyByIDRequest}
  */
-proto.api.PartyByIDRequest.deserializeBinary = function(bytes) {
+proto.api.v1.PartyByIDRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PartyByIDRequest;
-  return proto.api.PartyByIDRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PartyByIDRequest;
+  return proto.api.v1.PartyByIDRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PartyByIDRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PartyByIDRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PartyByIDRequest}
+ * @return {!proto.api.v1.PartyByIDRequest}
  */
-proto.api.PartyByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PartyByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -10443,7 +12011,7 @@ proto.api.PartyByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     default:
       reader.skipField();
@@ -10458,9 +12026,9 @@ proto.api.PartyByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PartyByIDRequest.prototype.serializeBinary = function() {
+proto.api.v1.PartyByIDRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PartyByIDRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PartyByIDRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -10468,13 +12036,13 @@ proto.api.PartyByIDRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PartyByIDRequest} message
+ * @param {!proto.api.v1.PartyByIDRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PartyByIDRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PartyByIDRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -10485,19 +12053,19 @@ proto.api.PartyByIDRequest.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string partyID = 1;
+ * optional string party_id = 1;
  * @return {string}
  */
-proto.api.PartyByIDRequest.prototype.getPartyid = function() {
+proto.api.v1.PartyByIDRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.PartyByIDRequest} returns this
+ * @return {!proto.api.v1.PartyByIDRequest} returns this
  */
-proto.api.PartyByIDRequest.prototype.setPartyid = function(value) {
+proto.api.v1.PartyByIDRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -10518,8 +12086,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PartyByIDResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PartyByIDResponse.toObject(opt_includeInstance, this);
+proto.api.v1.PartyByIDResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PartyByIDResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -10528,11 +12096,11 @@ proto.api.PartyByIDResponse.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PartyByIDResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.PartyByIDResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PartyByIDResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.PartyByIDResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     party: (f = msg.getParty()) && vega_pb.Party.toObject(includeInstance, f)
   };
@@ -10548,23 +12116,23 @@ proto.api.PartyByIDResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PartyByIDResponse}
+ * @return {!proto.api.v1.PartyByIDResponse}
  */
-proto.api.PartyByIDResponse.deserializeBinary = function(bytes) {
+proto.api.v1.PartyByIDResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PartyByIDResponse;
-  return proto.api.PartyByIDResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PartyByIDResponse;
+  return proto.api.v1.PartyByIDResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PartyByIDResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PartyByIDResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PartyByIDResponse}
+ * @return {!proto.api.v1.PartyByIDResponse}
  */
-proto.api.PartyByIDResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PartyByIDResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -10589,9 +12157,9 @@ proto.api.PartyByIDResponse.deserializeBinaryFromReader = function(msg, reader) 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PartyByIDResponse.prototype.serializeBinary = function() {
+proto.api.v1.PartyByIDResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PartyByIDResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PartyByIDResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -10599,11 +12167,11 @@ proto.api.PartyByIDResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PartyByIDResponse} message
+ * @param {!proto.api.v1.PartyByIDResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PartyByIDResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PartyByIDResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getParty();
   if (f != null) {
@@ -10620,7 +12188,7 @@ proto.api.PartyByIDResponse.serializeBinaryToWriter = function(message, writer) 
  * optional vega.Party party = 1;
  * @return {?proto.vega.Party}
  */
-proto.api.PartyByIDResponse.prototype.getParty = function() {
+proto.api.v1.PartyByIDResponse.prototype.getParty = function() {
   return /** @type{?proto.vega.Party} */ (
     jspb.Message.getWrapperField(this, vega_pb.Party, 1));
 };
@@ -10628,18 +12196,18 @@ proto.api.PartyByIDResponse.prototype.getParty = function() {
 
 /**
  * @param {?proto.vega.Party|undefined} value
- * @return {!proto.api.PartyByIDResponse} returns this
+ * @return {!proto.api.v1.PartyByIDResponse} returns this
 */
-proto.api.PartyByIDResponse.prototype.setParty = function(value) {
+proto.api.v1.PartyByIDResponse.prototype.setParty = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.PartyByIDResponse} returns this
+ * @return {!proto.api.v1.PartyByIDResponse} returns this
  */
-proto.api.PartyByIDResponse.prototype.clearParty = function() {
+proto.api.v1.PartyByIDResponse.prototype.clearParty = function() {
   return this.setParty(undefined);
 };
 
@@ -10648,18 +12216,11 @@ proto.api.PartyByIDResponse.prototype.clearParty = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.PartyByIDResponse.prototype.hasParty = function() {
+proto.api.v1.PartyByIDResponse.prototype.hasParty = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.PartiesResponse.repeatedFields_ = [1];
 
 
 
@@ -10676,8 +12237,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PartiesResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PartiesResponse.toObject(opt_includeInstance, this);
+proto.api.v1.PartiesRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PartiesRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -10686,11 +12247,119 @@ proto.api.PartiesResponse.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PartiesResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.PartiesRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PartiesResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.PartiesRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.PartiesRequest}
+ */
+proto.api.v1.PartiesRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.PartiesRequest;
+  return proto.api.v1.PartiesRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.PartiesRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.PartiesRequest}
+ */
+proto.api.v1.PartiesRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.PartiesRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.PartiesRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.PartiesRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.PartiesRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1.PartiesResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.PartiesResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PartiesResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.PartiesResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.PartiesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     partiesList: jspb.Message.toObjectList(msg.getPartiesList(),
     vega_pb.Party.toObject, includeInstance)
@@ -10707,23 +12376,23 @@ proto.api.PartiesResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PartiesResponse}
+ * @return {!proto.api.v1.PartiesResponse}
  */
-proto.api.PartiesResponse.deserializeBinary = function(bytes) {
+proto.api.v1.PartiesResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PartiesResponse;
-  return proto.api.PartiesResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PartiesResponse;
+  return proto.api.v1.PartiesResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PartiesResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PartiesResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PartiesResponse}
+ * @return {!proto.api.v1.PartiesResponse}
  */
-proto.api.PartiesResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PartiesResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -10748,9 +12417,9 @@ proto.api.PartiesResponse.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PartiesResponse.prototype.serializeBinary = function() {
+proto.api.v1.PartiesResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PartiesResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PartiesResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -10758,11 +12427,11 @@ proto.api.PartiesResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PartiesResponse} message
+ * @param {!proto.api.v1.PartiesResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PartiesResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PartiesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getPartiesList();
   if (f.length > 0) {
@@ -10779,7 +12448,7 @@ proto.api.PartiesResponse.serializeBinaryToWriter = function(message, writer) {
  * repeated vega.Party parties = 1;
  * @return {!Array<!proto.vega.Party>}
  */
-proto.api.PartiesResponse.prototype.getPartiesList = function() {
+proto.api.v1.PartiesResponse.prototype.getPartiesList = function() {
   return /** @type{!Array<!proto.vega.Party>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.Party, 1));
 };
@@ -10787,9 +12456,9 @@ proto.api.PartiesResponse.prototype.getPartiesList = function() {
 
 /**
  * @param {!Array<!proto.vega.Party>} value
- * @return {!proto.api.PartiesResponse} returns this
+ * @return {!proto.api.v1.PartiesResponse} returns this
 */
-proto.api.PartiesResponse.prototype.setPartiesList = function(value) {
+proto.api.v1.PartiesResponse.prototype.setPartiesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -10799,16 +12468,16 @@ proto.api.PartiesResponse.prototype.setPartiesList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Party}
  */
-proto.api.PartiesResponse.prototype.addParties = function(opt_value, opt_index) {
+proto.api.v1.PartiesResponse.prototype.addParties = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Party, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.PartiesResponse} returns this
+ * @return {!proto.api.v1.PartiesResponse} returns this
  */
-proto.api.PartiesResponse.prototype.clearPartiesList = function() {
+proto.api.v1.PartiesResponse.prototype.clearPartiesList = function() {
   return this.setPartiesList([]);
 };
 
@@ -10829,8 +12498,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.TradesByPartyRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.TradesByPartyRequest.toObject(opt_includeInstance, this);
+proto.api.v1.TradesByPartyRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.TradesByPartyRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -10839,15 +12508,15 @@ proto.api.TradesByPartyRequest.prototype.toObject = function(opt_includeInstance
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.TradesByPartyRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.TradesByPartyRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.TradesByPartyRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.TradesByPartyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partyid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    marketid: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    pagination: (f = msg.getPagination()) && proto.api.Pagination.toObject(includeInstance, f)
+    partyId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    pagination: (f = msg.getPagination()) && proto.api.v1.Pagination.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10861,23 +12530,23 @@ proto.api.TradesByPartyRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.TradesByPartyRequest}
+ * @return {!proto.api.v1.TradesByPartyRequest}
  */
-proto.api.TradesByPartyRequest.deserializeBinary = function(bytes) {
+proto.api.v1.TradesByPartyRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.TradesByPartyRequest;
-  return proto.api.TradesByPartyRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.TradesByPartyRequest;
+  return proto.api.v1.TradesByPartyRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.TradesByPartyRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.TradesByPartyRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.TradesByPartyRequest}
+ * @return {!proto.api.v1.TradesByPartyRequest}
  */
-proto.api.TradesByPartyRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.TradesByPartyRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -10886,15 +12555,15 @@ proto.api.TradesByPartyRequest.deserializeBinaryFromReader = function(msg, reade
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 3:
-      var value = new proto.api.Pagination;
-      reader.readMessage(value,proto.api.Pagination.deserializeBinaryFromReader);
+      var value = new proto.api.v1.Pagination;
+      reader.readMessage(value,proto.api.v1.Pagination.deserializeBinaryFromReader);
       msg.setPagination(value);
       break;
     default:
@@ -10910,9 +12579,9 @@ proto.api.TradesByPartyRequest.deserializeBinaryFromReader = function(msg, reade
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.TradesByPartyRequest.prototype.serializeBinary = function() {
+proto.api.v1.TradesByPartyRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.TradesByPartyRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.TradesByPartyRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -10920,20 +12589,20 @@ proto.api.TradesByPartyRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.TradesByPartyRequest} message
+ * @param {!proto.api.v1.TradesByPartyRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.TradesByPartyRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.TradesByPartyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -10945,72 +12614,72 @@ proto.api.TradesByPartyRequest.serializeBinaryToWriter = function(message, write
     writer.writeMessage(
       3,
       f,
-      proto.api.Pagination.serializeBinaryToWriter
+      proto.api.v1.Pagination.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string partyID = 1;
+ * optional string party_id = 1;
  * @return {string}
  */
-proto.api.TradesByPartyRequest.prototype.getPartyid = function() {
+proto.api.v1.TradesByPartyRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.TradesByPartyRequest} returns this
+ * @return {!proto.api.v1.TradesByPartyRequest} returns this
  */
-proto.api.TradesByPartyRequest.prototype.setPartyid = function(value) {
+proto.api.v1.TradesByPartyRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string marketID = 2;
+ * optional string market_id = 2;
  * @return {string}
  */
-proto.api.TradesByPartyRequest.prototype.getMarketid = function() {
+proto.api.v1.TradesByPartyRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.TradesByPartyRequest} returns this
+ * @return {!proto.api.v1.TradesByPartyRequest} returns this
  */
-proto.api.TradesByPartyRequest.prototype.setMarketid = function(value) {
+proto.api.v1.TradesByPartyRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
  * optional Pagination pagination = 3;
- * @return {?proto.api.Pagination}
+ * @return {?proto.api.v1.Pagination}
  */
-proto.api.TradesByPartyRequest.prototype.getPagination = function() {
-  return /** @type{?proto.api.Pagination} */ (
-    jspb.Message.getWrapperField(this, proto.api.Pagination, 3));
+proto.api.v1.TradesByPartyRequest.prototype.getPagination = function() {
+  return /** @type{?proto.api.v1.Pagination} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1.Pagination, 3));
 };
 
 
 /**
- * @param {?proto.api.Pagination|undefined} value
- * @return {!proto.api.TradesByPartyRequest} returns this
+ * @param {?proto.api.v1.Pagination|undefined} value
+ * @return {!proto.api.v1.TradesByPartyRequest} returns this
 */
-proto.api.TradesByPartyRequest.prototype.setPagination = function(value) {
+proto.api.v1.TradesByPartyRequest.prototype.setPagination = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.TradesByPartyRequest} returns this
+ * @return {!proto.api.v1.TradesByPartyRequest} returns this
  */
-proto.api.TradesByPartyRequest.prototype.clearPagination = function() {
+proto.api.v1.TradesByPartyRequest.prototype.clearPagination = function() {
   return this.setPagination(undefined);
 };
 
@@ -11019,7 +12688,7 @@ proto.api.TradesByPartyRequest.prototype.clearPagination = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.TradesByPartyRequest.prototype.hasPagination = function() {
+proto.api.v1.TradesByPartyRequest.prototype.hasPagination = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -11030,7 +12699,7 @@ proto.api.TradesByPartyRequest.prototype.hasPagination = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.api.TradesByPartyResponse.repeatedFields_ = [1];
+proto.api.v1.TradesByPartyResponse.repeatedFields_ = [1];
 
 
 
@@ -11047,8 +12716,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.TradesByPartyResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.TradesByPartyResponse.toObject(opt_includeInstance, this);
+proto.api.v1.TradesByPartyResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.TradesByPartyResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -11057,11 +12726,11 @@ proto.api.TradesByPartyResponse.prototype.toObject = function(opt_includeInstanc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.TradesByPartyResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.TradesByPartyResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.TradesByPartyResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.TradesByPartyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     tradesList: jspb.Message.toObjectList(msg.getTradesList(),
     vega_pb.Trade.toObject, includeInstance)
@@ -11078,23 +12747,23 @@ proto.api.TradesByPartyResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.TradesByPartyResponse}
+ * @return {!proto.api.v1.TradesByPartyResponse}
  */
-proto.api.TradesByPartyResponse.deserializeBinary = function(bytes) {
+proto.api.v1.TradesByPartyResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.TradesByPartyResponse;
-  return proto.api.TradesByPartyResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.TradesByPartyResponse;
+  return proto.api.v1.TradesByPartyResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.TradesByPartyResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.TradesByPartyResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.TradesByPartyResponse}
+ * @return {!proto.api.v1.TradesByPartyResponse}
  */
-proto.api.TradesByPartyResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.TradesByPartyResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -11119,9 +12788,9 @@ proto.api.TradesByPartyResponse.deserializeBinaryFromReader = function(msg, read
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.TradesByPartyResponse.prototype.serializeBinary = function() {
+proto.api.v1.TradesByPartyResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.TradesByPartyResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.TradesByPartyResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -11129,11 +12798,11 @@ proto.api.TradesByPartyResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.TradesByPartyResponse} message
+ * @param {!proto.api.v1.TradesByPartyResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.TradesByPartyResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.TradesByPartyResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTradesList();
   if (f.length > 0) {
@@ -11150,7 +12819,7 @@ proto.api.TradesByPartyResponse.serializeBinaryToWriter = function(message, writ
  * repeated vega.Trade trades = 1;
  * @return {!Array<!proto.vega.Trade>}
  */
-proto.api.TradesByPartyResponse.prototype.getTradesList = function() {
+proto.api.v1.TradesByPartyResponse.prototype.getTradesList = function() {
   return /** @type{!Array<!proto.vega.Trade>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.Trade, 1));
 };
@@ -11158,9 +12827,9 @@ proto.api.TradesByPartyResponse.prototype.getTradesList = function() {
 
 /**
  * @param {!Array<!proto.vega.Trade>} value
- * @return {!proto.api.TradesByPartyResponse} returns this
+ * @return {!proto.api.v1.TradesByPartyResponse} returns this
 */
-proto.api.TradesByPartyResponse.prototype.setTradesList = function(value) {
+proto.api.v1.TradesByPartyResponse.prototype.setTradesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -11170,16 +12839,16 @@ proto.api.TradesByPartyResponse.prototype.setTradesList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Trade}
  */
-proto.api.TradesByPartyResponse.prototype.addTrades = function(opt_value, opt_index) {
+proto.api.v1.TradesByPartyResponse.prototype.addTrades = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Trade, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.TradesByPartyResponse} returns this
+ * @return {!proto.api.v1.TradesByPartyResponse} returns this
  */
-proto.api.TradesByPartyResponse.prototype.clearTradesList = function() {
+proto.api.v1.TradesByPartyResponse.prototype.clearTradesList = function() {
   return this.setTradesList([]);
 };
 
@@ -11200,8 +12869,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.TradesByOrderRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.TradesByOrderRequest.toObject(opt_includeInstance, this);
+proto.api.v1.TradesByOrderRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.TradesByOrderRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -11210,13 +12879,13 @@ proto.api.TradesByOrderRequest.prototype.toObject = function(opt_includeInstance
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.TradesByOrderRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.TradesByOrderRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.TradesByOrderRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.TradesByOrderRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orderid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    orderId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -11230,23 +12899,23 @@ proto.api.TradesByOrderRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.TradesByOrderRequest}
+ * @return {!proto.api.v1.TradesByOrderRequest}
  */
-proto.api.TradesByOrderRequest.deserializeBinary = function(bytes) {
+proto.api.v1.TradesByOrderRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.TradesByOrderRequest;
-  return proto.api.TradesByOrderRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.TradesByOrderRequest;
+  return proto.api.v1.TradesByOrderRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.TradesByOrderRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.TradesByOrderRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.TradesByOrderRequest}
+ * @return {!proto.api.v1.TradesByOrderRequest}
  */
-proto.api.TradesByOrderRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.TradesByOrderRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -11255,7 +12924,7 @@ proto.api.TradesByOrderRequest.deserializeBinaryFromReader = function(msg, reade
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOrderid(value);
+      msg.setOrderId(value);
       break;
     default:
       reader.skipField();
@@ -11270,9 +12939,9 @@ proto.api.TradesByOrderRequest.deserializeBinaryFromReader = function(msg, reade
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.TradesByOrderRequest.prototype.serializeBinary = function() {
+proto.api.v1.TradesByOrderRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.TradesByOrderRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.TradesByOrderRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -11280,13 +12949,13 @@ proto.api.TradesByOrderRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.TradesByOrderRequest} message
+ * @param {!proto.api.v1.TradesByOrderRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.TradesByOrderRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.TradesByOrderRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrderid();
+  f = message.getOrderId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -11297,19 +12966,19 @@ proto.api.TradesByOrderRequest.serializeBinaryToWriter = function(message, write
 
 
 /**
- * optional string orderID = 1;
+ * optional string order_id = 1;
  * @return {string}
  */
-proto.api.TradesByOrderRequest.prototype.getOrderid = function() {
+proto.api.v1.TradesByOrderRequest.prototype.getOrderId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.TradesByOrderRequest} returns this
+ * @return {!proto.api.v1.TradesByOrderRequest} returns this
  */
-proto.api.TradesByOrderRequest.prototype.setOrderid = function(value) {
+proto.api.v1.TradesByOrderRequest.prototype.setOrderId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -11320,7 +12989,7 @@ proto.api.TradesByOrderRequest.prototype.setOrderid = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.TradesByOrderResponse.repeatedFields_ = [1];
+proto.api.v1.TradesByOrderResponse.repeatedFields_ = [1];
 
 
 
@@ -11337,8 +13006,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.TradesByOrderResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.TradesByOrderResponse.toObject(opt_includeInstance, this);
+proto.api.v1.TradesByOrderResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.TradesByOrderResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -11347,11 +13016,11 @@ proto.api.TradesByOrderResponse.prototype.toObject = function(opt_includeInstanc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.TradesByOrderResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.TradesByOrderResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.TradesByOrderResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.TradesByOrderResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     tradesList: jspb.Message.toObjectList(msg.getTradesList(),
     vega_pb.Trade.toObject, includeInstance)
@@ -11368,23 +13037,23 @@ proto.api.TradesByOrderResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.TradesByOrderResponse}
+ * @return {!proto.api.v1.TradesByOrderResponse}
  */
-proto.api.TradesByOrderResponse.deserializeBinary = function(bytes) {
+proto.api.v1.TradesByOrderResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.TradesByOrderResponse;
-  return proto.api.TradesByOrderResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.TradesByOrderResponse;
+  return proto.api.v1.TradesByOrderResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.TradesByOrderResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.TradesByOrderResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.TradesByOrderResponse}
+ * @return {!proto.api.v1.TradesByOrderResponse}
  */
-proto.api.TradesByOrderResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.TradesByOrderResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -11409,9 +13078,9 @@ proto.api.TradesByOrderResponse.deserializeBinaryFromReader = function(msg, read
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.TradesByOrderResponse.prototype.serializeBinary = function() {
+proto.api.v1.TradesByOrderResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.TradesByOrderResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.TradesByOrderResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -11419,11 +13088,11 @@ proto.api.TradesByOrderResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.TradesByOrderResponse} message
+ * @param {!proto.api.v1.TradesByOrderResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.TradesByOrderResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.TradesByOrderResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTradesList();
   if (f.length > 0) {
@@ -11440,7 +13109,7 @@ proto.api.TradesByOrderResponse.serializeBinaryToWriter = function(message, writ
  * repeated vega.Trade trades = 1;
  * @return {!Array<!proto.vega.Trade>}
  */
-proto.api.TradesByOrderResponse.prototype.getTradesList = function() {
+proto.api.v1.TradesByOrderResponse.prototype.getTradesList = function() {
   return /** @type{!Array<!proto.vega.Trade>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.Trade, 1));
 };
@@ -11448,9 +13117,9 @@ proto.api.TradesByOrderResponse.prototype.getTradesList = function() {
 
 /**
  * @param {!Array<!proto.vega.Trade>} value
- * @return {!proto.api.TradesByOrderResponse} returns this
+ * @return {!proto.api.v1.TradesByOrderResponse} returns this
 */
-proto.api.TradesByOrderResponse.prototype.setTradesList = function(value) {
+proto.api.v1.TradesByOrderResponse.prototype.setTradesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -11460,16 +13129,16 @@ proto.api.TradesByOrderResponse.prototype.setTradesList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Trade}
  */
-proto.api.TradesByOrderResponse.prototype.addTrades = function(opt_value, opt_index) {
+proto.api.v1.TradesByOrderResponse.prototype.addTrades = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Trade, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.TradesByOrderResponse} returns this
+ * @return {!proto.api.v1.TradesByOrderResponse} returns this
  */
-proto.api.TradesByOrderResponse.prototype.clearTradesList = function() {
+proto.api.v1.TradesByOrderResponse.prototype.clearTradesList = function() {
   return this.setTradesList([]);
 };
 
@@ -11490,8 +13159,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.AccountsSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.AccountsSubscribeRequest.toObject(opt_includeInstance, this);
+proto.api.v1.AccountsSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.AccountsSubscribeRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -11500,14 +13169,14 @@ proto.api.AccountsSubscribeRequest.prototype.toObject = function(opt_includeInst
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.AccountsSubscribeRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.AccountsSubscribeRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.AccountsSubscribeRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.AccountsSubscribeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    partyid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    partyId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     asset: jspb.Message.getFieldWithDefault(msg, 3, ""),
     type: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
@@ -11523,23 +13192,23 @@ proto.api.AccountsSubscribeRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.AccountsSubscribeRequest}
+ * @return {!proto.api.v1.AccountsSubscribeRequest}
  */
-proto.api.AccountsSubscribeRequest.deserializeBinary = function(bytes) {
+proto.api.v1.AccountsSubscribeRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.AccountsSubscribeRequest;
-  return proto.api.AccountsSubscribeRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.AccountsSubscribeRequest;
+  return proto.api.v1.AccountsSubscribeRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.AccountsSubscribeRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.AccountsSubscribeRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.AccountsSubscribeRequest}
+ * @return {!proto.api.v1.AccountsSubscribeRequest}
  */
-proto.api.AccountsSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.AccountsSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -11548,11 +13217,11 @@ proto.api.AccountsSubscribeRequest.deserializeBinaryFromReader = function(msg, r
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -11575,9 +13244,9 @@ proto.api.AccountsSubscribeRequest.deserializeBinaryFromReader = function(msg, r
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.AccountsSubscribeRequest.prototype.serializeBinary = function() {
+proto.api.v1.AccountsSubscribeRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.AccountsSubscribeRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.AccountsSubscribeRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -11585,20 +13254,20 @@ proto.api.AccountsSubscribeRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.AccountsSubscribeRequest} message
+ * @param {!proto.api.v1.AccountsSubscribeRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.AccountsSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.AccountsSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -11623,37 +13292,37 @@ proto.api.AccountsSubscribeRequest.serializeBinaryToWriter = function(message, w
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.api.AccountsSubscribeRequest.prototype.getMarketid = function() {
+proto.api.v1.AccountsSubscribeRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.AccountsSubscribeRequest} returns this
+ * @return {!proto.api.v1.AccountsSubscribeRequest} returns this
  */
-proto.api.AccountsSubscribeRequest.prototype.setMarketid = function(value) {
+proto.api.v1.AccountsSubscribeRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string partyID = 2;
+ * optional string party_id = 2;
  * @return {string}
  */
-proto.api.AccountsSubscribeRequest.prototype.getPartyid = function() {
+proto.api.v1.AccountsSubscribeRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.AccountsSubscribeRequest} returns this
+ * @return {!proto.api.v1.AccountsSubscribeRequest} returns this
  */
-proto.api.AccountsSubscribeRequest.prototype.setPartyid = function(value) {
+proto.api.v1.AccountsSubscribeRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -11662,16 +13331,16 @@ proto.api.AccountsSubscribeRequest.prototype.setPartyid = function(value) {
  * optional string asset = 3;
  * @return {string}
  */
-proto.api.AccountsSubscribeRequest.prototype.getAsset = function() {
+proto.api.v1.AccountsSubscribeRequest.prototype.getAsset = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.AccountsSubscribeRequest} returns this
+ * @return {!proto.api.v1.AccountsSubscribeRequest} returns this
  */
-proto.api.AccountsSubscribeRequest.prototype.setAsset = function(value) {
+proto.api.v1.AccountsSubscribeRequest.prototype.setAsset = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -11680,16 +13349,16 @@ proto.api.AccountsSubscribeRequest.prototype.setAsset = function(value) {
  * optional vega.AccountType type = 4;
  * @return {!proto.vega.AccountType}
  */
-proto.api.AccountsSubscribeRequest.prototype.getType = function() {
+proto.api.v1.AccountsSubscribeRequest.prototype.getType = function() {
   return /** @type {!proto.vega.AccountType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
  * @param {!proto.vega.AccountType} value
- * @return {!proto.api.AccountsSubscribeRequest} returns this
+ * @return {!proto.api.v1.AccountsSubscribeRequest} returns this
  */
-proto.api.AccountsSubscribeRequest.prototype.setType = function(value) {
+proto.api.v1.AccountsSubscribeRequest.prototype.setType = function(value) {
   return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
@@ -11710,8 +13379,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.OrdersSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.OrdersSubscribeRequest.toObject(opt_includeInstance, this);
+proto.api.v1.AccountsSubscribeResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.AccountsSubscribeResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -11720,14 +13389,13 @@ proto.api.OrdersSubscribeRequest.prototype.toObject = function(opt_includeInstan
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.OrdersSubscribeRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.AccountsSubscribeResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrdersSubscribeRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.AccountsSubscribeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    partyid: jspb.Message.getFieldWithDefault(msg, 2, "")
+    account: (f = msg.getAccount()) && vega_pb.Account.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11741,23 +13409,23 @@ proto.api.OrdersSubscribeRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.OrdersSubscribeRequest}
+ * @return {!proto.api.v1.AccountsSubscribeResponse}
  */
-proto.api.OrdersSubscribeRequest.deserializeBinary = function(bytes) {
+proto.api.v1.AccountsSubscribeResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.OrdersSubscribeRequest;
-  return proto.api.OrdersSubscribeRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.AccountsSubscribeResponse;
+  return proto.api.v1.AccountsSubscribeResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.OrdersSubscribeRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.AccountsSubscribeResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.OrdersSubscribeRequest}
+ * @return {!proto.api.v1.AccountsSubscribeResponse}
  */
-proto.api.OrdersSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.AccountsSubscribeResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -11765,12 +13433,9 @@ proto.api.OrdersSubscribeRequest.deserializeBinaryFromReader = function(msg, rea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      var value = new vega_pb.Account;
+      reader.readMessage(value,vega_pb.Account.deserializeBinaryFromReader);
+      msg.setAccount(value);
       break;
     default:
       reader.skipField();
@@ -11785,9 +13450,9 @@ proto.api.OrdersSubscribeRequest.deserializeBinaryFromReader = function(msg, rea
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.OrdersSubscribeRequest.prototype.serializeBinary = function() {
+proto.api.v1.AccountsSubscribeResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.OrdersSubscribeRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.AccountsSubscribeResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -11795,20 +13460,175 @@ proto.api.OrdersSubscribeRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.OrdersSubscribeRequest} message
+ * @param {!proto.api.v1.AccountsSubscribeResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrdersSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.AccountsSubscribeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getAccount();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      vega_pb.Account.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional vega.Account account = 1;
+ * @return {?proto.vega.Account}
+ */
+proto.api.v1.AccountsSubscribeResponse.prototype.getAccount = function() {
+  return /** @type{?proto.vega.Account} */ (
+    jspb.Message.getWrapperField(this, vega_pb.Account, 1));
+};
+
+
+/**
+ * @param {?proto.vega.Account|undefined} value
+ * @return {!proto.api.v1.AccountsSubscribeResponse} returns this
+*/
+proto.api.v1.AccountsSubscribeResponse.prototype.setAccount = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1.AccountsSubscribeResponse} returns this
+ */
+proto.api.v1.AccountsSubscribeResponse.prototype.clearAccount = function() {
+  return this.setAccount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1.AccountsSubscribeResponse.prototype.hasAccount = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.OrdersSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.OrdersSubscribeRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.OrdersSubscribeRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.OrdersSubscribeRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    partyId: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.OrdersSubscribeRequest}
+ */
+proto.api.v1.OrdersSubscribeRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.OrdersSubscribeRequest;
+  return proto.api.v1.OrdersSubscribeRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.OrdersSubscribeRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.OrdersSubscribeRequest}
+ */
+proto.api.v1.OrdersSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMarketId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPartyId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.OrdersSubscribeRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.OrdersSubscribeRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.OrdersSubscribeRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.OrdersSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -11819,37 +13639,37 @@ proto.api.OrdersSubscribeRequest.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.api.OrdersSubscribeRequest.prototype.getMarketid = function() {
+proto.api.v1.OrdersSubscribeRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.OrdersSubscribeRequest} returns this
+ * @return {!proto.api.v1.OrdersSubscribeRequest} returns this
  */
-proto.api.OrdersSubscribeRequest.prototype.setMarketid = function(value) {
+proto.api.v1.OrdersSubscribeRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string partyID = 2;
+ * optional string party_id = 2;
  * @return {string}
  */
-proto.api.OrdersSubscribeRequest.prototype.getPartyid = function() {
+proto.api.v1.OrdersSubscribeRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.OrdersSubscribeRequest} returns this
+ * @return {!proto.api.v1.OrdersSubscribeRequest} returns this
  */
-proto.api.OrdersSubscribeRequest.prototype.setPartyid = function(value) {
+proto.api.v1.OrdersSubscribeRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -11870,8 +13690,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.TradesSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.TradesSubscribeRequest.toObject(opt_includeInstance, this);
+proto.api.v1.TradesSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.TradesSubscribeRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -11880,14 +13700,14 @@ proto.api.TradesSubscribeRequest.prototype.toObject = function(opt_includeInstan
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.TradesSubscribeRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.TradesSubscribeRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.TradesSubscribeRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.TradesSubscribeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    partyid: jspb.Message.getFieldWithDefault(msg, 2, "")
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    partyId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -11901,23 +13721,23 @@ proto.api.TradesSubscribeRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.TradesSubscribeRequest}
+ * @return {!proto.api.v1.TradesSubscribeRequest}
  */
-proto.api.TradesSubscribeRequest.deserializeBinary = function(bytes) {
+proto.api.v1.TradesSubscribeRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.TradesSubscribeRequest;
-  return proto.api.TradesSubscribeRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.TradesSubscribeRequest;
+  return proto.api.v1.TradesSubscribeRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.TradesSubscribeRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.TradesSubscribeRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.TradesSubscribeRequest}
+ * @return {!proto.api.v1.TradesSubscribeRequest}
  */
-proto.api.TradesSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.TradesSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -11926,11 +13746,11 @@ proto.api.TradesSubscribeRequest.deserializeBinaryFromReader = function(msg, rea
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     default:
       reader.skipField();
@@ -11945,9 +13765,9 @@ proto.api.TradesSubscribeRequest.deserializeBinaryFromReader = function(msg, rea
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.TradesSubscribeRequest.prototype.serializeBinary = function() {
+proto.api.v1.TradesSubscribeRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.TradesSubscribeRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.TradesSubscribeRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -11955,20 +13775,20 @@ proto.api.TradesSubscribeRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.TradesSubscribeRequest} message
+ * @param {!proto.api.v1.TradesSubscribeRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.TradesSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.TradesSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -11979,37 +13799,37 @@ proto.api.TradesSubscribeRequest.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.api.TradesSubscribeRequest.prototype.getMarketid = function() {
+proto.api.v1.TradesSubscribeRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.TradesSubscribeRequest} returns this
+ * @return {!proto.api.v1.TradesSubscribeRequest} returns this
  */
-proto.api.TradesSubscribeRequest.prototype.setMarketid = function(value) {
+proto.api.v1.TradesSubscribeRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string partyID = 2;
+ * optional string party_id = 2;
  * @return {string}
  */
-proto.api.TradesSubscribeRequest.prototype.getPartyid = function() {
+proto.api.v1.TradesSubscribeRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.TradesSubscribeRequest} returns this
+ * @return {!proto.api.v1.TradesSubscribeRequest} returns this
  */
-proto.api.TradesSubscribeRequest.prototype.setPartyid = function(value) {
+proto.api.v1.TradesSubscribeRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -12030,8 +13850,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.CandlesSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.CandlesSubscribeRequest.toObject(opt_includeInstance, this);
+proto.api.v1.CandlesSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.CandlesSubscribeRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -12040,13 +13860,13 @@ proto.api.CandlesSubscribeRequest.prototype.toObject = function(opt_includeInsta
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.CandlesSubscribeRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.CandlesSubscribeRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.CandlesSubscribeRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.CandlesSubscribeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     interval: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
@@ -12061,23 +13881,23 @@ proto.api.CandlesSubscribeRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.CandlesSubscribeRequest}
+ * @return {!proto.api.v1.CandlesSubscribeRequest}
  */
-proto.api.CandlesSubscribeRequest.deserializeBinary = function(bytes) {
+proto.api.v1.CandlesSubscribeRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.CandlesSubscribeRequest;
-  return proto.api.CandlesSubscribeRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.CandlesSubscribeRequest;
+  return proto.api.v1.CandlesSubscribeRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.CandlesSubscribeRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.CandlesSubscribeRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.CandlesSubscribeRequest}
+ * @return {!proto.api.v1.CandlesSubscribeRequest}
  */
-proto.api.CandlesSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.CandlesSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -12086,7 +13906,7 @@ proto.api.CandlesSubscribeRequest.deserializeBinaryFromReader = function(msg, re
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
       var value = /** @type {!proto.vega.Interval} */ (reader.readEnum());
@@ -12105,9 +13925,9 @@ proto.api.CandlesSubscribeRequest.deserializeBinaryFromReader = function(msg, re
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.CandlesSubscribeRequest.prototype.serializeBinary = function() {
+proto.api.v1.CandlesSubscribeRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.CandlesSubscribeRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.CandlesSubscribeRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -12115,13 +13935,13 @@ proto.api.CandlesSubscribeRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.CandlesSubscribeRequest} message
+ * @param {!proto.api.v1.CandlesSubscribeRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.CandlesSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.CandlesSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -12139,19 +13959,19 @@ proto.api.CandlesSubscribeRequest.serializeBinaryToWriter = function(message, wr
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.api.CandlesSubscribeRequest.prototype.getMarketid = function() {
+proto.api.v1.CandlesSubscribeRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.CandlesSubscribeRequest} returns this
+ * @return {!proto.api.v1.CandlesSubscribeRequest} returns this
  */
-proto.api.CandlesSubscribeRequest.prototype.setMarketid = function(value) {
+proto.api.v1.CandlesSubscribeRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -12160,16 +13980,16 @@ proto.api.CandlesSubscribeRequest.prototype.setMarketid = function(value) {
  * optional vega.Interval interval = 2;
  * @return {!proto.vega.Interval}
  */
-proto.api.CandlesSubscribeRequest.prototype.getInterval = function() {
+proto.api.v1.CandlesSubscribeRequest.prototype.getInterval = function() {
   return /** @type {!proto.vega.Interval} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {!proto.vega.Interval} value
- * @return {!proto.api.CandlesSubscribeRequest} returns this
+ * @return {!proto.api.v1.CandlesSubscribeRequest} returns this
  */
-proto.api.CandlesSubscribeRequest.prototype.setInterval = function(value) {
+proto.api.v1.CandlesSubscribeRequest.prototype.setInterval = function(value) {
   return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
@@ -12190,8 +14010,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.MarketDepthSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.MarketDepthSubscribeRequest.toObject(opt_includeInstance, this);
+proto.api.v1.CandlesSubscribeResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.CandlesSubscribeResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -12200,13 +14020,13 @@ proto.api.MarketDepthSubscribeRequest.prototype.toObject = function(opt_includeI
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.MarketDepthSubscribeRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.CandlesSubscribeResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketDepthSubscribeRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.CandlesSubscribeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    candle: (f = msg.getCandle()) && vega_pb.Candle.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12220,23 +14040,23 @@ proto.api.MarketDepthSubscribeRequest.toObject = function(includeInstance, msg) 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.MarketDepthSubscribeRequest}
+ * @return {!proto.api.v1.CandlesSubscribeResponse}
  */
-proto.api.MarketDepthSubscribeRequest.deserializeBinary = function(bytes) {
+proto.api.v1.CandlesSubscribeResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.MarketDepthSubscribeRequest;
-  return proto.api.MarketDepthSubscribeRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.CandlesSubscribeResponse;
+  return proto.api.v1.CandlesSubscribeResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.MarketDepthSubscribeRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.CandlesSubscribeResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.MarketDepthSubscribeRequest}
+ * @return {!proto.api.v1.CandlesSubscribeResponse}
  */
-proto.api.MarketDepthSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.CandlesSubscribeResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -12244,8 +14064,9 @@ proto.api.MarketDepthSubscribeRequest.deserializeBinaryFromReader = function(msg
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      var value = new vega_pb.Candle;
+      reader.readMessage(value,vega_pb.Candle.deserializeBinaryFromReader);
+      msg.setCandle(value);
       break;
     default:
       reader.skipField();
@@ -12260,9 +14081,9 @@ proto.api.MarketDepthSubscribeRequest.deserializeBinaryFromReader = function(msg
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.MarketDepthSubscribeRequest.prototype.serializeBinary = function() {
+proto.api.v1.CandlesSubscribeResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.MarketDepthSubscribeRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.CandlesSubscribeResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -12270,13 +14091,163 @@ proto.api.MarketDepthSubscribeRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.MarketDepthSubscribeRequest} message
+ * @param {!proto.api.v1.CandlesSubscribeResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketDepthSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.CandlesSubscribeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getCandle();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      vega_pb.Candle.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional vega.Candle candle = 1;
+ * @return {?proto.vega.Candle}
+ */
+proto.api.v1.CandlesSubscribeResponse.prototype.getCandle = function() {
+  return /** @type{?proto.vega.Candle} */ (
+    jspb.Message.getWrapperField(this, vega_pb.Candle, 1));
+};
+
+
+/**
+ * @param {?proto.vega.Candle|undefined} value
+ * @return {!proto.api.v1.CandlesSubscribeResponse} returns this
+*/
+proto.api.v1.CandlesSubscribeResponse.prototype.setCandle = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1.CandlesSubscribeResponse} returns this
+ */
+proto.api.v1.CandlesSubscribeResponse.prototype.clearCandle = function() {
+  return this.setCandle(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1.CandlesSubscribeResponse.prototype.hasCandle = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.MarketDepthSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketDepthSubscribeRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.MarketDepthSubscribeRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.MarketDepthSubscribeRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.MarketDepthSubscribeRequest}
+ */
+proto.api.v1.MarketDepthSubscribeRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.MarketDepthSubscribeRequest;
+  return proto.api.v1.MarketDepthSubscribeRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.MarketDepthSubscribeRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.MarketDepthSubscribeRequest}
+ */
+proto.api.v1.MarketDepthSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMarketId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.MarketDepthSubscribeRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.MarketDepthSubscribeRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.MarketDepthSubscribeRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.MarketDepthSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -12287,19 +14258,19 @@ proto.api.MarketDepthSubscribeRequest.serializeBinaryToWriter = function(message
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.api.MarketDepthSubscribeRequest.prototype.getMarketid = function() {
+proto.api.v1.MarketDepthSubscribeRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.MarketDepthSubscribeRequest} returns this
+ * @return {!proto.api.v1.MarketDepthSubscribeRequest} returns this
  */
-proto.api.MarketDepthSubscribeRequest.prototype.setMarketid = function(value) {
+proto.api.v1.MarketDepthSubscribeRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -12320,8 +14291,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.MarketDepthUpdatesSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.MarketDepthUpdatesSubscribeRequest.toObject(opt_includeInstance, this);
+proto.api.v1.MarketDepthSubscribeResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketDepthSubscribeResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -12330,13 +14301,13 @@ proto.api.MarketDepthUpdatesSubscribeRequest.prototype.toObject = function(opt_i
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.MarketDepthUpdatesSubscribeRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.MarketDepthSubscribeResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketDepthUpdatesSubscribeRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.MarketDepthSubscribeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    marketDepth: (f = msg.getMarketDepth()) && vega_pb.MarketDepth.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12350,23 +14321,23 @@ proto.api.MarketDepthUpdatesSubscribeRequest.toObject = function(includeInstance
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.MarketDepthUpdatesSubscribeRequest}
+ * @return {!proto.api.v1.MarketDepthSubscribeResponse}
  */
-proto.api.MarketDepthUpdatesSubscribeRequest.deserializeBinary = function(bytes) {
+proto.api.v1.MarketDepthSubscribeResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.MarketDepthUpdatesSubscribeRequest;
-  return proto.api.MarketDepthUpdatesSubscribeRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.MarketDepthSubscribeResponse;
+  return proto.api.v1.MarketDepthSubscribeResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.MarketDepthUpdatesSubscribeRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.MarketDepthSubscribeResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.MarketDepthUpdatesSubscribeRequest}
+ * @return {!proto.api.v1.MarketDepthSubscribeResponse}
  */
-proto.api.MarketDepthUpdatesSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.MarketDepthSubscribeResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -12374,8 +14345,9 @@ proto.api.MarketDepthUpdatesSubscribeRequest.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      var value = new vega_pb.MarketDepth;
+      reader.readMessage(value,vega_pb.MarketDepth.deserializeBinaryFromReader);
+      msg.setMarketDepth(value);
       break;
     default:
       reader.skipField();
@@ -12390,9 +14362,9 @@ proto.api.MarketDepthUpdatesSubscribeRequest.deserializeBinaryFromReader = funct
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.MarketDepthUpdatesSubscribeRequest.prototype.serializeBinary = function() {
+proto.api.v1.MarketDepthSubscribeResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.MarketDepthUpdatesSubscribeRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.MarketDepthSubscribeResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -12400,13 +14372,163 @@ proto.api.MarketDepthUpdatesSubscribeRequest.prototype.serializeBinary = functio
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.MarketDepthUpdatesSubscribeRequest} message
+ * @param {!proto.api.v1.MarketDepthSubscribeResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketDepthUpdatesSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.MarketDepthSubscribeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketDepth();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      vega_pb.MarketDepth.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional vega.MarketDepth market_depth = 1;
+ * @return {?proto.vega.MarketDepth}
+ */
+proto.api.v1.MarketDepthSubscribeResponse.prototype.getMarketDepth = function() {
+  return /** @type{?proto.vega.MarketDepth} */ (
+    jspb.Message.getWrapperField(this, vega_pb.MarketDepth, 1));
+};
+
+
+/**
+ * @param {?proto.vega.MarketDepth|undefined} value
+ * @return {!proto.api.v1.MarketDepthSubscribeResponse} returns this
+*/
+proto.api.v1.MarketDepthSubscribeResponse.prototype.setMarketDepth = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1.MarketDepthSubscribeResponse} returns this
+ */
+proto.api.v1.MarketDepthSubscribeResponse.prototype.clearMarketDepth = function() {
+  return this.setMarketDepth(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1.MarketDepthSubscribeResponse.prototype.hasMarketDepth = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.MarketDepthUpdatesSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketDepthUpdatesSubscribeRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.MarketDepthUpdatesSubscribeRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.MarketDepthUpdatesSubscribeRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.MarketDepthUpdatesSubscribeRequest}
+ */
+proto.api.v1.MarketDepthUpdatesSubscribeRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.MarketDepthUpdatesSubscribeRequest;
+  return proto.api.v1.MarketDepthUpdatesSubscribeRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.MarketDepthUpdatesSubscribeRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.MarketDepthUpdatesSubscribeRequest}
+ */
+proto.api.v1.MarketDepthUpdatesSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMarketId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.MarketDepthUpdatesSubscribeRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.MarketDepthUpdatesSubscribeRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.MarketDepthUpdatesSubscribeRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.MarketDepthUpdatesSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -12417,19 +14539,19 @@ proto.api.MarketDepthUpdatesSubscribeRequest.serializeBinaryToWriter = function(
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.api.MarketDepthUpdatesSubscribeRequest.prototype.getMarketid = function() {
+proto.api.v1.MarketDepthUpdatesSubscribeRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.MarketDepthUpdatesSubscribeRequest} returns this
+ * @return {!proto.api.v1.MarketDepthUpdatesSubscribeRequest} returns this
  */
-proto.api.MarketDepthUpdatesSubscribeRequest.prototype.setMarketid = function(value) {
+proto.api.v1.MarketDepthUpdatesSubscribeRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -12450,8 +14572,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PositionsSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PositionsSubscribeRequest.toObject(opt_includeInstance, this);
+proto.api.v1.MarketDepthUpdatesSubscribeResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketDepthUpdatesSubscribeResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -12460,14 +14582,13 @@ proto.api.PositionsSubscribeRequest.prototype.toObject = function(opt_includeIns
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PositionsSubscribeRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.MarketDepthUpdatesSubscribeResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PositionsSubscribeRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.MarketDepthUpdatesSubscribeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partyid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    marketid: jspb.Message.getFieldWithDefault(msg, 2, "")
+    update: (f = msg.getUpdate()) && vega_pb.MarketDepthUpdate.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12481,23 +14602,175 @@ proto.api.PositionsSubscribeRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PositionsSubscribeRequest}
+ * @return {!proto.api.v1.MarketDepthUpdatesSubscribeResponse}
  */
-proto.api.PositionsSubscribeRequest.deserializeBinary = function(bytes) {
+proto.api.v1.MarketDepthUpdatesSubscribeResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PositionsSubscribeRequest;
-  return proto.api.PositionsSubscribeRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.MarketDepthUpdatesSubscribeResponse;
+  return proto.api.v1.MarketDepthUpdatesSubscribeResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PositionsSubscribeRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.MarketDepthUpdatesSubscribeResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PositionsSubscribeRequest}
+ * @return {!proto.api.v1.MarketDepthUpdatesSubscribeResponse}
  */
-proto.api.PositionsSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.MarketDepthUpdatesSubscribeResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new vega_pb.MarketDepthUpdate;
+      reader.readMessage(value,vega_pb.MarketDepthUpdate.deserializeBinaryFromReader);
+      msg.setUpdate(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.MarketDepthUpdatesSubscribeResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.MarketDepthUpdatesSubscribeResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.MarketDepthUpdatesSubscribeResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.MarketDepthUpdatesSubscribeResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getUpdate();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      vega_pb.MarketDepthUpdate.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional vega.MarketDepthUpdate update = 1;
+ * @return {?proto.vega.MarketDepthUpdate}
+ */
+proto.api.v1.MarketDepthUpdatesSubscribeResponse.prototype.getUpdate = function() {
+  return /** @type{?proto.vega.MarketDepthUpdate} */ (
+    jspb.Message.getWrapperField(this, vega_pb.MarketDepthUpdate, 1));
+};
+
+
+/**
+ * @param {?proto.vega.MarketDepthUpdate|undefined} value
+ * @return {!proto.api.v1.MarketDepthUpdatesSubscribeResponse} returns this
+*/
+proto.api.v1.MarketDepthUpdatesSubscribeResponse.prototype.setUpdate = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1.MarketDepthUpdatesSubscribeResponse} returns this
+ */
+proto.api.v1.MarketDepthUpdatesSubscribeResponse.prototype.clearUpdate = function() {
+  return this.setUpdate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1.MarketDepthUpdatesSubscribeResponse.prototype.hasUpdate = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.PositionsSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PositionsSubscribeRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.PositionsSubscribeRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.PositionsSubscribeRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    partyId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.PositionsSubscribeRequest}
+ */
+proto.api.v1.PositionsSubscribeRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.PositionsSubscribeRequest;
+  return proto.api.v1.PositionsSubscribeRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.PositionsSubscribeRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.PositionsSubscribeRequest}
+ */
+proto.api.v1.PositionsSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -12506,11 +14779,11 @@ proto.api.PositionsSubscribeRequest.deserializeBinaryFromReader = function(msg, 
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     default:
       reader.skipField();
@@ -12525,9 +14798,9 @@ proto.api.PositionsSubscribeRequest.deserializeBinaryFromReader = function(msg, 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PositionsSubscribeRequest.prototype.serializeBinary = function() {
+proto.api.v1.PositionsSubscribeRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PositionsSubscribeRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PositionsSubscribeRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -12535,20 +14808,20 @@ proto.api.PositionsSubscribeRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PositionsSubscribeRequest} message
+ * @param {!proto.api.v1.PositionsSubscribeRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PositionsSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PositionsSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -12559,37 +14832,37 @@ proto.api.PositionsSubscribeRequest.serializeBinaryToWriter = function(message, 
 
 
 /**
- * optional string partyID = 1;
+ * optional string party_id = 1;
  * @return {string}
  */
-proto.api.PositionsSubscribeRequest.prototype.getPartyid = function() {
+proto.api.v1.PositionsSubscribeRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.PositionsSubscribeRequest} returns this
+ * @return {!proto.api.v1.PositionsSubscribeRequest} returns this
  */
-proto.api.PositionsSubscribeRequest.prototype.setPartyid = function(value) {
+proto.api.v1.PositionsSubscribeRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string marketID = 2;
+ * optional string market_id = 2;
  * @return {string}
  */
-proto.api.PositionsSubscribeRequest.prototype.getMarketid = function() {
+proto.api.v1.PositionsSubscribeRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.PositionsSubscribeRequest} returns this
+ * @return {!proto.api.v1.PositionsSubscribeRequest} returns this
  */
-proto.api.PositionsSubscribeRequest.prototype.setMarketid = function(value) {
+proto.api.v1.PositionsSubscribeRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -12610,8 +14883,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.OrdersByMarketRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.OrdersByMarketRequest.toObject(opt_includeInstance, this);
+proto.api.v1.PositionsSubscribeResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PositionsSubscribeResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -12620,14 +14893,13 @@ proto.api.OrdersByMarketRequest.prototype.toObject = function(opt_includeInstanc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.OrdersByMarketRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.PositionsSubscribeResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrdersByMarketRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.PositionsSubscribeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pagination: (f = msg.getPagination()) && proto.api.Pagination.toObject(includeInstance, f)
+    position: (f = msg.getPosition()) && vega_pb.Position.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12641,23 +14913,23 @@ proto.api.OrdersByMarketRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.OrdersByMarketRequest}
+ * @return {!proto.api.v1.PositionsSubscribeResponse}
  */
-proto.api.OrdersByMarketRequest.deserializeBinary = function(bytes) {
+proto.api.v1.PositionsSubscribeResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.OrdersByMarketRequest;
-  return proto.api.OrdersByMarketRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PositionsSubscribeResponse;
+  return proto.api.v1.PositionsSubscribeResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.OrdersByMarketRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PositionsSubscribeResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.OrdersByMarketRequest}
+ * @return {!proto.api.v1.PositionsSubscribeResponse}
  */
-proto.api.OrdersByMarketRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PositionsSubscribeResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -12665,13 +14937,9 @@ proto.api.OrdersByMarketRequest.deserializeBinaryFromReader = function(msg, read
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
-      break;
-    case 2:
-      var value = new proto.api.Pagination;
-      reader.readMessage(value,proto.api.Pagination.deserializeBinaryFromReader);
-      msg.setPagination(value);
+      var value = new vega_pb.Position;
+      reader.readMessage(value,vega_pb.Position.deserializeBinaryFromReader);
+      msg.setPosition(value);
       break;
     default:
       reader.skipField();
@@ -12686,9 +14954,9 @@ proto.api.OrdersByMarketRequest.deserializeBinaryFromReader = function(msg, read
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.OrdersByMarketRequest.prototype.serializeBinary = function() {
+proto.api.v1.PositionsSubscribeResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.OrdersByMarketRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PositionsSubscribeResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -12696,73 +14964,48 @@ proto.api.OrdersByMarketRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.OrdersByMarketRequest} message
+ * @param {!proto.api.v1.PositionsSubscribeResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrdersByMarketRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PositionsSubscribeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getPagination();
+  f = message.getPosition();
   if (f != null) {
     writer.writeMessage(
-      2,
+      1,
       f,
-      proto.api.Pagination.serializeBinaryToWriter
+      vega_pb.Position.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string marketID = 1;
- * @return {string}
+ * optional vega.Position position = 1;
+ * @return {?proto.vega.Position}
  */
-proto.api.OrdersByMarketRequest.prototype.getMarketid = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.api.v1.PositionsSubscribeResponse.prototype.getPosition = function() {
+  return /** @type{?proto.vega.Position} */ (
+    jspb.Message.getWrapperField(this, vega_pb.Position, 1));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.api.OrdersByMarketRequest} returns this
- */
-proto.api.OrdersByMarketRequest.prototype.setMarketid = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional Pagination pagination = 2;
- * @return {?proto.api.Pagination}
- */
-proto.api.OrdersByMarketRequest.prototype.getPagination = function() {
-  return /** @type{?proto.api.Pagination} */ (
-    jspb.Message.getWrapperField(this, proto.api.Pagination, 2));
-};
-
-
-/**
- * @param {?proto.api.Pagination|undefined} value
- * @return {!proto.api.OrdersByMarketRequest} returns this
+ * @param {?proto.vega.Position|undefined} value
+ * @return {!proto.api.v1.PositionsSubscribeResponse} returns this
 */
-proto.api.OrdersByMarketRequest.prototype.setPagination = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+proto.api.v1.PositionsSubscribeResponse.prototype.setPosition = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.OrdersByMarketRequest} returns this
+ * @return {!proto.api.v1.PositionsSubscribeResponse} returns this
  */
-proto.api.OrdersByMarketRequest.prototype.clearPagination = function() {
-  return this.setPagination(undefined);
+proto.api.v1.PositionsSubscribeResponse.prototype.clearPosition = function() {
+  return this.setPosition(undefined);
 };
 
 
@@ -12770,18 +15013,11 @@ proto.api.OrdersByMarketRequest.prototype.clearPagination = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.OrdersByMarketRequest.prototype.hasPagination = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.api.v1.PositionsSubscribeResponse.prototype.hasPosition = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.OrdersByMarketResponse.repeatedFields_ = [1];
 
 
 
@@ -12798,8 +15034,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.OrdersByMarketResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.OrdersByMarketResponse.toObject(opt_includeInstance, this);
+proto.api.v1.OrdersByMarketRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.OrdersByMarketRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -12808,11 +15044,199 @@ proto.api.OrdersByMarketResponse.prototype.toObject = function(opt_includeInstan
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.OrdersByMarketResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.OrdersByMarketRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrdersByMarketResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.OrdersByMarketRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    pagination: (f = msg.getPagination()) && proto.api.v1.Pagination.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.OrdersByMarketRequest}
+ */
+proto.api.v1.OrdersByMarketRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.OrdersByMarketRequest;
+  return proto.api.v1.OrdersByMarketRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.OrdersByMarketRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.OrdersByMarketRequest}
+ */
+proto.api.v1.OrdersByMarketRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMarketId(value);
+      break;
+    case 2:
+      var value = new proto.api.v1.Pagination;
+      reader.readMessage(value,proto.api.v1.Pagination.deserializeBinaryFromReader);
+      msg.setPagination(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.OrdersByMarketRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.OrdersByMarketRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.OrdersByMarketRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.OrdersByMarketRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMarketId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getPagination();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.api.v1.Pagination.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string market_id = 1;
+ * @return {string}
+ */
+proto.api.v1.OrdersByMarketRequest.prototype.getMarketId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1.OrdersByMarketRequest} returns this
+ */
+proto.api.v1.OrdersByMarketRequest.prototype.setMarketId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional Pagination pagination = 2;
+ * @return {?proto.api.v1.Pagination}
+ */
+proto.api.v1.OrdersByMarketRequest.prototype.getPagination = function() {
+  return /** @type{?proto.api.v1.Pagination} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1.Pagination, 2));
+};
+
+
+/**
+ * @param {?proto.api.v1.Pagination|undefined} value
+ * @return {!proto.api.v1.OrdersByMarketRequest} returns this
+*/
+proto.api.v1.OrdersByMarketRequest.prototype.setPagination = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1.OrdersByMarketRequest} returns this
+ */
+proto.api.v1.OrdersByMarketRequest.prototype.clearPagination = function() {
+  return this.setPagination(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1.OrdersByMarketRequest.prototype.hasPagination = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1.OrdersByMarketResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.OrdersByMarketResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.OrdersByMarketResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.OrdersByMarketResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.OrdersByMarketResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     ordersList: jspb.Message.toObjectList(msg.getOrdersList(),
     vega_pb.Order.toObject, includeInstance)
@@ -12829,23 +15253,23 @@ proto.api.OrdersByMarketResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.OrdersByMarketResponse}
+ * @return {!proto.api.v1.OrdersByMarketResponse}
  */
-proto.api.OrdersByMarketResponse.deserializeBinary = function(bytes) {
+proto.api.v1.OrdersByMarketResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.OrdersByMarketResponse;
-  return proto.api.OrdersByMarketResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.OrdersByMarketResponse;
+  return proto.api.v1.OrdersByMarketResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.OrdersByMarketResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.OrdersByMarketResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.OrdersByMarketResponse}
+ * @return {!proto.api.v1.OrdersByMarketResponse}
  */
-proto.api.OrdersByMarketResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.OrdersByMarketResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -12870,9 +15294,9 @@ proto.api.OrdersByMarketResponse.deserializeBinaryFromReader = function(msg, rea
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.OrdersByMarketResponse.prototype.serializeBinary = function() {
+proto.api.v1.OrdersByMarketResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.OrdersByMarketResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.OrdersByMarketResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -12880,11 +15304,11 @@ proto.api.OrdersByMarketResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.OrdersByMarketResponse} message
+ * @param {!proto.api.v1.OrdersByMarketResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrdersByMarketResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.OrdersByMarketResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrdersList();
   if (f.length > 0) {
@@ -12901,7 +15325,7 @@ proto.api.OrdersByMarketResponse.serializeBinaryToWriter = function(message, wri
  * repeated vega.Order orders = 1;
  * @return {!Array<!proto.vega.Order>}
  */
-proto.api.OrdersByMarketResponse.prototype.getOrdersList = function() {
+proto.api.v1.OrdersByMarketResponse.prototype.getOrdersList = function() {
   return /** @type{!Array<!proto.vega.Order>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.Order, 1));
 };
@@ -12909,9 +15333,9 @@ proto.api.OrdersByMarketResponse.prototype.getOrdersList = function() {
 
 /**
  * @param {!Array<!proto.vega.Order>} value
- * @return {!proto.api.OrdersByMarketResponse} returns this
+ * @return {!proto.api.v1.OrdersByMarketResponse} returns this
 */
-proto.api.OrdersByMarketResponse.prototype.setOrdersList = function(value) {
+proto.api.v1.OrdersByMarketResponse.prototype.setOrdersList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -12921,16 +15345,16 @@ proto.api.OrdersByMarketResponse.prototype.setOrdersList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Order}
  */
-proto.api.OrdersByMarketResponse.prototype.addOrders = function(opt_value, opt_index) {
+proto.api.v1.OrdersByMarketResponse.prototype.addOrders = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Order, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.OrdersByMarketResponse} returns this
+ * @return {!proto.api.v1.OrdersByMarketResponse} returns this
  */
-proto.api.OrdersByMarketResponse.prototype.clearOrdersList = function() {
+proto.api.v1.OrdersByMarketResponse.prototype.clearOrdersList = function() {
   return this.setOrdersList([]);
 };
 
@@ -12951,8 +15375,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.OrdersByPartyRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.OrdersByPartyRequest.toObject(opt_includeInstance, this);
+proto.api.v1.OrdersByPartyRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.OrdersByPartyRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -12961,14 +15385,14 @@ proto.api.OrdersByPartyRequest.prototype.toObject = function(opt_includeInstance
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.OrdersByPartyRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.OrdersByPartyRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrdersByPartyRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.OrdersByPartyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partyid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pagination: (f = msg.getPagination()) && proto.api.Pagination.toObject(includeInstance, f)
+    partyId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    pagination: (f = msg.getPagination()) && proto.api.v1.Pagination.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12982,23 +15406,23 @@ proto.api.OrdersByPartyRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.OrdersByPartyRequest}
+ * @return {!proto.api.v1.OrdersByPartyRequest}
  */
-proto.api.OrdersByPartyRequest.deserializeBinary = function(bytes) {
+proto.api.v1.OrdersByPartyRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.OrdersByPartyRequest;
-  return proto.api.OrdersByPartyRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.OrdersByPartyRequest;
+  return proto.api.v1.OrdersByPartyRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.OrdersByPartyRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.OrdersByPartyRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.OrdersByPartyRequest}
+ * @return {!proto.api.v1.OrdersByPartyRequest}
  */
-proto.api.OrdersByPartyRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.OrdersByPartyRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -13007,11 +15431,11 @@ proto.api.OrdersByPartyRequest.deserializeBinaryFromReader = function(msg, reade
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     case 2:
-      var value = new proto.api.Pagination;
-      reader.readMessage(value,proto.api.Pagination.deserializeBinaryFromReader);
+      var value = new proto.api.v1.Pagination;
+      reader.readMessage(value,proto.api.v1.Pagination.deserializeBinaryFromReader);
       msg.setPagination(value);
       break;
     default:
@@ -13027,9 +15451,9 @@ proto.api.OrdersByPartyRequest.deserializeBinaryFromReader = function(msg, reade
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.OrdersByPartyRequest.prototype.serializeBinary = function() {
+proto.api.v1.OrdersByPartyRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.OrdersByPartyRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.OrdersByPartyRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -13037,13 +15461,13 @@ proto.api.OrdersByPartyRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.OrdersByPartyRequest} message
+ * @param {!proto.api.v1.OrdersByPartyRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrdersByPartyRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.OrdersByPartyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -13055,54 +15479,54 @@ proto.api.OrdersByPartyRequest.serializeBinaryToWriter = function(message, write
     writer.writeMessage(
       2,
       f,
-      proto.api.Pagination.serializeBinaryToWriter
+      proto.api.v1.Pagination.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string partyID = 1;
+ * optional string party_id = 1;
  * @return {string}
  */
-proto.api.OrdersByPartyRequest.prototype.getPartyid = function() {
+proto.api.v1.OrdersByPartyRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.OrdersByPartyRequest} returns this
+ * @return {!proto.api.v1.OrdersByPartyRequest} returns this
  */
-proto.api.OrdersByPartyRequest.prototype.setPartyid = function(value) {
+proto.api.v1.OrdersByPartyRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
  * optional Pagination pagination = 2;
- * @return {?proto.api.Pagination}
+ * @return {?proto.api.v1.Pagination}
  */
-proto.api.OrdersByPartyRequest.prototype.getPagination = function() {
-  return /** @type{?proto.api.Pagination} */ (
-    jspb.Message.getWrapperField(this, proto.api.Pagination, 2));
+proto.api.v1.OrdersByPartyRequest.prototype.getPagination = function() {
+  return /** @type{?proto.api.v1.Pagination} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1.Pagination, 2));
 };
 
 
 /**
- * @param {?proto.api.Pagination|undefined} value
- * @return {!proto.api.OrdersByPartyRequest} returns this
+ * @param {?proto.api.v1.Pagination|undefined} value
+ * @return {!proto.api.v1.OrdersByPartyRequest} returns this
 */
-proto.api.OrdersByPartyRequest.prototype.setPagination = function(value) {
+proto.api.v1.OrdersByPartyRequest.prototype.setPagination = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.OrdersByPartyRequest} returns this
+ * @return {!proto.api.v1.OrdersByPartyRequest} returns this
  */
-proto.api.OrdersByPartyRequest.prototype.clearPagination = function() {
+proto.api.v1.OrdersByPartyRequest.prototype.clearPagination = function() {
   return this.setPagination(undefined);
 };
 
@@ -13111,7 +15535,7 @@ proto.api.OrdersByPartyRequest.prototype.clearPagination = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.OrdersByPartyRequest.prototype.hasPagination = function() {
+proto.api.v1.OrdersByPartyRequest.prototype.hasPagination = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -13122,7 +15546,7 @@ proto.api.OrdersByPartyRequest.prototype.hasPagination = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.api.OrdersByPartyResponse.repeatedFields_ = [1];
+proto.api.v1.OrdersByPartyResponse.repeatedFields_ = [1];
 
 
 
@@ -13139,8 +15563,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.OrdersByPartyResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.OrdersByPartyResponse.toObject(opt_includeInstance, this);
+proto.api.v1.OrdersByPartyResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.OrdersByPartyResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -13149,11 +15573,11 @@ proto.api.OrdersByPartyResponse.prototype.toObject = function(opt_includeInstanc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.OrdersByPartyResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.OrdersByPartyResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrdersByPartyResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.OrdersByPartyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     ordersList: jspb.Message.toObjectList(msg.getOrdersList(),
     vega_pb.Order.toObject, includeInstance)
@@ -13170,23 +15594,23 @@ proto.api.OrdersByPartyResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.OrdersByPartyResponse}
+ * @return {!proto.api.v1.OrdersByPartyResponse}
  */
-proto.api.OrdersByPartyResponse.deserializeBinary = function(bytes) {
+proto.api.v1.OrdersByPartyResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.OrdersByPartyResponse;
-  return proto.api.OrdersByPartyResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.OrdersByPartyResponse;
+  return proto.api.v1.OrdersByPartyResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.OrdersByPartyResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.OrdersByPartyResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.OrdersByPartyResponse}
+ * @return {!proto.api.v1.OrdersByPartyResponse}
  */
-proto.api.OrdersByPartyResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.OrdersByPartyResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -13211,9 +15635,9 @@ proto.api.OrdersByPartyResponse.deserializeBinaryFromReader = function(msg, read
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.OrdersByPartyResponse.prototype.serializeBinary = function() {
+proto.api.v1.OrdersByPartyResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.OrdersByPartyResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.OrdersByPartyResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -13221,11 +15645,11 @@ proto.api.OrdersByPartyResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.OrdersByPartyResponse} message
+ * @param {!proto.api.v1.OrdersByPartyResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrdersByPartyResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.OrdersByPartyResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrdersList();
   if (f.length > 0) {
@@ -13242,7 +15666,7 @@ proto.api.OrdersByPartyResponse.serializeBinaryToWriter = function(message, writ
  * repeated vega.Order orders = 1;
  * @return {!Array<!proto.vega.Order>}
  */
-proto.api.OrdersByPartyResponse.prototype.getOrdersList = function() {
+proto.api.v1.OrdersByPartyResponse.prototype.getOrdersList = function() {
   return /** @type{!Array<!proto.vega.Order>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.Order, 1));
 };
@@ -13250,9 +15674,9 @@ proto.api.OrdersByPartyResponse.prototype.getOrdersList = function() {
 
 /**
  * @param {!Array<!proto.vega.Order>} value
- * @return {!proto.api.OrdersByPartyResponse} returns this
+ * @return {!proto.api.v1.OrdersByPartyResponse} returns this
 */
-proto.api.OrdersByPartyResponse.prototype.setOrdersList = function(value) {
+proto.api.v1.OrdersByPartyResponse.prototype.setOrdersList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -13262,16 +15686,16 @@ proto.api.OrdersByPartyResponse.prototype.setOrdersList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Order}
  */
-proto.api.OrdersByPartyResponse.prototype.addOrders = function(opt_value, opt_index) {
+proto.api.v1.OrdersByPartyResponse.prototype.addOrders = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Order, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.OrdersByPartyResponse} returns this
+ * @return {!proto.api.v1.OrdersByPartyResponse} returns this
  */
-proto.api.OrdersByPartyResponse.prototype.clearOrdersList = function() {
+proto.api.v1.OrdersByPartyResponse.prototype.clearOrdersList = function() {
   return this.setOrdersList([]);
 };
 
@@ -13292,8 +15716,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.OrderByMarketAndIdRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.OrderByMarketAndIdRequest.toObject(opt_includeInstance, this);
+proto.api.v1.OrderByMarketAndIDRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.OrderByMarketAndIDRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -13302,14 +15726,14 @@ proto.api.OrderByMarketAndIdRequest.prototype.toObject = function(opt_includeIns
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.OrderByMarketAndIdRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.OrderByMarketAndIDRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrderByMarketAndIdRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.OrderByMarketAndIDRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    orderid: jspb.Message.getFieldWithDefault(msg, 2, "")
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    orderId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -13323,23 +15747,23 @@ proto.api.OrderByMarketAndIdRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.OrderByMarketAndIdRequest}
+ * @return {!proto.api.v1.OrderByMarketAndIDRequest}
  */
-proto.api.OrderByMarketAndIdRequest.deserializeBinary = function(bytes) {
+proto.api.v1.OrderByMarketAndIDRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.OrderByMarketAndIdRequest;
-  return proto.api.OrderByMarketAndIdRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.OrderByMarketAndIDRequest;
+  return proto.api.v1.OrderByMarketAndIDRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.OrderByMarketAndIdRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.OrderByMarketAndIDRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.OrderByMarketAndIdRequest}
+ * @return {!proto.api.v1.OrderByMarketAndIDRequest}
  */
-proto.api.OrderByMarketAndIdRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.OrderByMarketAndIDRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -13348,11 +15772,11 @@ proto.api.OrderByMarketAndIdRequest.deserializeBinaryFromReader = function(msg, 
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOrderid(value);
+      msg.setOrderId(value);
       break;
     default:
       reader.skipField();
@@ -13367,9 +15791,9 @@ proto.api.OrderByMarketAndIdRequest.deserializeBinaryFromReader = function(msg, 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.OrderByMarketAndIdRequest.prototype.serializeBinary = function() {
+proto.api.v1.OrderByMarketAndIDRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.OrderByMarketAndIdRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.OrderByMarketAndIDRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -13377,20 +15801,20 @@ proto.api.OrderByMarketAndIdRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.OrderByMarketAndIdRequest} message
+ * @param {!proto.api.v1.OrderByMarketAndIDRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrderByMarketAndIdRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.OrderByMarketAndIDRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getOrderid();
+  f = message.getOrderId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -13401,37 +15825,37 @@ proto.api.OrderByMarketAndIdRequest.serializeBinaryToWriter = function(message, 
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.api.OrderByMarketAndIdRequest.prototype.getMarketid = function() {
+proto.api.v1.OrderByMarketAndIDRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.OrderByMarketAndIdRequest} returns this
+ * @return {!proto.api.v1.OrderByMarketAndIDRequest} returns this
  */
-proto.api.OrderByMarketAndIdRequest.prototype.setMarketid = function(value) {
+proto.api.v1.OrderByMarketAndIDRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string orderID = 2;
+ * optional string order_id = 2;
  * @return {string}
  */
-proto.api.OrderByMarketAndIdRequest.prototype.getOrderid = function() {
+proto.api.v1.OrderByMarketAndIDRequest.prototype.getOrderId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.OrderByMarketAndIdRequest} returns this
+ * @return {!proto.api.v1.OrderByMarketAndIDRequest} returns this
  */
-proto.api.OrderByMarketAndIdRequest.prototype.setOrderid = function(value) {
+proto.api.v1.OrderByMarketAndIDRequest.prototype.setOrderId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -13452,8 +15876,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.OrderByMarketAndIdResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.OrderByMarketAndIdResponse.toObject(opt_includeInstance, this);
+proto.api.v1.OrderByMarketAndIDResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.OrderByMarketAndIDResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -13462,11 +15886,11 @@ proto.api.OrderByMarketAndIdResponse.prototype.toObject = function(opt_includeIn
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.OrderByMarketAndIdResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.OrderByMarketAndIDResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrderByMarketAndIdResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.OrderByMarketAndIDResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     order: (f = msg.getOrder()) && vega_pb.Order.toObject(includeInstance, f)
   };
@@ -13482,23 +15906,23 @@ proto.api.OrderByMarketAndIdResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.OrderByMarketAndIdResponse}
+ * @return {!proto.api.v1.OrderByMarketAndIDResponse}
  */
-proto.api.OrderByMarketAndIdResponse.deserializeBinary = function(bytes) {
+proto.api.v1.OrderByMarketAndIDResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.OrderByMarketAndIdResponse;
-  return proto.api.OrderByMarketAndIdResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.OrderByMarketAndIDResponse;
+  return proto.api.v1.OrderByMarketAndIDResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.OrderByMarketAndIdResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.OrderByMarketAndIDResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.OrderByMarketAndIdResponse}
+ * @return {!proto.api.v1.OrderByMarketAndIDResponse}
  */
-proto.api.OrderByMarketAndIdResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.OrderByMarketAndIDResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -13523,9 +15947,9 @@ proto.api.OrderByMarketAndIdResponse.deserializeBinaryFromReader = function(msg,
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.OrderByMarketAndIdResponse.prototype.serializeBinary = function() {
+proto.api.v1.OrderByMarketAndIDResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.OrderByMarketAndIdResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.OrderByMarketAndIDResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -13533,11 +15957,11 @@ proto.api.OrderByMarketAndIdResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.OrderByMarketAndIdResponse} message
+ * @param {!proto.api.v1.OrderByMarketAndIDResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrderByMarketAndIdResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.OrderByMarketAndIDResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrder();
   if (f != null) {
@@ -13554,7 +15978,7 @@ proto.api.OrderByMarketAndIdResponse.serializeBinaryToWriter = function(message,
  * optional vega.Order order = 1;
  * @return {?proto.vega.Order}
  */
-proto.api.OrderByMarketAndIdResponse.prototype.getOrder = function() {
+proto.api.v1.OrderByMarketAndIDResponse.prototype.getOrder = function() {
   return /** @type{?proto.vega.Order} */ (
     jspb.Message.getWrapperField(this, vega_pb.Order, 1));
 };
@@ -13562,18 +15986,18 @@ proto.api.OrderByMarketAndIdResponse.prototype.getOrder = function() {
 
 /**
  * @param {?proto.vega.Order|undefined} value
- * @return {!proto.api.OrderByMarketAndIdResponse} returns this
+ * @return {!proto.api.v1.OrderByMarketAndIDResponse} returns this
 */
-proto.api.OrderByMarketAndIdResponse.prototype.setOrder = function(value) {
+proto.api.v1.OrderByMarketAndIDResponse.prototype.setOrder = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.OrderByMarketAndIdResponse} returns this
+ * @return {!proto.api.v1.OrderByMarketAndIDResponse} returns this
  */
-proto.api.OrderByMarketAndIdResponse.prototype.clearOrder = function() {
+proto.api.v1.OrderByMarketAndIDResponse.prototype.clearOrder = function() {
   return this.setOrder(undefined);
 };
 
@@ -13582,7 +16006,7 @@ proto.api.OrderByMarketAndIdResponse.prototype.clearOrder = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.OrderByMarketAndIdResponse.prototype.hasOrder = function() {
+proto.api.v1.OrderByMarketAndIDResponse.prototype.hasOrder = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -13603,8 +16027,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.OrderByReferenceRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.OrderByReferenceRequest.toObject(opt_includeInstance, this);
+proto.api.v1.OrderByReferenceRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.OrderByReferenceRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -13613,11 +16037,11 @@ proto.api.OrderByReferenceRequest.prototype.toObject = function(opt_includeInsta
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.OrderByReferenceRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.OrderByReferenceRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrderByReferenceRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.OrderByReferenceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     reference: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
@@ -13633,23 +16057,23 @@ proto.api.OrderByReferenceRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.OrderByReferenceRequest}
+ * @return {!proto.api.v1.OrderByReferenceRequest}
  */
-proto.api.OrderByReferenceRequest.deserializeBinary = function(bytes) {
+proto.api.v1.OrderByReferenceRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.OrderByReferenceRequest;
-  return proto.api.OrderByReferenceRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.OrderByReferenceRequest;
+  return proto.api.v1.OrderByReferenceRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.OrderByReferenceRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.OrderByReferenceRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.OrderByReferenceRequest}
+ * @return {!proto.api.v1.OrderByReferenceRequest}
  */
-proto.api.OrderByReferenceRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.OrderByReferenceRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -13673,9 +16097,9 @@ proto.api.OrderByReferenceRequest.deserializeBinaryFromReader = function(msg, re
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.OrderByReferenceRequest.prototype.serializeBinary = function() {
+proto.api.v1.OrderByReferenceRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.OrderByReferenceRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.OrderByReferenceRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -13683,11 +16107,11 @@ proto.api.OrderByReferenceRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.OrderByReferenceRequest} message
+ * @param {!proto.api.v1.OrderByReferenceRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrderByReferenceRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.OrderByReferenceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getReference();
   if (f.length > 0) {
@@ -13703,16 +16127,16 @@ proto.api.OrderByReferenceRequest.serializeBinaryToWriter = function(message, wr
  * optional string reference = 1;
  * @return {string}
  */
-proto.api.OrderByReferenceRequest.prototype.getReference = function() {
+proto.api.v1.OrderByReferenceRequest.prototype.getReference = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.OrderByReferenceRequest} returns this
+ * @return {!proto.api.v1.OrderByReferenceRequest} returns this
  */
-proto.api.OrderByReferenceRequest.prototype.setReference = function(value) {
+proto.api.v1.OrderByReferenceRequest.prototype.setReference = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -13733,8 +16157,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.OrderByReferenceResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.OrderByReferenceResponse.toObject(opt_includeInstance, this);
+proto.api.v1.OrderByReferenceResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.OrderByReferenceResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -13743,11 +16167,11 @@ proto.api.OrderByReferenceResponse.prototype.toObject = function(opt_includeInst
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.OrderByReferenceResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.OrderByReferenceResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrderByReferenceResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.OrderByReferenceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     order: (f = msg.getOrder()) && vega_pb.Order.toObject(includeInstance, f)
   };
@@ -13763,23 +16187,23 @@ proto.api.OrderByReferenceResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.OrderByReferenceResponse}
+ * @return {!proto.api.v1.OrderByReferenceResponse}
  */
-proto.api.OrderByReferenceResponse.deserializeBinary = function(bytes) {
+proto.api.v1.OrderByReferenceResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.OrderByReferenceResponse;
-  return proto.api.OrderByReferenceResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.OrderByReferenceResponse;
+  return proto.api.v1.OrderByReferenceResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.OrderByReferenceResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.OrderByReferenceResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.OrderByReferenceResponse}
+ * @return {!proto.api.v1.OrderByReferenceResponse}
  */
-proto.api.OrderByReferenceResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.OrderByReferenceResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -13804,9 +16228,9 @@ proto.api.OrderByReferenceResponse.deserializeBinaryFromReader = function(msg, r
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.OrderByReferenceResponse.prototype.serializeBinary = function() {
+proto.api.v1.OrderByReferenceResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.OrderByReferenceResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.OrderByReferenceResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -13814,11 +16238,11 @@ proto.api.OrderByReferenceResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.OrderByReferenceResponse} message
+ * @param {!proto.api.v1.OrderByReferenceResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrderByReferenceResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.OrderByReferenceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrder();
   if (f != null) {
@@ -13835,7 +16259,7 @@ proto.api.OrderByReferenceResponse.serializeBinaryToWriter = function(message, w
  * optional vega.Order order = 1;
  * @return {?proto.vega.Order}
  */
-proto.api.OrderByReferenceResponse.prototype.getOrder = function() {
+proto.api.v1.OrderByReferenceResponse.prototype.getOrder = function() {
   return /** @type{?proto.vega.Order} */ (
     jspb.Message.getWrapperField(this, vega_pb.Order, 1));
 };
@@ -13843,18 +16267,18 @@ proto.api.OrderByReferenceResponse.prototype.getOrder = function() {
 
 /**
  * @param {?proto.vega.Order|undefined} value
- * @return {!proto.api.OrderByReferenceResponse} returns this
+ * @return {!proto.api.v1.OrderByReferenceResponse} returns this
 */
-proto.api.OrderByReferenceResponse.prototype.setOrder = function(value) {
+proto.api.v1.OrderByReferenceResponse.prototype.setOrder = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.OrderByReferenceResponse} returns this
+ * @return {!proto.api.v1.OrderByReferenceResponse} returns this
  */
-proto.api.OrderByReferenceResponse.prototype.clearOrder = function() {
+proto.api.v1.OrderByReferenceResponse.prototype.clearOrder = function() {
   return this.setOrder(undefined);
 };
 
@@ -13863,18 +16287,11 @@ proto.api.OrderByReferenceResponse.prototype.clearOrder = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.OrderByReferenceResponse.prototype.hasOrder = function() {
+proto.api.v1.OrderByReferenceResponse.prototype.hasOrder = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.MarketsResponse.repeatedFields_ = [1];
 
 
 
@@ -13891,8 +16308,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.MarketsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.MarketsResponse.toObject(opt_includeInstance, this);
+proto.api.v1.MarketsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -13901,11 +16318,119 @@ proto.api.MarketsResponse.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.MarketsResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.MarketsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketsResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.MarketsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.MarketsRequest}
+ */
+proto.api.v1.MarketsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.MarketsRequest;
+  return proto.api.v1.MarketsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.MarketsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.MarketsRequest}
+ */
+proto.api.v1.MarketsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.MarketsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.MarketsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.MarketsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.MarketsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1.MarketsResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.MarketsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.MarketsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.MarketsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     marketsList: jspb.Message.toObjectList(msg.getMarketsList(),
     markets_pb.Market.toObject, includeInstance)
@@ -13922,23 +16447,23 @@ proto.api.MarketsResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.MarketsResponse}
+ * @return {!proto.api.v1.MarketsResponse}
  */
-proto.api.MarketsResponse.deserializeBinary = function(bytes) {
+proto.api.v1.MarketsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.MarketsResponse;
-  return proto.api.MarketsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.MarketsResponse;
+  return proto.api.v1.MarketsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.MarketsResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.MarketsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.MarketsResponse}
+ * @return {!proto.api.v1.MarketsResponse}
  */
-proto.api.MarketsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.MarketsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -13963,9 +16488,9 @@ proto.api.MarketsResponse.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.MarketsResponse.prototype.serializeBinary = function() {
+proto.api.v1.MarketsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.MarketsResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.MarketsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -13973,11 +16498,11 @@ proto.api.MarketsResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.MarketsResponse} message
+ * @param {!proto.api.v1.MarketsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.MarketsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getMarketsList();
   if (f.length > 0) {
@@ -13994,7 +16519,7 @@ proto.api.MarketsResponse.serializeBinaryToWriter = function(message, writer) {
  * repeated vega.Market markets = 1;
  * @return {!Array<!proto.vega.Market>}
  */
-proto.api.MarketsResponse.prototype.getMarketsList = function() {
+proto.api.v1.MarketsResponse.prototype.getMarketsList = function() {
   return /** @type{!Array<!proto.vega.Market>} */ (
     jspb.Message.getRepeatedWrapperField(this, markets_pb.Market, 1));
 };
@@ -14002,9 +16527,9 @@ proto.api.MarketsResponse.prototype.getMarketsList = function() {
 
 /**
  * @param {!Array<!proto.vega.Market>} value
- * @return {!proto.api.MarketsResponse} returns this
+ * @return {!proto.api.v1.MarketsResponse} returns this
 */
-proto.api.MarketsResponse.prototype.setMarketsList = function(value) {
+proto.api.v1.MarketsResponse.prototype.setMarketsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -14014,16 +16539,16 @@ proto.api.MarketsResponse.prototype.setMarketsList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Market}
  */
-proto.api.MarketsResponse.prototype.addMarkets = function(opt_value, opt_index) {
+proto.api.v1.MarketsResponse.prototype.addMarkets = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Market, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.MarketsResponse} returns this
+ * @return {!proto.api.v1.MarketsResponse} returns this
  */
-proto.api.MarketsResponse.prototype.clearMarketsList = function() {
+proto.api.v1.MarketsResponse.prototype.clearMarketsList = function() {
   return this.setMarketsList([]);
 };
 
@@ -14044,8 +16569,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.CandlesRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.CandlesRequest.toObject(opt_includeInstance, this);
+proto.api.v1.CandlesRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.CandlesRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -14054,14 +16579,14 @@ proto.api.CandlesRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.CandlesRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.CandlesRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.CandlesRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.CandlesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sincetimestamp: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    sinceTimestamp: jspb.Message.getFieldWithDefault(msg, 2, 0),
     interval: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
@@ -14076,23 +16601,23 @@ proto.api.CandlesRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.CandlesRequest}
+ * @return {!proto.api.v1.CandlesRequest}
  */
-proto.api.CandlesRequest.deserializeBinary = function(bytes) {
+proto.api.v1.CandlesRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.CandlesRequest;
-  return proto.api.CandlesRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.CandlesRequest;
+  return proto.api.v1.CandlesRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.CandlesRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.CandlesRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.CandlesRequest}
+ * @return {!proto.api.v1.CandlesRequest}
  */
-proto.api.CandlesRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.CandlesRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -14101,11 +16626,11 @@ proto.api.CandlesRequest.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setSincetimestamp(value);
+      msg.setSinceTimestamp(value);
       break;
     case 3:
       var value = /** @type {!proto.vega.Interval} */ (reader.readEnum());
@@ -14124,9 +16649,9 @@ proto.api.CandlesRequest.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.CandlesRequest.prototype.serializeBinary = function() {
+proto.api.v1.CandlesRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.CandlesRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.CandlesRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -14134,20 +16659,20 @@ proto.api.CandlesRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.CandlesRequest} message
+ * @param {!proto.api.v1.CandlesRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.CandlesRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.CandlesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getSincetimestamp();
+  f = message.getSinceTimestamp();
   if (f !== 0) {
     writer.writeInt64(
       2,
@@ -14165,37 +16690,37 @@ proto.api.CandlesRequest.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.api.CandlesRequest.prototype.getMarketid = function() {
+proto.api.v1.CandlesRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.CandlesRequest} returns this
+ * @return {!proto.api.v1.CandlesRequest} returns this
  */
-proto.api.CandlesRequest.prototype.setMarketid = function(value) {
+proto.api.v1.CandlesRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional int64 sinceTimestamp = 2;
+ * optional int64 since_timestamp = 2;
  * @return {number}
  */
-proto.api.CandlesRequest.prototype.getSincetimestamp = function() {
+proto.api.v1.CandlesRequest.prototype.getSinceTimestamp = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.CandlesRequest} returns this
+ * @return {!proto.api.v1.CandlesRequest} returns this
  */
-proto.api.CandlesRequest.prototype.setSincetimestamp = function(value) {
+proto.api.v1.CandlesRequest.prototype.setSinceTimestamp = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -14204,16 +16729,16 @@ proto.api.CandlesRequest.prototype.setSincetimestamp = function(value) {
  * optional vega.Interval interval = 3;
  * @return {!proto.vega.Interval}
  */
-proto.api.CandlesRequest.prototype.getInterval = function() {
+proto.api.v1.CandlesRequest.prototype.getInterval = function() {
   return /** @type {!proto.vega.Interval} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
  * @param {!proto.vega.Interval} value
- * @return {!proto.api.CandlesRequest} returns this
+ * @return {!proto.api.v1.CandlesRequest} returns this
  */
-proto.api.CandlesRequest.prototype.setInterval = function(value) {
+proto.api.v1.CandlesRequest.prototype.setInterval = function(value) {
   return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
@@ -14224,7 +16749,7 @@ proto.api.CandlesRequest.prototype.setInterval = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.CandlesResponse.repeatedFields_ = [1];
+proto.api.v1.CandlesResponse.repeatedFields_ = [1];
 
 
 
@@ -14241,8 +16766,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.CandlesResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.CandlesResponse.toObject(opt_includeInstance, this);
+proto.api.v1.CandlesResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.CandlesResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -14251,11 +16776,11 @@ proto.api.CandlesResponse.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.CandlesResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.CandlesResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.CandlesResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.CandlesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     candlesList: jspb.Message.toObjectList(msg.getCandlesList(),
     vega_pb.Candle.toObject, includeInstance)
@@ -14272,23 +16797,23 @@ proto.api.CandlesResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.CandlesResponse}
+ * @return {!proto.api.v1.CandlesResponse}
  */
-proto.api.CandlesResponse.deserializeBinary = function(bytes) {
+proto.api.v1.CandlesResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.CandlesResponse;
-  return proto.api.CandlesResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.CandlesResponse;
+  return proto.api.v1.CandlesResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.CandlesResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.CandlesResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.CandlesResponse}
+ * @return {!proto.api.v1.CandlesResponse}
  */
-proto.api.CandlesResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.CandlesResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -14313,9 +16838,9 @@ proto.api.CandlesResponse.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.CandlesResponse.prototype.serializeBinary = function() {
+proto.api.v1.CandlesResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.CandlesResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.CandlesResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -14323,11 +16848,11 @@ proto.api.CandlesResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.CandlesResponse} message
+ * @param {!proto.api.v1.CandlesResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.CandlesResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.CandlesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getCandlesList();
   if (f.length > 0) {
@@ -14344,7 +16869,7 @@ proto.api.CandlesResponse.serializeBinaryToWriter = function(message, writer) {
  * repeated vega.Candle candles = 1;
  * @return {!Array<!proto.vega.Candle>}
  */
-proto.api.CandlesResponse.prototype.getCandlesList = function() {
+proto.api.v1.CandlesResponse.prototype.getCandlesList = function() {
   return /** @type{!Array<!proto.vega.Candle>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.Candle, 1));
 };
@@ -14352,9 +16877,9 @@ proto.api.CandlesResponse.prototype.getCandlesList = function() {
 
 /**
  * @param {!Array<!proto.vega.Candle>} value
- * @return {!proto.api.CandlesResponse} returns this
+ * @return {!proto.api.v1.CandlesResponse} returns this
 */
-proto.api.CandlesResponse.prototype.setCandlesList = function(value) {
+proto.api.v1.CandlesResponse.prototype.setCandlesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -14364,16 +16889,16 @@ proto.api.CandlesResponse.prototype.setCandlesList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Candle}
  */
-proto.api.CandlesResponse.prototype.addCandles = function(opt_value, opt_index) {
+proto.api.v1.CandlesResponse.prototype.addCandles = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Candle, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.CandlesResponse} returns this
+ * @return {!proto.api.v1.CandlesResponse} returns this
  */
-proto.api.CandlesResponse.prototype.clearCandlesList = function() {
+proto.api.v1.CandlesResponse.prototype.clearCandlesList = function() {
   return this.setCandlesList([]);
 };
 
@@ -14394,8 +16919,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.MarketDepthRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.MarketDepthRequest.toObject(opt_includeInstance, this);
+proto.api.v1.MarketDepthRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketDepthRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -14404,14 +16929,14 @@ proto.api.MarketDepthRequest.prototype.toObject = function(opt_includeInstance) 
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.MarketDepthRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.MarketDepthRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketDepthRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.MarketDepthRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    maxdepth: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    maxDepth: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -14425,23 +16950,23 @@ proto.api.MarketDepthRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.MarketDepthRequest}
+ * @return {!proto.api.v1.MarketDepthRequest}
  */
-proto.api.MarketDepthRequest.deserializeBinary = function(bytes) {
+proto.api.v1.MarketDepthRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.MarketDepthRequest;
-  return proto.api.MarketDepthRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.MarketDepthRequest;
+  return proto.api.v1.MarketDepthRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.MarketDepthRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.MarketDepthRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.MarketDepthRequest}
+ * @return {!proto.api.v1.MarketDepthRequest}
  */
-proto.api.MarketDepthRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.MarketDepthRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -14450,11 +16975,11 @@ proto.api.MarketDepthRequest.deserializeBinaryFromReader = function(msg, reader)
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMaxdepth(value);
+      msg.setMaxDepth(value);
       break;
     default:
       reader.skipField();
@@ -14469,9 +16994,9 @@ proto.api.MarketDepthRequest.deserializeBinaryFromReader = function(msg, reader)
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.MarketDepthRequest.prototype.serializeBinary = function() {
+proto.api.v1.MarketDepthRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.MarketDepthRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.MarketDepthRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -14479,20 +17004,20 @@ proto.api.MarketDepthRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.MarketDepthRequest} message
+ * @param {!proto.api.v1.MarketDepthRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketDepthRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.MarketDepthRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getMaxdepth();
+  f = message.getMaxDepth();
   if (f !== 0) {
     writer.writeUint64(
       2,
@@ -14503,37 +17028,37 @@ proto.api.MarketDepthRequest.serializeBinaryToWriter = function(message, writer)
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.api.MarketDepthRequest.prototype.getMarketid = function() {
+proto.api.v1.MarketDepthRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.MarketDepthRequest} returns this
+ * @return {!proto.api.v1.MarketDepthRequest} returns this
  */
-proto.api.MarketDepthRequest.prototype.setMarketid = function(value) {
+proto.api.v1.MarketDepthRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional uint64 maxDepth = 2;
+ * optional uint64 max_depth = 2;
  * @return {number}
  */
-proto.api.MarketDepthRequest.prototype.getMaxdepth = function() {
+proto.api.v1.MarketDepthRequest.prototype.getMaxDepth = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.MarketDepthRequest} returns this
+ * @return {!proto.api.v1.MarketDepthRequest} returns this
  */
-proto.api.MarketDepthRequest.prototype.setMaxdepth = function(value) {
+proto.api.v1.MarketDepthRequest.prototype.setMaxDepth = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -14544,7 +17069,7 @@ proto.api.MarketDepthRequest.prototype.setMaxdepth = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.MarketDepthResponse.repeatedFields_ = [2,3];
+proto.api.v1.MarketDepthResponse.repeatedFields_ = [2,3];
 
 
 
@@ -14561,8 +17086,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.MarketDepthResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.MarketDepthResponse.toObject(opt_includeInstance, this);
+proto.api.v1.MarketDepthResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketDepthResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -14571,19 +17096,19 @@ proto.api.MarketDepthResponse.prototype.toObject = function(opt_includeInstance)
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.MarketDepthResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.MarketDepthResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketDepthResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.MarketDepthResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     buyList: jspb.Message.toObjectList(msg.getBuyList(),
     vega_pb.PriceLevel.toObject, includeInstance),
     sellList: jspb.Message.toObjectList(msg.getSellList(),
     vega_pb.PriceLevel.toObject, includeInstance),
-    lasttrade: (f = msg.getLasttrade()) && vega_pb.Trade.toObject(includeInstance, f),
-    sequencenumber: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    lastTrade: (f = msg.getLastTrade()) && vega_pb.Trade.toObject(includeInstance, f),
+    sequenceNumber: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -14597,23 +17122,23 @@ proto.api.MarketDepthResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.MarketDepthResponse}
+ * @return {!proto.api.v1.MarketDepthResponse}
  */
-proto.api.MarketDepthResponse.deserializeBinary = function(bytes) {
+proto.api.v1.MarketDepthResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.MarketDepthResponse;
-  return proto.api.MarketDepthResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.MarketDepthResponse;
+  return proto.api.v1.MarketDepthResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.MarketDepthResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.MarketDepthResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.MarketDepthResponse}
+ * @return {!proto.api.v1.MarketDepthResponse}
  */
-proto.api.MarketDepthResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.MarketDepthResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -14622,7 +17147,7 @@ proto.api.MarketDepthResponse.deserializeBinaryFromReader = function(msg, reader
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
       var value = new vega_pb.PriceLevel;
@@ -14637,11 +17162,11 @@ proto.api.MarketDepthResponse.deserializeBinaryFromReader = function(msg, reader
     case 4:
       var value = new vega_pb.Trade;
       reader.readMessage(value,vega_pb.Trade.deserializeBinaryFromReader);
-      msg.setLasttrade(value);
+      msg.setLastTrade(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setSequencenumber(value);
+      msg.setSequenceNumber(value);
       break;
     default:
       reader.skipField();
@@ -14656,9 +17181,9 @@ proto.api.MarketDepthResponse.deserializeBinaryFromReader = function(msg, reader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.MarketDepthResponse.prototype.serializeBinary = function() {
+proto.api.v1.MarketDepthResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.MarketDepthResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.MarketDepthResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -14666,13 +17191,13 @@ proto.api.MarketDepthResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.MarketDepthResponse} message
+ * @param {!proto.api.v1.MarketDepthResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketDepthResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.MarketDepthResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -14695,7 +17220,7 @@ proto.api.MarketDepthResponse.serializeBinaryToWriter = function(message, writer
       vega_pb.PriceLevel.serializeBinaryToWriter
     );
   }
-  f = message.getLasttrade();
+  f = message.getLastTrade();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -14703,7 +17228,7 @@ proto.api.MarketDepthResponse.serializeBinaryToWriter = function(message, writer
       vega_pb.Trade.serializeBinaryToWriter
     );
   }
-  f = message.getSequencenumber();
+  f = message.getSequenceNumber();
   if (f !== 0) {
     writer.writeUint64(
       5,
@@ -14714,19 +17239,19 @@ proto.api.MarketDepthResponse.serializeBinaryToWriter = function(message, writer
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.api.MarketDepthResponse.prototype.getMarketid = function() {
+proto.api.v1.MarketDepthResponse.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.MarketDepthResponse} returns this
+ * @return {!proto.api.v1.MarketDepthResponse} returns this
  */
-proto.api.MarketDepthResponse.prototype.setMarketid = function(value) {
+proto.api.v1.MarketDepthResponse.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -14735,7 +17260,7 @@ proto.api.MarketDepthResponse.prototype.setMarketid = function(value) {
  * repeated vega.PriceLevel buy = 2;
  * @return {!Array<!proto.vega.PriceLevel>}
  */
-proto.api.MarketDepthResponse.prototype.getBuyList = function() {
+proto.api.v1.MarketDepthResponse.prototype.getBuyList = function() {
   return /** @type{!Array<!proto.vega.PriceLevel>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.PriceLevel, 2));
 };
@@ -14743,9 +17268,9 @@ proto.api.MarketDepthResponse.prototype.getBuyList = function() {
 
 /**
  * @param {!Array<!proto.vega.PriceLevel>} value
- * @return {!proto.api.MarketDepthResponse} returns this
+ * @return {!proto.api.v1.MarketDepthResponse} returns this
 */
-proto.api.MarketDepthResponse.prototype.setBuyList = function(value) {
+proto.api.v1.MarketDepthResponse.prototype.setBuyList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
@@ -14755,16 +17280,16 @@ proto.api.MarketDepthResponse.prototype.setBuyList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.PriceLevel}
  */
-proto.api.MarketDepthResponse.prototype.addBuy = function(opt_value, opt_index) {
+proto.api.v1.MarketDepthResponse.prototype.addBuy = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.vega.PriceLevel, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.MarketDepthResponse} returns this
+ * @return {!proto.api.v1.MarketDepthResponse} returns this
  */
-proto.api.MarketDepthResponse.prototype.clearBuyList = function() {
+proto.api.v1.MarketDepthResponse.prototype.clearBuyList = function() {
   return this.setBuyList([]);
 };
 
@@ -14773,7 +17298,7 @@ proto.api.MarketDepthResponse.prototype.clearBuyList = function() {
  * repeated vega.PriceLevel sell = 3;
  * @return {!Array<!proto.vega.PriceLevel>}
  */
-proto.api.MarketDepthResponse.prototype.getSellList = function() {
+proto.api.v1.MarketDepthResponse.prototype.getSellList = function() {
   return /** @type{!Array<!proto.vega.PriceLevel>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.PriceLevel, 3));
 };
@@ -14781,9 +17306,9 @@ proto.api.MarketDepthResponse.prototype.getSellList = function() {
 
 /**
  * @param {!Array<!proto.vega.PriceLevel>} value
- * @return {!proto.api.MarketDepthResponse} returns this
+ * @return {!proto.api.v1.MarketDepthResponse} returns this
 */
-proto.api.MarketDepthResponse.prototype.setSellList = function(value) {
+proto.api.v1.MarketDepthResponse.prototype.setSellList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
@@ -14793,25 +17318,25 @@ proto.api.MarketDepthResponse.prototype.setSellList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.PriceLevel}
  */
-proto.api.MarketDepthResponse.prototype.addSell = function(opt_value, opt_index) {
+proto.api.v1.MarketDepthResponse.prototype.addSell = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.vega.PriceLevel, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.MarketDepthResponse} returns this
+ * @return {!proto.api.v1.MarketDepthResponse} returns this
  */
-proto.api.MarketDepthResponse.prototype.clearSellList = function() {
+proto.api.v1.MarketDepthResponse.prototype.clearSellList = function() {
   return this.setSellList([]);
 };
 
 
 /**
- * optional vega.Trade lastTrade = 4;
+ * optional vega.Trade last_trade = 4;
  * @return {?proto.vega.Trade}
  */
-proto.api.MarketDepthResponse.prototype.getLasttrade = function() {
+proto.api.v1.MarketDepthResponse.prototype.getLastTrade = function() {
   return /** @type{?proto.vega.Trade} */ (
     jspb.Message.getWrapperField(this, vega_pb.Trade, 4));
 };
@@ -14819,19 +17344,19 @@ proto.api.MarketDepthResponse.prototype.getLasttrade = function() {
 
 /**
  * @param {?proto.vega.Trade|undefined} value
- * @return {!proto.api.MarketDepthResponse} returns this
+ * @return {!proto.api.v1.MarketDepthResponse} returns this
 */
-proto.api.MarketDepthResponse.prototype.setLasttrade = function(value) {
+proto.api.v1.MarketDepthResponse.prototype.setLastTrade = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.MarketDepthResponse} returns this
+ * @return {!proto.api.v1.MarketDepthResponse} returns this
  */
-proto.api.MarketDepthResponse.prototype.clearLasttrade = function() {
-  return this.setLasttrade(undefined);
+proto.api.v1.MarketDepthResponse.prototype.clearLastTrade = function() {
+  return this.setLastTrade(undefined);
 };
 
 
@@ -14839,25 +17364,25 @@ proto.api.MarketDepthResponse.prototype.clearLasttrade = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.MarketDepthResponse.prototype.hasLasttrade = function() {
+proto.api.v1.MarketDepthResponse.prototype.hasLastTrade = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional uint64 sequenceNumber = 5;
+ * optional uint64 sequence_number = 5;
  * @return {number}
  */
-proto.api.MarketDepthResponse.prototype.getSequencenumber = function() {
+proto.api.v1.MarketDepthResponse.prototype.getSequenceNumber = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.MarketDepthResponse} returns this
+ * @return {!proto.api.v1.MarketDepthResponse} returns this
  */
-proto.api.MarketDepthResponse.prototype.setSequencenumber = function(value) {
+proto.api.v1.MarketDepthResponse.prototype.setSequenceNumber = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
@@ -14878,8 +17403,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.TradesByMarketRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.TradesByMarketRequest.toObject(opt_includeInstance, this);
+proto.api.v1.TradesByMarketRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.TradesByMarketRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -14888,14 +17413,14 @@ proto.api.TradesByMarketRequest.prototype.toObject = function(opt_includeInstanc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.TradesByMarketRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.TradesByMarketRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.TradesByMarketRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.TradesByMarketRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pagination: (f = msg.getPagination()) && proto.api.Pagination.toObject(includeInstance, f)
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    pagination: (f = msg.getPagination()) && proto.api.v1.Pagination.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14909,23 +17434,23 @@ proto.api.TradesByMarketRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.TradesByMarketRequest}
+ * @return {!proto.api.v1.TradesByMarketRequest}
  */
-proto.api.TradesByMarketRequest.deserializeBinary = function(bytes) {
+proto.api.v1.TradesByMarketRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.TradesByMarketRequest;
-  return proto.api.TradesByMarketRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.TradesByMarketRequest;
+  return proto.api.v1.TradesByMarketRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.TradesByMarketRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.TradesByMarketRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.TradesByMarketRequest}
+ * @return {!proto.api.v1.TradesByMarketRequest}
  */
-proto.api.TradesByMarketRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.TradesByMarketRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -14934,11 +17459,11 @@ proto.api.TradesByMarketRequest.deserializeBinaryFromReader = function(msg, read
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
-      var value = new proto.api.Pagination;
-      reader.readMessage(value,proto.api.Pagination.deserializeBinaryFromReader);
+      var value = new proto.api.v1.Pagination;
+      reader.readMessage(value,proto.api.v1.Pagination.deserializeBinaryFromReader);
       msg.setPagination(value);
       break;
     default:
@@ -14954,9 +17479,9 @@ proto.api.TradesByMarketRequest.deserializeBinaryFromReader = function(msg, read
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.TradesByMarketRequest.prototype.serializeBinary = function() {
+proto.api.v1.TradesByMarketRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.TradesByMarketRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.TradesByMarketRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -14964,13 +17489,13 @@ proto.api.TradesByMarketRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.TradesByMarketRequest} message
+ * @param {!proto.api.v1.TradesByMarketRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.TradesByMarketRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.TradesByMarketRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -14982,54 +17507,54 @@ proto.api.TradesByMarketRequest.serializeBinaryToWriter = function(message, writ
     writer.writeMessage(
       2,
       f,
-      proto.api.Pagination.serializeBinaryToWriter
+      proto.api.v1.Pagination.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.api.TradesByMarketRequest.prototype.getMarketid = function() {
+proto.api.v1.TradesByMarketRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.TradesByMarketRequest} returns this
+ * @return {!proto.api.v1.TradesByMarketRequest} returns this
  */
-proto.api.TradesByMarketRequest.prototype.setMarketid = function(value) {
+proto.api.v1.TradesByMarketRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
  * optional Pagination pagination = 2;
- * @return {?proto.api.Pagination}
+ * @return {?proto.api.v1.Pagination}
  */
-proto.api.TradesByMarketRequest.prototype.getPagination = function() {
-  return /** @type{?proto.api.Pagination} */ (
-    jspb.Message.getWrapperField(this, proto.api.Pagination, 2));
+proto.api.v1.TradesByMarketRequest.prototype.getPagination = function() {
+  return /** @type{?proto.api.v1.Pagination} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1.Pagination, 2));
 };
 
 
 /**
- * @param {?proto.api.Pagination|undefined} value
- * @return {!proto.api.TradesByMarketRequest} returns this
+ * @param {?proto.api.v1.Pagination|undefined} value
+ * @return {!proto.api.v1.TradesByMarketRequest} returns this
 */
-proto.api.TradesByMarketRequest.prototype.setPagination = function(value) {
+proto.api.v1.TradesByMarketRequest.prototype.setPagination = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.TradesByMarketRequest} returns this
+ * @return {!proto.api.v1.TradesByMarketRequest} returns this
  */
-proto.api.TradesByMarketRequest.prototype.clearPagination = function() {
+proto.api.v1.TradesByMarketRequest.prototype.clearPagination = function() {
   return this.setPagination(undefined);
 };
 
@@ -15038,7 +17563,7 @@ proto.api.TradesByMarketRequest.prototype.clearPagination = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.TradesByMarketRequest.prototype.hasPagination = function() {
+proto.api.v1.TradesByMarketRequest.prototype.hasPagination = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -15049,7 +17574,7 @@ proto.api.TradesByMarketRequest.prototype.hasPagination = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.api.TradesByMarketResponse.repeatedFields_ = [1];
+proto.api.v1.TradesByMarketResponse.repeatedFields_ = [1];
 
 
 
@@ -15066,8 +17591,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.TradesByMarketResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.TradesByMarketResponse.toObject(opt_includeInstance, this);
+proto.api.v1.TradesByMarketResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.TradesByMarketResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -15076,11 +17601,11 @@ proto.api.TradesByMarketResponse.prototype.toObject = function(opt_includeInstan
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.TradesByMarketResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.TradesByMarketResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.TradesByMarketResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.TradesByMarketResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     tradesList: jspb.Message.toObjectList(msg.getTradesList(),
     vega_pb.Trade.toObject, includeInstance)
@@ -15097,23 +17622,23 @@ proto.api.TradesByMarketResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.TradesByMarketResponse}
+ * @return {!proto.api.v1.TradesByMarketResponse}
  */
-proto.api.TradesByMarketResponse.deserializeBinary = function(bytes) {
+proto.api.v1.TradesByMarketResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.TradesByMarketResponse;
-  return proto.api.TradesByMarketResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.TradesByMarketResponse;
+  return proto.api.v1.TradesByMarketResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.TradesByMarketResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.TradesByMarketResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.TradesByMarketResponse}
+ * @return {!proto.api.v1.TradesByMarketResponse}
  */
-proto.api.TradesByMarketResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.TradesByMarketResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -15138,9 +17663,9 @@ proto.api.TradesByMarketResponse.deserializeBinaryFromReader = function(msg, rea
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.TradesByMarketResponse.prototype.serializeBinary = function() {
+proto.api.v1.TradesByMarketResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.TradesByMarketResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.TradesByMarketResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -15148,11 +17673,11 @@ proto.api.TradesByMarketResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.TradesByMarketResponse} message
+ * @param {!proto.api.v1.TradesByMarketResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.TradesByMarketResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.TradesByMarketResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTradesList();
   if (f.length > 0) {
@@ -15169,7 +17694,7 @@ proto.api.TradesByMarketResponse.serializeBinaryToWriter = function(message, wri
  * repeated vega.Trade trades = 1;
  * @return {!Array<!proto.vega.Trade>}
  */
-proto.api.TradesByMarketResponse.prototype.getTradesList = function() {
+proto.api.v1.TradesByMarketResponse.prototype.getTradesList = function() {
   return /** @type{!Array<!proto.vega.Trade>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.Trade, 1));
 };
@@ -15177,9 +17702,9 @@ proto.api.TradesByMarketResponse.prototype.getTradesList = function() {
 
 /**
  * @param {!Array<!proto.vega.Trade>} value
- * @return {!proto.api.TradesByMarketResponse} returns this
+ * @return {!proto.api.v1.TradesByMarketResponse} returns this
 */
-proto.api.TradesByMarketResponse.prototype.setTradesList = function(value) {
+proto.api.v1.TradesByMarketResponse.prototype.setTradesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -15189,16 +17714,16 @@ proto.api.TradesByMarketResponse.prototype.setTradesList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Trade}
  */
-proto.api.TradesByMarketResponse.prototype.addTrades = function(opt_value, opt_index) {
+proto.api.v1.TradesByMarketResponse.prototype.addTrades = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Trade, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.TradesByMarketResponse} returns this
+ * @return {!proto.api.v1.TradesByMarketResponse} returns this
  */
-proto.api.TradesByMarketResponse.prototype.clearTradesList = function() {
+proto.api.v1.TradesByMarketResponse.prototype.clearTradesList = function() {
   return this.setTradesList([]);
 };
 
@@ -15219,8 +17744,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PositionsByPartyRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PositionsByPartyRequest.toObject(opt_includeInstance, this);
+proto.api.v1.PositionsByPartyRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PositionsByPartyRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -15229,14 +17754,14 @@ proto.api.PositionsByPartyRequest.prototype.toObject = function(opt_includeInsta
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PositionsByPartyRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.PositionsByPartyRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PositionsByPartyRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.PositionsByPartyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partyid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    marketid: jspb.Message.getFieldWithDefault(msg, 2, "")
+    partyId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -15250,23 +17775,23 @@ proto.api.PositionsByPartyRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PositionsByPartyRequest}
+ * @return {!proto.api.v1.PositionsByPartyRequest}
  */
-proto.api.PositionsByPartyRequest.deserializeBinary = function(bytes) {
+proto.api.v1.PositionsByPartyRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PositionsByPartyRequest;
-  return proto.api.PositionsByPartyRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PositionsByPartyRequest;
+  return proto.api.v1.PositionsByPartyRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PositionsByPartyRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PositionsByPartyRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PositionsByPartyRequest}
+ * @return {!proto.api.v1.PositionsByPartyRequest}
  */
-proto.api.PositionsByPartyRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PositionsByPartyRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -15275,11 +17800,11 @@ proto.api.PositionsByPartyRequest.deserializeBinaryFromReader = function(msg, re
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     default:
       reader.skipField();
@@ -15294,9 +17819,9 @@ proto.api.PositionsByPartyRequest.deserializeBinaryFromReader = function(msg, re
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PositionsByPartyRequest.prototype.serializeBinary = function() {
+proto.api.v1.PositionsByPartyRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PositionsByPartyRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PositionsByPartyRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -15304,20 +17829,20 @@ proto.api.PositionsByPartyRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PositionsByPartyRequest} message
+ * @param {!proto.api.v1.PositionsByPartyRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PositionsByPartyRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PositionsByPartyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -15328,37 +17853,37 @@ proto.api.PositionsByPartyRequest.serializeBinaryToWriter = function(message, wr
 
 
 /**
- * optional string partyID = 1;
+ * optional string party_id = 1;
  * @return {string}
  */
-proto.api.PositionsByPartyRequest.prototype.getPartyid = function() {
+proto.api.v1.PositionsByPartyRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.PositionsByPartyRequest} returns this
+ * @return {!proto.api.v1.PositionsByPartyRequest} returns this
  */
-proto.api.PositionsByPartyRequest.prototype.setPartyid = function(value) {
+proto.api.v1.PositionsByPartyRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string marketID = 2;
+ * optional string market_id = 2;
  * @return {string}
  */
-proto.api.PositionsByPartyRequest.prototype.getMarketid = function() {
+proto.api.v1.PositionsByPartyRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.PositionsByPartyRequest} returns this
+ * @return {!proto.api.v1.PositionsByPartyRequest} returns this
  */
-proto.api.PositionsByPartyRequest.prototype.setMarketid = function(value) {
+proto.api.v1.PositionsByPartyRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -15369,7 +17894,7 @@ proto.api.PositionsByPartyRequest.prototype.setMarketid = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.PositionsByPartyResponse.repeatedFields_ = [1];
+proto.api.v1.PositionsByPartyResponse.repeatedFields_ = [1];
 
 
 
@@ -15386,8 +17911,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PositionsByPartyResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PositionsByPartyResponse.toObject(opt_includeInstance, this);
+proto.api.v1.PositionsByPartyResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PositionsByPartyResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -15396,11 +17921,11 @@ proto.api.PositionsByPartyResponse.prototype.toObject = function(opt_includeInst
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PositionsByPartyResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.PositionsByPartyResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PositionsByPartyResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.PositionsByPartyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     positionsList: jspb.Message.toObjectList(msg.getPositionsList(),
     vega_pb.Position.toObject, includeInstance)
@@ -15417,23 +17942,23 @@ proto.api.PositionsByPartyResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PositionsByPartyResponse}
+ * @return {!proto.api.v1.PositionsByPartyResponse}
  */
-proto.api.PositionsByPartyResponse.deserializeBinary = function(bytes) {
+proto.api.v1.PositionsByPartyResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PositionsByPartyResponse;
-  return proto.api.PositionsByPartyResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PositionsByPartyResponse;
+  return proto.api.v1.PositionsByPartyResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PositionsByPartyResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PositionsByPartyResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PositionsByPartyResponse}
+ * @return {!proto.api.v1.PositionsByPartyResponse}
  */
-proto.api.PositionsByPartyResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PositionsByPartyResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -15458,9 +17983,9 @@ proto.api.PositionsByPartyResponse.deserializeBinaryFromReader = function(msg, r
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PositionsByPartyResponse.prototype.serializeBinary = function() {
+proto.api.v1.PositionsByPartyResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PositionsByPartyResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PositionsByPartyResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -15468,11 +17993,11 @@ proto.api.PositionsByPartyResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PositionsByPartyResponse} message
+ * @param {!proto.api.v1.PositionsByPartyResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PositionsByPartyResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PositionsByPartyResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getPositionsList();
   if (f.length > 0) {
@@ -15489,7 +18014,7 @@ proto.api.PositionsByPartyResponse.serializeBinaryToWriter = function(message, w
  * repeated vega.Position positions = 1;
  * @return {!Array<!proto.vega.Position>}
  */
-proto.api.PositionsByPartyResponse.prototype.getPositionsList = function() {
+proto.api.v1.PositionsByPartyResponse.prototype.getPositionsList = function() {
   return /** @type{!Array<!proto.vega.Position>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.Position, 1));
 };
@@ -15497,9 +18022,9 @@ proto.api.PositionsByPartyResponse.prototype.getPositionsList = function() {
 
 /**
  * @param {!Array<!proto.vega.Position>} value
- * @return {!proto.api.PositionsByPartyResponse} returns this
+ * @return {!proto.api.v1.PositionsByPartyResponse} returns this
 */
-proto.api.PositionsByPartyResponse.prototype.setPositionsList = function(value) {
+proto.api.v1.PositionsByPartyResponse.prototype.setPositionsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -15509,16 +18034,16 @@ proto.api.PositionsByPartyResponse.prototype.setPositionsList = function(value) 
  * @param {number=} opt_index
  * @return {!proto.vega.Position}
  */
-proto.api.PositionsByPartyResponse.prototype.addPositions = function(opt_value, opt_index) {
+proto.api.v1.PositionsByPartyResponse.prototype.addPositions = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Position, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.PositionsByPartyResponse} returns this
+ * @return {!proto.api.v1.PositionsByPartyResponse} returns this
  */
-proto.api.PositionsByPartyResponse.prototype.clearPositionsList = function() {
+proto.api.v1.PositionsByPartyResponse.prototype.clearPositionsList = function() {
   return this.setPositionsList([]);
 };
 
@@ -15539,8 +18064,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.VegaTimeResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.VegaTimeResponse.toObject(opt_includeInstance, this);
+proto.api.v1.GetVegaTimeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetVegaTimeRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -15549,11 +18074,112 @@ proto.api.VegaTimeResponse.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.VegaTimeResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.GetVegaTimeRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.VegaTimeResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.GetVegaTimeRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.GetVegaTimeRequest}
+ */
+proto.api.v1.GetVegaTimeRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.GetVegaTimeRequest;
+  return proto.api.v1.GetVegaTimeRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.GetVegaTimeRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.GetVegaTimeRequest}
+ */
+proto.api.v1.GetVegaTimeRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.GetVegaTimeRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.GetVegaTimeRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.GetVegaTimeRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.GetVegaTimeRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.GetVegaTimeResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.GetVegaTimeResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.GetVegaTimeResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.GetVegaTimeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
@@ -15569,23 +18195,23 @@ proto.api.VegaTimeResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.VegaTimeResponse}
+ * @return {!proto.api.v1.GetVegaTimeResponse}
  */
-proto.api.VegaTimeResponse.deserializeBinary = function(bytes) {
+proto.api.v1.GetVegaTimeResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.VegaTimeResponse;
-  return proto.api.VegaTimeResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.GetVegaTimeResponse;
+  return proto.api.v1.GetVegaTimeResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.VegaTimeResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.GetVegaTimeResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.VegaTimeResponse}
+ * @return {!proto.api.v1.GetVegaTimeResponse}
  */
-proto.api.VegaTimeResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.GetVegaTimeResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -15609,9 +18235,9 @@ proto.api.VegaTimeResponse.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.VegaTimeResponse.prototype.serializeBinary = function() {
+proto.api.v1.GetVegaTimeResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.VegaTimeResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.GetVegaTimeResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -15619,11 +18245,11 @@ proto.api.VegaTimeResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.VegaTimeResponse} message
+ * @param {!proto.api.v1.GetVegaTimeResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.VegaTimeResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.GetVegaTimeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTimestamp();
   if (f !== 0) {
@@ -15639,16 +18265,16 @@ proto.api.VegaTimeResponse.serializeBinaryToWriter = function(message, writer) {
  * optional int64 timestamp = 1;
  * @return {number}
  */
-proto.api.VegaTimeResponse.prototype.getTimestamp = function() {
+proto.api.v1.GetVegaTimeResponse.prototype.getTimestamp = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.VegaTimeResponse} returns this
+ * @return {!proto.api.v1.GetVegaTimeResponse} returns this
  */
-proto.api.VegaTimeResponse.prototype.setTimestamp = function(value) {
+proto.api.v1.GetVegaTimeResponse.prototype.setTimestamp = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -15669,8 +18295,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.Pagination.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.Pagination.toObject(opt_includeInstance, this);
+proto.api.v1.Pagination.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.Pagination.toObject(opt_includeInstance, this);
 };
 
 
@@ -15679,11 +18305,11 @@ proto.api.Pagination.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.Pagination} msg The msg instance to transform.
+ * @param {!proto.api.v1.Pagination} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.Pagination.toObject = function(includeInstance, msg) {
+proto.api.v1.Pagination.toObject = function(includeInstance, msg) {
   var f, obj = {
     skip: jspb.Message.getFieldWithDefault(msg, 1, 0),
     limit: jspb.Message.getFieldWithDefault(msg, 2, 0),
@@ -15701,23 +18327,23 @@ proto.api.Pagination.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.Pagination}
+ * @return {!proto.api.v1.Pagination}
  */
-proto.api.Pagination.deserializeBinary = function(bytes) {
+proto.api.v1.Pagination.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.Pagination;
-  return proto.api.Pagination.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.Pagination;
+  return proto.api.v1.Pagination.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.Pagination} msg The message object to deserialize into.
+ * @param {!proto.api.v1.Pagination} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.Pagination}
+ * @return {!proto.api.v1.Pagination}
  */
-proto.api.Pagination.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.Pagination.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -15749,9 +18375,9 @@ proto.api.Pagination.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.Pagination.prototype.serializeBinary = function() {
+proto.api.v1.Pagination.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.Pagination.serializeBinaryToWriter(this, writer);
+  proto.api.v1.Pagination.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -15759,11 +18385,11 @@ proto.api.Pagination.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.Pagination} message
+ * @param {!proto.api.v1.Pagination} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.Pagination.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.Pagination.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSkip();
   if (f !== 0) {
@@ -15793,16 +18419,16 @@ proto.api.Pagination.serializeBinaryToWriter = function(message, writer) {
  * optional uint64 skip = 1;
  * @return {number}
  */
-proto.api.Pagination.prototype.getSkip = function() {
+proto.api.v1.Pagination.prototype.getSkip = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.Pagination} returns this
+ * @return {!proto.api.v1.Pagination} returns this
  */
-proto.api.Pagination.prototype.setSkip = function(value) {
+proto.api.v1.Pagination.prototype.setSkip = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -15811,16 +18437,16 @@ proto.api.Pagination.prototype.setSkip = function(value) {
  * optional uint64 limit = 2;
  * @return {number}
  */
-proto.api.Pagination.prototype.getLimit = function() {
+proto.api.v1.Pagination.prototype.getLimit = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.Pagination} returns this
+ * @return {!proto.api.v1.Pagination} returns this
  */
-proto.api.Pagination.prototype.setLimit = function(value) {
+proto.api.v1.Pagination.prototype.setLimit = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -15829,16 +18455,16 @@ proto.api.Pagination.prototype.setLimit = function(value) {
  * optional bool descending = 3;
  * @return {boolean}
  */
-proto.api.Pagination.prototype.getDescending = function() {
+proto.api.v1.Pagination.prototype.getDescending = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.api.Pagination} returns this
+ * @return {!proto.api.v1.Pagination} returns this
  */
-proto.api.Pagination.prototype.setDescending = function(value) {
+proto.api.v1.Pagination.prototype.setDescending = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
@@ -15849,7 +18475,7 @@ proto.api.Pagination.prototype.setDescending = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.OrdersStream.repeatedFields_ = [1];
+proto.api.v1.OrdersSubscribeResponse.repeatedFields_ = [1];
 
 
 
@@ -15866,8 +18492,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.OrdersStream.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.OrdersStream.toObject(opt_includeInstance, this);
+proto.api.v1.OrdersSubscribeResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.OrdersSubscribeResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -15876,11 +18502,11 @@ proto.api.OrdersStream.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.OrdersStream} msg The msg instance to transform.
+ * @param {!proto.api.v1.OrdersSubscribeResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrdersStream.toObject = function(includeInstance, msg) {
+proto.api.v1.OrdersSubscribeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     ordersList: jspb.Message.toObjectList(msg.getOrdersList(),
     vega_pb.Order.toObject, includeInstance)
@@ -15897,23 +18523,23 @@ proto.api.OrdersStream.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.OrdersStream}
+ * @return {!proto.api.v1.OrdersSubscribeResponse}
  */
-proto.api.OrdersStream.deserializeBinary = function(bytes) {
+proto.api.v1.OrdersSubscribeResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.OrdersStream;
-  return proto.api.OrdersStream.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.OrdersSubscribeResponse;
+  return proto.api.v1.OrdersSubscribeResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.OrdersStream} msg The message object to deserialize into.
+ * @param {!proto.api.v1.OrdersSubscribeResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.OrdersStream}
+ * @return {!proto.api.v1.OrdersSubscribeResponse}
  */
-proto.api.OrdersStream.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.OrdersSubscribeResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -15938,9 +18564,9 @@ proto.api.OrdersStream.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.OrdersStream.prototype.serializeBinary = function() {
+proto.api.v1.OrdersSubscribeResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.OrdersStream.serializeBinaryToWriter(this, writer);
+  proto.api.v1.OrdersSubscribeResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -15948,11 +18574,11 @@ proto.api.OrdersStream.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.OrdersStream} message
+ * @param {!proto.api.v1.OrdersSubscribeResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrdersStream.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.OrdersSubscribeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrdersList();
   if (f.length > 0) {
@@ -15969,7 +18595,7 @@ proto.api.OrdersStream.serializeBinaryToWriter = function(message, writer) {
  * repeated vega.Order orders = 1;
  * @return {!Array<!proto.vega.Order>}
  */
-proto.api.OrdersStream.prototype.getOrdersList = function() {
+proto.api.v1.OrdersSubscribeResponse.prototype.getOrdersList = function() {
   return /** @type{!Array<!proto.vega.Order>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.Order, 1));
 };
@@ -15977,9 +18603,9 @@ proto.api.OrdersStream.prototype.getOrdersList = function() {
 
 /**
  * @param {!Array<!proto.vega.Order>} value
- * @return {!proto.api.OrdersStream} returns this
+ * @return {!proto.api.v1.OrdersSubscribeResponse} returns this
 */
-proto.api.OrdersStream.prototype.setOrdersList = function(value) {
+proto.api.v1.OrdersSubscribeResponse.prototype.setOrdersList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -15989,16 +18615,16 @@ proto.api.OrdersStream.prototype.setOrdersList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Order}
  */
-proto.api.OrdersStream.prototype.addOrders = function(opt_value, opt_index) {
+proto.api.v1.OrdersSubscribeResponse.prototype.addOrders = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Order, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.OrdersStream} returns this
+ * @return {!proto.api.v1.OrdersSubscribeResponse} returns this
  */
-proto.api.OrdersStream.prototype.clearOrdersList = function() {
+proto.api.v1.OrdersSubscribeResponse.prototype.clearOrdersList = function() {
   return this.setOrdersList([]);
 };
 
@@ -16009,7 +18635,7 @@ proto.api.OrdersStream.prototype.clearOrdersList = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.api.TradesStream.repeatedFields_ = [1];
+proto.api.v1.TradesSubscribeResponse.repeatedFields_ = [1];
 
 
 
@@ -16026,8 +18652,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.TradesStream.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.TradesStream.toObject(opt_includeInstance, this);
+proto.api.v1.TradesSubscribeResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.TradesSubscribeResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -16036,11 +18662,11 @@ proto.api.TradesStream.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.TradesStream} msg The msg instance to transform.
+ * @param {!proto.api.v1.TradesSubscribeResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.TradesStream.toObject = function(includeInstance, msg) {
+proto.api.v1.TradesSubscribeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     tradesList: jspb.Message.toObjectList(msg.getTradesList(),
     vega_pb.Trade.toObject, includeInstance)
@@ -16057,23 +18683,23 @@ proto.api.TradesStream.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.TradesStream}
+ * @return {!proto.api.v1.TradesSubscribeResponse}
  */
-proto.api.TradesStream.deserializeBinary = function(bytes) {
+proto.api.v1.TradesSubscribeResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.TradesStream;
-  return proto.api.TradesStream.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.TradesSubscribeResponse;
+  return proto.api.v1.TradesSubscribeResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.TradesStream} msg The message object to deserialize into.
+ * @param {!proto.api.v1.TradesSubscribeResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.TradesStream}
+ * @return {!proto.api.v1.TradesSubscribeResponse}
  */
-proto.api.TradesStream.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.TradesSubscribeResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -16098,9 +18724,9 @@ proto.api.TradesStream.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.TradesStream.prototype.serializeBinary = function() {
+proto.api.v1.TradesSubscribeResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.TradesStream.serializeBinaryToWriter(this, writer);
+  proto.api.v1.TradesSubscribeResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -16108,11 +18734,11 @@ proto.api.TradesStream.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.TradesStream} message
+ * @param {!proto.api.v1.TradesSubscribeResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.TradesStream.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.TradesSubscribeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTradesList();
   if (f.length > 0) {
@@ -16129,7 +18755,7 @@ proto.api.TradesStream.serializeBinaryToWriter = function(message, writer) {
  * repeated vega.Trade trades = 1;
  * @return {!Array<!proto.vega.Trade>}
  */
-proto.api.TradesStream.prototype.getTradesList = function() {
+proto.api.v1.TradesSubscribeResponse.prototype.getTradesList = function() {
   return /** @type{!Array<!proto.vega.Trade>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.Trade, 1));
 };
@@ -16137,9 +18763,9 @@ proto.api.TradesStream.prototype.getTradesList = function() {
 
 /**
  * @param {!Array<!proto.vega.Trade>} value
- * @return {!proto.api.TradesStream} returns this
+ * @return {!proto.api.v1.TradesSubscribeResponse} returns this
 */
-proto.api.TradesStream.prototype.setTradesList = function(value) {
+proto.api.v1.TradesSubscribeResponse.prototype.setTradesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -16149,16 +18775,16 @@ proto.api.TradesStream.prototype.setTradesList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Trade}
  */
-proto.api.TradesStream.prototype.addTrades = function(opt_value, opt_index) {
+proto.api.v1.TradesSubscribeResponse.prototype.addTrades = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Trade, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.TradesStream} returns this
+ * @return {!proto.api.v1.TradesSubscribeResponse} returns this
  */
-proto.api.TradesStream.prototype.clearTradesList = function() {
+proto.api.v1.TradesSubscribeResponse.prototype.clearTradesList = function() {
   return this.setTradesList([]);
 };
 
@@ -16179,8 +18805,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PartyAccountsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PartyAccountsRequest.toObject(opt_includeInstance, this);
+proto.api.v1.TransferResponsesSubscribeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.TransferResponsesSubscribeRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -16189,14 +18815,266 @@ proto.api.PartyAccountsRequest.prototype.toObject = function(opt_includeInstance
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PartyAccountsRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.TransferResponsesSubscribeRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PartyAccountsRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.TransferResponsesSubscribeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partyid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    marketid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.TransferResponsesSubscribeRequest}
+ */
+proto.api.v1.TransferResponsesSubscribeRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.TransferResponsesSubscribeRequest;
+  return proto.api.v1.TransferResponsesSubscribeRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.TransferResponsesSubscribeRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.TransferResponsesSubscribeRequest}
+ */
+proto.api.v1.TransferResponsesSubscribeRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.TransferResponsesSubscribeRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.TransferResponsesSubscribeRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.TransferResponsesSubscribeRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.TransferResponsesSubscribeRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.TransferResponsesSubscribeResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.TransferResponsesSubscribeResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.TransferResponsesSubscribeResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.TransferResponsesSubscribeResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    response: (f = msg.getResponse()) && vega_pb.TransferResponse.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.TransferResponsesSubscribeResponse}
+ */
+proto.api.v1.TransferResponsesSubscribeResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.TransferResponsesSubscribeResponse;
+  return proto.api.v1.TransferResponsesSubscribeResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.TransferResponsesSubscribeResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.TransferResponsesSubscribeResponse}
+ */
+proto.api.v1.TransferResponsesSubscribeResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new vega_pb.TransferResponse;
+      reader.readMessage(value,vega_pb.TransferResponse.deserializeBinaryFromReader);
+      msg.setResponse(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.TransferResponsesSubscribeResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.TransferResponsesSubscribeResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.TransferResponsesSubscribeResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.TransferResponsesSubscribeResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getResponse();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      vega_pb.TransferResponse.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional vega.TransferResponse response = 1;
+ * @return {?proto.vega.TransferResponse}
+ */
+proto.api.v1.TransferResponsesSubscribeResponse.prototype.getResponse = function() {
+  return /** @type{?proto.vega.TransferResponse} */ (
+    jspb.Message.getWrapperField(this, vega_pb.TransferResponse, 1));
+};
+
+
+/**
+ * @param {?proto.vega.TransferResponse|undefined} value
+ * @return {!proto.api.v1.TransferResponsesSubscribeResponse} returns this
+*/
+proto.api.v1.TransferResponsesSubscribeResponse.prototype.setResponse = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1.TransferResponsesSubscribeResponse} returns this
+ */
+proto.api.v1.TransferResponsesSubscribeResponse.prototype.clearResponse = function() {
+  return this.setResponse(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1.TransferResponsesSubscribeResponse.prototype.hasResponse = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.PartyAccountsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PartyAccountsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.PartyAccountsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.PartyAccountsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    partyId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     type: jspb.Message.getFieldWithDefault(msg, 3, 0),
     asset: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
@@ -16212,23 +19090,23 @@ proto.api.PartyAccountsRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PartyAccountsRequest}
+ * @return {!proto.api.v1.PartyAccountsRequest}
  */
-proto.api.PartyAccountsRequest.deserializeBinary = function(bytes) {
+proto.api.v1.PartyAccountsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PartyAccountsRequest;
-  return proto.api.PartyAccountsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PartyAccountsRequest;
+  return proto.api.v1.PartyAccountsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PartyAccountsRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PartyAccountsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PartyAccountsRequest}
+ * @return {!proto.api.v1.PartyAccountsRequest}
  */
-proto.api.PartyAccountsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PartyAccountsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -16237,11 +19115,11 @@ proto.api.PartyAccountsRequest.deserializeBinaryFromReader = function(msg, reade
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 3:
       var value = /** @type {!proto.vega.AccountType} */ (reader.readEnum());
@@ -16264,9 +19142,9 @@ proto.api.PartyAccountsRequest.deserializeBinaryFromReader = function(msg, reade
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PartyAccountsRequest.prototype.serializeBinary = function() {
+proto.api.v1.PartyAccountsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PartyAccountsRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PartyAccountsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -16274,20 +19152,20 @@ proto.api.PartyAccountsRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PartyAccountsRequest} message
+ * @param {!proto.api.v1.PartyAccountsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PartyAccountsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PartyAccountsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -16312,37 +19190,37 @@ proto.api.PartyAccountsRequest.serializeBinaryToWriter = function(message, write
 
 
 /**
- * optional string partyID = 1;
+ * optional string party_id = 1;
  * @return {string}
  */
-proto.api.PartyAccountsRequest.prototype.getPartyid = function() {
+proto.api.v1.PartyAccountsRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.PartyAccountsRequest} returns this
+ * @return {!proto.api.v1.PartyAccountsRequest} returns this
  */
-proto.api.PartyAccountsRequest.prototype.setPartyid = function(value) {
+proto.api.v1.PartyAccountsRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string marketID = 2;
+ * optional string market_id = 2;
  * @return {string}
  */
-proto.api.PartyAccountsRequest.prototype.getMarketid = function() {
+proto.api.v1.PartyAccountsRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.PartyAccountsRequest} returns this
+ * @return {!proto.api.v1.PartyAccountsRequest} returns this
  */
-proto.api.PartyAccountsRequest.prototype.setMarketid = function(value) {
+proto.api.v1.PartyAccountsRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -16351,16 +19229,16 @@ proto.api.PartyAccountsRequest.prototype.setMarketid = function(value) {
  * optional vega.AccountType type = 3;
  * @return {!proto.vega.AccountType}
  */
-proto.api.PartyAccountsRequest.prototype.getType = function() {
+proto.api.v1.PartyAccountsRequest.prototype.getType = function() {
   return /** @type {!proto.vega.AccountType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
  * @param {!proto.vega.AccountType} value
- * @return {!proto.api.PartyAccountsRequest} returns this
+ * @return {!proto.api.v1.PartyAccountsRequest} returns this
  */
-proto.api.PartyAccountsRequest.prototype.setType = function(value) {
+proto.api.v1.PartyAccountsRequest.prototype.setType = function(value) {
   return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
@@ -16369,16 +19247,16 @@ proto.api.PartyAccountsRequest.prototype.setType = function(value) {
  * optional string asset = 4;
  * @return {string}
  */
-proto.api.PartyAccountsRequest.prototype.getAsset = function() {
+proto.api.v1.PartyAccountsRequest.prototype.getAsset = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.PartyAccountsRequest} returns this
+ * @return {!proto.api.v1.PartyAccountsRequest} returns this
  */
-proto.api.PartyAccountsRequest.prototype.setAsset = function(value) {
+proto.api.v1.PartyAccountsRequest.prototype.setAsset = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -16389,7 +19267,7 @@ proto.api.PartyAccountsRequest.prototype.setAsset = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.PartyAccountsResponse.repeatedFields_ = [1];
+proto.api.v1.PartyAccountsResponse.repeatedFields_ = [1];
 
 
 
@@ -16406,8 +19284,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PartyAccountsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PartyAccountsResponse.toObject(opt_includeInstance, this);
+proto.api.v1.PartyAccountsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PartyAccountsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -16416,11 +19294,11 @@ proto.api.PartyAccountsResponse.prototype.toObject = function(opt_includeInstanc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PartyAccountsResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.PartyAccountsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PartyAccountsResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.PartyAccountsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     accountsList: jspb.Message.toObjectList(msg.getAccountsList(),
     vega_pb.Account.toObject, includeInstance)
@@ -16437,23 +19315,23 @@ proto.api.PartyAccountsResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PartyAccountsResponse}
+ * @return {!proto.api.v1.PartyAccountsResponse}
  */
-proto.api.PartyAccountsResponse.deserializeBinary = function(bytes) {
+proto.api.v1.PartyAccountsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PartyAccountsResponse;
-  return proto.api.PartyAccountsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PartyAccountsResponse;
+  return proto.api.v1.PartyAccountsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PartyAccountsResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PartyAccountsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PartyAccountsResponse}
+ * @return {!proto.api.v1.PartyAccountsResponse}
  */
-proto.api.PartyAccountsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PartyAccountsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -16478,9 +19356,9 @@ proto.api.PartyAccountsResponse.deserializeBinaryFromReader = function(msg, read
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PartyAccountsResponse.prototype.serializeBinary = function() {
+proto.api.v1.PartyAccountsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PartyAccountsResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PartyAccountsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -16488,11 +19366,11 @@ proto.api.PartyAccountsResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PartyAccountsResponse} message
+ * @param {!proto.api.v1.PartyAccountsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PartyAccountsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PartyAccountsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAccountsList();
   if (f.length > 0) {
@@ -16509,7 +19387,7 @@ proto.api.PartyAccountsResponse.serializeBinaryToWriter = function(message, writ
  * repeated vega.Account accounts = 1;
  * @return {!Array<!proto.vega.Account>}
  */
-proto.api.PartyAccountsResponse.prototype.getAccountsList = function() {
+proto.api.v1.PartyAccountsResponse.prototype.getAccountsList = function() {
   return /** @type{!Array<!proto.vega.Account>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.Account, 1));
 };
@@ -16517,9 +19395,9 @@ proto.api.PartyAccountsResponse.prototype.getAccountsList = function() {
 
 /**
  * @param {!Array<!proto.vega.Account>} value
- * @return {!proto.api.PartyAccountsResponse} returns this
+ * @return {!proto.api.v1.PartyAccountsResponse} returns this
 */
-proto.api.PartyAccountsResponse.prototype.setAccountsList = function(value) {
+proto.api.v1.PartyAccountsResponse.prototype.setAccountsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -16529,16 +19407,16 @@ proto.api.PartyAccountsResponse.prototype.setAccountsList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Account}
  */
-proto.api.PartyAccountsResponse.prototype.addAccounts = function(opt_value, opt_index) {
+proto.api.v1.PartyAccountsResponse.prototype.addAccounts = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Account, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.PartyAccountsResponse} returns this
+ * @return {!proto.api.v1.PartyAccountsResponse} returns this
  */
-proto.api.PartyAccountsResponse.prototype.clearAccountsList = function() {
+proto.api.v1.PartyAccountsResponse.prototype.clearAccountsList = function() {
   return this.setAccountsList([]);
 };
 
@@ -16559,8 +19437,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.MarketAccountsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.MarketAccountsRequest.toObject(opt_includeInstance, this);
+proto.api.v1.MarketAccountsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketAccountsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -16569,13 +19447,13 @@ proto.api.MarketAccountsRequest.prototype.toObject = function(opt_includeInstanc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.MarketAccountsRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.MarketAccountsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketAccountsRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.MarketAccountsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     asset: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -16590,23 +19468,23 @@ proto.api.MarketAccountsRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.MarketAccountsRequest}
+ * @return {!proto.api.v1.MarketAccountsRequest}
  */
-proto.api.MarketAccountsRequest.deserializeBinary = function(bytes) {
+proto.api.v1.MarketAccountsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.MarketAccountsRequest;
-  return proto.api.MarketAccountsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.MarketAccountsRequest;
+  return proto.api.v1.MarketAccountsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.MarketAccountsRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.MarketAccountsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.MarketAccountsRequest}
+ * @return {!proto.api.v1.MarketAccountsRequest}
  */
-proto.api.MarketAccountsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.MarketAccountsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -16615,7 +19493,7 @@ proto.api.MarketAccountsRequest.deserializeBinaryFromReader = function(msg, read
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -16634,9 +19512,9 @@ proto.api.MarketAccountsRequest.deserializeBinaryFromReader = function(msg, read
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.MarketAccountsRequest.prototype.serializeBinary = function() {
+proto.api.v1.MarketAccountsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.MarketAccountsRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.MarketAccountsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -16644,13 +19522,13 @@ proto.api.MarketAccountsRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.MarketAccountsRequest} message
+ * @param {!proto.api.v1.MarketAccountsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketAccountsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.MarketAccountsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -16668,19 +19546,19 @@ proto.api.MarketAccountsRequest.serializeBinaryToWriter = function(message, writ
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.api.MarketAccountsRequest.prototype.getMarketid = function() {
+proto.api.v1.MarketAccountsRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.MarketAccountsRequest} returns this
+ * @return {!proto.api.v1.MarketAccountsRequest} returns this
  */
-proto.api.MarketAccountsRequest.prototype.setMarketid = function(value) {
+proto.api.v1.MarketAccountsRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -16689,16 +19567,16 @@ proto.api.MarketAccountsRequest.prototype.setMarketid = function(value) {
  * optional string asset = 2;
  * @return {string}
  */
-proto.api.MarketAccountsRequest.prototype.getAsset = function() {
+proto.api.v1.MarketAccountsRequest.prototype.getAsset = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.MarketAccountsRequest} returns this
+ * @return {!proto.api.v1.MarketAccountsRequest} returns this
  */
-proto.api.MarketAccountsRequest.prototype.setAsset = function(value) {
+proto.api.v1.MarketAccountsRequest.prototype.setAsset = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -16709,7 +19587,7 @@ proto.api.MarketAccountsRequest.prototype.setAsset = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.MarketAccountsResponse.repeatedFields_ = [1];
+proto.api.v1.MarketAccountsResponse.repeatedFields_ = [1];
 
 
 
@@ -16726,8 +19604,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.MarketAccountsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.MarketAccountsResponse.toObject(opt_includeInstance, this);
+proto.api.v1.MarketAccountsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.MarketAccountsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -16736,11 +19614,11 @@ proto.api.MarketAccountsResponse.prototype.toObject = function(opt_includeInstan
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.MarketAccountsResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.MarketAccountsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketAccountsResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.MarketAccountsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     accountsList: jspb.Message.toObjectList(msg.getAccountsList(),
     vega_pb.Account.toObject, includeInstance)
@@ -16757,23 +19635,23 @@ proto.api.MarketAccountsResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.MarketAccountsResponse}
+ * @return {!proto.api.v1.MarketAccountsResponse}
  */
-proto.api.MarketAccountsResponse.deserializeBinary = function(bytes) {
+proto.api.v1.MarketAccountsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.MarketAccountsResponse;
-  return proto.api.MarketAccountsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.MarketAccountsResponse;
+  return proto.api.v1.MarketAccountsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.MarketAccountsResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.MarketAccountsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.MarketAccountsResponse}
+ * @return {!proto.api.v1.MarketAccountsResponse}
  */
-proto.api.MarketAccountsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.MarketAccountsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -16798,9 +19676,9 @@ proto.api.MarketAccountsResponse.deserializeBinaryFromReader = function(msg, rea
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.MarketAccountsResponse.prototype.serializeBinary = function() {
+proto.api.v1.MarketAccountsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.MarketAccountsResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.MarketAccountsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -16808,11 +19686,11 @@ proto.api.MarketAccountsResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.MarketAccountsResponse} message
+ * @param {!proto.api.v1.MarketAccountsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.MarketAccountsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.MarketAccountsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAccountsList();
   if (f.length > 0) {
@@ -16829,7 +19707,7 @@ proto.api.MarketAccountsResponse.serializeBinaryToWriter = function(message, wri
  * repeated vega.Account accounts = 1;
  * @return {!Array<!proto.vega.Account>}
  */
-proto.api.MarketAccountsResponse.prototype.getAccountsList = function() {
+proto.api.v1.MarketAccountsResponse.prototype.getAccountsList = function() {
   return /** @type{!Array<!proto.vega.Account>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.Account, 1));
 };
@@ -16837,9 +19715,9 @@ proto.api.MarketAccountsResponse.prototype.getAccountsList = function() {
 
 /**
  * @param {!Array<!proto.vega.Account>} value
- * @return {!proto.api.MarketAccountsResponse} returns this
+ * @return {!proto.api.v1.MarketAccountsResponse} returns this
 */
-proto.api.MarketAccountsResponse.prototype.setAccountsList = function(value) {
+proto.api.v1.MarketAccountsResponse.prototype.setAccountsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -16849,16 +19727,16 @@ proto.api.MarketAccountsResponse.prototype.setAccountsList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Account}
  */
-proto.api.MarketAccountsResponse.prototype.addAccounts = function(opt_value, opt_index) {
+proto.api.v1.MarketAccountsResponse.prototype.addAccounts = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Account, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.MarketAccountsResponse} returns this
+ * @return {!proto.api.v1.MarketAccountsResponse} returns this
  */
-proto.api.MarketAccountsResponse.prototype.clearAccountsList = function() {
+proto.api.v1.MarketAccountsResponse.prototype.clearAccountsList = function() {
   return this.setAccountsList([]);
 };
 
@@ -16879,8 +19757,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.FeeInfrastructureAccountsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.FeeInfrastructureAccountsRequest.toObject(opt_includeInstance, this);
+proto.api.v1.FeeInfrastructureAccountsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.FeeInfrastructureAccountsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -16889,11 +19767,11 @@ proto.api.FeeInfrastructureAccountsRequest.prototype.toObject = function(opt_inc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.FeeInfrastructureAccountsRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.FeeInfrastructureAccountsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.FeeInfrastructureAccountsRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.FeeInfrastructureAccountsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     asset: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
@@ -16909,23 +19787,23 @@ proto.api.FeeInfrastructureAccountsRequest.toObject = function(includeInstance, 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.FeeInfrastructureAccountsRequest}
+ * @return {!proto.api.v1.FeeInfrastructureAccountsRequest}
  */
-proto.api.FeeInfrastructureAccountsRequest.deserializeBinary = function(bytes) {
+proto.api.v1.FeeInfrastructureAccountsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.FeeInfrastructureAccountsRequest;
-  return proto.api.FeeInfrastructureAccountsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.FeeInfrastructureAccountsRequest;
+  return proto.api.v1.FeeInfrastructureAccountsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.FeeInfrastructureAccountsRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.FeeInfrastructureAccountsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.FeeInfrastructureAccountsRequest}
+ * @return {!proto.api.v1.FeeInfrastructureAccountsRequest}
  */
-proto.api.FeeInfrastructureAccountsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.FeeInfrastructureAccountsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -16949,9 +19827,9 @@ proto.api.FeeInfrastructureAccountsRequest.deserializeBinaryFromReader = functio
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.FeeInfrastructureAccountsRequest.prototype.serializeBinary = function() {
+proto.api.v1.FeeInfrastructureAccountsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.FeeInfrastructureAccountsRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.FeeInfrastructureAccountsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -16959,11 +19837,11 @@ proto.api.FeeInfrastructureAccountsRequest.prototype.serializeBinary = function(
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.FeeInfrastructureAccountsRequest} message
+ * @param {!proto.api.v1.FeeInfrastructureAccountsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.FeeInfrastructureAccountsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.FeeInfrastructureAccountsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAsset();
   if (f.length > 0) {
@@ -16979,16 +19857,16 @@ proto.api.FeeInfrastructureAccountsRequest.serializeBinaryToWriter = function(me
  * optional string asset = 1;
  * @return {string}
  */
-proto.api.FeeInfrastructureAccountsRequest.prototype.getAsset = function() {
+proto.api.v1.FeeInfrastructureAccountsRequest.prototype.getAsset = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.FeeInfrastructureAccountsRequest} returns this
+ * @return {!proto.api.v1.FeeInfrastructureAccountsRequest} returns this
  */
-proto.api.FeeInfrastructureAccountsRequest.prototype.setAsset = function(value) {
+proto.api.v1.FeeInfrastructureAccountsRequest.prototype.setAsset = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -16999,7 +19877,7 @@ proto.api.FeeInfrastructureAccountsRequest.prototype.setAsset = function(value) 
  * @private {!Array<number>}
  * @const
  */
-proto.api.FeeInfrastructureAccountsResponse.repeatedFields_ = [1];
+proto.api.v1.FeeInfrastructureAccountsResponse.repeatedFields_ = [1];
 
 
 
@@ -17016,8 +19894,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.FeeInfrastructureAccountsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.FeeInfrastructureAccountsResponse.toObject(opt_includeInstance, this);
+proto.api.v1.FeeInfrastructureAccountsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.FeeInfrastructureAccountsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -17026,11 +19904,11 @@ proto.api.FeeInfrastructureAccountsResponse.prototype.toObject = function(opt_in
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.FeeInfrastructureAccountsResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.FeeInfrastructureAccountsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.FeeInfrastructureAccountsResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.FeeInfrastructureAccountsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     accountsList: jspb.Message.toObjectList(msg.getAccountsList(),
     vega_pb.Account.toObject, includeInstance)
@@ -17047,23 +19925,23 @@ proto.api.FeeInfrastructureAccountsResponse.toObject = function(includeInstance,
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.FeeInfrastructureAccountsResponse}
+ * @return {!proto.api.v1.FeeInfrastructureAccountsResponse}
  */
-proto.api.FeeInfrastructureAccountsResponse.deserializeBinary = function(bytes) {
+proto.api.v1.FeeInfrastructureAccountsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.FeeInfrastructureAccountsResponse;
-  return proto.api.FeeInfrastructureAccountsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.FeeInfrastructureAccountsResponse;
+  return proto.api.v1.FeeInfrastructureAccountsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.FeeInfrastructureAccountsResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.FeeInfrastructureAccountsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.FeeInfrastructureAccountsResponse}
+ * @return {!proto.api.v1.FeeInfrastructureAccountsResponse}
  */
-proto.api.FeeInfrastructureAccountsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.FeeInfrastructureAccountsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -17088,9 +19966,9 @@ proto.api.FeeInfrastructureAccountsResponse.deserializeBinaryFromReader = functi
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.FeeInfrastructureAccountsResponse.prototype.serializeBinary = function() {
+proto.api.v1.FeeInfrastructureAccountsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.FeeInfrastructureAccountsResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.FeeInfrastructureAccountsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -17098,11 +19976,11 @@ proto.api.FeeInfrastructureAccountsResponse.prototype.serializeBinary = function
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.FeeInfrastructureAccountsResponse} message
+ * @param {!proto.api.v1.FeeInfrastructureAccountsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.FeeInfrastructureAccountsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.FeeInfrastructureAccountsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAccountsList();
   if (f.length > 0) {
@@ -17119,7 +19997,7 @@ proto.api.FeeInfrastructureAccountsResponse.serializeBinaryToWriter = function(m
  * repeated vega.Account accounts = 1;
  * @return {!Array<!proto.vega.Account>}
  */
-proto.api.FeeInfrastructureAccountsResponse.prototype.getAccountsList = function() {
+proto.api.v1.FeeInfrastructureAccountsResponse.prototype.getAccountsList = function() {
   return /** @type{!Array<!proto.vega.Account>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.Account, 1));
 };
@@ -17127,9 +20005,9 @@ proto.api.FeeInfrastructureAccountsResponse.prototype.getAccountsList = function
 
 /**
  * @param {!Array<!proto.vega.Account>} value
- * @return {!proto.api.FeeInfrastructureAccountsResponse} returns this
+ * @return {!proto.api.v1.FeeInfrastructureAccountsResponse} returns this
 */
-proto.api.FeeInfrastructureAccountsResponse.prototype.setAccountsList = function(value) {
+proto.api.v1.FeeInfrastructureAccountsResponse.prototype.setAccountsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -17139,16 +20017,16 @@ proto.api.FeeInfrastructureAccountsResponse.prototype.setAccountsList = function
  * @param {number=} opt_index
  * @return {!proto.vega.Account}
  */
-proto.api.FeeInfrastructureAccountsResponse.prototype.addAccounts = function(opt_value, opt_index) {
+proto.api.v1.FeeInfrastructureAccountsResponse.prototype.addAccounts = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Account, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.FeeInfrastructureAccountsResponse} returns this
+ * @return {!proto.api.v1.FeeInfrastructureAccountsResponse} returns this
  */
-proto.api.FeeInfrastructureAccountsResponse.prototype.clearAccountsList = function() {
+proto.api.v1.FeeInfrastructureAccountsResponse.prototype.clearAccountsList = function() {
   return this.setAccountsList([]);
 };
 
@@ -17169,8 +20047,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PrepareProposalRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PrepareProposalRequest.toObject(opt_includeInstance, this);
+proto.api.v1.PrepareProposalRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PrepareProposalRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -17179,13 +20057,13 @@ proto.api.PrepareProposalRequest.prototype.toObject = function(opt_includeInstan
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PrepareProposalRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.PrepareProposalRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareProposalRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.PrepareProposalRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partyid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    partyId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     reference: jspb.Message.getFieldWithDefault(msg, 2, ""),
     proposal: (f = msg.getProposal()) && governance_pb.ProposalTerms.toObject(includeInstance, f)
   };
@@ -17201,23 +20079,23 @@ proto.api.PrepareProposalRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PrepareProposalRequest}
+ * @return {!proto.api.v1.PrepareProposalRequest}
  */
-proto.api.PrepareProposalRequest.deserializeBinary = function(bytes) {
+proto.api.v1.PrepareProposalRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PrepareProposalRequest;
-  return proto.api.PrepareProposalRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PrepareProposalRequest;
+  return proto.api.v1.PrepareProposalRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PrepareProposalRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PrepareProposalRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PrepareProposalRequest}
+ * @return {!proto.api.v1.PrepareProposalRequest}
  */
-proto.api.PrepareProposalRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PrepareProposalRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -17226,7 +20104,7 @@ proto.api.PrepareProposalRequest.deserializeBinaryFromReader = function(msg, rea
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -17250,9 +20128,9 @@ proto.api.PrepareProposalRequest.deserializeBinaryFromReader = function(msg, rea
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PrepareProposalRequest.prototype.serializeBinary = function() {
+proto.api.v1.PrepareProposalRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PrepareProposalRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PrepareProposalRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -17260,13 +20138,13 @@ proto.api.PrepareProposalRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PrepareProposalRequest} message
+ * @param {!proto.api.v1.PrepareProposalRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareProposalRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PrepareProposalRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -17292,19 +20170,19 @@ proto.api.PrepareProposalRequest.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional string partyID = 1;
+ * optional string party_id = 1;
  * @return {string}
  */
-proto.api.PrepareProposalRequest.prototype.getPartyid = function() {
+proto.api.v1.PrepareProposalRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.PrepareProposalRequest} returns this
+ * @return {!proto.api.v1.PrepareProposalRequest} returns this
  */
-proto.api.PrepareProposalRequest.prototype.setPartyid = function(value) {
+proto.api.v1.PrepareProposalRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -17313,16 +20191,16 @@ proto.api.PrepareProposalRequest.prototype.setPartyid = function(value) {
  * optional string reference = 2;
  * @return {string}
  */
-proto.api.PrepareProposalRequest.prototype.getReference = function() {
+proto.api.v1.PrepareProposalRequest.prototype.getReference = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.PrepareProposalRequest} returns this
+ * @return {!proto.api.v1.PrepareProposalRequest} returns this
  */
-proto.api.PrepareProposalRequest.prototype.setReference = function(value) {
+proto.api.v1.PrepareProposalRequest.prototype.setReference = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -17331,7 +20209,7 @@ proto.api.PrepareProposalRequest.prototype.setReference = function(value) {
  * optional vega.ProposalTerms proposal = 3;
  * @return {?proto.vega.ProposalTerms}
  */
-proto.api.PrepareProposalRequest.prototype.getProposal = function() {
+proto.api.v1.PrepareProposalRequest.prototype.getProposal = function() {
   return /** @type{?proto.vega.ProposalTerms} */ (
     jspb.Message.getWrapperField(this, governance_pb.ProposalTerms, 3));
 };
@@ -17339,18 +20217,18 @@ proto.api.PrepareProposalRequest.prototype.getProposal = function() {
 
 /**
  * @param {?proto.vega.ProposalTerms|undefined} value
- * @return {!proto.api.PrepareProposalRequest} returns this
+ * @return {!proto.api.v1.PrepareProposalRequest} returns this
 */
-proto.api.PrepareProposalRequest.prototype.setProposal = function(value) {
+proto.api.v1.PrepareProposalRequest.prototype.setProposal = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.PrepareProposalRequest} returns this
+ * @return {!proto.api.v1.PrepareProposalRequest} returns this
  */
-proto.api.PrepareProposalRequest.prototype.clearProposal = function() {
+proto.api.v1.PrepareProposalRequest.prototype.clearProposal = function() {
   return this.setProposal(undefined);
 };
 
@@ -17359,7 +20237,7 @@ proto.api.PrepareProposalRequest.prototype.clearProposal = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.PrepareProposalRequest.prototype.hasProposal = function() {
+proto.api.v1.PrepareProposalRequest.prototype.hasProposal = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -17380,8 +20258,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PrepareProposalResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PrepareProposalResponse.toObject(opt_includeInstance, this);
+proto.api.v1.PrepareProposalResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PrepareProposalResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -17390,14 +20268,14 @@ proto.api.PrepareProposalResponse.prototype.toObject = function(opt_includeInsta
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PrepareProposalResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.PrepareProposalResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareProposalResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.PrepareProposalResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     blob: msg.getBlob_asB64(),
-    pendingproposal: (f = msg.getPendingproposal()) && governance_pb.Proposal.toObject(includeInstance, f)
+    pendingProposal: (f = msg.getPendingProposal()) && governance_pb.Proposal.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17411,23 +20289,23 @@ proto.api.PrepareProposalResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PrepareProposalResponse}
+ * @return {!proto.api.v1.PrepareProposalResponse}
  */
-proto.api.PrepareProposalResponse.deserializeBinary = function(bytes) {
+proto.api.v1.PrepareProposalResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PrepareProposalResponse;
-  return proto.api.PrepareProposalResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PrepareProposalResponse;
+  return proto.api.v1.PrepareProposalResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PrepareProposalResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PrepareProposalResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PrepareProposalResponse}
+ * @return {!proto.api.v1.PrepareProposalResponse}
  */
-proto.api.PrepareProposalResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PrepareProposalResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -17441,7 +20319,7 @@ proto.api.PrepareProposalResponse.deserializeBinaryFromReader = function(msg, re
     case 2:
       var value = new governance_pb.Proposal;
       reader.readMessage(value,governance_pb.Proposal.deserializeBinaryFromReader);
-      msg.setPendingproposal(value);
+      msg.setPendingProposal(value);
       break;
     default:
       reader.skipField();
@@ -17456,9 +20334,9 @@ proto.api.PrepareProposalResponse.deserializeBinaryFromReader = function(msg, re
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PrepareProposalResponse.prototype.serializeBinary = function() {
+proto.api.v1.PrepareProposalResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PrepareProposalResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PrepareProposalResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -17466,11 +20344,11 @@ proto.api.PrepareProposalResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PrepareProposalResponse} message
+ * @param {!proto.api.v1.PrepareProposalResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareProposalResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PrepareProposalResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getBlob_asU8();
   if (f.length > 0) {
@@ -17479,7 +20357,7 @@ proto.api.PrepareProposalResponse.serializeBinaryToWriter = function(message, wr
       f
     );
   }
-  f = message.getPendingproposal();
+  f = message.getPendingProposal();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -17494,7 +20372,7 @@ proto.api.PrepareProposalResponse.serializeBinaryToWriter = function(message, wr
  * optional bytes blob = 1;
  * @return {!(string|Uint8Array)}
  */
-proto.api.PrepareProposalResponse.prototype.getBlob = function() {
+proto.api.v1.PrepareProposalResponse.prototype.getBlob = function() {
   return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -17504,7 +20382,7 @@ proto.api.PrepareProposalResponse.prototype.getBlob = function() {
  * This is a type-conversion wrapper around `getBlob()`
  * @return {string}
  */
-proto.api.PrepareProposalResponse.prototype.getBlob_asB64 = function() {
+proto.api.v1.PrepareProposalResponse.prototype.getBlob_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
       this.getBlob()));
 };
@@ -17517,7 +20395,7 @@ proto.api.PrepareProposalResponse.prototype.getBlob_asB64 = function() {
  * This is a type-conversion wrapper around `getBlob()`
  * @return {!Uint8Array}
  */
-proto.api.PrepareProposalResponse.prototype.getBlob_asU8 = function() {
+proto.api.v1.PrepareProposalResponse.prototype.getBlob_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
       this.getBlob()));
 };
@@ -17525,18 +20403,18 @@ proto.api.PrepareProposalResponse.prototype.getBlob_asU8 = function() {
 
 /**
  * @param {!(string|Uint8Array)} value
- * @return {!proto.api.PrepareProposalResponse} returns this
+ * @return {!proto.api.v1.PrepareProposalResponse} returns this
  */
-proto.api.PrepareProposalResponse.prototype.setBlob = function(value) {
+proto.api.v1.PrepareProposalResponse.prototype.setBlob = function(value) {
   return jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
 /**
- * optional vega.Proposal pendingProposal = 2;
+ * optional vega.Proposal pending_proposal = 2;
  * @return {?proto.vega.Proposal}
  */
-proto.api.PrepareProposalResponse.prototype.getPendingproposal = function() {
+proto.api.v1.PrepareProposalResponse.prototype.getPendingProposal = function() {
   return /** @type{?proto.vega.Proposal} */ (
     jspb.Message.getWrapperField(this, governance_pb.Proposal, 2));
 };
@@ -17544,19 +20422,19 @@ proto.api.PrepareProposalResponse.prototype.getPendingproposal = function() {
 
 /**
  * @param {?proto.vega.Proposal|undefined} value
- * @return {!proto.api.PrepareProposalResponse} returns this
+ * @return {!proto.api.v1.PrepareProposalResponse} returns this
 */
-proto.api.PrepareProposalResponse.prototype.setPendingproposal = function(value) {
+proto.api.v1.PrepareProposalResponse.prototype.setPendingProposal = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.PrepareProposalResponse} returns this
+ * @return {!proto.api.v1.PrepareProposalResponse} returns this
  */
-proto.api.PrepareProposalResponse.prototype.clearPendingproposal = function() {
-  return this.setPendingproposal(undefined);
+proto.api.v1.PrepareProposalResponse.prototype.clearPendingProposal = function() {
+  return this.setPendingProposal(undefined);
 };
 
 
@@ -17564,7 +20442,7 @@ proto.api.PrepareProposalResponse.prototype.clearPendingproposal = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.PrepareProposalResponse.prototype.hasPendingproposal = function() {
+proto.api.v1.PrepareProposalResponse.prototype.hasPendingProposal = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -17585,8 +20463,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PrepareVoteRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PrepareVoteRequest.toObject(opt_includeInstance, this);
+proto.api.v1.PrepareVoteRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PrepareVoteRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -17595,11 +20473,11 @@ proto.api.PrepareVoteRequest.prototype.toObject = function(opt_includeInstance) 
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PrepareVoteRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.PrepareVoteRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareVoteRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.PrepareVoteRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     vote: (f = msg.getVote()) && governance_pb.Vote.toObject(includeInstance, f)
   };
@@ -17615,23 +20493,23 @@ proto.api.PrepareVoteRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PrepareVoteRequest}
+ * @return {!proto.api.v1.PrepareVoteRequest}
  */
-proto.api.PrepareVoteRequest.deserializeBinary = function(bytes) {
+proto.api.v1.PrepareVoteRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PrepareVoteRequest;
-  return proto.api.PrepareVoteRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PrepareVoteRequest;
+  return proto.api.v1.PrepareVoteRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PrepareVoteRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PrepareVoteRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PrepareVoteRequest}
+ * @return {!proto.api.v1.PrepareVoteRequest}
  */
-proto.api.PrepareVoteRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PrepareVoteRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -17656,9 +20534,9 @@ proto.api.PrepareVoteRequest.deserializeBinaryFromReader = function(msg, reader)
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PrepareVoteRequest.prototype.serializeBinary = function() {
+proto.api.v1.PrepareVoteRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PrepareVoteRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PrepareVoteRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -17666,11 +20544,11 @@ proto.api.PrepareVoteRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PrepareVoteRequest} message
+ * @param {!proto.api.v1.PrepareVoteRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareVoteRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PrepareVoteRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getVote();
   if (f != null) {
@@ -17687,7 +20565,7 @@ proto.api.PrepareVoteRequest.serializeBinaryToWriter = function(message, writer)
  * optional vega.Vote vote = 1;
  * @return {?proto.vega.Vote}
  */
-proto.api.PrepareVoteRequest.prototype.getVote = function() {
+proto.api.v1.PrepareVoteRequest.prototype.getVote = function() {
   return /** @type{?proto.vega.Vote} */ (
     jspb.Message.getWrapperField(this, governance_pb.Vote, 1));
 };
@@ -17695,18 +20573,18 @@ proto.api.PrepareVoteRequest.prototype.getVote = function() {
 
 /**
  * @param {?proto.vega.Vote|undefined} value
- * @return {!proto.api.PrepareVoteRequest} returns this
+ * @return {!proto.api.v1.PrepareVoteRequest} returns this
 */
-proto.api.PrepareVoteRequest.prototype.setVote = function(value) {
+proto.api.v1.PrepareVoteRequest.prototype.setVote = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.PrepareVoteRequest} returns this
+ * @return {!proto.api.v1.PrepareVoteRequest} returns this
  */
-proto.api.PrepareVoteRequest.prototype.clearVote = function() {
+proto.api.v1.PrepareVoteRequest.prototype.clearVote = function() {
   return this.setVote(undefined);
 };
 
@@ -17715,7 +20593,7 @@ proto.api.PrepareVoteRequest.prototype.clearVote = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.PrepareVoteRequest.prototype.hasVote = function() {
+proto.api.v1.PrepareVoteRequest.prototype.hasVote = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -17736,8 +20614,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PrepareVoteResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PrepareVoteResponse.toObject(opt_includeInstance, this);
+proto.api.v1.PrepareVoteResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PrepareVoteResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -17746,11 +20624,11 @@ proto.api.PrepareVoteResponse.prototype.toObject = function(opt_includeInstance)
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PrepareVoteResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.PrepareVoteResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareVoteResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.PrepareVoteResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     blob: msg.getBlob_asB64(),
     vote: (f = msg.getVote()) && governance_pb.Vote.toObject(includeInstance, f)
@@ -17767,23 +20645,23 @@ proto.api.PrepareVoteResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PrepareVoteResponse}
+ * @return {!proto.api.v1.PrepareVoteResponse}
  */
-proto.api.PrepareVoteResponse.deserializeBinary = function(bytes) {
+proto.api.v1.PrepareVoteResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PrepareVoteResponse;
-  return proto.api.PrepareVoteResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PrepareVoteResponse;
+  return proto.api.v1.PrepareVoteResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PrepareVoteResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PrepareVoteResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PrepareVoteResponse}
+ * @return {!proto.api.v1.PrepareVoteResponse}
  */
-proto.api.PrepareVoteResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PrepareVoteResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -17812,9 +20690,9 @@ proto.api.PrepareVoteResponse.deserializeBinaryFromReader = function(msg, reader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PrepareVoteResponse.prototype.serializeBinary = function() {
+proto.api.v1.PrepareVoteResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PrepareVoteResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PrepareVoteResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -17822,11 +20700,11 @@ proto.api.PrepareVoteResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PrepareVoteResponse} message
+ * @param {!proto.api.v1.PrepareVoteResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareVoteResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PrepareVoteResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getBlob_asU8();
   if (f.length > 0) {
@@ -17850,7 +20728,7 @@ proto.api.PrepareVoteResponse.serializeBinaryToWriter = function(message, writer
  * optional bytes blob = 1;
  * @return {!(string|Uint8Array)}
  */
-proto.api.PrepareVoteResponse.prototype.getBlob = function() {
+proto.api.v1.PrepareVoteResponse.prototype.getBlob = function() {
   return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -17860,7 +20738,7 @@ proto.api.PrepareVoteResponse.prototype.getBlob = function() {
  * This is a type-conversion wrapper around `getBlob()`
  * @return {string}
  */
-proto.api.PrepareVoteResponse.prototype.getBlob_asB64 = function() {
+proto.api.v1.PrepareVoteResponse.prototype.getBlob_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
       this.getBlob()));
 };
@@ -17873,7 +20751,7 @@ proto.api.PrepareVoteResponse.prototype.getBlob_asB64 = function() {
  * This is a type-conversion wrapper around `getBlob()`
  * @return {!Uint8Array}
  */
-proto.api.PrepareVoteResponse.prototype.getBlob_asU8 = function() {
+proto.api.v1.PrepareVoteResponse.prototype.getBlob_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
       this.getBlob()));
 };
@@ -17881,9 +20759,9 @@ proto.api.PrepareVoteResponse.prototype.getBlob_asU8 = function() {
 
 /**
  * @param {!(string|Uint8Array)} value
- * @return {!proto.api.PrepareVoteResponse} returns this
+ * @return {!proto.api.v1.PrepareVoteResponse} returns this
  */
-proto.api.PrepareVoteResponse.prototype.setBlob = function(value) {
+proto.api.v1.PrepareVoteResponse.prototype.setBlob = function(value) {
   return jspb.Message.setProto3BytesField(this, 1, value);
 };
 
@@ -17892,7 +20770,7 @@ proto.api.PrepareVoteResponse.prototype.setBlob = function(value) {
  * optional vega.Vote vote = 2;
  * @return {?proto.vega.Vote}
  */
-proto.api.PrepareVoteResponse.prototype.getVote = function() {
+proto.api.v1.PrepareVoteResponse.prototype.getVote = function() {
   return /** @type{?proto.vega.Vote} */ (
     jspb.Message.getWrapperField(this, governance_pb.Vote, 2));
 };
@@ -17900,18 +20778,18 @@ proto.api.PrepareVoteResponse.prototype.getVote = function() {
 
 /**
  * @param {?proto.vega.Vote|undefined} value
- * @return {!proto.api.PrepareVoteResponse} returns this
+ * @return {!proto.api.v1.PrepareVoteResponse} returns this
 */
-proto.api.PrepareVoteResponse.prototype.setVote = function(value) {
+proto.api.v1.PrepareVoteResponse.prototype.setVote = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.PrepareVoteResponse} returns this
+ * @return {!proto.api.v1.PrepareVoteResponse} returns this
  */
-proto.api.PrepareVoteResponse.prototype.clearVote = function() {
+proto.api.v1.PrepareVoteResponse.prototype.clearVote = function() {
   return this.setVote(undefined);
 };
 
@@ -17920,7 +20798,7 @@ proto.api.PrepareVoteResponse.prototype.clearVote = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.PrepareVoteResponse.prototype.hasVote = function() {
+proto.api.v1.PrepareVoteResponse.prototype.hasVote = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -17941,8 +20819,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PrepareLiquidityProvisionRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PrepareLiquidityProvisionRequest.toObject(opt_includeInstance, this);
+proto.api.v1.PrepareLiquidityProvisionRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PrepareLiquidityProvisionRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -17951,11 +20829,11 @@ proto.api.PrepareLiquidityProvisionRequest.prototype.toObject = function(opt_inc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PrepareLiquidityProvisionRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.PrepareLiquidityProvisionRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareLiquidityProvisionRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.PrepareLiquidityProvisionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     submission: (f = msg.getSubmission()) && vega_pb.LiquidityProvisionSubmission.toObject(includeInstance, f)
   };
@@ -17971,23 +20849,23 @@ proto.api.PrepareLiquidityProvisionRequest.toObject = function(includeInstance, 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PrepareLiquidityProvisionRequest}
+ * @return {!proto.api.v1.PrepareLiquidityProvisionRequest}
  */
-proto.api.PrepareLiquidityProvisionRequest.deserializeBinary = function(bytes) {
+proto.api.v1.PrepareLiquidityProvisionRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PrepareLiquidityProvisionRequest;
-  return proto.api.PrepareLiquidityProvisionRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PrepareLiquidityProvisionRequest;
+  return proto.api.v1.PrepareLiquidityProvisionRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PrepareLiquidityProvisionRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PrepareLiquidityProvisionRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PrepareLiquidityProvisionRequest}
+ * @return {!proto.api.v1.PrepareLiquidityProvisionRequest}
  */
-proto.api.PrepareLiquidityProvisionRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PrepareLiquidityProvisionRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -18012,9 +20890,9 @@ proto.api.PrepareLiquidityProvisionRequest.deserializeBinaryFromReader = functio
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PrepareLiquidityProvisionRequest.prototype.serializeBinary = function() {
+proto.api.v1.PrepareLiquidityProvisionRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PrepareLiquidityProvisionRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PrepareLiquidityProvisionRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -18022,11 +20900,11 @@ proto.api.PrepareLiquidityProvisionRequest.prototype.serializeBinary = function(
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PrepareLiquidityProvisionRequest} message
+ * @param {!proto.api.v1.PrepareLiquidityProvisionRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareLiquidityProvisionRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PrepareLiquidityProvisionRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getSubmission();
   if (f != null) {
@@ -18043,7 +20921,7 @@ proto.api.PrepareLiquidityProvisionRequest.serializeBinaryToWriter = function(me
  * optional vega.LiquidityProvisionSubmission submission = 1;
  * @return {?proto.vega.LiquidityProvisionSubmission}
  */
-proto.api.PrepareLiquidityProvisionRequest.prototype.getSubmission = function() {
+proto.api.v1.PrepareLiquidityProvisionRequest.prototype.getSubmission = function() {
   return /** @type{?proto.vega.LiquidityProvisionSubmission} */ (
     jspb.Message.getWrapperField(this, vega_pb.LiquidityProvisionSubmission, 1));
 };
@@ -18051,18 +20929,18 @@ proto.api.PrepareLiquidityProvisionRequest.prototype.getSubmission = function() 
 
 /**
  * @param {?proto.vega.LiquidityProvisionSubmission|undefined} value
- * @return {!proto.api.PrepareLiquidityProvisionRequest} returns this
+ * @return {!proto.api.v1.PrepareLiquidityProvisionRequest} returns this
 */
-proto.api.PrepareLiquidityProvisionRequest.prototype.setSubmission = function(value) {
+proto.api.v1.PrepareLiquidityProvisionRequest.prototype.setSubmission = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.PrepareLiquidityProvisionRequest} returns this
+ * @return {!proto.api.v1.PrepareLiquidityProvisionRequest} returns this
  */
-proto.api.PrepareLiquidityProvisionRequest.prototype.clearSubmission = function() {
+proto.api.v1.PrepareLiquidityProvisionRequest.prototype.clearSubmission = function() {
   return this.setSubmission(undefined);
 };
 
@@ -18071,7 +20949,7 @@ proto.api.PrepareLiquidityProvisionRequest.prototype.clearSubmission = function(
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.PrepareLiquidityProvisionRequest.prototype.hasSubmission = function() {
+proto.api.v1.PrepareLiquidityProvisionRequest.prototype.hasSubmission = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -18092,8 +20970,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.PrepareLiquidityProvisionResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.PrepareLiquidityProvisionResponse.toObject(opt_includeInstance, this);
+proto.api.v1.PrepareLiquidityProvisionResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.PrepareLiquidityProvisionResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -18102,11 +20980,11 @@ proto.api.PrepareLiquidityProvisionResponse.prototype.toObject = function(opt_in
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.PrepareLiquidityProvisionResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.PrepareLiquidityProvisionResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareLiquidityProvisionResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.PrepareLiquidityProvisionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     blob: msg.getBlob_asB64()
   };
@@ -18122,23 +21000,23 @@ proto.api.PrepareLiquidityProvisionResponse.toObject = function(includeInstance,
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.PrepareLiquidityProvisionResponse}
+ * @return {!proto.api.v1.PrepareLiquidityProvisionResponse}
  */
-proto.api.PrepareLiquidityProvisionResponse.deserializeBinary = function(bytes) {
+proto.api.v1.PrepareLiquidityProvisionResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.PrepareLiquidityProvisionResponse;
-  return proto.api.PrepareLiquidityProvisionResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.PrepareLiquidityProvisionResponse;
+  return proto.api.v1.PrepareLiquidityProvisionResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.PrepareLiquidityProvisionResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.PrepareLiquidityProvisionResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.PrepareLiquidityProvisionResponse}
+ * @return {!proto.api.v1.PrepareLiquidityProvisionResponse}
  */
-proto.api.PrepareLiquidityProvisionResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.PrepareLiquidityProvisionResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -18162,9 +21040,9 @@ proto.api.PrepareLiquidityProvisionResponse.deserializeBinaryFromReader = functi
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.PrepareLiquidityProvisionResponse.prototype.serializeBinary = function() {
+proto.api.v1.PrepareLiquidityProvisionResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.PrepareLiquidityProvisionResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.PrepareLiquidityProvisionResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -18172,11 +21050,11 @@ proto.api.PrepareLiquidityProvisionResponse.prototype.serializeBinary = function
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.PrepareLiquidityProvisionResponse} message
+ * @param {!proto.api.v1.PrepareLiquidityProvisionResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.PrepareLiquidityProvisionResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.PrepareLiquidityProvisionResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getBlob_asU8();
   if (f.length > 0) {
@@ -18192,7 +21070,7 @@ proto.api.PrepareLiquidityProvisionResponse.serializeBinaryToWriter = function(m
  * optional bytes blob = 1;
  * @return {!(string|Uint8Array)}
  */
-proto.api.PrepareLiquidityProvisionResponse.prototype.getBlob = function() {
+proto.api.v1.PrepareLiquidityProvisionResponse.prototype.getBlob = function() {
   return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -18202,7 +21080,7 @@ proto.api.PrepareLiquidityProvisionResponse.prototype.getBlob = function() {
  * This is a type-conversion wrapper around `getBlob()`
  * @return {string}
  */
-proto.api.PrepareLiquidityProvisionResponse.prototype.getBlob_asB64 = function() {
+proto.api.v1.PrepareLiquidityProvisionResponse.prototype.getBlob_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
       this.getBlob()));
 };
@@ -18215,7 +21093,7 @@ proto.api.PrepareLiquidityProvisionResponse.prototype.getBlob_asB64 = function()
  * This is a type-conversion wrapper around `getBlob()`
  * @return {!Uint8Array}
  */
-proto.api.PrepareLiquidityProvisionResponse.prototype.getBlob_asU8 = function() {
+proto.api.v1.PrepareLiquidityProvisionResponse.prototype.getBlob_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
       this.getBlob()));
 };
@@ -18223,9 +21101,9 @@ proto.api.PrepareLiquidityProvisionResponse.prototype.getBlob_asU8 = function() 
 
 /**
  * @param {!(string|Uint8Array)} value
- * @return {!proto.api.PrepareLiquidityProvisionResponse} returns this
+ * @return {!proto.api.v1.PrepareLiquidityProvisionResponse} returns this
  */
-proto.api.PrepareLiquidityProvisionResponse.prototype.setBlob = function(value) {
+proto.api.v1.PrepareLiquidityProvisionResponse.prototype.setBlob = function(value) {
   return jspb.Message.setProto3BytesField(this, 1, value);
 };
 
@@ -18246,8 +21124,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.OrderByIDRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.OrderByIDRequest.toObject(opt_includeInstance, this);
+proto.api.v1.OrderByIDRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.OrderByIDRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -18256,13 +21134,13 @@ proto.api.OrderByIDRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.OrderByIDRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.OrderByIDRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrderByIDRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.OrderByIDRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orderid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    orderId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     version: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
@@ -18277,23 +21155,23 @@ proto.api.OrderByIDRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.OrderByIDRequest}
+ * @return {!proto.api.v1.OrderByIDRequest}
  */
-proto.api.OrderByIDRequest.deserializeBinary = function(bytes) {
+proto.api.v1.OrderByIDRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.OrderByIDRequest;
-  return proto.api.OrderByIDRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.OrderByIDRequest;
+  return proto.api.v1.OrderByIDRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.OrderByIDRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.OrderByIDRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.OrderByIDRequest}
+ * @return {!proto.api.v1.OrderByIDRequest}
  */
-proto.api.OrderByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.OrderByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -18302,7 +21180,7 @@ proto.api.OrderByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOrderid(value);
+      msg.setOrderId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
@@ -18321,9 +21199,9 @@ proto.api.OrderByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.OrderByIDRequest.prototype.serializeBinary = function() {
+proto.api.v1.OrderByIDRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.OrderByIDRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.OrderByIDRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -18331,13 +21209,13 @@ proto.api.OrderByIDRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.OrderByIDRequest} message
+ * @param {!proto.api.v1.OrderByIDRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrderByIDRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.OrderByIDRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrderid();
+  f = message.getOrderId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -18355,19 +21233,19 @@ proto.api.OrderByIDRequest.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string orderID = 1;
+ * optional string order_id = 1;
  * @return {string}
  */
-proto.api.OrderByIDRequest.prototype.getOrderid = function() {
+proto.api.v1.OrderByIDRequest.prototype.getOrderId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.OrderByIDRequest} returns this
+ * @return {!proto.api.v1.OrderByIDRequest} returns this
  */
-proto.api.OrderByIDRequest.prototype.setOrderid = function(value) {
+proto.api.v1.OrderByIDRequest.prototype.setOrderId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -18376,16 +21254,16 @@ proto.api.OrderByIDRequest.prototype.setOrderid = function(value) {
  * optional uint64 version = 2;
  * @return {number}
  */
-proto.api.OrderByIDRequest.prototype.getVersion = function() {
+proto.api.v1.OrderByIDRequest.prototype.getVersion = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.OrderByIDRequest} returns this
+ * @return {!proto.api.v1.OrderByIDRequest} returns this
  */
-proto.api.OrderByIDRequest.prototype.setVersion = function(value) {
+proto.api.v1.OrderByIDRequest.prototype.setVersion = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -18406,8 +21284,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.OrderVersionsByIDRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.OrderVersionsByIDRequest.toObject(opt_includeInstance, this);
+proto.api.v1.OrderByIDResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.OrderByIDResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -18416,14 +21294,13 @@ proto.api.OrderVersionsByIDRequest.prototype.toObject = function(opt_includeInst
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.OrderVersionsByIDRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.OrderByIDResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrderVersionsByIDRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.OrderByIDResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    orderid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pagination: (f = msg.getPagination()) && proto.api.Pagination.toObject(includeInstance, f)
+    order: (f = msg.getOrder()) && vega_pb.Order.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -18437,23 +21314,23 @@ proto.api.OrderVersionsByIDRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.OrderVersionsByIDRequest}
+ * @return {!proto.api.v1.OrderByIDResponse}
  */
-proto.api.OrderVersionsByIDRequest.deserializeBinary = function(bytes) {
+proto.api.v1.OrderByIDResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.OrderVersionsByIDRequest;
-  return proto.api.OrderVersionsByIDRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.OrderByIDResponse;
+  return proto.api.v1.OrderByIDResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.OrderVersionsByIDRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.OrderByIDResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.OrderVersionsByIDRequest}
+ * @return {!proto.api.v1.OrderByIDResponse}
  */
-proto.api.OrderVersionsByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.OrderByIDResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -18461,13 +21338,9 @@ proto.api.OrderVersionsByIDRequest.deserializeBinaryFromReader = function(msg, r
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOrderid(value);
-      break;
-    case 2:
-      var value = new proto.api.Pagination;
-      reader.readMessage(value,proto.api.Pagination.deserializeBinaryFromReader);
-      msg.setPagination(value);
+      var value = new vega_pb.Order;
+      reader.readMessage(value,vega_pb.Order.deserializeBinaryFromReader);
+      msg.setOrder(value);
       break;
     default:
       reader.skipField();
@@ -18482,9 +21355,9 @@ proto.api.OrderVersionsByIDRequest.deserializeBinaryFromReader = function(msg, r
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.OrderVersionsByIDRequest.prototype.serializeBinary = function() {
+proto.api.v1.OrderByIDResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.OrderVersionsByIDRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.OrderByIDResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -18492,73 +21365,48 @@ proto.api.OrderVersionsByIDRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.OrderVersionsByIDRequest} message
+ * @param {!proto.api.v1.OrderByIDResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrderVersionsByIDRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.OrderByIDResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrderid();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getPagination();
+  f = message.getOrder();
   if (f != null) {
     writer.writeMessage(
-      2,
+      1,
       f,
-      proto.api.Pagination.serializeBinaryToWriter
+      vega_pb.Order.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string orderID = 1;
- * @return {string}
+ * optional vega.Order order = 1;
+ * @return {?proto.vega.Order}
  */
-proto.api.OrderVersionsByIDRequest.prototype.getOrderid = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.api.v1.OrderByIDResponse.prototype.getOrder = function() {
+  return /** @type{?proto.vega.Order} */ (
+    jspb.Message.getWrapperField(this, vega_pb.Order, 1));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.api.OrderVersionsByIDRequest} returns this
- */
-proto.api.OrderVersionsByIDRequest.prototype.setOrderid = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional Pagination pagination = 2;
- * @return {?proto.api.Pagination}
- */
-proto.api.OrderVersionsByIDRequest.prototype.getPagination = function() {
-  return /** @type{?proto.api.Pagination} */ (
-    jspb.Message.getWrapperField(this, proto.api.Pagination, 2));
-};
-
-
-/**
- * @param {?proto.api.Pagination|undefined} value
- * @return {!proto.api.OrderVersionsByIDRequest} returns this
+ * @param {?proto.vega.Order|undefined} value
+ * @return {!proto.api.v1.OrderByIDResponse} returns this
 */
-proto.api.OrderVersionsByIDRequest.prototype.setPagination = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+proto.api.v1.OrderByIDResponse.prototype.setOrder = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.OrderVersionsByIDRequest} returns this
+ * @return {!proto.api.v1.OrderByIDResponse} returns this
  */
-proto.api.OrderVersionsByIDRequest.prototype.clearPagination = function() {
-  return this.setPagination(undefined);
+proto.api.v1.OrderByIDResponse.prototype.clearOrder = function() {
+  return this.setOrder(undefined);
 };
 
 
@@ -18566,18 +21414,11 @@ proto.api.OrderVersionsByIDRequest.prototype.clearPagination = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.OrderVersionsByIDRequest.prototype.hasPagination = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.api.v1.OrderByIDResponse.prototype.hasOrder = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.OrderVersionsResponse.repeatedFields_ = [1];
 
 
 
@@ -18594,8 +21435,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.OrderVersionsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.OrderVersionsResponse.toObject(opt_includeInstance, this);
+proto.api.v1.OrderVersionsByIDRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.OrderVersionsByIDRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -18604,11 +21445,199 @@ proto.api.OrderVersionsResponse.prototype.toObject = function(opt_includeInstanc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.OrderVersionsResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.OrderVersionsByIDRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrderVersionsResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.OrderVersionsByIDRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    orderId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    pagination: (f = msg.getPagination()) && proto.api.v1.Pagination.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.OrderVersionsByIDRequest}
+ */
+proto.api.v1.OrderVersionsByIDRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.OrderVersionsByIDRequest;
+  return proto.api.v1.OrderVersionsByIDRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.OrderVersionsByIDRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.OrderVersionsByIDRequest}
+ */
+proto.api.v1.OrderVersionsByIDRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrderId(value);
+      break;
+    case 2:
+      var value = new proto.api.v1.Pagination;
+      reader.readMessage(value,proto.api.v1.Pagination.deserializeBinaryFromReader);
+      msg.setPagination(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.OrderVersionsByIDRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.OrderVersionsByIDRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.OrderVersionsByIDRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.OrderVersionsByIDRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getOrderId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getPagination();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.api.v1.Pagination.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string order_id = 1;
+ * @return {string}
+ */
+proto.api.v1.OrderVersionsByIDRequest.prototype.getOrderId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1.OrderVersionsByIDRequest} returns this
+ */
+proto.api.v1.OrderVersionsByIDRequest.prototype.setOrderId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional Pagination pagination = 2;
+ * @return {?proto.api.v1.Pagination}
+ */
+proto.api.v1.OrderVersionsByIDRequest.prototype.getPagination = function() {
+  return /** @type{?proto.api.v1.Pagination} */ (
+    jspb.Message.getWrapperField(this, proto.api.v1.Pagination, 2));
+};
+
+
+/**
+ * @param {?proto.api.v1.Pagination|undefined} value
+ * @return {!proto.api.v1.OrderVersionsByIDRequest} returns this
+*/
+proto.api.v1.OrderVersionsByIDRequest.prototype.setPagination = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1.OrderVersionsByIDRequest} returns this
+ */
+proto.api.v1.OrderVersionsByIDRequest.prototype.clearPagination = function() {
+  return this.setPagination(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1.OrderVersionsByIDRequest.prototype.hasPagination = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1.OrderVersionsByIDResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.OrderVersionsByIDResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.OrderVersionsByIDResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.OrderVersionsByIDResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.OrderVersionsByIDResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     ordersList: jspb.Message.toObjectList(msg.getOrdersList(),
     vega_pb.Order.toObject, includeInstance)
@@ -18625,23 +21654,23 @@ proto.api.OrderVersionsResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.OrderVersionsResponse}
+ * @return {!proto.api.v1.OrderVersionsByIDResponse}
  */
-proto.api.OrderVersionsResponse.deserializeBinary = function(bytes) {
+proto.api.v1.OrderVersionsByIDResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.OrderVersionsResponse;
-  return proto.api.OrderVersionsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.OrderVersionsByIDResponse;
+  return proto.api.v1.OrderVersionsByIDResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.OrderVersionsResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.OrderVersionsByIDResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.OrderVersionsResponse}
+ * @return {!proto.api.v1.OrderVersionsByIDResponse}
  */
-proto.api.OrderVersionsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.OrderVersionsByIDResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -18666,9 +21695,9 @@ proto.api.OrderVersionsResponse.deserializeBinaryFromReader = function(msg, read
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.OrderVersionsResponse.prototype.serializeBinary = function() {
+proto.api.v1.OrderVersionsByIDResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.OrderVersionsResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.OrderVersionsByIDResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -18676,11 +21705,11 @@ proto.api.OrderVersionsResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.OrderVersionsResponse} message
+ * @param {!proto.api.v1.OrderVersionsByIDResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.OrderVersionsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.OrderVersionsByIDResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrdersList();
   if (f.length > 0) {
@@ -18697,7 +21726,7 @@ proto.api.OrderVersionsResponse.serializeBinaryToWriter = function(message, writ
  * repeated vega.Order orders = 1;
  * @return {!Array<!proto.vega.Order>}
  */
-proto.api.OrderVersionsResponse.prototype.getOrdersList = function() {
+proto.api.v1.OrderVersionsByIDResponse.prototype.getOrdersList = function() {
   return /** @type{!Array<!proto.vega.Order>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.Order, 1));
 };
@@ -18705,9 +21734,9 @@ proto.api.OrderVersionsResponse.prototype.getOrdersList = function() {
 
 /**
  * @param {!Array<!proto.vega.Order>} value
- * @return {!proto.api.OrderVersionsResponse} returns this
+ * @return {!proto.api.v1.OrderVersionsByIDResponse} returns this
 */
-proto.api.OrderVersionsResponse.prototype.setOrdersList = function(value) {
+proto.api.v1.OrderVersionsByIDResponse.prototype.setOrdersList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -18717,16 +21746,16 @@ proto.api.OrderVersionsResponse.prototype.setOrdersList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Order}
  */
-proto.api.OrderVersionsResponse.prototype.addOrders = function(opt_value, opt_index) {
+proto.api.v1.OrderVersionsByIDResponse.prototype.addOrders = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Order, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.OrderVersionsResponse} returns this
+ * @return {!proto.api.v1.OrderVersionsByIDResponse} returns this
  */
-proto.api.OrderVersionsResponse.prototype.clearOrdersList = function() {
+proto.api.v1.OrderVersionsByIDResponse.prototype.clearOrdersList = function() {
   return this.setOrdersList([]);
 };
 
@@ -18747,8 +21776,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.EstimateFeeRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.EstimateFeeRequest.toObject(opt_includeInstance, this);
+proto.api.v1.EstimateFeeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.EstimateFeeRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -18757,11 +21786,11 @@ proto.api.EstimateFeeRequest.prototype.toObject = function(opt_includeInstance) 
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.EstimateFeeRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.EstimateFeeRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.EstimateFeeRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.EstimateFeeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     order: (f = msg.getOrder()) && vega_pb.Order.toObject(includeInstance, f)
   };
@@ -18777,23 +21806,23 @@ proto.api.EstimateFeeRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.EstimateFeeRequest}
+ * @return {!proto.api.v1.EstimateFeeRequest}
  */
-proto.api.EstimateFeeRequest.deserializeBinary = function(bytes) {
+proto.api.v1.EstimateFeeRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.EstimateFeeRequest;
-  return proto.api.EstimateFeeRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.EstimateFeeRequest;
+  return proto.api.v1.EstimateFeeRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.EstimateFeeRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.EstimateFeeRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.EstimateFeeRequest}
+ * @return {!proto.api.v1.EstimateFeeRequest}
  */
-proto.api.EstimateFeeRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.EstimateFeeRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -18818,9 +21847,9 @@ proto.api.EstimateFeeRequest.deserializeBinaryFromReader = function(msg, reader)
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.EstimateFeeRequest.prototype.serializeBinary = function() {
+proto.api.v1.EstimateFeeRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.EstimateFeeRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.EstimateFeeRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -18828,11 +21857,11 @@ proto.api.EstimateFeeRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.EstimateFeeRequest} message
+ * @param {!proto.api.v1.EstimateFeeRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.EstimateFeeRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.EstimateFeeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrder();
   if (f != null) {
@@ -18849,7 +21878,7 @@ proto.api.EstimateFeeRequest.serializeBinaryToWriter = function(message, writer)
  * optional vega.Order order = 1;
  * @return {?proto.vega.Order}
  */
-proto.api.EstimateFeeRequest.prototype.getOrder = function() {
+proto.api.v1.EstimateFeeRequest.prototype.getOrder = function() {
   return /** @type{?proto.vega.Order} */ (
     jspb.Message.getWrapperField(this, vega_pb.Order, 1));
 };
@@ -18857,18 +21886,18 @@ proto.api.EstimateFeeRequest.prototype.getOrder = function() {
 
 /**
  * @param {?proto.vega.Order|undefined} value
- * @return {!proto.api.EstimateFeeRequest} returns this
+ * @return {!proto.api.v1.EstimateFeeRequest} returns this
 */
-proto.api.EstimateFeeRequest.prototype.setOrder = function(value) {
+proto.api.v1.EstimateFeeRequest.prototype.setOrder = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.EstimateFeeRequest} returns this
+ * @return {!proto.api.v1.EstimateFeeRequest} returns this
  */
-proto.api.EstimateFeeRequest.prototype.clearOrder = function() {
+proto.api.v1.EstimateFeeRequest.prototype.clearOrder = function() {
   return this.setOrder(undefined);
 };
 
@@ -18877,7 +21906,7 @@ proto.api.EstimateFeeRequest.prototype.clearOrder = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.EstimateFeeRequest.prototype.hasOrder = function() {
+proto.api.v1.EstimateFeeRequest.prototype.hasOrder = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -18898,8 +21927,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.EstimateFeeResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.EstimateFeeResponse.toObject(opt_includeInstance, this);
+proto.api.v1.EstimateFeeResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.EstimateFeeResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -18908,11 +21937,11 @@ proto.api.EstimateFeeResponse.prototype.toObject = function(opt_includeInstance)
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.EstimateFeeResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.EstimateFeeResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.EstimateFeeResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.EstimateFeeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     fee: (f = msg.getFee()) && vega_pb.Fee.toObject(includeInstance, f)
   };
@@ -18928,23 +21957,23 @@ proto.api.EstimateFeeResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.EstimateFeeResponse}
+ * @return {!proto.api.v1.EstimateFeeResponse}
  */
-proto.api.EstimateFeeResponse.deserializeBinary = function(bytes) {
+proto.api.v1.EstimateFeeResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.EstimateFeeResponse;
-  return proto.api.EstimateFeeResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.EstimateFeeResponse;
+  return proto.api.v1.EstimateFeeResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.EstimateFeeResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.EstimateFeeResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.EstimateFeeResponse}
+ * @return {!proto.api.v1.EstimateFeeResponse}
  */
-proto.api.EstimateFeeResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.EstimateFeeResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -18969,9 +21998,9 @@ proto.api.EstimateFeeResponse.deserializeBinaryFromReader = function(msg, reader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.EstimateFeeResponse.prototype.serializeBinary = function() {
+proto.api.v1.EstimateFeeResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.EstimateFeeResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.EstimateFeeResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -18979,11 +22008,11 @@ proto.api.EstimateFeeResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.EstimateFeeResponse} message
+ * @param {!proto.api.v1.EstimateFeeResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.EstimateFeeResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.EstimateFeeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFee();
   if (f != null) {
@@ -19000,7 +22029,7 @@ proto.api.EstimateFeeResponse.serializeBinaryToWriter = function(message, writer
  * optional vega.Fee fee = 2;
  * @return {?proto.vega.Fee}
  */
-proto.api.EstimateFeeResponse.prototype.getFee = function() {
+proto.api.v1.EstimateFeeResponse.prototype.getFee = function() {
   return /** @type{?proto.vega.Fee} */ (
     jspb.Message.getWrapperField(this, vega_pb.Fee, 2));
 };
@@ -19008,18 +22037,18 @@ proto.api.EstimateFeeResponse.prototype.getFee = function() {
 
 /**
  * @param {?proto.vega.Fee|undefined} value
- * @return {!proto.api.EstimateFeeResponse} returns this
+ * @return {!proto.api.v1.EstimateFeeResponse} returns this
 */
-proto.api.EstimateFeeResponse.prototype.setFee = function(value) {
+proto.api.v1.EstimateFeeResponse.prototype.setFee = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.EstimateFeeResponse} returns this
+ * @return {!proto.api.v1.EstimateFeeResponse} returns this
  */
-proto.api.EstimateFeeResponse.prototype.clearFee = function() {
+proto.api.v1.EstimateFeeResponse.prototype.clearFee = function() {
   return this.setFee(undefined);
 };
 
@@ -19028,7 +22057,7 @@ proto.api.EstimateFeeResponse.prototype.clearFee = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.EstimateFeeResponse.prototype.hasFee = function() {
+proto.api.v1.EstimateFeeResponse.prototype.hasFee = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -19049,8 +22078,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.EstimateMarginRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.EstimateMarginRequest.toObject(opt_includeInstance, this);
+proto.api.v1.EstimateMarginRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.EstimateMarginRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -19059,11 +22088,11 @@ proto.api.EstimateMarginRequest.prototype.toObject = function(opt_includeInstanc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.EstimateMarginRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.EstimateMarginRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.EstimateMarginRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.EstimateMarginRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     order: (f = msg.getOrder()) && vega_pb.Order.toObject(includeInstance, f)
   };
@@ -19079,23 +22108,23 @@ proto.api.EstimateMarginRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.EstimateMarginRequest}
+ * @return {!proto.api.v1.EstimateMarginRequest}
  */
-proto.api.EstimateMarginRequest.deserializeBinary = function(bytes) {
+proto.api.v1.EstimateMarginRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.EstimateMarginRequest;
-  return proto.api.EstimateMarginRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.EstimateMarginRequest;
+  return proto.api.v1.EstimateMarginRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.EstimateMarginRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.EstimateMarginRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.EstimateMarginRequest}
+ * @return {!proto.api.v1.EstimateMarginRequest}
  */
-proto.api.EstimateMarginRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.EstimateMarginRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -19120,9 +22149,9 @@ proto.api.EstimateMarginRequest.deserializeBinaryFromReader = function(msg, read
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.EstimateMarginRequest.prototype.serializeBinary = function() {
+proto.api.v1.EstimateMarginRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.EstimateMarginRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.EstimateMarginRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -19130,11 +22159,11 @@ proto.api.EstimateMarginRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.EstimateMarginRequest} message
+ * @param {!proto.api.v1.EstimateMarginRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.EstimateMarginRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.EstimateMarginRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOrder();
   if (f != null) {
@@ -19151,7 +22180,7 @@ proto.api.EstimateMarginRequest.serializeBinaryToWriter = function(message, writ
  * optional vega.Order order = 1;
  * @return {?proto.vega.Order}
  */
-proto.api.EstimateMarginRequest.prototype.getOrder = function() {
+proto.api.v1.EstimateMarginRequest.prototype.getOrder = function() {
   return /** @type{?proto.vega.Order} */ (
     jspb.Message.getWrapperField(this, vega_pb.Order, 1));
 };
@@ -19159,18 +22188,18 @@ proto.api.EstimateMarginRequest.prototype.getOrder = function() {
 
 /**
  * @param {?proto.vega.Order|undefined} value
- * @return {!proto.api.EstimateMarginRequest} returns this
+ * @return {!proto.api.v1.EstimateMarginRequest} returns this
 */
-proto.api.EstimateMarginRequest.prototype.setOrder = function(value) {
+proto.api.v1.EstimateMarginRequest.prototype.setOrder = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.EstimateMarginRequest} returns this
+ * @return {!proto.api.v1.EstimateMarginRequest} returns this
  */
-proto.api.EstimateMarginRequest.prototype.clearOrder = function() {
+proto.api.v1.EstimateMarginRequest.prototype.clearOrder = function() {
   return this.setOrder(undefined);
 };
 
@@ -19179,7 +22208,7 @@ proto.api.EstimateMarginRequest.prototype.clearOrder = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.EstimateMarginRequest.prototype.hasOrder = function() {
+proto.api.v1.EstimateMarginRequest.prototype.hasOrder = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -19200,8 +22229,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.EstimateMarginResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.EstimateMarginResponse.toObject(opt_includeInstance, this);
+proto.api.v1.EstimateMarginResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.EstimateMarginResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -19210,13 +22239,13 @@ proto.api.EstimateMarginResponse.prototype.toObject = function(opt_includeInstan
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.EstimateMarginResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.EstimateMarginResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.EstimateMarginResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.EstimateMarginResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marginlevels: (f = msg.getMarginlevels()) && vega_pb.MarginLevels.toObject(includeInstance, f)
+    marginLevels: (f = msg.getMarginLevels()) && vega_pb.MarginLevels.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -19230,23 +22259,23 @@ proto.api.EstimateMarginResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.EstimateMarginResponse}
+ * @return {!proto.api.v1.EstimateMarginResponse}
  */
-proto.api.EstimateMarginResponse.deserializeBinary = function(bytes) {
+proto.api.v1.EstimateMarginResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.EstimateMarginResponse;
-  return proto.api.EstimateMarginResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.EstimateMarginResponse;
+  return proto.api.v1.EstimateMarginResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.EstimateMarginResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.EstimateMarginResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.EstimateMarginResponse}
+ * @return {!proto.api.v1.EstimateMarginResponse}
  */
-proto.api.EstimateMarginResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.EstimateMarginResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -19256,7 +22285,7 @@ proto.api.EstimateMarginResponse.deserializeBinaryFromReader = function(msg, rea
     case 2:
       var value = new vega_pb.MarginLevels;
       reader.readMessage(value,vega_pb.MarginLevels.deserializeBinaryFromReader);
-      msg.setMarginlevels(value);
+      msg.setMarginLevels(value);
       break;
     default:
       reader.skipField();
@@ -19271,9 +22300,9 @@ proto.api.EstimateMarginResponse.deserializeBinaryFromReader = function(msg, rea
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.EstimateMarginResponse.prototype.serializeBinary = function() {
+proto.api.v1.EstimateMarginResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.EstimateMarginResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.EstimateMarginResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -19281,13 +22310,13 @@ proto.api.EstimateMarginResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.EstimateMarginResponse} message
+ * @param {!proto.api.v1.EstimateMarginResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.EstimateMarginResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.EstimateMarginResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarginlevels();
+  f = message.getMarginLevels();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -19299,10 +22328,10 @@ proto.api.EstimateMarginResponse.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional vega.MarginLevels marginLevels = 2;
+ * optional vega.MarginLevels margin_levels = 2;
  * @return {?proto.vega.MarginLevels}
  */
-proto.api.EstimateMarginResponse.prototype.getMarginlevels = function() {
+proto.api.v1.EstimateMarginResponse.prototype.getMarginLevels = function() {
   return /** @type{?proto.vega.MarginLevels} */ (
     jspb.Message.getWrapperField(this, vega_pb.MarginLevels, 2));
 };
@@ -19310,19 +22339,19 @@ proto.api.EstimateMarginResponse.prototype.getMarginlevels = function() {
 
 /**
  * @param {?proto.vega.MarginLevels|undefined} value
- * @return {!proto.api.EstimateMarginResponse} returns this
+ * @return {!proto.api.v1.EstimateMarginResponse} returns this
 */
-proto.api.EstimateMarginResponse.prototype.setMarginlevels = function(value) {
+proto.api.v1.EstimateMarginResponse.prototype.setMarginLevels = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.EstimateMarginResponse} returns this
+ * @return {!proto.api.v1.EstimateMarginResponse} returns this
  */
-proto.api.EstimateMarginResponse.prototype.clearMarginlevels = function() {
-  return this.setMarginlevels(undefined);
+proto.api.v1.EstimateMarginResponse.prototype.clearMarginLevels = function() {
+  return this.setMarginLevels(undefined);
 };
 
 
@@ -19330,7 +22359,7 @@ proto.api.EstimateMarginResponse.prototype.clearMarginlevels = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.EstimateMarginResponse.prototype.hasMarginlevels = function() {
+proto.api.v1.EstimateMarginResponse.prototype.hasMarginLevels = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -19341,7 +22370,7 @@ proto.api.EstimateMarginResponse.prototype.hasMarginlevels = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.api.ObserveEventsRequest.repeatedFields_ = [1];
+proto.api.v1.ObserveEventBusRequest.repeatedFields_ = [1];
 
 
 
@@ -19358,8 +22387,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.ObserveEventsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.ObserveEventsRequest.toObject(opt_includeInstance, this);
+proto.api.v1.ObserveEventBusRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.ObserveEventBusRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -19368,16 +22397,16 @@ proto.api.ObserveEventsRequest.prototype.toObject = function(opt_includeInstance
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.ObserveEventsRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.ObserveEventBusRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.ObserveEventsRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.ObserveEventBusRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     typeList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    marketid: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    partyid: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    batchsize: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    marketId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    partyId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    batchSize: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -19391,23 +22420,23 @@ proto.api.ObserveEventsRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.ObserveEventsRequest}
+ * @return {!proto.api.v1.ObserveEventBusRequest}
  */
-proto.api.ObserveEventsRequest.deserializeBinary = function(bytes) {
+proto.api.v1.ObserveEventBusRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.ObserveEventsRequest;
-  return proto.api.ObserveEventsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.ObserveEventBusRequest;
+  return proto.api.v1.ObserveEventBusRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.ObserveEventsRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.ObserveEventBusRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.ObserveEventsRequest}
+ * @return {!proto.api.v1.ObserveEventBusRequest}
  */
-proto.api.ObserveEventsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.ObserveEventBusRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -19422,15 +22451,15 @@ proto.api.ObserveEventsRequest.deserializeBinaryFromReader = function(msg, reade
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setBatchsize(value);
+      msg.setBatchSize(value);
       break;
     default:
       reader.skipField();
@@ -19445,9 +22474,9 @@ proto.api.ObserveEventsRequest.deserializeBinaryFromReader = function(msg, reade
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.ObserveEventsRequest.prototype.serializeBinary = function() {
+proto.api.v1.ObserveEventBusRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.ObserveEventsRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.ObserveEventBusRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -19455,11 +22484,11 @@ proto.api.ObserveEventsRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.ObserveEventsRequest} message
+ * @param {!proto.api.v1.ObserveEventBusRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.ObserveEventsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.ObserveEventBusRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTypeList();
   if (f.length > 0) {
@@ -19468,21 +22497,21 @@ proto.api.ObserveEventsRequest.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getBatchsize();
+  f = message.getBatchSize();
   if (f !== 0) {
     writer.writeInt64(
       4,
@@ -19496,16 +22525,16 @@ proto.api.ObserveEventsRequest.serializeBinaryToWriter = function(message, write
  * repeated vega.BusEventType type = 1;
  * @return {!Array<!proto.vega.BusEventType>}
  */
-proto.api.ObserveEventsRequest.prototype.getTypeList = function() {
+proto.api.v1.ObserveEventBusRequest.prototype.getTypeList = function() {
   return /** @type {!Array<!proto.vega.BusEventType>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
  * @param {!Array<!proto.vega.BusEventType>} value
- * @return {!proto.api.ObserveEventsRequest} returns this
+ * @return {!proto.api.v1.ObserveEventBusRequest} returns this
  */
-proto.api.ObserveEventsRequest.prototype.setTypeList = function(value) {
+proto.api.v1.ObserveEventBusRequest.prototype.setTypeList = function(value) {
   return jspb.Message.setField(this, 1, value || []);
 };
 
@@ -19513,72 +22542,72 @@ proto.api.ObserveEventsRequest.prototype.setTypeList = function(value) {
 /**
  * @param {!proto.vega.BusEventType} value
  * @param {number=} opt_index
- * @return {!proto.api.ObserveEventsRequest} returns this
+ * @return {!proto.api.v1.ObserveEventBusRequest} returns this
  */
-proto.api.ObserveEventsRequest.prototype.addType = function(value, opt_index) {
+proto.api.v1.ObserveEventBusRequest.prototype.addType = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.ObserveEventsRequest} returns this
+ * @return {!proto.api.v1.ObserveEventBusRequest} returns this
  */
-proto.api.ObserveEventsRequest.prototype.clearTypeList = function() {
+proto.api.v1.ObserveEventBusRequest.prototype.clearTypeList = function() {
   return this.setTypeList([]);
 };
 
 
 /**
- * optional string marketID = 2;
+ * optional string market_id = 2;
  * @return {string}
  */
-proto.api.ObserveEventsRequest.prototype.getMarketid = function() {
+proto.api.v1.ObserveEventBusRequest.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.ObserveEventsRequest} returns this
+ * @return {!proto.api.v1.ObserveEventBusRequest} returns this
  */
-proto.api.ObserveEventsRequest.prototype.setMarketid = function(value) {
+proto.api.v1.ObserveEventBusRequest.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string partyID = 3;
+ * optional string party_id = 3;
  * @return {string}
  */
-proto.api.ObserveEventsRequest.prototype.getPartyid = function() {
+proto.api.v1.ObserveEventBusRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.ObserveEventsRequest} returns this
+ * @return {!proto.api.v1.ObserveEventBusRequest} returns this
  */
-proto.api.ObserveEventsRequest.prototype.setPartyid = function(value) {
+proto.api.v1.ObserveEventBusRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional int64 batchSize = 4;
+ * optional int64 batch_size = 4;
  * @return {number}
  */
-proto.api.ObserveEventsRequest.prototype.getBatchsize = function() {
+proto.api.v1.ObserveEventBusRequest.prototype.getBatchSize = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.ObserveEventsRequest} returns this
+ * @return {!proto.api.v1.ObserveEventBusRequest} returns this
  */
-proto.api.ObserveEventsRequest.prototype.setBatchsize = function(value) {
+proto.api.v1.ObserveEventBusRequest.prototype.setBatchSize = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
@@ -19589,7 +22618,7 @@ proto.api.ObserveEventsRequest.prototype.setBatchsize = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.ObserveEventsResponse.repeatedFields_ = [1];
+proto.api.v1.ObserveEventBusResponse.repeatedFields_ = [1];
 
 
 
@@ -19606,8 +22635,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.ObserveEventsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.ObserveEventsResponse.toObject(opt_includeInstance, this);
+proto.api.v1.ObserveEventBusResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.ObserveEventBusResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -19616,11 +22645,11 @@ proto.api.ObserveEventsResponse.prototype.toObject = function(opt_includeInstanc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.ObserveEventsResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.ObserveEventBusResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.ObserveEventsResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.ObserveEventBusResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     eventsList: jspb.Message.toObjectList(msg.getEventsList(),
     events_pb.BusEvent.toObject, includeInstance)
@@ -19637,23 +22666,23 @@ proto.api.ObserveEventsResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.ObserveEventsResponse}
+ * @return {!proto.api.v1.ObserveEventBusResponse}
  */
-proto.api.ObserveEventsResponse.deserializeBinary = function(bytes) {
+proto.api.v1.ObserveEventBusResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.ObserveEventsResponse;
-  return proto.api.ObserveEventsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.ObserveEventBusResponse;
+  return proto.api.v1.ObserveEventBusResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.ObserveEventsResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.ObserveEventBusResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.ObserveEventsResponse}
+ * @return {!proto.api.v1.ObserveEventBusResponse}
  */
-proto.api.ObserveEventsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.ObserveEventBusResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -19678,9 +22707,9 @@ proto.api.ObserveEventsResponse.deserializeBinaryFromReader = function(msg, read
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.ObserveEventsResponse.prototype.serializeBinary = function() {
+proto.api.v1.ObserveEventBusResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.ObserveEventsResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.ObserveEventBusResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -19688,11 +22717,11 @@ proto.api.ObserveEventsResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.ObserveEventsResponse} message
+ * @param {!proto.api.v1.ObserveEventBusResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.ObserveEventsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.ObserveEventBusResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getEventsList();
   if (f.length > 0) {
@@ -19709,7 +22738,7 @@ proto.api.ObserveEventsResponse.serializeBinaryToWriter = function(message, writ
  * repeated vega.BusEvent events = 1;
  * @return {!Array<!proto.vega.BusEvent>}
  */
-proto.api.ObserveEventsResponse.prototype.getEventsList = function() {
+proto.api.v1.ObserveEventBusResponse.prototype.getEventsList = function() {
   return /** @type{!Array<!proto.vega.BusEvent>} */ (
     jspb.Message.getRepeatedWrapperField(this, events_pb.BusEvent, 1));
 };
@@ -19717,9 +22746,9 @@ proto.api.ObserveEventsResponse.prototype.getEventsList = function() {
 
 /**
  * @param {!Array<!proto.vega.BusEvent>} value
- * @return {!proto.api.ObserveEventsResponse} returns this
+ * @return {!proto.api.v1.ObserveEventBusResponse} returns this
 */
-proto.api.ObserveEventsResponse.prototype.setEventsList = function(value) {
+proto.api.v1.ObserveEventBusResponse.prototype.setEventsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -19729,16 +22758,16 @@ proto.api.ObserveEventsResponse.prototype.setEventsList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.BusEvent}
  */
-proto.api.ObserveEventsResponse.prototype.addEvents = function(opt_value, opt_index) {
+proto.api.v1.ObserveEventBusResponse.prototype.addEvents = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.BusEvent, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.ObserveEventsResponse} returns this
+ * @return {!proto.api.v1.ObserveEventBusResponse} returns this
  */
-proto.api.ObserveEventsResponse.prototype.clearEventsList = function() {
+proto.api.v1.ObserveEventBusResponse.prototype.clearEventsList = function() {
   return this.setEventsList([]);
 };
 
@@ -19759,8 +22788,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.WithdrawalsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.WithdrawalsRequest.toObject(opt_includeInstance, this);
+proto.api.v1.StatisticsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.StatisticsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -19769,13 +22798,13 @@ proto.api.WithdrawalsRequest.prototype.toObject = function(opt_includeInstance) 
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.WithdrawalsRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.StatisticsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.WithdrawalsRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.StatisticsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partyid: jspb.Message.getFieldWithDefault(msg, 1, "")
+
   };
 
   if (includeInstance) {
@@ -19789,33 +22818,29 @@ proto.api.WithdrawalsRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.WithdrawalsRequest}
+ * @return {!proto.api.v1.StatisticsRequest}
  */
-proto.api.WithdrawalsRequest.deserializeBinary = function(bytes) {
+proto.api.v1.StatisticsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.WithdrawalsRequest;
-  return proto.api.WithdrawalsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.StatisticsRequest;
+  return proto.api.v1.StatisticsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.WithdrawalsRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.StatisticsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.WithdrawalsRequest}
+ * @return {!proto.api.v1.StatisticsRequest}
  */
-proto.api.WithdrawalsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.StatisticsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -19829,9 +22854,9 @@ proto.api.WithdrawalsRequest.deserializeBinaryFromReader = function(msg, reader)
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.WithdrawalsRequest.prototype.serializeBinary = function() {
+proto.api.v1.StatisticsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.WithdrawalsRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.StatisticsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -19839,47 +22864,15 @@ proto.api.WithdrawalsRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.WithdrawalsRequest} message
+ * @param {!proto.api.v1.StatisticsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.WithdrawalsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.StatisticsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPartyid();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
 };
 
 
-/**
- * optional string partyID = 1;
- * @return {string}
- */
-proto.api.WithdrawalsRequest.prototype.getPartyid = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.api.WithdrawalsRequest} returns this
- */
-proto.api.WithdrawalsRequest.prototype.setPartyid = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.WithdrawalsResponse.repeatedFields_ = [1];
 
 
 
@@ -19896,8 +22889,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.WithdrawalsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.WithdrawalsResponse.toObject(opt_includeInstance, this);
+proto.api.v1.StatisticsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.StatisticsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -19906,11 +22899,299 @@ proto.api.WithdrawalsResponse.prototype.toObject = function(opt_includeInstance)
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.WithdrawalsResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.StatisticsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.WithdrawalsResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.StatisticsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    statistics: (f = msg.getStatistics()) && vega_pb.Statistics.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.StatisticsResponse}
+ */
+proto.api.v1.StatisticsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.StatisticsResponse;
+  return proto.api.v1.StatisticsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.StatisticsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.StatisticsResponse}
+ */
+proto.api.v1.StatisticsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new vega_pb.Statistics;
+      reader.readMessage(value,vega_pb.Statistics.deserializeBinaryFromReader);
+      msg.setStatistics(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.StatisticsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.StatisticsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.StatisticsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.StatisticsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getStatistics();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      vega_pb.Statistics.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional vega.Statistics statistics = 1;
+ * @return {?proto.vega.Statistics}
+ */
+proto.api.v1.StatisticsResponse.prototype.getStatistics = function() {
+  return /** @type{?proto.vega.Statistics} */ (
+    jspb.Message.getWrapperField(this, vega_pb.Statistics, 1));
+};
+
+
+/**
+ * @param {?proto.vega.Statistics|undefined} value
+ * @return {!proto.api.v1.StatisticsResponse} returns this
+*/
+proto.api.v1.StatisticsResponse.prototype.setStatistics = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.api.v1.StatisticsResponse} returns this
+ */
+proto.api.v1.StatisticsResponse.prototype.clearStatistics = function() {
+  return this.setStatistics(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.api.v1.StatisticsResponse.prototype.hasStatistics = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.WithdrawalsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.WithdrawalsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.WithdrawalsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.WithdrawalsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    partyId: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.v1.WithdrawalsRequest}
+ */
+proto.api.v1.WithdrawalsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.v1.WithdrawalsRequest;
+  return proto.api.v1.WithdrawalsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.v1.WithdrawalsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.v1.WithdrawalsRequest}
+ */
+proto.api.v1.WithdrawalsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPartyId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.v1.WithdrawalsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.v1.WithdrawalsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.v1.WithdrawalsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.WithdrawalsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPartyId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string party_id = 1;
+ * @return {string}
+ */
+proto.api.v1.WithdrawalsRequest.prototype.getPartyId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.api.v1.WithdrawalsRequest} returns this
+ */
+proto.api.v1.WithdrawalsRequest.prototype.setPartyId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.v1.WithdrawalsResponse.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.v1.WithdrawalsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.WithdrawalsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.v1.WithdrawalsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.v1.WithdrawalsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     withdrawalsList: jspb.Message.toObjectList(msg.getWithdrawalsList(),
     vega_pb.Withdrawal.toObject, includeInstance)
@@ -19927,23 +23208,23 @@ proto.api.WithdrawalsResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.WithdrawalsResponse}
+ * @return {!proto.api.v1.WithdrawalsResponse}
  */
-proto.api.WithdrawalsResponse.deserializeBinary = function(bytes) {
+proto.api.v1.WithdrawalsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.WithdrawalsResponse;
-  return proto.api.WithdrawalsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.WithdrawalsResponse;
+  return proto.api.v1.WithdrawalsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.WithdrawalsResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.WithdrawalsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.WithdrawalsResponse}
+ * @return {!proto.api.v1.WithdrawalsResponse}
  */
-proto.api.WithdrawalsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.WithdrawalsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -19968,9 +23249,9 @@ proto.api.WithdrawalsResponse.deserializeBinaryFromReader = function(msg, reader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.WithdrawalsResponse.prototype.serializeBinary = function() {
+proto.api.v1.WithdrawalsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.WithdrawalsResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.WithdrawalsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -19978,11 +23259,11 @@ proto.api.WithdrawalsResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.WithdrawalsResponse} message
+ * @param {!proto.api.v1.WithdrawalsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.WithdrawalsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.WithdrawalsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getWithdrawalsList();
   if (f.length > 0) {
@@ -19999,7 +23280,7 @@ proto.api.WithdrawalsResponse.serializeBinaryToWriter = function(message, writer
  * repeated vega.Withdrawal withdrawals = 1;
  * @return {!Array<!proto.vega.Withdrawal>}
  */
-proto.api.WithdrawalsResponse.prototype.getWithdrawalsList = function() {
+proto.api.v1.WithdrawalsResponse.prototype.getWithdrawalsList = function() {
   return /** @type{!Array<!proto.vega.Withdrawal>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.Withdrawal, 1));
 };
@@ -20007,9 +23288,9 @@ proto.api.WithdrawalsResponse.prototype.getWithdrawalsList = function() {
 
 /**
  * @param {!Array<!proto.vega.Withdrawal>} value
- * @return {!proto.api.WithdrawalsResponse} returns this
+ * @return {!proto.api.v1.WithdrawalsResponse} returns this
 */
-proto.api.WithdrawalsResponse.prototype.setWithdrawalsList = function(value) {
+proto.api.v1.WithdrawalsResponse.prototype.setWithdrawalsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -20019,16 +23300,16 @@ proto.api.WithdrawalsResponse.prototype.setWithdrawalsList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Withdrawal}
  */
-proto.api.WithdrawalsResponse.prototype.addWithdrawals = function(opt_value, opt_index) {
+proto.api.v1.WithdrawalsResponse.prototype.addWithdrawals = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Withdrawal, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.WithdrawalsResponse} returns this
+ * @return {!proto.api.v1.WithdrawalsResponse} returns this
  */
-proto.api.WithdrawalsResponse.prototype.clearWithdrawalsList = function() {
+proto.api.v1.WithdrawalsResponse.prototype.clearWithdrawalsList = function() {
   return this.setWithdrawalsList([]);
 };
 
@@ -20049,8 +23330,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.WithdrawalRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.WithdrawalRequest.toObject(opt_includeInstance, this);
+proto.api.v1.WithdrawalRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.WithdrawalRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -20059,11 +23340,11 @@ proto.api.WithdrawalRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.WithdrawalRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.WithdrawalRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.WithdrawalRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.WithdrawalRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
@@ -20079,23 +23360,23 @@ proto.api.WithdrawalRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.WithdrawalRequest}
+ * @return {!proto.api.v1.WithdrawalRequest}
  */
-proto.api.WithdrawalRequest.deserializeBinary = function(bytes) {
+proto.api.v1.WithdrawalRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.WithdrawalRequest;
-  return proto.api.WithdrawalRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.WithdrawalRequest;
+  return proto.api.v1.WithdrawalRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.WithdrawalRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.WithdrawalRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.WithdrawalRequest}
+ * @return {!proto.api.v1.WithdrawalRequest}
  */
-proto.api.WithdrawalRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.WithdrawalRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -20119,9 +23400,9 @@ proto.api.WithdrawalRequest.deserializeBinaryFromReader = function(msg, reader) 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.WithdrawalRequest.prototype.serializeBinary = function() {
+proto.api.v1.WithdrawalRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.WithdrawalRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.WithdrawalRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -20129,11 +23410,11 @@ proto.api.WithdrawalRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.WithdrawalRequest} message
+ * @param {!proto.api.v1.WithdrawalRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.WithdrawalRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.WithdrawalRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
   if (f.length > 0) {
@@ -20146,19 +23427,19 @@ proto.api.WithdrawalRequest.serializeBinaryToWriter = function(message, writer) 
 
 
 /**
- * optional string ID = 1;
+ * optional string id = 1;
  * @return {string}
  */
-proto.api.WithdrawalRequest.prototype.getId = function() {
+proto.api.v1.WithdrawalRequest.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.WithdrawalRequest} returns this
+ * @return {!proto.api.v1.WithdrawalRequest} returns this
  */
-proto.api.WithdrawalRequest.prototype.setId = function(value) {
+proto.api.v1.WithdrawalRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -20179,8 +23460,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.WithdrawalResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.WithdrawalResponse.toObject(opt_includeInstance, this);
+proto.api.v1.WithdrawalResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.WithdrawalResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -20189,11 +23470,11 @@ proto.api.WithdrawalResponse.prototype.toObject = function(opt_includeInstance) 
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.WithdrawalResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.WithdrawalResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.WithdrawalResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.WithdrawalResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     withdrawal: (f = msg.getWithdrawal()) && vega_pb.Withdrawal.toObject(includeInstance, f)
   };
@@ -20209,23 +23490,23 @@ proto.api.WithdrawalResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.WithdrawalResponse}
+ * @return {!proto.api.v1.WithdrawalResponse}
  */
-proto.api.WithdrawalResponse.deserializeBinary = function(bytes) {
+proto.api.v1.WithdrawalResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.WithdrawalResponse;
-  return proto.api.WithdrawalResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.WithdrawalResponse;
+  return proto.api.v1.WithdrawalResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.WithdrawalResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.WithdrawalResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.WithdrawalResponse}
+ * @return {!proto.api.v1.WithdrawalResponse}
  */
-proto.api.WithdrawalResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.WithdrawalResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -20250,9 +23531,9 @@ proto.api.WithdrawalResponse.deserializeBinaryFromReader = function(msg, reader)
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.WithdrawalResponse.prototype.serializeBinary = function() {
+proto.api.v1.WithdrawalResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.WithdrawalResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.WithdrawalResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -20260,11 +23541,11 @@ proto.api.WithdrawalResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.WithdrawalResponse} message
+ * @param {!proto.api.v1.WithdrawalResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.WithdrawalResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.WithdrawalResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getWithdrawal();
   if (f != null) {
@@ -20281,7 +23562,7 @@ proto.api.WithdrawalResponse.serializeBinaryToWriter = function(message, writer)
  * optional vega.Withdrawal withdrawal = 1;
  * @return {?proto.vega.Withdrawal}
  */
-proto.api.WithdrawalResponse.prototype.getWithdrawal = function() {
+proto.api.v1.WithdrawalResponse.prototype.getWithdrawal = function() {
   return /** @type{?proto.vega.Withdrawal} */ (
     jspb.Message.getWrapperField(this, vega_pb.Withdrawal, 1));
 };
@@ -20289,18 +23570,18 @@ proto.api.WithdrawalResponse.prototype.getWithdrawal = function() {
 
 /**
  * @param {?proto.vega.Withdrawal|undefined} value
- * @return {!proto.api.WithdrawalResponse} returns this
+ * @return {!proto.api.v1.WithdrawalResponse} returns this
 */
-proto.api.WithdrawalResponse.prototype.setWithdrawal = function(value) {
+proto.api.v1.WithdrawalResponse.prototype.setWithdrawal = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.WithdrawalResponse} returns this
+ * @return {!proto.api.v1.WithdrawalResponse} returns this
  */
-proto.api.WithdrawalResponse.prototype.clearWithdrawal = function() {
+proto.api.v1.WithdrawalResponse.prototype.clearWithdrawal = function() {
   return this.setWithdrawal(undefined);
 };
 
@@ -20309,7 +23590,7 @@ proto.api.WithdrawalResponse.prototype.clearWithdrawal = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.WithdrawalResponse.prototype.hasWithdrawal = function() {
+proto.api.v1.WithdrawalResponse.prototype.hasWithdrawal = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -20330,8 +23611,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.ERC20WithdrawalApprovalRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.ERC20WithdrawalApprovalRequest.toObject(opt_includeInstance, this);
+proto.api.v1.ERC20WithdrawalApprovalRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.ERC20WithdrawalApprovalRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -20340,13 +23621,13 @@ proto.api.ERC20WithdrawalApprovalRequest.prototype.toObject = function(opt_inclu
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.ERC20WithdrawalApprovalRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.ERC20WithdrawalApprovalRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.ERC20WithdrawalApprovalRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.ERC20WithdrawalApprovalRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    withdrawalid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    withdrawalId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -20360,23 +23641,23 @@ proto.api.ERC20WithdrawalApprovalRequest.toObject = function(includeInstance, ms
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.ERC20WithdrawalApprovalRequest}
+ * @return {!proto.api.v1.ERC20WithdrawalApprovalRequest}
  */
-proto.api.ERC20WithdrawalApprovalRequest.deserializeBinary = function(bytes) {
+proto.api.v1.ERC20WithdrawalApprovalRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.ERC20WithdrawalApprovalRequest;
-  return proto.api.ERC20WithdrawalApprovalRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.ERC20WithdrawalApprovalRequest;
+  return proto.api.v1.ERC20WithdrawalApprovalRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.ERC20WithdrawalApprovalRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.ERC20WithdrawalApprovalRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.ERC20WithdrawalApprovalRequest}
+ * @return {!proto.api.v1.ERC20WithdrawalApprovalRequest}
  */
-proto.api.ERC20WithdrawalApprovalRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.ERC20WithdrawalApprovalRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -20385,7 +23666,7 @@ proto.api.ERC20WithdrawalApprovalRequest.deserializeBinaryFromReader = function(
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setWithdrawalid(value);
+      msg.setWithdrawalId(value);
       break;
     default:
       reader.skipField();
@@ -20400,9 +23681,9 @@ proto.api.ERC20WithdrawalApprovalRequest.deserializeBinaryFromReader = function(
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.ERC20WithdrawalApprovalRequest.prototype.serializeBinary = function() {
+proto.api.v1.ERC20WithdrawalApprovalRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.ERC20WithdrawalApprovalRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.ERC20WithdrawalApprovalRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -20410,13 +23691,13 @@ proto.api.ERC20WithdrawalApprovalRequest.prototype.serializeBinary = function() 
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.ERC20WithdrawalApprovalRequest} message
+ * @param {!proto.api.v1.ERC20WithdrawalApprovalRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.ERC20WithdrawalApprovalRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.ERC20WithdrawalApprovalRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getWithdrawalid();
+  f = message.getWithdrawalId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -20427,19 +23708,19 @@ proto.api.ERC20WithdrawalApprovalRequest.serializeBinaryToWriter = function(mess
 
 
 /**
- * optional string withdrawalID = 1;
+ * optional string withdrawal_id = 1;
  * @return {string}
  */
-proto.api.ERC20WithdrawalApprovalRequest.prototype.getWithdrawalid = function() {
+proto.api.v1.ERC20WithdrawalApprovalRequest.prototype.getWithdrawalId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.ERC20WithdrawalApprovalRequest} returns this
+ * @return {!proto.api.v1.ERC20WithdrawalApprovalRequest} returns this
  */
-proto.api.ERC20WithdrawalApprovalRequest.prototype.setWithdrawalid = function(value) {
+proto.api.v1.ERC20WithdrawalApprovalRequest.prototype.setWithdrawalId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -20460,8 +23741,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.ERC20WithdrawalApprovalResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.ERC20WithdrawalApprovalResponse.toObject(opt_includeInstance, this);
+proto.api.v1.ERC20WithdrawalApprovalResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.ERC20WithdrawalApprovalResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -20470,13 +23751,13 @@ proto.api.ERC20WithdrawalApprovalResponse.prototype.toObject = function(opt_incl
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.ERC20WithdrawalApprovalResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.ERC20WithdrawalApprovalResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.ERC20WithdrawalApprovalResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.ERC20WithdrawalApprovalResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    assetsource: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    assetSource: jspb.Message.getFieldWithDefault(msg, 1, ""),
     amount: jspb.Message.getFieldWithDefault(msg, 2, ""),
     expiry: jspb.Message.getFieldWithDefault(msg, 3, 0),
     nonce: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -20494,23 +23775,23 @@ proto.api.ERC20WithdrawalApprovalResponse.toObject = function(includeInstance, m
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.ERC20WithdrawalApprovalResponse}
+ * @return {!proto.api.v1.ERC20WithdrawalApprovalResponse}
  */
-proto.api.ERC20WithdrawalApprovalResponse.deserializeBinary = function(bytes) {
+proto.api.v1.ERC20WithdrawalApprovalResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.ERC20WithdrawalApprovalResponse;
-  return proto.api.ERC20WithdrawalApprovalResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.ERC20WithdrawalApprovalResponse;
+  return proto.api.v1.ERC20WithdrawalApprovalResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.ERC20WithdrawalApprovalResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.ERC20WithdrawalApprovalResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.ERC20WithdrawalApprovalResponse}
+ * @return {!proto.api.v1.ERC20WithdrawalApprovalResponse}
  */
-proto.api.ERC20WithdrawalApprovalResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.ERC20WithdrawalApprovalResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -20519,7 +23800,7 @@ proto.api.ERC20WithdrawalApprovalResponse.deserializeBinaryFromReader = function
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAssetsource(value);
+      msg.setAssetSource(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -20550,9 +23831,9 @@ proto.api.ERC20WithdrawalApprovalResponse.deserializeBinaryFromReader = function
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.ERC20WithdrawalApprovalResponse.prototype.serializeBinary = function() {
+proto.api.v1.ERC20WithdrawalApprovalResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.ERC20WithdrawalApprovalResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.ERC20WithdrawalApprovalResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -20560,13 +23841,13 @@ proto.api.ERC20WithdrawalApprovalResponse.prototype.serializeBinary = function()
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.ERC20WithdrawalApprovalResponse} message
+ * @param {!proto.api.v1.ERC20WithdrawalApprovalResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.ERC20WithdrawalApprovalResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.ERC20WithdrawalApprovalResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAssetsource();
+  f = message.getAssetSource();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -20605,19 +23886,19 @@ proto.api.ERC20WithdrawalApprovalResponse.serializeBinaryToWriter = function(mes
 
 
 /**
- * optional string assetSource = 1;
+ * optional string asset_source = 1;
  * @return {string}
  */
-proto.api.ERC20WithdrawalApprovalResponse.prototype.getAssetsource = function() {
+proto.api.v1.ERC20WithdrawalApprovalResponse.prototype.getAssetSource = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.ERC20WithdrawalApprovalResponse} returns this
+ * @return {!proto.api.v1.ERC20WithdrawalApprovalResponse} returns this
  */
-proto.api.ERC20WithdrawalApprovalResponse.prototype.setAssetsource = function(value) {
+proto.api.v1.ERC20WithdrawalApprovalResponse.prototype.setAssetSource = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -20626,16 +23907,16 @@ proto.api.ERC20WithdrawalApprovalResponse.prototype.setAssetsource = function(va
  * optional string amount = 2;
  * @return {string}
  */
-proto.api.ERC20WithdrawalApprovalResponse.prototype.getAmount = function() {
+proto.api.v1.ERC20WithdrawalApprovalResponse.prototype.getAmount = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.ERC20WithdrawalApprovalResponse} returns this
+ * @return {!proto.api.v1.ERC20WithdrawalApprovalResponse} returns this
  */
-proto.api.ERC20WithdrawalApprovalResponse.prototype.setAmount = function(value) {
+proto.api.v1.ERC20WithdrawalApprovalResponse.prototype.setAmount = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -20644,16 +23925,16 @@ proto.api.ERC20WithdrawalApprovalResponse.prototype.setAmount = function(value) 
  * optional int64 expiry = 3;
  * @return {number}
  */
-proto.api.ERC20WithdrawalApprovalResponse.prototype.getExpiry = function() {
+proto.api.v1.ERC20WithdrawalApprovalResponse.prototype.getExpiry = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.api.ERC20WithdrawalApprovalResponse} returns this
+ * @return {!proto.api.v1.ERC20WithdrawalApprovalResponse} returns this
  */
-proto.api.ERC20WithdrawalApprovalResponse.prototype.setExpiry = function(value) {
+proto.api.v1.ERC20WithdrawalApprovalResponse.prototype.setExpiry = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
@@ -20662,16 +23943,16 @@ proto.api.ERC20WithdrawalApprovalResponse.prototype.setExpiry = function(value) 
  * optional string nonce = 4;
  * @return {string}
  */
-proto.api.ERC20WithdrawalApprovalResponse.prototype.getNonce = function() {
+proto.api.v1.ERC20WithdrawalApprovalResponse.prototype.getNonce = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.ERC20WithdrawalApprovalResponse} returns this
+ * @return {!proto.api.v1.ERC20WithdrawalApprovalResponse} returns this
  */
-proto.api.ERC20WithdrawalApprovalResponse.prototype.setNonce = function(value) {
+proto.api.v1.ERC20WithdrawalApprovalResponse.prototype.setNonce = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -20680,16 +23961,16 @@ proto.api.ERC20WithdrawalApprovalResponse.prototype.setNonce = function(value) {
  * optional string signatures = 5;
  * @return {string}
  */
-proto.api.ERC20WithdrawalApprovalResponse.prototype.getSignatures = function() {
+proto.api.v1.ERC20WithdrawalApprovalResponse.prototype.getSignatures = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.ERC20WithdrawalApprovalResponse} returns this
+ * @return {!proto.api.v1.ERC20WithdrawalApprovalResponse} returns this
  */
-proto.api.ERC20WithdrawalApprovalResponse.prototype.setSignatures = function(value) {
+proto.api.v1.ERC20WithdrawalApprovalResponse.prototype.setSignatures = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
@@ -20710,8 +23991,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.DepositsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.DepositsRequest.toObject(opt_includeInstance, this);
+proto.api.v1.DepositsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.DepositsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -20720,13 +24001,13 @@ proto.api.DepositsRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.DepositsRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.DepositsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.DepositsRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.DepositsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partyid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    partyId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -20740,23 +24021,23 @@ proto.api.DepositsRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.DepositsRequest}
+ * @return {!proto.api.v1.DepositsRequest}
  */
-proto.api.DepositsRequest.deserializeBinary = function(bytes) {
+proto.api.v1.DepositsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.DepositsRequest;
-  return proto.api.DepositsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.DepositsRequest;
+  return proto.api.v1.DepositsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.DepositsRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.DepositsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.DepositsRequest}
+ * @return {!proto.api.v1.DepositsRequest}
  */
-proto.api.DepositsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.DepositsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -20765,7 +24046,7 @@ proto.api.DepositsRequest.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     default:
       reader.skipField();
@@ -20780,9 +24061,9 @@ proto.api.DepositsRequest.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.DepositsRequest.prototype.serializeBinary = function() {
+proto.api.v1.DepositsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.DepositsRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.DepositsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -20790,13 +24071,13 @@ proto.api.DepositsRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.DepositsRequest} message
+ * @param {!proto.api.v1.DepositsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.DepositsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.DepositsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -20807,19 +24088,19 @@ proto.api.DepositsRequest.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string partyID = 1;
+ * optional string party_id = 1;
  * @return {string}
  */
-proto.api.DepositsRequest.prototype.getPartyid = function() {
+proto.api.v1.DepositsRequest.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.DepositsRequest} returns this
+ * @return {!proto.api.v1.DepositsRequest} returns this
  */
-proto.api.DepositsRequest.prototype.setPartyid = function(value) {
+proto.api.v1.DepositsRequest.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -20830,7 +24111,7 @@ proto.api.DepositsRequest.prototype.setPartyid = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.DepositsResponse.repeatedFields_ = [1];
+proto.api.v1.DepositsResponse.repeatedFields_ = [1];
 
 
 
@@ -20847,8 +24128,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.DepositsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.DepositsResponse.toObject(opt_includeInstance, this);
+proto.api.v1.DepositsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.DepositsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -20857,11 +24138,11 @@ proto.api.DepositsResponse.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.DepositsResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.DepositsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.DepositsResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.DepositsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     depositsList: jspb.Message.toObjectList(msg.getDepositsList(),
     vega_pb.Deposit.toObject, includeInstance)
@@ -20878,23 +24159,23 @@ proto.api.DepositsResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.DepositsResponse}
+ * @return {!proto.api.v1.DepositsResponse}
  */
-proto.api.DepositsResponse.deserializeBinary = function(bytes) {
+proto.api.v1.DepositsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.DepositsResponse;
-  return proto.api.DepositsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.DepositsResponse;
+  return proto.api.v1.DepositsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.DepositsResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.DepositsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.DepositsResponse}
+ * @return {!proto.api.v1.DepositsResponse}
  */
-proto.api.DepositsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.DepositsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -20919,9 +24200,9 @@ proto.api.DepositsResponse.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.DepositsResponse.prototype.serializeBinary = function() {
+proto.api.v1.DepositsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.DepositsResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.DepositsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -20929,11 +24210,11 @@ proto.api.DepositsResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.DepositsResponse} message
+ * @param {!proto.api.v1.DepositsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.DepositsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.DepositsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDepositsList();
   if (f.length > 0) {
@@ -20950,7 +24231,7 @@ proto.api.DepositsResponse.serializeBinaryToWriter = function(message, writer) {
  * repeated vega.Deposit deposits = 1;
  * @return {!Array<!proto.vega.Deposit>}
  */
-proto.api.DepositsResponse.prototype.getDepositsList = function() {
+proto.api.v1.DepositsResponse.prototype.getDepositsList = function() {
   return /** @type{!Array<!proto.vega.Deposit>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.Deposit, 1));
 };
@@ -20958,9 +24239,9 @@ proto.api.DepositsResponse.prototype.getDepositsList = function() {
 
 /**
  * @param {!Array<!proto.vega.Deposit>} value
- * @return {!proto.api.DepositsResponse} returns this
+ * @return {!proto.api.v1.DepositsResponse} returns this
 */
-proto.api.DepositsResponse.prototype.setDepositsList = function(value) {
+proto.api.v1.DepositsResponse.prototype.setDepositsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -20970,16 +24251,16 @@ proto.api.DepositsResponse.prototype.setDepositsList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.Deposit}
  */
-proto.api.DepositsResponse.prototype.addDeposits = function(opt_value, opt_index) {
+proto.api.v1.DepositsResponse.prototype.addDeposits = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.Deposit, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.DepositsResponse} returns this
+ * @return {!proto.api.v1.DepositsResponse} returns this
  */
-proto.api.DepositsResponse.prototype.clearDepositsList = function() {
+proto.api.v1.DepositsResponse.prototype.clearDepositsList = function() {
   return this.setDepositsList([]);
 };
 
@@ -21000,8 +24281,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.DepositRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.DepositRequest.toObject(opt_includeInstance, this);
+proto.api.v1.DepositRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.DepositRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -21010,11 +24291,11 @@ proto.api.DepositRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.DepositRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.DepositRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.DepositRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.DepositRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
@@ -21030,23 +24311,23 @@ proto.api.DepositRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.DepositRequest}
+ * @return {!proto.api.v1.DepositRequest}
  */
-proto.api.DepositRequest.deserializeBinary = function(bytes) {
+proto.api.v1.DepositRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.DepositRequest;
-  return proto.api.DepositRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.DepositRequest;
+  return proto.api.v1.DepositRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.DepositRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.DepositRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.DepositRequest}
+ * @return {!proto.api.v1.DepositRequest}
  */
-proto.api.DepositRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.DepositRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -21070,9 +24351,9 @@ proto.api.DepositRequest.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.DepositRequest.prototype.serializeBinary = function() {
+proto.api.v1.DepositRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.DepositRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.DepositRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -21080,11 +24361,11 @@ proto.api.DepositRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.DepositRequest} message
+ * @param {!proto.api.v1.DepositRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.DepositRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.DepositRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
   if (f.length > 0) {
@@ -21097,19 +24378,19 @@ proto.api.DepositRequest.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string ID = 1;
+ * optional string id = 1;
  * @return {string}
  */
-proto.api.DepositRequest.prototype.getId = function() {
+proto.api.v1.DepositRequest.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.DepositRequest} returns this
+ * @return {!proto.api.v1.DepositRequest} returns this
  */
-proto.api.DepositRequest.prototype.setId = function(value) {
+proto.api.v1.DepositRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -21130,8 +24411,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.DepositResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.DepositResponse.toObject(opt_includeInstance, this);
+proto.api.v1.DepositResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.DepositResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -21140,11 +24421,11 @@ proto.api.DepositResponse.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.DepositResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.DepositResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.DepositResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.DepositResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     deposit: (f = msg.getDeposit()) && vega_pb.Deposit.toObject(includeInstance, f)
   };
@@ -21160,23 +24441,23 @@ proto.api.DepositResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.DepositResponse}
+ * @return {!proto.api.v1.DepositResponse}
  */
-proto.api.DepositResponse.deserializeBinary = function(bytes) {
+proto.api.v1.DepositResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.DepositResponse;
-  return proto.api.DepositResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.DepositResponse;
+  return proto.api.v1.DepositResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.DepositResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.DepositResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.DepositResponse}
+ * @return {!proto.api.v1.DepositResponse}
  */
-proto.api.DepositResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.DepositResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -21201,9 +24482,9 @@ proto.api.DepositResponse.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.DepositResponse.prototype.serializeBinary = function() {
+proto.api.v1.DepositResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.DepositResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.DepositResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -21211,11 +24492,11 @@ proto.api.DepositResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.DepositResponse} message
+ * @param {!proto.api.v1.DepositResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.DepositResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.DepositResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDeposit();
   if (f != null) {
@@ -21232,7 +24513,7 @@ proto.api.DepositResponse.serializeBinaryToWriter = function(message, writer) {
  * optional vega.Deposit deposit = 1;
  * @return {?proto.vega.Deposit}
  */
-proto.api.DepositResponse.prototype.getDeposit = function() {
+proto.api.v1.DepositResponse.prototype.getDeposit = function() {
   return /** @type{?proto.vega.Deposit} */ (
     jspb.Message.getWrapperField(this, vega_pb.Deposit, 1));
 };
@@ -21240,18 +24521,18 @@ proto.api.DepositResponse.prototype.getDeposit = function() {
 
 /**
  * @param {?proto.vega.Deposit|undefined} value
- * @return {!proto.api.DepositResponse} returns this
+ * @return {!proto.api.v1.DepositResponse} returns this
 */
-proto.api.DepositResponse.prototype.setDeposit = function(value) {
+proto.api.v1.DepositResponse.prototype.setDeposit = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.api.DepositResponse} returns this
+ * @return {!proto.api.v1.DepositResponse} returns this
  */
-proto.api.DepositResponse.prototype.clearDeposit = function() {
+proto.api.v1.DepositResponse.prototype.clearDeposit = function() {
   return this.setDeposit(undefined);
 };
 
@@ -21260,7 +24541,7 @@ proto.api.DepositResponse.prototype.clearDeposit = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.api.DepositResponse.prototype.hasDeposit = function() {
+proto.api.v1.DepositResponse.prototype.hasDeposit = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -21281,8 +24562,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.NetworkParametersRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.NetworkParametersRequest.toObject(opt_includeInstance, this);
+proto.api.v1.NetworkParametersRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.NetworkParametersRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -21291,11 +24572,11 @@ proto.api.NetworkParametersRequest.prototype.toObject = function(opt_includeInst
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.NetworkParametersRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.NetworkParametersRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.NetworkParametersRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.NetworkParametersRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -21311,23 +24592,23 @@ proto.api.NetworkParametersRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.NetworkParametersRequest}
+ * @return {!proto.api.v1.NetworkParametersRequest}
  */
-proto.api.NetworkParametersRequest.deserializeBinary = function(bytes) {
+proto.api.v1.NetworkParametersRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.NetworkParametersRequest;
-  return proto.api.NetworkParametersRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.NetworkParametersRequest;
+  return proto.api.v1.NetworkParametersRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.NetworkParametersRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.NetworkParametersRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.NetworkParametersRequest}
+ * @return {!proto.api.v1.NetworkParametersRequest}
  */
-proto.api.NetworkParametersRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.NetworkParametersRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -21347,9 +24628,9 @@ proto.api.NetworkParametersRequest.deserializeBinaryFromReader = function(msg, r
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.NetworkParametersRequest.prototype.serializeBinary = function() {
+proto.api.v1.NetworkParametersRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.NetworkParametersRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.NetworkParametersRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -21357,11 +24638,11 @@ proto.api.NetworkParametersRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.NetworkParametersRequest} message
+ * @param {!proto.api.v1.NetworkParametersRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.NetworkParametersRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.NetworkParametersRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -21372,7 +24653,7 @@ proto.api.NetworkParametersRequest.serializeBinaryToWriter = function(message, w
  * @private {!Array<number>}
  * @const
  */
-proto.api.NetworkParametersResponse.repeatedFields_ = [1];
+proto.api.v1.NetworkParametersResponse.repeatedFields_ = [1];
 
 
 
@@ -21389,8 +24670,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.NetworkParametersResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.NetworkParametersResponse.toObject(opt_includeInstance, this);
+proto.api.v1.NetworkParametersResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.NetworkParametersResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -21399,13 +24680,13 @@ proto.api.NetworkParametersResponse.prototype.toObject = function(opt_includeIns
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.NetworkParametersResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.NetworkParametersResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.NetworkParametersResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.NetworkParametersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    networkparametersList: jspb.Message.toObjectList(msg.getNetworkparametersList(),
+    networkParametersList: jspb.Message.toObjectList(msg.getNetworkParametersList(),
     vega_pb.NetworkParameter.toObject, includeInstance)
   };
 
@@ -21420,23 +24701,23 @@ proto.api.NetworkParametersResponse.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.NetworkParametersResponse}
+ * @return {!proto.api.v1.NetworkParametersResponse}
  */
-proto.api.NetworkParametersResponse.deserializeBinary = function(bytes) {
+proto.api.v1.NetworkParametersResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.NetworkParametersResponse;
-  return proto.api.NetworkParametersResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.NetworkParametersResponse;
+  return proto.api.v1.NetworkParametersResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.NetworkParametersResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.NetworkParametersResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.NetworkParametersResponse}
+ * @return {!proto.api.v1.NetworkParametersResponse}
  */
-proto.api.NetworkParametersResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.NetworkParametersResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -21446,7 +24727,7 @@ proto.api.NetworkParametersResponse.deserializeBinaryFromReader = function(msg, 
     case 1:
       var value = new vega_pb.NetworkParameter;
       reader.readMessage(value,vega_pb.NetworkParameter.deserializeBinaryFromReader);
-      msg.addNetworkparameters(value);
+      msg.addNetworkParameters(value);
       break;
     default:
       reader.skipField();
@@ -21461,9 +24742,9 @@ proto.api.NetworkParametersResponse.deserializeBinaryFromReader = function(msg, 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.NetworkParametersResponse.prototype.serializeBinary = function() {
+proto.api.v1.NetworkParametersResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.NetworkParametersResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.NetworkParametersResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -21471,13 +24752,13 @@ proto.api.NetworkParametersResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.NetworkParametersResponse} message
+ * @param {!proto.api.v1.NetworkParametersResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.NetworkParametersResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.NetworkParametersResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNetworkparametersList();
+  f = message.getNetworkParametersList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -21489,10 +24770,10 @@ proto.api.NetworkParametersResponse.serializeBinaryToWriter = function(message, 
 
 
 /**
- * repeated vega.NetworkParameter networkParameters = 1;
+ * repeated vega.NetworkParameter network_parameters = 1;
  * @return {!Array<!proto.vega.NetworkParameter>}
  */
-proto.api.NetworkParametersResponse.prototype.getNetworkparametersList = function() {
+proto.api.v1.NetworkParametersResponse.prototype.getNetworkParametersList = function() {
   return /** @type{!Array<!proto.vega.NetworkParameter>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.NetworkParameter, 1));
 };
@@ -21500,9 +24781,9 @@ proto.api.NetworkParametersResponse.prototype.getNetworkparametersList = functio
 
 /**
  * @param {!Array<!proto.vega.NetworkParameter>} value
- * @return {!proto.api.NetworkParametersResponse} returns this
+ * @return {!proto.api.v1.NetworkParametersResponse} returns this
 */
-proto.api.NetworkParametersResponse.prototype.setNetworkparametersList = function(value) {
+proto.api.v1.NetworkParametersResponse.prototype.setNetworkParametersList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -21512,17 +24793,17 @@ proto.api.NetworkParametersResponse.prototype.setNetworkparametersList = functio
  * @param {number=} opt_index
  * @return {!proto.vega.NetworkParameter}
  */
-proto.api.NetworkParametersResponse.prototype.addNetworkparameters = function(opt_value, opt_index) {
+proto.api.v1.NetworkParametersResponse.prototype.addNetworkParameters = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.NetworkParameter, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.NetworkParametersResponse} returns this
+ * @return {!proto.api.v1.NetworkParametersResponse} returns this
  */
-proto.api.NetworkParametersResponse.prototype.clearNetworkparametersList = function() {
-  return this.setNetworkparametersList([]);
+proto.api.v1.NetworkParametersResponse.prototype.clearNetworkParametersList = function() {
+  return this.setNetworkParametersList([]);
 };
 
 
@@ -21542,8 +24823,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.LiquidityProvisionsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.LiquidityProvisionsRequest.toObject(opt_includeInstance, this);
+proto.api.v1.LiquidityProvisionsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.LiquidityProvisionsRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -21552,11 +24833,11 @@ proto.api.LiquidityProvisionsRequest.prototype.toObject = function(opt_includeIn
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.LiquidityProvisionsRequest} msg The msg instance to transform.
+ * @param {!proto.api.v1.LiquidityProvisionsRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.LiquidityProvisionsRequest.toObject = function(includeInstance, msg) {
+proto.api.v1.LiquidityProvisionsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     market: jspb.Message.getFieldWithDefault(msg, 1, ""),
     party: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -21573,23 +24854,23 @@ proto.api.LiquidityProvisionsRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.LiquidityProvisionsRequest}
+ * @return {!proto.api.v1.LiquidityProvisionsRequest}
  */
-proto.api.LiquidityProvisionsRequest.deserializeBinary = function(bytes) {
+proto.api.v1.LiquidityProvisionsRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.LiquidityProvisionsRequest;
-  return proto.api.LiquidityProvisionsRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.LiquidityProvisionsRequest;
+  return proto.api.v1.LiquidityProvisionsRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.LiquidityProvisionsRequest} msg The message object to deserialize into.
+ * @param {!proto.api.v1.LiquidityProvisionsRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.LiquidityProvisionsRequest}
+ * @return {!proto.api.v1.LiquidityProvisionsRequest}
  */
-proto.api.LiquidityProvisionsRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.LiquidityProvisionsRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -21617,9 +24898,9 @@ proto.api.LiquidityProvisionsRequest.deserializeBinaryFromReader = function(msg,
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.LiquidityProvisionsRequest.prototype.serializeBinary = function() {
+proto.api.v1.LiquidityProvisionsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.LiquidityProvisionsRequest.serializeBinaryToWriter(this, writer);
+  proto.api.v1.LiquidityProvisionsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -21627,11 +24908,11 @@ proto.api.LiquidityProvisionsRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.LiquidityProvisionsRequest} message
+ * @param {!proto.api.v1.LiquidityProvisionsRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.LiquidityProvisionsRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.LiquidityProvisionsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getMarket();
   if (f.length > 0) {
@@ -21654,16 +24935,16 @@ proto.api.LiquidityProvisionsRequest.serializeBinaryToWriter = function(message,
  * optional string market = 1;
  * @return {string}
  */
-proto.api.LiquidityProvisionsRequest.prototype.getMarket = function() {
+proto.api.v1.LiquidityProvisionsRequest.prototype.getMarket = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.LiquidityProvisionsRequest} returns this
+ * @return {!proto.api.v1.LiquidityProvisionsRequest} returns this
  */
-proto.api.LiquidityProvisionsRequest.prototype.setMarket = function(value) {
+proto.api.v1.LiquidityProvisionsRequest.prototype.setMarket = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -21672,16 +24953,16 @@ proto.api.LiquidityProvisionsRequest.prototype.setMarket = function(value) {
  * optional string party = 2;
  * @return {string}
  */
-proto.api.LiquidityProvisionsRequest.prototype.getParty = function() {
+proto.api.v1.LiquidityProvisionsRequest.prototype.getParty = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.api.LiquidityProvisionsRequest} returns this
+ * @return {!proto.api.v1.LiquidityProvisionsRequest} returns this
  */
-proto.api.LiquidityProvisionsRequest.prototype.setParty = function(value) {
+proto.api.v1.LiquidityProvisionsRequest.prototype.setParty = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -21692,7 +24973,7 @@ proto.api.LiquidityProvisionsRequest.prototype.setParty = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.api.LiquidityProvisionsResponse.repeatedFields_ = [1];
+proto.api.v1.LiquidityProvisionsResponse.repeatedFields_ = [1];
 
 
 
@@ -21709,8 +24990,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.LiquidityProvisionsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.LiquidityProvisionsResponse.toObject(opt_includeInstance, this);
+proto.api.v1.LiquidityProvisionsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.v1.LiquidityProvisionsResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -21719,13 +25000,13 @@ proto.api.LiquidityProvisionsResponse.prototype.toObject = function(opt_includeI
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.LiquidityProvisionsResponse} msg The msg instance to transform.
+ * @param {!proto.api.v1.LiquidityProvisionsResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.LiquidityProvisionsResponse.toObject = function(includeInstance, msg) {
+proto.api.v1.LiquidityProvisionsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    liquidityprovisionsList: jspb.Message.toObjectList(msg.getLiquidityprovisionsList(),
+    liquidityProvisionsList: jspb.Message.toObjectList(msg.getLiquidityProvisionsList(),
     vega_pb.LiquidityProvision.toObject, includeInstance)
   };
 
@@ -21740,23 +25021,23 @@ proto.api.LiquidityProvisionsResponse.toObject = function(includeInstance, msg) 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.LiquidityProvisionsResponse}
+ * @return {!proto.api.v1.LiquidityProvisionsResponse}
  */
-proto.api.LiquidityProvisionsResponse.deserializeBinary = function(bytes) {
+proto.api.v1.LiquidityProvisionsResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.LiquidityProvisionsResponse;
-  return proto.api.LiquidityProvisionsResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.v1.LiquidityProvisionsResponse;
+  return proto.api.v1.LiquidityProvisionsResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.LiquidityProvisionsResponse} msg The message object to deserialize into.
+ * @param {!proto.api.v1.LiquidityProvisionsResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.LiquidityProvisionsResponse}
+ * @return {!proto.api.v1.LiquidityProvisionsResponse}
  */
-proto.api.LiquidityProvisionsResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.v1.LiquidityProvisionsResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -21766,7 +25047,7 @@ proto.api.LiquidityProvisionsResponse.deserializeBinaryFromReader = function(msg
     case 1:
       var value = new vega_pb.LiquidityProvision;
       reader.readMessage(value,vega_pb.LiquidityProvision.deserializeBinaryFromReader);
-      msg.addLiquidityprovisions(value);
+      msg.addLiquidityProvisions(value);
       break;
     default:
       reader.skipField();
@@ -21781,9 +25062,9 @@ proto.api.LiquidityProvisionsResponse.deserializeBinaryFromReader = function(msg
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.LiquidityProvisionsResponse.prototype.serializeBinary = function() {
+proto.api.v1.LiquidityProvisionsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.LiquidityProvisionsResponse.serializeBinaryToWriter(this, writer);
+  proto.api.v1.LiquidityProvisionsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -21791,13 +25072,13 @@ proto.api.LiquidityProvisionsResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.LiquidityProvisionsResponse} message
+ * @param {!proto.api.v1.LiquidityProvisionsResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.LiquidityProvisionsResponse.serializeBinaryToWriter = function(message, writer) {
+proto.api.v1.LiquidityProvisionsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLiquidityprovisionsList();
+  f = message.getLiquidityProvisionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -21809,10 +25090,10 @@ proto.api.LiquidityProvisionsResponse.serializeBinaryToWriter = function(message
 
 
 /**
- * repeated vega.LiquidityProvision liquidityProvisions = 1;
+ * repeated vega.LiquidityProvision liquidity_provisions = 1;
  * @return {!Array<!proto.vega.LiquidityProvision>}
  */
-proto.api.LiquidityProvisionsResponse.prototype.getLiquidityprovisionsList = function() {
+proto.api.v1.LiquidityProvisionsResponse.prototype.getLiquidityProvisionsList = function() {
   return /** @type{!Array<!proto.vega.LiquidityProvision>} */ (
     jspb.Message.getRepeatedWrapperField(this, vega_pb.LiquidityProvision, 1));
 };
@@ -21820,9 +25101,9 @@ proto.api.LiquidityProvisionsResponse.prototype.getLiquidityprovisionsList = fun
 
 /**
  * @param {!Array<!proto.vega.LiquidityProvision>} value
- * @return {!proto.api.LiquidityProvisionsResponse} returns this
+ * @return {!proto.api.v1.LiquidityProvisionsResponse} returns this
 */
-proto.api.LiquidityProvisionsResponse.prototype.setLiquidityprovisionsList = function(value) {
+proto.api.v1.LiquidityProvisionsResponse.prototype.setLiquidityProvisionsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -21832,18 +25113,18 @@ proto.api.LiquidityProvisionsResponse.prototype.setLiquidityprovisionsList = fun
  * @param {number=} opt_index
  * @return {!proto.vega.LiquidityProvision}
  */
-proto.api.LiquidityProvisionsResponse.prototype.addLiquidityprovisions = function(opt_value, opt_index) {
+proto.api.v1.LiquidityProvisionsResponse.prototype.addLiquidityProvisions = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.vega.LiquidityProvision, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.api.LiquidityProvisionsResponse} returns this
+ * @return {!proto.api.v1.LiquidityProvisionsResponse} returns this
  */
-proto.api.LiquidityProvisionsResponse.prototype.clearLiquidityprovisionsList = function() {
-  return this.setLiquidityprovisionsList([]);
+proto.api.v1.LiquidityProvisionsResponse.prototype.clearLiquidityProvisionsList = function() {
+  return this.setLiquidityProvisionsList([]);
 };
 
 
-goog.object.extend(exports, proto.api);
+goog.object.extend(exports, proto.api.v1);

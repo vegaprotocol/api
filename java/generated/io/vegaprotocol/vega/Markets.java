@@ -20,7 +20,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Duration of the auction in seconds.
+     * Duration of the auction in seconds
      * </pre>
      *
      * <code>int64 duration = 1 [json_name = "duration"];</code>
@@ -30,7 +30,7 @@ public final class Markets {
 
     /**
      * <pre>
-     *Target uncrossing trading volume.
+     *Target uncrossing trading volume
      * </pre>
      *
      * <code>uint64 volume = 2 [json_name = "volume"];</code>
@@ -42,11 +42,11 @@ public final class Markets {
    * <pre>
    * An auction duration is used to configure 3 auction periods:
    * 1. `duration &gt; 0`, `volume == 0`:
-   *   The auction will last for at least N seconds.
+   *   The auction will last for at least N seconds
    * 2. `duration == 0`, `volume &gt; 0`:
-   *   The auction will end once we can close with given traded volume.
+   *   The auction will end once we can close with given traded volume
    * 3. `duration &gt; 0`, `volume &gt; 0`:
-   *   The auction will take at least N seconds, but can end sooner if we can trade a certain volume.
+   *   The auction will take at least N seconds, but can end sooner if we can trade a certain volume
    * </pre>
    *
    * Protobuf type {@code vega.AuctionDuration}
@@ -139,7 +139,7 @@ public final class Markets {
     private long duration_;
     /**
      * <pre>
-     * Duration of the auction in seconds.
+     * Duration of the auction in seconds
      * </pre>
      *
      * <code>int64 duration = 1 [json_name = "duration"];</code>
@@ -154,7 +154,7 @@ public final class Markets {
     private long volume_;
     /**
      * <pre>
-     *Target uncrossing trading volume.
+     *Target uncrossing trading volume
      * </pre>
      *
      * <code>uint64 volume = 2 [json_name = "volume"];</code>
@@ -337,11 +337,11 @@ public final class Markets {
      * <pre>
      * An auction duration is used to configure 3 auction periods:
      * 1. `duration &gt; 0`, `volume == 0`:
-     *   The auction will last for at least N seconds.
+     *   The auction will last for at least N seconds
      * 2. `duration == 0`, `volume &gt; 0`:
-     *   The auction will end once we can close with given traded volume.
+     *   The auction will end once we can close with given traded volume
      * 3. `duration &gt; 0`, `volume &gt; 0`:
-     *   The auction will take at least N seconds, but can end sooner if we can trade a certain volume.
+     *   The auction will take at least N seconds, but can end sooner if we can trade a certain volume
      * </pre>
      *
      * Protobuf type {@code vega.AuctionDuration}
@@ -499,7 +499,7 @@ public final class Markets {
       private long duration_ ;
       /**
        * <pre>
-       * Duration of the auction in seconds.
+       * Duration of the auction in seconds
        * </pre>
        *
        * <code>int64 duration = 1 [json_name = "duration"];</code>
@@ -511,7 +511,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Duration of the auction in seconds.
+       * Duration of the auction in seconds
        * </pre>
        *
        * <code>int64 duration = 1 [json_name = "duration"];</code>
@@ -526,7 +526,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Duration of the auction in seconds.
+       * Duration of the auction in seconds
        * </pre>
        *
        * <code>int64 duration = 1 [json_name = "duration"];</code>
@@ -542,7 +542,7 @@ public final class Markets {
       private long volume_ ;
       /**
        * <pre>
-       *Target uncrossing trading volume.
+       *Target uncrossing trading volume
        * </pre>
        *
        * <code>uint64 volume = 2 [json_name = "volume"];</code>
@@ -554,7 +554,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       *Target uncrossing trading volume.
+       *Target uncrossing trading volume
        * </pre>
        *
        * <code>uint64 volume = 2 [json_name = "volume"];</code>
@@ -569,7 +569,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       *Target uncrossing trading volume.
+       *Target uncrossing trading volume
        * </pre>
        *
        * <code>uint64 volume = 2 [json_name = "volume"];</code>
@@ -640,19 +640,19 @@ public final class Markets {
 
     /**
      * <pre>
-     * Tick size.
+     * Tick size
      * </pre>
      *
-     * <code>string tickSize = 1 [json_name = "tickSize"];</code>
+     * <code>string tick_size = 1 [json_name = "tickSize"];</code>
      * @return The tickSize.
      */
     java.lang.String getTickSize();
     /**
      * <pre>
-     * Tick size.
+     * Tick size
      * </pre>
      *
-     * <code>string tickSize = 1 [json_name = "tickSize"];</code>
+     * <code>string tick_size = 1 [json_name = "tickSize"];</code>
      * @return The bytes for tickSize.
      */
     com.google.protobuf.ByteString
@@ -660,7 +660,7 @@ public final class Markets {
   }
   /**
    * <pre>
-   * Continuous trading.
+   * Continuous trading
    * </pre>
    *
    * Protobuf type {@code vega.ContinuousTrading}
@@ -746,14 +746,14 @@ public final class Markets {
               io.vegaprotocol.vega.Markets.ContinuousTrading.class, io.vegaprotocol.vega.Markets.ContinuousTrading.Builder.class);
     }
 
-    public static final int TICKSIZE_FIELD_NUMBER = 1;
+    public static final int TICK_SIZE_FIELD_NUMBER = 1;
     private volatile java.lang.Object tickSize_;
     /**
      * <pre>
-     * Tick size.
+     * Tick size
      * </pre>
      *
-     * <code>string tickSize = 1 [json_name = "tickSize"];</code>
+     * <code>string tick_size = 1 [json_name = "tickSize"];</code>
      * @return The tickSize.
      */
     @java.lang.Override
@@ -771,10 +771,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Tick size.
+     * Tick size
      * </pre>
      *
-     * <code>string tickSize = 1 [json_name = "tickSize"];</code>
+     * <code>string tick_size = 1 [json_name = "tickSize"];</code>
      * @return The bytes for tickSize.
      */
     @java.lang.Override
@@ -849,7 +849,7 @@ public final class Markets {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TICKSIZE_FIELD_NUMBER;
+      hash = (37 * hash) + TICK_SIZE_FIELD_NUMBER;
       hash = (53 * hash) + getTickSize().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -948,7 +948,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Continuous trading.
+     * Continuous trading
      * </pre>
      *
      * Protobuf type {@code vega.ContinuousTrading}
@@ -1101,10 +1101,10 @@ public final class Markets {
       private java.lang.Object tickSize_ = "";
       /**
        * <pre>
-       * Tick size.
+       * Tick size
        * </pre>
        *
-       * <code>string tickSize = 1 [json_name = "tickSize"];</code>
+       * <code>string tick_size = 1 [json_name = "tickSize"];</code>
        * @return The tickSize.
        */
       public java.lang.String getTickSize() {
@@ -1121,10 +1121,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tick size.
+       * Tick size
        * </pre>
        *
-       * <code>string tickSize = 1 [json_name = "tickSize"];</code>
+       * <code>string tick_size = 1 [json_name = "tickSize"];</code>
        * @return The bytes for tickSize.
        */
       public com.google.protobuf.ByteString
@@ -1142,10 +1142,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tick size.
+       * Tick size
        * </pre>
        *
-       * <code>string tickSize = 1 [json_name = "tickSize"];</code>
+       * <code>string tick_size = 1 [json_name = "tickSize"];</code>
        * @param value The tickSize to set.
        * @return This builder for chaining.
        */
@@ -1161,10 +1161,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tick size.
+       * Tick size
        * </pre>
        *
-       * <code>string tickSize = 1 [json_name = "tickSize"];</code>
+       * <code>string tick_size = 1 [json_name = "tickSize"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTickSize() {
@@ -1175,10 +1175,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tick size.
+       * Tick size
        * </pre>
        *
-       * <code>string tickSize = 1 [json_name = "tickSize"];</code>
+       * <code>string tick_size = 1 [json_name = "tickSize"];</code>
        * @param value The bytes for tickSize to set.
        * @return This builder for chaining.
        */
@@ -1255,26 +1255,26 @@ public final class Markets {
      * Duration in nanoseconds, maximum 1 month (2592000000000000 ns)
      * </pre>
      *
-     * <code>int64 durationNs = 1 [json_name = "durationNs", (.validator.field) = { ... }</code>
+     * <code>int64 duration_ns = 1 [json_name = "durationNs", (.validator.field) = { ... }</code>
      * @return The durationNs.
      */
     long getDurationNs();
 
     /**
      * <pre>
-     * Tick size.
+     * Tick size
      * </pre>
      *
-     * <code>string tickSize = 2 [json_name = "tickSize"];</code>
+     * <code>string tick_size = 2 [json_name = "tickSize"];</code>
      * @return The tickSize.
      */
     java.lang.String getTickSize();
     /**
      * <pre>
-     * Tick size.
+     * Tick size
      * </pre>
      *
-     * <code>string tickSize = 2 [json_name = "tickSize"];</code>
+     * <code>string tick_size = 2 [json_name = "tickSize"];</code>
      * @return The bytes for tickSize.
      */
     com.google.protobuf.ByteString
@@ -1282,7 +1282,7 @@ public final class Markets {
   }
   /**
    * <pre>
-   * Discrete trading.
+   * Discrete trading
    * </pre>
    *
    * Protobuf type {@code vega.DiscreteTrading}
@@ -1373,14 +1373,14 @@ public final class Markets {
               io.vegaprotocol.vega.Markets.DiscreteTrading.class, io.vegaprotocol.vega.Markets.DiscreteTrading.Builder.class);
     }
 
-    public static final int DURATIONNS_FIELD_NUMBER = 1;
+    public static final int DURATION_NS_FIELD_NUMBER = 1;
     private long durationNs_;
     /**
      * <pre>
      * Duration in nanoseconds, maximum 1 month (2592000000000000 ns)
      * </pre>
      *
-     * <code>int64 durationNs = 1 [json_name = "durationNs", (.validator.field) = { ... }</code>
+     * <code>int64 duration_ns = 1 [json_name = "durationNs", (.validator.field) = { ... }</code>
      * @return The durationNs.
      */
     @java.lang.Override
@@ -1388,14 +1388,14 @@ public final class Markets {
       return durationNs_;
     }
 
-    public static final int TICKSIZE_FIELD_NUMBER = 2;
+    public static final int TICK_SIZE_FIELD_NUMBER = 2;
     private volatile java.lang.Object tickSize_;
     /**
      * <pre>
-     * Tick size.
+     * Tick size
      * </pre>
      *
-     * <code>string tickSize = 2 [json_name = "tickSize"];</code>
+     * <code>string tick_size = 2 [json_name = "tickSize"];</code>
      * @return The tickSize.
      */
     @java.lang.Override
@@ -1413,10 +1413,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Tick size.
+     * Tick size
      * </pre>
      *
-     * <code>string tickSize = 2 [json_name = "tickSize"];</code>
+     * <code>string tick_size = 2 [json_name = "tickSize"];</code>
      * @return The bytes for tickSize.
      */
     @java.lang.Override
@@ -1500,10 +1500,10 @@ public final class Markets {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DURATIONNS_FIELD_NUMBER;
+      hash = (37 * hash) + DURATION_NS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getDurationNs());
-      hash = (37 * hash) + TICKSIZE_FIELD_NUMBER;
+      hash = (37 * hash) + TICK_SIZE_FIELD_NUMBER;
       hash = (53 * hash) + getTickSize().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1602,7 +1602,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Discrete trading.
+     * Discrete trading
      * </pre>
      *
      * Protobuf type {@code vega.DiscreteTrading}
@@ -1764,7 +1764,7 @@ public final class Markets {
        * Duration in nanoseconds, maximum 1 month (2592000000000000 ns)
        * </pre>
        *
-       * <code>int64 durationNs = 1 [json_name = "durationNs", (.validator.field) = { ... }</code>
+       * <code>int64 duration_ns = 1 [json_name = "durationNs", (.validator.field) = { ... }</code>
        * @return The durationNs.
        */
       @java.lang.Override
@@ -1776,7 +1776,7 @@ public final class Markets {
        * Duration in nanoseconds, maximum 1 month (2592000000000000 ns)
        * </pre>
        *
-       * <code>int64 durationNs = 1 [json_name = "durationNs", (.validator.field) = { ... }</code>
+       * <code>int64 duration_ns = 1 [json_name = "durationNs", (.validator.field) = { ... }</code>
        * @param value The durationNs to set.
        * @return This builder for chaining.
        */
@@ -1791,7 +1791,7 @@ public final class Markets {
        * Duration in nanoseconds, maximum 1 month (2592000000000000 ns)
        * </pre>
        *
-       * <code>int64 durationNs = 1 [json_name = "durationNs", (.validator.field) = { ... }</code>
+       * <code>int64 duration_ns = 1 [json_name = "durationNs", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearDurationNs() {
@@ -1804,10 +1804,10 @@ public final class Markets {
       private java.lang.Object tickSize_ = "";
       /**
        * <pre>
-       * Tick size.
+       * Tick size
        * </pre>
        *
-       * <code>string tickSize = 2 [json_name = "tickSize"];</code>
+       * <code>string tick_size = 2 [json_name = "tickSize"];</code>
        * @return The tickSize.
        */
       public java.lang.String getTickSize() {
@@ -1824,10 +1824,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tick size.
+       * Tick size
        * </pre>
        *
-       * <code>string tickSize = 2 [json_name = "tickSize"];</code>
+       * <code>string tick_size = 2 [json_name = "tickSize"];</code>
        * @return The bytes for tickSize.
        */
       public com.google.protobuf.ByteString
@@ -1845,10 +1845,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tick size.
+       * Tick size
        * </pre>
        *
-       * <code>string tickSize = 2 [json_name = "tickSize"];</code>
+       * <code>string tick_size = 2 [json_name = "tickSize"];</code>
        * @param value The tickSize to set.
        * @return This builder for chaining.
        */
@@ -1864,10 +1864,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tick size.
+       * Tick size
        * </pre>
        *
-       * <code>string tickSize = 2 [json_name = "tickSize"];</code>
+       * <code>string tick_size = 2 [json_name = "tickSize"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTickSize() {
@@ -1878,10 +1878,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tick size.
+       * Tick size
        * </pre>
        *
-       * <code>string tickSize = 2 [json_name = "tickSize"];</code>
+       * <code>string tick_size = 2 [json_name = "tickSize"];</code>
        * @param value The bytes for tickSize to set.
        * @return This builder for chaining.
        */
@@ -1955,7 +1955,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * The maturity for the future.
+     * The maturity for the future
      * </pre>
      *
      * <code>string maturity = 1 [json_name = "maturity"];</code>
@@ -1964,7 +1964,7 @@ public final class Markets {
     java.lang.String getMaturity();
     /**
      * <pre>
-     * The maturity for the future.
+     * The maturity for the future
      * </pre>
      *
      * <code>string maturity = 1 [json_name = "maturity"];</code>
@@ -1975,19 +1975,19 @@ public final class Markets {
 
     /**
      * <pre>
-     * The asset for the future.
+     * The asset for the future
      * </pre>
      *
-     * <code>string settlementAsset = 2 [json_name = "settlementAsset"];</code>
+     * <code>string settlement_asset = 2 [json_name = "settlementAsset"];</code>
      * @return The settlementAsset.
      */
     java.lang.String getSettlementAsset();
     /**
      * <pre>
-     * The asset for the future.
+     * The asset for the future
      * </pre>
      *
-     * <code>string settlementAsset = 2 [json_name = "settlementAsset"];</code>
+     * <code>string settlement_asset = 2 [json_name = "settlementAsset"];</code>
      * @return The bytes for settlementAsset.
      */
     com.google.protobuf.ByteString
@@ -1995,19 +1995,19 @@ public final class Markets {
 
     /**
      * <pre>
-     * Quote name of the instrument.
+     * Quote name of the instrument
      * </pre>
      *
-     * <code>string quoteName = 4 [json_name = "quoteName"];</code>
+     * <code>string quote_name = 4 [json_name = "quoteName"];</code>
      * @return The quoteName.
      */
     java.lang.String getQuoteName();
     /**
      * <pre>
-     * Quote name of the instrument.
+     * Quote name of the instrument
      * </pre>
      *
-     * <code>string quoteName = 4 [json_name = "quoteName"];</code>
+     * <code>string quote_name = 4 [json_name = "quoteName"];</code>
      * @return The bytes for quoteName.
      */
     com.google.protobuf.ByteString
@@ -2015,28 +2015,28 @@ public final class Markets {
 
     /**
      * <pre>
-     * Ethereum events.
+     * Ethereum events
      * </pre>
      *
-     * <code>.vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];</code>
+     * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
      * @return Whether the ethereumEvent field is set.
      */
     boolean hasEthereumEvent();
     /**
      * <pre>
-     * Ethereum events.
+     * Ethereum events
      * </pre>
      *
-     * <code>.vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];</code>
+     * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
      * @return The ethereumEvent.
      */
     io.vegaprotocol.vega.Markets.EthereumEvent getEthereumEvent();
     /**
      * <pre>
-     * Ethereum events.
+     * Ethereum events
      * </pre>
      *
-     * <code>.vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];</code>
+     * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
      */
     io.vegaprotocol.vega.Markets.EthereumEventOrBuilder getEthereumEventOrBuilder();
 
@@ -2044,7 +2044,7 @@ public final class Markets {
   }
   /**
    * <pre>
-   * Future product definition.
+   * Future product definition
    * </pre>
    *
    * Protobuf type {@code vega.Future}
@@ -2163,7 +2163,7 @@ public final class Markets {
     public enum OracleCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      ETHEREUMEVENT(100),
+      ETHEREUM_EVENT(100),
       ORACLE_NOT_SET(0);
       private final int value;
       private OracleCase(int value) {
@@ -2181,7 +2181,7 @@ public final class Markets {
 
       public static OracleCase forNumber(int value) {
         switch (value) {
-          case 100: return ETHEREUMEVENT;
+          case 100: return ETHEREUM_EVENT;
           case 0: return ORACLE_NOT_SET;
           default: return null;
         }
@@ -2201,7 +2201,7 @@ public final class Markets {
     private volatile java.lang.Object maturity_;
     /**
      * <pre>
-     * The maturity for the future.
+     * The maturity for the future
      * </pre>
      *
      * <code>string maturity = 1 [json_name = "maturity"];</code>
@@ -2222,7 +2222,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * The maturity for the future.
+     * The maturity for the future
      * </pre>
      *
      * <code>string maturity = 1 [json_name = "maturity"];</code>
@@ -2243,14 +2243,14 @@ public final class Markets {
       }
     }
 
-    public static final int SETTLEMENTASSET_FIELD_NUMBER = 2;
+    public static final int SETTLEMENT_ASSET_FIELD_NUMBER = 2;
     private volatile java.lang.Object settlementAsset_;
     /**
      * <pre>
-     * The asset for the future.
+     * The asset for the future
      * </pre>
      *
-     * <code>string settlementAsset = 2 [json_name = "settlementAsset"];</code>
+     * <code>string settlement_asset = 2 [json_name = "settlementAsset"];</code>
      * @return The settlementAsset.
      */
     @java.lang.Override
@@ -2268,10 +2268,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * The asset for the future.
+     * The asset for the future
      * </pre>
      *
-     * <code>string settlementAsset = 2 [json_name = "settlementAsset"];</code>
+     * <code>string settlement_asset = 2 [json_name = "settlementAsset"];</code>
      * @return The bytes for settlementAsset.
      */
     @java.lang.Override
@@ -2289,14 +2289,14 @@ public final class Markets {
       }
     }
 
-    public static final int QUOTENAME_FIELD_NUMBER = 4;
+    public static final int QUOTE_NAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object quoteName_;
     /**
      * <pre>
-     * Quote name of the instrument.
+     * Quote name of the instrument
      * </pre>
      *
-     * <code>string quoteName = 4 [json_name = "quoteName"];</code>
+     * <code>string quote_name = 4 [json_name = "quoteName"];</code>
      * @return The quoteName.
      */
     @java.lang.Override
@@ -2314,10 +2314,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Quote name of the instrument.
+     * Quote name of the instrument
      * </pre>
      *
-     * <code>string quoteName = 4 [json_name = "quoteName"];</code>
+     * <code>string quote_name = 4 [json_name = "quoteName"];</code>
      * @return The bytes for quoteName.
      */
     @java.lang.Override
@@ -2335,13 +2335,13 @@ public final class Markets {
       }
     }
 
-    public static final int ETHEREUMEVENT_FIELD_NUMBER = 100;
+    public static final int ETHEREUM_EVENT_FIELD_NUMBER = 100;
     /**
      * <pre>
-     * Ethereum events.
+     * Ethereum events
      * </pre>
      *
-     * <code>.vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];</code>
+     * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
      * @return Whether the ethereumEvent field is set.
      */
     @java.lang.Override
@@ -2350,10 +2350,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Ethereum events.
+     * Ethereum events
      * </pre>
      *
-     * <code>.vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];</code>
+     * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
      * @return The ethereumEvent.
      */
     @java.lang.Override
@@ -2365,10 +2365,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Ethereum events.
+     * Ethereum events
      * </pre>
      *
-     * <code>.vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];</code>
+     * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Markets.EthereumEventOrBuilder getEthereumEventOrBuilder() {
@@ -2469,13 +2469,13 @@ public final class Markets {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MATURITY_FIELD_NUMBER;
       hash = (53 * hash) + getMaturity().hashCode();
-      hash = (37 * hash) + SETTLEMENTASSET_FIELD_NUMBER;
+      hash = (37 * hash) + SETTLEMENT_ASSET_FIELD_NUMBER;
       hash = (53 * hash) + getSettlementAsset().hashCode();
-      hash = (37 * hash) + QUOTENAME_FIELD_NUMBER;
+      hash = (37 * hash) + QUOTE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getQuoteName().hashCode();
       switch (oracleCase_) {
         case 100:
-          hash = (37 * hash) + ETHEREUMEVENT_FIELD_NUMBER;
+          hash = (37 * hash) + ETHEREUM_EVENT_FIELD_NUMBER;
           hash = (53 * hash) + getEthereumEvent().hashCode();
           break;
         case 0:
@@ -2578,7 +2578,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Future product definition.
+     * Future product definition
      * </pre>
      *
      * Protobuf type {@code vega.Future}
@@ -2724,7 +2724,7 @@ public final class Markets {
           onChanged();
         }
         switch (other.getOracleCase()) {
-          case ETHEREUMEVENT: {
+          case ETHEREUM_EVENT: {
             mergeEthereumEvent(other.getEthereumEvent());
             break;
           }
@@ -2779,7 +2779,7 @@ public final class Markets {
       private java.lang.Object maturity_ = "";
       /**
        * <pre>
-       * The maturity for the future.
+       * The maturity for the future
        * </pre>
        *
        * <code>string maturity = 1 [json_name = "maturity"];</code>
@@ -2799,7 +2799,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * The maturity for the future.
+       * The maturity for the future
        * </pre>
        *
        * <code>string maturity = 1 [json_name = "maturity"];</code>
@@ -2820,7 +2820,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * The maturity for the future.
+       * The maturity for the future
        * </pre>
        *
        * <code>string maturity = 1 [json_name = "maturity"];</code>
@@ -2839,7 +2839,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * The maturity for the future.
+       * The maturity for the future
        * </pre>
        *
        * <code>string maturity = 1 [json_name = "maturity"];</code>
@@ -2853,7 +2853,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * The maturity for the future.
+       * The maturity for the future
        * </pre>
        *
        * <code>string maturity = 1 [json_name = "maturity"];</code>
@@ -2875,10 +2875,10 @@ public final class Markets {
       private java.lang.Object settlementAsset_ = "";
       /**
        * <pre>
-       * The asset for the future.
+       * The asset for the future
        * </pre>
        *
-       * <code>string settlementAsset = 2 [json_name = "settlementAsset"];</code>
+       * <code>string settlement_asset = 2 [json_name = "settlementAsset"];</code>
        * @return The settlementAsset.
        */
       public java.lang.String getSettlementAsset() {
@@ -2895,10 +2895,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * The asset for the future.
+       * The asset for the future
        * </pre>
        *
-       * <code>string settlementAsset = 2 [json_name = "settlementAsset"];</code>
+       * <code>string settlement_asset = 2 [json_name = "settlementAsset"];</code>
        * @return The bytes for settlementAsset.
        */
       public com.google.protobuf.ByteString
@@ -2916,10 +2916,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * The asset for the future.
+       * The asset for the future
        * </pre>
        *
-       * <code>string settlementAsset = 2 [json_name = "settlementAsset"];</code>
+       * <code>string settlement_asset = 2 [json_name = "settlementAsset"];</code>
        * @param value The settlementAsset to set.
        * @return This builder for chaining.
        */
@@ -2935,10 +2935,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * The asset for the future.
+       * The asset for the future
        * </pre>
        *
-       * <code>string settlementAsset = 2 [json_name = "settlementAsset"];</code>
+       * <code>string settlement_asset = 2 [json_name = "settlementAsset"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSettlementAsset() {
@@ -2949,10 +2949,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * The asset for the future.
+       * The asset for the future
        * </pre>
        *
-       * <code>string settlementAsset = 2 [json_name = "settlementAsset"];</code>
+       * <code>string settlement_asset = 2 [json_name = "settlementAsset"];</code>
        * @param value The bytes for settlementAsset to set.
        * @return This builder for chaining.
        */
@@ -2971,10 +2971,10 @@ public final class Markets {
       private java.lang.Object quoteName_ = "";
       /**
        * <pre>
-       * Quote name of the instrument.
+       * Quote name of the instrument
        * </pre>
        *
-       * <code>string quoteName = 4 [json_name = "quoteName"];</code>
+       * <code>string quote_name = 4 [json_name = "quoteName"];</code>
        * @return The quoteName.
        */
       public java.lang.String getQuoteName() {
@@ -2991,10 +2991,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Quote name of the instrument.
+       * Quote name of the instrument
        * </pre>
        *
-       * <code>string quoteName = 4 [json_name = "quoteName"];</code>
+       * <code>string quote_name = 4 [json_name = "quoteName"];</code>
        * @return The bytes for quoteName.
        */
       public com.google.protobuf.ByteString
@@ -3012,10 +3012,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Quote name of the instrument.
+       * Quote name of the instrument
        * </pre>
        *
-       * <code>string quoteName = 4 [json_name = "quoteName"];</code>
+       * <code>string quote_name = 4 [json_name = "quoteName"];</code>
        * @param value The quoteName to set.
        * @return This builder for chaining.
        */
@@ -3031,10 +3031,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Quote name of the instrument.
+       * Quote name of the instrument
        * </pre>
        *
-       * <code>string quoteName = 4 [json_name = "quoteName"];</code>
+       * <code>string quote_name = 4 [json_name = "quoteName"];</code>
        * @return This builder for chaining.
        */
       public Builder clearQuoteName() {
@@ -3045,10 +3045,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Quote name of the instrument.
+       * Quote name of the instrument
        * </pre>
        *
-       * <code>string quoteName = 4 [json_name = "quoteName"];</code>
+       * <code>string quote_name = 4 [json_name = "quoteName"];</code>
        * @param value The bytes for quoteName to set.
        * @return This builder for chaining.
        */
@@ -3068,10 +3068,10 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.EthereumEvent, io.vegaprotocol.vega.Markets.EthereumEvent.Builder, io.vegaprotocol.vega.Markets.EthereumEventOrBuilder> ethereumEventBuilder_;
       /**
        * <pre>
-       * Ethereum events.
+       * Ethereum events
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];</code>
+       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
        * @return Whether the ethereumEvent field is set.
        */
       @java.lang.Override
@@ -3080,10 +3080,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Ethereum events.
+       * Ethereum events
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];</code>
+       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
        * @return The ethereumEvent.
        */
       @java.lang.Override
@@ -3102,10 +3102,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Ethereum events.
+       * Ethereum events
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];</code>
+       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
        */
       public Builder setEthereumEvent(io.vegaprotocol.vega.Markets.EthereumEvent value) {
         if (ethereumEventBuilder_ == null) {
@@ -3122,10 +3122,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Ethereum events.
+       * Ethereum events
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];</code>
+       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
        */
       public Builder setEthereumEvent(
           io.vegaprotocol.vega.Markets.EthereumEvent.Builder builderForValue) {
@@ -3140,10 +3140,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Ethereum events.
+       * Ethereum events
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];</code>
+       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
        */
       public Builder mergeEthereumEvent(io.vegaprotocol.vega.Markets.EthereumEvent value) {
         if (ethereumEventBuilder_ == null) {
@@ -3166,10 +3166,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Ethereum events.
+       * Ethereum events
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];</code>
+       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
        */
       public Builder clearEthereumEvent() {
         if (ethereumEventBuilder_ == null) {
@@ -3189,20 +3189,20 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Ethereum events.
+       * Ethereum events
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];</code>
+       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
        */
       public io.vegaprotocol.vega.Markets.EthereumEvent.Builder getEthereumEventBuilder() {
         return getEthereumEventFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Ethereum events.
+       * Ethereum events
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];</code>
+       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Markets.EthereumEventOrBuilder getEthereumEventOrBuilder() {
@@ -3217,10 +3217,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Ethereum events.
+       * Ethereum events
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];</code>
+       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.EthereumEvent, io.vegaprotocol.vega.Markets.EthereumEvent.Builder, io.vegaprotocol.vega.Markets.EthereumEventOrBuilder>
@@ -3299,27 +3299,27 @@ public final class Markets {
 
     /**
      * <pre>
-     * Ethereum contract identifier.
+     * Ethereum contract identifier
      * </pre>
      *
-     * <code>string contractID = 1 [json_name = "contractID"];</code>
-     * @return The contractID.
+     * <code>string contract_id = 1 [json_name = "contractId"];</code>
+     * @return The contractId.
      */
-    java.lang.String getContractID();
+    java.lang.String getContractId();
     /**
      * <pre>
-     * Ethereum contract identifier.
+     * Ethereum contract identifier
      * </pre>
      *
-     * <code>string contractID = 1 [json_name = "contractID"];</code>
-     * @return The bytes for contractID.
+     * <code>string contract_id = 1 [json_name = "contractId"];</code>
+     * @return The bytes for contractId.
      */
     com.google.protobuf.ByteString
-        getContractIDBytes();
+        getContractIdBytes();
 
     /**
      * <pre>
-     * Event.
+     * Event
      * </pre>
      *
      * <code>string event = 2 [json_name = "event"];</code>
@@ -3328,7 +3328,7 @@ public final class Markets {
     java.lang.String getEvent();
     /**
      * <pre>
-     * Event.
+     * Event
      * </pre>
      *
      * <code>string event = 2 [json_name = "event"];</code>
@@ -3339,7 +3339,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Value.
+     * Value
      * </pre>
      *
      * <code>uint64 value = 3 [json_name = "value"];</code>
@@ -3349,7 +3349,7 @@ public final class Markets {
   }
   /**
    * <pre>
-   * Ethereum event (for oracles).
+   * Ethereum event (for oracles)
    * </pre>
    *
    * Protobuf type {@code vega.EthereumEvent}
@@ -3364,7 +3364,7 @@ public final class Markets {
       super(builder);
     }
     private EthereumEvent() {
-      contractID_ = "";
+      contractId_ = "";
       event_ = "";
     }
 
@@ -3401,7 +3401,7 @@ public final class Markets {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              contractID_ = s;
+              contractId_ = s;
               break;
             }
             case 18: {
@@ -3447,46 +3447,46 @@ public final class Markets {
               io.vegaprotocol.vega.Markets.EthereumEvent.class, io.vegaprotocol.vega.Markets.EthereumEvent.Builder.class);
     }
 
-    public static final int CONTRACTID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object contractID_;
+    public static final int CONTRACT_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object contractId_;
     /**
      * <pre>
-     * Ethereum contract identifier.
+     * Ethereum contract identifier
      * </pre>
      *
-     * <code>string contractID = 1 [json_name = "contractID"];</code>
-     * @return The contractID.
+     * <code>string contract_id = 1 [json_name = "contractId"];</code>
+     * @return The contractId.
      */
     @java.lang.Override
-    public java.lang.String getContractID() {
-      java.lang.Object ref = contractID_;
+    public java.lang.String getContractId() {
+      java.lang.Object ref = contractId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        contractID_ = s;
+        contractId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * Ethereum contract identifier.
+     * Ethereum contract identifier
      * </pre>
      *
-     * <code>string contractID = 1 [json_name = "contractID"];</code>
-     * @return The bytes for contractID.
+     * <code>string contract_id = 1 [json_name = "contractId"];</code>
+     * @return The bytes for contractId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getContractIDBytes() {
-      java.lang.Object ref = contractID_;
+        getContractIdBytes() {
+      java.lang.Object ref = contractId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        contractID_ = b;
+        contractId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3497,7 +3497,7 @@ public final class Markets {
     private volatile java.lang.Object event_;
     /**
      * <pre>
-     * Event.
+     * Event
      * </pre>
      *
      * <code>string event = 2 [json_name = "event"];</code>
@@ -3518,7 +3518,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Event.
+     * Event
      * </pre>
      *
      * <code>string event = 2 [json_name = "event"];</code>
@@ -3543,7 +3543,7 @@ public final class Markets {
     private long value_;
     /**
      * <pre>
-     * Value.
+     * Value
      * </pre>
      *
      * <code>uint64 value = 3 [json_name = "value"];</code>
@@ -3568,8 +3568,8 @@ public final class Markets {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getContractIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, contractID_);
+      if (!getContractIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, contractId_);
       }
       if (!getEventBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, event_);
@@ -3586,8 +3586,8 @@ public final class Markets {
       if (size != -1) return size;
 
       size = 0;
-      if (!getContractIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, contractID_);
+      if (!getContractIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, contractId_);
       }
       if (!getEventBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, event_);
@@ -3611,8 +3611,8 @@ public final class Markets {
       }
       io.vegaprotocol.vega.Markets.EthereumEvent other = (io.vegaprotocol.vega.Markets.EthereumEvent) obj;
 
-      if (!getContractID()
-          .equals(other.getContractID())) return false;
+      if (!getContractId()
+          .equals(other.getContractId())) return false;
       if (!getEvent()
           .equals(other.getEvent())) return false;
       if (getValue()
@@ -3628,8 +3628,8 @@ public final class Markets {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CONTRACTID_FIELD_NUMBER;
-      hash = (53 * hash) + getContractID().hashCode();
+      hash = (37 * hash) + CONTRACT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getContractId().hashCode();
       hash = (37 * hash) + EVENT_FIELD_NUMBER;
       hash = (53 * hash) + getEvent().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
@@ -3732,7 +3732,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Ethereum event (for oracles).
+     * Ethereum event (for oracles)
      * </pre>
      *
      * Protobuf type {@code vega.EthereumEvent}
@@ -3772,7 +3772,7 @@ public final class Markets {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        contractID_ = "";
+        contractId_ = "";
 
         event_ = "";
 
@@ -3804,7 +3804,7 @@ public final class Markets {
       @java.lang.Override
       public io.vegaprotocol.vega.Markets.EthereumEvent buildPartial() {
         io.vegaprotocol.vega.Markets.EthereumEvent result = new io.vegaprotocol.vega.Markets.EthereumEvent(this);
-        result.contractID_ = contractID_;
+        result.contractId_ = contractId_;
         result.event_ = event_;
         result.value_ = value_;
         onBuilt();
@@ -3855,8 +3855,8 @@ public final class Markets {
 
       public Builder mergeFrom(io.vegaprotocol.vega.Markets.EthereumEvent other) {
         if (other == io.vegaprotocol.vega.Markets.EthereumEvent.getDefaultInstance()) return this;
-        if (!other.getContractID().isEmpty()) {
-          contractID_ = other.contractID_;
+        if (!other.getContractId().isEmpty()) {
+          contractId_ = other.contractId_;
           onChanged();
         }
         if (!other.getEvent().isEmpty()) {
@@ -3895,22 +3895,22 @@ public final class Markets {
         return this;
       }
 
-      private java.lang.Object contractID_ = "";
+      private java.lang.Object contractId_ = "";
       /**
        * <pre>
-       * Ethereum contract identifier.
+       * Ethereum contract identifier
        * </pre>
        *
-       * <code>string contractID = 1 [json_name = "contractID"];</code>
-       * @return The contractID.
+       * <code>string contract_id = 1 [json_name = "contractId"];</code>
+       * @return The contractId.
        */
-      public java.lang.String getContractID() {
-        java.lang.Object ref = contractID_;
+      public java.lang.String getContractId() {
+        java.lang.Object ref = contractId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          contractID_ = s;
+          contractId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -3918,20 +3918,20 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Ethereum contract identifier.
+       * Ethereum contract identifier
        * </pre>
        *
-       * <code>string contractID = 1 [json_name = "contractID"];</code>
-       * @return The bytes for contractID.
+       * <code>string contract_id = 1 [json_name = "contractId"];</code>
+       * @return The bytes for contractId.
        */
       public com.google.protobuf.ByteString
-          getContractIDBytes() {
-        java.lang.Object ref = contractID_;
+          getContractIdBytes() {
+        java.lang.Object ref = contractId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          contractID_ = b;
+          contractId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -3939,54 +3939,54 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Ethereum contract identifier.
+       * Ethereum contract identifier
        * </pre>
        *
-       * <code>string contractID = 1 [json_name = "contractID"];</code>
-       * @param value The contractID to set.
+       * <code>string contract_id = 1 [json_name = "contractId"];</code>
+       * @param value The contractId to set.
        * @return This builder for chaining.
        */
-      public Builder setContractID(
+      public Builder setContractId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        contractID_ = value;
+        contractId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Ethereum contract identifier.
+       * Ethereum contract identifier
        * </pre>
        *
-       * <code>string contractID = 1 [json_name = "contractID"];</code>
+       * <code>string contract_id = 1 [json_name = "contractId"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearContractID() {
+      public Builder clearContractId() {
 
-        contractID_ = getDefaultInstance().getContractID();
+        contractId_ = getDefaultInstance().getContractId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Ethereum contract identifier.
+       * Ethereum contract identifier
        * </pre>
        *
-       * <code>string contractID = 1 [json_name = "contractID"];</code>
-       * @param value The bytes for contractID to set.
+       * <code>string contract_id = 1 [json_name = "contractId"];</code>
+       * @param value The bytes for contractId to set.
        * @return This builder for chaining.
        */
-      public Builder setContractIDBytes(
+      public Builder setContractIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        contractID_ = value;
+        contractId_ = value;
         onChanged();
         return this;
       }
@@ -3994,7 +3994,7 @@ public final class Markets {
       private java.lang.Object event_ = "";
       /**
        * <pre>
-       * Event.
+       * Event
        * </pre>
        *
        * <code>string event = 2 [json_name = "event"];</code>
@@ -4014,7 +4014,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Event.
+       * Event
        * </pre>
        *
        * <code>string event = 2 [json_name = "event"];</code>
@@ -4035,7 +4035,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Event.
+       * Event
        * </pre>
        *
        * <code>string event = 2 [json_name = "event"];</code>
@@ -4054,7 +4054,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Event.
+       * Event
        * </pre>
        *
        * <code>string event = 2 [json_name = "event"];</code>
@@ -4068,7 +4068,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Event.
+       * Event
        * </pre>
        *
        * <code>string event = 2 [json_name = "event"];</code>
@@ -4090,7 +4090,7 @@ public final class Markets {
       private long value_ ;
       /**
        * <pre>
-       * Value.
+       * Value
        * </pre>
        *
        * <code>uint64 value = 3 [json_name = "value"];</code>
@@ -4102,7 +4102,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Value.
+       * Value
        * </pre>
        *
        * <code>uint64 value = 3 [json_name = "value"];</code>
@@ -4117,7 +4117,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Value.
+       * Value
        * </pre>
        *
        * <code>uint64 value = 3 [json_name = "value"];</code>
@@ -4188,7 +4188,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * A list of 0 or more tags.
+     * A list of 0 or more tags
      * </pre>
      *
      * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4198,7 +4198,7 @@ public final class Markets {
         getTagsList();
     /**
      * <pre>
-     * A list of 0 or more tags.
+     * A list of 0 or more tags
      * </pre>
      *
      * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4207,7 +4207,7 @@ public final class Markets {
     int getTagsCount();
     /**
      * <pre>
-     * A list of 0 or more tags.
+     * A list of 0 or more tags
      * </pre>
      *
      * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4217,7 +4217,7 @@ public final class Markets {
     java.lang.String getTags(int index);
     /**
      * <pre>
-     * A list of 0 or more tags.
+     * A list of 0 or more tags
      * </pre>
      *
      * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4229,7 +4229,7 @@ public final class Markets {
   }
   /**
    * <pre>
-   * Instrument metadata definition.
+   * Instrument metadata definition
    * </pre>
    *
    * Protobuf type {@code vega.InstrumentMetadata}
@@ -4326,7 +4326,7 @@ public final class Markets {
     private com.google.protobuf.LazyStringList tags_;
     /**
      * <pre>
-     * A list of 0 or more tags.
+     * A list of 0 or more tags
      * </pre>
      *
      * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4338,7 +4338,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * A list of 0 or more tags.
+     * A list of 0 or more tags
      * </pre>
      *
      * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4349,7 +4349,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * A list of 0 or more tags.
+     * A list of 0 or more tags
      * </pre>
      *
      * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4361,7 +4361,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * A list of 0 or more tags.
+     * A list of 0 or more tags
      * </pre>
      *
      * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4536,7 +4536,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Instrument metadata definition.
+     * Instrument metadata definition
      * </pre>
      *
      * Protobuf type {@code vega.InstrumentMetadata}
@@ -4707,7 +4707,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A list of 0 or more tags.
+       * A list of 0 or more tags
        * </pre>
        *
        * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4719,7 +4719,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A list of 0 or more tags.
+       * A list of 0 or more tags
        * </pre>
        *
        * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4730,7 +4730,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A list of 0 or more tags.
+       * A list of 0 or more tags
        * </pre>
        *
        * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4742,7 +4742,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A list of 0 or more tags.
+       * A list of 0 or more tags
        * </pre>
        *
        * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4755,7 +4755,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A list of 0 or more tags.
+       * A list of 0 or more tags
        * </pre>
        *
        * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4775,7 +4775,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A list of 0 or more tags.
+       * A list of 0 or more tags
        * </pre>
        *
        * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4794,7 +4794,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A list of 0 or more tags.
+       * A list of 0 or more tags
        * </pre>
        *
        * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4811,7 +4811,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A list of 0 or more tags.
+       * A list of 0 or more tags
        * </pre>
        *
        * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4825,7 +4825,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A list of 0 or more tags.
+       * A list of 0 or more tags
        * </pre>
        *
        * <code>repeated string tags = 1 [json_name = "tags"];</code>
@@ -4902,7 +4902,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Instrument identifier.
+     * Instrument identifier
      * </pre>
      *
      * <code>string id = 1 [json_name = "id"];</code>
@@ -4911,7 +4911,7 @@ public final class Markets {
     java.lang.String getId();
     /**
      * <pre>
-     * Instrument identifier.
+     * Instrument identifier
      * </pre>
      *
      * <code>string id = 1 [json_name = "id"];</code>
@@ -4922,7 +4922,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Code for the instrument.
+     * Code for the instrument
      * </pre>
      *
      * <code>string code = 2 [json_name = "code"];</code>
@@ -4931,7 +4931,7 @@ public final class Markets {
     java.lang.String getCode();
     /**
      * <pre>
-     * Code for the instrument.
+     * Code for the instrument
      * </pre>
      *
      * <code>string code = 2 [json_name = "code"];</code>
@@ -4942,7 +4942,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Name of the instrument.
+     * Name of the instrument
      * </pre>
      *
      * <code>string name = 3 [json_name = "name"];</code>
@@ -4951,7 +4951,7 @@ public final class Markets {
     java.lang.String getName();
     /**
      * <pre>
-     * Name of the instrument.
+     * Name of the instrument
      * </pre>
      *
      * <code>string name = 3 [json_name = "name"];</code>
@@ -4962,7 +4962,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * A collection of instrument meta-data.
+     * A collection of instrument meta-data
      * </pre>
      *
      * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
@@ -4971,7 +4971,7 @@ public final class Markets {
     boolean hasMetadata();
     /**
      * <pre>
-     * A collection of instrument meta-data.
+     * A collection of instrument meta-data
      * </pre>
      *
      * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
@@ -4980,7 +4980,7 @@ public final class Markets {
     io.vegaprotocol.vega.Markets.InstrumentMetadata getMetadata();
     /**
      * <pre>
-     * A collection of instrument meta-data.
+     * A collection of instrument meta-data
      * </pre>
      *
      * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
@@ -4989,17 +4989,17 @@ public final class Markets {
 
     /**
      * <pre>
-     * An initial mark price for the instrument.
+     * An initial mark price for the instrument
      * </pre>
      *
-     * <code>uint64 initialMarkPrice = 5 [json_name = "initialMarkPrice"];</code>
+     * <code>uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];</code>
      * @return The initialMarkPrice.
      */
     long getInitialMarkPrice();
 
     /**
      * <pre>
-     * Future.
+     * Future
      * </pre>
      *
      * <code>.vega.Future future = 100 [json_name = "future"];</code>
@@ -5008,7 +5008,7 @@ public final class Markets {
     boolean hasFuture();
     /**
      * <pre>
-     * Future.
+     * Future
      * </pre>
      *
      * <code>.vega.Future future = 100 [json_name = "future"];</code>
@@ -5017,7 +5017,7 @@ public final class Markets {
     io.vegaprotocol.vega.Markets.Future getFuture();
     /**
      * <pre>
-     * Future.
+     * Future
      * </pre>
      *
      * <code>.vega.Future future = 100 [json_name = "future"];</code>
@@ -5028,7 +5028,7 @@ public final class Markets {
   }
   /**
    * <pre>
-   * Instrument definition.
+   * Instrument definition
    * </pre>
    *
    * Protobuf type {@code vega.Instrument}
@@ -5203,7 +5203,7 @@ public final class Markets {
     private volatile java.lang.Object id_;
     /**
      * <pre>
-     * Instrument identifier.
+     * Instrument identifier
      * </pre>
      *
      * <code>string id = 1 [json_name = "id"];</code>
@@ -5224,7 +5224,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Instrument identifier.
+     * Instrument identifier
      * </pre>
      *
      * <code>string id = 1 [json_name = "id"];</code>
@@ -5249,7 +5249,7 @@ public final class Markets {
     private volatile java.lang.Object code_;
     /**
      * <pre>
-     * Code for the instrument.
+     * Code for the instrument
      * </pre>
      *
      * <code>string code = 2 [json_name = "code"];</code>
@@ -5270,7 +5270,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Code for the instrument.
+     * Code for the instrument
      * </pre>
      *
      * <code>string code = 2 [json_name = "code"];</code>
@@ -5295,7 +5295,7 @@ public final class Markets {
     private volatile java.lang.Object name_;
     /**
      * <pre>
-     * Name of the instrument.
+     * Name of the instrument
      * </pre>
      *
      * <code>string name = 3 [json_name = "name"];</code>
@@ -5316,7 +5316,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Name of the instrument.
+     * Name of the instrument
      * </pre>
      *
      * <code>string name = 3 [json_name = "name"];</code>
@@ -5341,7 +5341,7 @@ public final class Markets {
     private io.vegaprotocol.vega.Markets.InstrumentMetadata metadata_;
     /**
      * <pre>
-     * A collection of instrument meta-data.
+     * A collection of instrument meta-data
      * </pre>
      *
      * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
@@ -5353,7 +5353,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * A collection of instrument meta-data.
+     * A collection of instrument meta-data
      * </pre>
      *
      * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
@@ -5365,7 +5365,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * A collection of instrument meta-data.
+     * A collection of instrument meta-data
      * </pre>
      *
      * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
@@ -5375,14 +5375,14 @@ public final class Markets {
       return getMetadata();
     }
 
-    public static final int INITIALMARKPRICE_FIELD_NUMBER = 5;
+    public static final int INITIAL_MARK_PRICE_FIELD_NUMBER = 5;
     private long initialMarkPrice_;
     /**
      * <pre>
-     * An initial mark price for the instrument.
+     * An initial mark price for the instrument
      * </pre>
      *
-     * <code>uint64 initialMarkPrice = 5 [json_name = "initialMarkPrice"];</code>
+     * <code>uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];</code>
      * @return The initialMarkPrice.
      */
     @java.lang.Override
@@ -5393,7 +5393,7 @@ public final class Markets {
     public static final int FUTURE_FIELD_NUMBER = 100;
     /**
      * <pre>
-     * Future.
+     * Future
      * </pre>
      *
      * <code>.vega.Future future = 100 [json_name = "future"];</code>
@@ -5405,7 +5405,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Future.
+     * Future
      * </pre>
      *
      * <code>.vega.Future future = 100 [json_name = "future"];</code>
@@ -5420,7 +5420,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Future.
+     * Future
      * </pre>
      *
      * <code>.vega.Future future = 100 [json_name = "future"];</code>
@@ -5553,7 +5553,7 @@ public final class Markets {
         hash = (37 * hash) + METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getMetadata().hashCode();
       }
-      hash = (37 * hash) + INITIALMARKPRICE_FIELD_NUMBER;
+      hash = (37 * hash) + INITIAL_MARK_PRICE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getInitialMarkPrice());
       switch (productCase_) {
@@ -5661,7 +5661,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Instrument definition.
+     * Instrument definition
      * </pre>
      *
      * Protobuf type {@code vega.Instrument}
@@ -5882,7 +5882,7 @@ public final class Markets {
       private java.lang.Object id_ = "";
       /**
        * <pre>
-       * Instrument identifier.
+       * Instrument identifier
        * </pre>
        *
        * <code>string id = 1 [json_name = "id"];</code>
@@ -5902,7 +5902,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Instrument identifier.
+       * Instrument identifier
        * </pre>
        *
        * <code>string id = 1 [json_name = "id"];</code>
@@ -5923,7 +5923,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Instrument identifier.
+       * Instrument identifier
        * </pre>
        *
        * <code>string id = 1 [json_name = "id"];</code>
@@ -5942,7 +5942,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Instrument identifier.
+       * Instrument identifier
        * </pre>
        *
        * <code>string id = 1 [json_name = "id"];</code>
@@ -5956,7 +5956,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Instrument identifier.
+       * Instrument identifier
        * </pre>
        *
        * <code>string id = 1 [json_name = "id"];</code>
@@ -5978,7 +5978,7 @@ public final class Markets {
       private java.lang.Object code_ = "";
       /**
        * <pre>
-       * Code for the instrument.
+       * Code for the instrument
        * </pre>
        *
        * <code>string code = 2 [json_name = "code"];</code>
@@ -5998,7 +5998,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Code for the instrument.
+       * Code for the instrument
        * </pre>
        *
        * <code>string code = 2 [json_name = "code"];</code>
@@ -6019,7 +6019,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Code for the instrument.
+       * Code for the instrument
        * </pre>
        *
        * <code>string code = 2 [json_name = "code"];</code>
@@ -6038,7 +6038,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Code for the instrument.
+       * Code for the instrument
        * </pre>
        *
        * <code>string code = 2 [json_name = "code"];</code>
@@ -6052,7 +6052,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Code for the instrument.
+       * Code for the instrument
        * </pre>
        *
        * <code>string code = 2 [json_name = "code"];</code>
@@ -6074,7 +6074,7 @@ public final class Markets {
       private java.lang.Object name_ = "";
       /**
        * <pre>
-       * Name of the instrument.
+       * Name of the instrument
        * </pre>
        *
        * <code>string name = 3 [json_name = "name"];</code>
@@ -6094,7 +6094,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Name of the instrument.
+       * Name of the instrument
        * </pre>
        *
        * <code>string name = 3 [json_name = "name"];</code>
@@ -6115,7 +6115,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Name of the instrument.
+       * Name of the instrument
        * </pre>
        *
        * <code>string name = 3 [json_name = "name"];</code>
@@ -6134,7 +6134,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Name of the instrument.
+       * Name of the instrument
        * </pre>
        *
        * <code>string name = 3 [json_name = "name"];</code>
@@ -6148,7 +6148,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Name of the instrument.
+       * Name of the instrument
        * </pre>
        *
        * <code>string name = 3 [json_name = "name"];</code>
@@ -6172,7 +6172,7 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.InstrumentMetadata, io.vegaprotocol.vega.Markets.InstrumentMetadata.Builder, io.vegaprotocol.vega.Markets.InstrumentMetadataOrBuilder> metadataBuilder_;
       /**
        * <pre>
-       * A collection of instrument meta-data.
+       * A collection of instrument meta-data
        * </pre>
        *
        * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
@@ -6183,7 +6183,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A collection of instrument meta-data.
+       * A collection of instrument meta-data
        * </pre>
        *
        * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
@@ -6198,7 +6198,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A collection of instrument meta-data.
+       * A collection of instrument meta-data
        * </pre>
        *
        * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
@@ -6218,7 +6218,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A collection of instrument meta-data.
+       * A collection of instrument meta-data
        * </pre>
        *
        * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
@@ -6236,7 +6236,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A collection of instrument meta-data.
+       * A collection of instrument meta-data
        * </pre>
        *
        * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
@@ -6258,7 +6258,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A collection of instrument meta-data.
+       * A collection of instrument meta-data
        * </pre>
        *
        * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
@@ -6276,7 +6276,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A collection of instrument meta-data.
+       * A collection of instrument meta-data
        * </pre>
        *
        * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
@@ -6288,7 +6288,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A collection of instrument meta-data.
+       * A collection of instrument meta-data
        * </pre>
        *
        * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
@@ -6303,7 +6303,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * A collection of instrument meta-data.
+       * A collection of instrument meta-data
        * </pre>
        *
        * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
@@ -6325,10 +6325,10 @@ public final class Markets {
       private long initialMarkPrice_ ;
       /**
        * <pre>
-       * An initial mark price for the instrument.
+       * An initial mark price for the instrument
        * </pre>
        *
-       * <code>uint64 initialMarkPrice = 5 [json_name = "initialMarkPrice"];</code>
+       * <code>uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];</code>
        * @return The initialMarkPrice.
        */
       @java.lang.Override
@@ -6337,10 +6337,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * An initial mark price for the instrument.
+       * An initial mark price for the instrument
        * </pre>
        *
-       * <code>uint64 initialMarkPrice = 5 [json_name = "initialMarkPrice"];</code>
+       * <code>uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];</code>
        * @param value The initialMarkPrice to set.
        * @return This builder for chaining.
        */
@@ -6352,10 +6352,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * An initial mark price for the instrument.
+       * An initial mark price for the instrument
        * </pre>
        *
-       * <code>uint64 initialMarkPrice = 5 [json_name = "initialMarkPrice"];</code>
+       * <code>uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];</code>
        * @return This builder for chaining.
        */
       public Builder clearInitialMarkPrice() {
@@ -6369,7 +6369,7 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.Future, io.vegaprotocol.vega.Markets.Future.Builder, io.vegaprotocol.vega.Markets.FutureOrBuilder> futureBuilder_;
       /**
        * <pre>
-       * Future.
+       * Future
        * </pre>
        *
        * <code>.vega.Future future = 100 [json_name = "future"];</code>
@@ -6381,7 +6381,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Future.
+       * Future
        * </pre>
        *
        * <code>.vega.Future future = 100 [json_name = "future"];</code>
@@ -6403,7 +6403,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Future.
+       * Future
        * </pre>
        *
        * <code>.vega.Future future = 100 [json_name = "future"];</code>
@@ -6423,7 +6423,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Future.
+       * Future
        * </pre>
        *
        * <code>.vega.Future future = 100 [json_name = "future"];</code>
@@ -6441,7 +6441,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Future.
+       * Future
        * </pre>
        *
        * <code>.vega.Future future = 100 [json_name = "future"];</code>
@@ -6467,7 +6467,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Future.
+       * Future
        * </pre>
        *
        * <code>.vega.Future future = 100 [json_name = "future"];</code>
@@ -6490,7 +6490,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Future.
+       * Future
        * </pre>
        *
        * <code>.vega.Future future = 100 [json_name = "future"];</code>
@@ -6500,7 +6500,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Future.
+       * Future
        * </pre>
        *
        * <code>.vega.Future future = 100 [json_name = "future"];</code>
@@ -6518,7 +6518,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Future.
+       * Future
        * </pre>
        *
        * <code>.vega.Future future = 100 [json_name = "future"];</code>
@@ -6600,17 +6600,17 @@ public final class Markets {
 
     /**
      * <pre>
-     * Risk Aversion Parameter.
+     * Risk Aversion Parameter
      * </pre>
      *
-     * <code>double riskAversionParameter = 1 [json_name = "riskAversionParameter"];</code>
+     * <code>double risk_aversion_parameter = 1 [json_name = "riskAversionParameter"];</code>
      * @return The riskAversionParameter.
      */
     double getRiskAversionParameter();
 
     /**
      * <pre>
-     * Tau.
+     * Tau
      * </pre>
      *
      * <code>double tau = 2 [json_name = "tau"];</code>
@@ -6620,7 +6620,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Risk model parameters for log normal.
+     * Risk model parameters for log normal
      * </pre>
      *
      * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
@@ -6629,7 +6629,7 @@ public final class Markets {
     boolean hasParams();
     /**
      * <pre>
-     * Risk model parameters for log normal.
+     * Risk model parameters for log normal
      * </pre>
      *
      * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
@@ -6638,7 +6638,7 @@ public final class Markets {
     io.vegaprotocol.vega.Markets.LogNormalModelParams getParams();
     /**
      * <pre>
-     * Risk model parameters for log normal.
+     * Risk model parameters for log normal
      * </pre>
      *
      * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
@@ -6647,7 +6647,7 @@ public final class Markets {
   }
   /**
    * <pre>
-   * Risk model for log normal.
+   * Risk model for log normal
    * </pre>
    *
    * Protobuf type {@code vega.LogNormalRiskModel}
@@ -6749,14 +6749,14 @@ public final class Markets {
               io.vegaprotocol.vega.Markets.LogNormalRiskModel.class, io.vegaprotocol.vega.Markets.LogNormalRiskModel.Builder.class);
     }
 
-    public static final int RISKAVERSIONPARAMETER_FIELD_NUMBER = 1;
+    public static final int RISK_AVERSION_PARAMETER_FIELD_NUMBER = 1;
     private double riskAversionParameter_;
     /**
      * <pre>
-     * Risk Aversion Parameter.
+     * Risk Aversion Parameter
      * </pre>
      *
-     * <code>double riskAversionParameter = 1 [json_name = "riskAversionParameter"];</code>
+     * <code>double risk_aversion_parameter = 1 [json_name = "riskAversionParameter"];</code>
      * @return The riskAversionParameter.
      */
     @java.lang.Override
@@ -6768,7 +6768,7 @@ public final class Markets {
     private double tau_;
     /**
      * <pre>
-     * Tau.
+     * Tau
      * </pre>
      *
      * <code>double tau = 2 [json_name = "tau"];</code>
@@ -6783,7 +6783,7 @@ public final class Markets {
     private io.vegaprotocol.vega.Markets.LogNormalModelParams params_;
     /**
      * <pre>
-     * Risk model parameters for log normal.
+     * Risk model parameters for log normal
      * </pre>
      *
      * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
@@ -6795,7 +6795,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Risk model parameters for log normal.
+     * Risk model parameters for log normal
      * </pre>
      *
      * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
@@ -6807,7 +6807,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Risk model parameters for log normal.
+     * Risk model parameters for log normal
      * </pre>
      *
      * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
@@ -6898,7 +6898,7 @@ public final class Markets {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RISKAVERSIONPARAMETER_FIELD_NUMBER;
+      hash = (37 * hash) + RISK_AVERSION_PARAMETER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getRiskAversionParameter()));
       hash = (37 * hash) + TAU_FIELD_NUMBER;
@@ -7005,7 +7005,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Risk model for log normal.
+     * Risk model for log normal
      * </pre>
      *
      * Protobuf type {@code vega.LogNormalRiskModel}
@@ -7177,10 +7177,10 @@ public final class Markets {
       private double riskAversionParameter_ ;
       /**
        * <pre>
-       * Risk Aversion Parameter.
+       * Risk Aversion Parameter
        * </pre>
        *
-       * <code>double riskAversionParameter = 1 [json_name = "riskAversionParameter"];</code>
+       * <code>double risk_aversion_parameter = 1 [json_name = "riskAversionParameter"];</code>
        * @return The riskAversionParameter.
        */
       @java.lang.Override
@@ -7189,10 +7189,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk Aversion Parameter.
+       * Risk Aversion Parameter
        * </pre>
        *
-       * <code>double riskAversionParameter = 1 [json_name = "riskAversionParameter"];</code>
+       * <code>double risk_aversion_parameter = 1 [json_name = "riskAversionParameter"];</code>
        * @param value The riskAversionParameter to set.
        * @return This builder for chaining.
        */
@@ -7204,10 +7204,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk Aversion Parameter.
+       * Risk Aversion Parameter
        * </pre>
        *
-       * <code>double riskAversionParameter = 1 [json_name = "riskAversionParameter"];</code>
+       * <code>double risk_aversion_parameter = 1 [json_name = "riskAversionParameter"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRiskAversionParameter() {
@@ -7220,7 +7220,7 @@ public final class Markets {
       private double tau_ ;
       /**
        * <pre>
-       * Tau.
+       * Tau
        * </pre>
        *
        * <code>double tau = 2 [json_name = "tau"];</code>
@@ -7232,7 +7232,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tau.
+       * Tau
        * </pre>
        *
        * <code>double tau = 2 [json_name = "tau"];</code>
@@ -7247,7 +7247,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tau.
+       * Tau
        * </pre>
        *
        * <code>double tau = 2 [json_name = "tau"];</code>
@@ -7265,7 +7265,7 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.LogNormalModelParams, io.vegaprotocol.vega.Markets.LogNormalModelParams.Builder, io.vegaprotocol.vega.Markets.LogNormalModelParamsOrBuilder> paramsBuilder_;
       /**
        * <pre>
-       * Risk model parameters for log normal.
+       * Risk model parameters for log normal
        * </pre>
        *
        * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
@@ -7276,7 +7276,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk model parameters for log normal.
+       * Risk model parameters for log normal
        * </pre>
        *
        * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
@@ -7291,7 +7291,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk model parameters for log normal.
+       * Risk model parameters for log normal
        * </pre>
        *
        * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
@@ -7311,7 +7311,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk model parameters for log normal.
+       * Risk model parameters for log normal
        * </pre>
        *
        * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
@@ -7329,7 +7329,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk model parameters for log normal.
+       * Risk model parameters for log normal
        * </pre>
        *
        * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
@@ -7351,7 +7351,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk model parameters for log normal.
+       * Risk model parameters for log normal
        * </pre>
        *
        * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
@@ -7369,7 +7369,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk model parameters for log normal.
+       * Risk model parameters for log normal
        * </pre>
        *
        * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
@@ -7381,7 +7381,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk model parameters for log normal.
+       * Risk model parameters for log normal
        * </pre>
        *
        * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
@@ -7396,7 +7396,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk model parameters for log normal.
+       * Risk model parameters for log normal
        * </pre>
        *
        * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
@@ -7473,7 +7473,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Mu param.
+     * Mu param
      * </pre>
      *
      * <code>double mu = 1 [json_name = "mu"];</code>
@@ -7483,7 +7483,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * R param.
+     * R param
      * </pre>
      *
      * <code>double r = 2 [json_name = "r"];</code>
@@ -7493,7 +7493,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Sigma param.
+     * Sigma param
      * </pre>
      *
      * <code>double sigma = 3 [json_name = "sigma"];</code>
@@ -7503,7 +7503,7 @@ public final class Markets {
   }
   /**
    * <pre>
-   * Risk model parameters for log normal.
+   * Risk model parameters for log normal
    * </pre>
    *
    * Protobuf type {@code vega.LogNormalModelParams}
@@ -7601,7 +7601,7 @@ public final class Markets {
     private double mu_;
     /**
      * <pre>
-     * Mu param.
+     * Mu param
      * </pre>
      *
      * <code>double mu = 1 [json_name = "mu"];</code>
@@ -7616,7 +7616,7 @@ public final class Markets {
     private double r_;
     /**
      * <pre>
-     * R param.
+     * R param
      * </pre>
      *
      * <code>double r = 2 [json_name = "r"];</code>
@@ -7631,7 +7631,7 @@ public final class Markets {
     private double sigma_;
     /**
      * <pre>
-     * Sigma param.
+     * Sigma param
      * </pre>
      *
      * <code>double sigma = 3 [json_name = "sigma"];</code>
@@ -7827,7 +7827,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Risk model parameters for log normal.
+     * Risk model parameters for log normal
      * </pre>
      *
      * Protobuf type {@code vega.LogNormalModelParams}
@@ -7991,7 +7991,7 @@ public final class Markets {
       private double mu_ ;
       /**
        * <pre>
-       * Mu param.
+       * Mu param
        * </pre>
        *
        * <code>double mu = 1 [json_name = "mu"];</code>
@@ -8003,7 +8003,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Mu param.
+       * Mu param
        * </pre>
        *
        * <code>double mu = 1 [json_name = "mu"];</code>
@@ -8018,7 +8018,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Mu param.
+       * Mu param
        * </pre>
        *
        * <code>double mu = 1 [json_name = "mu"];</code>
@@ -8034,7 +8034,7 @@ public final class Markets {
       private double r_ ;
       /**
        * <pre>
-       * R param.
+       * R param
        * </pre>
        *
        * <code>double r = 2 [json_name = "r"];</code>
@@ -8046,7 +8046,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * R param.
+       * R param
        * </pre>
        *
        * <code>double r = 2 [json_name = "r"];</code>
@@ -8061,7 +8061,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * R param.
+       * R param
        * </pre>
        *
        * <code>double r = 2 [json_name = "r"];</code>
@@ -8077,7 +8077,7 @@ public final class Markets {
       private double sigma_ ;
       /**
        * <pre>
-       * Sigma param.
+       * Sigma param
        * </pre>
        *
        * <code>double sigma = 3 [json_name = "sigma"];</code>
@@ -8089,7 +8089,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Sigma param.
+       * Sigma param
        * </pre>
        *
        * <code>double sigma = 3 [json_name = "sigma"];</code>
@@ -8104,7 +8104,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Sigma param.
+       * Sigma param
        * </pre>
        *
        * <code>double sigma = 3 [json_name = "sigma"];</code>
@@ -8175,7 +8175,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Risk model params for simple modelling.
+     * Risk model params for simple modelling
      * </pre>
      *
      * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
@@ -8184,7 +8184,7 @@ public final class Markets {
     boolean hasParams();
     /**
      * <pre>
-     * Risk model params for simple modelling.
+     * Risk model params for simple modelling
      * </pre>
      *
      * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
@@ -8193,7 +8193,7 @@ public final class Markets {
     io.vegaprotocol.vega.Markets.SimpleModelParams getParams();
     /**
      * <pre>
-     * Risk model params for simple modelling.
+     * Risk model params for simple modelling
      * </pre>
      *
      * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
@@ -8202,7 +8202,7 @@ public final class Markets {
   }
   /**
    * <pre>
-   * Risk model for simple modelling.
+   * Risk model for simple modelling
    * </pre>
    *
    * Protobuf type {@code vega.SimpleRiskModel}
@@ -8298,7 +8298,7 @@ public final class Markets {
     private io.vegaprotocol.vega.Markets.SimpleModelParams params_;
     /**
      * <pre>
-     * Risk model params for simple modelling.
+     * Risk model params for simple modelling
      * </pre>
      *
      * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
@@ -8310,7 +8310,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Risk model params for simple modelling.
+     * Risk model params for simple modelling
      * </pre>
      *
      * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
@@ -8322,7 +8322,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Risk model params for simple modelling.
+     * Risk model params for simple modelling
      * </pre>
      *
      * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
@@ -8494,7 +8494,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Risk model for simple modelling.
+     * Risk model for simple modelling
      * </pre>
      *
      * Protobuf type {@code vega.SimpleRiskModel}
@@ -8656,7 +8656,7 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.SimpleModelParams, io.vegaprotocol.vega.Markets.SimpleModelParams.Builder, io.vegaprotocol.vega.Markets.SimpleModelParamsOrBuilder> paramsBuilder_;
       /**
        * <pre>
-       * Risk model params for simple modelling.
+       * Risk model params for simple modelling
        * </pre>
        *
        * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
@@ -8667,7 +8667,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk model params for simple modelling.
+       * Risk model params for simple modelling
        * </pre>
        *
        * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
@@ -8682,7 +8682,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk model params for simple modelling.
+       * Risk model params for simple modelling
        * </pre>
        *
        * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
@@ -8702,7 +8702,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk model params for simple modelling.
+       * Risk model params for simple modelling
        * </pre>
        *
        * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
@@ -8720,7 +8720,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk model params for simple modelling.
+       * Risk model params for simple modelling
        * </pre>
        *
        * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
@@ -8742,7 +8742,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk model params for simple modelling.
+       * Risk model params for simple modelling
        * </pre>
        *
        * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
@@ -8760,7 +8760,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk model params for simple modelling.
+       * Risk model params for simple modelling
        * </pre>
        *
        * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
@@ -8772,7 +8772,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk model params for simple modelling.
+       * Risk model params for simple modelling
        * </pre>
        *
        * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
@@ -8787,7 +8787,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Risk model params for simple modelling.
+       * Risk model params for simple modelling
        * </pre>
        *
        * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
@@ -8864,40 +8864,40 @@ public final class Markets {
 
     /**
      * <pre>
-     * Pre-defined risk factor value for long.
+     * Pre-defined risk factor value for long
      * </pre>
      *
-     * <code>double factorLong = 1 [json_name = "factorLong"];</code>
+     * <code>double factor_long = 1 [json_name = "factorLong"];</code>
      * @return The factorLong.
      */
     double getFactorLong();
 
     /**
      * <pre>
-     * Pre-defined risk factor value for short.
+     * Pre-defined risk factor value for short
      * </pre>
      *
-     * <code>double factorShort = 2 [json_name = "factorShort"];</code>
+     * <code>double factor_short = 2 [json_name = "factorShort"];</code>
      * @return The factorShort.
      */
     double getFactorShort();
 
     /**
      * <pre>
-     * Pre-defined maximum price move up that the model considers as valid.
+     * Pre-defined maximum price move up that the model considers as valid
      * </pre>
      *
-     * <code>double maxMoveUp = 3 [json_name = "maxMoveUp", (.validator.field) = { ... }</code>
+     * <code>double max_move_up = 3 [json_name = "maxMoveUp", (.validator.field) = { ... }</code>
      * @return The maxMoveUp.
      */
     double getMaxMoveUp();
 
     /**
      * <pre>
-     * Pre-defined minimum price move down that the model considers as valid.
+     * Pre-defined minimum price move down that the model considers as valid
      * </pre>
      *
-     * <code>double minMoveDown = 4 [json_name = "minMoveDown", (.validator.field) = { ... }</code>
+     * <code>double min_move_down = 4 [json_name = "minMoveDown", (.validator.field) = { ... }</code>
      * @return The minMoveDown.
      */
     double getMinMoveDown();
@@ -8907,14 +8907,14 @@ public final class Markets {
      * Pre-defined constant probability of trading
      * </pre>
      *
-     * <code>double probabilityOfTrading = 5 [json_name = "probabilityOfTrading", (.validator.field) = { ... }</code>
+     * <code>double probability_of_trading = 5 [json_name = "probabilityOfTrading", (.validator.field) = { ... }</code>
      * @return The probabilityOfTrading.
      */
     double getProbabilityOfTrading();
   }
   /**
    * <pre>
-   * Risk model parameters for simple modelling.
+   * Risk model parameters for simple modelling
    * </pre>
    *
    * Protobuf type {@code vega.SimpleModelParams}
@@ -9018,14 +9018,14 @@ public final class Markets {
               io.vegaprotocol.vega.Markets.SimpleModelParams.class, io.vegaprotocol.vega.Markets.SimpleModelParams.Builder.class);
     }
 
-    public static final int FACTORLONG_FIELD_NUMBER = 1;
+    public static final int FACTOR_LONG_FIELD_NUMBER = 1;
     private double factorLong_;
     /**
      * <pre>
-     * Pre-defined risk factor value for long.
+     * Pre-defined risk factor value for long
      * </pre>
      *
-     * <code>double factorLong = 1 [json_name = "factorLong"];</code>
+     * <code>double factor_long = 1 [json_name = "factorLong"];</code>
      * @return The factorLong.
      */
     @java.lang.Override
@@ -9033,14 +9033,14 @@ public final class Markets {
       return factorLong_;
     }
 
-    public static final int FACTORSHORT_FIELD_NUMBER = 2;
+    public static final int FACTOR_SHORT_FIELD_NUMBER = 2;
     private double factorShort_;
     /**
      * <pre>
-     * Pre-defined risk factor value for short.
+     * Pre-defined risk factor value for short
      * </pre>
      *
-     * <code>double factorShort = 2 [json_name = "factorShort"];</code>
+     * <code>double factor_short = 2 [json_name = "factorShort"];</code>
      * @return The factorShort.
      */
     @java.lang.Override
@@ -9048,14 +9048,14 @@ public final class Markets {
       return factorShort_;
     }
 
-    public static final int MAXMOVEUP_FIELD_NUMBER = 3;
+    public static final int MAX_MOVE_UP_FIELD_NUMBER = 3;
     private double maxMoveUp_;
     /**
      * <pre>
-     * Pre-defined maximum price move up that the model considers as valid.
+     * Pre-defined maximum price move up that the model considers as valid
      * </pre>
      *
-     * <code>double maxMoveUp = 3 [json_name = "maxMoveUp", (.validator.field) = { ... }</code>
+     * <code>double max_move_up = 3 [json_name = "maxMoveUp", (.validator.field) = { ... }</code>
      * @return The maxMoveUp.
      */
     @java.lang.Override
@@ -9063,14 +9063,14 @@ public final class Markets {
       return maxMoveUp_;
     }
 
-    public static final int MINMOVEDOWN_FIELD_NUMBER = 4;
+    public static final int MIN_MOVE_DOWN_FIELD_NUMBER = 4;
     private double minMoveDown_;
     /**
      * <pre>
-     * Pre-defined minimum price move down that the model considers as valid.
+     * Pre-defined minimum price move down that the model considers as valid
      * </pre>
      *
-     * <code>double minMoveDown = 4 [json_name = "minMoveDown", (.validator.field) = { ... }</code>
+     * <code>double min_move_down = 4 [json_name = "minMoveDown", (.validator.field) = { ... }</code>
      * @return The minMoveDown.
      */
     @java.lang.Override
@@ -9078,14 +9078,14 @@ public final class Markets {
       return minMoveDown_;
     }
 
-    public static final int PROBABILITYOFTRADING_FIELD_NUMBER = 5;
+    public static final int PROBABILITY_OF_TRADING_FIELD_NUMBER = 5;
     private double probabilityOfTrading_;
     /**
      * <pre>
      * Pre-defined constant probability of trading
      * </pre>
      *
-     * <code>double probabilityOfTrading = 5 [json_name = "probabilityOfTrading", (.validator.field) = { ... }</code>
+     * <code>double probability_of_trading = 5 [json_name = "probabilityOfTrading", (.validator.field) = { ... }</code>
      * @return The probabilityOfTrading.
      */
     @java.lang.Override
@@ -9192,19 +9192,19 @@ public final class Markets {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FACTORLONG_FIELD_NUMBER;
+      hash = (37 * hash) + FACTOR_LONG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getFactorLong()));
-      hash = (37 * hash) + FACTORSHORT_FIELD_NUMBER;
+      hash = (37 * hash) + FACTOR_SHORT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getFactorShort()));
-      hash = (37 * hash) + MAXMOVEUP_FIELD_NUMBER;
+      hash = (37 * hash) + MAX_MOVE_UP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getMaxMoveUp()));
-      hash = (37 * hash) + MINMOVEDOWN_FIELD_NUMBER;
+      hash = (37 * hash) + MIN_MOVE_DOWN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getMinMoveDown()));
-      hash = (37 * hash) + PROBABILITYOFTRADING_FIELD_NUMBER;
+      hash = (37 * hash) + PROBABILITY_OF_TRADING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getProbabilityOfTrading()));
       hash = (29 * hash) + unknownFields.hashCode();
@@ -9304,7 +9304,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Risk model parameters for simple modelling.
+     * Risk model parameters for simple modelling
      * </pre>
      *
      * Protobuf type {@code vega.SimpleModelParams}
@@ -9480,10 +9480,10 @@ public final class Markets {
       private double factorLong_ ;
       /**
        * <pre>
-       * Pre-defined risk factor value for long.
+       * Pre-defined risk factor value for long
        * </pre>
        *
-       * <code>double factorLong = 1 [json_name = "factorLong"];</code>
+       * <code>double factor_long = 1 [json_name = "factorLong"];</code>
        * @return The factorLong.
        */
       @java.lang.Override
@@ -9492,10 +9492,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Pre-defined risk factor value for long.
+       * Pre-defined risk factor value for long
        * </pre>
        *
-       * <code>double factorLong = 1 [json_name = "factorLong"];</code>
+       * <code>double factor_long = 1 [json_name = "factorLong"];</code>
        * @param value The factorLong to set.
        * @return This builder for chaining.
        */
@@ -9507,10 +9507,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Pre-defined risk factor value for long.
+       * Pre-defined risk factor value for long
        * </pre>
        *
-       * <code>double factorLong = 1 [json_name = "factorLong"];</code>
+       * <code>double factor_long = 1 [json_name = "factorLong"];</code>
        * @return This builder for chaining.
        */
       public Builder clearFactorLong() {
@@ -9523,10 +9523,10 @@ public final class Markets {
       private double factorShort_ ;
       /**
        * <pre>
-       * Pre-defined risk factor value for short.
+       * Pre-defined risk factor value for short
        * </pre>
        *
-       * <code>double factorShort = 2 [json_name = "factorShort"];</code>
+       * <code>double factor_short = 2 [json_name = "factorShort"];</code>
        * @return The factorShort.
        */
       @java.lang.Override
@@ -9535,10 +9535,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Pre-defined risk factor value for short.
+       * Pre-defined risk factor value for short
        * </pre>
        *
-       * <code>double factorShort = 2 [json_name = "factorShort"];</code>
+       * <code>double factor_short = 2 [json_name = "factorShort"];</code>
        * @param value The factorShort to set.
        * @return This builder for chaining.
        */
@@ -9550,10 +9550,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Pre-defined risk factor value for short.
+       * Pre-defined risk factor value for short
        * </pre>
        *
-       * <code>double factorShort = 2 [json_name = "factorShort"];</code>
+       * <code>double factor_short = 2 [json_name = "factorShort"];</code>
        * @return This builder for chaining.
        */
       public Builder clearFactorShort() {
@@ -9566,10 +9566,10 @@ public final class Markets {
       private double maxMoveUp_ ;
       /**
        * <pre>
-       * Pre-defined maximum price move up that the model considers as valid.
+       * Pre-defined maximum price move up that the model considers as valid
        * </pre>
        *
-       * <code>double maxMoveUp = 3 [json_name = "maxMoveUp", (.validator.field) = { ... }</code>
+       * <code>double max_move_up = 3 [json_name = "maxMoveUp", (.validator.field) = { ... }</code>
        * @return The maxMoveUp.
        */
       @java.lang.Override
@@ -9578,10 +9578,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Pre-defined maximum price move up that the model considers as valid.
+       * Pre-defined maximum price move up that the model considers as valid
        * </pre>
        *
-       * <code>double maxMoveUp = 3 [json_name = "maxMoveUp", (.validator.field) = { ... }</code>
+       * <code>double max_move_up = 3 [json_name = "maxMoveUp", (.validator.field) = { ... }</code>
        * @param value The maxMoveUp to set.
        * @return This builder for chaining.
        */
@@ -9593,10 +9593,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Pre-defined maximum price move up that the model considers as valid.
+       * Pre-defined maximum price move up that the model considers as valid
        * </pre>
        *
-       * <code>double maxMoveUp = 3 [json_name = "maxMoveUp", (.validator.field) = { ... }</code>
+       * <code>double max_move_up = 3 [json_name = "maxMoveUp", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxMoveUp() {
@@ -9609,10 +9609,10 @@ public final class Markets {
       private double minMoveDown_ ;
       /**
        * <pre>
-       * Pre-defined minimum price move down that the model considers as valid.
+       * Pre-defined minimum price move down that the model considers as valid
        * </pre>
        *
-       * <code>double minMoveDown = 4 [json_name = "minMoveDown", (.validator.field) = { ... }</code>
+       * <code>double min_move_down = 4 [json_name = "minMoveDown", (.validator.field) = { ... }</code>
        * @return The minMoveDown.
        */
       @java.lang.Override
@@ -9621,10 +9621,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Pre-defined minimum price move down that the model considers as valid.
+       * Pre-defined minimum price move down that the model considers as valid
        * </pre>
        *
-       * <code>double minMoveDown = 4 [json_name = "minMoveDown", (.validator.field) = { ... }</code>
+       * <code>double min_move_down = 4 [json_name = "minMoveDown", (.validator.field) = { ... }</code>
        * @param value The minMoveDown to set.
        * @return This builder for chaining.
        */
@@ -9636,10 +9636,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Pre-defined minimum price move down that the model considers as valid.
+       * Pre-defined minimum price move down that the model considers as valid
        * </pre>
        *
-       * <code>double minMoveDown = 4 [json_name = "minMoveDown", (.validator.field) = { ... }</code>
+       * <code>double min_move_down = 4 [json_name = "minMoveDown", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearMinMoveDown() {
@@ -9655,7 +9655,7 @@ public final class Markets {
        * Pre-defined constant probability of trading
        * </pre>
        *
-       * <code>double probabilityOfTrading = 5 [json_name = "probabilityOfTrading", (.validator.field) = { ... }</code>
+       * <code>double probability_of_trading = 5 [json_name = "probabilityOfTrading", (.validator.field) = { ... }</code>
        * @return The probabilityOfTrading.
        */
       @java.lang.Override
@@ -9667,7 +9667,7 @@ public final class Markets {
        * Pre-defined constant probability of trading
        * </pre>
        *
-       * <code>double probabilityOfTrading = 5 [json_name = "probabilityOfTrading", (.validator.field) = { ... }</code>
+       * <code>double probability_of_trading = 5 [json_name = "probabilityOfTrading", (.validator.field) = { ... }</code>
        * @param value The probabilityOfTrading to set.
        * @return This builder for chaining.
        */
@@ -9682,7 +9682,7 @@ public final class Markets {
        * Pre-defined constant probability of trading
        * </pre>
        *
-       * <code>double probabilityOfTrading = 5 [json_name = "probabilityOfTrading", (.validator.field) = { ... }</code>
+       * <code>double probability_of_trading = 5 [json_name = "probabilityOfTrading", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearProbabilityOfTrading() {
@@ -9750,37 +9750,37 @@ public final class Markets {
 
     /**
      * <pre>
-     * Search level.
+     * Search level
      * </pre>
      *
-     * <code>double searchLevel = 1 [json_name = "searchLevel"];</code>
+     * <code>double search_level = 1 [json_name = "searchLevel"];</code>
      * @return The searchLevel.
      */
     double getSearchLevel();
 
     /**
      * <pre>
-     * Initial margin level.
+     * Initial margin level
      * </pre>
      *
-     * <code>double initialMargin = 2 [json_name = "initialMargin"];</code>
+     * <code>double initial_margin = 2 [json_name = "initialMargin"];</code>
      * @return The initialMargin.
      */
     double getInitialMargin();
 
     /**
      * <pre>
-     * Collateral release level.
+     * Collateral release level
      * </pre>
      *
-     * <code>double collateralRelease = 3 [json_name = "collateralRelease"];</code>
+     * <code>double collateral_release = 3 [json_name = "collateralRelease"];</code>
      * @return The collateralRelease.
      */
     double getCollateralRelease();
   }
   /**
    * <pre>
-   * Scaling Factors (for use in margin calculation).
+   * Scaling Factors (for use in margin calculation)
    * </pre>
    *
    * Protobuf type {@code vega.ScalingFactors}
@@ -9874,14 +9874,14 @@ public final class Markets {
               io.vegaprotocol.vega.Markets.ScalingFactors.class, io.vegaprotocol.vega.Markets.ScalingFactors.Builder.class);
     }
 
-    public static final int SEARCHLEVEL_FIELD_NUMBER = 1;
+    public static final int SEARCH_LEVEL_FIELD_NUMBER = 1;
     private double searchLevel_;
     /**
      * <pre>
-     * Search level.
+     * Search level
      * </pre>
      *
-     * <code>double searchLevel = 1 [json_name = "searchLevel"];</code>
+     * <code>double search_level = 1 [json_name = "searchLevel"];</code>
      * @return The searchLevel.
      */
     @java.lang.Override
@@ -9889,14 +9889,14 @@ public final class Markets {
       return searchLevel_;
     }
 
-    public static final int INITIALMARGIN_FIELD_NUMBER = 2;
+    public static final int INITIAL_MARGIN_FIELD_NUMBER = 2;
     private double initialMargin_;
     /**
      * <pre>
-     * Initial margin level.
+     * Initial margin level
      * </pre>
      *
-     * <code>double initialMargin = 2 [json_name = "initialMargin"];</code>
+     * <code>double initial_margin = 2 [json_name = "initialMargin"];</code>
      * @return The initialMargin.
      */
     @java.lang.Override
@@ -9904,14 +9904,14 @@ public final class Markets {
       return initialMargin_;
     }
 
-    public static final int COLLATERALRELEASE_FIELD_NUMBER = 3;
+    public static final int COLLATERAL_RELEASE_FIELD_NUMBER = 3;
     private double collateralRelease_;
     /**
      * <pre>
-     * Collateral release level.
+     * Collateral release level
      * </pre>
      *
-     * <code>double collateralRelease = 3 [json_name = "collateralRelease"];</code>
+     * <code>double collateral_release = 3 [json_name = "collateralRelease"];</code>
      * @return The collateralRelease.
      */
     @java.lang.Override
@@ -9998,13 +9998,13 @@ public final class Markets {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SEARCHLEVEL_FIELD_NUMBER;
+      hash = (37 * hash) + SEARCH_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getSearchLevel()));
-      hash = (37 * hash) + INITIALMARGIN_FIELD_NUMBER;
+      hash = (37 * hash) + INITIAL_MARGIN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getInitialMargin()));
-      hash = (37 * hash) + COLLATERALRELEASE_FIELD_NUMBER;
+      hash = (37 * hash) + COLLATERAL_RELEASE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getCollateralRelease()));
       hash = (29 * hash) + unknownFields.hashCode();
@@ -10104,7 +10104,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Scaling Factors (for use in margin calculation).
+     * Scaling Factors (for use in margin calculation)
      * </pre>
      *
      * Protobuf type {@code vega.ScalingFactors}
@@ -10268,10 +10268,10 @@ public final class Markets {
       private double searchLevel_ ;
       /**
        * <pre>
-       * Search level.
+       * Search level
        * </pre>
        *
-       * <code>double searchLevel = 1 [json_name = "searchLevel"];</code>
+       * <code>double search_level = 1 [json_name = "searchLevel"];</code>
        * @return The searchLevel.
        */
       @java.lang.Override
@@ -10280,10 +10280,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Search level.
+       * Search level
        * </pre>
        *
-       * <code>double searchLevel = 1 [json_name = "searchLevel"];</code>
+       * <code>double search_level = 1 [json_name = "searchLevel"];</code>
        * @param value The searchLevel to set.
        * @return This builder for chaining.
        */
@@ -10295,10 +10295,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Search level.
+       * Search level
        * </pre>
        *
-       * <code>double searchLevel = 1 [json_name = "searchLevel"];</code>
+       * <code>double search_level = 1 [json_name = "searchLevel"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSearchLevel() {
@@ -10311,10 +10311,10 @@ public final class Markets {
       private double initialMargin_ ;
       /**
        * <pre>
-       * Initial margin level.
+       * Initial margin level
        * </pre>
        *
-       * <code>double initialMargin = 2 [json_name = "initialMargin"];</code>
+       * <code>double initial_margin = 2 [json_name = "initialMargin"];</code>
        * @return The initialMargin.
        */
       @java.lang.Override
@@ -10323,10 +10323,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Initial margin level.
+       * Initial margin level
        * </pre>
        *
-       * <code>double initialMargin = 2 [json_name = "initialMargin"];</code>
+       * <code>double initial_margin = 2 [json_name = "initialMargin"];</code>
        * @param value The initialMargin to set.
        * @return This builder for chaining.
        */
@@ -10338,10 +10338,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Initial margin level.
+       * Initial margin level
        * </pre>
        *
-       * <code>double initialMargin = 2 [json_name = "initialMargin"];</code>
+       * <code>double initial_margin = 2 [json_name = "initialMargin"];</code>
        * @return This builder for chaining.
        */
       public Builder clearInitialMargin() {
@@ -10354,10 +10354,10 @@ public final class Markets {
       private double collateralRelease_ ;
       /**
        * <pre>
-       * Collateral release level.
+       * Collateral release level
        * </pre>
        *
-       * <code>double collateralRelease = 3 [json_name = "collateralRelease"];</code>
+       * <code>double collateral_release = 3 [json_name = "collateralRelease"];</code>
        * @return The collateralRelease.
        */
       @java.lang.Override
@@ -10366,10 +10366,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Collateral release level.
+       * Collateral release level
        * </pre>
        *
-       * <code>double collateralRelease = 3 [json_name = "collateralRelease"];</code>
+       * <code>double collateral_release = 3 [json_name = "collateralRelease"];</code>
        * @param value The collateralRelease to set.
        * @return This builder for chaining.
        */
@@ -10381,10 +10381,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Collateral release level.
+       * Collateral release level
        * </pre>
        *
-       * <code>double collateralRelease = 3 [json_name = "collateralRelease"];</code>
+       * <code>double collateral_release = 3 [json_name = "collateralRelease"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCollateralRelease() {
@@ -10452,34 +10452,34 @@ public final class Markets {
 
     /**
      * <pre>
-     * Scaling factors for margin calculation.
+     * Scaling factors for margin calculation
      * </pre>
      *
-     * <code>.vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];</code>
+     * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
      * @return Whether the scalingFactors field is set.
      */
     boolean hasScalingFactors();
     /**
      * <pre>
-     * Scaling factors for margin calculation.
+     * Scaling factors for margin calculation
      * </pre>
      *
-     * <code>.vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];</code>
+     * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
      * @return The scalingFactors.
      */
     io.vegaprotocol.vega.Markets.ScalingFactors getScalingFactors();
     /**
      * <pre>
-     * Scaling factors for margin calculation.
+     * Scaling factors for margin calculation
      * </pre>
      *
-     * <code>.vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];</code>
+     * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
      */
     io.vegaprotocol.vega.Markets.ScalingFactorsOrBuilder getScalingFactorsOrBuilder();
   }
   /**
    * <pre>
-   * Margin Calculator definition.
+   * Margin Calculator definition
    * </pre>
    *
    * Protobuf type {@code vega.MarginCalculator}
@@ -10571,14 +10571,14 @@ public final class Markets {
               io.vegaprotocol.vega.Markets.MarginCalculator.class, io.vegaprotocol.vega.Markets.MarginCalculator.Builder.class);
     }
 
-    public static final int SCALINGFACTORS_FIELD_NUMBER = 1;
+    public static final int SCALING_FACTORS_FIELD_NUMBER = 1;
     private io.vegaprotocol.vega.Markets.ScalingFactors scalingFactors_;
     /**
      * <pre>
-     * Scaling factors for margin calculation.
+     * Scaling factors for margin calculation
      * </pre>
      *
-     * <code>.vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];</code>
+     * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
      * @return Whether the scalingFactors field is set.
      */
     @java.lang.Override
@@ -10587,10 +10587,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Scaling factors for margin calculation.
+     * Scaling factors for margin calculation
      * </pre>
      *
-     * <code>.vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];</code>
+     * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
      * @return The scalingFactors.
      */
     @java.lang.Override
@@ -10599,10 +10599,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Scaling factors for margin calculation.
+     * Scaling factors for margin calculation
      * </pre>
      *
-     * <code>.vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];</code>
+     * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Markets.ScalingFactorsOrBuilder getScalingFactorsOrBuilder() {
@@ -10671,7 +10671,7 @@ public final class Markets {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasScalingFactors()) {
-        hash = (37 * hash) + SCALINGFACTORS_FIELD_NUMBER;
+        hash = (37 * hash) + SCALING_FACTORS_FIELD_NUMBER;
         hash = (53 * hash) + getScalingFactors().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -10771,7 +10771,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Margin Calculator definition.
+     * Margin Calculator definition
      * </pre>
      *
      * Protobuf type {@code vega.MarginCalculator}
@@ -10933,10 +10933,10 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.ScalingFactors, io.vegaprotocol.vega.Markets.ScalingFactors.Builder, io.vegaprotocol.vega.Markets.ScalingFactorsOrBuilder> scalingFactorsBuilder_;
       /**
        * <pre>
-       * Scaling factors for margin calculation.
+       * Scaling factors for margin calculation
        * </pre>
        *
-       * <code>.vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];</code>
+       * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
        * @return Whether the scalingFactors field is set.
        */
       public boolean hasScalingFactors() {
@@ -10944,10 +10944,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Scaling factors for margin calculation.
+       * Scaling factors for margin calculation
        * </pre>
        *
-       * <code>.vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];</code>
+       * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
        * @return The scalingFactors.
        */
       public io.vegaprotocol.vega.Markets.ScalingFactors getScalingFactors() {
@@ -10959,10 +10959,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Scaling factors for margin calculation.
+       * Scaling factors for margin calculation
        * </pre>
        *
-       * <code>.vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];</code>
+       * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
        */
       public Builder setScalingFactors(io.vegaprotocol.vega.Markets.ScalingFactors value) {
         if (scalingFactorsBuilder_ == null) {
@@ -10979,10 +10979,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Scaling factors for margin calculation.
+       * Scaling factors for margin calculation
        * </pre>
        *
-       * <code>.vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];</code>
+       * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
        */
       public Builder setScalingFactors(
           io.vegaprotocol.vega.Markets.ScalingFactors.Builder builderForValue) {
@@ -10997,10 +10997,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Scaling factors for margin calculation.
+       * Scaling factors for margin calculation
        * </pre>
        *
-       * <code>.vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];</code>
+       * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
        */
       public Builder mergeScalingFactors(io.vegaprotocol.vega.Markets.ScalingFactors value) {
         if (scalingFactorsBuilder_ == null) {
@@ -11019,10 +11019,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Scaling factors for margin calculation.
+       * Scaling factors for margin calculation
        * </pre>
        *
-       * <code>.vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];</code>
+       * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
        */
       public Builder clearScalingFactors() {
         if (scalingFactorsBuilder_ == null) {
@@ -11037,10 +11037,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Scaling factors for margin calculation.
+       * Scaling factors for margin calculation
        * </pre>
        *
-       * <code>.vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];</code>
+       * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
        */
       public io.vegaprotocol.vega.Markets.ScalingFactors.Builder getScalingFactorsBuilder() {
 
@@ -11049,10 +11049,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Scaling factors for margin calculation.
+       * Scaling factors for margin calculation
        * </pre>
        *
-       * <code>.vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];</code>
+       * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
        */
       public io.vegaprotocol.vega.Markets.ScalingFactorsOrBuilder getScalingFactorsOrBuilder() {
         if (scalingFactorsBuilder_ != null) {
@@ -11064,10 +11064,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Scaling factors for margin calculation.
+       * Scaling factors for margin calculation
        * </pre>
        *
-       * <code>.vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];</code>
+       * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.ScalingFactors, io.vegaprotocol.vega.Markets.ScalingFactors.Builder, io.vegaprotocol.vega.Markets.ScalingFactorsOrBuilder>
@@ -11141,7 +11141,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Instrument details.
+     * Instrument details
      * </pre>
      *
      * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
@@ -11150,7 +11150,7 @@ public final class Markets {
     boolean hasInstrument();
     /**
      * <pre>
-     * Instrument details.
+     * Instrument details
      * </pre>
      *
      * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
@@ -11159,7 +11159,7 @@ public final class Markets {
     io.vegaprotocol.vega.Markets.Instrument getInstrument();
     /**
      * <pre>
-     * Instrument details.
+     * Instrument details
      * </pre>
      *
      * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
@@ -11168,82 +11168,82 @@ public final class Markets {
 
     /**
      * <pre>
-     * Margin calculator for the instrument.
+     * Margin calculator for the instrument
      * </pre>
      *
-     * <code>.vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];</code>
+     * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
      * @return Whether the marginCalculator field is set.
      */
     boolean hasMarginCalculator();
     /**
      * <pre>
-     * Margin calculator for the instrument.
+     * Margin calculator for the instrument
      * </pre>
      *
-     * <code>.vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];</code>
+     * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
      * @return The marginCalculator.
      */
     io.vegaprotocol.vega.Markets.MarginCalculator getMarginCalculator();
     /**
      * <pre>
-     * Margin calculator for the instrument.
+     * Margin calculator for the instrument
      * </pre>
      *
-     * <code>.vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];</code>
+     * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
      */
     io.vegaprotocol.vega.Markets.MarginCalculatorOrBuilder getMarginCalculatorOrBuilder();
 
     /**
      * <pre>
-     * Log normal.
+     * Log normal
      * </pre>
      *
-     * <code>.vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];</code>
+     * <code>.vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];</code>
      * @return Whether the logNormalRiskModel field is set.
      */
     boolean hasLogNormalRiskModel();
     /**
      * <pre>
-     * Log normal.
+     * Log normal
      * </pre>
      *
-     * <code>.vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];</code>
+     * <code>.vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];</code>
      * @return The logNormalRiskModel.
      */
     io.vegaprotocol.vega.Markets.LogNormalRiskModel getLogNormalRiskModel();
     /**
      * <pre>
-     * Log normal.
+     * Log normal
      * </pre>
      *
-     * <code>.vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];</code>
+     * <code>.vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];</code>
      */
     io.vegaprotocol.vega.Markets.LogNormalRiskModelOrBuilder getLogNormalRiskModelOrBuilder();
 
     /**
      * <pre>
-     * Simple.
+     * Simple
      * </pre>
      *
-     * <code>.vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];</code>
+     * <code>.vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];</code>
      * @return Whether the simpleRiskModel field is set.
      */
     boolean hasSimpleRiskModel();
     /**
      * <pre>
-     * Simple.
+     * Simple
      * </pre>
      *
-     * <code>.vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];</code>
+     * <code>.vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];</code>
      * @return The simpleRiskModel.
      */
     io.vegaprotocol.vega.Markets.SimpleRiskModel getSimpleRiskModel();
     /**
      * <pre>
-     * Simple.
+     * Simple
      * </pre>
      *
-     * <code>.vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];</code>
+     * <code>.vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];</code>
      */
     io.vegaprotocol.vega.Markets.SimpleRiskModelOrBuilder getSimpleRiskModelOrBuilder();
 
@@ -11251,7 +11251,7 @@ public final class Markets {
   }
   /**
    * <pre>
-   * Tradable Instrument definition.
+   * Tradable Instrument definition
    * </pre>
    *
    * Protobuf type {@code vega.TradableInstrument}
@@ -11389,8 +11389,8 @@ public final class Markets {
     public enum RiskModelCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      LOGNORMALRISKMODEL(100),
-      SIMPLERISKMODEL(101),
+      LOG_NORMAL_RISK_MODEL(100),
+      SIMPLE_RISK_MODEL(101),
       RISKMODEL_NOT_SET(0);
       private final int value;
       private RiskModelCase(int value) {
@@ -11408,8 +11408,8 @@ public final class Markets {
 
       public static RiskModelCase forNumber(int value) {
         switch (value) {
-          case 100: return LOGNORMALRISKMODEL;
-          case 101: return SIMPLERISKMODEL;
+          case 100: return LOG_NORMAL_RISK_MODEL;
+          case 101: return SIMPLE_RISK_MODEL;
           case 0: return RISKMODEL_NOT_SET;
           default: return null;
         }
@@ -11429,7 +11429,7 @@ public final class Markets {
     private io.vegaprotocol.vega.Markets.Instrument instrument_;
     /**
      * <pre>
-     * Instrument details.
+     * Instrument details
      * </pre>
      *
      * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
@@ -11441,7 +11441,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Instrument details.
+     * Instrument details
      * </pre>
      *
      * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
@@ -11453,7 +11453,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Instrument details.
+     * Instrument details
      * </pre>
      *
      * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
@@ -11463,14 +11463,14 @@ public final class Markets {
       return getInstrument();
     }
 
-    public static final int MARGINCALCULATOR_FIELD_NUMBER = 2;
+    public static final int MARGIN_CALCULATOR_FIELD_NUMBER = 2;
     private io.vegaprotocol.vega.Markets.MarginCalculator marginCalculator_;
     /**
      * <pre>
-     * Margin calculator for the instrument.
+     * Margin calculator for the instrument
      * </pre>
      *
-     * <code>.vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];</code>
+     * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
      * @return Whether the marginCalculator field is set.
      */
     @java.lang.Override
@@ -11479,10 +11479,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Margin calculator for the instrument.
+     * Margin calculator for the instrument
      * </pre>
      *
-     * <code>.vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];</code>
+     * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
      * @return The marginCalculator.
      */
     @java.lang.Override
@@ -11491,23 +11491,23 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Margin calculator for the instrument.
+     * Margin calculator for the instrument
      * </pre>
      *
-     * <code>.vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];</code>
+     * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Markets.MarginCalculatorOrBuilder getMarginCalculatorOrBuilder() {
       return getMarginCalculator();
     }
 
-    public static final int LOGNORMALRISKMODEL_FIELD_NUMBER = 100;
+    public static final int LOG_NORMAL_RISK_MODEL_FIELD_NUMBER = 100;
     /**
      * <pre>
-     * Log normal.
+     * Log normal
      * </pre>
      *
-     * <code>.vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];</code>
+     * <code>.vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];</code>
      * @return Whether the logNormalRiskModel field is set.
      */
     @java.lang.Override
@@ -11516,10 +11516,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Log normal.
+     * Log normal
      * </pre>
      *
-     * <code>.vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];</code>
+     * <code>.vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];</code>
      * @return The logNormalRiskModel.
      */
     @java.lang.Override
@@ -11531,10 +11531,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Log normal.
+     * Log normal
      * </pre>
      *
-     * <code>.vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];</code>
+     * <code>.vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Markets.LogNormalRiskModelOrBuilder getLogNormalRiskModelOrBuilder() {
@@ -11544,13 +11544,13 @@ public final class Markets {
       return io.vegaprotocol.vega.Markets.LogNormalRiskModel.getDefaultInstance();
     }
 
-    public static final int SIMPLERISKMODEL_FIELD_NUMBER = 101;
+    public static final int SIMPLE_RISK_MODEL_FIELD_NUMBER = 101;
     /**
      * <pre>
-     * Simple.
+     * Simple
      * </pre>
      *
-     * <code>.vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];</code>
+     * <code>.vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];</code>
      * @return Whether the simpleRiskModel field is set.
      */
     @java.lang.Override
@@ -11559,10 +11559,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Simple.
+     * Simple
      * </pre>
      *
-     * <code>.vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];</code>
+     * <code>.vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];</code>
      * @return The simpleRiskModel.
      */
     @java.lang.Override
@@ -11574,10 +11574,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Simple.
+     * Simple
      * </pre>
      *
-     * <code>.vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];</code>
+     * <code>.vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Markets.SimpleRiskModelOrBuilder getSimpleRiskModelOrBuilder() {
@@ -11692,16 +11692,16 @@ public final class Markets {
         hash = (53 * hash) + getInstrument().hashCode();
       }
       if (hasMarginCalculator()) {
-        hash = (37 * hash) + MARGINCALCULATOR_FIELD_NUMBER;
+        hash = (37 * hash) + MARGIN_CALCULATOR_FIELD_NUMBER;
         hash = (53 * hash) + getMarginCalculator().hashCode();
       }
       switch (riskModelCase_) {
         case 100:
-          hash = (37 * hash) + LOGNORMALRISKMODEL_FIELD_NUMBER;
+          hash = (37 * hash) + LOG_NORMAL_RISK_MODEL_FIELD_NUMBER;
           hash = (53 * hash) + getLogNormalRiskModel().hashCode();
           break;
         case 101:
-          hash = (37 * hash) + SIMPLERISKMODEL_FIELD_NUMBER;
+          hash = (37 * hash) + SIMPLE_RISK_MODEL_FIELD_NUMBER;
           hash = (53 * hash) + getSimpleRiskModel().hashCode();
           break;
         case 0:
@@ -11804,7 +11804,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Tradable Instrument definition.
+     * Tradable Instrument definition
      * </pre>
      *
      * Protobuf type {@code vega.TradableInstrument}
@@ -11964,11 +11964,11 @@ public final class Markets {
           mergeMarginCalculator(other.getMarginCalculator());
         }
         switch (other.getRiskModelCase()) {
-          case LOGNORMALRISKMODEL: {
+          case LOG_NORMAL_RISK_MODEL: {
             mergeLogNormalRiskModel(other.getLogNormalRiskModel());
             break;
           }
-          case SIMPLERISKMODEL: {
+          case SIMPLE_RISK_MODEL: {
             mergeSimpleRiskModel(other.getSimpleRiskModel());
             break;
           }
@@ -12025,7 +12025,7 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.Instrument, io.vegaprotocol.vega.Markets.Instrument.Builder, io.vegaprotocol.vega.Markets.InstrumentOrBuilder> instrumentBuilder_;
       /**
        * <pre>
-       * Instrument details.
+       * Instrument details
        * </pre>
        *
        * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
@@ -12036,7 +12036,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Instrument details.
+       * Instrument details
        * </pre>
        *
        * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
@@ -12051,7 +12051,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Instrument details.
+       * Instrument details
        * </pre>
        *
        * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
@@ -12071,7 +12071,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Instrument details.
+       * Instrument details
        * </pre>
        *
        * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
@@ -12089,7 +12089,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Instrument details.
+       * Instrument details
        * </pre>
        *
        * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
@@ -12111,7 +12111,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Instrument details.
+       * Instrument details
        * </pre>
        *
        * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
@@ -12129,7 +12129,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Instrument details.
+       * Instrument details
        * </pre>
        *
        * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
@@ -12141,7 +12141,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Instrument details.
+       * Instrument details
        * </pre>
        *
        * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
@@ -12156,7 +12156,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Instrument details.
+       * Instrument details
        * </pre>
        *
        * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
@@ -12180,10 +12180,10 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.MarginCalculator, io.vegaprotocol.vega.Markets.MarginCalculator.Builder, io.vegaprotocol.vega.Markets.MarginCalculatorOrBuilder> marginCalculatorBuilder_;
       /**
        * <pre>
-       * Margin calculator for the instrument.
+       * Margin calculator for the instrument
        * </pre>
        *
-       * <code>.vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];</code>
+       * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
        * @return Whether the marginCalculator field is set.
        */
       public boolean hasMarginCalculator() {
@@ -12191,10 +12191,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Margin calculator for the instrument.
+       * Margin calculator for the instrument
        * </pre>
        *
-       * <code>.vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];</code>
+       * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
        * @return The marginCalculator.
        */
       public io.vegaprotocol.vega.Markets.MarginCalculator getMarginCalculator() {
@@ -12206,10 +12206,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Margin calculator for the instrument.
+       * Margin calculator for the instrument
        * </pre>
        *
-       * <code>.vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];</code>
+       * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
        */
       public Builder setMarginCalculator(io.vegaprotocol.vega.Markets.MarginCalculator value) {
         if (marginCalculatorBuilder_ == null) {
@@ -12226,10 +12226,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Margin calculator for the instrument.
+       * Margin calculator for the instrument
        * </pre>
        *
-       * <code>.vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];</code>
+       * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
        */
       public Builder setMarginCalculator(
           io.vegaprotocol.vega.Markets.MarginCalculator.Builder builderForValue) {
@@ -12244,10 +12244,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Margin calculator for the instrument.
+       * Margin calculator for the instrument
        * </pre>
        *
-       * <code>.vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];</code>
+       * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
        */
       public Builder mergeMarginCalculator(io.vegaprotocol.vega.Markets.MarginCalculator value) {
         if (marginCalculatorBuilder_ == null) {
@@ -12266,10 +12266,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Margin calculator for the instrument.
+       * Margin calculator for the instrument
        * </pre>
        *
-       * <code>.vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];</code>
+       * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
        */
       public Builder clearMarginCalculator() {
         if (marginCalculatorBuilder_ == null) {
@@ -12284,10 +12284,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Margin calculator for the instrument.
+       * Margin calculator for the instrument
        * </pre>
        *
-       * <code>.vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];</code>
+       * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
        */
       public io.vegaprotocol.vega.Markets.MarginCalculator.Builder getMarginCalculatorBuilder() {
 
@@ -12296,10 +12296,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Margin calculator for the instrument.
+       * Margin calculator for the instrument
        * </pre>
        *
-       * <code>.vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];</code>
+       * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
        */
       public io.vegaprotocol.vega.Markets.MarginCalculatorOrBuilder getMarginCalculatorOrBuilder() {
         if (marginCalculatorBuilder_ != null) {
@@ -12311,10 +12311,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Margin calculator for the instrument.
+       * Margin calculator for the instrument
        * </pre>
        *
-       * <code>.vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];</code>
+       * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.MarginCalculator, io.vegaprotocol.vega.Markets.MarginCalculator.Builder, io.vegaprotocol.vega.Markets.MarginCalculatorOrBuilder>
@@ -12334,10 +12334,10 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.LogNormalRiskModel, io.vegaprotocol.vega.Markets.LogNormalRiskModel.Builder, io.vegaprotocol.vega.Markets.LogNormalRiskModelOrBuilder> logNormalRiskModelBuilder_;
       /**
        * <pre>
-       * Log normal.
+       * Log normal
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];</code>
        * @return Whether the logNormalRiskModel field is set.
        */
       @java.lang.Override
@@ -12346,10 +12346,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Log normal.
+       * Log normal
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];</code>
        * @return The logNormalRiskModel.
        */
       @java.lang.Override
@@ -12368,10 +12368,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Log normal.
+       * Log normal
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];</code>
        */
       public Builder setLogNormalRiskModel(io.vegaprotocol.vega.Markets.LogNormalRiskModel value) {
         if (logNormalRiskModelBuilder_ == null) {
@@ -12388,10 +12388,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Log normal.
+       * Log normal
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];</code>
        */
       public Builder setLogNormalRiskModel(
           io.vegaprotocol.vega.Markets.LogNormalRiskModel.Builder builderForValue) {
@@ -12406,10 +12406,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Log normal.
+       * Log normal
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];</code>
        */
       public Builder mergeLogNormalRiskModel(io.vegaprotocol.vega.Markets.LogNormalRiskModel value) {
         if (logNormalRiskModelBuilder_ == null) {
@@ -12432,10 +12432,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Log normal.
+       * Log normal
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];</code>
        */
       public Builder clearLogNormalRiskModel() {
         if (logNormalRiskModelBuilder_ == null) {
@@ -12455,20 +12455,20 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Log normal.
+       * Log normal
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];</code>
        */
       public io.vegaprotocol.vega.Markets.LogNormalRiskModel.Builder getLogNormalRiskModelBuilder() {
         return getLogNormalRiskModelFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Log normal.
+       * Log normal
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Markets.LogNormalRiskModelOrBuilder getLogNormalRiskModelOrBuilder() {
@@ -12483,10 +12483,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Log normal.
+       * Log normal
        * </pre>
        *
-       * <code>.vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];</code>
+       * <code>.vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.LogNormalRiskModel, io.vegaprotocol.vega.Markets.LogNormalRiskModel.Builder, io.vegaprotocol.vega.Markets.LogNormalRiskModelOrBuilder>
@@ -12511,10 +12511,10 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.SimpleRiskModel, io.vegaprotocol.vega.Markets.SimpleRiskModel.Builder, io.vegaprotocol.vega.Markets.SimpleRiskModelOrBuilder> simpleRiskModelBuilder_;
       /**
        * <pre>
-       * Simple.
+       * Simple
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];</code>
+       * <code>.vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];</code>
        * @return Whether the simpleRiskModel field is set.
        */
       @java.lang.Override
@@ -12523,10 +12523,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Simple.
+       * Simple
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];</code>
+       * <code>.vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];</code>
        * @return The simpleRiskModel.
        */
       @java.lang.Override
@@ -12545,10 +12545,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Simple.
+       * Simple
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];</code>
+       * <code>.vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];</code>
        */
       public Builder setSimpleRiskModel(io.vegaprotocol.vega.Markets.SimpleRiskModel value) {
         if (simpleRiskModelBuilder_ == null) {
@@ -12565,10 +12565,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Simple.
+       * Simple
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];</code>
+       * <code>.vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];</code>
        */
       public Builder setSimpleRiskModel(
           io.vegaprotocol.vega.Markets.SimpleRiskModel.Builder builderForValue) {
@@ -12583,10 +12583,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Simple.
+       * Simple
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];</code>
+       * <code>.vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];</code>
        */
       public Builder mergeSimpleRiskModel(io.vegaprotocol.vega.Markets.SimpleRiskModel value) {
         if (simpleRiskModelBuilder_ == null) {
@@ -12609,10 +12609,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Simple.
+       * Simple
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];</code>
+       * <code>.vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];</code>
        */
       public Builder clearSimpleRiskModel() {
         if (simpleRiskModelBuilder_ == null) {
@@ -12632,20 +12632,20 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Simple.
+       * Simple
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];</code>
+       * <code>.vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];</code>
        */
       public io.vegaprotocol.vega.Markets.SimpleRiskModel.Builder getSimpleRiskModelBuilder() {
         return getSimpleRiskModelFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Simple.
+       * Simple
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];</code>
+       * <code>.vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];</code>
        */
       @java.lang.Override
       public io.vegaprotocol.vega.Markets.SimpleRiskModelOrBuilder getSimpleRiskModelOrBuilder() {
@@ -12660,10 +12660,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Simple.
+       * Simple
        * </pre>
        *
-       * <code>.vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];</code>
+       * <code>.vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.SimpleRiskModel, io.vegaprotocol.vega.Markets.SimpleRiskModel.Builder, io.vegaprotocol.vega.Markets.SimpleRiskModelOrBuilder>
@@ -12742,19 +12742,19 @@ public final class Markets {
 
     /**
      * <pre>
-     * Maker fee.
+     * Maker fee
      * </pre>
      *
-     * <code>string makerFee = 1 [json_name = "makerFee"];</code>
+     * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
      * @return The makerFee.
      */
     java.lang.String getMakerFee();
     /**
      * <pre>
-     * Maker fee.
+     * Maker fee
      * </pre>
      *
-     * <code>string makerFee = 1 [json_name = "makerFee"];</code>
+     * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
      * @return The bytes for makerFee.
      */
     com.google.protobuf.ByteString
@@ -12762,19 +12762,19 @@ public final class Markets {
 
     /**
      * <pre>
-     * Infrastructure fee.
+     * Infrastructure fee
      * </pre>
      *
-     * <code>string infrastructureFee = 2 [json_name = "infrastructureFee"];</code>
+     * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
      * @return The infrastructureFee.
      */
     java.lang.String getInfrastructureFee();
     /**
      * <pre>
-     * Infrastructure fee.
+     * Infrastructure fee
      * </pre>
      *
-     * <code>string infrastructureFee = 2 [json_name = "infrastructureFee"];</code>
+     * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
      * @return The bytes for infrastructureFee.
      */
     com.google.protobuf.ByteString
@@ -12782,19 +12782,19 @@ public final class Markets {
 
     /**
      * <pre>
-     * Liquidity fee.
+     * Liquidity fee
      * </pre>
      *
-     * <code>string liquidityFee = 3 [json_name = "liquidityFee"];</code>
+     * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
      * @return The liquidityFee.
      */
     java.lang.String getLiquidityFee();
     /**
      * <pre>
-     * Liquidity fee.
+     * Liquidity fee
      * </pre>
      *
-     * <code>string liquidityFee = 3 [json_name = "liquidityFee"];</code>
+     * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
      * @return The bytes for liquidityFee.
      */
     com.google.protobuf.ByteString
@@ -12802,7 +12802,7 @@ public final class Markets {
   }
   /**
    * <pre>
-   * Fee factors definition.
+   * Fee factors definition
    * </pre>
    *
    * Protobuf type {@code vega.FeeFactors}
@@ -12902,14 +12902,14 @@ public final class Markets {
               io.vegaprotocol.vega.Markets.FeeFactors.class, io.vegaprotocol.vega.Markets.FeeFactors.Builder.class);
     }
 
-    public static final int MAKERFEE_FIELD_NUMBER = 1;
+    public static final int MAKER_FEE_FIELD_NUMBER = 1;
     private volatile java.lang.Object makerFee_;
     /**
      * <pre>
-     * Maker fee.
+     * Maker fee
      * </pre>
      *
-     * <code>string makerFee = 1 [json_name = "makerFee"];</code>
+     * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
      * @return The makerFee.
      */
     @java.lang.Override
@@ -12927,10 +12927,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Maker fee.
+     * Maker fee
      * </pre>
      *
-     * <code>string makerFee = 1 [json_name = "makerFee"];</code>
+     * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
      * @return The bytes for makerFee.
      */
     @java.lang.Override
@@ -12948,14 +12948,14 @@ public final class Markets {
       }
     }
 
-    public static final int INFRASTRUCTUREFEE_FIELD_NUMBER = 2;
+    public static final int INFRASTRUCTURE_FEE_FIELD_NUMBER = 2;
     private volatile java.lang.Object infrastructureFee_;
     /**
      * <pre>
-     * Infrastructure fee.
+     * Infrastructure fee
      * </pre>
      *
-     * <code>string infrastructureFee = 2 [json_name = "infrastructureFee"];</code>
+     * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
      * @return The infrastructureFee.
      */
     @java.lang.Override
@@ -12973,10 +12973,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Infrastructure fee.
+     * Infrastructure fee
      * </pre>
      *
-     * <code>string infrastructureFee = 2 [json_name = "infrastructureFee"];</code>
+     * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
      * @return The bytes for infrastructureFee.
      */
     @java.lang.Override
@@ -12994,14 +12994,14 @@ public final class Markets {
       }
     }
 
-    public static final int LIQUIDITYFEE_FIELD_NUMBER = 3;
+    public static final int LIQUIDITY_FEE_FIELD_NUMBER = 3;
     private volatile java.lang.Object liquidityFee_;
     /**
      * <pre>
-     * Liquidity fee.
+     * Liquidity fee
      * </pre>
      *
-     * <code>string liquidityFee = 3 [json_name = "liquidityFee"];</code>
+     * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
      * @return The liquidityFee.
      */
     @java.lang.Override
@@ -13019,10 +13019,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Liquidity fee.
+     * Liquidity fee
      * </pre>
      *
-     * <code>string liquidityFee = 3 [json_name = "liquidityFee"];</code>
+     * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
      * @return The bytes for liquidityFee.
      */
     @java.lang.Override
@@ -13113,11 +13113,11 @@ public final class Markets {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MAKERFEE_FIELD_NUMBER;
+      hash = (37 * hash) + MAKER_FEE_FIELD_NUMBER;
       hash = (53 * hash) + getMakerFee().hashCode();
-      hash = (37 * hash) + INFRASTRUCTUREFEE_FIELD_NUMBER;
+      hash = (37 * hash) + INFRASTRUCTURE_FEE_FIELD_NUMBER;
       hash = (53 * hash) + getInfrastructureFee().hashCode();
-      hash = (37 * hash) + LIQUIDITYFEE_FIELD_NUMBER;
+      hash = (37 * hash) + LIQUIDITY_FEE_FIELD_NUMBER;
       hash = (53 * hash) + getLiquidityFee().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -13216,7 +13216,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Fee factors definition.
+     * Fee factors definition
      * </pre>
      *
      * Protobuf type {@code vega.FeeFactors}
@@ -13383,10 +13383,10 @@ public final class Markets {
       private java.lang.Object makerFee_ = "";
       /**
        * <pre>
-       * Maker fee.
+       * Maker fee
        * </pre>
        *
-       * <code>string makerFee = 1 [json_name = "makerFee"];</code>
+       * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
        * @return The makerFee.
        */
       public java.lang.String getMakerFee() {
@@ -13403,10 +13403,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Maker fee.
+       * Maker fee
        * </pre>
        *
-       * <code>string makerFee = 1 [json_name = "makerFee"];</code>
+       * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
        * @return The bytes for makerFee.
        */
       public com.google.protobuf.ByteString
@@ -13424,10 +13424,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Maker fee.
+       * Maker fee
        * </pre>
        *
-       * <code>string makerFee = 1 [json_name = "makerFee"];</code>
+       * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
        * @param value The makerFee to set.
        * @return This builder for chaining.
        */
@@ -13443,10 +13443,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Maker fee.
+       * Maker fee
        * </pre>
        *
-       * <code>string makerFee = 1 [json_name = "makerFee"];</code>
+       * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMakerFee() {
@@ -13457,10 +13457,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Maker fee.
+       * Maker fee
        * </pre>
        *
-       * <code>string makerFee = 1 [json_name = "makerFee"];</code>
+       * <code>string maker_fee = 1 [json_name = "makerFee"];</code>
        * @param value The bytes for makerFee to set.
        * @return This builder for chaining.
        */
@@ -13479,10 +13479,10 @@ public final class Markets {
       private java.lang.Object infrastructureFee_ = "";
       /**
        * <pre>
-       * Infrastructure fee.
+       * Infrastructure fee
        * </pre>
        *
-       * <code>string infrastructureFee = 2 [json_name = "infrastructureFee"];</code>
+       * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
        * @return The infrastructureFee.
        */
       public java.lang.String getInfrastructureFee() {
@@ -13499,10 +13499,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Infrastructure fee.
+       * Infrastructure fee
        * </pre>
        *
-       * <code>string infrastructureFee = 2 [json_name = "infrastructureFee"];</code>
+       * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
        * @return The bytes for infrastructureFee.
        */
       public com.google.protobuf.ByteString
@@ -13520,10 +13520,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Infrastructure fee.
+       * Infrastructure fee
        * </pre>
        *
-       * <code>string infrastructureFee = 2 [json_name = "infrastructureFee"];</code>
+       * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
        * @param value The infrastructureFee to set.
        * @return This builder for chaining.
        */
@@ -13539,10 +13539,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Infrastructure fee.
+       * Infrastructure fee
        * </pre>
        *
-       * <code>string infrastructureFee = 2 [json_name = "infrastructureFee"];</code>
+       * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
        * @return This builder for chaining.
        */
       public Builder clearInfrastructureFee() {
@@ -13553,10 +13553,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Infrastructure fee.
+       * Infrastructure fee
        * </pre>
        *
-       * <code>string infrastructureFee = 2 [json_name = "infrastructureFee"];</code>
+       * <code>string infrastructure_fee = 2 [json_name = "infrastructureFee"];</code>
        * @param value The bytes for infrastructureFee to set.
        * @return This builder for chaining.
        */
@@ -13575,10 +13575,10 @@ public final class Markets {
       private java.lang.Object liquidityFee_ = "";
       /**
        * <pre>
-       * Liquidity fee.
+       * Liquidity fee
        * </pre>
        *
-       * <code>string liquidityFee = 3 [json_name = "liquidityFee"];</code>
+       * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
        * @return The liquidityFee.
        */
       public java.lang.String getLiquidityFee() {
@@ -13595,10 +13595,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Liquidity fee.
+       * Liquidity fee
        * </pre>
        *
-       * <code>string liquidityFee = 3 [json_name = "liquidityFee"];</code>
+       * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
        * @return The bytes for liquidityFee.
        */
       public com.google.protobuf.ByteString
@@ -13616,10 +13616,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Liquidity fee.
+       * Liquidity fee
        * </pre>
        *
-       * <code>string liquidityFee = 3 [json_name = "liquidityFee"];</code>
+       * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
        * @param value The liquidityFee to set.
        * @return This builder for chaining.
        */
@@ -13635,10 +13635,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Liquidity fee.
+       * Liquidity fee
        * </pre>
        *
-       * <code>string liquidityFee = 3 [json_name = "liquidityFee"];</code>
+       * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLiquidityFee() {
@@ -13649,10 +13649,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Liquidity fee.
+       * Liquidity fee
        * </pre>
        *
-       * <code>string liquidityFee = 3 [json_name = "liquidityFee"];</code>
+       * <code>string liquidity_fee = 3 [json_name = "liquidityFee"];</code>
        * @param value The bytes for liquidityFee to set.
        * @return This builder for chaining.
        */
@@ -13726,7 +13726,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Fee factors.
+     * Fee factors
      * </pre>
      *
      * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
@@ -13735,7 +13735,7 @@ public final class Markets {
     boolean hasFactors();
     /**
      * <pre>
-     * Fee factors.
+     * Fee factors
      * </pre>
      *
      * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
@@ -13744,7 +13744,7 @@ public final class Markets {
     io.vegaprotocol.vega.Markets.FeeFactors getFactors();
     /**
      * <pre>
-     * Fee factors.
+     * Fee factors
      * </pre>
      *
      * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
@@ -13753,7 +13753,7 @@ public final class Markets {
   }
   /**
    * <pre>
-   * Fees definition.
+   * Fees definition
    * </pre>
    *
    * Protobuf type {@code vega.Fees}
@@ -13849,7 +13849,7 @@ public final class Markets {
     private io.vegaprotocol.vega.Markets.FeeFactors factors_;
     /**
      * <pre>
-     * Fee factors.
+     * Fee factors
      * </pre>
      *
      * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
@@ -13861,7 +13861,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Fee factors.
+     * Fee factors
      * </pre>
      *
      * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
@@ -13873,7 +13873,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Fee factors.
+     * Fee factors
      * </pre>
      *
      * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
@@ -14045,7 +14045,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Fees definition.
+     * Fees definition
      * </pre>
      *
      * Protobuf type {@code vega.Fees}
@@ -14207,7 +14207,7 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.FeeFactors, io.vegaprotocol.vega.Markets.FeeFactors.Builder, io.vegaprotocol.vega.Markets.FeeFactorsOrBuilder> factorsBuilder_;
       /**
        * <pre>
-       * Fee factors.
+       * Fee factors
        * </pre>
        *
        * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
@@ -14218,7 +14218,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Fee factors.
+       * Fee factors
        * </pre>
        *
        * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
@@ -14233,7 +14233,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Fee factors.
+       * Fee factors
        * </pre>
        *
        * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
@@ -14253,7 +14253,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Fee factors.
+       * Fee factors
        * </pre>
        *
        * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
@@ -14271,7 +14271,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Fee factors.
+       * Fee factors
        * </pre>
        *
        * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
@@ -14293,7 +14293,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Fee factors.
+       * Fee factors
        * </pre>
        *
        * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
@@ -14311,7 +14311,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Fee factors.
+       * Fee factors
        * </pre>
        *
        * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
@@ -14323,7 +14323,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Fee factors.
+       * Fee factors
        * </pre>
        *
        * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
@@ -14338,7 +14338,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Fee factors.
+       * Fee factors
        * </pre>
        *
        * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
@@ -14415,7 +14415,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Price monitoring projection horizon τ in seconds.
+     * Price monitoring projection horizon τ in seconds
      * </pre>
      *
      * <code>int64 horizon = 1 [json_name = "horizon", (.validator.field) = { ... }</code>
@@ -14425,7 +14425,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Price monitoirng probability level p.
+     * Price monitoirng probability level p
      * </pre>
      *
      * <code>double probability = 2 [json_name = "probability", (.validator.field) = { ... }</code>
@@ -14437,10 +14437,10 @@ public final class Markets {
      * <pre>
      * Price monitoring auction extension duration in seconds should the price
      * breach it's theoretical level over the specified horizon at the specified
-     * probability level.
+     * probability level
      * </pre>
      *
-     * <code>int64 auctionExtension = 3 [json_name = "auctionExtension", (.validator.field) = { ... }</code>
+     * <code>int64 auction_extension = 3 [json_name = "auctionExtension", (.validator.field) = { ... }</code>
      * @return The auctionExtension.
      */
     long getAuctionExtension();
@@ -14545,7 +14545,7 @@ public final class Markets {
     private long horizon_;
     /**
      * <pre>
-     * Price monitoring projection horizon τ in seconds.
+     * Price monitoring projection horizon τ in seconds
      * </pre>
      *
      * <code>int64 horizon = 1 [json_name = "horizon", (.validator.field) = { ... }</code>
@@ -14560,7 +14560,7 @@ public final class Markets {
     private double probability_;
     /**
      * <pre>
-     * Price monitoirng probability level p.
+     * Price monitoirng probability level p
      * </pre>
      *
      * <code>double probability = 2 [json_name = "probability", (.validator.field) = { ... }</code>
@@ -14571,16 +14571,16 @@ public final class Markets {
       return probability_;
     }
 
-    public static final int AUCTIONEXTENSION_FIELD_NUMBER = 3;
+    public static final int AUCTION_EXTENSION_FIELD_NUMBER = 3;
     private long auctionExtension_;
     /**
      * <pre>
      * Price monitoring auction extension duration in seconds should the price
      * breach it's theoretical level over the specified horizon at the specified
-     * probability level.
+     * probability level
      * </pre>
      *
-     * <code>int64 auctionExtension = 3 [json_name = "auctionExtension", (.validator.field) = { ... }</code>
+     * <code>int64 auction_extension = 3 [json_name = "auctionExtension", (.validator.field) = { ... }</code>
      * @return The auctionExtension.
      */
     @java.lang.Override
@@ -14671,7 +14671,7 @@ public final class Markets {
       hash = (37 * hash) + PROBABILITY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getProbability()));
-      hash = (37 * hash) + AUCTIONEXTENSION_FIELD_NUMBER;
+      hash = (37 * hash) + AUCTION_EXTENSION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAuctionExtension());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -14935,7 +14935,7 @@ public final class Markets {
       private long horizon_ ;
       /**
        * <pre>
-       * Price monitoring projection horizon τ in seconds.
+       * Price monitoring projection horizon τ in seconds
        * </pre>
        *
        * <code>int64 horizon = 1 [json_name = "horizon", (.validator.field) = { ... }</code>
@@ -14947,7 +14947,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Price monitoring projection horizon τ in seconds.
+       * Price monitoring projection horizon τ in seconds
        * </pre>
        *
        * <code>int64 horizon = 1 [json_name = "horizon", (.validator.field) = { ... }</code>
@@ -14962,7 +14962,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Price monitoring projection horizon τ in seconds.
+       * Price monitoring projection horizon τ in seconds
        * </pre>
        *
        * <code>int64 horizon = 1 [json_name = "horizon", (.validator.field) = { ... }</code>
@@ -14978,7 +14978,7 @@ public final class Markets {
       private double probability_ ;
       /**
        * <pre>
-       * Price monitoirng probability level p.
+       * Price monitoirng probability level p
        * </pre>
        *
        * <code>double probability = 2 [json_name = "probability", (.validator.field) = { ... }</code>
@@ -14990,7 +14990,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Price monitoirng probability level p.
+       * Price monitoirng probability level p
        * </pre>
        *
        * <code>double probability = 2 [json_name = "probability", (.validator.field) = { ... }</code>
@@ -15005,7 +15005,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Price monitoirng probability level p.
+       * Price monitoirng probability level p
        * </pre>
        *
        * <code>double probability = 2 [json_name = "probability", (.validator.field) = { ... }</code>
@@ -15023,10 +15023,10 @@ public final class Markets {
        * <pre>
        * Price monitoring auction extension duration in seconds should the price
        * breach it's theoretical level over the specified horizon at the specified
-       * probability level.
+       * probability level
        * </pre>
        *
-       * <code>int64 auctionExtension = 3 [json_name = "auctionExtension", (.validator.field) = { ... }</code>
+       * <code>int64 auction_extension = 3 [json_name = "auctionExtension", (.validator.field) = { ... }</code>
        * @return The auctionExtension.
        */
       @java.lang.Override
@@ -15037,10 +15037,10 @@ public final class Markets {
        * <pre>
        * Price monitoring auction extension duration in seconds should the price
        * breach it's theoretical level over the specified horizon at the specified
-       * probability level.
+       * probability level
        * </pre>
        *
-       * <code>int64 auctionExtension = 3 [json_name = "auctionExtension", (.validator.field) = { ... }</code>
+       * <code>int64 auction_extension = 3 [json_name = "auctionExtension", (.validator.field) = { ... }</code>
        * @param value The auctionExtension to set.
        * @return This builder for chaining.
        */
@@ -15054,10 +15054,10 @@ public final class Markets {
        * <pre>
        * Price monitoring auction extension duration in seconds should the price
        * breach it's theoretical level over the specified horizon at the specified
-       * probability level.
+       * probability level
        * </pre>
        *
-       * <code>int64 auctionExtension = 3 [json_name = "auctionExtension", (.validator.field) = { ... }</code>
+       * <code>int64 auction_extension = 3 [json_name = "auctionExtension", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearAuctionExtension() {
@@ -15149,7 +15149,7 @@ public final class Markets {
   }
   /**
    * <pre>
-   * PriceMonitoringParameters contain a collection of triggers to be used for a given market.
+   * PriceMonitoringParameters contains a collection of triggers to be used for a given market
    * </pre>
    *
    * Protobuf type {@code vega.PriceMonitoringParameters}
@@ -15441,7 +15441,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * PriceMonitoringParameters contain a collection of triggers to be used for a given market.
+     * PriceMonitoringParameters contains a collection of triggers to be used for a given market
      * </pre>
      *
      * Protobuf type {@code vega.PriceMonitoringParameters}
@@ -15926,7 +15926,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+     * Specifies price monitoring parameters to be used for price monitoring purposes
      * </pre>
      *
      * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
@@ -15935,7 +15935,7 @@ public final class Markets {
     boolean hasParameters();
     /**
      * <pre>
-     * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+     * Specifies price monitoring parameters to be used for price monitoring purposes
      * </pre>
      *
      * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
@@ -15944,7 +15944,7 @@ public final class Markets {
     io.vegaprotocol.vega.Markets.PriceMonitoringParameters getParameters();
     /**
      * <pre>
-     * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+     * Specifies price monitoring parameters to be used for price monitoring purposes
      * </pre>
      *
      * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
@@ -15953,15 +15953,19 @@ public final class Markets {
 
     /**
      * <pre>
-     * Specifies how often (expressed in seconds) the price monitoring bounds should be updated.
+     * Specifies how often (expressed in seconds) the price monitoring bounds should be updated
      * </pre>
      *
-     * <code>int64 updateFrequency = 2 [json_name = "updateFrequency"];</code>
+     * <code>int64 update_frequency = 2 [json_name = "updateFrequency"];</code>
      * @return The updateFrequency.
      */
     long getUpdateFrequency();
   }
   /**
+   * <pre>
+   * PriceMonitoringSettings contains the settings for price monitoring
+   * </pre>
+   *
    * Protobuf type {@code vega.PriceMonitoringSettings}
    */
   public static final class PriceMonitoringSettings extends
@@ -16060,7 +16064,7 @@ public final class Markets {
     private io.vegaprotocol.vega.Markets.PriceMonitoringParameters parameters_;
     /**
      * <pre>
-     * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+     * Specifies price monitoring parameters to be used for price monitoring purposes
      * </pre>
      *
      * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
@@ -16072,7 +16076,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+     * Specifies price monitoring parameters to be used for price monitoring purposes
      * </pre>
      *
      * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
@@ -16084,7 +16088,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+     * Specifies price monitoring parameters to be used for price monitoring purposes
      * </pre>
      *
      * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
@@ -16094,14 +16098,14 @@ public final class Markets {
       return getParameters();
     }
 
-    public static final int UPDATEFREQUENCY_FIELD_NUMBER = 2;
+    public static final int UPDATE_FREQUENCY_FIELD_NUMBER = 2;
     private long updateFrequency_;
     /**
      * <pre>
-     * Specifies how often (expressed in seconds) the price monitoring bounds should be updated.
+     * Specifies how often (expressed in seconds) the price monitoring bounds should be updated
      * </pre>
      *
-     * <code>int64 updateFrequency = 2 [json_name = "updateFrequency"];</code>
+     * <code>int64 update_frequency = 2 [json_name = "updateFrequency"];</code>
      * @return The updateFrequency.
      */
     @java.lang.Override
@@ -16183,7 +16187,7 @@ public final class Markets {
         hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
         hash = (53 * hash) + getParameters().hashCode();
       }
-      hash = (37 * hash) + UPDATEFREQUENCY_FIELD_NUMBER;
+      hash = (37 * hash) + UPDATE_FREQUENCY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdateFrequency());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -16282,6 +16286,10 @@ public final class Markets {
       return builder;
     }
     /**
+     * <pre>
+     * PriceMonitoringSettings contains the settings for price monitoring
+     * </pre>
+     *
      * Protobuf type {@code vega.PriceMonitoringSettings}
      */
     public static final class Builder extends
@@ -16447,7 +16455,7 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.PriceMonitoringParameters, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder> parametersBuilder_;
       /**
        * <pre>
-       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+       * Specifies price monitoring parameters to be used for price monitoring purposes
        * </pre>
        *
        * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
@@ -16458,7 +16466,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+       * Specifies price monitoring parameters to be used for price monitoring purposes
        * </pre>
        *
        * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
@@ -16473,7 +16481,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+       * Specifies price monitoring parameters to be used for price monitoring purposes
        * </pre>
        *
        * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
@@ -16493,7 +16501,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+       * Specifies price monitoring parameters to be used for price monitoring purposes
        * </pre>
        *
        * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
@@ -16511,7 +16519,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+       * Specifies price monitoring parameters to be used for price monitoring purposes
        * </pre>
        *
        * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
@@ -16533,7 +16541,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+       * Specifies price monitoring parameters to be used for price monitoring purposes
        * </pre>
        *
        * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
@@ -16551,7 +16559,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+       * Specifies price monitoring parameters to be used for price monitoring purposes
        * </pre>
        *
        * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
@@ -16563,7 +16571,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+       * Specifies price monitoring parameters to be used for price monitoring purposes
        * </pre>
        *
        * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
@@ -16578,7 +16586,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Specifies PriceMonitoringParameters to be used for price monitoring purposes
+       * Specifies price monitoring parameters to be used for price monitoring purposes
        * </pre>
        *
        * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
@@ -16600,10 +16608,10 @@ public final class Markets {
       private long updateFrequency_ ;
       /**
        * <pre>
-       * Specifies how often (expressed in seconds) the price monitoring bounds should be updated.
+       * Specifies how often (expressed in seconds) the price monitoring bounds should be updated
        * </pre>
        *
-       * <code>int64 updateFrequency = 2 [json_name = "updateFrequency"];</code>
+       * <code>int64 update_frequency = 2 [json_name = "updateFrequency"];</code>
        * @return The updateFrequency.
        */
       @java.lang.Override
@@ -16612,10 +16620,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Specifies how often (expressed in seconds) the price monitoring bounds should be updated.
+       * Specifies how often (expressed in seconds) the price monitoring bounds should be updated
        * </pre>
        *
-       * <code>int64 updateFrequency = 2 [json_name = "updateFrequency"];</code>
+       * <code>int64 update_frequency = 2 [json_name = "updateFrequency"];</code>
        * @param value The updateFrequency to set.
        * @return This builder for chaining.
        */
@@ -16627,10 +16635,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Specifies how often (expressed in seconds) the price monitoring bounds should be updated.
+       * Specifies how often (expressed in seconds) the price monitoring bounds should be updated
        * </pre>
        *
-       * <code>int64 updateFrequency = 2 [json_name = "updateFrequency"];</code>
+       * <code>int64 update_frequency = 2 [json_name = "updateFrequency"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdateFrequency() {
@@ -16701,7 +16709,7 @@ public final class Markets {
      * Specifies length of time window expressed in seconds for target stake calculation
      * </pre>
      *
-     * <code>int64 timeWindow = 1 [json_name = "timeWindow", (.validator.field) = { ... }</code>
+     * <code>int64 time_window = 1 [json_name = "timeWindow", (.validator.field) = { ... }</code>
      * @return The timeWindow.
      */
     long getTimeWindow();
@@ -16711,7 +16719,7 @@ public final class Markets {
      * Specifies scaling factors used in target stake calculation
      * </pre>
      *
-     * <code>double scalingFactor = 2 [json_name = "scalingFactor", (.validator.field) = { ... }</code>
+     * <code>double scaling_factor = 2 [json_name = "scalingFactor", (.validator.field) = { ... }</code>
      * @return The scalingFactor.
      */
     double getScalingFactor();
@@ -16807,14 +16815,14 @@ public final class Markets {
               io.vegaprotocol.vega.Markets.TargetStakeParameters.class, io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder.class);
     }
 
-    public static final int TIMEWINDOW_FIELD_NUMBER = 1;
+    public static final int TIME_WINDOW_FIELD_NUMBER = 1;
     private long timeWindow_;
     /**
      * <pre>
      * Specifies length of time window expressed in seconds for target stake calculation
      * </pre>
      *
-     * <code>int64 timeWindow = 1 [json_name = "timeWindow", (.validator.field) = { ... }</code>
+     * <code>int64 time_window = 1 [json_name = "timeWindow", (.validator.field) = { ... }</code>
      * @return The timeWindow.
      */
     @java.lang.Override
@@ -16822,14 +16830,14 @@ public final class Markets {
       return timeWindow_;
     }
 
-    public static final int SCALINGFACTOR_FIELD_NUMBER = 2;
+    public static final int SCALING_FACTOR_FIELD_NUMBER = 2;
     private double scalingFactor_;
     /**
      * <pre>
      * Specifies scaling factors used in target stake calculation
      * </pre>
      *
-     * <code>double scalingFactor = 2 [json_name = "scalingFactor", (.validator.field) = { ... }</code>
+     * <code>double scaling_factor = 2 [json_name = "scalingFactor", (.validator.field) = { ... }</code>
      * @return The scalingFactor.
      */
     @java.lang.Override
@@ -16905,10 +16913,10 @@ public final class Markets {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TIMEWINDOW_FIELD_NUMBER;
+      hash = (37 * hash) + TIME_WINDOW_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimeWindow());
-      hash = (37 * hash) + SCALINGFACTOR_FIELD_NUMBER;
+      hash = (37 * hash) + SCALING_FACTOR_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getScalingFactor()));
       hash = (29 * hash) + unknownFields.hashCode();
@@ -17169,7 +17177,7 @@ public final class Markets {
        * Specifies length of time window expressed in seconds for target stake calculation
        * </pre>
        *
-       * <code>int64 timeWindow = 1 [json_name = "timeWindow", (.validator.field) = { ... }</code>
+       * <code>int64 time_window = 1 [json_name = "timeWindow", (.validator.field) = { ... }</code>
        * @return The timeWindow.
        */
       @java.lang.Override
@@ -17181,7 +17189,7 @@ public final class Markets {
        * Specifies length of time window expressed in seconds for target stake calculation
        * </pre>
        *
-       * <code>int64 timeWindow = 1 [json_name = "timeWindow", (.validator.field) = { ... }</code>
+       * <code>int64 time_window = 1 [json_name = "timeWindow", (.validator.field) = { ... }</code>
        * @param value The timeWindow to set.
        * @return This builder for chaining.
        */
@@ -17196,7 +17204,7 @@ public final class Markets {
        * Specifies length of time window expressed in seconds for target stake calculation
        * </pre>
        *
-       * <code>int64 timeWindow = 1 [json_name = "timeWindow", (.validator.field) = { ... }</code>
+       * <code>int64 time_window = 1 [json_name = "timeWindow", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearTimeWindow() {
@@ -17212,7 +17220,7 @@ public final class Markets {
        * Specifies scaling factors used in target stake calculation
        * </pre>
        *
-       * <code>double scalingFactor = 2 [json_name = "scalingFactor", (.validator.field) = { ... }</code>
+       * <code>double scaling_factor = 2 [json_name = "scalingFactor", (.validator.field) = { ... }</code>
        * @return The scalingFactor.
        */
       @java.lang.Override
@@ -17224,7 +17232,7 @@ public final class Markets {
        * Specifies scaling factors used in target stake calculation
        * </pre>
        *
-       * <code>double scalingFactor = 2 [json_name = "scalingFactor", (.validator.field) = { ... }</code>
+       * <code>double scaling_factor = 2 [json_name = "scalingFactor", (.validator.field) = { ... }</code>
        * @param value The scalingFactor to set.
        * @return This builder for chaining.
        */
@@ -17239,7 +17247,7 @@ public final class Markets {
        * Specifies scaling factors used in target stake calculation
        * </pre>
        *
-       * <code>double scalingFactor = 2 [json_name = "scalingFactor", (.validator.field) = { ... }</code>
+       * <code>double scaling_factor = 2 [json_name = "scalingFactor", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearScalingFactor() {
@@ -17307,7 +17315,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Unique identifier.
+     * Unique identifier
      * </pre>
      *
      * <code>string id = 1 [json_name = "id"];</code>
@@ -17316,7 +17324,7 @@ public final class Markets {
     java.lang.String getId();
     /**
      * <pre>
-     * Unique identifier.
+     * Unique identifier
      * </pre>
      *
      * <code>string id = 1 [json_name = "id"];</code>
@@ -17327,46 +17335,46 @@ public final class Markets {
 
     /**
      * <pre>
-     * Tradable instrument configuration.
+     * Tradable instrument configuration
      * </pre>
      *
-     * <code>.vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];</code>
+     * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
      * @return Whether the tradableInstrument field is set.
      */
     boolean hasTradableInstrument();
     /**
      * <pre>
-     * Tradable instrument configuration.
+     * Tradable instrument configuration
      * </pre>
      *
-     * <code>.vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];</code>
+     * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
      * @return The tradableInstrument.
      */
     io.vegaprotocol.vega.Markets.TradableInstrument getTradableInstrument();
     /**
      * <pre>
-     * Tradable instrument configuration.
+     * Tradable instrument configuration
      * </pre>
      *
-     * <code>.vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];</code>
+     * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
      */
     io.vegaprotocol.vega.Markets.TradableInstrumentOrBuilder getTradableInstrumentOrBuilder();
 
     /**
      * <pre>
      * Number of decimal places that a price must be shifted by in order to get a
-     * correct price denominated in the currency of the market. For example:
+     * correct price denominated in the currency of the market, for example:
      * `realPrice = price / 10^decimalPlaces`
      * </pre>
      *
-     * <code>uint64 decimalPlaces = 3 [json_name = "decimalPlaces"];</code>
+     * <code>uint64 decimal_places = 3 [json_name = "decimalPlaces"];</code>
      * @return The decimalPlaces.
      */
     long getDecimalPlaces();
 
     /**
      * <pre>
-     * Fees configuration.
+     * Fees configuration
      * </pre>
      *
      * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
@@ -17375,7 +17383,7 @@ public final class Markets {
     boolean hasFees();
     /**
      * <pre>
-     * Fees configuration.
+     * Fees configuration
      * </pre>
      *
      * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
@@ -17384,7 +17392,7 @@ public final class Markets {
     io.vegaprotocol.vega.Markets.Fees getFees();
     /**
      * <pre>
-     * Fees configuration.
+     * Fees configuration
      * </pre>
      *
      * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
@@ -17394,36 +17402,36 @@ public final class Markets {
     /**
      * <pre>
      * Auction duration specifies how long the opening auction will run (minimum
-     * duration and optionally a minimum traded volume).
+     * duration and optionally a minimum traded volume)
      * </pre>
      *
-     * <code>.vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];</code>
+     * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
      * @return Whether the openingAuction field is set.
      */
     boolean hasOpeningAuction();
     /**
      * <pre>
      * Auction duration specifies how long the opening auction will run (minimum
-     * duration and optionally a minimum traded volume).
+     * duration and optionally a minimum traded volume)
      * </pre>
      *
-     * <code>.vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];</code>
+     * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
      * @return The openingAuction.
      */
     io.vegaprotocol.vega.Markets.AuctionDuration getOpeningAuction();
     /**
      * <pre>
      * Auction duration specifies how long the opening auction will run (minimum
-     * duration and optionally a minimum traded volume).
+     * duration and optionally a minimum traded volume)
      * </pre>
      *
-     * <code>.vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];</code>
+     * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
      */
     io.vegaprotocol.vega.Markets.AuctionDurationOrBuilder getOpeningAuctionOrBuilder();
 
     /**
      * <pre>
-     * Continuous.
+     * Continuous
      * </pre>
      *
      * <code>.vega.ContinuousTrading continuous = 100 [json_name = "continuous"];</code>
@@ -17432,7 +17440,7 @@ public final class Markets {
     boolean hasContinuous();
     /**
      * <pre>
-     * Continuous.
+     * Continuous
      * </pre>
      *
      * <code>.vega.ContinuousTrading continuous = 100 [json_name = "continuous"];</code>
@@ -17441,7 +17449,7 @@ public final class Markets {
     io.vegaprotocol.vega.Markets.ContinuousTrading getContinuous();
     /**
      * <pre>
-     * Continuous.
+     * Continuous
      * </pre>
      *
      * <code>.vega.ContinuousTrading continuous = 100 [json_name = "continuous"];</code>
@@ -17450,7 +17458,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Discrete.
+     * Discrete
      * </pre>
      *
      * <code>.vega.DiscreteTrading discrete = 101 [json_name = "discrete"];</code>
@@ -17459,7 +17467,7 @@ public final class Markets {
     boolean hasDiscrete();
     /**
      * <pre>
-     * Discrete.
+     * Discrete
      * </pre>
      *
      * <code>.vega.DiscreteTrading discrete = 101 [json_name = "discrete"];</code>
@@ -17468,7 +17476,7 @@ public final class Markets {
     io.vegaprotocol.vega.Markets.DiscreteTrading getDiscrete();
     /**
      * <pre>
-     * Discrete.
+     * Discrete
      * </pre>
      *
      * <code>.vega.DiscreteTrading discrete = 101 [json_name = "discrete"];</code>
@@ -17477,28 +17485,28 @@ public final class Markets {
 
     /**
      * <pre>
-     * PriceMonitoringSettings for the market.
+     * PriceMonitoringSettings for the market
      * </pre>
      *
-     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];</code>
+     * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
      * @return Whether the priceMonitoringSettings field is set.
      */
     boolean hasPriceMonitoringSettings();
     /**
      * <pre>
-     * PriceMonitoringSettings for the market.
+     * PriceMonitoringSettings for the market
      * </pre>
      *
-     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];</code>
+     * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
      * @return The priceMonitoringSettings.
      */
     io.vegaprotocol.vega.Markets.PriceMonitoringSettings getPriceMonitoringSettings();
     /**
      * <pre>
-     * PriceMonitoringSettings for the market.
+     * PriceMonitoringSettings for the market
      * </pre>
      *
-     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];</code>
+     * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
      */
     io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder getPriceMonitoringSettingsOrBuilder();
 
@@ -17507,7 +17515,7 @@ public final class Markets {
      * TargetStakeParameters for the market
      * </pre>
      *
-     * <code>.vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];</code>
+     * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
      * @return Whether the targetStakeParameters field is set.
      */
     boolean hasTargetStakeParameters();
@@ -17516,7 +17524,7 @@ public final class Markets {
      * TargetStakeParameters for the market
      * </pre>
      *
-     * <code>.vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];</code>
+     * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
      * @return The targetStakeParameters.
      */
     io.vegaprotocol.vega.Markets.TargetStakeParameters getTargetStakeParameters();
@@ -17525,7 +17533,7 @@ public final class Markets {
      * TargetStakeParameters for the market
      * </pre>
      *
-     * <code>.vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];</code>
+     * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
      */
     io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder getTargetStakeParametersOrBuilder();
 
@@ -17534,7 +17542,7 @@ public final class Markets {
      * Current mode of execution of the market
      * </pre>
      *
-     * <code>.vega.Market.TradingMode tradingMode = 8 [json_name = "tradingMode"];</code>
+     * <code>.vega.Market.TradingMode trading_mode = 8 [json_name = "tradingMode"];</code>
      * @return The enum numeric value on the wire for tradingMode.
      */
     int getTradingModeValue();
@@ -17543,7 +17551,7 @@ public final class Markets {
      * Current mode of execution of the market
      * </pre>
      *
-     * <code>.vega.Market.TradingMode tradingMode = 8 [json_name = "tradingMode"];</code>
+     * <code>.vega.Market.TradingMode trading_mode = 8 [json_name = "tradingMode"];</code>
      * @return The tradingMode.
      */
     io.vegaprotocol.vega.Markets.Market.TradingMode getTradingMode();
@@ -17571,7 +17579,7 @@ public final class Markets {
   }
   /**
    * <pre>
-   * Market definition.
+   * Market definition
    * </pre>
    *
    * Protobuf type {@code vega.Market}
@@ -18039,7 +18047,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * What mode is the market currently running, also known as market state.
+     * The trading mode the market is currently running, also referred to as 'market state'
      * </pre>
      *
      * Protobuf enum {@code vega.Market.TradingMode}
@@ -18261,7 +18269,7 @@ public final class Markets {
     private volatile java.lang.Object id_;
     /**
      * <pre>
-     * Unique identifier.
+     * Unique identifier
      * </pre>
      *
      * <code>string id = 1 [json_name = "id"];</code>
@@ -18282,7 +18290,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Unique identifier.
+     * Unique identifier
      * </pre>
      *
      * <code>string id = 1 [json_name = "id"];</code>
@@ -18303,14 +18311,14 @@ public final class Markets {
       }
     }
 
-    public static final int TRADABLEINSTRUMENT_FIELD_NUMBER = 2;
+    public static final int TRADABLE_INSTRUMENT_FIELD_NUMBER = 2;
     private io.vegaprotocol.vega.Markets.TradableInstrument tradableInstrument_;
     /**
      * <pre>
-     * Tradable instrument configuration.
+     * Tradable instrument configuration
      * </pre>
      *
-     * <code>.vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];</code>
+     * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
      * @return Whether the tradableInstrument field is set.
      */
     @java.lang.Override
@@ -18319,10 +18327,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Tradable instrument configuration.
+     * Tradable instrument configuration
      * </pre>
      *
-     * <code>.vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];</code>
+     * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
      * @return The tradableInstrument.
      */
     @java.lang.Override
@@ -18331,26 +18339,26 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Tradable instrument configuration.
+     * Tradable instrument configuration
      * </pre>
      *
-     * <code>.vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];</code>
+     * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Markets.TradableInstrumentOrBuilder getTradableInstrumentOrBuilder() {
       return getTradableInstrument();
     }
 
-    public static final int DECIMALPLACES_FIELD_NUMBER = 3;
+    public static final int DECIMAL_PLACES_FIELD_NUMBER = 3;
     private long decimalPlaces_;
     /**
      * <pre>
      * Number of decimal places that a price must be shifted by in order to get a
-     * correct price denominated in the currency of the market. For example:
+     * correct price denominated in the currency of the market, for example:
      * `realPrice = price / 10^decimalPlaces`
      * </pre>
      *
-     * <code>uint64 decimalPlaces = 3 [json_name = "decimalPlaces"];</code>
+     * <code>uint64 decimal_places = 3 [json_name = "decimalPlaces"];</code>
      * @return The decimalPlaces.
      */
     @java.lang.Override
@@ -18362,7 +18370,7 @@ public final class Markets {
     private io.vegaprotocol.vega.Markets.Fees fees_;
     /**
      * <pre>
-     * Fees configuration.
+     * Fees configuration
      * </pre>
      *
      * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
@@ -18374,7 +18382,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Fees configuration.
+     * Fees configuration
      * </pre>
      *
      * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
@@ -18386,7 +18394,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Fees configuration.
+     * Fees configuration
      * </pre>
      *
      * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
@@ -18396,15 +18404,15 @@ public final class Markets {
       return getFees();
     }
 
-    public static final int OPENINGAUCTION_FIELD_NUMBER = 5;
+    public static final int OPENING_AUCTION_FIELD_NUMBER = 5;
     private io.vegaprotocol.vega.Markets.AuctionDuration openingAuction_;
     /**
      * <pre>
      * Auction duration specifies how long the opening auction will run (minimum
-     * duration and optionally a minimum traded volume).
+     * duration and optionally a minimum traded volume)
      * </pre>
      *
-     * <code>.vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];</code>
+     * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
      * @return Whether the openingAuction field is set.
      */
     @java.lang.Override
@@ -18414,10 +18422,10 @@ public final class Markets {
     /**
      * <pre>
      * Auction duration specifies how long the opening auction will run (minimum
-     * duration and optionally a minimum traded volume).
+     * duration and optionally a minimum traded volume)
      * </pre>
      *
-     * <code>.vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];</code>
+     * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
      * @return The openingAuction.
      */
     @java.lang.Override
@@ -18427,10 +18435,10 @@ public final class Markets {
     /**
      * <pre>
      * Auction duration specifies how long the opening auction will run (minimum
-     * duration and optionally a minimum traded volume).
+     * duration and optionally a minimum traded volume)
      * </pre>
      *
-     * <code>.vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];</code>
+     * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Markets.AuctionDurationOrBuilder getOpeningAuctionOrBuilder() {
@@ -18440,7 +18448,7 @@ public final class Markets {
     public static final int CONTINUOUS_FIELD_NUMBER = 100;
     /**
      * <pre>
-     * Continuous.
+     * Continuous
      * </pre>
      *
      * <code>.vega.ContinuousTrading continuous = 100 [json_name = "continuous"];</code>
@@ -18452,7 +18460,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Continuous.
+     * Continuous
      * </pre>
      *
      * <code>.vega.ContinuousTrading continuous = 100 [json_name = "continuous"];</code>
@@ -18467,7 +18475,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Continuous.
+     * Continuous
      * </pre>
      *
      * <code>.vega.ContinuousTrading continuous = 100 [json_name = "continuous"];</code>
@@ -18483,7 +18491,7 @@ public final class Markets {
     public static final int DISCRETE_FIELD_NUMBER = 101;
     /**
      * <pre>
-     * Discrete.
+     * Discrete
      * </pre>
      *
      * <code>.vega.DiscreteTrading discrete = 101 [json_name = "discrete"];</code>
@@ -18495,7 +18503,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Discrete.
+     * Discrete
      * </pre>
      *
      * <code>.vega.DiscreteTrading discrete = 101 [json_name = "discrete"];</code>
@@ -18510,7 +18518,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Discrete.
+     * Discrete
      * </pre>
      *
      * <code>.vega.DiscreteTrading discrete = 101 [json_name = "discrete"];</code>
@@ -18523,14 +18531,14 @@ public final class Markets {
       return io.vegaprotocol.vega.Markets.DiscreteTrading.getDefaultInstance();
     }
 
-    public static final int PRICEMONITORINGSETTINGS_FIELD_NUMBER = 6;
+    public static final int PRICE_MONITORING_SETTINGS_FIELD_NUMBER = 6;
     private io.vegaprotocol.vega.Markets.PriceMonitoringSettings priceMonitoringSettings_;
     /**
      * <pre>
-     * PriceMonitoringSettings for the market.
+     * PriceMonitoringSettings for the market
      * </pre>
      *
-     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];</code>
+     * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
      * @return Whether the priceMonitoringSettings field is set.
      */
     @java.lang.Override
@@ -18539,10 +18547,10 @@ public final class Markets {
     }
     /**
      * <pre>
-     * PriceMonitoringSettings for the market.
+     * PriceMonitoringSettings for the market
      * </pre>
      *
-     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];</code>
+     * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
      * @return The priceMonitoringSettings.
      */
     @java.lang.Override
@@ -18551,24 +18559,24 @@ public final class Markets {
     }
     /**
      * <pre>
-     * PriceMonitoringSettings for the market.
+     * PriceMonitoringSettings for the market
      * </pre>
      *
-     * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];</code>
+     * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder getPriceMonitoringSettingsOrBuilder() {
       return getPriceMonitoringSettings();
     }
 
-    public static final int TARGETSTAKEPARAMETERS_FIELD_NUMBER = 7;
+    public static final int TARGET_STAKE_PARAMETERS_FIELD_NUMBER = 7;
     private io.vegaprotocol.vega.Markets.TargetStakeParameters targetStakeParameters_;
     /**
      * <pre>
      * TargetStakeParameters for the market
      * </pre>
      *
-     * <code>.vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];</code>
+     * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
      * @return Whether the targetStakeParameters field is set.
      */
     @java.lang.Override
@@ -18580,7 +18588,7 @@ public final class Markets {
      * TargetStakeParameters for the market
      * </pre>
      *
-     * <code>.vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];</code>
+     * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
      * @return The targetStakeParameters.
      */
     @java.lang.Override
@@ -18592,21 +18600,21 @@ public final class Markets {
      * TargetStakeParameters for the market
      * </pre>
      *
-     * <code>.vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];</code>
+     * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder getTargetStakeParametersOrBuilder() {
       return getTargetStakeParameters();
     }
 
-    public static final int TRADINGMODE_FIELD_NUMBER = 8;
+    public static final int TRADING_MODE_FIELD_NUMBER = 8;
     private int tradingMode_;
     /**
      * <pre>
      * Current mode of execution of the market
      * </pre>
      *
-     * <code>.vega.Market.TradingMode tradingMode = 8 [json_name = "tradingMode"];</code>
+     * <code>.vega.Market.TradingMode trading_mode = 8 [json_name = "tradingMode"];</code>
      * @return The enum numeric value on the wire for tradingMode.
      */
     @java.lang.Override public int getTradingModeValue() {
@@ -18617,7 +18625,7 @@ public final class Markets {
      * Current mode of execution of the market
      * </pre>
      *
-     * <code>.vega.Market.TradingMode tradingMode = 8 [json_name = "tradingMode"];</code>
+     * <code>.vega.Market.TradingMode trading_mode = 8 [json_name = "tradingMode"];</code>
      * @return The tradingMode.
      */
     @java.lang.Override public io.vegaprotocol.vega.Markets.Market.TradingMode getTradingMode() {
@@ -18825,10 +18833,10 @@ public final class Markets {
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       if (hasTradableInstrument()) {
-        hash = (37 * hash) + TRADABLEINSTRUMENT_FIELD_NUMBER;
+        hash = (37 * hash) + TRADABLE_INSTRUMENT_FIELD_NUMBER;
         hash = (53 * hash) + getTradableInstrument().hashCode();
       }
-      hash = (37 * hash) + DECIMALPLACES_FIELD_NUMBER;
+      hash = (37 * hash) + DECIMAL_PLACES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getDecimalPlaces());
       if (hasFees()) {
@@ -18836,18 +18844,18 @@ public final class Markets {
         hash = (53 * hash) + getFees().hashCode();
       }
       if (hasOpeningAuction()) {
-        hash = (37 * hash) + OPENINGAUCTION_FIELD_NUMBER;
+        hash = (37 * hash) + OPENING_AUCTION_FIELD_NUMBER;
         hash = (53 * hash) + getOpeningAuction().hashCode();
       }
       if (hasPriceMonitoringSettings()) {
-        hash = (37 * hash) + PRICEMONITORINGSETTINGS_FIELD_NUMBER;
+        hash = (37 * hash) + PRICE_MONITORING_SETTINGS_FIELD_NUMBER;
         hash = (53 * hash) + getPriceMonitoringSettings().hashCode();
       }
       if (hasTargetStakeParameters()) {
-        hash = (37 * hash) + TARGETSTAKEPARAMETERS_FIELD_NUMBER;
+        hash = (37 * hash) + TARGET_STAKE_PARAMETERS_FIELD_NUMBER;
         hash = (53 * hash) + getTargetStakeParameters().hashCode();
       }
-      hash = (37 * hash) + TRADINGMODE_FIELD_NUMBER;
+      hash = (37 * hash) + TRADING_MODE_FIELD_NUMBER;
       hash = (53 * hash) + tradingMode_;
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
@@ -18960,7 +18968,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Market definition.
+     * Market definition
      * </pre>
      *
      * Protobuf type {@code vega.Market}
@@ -19246,7 +19254,7 @@ public final class Markets {
       private java.lang.Object id_ = "";
       /**
        * <pre>
-       * Unique identifier.
+       * Unique identifier
        * </pre>
        *
        * <code>string id = 1 [json_name = "id"];</code>
@@ -19266,7 +19274,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Unique identifier.
+       * Unique identifier
        * </pre>
        *
        * <code>string id = 1 [json_name = "id"];</code>
@@ -19287,7 +19295,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Unique identifier.
+       * Unique identifier
        * </pre>
        *
        * <code>string id = 1 [json_name = "id"];</code>
@@ -19306,7 +19314,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Unique identifier.
+       * Unique identifier
        * </pre>
        *
        * <code>string id = 1 [json_name = "id"];</code>
@@ -19320,7 +19328,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Unique identifier.
+       * Unique identifier
        * </pre>
        *
        * <code>string id = 1 [json_name = "id"];</code>
@@ -19344,10 +19352,10 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.TradableInstrument, io.vegaprotocol.vega.Markets.TradableInstrument.Builder, io.vegaprotocol.vega.Markets.TradableInstrumentOrBuilder> tradableInstrumentBuilder_;
       /**
        * <pre>
-       * Tradable instrument configuration.
+       * Tradable instrument configuration
        * </pre>
        *
-       * <code>.vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];</code>
+       * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
        * @return Whether the tradableInstrument field is set.
        */
       public boolean hasTradableInstrument() {
@@ -19355,10 +19363,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tradable instrument configuration.
+       * Tradable instrument configuration
        * </pre>
        *
-       * <code>.vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];</code>
+       * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
        * @return The tradableInstrument.
        */
       public io.vegaprotocol.vega.Markets.TradableInstrument getTradableInstrument() {
@@ -19370,10 +19378,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tradable instrument configuration.
+       * Tradable instrument configuration
        * </pre>
        *
-       * <code>.vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];</code>
+       * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
        */
       public Builder setTradableInstrument(io.vegaprotocol.vega.Markets.TradableInstrument value) {
         if (tradableInstrumentBuilder_ == null) {
@@ -19390,10 +19398,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tradable instrument configuration.
+       * Tradable instrument configuration
        * </pre>
        *
-       * <code>.vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];</code>
+       * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
        */
       public Builder setTradableInstrument(
           io.vegaprotocol.vega.Markets.TradableInstrument.Builder builderForValue) {
@@ -19408,10 +19416,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tradable instrument configuration.
+       * Tradable instrument configuration
        * </pre>
        *
-       * <code>.vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];</code>
+       * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
        */
       public Builder mergeTradableInstrument(io.vegaprotocol.vega.Markets.TradableInstrument value) {
         if (tradableInstrumentBuilder_ == null) {
@@ -19430,10 +19438,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tradable instrument configuration.
+       * Tradable instrument configuration
        * </pre>
        *
-       * <code>.vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];</code>
+       * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
        */
       public Builder clearTradableInstrument() {
         if (tradableInstrumentBuilder_ == null) {
@@ -19448,10 +19456,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tradable instrument configuration.
+       * Tradable instrument configuration
        * </pre>
        *
-       * <code>.vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];</code>
+       * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
        */
       public io.vegaprotocol.vega.Markets.TradableInstrument.Builder getTradableInstrumentBuilder() {
 
@@ -19460,10 +19468,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tradable instrument configuration.
+       * Tradable instrument configuration
        * </pre>
        *
-       * <code>.vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];</code>
+       * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
        */
       public io.vegaprotocol.vega.Markets.TradableInstrumentOrBuilder getTradableInstrumentOrBuilder() {
         if (tradableInstrumentBuilder_ != null) {
@@ -19475,10 +19483,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Tradable instrument configuration.
+       * Tradable instrument configuration
        * </pre>
        *
-       * <code>.vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];</code>
+       * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.TradableInstrument, io.vegaprotocol.vega.Markets.TradableInstrument.Builder, io.vegaprotocol.vega.Markets.TradableInstrumentOrBuilder>
@@ -19498,11 +19506,11 @@ public final class Markets {
       /**
        * <pre>
        * Number of decimal places that a price must be shifted by in order to get a
-       * correct price denominated in the currency of the market. For example:
+       * correct price denominated in the currency of the market, for example:
        * `realPrice = price / 10^decimalPlaces`
        * </pre>
        *
-       * <code>uint64 decimalPlaces = 3 [json_name = "decimalPlaces"];</code>
+       * <code>uint64 decimal_places = 3 [json_name = "decimalPlaces"];</code>
        * @return The decimalPlaces.
        */
       @java.lang.Override
@@ -19512,11 +19520,11 @@ public final class Markets {
       /**
        * <pre>
        * Number of decimal places that a price must be shifted by in order to get a
-       * correct price denominated in the currency of the market. For example:
+       * correct price denominated in the currency of the market, for example:
        * `realPrice = price / 10^decimalPlaces`
        * </pre>
        *
-       * <code>uint64 decimalPlaces = 3 [json_name = "decimalPlaces"];</code>
+       * <code>uint64 decimal_places = 3 [json_name = "decimalPlaces"];</code>
        * @param value The decimalPlaces to set.
        * @return This builder for chaining.
        */
@@ -19529,11 +19537,11 @@ public final class Markets {
       /**
        * <pre>
        * Number of decimal places that a price must be shifted by in order to get a
-       * correct price denominated in the currency of the market. For example:
+       * correct price denominated in the currency of the market, for example:
        * `realPrice = price / 10^decimalPlaces`
        * </pre>
        *
-       * <code>uint64 decimalPlaces = 3 [json_name = "decimalPlaces"];</code>
+       * <code>uint64 decimal_places = 3 [json_name = "decimalPlaces"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDecimalPlaces() {
@@ -19548,7 +19556,7 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.Fees, io.vegaprotocol.vega.Markets.Fees.Builder, io.vegaprotocol.vega.Markets.FeesOrBuilder> feesBuilder_;
       /**
        * <pre>
-       * Fees configuration.
+       * Fees configuration
        * </pre>
        *
        * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
@@ -19559,7 +19567,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Fees configuration.
+       * Fees configuration
        * </pre>
        *
        * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
@@ -19574,7 +19582,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Fees configuration.
+       * Fees configuration
        * </pre>
        *
        * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
@@ -19594,7 +19602,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Fees configuration.
+       * Fees configuration
        * </pre>
        *
        * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
@@ -19612,7 +19620,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Fees configuration.
+       * Fees configuration
        * </pre>
        *
        * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
@@ -19634,7 +19642,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Fees configuration.
+       * Fees configuration
        * </pre>
        *
        * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
@@ -19652,7 +19660,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Fees configuration.
+       * Fees configuration
        * </pre>
        *
        * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
@@ -19664,7 +19672,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Fees configuration.
+       * Fees configuration
        * </pre>
        *
        * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
@@ -19679,7 +19687,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Fees configuration.
+       * Fees configuration
        * </pre>
        *
        * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
@@ -19704,10 +19712,10 @@ public final class Markets {
       /**
        * <pre>
        * Auction duration specifies how long the opening auction will run (minimum
-       * duration and optionally a minimum traded volume).
+       * duration and optionally a minimum traded volume)
        * </pre>
        *
-       * <code>.vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];</code>
+       * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
        * @return Whether the openingAuction field is set.
        */
       public boolean hasOpeningAuction() {
@@ -19716,10 +19724,10 @@ public final class Markets {
       /**
        * <pre>
        * Auction duration specifies how long the opening auction will run (minimum
-       * duration and optionally a minimum traded volume).
+       * duration and optionally a minimum traded volume)
        * </pre>
        *
-       * <code>.vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];</code>
+       * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
        * @return The openingAuction.
        */
       public io.vegaprotocol.vega.Markets.AuctionDuration getOpeningAuction() {
@@ -19732,10 +19740,10 @@ public final class Markets {
       /**
        * <pre>
        * Auction duration specifies how long the opening auction will run (minimum
-       * duration and optionally a minimum traded volume).
+       * duration and optionally a minimum traded volume)
        * </pre>
        *
-       * <code>.vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];</code>
+       * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
        */
       public Builder setOpeningAuction(io.vegaprotocol.vega.Markets.AuctionDuration value) {
         if (openingAuctionBuilder_ == null) {
@@ -19753,10 +19761,10 @@ public final class Markets {
       /**
        * <pre>
        * Auction duration specifies how long the opening auction will run (minimum
-       * duration and optionally a minimum traded volume).
+       * duration and optionally a minimum traded volume)
        * </pre>
        *
-       * <code>.vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];</code>
+       * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
        */
       public Builder setOpeningAuction(
           io.vegaprotocol.vega.Markets.AuctionDuration.Builder builderForValue) {
@@ -19772,10 +19780,10 @@ public final class Markets {
       /**
        * <pre>
        * Auction duration specifies how long the opening auction will run (minimum
-       * duration and optionally a minimum traded volume).
+       * duration and optionally a minimum traded volume)
        * </pre>
        *
-       * <code>.vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];</code>
+       * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
        */
       public Builder mergeOpeningAuction(io.vegaprotocol.vega.Markets.AuctionDuration value) {
         if (openingAuctionBuilder_ == null) {
@@ -19795,10 +19803,10 @@ public final class Markets {
       /**
        * <pre>
        * Auction duration specifies how long the opening auction will run (minimum
-       * duration and optionally a minimum traded volume).
+       * duration and optionally a minimum traded volume)
        * </pre>
        *
-       * <code>.vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];</code>
+       * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
        */
       public Builder clearOpeningAuction() {
         if (openingAuctionBuilder_ == null) {
@@ -19814,10 +19822,10 @@ public final class Markets {
       /**
        * <pre>
        * Auction duration specifies how long the opening auction will run (minimum
-       * duration and optionally a minimum traded volume).
+       * duration and optionally a minimum traded volume)
        * </pre>
        *
-       * <code>.vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];</code>
+       * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
        */
       public io.vegaprotocol.vega.Markets.AuctionDuration.Builder getOpeningAuctionBuilder() {
 
@@ -19827,10 +19835,10 @@ public final class Markets {
       /**
        * <pre>
        * Auction duration specifies how long the opening auction will run (minimum
-       * duration and optionally a minimum traded volume).
+       * duration and optionally a minimum traded volume)
        * </pre>
        *
-       * <code>.vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];</code>
+       * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
        */
       public io.vegaprotocol.vega.Markets.AuctionDurationOrBuilder getOpeningAuctionOrBuilder() {
         if (openingAuctionBuilder_ != null) {
@@ -19843,10 +19851,10 @@ public final class Markets {
       /**
        * <pre>
        * Auction duration specifies how long the opening auction will run (minimum
-       * duration and optionally a minimum traded volume).
+       * duration and optionally a minimum traded volume)
        * </pre>
        *
-       * <code>.vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];</code>
+       * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.AuctionDuration, io.vegaprotocol.vega.Markets.AuctionDuration.Builder, io.vegaprotocol.vega.Markets.AuctionDurationOrBuilder>
@@ -19866,7 +19874,7 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.ContinuousTrading, io.vegaprotocol.vega.Markets.ContinuousTrading.Builder, io.vegaprotocol.vega.Markets.ContinuousTradingOrBuilder> continuousBuilder_;
       /**
        * <pre>
-       * Continuous.
+       * Continuous
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 100 [json_name = "continuous"];</code>
@@ -19878,7 +19886,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Continuous.
+       * Continuous
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 100 [json_name = "continuous"];</code>
@@ -19900,7 +19908,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Continuous.
+       * Continuous
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 100 [json_name = "continuous"];</code>
@@ -19920,7 +19928,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Continuous.
+       * Continuous
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 100 [json_name = "continuous"];</code>
@@ -19938,7 +19946,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Continuous.
+       * Continuous
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 100 [json_name = "continuous"];</code>
@@ -19964,7 +19972,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Continuous.
+       * Continuous
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 100 [json_name = "continuous"];</code>
@@ -19987,7 +19995,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Continuous.
+       * Continuous
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 100 [json_name = "continuous"];</code>
@@ -19997,7 +20005,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Continuous.
+       * Continuous
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 100 [json_name = "continuous"];</code>
@@ -20015,7 +20023,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Continuous.
+       * Continuous
        * </pre>
        *
        * <code>.vega.ContinuousTrading continuous = 100 [json_name = "continuous"];</code>
@@ -20043,7 +20051,7 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.DiscreteTrading, io.vegaprotocol.vega.Markets.DiscreteTrading.Builder, io.vegaprotocol.vega.Markets.DiscreteTradingOrBuilder> discreteBuilder_;
       /**
        * <pre>
-       * Discrete.
+       * Discrete
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 101 [json_name = "discrete"];</code>
@@ -20055,7 +20063,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Discrete.
+       * Discrete
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 101 [json_name = "discrete"];</code>
@@ -20077,7 +20085,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Discrete.
+       * Discrete
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 101 [json_name = "discrete"];</code>
@@ -20097,7 +20105,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Discrete.
+       * Discrete
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 101 [json_name = "discrete"];</code>
@@ -20115,7 +20123,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Discrete.
+       * Discrete
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 101 [json_name = "discrete"];</code>
@@ -20141,7 +20149,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Discrete.
+       * Discrete
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 101 [json_name = "discrete"];</code>
@@ -20164,7 +20172,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Discrete.
+       * Discrete
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 101 [json_name = "discrete"];</code>
@@ -20174,7 +20182,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Discrete.
+       * Discrete
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 101 [json_name = "discrete"];</code>
@@ -20192,7 +20200,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Discrete.
+       * Discrete
        * </pre>
        *
        * <code>.vega.DiscreteTrading discrete = 101 [json_name = "discrete"];</code>
@@ -20221,10 +20229,10 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.PriceMonitoringSettings, io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder> priceMonitoringSettingsBuilder_;
       /**
        * <pre>
-       * PriceMonitoringSettings for the market.
+       * PriceMonitoringSettings for the market
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];</code>
+       * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
        * @return Whether the priceMonitoringSettings field is set.
        */
       public boolean hasPriceMonitoringSettings() {
@@ -20232,10 +20240,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * PriceMonitoringSettings for the market.
+       * PriceMonitoringSettings for the market
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];</code>
+       * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
        * @return The priceMonitoringSettings.
        */
       public io.vegaprotocol.vega.Markets.PriceMonitoringSettings getPriceMonitoringSettings() {
@@ -20247,10 +20255,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * PriceMonitoringSettings for the market.
+       * PriceMonitoringSettings for the market
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];</code>
+       * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
        */
       public Builder setPriceMonitoringSettings(io.vegaprotocol.vega.Markets.PriceMonitoringSettings value) {
         if (priceMonitoringSettingsBuilder_ == null) {
@@ -20267,10 +20275,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * PriceMonitoringSettings for the market.
+       * PriceMonitoringSettings for the market
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];</code>
+       * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
        */
       public Builder setPriceMonitoringSettings(
           io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder builderForValue) {
@@ -20285,10 +20293,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * PriceMonitoringSettings for the market.
+       * PriceMonitoringSettings for the market
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];</code>
+       * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
        */
       public Builder mergePriceMonitoringSettings(io.vegaprotocol.vega.Markets.PriceMonitoringSettings value) {
         if (priceMonitoringSettingsBuilder_ == null) {
@@ -20307,10 +20315,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * PriceMonitoringSettings for the market.
+       * PriceMonitoringSettings for the market
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];</code>
+       * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
        */
       public Builder clearPriceMonitoringSettings() {
         if (priceMonitoringSettingsBuilder_ == null) {
@@ -20325,10 +20333,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * PriceMonitoringSettings for the market.
+       * PriceMonitoringSettings for the market
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];</code>
+       * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
        */
       public io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder getPriceMonitoringSettingsBuilder() {
 
@@ -20337,10 +20345,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * PriceMonitoringSettings for the market.
+       * PriceMonitoringSettings for the market
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];</code>
+       * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
        */
       public io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder getPriceMonitoringSettingsOrBuilder() {
         if (priceMonitoringSettingsBuilder_ != null) {
@@ -20352,10 +20360,10 @@ public final class Markets {
       }
       /**
        * <pre>
-       * PriceMonitoringSettings for the market.
+       * PriceMonitoringSettings for the market
        * </pre>
        *
-       * <code>.vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];</code>
+       * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.PriceMonitoringSettings, io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder>
@@ -20379,7 +20387,7 @@ public final class Markets {
        * TargetStakeParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];</code>
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
        * @return Whether the targetStakeParameters field is set.
        */
       public boolean hasTargetStakeParameters() {
@@ -20390,7 +20398,7 @@ public final class Markets {
        * TargetStakeParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];</code>
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
        * @return The targetStakeParameters.
        */
       public io.vegaprotocol.vega.Markets.TargetStakeParameters getTargetStakeParameters() {
@@ -20405,7 +20413,7 @@ public final class Markets {
        * TargetStakeParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];</code>
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
        */
       public Builder setTargetStakeParameters(io.vegaprotocol.vega.Markets.TargetStakeParameters value) {
         if (targetStakeParametersBuilder_ == null) {
@@ -20425,7 +20433,7 @@ public final class Markets {
        * TargetStakeParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];</code>
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
        */
       public Builder setTargetStakeParameters(
           io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder builderForValue) {
@@ -20443,7 +20451,7 @@ public final class Markets {
        * TargetStakeParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];</code>
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
        */
       public Builder mergeTargetStakeParameters(io.vegaprotocol.vega.Markets.TargetStakeParameters value) {
         if (targetStakeParametersBuilder_ == null) {
@@ -20465,7 +20473,7 @@ public final class Markets {
        * TargetStakeParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];</code>
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
        */
       public Builder clearTargetStakeParameters() {
         if (targetStakeParametersBuilder_ == null) {
@@ -20483,7 +20491,7 @@ public final class Markets {
        * TargetStakeParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];</code>
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
        */
       public io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder getTargetStakeParametersBuilder() {
 
@@ -20495,7 +20503,7 @@ public final class Markets {
        * TargetStakeParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];</code>
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
        */
       public io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder getTargetStakeParametersOrBuilder() {
         if (targetStakeParametersBuilder_ != null) {
@@ -20510,7 +20518,7 @@ public final class Markets {
        * TargetStakeParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];</code>
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.TargetStakeParameters, io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder, io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder>
@@ -20532,7 +20540,7 @@ public final class Markets {
        * Current mode of execution of the market
        * </pre>
        *
-       * <code>.vega.Market.TradingMode tradingMode = 8 [json_name = "tradingMode"];</code>
+       * <code>.vega.Market.TradingMode trading_mode = 8 [json_name = "tradingMode"];</code>
        * @return The enum numeric value on the wire for tradingMode.
        */
       @java.lang.Override public int getTradingModeValue() {
@@ -20543,7 +20551,7 @@ public final class Markets {
        * Current mode of execution of the market
        * </pre>
        *
-       * <code>.vega.Market.TradingMode tradingMode = 8 [json_name = "tradingMode"];</code>
+       * <code>.vega.Market.TradingMode trading_mode = 8 [json_name = "tradingMode"];</code>
        * @param value The enum numeric value on the wire for tradingMode to set.
        * @return This builder for chaining.
        */
@@ -20558,7 +20566,7 @@ public final class Markets {
        * Current mode of execution of the market
        * </pre>
        *
-       * <code>.vega.Market.TradingMode tradingMode = 8 [json_name = "tradingMode"];</code>
+       * <code>.vega.Market.TradingMode trading_mode = 8 [json_name = "tradingMode"];</code>
        * @return The tradingMode.
        */
       @java.lang.Override
@@ -20572,7 +20580,7 @@ public final class Markets {
        * Current mode of execution of the market
        * </pre>
        *
-       * <code>.vega.Market.TradingMode tradingMode = 8 [json_name = "tradingMode"];</code>
+       * <code>.vega.Market.TradingMode trading_mode = 8 [json_name = "tradingMode"];</code>
        * @param value The tradingMode to set.
        * @return This builder for chaining.
        */
@@ -20590,7 +20598,7 @@ public final class Markets {
        * Current mode of execution of the market
        * </pre>
        *
-       * <code>.vega.Market.TradingMode tradingMode = 8 [json_name = "tradingMode"];</code>
+       * <code>.vega.Market.TradingMode trading_mode = 8 [json_name = "tradingMode"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTradingMode() {
@@ -20843,96 +20851,97 @@ public final class Markets {
       "\n\rmarkets.proto\022\004vega\0326github.com/mwitko" +
       "w/go-proto-validators/validator.proto\"E\n" +
       "\017AuctionDuration\022\032\n\010duration\030\001 \001(\003R\010dura" +
-      "tion\022\026\n\006volume\030\002 \001(\004R\006volume\"/\n\021Continuo" +
-      "usTrading\022\032\n\010tickSize\030\001 \001(\tR\010tickSize\"^\n" +
-      "\017DiscreteTrading\022/\n\ndurationNs\030\001 \001(\003B\017\342\337" +
-      "\037\013\020\000\030\200\200\210\272\220\255\315\004R\ndurationNs\022\032\n\010tickSize\030\002 " +
-      "\001(\tR\010tickSize\"\263\001\n\006Future\022\032\n\010maturity\030\001 \001" +
-      "(\tR\010maturity\022(\n\017settlementAsset\030\002 \001(\tR\017s" +
-      "ettlementAsset\022\034\n\tquoteName\030\004 \001(\tR\tquote" +
-      "Name\022;\n\rethereumEvent\030d \001(\0132\023.vega.Ether" +
-      "eumEventH\000R\rethereumEventB\010\n\006oracle\"[\n\rE" +
-      "thereumEvent\022\036\n\ncontractID\030\001 \001(\tR\ncontra" +
-      "ctID\022\024\n\005event\030\002 \001(\tR\005event\022\024\n\005value\030\003 \001(" +
-      "\004R\005value\"(\n\022InstrumentMetadata\022\022\n\004tags\030\001" +
-      " \003(\tR\004tags\"\331\001\n\nInstrument\022\016\n\002id\030\001 \001(\tR\002i" +
-      "d\022\022\n\004code\030\002 \001(\tR\004code\022\022\n\004name\030\003 \001(\tR\004nam" +
-      "e\0224\n\010metadata\030\004 \001(\0132\030.vega.InstrumentMet" +
-      "adataR\010metadata\022*\n\020initialMarkPrice\030\005 \001(" +
-      "\004R\020initialMarkPrice\022&\n\006future\030d \001(\0132\014.ve" +
-      "ga.FutureH\000R\006futureB\t\n\007product\"\220\001\n\022LogNo" +
-      "rmalRiskModel\0224\n\025riskAversionParameter\030\001" +
-      " \001(\001R\025riskAversionParameter\022\020\n\003tau\030\002 \001(\001" +
-      "R\003tau\0222\n\006params\030\003 \001(\0132\032.vega.LogNormalMo" +
-      "delParamsR\006params\"J\n\024LogNormalModelParam" +
-      "s\022\016\n\002mu\030\001 \001(\001R\002mu\022\014\n\001r\030\002 \001(\001R\001r\022\024\n\005sigma" +
-      "\030\003 \001(\001R\005sigma\"B\n\017SimpleRiskModel\022/\n\006para" +
-      "ms\030\001 \001(\0132\027.vega.SimpleModelParamsR\006param" +
-      "s\"\377\001\n\021SimpleModelParams\022\036\n\nfactorLong\030\001 " +
-      "\001(\001R\nfactorLong\022 \n\013factorShort\030\002 \001(\001R\013fa" +
-      "ctorShort\022+\n\tmaxMoveUp\030\003 \001(\001B\r\342\337\037\tI\000\000\000\000\000" +
-      "\000\000\000R\tmaxMoveUp\022/\n\013minMoveDown\030\004 \001(\001B\r\342\337\037" +
-      "\tQ\000\000\000\000\000\000\000\000R\013minMoveDown\022J\n\024probabilityOf" +
-      "Trading\030\005 \001(\001B\026\342\337\037\022I\000\000\000\000\000\000\000\000Q\000\000\000\000\000\000\360?R\024p" +
-      "robabilityOfTrading\"\206\001\n\016ScalingFactors\022 " +
-      "\n\013searchLevel\030\001 \001(\001R\013searchLevel\022$\n\rinit" +
-      "ialMargin\030\002 \001(\001R\rinitialMargin\022,\n\021collat" +
-      "eralRelease\030\003 \001(\001R\021collateralRelease\"P\n\020" +
-      "MarginCalculator\022<\n\016scalingFactors\030\001 \001(\013" +
-      "2\024.vega.ScalingFactorsR\016scalingFactors\"\246" +
-      "\002\n\022TradableInstrument\0220\n\ninstrument\030\001 \001(" +
-      "\0132\020.vega.InstrumentR\ninstrument\022B\n\020margi" +
-      "nCalculator\030\002 \001(\0132\026.vega.MarginCalculato" +
-      "rR\020marginCalculator\022J\n\022logNormalRiskMode" +
-      "l\030d \001(\0132\030.vega.LogNormalRiskModelH\000R\022log" +
-      "NormalRiskModel\022A\n\017simpleRiskModel\030e \001(\013" +
-      "2\025.vega.SimpleRiskModelH\000R\017simpleRiskMod" +
-      "elB\013\n\triskModel\"z\n\nFeeFactors\022\032\n\010makerFe" +
-      "e\030\001 \001(\tR\010makerFee\022,\n\021infrastructureFee\030\002" +
-      " \001(\tR\021infrastructureFee\022\"\n\014liquidityFee\030" +
-      "\003 \001(\tR\014liquidityFee\"2\n\004Fees\022*\n\007factors\030\001" +
-      " \001(\0132\020.vega.FeeFactorsR\007factors\"\250\001\n\026Pric" +
-      "eMonitoringTrigger\022 \n\007horizon\030\001 \001(\003B\006\342\337\037" +
-      "\002\020\000R\007horizon\0228\n\013probability\030\002 \001(\001B\026\342\337\037\0221" +
-      "\000\000\000\000\000\000\000\0009\000\000\000\000\000\000\360?R\013probability\0222\n\020auctio" +
-      "nExtension\030\003 \001(\003B\006\342\337\037\002\020\000R\020auctionExtensi" +
-      "on\"U\n\031PriceMonitoringParameters\0228\n\010trigg" +
-      "ers\030\001 \003(\0132\034.vega.PriceMonitoringTriggerR" +
-      "\010triggers\"\204\001\n\027PriceMonitoringSettings\022?\n" +
-      "\nparameters\030\001 \001(\0132\037.vega.PriceMonitoring" +
-      "ParametersR\nparameters\022(\n\017updateFrequenc" +
-      "y\030\002 \001(\003R\017updateFrequency\"t\n\025TargetStakeP" +
-      "arameters\022&\n\ntimeWindow\030\001 \001(\003B\006\342\337\037\002\020\000R\nt" +
-      "imeWindow\0223\n\rscalingFactor\030\002 \001(\001B\r\342\337\037\t1\000" +
-      "\000\000\000\000\000\000\000R\rscalingFactor\"\213\010\n\006Market\022\016\n\002id\030" +
-      "\001 \001(\tR\002id\022H\n\022tradableInstrument\030\002 \001(\0132\030." +
-      "vega.TradableInstrumentR\022tradableInstrum" +
-      "ent\022$\n\rdecimalPlaces\030\003 \001(\004R\rdecimalPlace" +
-      "s\022\036\n\004fees\030\004 \001(\0132\n.vega.FeesR\004fees\022=\n\016ope" +
-      "ningAuction\030\005 \001(\0132\025.vega.AuctionDuration" +
+      "tion\022\026\n\006volume\030\002 \001(\004R\006volume\"0\n\021Continuo" +
+      "usTrading\022\033\n\ttick_size\030\001 \001(\tR\010tickSize\"`" +
+      "\n\017DiscreteTrading\0220\n\013duration_ns\030\001 \001(\003B\017" +
+      "\342\337\037\013\020\000\030\200\200\210\272\220\255\315\004R\ndurationNs\022\033\n\ttick_size" +
+      "\030\002 \001(\tR\010tickSize\"\266\001\n\006Future\022\032\n\010maturity\030" +
+      "\001 \001(\tR\010maturity\022)\n\020settlement_asset\030\002 \001(" +
+      "\tR\017settlementAsset\022\035\n\nquote_name\030\004 \001(\tR\t" +
+      "quoteName\022<\n\016ethereum_event\030d \001(\0132\023.vega" +
+      ".EthereumEventH\000R\rethereumEventB\010\n\006oracl" +
+      "e\"\\\n\rEthereumEvent\022\037\n\013contract_id\030\001 \001(\tR" +
+      "\ncontractId\022\024\n\005event\030\002 \001(\tR\005event\022\024\n\005val" +
+      "ue\030\003 \001(\004R\005value\"(\n\022InstrumentMetadata\022\022\n" +
+      "\004tags\030\001 \003(\tR\004tags\"\333\001\n\nInstrument\022\016\n\002id\030\001" +
+      " \001(\tR\002id\022\022\n\004code\030\002 \001(\tR\004code\022\022\n\004name\030\003 \001" +
+      "(\tR\004name\0224\n\010metadata\030\004 \001(\0132\030.vega.Instru" +
+      "mentMetadataR\010metadata\022,\n\022initial_mark_p" +
+      "rice\030\005 \001(\004R\020initialMarkPrice\022&\n\006future\030d" +
+      " \001(\0132\014.vega.FutureH\000R\006futureB\t\n\007product\"" +
+      "\222\001\n\022LogNormalRiskModel\0226\n\027risk_aversion_" +
+      "parameter\030\001 \001(\001R\025riskAversionParameter\022\020" +
+      "\n\003tau\030\002 \001(\001R\003tau\0222\n\006params\030\003 \001(\0132\032.vega." +
+      "LogNormalModelParamsR\006params\"J\n\024LogNorma" +
+      "lModelParams\022\016\n\002mu\030\001 \001(\001R\002mu\022\014\n\001r\030\002 \001(\001R" +
+      "\001r\022\024\n\005sigma\030\003 \001(\001R\005sigma\"B\n\017SimpleRiskMo" +
+      "del\022/\n\006params\030\001 \001(\0132\027.vega.SimpleModelPa" +
+      "ramsR\006params\"\207\002\n\021SimpleModelParams\022\037\n\013fa" +
+      "ctor_long\030\001 \001(\001R\nfactorLong\022!\n\014factor_sh" +
+      "ort\030\002 \001(\001R\013factorShort\022-\n\013max_move_up\030\003 " +
+      "\001(\001B\r\342\337\037\tI\000\000\000\000\000\000\000\000R\tmaxMoveUp\0221\n\rmin_mov" +
+      "e_down\030\004 \001(\001B\r\342\337\037\tQ\000\000\000\000\000\000\000\000R\013minMoveDown" +
+      "\022L\n\026probability_of_trading\030\005 \001(\001B\026\342\337\037\022I\000" +
+      "\000\000\000\000\000\000\000Q\000\000\000\000\000\000\360?R\024probabilityOfTrading\"\211" +
+      "\001\n\016ScalingFactors\022!\n\014search_level\030\001 \001(\001R" +
+      "\013searchLevel\022%\n\016initial_margin\030\002 \001(\001R\rin" +
+      "itialMargin\022-\n\022collateral_release\030\003 \001(\001R" +
+      "\021collateralRelease\"Q\n\020MarginCalculator\022=" +
+      "\n\017scaling_factors\030\001 \001(\0132\024.vega.ScalingFa" +
+      "ctorsR\016scalingFactors\"\255\002\n\022TradableInstru" +
+      "ment\0220\n\ninstrument\030\001 \001(\0132\020.vega.Instrume" +
+      "ntR\ninstrument\022C\n\021margin_calculator\030\002 \001(" +
+      "\0132\026.vega.MarginCalculatorR\020marginCalcula" +
+      "tor\022M\n\025log_normal_risk_model\030d \001(\0132\030.veg" +
+      "a.LogNormalRiskModelH\000R\022logNormalRiskMod" +
+      "el\022C\n\021simple_risk_model\030e \001(\0132\025.vega.Sim" +
+      "pleRiskModelH\000R\017simpleRiskModelB\014\n\nrisk_" +
+      "model\"}\n\nFeeFactors\022\033\n\tmaker_fee\030\001 \001(\tR\010" +
+      "makerFee\022-\n\022infrastructure_fee\030\002 \001(\tR\021in" +
+      "frastructureFee\022#\n\rliquidity_fee\030\003 \001(\tR\014" +
+      "liquidityFee\"2\n\004Fees\022*\n\007factors\030\001 \001(\0132\020." +
+      "vega.FeeFactorsR\007factors\"\251\001\n\026PriceMonito" +
+      "ringTrigger\022 \n\007horizon\030\001 \001(\003B\006\342\337\037\002\020\000R\007ho" +
+      "rizon\0228\n\013probability\030\002 \001(\001B\026\342\337\037\0221\000\000\000\000\000\000\000" +
+      "\0009\000\000\000\000\000\000\360?R\013probability\0223\n\021auction_exten" +
+      "sion\030\003 \001(\003B\006\342\337\037\002\020\000R\020auctionExtension\"U\n\031" +
+      "PriceMonitoringParameters\0228\n\010triggers\030\001 " +
+      "\003(\0132\034.vega.PriceMonitoringTriggerR\010trigg" +
+      "ers\"\205\001\n\027PriceMonitoringSettings\022?\n\nparam" +
+      "eters\030\001 \001(\0132\037.vega.PriceMonitoringParame" +
+      "tersR\nparameters\022)\n\020update_frequency\030\002 \001" +
+      "(\003R\017updateFrequency\"v\n\025TargetStakeParame" +
+      "ters\022\'\n\013time_window\030\001 \001(\003B\006\342\337\037\002\020\000R\ntimeW" +
+      "indow\0224\n\016scaling_factor\030\002 \001(\001B\r\342\337\037\t1\000\000\000\000" +
+      "\000\000\000\000R\rscalingFactor\"\225\010\n\006Market\022\016\n\002id\030\001 \001" +
+      "(\tR\002id\022I\n\023tradable_instrument\030\002 \001(\0132\030.ve" +
+      "ga.TradableInstrumentR\022tradableInstrumen" +
+      "t\022%\n\016decimal_places\030\003 \001(\004R\rdecimalPlaces" +
+      "\022\036\n\004fees\030\004 \001(\0132\n.vega.FeesR\004fees\022>\n\017open" +
+      "ing_auction\030\005 \001(\0132\025.vega.AuctionDuration" +
       "R\016openingAuction\0229\n\ncontinuous\030d \001(\0132\027.v" +
       "ega.ContinuousTradingH\000R\ncontinuous\0223\n\010d" +
       "iscrete\030e \001(\0132\025.vega.DiscreteTradingH\000R\010" +
-      "discrete\022W\n\027priceMonitoringSettings\030\006 \001(" +
-      "\0132\035.vega.PriceMonitoringSettingsR\027priceM" +
-      "onitoringSettings\022Q\n\025targetStakeParamete" +
-      "rs\030\007 \001(\0132\033.vega.TargetStakeParametersR\025t" +
-      "argetStakeParameters\022:\n\013tradingMode\030\010 \001(" +
-      "\0162\030.vega.Market.TradingModeR\013tradingMode" +
-      "\022(\n\005state\030\t \001(\0162\022.vega.Market.StateR\005sta" +
-      "te\"\330\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\022\n\016S" +
-      "TATE_PROPOSED\020\001\022\022\n\016STATE_REJECTED\020\002\022\021\n\rS" +
-      "TATE_PENDING\020\003\022\023\n\017STATE_CANCELLED\020\004\022\020\n\014S" +
-      "TATE_ACTIVE\020\005\022\023\n\017STATE_SUSPENDED\020\006\022\020\n\014ST" +
-      "ATE_CLOSED\020\007\022\034\n\030STATE_TRADING_TERMINATED" +
-      "\020\010\022\021\n\rSTATE_SETTLED\020\t\"\257\001\n\013TradingMode\022\034\n" +
-      "\030TRADING_MODE_UNSPECIFIED\020\000\022\033\n\027TRADING_M" +
-      "ODE_CONTINUOUS\020\001\022\036\n\032TRADING_MODE_BATCH_A" +
-      "UCTION\020\002\022 \n\034TRADING_MODE_OPENING_AUCTION" +
-      "\020\003\022#\n\037TRADING_MODE_MONITORING_AUCTION\020\004B" +
-      "\023\n\021tradingModeConfigB7\n\024io.vegaprotocol." +
-      "vegaZ\037code.vegaprotocol.io/vega/protob\006p" +
-      "roto3"
+      "discrete\022Y\n\031price_monitoring_settings\030\006 " +
+      "\001(\0132\035.vega.PriceMonitoringSettingsR\027pric" +
+      "eMonitoringSettings\022S\n\027target_stake_para" +
+      "meters\030\007 \001(\0132\033.vega.TargetStakeParameter" +
+      "sR\025targetStakeParameters\022;\n\014trading_mode" +
+      "\030\010 \001(\0162\030.vega.Market.TradingModeR\013tradin" +
+      "gMode\022(\n\005state\030\t \001(\0162\022.vega.Market.State" +
+      "R\005state\"\330\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000" +
+      "\022\022\n\016STATE_PROPOSED\020\001\022\022\n\016STATE_REJECTED\020\002" +
+      "\022\021\n\rSTATE_PENDING\020\003\022\023\n\017STATE_CANCELLED\020\004" +
+      "\022\020\n\014STATE_ACTIVE\020\005\022\023\n\017STATE_SUSPENDED\020\006\022" +
+      "\020\n\014STATE_CLOSED\020\007\022\034\n\030STATE_TRADING_TERMI" +
+      "NATED\020\010\022\021\n\rSTATE_SETTLED\020\t\"\257\001\n\013TradingMo" +
+      "de\022\034\n\030TRADING_MODE_UNSPECIFIED\020\000\022\033\n\027TRAD" +
+      "ING_MODE_CONTINUOUS\020\001\022\036\n\032TRADING_MODE_BA" +
+      "TCH_AUCTION\020\002\022 \n\034TRADING_MODE_OPENING_AU" +
+      "CTION\020\003\022#\n\037TRADING_MODE_MONITORING_AUCTI" +
+      "ON\020\004B\025\n\023trading_mode_configB7\n\024io.vegapr" +
+      "otocol.vegaZ\037code.vegaprotocol.io/vega/p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20968,7 +20977,7 @@ public final class Markets {
     internal_static_vega_EthereumEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_EthereumEvent_descriptor,
-        new java.lang.String[] { "ContractID", "Event", "Value", });
+        new java.lang.String[] { "ContractId", "Event", "Value", });
     internal_static_vega_InstrumentMetadata_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_vega_InstrumentMetadata_fieldAccessorTable = new

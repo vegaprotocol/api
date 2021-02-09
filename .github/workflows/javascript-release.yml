@@ -1,6 +1,8 @@
+---
+
 name: Javascript Release to npm (public)
 
-on:
+"on":
   push:
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+"
@@ -11,32 +13,32 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out code
-      uses: actions/checkout@v2
+      - name: Check out code
+        uses: actions/checkout@v2
 
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v2
-      with:
-        node-version: 12.x
-        registry-url: https://registry.npmjs.org/
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12.x
+          registry-url: https://registry.npmjs.org/
 
-    - name: Install
-      run: |
-        cd js
-        npm ci
+      - name: Install
+        run: |
+          cd js
+          npm ci
 
-    - name: Test
-      env:
-        CI: true
-        GRPC_NODE: ${{ secrets.GRPC_NODE }}
-        WALLETSERVER: ${{ secrets.WALLETSERVER }}
-      run: |
-        cd js
-        npm test
+      - name: Test
+        env:
+          CI: true
+          GRPC_NODE: ${{ secrets.GRPC_NODE }}
+          WALLETSERVER: ${{ secrets.WALLETSERVER }}
+        run: |
+          cd js
+          npm test
 
-    - name: Push release to npm (public)
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-      run: |
-        cd js
-        npm publish --access public .
+      - name: Push release to npm (public)
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: |
+          cd js
+          npm publish --access public .

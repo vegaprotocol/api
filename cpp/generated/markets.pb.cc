@@ -430,22 +430,22 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_markets_2eproto::offsets[] PRO
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ContinuousTrading, ticksize_),
+  PROTOBUF_FIELD_OFFSET(::vega::ContinuousTrading, tick_size_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::DiscreteTrading, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::DiscreteTrading, durationns_),
-  PROTOBUF_FIELD_OFFSET(::vega::DiscreteTrading, ticksize_),
+  PROTOBUF_FIELD_OFFSET(::vega::DiscreteTrading, duration_ns_),
+  PROTOBUF_FIELD_OFFSET(::vega::DiscreteTrading, tick_size_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::Future, _internal_metadata_),
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::vega::Future, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::Future, maturity_),
-  PROTOBUF_FIELD_OFFSET(::vega::Future, settlementasset_),
-  PROTOBUF_FIELD_OFFSET(::vega::Future, quotename_),
+  PROTOBUF_FIELD_OFFSET(::vega::Future, settlement_asset_),
+  PROTOBUF_FIELD_OFFSET(::vega::Future, quote_name_),
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::vega::Future, oracle_),
   ~0u,  // no _has_bits_
@@ -453,7 +453,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_markets_2eproto::offsets[] PRO
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::EthereumEvent, contractid_),
+  PROTOBUF_FIELD_OFFSET(::vega::EthereumEvent, contract_id_),
   PROTOBUF_FIELD_OFFSET(::vega::EthereumEvent, event_),
   PROTOBUF_FIELD_OFFSET(::vega::EthereumEvent, value_),
   ~0u,  // no _has_bits_
@@ -471,7 +471,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_markets_2eproto::offsets[] PRO
   PROTOBUF_FIELD_OFFSET(::vega::Instrument, code_),
   PROTOBUF_FIELD_OFFSET(::vega::Instrument, name_),
   PROTOBUF_FIELD_OFFSET(::vega::Instrument, metadata_),
-  PROTOBUF_FIELD_OFFSET(::vega::Instrument, initialmarkprice_),
+  PROTOBUF_FIELD_OFFSET(::vega::Instrument, initial_mark_price_),
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::vega::Instrument, product_),
   ~0u,  // no _has_bits_
@@ -479,7 +479,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_markets_2eproto::offsets[] PRO
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::LogNormalRiskModel, riskaversionparameter_),
+  PROTOBUF_FIELD_OFFSET(::vega::LogNormalRiskModel, risk_aversion_parameter_),
   PROTOBUF_FIELD_OFFSET(::vega::LogNormalRiskModel, tau_),
   PROTOBUF_FIELD_OFFSET(::vega::LogNormalRiskModel, params_),
   ~0u,  // no _has_bits_
@@ -501,43 +501,43 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_markets_2eproto::offsets[] PRO
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::SimpleModelParams, factorlong_),
-  PROTOBUF_FIELD_OFFSET(::vega::SimpleModelParams, factorshort_),
-  PROTOBUF_FIELD_OFFSET(::vega::SimpleModelParams, maxmoveup_),
-  PROTOBUF_FIELD_OFFSET(::vega::SimpleModelParams, minmovedown_),
-  PROTOBUF_FIELD_OFFSET(::vega::SimpleModelParams, probabilityoftrading_),
+  PROTOBUF_FIELD_OFFSET(::vega::SimpleModelParams, factor_long_),
+  PROTOBUF_FIELD_OFFSET(::vega::SimpleModelParams, factor_short_),
+  PROTOBUF_FIELD_OFFSET(::vega::SimpleModelParams, max_move_up_),
+  PROTOBUF_FIELD_OFFSET(::vega::SimpleModelParams, min_move_down_),
+  PROTOBUF_FIELD_OFFSET(::vega::SimpleModelParams, probability_of_trading_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::ScalingFactors, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ScalingFactors, searchlevel_),
-  PROTOBUF_FIELD_OFFSET(::vega::ScalingFactors, initialmargin_),
-  PROTOBUF_FIELD_OFFSET(::vega::ScalingFactors, collateralrelease_),
+  PROTOBUF_FIELD_OFFSET(::vega::ScalingFactors, search_level_),
+  PROTOBUF_FIELD_OFFSET(::vega::ScalingFactors, initial_margin_),
+  PROTOBUF_FIELD_OFFSET(::vega::ScalingFactors, collateral_release_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::MarginCalculator, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::MarginCalculator, scalingfactors_),
+  PROTOBUF_FIELD_OFFSET(::vega::MarginCalculator, scaling_factors_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::TradableInstrument, _internal_metadata_),
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::vega::TradableInstrument, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::TradableInstrument, instrument_),
-  PROTOBUF_FIELD_OFFSET(::vega::TradableInstrument, margincalculator_),
+  PROTOBUF_FIELD_OFFSET(::vega::TradableInstrument, margin_calculator_),
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::vega::TradableInstrument, riskModel_),
+  PROTOBUF_FIELD_OFFSET(::vega::TradableInstrument, risk_model_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::FeeFactors, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::FeeFactors, makerfee_),
-  PROTOBUF_FIELD_OFFSET(::vega::FeeFactors, infrastructurefee_),
-  PROTOBUF_FIELD_OFFSET(::vega::FeeFactors, liquidityfee_),
+  PROTOBUF_FIELD_OFFSET(::vega::FeeFactors, maker_fee_),
+  PROTOBUF_FIELD_OFFSET(::vega::FeeFactors, infrastructure_fee_),
+  PROTOBUF_FIELD_OFFSET(::vega::FeeFactors, liquidity_fee_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::Fees, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -551,7 +551,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_markets_2eproto::offsets[] PRO
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::PriceMonitoringTrigger, horizon_),
   PROTOBUF_FIELD_OFFSET(::vega::PriceMonitoringTrigger, probability_),
-  PROTOBUF_FIELD_OFFSET(::vega::PriceMonitoringTrigger, auctionextension_),
+  PROTOBUF_FIELD_OFFSET(::vega::PriceMonitoringTrigger, auction_extension_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::PriceMonitoringParameters, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -564,31 +564,31 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_markets_2eproto::offsets[] PRO
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::PriceMonitoringSettings, parameters_),
-  PROTOBUF_FIELD_OFFSET(::vega::PriceMonitoringSettings, updatefrequency_),
+  PROTOBUF_FIELD_OFFSET(::vega::PriceMonitoringSettings, update_frequency_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::TargetStakeParameters, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::TargetStakeParameters, timewindow_),
-  PROTOBUF_FIELD_OFFSET(::vega::TargetStakeParameters, scalingfactor_),
+  PROTOBUF_FIELD_OFFSET(::vega::TargetStakeParameters, time_window_),
+  PROTOBUF_FIELD_OFFSET(::vega::TargetStakeParameters, scaling_factor_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::Market, _internal_metadata_),
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::vega::Market, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::Market, id_),
-  PROTOBUF_FIELD_OFFSET(::vega::Market, tradableinstrument_),
-  PROTOBUF_FIELD_OFFSET(::vega::Market, decimalplaces_),
+  PROTOBUF_FIELD_OFFSET(::vega::Market, tradable_instrument_),
+  PROTOBUF_FIELD_OFFSET(::vega::Market, decimal_places_),
   PROTOBUF_FIELD_OFFSET(::vega::Market, fees_),
-  PROTOBUF_FIELD_OFFSET(::vega::Market, openingauction_),
+  PROTOBUF_FIELD_OFFSET(::vega::Market, opening_auction_),
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::vega::Market, pricemonitoringsettings_),
-  PROTOBUF_FIELD_OFFSET(::vega::Market, targetstakeparameters_),
-  PROTOBUF_FIELD_OFFSET(::vega::Market, tradingmode_),
+  PROTOBUF_FIELD_OFFSET(::vega::Market, price_monitoring_settings_),
+  PROTOBUF_FIELD_OFFSET(::vega::Market, target_stake_parameters_),
+  PROTOBUF_FIELD_OFFSET(::vega::Market, trading_mode_),
   PROTOBUF_FIELD_OFFSET(::vega::Market, state_),
-  PROTOBUF_FIELD_OFFSET(::vega::Market, tradingModeConfig_),
+  PROTOBUF_FIELD_OFFSET(::vega::Market, trading_mode_config_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::AuctionDuration)},
@@ -642,96 +642,97 @@ const char descriptor_table_protodef_markets_2eproto[] PROTOBUF_SECTION_VARIABLE
   "\n\rmarkets.proto\022\004vega\0326github.com/mwitko"
   "w/go-proto-validators/validator.proto\"E\n"
   "\017AuctionDuration\022\032\n\010duration\030\001 \001(\003R\010dura"
-  "tion\022\026\n\006volume\030\002 \001(\004R\006volume\"/\n\021Continuo"
-  "usTrading\022\032\n\010tickSize\030\001 \001(\tR\010tickSize\"^\n"
-  "\017DiscreteTrading\022/\n\ndurationNs\030\001 \001(\003B\017\342\337"
-  "\037\013\020\000\030\200\200\210\272\220\255\315\004R\ndurationNs\022\032\n\010tickSize\030\002 "
-  "\001(\tR\010tickSize\"\263\001\n\006Future\022\032\n\010maturity\030\001 \001"
-  "(\tR\010maturity\022(\n\017settlementAsset\030\002 \001(\tR\017s"
-  "ettlementAsset\022\034\n\tquoteName\030\004 \001(\tR\tquote"
-  "Name\022;\n\rethereumEvent\030d \001(\0132\023.vega.Ether"
-  "eumEventH\000R\rethereumEventB\010\n\006oracle\"[\n\rE"
-  "thereumEvent\022\036\n\ncontractID\030\001 \001(\tR\ncontra"
-  "ctID\022\024\n\005event\030\002 \001(\tR\005event\022\024\n\005value\030\003 \001("
-  "\004R\005value\"(\n\022InstrumentMetadata\022\022\n\004tags\030\001"
-  " \003(\tR\004tags\"\331\001\n\nInstrument\022\016\n\002id\030\001 \001(\tR\002i"
-  "d\022\022\n\004code\030\002 \001(\tR\004code\022\022\n\004name\030\003 \001(\tR\004nam"
-  "e\0224\n\010metadata\030\004 \001(\0132\030.vega.InstrumentMet"
-  "adataR\010metadata\022*\n\020initialMarkPrice\030\005 \001("
-  "\004R\020initialMarkPrice\022&\n\006future\030d \001(\0132\014.ve"
-  "ga.FutureH\000R\006futureB\t\n\007product\"\220\001\n\022LogNo"
-  "rmalRiskModel\0224\n\025riskAversionParameter\030\001"
-  " \001(\001R\025riskAversionParameter\022\020\n\003tau\030\002 \001(\001"
-  "R\003tau\0222\n\006params\030\003 \001(\0132\032.vega.LogNormalMo"
-  "delParamsR\006params\"J\n\024LogNormalModelParam"
-  "s\022\016\n\002mu\030\001 \001(\001R\002mu\022\014\n\001r\030\002 \001(\001R\001r\022\024\n\005sigma"
-  "\030\003 \001(\001R\005sigma\"B\n\017SimpleRiskModel\022/\n\006para"
-  "ms\030\001 \001(\0132\027.vega.SimpleModelParamsR\006param"
-  "s\"\377\001\n\021SimpleModelParams\022\036\n\nfactorLong\030\001 "
-  "\001(\001R\nfactorLong\022 \n\013factorShort\030\002 \001(\001R\013fa"
-  "ctorShort\022+\n\tmaxMoveUp\030\003 \001(\001B\r\342\337\037\tI\000\000\000\000\000"
-  "\000\000\000R\tmaxMoveUp\022/\n\013minMoveDown\030\004 \001(\001B\r\342\337\037"
-  "\tQ\000\000\000\000\000\000\000\000R\013minMoveDown\022J\n\024probabilityOf"
-  "Trading\030\005 \001(\001B\026\342\337\037\022I\000\000\000\000\000\000\000\000Q\000\000\000\000\000\000\360\?R\024p"
-  "robabilityOfTrading\"\206\001\n\016ScalingFactors\022 "
-  "\n\013searchLevel\030\001 \001(\001R\013searchLevel\022$\n\rinit"
-  "ialMargin\030\002 \001(\001R\rinitialMargin\022,\n\021collat"
-  "eralRelease\030\003 \001(\001R\021collateralRelease\"P\n\020"
-  "MarginCalculator\022<\n\016scalingFactors\030\001 \001(\013"
-  "2\024.vega.ScalingFactorsR\016scalingFactors\"\246"
-  "\002\n\022TradableInstrument\0220\n\ninstrument\030\001 \001("
-  "\0132\020.vega.InstrumentR\ninstrument\022B\n\020margi"
-  "nCalculator\030\002 \001(\0132\026.vega.MarginCalculato"
-  "rR\020marginCalculator\022J\n\022logNormalRiskMode"
-  "l\030d \001(\0132\030.vega.LogNormalRiskModelH\000R\022log"
-  "NormalRiskModel\022A\n\017simpleRiskModel\030e \001(\013"
-  "2\025.vega.SimpleRiskModelH\000R\017simpleRiskMod"
-  "elB\013\n\triskModel\"z\n\nFeeFactors\022\032\n\010makerFe"
-  "e\030\001 \001(\tR\010makerFee\022,\n\021infrastructureFee\030\002"
-  " \001(\tR\021infrastructureFee\022\"\n\014liquidityFee\030"
-  "\003 \001(\tR\014liquidityFee\"2\n\004Fees\022*\n\007factors\030\001"
-  " \001(\0132\020.vega.FeeFactorsR\007factors\"\250\001\n\026Pric"
-  "eMonitoringTrigger\022 \n\007horizon\030\001 \001(\003B\006\342\337\037"
-  "\002\020\000R\007horizon\0228\n\013probability\030\002 \001(\001B\026\342\337\037\0221"
-  "\000\000\000\000\000\000\000\0009\000\000\000\000\000\000\360\?R\013probability\0222\n\020auctio"
-  "nExtension\030\003 \001(\003B\006\342\337\037\002\020\000R\020auctionExtensi"
-  "on\"U\n\031PriceMonitoringParameters\0228\n\010trigg"
-  "ers\030\001 \003(\0132\034.vega.PriceMonitoringTriggerR"
-  "\010triggers\"\204\001\n\027PriceMonitoringSettings\022\?\n"
-  "\nparameters\030\001 \001(\0132\037.vega.PriceMonitoring"
-  "ParametersR\nparameters\022(\n\017updateFrequenc"
-  "y\030\002 \001(\003R\017updateFrequency\"t\n\025TargetStakeP"
-  "arameters\022&\n\ntimeWindow\030\001 \001(\003B\006\342\337\037\002\020\000R\nt"
-  "imeWindow\0223\n\rscalingFactor\030\002 \001(\001B\r\342\337\037\t1\000"
-  "\000\000\000\000\000\000\000R\rscalingFactor\"\213\010\n\006Market\022\016\n\002id\030"
-  "\001 \001(\tR\002id\022H\n\022tradableInstrument\030\002 \001(\0132\030."
-  "vega.TradableInstrumentR\022tradableInstrum"
-  "ent\022$\n\rdecimalPlaces\030\003 \001(\004R\rdecimalPlace"
-  "s\022\036\n\004fees\030\004 \001(\0132\n.vega.FeesR\004fees\022=\n\016ope"
-  "ningAuction\030\005 \001(\0132\025.vega.AuctionDuration"
+  "tion\022\026\n\006volume\030\002 \001(\004R\006volume\"0\n\021Continuo"
+  "usTrading\022\033\n\ttick_size\030\001 \001(\tR\010tickSize\"`"
+  "\n\017DiscreteTrading\0220\n\013duration_ns\030\001 \001(\003B\017"
+  "\342\337\037\013\020\000\030\200\200\210\272\220\255\315\004R\ndurationNs\022\033\n\ttick_size"
+  "\030\002 \001(\tR\010tickSize\"\266\001\n\006Future\022\032\n\010maturity\030"
+  "\001 \001(\tR\010maturity\022)\n\020settlement_asset\030\002 \001("
+  "\tR\017settlementAsset\022\035\n\nquote_name\030\004 \001(\tR\t"
+  "quoteName\022<\n\016ethereum_event\030d \001(\0132\023.vega"
+  ".EthereumEventH\000R\rethereumEventB\010\n\006oracl"
+  "e\"\\\n\rEthereumEvent\022\037\n\013contract_id\030\001 \001(\tR"
+  "\ncontractId\022\024\n\005event\030\002 \001(\tR\005event\022\024\n\005val"
+  "ue\030\003 \001(\004R\005value\"(\n\022InstrumentMetadata\022\022\n"
+  "\004tags\030\001 \003(\tR\004tags\"\333\001\n\nInstrument\022\016\n\002id\030\001"
+  " \001(\tR\002id\022\022\n\004code\030\002 \001(\tR\004code\022\022\n\004name\030\003 \001"
+  "(\tR\004name\0224\n\010metadata\030\004 \001(\0132\030.vega.Instru"
+  "mentMetadataR\010metadata\022,\n\022initial_mark_p"
+  "rice\030\005 \001(\004R\020initialMarkPrice\022&\n\006future\030d"
+  " \001(\0132\014.vega.FutureH\000R\006futureB\t\n\007product\""
+  "\222\001\n\022LogNormalRiskModel\0226\n\027risk_aversion_"
+  "parameter\030\001 \001(\001R\025riskAversionParameter\022\020"
+  "\n\003tau\030\002 \001(\001R\003tau\0222\n\006params\030\003 \001(\0132\032.vega."
+  "LogNormalModelParamsR\006params\"J\n\024LogNorma"
+  "lModelParams\022\016\n\002mu\030\001 \001(\001R\002mu\022\014\n\001r\030\002 \001(\001R"
+  "\001r\022\024\n\005sigma\030\003 \001(\001R\005sigma\"B\n\017SimpleRiskMo"
+  "del\022/\n\006params\030\001 \001(\0132\027.vega.SimpleModelPa"
+  "ramsR\006params\"\207\002\n\021SimpleModelParams\022\037\n\013fa"
+  "ctor_long\030\001 \001(\001R\nfactorLong\022!\n\014factor_sh"
+  "ort\030\002 \001(\001R\013factorShort\022-\n\013max_move_up\030\003 "
+  "\001(\001B\r\342\337\037\tI\000\000\000\000\000\000\000\000R\tmaxMoveUp\0221\n\rmin_mov"
+  "e_down\030\004 \001(\001B\r\342\337\037\tQ\000\000\000\000\000\000\000\000R\013minMoveDown"
+  "\022L\n\026probability_of_trading\030\005 \001(\001B\026\342\337\037\022I\000"
+  "\000\000\000\000\000\000\000Q\000\000\000\000\000\000\360\?R\024probabilityOfTrading\"\211"
+  "\001\n\016ScalingFactors\022!\n\014search_level\030\001 \001(\001R"
+  "\013searchLevel\022%\n\016initial_margin\030\002 \001(\001R\rin"
+  "itialMargin\022-\n\022collateral_release\030\003 \001(\001R"
+  "\021collateralRelease\"Q\n\020MarginCalculator\022="
+  "\n\017scaling_factors\030\001 \001(\0132\024.vega.ScalingFa"
+  "ctorsR\016scalingFactors\"\255\002\n\022TradableInstru"
+  "ment\0220\n\ninstrument\030\001 \001(\0132\020.vega.Instrume"
+  "ntR\ninstrument\022C\n\021margin_calculator\030\002 \001("
+  "\0132\026.vega.MarginCalculatorR\020marginCalcula"
+  "tor\022M\n\025log_normal_risk_model\030d \001(\0132\030.veg"
+  "a.LogNormalRiskModelH\000R\022logNormalRiskMod"
+  "el\022C\n\021simple_risk_model\030e \001(\0132\025.vega.Sim"
+  "pleRiskModelH\000R\017simpleRiskModelB\014\n\nrisk_"
+  "model\"}\n\nFeeFactors\022\033\n\tmaker_fee\030\001 \001(\tR\010"
+  "makerFee\022-\n\022infrastructure_fee\030\002 \001(\tR\021in"
+  "frastructureFee\022#\n\rliquidity_fee\030\003 \001(\tR\014"
+  "liquidityFee\"2\n\004Fees\022*\n\007factors\030\001 \001(\0132\020."
+  "vega.FeeFactorsR\007factors\"\251\001\n\026PriceMonito"
+  "ringTrigger\022 \n\007horizon\030\001 \001(\003B\006\342\337\037\002\020\000R\007ho"
+  "rizon\0228\n\013probability\030\002 \001(\001B\026\342\337\037\0221\000\000\000\000\000\000\000"
+  "\0009\000\000\000\000\000\000\360\?R\013probability\0223\n\021auction_exten"
+  "sion\030\003 \001(\003B\006\342\337\037\002\020\000R\020auctionExtension\"U\n\031"
+  "PriceMonitoringParameters\0228\n\010triggers\030\001 "
+  "\003(\0132\034.vega.PriceMonitoringTriggerR\010trigg"
+  "ers\"\205\001\n\027PriceMonitoringSettings\022\?\n\nparam"
+  "eters\030\001 \001(\0132\037.vega.PriceMonitoringParame"
+  "tersR\nparameters\022)\n\020update_frequency\030\002 \001"
+  "(\003R\017updateFrequency\"v\n\025TargetStakeParame"
+  "ters\022\'\n\013time_window\030\001 \001(\003B\006\342\337\037\002\020\000R\ntimeW"
+  "indow\0224\n\016scaling_factor\030\002 \001(\001B\r\342\337\037\t1\000\000\000\000"
+  "\000\000\000\000R\rscalingFactor\"\225\010\n\006Market\022\016\n\002id\030\001 \001"
+  "(\tR\002id\022I\n\023tradable_instrument\030\002 \001(\0132\030.ve"
+  "ga.TradableInstrumentR\022tradableInstrumen"
+  "t\022%\n\016decimal_places\030\003 \001(\004R\rdecimalPlaces"
+  "\022\036\n\004fees\030\004 \001(\0132\n.vega.FeesR\004fees\022>\n\017open"
+  "ing_auction\030\005 \001(\0132\025.vega.AuctionDuration"
   "R\016openingAuction\0229\n\ncontinuous\030d \001(\0132\027.v"
   "ega.ContinuousTradingH\000R\ncontinuous\0223\n\010d"
   "iscrete\030e \001(\0132\025.vega.DiscreteTradingH\000R\010"
-  "discrete\022W\n\027priceMonitoringSettings\030\006 \001("
-  "\0132\035.vega.PriceMonitoringSettingsR\027priceM"
-  "onitoringSettings\022Q\n\025targetStakeParamete"
-  "rs\030\007 \001(\0132\033.vega.TargetStakeParametersR\025t"
-  "argetStakeParameters\022:\n\013tradingMode\030\010 \001("
-  "\0162\030.vega.Market.TradingModeR\013tradingMode"
-  "\022(\n\005state\030\t \001(\0162\022.vega.Market.StateR\005sta"
-  "te\"\330\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\022\n\016S"
-  "TATE_PROPOSED\020\001\022\022\n\016STATE_REJECTED\020\002\022\021\n\rS"
-  "TATE_PENDING\020\003\022\023\n\017STATE_CANCELLED\020\004\022\020\n\014S"
-  "TATE_ACTIVE\020\005\022\023\n\017STATE_SUSPENDED\020\006\022\020\n\014ST"
-  "ATE_CLOSED\020\007\022\034\n\030STATE_TRADING_TERMINATED"
-  "\020\010\022\021\n\rSTATE_SETTLED\020\t\"\257\001\n\013TradingMode\022\034\n"
-  "\030TRADING_MODE_UNSPECIFIED\020\000\022\033\n\027TRADING_M"
-  "ODE_CONTINUOUS\020\001\022\036\n\032TRADING_MODE_BATCH_A"
-  "UCTION\020\002\022 \n\034TRADING_MODE_OPENING_AUCTION"
-  "\020\003\022#\n\037TRADING_MODE_MONITORING_AUCTION\020\004B"
-  "\023\n\021tradingModeConfigB7\n\024io.vegaprotocol."
-  "vegaZ\037code.vegaprotocol.io/vega/protob\006p"
-  "roto3"
+  "discrete\022Y\n\031price_monitoring_settings\030\006 "
+  "\001(\0132\035.vega.PriceMonitoringSettingsR\027pric"
+  "eMonitoringSettings\022S\n\027target_stake_para"
+  "meters\030\007 \001(\0132\033.vega.TargetStakeParameter"
+  "sR\025targetStakeParameters\022;\n\014trading_mode"
+  "\030\010 \001(\0162\030.vega.Market.TradingModeR\013tradin"
+  "gMode\022(\n\005state\030\t \001(\0162\022.vega.Market.State"
+  "R\005state\"\330\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000"
+  "\022\022\n\016STATE_PROPOSED\020\001\022\022\n\016STATE_REJECTED\020\002"
+  "\022\021\n\rSTATE_PENDING\020\003\022\023\n\017STATE_CANCELLED\020\004"
+  "\022\020\n\014STATE_ACTIVE\020\005\022\023\n\017STATE_SUSPENDED\020\006\022"
+  "\020\n\014STATE_CLOSED\020\007\022\034\n\030STATE_TRADING_TERMI"
+  "NATED\020\010\022\021\n\rSTATE_SETTLED\020\t\"\257\001\n\013TradingMo"
+  "de\022\034\n\030TRADING_MODE_UNSPECIFIED\020\000\022\033\n\027TRAD"
+  "ING_MODE_CONTINUOUS\020\001\022\036\n\032TRADING_MODE_BA"
+  "TCH_AUCTION\020\002\022 \n\034TRADING_MODE_OPENING_AU"
+  "CTION\020\003\022#\n\037TRADING_MODE_MONITORING_AUCTI"
+  "ON\020\004B\025\n\023trading_mode_configB7\n\024io.vegapr"
+  "otocol.vegaZ\037code.vegaprotocol.io/vega/p"
+  "rotob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_markets_2eproto_deps[1] = {
   &::descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto,
@@ -761,7 +762,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_mar
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_markets_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_markets_2eproto = {
-  false, false, descriptor_table_protodef_markets_2eproto, "markets.proto", 3685,
+  false, false, descriptor_table_protodef_markets_2eproto, "markets.proto", 3732,
   &descriptor_table_markets_2eproto_once, descriptor_table_markets_2eproto_sccs, descriptor_table_markets_2eproto_deps, 21, 1,
   schemas, file_default_instances, TableStruct_markets_2eproto::offsets,
   file_level_metadata_markets_2eproto, 21, file_level_enum_descriptors_markets_2eproto, file_level_service_descriptors_markets_2eproto,
@@ -1079,9 +1080,9 @@ ContinuousTrading::ContinuousTrading(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 ContinuousTrading::ContinuousTrading(const ContinuousTrading& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ticksize_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_ticksize().empty()) {
-    ticksize_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ticksize(),
+  tick_size_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_tick_size().empty()) {
+    tick_size_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_tick_size(),
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:vega.ContinuousTrading)
@@ -1089,7 +1090,7 @@ ContinuousTrading::ContinuousTrading(const ContinuousTrading& from)
 
 void ContinuousTrading::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ContinuousTrading_markets_2eproto.base);
-  ticksize_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  tick_size_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 ContinuousTrading::~ContinuousTrading() {
@@ -1100,7 +1101,7 @@ ContinuousTrading::~ContinuousTrading() {
 
 void ContinuousTrading::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  ticksize_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  tick_size_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ContinuousTrading::ArenaDtor(void* object) {
@@ -1124,7 +1125,7 @@ void ContinuousTrading::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ticksize_.ClearToEmpty();
+  tick_size_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1135,12 +1136,12 @@ const char* ContinuousTrading::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string tickSize = 1 [json_name = "tickSize"];
+      // string tick_size = 1 [json_name = "tickSize"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_ticksize();
+          auto str = _internal_mutable_tick_size();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ContinuousTrading.tickSize"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ContinuousTrading.tick_size"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1172,14 +1173,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string tickSize = 1 [json_name = "tickSize"];
-  if (this->ticksize().size() > 0) {
+  // string tick_size = 1 [json_name = "tickSize"];
+  if (this->tick_size().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_ticksize().data(), static_cast<int>(this->_internal_ticksize().length()),
+      this->_internal_tick_size().data(), static_cast<int>(this->_internal_tick_size().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.ContinuousTrading.tickSize");
+      "vega.ContinuousTrading.tick_size");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_ticksize(), target);
+        1, this->_internal_tick_size(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1198,11 +1199,11 @@ size_t ContinuousTrading::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string tickSize = 1 [json_name = "tickSize"];
-  if (this->ticksize().size() > 0) {
+  // string tick_size = 1 [json_name = "tickSize"];
+  if (this->tick_size().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_ticksize());
+        this->_internal_tick_size());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1236,8 +1237,8 @@ void ContinuousTrading::MergeFrom(const ContinuousTrading& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.ticksize().size() > 0) {
-    _internal_set_ticksize(from._internal_ticksize());
+  if (from.tick_size().size() > 0) {
+    _internal_set_tick_size(from._internal_tick_size());
   }
 }
 
@@ -1262,7 +1263,7 @@ bool ContinuousTrading::IsInitialized() const {
 void ContinuousTrading::InternalSwap(ContinuousTrading* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ticksize_.Swap(&other->ticksize_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  tick_size_.Swap(&other->tick_size_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ContinuousTrading::GetMetadata() const {
@@ -1285,19 +1286,19 @@ DiscreteTrading::DiscreteTrading(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 DiscreteTrading::DiscreteTrading(const DiscreteTrading& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ticksize_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_ticksize().empty()) {
-    ticksize_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ticksize(),
+  tick_size_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_tick_size().empty()) {
+    tick_size_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_tick_size(),
       GetArena());
   }
-  durationns_ = from.durationns_;
+  duration_ns_ = from.duration_ns_;
   // @@protoc_insertion_point(copy_constructor:vega.DiscreteTrading)
 }
 
 void DiscreteTrading::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DiscreteTrading_markets_2eproto.base);
-  ticksize_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  durationns_ = PROTOBUF_LONGLONG(0);
+  tick_size_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  duration_ns_ = PROTOBUF_LONGLONG(0);
 }
 
 DiscreteTrading::~DiscreteTrading() {
@@ -1308,7 +1309,7 @@ DiscreteTrading::~DiscreteTrading() {
 
 void DiscreteTrading::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  ticksize_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  tick_size_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void DiscreteTrading::ArenaDtor(void* object) {
@@ -1332,8 +1333,8 @@ void DiscreteTrading::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ticksize_.ClearToEmpty();
-  durationns_ = PROTOBUF_LONGLONG(0);
+  tick_size_.ClearToEmpty();
+  duration_ns_ = PROTOBUF_LONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1344,19 +1345,19 @@ const char* DiscreteTrading::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // int64 durationNs = 1 [json_name = "durationNs", (.validator.field) = {
+      // int64 duration_ns = 1 [json_name = "durationNs", (.validator.field) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          durationns_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          duration_ns_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string tickSize = 2 [json_name = "tickSize"];
+      // string tick_size = 2 [json_name = "tickSize"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_ticksize();
+          auto str = _internal_mutable_tick_size();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.DiscreteTrading.tickSize"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.DiscreteTrading.tick_size"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1388,20 +1389,20 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 durationNs = 1 [json_name = "durationNs", (.validator.field) = {
-  if (this->durationns() != 0) {
+  // int64 duration_ns = 1 [json_name = "durationNs", (.validator.field) = {
+  if (this->duration_ns() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_durationns(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_duration_ns(), target);
   }
 
-  // string tickSize = 2 [json_name = "tickSize"];
-  if (this->ticksize().size() > 0) {
+  // string tick_size = 2 [json_name = "tickSize"];
+  if (this->tick_size().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_ticksize().data(), static_cast<int>(this->_internal_ticksize().length()),
+      this->_internal_tick_size().data(), static_cast<int>(this->_internal_tick_size().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.DiscreteTrading.tickSize");
+      "vega.DiscreteTrading.tick_size");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_ticksize(), target);
+        2, this->_internal_tick_size(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1420,18 +1421,18 @@ size_t DiscreteTrading::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string tickSize = 2 [json_name = "tickSize"];
-  if (this->ticksize().size() > 0) {
+  // string tick_size = 2 [json_name = "tickSize"];
+  if (this->tick_size().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_ticksize());
+        this->_internal_tick_size());
   }
 
-  // int64 durationNs = 1 [json_name = "durationNs", (.validator.field) = {
-  if (this->durationns() != 0) {
+  // int64 duration_ns = 1 [json_name = "durationNs", (.validator.field) = {
+  if (this->duration_ns() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_durationns());
+        this->_internal_duration_ns());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1465,11 +1466,11 @@ void DiscreteTrading::MergeFrom(const DiscreteTrading& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.ticksize().size() > 0) {
-    _internal_set_ticksize(from._internal_ticksize());
+  if (from.tick_size().size() > 0) {
+    _internal_set_tick_size(from._internal_tick_size());
   }
-  if (from.durationns() != 0) {
-    _internal_set_durationns(from._internal_durationns());
+  if (from.duration_ns() != 0) {
+    _internal_set_duration_ns(from._internal_duration_ns());
   }
 }
 
@@ -1494,8 +1495,8 @@ bool DiscreteTrading::IsInitialized() const {
 void DiscreteTrading::InternalSwap(DiscreteTrading* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ticksize_.Swap(&other->ticksize_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(durationns_, other->durationns_);
+  tick_size_.Swap(&other->tick_size_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(duration_ns_, other->duration_ns_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DiscreteTrading::GetMetadata() const {
@@ -1507,27 +1508,27 @@ void DiscreteTrading::InternalSwap(DiscreteTrading* other) {
 
 class Future::_Internal {
  public:
-  static const ::vega::EthereumEvent& ethereumevent(const Future* msg);
+  static const ::vega::EthereumEvent& ethereum_event(const Future* msg);
 };
 
 const ::vega::EthereumEvent&
-Future::_Internal::ethereumevent(const Future* msg) {
-  return *msg->oracle_.ethereumevent_;
+Future::_Internal::ethereum_event(const Future* msg) {
+  return *msg->oracle_.ethereum_event_;
 }
-void Future::set_allocated_ethereumevent(::vega::EthereumEvent* ethereumevent) {
+void Future::set_allocated_ethereum_event(::vega::EthereumEvent* ethereum_event) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_oracle();
-  if (ethereumevent) {
+  if (ethereum_event) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(ethereumevent);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(ethereum_event);
     if (message_arena != submessage_arena) {
-      ethereumevent = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, ethereumevent, submessage_arena);
+      ethereum_event = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, ethereum_event, submessage_arena);
     }
-    set_has_ethereumevent();
-    oracle_.ethereumevent_ = ethereumevent;
+    set_has_ethereum_event();
+    oracle_.ethereum_event_ = ethereum_event;
   }
-  // @@protoc_insertion_point(field_set_allocated:vega.Future.ethereumEvent)
+  // @@protoc_insertion_point(field_set_allocated:vega.Future.ethereum_event)
 }
 Future::Future(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
@@ -1543,20 +1544,20 @@ Future::Future(const Future& from)
     maturity_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_maturity(),
       GetArena());
   }
-  settlementasset_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_settlementasset().empty()) {
-    settlementasset_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_settlementasset(),
+  settlement_asset_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_settlement_asset().empty()) {
+    settlement_asset_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_settlement_asset(),
       GetArena());
   }
-  quotename_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_quotename().empty()) {
-    quotename_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_quotename(),
+  quote_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_quote_name().empty()) {
+    quote_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_quote_name(),
       GetArena());
   }
   clear_has_oracle();
   switch (from.oracle_case()) {
     case kEthereumEvent: {
-      _internal_mutable_ethereumevent()->::vega::EthereumEvent::MergeFrom(from._internal_ethereumevent());
+      _internal_mutable_ethereum_event()->::vega::EthereumEvent::MergeFrom(from._internal_ethereum_event());
       break;
     }
     case ORACLE_NOT_SET: {
@@ -1569,8 +1570,8 @@ Future::Future(const Future& from)
 void Future::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Future_markets_2eproto.base);
   maturity_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  settlementasset_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  quotename_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  settlement_asset_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  quote_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   clear_has_oracle();
 }
 
@@ -1583,8 +1584,8 @@ Future::~Future() {
 void Future::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   maturity_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  settlementasset_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  quotename_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  settlement_asset_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  quote_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (has_oracle()) {
     clear_oracle();
   }
@@ -1610,7 +1611,7 @@ void Future::clear_oracle() {
   switch (oracle_case()) {
     case kEthereumEvent: {
       if (GetArena() == nullptr) {
-        delete oracle_.ethereumevent_;
+        delete oracle_.ethereum_event_;
       }
       break;
     }
@@ -1629,8 +1630,8 @@ void Future::Clear() {
   (void) cached_has_bits;
 
   maturity_.ClearToEmpty();
-  settlementasset_.ClearToEmpty();
-  quotename_.ClearToEmpty();
+  settlement_asset_.ClearToEmpty();
+  quote_name_.ClearToEmpty();
   clear_oracle();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1651,28 +1652,28 @@ const char* Future::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string settlementAsset = 2 [json_name = "settlementAsset"];
+      // string settlement_asset = 2 [json_name = "settlementAsset"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_settlementasset();
+          auto str = _internal_mutable_settlement_asset();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.Future.settlementAsset"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.Future.settlement_asset"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string quoteName = 4 [json_name = "quoteName"];
+      // string quote_name = 4 [json_name = "quoteName"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_quotename();
+          auto str = _internal_mutable_quote_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.Future.quoteName"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.Future.quote_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];
+      // .vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];
       case 100:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_ethereumevent(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_ethereum_event(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1714,32 +1715,32 @@ failure:
         1, this->_internal_maturity(), target);
   }
 
-  // string settlementAsset = 2 [json_name = "settlementAsset"];
-  if (this->settlementasset().size() > 0) {
+  // string settlement_asset = 2 [json_name = "settlementAsset"];
+  if (this->settlement_asset().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_settlementasset().data(), static_cast<int>(this->_internal_settlementasset().length()),
+      this->_internal_settlement_asset().data(), static_cast<int>(this->_internal_settlement_asset().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.Future.settlementAsset");
+      "vega.Future.settlement_asset");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_settlementasset(), target);
+        2, this->_internal_settlement_asset(), target);
   }
 
-  // string quoteName = 4 [json_name = "quoteName"];
-  if (this->quotename().size() > 0) {
+  // string quote_name = 4 [json_name = "quoteName"];
+  if (this->quote_name().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_quotename().data(), static_cast<int>(this->_internal_quotename().length()),
+      this->_internal_quote_name().data(), static_cast<int>(this->_internal_quote_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.Future.quoteName");
+      "vega.Future.quote_name");
     target = stream->WriteStringMaybeAliased(
-        4, this->_internal_quotename(), target);
+        4, this->_internal_quote_name(), target);
   }
 
-  // .vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];
-  if (_internal_has_ethereumevent()) {
+  // .vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];
+  if (_internal_has_ethereum_event()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        100, _Internal::ethereumevent(this), target, stream);
+        100, _Internal::ethereum_event(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1765,26 +1766,26 @@ size_t Future::ByteSizeLong() const {
         this->_internal_maturity());
   }
 
-  // string settlementAsset = 2 [json_name = "settlementAsset"];
-  if (this->settlementasset().size() > 0) {
+  // string settlement_asset = 2 [json_name = "settlementAsset"];
+  if (this->settlement_asset().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_settlementasset());
+        this->_internal_settlement_asset());
   }
 
-  // string quoteName = 4 [json_name = "quoteName"];
-  if (this->quotename().size() > 0) {
+  // string quote_name = 4 [json_name = "quoteName"];
+  if (this->quote_name().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_quotename());
+        this->_internal_quote_name());
   }
 
   switch (oracle_case()) {
-    // .vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];
+    // .vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];
     case kEthereumEvent: {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *oracle_.ethereumevent_);
+          *oracle_.ethereum_event_);
       break;
     }
     case ORACLE_NOT_SET: {
@@ -1825,15 +1826,15 @@ void Future::MergeFrom(const Future& from) {
   if (from.maturity().size() > 0) {
     _internal_set_maturity(from._internal_maturity());
   }
-  if (from.settlementasset().size() > 0) {
-    _internal_set_settlementasset(from._internal_settlementasset());
+  if (from.settlement_asset().size() > 0) {
+    _internal_set_settlement_asset(from._internal_settlement_asset());
   }
-  if (from.quotename().size() > 0) {
-    _internal_set_quotename(from._internal_quotename());
+  if (from.quote_name().size() > 0) {
+    _internal_set_quote_name(from._internal_quote_name());
   }
   switch (from.oracle_case()) {
     case kEthereumEvent: {
-      _internal_mutable_ethereumevent()->::vega::EthereumEvent::MergeFrom(from._internal_ethereumevent());
+      _internal_mutable_ethereum_event()->::vega::EthereumEvent::MergeFrom(from._internal_ethereum_event());
       break;
     }
     case ORACLE_NOT_SET: {
@@ -1864,8 +1865,8 @@ void Future::InternalSwap(Future* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   maturity_.Swap(&other->maturity_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  settlementasset_.Swap(&other->settlementasset_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  quotename_.Swap(&other->quotename_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  settlement_asset_.Swap(&other->settlement_asset_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  quote_name_.Swap(&other->quote_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(oracle_, other->oracle_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
@@ -1890,9 +1891,9 @@ EthereumEvent::EthereumEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 EthereumEvent::EthereumEvent(const EthereumEvent& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  contractid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_contractid().empty()) {
-    contractid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_contractid(),
+  contract_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_contract_id().empty()) {
+    contract_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_contract_id(),
       GetArena());
   }
   event_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1906,7 +1907,7 @@ EthereumEvent::EthereumEvent(const EthereumEvent& from)
 
 void EthereumEvent::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_EthereumEvent_markets_2eproto.base);
-  contractid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  contract_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   event_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   value_ = PROTOBUF_ULONGLONG(0);
 }
@@ -1919,7 +1920,7 @@ EthereumEvent::~EthereumEvent() {
 
 void EthereumEvent::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  contractid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  contract_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   event_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1944,7 +1945,7 @@ void EthereumEvent::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  contractid_.ClearToEmpty();
+  contract_id_.ClearToEmpty();
   event_.ClearToEmpty();
   value_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -1957,12 +1958,12 @@ const char* EthereumEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string contractID = 1 [json_name = "contractID"];
+      // string contract_id = 1 [json_name = "contractId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_contractid();
+          auto str = _internal_mutable_contract_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.EthereumEvent.contractID"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.EthereumEvent.contract_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2010,14 +2011,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string contractID = 1 [json_name = "contractID"];
-  if (this->contractid().size() > 0) {
+  // string contract_id = 1 [json_name = "contractId"];
+  if (this->contract_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_contractid().data(), static_cast<int>(this->_internal_contractid().length()),
+      this->_internal_contract_id().data(), static_cast<int>(this->_internal_contract_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.EthereumEvent.contractID");
+      "vega.EthereumEvent.contract_id");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_contractid(), target);
+        1, this->_internal_contract_id(), target);
   }
 
   // string event = 2 [json_name = "event"];
@@ -2052,11 +2053,11 @@ size_t EthereumEvent::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string contractID = 1 [json_name = "contractID"];
-  if (this->contractid().size() > 0) {
+  // string contract_id = 1 [json_name = "contractId"];
+  if (this->contract_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_contractid());
+        this->_internal_contract_id());
   }
 
   // string event = 2 [json_name = "event"];
@@ -2104,8 +2105,8 @@ void EthereumEvent::MergeFrom(const EthereumEvent& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.contractid().size() > 0) {
-    _internal_set_contractid(from._internal_contractid());
+  if (from.contract_id().size() > 0) {
+    _internal_set_contract_id(from._internal_contract_id());
   }
   if (from.event().size() > 0) {
     _internal_set_event(from._internal_event());
@@ -2136,7 +2137,7 @@ bool EthereumEvent::IsInitialized() const {
 void EthereumEvent::InternalSwap(EthereumEvent* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  contractid_.Swap(&other->contractid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  contract_id_.Swap(&other->contract_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   event_.Swap(&other->event_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(value_, other->value_);
 }
@@ -2411,7 +2412,7 @@ Instrument::Instrument(const Instrument& from)
   } else {
     metadata_ = nullptr;
   }
-  initialmarkprice_ = from.initialmarkprice_;
+  initial_mark_price_ = from.initial_mark_price_;
   clear_has_product();
   switch (from.product_case()) {
     case kFuture: {
@@ -2432,8 +2433,8 @@ void Instrument::SharedCtor() {
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
       reinterpret_cast<char*>(&metadata_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&initialmarkprice_) -
-      reinterpret_cast<char*>(&metadata_)) + sizeof(initialmarkprice_));
+      0, static_cast<size_t>(reinterpret_cast<char*>(&initial_mark_price_) -
+      reinterpret_cast<char*>(&metadata_)) + sizeof(initial_mark_price_));
   clear_has_product();
 }
 
@@ -2499,7 +2500,7 @@ void Instrument::Clear() {
     delete metadata_;
   }
   metadata_ = nullptr;
-  initialmarkprice_ = PROTOBUF_ULONGLONG(0);
+  initial_mark_price_ = PROTOBUF_ULONGLONG(0);
   clear_product();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2545,10 +2546,10 @@ const char* Instrument::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 initialMarkPrice = 5 [json_name = "initialMarkPrice"];
+      // uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          initialmarkprice_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          initial_mark_price_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2625,10 +2626,10 @@ failure:
         4, _Internal::metadata(this), target, stream);
   }
 
-  // uint64 initialMarkPrice = 5 [json_name = "initialMarkPrice"];
-  if (this->initialmarkprice() != 0) {
+  // uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];
+  if (this->initial_mark_price() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_initialmarkprice(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_initial_mark_price(), target);
   }
 
   // .vega.Future future = 100 [json_name = "future"];
@@ -2683,11 +2684,11 @@ size_t Instrument::ByteSizeLong() const {
         *metadata_);
   }
 
-  // uint64 initialMarkPrice = 5 [json_name = "initialMarkPrice"];
-  if (this->initialmarkprice() != 0) {
+  // uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];
+  if (this->initial_mark_price() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_initialmarkprice());
+        this->_internal_initial_mark_price());
   }
 
   switch (product_case()) {
@@ -2745,8 +2746,8 @@ void Instrument::MergeFrom(const Instrument& from) {
   if (from.has_metadata()) {
     _internal_mutable_metadata()->::vega::InstrumentMetadata::MergeFrom(from._internal_metadata());
   }
-  if (from.initialmarkprice() != 0) {
-    _internal_set_initialmarkprice(from._internal_initialmarkprice());
+  if (from.initial_mark_price() != 0) {
+    _internal_set_initial_mark_price(from._internal_initial_mark_price());
   }
   switch (from.product_case()) {
     case kFuture: {
@@ -2784,8 +2785,8 @@ void Instrument::InternalSwap(Instrument* other) {
   code_.Swap(&other->code_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Instrument, initialmarkprice_)
-      + sizeof(Instrument::initialmarkprice_)
+      PROTOBUF_FIELD_OFFSET(Instrument, initial_mark_price_)
+      + sizeof(Instrument::initial_mark_price_)
       - PROTOBUF_FIELD_OFFSET(Instrument, metadata_)>(
           reinterpret_cast<char*>(&metadata_),
           reinterpret_cast<char*>(&other->metadata_));
@@ -2823,9 +2824,9 @@ LogNormalRiskModel::LogNormalRiskModel(const LogNormalRiskModel& from)
   } else {
     params_ = nullptr;
   }
-  ::memcpy(&riskaversionparameter_, &from.riskaversionparameter_,
+  ::memcpy(&risk_aversion_parameter_, &from.risk_aversion_parameter_,
     static_cast<size_t>(reinterpret_cast<char*>(&tau_) -
-    reinterpret_cast<char*>(&riskaversionparameter_)) + sizeof(tau_));
+    reinterpret_cast<char*>(&risk_aversion_parameter_)) + sizeof(tau_));
   // @@protoc_insertion_point(copy_constructor:vega.LogNormalRiskModel)
 }
 
@@ -2873,9 +2874,9 @@ void LogNormalRiskModel::Clear() {
     delete params_;
   }
   params_ = nullptr;
-  ::memset(&riskaversionparameter_, 0, static_cast<size_t>(
+  ::memset(&risk_aversion_parameter_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&tau_) -
-      reinterpret_cast<char*>(&riskaversionparameter_)) + sizeof(tau_));
+      reinterpret_cast<char*>(&risk_aversion_parameter_)) + sizeof(tau_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2886,10 +2887,10 @@ const char* LogNormalRiskModel::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // double riskAversionParameter = 1 [json_name = "riskAversionParameter"];
+      // double risk_aversion_parameter = 1 [json_name = "riskAversionParameter"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
-          riskaversionparameter_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          risk_aversion_parameter_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
@@ -2935,10 +2936,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double riskAversionParameter = 1 [json_name = "riskAversionParameter"];
-  if (!(this->riskaversionparameter() <= 0 && this->riskaversionparameter() >= 0)) {
+  // double risk_aversion_parameter = 1 [json_name = "riskAversionParameter"];
+  if (!(this->risk_aversion_parameter() <= 0 && this->risk_aversion_parameter() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_riskaversionparameter(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_risk_aversion_parameter(), target);
   }
 
   // double tau = 2 [json_name = "tau"];
@@ -2978,8 +2979,8 @@ size_t LogNormalRiskModel::ByteSizeLong() const {
         *params_);
   }
 
-  // double riskAversionParameter = 1 [json_name = "riskAversionParameter"];
-  if (!(this->riskaversionparameter() <= 0 && this->riskaversionparameter() >= 0)) {
+  // double risk_aversion_parameter = 1 [json_name = "riskAversionParameter"];
+  if (!(this->risk_aversion_parameter() <= 0 && this->risk_aversion_parameter() >= 0)) {
     total_size += 1 + 8;
   }
 
@@ -3022,8 +3023,8 @@ void LogNormalRiskModel::MergeFrom(const LogNormalRiskModel& from) {
   if (from.has_params()) {
     _internal_mutable_params()->::vega::LogNormalModelParams::MergeFrom(from._internal_params());
   }
-  if (!(from.riskaversionparameter() <= 0 && from.riskaversionparameter() >= 0)) {
-    _internal_set_riskaversionparameter(from._internal_riskaversionparameter());
+  if (!(from.risk_aversion_parameter() <= 0 && from.risk_aversion_parameter() >= 0)) {
+    _internal_set_risk_aversion_parameter(from._internal_risk_aversion_parameter());
   }
   if (!(from.tau() <= 0 && from.tau() >= 0)) {
     _internal_set_tau(from._internal_tau());
@@ -3535,17 +3536,17 @@ SimpleModelParams::SimpleModelParams(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 SimpleModelParams::SimpleModelParams(const SimpleModelParams& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&factorlong_, &from.factorlong_,
-    static_cast<size_t>(reinterpret_cast<char*>(&probabilityoftrading_) -
-    reinterpret_cast<char*>(&factorlong_)) + sizeof(probabilityoftrading_));
+  ::memcpy(&factor_long_, &from.factor_long_,
+    static_cast<size_t>(reinterpret_cast<char*>(&probability_of_trading_) -
+    reinterpret_cast<char*>(&factor_long_)) + sizeof(probability_of_trading_));
   // @@protoc_insertion_point(copy_constructor:vega.SimpleModelParams)
 }
 
 void SimpleModelParams::SharedCtor() {
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&factorlong_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&probabilityoftrading_) -
-      reinterpret_cast<char*>(&factorlong_)) + sizeof(probabilityoftrading_));
+      reinterpret_cast<char*>(&factor_long_) - reinterpret_cast<char*>(this)),
+      0, static_cast<size_t>(reinterpret_cast<char*>(&probability_of_trading_) -
+      reinterpret_cast<char*>(&factor_long_)) + sizeof(probability_of_trading_));
 }
 
 SimpleModelParams::~SimpleModelParams() {
@@ -3579,9 +3580,9 @@ void SimpleModelParams::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&factorlong_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&probabilityoftrading_) -
-      reinterpret_cast<char*>(&factorlong_)) + sizeof(probabilityoftrading_));
+  ::memset(&factor_long_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&probability_of_trading_) -
+      reinterpret_cast<char*>(&factor_long_)) + sizeof(probability_of_trading_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3592,38 +3593,38 @@ const char* SimpleModelParams::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // double factorLong = 1 [json_name = "factorLong"];
+      // double factor_long = 1 [json_name = "factorLong"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
-          factorlong_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          factor_long_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double factorShort = 2 [json_name = "factorShort"];
+      // double factor_short = 2 [json_name = "factorShort"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
-          factorshort_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          factor_short_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double maxMoveUp = 3 [json_name = "maxMoveUp", (.validator.field) = {
+      // double max_move_up = 3 [json_name = "maxMoveUp", (.validator.field) = {
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 25)) {
-          maxmoveup_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          max_move_up_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double minMoveDown = 4 [json_name = "minMoveDown", (.validator.field) = {
+      // double min_move_down = 4 [json_name = "minMoveDown", (.validator.field) = {
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 33)) {
-          minmovedown_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          min_move_down_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double probabilityOfTrading = 5 [json_name = "probabilityOfTrading", (.validator.field) = {
+      // double probability_of_trading = 5 [json_name = "probabilityOfTrading", (.validator.field) = {
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 41)) {
-          probabilityoftrading_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          probability_of_trading_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
@@ -3655,34 +3656,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double factorLong = 1 [json_name = "factorLong"];
-  if (!(this->factorlong() <= 0 && this->factorlong() >= 0)) {
+  // double factor_long = 1 [json_name = "factorLong"];
+  if (!(this->factor_long() <= 0 && this->factor_long() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_factorlong(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_factor_long(), target);
   }
 
-  // double factorShort = 2 [json_name = "factorShort"];
-  if (!(this->factorshort() <= 0 && this->factorshort() >= 0)) {
+  // double factor_short = 2 [json_name = "factorShort"];
+  if (!(this->factor_short() <= 0 && this->factor_short() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_factorshort(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_factor_short(), target);
   }
 
-  // double maxMoveUp = 3 [json_name = "maxMoveUp", (.validator.field) = {
-  if (!(this->maxmoveup() <= 0 && this->maxmoveup() >= 0)) {
+  // double max_move_up = 3 [json_name = "maxMoveUp", (.validator.field) = {
+  if (!(this->max_move_up() <= 0 && this->max_move_up() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(3, this->_internal_maxmoveup(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(3, this->_internal_max_move_up(), target);
   }
 
-  // double minMoveDown = 4 [json_name = "minMoveDown", (.validator.field) = {
-  if (!(this->minmovedown() <= 0 && this->minmovedown() >= 0)) {
+  // double min_move_down = 4 [json_name = "minMoveDown", (.validator.field) = {
+  if (!(this->min_move_down() <= 0 && this->min_move_down() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(4, this->_internal_minmovedown(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(4, this->_internal_min_move_down(), target);
   }
 
-  // double probabilityOfTrading = 5 [json_name = "probabilityOfTrading", (.validator.field) = {
-  if (!(this->probabilityoftrading() <= 0 && this->probabilityoftrading() >= 0)) {
+  // double probability_of_trading = 5 [json_name = "probabilityOfTrading", (.validator.field) = {
+  if (!(this->probability_of_trading() <= 0 && this->probability_of_trading() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(5, this->_internal_probabilityoftrading(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(5, this->_internal_probability_of_trading(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3701,28 +3702,28 @@ size_t SimpleModelParams::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double factorLong = 1 [json_name = "factorLong"];
-  if (!(this->factorlong() <= 0 && this->factorlong() >= 0)) {
+  // double factor_long = 1 [json_name = "factorLong"];
+  if (!(this->factor_long() <= 0 && this->factor_long() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double factorShort = 2 [json_name = "factorShort"];
-  if (!(this->factorshort() <= 0 && this->factorshort() >= 0)) {
+  // double factor_short = 2 [json_name = "factorShort"];
+  if (!(this->factor_short() <= 0 && this->factor_short() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double maxMoveUp = 3 [json_name = "maxMoveUp", (.validator.field) = {
-  if (!(this->maxmoveup() <= 0 && this->maxmoveup() >= 0)) {
+  // double max_move_up = 3 [json_name = "maxMoveUp", (.validator.field) = {
+  if (!(this->max_move_up() <= 0 && this->max_move_up() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double minMoveDown = 4 [json_name = "minMoveDown", (.validator.field) = {
-  if (!(this->minmovedown() <= 0 && this->minmovedown() >= 0)) {
+  // double min_move_down = 4 [json_name = "minMoveDown", (.validator.field) = {
+  if (!(this->min_move_down() <= 0 && this->min_move_down() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double probabilityOfTrading = 5 [json_name = "probabilityOfTrading", (.validator.field) = {
-  if (!(this->probabilityoftrading() <= 0 && this->probabilityoftrading() >= 0)) {
+  // double probability_of_trading = 5 [json_name = "probabilityOfTrading", (.validator.field) = {
+  if (!(this->probability_of_trading() <= 0 && this->probability_of_trading() >= 0)) {
     total_size += 1 + 8;
   }
 
@@ -3757,20 +3758,20 @@ void SimpleModelParams::MergeFrom(const SimpleModelParams& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!(from.factorlong() <= 0 && from.factorlong() >= 0)) {
-    _internal_set_factorlong(from._internal_factorlong());
+  if (!(from.factor_long() <= 0 && from.factor_long() >= 0)) {
+    _internal_set_factor_long(from._internal_factor_long());
   }
-  if (!(from.factorshort() <= 0 && from.factorshort() >= 0)) {
-    _internal_set_factorshort(from._internal_factorshort());
+  if (!(from.factor_short() <= 0 && from.factor_short() >= 0)) {
+    _internal_set_factor_short(from._internal_factor_short());
   }
-  if (!(from.maxmoveup() <= 0 && from.maxmoveup() >= 0)) {
-    _internal_set_maxmoveup(from._internal_maxmoveup());
+  if (!(from.max_move_up() <= 0 && from.max_move_up() >= 0)) {
+    _internal_set_max_move_up(from._internal_max_move_up());
   }
-  if (!(from.minmovedown() <= 0 && from.minmovedown() >= 0)) {
-    _internal_set_minmovedown(from._internal_minmovedown());
+  if (!(from.min_move_down() <= 0 && from.min_move_down() >= 0)) {
+    _internal_set_min_move_down(from._internal_min_move_down());
   }
-  if (!(from.probabilityoftrading() <= 0 && from.probabilityoftrading() >= 0)) {
-    _internal_set_probabilityoftrading(from._internal_probabilityoftrading());
+  if (!(from.probability_of_trading() <= 0 && from.probability_of_trading() >= 0)) {
+    _internal_set_probability_of_trading(from._internal_probability_of_trading());
   }
 }
 
@@ -3796,11 +3797,11 @@ void SimpleModelParams::InternalSwap(SimpleModelParams* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(SimpleModelParams, probabilityoftrading_)
-      + sizeof(SimpleModelParams::probabilityoftrading_)
-      - PROTOBUF_FIELD_OFFSET(SimpleModelParams, factorlong_)>(
-          reinterpret_cast<char*>(&factorlong_),
-          reinterpret_cast<char*>(&other->factorlong_));
+      PROTOBUF_FIELD_OFFSET(SimpleModelParams, probability_of_trading_)
+      + sizeof(SimpleModelParams::probability_of_trading_)
+      - PROTOBUF_FIELD_OFFSET(SimpleModelParams, factor_long_)>(
+          reinterpret_cast<char*>(&factor_long_),
+          reinterpret_cast<char*>(&other->factor_long_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SimpleModelParams::GetMetadata() const {
@@ -3823,17 +3824,17 @@ ScalingFactors::ScalingFactors(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 ScalingFactors::ScalingFactors(const ScalingFactors& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&searchlevel_, &from.searchlevel_,
-    static_cast<size_t>(reinterpret_cast<char*>(&collateralrelease_) -
-    reinterpret_cast<char*>(&searchlevel_)) + sizeof(collateralrelease_));
+  ::memcpy(&search_level_, &from.search_level_,
+    static_cast<size_t>(reinterpret_cast<char*>(&collateral_release_) -
+    reinterpret_cast<char*>(&search_level_)) + sizeof(collateral_release_));
   // @@protoc_insertion_point(copy_constructor:vega.ScalingFactors)
 }
 
 void ScalingFactors::SharedCtor() {
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&searchlevel_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&collateralrelease_) -
-      reinterpret_cast<char*>(&searchlevel_)) + sizeof(collateralrelease_));
+      reinterpret_cast<char*>(&search_level_) - reinterpret_cast<char*>(this)),
+      0, static_cast<size_t>(reinterpret_cast<char*>(&collateral_release_) -
+      reinterpret_cast<char*>(&search_level_)) + sizeof(collateral_release_));
 }
 
 ScalingFactors::~ScalingFactors() {
@@ -3867,9 +3868,9 @@ void ScalingFactors::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&searchlevel_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&collateralrelease_) -
-      reinterpret_cast<char*>(&searchlevel_)) + sizeof(collateralrelease_));
+  ::memset(&search_level_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&collateral_release_) -
+      reinterpret_cast<char*>(&search_level_)) + sizeof(collateral_release_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3880,24 +3881,24 @@ const char* ScalingFactors::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // double searchLevel = 1 [json_name = "searchLevel"];
+      // double search_level = 1 [json_name = "searchLevel"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
-          searchlevel_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          search_level_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double initialMargin = 2 [json_name = "initialMargin"];
+      // double initial_margin = 2 [json_name = "initialMargin"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
-          initialmargin_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          initial_margin_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double collateralRelease = 3 [json_name = "collateralRelease"];
+      // double collateral_release = 3 [json_name = "collateralRelease"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 25)) {
-          collateralrelease_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          collateral_release_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
@@ -3929,22 +3930,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double searchLevel = 1 [json_name = "searchLevel"];
-  if (!(this->searchlevel() <= 0 && this->searchlevel() >= 0)) {
+  // double search_level = 1 [json_name = "searchLevel"];
+  if (!(this->search_level() <= 0 && this->search_level() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_searchlevel(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_search_level(), target);
   }
 
-  // double initialMargin = 2 [json_name = "initialMargin"];
-  if (!(this->initialmargin() <= 0 && this->initialmargin() >= 0)) {
+  // double initial_margin = 2 [json_name = "initialMargin"];
+  if (!(this->initial_margin() <= 0 && this->initial_margin() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_initialmargin(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_initial_margin(), target);
   }
 
-  // double collateralRelease = 3 [json_name = "collateralRelease"];
-  if (!(this->collateralrelease() <= 0 && this->collateralrelease() >= 0)) {
+  // double collateral_release = 3 [json_name = "collateralRelease"];
+  if (!(this->collateral_release() <= 0 && this->collateral_release() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(3, this->_internal_collateralrelease(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(3, this->_internal_collateral_release(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3963,18 +3964,18 @@ size_t ScalingFactors::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double searchLevel = 1 [json_name = "searchLevel"];
-  if (!(this->searchlevel() <= 0 && this->searchlevel() >= 0)) {
+  // double search_level = 1 [json_name = "searchLevel"];
+  if (!(this->search_level() <= 0 && this->search_level() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double initialMargin = 2 [json_name = "initialMargin"];
-  if (!(this->initialmargin() <= 0 && this->initialmargin() >= 0)) {
+  // double initial_margin = 2 [json_name = "initialMargin"];
+  if (!(this->initial_margin() <= 0 && this->initial_margin() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double collateralRelease = 3 [json_name = "collateralRelease"];
-  if (!(this->collateralrelease() <= 0 && this->collateralrelease() >= 0)) {
+  // double collateral_release = 3 [json_name = "collateralRelease"];
+  if (!(this->collateral_release() <= 0 && this->collateral_release() >= 0)) {
     total_size += 1 + 8;
   }
 
@@ -4009,14 +4010,14 @@ void ScalingFactors::MergeFrom(const ScalingFactors& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!(from.searchlevel() <= 0 && from.searchlevel() >= 0)) {
-    _internal_set_searchlevel(from._internal_searchlevel());
+  if (!(from.search_level() <= 0 && from.search_level() >= 0)) {
+    _internal_set_search_level(from._internal_search_level());
   }
-  if (!(from.initialmargin() <= 0 && from.initialmargin() >= 0)) {
-    _internal_set_initialmargin(from._internal_initialmargin());
+  if (!(from.initial_margin() <= 0 && from.initial_margin() >= 0)) {
+    _internal_set_initial_margin(from._internal_initial_margin());
   }
-  if (!(from.collateralrelease() <= 0 && from.collateralrelease() >= 0)) {
-    _internal_set_collateralrelease(from._internal_collateralrelease());
+  if (!(from.collateral_release() <= 0 && from.collateral_release() >= 0)) {
+    _internal_set_collateral_release(from._internal_collateral_release());
   }
 }
 
@@ -4042,11 +4043,11 @@ void ScalingFactors::InternalSwap(ScalingFactors* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ScalingFactors, collateralrelease_)
-      + sizeof(ScalingFactors::collateralrelease_)
-      - PROTOBUF_FIELD_OFFSET(ScalingFactors, searchlevel_)>(
-          reinterpret_cast<char*>(&searchlevel_),
-          reinterpret_cast<char*>(&other->searchlevel_));
+      PROTOBUF_FIELD_OFFSET(ScalingFactors, collateral_release_)
+      + sizeof(ScalingFactors::collateral_release_)
+      - PROTOBUF_FIELD_OFFSET(ScalingFactors, search_level_)>(
+          reinterpret_cast<char*>(&search_level_),
+          reinterpret_cast<char*>(&other->search_level_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ScalingFactors::GetMetadata() const {
@@ -4058,12 +4059,12 @@ void ScalingFactors::InternalSwap(ScalingFactors* other) {
 
 class MarginCalculator::_Internal {
  public:
-  static const ::vega::ScalingFactors& scalingfactors(const MarginCalculator* msg);
+  static const ::vega::ScalingFactors& scaling_factors(const MarginCalculator* msg);
 };
 
 const ::vega::ScalingFactors&
-MarginCalculator::_Internal::scalingfactors(const MarginCalculator* msg) {
-  return *msg->scalingfactors_;
+MarginCalculator::_Internal::scaling_factors(const MarginCalculator* msg) {
+  return *msg->scaling_factors_;
 }
 MarginCalculator::MarginCalculator(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
@@ -4074,17 +4075,17 @@ MarginCalculator::MarginCalculator(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 MarginCalculator::MarginCalculator(const MarginCalculator& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_scalingfactors()) {
-    scalingfactors_ = new ::vega::ScalingFactors(*from.scalingfactors_);
+  if (from._internal_has_scaling_factors()) {
+    scaling_factors_ = new ::vega::ScalingFactors(*from.scaling_factors_);
   } else {
-    scalingfactors_ = nullptr;
+    scaling_factors_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:vega.MarginCalculator)
 }
 
 void MarginCalculator::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_MarginCalculator_markets_2eproto.base);
-  scalingfactors_ = nullptr;
+  scaling_factors_ = nullptr;
 }
 
 MarginCalculator::~MarginCalculator() {
@@ -4095,7 +4096,7 @@ MarginCalculator::~MarginCalculator() {
 
 void MarginCalculator::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  if (this != internal_default_instance()) delete scalingfactors_;
+  if (this != internal_default_instance()) delete scaling_factors_;
 }
 
 void MarginCalculator::ArenaDtor(void* object) {
@@ -4119,10 +4120,10 @@ void MarginCalculator::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArena() == nullptr && scalingfactors_ != nullptr) {
-    delete scalingfactors_;
+  if (GetArena() == nullptr && scaling_factors_ != nullptr) {
+    delete scaling_factors_;
   }
-  scalingfactors_ = nullptr;
+  scaling_factors_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4133,10 +4134,10 @@ const char* MarginCalculator::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];
+      // .vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_scalingfactors(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_scaling_factors(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4168,12 +4169,12 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];
-  if (this->has_scalingfactors()) {
+  // .vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];
+  if (this->has_scaling_factors()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::scalingfactors(this), target, stream);
+        1, _Internal::scaling_factors(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4192,11 +4193,11 @@ size_t MarginCalculator::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];
-  if (this->has_scalingfactors()) {
+  // .vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];
+  if (this->has_scaling_factors()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *scalingfactors_);
+        *scaling_factors_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4230,8 +4231,8 @@ void MarginCalculator::MergeFrom(const MarginCalculator& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_scalingfactors()) {
-    _internal_mutable_scalingfactors()->::vega::ScalingFactors::MergeFrom(from._internal_scalingfactors());
+  if (from.has_scaling_factors()) {
+    _internal_mutable_scaling_factors()->::vega::ScalingFactors::MergeFrom(from._internal_scaling_factors());
   }
 }
 
@@ -4256,7 +4257,7 @@ bool MarginCalculator::IsInitialized() const {
 void MarginCalculator::InternalSwap(MarginCalculator* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(scalingfactors_, other->scalingfactors_);
+  swap(scaling_factors_, other->scaling_factors_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata MarginCalculator::GetMetadata() const {
@@ -4269,9 +4270,9 @@ void MarginCalculator::InternalSwap(MarginCalculator* other) {
 class TradableInstrument::_Internal {
  public:
   static const ::vega::Instrument& instrument(const TradableInstrument* msg);
-  static const ::vega::MarginCalculator& margincalculator(const TradableInstrument* msg);
-  static const ::vega::LogNormalRiskModel& lognormalriskmodel(const TradableInstrument* msg);
-  static const ::vega::SimpleRiskModel& simpleriskmodel(const TradableInstrument* msg);
+  static const ::vega::MarginCalculator& margin_calculator(const TradableInstrument* msg);
+  static const ::vega::LogNormalRiskModel& log_normal_risk_model(const TradableInstrument* msg);
+  static const ::vega::SimpleRiskModel& simple_risk_model(const TradableInstrument* msg);
 };
 
 const ::vega::Instrument&
@@ -4279,46 +4280,46 @@ TradableInstrument::_Internal::instrument(const TradableInstrument* msg) {
   return *msg->instrument_;
 }
 const ::vega::MarginCalculator&
-TradableInstrument::_Internal::margincalculator(const TradableInstrument* msg) {
-  return *msg->margincalculator_;
+TradableInstrument::_Internal::margin_calculator(const TradableInstrument* msg) {
+  return *msg->margin_calculator_;
 }
 const ::vega::LogNormalRiskModel&
-TradableInstrument::_Internal::lognormalriskmodel(const TradableInstrument* msg) {
-  return *msg->riskModel_.lognormalriskmodel_;
+TradableInstrument::_Internal::log_normal_risk_model(const TradableInstrument* msg) {
+  return *msg->risk_model_.log_normal_risk_model_;
 }
 const ::vega::SimpleRiskModel&
-TradableInstrument::_Internal::simpleriskmodel(const TradableInstrument* msg) {
-  return *msg->riskModel_.simpleriskmodel_;
+TradableInstrument::_Internal::simple_risk_model(const TradableInstrument* msg) {
+  return *msg->risk_model_.simple_risk_model_;
 }
-void TradableInstrument::set_allocated_lognormalriskmodel(::vega::LogNormalRiskModel* lognormalriskmodel) {
+void TradableInstrument::set_allocated_log_normal_risk_model(::vega::LogNormalRiskModel* log_normal_risk_model) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  clear_riskModel();
-  if (lognormalriskmodel) {
+  clear_risk_model();
+  if (log_normal_risk_model) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(lognormalriskmodel);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(log_normal_risk_model);
     if (message_arena != submessage_arena) {
-      lognormalriskmodel = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, lognormalriskmodel, submessage_arena);
+      log_normal_risk_model = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, log_normal_risk_model, submessage_arena);
     }
-    set_has_lognormalriskmodel();
-    riskModel_.lognormalriskmodel_ = lognormalriskmodel;
+    set_has_log_normal_risk_model();
+    risk_model_.log_normal_risk_model_ = log_normal_risk_model;
   }
-  // @@protoc_insertion_point(field_set_allocated:vega.TradableInstrument.logNormalRiskModel)
+  // @@protoc_insertion_point(field_set_allocated:vega.TradableInstrument.log_normal_risk_model)
 }
-void TradableInstrument::set_allocated_simpleriskmodel(::vega::SimpleRiskModel* simpleriskmodel) {
+void TradableInstrument::set_allocated_simple_risk_model(::vega::SimpleRiskModel* simple_risk_model) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  clear_riskModel();
-  if (simpleriskmodel) {
+  clear_risk_model();
+  if (simple_risk_model) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(simpleriskmodel);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(simple_risk_model);
     if (message_arena != submessage_arena) {
-      simpleriskmodel = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, simpleriskmodel, submessage_arena);
+      simple_risk_model = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, simple_risk_model, submessage_arena);
     }
-    set_has_simpleriskmodel();
-    riskModel_.simpleriskmodel_ = simpleriskmodel;
+    set_has_simple_risk_model();
+    risk_model_.simple_risk_model_ = simple_risk_model;
   }
-  // @@protoc_insertion_point(field_set_allocated:vega.TradableInstrument.simpleRiskModel)
+  // @@protoc_insertion_point(field_set_allocated:vega.TradableInstrument.simple_risk_model)
 }
 TradableInstrument::TradableInstrument(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
@@ -4334,22 +4335,22 @@ TradableInstrument::TradableInstrument(const TradableInstrument& from)
   } else {
     instrument_ = nullptr;
   }
-  if (from._internal_has_margincalculator()) {
-    margincalculator_ = new ::vega::MarginCalculator(*from.margincalculator_);
+  if (from._internal_has_margin_calculator()) {
+    margin_calculator_ = new ::vega::MarginCalculator(*from.margin_calculator_);
   } else {
-    margincalculator_ = nullptr;
+    margin_calculator_ = nullptr;
   }
-  clear_has_riskModel();
-  switch (from.riskModel_case()) {
+  clear_has_risk_model();
+  switch (from.risk_model_case()) {
     case kLogNormalRiskModel: {
-      _internal_mutable_lognormalriskmodel()->::vega::LogNormalRiskModel::MergeFrom(from._internal_lognormalriskmodel());
+      _internal_mutable_log_normal_risk_model()->::vega::LogNormalRiskModel::MergeFrom(from._internal_log_normal_risk_model());
       break;
     }
     case kSimpleRiskModel: {
-      _internal_mutable_simpleriskmodel()->::vega::SimpleRiskModel::MergeFrom(from._internal_simpleriskmodel());
+      _internal_mutable_simple_risk_model()->::vega::SimpleRiskModel::MergeFrom(from._internal_simple_risk_model());
       break;
     }
-    case RISKMODEL_NOT_SET: {
+    case RISK_MODEL_NOT_SET: {
       break;
     }
   }
@@ -4360,9 +4361,9 @@ void TradableInstrument::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TradableInstrument_markets_2eproto.base);
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
       reinterpret_cast<char*>(&instrument_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&margincalculator_) -
-      reinterpret_cast<char*>(&instrument_)) + sizeof(margincalculator_));
-  clear_has_riskModel();
+      0, static_cast<size_t>(reinterpret_cast<char*>(&margin_calculator_) -
+      reinterpret_cast<char*>(&instrument_)) + sizeof(margin_calculator_));
+  clear_has_risk_model();
 }
 
 TradableInstrument::~TradableInstrument() {
@@ -4374,9 +4375,9 @@ TradableInstrument::~TradableInstrument() {
 void TradableInstrument::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   if (this != internal_default_instance()) delete instrument_;
-  if (this != internal_default_instance()) delete margincalculator_;
-  if (has_riskModel()) {
-    clear_riskModel();
+  if (this != internal_default_instance()) delete margin_calculator_;
+  if (has_risk_model()) {
+    clear_risk_model();
   }
 }
 
@@ -4395,26 +4396,26 @@ const TradableInstrument& TradableInstrument::default_instance() {
 }
 
 
-void TradableInstrument::clear_riskModel() {
+void TradableInstrument::clear_risk_model() {
 // @@protoc_insertion_point(one_of_clear_start:vega.TradableInstrument)
-  switch (riskModel_case()) {
+  switch (risk_model_case()) {
     case kLogNormalRiskModel: {
       if (GetArena() == nullptr) {
-        delete riskModel_.lognormalriskmodel_;
+        delete risk_model_.log_normal_risk_model_;
       }
       break;
     }
     case kSimpleRiskModel: {
       if (GetArena() == nullptr) {
-        delete riskModel_.simpleriskmodel_;
+        delete risk_model_.simple_risk_model_;
       }
       break;
     }
-    case RISKMODEL_NOT_SET: {
+    case RISK_MODEL_NOT_SET: {
       break;
     }
   }
-  _oneof_case_[0] = RISKMODEL_NOT_SET;
+  _oneof_case_[0] = RISK_MODEL_NOT_SET;
 }
 
 
@@ -4428,11 +4429,11 @@ void TradableInstrument::Clear() {
     delete instrument_;
   }
   instrument_ = nullptr;
-  if (GetArena() == nullptr && margincalculator_ != nullptr) {
-    delete margincalculator_;
+  if (GetArena() == nullptr && margin_calculator_ != nullptr) {
+    delete margin_calculator_;
   }
-  margincalculator_ = nullptr;
-  clear_riskModel();
+  margin_calculator_ = nullptr;
+  clear_risk_model();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4450,24 +4451,24 @@ const char* TradableInstrument::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];
+      // .vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_margincalculator(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_margin_calculator(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];
+      // .vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];
       case 100:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_lognormalriskmodel(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_log_normal_risk_model(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];
+      // .vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];
       case 101:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          ptr = ctx->ParseMessage(_internal_mutable_simpleriskmodel(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_simple_risk_model(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4507,28 +4508,28 @@ failure:
         1, _Internal::instrument(this), target, stream);
   }
 
-  // .vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];
-  if (this->has_margincalculator()) {
+  // .vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];
+  if (this->has_margin_calculator()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::margincalculator(this), target, stream);
+        2, _Internal::margin_calculator(this), target, stream);
   }
 
-  // .vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];
-  if (_internal_has_lognormalriskmodel()) {
+  // .vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];
+  if (_internal_has_log_normal_risk_model()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        100, _Internal::lognormalriskmodel(this), target, stream);
+        100, _Internal::log_normal_risk_model(this), target, stream);
   }
 
-  // .vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];
-  if (_internal_has_simpleriskmodel()) {
+  // .vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];
+  if (_internal_has_simple_risk_model()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        101, _Internal::simpleriskmodel(this), target, stream);
+        101, _Internal::simple_risk_model(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4554,29 +4555,29 @@ size_t TradableInstrument::ByteSizeLong() const {
         *instrument_);
   }
 
-  // .vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];
-  if (this->has_margincalculator()) {
+  // .vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];
+  if (this->has_margin_calculator()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *margincalculator_);
+        *margin_calculator_);
   }
 
-  switch (riskModel_case()) {
-    // .vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];
+  switch (risk_model_case()) {
+    // .vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];
     case kLogNormalRiskModel: {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *riskModel_.lognormalriskmodel_);
+          *risk_model_.log_normal_risk_model_);
       break;
     }
-    // .vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];
+    // .vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];
     case kSimpleRiskModel: {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *riskModel_.simpleriskmodel_);
+          *risk_model_.simple_risk_model_);
       break;
     }
-    case RISKMODEL_NOT_SET: {
+    case RISK_MODEL_NOT_SET: {
       break;
     }
   }
@@ -4614,19 +4615,19 @@ void TradableInstrument::MergeFrom(const TradableInstrument& from) {
   if (from.has_instrument()) {
     _internal_mutable_instrument()->::vega::Instrument::MergeFrom(from._internal_instrument());
   }
-  if (from.has_margincalculator()) {
-    _internal_mutable_margincalculator()->::vega::MarginCalculator::MergeFrom(from._internal_margincalculator());
+  if (from.has_margin_calculator()) {
+    _internal_mutable_margin_calculator()->::vega::MarginCalculator::MergeFrom(from._internal_margin_calculator());
   }
-  switch (from.riskModel_case()) {
+  switch (from.risk_model_case()) {
     case kLogNormalRiskModel: {
-      _internal_mutable_lognormalriskmodel()->::vega::LogNormalRiskModel::MergeFrom(from._internal_lognormalriskmodel());
+      _internal_mutable_log_normal_risk_model()->::vega::LogNormalRiskModel::MergeFrom(from._internal_log_normal_risk_model());
       break;
     }
     case kSimpleRiskModel: {
-      _internal_mutable_simpleriskmodel()->::vega::SimpleRiskModel::MergeFrom(from._internal_simpleriskmodel());
+      _internal_mutable_simple_risk_model()->::vega::SimpleRiskModel::MergeFrom(from._internal_simple_risk_model());
       break;
     }
-    case RISKMODEL_NOT_SET: {
+    case RISK_MODEL_NOT_SET: {
       break;
     }
   }
@@ -4654,12 +4655,12 @@ void TradableInstrument::InternalSwap(TradableInstrument* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TradableInstrument, margincalculator_)
-      + sizeof(TradableInstrument::margincalculator_)
+      PROTOBUF_FIELD_OFFSET(TradableInstrument, margin_calculator_)
+      + sizeof(TradableInstrument::margin_calculator_)
       - PROTOBUF_FIELD_OFFSET(TradableInstrument, instrument_)>(
           reinterpret_cast<char*>(&instrument_),
           reinterpret_cast<char*>(&other->instrument_));
-  swap(riskModel_, other->riskModel_);
+  swap(risk_model_, other->risk_model_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
@@ -4683,19 +4684,19 @@ FeeFactors::FeeFactors(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 FeeFactors::FeeFactors(const FeeFactors& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  makerfee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_makerfee().empty()) {
-    makerfee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_makerfee(),
+  maker_fee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_maker_fee().empty()) {
+    maker_fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_maker_fee(),
       GetArena());
   }
-  infrastructurefee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_infrastructurefee().empty()) {
-    infrastructurefee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_infrastructurefee(),
+  infrastructure_fee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_infrastructure_fee().empty()) {
+    infrastructure_fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_infrastructure_fee(),
       GetArena());
   }
-  liquidityfee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_liquidityfee().empty()) {
-    liquidityfee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_liquidityfee(),
+  liquidity_fee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_liquidity_fee().empty()) {
+    liquidity_fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_liquidity_fee(),
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:vega.FeeFactors)
@@ -4703,9 +4704,9 @@ FeeFactors::FeeFactors(const FeeFactors& from)
 
 void FeeFactors::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FeeFactors_markets_2eproto.base);
-  makerfee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  infrastructurefee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  liquidityfee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  maker_fee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  infrastructure_fee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  liquidity_fee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 FeeFactors::~FeeFactors() {
@@ -4716,9 +4717,9 @@ FeeFactors::~FeeFactors() {
 
 void FeeFactors::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  makerfee_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  infrastructurefee_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  liquidityfee_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  maker_fee_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  infrastructure_fee_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  liquidity_fee_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void FeeFactors::ArenaDtor(void* object) {
@@ -4742,9 +4743,9 @@ void FeeFactors::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  makerfee_.ClearToEmpty();
-  infrastructurefee_.ClearToEmpty();
-  liquidityfee_.ClearToEmpty();
+  maker_fee_.ClearToEmpty();
+  infrastructure_fee_.ClearToEmpty();
+  liquidity_fee_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4755,30 +4756,30 @@ const char* FeeFactors::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string makerFee = 1 [json_name = "makerFee"];
+      // string maker_fee = 1 [json_name = "makerFee"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_makerfee();
+          auto str = _internal_mutable_maker_fee();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.FeeFactors.makerFee"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.FeeFactors.maker_fee"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string infrastructureFee = 2 [json_name = "infrastructureFee"];
+      // string infrastructure_fee = 2 [json_name = "infrastructureFee"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_infrastructurefee();
+          auto str = _internal_mutable_infrastructure_fee();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.FeeFactors.infrastructureFee"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.FeeFactors.infrastructure_fee"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string liquidityFee = 3 [json_name = "liquidityFee"];
+      // string liquidity_fee = 3 [json_name = "liquidityFee"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_liquidityfee();
+          auto str = _internal_mutable_liquidity_fee();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.FeeFactors.liquidityFee"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.FeeFactors.liquidity_fee"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4810,34 +4811,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string makerFee = 1 [json_name = "makerFee"];
-  if (this->makerfee().size() > 0) {
+  // string maker_fee = 1 [json_name = "makerFee"];
+  if (this->maker_fee().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_makerfee().data(), static_cast<int>(this->_internal_makerfee().length()),
+      this->_internal_maker_fee().data(), static_cast<int>(this->_internal_maker_fee().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.FeeFactors.makerFee");
+      "vega.FeeFactors.maker_fee");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_makerfee(), target);
+        1, this->_internal_maker_fee(), target);
   }
 
-  // string infrastructureFee = 2 [json_name = "infrastructureFee"];
-  if (this->infrastructurefee().size() > 0) {
+  // string infrastructure_fee = 2 [json_name = "infrastructureFee"];
+  if (this->infrastructure_fee().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_infrastructurefee().data(), static_cast<int>(this->_internal_infrastructurefee().length()),
+      this->_internal_infrastructure_fee().data(), static_cast<int>(this->_internal_infrastructure_fee().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.FeeFactors.infrastructureFee");
+      "vega.FeeFactors.infrastructure_fee");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_infrastructurefee(), target);
+        2, this->_internal_infrastructure_fee(), target);
   }
 
-  // string liquidityFee = 3 [json_name = "liquidityFee"];
-  if (this->liquidityfee().size() > 0) {
+  // string liquidity_fee = 3 [json_name = "liquidityFee"];
+  if (this->liquidity_fee().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_liquidityfee().data(), static_cast<int>(this->_internal_liquidityfee().length()),
+      this->_internal_liquidity_fee().data(), static_cast<int>(this->_internal_liquidity_fee().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.FeeFactors.liquidityFee");
+      "vega.FeeFactors.liquidity_fee");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_liquidityfee(), target);
+        3, this->_internal_liquidity_fee(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4856,25 +4857,25 @@ size_t FeeFactors::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string makerFee = 1 [json_name = "makerFee"];
-  if (this->makerfee().size() > 0) {
+  // string maker_fee = 1 [json_name = "makerFee"];
+  if (this->maker_fee().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_makerfee());
+        this->_internal_maker_fee());
   }
 
-  // string infrastructureFee = 2 [json_name = "infrastructureFee"];
-  if (this->infrastructurefee().size() > 0) {
+  // string infrastructure_fee = 2 [json_name = "infrastructureFee"];
+  if (this->infrastructure_fee().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_infrastructurefee());
+        this->_internal_infrastructure_fee());
   }
 
-  // string liquidityFee = 3 [json_name = "liquidityFee"];
-  if (this->liquidityfee().size() > 0) {
+  // string liquidity_fee = 3 [json_name = "liquidityFee"];
+  if (this->liquidity_fee().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_liquidityfee());
+        this->_internal_liquidity_fee());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4908,14 +4909,14 @@ void FeeFactors::MergeFrom(const FeeFactors& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.makerfee().size() > 0) {
-    _internal_set_makerfee(from._internal_makerfee());
+  if (from.maker_fee().size() > 0) {
+    _internal_set_maker_fee(from._internal_maker_fee());
   }
-  if (from.infrastructurefee().size() > 0) {
-    _internal_set_infrastructurefee(from._internal_infrastructurefee());
+  if (from.infrastructure_fee().size() > 0) {
+    _internal_set_infrastructure_fee(from._internal_infrastructure_fee());
   }
-  if (from.liquidityfee().size() > 0) {
-    _internal_set_liquidityfee(from._internal_liquidityfee());
+  if (from.liquidity_fee().size() > 0) {
+    _internal_set_liquidity_fee(from._internal_liquidity_fee());
   }
 }
 
@@ -4940,9 +4941,9 @@ bool FeeFactors::IsInitialized() const {
 void FeeFactors::InternalSwap(FeeFactors* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  makerfee_.Swap(&other->makerfee_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  infrastructurefee_.Swap(&other->infrastructurefee_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  liquidityfee_.Swap(&other->liquidityfee_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  maker_fee_.Swap(&other->maker_fee_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  infrastructure_fee_.Swap(&other->infrastructure_fee_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  liquidity_fee_.Swap(&other->liquidity_fee_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata FeeFactors::GetMetadata() const {
@@ -5176,16 +5177,16 @@ PriceMonitoringTrigger::PriceMonitoringTrigger(const PriceMonitoringTrigger& fro
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&horizon_, &from.horizon_,
-    static_cast<size_t>(reinterpret_cast<char*>(&auctionextension_) -
-    reinterpret_cast<char*>(&horizon_)) + sizeof(auctionextension_));
+    static_cast<size_t>(reinterpret_cast<char*>(&auction_extension_) -
+    reinterpret_cast<char*>(&horizon_)) + sizeof(auction_extension_));
   // @@protoc_insertion_point(copy_constructor:vega.PriceMonitoringTrigger)
 }
 
 void PriceMonitoringTrigger::SharedCtor() {
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
       reinterpret_cast<char*>(&horizon_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&auctionextension_) -
-      reinterpret_cast<char*>(&horizon_)) + sizeof(auctionextension_));
+      0, static_cast<size_t>(reinterpret_cast<char*>(&auction_extension_) -
+      reinterpret_cast<char*>(&horizon_)) + sizeof(auction_extension_));
 }
 
 PriceMonitoringTrigger::~PriceMonitoringTrigger() {
@@ -5220,8 +5221,8 @@ void PriceMonitoringTrigger::Clear() {
   (void) cached_has_bits;
 
   ::memset(&horizon_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&auctionextension_) -
-      reinterpret_cast<char*>(&horizon_)) + sizeof(auctionextension_));
+      reinterpret_cast<char*>(&auction_extension_) -
+      reinterpret_cast<char*>(&horizon_)) + sizeof(auction_extension_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5246,10 +5247,10 @@ const char* PriceMonitoringTrigger::_InternalParse(const char* ptr, ::PROTOBUF_N
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // int64 auctionExtension = 3 [json_name = "auctionExtension", (.validator.field) = {
+      // int64 auction_extension = 3 [json_name = "auctionExtension", (.validator.field) = {
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          auctionextension_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          auction_extension_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5293,10 +5294,10 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_probability(), target);
   }
 
-  // int64 auctionExtension = 3 [json_name = "auctionExtension", (.validator.field) = {
-  if (this->auctionextension() != 0) {
+  // int64 auction_extension = 3 [json_name = "auctionExtension", (.validator.field) = {
+  if (this->auction_extension() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(3, this->_internal_auctionextension(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(3, this->_internal_auction_extension(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5327,11 +5328,11 @@ size_t PriceMonitoringTrigger::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
-  // int64 auctionExtension = 3 [json_name = "auctionExtension", (.validator.field) = {
-  if (this->auctionextension() != 0) {
+  // int64 auction_extension = 3 [json_name = "auctionExtension", (.validator.field) = {
+  if (this->auction_extension() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_auctionextension());
+        this->_internal_auction_extension());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5371,8 +5372,8 @@ void PriceMonitoringTrigger::MergeFrom(const PriceMonitoringTrigger& from) {
   if (!(from.probability() <= 0 && from.probability() >= 0)) {
     _internal_set_probability(from._internal_probability());
   }
-  if (from.auctionextension() != 0) {
-    _internal_set_auctionextension(from._internal_auctionextension());
+  if (from.auction_extension() != 0) {
+    _internal_set_auction_extension(from._internal_auction_extension());
   }
 }
 
@@ -5398,8 +5399,8 @@ void PriceMonitoringTrigger::InternalSwap(PriceMonitoringTrigger* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PriceMonitoringTrigger, auctionextension_)
-      + sizeof(PriceMonitoringTrigger::auctionextension_)
+      PROTOBUF_FIELD_OFFSET(PriceMonitoringTrigger, auction_extension_)
+      + sizeof(PriceMonitoringTrigger::auction_extension_)
       - PROTOBUF_FIELD_OFFSET(PriceMonitoringTrigger, horizon_)>(
           reinterpret_cast<char*>(&horizon_),
           reinterpret_cast<char*>(&other->horizon_));
@@ -5635,7 +5636,7 @@ PriceMonitoringSettings::PriceMonitoringSettings(const PriceMonitoringSettings& 
   } else {
     parameters_ = nullptr;
   }
-  updatefrequency_ = from.updatefrequency_;
+  update_frequency_ = from.update_frequency_;
   // @@protoc_insertion_point(copy_constructor:vega.PriceMonitoringSettings)
 }
 
@@ -5643,8 +5644,8 @@ void PriceMonitoringSettings::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PriceMonitoringSettings_markets_2eproto.base);
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
       reinterpret_cast<char*>(&parameters_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&updatefrequency_) -
-      reinterpret_cast<char*>(&parameters_)) + sizeof(updatefrequency_));
+      0, static_cast<size_t>(reinterpret_cast<char*>(&update_frequency_) -
+      reinterpret_cast<char*>(&parameters_)) + sizeof(update_frequency_));
 }
 
 PriceMonitoringSettings::~PriceMonitoringSettings() {
@@ -5683,7 +5684,7 @@ void PriceMonitoringSettings::Clear() {
     delete parameters_;
   }
   parameters_ = nullptr;
-  updatefrequency_ = PROTOBUF_LONGLONG(0);
+  update_frequency_ = PROTOBUF_LONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5701,10 +5702,10 @@ const char* PriceMonitoringSettings::_InternalParse(const char* ptr, ::PROTOBUF_
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int64 updateFrequency = 2 [json_name = "updateFrequency"];
+      // int64 update_frequency = 2 [json_name = "updateFrequency"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          updatefrequency_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          update_frequency_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5744,10 +5745,10 @@ failure:
         1, _Internal::parameters(this), target, stream);
   }
 
-  // int64 updateFrequency = 2 [json_name = "updateFrequency"];
-  if (this->updatefrequency() != 0) {
+  // int64 update_frequency = 2 [json_name = "updateFrequency"];
+  if (this->update_frequency() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_updatefrequency(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_update_frequency(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5773,11 +5774,11 @@ size_t PriceMonitoringSettings::ByteSizeLong() const {
         *parameters_);
   }
 
-  // int64 updateFrequency = 2 [json_name = "updateFrequency"];
-  if (this->updatefrequency() != 0) {
+  // int64 update_frequency = 2 [json_name = "updateFrequency"];
+  if (this->update_frequency() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_updatefrequency());
+        this->_internal_update_frequency());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5814,8 +5815,8 @@ void PriceMonitoringSettings::MergeFrom(const PriceMonitoringSettings& from) {
   if (from.has_parameters()) {
     _internal_mutable_parameters()->::vega::PriceMonitoringParameters::MergeFrom(from._internal_parameters());
   }
-  if (from.updatefrequency() != 0) {
-    _internal_set_updatefrequency(from._internal_updatefrequency());
+  if (from.update_frequency() != 0) {
+    _internal_set_update_frequency(from._internal_update_frequency());
   }
 }
 
@@ -5841,8 +5842,8 @@ void PriceMonitoringSettings::InternalSwap(PriceMonitoringSettings* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PriceMonitoringSettings, updatefrequency_)
-      + sizeof(PriceMonitoringSettings::updatefrequency_)
+      PROTOBUF_FIELD_OFFSET(PriceMonitoringSettings, update_frequency_)
+      + sizeof(PriceMonitoringSettings::update_frequency_)
       - PROTOBUF_FIELD_OFFSET(PriceMonitoringSettings, parameters_)>(
           reinterpret_cast<char*>(&parameters_),
           reinterpret_cast<char*>(&other->parameters_));
@@ -5868,17 +5869,17 @@ TargetStakeParameters::TargetStakeParameters(::PROTOBUF_NAMESPACE_ID::Arena* are
 TargetStakeParameters::TargetStakeParameters(const TargetStakeParameters& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&timewindow_, &from.timewindow_,
-    static_cast<size_t>(reinterpret_cast<char*>(&scalingfactor_) -
-    reinterpret_cast<char*>(&timewindow_)) + sizeof(scalingfactor_));
+  ::memcpy(&time_window_, &from.time_window_,
+    static_cast<size_t>(reinterpret_cast<char*>(&scaling_factor_) -
+    reinterpret_cast<char*>(&time_window_)) + sizeof(scaling_factor_));
   // @@protoc_insertion_point(copy_constructor:vega.TargetStakeParameters)
 }
 
 void TargetStakeParameters::SharedCtor() {
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&timewindow_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&scalingfactor_) -
-      reinterpret_cast<char*>(&timewindow_)) + sizeof(scalingfactor_));
+      reinterpret_cast<char*>(&time_window_) - reinterpret_cast<char*>(this)),
+      0, static_cast<size_t>(reinterpret_cast<char*>(&scaling_factor_) -
+      reinterpret_cast<char*>(&time_window_)) + sizeof(scaling_factor_));
 }
 
 TargetStakeParameters::~TargetStakeParameters() {
@@ -5912,9 +5913,9 @@ void TargetStakeParameters::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&timewindow_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&scalingfactor_) -
-      reinterpret_cast<char*>(&timewindow_)) + sizeof(scalingfactor_));
+  ::memset(&time_window_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&scaling_factor_) -
+      reinterpret_cast<char*>(&time_window_)) + sizeof(scaling_factor_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5925,17 +5926,17 @@ const char* TargetStakeParameters::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // int64 timeWindow = 1 [json_name = "timeWindow", (.validator.field) = {
+      // int64 time_window = 1 [json_name = "timeWindow", (.validator.field) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          timewindow_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          time_window_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // double scalingFactor = 2 [json_name = "scalingFactor", (.validator.field) = {
+      // double scaling_factor = 2 [json_name = "scalingFactor", (.validator.field) = {
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
-          scalingfactor_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          scaling_factor_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
@@ -5967,16 +5968,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 timeWindow = 1 [json_name = "timeWindow", (.validator.field) = {
-  if (this->timewindow() != 0) {
+  // int64 time_window = 1 [json_name = "timeWindow", (.validator.field) = {
+  if (this->time_window() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_timewindow(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_time_window(), target);
   }
 
-  // double scalingFactor = 2 [json_name = "scalingFactor", (.validator.field) = {
-  if (!(this->scalingfactor() <= 0 && this->scalingfactor() >= 0)) {
+  // double scaling_factor = 2 [json_name = "scalingFactor", (.validator.field) = {
+  if (!(this->scaling_factor() <= 0 && this->scaling_factor() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_scalingfactor(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_scaling_factor(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5995,15 +5996,15 @@ size_t TargetStakeParameters::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int64 timeWindow = 1 [json_name = "timeWindow", (.validator.field) = {
-  if (this->timewindow() != 0) {
+  // int64 time_window = 1 [json_name = "timeWindow", (.validator.field) = {
+  if (this->time_window() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_timewindow());
+        this->_internal_time_window());
   }
 
-  // double scalingFactor = 2 [json_name = "scalingFactor", (.validator.field) = {
-  if (!(this->scalingfactor() <= 0 && this->scalingfactor() >= 0)) {
+  // double scaling_factor = 2 [json_name = "scalingFactor", (.validator.field) = {
+  if (!(this->scaling_factor() <= 0 && this->scaling_factor() >= 0)) {
     total_size += 1 + 8;
   }
 
@@ -6038,11 +6039,11 @@ void TargetStakeParameters::MergeFrom(const TargetStakeParameters& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.timewindow() != 0) {
-    _internal_set_timewindow(from._internal_timewindow());
+  if (from.time_window() != 0) {
+    _internal_set_time_window(from._internal_time_window());
   }
-  if (!(from.scalingfactor() <= 0 && from.scalingfactor() >= 0)) {
-    _internal_set_scalingfactor(from._internal_scalingfactor());
+  if (!(from.scaling_factor() <= 0 && from.scaling_factor() >= 0)) {
+    _internal_set_scaling_factor(from._internal_scaling_factor());
   }
 }
 
@@ -6068,11 +6069,11 @@ void TargetStakeParameters::InternalSwap(TargetStakeParameters* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TargetStakeParameters, scalingfactor_)
-      + sizeof(TargetStakeParameters::scalingfactor_)
-      - PROTOBUF_FIELD_OFFSET(TargetStakeParameters, timewindow_)>(
-          reinterpret_cast<char*>(&timewindow_),
-          reinterpret_cast<char*>(&other->timewindow_));
+      PROTOBUF_FIELD_OFFSET(TargetStakeParameters, scaling_factor_)
+      + sizeof(TargetStakeParameters::scaling_factor_)
+      - PROTOBUF_FIELD_OFFSET(TargetStakeParameters, time_window_)>(
+          reinterpret_cast<char*>(&time_window_),
+          reinterpret_cast<char*>(&other->time_window_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TargetStakeParameters::GetMetadata() const {
@@ -6084,46 +6085,46 @@ void TargetStakeParameters::InternalSwap(TargetStakeParameters* other) {
 
 class Market::_Internal {
  public:
-  static const ::vega::TradableInstrument& tradableinstrument(const Market* msg);
+  static const ::vega::TradableInstrument& tradable_instrument(const Market* msg);
   static const ::vega::Fees& fees(const Market* msg);
-  static const ::vega::AuctionDuration& openingauction(const Market* msg);
+  static const ::vega::AuctionDuration& opening_auction(const Market* msg);
   static const ::vega::ContinuousTrading& continuous(const Market* msg);
   static const ::vega::DiscreteTrading& discrete(const Market* msg);
-  static const ::vega::PriceMonitoringSettings& pricemonitoringsettings(const Market* msg);
-  static const ::vega::TargetStakeParameters& targetstakeparameters(const Market* msg);
+  static const ::vega::PriceMonitoringSettings& price_monitoring_settings(const Market* msg);
+  static const ::vega::TargetStakeParameters& target_stake_parameters(const Market* msg);
 };
 
 const ::vega::TradableInstrument&
-Market::_Internal::tradableinstrument(const Market* msg) {
-  return *msg->tradableinstrument_;
+Market::_Internal::tradable_instrument(const Market* msg) {
+  return *msg->tradable_instrument_;
 }
 const ::vega::Fees&
 Market::_Internal::fees(const Market* msg) {
   return *msg->fees_;
 }
 const ::vega::AuctionDuration&
-Market::_Internal::openingauction(const Market* msg) {
-  return *msg->openingauction_;
+Market::_Internal::opening_auction(const Market* msg) {
+  return *msg->opening_auction_;
 }
 const ::vega::ContinuousTrading&
 Market::_Internal::continuous(const Market* msg) {
-  return *msg->tradingModeConfig_.continuous_;
+  return *msg->trading_mode_config_.continuous_;
 }
 const ::vega::DiscreteTrading&
 Market::_Internal::discrete(const Market* msg) {
-  return *msg->tradingModeConfig_.discrete_;
+  return *msg->trading_mode_config_.discrete_;
 }
 const ::vega::PriceMonitoringSettings&
-Market::_Internal::pricemonitoringsettings(const Market* msg) {
-  return *msg->pricemonitoringsettings_;
+Market::_Internal::price_monitoring_settings(const Market* msg) {
+  return *msg->price_monitoring_settings_;
 }
 const ::vega::TargetStakeParameters&
-Market::_Internal::targetstakeparameters(const Market* msg) {
-  return *msg->targetstakeparameters_;
+Market::_Internal::target_stake_parameters(const Market* msg) {
+  return *msg->target_stake_parameters_;
 }
 void Market::set_allocated_continuous(::vega::ContinuousTrading* continuous) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  clear_tradingModeConfig();
+  clear_trading_mode_config();
   if (continuous) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
       ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(continuous);
@@ -6132,13 +6133,13 @@ void Market::set_allocated_continuous(::vega::ContinuousTrading* continuous) {
           message_arena, continuous, submessage_arena);
     }
     set_has_continuous();
-    tradingModeConfig_.continuous_ = continuous;
+    trading_mode_config_.continuous_ = continuous;
   }
   // @@protoc_insertion_point(field_set_allocated:vega.Market.continuous)
 }
 void Market::set_allocated_discrete(::vega::DiscreteTrading* discrete) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  clear_tradingModeConfig();
+  clear_trading_mode_config();
   if (discrete) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
       ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(discrete);
@@ -6147,7 +6148,7 @@ void Market::set_allocated_discrete(::vega::DiscreteTrading* discrete) {
           message_arena, discrete, submessage_arena);
     }
     set_has_discrete();
-    tradingModeConfig_.discrete_ = discrete;
+    trading_mode_config_.discrete_ = discrete;
   }
   // @@protoc_insertion_point(field_set_allocated:vega.Market.discrete)
 }
@@ -6165,36 +6166,36 @@ Market::Market(const Market& from)
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(),
       GetArena());
   }
-  if (from._internal_has_tradableinstrument()) {
-    tradableinstrument_ = new ::vega::TradableInstrument(*from.tradableinstrument_);
+  if (from._internal_has_tradable_instrument()) {
+    tradable_instrument_ = new ::vega::TradableInstrument(*from.tradable_instrument_);
   } else {
-    tradableinstrument_ = nullptr;
+    tradable_instrument_ = nullptr;
   }
   if (from._internal_has_fees()) {
     fees_ = new ::vega::Fees(*from.fees_);
   } else {
     fees_ = nullptr;
   }
-  if (from._internal_has_openingauction()) {
-    openingauction_ = new ::vega::AuctionDuration(*from.openingauction_);
+  if (from._internal_has_opening_auction()) {
+    opening_auction_ = new ::vega::AuctionDuration(*from.opening_auction_);
   } else {
-    openingauction_ = nullptr;
+    opening_auction_ = nullptr;
   }
-  if (from._internal_has_pricemonitoringsettings()) {
-    pricemonitoringsettings_ = new ::vega::PriceMonitoringSettings(*from.pricemonitoringsettings_);
+  if (from._internal_has_price_monitoring_settings()) {
+    price_monitoring_settings_ = new ::vega::PriceMonitoringSettings(*from.price_monitoring_settings_);
   } else {
-    pricemonitoringsettings_ = nullptr;
+    price_monitoring_settings_ = nullptr;
   }
-  if (from._internal_has_targetstakeparameters()) {
-    targetstakeparameters_ = new ::vega::TargetStakeParameters(*from.targetstakeparameters_);
+  if (from._internal_has_target_stake_parameters()) {
+    target_stake_parameters_ = new ::vega::TargetStakeParameters(*from.target_stake_parameters_);
   } else {
-    targetstakeparameters_ = nullptr;
+    target_stake_parameters_ = nullptr;
   }
-  ::memcpy(&decimalplaces_, &from.decimalplaces_,
+  ::memcpy(&decimal_places_, &from.decimal_places_,
     static_cast<size_t>(reinterpret_cast<char*>(&state_) -
-    reinterpret_cast<char*>(&decimalplaces_)) + sizeof(state_));
-  clear_has_tradingModeConfig();
-  switch (from.tradingModeConfig_case()) {
+    reinterpret_cast<char*>(&decimal_places_)) + sizeof(state_));
+  clear_has_trading_mode_config();
+  switch (from.trading_mode_config_case()) {
     case kContinuous: {
       _internal_mutable_continuous()->::vega::ContinuousTrading::MergeFrom(from._internal_continuous());
       break;
@@ -6203,7 +6204,7 @@ Market::Market(const Market& from)
       _internal_mutable_discrete()->::vega::DiscreteTrading::MergeFrom(from._internal_discrete());
       break;
     }
-    case TRADINGMODECONFIG_NOT_SET: {
+    case TRADING_MODE_CONFIG_NOT_SET: {
       break;
     }
   }
@@ -6214,10 +6215,10 @@ void Market::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Market_markets_2eproto.base);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&tradableinstrument_) - reinterpret_cast<char*>(this)),
+      reinterpret_cast<char*>(&tradable_instrument_) - reinterpret_cast<char*>(this)),
       0, static_cast<size_t>(reinterpret_cast<char*>(&state_) -
-      reinterpret_cast<char*>(&tradableinstrument_)) + sizeof(state_));
-  clear_has_tradingModeConfig();
+      reinterpret_cast<char*>(&tradable_instrument_)) + sizeof(state_));
+  clear_has_trading_mode_config();
 }
 
 Market::~Market() {
@@ -6229,13 +6230,13 @@ Market::~Market() {
 void Market::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete tradableinstrument_;
+  if (this != internal_default_instance()) delete tradable_instrument_;
   if (this != internal_default_instance()) delete fees_;
-  if (this != internal_default_instance()) delete openingauction_;
-  if (this != internal_default_instance()) delete pricemonitoringsettings_;
-  if (this != internal_default_instance()) delete targetstakeparameters_;
-  if (has_tradingModeConfig()) {
-    clear_tradingModeConfig();
+  if (this != internal_default_instance()) delete opening_auction_;
+  if (this != internal_default_instance()) delete price_monitoring_settings_;
+  if (this != internal_default_instance()) delete target_stake_parameters_;
+  if (has_trading_mode_config()) {
+    clear_trading_mode_config();
   }
 }
 
@@ -6254,26 +6255,26 @@ const Market& Market::default_instance() {
 }
 
 
-void Market::clear_tradingModeConfig() {
+void Market::clear_trading_mode_config() {
 // @@protoc_insertion_point(one_of_clear_start:vega.Market)
-  switch (tradingModeConfig_case()) {
+  switch (trading_mode_config_case()) {
     case kContinuous: {
       if (GetArena() == nullptr) {
-        delete tradingModeConfig_.continuous_;
+        delete trading_mode_config_.continuous_;
       }
       break;
     }
     case kDiscrete: {
       if (GetArena() == nullptr) {
-        delete tradingModeConfig_.discrete_;
+        delete trading_mode_config_.discrete_;
       }
       break;
     }
-    case TRADINGMODECONFIG_NOT_SET: {
+    case TRADING_MODE_CONFIG_NOT_SET: {
       break;
     }
   }
-  _oneof_case_[0] = TRADINGMODECONFIG_NOT_SET;
+  _oneof_case_[0] = TRADING_MODE_CONFIG_NOT_SET;
 }
 
 
@@ -6284,30 +6285,30 @@ void Market::Clear() {
   (void) cached_has_bits;
 
   id_.ClearToEmpty();
-  if (GetArena() == nullptr && tradableinstrument_ != nullptr) {
-    delete tradableinstrument_;
+  if (GetArena() == nullptr && tradable_instrument_ != nullptr) {
+    delete tradable_instrument_;
   }
-  tradableinstrument_ = nullptr;
+  tradable_instrument_ = nullptr;
   if (GetArena() == nullptr && fees_ != nullptr) {
     delete fees_;
   }
   fees_ = nullptr;
-  if (GetArena() == nullptr && openingauction_ != nullptr) {
-    delete openingauction_;
+  if (GetArena() == nullptr && opening_auction_ != nullptr) {
+    delete opening_auction_;
   }
-  openingauction_ = nullptr;
-  if (GetArena() == nullptr && pricemonitoringsettings_ != nullptr) {
-    delete pricemonitoringsettings_;
+  opening_auction_ = nullptr;
+  if (GetArena() == nullptr && price_monitoring_settings_ != nullptr) {
+    delete price_monitoring_settings_;
   }
-  pricemonitoringsettings_ = nullptr;
-  if (GetArena() == nullptr && targetstakeparameters_ != nullptr) {
-    delete targetstakeparameters_;
+  price_monitoring_settings_ = nullptr;
+  if (GetArena() == nullptr && target_stake_parameters_ != nullptr) {
+    delete target_stake_parameters_;
   }
-  targetstakeparameters_ = nullptr;
-  ::memset(&decimalplaces_, 0, static_cast<size_t>(
+  target_stake_parameters_ = nullptr;
+  ::memset(&decimal_places_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&state_) -
-      reinterpret_cast<char*>(&decimalplaces_)) + sizeof(state_));
-  clear_tradingModeConfig();
+      reinterpret_cast<char*>(&decimal_places_)) + sizeof(state_));
+  clear_trading_mode_config();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6327,17 +6328,17 @@ const char* Market::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];
+      // .vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_tradableinstrument(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_tradable_instrument(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 decimalPlaces = 3 [json_name = "decimalPlaces"];
+      // uint64 decimal_places = 3 [json_name = "decimalPlaces"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          decimalplaces_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          decimal_places_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6348,33 +6349,33 @@ const char* Market::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];
+      // .vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          ptr = ctx->ParseMessage(_internal_mutable_openingauction(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_opening_auction(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];
+      // .vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
-          ptr = ctx->ParseMessage(_internal_mutable_pricemonitoringsettings(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_price_monitoring_settings(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];
+      // .vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
-          ptr = ctx->ParseMessage(_internal_mutable_targetstakeparameters(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_target_stake_parameters(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.Market.TradingMode tradingMode = 8 [json_name = "tradingMode"];
+      // .vega.Market.TradingMode trading_mode = 8 [json_name = "tradingMode"];
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_tradingmode(static_cast<::vega::Market_TradingMode>(val));
+          _internal_set_trading_mode(static_cast<::vega::Market_TradingMode>(val));
         } else goto handle_unusual;
         continue;
       // .vega.Market.State state = 9 [json_name = "state"];
@@ -6437,18 +6438,18 @@ failure:
         1, this->_internal_id(), target);
   }
 
-  // .vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];
-  if (this->has_tradableinstrument()) {
+  // .vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];
+  if (this->has_tradable_instrument()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::tradableinstrument(this), target, stream);
+        2, _Internal::tradable_instrument(this), target, stream);
   }
 
-  // uint64 decimalPlaces = 3 [json_name = "decimalPlaces"];
-  if (this->decimalplaces() != 0) {
+  // uint64 decimal_places = 3 [json_name = "decimalPlaces"];
+  if (this->decimal_places() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_decimalplaces(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_decimal_places(), target);
   }
 
   // .vega.Fees fees = 4 [json_name = "fees"];
@@ -6459,35 +6460,35 @@ failure:
         4, _Internal::fees(this), target, stream);
   }
 
-  // .vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];
-  if (this->has_openingauction()) {
+  // .vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];
+  if (this->has_opening_auction()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        5, _Internal::openingauction(this), target, stream);
+        5, _Internal::opening_auction(this), target, stream);
   }
 
-  // .vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];
-  if (this->has_pricemonitoringsettings()) {
+  // .vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];
+  if (this->has_price_monitoring_settings()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        6, _Internal::pricemonitoringsettings(this), target, stream);
+        6, _Internal::price_monitoring_settings(this), target, stream);
   }
 
-  // .vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];
-  if (this->has_targetstakeparameters()) {
+  // .vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];
+  if (this->has_target_stake_parameters()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        7, _Internal::targetstakeparameters(this), target, stream);
+        7, _Internal::target_stake_parameters(this), target, stream);
   }
 
-  // .vega.Market.TradingMode tradingMode = 8 [json_name = "tradingMode"];
-  if (this->tradingmode() != 0) {
+  // .vega.Market.TradingMode trading_mode = 8 [json_name = "tradingMode"];
+  if (this->trading_mode() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      8, this->_internal_tradingmode(), target);
+      8, this->_internal_trading_mode(), target);
   }
 
   // .vega.Market.State state = 9 [json_name = "state"];
@@ -6536,11 +6537,11 @@ size_t Market::ByteSizeLong() const {
         this->_internal_id());
   }
 
-  // .vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];
-  if (this->has_tradableinstrument()) {
+  // .vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];
+  if (this->has_tradable_instrument()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *tradableinstrument_);
+        *tradable_instrument_);
   }
 
   // .vega.Fees fees = 4 [json_name = "fees"];
@@ -6550,38 +6551,38 @@ size_t Market::ByteSizeLong() const {
         *fees_);
   }
 
-  // .vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];
-  if (this->has_openingauction()) {
+  // .vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];
+  if (this->has_opening_auction()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *openingauction_);
+        *opening_auction_);
   }
 
-  // .vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];
-  if (this->has_pricemonitoringsettings()) {
+  // .vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];
+  if (this->has_price_monitoring_settings()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *pricemonitoringsettings_);
+        *price_monitoring_settings_);
   }
 
-  // .vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];
-  if (this->has_targetstakeparameters()) {
+  // .vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];
+  if (this->has_target_stake_parameters()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *targetstakeparameters_);
+        *target_stake_parameters_);
   }
 
-  // uint64 decimalPlaces = 3 [json_name = "decimalPlaces"];
-  if (this->decimalplaces() != 0) {
+  // uint64 decimal_places = 3 [json_name = "decimalPlaces"];
+  if (this->decimal_places() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_decimalplaces());
+        this->_internal_decimal_places());
   }
 
-  // .vega.Market.TradingMode tradingMode = 8 [json_name = "tradingMode"];
-  if (this->tradingmode() != 0) {
+  // .vega.Market.TradingMode trading_mode = 8 [json_name = "tradingMode"];
+  if (this->trading_mode() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_tradingmode());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_trading_mode());
   }
 
   // .vega.Market.State state = 9 [json_name = "state"];
@@ -6590,22 +6591,22 @@ size_t Market::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_state());
   }
 
-  switch (tradingModeConfig_case()) {
+  switch (trading_mode_config_case()) {
     // .vega.ContinuousTrading continuous = 100 [json_name = "continuous"];
     case kContinuous: {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *tradingModeConfig_.continuous_);
+          *trading_mode_config_.continuous_);
       break;
     }
     // .vega.DiscreteTrading discrete = 101 [json_name = "discrete"];
     case kDiscrete: {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *tradingModeConfig_.discrete_);
+          *trading_mode_config_.discrete_);
       break;
     }
-    case TRADINGMODECONFIG_NOT_SET: {
+    case TRADING_MODE_CONFIG_NOT_SET: {
       break;
     }
   }
@@ -6643,31 +6644,31 @@ void Market::MergeFrom(const Market& from) {
   if (from.id().size() > 0) {
     _internal_set_id(from._internal_id());
   }
-  if (from.has_tradableinstrument()) {
-    _internal_mutable_tradableinstrument()->::vega::TradableInstrument::MergeFrom(from._internal_tradableinstrument());
+  if (from.has_tradable_instrument()) {
+    _internal_mutable_tradable_instrument()->::vega::TradableInstrument::MergeFrom(from._internal_tradable_instrument());
   }
   if (from.has_fees()) {
     _internal_mutable_fees()->::vega::Fees::MergeFrom(from._internal_fees());
   }
-  if (from.has_openingauction()) {
-    _internal_mutable_openingauction()->::vega::AuctionDuration::MergeFrom(from._internal_openingauction());
+  if (from.has_opening_auction()) {
+    _internal_mutable_opening_auction()->::vega::AuctionDuration::MergeFrom(from._internal_opening_auction());
   }
-  if (from.has_pricemonitoringsettings()) {
-    _internal_mutable_pricemonitoringsettings()->::vega::PriceMonitoringSettings::MergeFrom(from._internal_pricemonitoringsettings());
+  if (from.has_price_monitoring_settings()) {
+    _internal_mutable_price_monitoring_settings()->::vega::PriceMonitoringSettings::MergeFrom(from._internal_price_monitoring_settings());
   }
-  if (from.has_targetstakeparameters()) {
-    _internal_mutable_targetstakeparameters()->::vega::TargetStakeParameters::MergeFrom(from._internal_targetstakeparameters());
+  if (from.has_target_stake_parameters()) {
+    _internal_mutable_target_stake_parameters()->::vega::TargetStakeParameters::MergeFrom(from._internal_target_stake_parameters());
   }
-  if (from.decimalplaces() != 0) {
-    _internal_set_decimalplaces(from._internal_decimalplaces());
+  if (from.decimal_places() != 0) {
+    _internal_set_decimal_places(from._internal_decimal_places());
   }
-  if (from.tradingmode() != 0) {
-    _internal_set_tradingmode(from._internal_tradingmode());
+  if (from.trading_mode() != 0) {
+    _internal_set_trading_mode(from._internal_trading_mode());
   }
   if (from.state() != 0) {
     _internal_set_state(from._internal_state());
   }
-  switch (from.tradingModeConfig_case()) {
+  switch (from.trading_mode_config_case()) {
     case kContinuous: {
       _internal_mutable_continuous()->::vega::ContinuousTrading::MergeFrom(from._internal_continuous());
       break;
@@ -6676,7 +6677,7 @@ void Market::MergeFrom(const Market& from) {
       _internal_mutable_discrete()->::vega::DiscreteTrading::MergeFrom(from._internal_discrete());
       break;
     }
-    case TRADINGMODECONFIG_NOT_SET: {
+    case TRADING_MODE_CONFIG_NOT_SET: {
       break;
     }
   }
@@ -6707,10 +6708,10 @@ void Market::InternalSwap(Market* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Market, state_)
       + sizeof(Market::state_)
-      - PROTOBUF_FIELD_OFFSET(Market, tradableinstrument_)>(
-          reinterpret_cast<char*>(&tradableinstrument_),
-          reinterpret_cast<char*>(&other->tradableinstrument_));
-  swap(tradingModeConfig_, other->tradingModeConfig_);
+      - PROTOBUF_FIELD_OFFSET(Market, tradable_instrument_)>(
+          reinterpret_cast<char*>(&tradable_instrument_),
+          reinterpret_cast<char*>(&other->tradable_instrument_));
+  swap(trading_mode_config_, other->trading_mode_config_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
