@@ -28,15 +28,17 @@ IMP==0 && /^import \\($/ {
 }
 EOF
 
-find "$go_generated_dir" -name '*.validator.pb.go' | sort | while read -r valpbgo
+find "$go_generated_dir" -name '*.pb.go' | sort | while read -r pbgo
 do
 	# Rename Size_ back to Size. See https://github.com/mwitkow/go-proto-validators/issues/51
-	sed -i -re 's/this\.Size_/this.Size/' "$valpbgo"
+	sed -i -re 's/this\.Size_/this.Size/' "$pbgo"
+	sed -i -re 's/"code\.vegaprotocol\.io\/vega\/proto"/"github.com\/vegaprotocol\/api-clients\/go\/generated\/code\.vegaprotocol\.io\/vega\/proto"/' "$pbgo"
+	sed -i -re 's/"code\.vegaprotocol\.io\/vega\/proto"/"github.com\/vegaprotocol\/api-clients\/go\/generated\/code\.vegaprotocol\.io\/vega\/proto"/' "$pbgo"
 
 	# Make the import list order deterministic.
 	f="$(mktemp)"
-	awk -f "$awkscript" <"$valpbgo" >"$f"
-	mv "$f" "$valpbgo"
-	goimports -w "$valpbgo"
+	awk -f "$awkscript" <"$pbgo" >"$f"
+	mv "$f" "$pbgo"
+	goimports -w "$pbgo"
 done
 rm -f "$awkscript"

@@ -4,7 +4,7 @@
 package api
 
 import (
-	proto1 "code.vegaprotocol.io/vega/proto"
+	proto1 "github.com/vegaprotocol/api-clients/go/generated/code.vegaprotocol.io/vega/proto"
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/mwitkow/go-proto-validators"
