@@ -3,6 +3,17 @@ version: v1beta1
 
 plugins:
 
+  # Documentation
+  - name: doc
+    out: doc
+    opt: html,index.html
+    strategy: all
+
+  - name: doc
+    out: doc
+    opt: markdown,index.md
+    strategy: all
+
   # C++
   - name: cpp
     out: cpp/generated
