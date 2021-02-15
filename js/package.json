@@ -28,7 +28,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "4.15.0",
     "@typescript-eslint/parser": "4.15.0",
-    "eslint": "7.19.0",
+    "eslint": "7.20.0",
     "google-protobuf": "3.14.0",
     "tap-dot": "2.0.0",
     "tape": "5.1.1",
