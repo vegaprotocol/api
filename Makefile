@@ -33,6 +33,18 @@ PYTHON_GENERATED_DIR := python/vegaapiclient/generated
 
 .PHONY: buf-generate
 buf-generate: buf-build
+	@if ! command -v protoc-gen-doc 1>/dev/null ; then \
+		go get github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc@v1.4.1 || exit 1 ; \
+	fi
+	@if ! command -v protoc-gen-go 1>/dev/null ; then \
+		go get github.com/golang/protobuf/protoc-gen-go@v1.4.3 || exit 1 ; \
+	fi
+	@if ! command -v protoc-gen-go-grpc 1>/dev/null ; then \
+		go get google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1.0 || exit 1 ; \
+	fi
+	@if ! command -v protoc-gen-govalidators 1>/dev/null ; then \
+		go get github.com/mwitkow/go-proto-validators/protoc-gen-govalidators@v0.3.2 || exit 1 ; \
+	fi
 	@for cmd in grpc_cpp_plugin grpc_python_plugin ; do \
 		if ! command -v "$$cmd" 1>/dev/null ; then \
 			echo "Not found/executable: $$cmd" ; \
