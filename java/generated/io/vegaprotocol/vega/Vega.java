@@ -782,7 +782,7 @@ public final class Vega {
     ORDER_ERROR_REMOVAL_FAILURE(6),
     /**
      * <pre>
-     * An order with `TimeInForce.TIF_GTT` was submitted or amended
+     * An order with `TimeInForce.TIME_IN_FORCE_GTT` was submitted or amended
      * with an expiration that was badly formatted or otherwise invalid
      * </pre>
      *
@@ -1164,7 +1164,7 @@ public final class Vega {
     public static final int ORDER_ERROR_REMOVAL_FAILURE_VALUE = 6;
     /**
      * <pre>
-     * An order with `TimeInForce.TIF_GTT` was submitted or amended
+     * An order with `TimeInForce.TIME_IN_FORCE_GTT` was submitted or amended
      * with an expiration that was badly formatted or otherwise invalid
      * </pre>
      *
@@ -7306,7 +7306,7 @@ public final class Vega {
     /**
      * <pre>
      * Timestamp for when the order will expire, in nanoseconds since the epoch
-     * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`, valid only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIF_GTT`
+     * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`, valid only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIME_IN_FORCE_GTT`
      * </pre>
      *
      * <code>int64 expires_at = 12 [json_name = "expiresAt"];</code>
@@ -8554,7 +8554,7 @@ public final class Vega {
     /**
      * <pre>
      * Timestamp for when the order will expire, in nanoseconds since the epoch
-     * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`, valid only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIF_GTT`
+     * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`, valid only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIME_IN_FORCE_GTT`
      * </pre>
      *
      * <code>int64 expires_at = 12 [json_name = "expiresAt"];</code>
@@ -10114,7 +10114,7 @@ public final class Vega {
       /**
        * <pre>
        * Timestamp for when the order will expire, in nanoseconds since the epoch
-       * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`, valid only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIF_GTT`
+       * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`, valid only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIME_IN_FORCE_GTT`
        * </pre>
        *
        * <code>int64 expires_at = 12 [json_name = "expiresAt"];</code>
@@ -10127,7 +10127,7 @@ public final class Vega {
       /**
        * <pre>
        * Timestamp for when the order will expire, in nanoseconds since the epoch
-       * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`, valid only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIF_GTT`
+       * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`, valid only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIME_IN_FORCE_GTT`
        * </pre>
        *
        * <code>int64 expires_at = 12 [json_name = "expiresAt"];</code>
@@ -10143,7 +10143,7 @@ public final class Vega {
       /**
        * <pre>
        * Timestamp for when the order will expire, in nanoseconds since the epoch
-       * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`, valid only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIF_GTT`
+       * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`, valid only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIME_IN_FORCE_GTT`
        * </pre>
        *
        * <code>int64 expires_at = 12 [json_name = "expiresAt"];</code>
@@ -36794,7 +36794,7 @@ public final class Vega {
 
     /**
      * <pre>
-     * Amend the time in force for the order, set to TIF_UNSPECIFIED to remain unchanged
+     * Amend the time in force for the order, set to TIME_IN_FORCE_UNSPECIFIED to remain unchanged
      * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
@@ -36804,7 +36804,7 @@ public final class Vega {
     int getTimeInForceValue();
     /**
      * <pre>
-     * Amend the time in force for the order, set to TIF_UNSPECIFIED to remain unchanged
+     * Amend the time in force for the order, set to TIME_IN_FORCE_UNSPECIFIED to remain unchanged
      * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
@@ -37260,7 +37260,7 @@ public final class Vega {
     private int timeInForce_;
     /**
      * <pre>
-     * Amend the time in force for the order, set to TIF_UNSPECIFIED to remain unchanged
+     * Amend the time in force for the order, set to TIME_IN_FORCE_UNSPECIFIED to remain unchanged
      * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
@@ -37272,7 +37272,7 @@ public final class Vega {
     }
     /**
      * <pre>
-     * Amend the time in force for the order, set to TIF_UNSPECIFIED to remain unchanged
+     * Amend the time in force for the order, set to TIME_IN_FORCE_UNSPECIFIED to remain unchanged
      * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
@@ -38494,7 +38494,7 @@ public final class Vega {
       private int timeInForce_ = 0;
       /**
        * <pre>
-       * Amend the time in force for the order, set to TIF_UNSPECIFIED to remain unchanged
+       * Amend the time in force for the order, set to TIME_IN_FORCE_UNSPECIFIED to remain unchanged
        * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
@@ -38506,7 +38506,7 @@ public final class Vega {
       }
       /**
        * <pre>
-       * Amend the time in force for the order, set to TIF_UNSPECIFIED to remain unchanged
+       * Amend the time in force for the order, set to TIME_IN_FORCE_UNSPECIFIED to remain unchanged
        * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
@@ -38522,7 +38522,7 @@ public final class Vega {
       }
       /**
        * <pre>
-       * Amend the time in force for the order, set to TIF_UNSPECIFIED to remain unchanged
+       * Amend the time in force for the order, set to TIME_IN_FORCE_UNSPECIFIED to remain unchanged
        * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
@@ -38537,7 +38537,7 @@ public final class Vega {
       }
       /**
        * <pre>
-       * Amend the time in force for the order, set to TIF_UNSPECIFIED to remain unchanged
+       * Amend the time in force for the order, set to TIME_IN_FORCE_UNSPECIFIED to remain unchanged
        * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
@@ -38556,7 +38556,7 @@ public final class Vega {
       }
       /**
        * <pre>
-       * Amend the time in force for the order, set to TIF_UNSPECIFIED to remain unchanged
+       * Amend the time in force for the order, set to TIME_IN_FORCE_UNSPECIFIED to remain unchanged
        * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
@@ -38985,7 +38985,7 @@ public final class Vega {
     /**
      * <pre>
      * Timestamp for when the order will expire, in nanoseconds since the epoch,
-     * required field only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIF_GTT`
+     * required field only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIME_IN_FORCE_GTT`
      * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
@@ -39454,7 +39454,7 @@ public final class Vega {
     /**
      * <pre>
      * Timestamp for when the order will expire, in nanoseconds since the epoch,
-     * required field only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIF_GTT`
+     * required field only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIME_IN_FORCE_GTT`
      * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
@@ -40608,7 +40608,7 @@ public final class Vega {
       /**
        * <pre>
        * Timestamp for when the order will expire, in nanoseconds since the epoch,
-       * required field only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIF_GTT`
+       * required field only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIME_IN_FORCE_GTT`
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
@@ -40622,7 +40622,7 @@ public final class Vega {
       /**
        * <pre>
        * Timestamp for when the order will expire, in nanoseconds since the epoch,
-       * required field only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIF_GTT`
+       * required field only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIME_IN_FORCE_GTT`
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
@@ -40639,7 +40639,7 @@ public final class Vega {
       /**
        * <pre>
        * Timestamp for when the order will expire, in nanoseconds since the epoch,
-       * required field only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIF_GTT`
+       * required field only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIME_IN_FORCE_GTT`
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
