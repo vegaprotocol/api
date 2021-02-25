@@ -12,6 +12,7 @@ import (
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
+// Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
 // TradingServiceClient is the client API for TradingService service.
@@ -193,7 +194,7 @@ type UnsafeTradingServiceServer interface {
 }
 
 func RegisterTradingServiceServer(s grpc.ServiceRegistrar, srv TradingServiceServer) {
-	s.RegisterService(&_TradingService_serviceDesc, srv)
+	s.RegisterService(&TradingService_ServiceDesc, srv)
 }
 
 func _TradingService_PrepareSubmitOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -358,7 +359,10 @@ func _TradingService_PrepareLiquidityProvision_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
-var _TradingService_serviceDesc = grpc.ServiceDesc{
+// TradingService_ServiceDesc is the grpc.ServiceDesc for TradingService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var TradingService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "api.v1.TradingService",
 	HandlerType: (*TradingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
@@ -829,7 +833,7 @@ func (c *tradingDataServiceClient) GetProposalByReference(ctx context.Context, i
 }
 
 func (c *tradingDataServiceClient) ObserveGovernance(ctx context.Context, in *ObserveGovernanceRequest, opts ...grpc.CallOption) (TradingDataService_ObserveGovernanceClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[0], "/api.v1.TradingDataService/ObserveGovernance", opts...)
+	stream, err := c.cc.NewStream(ctx, &TradingDataService_ServiceDesc.Streams[0], "/api.v1.TradingDataService/ObserveGovernance", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -861,7 +865,7 @@ func (x *tradingDataServiceObserveGovernanceClient) Recv() (*ObserveGovernanceRe
 }
 
 func (c *tradingDataServiceClient) ObservePartyProposals(ctx context.Context, in *ObservePartyProposalsRequest, opts ...grpc.CallOption) (TradingDataService_ObservePartyProposalsClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[1], "/api.v1.TradingDataService/ObservePartyProposals", opts...)
+	stream, err := c.cc.NewStream(ctx, &TradingDataService_ServiceDesc.Streams[1], "/api.v1.TradingDataService/ObservePartyProposals", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -893,7 +897,7 @@ func (x *tradingDataServiceObservePartyProposalsClient) Recv() (*ObservePartyPro
 }
 
 func (c *tradingDataServiceClient) ObservePartyVotes(ctx context.Context, in *ObservePartyVotesRequest, opts ...grpc.CallOption) (TradingDataService_ObservePartyVotesClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[2], "/api.v1.TradingDataService/ObservePartyVotes", opts...)
+	stream, err := c.cc.NewStream(ctx, &TradingDataService_ServiceDesc.Streams[2], "/api.v1.TradingDataService/ObservePartyVotes", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -925,7 +929,7 @@ func (x *tradingDataServiceObservePartyVotesClient) Recv() (*ObservePartyVotesRe
 }
 
 func (c *tradingDataServiceClient) ObserveProposalVotes(ctx context.Context, in *ObserveProposalVotesRequest, opts ...grpc.CallOption) (TradingDataService_ObserveProposalVotesClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[3], "/api.v1.TradingDataService/ObserveProposalVotes", opts...)
+	stream, err := c.cc.NewStream(ctx, &TradingDataService_ServiceDesc.Streams[3], "/api.v1.TradingDataService/ObserveProposalVotes", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -957,7 +961,7 @@ func (x *tradingDataServiceObserveProposalVotesClient) Recv() (*ObserveProposalV
 }
 
 func (c *tradingDataServiceClient) ObserveEventBus(ctx context.Context, opts ...grpc.CallOption) (TradingDataService_ObserveEventBusClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[4], "/api.v1.TradingDataService/ObserveEventBus", opts...)
+	stream, err := c.cc.NewStream(ctx, &TradingDataService_ServiceDesc.Streams[4], "/api.v1.TradingDataService/ObserveEventBus", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1006,7 +1010,7 @@ func (c *tradingDataServiceClient) GetVegaTime(ctx context.Context, in *GetVegaT
 }
 
 func (c *tradingDataServiceClient) AccountsSubscribe(ctx context.Context, in *AccountsSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_AccountsSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[5], "/api.v1.TradingDataService/AccountsSubscribe", opts...)
+	stream, err := c.cc.NewStream(ctx, &TradingDataService_ServiceDesc.Streams[5], "/api.v1.TradingDataService/AccountsSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1038,7 +1042,7 @@ func (x *tradingDataServiceAccountsSubscribeClient) Recv() (*AccountsSubscribeRe
 }
 
 func (c *tradingDataServiceClient) CandlesSubscribe(ctx context.Context, in *CandlesSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_CandlesSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[6], "/api.v1.TradingDataService/CandlesSubscribe", opts...)
+	stream, err := c.cc.NewStream(ctx, &TradingDataService_ServiceDesc.Streams[6], "/api.v1.TradingDataService/CandlesSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1070,7 +1074,7 @@ func (x *tradingDataServiceCandlesSubscribeClient) Recv() (*CandlesSubscribeResp
 }
 
 func (c *tradingDataServiceClient) MarginLevelsSubscribe(ctx context.Context, in *MarginLevelsSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_MarginLevelsSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[7], "/api.v1.TradingDataService/MarginLevelsSubscribe", opts...)
+	stream, err := c.cc.NewStream(ctx, &TradingDataService_ServiceDesc.Streams[7], "/api.v1.TradingDataService/MarginLevelsSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1102,7 +1106,7 @@ func (x *tradingDataServiceMarginLevelsSubscribeClient) Recv() (*MarginLevelsSub
 }
 
 func (c *tradingDataServiceClient) MarketDepthSubscribe(ctx context.Context, in *MarketDepthSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_MarketDepthSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[8], "/api.v1.TradingDataService/MarketDepthSubscribe", opts...)
+	stream, err := c.cc.NewStream(ctx, &TradingDataService_ServiceDesc.Streams[8], "/api.v1.TradingDataService/MarketDepthSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1134,7 +1138,7 @@ func (x *tradingDataServiceMarketDepthSubscribeClient) Recv() (*MarketDepthSubsc
 }
 
 func (c *tradingDataServiceClient) MarketDepthUpdatesSubscribe(ctx context.Context, in *MarketDepthUpdatesSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_MarketDepthUpdatesSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[9], "/api.v1.TradingDataService/MarketDepthUpdatesSubscribe", opts...)
+	stream, err := c.cc.NewStream(ctx, &TradingDataService_ServiceDesc.Streams[9], "/api.v1.TradingDataService/MarketDepthUpdatesSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1166,7 +1170,7 @@ func (x *tradingDataServiceMarketDepthUpdatesSubscribeClient) Recv() (*MarketDep
 }
 
 func (c *tradingDataServiceClient) MarketsDataSubscribe(ctx context.Context, in *MarketsDataSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_MarketsDataSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[10], "/api.v1.TradingDataService/MarketsDataSubscribe", opts...)
+	stream, err := c.cc.NewStream(ctx, &TradingDataService_ServiceDesc.Streams[10], "/api.v1.TradingDataService/MarketsDataSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1198,7 +1202,7 @@ func (x *tradingDataServiceMarketsDataSubscribeClient) Recv() (*MarketsDataSubsc
 }
 
 func (c *tradingDataServiceClient) OrdersSubscribe(ctx context.Context, in *OrdersSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_OrdersSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[11], "/api.v1.TradingDataService/OrdersSubscribe", opts...)
+	stream, err := c.cc.NewStream(ctx, &TradingDataService_ServiceDesc.Streams[11], "/api.v1.TradingDataService/OrdersSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1230,7 +1234,7 @@ func (x *tradingDataServiceOrdersSubscribeClient) Recv() (*OrdersSubscribeRespon
 }
 
 func (c *tradingDataServiceClient) PositionsSubscribe(ctx context.Context, in *PositionsSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_PositionsSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[12], "/api.v1.TradingDataService/PositionsSubscribe", opts...)
+	stream, err := c.cc.NewStream(ctx, &TradingDataService_ServiceDesc.Streams[12], "/api.v1.TradingDataService/PositionsSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1262,7 +1266,7 @@ func (x *tradingDataServicePositionsSubscribeClient) Recv() (*PositionsSubscribe
 }
 
 func (c *tradingDataServiceClient) TradesSubscribe(ctx context.Context, in *TradesSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_TradesSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[13], "/api.v1.TradingDataService/TradesSubscribe", opts...)
+	stream, err := c.cc.NewStream(ctx, &TradingDataService_ServiceDesc.Streams[13], "/api.v1.TradingDataService/TradesSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1294,7 +1298,7 @@ func (x *tradingDataServiceTradesSubscribeClient) Recv() (*TradesSubscribeRespon
 }
 
 func (c *tradingDataServiceClient) TransferResponsesSubscribe(ctx context.Context, in *TransferResponsesSubscribeRequest, opts ...grpc.CallOption) (TradingDataService_TransferResponsesSubscribeClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_TradingDataService_serviceDesc.Streams[14], "/api.v1.TradingDataService/TransferResponsesSubscribe", opts...)
+	stream, err := c.cc.NewStream(ctx, &TradingDataService_ServiceDesc.Streams[14], "/api.v1.TradingDataService/TransferResponsesSubscribe", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1760,7 +1764,7 @@ type UnsafeTradingDataServiceServer interface {
 }
 
 func RegisterTradingDataServiceServer(s grpc.ServiceRegistrar, srv TradingDataServiceServer) {
-	s.RegisterService(&_TradingDataService_serviceDesc, srv)
+	s.RegisterService(&TradingDataService_ServiceDesc, srv)
 }
 
 func _TradingDataService_MarketAccounts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -2911,7 +2915,10 @@ func _TradingDataService_LiquidityProvisions_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
-var _TradingDataService_serviceDesc = grpc.ServiceDesc{
+// TradingDataService_ServiceDesc is the grpc.ServiceDesc for TradingDataService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var TradingDataService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "api.v1.TradingDataService",
 	HandlerType: (*TradingDataServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
