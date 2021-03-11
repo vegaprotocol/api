@@ -1,0 +1,5 @@
+// GENERATED CODE -- DO NOT EDIT!
+
+{% for exp in ts_exports -%}
+export * as {{ exp[0] }} from "{{ exp[1] }}";
+{% endfor %}

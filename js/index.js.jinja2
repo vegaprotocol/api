@@ -1,0 +1,7 @@
+// GENERATED CODE -- DO NOT EDIT!
+
+{% for req in js_requires -%}
+var {{ req[0] }} = require('{{ req[1] }}')
+{% endfor %}
+module.exports = {{ js_module_exports }}
+
