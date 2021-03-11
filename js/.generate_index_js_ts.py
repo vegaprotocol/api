@@ -40,12 +40,13 @@ def fn_to_ts_varname(fn: str) -> str:
     Convert a file name to a Typescript variable name.
     """
     if fn.endswith("_pb.d.ts"):
-        fn = fn[:-len("_pb.d.ts")]
+        fn = fn[: -len("_pb.d.ts")]
     elif fn.endswith("_pb_service.d.ts"):
-        fn = fn[:-len("_pb_service.d.ts")] + "_service"
+        fn = fn[: -len("_pb_service.d.ts")] + "_service"
     else:
         raise Exception(
-            "expected file path to end with '_pb.d.ts' or  '_pb_service.d.ts'")
+            "expected file path to end with '_pb.d.ts' or  '_pb_service.d.ts'"
+        )
 
     # Split by path separator
     pathparts = fn.split(os.path.sep)
@@ -68,11 +69,7 @@ def fn_to_ts_varname(fn: str) -> str:
 
 
 def js_requires(files: List[str]) -> List[Tuple[str, str]]:
-    return [
-        (fn_to_js_varname(f), f)
-        for f in files
-        if f.endswith("_pb.js")
-    ]
+    return [(fn_to_js_varname(f), f) for f in files if f.endswith("_pb.js")]
 
 
 def js_module_exports(files: List[str]) -> str:
@@ -94,7 +91,9 @@ def js_module_exports(files: List[str]) -> str:
 
             resultref = resultref[x]
 
-    return json.dumps(result["_"]["generated"], indent=2, sort_keys=True).replace('"', "")
+    return json.dumps(
+        result["_"]["generated"], indent=2, sort_keys=True
+    ).replace('"', "")
 
 
 def ts_exports(files: List[str]) -> List[Tuple[str, str]]:
@@ -106,11 +105,13 @@ def ts_exports(files: List[str]) -> List[Tuple[str, str]]:
 
 
 def main():
-    files = sorted([
-        os.path.join(root, f)
-        for root, _, files in os.walk("./generated")
-        for f in sorted(files)
-    ])
+    files = sorted(
+        [
+            os.path.join(root, f)
+            for root, _, files in os.walk("./generated")
+            for f in sorted(files)
+        ]
+    )
     env = jinja2.Environment(loader=jinja2.FileSystemLoader("."))
 
     js_data = {
@@ -128,60 +129,6 @@ def main():
     with open("index.d.ts", "w") as fh:
         fh.write(template.render(ts_data))
 
+
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-# requires="$(mktemp)"
-# modexports="$(mktemp)"
-# ts_exports="$(mktemp)"
-
-# # Handle top-level proto
-# find "$protodir" -name '*_pb.js' | sort | while read -r pbjs
-# do
-#     echo "$pbjs"
-#     filename="$(basename "$pbjs")"
-#     varname="$(echo "$pbjs" | sed -e "s#^$protodir/##;"' s/_pb.js$//' | tr ./- _)"
-#     echo "var $varname = require('$pbjs')" >>"$requires"
-#     echo "  $varname: $varname," >>"$modexports"
-
-#     echo "export * as $varname from \"${pbjs//.js/}\";" >>"$ts_exports"
-# done
-
-# # # Handle proto subdirs
-# # find "$protodir" -name '*_pb.js' -print0 | xargs -0 dirname | sort -u | tail +2 | while read -r protosubdir ; do
-# #     echo "  $(basename "$protosubdir" | tr - _): {" >>"$modexports"
-# #     find "$protosubdir" -maxdepth 1 -name '*_pb.js' | sort | while read -r pbjs
-# #     do
-# #         filename="$(basename "$pbjs")"
-# #         varname="$(echo "$filename" | tr - _ | sed -e 's/_pb.js$//')"
-# #         prefix="$(basename "$(dirname "$pbjs")" | tr - _)"
-# #         echo "var ${prefix}_${varname} = require('$pbjs')" >>"$requires"
-# #         echo "    $varname: ${prefix}_${varname}," >>"$modexports"
-
-# #         echo "export * as ${prefix}_${varname} from \"${pbjs//.js/}\";" >>"$ts_exports"
-# #     done
-# #     echo "  }," >>"$modexports"
-# # done
-
-# cat >index.js <<EOF
-# // GENERATED CODE -- DO NOT EDIT!
-
-# $(cat "$requires")
-
-# module.exports = {
-# $(cat "$modexports")
-# }
-# EOF
-
-# cat >index.d.ts <<EOF
-# // GENERATED CODE -- DO NOT EDIT!
-
-# $(cat "$ts_exports")
-# EOF
-
-# rm -f "$requires" "$modexports" "$ts_exports"
