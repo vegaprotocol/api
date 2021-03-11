@@ -15,7 +15,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/vegaprotocol/api-clients",
     packages=setuptools.find_packages(),
-    package_data={"vegaapiclient": ["py.typed"],},
+    package_data={"vegaapiclient": ["py.typed"]},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

@@ -7,6 +7,7 @@ from .helpers import grpc_error_detail
 from .walletclient import WalletClient
 from .generated import (
     api,
+    oracles,
     tm,
     assets_pb2 as assets,
     assets_pb2_grpc as assets_grpc,
@@ -29,6 +30,7 @@ __all__ = [
     "WalletClient",
     "grpc_error_detail",
     "api",
+    "oracles",
     "tm",
     "assets",
     "assets_grpc",

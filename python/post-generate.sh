@@ -9,6 +9,26 @@ from . import trading_pb2_grpc as trading_grpc
 __all__ = ["trading", "trading_grpc"]
 EOF
 
+cat >"$python_generated_dir/oracles/v1/__init__.py" <<EOF
+from . import oracle_data_pb2 as oracle_data
+from . import oracle_data_pb2_grpc as oracle_data_grpc
+from . import oracle_spec_pb2 as oracle_spec
+from . import oracle_spec_pb2_grpc as oracle_spec_grpc
+
+__all__ = [
+    "oracle_data",
+    "oracle_data_grpc",
+    "oracle_spec",
+    "oracle_spec_grpc",
+]
+EOF
+
+cat >"$python_generated_dir/oracles/__init__.py" <<EOF
+from . import v1
+
+__all__ = ["v1"]
+EOF
+
 cat >"$python_generated_dir/tm/__init__.py" <<EOF
 from . import replay_pb2 as replay
 from . import replay_pb2_grpc as replay_grpc
@@ -26,6 +46,7 @@ from . import validator_pb2_grpc as validator_grpc
 __all__ = ["validator", "validator_grpc"]
 EOF
 
+touch "$python_generated_dir/oracles/__init__.py"
 touch "$python_generated_dir/github/com/mwitkow/__init__.py"
 touch "$python_generated_dir/github/com/__init__.py"
 touch "$python_generated_dir/github/__init__.py"
