@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as github_com_mwitkow_go_proto_validators_validator_pb from "./github.com/mwitkow/go-proto-validators/validator_pb";
+import * as oracles_v1_oracle_spec_pb from "./oracles/v1/oracle_spec_pb";
 
 export class AuctionDuration extends jspb.Message {
   getDuration(): number;
@@ -82,12 +83,16 @@ export class Future extends jspb.Message {
   getQuoteName(): string;
   setQuoteName(value: string): void;
 
-  hasEthereumEvent(): boolean;
-  clearEthereumEvent(): void;
-  getEthereumEvent(): EthereumEvent | undefined;
-  setEthereumEvent(value?: EthereumEvent): void;
+  hasOracleSpec(): boolean;
+  clearOracleSpec(): void;
+  getOracleSpec(): oracles_v1_oracle_spec_pb.OracleSpec | undefined;
+  setOracleSpec(value?: oracles_v1_oracle_spec_pb.OracleSpec): void;
 
-  getOracleCase(): Future.OracleCase;
+  hasOracleSpecBinding(): boolean;
+  clearOracleSpecBinding(): void;
+  getOracleSpecBinding(): OracleSpecToFutureBinding | undefined;
+  setOracleSpecBinding(value?: OracleSpecToFutureBinding): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Future.AsObject;
   static toObject(includeInstance: boolean, msg: Future): Future.AsObject;
@@ -103,40 +108,28 @@ export namespace Future {
     maturity: string,
     settlementAsset: string,
     quoteName: string,
-    ethereumEvent?: EthereumEvent.AsObject,
-  }
-
-  export enum OracleCase {
-    ORACLE_NOT_SET = 0,
-    ETHEREUM_EVENT = 100,
+    oracleSpec?: oracles_v1_oracle_spec_pb.OracleSpec.AsObject,
+    oracleSpecBinding?: OracleSpecToFutureBinding.AsObject,
   }
 }
 
-export class EthereumEvent extends jspb.Message {
-  getContractId(): string;
-  setContractId(value: string): void;
-
-  getEvent(): string;
-  setEvent(value: string): void;
-
-  getValue(): number;
-  setValue(value: number): void;
+export class OracleSpecToFutureBinding extends jspb.Message {
+  getSettlementPriceProperty(): string;
+  setSettlementPriceProperty(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EthereumEvent.AsObject;
-  static toObject(includeInstance: boolean, msg: EthereumEvent): EthereumEvent.AsObject;
+  toObject(includeInstance?: boolean): OracleSpecToFutureBinding.AsObject;
+  static toObject(includeInstance: boolean, msg: OracleSpecToFutureBinding): OracleSpecToFutureBinding.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: EthereumEvent, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EthereumEvent;
-  static deserializeBinaryFromReader(message: EthereumEvent, reader: jspb.BinaryReader): EthereumEvent;
+  static serializeBinaryToWriter(message: OracleSpecToFutureBinding, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OracleSpecToFutureBinding;
+  static deserializeBinaryFromReader(message: OracleSpecToFutureBinding, reader: jspb.BinaryReader): OracleSpecToFutureBinding;
 }
 
-export namespace EthereumEvent {
+export namespace OracleSpecToFutureBinding {
   export type AsObject = {
-    contractId: string,
-    event: string,
-    value: number,
+    settlementPriceProperty: string,
   }
 }
 
@@ -177,9 +170,6 @@ export class Instrument extends jspb.Message {
   getMetadata(): InstrumentMetadata | undefined;
   setMetadata(value?: InstrumentMetadata): void;
 
-  getInitialMarkPrice(): number;
-  setInitialMarkPrice(value: number): void;
-
   hasFuture(): boolean;
   clearFuture(): void;
   getFuture(): Future | undefined;
@@ -202,7 +192,6 @@ export namespace Instrument {
     code: string,
     name: string,
     metadata?: InstrumentMetadata.AsObject,
-    initialMarkPrice: number,
     future?: Future.AsObject,
   }
 

@@ -1983,6 +1983,9 @@ export class LiquidityProvisionSubmission extends jspb.Message {
   setBuysList(value: Array<LiquidityOrder>): void;
   addBuys(value?: LiquidityOrder, index?: number): LiquidityOrder;
 
+  getReference(): string;
+  setReference(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LiquidityProvisionSubmission.AsObject;
   static toObject(includeInstance: boolean, msg: LiquidityProvisionSubmission): LiquidityProvisionSubmission.AsObject;
@@ -2000,6 +2003,7 @@ export namespace LiquidityProvisionSubmission {
     fee: string,
     sellsList: Array<LiquidityOrder.AsObject>,
     buysList: Array<LiquidityOrder.AsObject>,
+    reference: string,
   }
 }
 
@@ -2067,6 +2071,9 @@ export class LiquidityProvision extends jspb.Message {
   getStatus(): LiquidityProvision.StatusMap[keyof LiquidityProvision.StatusMap];
   setStatus(value: LiquidityProvision.StatusMap[keyof LiquidityProvision.StatusMap]): void;
 
+  getReference(): string;
+  setReference(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LiquidityProvision.AsObject;
   static toObject(includeInstance: boolean, msg: LiquidityProvision): LiquidityProvision.AsObject;
@@ -2090,6 +2097,7 @@ export namespace LiquidityProvision {
     buysList: Array<LiquidityOrderReference.AsObject>,
     version: string,
     status: LiquidityProvision.StatusMap[keyof LiquidityProvision.StatusMap],
+    reference: string,
   }
 
   export interface StatusMap {

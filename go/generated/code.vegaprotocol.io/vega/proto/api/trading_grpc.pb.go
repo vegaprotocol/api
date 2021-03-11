@@ -415,7 +415,9 @@ type TradingDataServiceClient interface {
 	MarketAccounts(ctx context.Context, in *MarketAccountsRequest, opts ...grpc.CallOption) (*MarketAccountsResponse, error)
 	// Get a list of Accounts by Party
 	PartyAccounts(ctx context.Context, in *PartyAccountsRequest, opts ...grpc.CallOption) (*PartyAccountsResponse, error)
-	// Get a list of infrastructure fees accounts filter eventually by assets
+	// Get a list of accounts holding infrastructure fees.
+	// Can be filtered by asset, there will be 1 infrastructure fee account per
+	// asset in the network.
 	FeeInfrastructureAccounts(ctx context.Context, in *FeeInfrastructureAccountsRequest, opts ...grpc.CallOption) (*FeeInfrastructureAccountsResponse, error)
 	// Get a list of Candles by Market
 	Candles(ctx context.Context, in *CandlesRequest, opts ...grpc.CallOption) (*CandlesResponse, error)
@@ -534,6 +536,12 @@ type TradingDataServiceClient interface {
 	NetworkParameters(ctx context.Context, in *NetworkParametersRequest, opts ...grpc.CallOption) (*NetworkParametersResponse, error)
 	// Get the liquidity provision orders
 	LiquidityProvisions(ctx context.Context, in *LiquidityProvisionsRequest, opts ...grpc.CallOption) (*LiquidityProvisionsResponse, error)
+	// Get an oracle spec by ID
+	OracleSpec(ctx context.Context, in *OracleSpecRequest, opts ...grpc.CallOption) (*OracleSpecResponse, error)
+	// Get the oracle specs
+	OracleSpecs(ctx context.Context, in *OracleSpecsRequest, opts ...grpc.CallOption) (*OracleSpecsResponse, error)
+	// Get all oracle data
+	OracleDataBySpec(ctx context.Context, in *OracleDataBySpecRequest, opts ...grpc.CallOption) (*OracleDataBySpecResponse, error)
 }
 
 type tradingDataServiceClient struct {
@@ -1437,6 +1445,33 @@ func (c *tradingDataServiceClient) LiquidityProvisions(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *tradingDataServiceClient) OracleSpec(ctx context.Context, in *OracleSpecRequest, opts ...grpc.CallOption) (*OracleSpecResponse, error) {
+	out := new(OracleSpecResponse)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/OracleSpec", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *tradingDataServiceClient) OracleSpecs(ctx context.Context, in *OracleSpecsRequest, opts ...grpc.CallOption) (*OracleSpecsResponse, error) {
+	out := new(OracleSpecsResponse)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/OracleSpecs", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *tradingDataServiceClient) OracleDataBySpec(ctx context.Context, in *OracleDataBySpecRequest, opts ...grpc.CallOption) (*OracleDataBySpecResponse, error) {
+	out := new(OracleDataBySpecResponse)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/OracleDataBySpec", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TradingDataServiceServer is the server API for TradingDataService service.
 // All implementations must embed UnimplementedTradingDataServiceServer
 // for forward compatibility
@@ -1445,7 +1480,9 @@ type TradingDataServiceServer interface {
 	MarketAccounts(context.Context, *MarketAccountsRequest) (*MarketAccountsResponse, error)
 	// Get a list of Accounts by Party
 	PartyAccounts(context.Context, *PartyAccountsRequest) (*PartyAccountsResponse, error)
-	// Get a list of infrastructure fees accounts filter eventually by assets
+	// Get a list of accounts holding infrastructure fees.
+	// Can be filtered by asset, there will be 1 infrastructure fee account per
+	// asset in the network.
 	FeeInfrastructureAccounts(context.Context, *FeeInfrastructureAccountsRequest) (*FeeInfrastructureAccountsResponse, error)
 	// Get a list of Candles by Market
 	Candles(context.Context, *CandlesRequest) (*CandlesResponse, error)
@@ -1564,6 +1601,12 @@ type TradingDataServiceServer interface {
 	NetworkParameters(context.Context, *NetworkParametersRequest) (*NetworkParametersResponse, error)
 	// Get the liquidity provision orders
 	LiquidityProvisions(context.Context, *LiquidityProvisionsRequest) (*LiquidityProvisionsResponse, error)
+	// Get an oracle spec by ID
+	OracleSpec(context.Context, *OracleSpecRequest) (*OracleSpecResponse, error)
+	// Get the oracle specs
+	OracleSpecs(context.Context, *OracleSpecsRequest) (*OracleSpecsResponse, error)
+	// Get all oracle data
+	OracleDataBySpec(context.Context, *OracleDataBySpecRequest) (*OracleDataBySpecResponse, error)
 	mustEmbedUnimplementedTradingDataServiceServer()
 }
 
@@ -1753,6 +1796,15 @@ func (UnimplementedTradingDataServiceServer) NetworkParameters(context.Context, 
 }
 func (UnimplementedTradingDataServiceServer) LiquidityProvisions(context.Context, *LiquidityProvisionsRequest) (*LiquidityProvisionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method LiquidityProvisions not implemented")
+}
+func (UnimplementedTradingDataServiceServer) OracleSpec(context.Context, *OracleSpecRequest) (*OracleSpecResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method OracleSpec not implemented")
+}
+func (UnimplementedTradingDataServiceServer) OracleSpecs(context.Context, *OracleSpecsRequest) (*OracleSpecsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method OracleSpecs not implemented")
+}
+func (UnimplementedTradingDataServiceServer) OracleDataBySpec(context.Context, *OracleDataBySpecRequest) (*OracleDataBySpecResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method OracleDataBySpec not implemented")
 }
 func (UnimplementedTradingDataServiceServer) mustEmbedUnimplementedTradingDataServiceServer() {}
 
@@ -2915,6 +2967,60 @@ func _TradingDataService_LiquidityProvisions_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TradingDataService_OracleSpec_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(OracleSpecRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TradingDataServiceServer).OracleSpec(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.v1.TradingDataService/OracleSpec",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TradingDataServiceServer).OracleSpec(ctx, req.(*OracleSpecRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TradingDataService_OracleSpecs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(OracleSpecsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TradingDataServiceServer).OracleSpecs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.v1.TradingDataService/OracleSpecs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TradingDataServiceServer).OracleSpecs(ctx, req.(*OracleSpecsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TradingDataService_OracleDataBySpec_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(OracleDataBySpecRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TradingDataServiceServer).OracleDataBySpec(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.v1.TradingDataService/OracleDataBySpec",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TradingDataServiceServer).OracleDataBySpec(ctx, req.(*OracleDataBySpecRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // TradingDataService_ServiceDesc is the grpc.ServiceDesc for TradingDataService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -3105,6 +3211,18 @@ var TradingDataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "LiquidityProvisions",
 			Handler:    _TradingDataService_LiquidityProvisions_Handler,
+		},
+		{
+			MethodName: "OracleSpec",
+			Handler:    _TradingDataService_OracleSpec_Handler,
+		},
+		{
+			MethodName: "OracleSpecs",
+			Handler:    _TradingDataService_OracleSpecs_Handler,
+		},
+		{
+			MethodName: "OracleDataBySpec",
+			Handler:    _TradingDataService_OracleDataBySpec_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

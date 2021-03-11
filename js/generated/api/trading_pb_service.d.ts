@@ -647,6 +647,33 @@ type TradingDataServiceLiquidityProvisions = {
   readonly responseType: typeof api_trading_pb.LiquidityProvisionsResponse;
 };
 
+type TradingDataServiceOracleSpec = {
+  readonly methodName: string;
+  readonly service: typeof TradingDataService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_trading_pb.OracleSpecRequest;
+  readonly responseType: typeof api_trading_pb.OracleSpecResponse;
+};
+
+type TradingDataServiceOracleSpecs = {
+  readonly methodName: string;
+  readonly service: typeof TradingDataService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_trading_pb.OracleSpecsRequest;
+  readonly responseType: typeof api_trading_pb.OracleSpecsResponse;
+};
+
+type TradingDataServiceOracleDataBySpec = {
+  readonly methodName: string;
+  readonly service: typeof TradingDataService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_trading_pb.OracleDataBySpecRequest;
+  readonly responseType: typeof api_trading_pb.OracleDataBySpecResponse;
+};
+
 export class TradingDataService {
   static readonly serviceName: string;
   static readonly MarketAccounts: TradingDataServiceMarketAccounts;
@@ -710,6 +737,9 @@ export class TradingDataService {
   static readonly Deposits: TradingDataServiceDeposits;
   static readonly NetworkParameters: TradingDataServiceNetworkParameters;
   static readonly LiquidityProvisions: TradingDataServiceLiquidityProvisions;
+  static readonly OracleSpec: TradingDataServiceOracleSpec;
+  static readonly OracleSpecs: TradingDataServiceOracleSpecs;
+  static readonly OracleDataBySpec: TradingDataServiceOracleDataBySpec;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -1259,6 +1289,33 @@ export class TradingDataServiceClient {
   liquidityProvisions(
     requestMessage: api_trading_pb.LiquidityProvisionsRequest,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.LiquidityProvisionsResponse|null) => void
+  ): UnaryResponse;
+  oracleSpec(
+    requestMessage: api_trading_pb.OracleSpecRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.OracleSpecResponse|null) => void
+  ): UnaryResponse;
+  oracleSpec(
+    requestMessage: api_trading_pb.OracleSpecRequest,
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.OracleSpecResponse|null) => void
+  ): UnaryResponse;
+  oracleSpecs(
+    requestMessage: api_trading_pb.OracleSpecsRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.OracleSpecsResponse|null) => void
+  ): UnaryResponse;
+  oracleSpecs(
+    requestMessage: api_trading_pb.OracleSpecsRequest,
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.OracleSpecsResponse|null) => void
+  ): UnaryResponse;
+  oracleDataBySpec(
+    requestMessage: api_trading_pb.OracleDataBySpecRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.OracleDataBySpecResponse|null) => void
+  ): UnaryResponse;
+  oracleDataBySpec(
+    requestMessage: api_trading_pb.OracleDataBySpecRequest,
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.OracleDataBySpecResponse|null) => void
   ): UnaryResponse;
 }
 

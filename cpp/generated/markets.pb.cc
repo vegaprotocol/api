@@ -14,18 +14,19 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_oracles_2fv1_2foracle_5fspec_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_OracleSpec_oracles_2fv1_2foracle_5fspec_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AuctionDuration_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ContinuousTrading_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DiscreteTrading_markets_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_EthereumEvent_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FeeFactors_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Fees_markets_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Future_markets_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Future_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Instrument_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_InstrumentMetadata_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_LogNormalModelParams_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LogNormalRiskModel_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_MarginCalculator_markets_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OracleSpecToFutureBinding_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PriceMonitoringParameters_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PriceMonitoringSettings_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PriceMonitoringTrigger_markets_2eproto;
@@ -51,10 +52,10 @@ class FutureDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Future> _instance;
 } _Future_default_instance_;
-class EthereumEventDefaultTypeInternal {
+class OracleSpecToFutureBindingDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<EthereumEvent> _instance;
-} _EthereumEvent_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<OracleSpecToFutureBinding> _instance;
+} _OracleSpecToFutureBinding_default_instance_;
 class InstrumentMetadataDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<InstrumentMetadata> _instance;
@@ -159,19 +160,6 @@ static void InitDefaultsscc_info_DiscreteTrading_markets_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DiscreteTrading_markets_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DiscreteTrading_markets_2eproto}, {}};
 
-static void InitDefaultsscc_info_EthereumEvent_markets_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::vega::_EthereumEvent_default_instance_;
-    new (ptr) ::vega::EthereumEvent();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_EthereumEvent_markets_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_EthereumEvent_markets_2eproto}, {}};
-
 static void InitDefaultsscc_info_FeeFactors_markets_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -209,9 +197,10 @@ static void InitDefaultsscc_info_Future_markets_2eproto() {
   }
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Future_markets_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Future_markets_2eproto}, {
-      &scc_info_EthereumEvent_markets_2eproto.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Future_markets_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_Future_markets_2eproto}, {
+      &scc_info_OracleSpec_oracles_2fv1_2foracle_5fspec_2eproto.base,
+      &scc_info_OracleSpecToFutureBinding_markets_2eproto.base,}};
 
 static void InitDefaultsscc_info_Instrument_markets_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -301,6 +290,19 @@ static void InitDefaultsscc_info_Market_markets_2eproto() {
       &scc_info_DiscreteTrading_markets_2eproto.base,
       &scc_info_PriceMonitoringSettings_markets_2eproto.base,
       &scc_info_TargetStakeParameters_markets_2eproto.base,}};
+
+static void InitDefaultsscc_info_OracleSpecToFutureBinding_markets_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vega::_OracleSpecToFutureBinding_default_instance_;
+    new (ptr) ::vega::OracleSpecToFutureBinding();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OracleSpecToFutureBinding_markets_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_OracleSpecToFutureBinding_markets_2eproto}, {}};
 
 static void InitDefaultsscc_info_PriceMonitoringParameters_markets_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -441,21 +443,19 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_markets_2eproto::offsets[] PRO
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::Future, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::vega::Future, _oneof_case_[0]),
+  ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::Future, maturity_),
   PROTOBUF_FIELD_OFFSET(::vega::Future, settlement_asset_),
   PROTOBUF_FIELD_OFFSET(::vega::Future, quote_name_),
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::vega::Future, oracle_),
+  PROTOBUF_FIELD_OFFSET(::vega::Future, oracle_spec_),
+  PROTOBUF_FIELD_OFFSET(::vega::Future, oracle_spec_binding_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::EthereumEvent, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::vega::OracleSpecToFutureBinding, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::EthereumEvent, contract_id_),
-  PROTOBUF_FIELD_OFFSET(::vega::EthereumEvent, event_),
-  PROTOBUF_FIELD_OFFSET(::vega::EthereumEvent, value_),
+  PROTOBUF_FIELD_OFFSET(::vega::OracleSpecToFutureBinding, settlement_price_property_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::InstrumentMetadata, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -471,7 +471,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_markets_2eproto::offsets[] PRO
   PROTOBUF_FIELD_OFFSET(::vega::Instrument, code_),
   PROTOBUF_FIELD_OFFSET(::vega::Instrument, name_),
   PROTOBUF_FIELD_OFFSET(::vega::Instrument, metadata_),
-  PROTOBUF_FIELD_OFFSET(::vega::Instrument, initial_mark_price_),
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::vega::Instrument, product_),
   ~0u,  // no _has_bits_
@@ -595,23 +594,23 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 7, -1, sizeof(::vega::ContinuousTrading)},
   { 13, -1, sizeof(::vega::DiscreteTrading)},
   { 20, -1, sizeof(::vega::Future)},
-  { 30, -1, sizeof(::vega::EthereumEvent)},
-  { 38, -1, sizeof(::vega::InstrumentMetadata)},
-  { 44, -1, sizeof(::vega::Instrument)},
-  { 56, -1, sizeof(::vega::LogNormalRiskModel)},
-  { 64, -1, sizeof(::vega::LogNormalModelParams)},
-  { 72, -1, sizeof(::vega::SimpleRiskModel)},
-  { 78, -1, sizeof(::vega::SimpleModelParams)},
-  { 88, -1, sizeof(::vega::ScalingFactors)},
-  { 96, -1, sizeof(::vega::MarginCalculator)},
-  { 102, -1, sizeof(::vega::TradableInstrument)},
-  { 112, -1, sizeof(::vega::FeeFactors)},
-  { 120, -1, sizeof(::vega::Fees)},
-  { 126, -1, sizeof(::vega::PriceMonitoringTrigger)},
-  { 134, -1, sizeof(::vega::PriceMonitoringParameters)},
-  { 140, -1, sizeof(::vega::PriceMonitoringSettings)},
-  { 147, -1, sizeof(::vega::TargetStakeParameters)},
-  { 154, -1, sizeof(::vega::Market)},
+  { 30, -1, sizeof(::vega::OracleSpecToFutureBinding)},
+  { 36, -1, sizeof(::vega::InstrumentMetadata)},
+  { 42, -1, sizeof(::vega::Instrument)},
+  { 53, -1, sizeof(::vega::LogNormalRiskModel)},
+  { 61, -1, sizeof(::vega::LogNormalModelParams)},
+  { 69, -1, sizeof(::vega::SimpleRiskModel)},
+  { 75, -1, sizeof(::vega::SimpleModelParams)},
+  { 85, -1, sizeof(::vega::ScalingFactors)},
+  { 93, -1, sizeof(::vega::MarginCalculator)},
+  { 99, -1, sizeof(::vega::TradableInstrument)},
+  { 109, -1, sizeof(::vega::FeeFactors)},
+  { 117, -1, sizeof(::vega::Fees)},
+  { 123, -1, sizeof(::vega::PriceMonitoringTrigger)},
+  { 131, -1, sizeof(::vega::PriceMonitoringParameters)},
+  { 137, -1, sizeof(::vega::PriceMonitoringSettings)},
+  { 144, -1, sizeof(::vega::TargetStakeParameters)},
+  { 151, -1, sizeof(::vega::Market)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -619,7 +618,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_ContinuousTrading_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_DiscreteTrading_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_Future_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_EthereumEvent_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_OracleSpecToFutureBinding_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_InstrumentMetadata_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_Instrument_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_LogNormalRiskModel_default_instance_),
@@ -640,108 +639,109 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_markets_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\rmarkets.proto\022\004vega\0326github.com/mwitko"
-  "w/go-proto-validators/validator.proto\"E\n"
-  "\017AuctionDuration\022\032\n\010duration\030\001 \001(\003R\010dura"
-  "tion\022\026\n\006volume\030\002 \001(\004R\006volume\"0\n\021Continuo"
-  "usTrading\022\033\n\ttick_size\030\001 \001(\tR\010tickSize\"`"
-  "\n\017DiscreteTrading\0220\n\013duration_ns\030\001 \001(\003B\017"
-  "\342\337\037\013\020\000\030\200\200\210\272\220\255\315\004R\ndurationNs\022\033\n\ttick_size"
-  "\030\002 \001(\tR\010tickSize\"\266\001\n\006Future\022\032\n\010maturity\030"
-  "\001 \001(\tR\010maturity\022)\n\020settlement_asset\030\002 \001("
-  "\tR\017settlementAsset\022\035\n\nquote_name\030\004 \001(\tR\t"
-  "quoteName\022<\n\016ethereum_event\030d \001(\0132\023.vega"
-  ".EthereumEventH\000R\rethereumEventB\010\n\006oracl"
-  "e\"\\\n\rEthereumEvent\022\037\n\013contract_id\030\001 \001(\tR"
-  "\ncontractId\022\024\n\005event\030\002 \001(\tR\005event\022\024\n\005val"
-  "ue\030\003 \001(\004R\005value\"(\n\022InstrumentMetadata\022\022\n"
-  "\004tags\030\001 \003(\tR\004tags\"\333\001\n\nInstrument\022\016\n\002id\030\001"
-  " \001(\tR\002id\022\022\n\004code\030\002 \001(\tR\004code\022\022\n\004name\030\003 \001"
-  "(\tR\004name\0224\n\010metadata\030\004 \001(\0132\030.vega.Instru"
-  "mentMetadataR\010metadata\022,\n\022initial_mark_p"
-  "rice\030\005 \001(\004R\020initialMarkPrice\022&\n\006future\030d"
-  " \001(\0132\014.vega.FutureH\000R\006futureB\t\n\007product\""
-  "\222\001\n\022LogNormalRiskModel\0226\n\027risk_aversion_"
-  "parameter\030\001 \001(\001R\025riskAversionParameter\022\020"
-  "\n\003tau\030\002 \001(\001R\003tau\0222\n\006params\030\003 \001(\0132\032.vega."
-  "LogNormalModelParamsR\006params\"J\n\024LogNorma"
-  "lModelParams\022\016\n\002mu\030\001 \001(\001R\002mu\022\014\n\001r\030\002 \001(\001R"
-  "\001r\022\024\n\005sigma\030\003 \001(\001R\005sigma\"B\n\017SimpleRiskMo"
-  "del\022/\n\006params\030\001 \001(\0132\027.vega.SimpleModelPa"
-  "ramsR\006params\"\207\002\n\021SimpleModelParams\022\037\n\013fa"
-  "ctor_long\030\001 \001(\001R\nfactorLong\022!\n\014factor_sh"
-  "ort\030\002 \001(\001R\013factorShort\022-\n\013max_move_up\030\003 "
-  "\001(\001B\r\342\337\037\tI\000\000\000\000\000\000\000\000R\tmaxMoveUp\0221\n\rmin_mov"
-  "e_down\030\004 \001(\001B\r\342\337\037\tQ\000\000\000\000\000\000\000\000R\013minMoveDown"
-  "\022L\n\026probability_of_trading\030\005 \001(\001B\026\342\337\037\022I\000"
-  "\000\000\000\000\000\000\000Q\000\000\000\000\000\000\360\?R\024probabilityOfTrading\"\211"
-  "\001\n\016ScalingFactors\022!\n\014search_level\030\001 \001(\001R"
-  "\013searchLevel\022%\n\016initial_margin\030\002 \001(\001R\rin"
-  "itialMargin\022-\n\022collateral_release\030\003 \001(\001R"
-  "\021collateralRelease\"Q\n\020MarginCalculator\022="
-  "\n\017scaling_factors\030\001 \001(\0132\024.vega.ScalingFa"
-  "ctorsR\016scalingFactors\"\255\002\n\022TradableInstru"
-  "ment\0220\n\ninstrument\030\001 \001(\0132\020.vega.Instrume"
-  "ntR\ninstrument\022C\n\021margin_calculator\030\002 \001("
-  "\0132\026.vega.MarginCalculatorR\020marginCalcula"
-  "tor\022M\n\025log_normal_risk_model\030d \001(\0132\030.veg"
-  "a.LogNormalRiskModelH\000R\022logNormalRiskMod"
-  "el\022C\n\021simple_risk_model\030e \001(\0132\025.vega.Sim"
-  "pleRiskModelH\000R\017simpleRiskModelB\014\n\nrisk_"
-  "model\"}\n\nFeeFactors\022\033\n\tmaker_fee\030\001 \001(\tR\010"
-  "makerFee\022-\n\022infrastructure_fee\030\002 \001(\tR\021in"
-  "frastructureFee\022#\n\rliquidity_fee\030\003 \001(\tR\014"
-  "liquidityFee\"2\n\004Fees\022*\n\007factors\030\001 \001(\0132\020."
-  "vega.FeeFactorsR\007factors\"\251\001\n\026PriceMonito"
-  "ringTrigger\022 \n\007horizon\030\001 \001(\003B\006\342\337\037\002\020\000R\007ho"
-  "rizon\0228\n\013probability\030\002 \001(\001B\026\342\337\037\0221\000\000\000\000\000\000\000"
-  "\0009\000\000\000\000\000\000\360\?R\013probability\0223\n\021auction_exten"
-  "sion\030\003 \001(\003B\006\342\337\037\002\020\000R\020auctionExtension\"U\n\031"
-  "PriceMonitoringParameters\0228\n\010triggers\030\001 "
-  "\003(\0132\034.vega.PriceMonitoringTriggerR\010trigg"
-  "ers\"\205\001\n\027PriceMonitoringSettings\022\?\n\nparam"
-  "eters\030\001 \001(\0132\037.vega.PriceMonitoringParame"
-  "tersR\nparameters\022)\n\020update_frequency\030\002 \001"
-  "(\003R\017updateFrequency\"v\n\025TargetStakeParame"
-  "ters\022\'\n\013time_window\030\001 \001(\003B\006\342\337\037\002\020\000R\ntimeW"
-  "indow\0224\n\016scaling_factor\030\002 \001(\001B\r\342\337\037\t1\000\000\000\000"
-  "\000\000\000\000R\rscalingFactor\"\225\010\n\006Market\022\016\n\002id\030\001 \001"
-  "(\tR\002id\022I\n\023tradable_instrument\030\002 \001(\0132\030.ve"
-  "ga.TradableInstrumentR\022tradableInstrumen"
-  "t\022%\n\016decimal_places\030\003 \001(\004R\rdecimalPlaces"
-  "\022\036\n\004fees\030\004 \001(\0132\n.vega.FeesR\004fees\022>\n\017open"
-  "ing_auction\030\005 \001(\0132\025.vega.AuctionDuration"
-  "R\016openingAuction\0229\n\ncontinuous\030d \001(\0132\027.v"
-  "ega.ContinuousTradingH\000R\ncontinuous\0223\n\010d"
-  "iscrete\030e \001(\0132\025.vega.DiscreteTradingH\000R\010"
-  "discrete\022Y\n\031price_monitoring_settings\030\006 "
-  "\001(\0132\035.vega.PriceMonitoringSettingsR\027pric"
-  "eMonitoringSettings\022S\n\027target_stake_para"
-  "meters\030\007 \001(\0132\033.vega.TargetStakeParameter"
-  "sR\025targetStakeParameters\022;\n\014trading_mode"
-  "\030\010 \001(\0162\030.vega.Market.TradingModeR\013tradin"
-  "gMode\022(\n\005state\030\t \001(\0162\022.vega.Market.State"
-  "R\005state\"\330\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000"
-  "\022\022\n\016STATE_PROPOSED\020\001\022\022\n\016STATE_REJECTED\020\002"
-  "\022\021\n\rSTATE_PENDING\020\003\022\023\n\017STATE_CANCELLED\020\004"
-  "\022\020\n\014STATE_ACTIVE\020\005\022\023\n\017STATE_SUSPENDED\020\006\022"
-  "\020\n\014STATE_CLOSED\020\007\022\034\n\030STATE_TRADING_TERMI"
-  "NATED\020\010\022\021\n\rSTATE_SETTLED\020\t\"\257\001\n\013TradingMo"
-  "de\022\034\n\030TRADING_MODE_UNSPECIFIED\020\000\022\033\n\027TRAD"
-  "ING_MODE_CONTINUOUS\020\001\022\036\n\032TRADING_MODE_BA"
-  "TCH_AUCTION\020\002\022 \n\034TRADING_MODE_OPENING_AU"
-  "CTION\020\003\022#\n\037TRADING_MODE_MONITORING_AUCTI"
-  "ON\020\004B\025\n\023trading_mode_configB7\n\024io.vegapr"
-  "otocol.vegaZ\037code.vegaprotocol.io/vega/p"
-  "rotob\006proto3"
+  "w/go-proto-validators/validator.proto\032\034o"
+  "racles/v1/oracle_spec.proto\"E\n\017AuctionDu"
+  "ration\022\032\n\010duration\030\001 \001(\003R\010duration\022\026\n\006vo"
+  "lume\030\002 \001(\004R\006volume\"0\n\021ContinuousTrading\022"
+  "\033\n\ttick_size\030\001 \001(\tR\010tickSize\"`\n\017Discrete"
+  "Trading\0220\n\013duration_ns\030\001 \001(\003B\017\342\337\037\013\020\000\030\200\200\210"
+  "\272\220\255\315\004R\ndurationNs\022\033\n\ttick_size\030\002 \001(\tR\010ti"
+  "ckSize\"\370\001\n\006Future\022\032\n\010maturity\030\001 \001(\tR\010mat"
+  "urity\022)\n\020settlement_asset\030\002 \001(\tR\017settlem"
+  "entAsset\022\035\n\nquote_name\030\004 \001(\tR\tquoteName\022"
+  "7\n\013oracle_spec\030\005 \001(\0132\026.oracles.v1.Oracle"
+  "SpecR\noracleSpec\022O\n\023oracle_spec_binding\030"
+  "\006 \001(\0132\037.vega.OracleSpecToFutureBindingR\021"
+  "oracleSpecBinding\"W\n\031OracleSpecToFutureB"
+  "inding\022:\n\031settlement_price_property\030\001 \001("
+  "\tR\027settlementPriceProperty\"(\n\022Instrument"
+  "Metadata\022\022\n\004tags\030\001 \003(\tR\004tags\"\255\001\n\nInstrum"
+  "ent\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004code\030\002 \001(\tR\004code\022"
+  "\022\n\004name\030\003 \001(\tR\004name\0224\n\010metadata\030\004 \001(\0132\030."
+  "vega.InstrumentMetadataR\010metadata\022&\n\006fut"
+  "ure\030d \001(\0132\014.vega.FutureH\000R\006futureB\t\n\007pro"
+  "duct\"\222\001\n\022LogNormalRiskModel\0226\n\027risk_aver"
+  "sion_parameter\030\001 \001(\001R\025riskAversionParame"
+  "ter\022\020\n\003tau\030\002 \001(\001R\003tau\0222\n\006params\030\003 \001(\0132\032."
+  "vega.LogNormalModelParamsR\006params\"J\n\024Log"
+  "NormalModelParams\022\016\n\002mu\030\001 \001(\001R\002mu\022\014\n\001r\030\002"
+  " \001(\001R\001r\022\024\n\005sigma\030\003 \001(\001R\005sigma\"B\n\017SimpleR"
+  "iskModel\022/\n\006params\030\001 \001(\0132\027.vega.SimpleMo"
+  "delParamsR\006params\"\207\002\n\021SimpleModelParams\022"
+  "\037\n\013factor_long\030\001 \001(\001R\nfactorLong\022!\n\014fact"
+  "or_short\030\002 \001(\001R\013factorShort\022-\n\013max_move_"
+  "up\030\003 \001(\001B\r\342\337\037\tI\000\000\000\000\000\000\000\000R\tmaxMoveUp\0221\n\rmi"
+  "n_move_down\030\004 \001(\001B\r\342\337\037\tQ\000\000\000\000\000\000\000\000R\013minMov"
+  "eDown\022L\n\026probability_of_trading\030\005 \001(\001B\026\342"
+  "\337\037\022I\000\000\000\000\000\000\000\000Q\000\000\000\000\000\000\360\?R\024probabilityOfTrad"
+  "ing\"\211\001\n\016ScalingFactors\022!\n\014search_level\030\001"
+  " \001(\001R\013searchLevel\022%\n\016initial_margin\030\002 \001("
+  "\001R\rinitialMargin\022-\n\022collateral_release\030\003"
+  " \001(\001R\021collateralRelease\"Q\n\020MarginCalcula"
+  "tor\022=\n\017scaling_factors\030\001 \001(\0132\024.vega.Scal"
+  "ingFactorsR\016scalingFactors\"\255\002\n\022TradableI"
+  "nstrument\0220\n\ninstrument\030\001 \001(\0132\020.vega.Ins"
+  "trumentR\ninstrument\022C\n\021margin_calculator"
+  "\030\002 \001(\0132\026.vega.MarginCalculatorR\020marginCa"
+  "lculator\022M\n\025log_normal_risk_model\030d \001(\0132"
+  "\030.vega.LogNormalRiskModelH\000R\022logNormalRi"
+  "skModel\022C\n\021simple_risk_model\030e \001(\0132\025.veg"
+  "a.SimpleRiskModelH\000R\017simpleRiskModelB\014\n\n"
+  "risk_model\"}\n\nFeeFactors\022\033\n\tmaker_fee\030\001 "
+  "\001(\tR\010makerFee\022-\n\022infrastructure_fee\030\002 \001("
+  "\tR\021infrastructureFee\022#\n\rliquidity_fee\030\003 "
+  "\001(\tR\014liquidityFee\"2\n\004Fees\022*\n\007factors\030\001 \001"
+  "(\0132\020.vega.FeeFactorsR\007factors\"\251\001\n\026PriceM"
+  "onitoringTrigger\022 \n\007horizon\030\001 \001(\003B\006\342\337\037\002\020"
+  "\000R\007horizon\0228\n\013probability\030\002 \001(\001B\026\342\337\037\0221\000\000"
+  "\000\000\000\000\000\0009\000\000\000\000\000\000\360\?R\013probability\0223\n\021auction_"
+  "extension\030\003 \001(\003B\006\342\337\037\002\020\000R\020auctionExtensio"
+  "n\"U\n\031PriceMonitoringParameters\0228\n\010trigge"
+  "rs\030\001 \003(\0132\034.vega.PriceMonitoringTriggerR\010"
+  "triggers\"\205\001\n\027PriceMonitoringSettings\022\?\n\n"
+  "parameters\030\001 \001(\0132\037.vega.PriceMonitoringP"
+  "arametersR\nparameters\022)\n\020update_frequenc"
+  "y\030\002 \001(\003R\017updateFrequency\"v\n\025TargetStakeP"
+  "arameters\022\'\n\013time_window\030\001 \001(\003B\006\342\337\037\002\020\000R\n"
+  "timeWindow\0224\n\016scaling_factor\030\002 \001(\001B\r\342\337\037\t"
+  "1\000\000\000\000\000\000\000\000R\rscalingFactor\"\225\010\n\006Market\022\016\n\002i"
+  "d\030\001 \001(\tR\002id\022I\n\023tradable_instrument\030\002 \001(\013"
+  "2\030.vega.TradableInstrumentR\022tradableInst"
+  "rument\022%\n\016decimal_places\030\003 \001(\004R\rdecimalP"
+  "laces\022\036\n\004fees\030\004 \001(\0132\n.vega.FeesR\004fees\022>\n"
+  "\017opening_auction\030\005 \001(\0132\025.vega.AuctionDur"
+  "ationR\016openingAuction\0229\n\ncontinuous\030d \001("
+  "\0132\027.vega.ContinuousTradingH\000R\ncontinuous"
+  "\0223\n\010discrete\030e \001(\0132\025.vega.DiscreteTradin"
+  "gH\000R\010discrete\022Y\n\031price_monitoring_settin"
+  "gs\030\006 \001(\0132\035.vega.PriceMonitoringSettingsR"
+  "\027priceMonitoringSettings\022S\n\027target_stake"
+  "_parameters\030\007 \001(\0132\033.vega.TargetStakePara"
+  "metersR\025targetStakeParameters\022;\n\014trading"
+  "_mode\030\010 \001(\0162\030.vega.Market.TradingModeR\013t"
+  "radingMode\022(\n\005state\030\t \001(\0162\022.vega.Market."
+  "StateR\005state\"\330\001\n\005State\022\025\n\021STATE_UNSPECIF"
+  "IED\020\000\022\022\n\016STATE_PROPOSED\020\001\022\022\n\016STATE_REJEC"
+  "TED\020\002\022\021\n\rSTATE_PENDING\020\003\022\023\n\017STATE_CANCEL"
+  "LED\020\004\022\020\n\014STATE_ACTIVE\020\005\022\023\n\017STATE_SUSPEND"
+  "ED\020\006\022\020\n\014STATE_CLOSED\020\007\022\034\n\030STATE_TRADING_"
+  "TERMINATED\020\010\022\021\n\rSTATE_SETTLED\020\t\"\257\001\n\013Trad"
+  "ingMode\022\034\n\030TRADING_MODE_UNSPECIFIED\020\000\022\033\n"
+  "\027TRADING_MODE_CONTINUOUS\020\001\022\036\n\032TRADING_MO"
+  "DE_BATCH_AUCTION\020\002\022 \n\034TRADING_MODE_OPENI"
+  "NG_AUCTION\020\003\022#\n\037TRADING_MODE_MONITORING_"
+  "AUCTION\020\004B\025\n\023trading_mode_configB7\n\024io.v"
+  "egaprotocol.vegaZ\037code.vegaprotocol.io/v"
+  "ega/protob\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_markets_2eproto_deps[1] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_markets_2eproto_deps[2] = {
   &::descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto,
+  &::descriptor_table_oracles_2fv1_2foracle_5fspec_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_markets_2eproto_sccs[21] = {
   &scc_info_AuctionDuration_markets_2eproto.base,
   &scc_info_ContinuousTrading_markets_2eproto.base,
   &scc_info_DiscreteTrading_markets_2eproto.base,
-  &scc_info_EthereumEvent_markets_2eproto.base,
   &scc_info_FeeFactors_markets_2eproto.base,
   &scc_info_Fees_markets_2eproto.base,
   &scc_info_Future_markets_2eproto.base,
@@ -751,6 +751,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_mar
   &scc_info_LogNormalRiskModel_markets_2eproto.base,
   &scc_info_MarginCalculator_markets_2eproto.base,
   &scc_info_Market_markets_2eproto.base,
+  &scc_info_OracleSpecToFutureBinding_markets_2eproto.base,
   &scc_info_PriceMonitoringParameters_markets_2eproto.base,
   &scc_info_PriceMonitoringSettings_markets_2eproto.base,
   &scc_info_PriceMonitoringTrigger_markets_2eproto.base,
@@ -762,8 +763,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_mar
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_markets_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_markets_2eproto = {
-  false, false, descriptor_table_protodef_markets_2eproto, "markets.proto", 3732,
-  &descriptor_table_markets_2eproto_once, descriptor_table_markets_2eproto_sccs, descriptor_table_markets_2eproto_deps, 21, 1,
+  false, false, descriptor_table_protodef_markets_2eproto, "markets.proto", 3777,
+  &descriptor_table_markets_2eproto_once, descriptor_table_markets_2eproto_sccs, descriptor_table_markets_2eproto_deps, 21, 2,
   schemas, file_default_instances, TableStruct_markets_2eproto::offsets,
   file_level_metadata_markets_2eproto, 21, file_level_enum_descriptors_markets_2eproto, file_level_service_descriptors_markets_2eproto,
 };
@@ -1508,27 +1509,23 @@ void DiscreteTrading::InternalSwap(DiscreteTrading* other) {
 
 class Future::_Internal {
  public:
-  static const ::vega::EthereumEvent& ethereum_event(const Future* msg);
+  static const ::oracles::v1::OracleSpec& oracle_spec(const Future* msg);
+  static const ::vega::OracleSpecToFutureBinding& oracle_spec_binding(const Future* msg);
 };
 
-const ::vega::EthereumEvent&
-Future::_Internal::ethereum_event(const Future* msg) {
-  return *msg->oracle_.ethereum_event_;
+const ::oracles::v1::OracleSpec&
+Future::_Internal::oracle_spec(const Future* msg) {
+  return *msg->oracle_spec_;
 }
-void Future::set_allocated_ethereum_event(::vega::EthereumEvent* ethereum_event) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  clear_oracle();
-  if (ethereum_event) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(ethereum_event);
-    if (message_arena != submessage_arena) {
-      ethereum_event = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, ethereum_event, submessage_arena);
-    }
-    set_has_ethereum_event();
-    oracle_.ethereum_event_ = ethereum_event;
+const ::vega::OracleSpecToFutureBinding&
+Future::_Internal::oracle_spec_binding(const Future* msg) {
+  return *msg->oracle_spec_binding_;
+}
+void Future::clear_oracle_spec() {
+  if (GetArena() == nullptr && oracle_spec_ != nullptr) {
+    delete oracle_spec_;
   }
-  // @@protoc_insertion_point(field_set_allocated:vega.Future.ethereum_event)
+  oracle_spec_ = nullptr;
 }
 Future::Future(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
@@ -1554,15 +1551,15 @@ Future::Future(const Future& from)
     quote_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_quote_name(),
       GetArena());
   }
-  clear_has_oracle();
-  switch (from.oracle_case()) {
-    case kEthereumEvent: {
-      _internal_mutable_ethereum_event()->::vega::EthereumEvent::MergeFrom(from._internal_ethereum_event());
-      break;
-    }
-    case ORACLE_NOT_SET: {
-      break;
-    }
+  if (from._internal_has_oracle_spec()) {
+    oracle_spec_ = new ::oracles::v1::OracleSpec(*from.oracle_spec_);
+  } else {
+    oracle_spec_ = nullptr;
+  }
+  if (from._internal_has_oracle_spec_binding()) {
+    oracle_spec_binding_ = new ::vega::OracleSpecToFutureBinding(*from.oracle_spec_binding_);
+  } else {
+    oracle_spec_binding_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:vega.Future)
 }
@@ -1572,7 +1569,10 @@ void Future::SharedCtor() {
   maturity_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   settlement_asset_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   quote_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  clear_has_oracle();
+  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+      reinterpret_cast<char*>(&oracle_spec_) - reinterpret_cast<char*>(this)),
+      0, static_cast<size_t>(reinterpret_cast<char*>(&oracle_spec_binding_) -
+      reinterpret_cast<char*>(&oracle_spec_)) + sizeof(oracle_spec_binding_));
 }
 
 Future::~Future() {
@@ -1586,9 +1586,8 @@ void Future::SharedDtor() {
   maturity_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   settlement_asset_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   quote_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (has_oracle()) {
-    clear_oracle();
-  }
+  if (this != internal_default_instance()) delete oracle_spec_;
+  if (this != internal_default_instance()) delete oracle_spec_binding_;
 }
 
 void Future::ArenaDtor(void* object) {
@@ -1606,23 +1605,6 @@ const Future& Future::default_instance() {
 }
 
 
-void Future::clear_oracle() {
-// @@protoc_insertion_point(one_of_clear_start:vega.Future)
-  switch (oracle_case()) {
-    case kEthereumEvent: {
-      if (GetArena() == nullptr) {
-        delete oracle_.ethereum_event_;
-      }
-      break;
-    }
-    case ORACLE_NOT_SET: {
-      break;
-    }
-  }
-  _oneof_case_[0] = ORACLE_NOT_SET;
-}
-
-
 void Future::Clear() {
 // @@protoc_insertion_point(message_clear_start:vega.Future)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1632,7 +1614,14 @@ void Future::Clear() {
   maturity_.ClearToEmpty();
   settlement_asset_.ClearToEmpty();
   quote_name_.ClearToEmpty();
-  clear_oracle();
+  if (GetArena() == nullptr && oracle_spec_ != nullptr) {
+    delete oracle_spec_;
+  }
+  oracle_spec_ = nullptr;
+  if (GetArena() == nullptr && oracle_spec_binding_ != nullptr) {
+    delete oracle_spec_binding_;
+  }
+  oracle_spec_binding_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1670,10 +1659,17 @@ const char* Future::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];
-      case 100:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_ethereum_event(), ptr);
+      // .oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          ptr = ctx->ParseMessage(_internal_mutable_oracle_spec(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr = ctx->ParseMessage(_internal_mutable_oracle_spec_binding(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1735,12 +1731,20 @@ failure:
         4, this->_internal_quote_name(), target);
   }
 
-  // .vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];
-  if (_internal_has_ethereum_event()) {
+  // .oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];
+  if (this->has_oracle_spec()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        100, _Internal::ethereum_event(this), target, stream);
+        5, _Internal::oracle_spec(this), target, stream);
+  }
+
+  // .vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];
+  if (this->has_oracle_spec_binding()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        6, _Internal::oracle_spec_binding(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1780,18 +1784,20 @@ size_t Future::ByteSizeLong() const {
         this->_internal_quote_name());
   }
 
-  switch (oracle_case()) {
-    // .vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];
-    case kEthereumEvent: {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *oracle_.ethereum_event_);
-      break;
-    }
-    case ORACLE_NOT_SET: {
-      break;
-    }
+  // .oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];
+  if (this->has_oracle_spec()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *oracle_spec_);
   }
+
+  // .vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];
+  if (this->has_oracle_spec_binding()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *oracle_spec_binding_);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -1832,14 +1838,11 @@ void Future::MergeFrom(const Future& from) {
   if (from.quote_name().size() > 0) {
     _internal_set_quote_name(from._internal_quote_name());
   }
-  switch (from.oracle_case()) {
-    case kEthereumEvent: {
-      _internal_mutable_ethereum_event()->::vega::EthereumEvent::MergeFrom(from._internal_ethereum_event());
-      break;
-    }
-    case ORACLE_NOT_SET: {
-      break;
-    }
+  if (from.has_oracle_spec()) {
+    _internal_mutable_oracle_spec()->::oracles::v1::OracleSpec::MergeFrom(from._internal_oracle_spec());
+  }
+  if (from.has_oracle_spec_binding()) {
+    _internal_mutable_oracle_spec_binding()->::vega::OracleSpecToFutureBinding::MergeFrom(from._internal_oracle_spec_binding());
   }
 }
 
@@ -1867,8 +1870,12 @@ void Future::InternalSwap(Future* other) {
   maturity_.Swap(&other->maturity_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   settlement_asset_.Swap(&other->settlement_asset_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   quote_name_.Swap(&other->quote_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(oracle_, other->oracle_);
-  swap(_oneof_case_[0], other->_oneof_case_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Future, oracle_spec_binding_)
+      + sizeof(Future::oracle_spec_binding_)
+      - PROTOBUF_FIELD_OFFSET(Future, oracle_spec_)>(
+          reinterpret_cast<char*>(&oracle_spec_),
+          reinterpret_cast<char*>(&other->oracle_spec_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Future::GetMetadata() const {
@@ -1878,108 +1885,81 @@ void Future::InternalSwap(Future* other) {
 
 // ===================================================================
 
-class EthereumEvent::_Internal {
+class OracleSpecToFutureBinding::_Internal {
  public:
 };
 
-EthereumEvent::EthereumEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+OracleSpecToFutureBinding::OracleSpecToFutureBinding(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.EthereumEvent)
+  // @@protoc_insertion_point(arena_constructor:vega.OracleSpecToFutureBinding)
 }
-EthereumEvent::EthereumEvent(const EthereumEvent& from)
+OracleSpecToFutureBinding::OracleSpecToFutureBinding(const OracleSpecToFutureBinding& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  contract_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_contract_id().empty()) {
-    contract_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_contract_id(),
+  settlement_price_property_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_settlement_price_property().empty()) {
+    settlement_price_property_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_settlement_price_property(),
       GetArena());
   }
-  event_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_event().empty()) {
-    event_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_event(),
-      GetArena());
-  }
-  value_ = from.value_;
-  // @@protoc_insertion_point(copy_constructor:vega.EthereumEvent)
+  // @@protoc_insertion_point(copy_constructor:vega.OracleSpecToFutureBinding)
 }
 
-void EthereumEvent::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_EthereumEvent_markets_2eproto.base);
-  contract_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  event_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  value_ = PROTOBUF_ULONGLONG(0);
+void OracleSpecToFutureBinding::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_OracleSpecToFutureBinding_markets_2eproto.base);
+  settlement_price_property_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-EthereumEvent::~EthereumEvent() {
-  // @@protoc_insertion_point(destructor:vega.EthereumEvent)
+OracleSpecToFutureBinding::~OracleSpecToFutureBinding() {
+  // @@protoc_insertion_point(destructor:vega.OracleSpecToFutureBinding)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void EthereumEvent::SharedDtor() {
+void OracleSpecToFutureBinding::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  contract_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  event_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  settlement_price_property_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void EthereumEvent::ArenaDtor(void* object) {
-  EthereumEvent* _this = reinterpret_cast< EthereumEvent* >(object);
+void OracleSpecToFutureBinding::ArenaDtor(void* object) {
+  OracleSpecToFutureBinding* _this = reinterpret_cast< OracleSpecToFutureBinding* >(object);
   (void)_this;
 }
-void EthereumEvent::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void OracleSpecToFutureBinding::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void EthereumEvent::SetCachedSize(int size) const {
+void OracleSpecToFutureBinding::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const EthereumEvent& EthereumEvent::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_EthereumEvent_markets_2eproto.base);
+const OracleSpecToFutureBinding& OracleSpecToFutureBinding::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_OracleSpecToFutureBinding_markets_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void EthereumEvent::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.EthereumEvent)
+void OracleSpecToFutureBinding::Clear() {
+// @@protoc_insertion_point(message_clear_start:vega.OracleSpecToFutureBinding)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  contract_id_.ClearToEmpty();
-  event_.ClearToEmpty();
-  value_ = PROTOBUF_ULONGLONG(0);
+  settlement_price_property_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* EthereumEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* OracleSpecToFutureBinding::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string contract_id = 1 [json_name = "contractId"];
+      // string settlement_price_property = 1 [json_name = "settlementPriceProperty"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_contract_id();
+          auto str = _internal_mutable_settlement_price_property();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.EthereumEvent.contract_id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string event = 2 [json_name = "event"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_event();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.EthereumEvent.event"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint64 value = 3 [json_name = "value"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.OracleSpecToFutureBinding.settlement_price_property"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2005,73 +1985,43 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* EthereumEvent::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* OracleSpecToFutureBinding::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.EthereumEvent)
+  // @@protoc_insertion_point(serialize_to_array_start:vega.OracleSpecToFutureBinding)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string contract_id = 1 [json_name = "contractId"];
-  if (this->contract_id().size() > 0) {
+  // string settlement_price_property = 1 [json_name = "settlementPriceProperty"];
+  if (this->settlement_price_property().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_contract_id().data(), static_cast<int>(this->_internal_contract_id().length()),
+      this->_internal_settlement_price_property().data(), static_cast<int>(this->_internal_settlement_price_property().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.EthereumEvent.contract_id");
+      "vega.OracleSpecToFutureBinding.settlement_price_property");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_contract_id(), target);
-  }
-
-  // string event = 2 [json_name = "event"];
-  if (this->event().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_event().data(), static_cast<int>(this->_internal_event().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.EthereumEvent.event");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_event(), target);
-  }
-
-  // uint64 value = 3 [json_name = "value"];
-  if (this->value() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_value(), target);
+        1, this->_internal_settlement_price_property(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.EthereumEvent)
+  // @@protoc_insertion_point(serialize_to_array_end:vega.OracleSpecToFutureBinding)
   return target;
 }
 
-size_t EthereumEvent::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.EthereumEvent)
+size_t OracleSpecToFutureBinding::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vega.OracleSpecToFutureBinding)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string contract_id = 1 [json_name = "contractId"];
-  if (this->contract_id().size() > 0) {
+  // string settlement_price_property = 1 [json_name = "settlementPriceProperty"];
+  if (this->settlement_price_property().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_contract_id());
-  }
-
-  // string event = 2 [json_name = "event"];
-  if (this->event().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_event());
-  }
-
-  // uint64 value = 3 [json_name = "value"];
-  if (this->value() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_value());
+        this->_internal_settlement_price_property());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2083,66 +2033,58 @@ size_t EthereumEvent::ByteSizeLong() const {
   return total_size;
 }
 
-void EthereumEvent::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.EthereumEvent)
+void OracleSpecToFutureBinding::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vega.OracleSpecToFutureBinding)
   GOOGLE_DCHECK_NE(&from, this);
-  const EthereumEvent* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<EthereumEvent>(
+  const OracleSpecToFutureBinding* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<OracleSpecToFutureBinding>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.EthereumEvent)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.OracleSpecToFutureBinding)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.EthereumEvent)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.OracleSpecToFutureBinding)
     MergeFrom(*source);
   }
 }
 
-void EthereumEvent::MergeFrom(const EthereumEvent& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.EthereumEvent)
+void OracleSpecToFutureBinding::MergeFrom(const OracleSpecToFutureBinding& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vega.OracleSpecToFutureBinding)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.contract_id().size() > 0) {
-    _internal_set_contract_id(from._internal_contract_id());
-  }
-  if (from.event().size() > 0) {
-    _internal_set_event(from._internal_event());
-  }
-  if (from.value() != 0) {
-    _internal_set_value(from._internal_value());
+  if (from.settlement_price_property().size() > 0) {
+    _internal_set_settlement_price_property(from._internal_settlement_price_property());
   }
 }
 
-void EthereumEvent::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.EthereumEvent)
+void OracleSpecToFutureBinding::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vega.OracleSpecToFutureBinding)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void EthereumEvent::CopyFrom(const EthereumEvent& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.EthereumEvent)
+void OracleSpecToFutureBinding::CopyFrom(const OracleSpecToFutureBinding& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vega.OracleSpecToFutureBinding)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool EthereumEvent::IsInitialized() const {
+bool OracleSpecToFutureBinding::IsInitialized() const {
   return true;
 }
 
-void EthereumEvent::InternalSwap(EthereumEvent* other) {
+void OracleSpecToFutureBinding::InternalSwap(OracleSpecToFutureBinding* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  contract_id_.Swap(&other->contract_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  event_.Swap(&other->event_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(value_, other->value_);
+  settlement_price_property_.Swap(&other->settlement_price_property_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata EthereumEvent::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata OracleSpecToFutureBinding::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -2412,7 +2354,6 @@ Instrument::Instrument(const Instrument& from)
   } else {
     metadata_ = nullptr;
   }
-  initial_mark_price_ = from.initial_mark_price_;
   clear_has_product();
   switch (from.product_case()) {
     case kFuture: {
@@ -2431,10 +2372,7 @@ void Instrument::SharedCtor() {
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&metadata_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&initial_mark_price_) -
-      reinterpret_cast<char*>(&metadata_)) + sizeof(initial_mark_price_));
+  metadata_ = nullptr;
   clear_has_product();
 }
 
@@ -2500,7 +2438,6 @@ void Instrument::Clear() {
     delete metadata_;
   }
   metadata_ = nullptr;
-  initial_mark_price_ = PROTOBUF_ULONGLONG(0);
   clear_product();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2543,13 +2480,6 @@ const char* Instrument::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_metadata(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          initial_mark_price_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2626,12 +2556,6 @@ failure:
         4, _Internal::metadata(this), target, stream);
   }
 
-  // uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];
-  if (this->initial_mark_price() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_initial_mark_price(), target);
-  }
-
   // .vega.Future future = 100 [json_name = "future"];
   if (_internal_has_future()) {
     target = stream->EnsureSpace(target);
@@ -2682,13 +2606,6 @@ size_t Instrument::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *metadata_);
-  }
-
-  // uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];
-  if (this->initial_mark_price() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_initial_mark_price());
   }
 
   switch (product_case()) {
@@ -2746,9 +2663,6 @@ void Instrument::MergeFrom(const Instrument& from) {
   if (from.has_metadata()) {
     _internal_mutable_metadata()->::vega::InstrumentMetadata::MergeFrom(from._internal_metadata());
   }
-  if (from.initial_mark_price() != 0) {
-    _internal_set_initial_mark_price(from._internal_initial_mark_price());
-  }
   switch (from.product_case()) {
     case kFuture: {
       _internal_mutable_future()->::vega::Future::MergeFrom(from._internal_future());
@@ -2784,12 +2698,7 @@ void Instrument::InternalSwap(Instrument* other) {
   id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   code_.Swap(&other->code_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Instrument, initial_mark_price_)
-      + sizeof(Instrument::initial_mark_price_)
-      - PROTOBUF_FIELD_OFFSET(Instrument, metadata_)>(
-          reinterpret_cast<char*>(&metadata_),
-          reinterpret_cast<char*>(&other->metadata_));
+  swap(metadata_, other->metadata_);
   swap(product_, other->product_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
@@ -6735,8 +6644,8 @@ template<> PROTOBUF_NOINLINE ::vega::DiscreteTrading* Arena::CreateMaybeMessage<
 template<> PROTOBUF_NOINLINE ::vega::Future* Arena::CreateMaybeMessage< ::vega::Future >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vega::Future >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::EthereumEvent* Arena::CreateMaybeMessage< ::vega::EthereumEvent >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::EthereumEvent >(arena);
+template<> PROTOBUF_NOINLINE ::vega::OracleSpecToFutureBinding* Arena::CreateMaybeMessage< ::vega::OracleSpecToFutureBinding >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vega::OracleSpecToFutureBinding >(arena);
 }
 template<> PROTOBUF_NOINLINE ::vega::InstrumentMetadata* Arena::CreateMaybeMessage< ::vega::InstrumentMetadata >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vega::InstrumentMetadata >(arena);

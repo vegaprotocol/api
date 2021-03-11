@@ -6,6 +6,7 @@ import * as github_com_mwitkow_go_proto_validators_validator_pb from "./github.c
 import * as markets_pb from "./markets_pb";
 import * as vega_pb from "./vega_pb";
 import * as assets_pb from "./assets_pb";
+import * as oracles_v1_oracle_spec_pb from "./oracles/v1/oracle_spec_pb";
 
 export class FutureProduct extends jspb.Message {
   getMaturity(): string;
@@ -16,6 +17,16 @@ export class FutureProduct extends jspb.Message {
 
   getQuoteName(): string;
   setQuoteName(value: string): void;
+
+  hasOracleSpec(): boolean;
+  clearOracleSpec(): void;
+  getOracleSpec(): oracles_v1_oracle_spec_pb.OracleSpecConfiguration | undefined;
+  setOracleSpec(value?: oracles_v1_oracle_spec_pb.OracleSpecConfiguration): void;
+
+  hasOracleSpecBinding(): boolean;
+  clearOracleSpecBinding(): void;
+  getOracleSpecBinding(): markets_pb.OracleSpecToFutureBinding | undefined;
+  setOracleSpecBinding(value?: markets_pb.OracleSpecToFutureBinding): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FutureProduct.AsObject;
@@ -32,6 +43,8 @@ export namespace FutureProduct {
     maturity: string,
     settlementAsset: string,
     quoteName: string,
+    oracleSpec?: oracles_v1_oracle_spec_pb.OracleSpecConfiguration.AsObject,
+    oracleSpecBinding?: markets_pb.OracleSpecToFutureBinding.AsObject,
   }
 }
 
@@ -164,6 +177,9 @@ export class NewMarketCommitment extends jspb.Message {
   setBuysList(value: Array<vega_pb.LiquidityOrder>): void;
   addBuys(value?: vega_pb.LiquidityOrder, index?: number): vega_pb.LiquidityOrder;
 
+  getReference(): string;
+  setReference(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NewMarketCommitment.AsObject;
   static toObject(includeInstance: boolean, msg: NewMarketCommitment): NewMarketCommitment.AsObject;
@@ -180,6 +196,7 @@ export namespace NewMarketCommitment {
     fee: string,
     sellsList: Array<vega_pb.LiquidityOrder.AsObject>,
     buysList: Array<vega_pb.LiquidityOrder.AsObject>,
+    reference: string,
   }
 }
 
@@ -498,6 +515,7 @@ export interface ProposalErrorMap {
   PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE: 23;
   PROPOSAL_ERROR_MARKET_MISSING_LIQUIDITY_COMMITMENT: 24;
   PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET: 25;
+  PROPOSAL_ERROR_INVALID_FUTUR_PRODUCT: 26;
 }
 
 export const ProposalError: ProposalErrorMap;

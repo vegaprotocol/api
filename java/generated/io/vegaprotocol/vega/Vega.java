@@ -65465,6 +65465,26 @@ public final class Vega {
      */
     io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getBuysOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * A reference to be added to every order created out of this liquidityProvisionSubmission
+     * </pre>
+     *
+     * <code>string reference = 6 [json_name = "reference"];</code>
+     * @return The reference.
+     */
+    java.lang.String getReference();
+    /**
+     * <pre>
+     * A reference to be added to every order created out of this liquidityProvisionSubmission
+     * </pre>
+     *
+     * <code>string reference = 6 [json_name = "reference"];</code>
+     * @return The bytes for reference.
+     */
+    com.google.protobuf.ByteString
+        getReferenceBytes();
   }
   /**
    * Protobuf type {@code vega.LiquidityProvisionSubmission}
@@ -65483,6 +65503,7 @@ public final class Vega {
       fee_ = "";
       sells_ = java.util.Collections.emptyList();
       buys_ = java.util.Collections.emptyList();
+      reference_ = "";
     }
 
     @java.lang.Override
@@ -65549,6 +65570,12 @@ public final class Vega {
               }
               buys_.add(
                   input.readMessage(io.vegaprotocol.vega.Vega.LiquidityOrder.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reference_ = s;
               break;
             }
             default: {
@@ -65816,6 +65843,52 @@ public final class Vega {
       return buys_.get(index);
     }
 
+    public static final int REFERENCE_FIELD_NUMBER = 6;
+    private volatile java.lang.Object reference_;
+    /**
+     * <pre>
+     * A reference to be added to every order created out of this liquidityProvisionSubmission
+     * </pre>
+     *
+     * <code>string reference = 6 [json_name = "reference"];</code>
+     * @return The reference.
+     */
+    @java.lang.Override
+    public java.lang.String getReference() {
+      java.lang.Object ref = reference_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reference_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A reference to be added to every order created out of this liquidityProvisionSubmission
+     * </pre>
+     *
+     * <code>string reference = 6 [json_name = "reference"];</code>
+     * @return The bytes for reference.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getReferenceBytes() {
+      java.lang.Object ref = reference_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reference_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -65845,6 +65918,9 @@ public final class Vega {
       for (int i = 0; i < buys_.size(); i++) {
         output.writeMessage(5, buys_.get(i));
       }
+      if (!getReferenceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, reference_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -65872,6 +65948,9 @@ public final class Vega {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, buys_.get(i));
       }
+      if (!getReferenceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, reference_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -65897,6 +65976,8 @@ public final class Vega {
           .equals(other.getSellsList())) return false;
       if (!getBuysList()
           .equals(other.getBuysList())) return false;
+      if (!getReference()
+          .equals(other.getReference())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -65923,6 +66004,8 @@ public final class Vega {
         hash = (37 * hash) + BUYS_FIELD_NUMBER;
         hash = (53 * hash) + getBuysList().hashCode();
       }
+      hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
+      hash = (53 * hash) + getReference().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -66076,6 +66159,8 @@ public final class Vega {
         } else {
           buysBuilder_.clear();
         }
+        reference_ = "";
+
         return this;
       }
 
@@ -66124,6 +66209,7 @@ public final class Vega {
         } else {
           result.buys_ = buysBuilder_.build();
         }
+        result.reference_ = reference_;
         onBuilt();
         return result;
       }
@@ -66234,6 +66320,10 @@ public final class Vega {
               buysBuilder_.addAllMessages(other.buys_);
             }
           }
+        }
+        if (!other.getReference().isEmpty()) {
+          reference_ = other.reference_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -67122,6 +67212,102 @@ public final class Vega {
           buys_ = null;
         }
         return buysBuilder_;
+      }
+
+      private java.lang.Object reference_ = "";
+      /**
+       * <pre>
+       * A reference to be added to every order created out of this liquidityProvisionSubmission
+       * </pre>
+       *
+       * <code>string reference = 6 [json_name = "reference"];</code>
+       * @return The reference.
+       */
+      public java.lang.String getReference() {
+        java.lang.Object ref = reference_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reference_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A reference to be added to every order created out of this liquidityProvisionSubmission
+       * </pre>
+       *
+       * <code>string reference = 6 [json_name = "reference"];</code>
+       * @return The bytes for reference.
+       */
+      public com.google.protobuf.ByteString
+          getReferenceBytes() {
+        java.lang.Object ref = reference_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          reference_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A reference to be added to every order created out of this liquidityProvisionSubmission
+       * </pre>
+       *
+       * <code>string reference = 6 [json_name = "reference"];</code>
+       * @param value The reference to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReference(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        reference_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A reference to be added to every order created out of this liquidityProvisionSubmission
+       * </pre>
+       *
+       * <code>string reference = 6 [json_name = "reference"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReference() {
+
+        reference_ = getDefaultInstance().getReference();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A reference to be added to every order created out of this liquidityProvisionSubmission
+       * </pre>
+       *
+       * <code>string reference = 6 [json_name = "reference"];</code>
+       * @param value The bytes for reference to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReferenceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        reference_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -68293,6 +68479,26 @@ public final class Vega {
      * @return The status.
      */
     io.vegaprotocol.vega.Vega.LiquidityProvision.Status getStatus();
+
+    /**
+     * <pre>
+     * A reference shared between this liquidity provision and all it's orders
+     * </pre>
+     *
+     * <code>string reference = 12 [json_name = "reference"];</code>
+     * @return The reference.
+     */
+    java.lang.String getReference();
+    /**
+     * <pre>
+     * A reference shared between this liquidity provision and all it's orders
+     * </pre>
+     *
+     * <code>string reference = 12 [json_name = "reference"];</code>
+     * @return The bytes for reference.
+     */
+    com.google.protobuf.ByteString
+        getReferenceBytes();
   }
   /**
    * <pre>
@@ -68319,6 +68525,7 @@ public final class Vega {
       buys_ = java.util.Collections.emptyList();
       version_ = "";
       status_ = 0;
+      reference_ = "";
     }
 
     @java.lang.Override
@@ -68419,6 +68626,12 @@ public final class Vega {
               int rawValue = input.readEnum();
 
               status_ = rawValue;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reference_ = s;
               break;
             }
             default: {
@@ -69079,6 +69292,52 @@ public final class Vega {
       return result == null ? io.vegaprotocol.vega.Vega.LiquidityProvision.Status.UNRECOGNIZED : result;
     }
 
+    public static final int REFERENCE_FIELD_NUMBER = 12;
+    private volatile java.lang.Object reference_;
+    /**
+     * <pre>
+     * A reference shared between this liquidity provision and all it's orders
+     * </pre>
+     *
+     * <code>string reference = 12 [json_name = "reference"];</code>
+     * @return The reference.
+     */
+    @java.lang.Override
+    public java.lang.String getReference() {
+      java.lang.Object ref = reference_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reference_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A reference shared between this liquidity provision and all it's orders
+     * </pre>
+     *
+     * <code>string reference = 12 [json_name = "reference"];</code>
+     * @return The bytes for reference.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getReferenceBytes() {
+      java.lang.Object ref = reference_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reference_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -69125,6 +69384,9 @@ public final class Vega {
       }
       if (status_ != io.vegaprotocol.vega.Vega.LiquidityProvision.Status.STATUS_UNSPECIFIED.getNumber()) {
         output.writeEnum(11, status_);
+      }
+      if (!getReferenceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, reference_);
       }
       unknownFields.writeTo(output);
     }
@@ -69174,6 +69436,9 @@ public final class Vega {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, status_);
       }
+      if (!getReferenceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, reference_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -69210,6 +69475,8 @@ public final class Vega {
       if (!getVersion()
           .equals(other.getVersion())) return false;
       if (status_ != other.status_) return false;
+      if (!getReference()
+          .equals(other.getReference())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -69250,6 +69517,8 @@ public final class Vega {
       hash = (53 * hash) + getVersion().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
+      hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
+      hash = (53 * hash) + getReference().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -69419,6 +69688,8 @@ public final class Vega {
 
         status_ = 0;
 
+        reference_ = "";
+
         return this;
       }
 
@@ -69473,6 +69744,7 @@ public final class Vega {
         }
         result.version_ = version_;
         result.status_ = status_;
+        result.reference_ = reference_;
         onBuilt();
         return result;
       }
@@ -69604,6 +69876,10 @@ public final class Vega {
         }
         if (other.status_ != 0) {
           setStatusValue(other.getStatusValue());
+        }
+        if (!other.getReference().isEmpty()) {
+          reference_ = other.reference_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -70944,6 +71220,102 @@ public final class Vega {
       public Builder clearStatus() {
 
         status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object reference_ = "";
+      /**
+       * <pre>
+       * A reference shared between this liquidity provision and all it's orders
+       * </pre>
+       *
+       * <code>string reference = 12 [json_name = "reference"];</code>
+       * @return The reference.
+       */
+      public java.lang.String getReference() {
+        java.lang.Object ref = reference_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reference_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A reference shared between this liquidity provision and all it's orders
+       * </pre>
+       *
+       * <code>string reference = 12 [json_name = "reference"];</code>
+       * @return The bytes for reference.
+       */
+      public com.google.protobuf.ByteString
+          getReferenceBytes() {
+        java.lang.Object ref = reference_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          reference_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A reference shared between this liquidity provision and all it's orders
+       * </pre>
+       *
+       * <code>string reference = 12 [json_name = "reference"];</code>
+       * @param value The reference to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReference(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        reference_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A reference shared between this liquidity provision and all it's orders
+       * </pre>
+       *
+       * <code>string reference = 12 [json_name = "reference"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReference() {
+
+        reference_ = getDefaultInstance().getReference();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A reference shared between this liquidity provision and all it's orders
+       * </pre>
+       *
+       * <code>string reference = 12 [json_name = "reference"];</code>
+       * @param value The bytes for reference to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReferenceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        reference_ = value;
         onChanged();
         return this;
       }
@@ -73430,134 +73802,136 @@ public final class Vega {
       "idityOrder\0223\n\treference\030\001 \001(\0162\025.vega.Peg" +
       "gedReferenceR\treference\022\036\n\nproportion\030\002 " +
       "\001(\rR\nproportion\022\026\n\006offset\030\003 \001(\003R\006offset\"" +
-      "\330\001\n\034LiquidityProvisionSubmission\022#\n\tmark" +
+      "\366\001\n\034LiquidityProvisionSubmission\022#\n\tmark" +
       "et_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022+\n\021commitm" +
       "ent_amount\030\002 \001(\004R\020commitmentAmount\022\020\n\003fe" +
       "e\030\003 \001(\tR\003fee\022*\n\005sells\030\004 \003(\0132\024.vega.Liqui" +
       "dityOrderR\005sells\022(\n\004buys\030\005 \003(\0132\024.vega.Li" +
-      "quidityOrderR\004buys\"s\n\027LiquidityOrderRefe" +
-      "rence\022\031\n\010order_id\030\001 \001(\tR\007orderId\022=\n\017liqu" +
-      "idity_order\030\002 \001(\0132\024.vega.LiquidityOrderR" +
-      "\016liquidityOrder\"\250\004\n\022LiquidityProvision\022\016" +
-      "\n\002id\030\001 \001(\tR\002id\022\031\n\010party_id\030\002 \001(\tR\007partyI" +
-      "d\022\035\n\ncreated_at\030\003 \001(\003R\tcreatedAt\022\035\n\nupda" +
-      "ted_at\030\004 \001(\003R\tupdatedAt\022#\n\tmarket_id\030\005 \001" +
-      "(\tB\006\342\337\037\002X\001R\010marketId\022+\n\021commitment_amoun" +
-      "t\030\006 \001(\004R\020commitmentAmount\022\020\n\003fee\030\007 \001(\tR\003" +
-      "fee\0223\n\005sells\030\010 \003(\0132\035.vega.LiquidityOrder" +
-      "ReferenceR\005sells\0221\n\004buys\030\t \003(\0132\035.vega.Li" +
-      "quidityOrderReferenceR\004buys\022\030\n\007version\030\n" +
-      " \001(\tR\007version\0227\n\006status\030\013 \001(\0162\037.vega.Liq" +
-      "uidityProvision.StatusR\006status\"\211\001\n\006Statu" +
-      "s\022\026\n\022STATUS_UNSPECIFIED\020\000\022\021\n\rSTATUS_ACTI" +
-      "VE\020\001\022\022\n\016STATUS_STOPPED\020\002\022\024\n\020STATUS_CANCE" +
-      "LLED\020\003\022\023\n\017STATUS_REJECTED\020\004\022\025\n\021STATUS_UN" +
-      "DEPLOYED\020\005\"\227\001\n\016EthereumConfig\022\035\n\nnetwork" +
-      "_id\030\001 \001(\tR\tnetworkId\022\031\n\010chain_id\030\002 \001(\tR\007" +
-      "chainId\022%\n\016bridge_address\030\003 \001(\tR\rbridgeA" +
-      "ddress\022$\n\rconfirmations\030\004 \001(\rR\rconfirmat" +
-      "ions\"\277\001\n\024OracleDataSubmission\022?\n\006source\030" +
-      "\001 \001(\0162\'.vega.OracleDataSubmission.Oracle" +
-      "SourceR\006source\022\030\n\007payload\030\002 \001(\014R\007payload" +
-      "\"L\n\014OracleSource\022\035\n\031ORACLE_SOURCE_UNSPEC" +
-      "IFIED\020\000\022\035\n\031ORACLE_SOURCE_OPEN_ORACLE\020\001*9" +
-      "\n\004Side\022\024\n\020SIDE_UNSPECIFIED\020\000\022\014\n\010SIDE_BUY" +
-      "\020\001\022\r\n\tSIDE_SELL\020\002*\230\001\n\010Interval\022\030\n\024INTERV" +
-      "AL_UNSPECIFIED\020\000\022\020\n\014INTERVAL_I1M\020<\022\021\n\014IN" +
-      "TERVAL_I5M\020\254\002\022\022\n\rINTERVAL_I15M\020\204\007\022\021\n\014INT" +
-      "ERVAL_I1H\020\220\034\022\022\n\014INTERVAL_I6H\020\340\250\001\022\022\n\014INTE" +
-      "RVAL_I1D\020\200\243\005*\243\001\n\016AuctionTrigger\022\037\n\033AUCTI" +
-      "ON_TRIGGER_UNSPECIFIED\020\000\022\031\n\025AUCTION_TRIG" +
-      "GER_BATCH\020\001\022\033\n\027AUCTION_TRIGGER_OPENING\020\002" +
-      "\022\031\n\025AUCTION_TRIGGER_PRICE\020\003\022\035\n\031AUCTION_T" +
-      "RIGGER_LIQUIDITY\020\004*\213\001\n\017PeggedReference\022 " +
-      "\n\034PEGGED_REFERENCE_UNSPECIFIED\020\000\022\030\n\024PEGG" +
-      "ED_REFERENCE_MID\020\001\022\035\n\031PEGGED_REFERENCE_B" +
-      "EST_BID\020\002\022\035\n\031PEGGED_REFERENCE_BEST_ASK\020\003" +
-      "*\276\017\n\nOrderError\022\033\n\027ORDER_ERROR_UNSPECIFI" +
-      "ED\020\000\022!\n\035ORDER_ERROR_INVALID_MARKET_ID\020\001\022" +
-      " \n\034ORDER_ERROR_INVALID_ORDER_ID\020\002\022\037\n\033ORD" +
-      "ER_ERROR_OUT_OF_SEQUENCE\020\003\022&\n\"ORDER_ERRO" +
-      "R_INVALID_REMAINING_SIZE\020\004\022\034\n\030ORDER_ERRO" +
-      "R_TIME_FAILURE\020\005\022\037\n\033ORDER_ERROR_REMOVAL_" +
-      "FAILURE\020\006\022+\n\'ORDER_ERROR_INVALID_EXPIRAT" +
-      "ION_DATETIME\020\007\022\'\n#ORDER_ERROR_INVALID_OR" +
-      "DER_REFERENCE\020\010\022 \n\034ORDER_ERROR_EDIT_NOT_" +
-      "ALLOWED\020\t\022\035\n\031ORDER_ERROR_AMEND_FAILURE\020\n" +
-      "\022\031\n\025ORDER_ERROR_NOT_FOUND\020\013\022 \n\034ORDER_ERR" +
-      "OR_INVALID_PARTY_ID\020\014\022\035\n\031ORDER_ERROR_MAR" +
-      "KET_CLOSED\020\r\022#\n\037ORDER_ERROR_MARGIN_CHECK" +
-      "_FAILED\020\016\022\'\n#ORDER_ERROR_MISSING_GENERAL" +
-      "_ACCOUNT\020\017\022\036\n\032ORDER_ERROR_INTERNAL_ERROR" +
-      "\020\020\022\034\n\030ORDER_ERROR_INVALID_SIZE\020\021\022#\n\037ORDE" +
-      "R_ERROR_INVALID_PERSISTENCE\020\022\022\034\n\030ORDER_E" +
-      "RROR_INVALID_TYPE\020\023\022\034\n\030ORDER_ERROR_SELF_" +
-      "TRADING\020\024\022.\n*ORDER_ERROR_INSUFFICIENT_FU" +
-      "NDS_TO_PAY_FEES\020\025\022%\n!ORDER_ERROR_INCORRE" +
-      "CT_MARKET_TYPE\020\026\022%\n!ORDER_ERROR_INVALID_" +
-      "TIME_IN_FORCE\020\027\022+\n\'ORDER_ERROR_GFN_ORDER" +
-      "_DURING_AN_AUCTION\020\030\0223\n/ORDER_ERROR_GFA_" +
-      "ORDER_DURING_CONTINUOUS_TRADING\020\031\0224\n0ORD" +
-      "ER_ERROR_CANNOT_AMEND_TO_GTT_WITHOUT_EXP" +
-      "IRYAT\020\032\022)\n%ORDER_ERROR_EXPIRYAT_BEFORE_C" +
-      "REATEDAT\020\033\022,\n(ORDER_ERROR_CANNOT_HAVE_GT" +
-      "C_AND_EXPIRYAT\020\034\022*\n&ORDER_ERROR_CANNOT_A" +
-      "MEND_TO_FOK_OR_IOC\020\035\022*\n&ORDER_ERROR_CANN" +
-      "OT_AMEND_TO_GFA_OR_GFN\020\036\022,\n(ORDER_ERROR_" +
-      "CANNOT_AMEND_FROM_GFA_OR_GFN\020\037\0224\n0ORDER_" +
-      "ERROR_CANNOT_SEND_IOC_ORDER_DURING_AUCTI" +
-      "ON\020 \0224\n0ORDER_ERROR_CANNOT_SEND_FOK_ORDE" +
-      "R_DURING_AUCTION\020!\022#\n\037ORDER_ERROR_MUST_B" +
-      "E_LIMIT_ORDER\020\"\022\"\n\036ORDER_ERROR_MUST_BE_G" +
-      "TT_OR_GTC\020#\022\'\n#ORDER_ERROR_WITHOUT_REFER" +
-      "ENCE_PRICE\020$\0223\n/ORDER_ERROR_BUY_CANNOT_R" +
-      "EFERENCE_BEST_ASK_PRICE\020%\0224\n0ORDER_ERROR" +
-      "_OFFSET_MUST_BE_LESS_OR_EQUAL_TO_ZERO\020&\022" +
-      "-\n)ORDER_ERROR_OFFSET_MUST_BE_LESS_THAN_" +
-      "ZERO\020\'\0227\n3ORDER_ERROR_OFFSET_MUST_BE_GRE" +
-      "ATER_OR_EQUAL_TO_ZERO\020(\0224\n0ORDER_ERROR_S" +
-      "ELL_CANNOT_REFERENCE_BEST_BID_PRICE\020)\0220\n" +
-      ",ORDER_ERROR_OFFSET_MUST_BE_GREATER_THAN" +
-      "_ZERO\020*\022*\n&ORDER_ERROR_INSUFFICIENT_ASSE" +
-      "T_BALANCE\020+\022E\nAORDER_ERROR_CANNOT_AMEND_" +
-      "PEGGED_ORDER_DETAILS_ON_NON_PEGGED_ORDER" +
-      "\020,\022.\n*ORDER_ERROR_UNABLE_TO_REPRICE_PEGG" +
-      "ED_ORDER\020-\0225\n1ORDER_ERROR_UNABLE_TO_AMEN" +
-      "D_PRICE_ON_PEGGED_ORDER\020.*\202\001\n\013ChainStatu" +
-      "s\022\034\n\030CHAIN_STATUS_UNSPECIFIED\020\000\022\035\n\031CHAIN" +
-      "_STATUS_DISCONNECTED\020\001\022\032\n\026CHAIN_STATUS_R" +
-      "EPLAYING\020\002\022\032\n\026CHAIN_STATUS_CONNECTED\020\003*\315" +
-      "\002\n\013AccountType\022\034\n\030ACCOUNT_TYPE_UNSPECIFI" +
-      "ED\020\000\022\032\n\026ACCOUNT_TYPE_INSURANCE\020\001\022\033\n\027ACCO" +
-      "UNT_TYPE_SETTLEMENT\020\002\022\027\n\023ACCOUNT_TYPE_MA" +
-      "RGIN\020\003\022\030\n\024ACCOUNT_TYPE_GENERAL\020\004\022$\n ACCO" +
-      "UNT_TYPE_FEES_INFRASTRUCTURE\020\005\022\037\n\033ACCOUN" +
-      "T_TYPE_FEES_LIQUIDITY\020\006\022\033\n\027ACCOUNT_TYPE_" +
-      "FEES_MAKER\020\007\022\036\n\032ACCOUNT_TYPE_LOCK_WITHDR" +
-      "AW\020\010\022\025\n\021ACCOUNT_TYPE_BOND\020\t\022\031\n\025ACCOUNT_T" +
-      "YPE_EXTERNAL\020\n*\263\005\n\014TransferType\022\035\n\031TRANS" +
-      "FER_TYPE_UNSPECIFIED\020\000\022\026\n\022TRANSFER_TYPE_" +
-      "LOSS\020\001\022\025\n\021TRANSFER_TYPE_WIN\020\002\022\027\n\023TRANSFE" +
-      "R_TYPE_CLOSE\020\003\022\032\n\026TRANSFER_TYPE_MTM_LOSS" +
-      "\020\004\022\031\n\025TRANSFER_TYPE_MTM_WIN\020\005\022\034\n\030TRANSFE" +
-      "R_TYPE_MARGIN_LOW\020\006\022\035\n\031TRANSFER_TYPE_MAR" +
-      "GIN_HIGH\020\007\022$\n TRANSFER_TYPE_MARGIN_CONFI" +
-      "SCATED\020\010\022\037\n\033TRANSFER_TYPE_MAKER_FEE_PAY\020" +
-      "\t\022#\n\037TRANSFER_TYPE_MAKER_FEE_RECEIVE\020\n\022(" +
-      "\n$TRANSFER_TYPE_INFRASTRUCTURE_FEE_PAY\020\013" +
-      "\022/\n+TRANSFER_TYPE_INFRASTRUCTURE_FEE_DIS" +
-      "TRIBUTE\020\014\022#\n\037TRANSFER_TYPE_LIQUIDITY_FEE" +
-      "_PAY\020\r\022*\n&TRANSFER_TYPE_LIQUIDITY_FEE_DI" +
-      "STRIBUTE\020\016\022\032\n\026TRANSFER_TYPE_BOND_LOW\020\017\022\033",
-      "\n\027TRANSFER_TYPE_BOND_HIGH\020\020\022\037\n\033TRANSFER_" +
-      "TYPE_WITHDRAW_LOCK\020\021\022\032\n\026TRANSFER_TYPE_WI" +
-      "THDRAW\020\022\022\031\n\025TRANSFER_TYPE_DEPOSIT\020\023\022\037\n\033T" +
-      "RANSFER_TYPE_BOND_SLASHING\020\024*\205\001\n\021NodeSig" +
-      "natureKind\022#\n\037NODE_SIGNATURE_KIND_UNSPEC" +
-      "IFIED\020\000\022!\n\035NODE_SIGNATURE_KIND_ASSET_NEW" +
-      "\020\001\022(\n$NODE_SIGNATURE_KIND_ASSET_WITHDRAW" +
-      "AL\020\002B7\n\024io.vegaprotocol.vegaZ\037code.vegap" +
-      "rotocol.io/vega/protob\006proto3"
+      "quidityOrderR\004buys\022\034\n\treference\030\006 \001(\tR\tr" +
+      "eference\"s\n\027LiquidityOrderReference\022\031\n\010o" +
+      "rder_id\030\001 \001(\tR\007orderId\022=\n\017liquidity_orde" +
+      "r\030\002 \001(\0132\024.vega.LiquidityOrderR\016liquidity" +
+      "Order\"\306\004\n\022LiquidityProvision\022\016\n\002id\030\001 \001(\t" +
+      "R\002id\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\035\n\ncreat" +
+      "ed_at\030\003 \001(\003R\tcreatedAt\022\035\n\nupdated_at\030\004 \001" +
+      "(\003R\tupdatedAt\022#\n\tmarket_id\030\005 \001(\tB\006\342\337\037\002X\001" +
+      "R\010marketId\022+\n\021commitment_amount\030\006 \001(\004R\020c" +
+      "ommitmentAmount\022\020\n\003fee\030\007 \001(\tR\003fee\0223\n\005sel" +
+      "ls\030\010 \003(\0132\035.vega.LiquidityOrderReferenceR" +
+      "\005sells\0221\n\004buys\030\t \003(\0132\035.vega.LiquidityOrd" +
+      "erReferenceR\004buys\022\030\n\007version\030\n \001(\tR\007vers" +
+      "ion\0227\n\006status\030\013 \001(\0162\037.vega.LiquidityProv" +
+      "ision.StatusR\006status\022\034\n\treference\030\014 \001(\tR" +
+      "\treference\"\211\001\n\006Status\022\026\n\022STATUS_UNSPECIF" +
+      "IED\020\000\022\021\n\rSTATUS_ACTIVE\020\001\022\022\n\016STATUS_STOPP" +
+      "ED\020\002\022\024\n\020STATUS_CANCELLED\020\003\022\023\n\017STATUS_REJ" +
+      "ECTED\020\004\022\025\n\021STATUS_UNDEPLOYED\020\005\"\227\001\n\016Ether" +
+      "eumConfig\022\035\n\nnetwork_id\030\001 \001(\tR\tnetworkId" +
+      "\022\031\n\010chain_id\030\002 \001(\tR\007chainId\022%\n\016bridge_ad" +
+      "dress\030\003 \001(\tR\rbridgeAddress\022$\n\rconfirmati" +
+      "ons\030\004 \001(\rR\rconfirmations\"\277\001\n\024OracleDataS" +
+      "ubmission\022?\n\006source\030\001 \001(\0162\'.vega.OracleD" +
+      "ataSubmission.OracleSourceR\006source\022\030\n\007pa" +
+      "yload\030\002 \001(\014R\007payload\"L\n\014OracleSource\022\035\n\031" +
+      "ORACLE_SOURCE_UNSPECIFIED\020\000\022\035\n\031ORACLE_SO" +
+      "URCE_OPEN_ORACLE\020\001*9\n\004Side\022\024\n\020SIDE_UNSPE" +
+      "CIFIED\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n\tSIDE_SELL\020\002*\230\001" +
+      "\n\010Interval\022\030\n\024INTERVAL_UNSPECIFIED\020\000\022\020\n\014" +
+      "INTERVAL_I1M\020<\022\021\n\014INTERVAL_I5M\020\254\002\022\022\n\rINT" +
+      "ERVAL_I15M\020\204\007\022\021\n\014INTERVAL_I1H\020\220\034\022\022\n\014INTE" +
+      "RVAL_I6H\020\340\250\001\022\022\n\014INTERVAL_I1D\020\200\243\005*\243\001\n\016Auc" +
+      "tionTrigger\022\037\n\033AUCTION_TRIGGER_UNSPECIFI" +
+      "ED\020\000\022\031\n\025AUCTION_TRIGGER_BATCH\020\001\022\033\n\027AUCTI" +
+      "ON_TRIGGER_OPENING\020\002\022\031\n\025AUCTION_TRIGGER_" +
+      "PRICE\020\003\022\035\n\031AUCTION_TRIGGER_LIQUIDITY\020\004*\213" +
+      "\001\n\017PeggedReference\022 \n\034PEGGED_REFERENCE_U" +
+      "NSPECIFIED\020\000\022\030\n\024PEGGED_REFERENCE_MID\020\001\022\035" +
+      "\n\031PEGGED_REFERENCE_BEST_BID\020\002\022\035\n\031PEGGED_" +
+      "REFERENCE_BEST_ASK\020\003*\276\017\n\nOrderError\022\033\n\027O" +
+      "RDER_ERROR_UNSPECIFIED\020\000\022!\n\035ORDER_ERROR_" +
+      "INVALID_MARKET_ID\020\001\022 \n\034ORDER_ERROR_INVAL" +
+      "ID_ORDER_ID\020\002\022\037\n\033ORDER_ERROR_OUT_OF_SEQU" +
+      "ENCE\020\003\022&\n\"ORDER_ERROR_INVALID_REMAINING_" +
+      "SIZE\020\004\022\034\n\030ORDER_ERROR_TIME_FAILURE\020\005\022\037\n\033" +
+      "ORDER_ERROR_REMOVAL_FAILURE\020\006\022+\n\'ORDER_E" +
+      "RROR_INVALID_EXPIRATION_DATETIME\020\007\022\'\n#OR" +
+      "DER_ERROR_INVALID_ORDER_REFERENCE\020\010\022 \n\034O" +
+      "RDER_ERROR_EDIT_NOT_ALLOWED\020\t\022\035\n\031ORDER_E" +
+      "RROR_AMEND_FAILURE\020\n\022\031\n\025ORDER_ERROR_NOT_" +
+      "FOUND\020\013\022 \n\034ORDER_ERROR_INVALID_PARTY_ID\020" +
+      "\014\022\035\n\031ORDER_ERROR_MARKET_CLOSED\020\r\022#\n\037ORDE" +
+      "R_ERROR_MARGIN_CHECK_FAILED\020\016\022\'\n#ORDER_E" +
+      "RROR_MISSING_GENERAL_ACCOUNT\020\017\022\036\n\032ORDER_" +
+      "ERROR_INTERNAL_ERROR\020\020\022\034\n\030ORDER_ERROR_IN" +
+      "VALID_SIZE\020\021\022#\n\037ORDER_ERROR_INVALID_PERS" +
+      "ISTENCE\020\022\022\034\n\030ORDER_ERROR_INVALID_TYPE\020\023\022" +
+      "\034\n\030ORDER_ERROR_SELF_TRADING\020\024\022.\n*ORDER_E" +
+      "RROR_INSUFFICIENT_FUNDS_TO_PAY_FEES\020\025\022%\n" +
+      "!ORDER_ERROR_INCORRECT_MARKET_TYPE\020\026\022%\n!" +
+      "ORDER_ERROR_INVALID_TIME_IN_FORCE\020\027\022+\n\'O" +
+      "RDER_ERROR_GFN_ORDER_DURING_AN_AUCTION\020\030" +
+      "\0223\n/ORDER_ERROR_GFA_ORDER_DURING_CONTINU" +
+      "OUS_TRADING\020\031\0224\n0ORDER_ERROR_CANNOT_AMEN" +
+      "D_TO_GTT_WITHOUT_EXPIRYAT\020\032\022)\n%ORDER_ERR" +
+      "OR_EXPIRYAT_BEFORE_CREATEDAT\020\033\022,\n(ORDER_" +
+      "ERROR_CANNOT_HAVE_GTC_AND_EXPIRYAT\020\034\022*\n&" +
+      "ORDER_ERROR_CANNOT_AMEND_TO_FOK_OR_IOC\020\035" +
+      "\022*\n&ORDER_ERROR_CANNOT_AMEND_TO_GFA_OR_G" +
+      "FN\020\036\022,\n(ORDER_ERROR_CANNOT_AMEND_FROM_GF" +
+      "A_OR_GFN\020\037\0224\n0ORDER_ERROR_CANNOT_SEND_IO" +
+      "C_ORDER_DURING_AUCTION\020 \0224\n0ORDER_ERROR_" +
+      "CANNOT_SEND_FOK_ORDER_DURING_AUCTION\020!\022#" +
+      "\n\037ORDER_ERROR_MUST_BE_LIMIT_ORDER\020\"\022\"\n\036O" +
+      "RDER_ERROR_MUST_BE_GTT_OR_GTC\020#\022\'\n#ORDER" +
+      "_ERROR_WITHOUT_REFERENCE_PRICE\020$\0223\n/ORDE" +
+      "R_ERROR_BUY_CANNOT_REFERENCE_BEST_ASK_PR" +
+      "ICE\020%\0224\n0ORDER_ERROR_OFFSET_MUST_BE_LESS" +
+      "_OR_EQUAL_TO_ZERO\020&\022-\n)ORDER_ERROR_OFFSE" +
+      "T_MUST_BE_LESS_THAN_ZERO\020\'\0227\n3ORDER_ERRO" +
+      "R_OFFSET_MUST_BE_GREATER_OR_EQUAL_TO_ZER" +
+      "O\020(\0224\n0ORDER_ERROR_SELL_CANNOT_REFERENCE" +
+      "_BEST_BID_PRICE\020)\0220\n,ORDER_ERROR_OFFSET_" +
+      "MUST_BE_GREATER_THAN_ZERO\020*\022*\n&ORDER_ERR" +
+      "OR_INSUFFICIENT_ASSET_BALANCE\020+\022E\nAORDER" +
+      "_ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAILS" +
+      "_ON_NON_PEGGED_ORDER\020,\022.\n*ORDER_ERROR_UN" +
+      "ABLE_TO_REPRICE_PEGGED_ORDER\020-\0225\n1ORDER_" +
+      "ERROR_UNABLE_TO_AMEND_PRICE_ON_PEGGED_OR" +
+      "DER\020.*\202\001\n\013ChainStatus\022\034\n\030CHAIN_STATUS_UN" +
+      "SPECIFIED\020\000\022\035\n\031CHAIN_STATUS_DISCONNECTED" +
+      "\020\001\022\032\n\026CHAIN_STATUS_REPLAYING\020\002\022\032\n\026CHAIN_" +
+      "STATUS_CONNECTED\020\003*\315\002\n\013AccountType\022\034\n\030AC" +
+      "COUNT_TYPE_UNSPECIFIED\020\000\022\032\n\026ACCOUNT_TYPE" +
+      "_INSURANCE\020\001\022\033\n\027ACCOUNT_TYPE_SETTLEMENT\020" +
+      "\002\022\027\n\023ACCOUNT_TYPE_MARGIN\020\003\022\030\n\024ACCOUNT_TY" +
+      "PE_GENERAL\020\004\022$\n ACCOUNT_TYPE_FEES_INFRAS" +
+      "TRUCTURE\020\005\022\037\n\033ACCOUNT_TYPE_FEES_LIQUIDIT" +
+      "Y\020\006\022\033\n\027ACCOUNT_TYPE_FEES_MAKER\020\007\022\036\n\032ACCO" +
+      "UNT_TYPE_LOCK_WITHDRAW\020\010\022\025\n\021ACCOUNT_TYPE" +
+      "_BOND\020\t\022\031\n\025ACCOUNT_TYPE_EXTERNAL\020\n*\263\005\n\014T" +
+      "ransferType\022\035\n\031TRANSFER_TYPE_UNSPECIFIED" +
+      "\020\000\022\026\n\022TRANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSFER_T" +
+      "YPE_WIN\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032\n\026TR" +
+      "ANSFER_TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_TYPE_" +
+      "MTM_WIN\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_LOW\020\006\022" +
+      "\035\n\031TRANSFER_TYPE_MARGIN_HIGH\020\007\022$\n TRANSF" +
+      "ER_TYPE_MARGIN_CONFISCATED\020\010\022\037\n\033TRANSFER" +
+      "_TYPE_MAKER_FEE_PAY\020\t\022#\n\037TRANSFER_TYPE_M" +
+      "AKER_FEE_RECEIVE\020\n\022(\n$TRANSFER_TYPE_INFR" +
+      "ASTRUCTURE_FEE_PAY\020\013\022/\n+TRANSFER_TYPE_IN" +
+      "FRASTRUCTURE_FEE_DISTRIBUTE\020\014\022#\n\037TRANSFE" +
+      "R_TYPE_LIQUIDITY_FEE_PAY\020\r\022*\n&TRANSFER_T",
+      "YPE_LIQUIDITY_FEE_DISTRIBUTE\020\016\022\032\n\026TRANSF" +
+      "ER_TYPE_BOND_LOW\020\017\022\033\n\027TRANSFER_TYPE_BOND" +
+      "_HIGH\020\020\022\037\n\033TRANSFER_TYPE_WITHDRAW_LOCK\020\021" +
+      "\022\032\n\026TRANSFER_TYPE_WITHDRAW\020\022\022\031\n\025TRANSFER" +
+      "_TYPE_DEPOSIT\020\023\022\037\n\033TRANSFER_TYPE_BOND_SL" +
+      "ASHING\020\024*\205\001\n\021NodeSignatureKind\022#\n\037NODE_S" +
+      "IGNATURE_KIND_UNSPECIFIED\020\000\022!\n\035NODE_SIGN" +
+      "ATURE_KIND_ASSET_NEW\020\001\022(\n$NODE_SIGNATURE" +
+      "_KIND_ASSET_WITHDRAWAL\020\002B7\n\024io.vegaproto" +
+      "col.vegaZ\037code.vegaprotocol.io/vega/prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -73871,7 +74245,7 @@ public final class Vega {
     internal_static_vega_LiquidityProvisionSubmission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_LiquidityProvisionSubmission_descriptor,
-        new java.lang.String[] { "MarketId", "CommitmentAmount", "Fee", "Sells", "Buys", });
+        new java.lang.String[] { "MarketId", "CommitmentAmount", "Fee", "Sells", "Buys", "Reference", });
     internal_static_vega_LiquidityOrderReference_descriptor =
       getDescriptor().getMessageTypes().get(49);
     internal_static_vega_LiquidityOrderReference_fieldAccessorTable = new
@@ -73883,7 +74257,7 @@ public final class Vega {
     internal_static_vega_LiquidityProvision_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_LiquidityProvision_descriptor,
-        new java.lang.String[] { "Id", "PartyId", "CreatedAt", "UpdatedAt", "MarketId", "CommitmentAmount", "Fee", "Sells", "Buys", "Version", "Status", });
+        new java.lang.String[] { "Id", "PartyId", "CreatedAt", "UpdatedAt", "MarketId", "CommitmentAmount", "Fee", "Sells", "Buys", "Version", "Status", "Reference", });
     internal_static_vega_EthereumConfig_descriptor =
       getDescriptor().getMessageTypes().get(51);
     internal_static_vega_EthereumConfig_fieldAccessorTable = new

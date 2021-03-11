@@ -1948,7 +1948,9 @@ class TradingDataService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::PartyAccountsResponse>> PrepareAsyncPartyAccounts(::grpc::ClientContext* context, const ::api::v1::PartyAccountsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::PartyAccountsResponse>>(PrepareAsyncPartyAccountsRaw(context, request, cq));
     }
-    // Get a list of infrastructure fees accounts filter eventually by assets
+    // Get a list of accounts holding infrastructure fees.
+    // Can be filtered by asset, there will be 1 infrastructure fee account per
+    // asset in the network.
     virtual ::grpc::Status FeeInfrastructureAccounts(::grpc::ClientContext* context, const ::api::v1::FeeInfrastructureAccountsRequest& request, ::api::v1::FeeInfrastructureAccountsResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::FeeInfrastructureAccountsResponse>> AsyncFeeInfrastructureAccounts(::grpc::ClientContext* context, const ::api::v1::FeeInfrastructureAccountsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::FeeInfrastructureAccountsResponse>>(AsyncFeeInfrastructureAccountsRaw(context, request, cq));
@@ -2469,6 +2471,30 @@ class TradingDataService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::LiquidityProvisionsResponse>> PrepareAsyncLiquidityProvisions(::grpc::ClientContext* context, const ::api::v1::LiquidityProvisionsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::LiquidityProvisionsResponse>>(PrepareAsyncLiquidityProvisionsRaw(context, request, cq));
     }
+    // Get an oracle spec by ID
+    virtual ::grpc::Status OracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest& request, ::api::v1::OracleSpecResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleSpecResponse>> AsyncOracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleSpecResponse>>(AsyncOracleSpecRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleSpecResponse>> PrepareAsyncOracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleSpecResponse>>(PrepareAsyncOracleSpecRaw(context, request, cq));
+    }
+    // Get the oracle specs
+    virtual ::grpc::Status OracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest& request, ::api::v1::OracleSpecsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleSpecsResponse>> AsyncOracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleSpecsResponse>>(AsyncOracleSpecsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleSpecsResponse>> PrepareAsyncOracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleSpecsResponse>>(PrepareAsyncOracleSpecsRaw(context, request, cq));
+    }
+    // Get all oracle data
+    virtual ::grpc::Status OracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest& request, ::api::v1::OracleDataBySpecResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleDataBySpecResponse>> AsyncOracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleDataBySpecResponse>>(AsyncOracleDataBySpecRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleDataBySpecResponse>> PrepareAsyncOracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleDataBySpecResponse>>(PrepareAsyncOracleDataBySpecRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -2488,7 +2514,9 @@ class TradingDataService final {
       #else
       virtual void PartyAccounts(::grpc::ClientContext* context, const ::api::v1::PartyAccountsRequest* request, ::api::v1::PartyAccountsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      // Get a list of infrastructure fees accounts filter eventually by assets
+      // Get a list of accounts holding infrastructure fees.
+      // Can be filtered by asset, there will be 1 infrastructure fee account per
+      // asset in the network.
       virtual void FeeInfrastructureAccounts(::grpc::ClientContext* context, const ::api::v1::FeeInfrastructureAccountsRequest* request, ::api::v1::FeeInfrastructureAccountsResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void FeeInfrastructureAccounts(::grpc::ClientContext* context, const ::api::v1::FeeInfrastructureAccountsRequest* request, ::api::v1::FeeInfrastructureAccountsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
@@ -2905,6 +2933,27 @@ class TradingDataService final {
       #else
       virtual void LiquidityProvisions(::grpc::ClientContext* context, const ::api::v1::LiquidityProvisionsRequest* request, ::api::v1::LiquidityProvisionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      // Get an oracle spec by ID
+      virtual void OracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest* request, ::api::v1::OracleSpecResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void OracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest* request, ::api::v1::OracleSpecResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void OracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest* request, ::api::v1::OracleSpecResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      // Get the oracle specs
+      virtual void OracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest* request, ::api::v1::OracleSpecsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void OracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest* request, ::api::v1::OracleSpecsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void OracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest* request, ::api::v1::OracleSpecsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      // Get all oracle data
+      virtual void OracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest* request, ::api::v1::OracleDataBySpecResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void OracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest* request, ::api::v1::OracleDataBySpecResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void OracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest* request, ::api::v1::OracleDataBySpecResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -3051,6 +3100,12 @@ class TradingDataService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::NetworkParametersResponse>* PrepareAsyncNetworkParametersRaw(::grpc::ClientContext* context, const ::api::v1::NetworkParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::LiquidityProvisionsResponse>* AsyncLiquidityProvisionsRaw(::grpc::ClientContext* context, const ::api::v1::LiquidityProvisionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::LiquidityProvisionsResponse>* PrepareAsyncLiquidityProvisionsRaw(::grpc::ClientContext* context, const ::api::v1::LiquidityProvisionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleSpecResponse>* AsyncOracleSpecRaw(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleSpecResponse>* PrepareAsyncOracleSpecRaw(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleSpecsResponse>* AsyncOracleSpecsRaw(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleSpecsResponse>* PrepareAsyncOracleSpecsRaw(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleDataBySpecResponse>* AsyncOracleDataBySpecRaw(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::OracleDataBySpecResponse>* PrepareAsyncOracleDataBySpecRaw(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -3512,6 +3567,27 @@ class TradingDataService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::LiquidityProvisionsResponse>> PrepareAsyncLiquidityProvisions(::grpc::ClientContext* context, const ::api::v1::LiquidityProvisionsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::LiquidityProvisionsResponse>>(PrepareAsyncLiquidityProvisionsRaw(context, request, cq));
     }
+    ::grpc::Status OracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest& request, ::api::v1::OracleSpecResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecResponse>> AsyncOracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecResponse>>(AsyncOracleSpecRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecResponse>> PrepareAsyncOracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecResponse>>(PrepareAsyncOracleSpecRaw(context, request, cq));
+    }
+    ::grpc::Status OracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest& request, ::api::v1::OracleSpecsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecsResponse>> AsyncOracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecsResponse>>(AsyncOracleSpecsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecsResponse>> PrepareAsyncOracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecsResponse>>(PrepareAsyncOracleSpecsRaw(context, request, cq));
+    }
+    ::grpc::Status OracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest& request, ::api::v1::OracleDataBySpecResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::OracleDataBySpecResponse>> AsyncOracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::OracleDataBySpecResponse>>(AsyncOracleDataBySpecRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::OracleDataBySpecResponse>> PrepareAsyncOracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::OracleDataBySpecResponse>>(PrepareAsyncOracleDataBySpecRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -3866,6 +3942,24 @@ class TradingDataService final {
       #else
       void LiquidityProvisions(::grpc::ClientContext* context, const ::api::v1::LiquidityProvisionsRequest* request, ::api::v1::LiquidityProvisionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void OracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest* request, ::api::v1::OracleSpecResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void OracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest* request, ::api::v1::OracleSpecResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void OracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest* request, ::api::v1::OracleSpecResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void OracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest* request, ::api::v1::OracleSpecsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void OracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest* request, ::api::v1::OracleSpecsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void OracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest* request, ::api::v1::OracleSpecsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void OracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest* request, ::api::v1::OracleDataBySpecResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void OracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest* request, ::api::v1::OracleDataBySpecResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void OracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest* request, ::api::v1::OracleDataBySpecResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -4014,6 +4108,12 @@ class TradingDataService final {
     ::grpc::ClientAsyncResponseReader< ::api::v1::NetworkParametersResponse>* PrepareAsyncNetworkParametersRaw(::grpc::ClientContext* context, const ::api::v1::NetworkParametersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::api::v1::LiquidityProvisionsResponse>* AsyncLiquidityProvisionsRaw(::grpc::ClientContext* context, const ::api::v1::LiquidityProvisionsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::api::v1::LiquidityProvisionsResponse>* PrepareAsyncLiquidityProvisionsRaw(::grpc::ClientContext* context, const ::api::v1::LiquidityProvisionsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecResponse>* AsyncOracleSpecRaw(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecResponse>* PrepareAsyncOracleSpecRaw(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecsResponse>* AsyncOracleSpecsRaw(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecsResponse>* PrepareAsyncOracleSpecsRaw(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::api::v1::OracleDataBySpecResponse>* AsyncOracleDataBySpecRaw(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::api::v1::OracleDataBySpecResponse>* PrepareAsyncOracleDataBySpecRaw(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_MarketAccounts_;
     const ::grpc::internal::RpcMethod rpcmethod_PartyAccounts_;
     const ::grpc::internal::RpcMethod rpcmethod_FeeInfrastructureAccounts_;
@@ -4075,6 +4175,9 @@ class TradingDataService final {
     const ::grpc::internal::RpcMethod rpcmethod_Deposits_;
     const ::grpc::internal::RpcMethod rpcmethod_NetworkParameters_;
     const ::grpc::internal::RpcMethod rpcmethod_LiquidityProvisions_;
+    const ::grpc::internal::RpcMethod rpcmethod_OracleSpec_;
+    const ::grpc::internal::RpcMethod rpcmethod_OracleSpecs_;
+    const ::grpc::internal::RpcMethod rpcmethod_OracleDataBySpec_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -4088,7 +4191,9 @@ class TradingDataService final {
     virtual ::grpc::Status MarketAccounts(::grpc::ServerContext* context, const ::api::v1::MarketAccountsRequest* request, ::api::v1::MarketAccountsResponse* response);
     // Get a list of Accounts by Party
     virtual ::grpc::Status PartyAccounts(::grpc::ServerContext* context, const ::api::v1::PartyAccountsRequest* request, ::api::v1::PartyAccountsResponse* response);
-    // Get a list of infrastructure fees accounts filter eventually by assets
+    // Get a list of accounts holding infrastructure fees.
+    // Can be filtered by asset, there will be 1 infrastructure fee account per
+    // asset in the network.
     virtual ::grpc::Status FeeInfrastructureAccounts(::grpc::ServerContext* context, const ::api::v1::FeeInfrastructureAccountsRequest* request, ::api::v1::FeeInfrastructureAccountsResponse* response);
     // -- Candles --
     //
@@ -4225,6 +4330,12 @@ class TradingDataService final {
     virtual ::grpc::Status NetworkParameters(::grpc::ServerContext* context, const ::api::v1::NetworkParametersRequest* request, ::api::v1::NetworkParametersResponse* response);
     // Get the liquidity provision orders
     virtual ::grpc::Status LiquidityProvisions(::grpc::ServerContext* context, const ::api::v1::LiquidityProvisionsRequest* request, ::api::v1::LiquidityProvisionsResponse* response);
+    // Get an oracle spec by ID
+    virtual ::grpc::Status OracleSpec(::grpc::ServerContext* context, const ::api::v1::OracleSpecRequest* request, ::api::v1::OracleSpecResponse* response);
+    // Get the oracle specs
+    virtual ::grpc::Status OracleSpecs(::grpc::ServerContext* context, const ::api::v1::OracleSpecsRequest* request, ::api::v1::OracleSpecsResponse* response);
+    // Get all oracle data
+    virtual ::grpc::Status OracleDataBySpec(::grpc::ServerContext* context, const ::api::v1::OracleDataBySpecRequest* request, ::api::v1::OracleDataBySpecResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_MarketAccounts : public BaseClass {
@@ -5446,7 +5557,67 @@ class TradingDataService final {
       ::grpc::Service::RequestAsyncUnary(60, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_MarketAccounts<WithAsyncMethod_PartyAccounts<WithAsyncMethod_FeeInfrastructureAccounts<WithAsyncMethod_Candles<WithAsyncMethod_MarketDataByID<WithAsyncMethod_MarketsData<WithAsyncMethod_MarketByID<WithAsyncMethod_MarketDepth<WithAsyncMethod_Markets<WithAsyncMethod_OrderByMarketAndID<WithAsyncMethod_OrderByReference<WithAsyncMethod_OrdersByMarket<WithAsyncMethod_OrdersByParty<WithAsyncMethod_OrderByID<WithAsyncMethod_OrderVersionsByID<WithAsyncMethod_MarginLevels<WithAsyncMethod_Parties<WithAsyncMethod_PartyByID<WithAsyncMethod_PositionsByParty<WithAsyncMethod_LastTrade<WithAsyncMethod_TradesByMarket<WithAsyncMethod_TradesByOrder<WithAsyncMethod_TradesByParty<WithAsyncMethod_GetProposals<WithAsyncMethod_GetProposalsByParty<WithAsyncMethod_GetVotesByParty<WithAsyncMethod_GetNewMarketProposals<WithAsyncMethod_GetUpdateMarketProposals<WithAsyncMethod_GetNetworkParametersProposals<WithAsyncMethod_GetNewAssetProposals<WithAsyncMethod_GetProposalByID<WithAsyncMethod_GetProposalByReference<WithAsyncMethod_ObserveGovernance<WithAsyncMethod_ObservePartyProposals<WithAsyncMethod_ObservePartyVotes<WithAsyncMethod_ObserveProposalVotes<WithAsyncMethod_ObserveEventBus<WithAsyncMethod_Statistics<WithAsyncMethod_GetVegaTime<WithAsyncMethod_AccountsSubscribe<WithAsyncMethod_CandlesSubscribe<WithAsyncMethod_MarginLevelsSubscribe<WithAsyncMethod_MarketDepthSubscribe<WithAsyncMethod_MarketDepthUpdatesSubscribe<WithAsyncMethod_MarketsDataSubscribe<WithAsyncMethod_OrdersSubscribe<WithAsyncMethod_PositionsSubscribe<WithAsyncMethod_TradesSubscribe<WithAsyncMethod_TransferResponsesSubscribe<WithAsyncMethod_GetNodeSignaturesAggregate<WithAsyncMethod_AssetByID<WithAsyncMethod_Assets<WithAsyncMethod_EstimateFee<WithAsyncMethod_EstimateMargin<WithAsyncMethod_ERC20WithdrawalApproval<WithAsyncMethod_Withdrawal<WithAsyncMethod_Withdrawals<WithAsyncMethod_Deposit<WithAsyncMethod_Deposits<WithAsyncMethod_NetworkParameters<WithAsyncMethod_LiquidityProvisions<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_OracleSpec : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_OracleSpec() {
+      ::grpc::Service::MarkMethodAsync(61);
+    }
+    ~WithAsyncMethod_OracleSpec() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status OracleSpec(::grpc::ServerContext* /*context*/, const ::api::v1::OracleSpecRequest* /*request*/, ::api::v1::OracleSpecResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestOracleSpec(::grpc::ServerContext* context, ::api::v1::OracleSpecRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::OracleSpecResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(61, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_OracleSpecs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_OracleSpecs() {
+      ::grpc::Service::MarkMethodAsync(62);
+    }
+    ~WithAsyncMethod_OracleSpecs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status OracleSpecs(::grpc::ServerContext* /*context*/, const ::api::v1::OracleSpecsRequest* /*request*/, ::api::v1::OracleSpecsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestOracleSpecs(::grpc::ServerContext* context, ::api::v1::OracleSpecsRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::OracleSpecsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(62, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_OracleDataBySpec : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_OracleDataBySpec() {
+      ::grpc::Service::MarkMethodAsync(63);
+    }
+    ~WithAsyncMethod_OracleDataBySpec() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status OracleDataBySpec(::grpc::ServerContext* /*context*/, const ::api::v1::OracleDataBySpecRequest* /*request*/, ::api::v1::OracleDataBySpecResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestOracleDataBySpec(::grpc::ServerContext* context, ::api::v1::OracleDataBySpecRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::OracleDataBySpecResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(63, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_MarketAccounts<WithAsyncMethod_PartyAccounts<WithAsyncMethod_FeeInfrastructureAccounts<WithAsyncMethod_Candles<WithAsyncMethod_MarketDataByID<WithAsyncMethod_MarketsData<WithAsyncMethod_MarketByID<WithAsyncMethod_MarketDepth<WithAsyncMethod_Markets<WithAsyncMethod_OrderByMarketAndID<WithAsyncMethod_OrderByReference<WithAsyncMethod_OrdersByMarket<WithAsyncMethod_OrdersByParty<WithAsyncMethod_OrderByID<WithAsyncMethod_OrderVersionsByID<WithAsyncMethod_MarginLevels<WithAsyncMethod_Parties<WithAsyncMethod_PartyByID<WithAsyncMethod_PositionsByParty<WithAsyncMethod_LastTrade<WithAsyncMethod_TradesByMarket<WithAsyncMethod_TradesByOrder<WithAsyncMethod_TradesByParty<WithAsyncMethod_GetProposals<WithAsyncMethod_GetProposalsByParty<WithAsyncMethod_GetVotesByParty<WithAsyncMethod_GetNewMarketProposals<WithAsyncMethod_GetUpdateMarketProposals<WithAsyncMethod_GetNetworkParametersProposals<WithAsyncMethod_GetNewAssetProposals<WithAsyncMethod_GetProposalByID<WithAsyncMethod_GetProposalByReference<WithAsyncMethod_ObserveGovernance<WithAsyncMethod_ObservePartyProposals<WithAsyncMethod_ObservePartyVotes<WithAsyncMethod_ObserveProposalVotes<WithAsyncMethod_ObserveEventBus<WithAsyncMethod_Statistics<WithAsyncMethod_GetVegaTime<WithAsyncMethod_AccountsSubscribe<WithAsyncMethod_CandlesSubscribe<WithAsyncMethod_MarginLevelsSubscribe<WithAsyncMethod_MarketDepthSubscribe<WithAsyncMethod_MarketDepthUpdatesSubscribe<WithAsyncMethod_MarketsDataSubscribe<WithAsyncMethod_OrdersSubscribe<WithAsyncMethod_PositionsSubscribe<WithAsyncMethod_TradesSubscribe<WithAsyncMethod_TransferResponsesSubscribe<WithAsyncMethod_GetNodeSignaturesAggregate<WithAsyncMethod_AssetByID<WithAsyncMethod_Assets<WithAsyncMethod_EstimateFee<WithAsyncMethod_EstimateMargin<WithAsyncMethod_ERC20WithdrawalApproval<WithAsyncMethod_Withdrawal<WithAsyncMethod_Withdrawals<WithAsyncMethod_Deposit<WithAsyncMethod_Deposits<WithAsyncMethod_NetworkParameters<WithAsyncMethod_LiquidityProvisions<WithAsyncMethod_OracleSpec<WithAsyncMethod_OracleSpecs<WithAsyncMethod_OracleDataBySpec<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_MarketAccounts : public BaseClass {
    private:
@@ -8179,11 +8350,152 @@ class TradingDataService final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_OracleSpec : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_OracleSpec() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(61,
+          new ::grpc::internal::CallbackUnaryHandler< ::api::v1::OracleSpecRequest, ::api::v1::OracleSpecResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::api::v1::OracleSpecRequest* request, ::api::v1::OracleSpecResponse* response) { return this->OracleSpec(context, request, response); }));}
+    void SetMessageAllocatorFor_OracleSpec(
+        ::grpc::experimental::MessageAllocator< ::api::v1::OracleSpecRequest, ::api::v1::OracleSpecResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(61);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(61);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::OracleSpecRequest, ::api::v1::OracleSpecResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_OracleSpec() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status OracleSpec(::grpc::ServerContext* /*context*/, const ::api::v1::OracleSpecRequest* /*request*/, ::api::v1::OracleSpecResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* OracleSpec(
+      ::grpc::CallbackServerContext* /*context*/, const ::api::v1::OracleSpecRequest* /*request*/, ::api::v1::OracleSpecResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* OracleSpec(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::api::v1::OracleSpecRequest* /*request*/, ::api::v1::OracleSpecResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_OracleSpecs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_OracleSpecs() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(62,
+          new ::grpc::internal::CallbackUnaryHandler< ::api::v1::OracleSpecsRequest, ::api::v1::OracleSpecsResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::api::v1::OracleSpecsRequest* request, ::api::v1::OracleSpecsResponse* response) { return this->OracleSpecs(context, request, response); }));}
+    void SetMessageAllocatorFor_OracleSpecs(
+        ::grpc::experimental::MessageAllocator< ::api::v1::OracleSpecsRequest, ::api::v1::OracleSpecsResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(62);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(62);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::OracleSpecsRequest, ::api::v1::OracleSpecsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_OracleSpecs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status OracleSpecs(::grpc::ServerContext* /*context*/, const ::api::v1::OracleSpecsRequest* /*request*/, ::api::v1::OracleSpecsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* OracleSpecs(
+      ::grpc::CallbackServerContext* /*context*/, const ::api::v1::OracleSpecsRequest* /*request*/, ::api::v1::OracleSpecsResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* OracleSpecs(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::api::v1::OracleSpecsRequest* /*request*/, ::api::v1::OracleSpecsResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_OracleDataBySpec : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_OracleDataBySpec() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(63,
+          new ::grpc::internal::CallbackUnaryHandler< ::api::v1::OracleDataBySpecRequest, ::api::v1::OracleDataBySpecResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::api::v1::OracleDataBySpecRequest* request, ::api::v1::OracleDataBySpecResponse* response) { return this->OracleDataBySpec(context, request, response); }));}
+    void SetMessageAllocatorFor_OracleDataBySpec(
+        ::grpc::experimental::MessageAllocator< ::api::v1::OracleDataBySpecRequest, ::api::v1::OracleDataBySpecResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(63);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(63);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::OracleDataBySpecRequest, ::api::v1::OracleDataBySpecResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_OracleDataBySpec() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status OracleDataBySpec(::grpc::ServerContext* /*context*/, const ::api::v1::OracleDataBySpecRequest* /*request*/, ::api::v1::OracleDataBySpecResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* OracleDataBySpec(
+      ::grpc::CallbackServerContext* /*context*/, const ::api::v1::OracleDataBySpecRequest* /*request*/, ::api::v1::OracleDataBySpecResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* OracleDataBySpec(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::api::v1::OracleDataBySpecRequest* /*request*/, ::api::v1::OracleDataBySpecResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_MarketAccounts<ExperimentalWithCallbackMethod_PartyAccounts<ExperimentalWithCallbackMethod_FeeInfrastructureAccounts<ExperimentalWithCallbackMethod_Candles<ExperimentalWithCallbackMethod_MarketDataByID<ExperimentalWithCallbackMethod_MarketsData<ExperimentalWithCallbackMethod_MarketByID<ExperimentalWithCallbackMethod_MarketDepth<ExperimentalWithCallbackMethod_Markets<ExperimentalWithCallbackMethod_OrderByMarketAndID<ExperimentalWithCallbackMethod_OrderByReference<ExperimentalWithCallbackMethod_OrdersByMarket<ExperimentalWithCallbackMethod_OrdersByParty<ExperimentalWithCallbackMethod_OrderByID<ExperimentalWithCallbackMethod_OrderVersionsByID<ExperimentalWithCallbackMethod_MarginLevels<ExperimentalWithCallbackMethod_Parties<ExperimentalWithCallbackMethod_PartyByID<ExperimentalWithCallbackMethod_PositionsByParty<ExperimentalWithCallbackMethod_LastTrade<ExperimentalWithCallbackMethod_TradesByMarket<ExperimentalWithCallbackMethod_TradesByOrder<ExperimentalWithCallbackMethod_TradesByParty<ExperimentalWithCallbackMethod_GetProposals<ExperimentalWithCallbackMethod_GetProposalsByParty<ExperimentalWithCallbackMethod_GetVotesByParty<ExperimentalWithCallbackMethod_GetNewMarketProposals<ExperimentalWithCallbackMethod_GetUpdateMarketProposals<ExperimentalWithCallbackMethod_GetNetworkParametersProposals<ExperimentalWithCallbackMethod_GetNewAssetProposals<ExperimentalWithCallbackMethod_GetProposalByID<ExperimentalWithCallbackMethod_GetProposalByReference<ExperimentalWithCallbackMethod_ObserveGovernance<ExperimentalWithCallbackMethod_ObservePartyProposals<ExperimentalWithCallbackMethod_ObservePartyVotes<ExperimentalWithCallbackMethod_ObserveProposalVotes<ExperimentalWithCallbackMethod_ObserveEventBus<ExperimentalWithCallbackMethod_Statistics<ExperimentalWithCallbackMethod_GetVegaTime<ExperimentalWithCallbackMethod_AccountsSubscribe<ExperimentalWithCallbackMethod_CandlesSubscribe<ExperimentalWithCallbackMethod_MarginLevelsSubscribe<ExperimentalWithCallbackMethod_MarketDepthSubscribe<ExperimentalWithCallbackMethod_MarketDepthUpdatesSubscribe<ExperimentalWithCallbackMethod_MarketsDataSubscribe<ExperimentalWithCallbackMethod_OrdersSubscribe<ExperimentalWithCallbackMethod_PositionsSubscribe<ExperimentalWithCallbackMethod_TradesSubscribe<ExperimentalWithCallbackMethod_TransferResponsesSubscribe<ExperimentalWithCallbackMethod_GetNodeSignaturesAggregate<ExperimentalWithCallbackMethod_AssetByID<ExperimentalWithCallbackMethod_Assets<ExperimentalWithCallbackMethod_EstimateFee<ExperimentalWithCallbackMethod_EstimateMargin<ExperimentalWithCallbackMethod_ERC20WithdrawalApproval<ExperimentalWithCallbackMethod_Withdrawal<ExperimentalWithCallbackMethod_Withdrawals<ExperimentalWithCallbackMethod_Deposit<ExperimentalWithCallbackMethod_Deposits<ExperimentalWithCallbackMethod_NetworkParameters<ExperimentalWithCallbackMethod_LiquidityProvisions<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_MarketAccounts<ExperimentalWithCallbackMethod_PartyAccounts<ExperimentalWithCallbackMethod_FeeInfrastructureAccounts<ExperimentalWithCallbackMethod_Candles<ExperimentalWithCallbackMethod_MarketDataByID<ExperimentalWithCallbackMethod_MarketsData<ExperimentalWithCallbackMethod_MarketByID<ExperimentalWithCallbackMethod_MarketDepth<ExperimentalWithCallbackMethod_Markets<ExperimentalWithCallbackMethod_OrderByMarketAndID<ExperimentalWithCallbackMethod_OrderByReference<ExperimentalWithCallbackMethod_OrdersByMarket<ExperimentalWithCallbackMethod_OrdersByParty<ExperimentalWithCallbackMethod_OrderByID<ExperimentalWithCallbackMethod_OrderVersionsByID<ExperimentalWithCallbackMethod_MarginLevels<ExperimentalWithCallbackMethod_Parties<ExperimentalWithCallbackMethod_PartyByID<ExperimentalWithCallbackMethod_PositionsByParty<ExperimentalWithCallbackMethod_LastTrade<ExperimentalWithCallbackMethod_TradesByMarket<ExperimentalWithCallbackMethod_TradesByOrder<ExperimentalWithCallbackMethod_TradesByParty<ExperimentalWithCallbackMethod_GetProposals<ExperimentalWithCallbackMethod_GetProposalsByParty<ExperimentalWithCallbackMethod_GetVotesByParty<ExperimentalWithCallbackMethod_GetNewMarketProposals<ExperimentalWithCallbackMethod_GetUpdateMarketProposals<ExperimentalWithCallbackMethod_GetNetworkParametersProposals<ExperimentalWithCallbackMethod_GetNewAssetProposals<ExperimentalWithCallbackMethod_GetProposalByID<ExperimentalWithCallbackMethod_GetProposalByReference<ExperimentalWithCallbackMethod_ObserveGovernance<ExperimentalWithCallbackMethod_ObservePartyProposals<ExperimentalWithCallbackMethod_ObservePartyVotes<ExperimentalWithCallbackMethod_ObserveProposalVotes<ExperimentalWithCallbackMethod_ObserveEventBus<ExperimentalWithCallbackMethod_Statistics<ExperimentalWithCallbackMethod_GetVegaTime<ExperimentalWithCallbackMethod_AccountsSubscribe<ExperimentalWithCallbackMethod_CandlesSubscribe<ExperimentalWithCallbackMethod_MarginLevelsSubscribe<ExperimentalWithCallbackMethod_MarketDepthSubscribe<ExperimentalWithCallbackMethod_MarketDepthUpdatesSubscribe<ExperimentalWithCallbackMethod_MarketsDataSubscribe<ExperimentalWithCallbackMethod_OrdersSubscribe<ExperimentalWithCallbackMethod_PositionsSubscribe<ExperimentalWithCallbackMethod_TradesSubscribe<ExperimentalWithCallbackMethod_TransferResponsesSubscribe<ExperimentalWithCallbackMethod_GetNodeSignaturesAggregate<ExperimentalWithCallbackMethod_AssetByID<ExperimentalWithCallbackMethod_Assets<ExperimentalWithCallbackMethod_EstimateFee<ExperimentalWithCallbackMethod_EstimateMargin<ExperimentalWithCallbackMethod_ERC20WithdrawalApproval<ExperimentalWithCallbackMethod_Withdrawal<ExperimentalWithCallbackMethod_Withdrawals<ExperimentalWithCallbackMethod_Deposit<ExperimentalWithCallbackMethod_Deposits<ExperimentalWithCallbackMethod_NetworkParameters<ExperimentalWithCallbackMethod_LiquidityProvisions<ExperimentalWithCallbackMethod_OracleSpec<ExperimentalWithCallbackMethod_OracleSpecs<ExperimentalWithCallbackMethod_OracleDataBySpec<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_MarketAccounts<ExperimentalWithCallbackMethod_PartyAccounts<ExperimentalWithCallbackMethod_FeeInfrastructureAccounts<ExperimentalWithCallbackMethod_Candles<ExperimentalWithCallbackMethod_MarketDataByID<ExperimentalWithCallbackMethod_MarketsData<ExperimentalWithCallbackMethod_MarketByID<ExperimentalWithCallbackMethod_MarketDepth<ExperimentalWithCallbackMethod_Markets<ExperimentalWithCallbackMethod_OrderByMarketAndID<ExperimentalWithCallbackMethod_OrderByReference<ExperimentalWithCallbackMethod_OrdersByMarket<ExperimentalWithCallbackMethod_OrdersByParty<ExperimentalWithCallbackMethod_OrderByID<ExperimentalWithCallbackMethod_OrderVersionsByID<ExperimentalWithCallbackMethod_MarginLevels<ExperimentalWithCallbackMethod_Parties<ExperimentalWithCallbackMethod_PartyByID<ExperimentalWithCallbackMethod_PositionsByParty<ExperimentalWithCallbackMethod_LastTrade<ExperimentalWithCallbackMethod_TradesByMarket<ExperimentalWithCallbackMethod_TradesByOrder<ExperimentalWithCallbackMethod_TradesByParty<ExperimentalWithCallbackMethod_GetProposals<ExperimentalWithCallbackMethod_GetProposalsByParty<ExperimentalWithCallbackMethod_GetVotesByParty<ExperimentalWithCallbackMethod_GetNewMarketProposals<ExperimentalWithCallbackMethod_GetUpdateMarketProposals<ExperimentalWithCallbackMethod_GetNetworkParametersProposals<ExperimentalWithCallbackMethod_GetNewAssetProposals<ExperimentalWithCallbackMethod_GetProposalByID<ExperimentalWithCallbackMethod_GetProposalByReference<ExperimentalWithCallbackMethod_ObserveGovernance<ExperimentalWithCallbackMethod_ObservePartyProposals<ExperimentalWithCallbackMethod_ObservePartyVotes<ExperimentalWithCallbackMethod_ObserveProposalVotes<ExperimentalWithCallbackMethod_ObserveEventBus<ExperimentalWithCallbackMethod_Statistics<ExperimentalWithCallbackMethod_GetVegaTime<ExperimentalWithCallbackMethod_AccountsSubscribe<ExperimentalWithCallbackMethod_CandlesSubscribe<ExperimentalWithCallbackMethod_MarginLevelsSubscribe<ExperimentalWithCallbackMethod_MarketDepthSubscribe<ExperimentalWithCallbackMethod_MarketDepthUpdatesSubscribe<ExperimentalWithCallbackMethod_MarketsDataSubscribe<ExperimentalWithCallbackMethod_OrdersSubscribe<ExperimentalWithCallbackMethod_PositionsSubscribe<ExperimentalWithCallbackMethod_TradesSubscribe<ExperimentalWithCallbackMethod_TransferResponsesSubscribe<ExperimentalWithCallbackMethod_GetNodeSignaturesAggregate<ExperimentalWithCallbackMethod_AssetByID<ExperimentalWithCallbackMethod_Assets<ExperimentalWithCallbackMethod_EstimateFee<ExperimentalWithCallbackMethod_EstimateMargin<ExperimentalWithCallbackMethod_ERC20WithdrawalApproval<ExperimentalWithCallbackMethod_Withdrawal<ExperimentalWithCallbackMethod_Withdrawals<ExperimentalWithCallbackMethod_Deposit<ExperimentalWithCallbackMethod_Deposits<ExperimentalWithCallbackMethod_NetworkParameters<ExperimentalWithCallbackMethod_LiquidityProvisions<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_MarketAccounts<ExperimentalWithCallbackMethod_PartyAccounts<ExperimentalWithCallbackMethod_FeeInfrastructureAccounts<ExperimentalWithCallbackMethod_Candles<ExperimentalWithCallbackMethod_MarketDataByID<ExperimentalWithCallbackMethod_MarketsData<ExperimentalWithCallbackMethod_MarketByID<ExperimentalWithCallbackMethod_MarketDepth<ExperimentalWithCallbackMethod_Markets<ExperimentalWithCallbackMethod_OrderByMarketAndID<ExperimentalWithCallbackMethod_OrderByReference<ExperimentalWithCallbackMethod_OrdersByMarket<ExperimentalWithCallbackMethod_OrdersByParty<ExperimentalWithCallbackMethod_OrderByID<ExperimentalWithCallbackMethod_OrderVersionsByID<ExperimentalWithCallbackMethod_MarginLevels<ExperimentalWithCallbackMethod_Parties<ExperimentalWithCallbackMethod_PartyByID<ExperimentalWithCallbackMethod_PositionsByParty<ExperimentalWithCallbackMethod_LastTrade<ExperimentalWithCallbackMethod_TradesByMarket<ExperimentalWithCallbackMethod_TradesByOrder<ExperimentalWithCallbackMethod_TradesByParty<ExperimentalWithCallbackMethod_GetProposals<ExperimentalWithCallbackMethod_GetProposalsByParty<ExperimentalWithCallbackMethod_GetVotesByParty<ExperimentalWithCallbackMethod_GetNewMarketProposals<ExperimentalWithCallbackMethod_GetUpdateMarketProposals<ExperimentalWithCallbackMethod_GetNetworkParametersProposals<ExperimentalWithCallbackMethod_GetNewAssetProposals<ExperimentalWithCallbackMethod_GetProposalByID<ExperimentalWithCallbackMethod_GetProposalByReference<ExperimentalWithCallbackMethod_ObserveGovernance<ExperimentalWithCallbackMethod_ObservePartyProposals<ExperimentalWithCallbackMethod_ObservePartyVotes<ExperimentalWithCallbackMethod_ObserveProposalVotes<ExperimentalWithCallbackMethod_ObserveEventBus<ExperimentalWithCallbackMethod_Statistics<ExperimentalWithCallbackMethod_GetVegaTime<ExperimentalWithCallbackMethod_AccountsSubscribe<ExperimentalWithCallbackMethod_CandlesSubscribe<ExperimentalWithCallbackMethod_MarginLevelsSubscribe<ExperimentalWithCallbackMethod_MarketDepthSubscribe<ExperimentalWithCallbackMethod_MarketDepthUpdatesSubscribe<ExperimentalWithCallbackMethod_MarketsDataSubscribe<ExperimentalWithCallbackMethod_OrdersSubscribe<ExperimentalWithCallbackMethod_PositionsSubscribe<ExperimentalWithCallbackMethod_TradesSubscribe<ExperimentalWithCallbackMethod_TransferResponsesSubscribe<ExperimentalWithCallbackMethod_GetNodeSignaturesAggregate<ExperimentalWithCallbackMethod_AssetByID<ExperimentalWithCallbackMethod_Assets<ExperimentalWithCallbackMethod_EstimateFee<ExperimentalWithCallbackMethod_EstimateMargin<ExperimentalWithCallbackMethod_ERC20WithdrawalApproval<ExperimentalWithCallbackMethod_Withdrawal<ExperimentalWithCallbackMethod_Withdrawals<ExperimentalWithCallbackMethod_Deposit<ExperimentalWithCallbackMethod_Deposits<ExperimentalWithCallbackMethod_NetworkParameters<ExperimentalWithCallbackMethod_LiquidityProvisions<ExperimentalWithCallbackMethod_OracleSpec<ExperimentalWithCallbackMethod_OracleSpecs<ExperimentalWithCallbackMethod_OracleDataBySpec<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_MarketAccounts : public BaseClass {
    private:
@@ -9217,6 +9529,57 @@ class TradingDataService final {
     }
     // disable synchronous version of this method
     ::grpc::Status LiquidityProvisions(::grpc::ServerContext* /*context*/, const ::api::v1::LiquidityProvisionsRequest* /*request*/, ::api::v1::LiquidityProvisionsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_OracleSpec : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_OracleSpec() {
+      ::grpc::Service::MarkMethodGeneric(61);
+    }
+    ~WithGenericMethod_OracleSpec() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status OracleSpec(::grpc::ServerContext* /*context*/, const ::api::v1::OracleSpecRequest* /*request*/, ::api::v1::OracleSpecResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_OracleSpecs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_OracleSpecs() {
+      ::grpc::Service::MarkMethodGeneric(62);
+    }
+    ~WithGenericMethod_OracleSpecs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status OracleSpecs(::grpc::ServerContext* /*context*/, const ::api::v1::OracleSpecsRequest* /*request*/, ::api::v1::OracleSpecsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_OracleDataBySpec : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_OracleDataBySpec() {
+      ::grpc::Service::MarkMethodGeneric(63);
+    }
+    ~WithGenericMethod_OracleDataBySpec() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status OracleDataBySpec(::grpc::ServerContext* /*context*/, const ::api::v1::OracleDataBySpecRequest* /*request*/, ::api::v1::OracleDataBySpecResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -10439,6 +10802,66 @@ class TradingDataService final {
     }
     void RequestLiquidityProvisions(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(60, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_OracleSpec : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_OracleSpec() {
+      ::grpc::Service::MarkMethodRaw(61);
+    }
+    ~WithRawMethod_OracleSpec() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status OracleSpec(::grpc::ServerContext* /*context*/, const ::api::v1::OracleSpecRequest* /*request*/, ::api::v1::OracleSpecResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestOracleSpec(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(61, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_OracleSpecs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_OracleSpecs() {
+      ::grpc::Service::MarkMethodRaw(62);
+    }
+    ~WithRawMethod_OracleSpecs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status OracleSpecs(::grpc::ServerContext* /*context*/, const ::api::v1::OracleSpecsRequest* /*request*/, ::api::v1::OracleSpecsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestOracleSpecs(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(62, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_OracleDataBySpec : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_OracleDataBySpec() {
+      ::grpc::Service::MarkMethodRaw(63);
+    }
+    ~WithRawMethod_OracleDataBySpec() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status OracleDataBySpec(::grpc::ServerContext* /*context*/, const ::api::v1::OracleDataBySpecRequest* /*request*/, ::api::v1::OracleDataBySpecResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestOracleDataBySpec(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(63, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -12760,6 +13183,120 @@ class TradingDataService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_OracleSpec : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_OracleSpec() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(61,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->OracleSpec(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_OracleSpec() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status OracleSpec(::grpc::ServerContext* /*context*/, const ::api::v1::OracleSpecRequest* /*request*/, ::api::v1::OracleSpecResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* OracleSpec(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* OracleSpec(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_OracleSpecs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_OracleSpecs() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(62,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->OracleSpecs(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_OracleSpecs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status OracleSpecs(::grpc::ServerContext* /*context*/, const ::api::v1::OracleSpecsRequest* /*request*/, ::api::v1::OracleSpecsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* OracleSpecs(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* OracleSpecs(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_OracleDataBySpec : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_OracleDataBySpec() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(63,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->OracleDataBySpec(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_OracleDataBySpec() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status OracleDataBySpec(::grpc::ServerContext* /*context*/, const ::api::v1::OracleDataBySpecRequest* /*request*/, ::api::v1::OracleDataBySpecResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* OracleDataBySpec(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* OracleDataBySpec(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_MarketAccounts : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -14001,7 +14538,88 @@ class TradingDataService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedLiquidityProvisions(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::api::v1::LiquidityProvisionsRequest,::api::v1::LiquidityProvisionsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_MarketAccounts<WithStreamedUnaryMethod_PartyAccounts<WithStreamedUnaryMethod_FeeInfrastructureAccounts<WithStreamedUnaryMethod_Candles<WithStreamedUnaryMethod_MarketDataByID<WithStreamedUnaryMethod_MarketsData<WithStreamedUnaryMethod_MarketByID<WithStreamedUnaryMethod_MarketDepth<WithStreamedUnaryMethod_Markets<WithStreamedUnaryMethod_OrderByMarketAndID<WithStreamedUnaryMethod_OrderByReference<WithStreamedUnaryMethod_OrdersByMarket<WithStreamedUnaryMethod_OrdersByParty<WithStreamedUnaryMethod_OrderByID<WithStreamedUnaryMethod_OrderVersionsByID<WithStreamedUnaryMethod_MarginLevels<WithStreamedUnaryMethod_Parties<WithStreamedUnaryMethod_PartyByID<WithStreamedUnaryMethod_PositionsByParty<WithStreamedUnaryMethod_LastTrade<WithStreamedUnaryMethod_TradesByMarket<WithStreamedUnaryMethod_TradesByOrder<WithStreamedUnaryMethod_TradesByParty<WithStreamedUnaryMethod_GetProposals<WithStreamedUnaryMethod_GetProposalsByParty<WithStreamedUnaryMethod_GetVotesByParty<WithStreamedUnaryMethod_GetNewMarketProposals<WithStreamedUnaryMethod_GetUpdateMarketProposals<WithStreamedUnaryMethod_GetNetworkParametersProposals<WithStreamedUnaryMethod_GetNewAssetProposals<WithStreamedUnaryMethod_GetProposalByID<WithStreamedUnaryMethod_GetProposalByReference<WithStreamedUnaryMethod_Statistics<WithStreamedUnaryMethod_GetVegaTime<WithStreamedUnaryMethod_GetNodeSignaturesAggregate<WithStreamedUnaryMethod_AssetByID<WithStreamedUnaryMethod_Assets<WithStreamedUnaryMethod_EstimateFee<WithStreamedUnaryMethod_EstimateMargin<WithStreamedUnaryMethod_ERC20WithdrawalApproval<WithStreamedUnaryMethod_Withdrawal<WithStreamedUnaryMethod_Withdrawals<WithStreamedUnaryMethod_Deposit<WithStreamedUnaryMethod_Deposits<WithStreamedUnaryMethod_NetworkParameters<WithStreamedUnaryMethod_LiquidityProvisions<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_OracleSpec : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_OracleSpec() {
+      ::grpc::Service::MarkMethodStreamed(61,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::api::v1::OracleSpecRequest, ::api::v1::OracleSpecResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::api::v1::OracleSpecRequest, ::api::v1::OracleSpecResponse>* streamer) {
+                       return this->StreamedOracleSpec(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_OracleSpec() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status OracleSpec(::grpc::ServerContext* /*context*/, const ::api::v1::OracleSpecRequest* /*request*/, ::api::v1::OracleSpecResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedOracleSpec(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::api::v1::OracleSpecRequest,::api::v1::OracleSpecResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_OracleSpecs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_OracleSpecs() {
+      ::grpc::Service::MarkMethodStreamed(62,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::api::v1::OracleSpecsRequest, ::api::v1::OracleSpecsResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::api::v1::OracleSpecsRequest, ::api::v1::OracleSpecsResponse>* streamer) {
+                       return this->StreamedOracleSpecs(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_OracleSpecs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status OracleSpecs(::grpc::ServerContext* /*context*/, const ::api::v1::OracleSpecsRequest* /*request*/, ::api::v1::OracleSpecsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedOracleSpecs(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::api::v1::OracleSpecsRequest,::api::v1::OracleSpecsResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_OracleDataBySpec : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_OracleDataBySpec() {
+      ::grpc::Service::MarkMethodStreamed(63,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::api::v1::OracleDataBySpecRequest, ::api::v1::OracleDataBySpecResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::api::v1::OracleDataBySpecRequest, ::api::v1::OracleDataBySpecResponse>* streamer) {
+                       return this->StreamedOracleDataBySpec(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_OracleDataBySpec() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status OracleDataBySpec(::grpc::ServerContext* /*context*/, const ::api::v1::OracleDataBySpecRequest* /*request*/, ::api::v1::OracleDataBySpecResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedOracleDataBySpec(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::api::v1::OracleDataBySpecRequest,::api::v1::OracleDataBySpecResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_MarketAccounts<WithStreamedUnaryMethod_PartyAccounts<WithStreamedUnaryMethod_FeeInfrastructureAccounts<WithStreamedUnaryMethod_Candles<WithStreamedUnaryMethod_MarketDataByID<WithStreamedUnaryMethod_MarketsData<WithStreamedUnaryMethod_MarketByID<WithStreamedUnaryMethod_MarketDepth<WithStreamedUnaryMethod_Markets<WithStreamedUnaryMethod_OrderByMarketAndID<WithStreamedUnaryMethod_OrderByReference<WithStreamedUnaryMethod_OrdersByMarket<WithStreamedUnaryMethod_OrdersByParty<WithStreamedUnaryMethod_OrderByID<WithStreamedUnaryMethod_OrderVersionsByID<WithStreamedUnaryMethod_MarginLevels<WithStreamedUnaryMethod_Parties<WithStreamedUnaryMethod_PartyByID<WithStreamedUnaryMethod_PositionsByParty<WithStreamedUnaryMethod_LastTrade<WithStreamedUnaryMethod_TradesByMarket<WithStreamedUnaryMethod_TradesByOrder<WithStreamedUnaryMethod_TradesByParty<WithStreamedUnaryMethod_GetProposals<WithStreamedUnaryMethod_GetProposalsByParty<WithStreamedUnaryMethod_GetVotesByParty<WithStreamedUnaryMethod_GetNewMarketProposals<WithStreamedUnaryMethod_GetUpdateMarketProposals<WithStreamedUnaryMethod_GetNetworkParametersProposals<WithStreamedUnaryMethod_GetNewAssetProposals<WithStreamedUnaryMethod_GetProposalByID<WithStreamedUnaryMethod_GetProposalByReference<WithStreamedUnaryMethod_Statistics<WithStreamedUnaryMethod_GetVegaTime<WithStreamedUnaryMethod_GetNodeSignaturesAggregate<WithStreamedUnaryMethod_AssetByID<WithStreamedUnaryMethod_Assets<WithStreamedUnaryMethod_EstimateFee<WithStreamedUnaryMethod_EstimateMargin<WithStreamedUnaryMethod_ERC20WithdrawalApproval<WithStreamedUnaryMethod_Withdrawal<WithStreamedUnaryMethod_Withdrawals<WithStreamedUnaryMethod_Deposit<WithStreamedUnaryMethod_Deposits<WithStreamedUnaryMethod_NetworkParameters<WithStreamedUnaryMethod_LiquidityProvisions<WithStreamedUnaryMethod_OracleSpec<WithStreamedUnaryMethod_OracleSpecs<WithStreamedUnaryMethod_OracleDataBySpec<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   template <class BaseClass>
   class WithSplitStreamingMethod_ObserveGovernance : public BaseClass {
    private:
@@ -14381,7 +14999,7 @@ class TradingDataService final {
     virtual ::grpc::Status StreamedTransferResponsesSubscribe(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::api::v1::TransferResponsesSubscribeRequest,::api::v1::TransferResponsesSubscribeResponse>* server_split_streamer) = 0;
   };
   typedef WithSplitStreamingMethod_ObserveGovernance<WithSplitStreamingMethod_ObservePartyProposals<WithSplitStreamingMethod_ObservePartyVotes<WithSplitStreamingMethod_ObserveProposalVotes<WithSplitStreamingMethod_AccountsSubscribe<WithSplitStreamingMethod_CandlesSubscribe<WithSplitStreamingMethod_MarginLevelsSubscribe<WithSplitStreamingMethod_MarketDepthSubscribe<WithSplitStreamingMethod_MarketDepthUpdatesSubscribe<WithSplitStreamingMethod_MarketsDataSubscribe<WithSplitStreamingMethod_OrdersSubscribe<WithSplitStreamingMethod_PositionsSubscribe<WithSplitStreamingMethod_TradesSubscribe<WithSplitStreamingMethod_TransferResponsesSubscribe<Service > > > > > > > > > > > > > > SplitStreamedService;
-  typedef WithStreamedUnaryMethod_MarketAccounts<WithStreamedUnaryMethod_PartyAccounts<WithStreamedUnaryMethod_FeeInfrastructureAccounts<WithStreamedUnaryMethod_Candles<WithStreamedUnaryMethod_MarketDataByID<WithStreamedUnaryMethod_MarketsData<WithStreamedUnaryMethod_MarketByID<WithStreamedUnaryMethod_MarketDepth<WithStreamedUnaryMethod_Markets<WithStreamedUnaryMethod_OrderByMarketAndID<WithStreamedUnaryMethod_OrderByReference<WithStreamedUnaryMethod_OrdersByMarket<WithStreamedUnaryMethod_OrdersByParty<WithStreamedUnaryMethod_OrderByID<WithStreamedUnaryMethod_OrderVersionsByID<WithStreamedUnaryMethod_MarginLevels<WithStreamedUnaryMethod_Parties<WithStreamedUnaryMethod_PartyByID<WithStreamedUnaryMethod_PositionsByParty<WithStreamedUnaryMethod_LastTrade<WithStreamedUnaryMethod_TradesByMarket<WithStreamedUnaryMethod_TradesByOrder<WithStreamedUnaryMethod_TradesByParty<WithStreamedUnaryMethod_GetProposals<WithStreamedUnaryMethod_GetProposalsByParty<WithStreamedUnaryMethod_GetVotesByParty<WithStreamedUnaryMethod_GetNewMarketProposals<WithStreamedUnaryMethod_GetUpdateMarketProposals<WithStreamedUnaryMethod_GetNetworkParametersProposals<WithStreamedUnaryMethod_GetNewAssetProposals<WithStreamedUnaryMethod_GetProposalByID<WithStreamedUnaryMethod_GetProposalByReference<WithSplitStreamingMethod_ObserveGovernance<WithSplitStreamingMethod_ObservePartyProposals<WithSplitStreamingMethod_ObservePartyVotes<WithSplitStreamingMethod_ObserveProposalVotes<WithStreamedUnaryMethod_Statistics<WithStreamedUnaryMethod_GetVegaTime<WithSplitStreamingMethod_AccountsSubscribe<WithSplitStreamingMethod_CandlesSubscribe<WithSplitStreamingMethod_MarginLevelsSubscribe<WithSplitStreamingMethod_MarketDepthSubscribe<WithSplitStreamingMethod_MarketDepthUpdatesSubscribe<WithSplitStreamingMethod_MarketsDataSubscribe<WithSplitStreamingMethod_OrdersSubscribe<WithSplitStreamingMethod_PositionsSubscribe<WithSplitStreamingMethod_TradesSubscribe<WithSplitStreamingMethod_TransferResponsesSubscribe<WithStreamedUnaryMethod_GetNodeSignaturesAggregate<WithStreamedUnaryMethod_AssetByID<WithStreamedUnaryMethod_Assets<WithStreamedUnaryMethod_EstimateFee<WithStreamedUnaryMethod_EstimateMargin<WithStreamedUnaryMethod_ERC20WithdrawalApproval<WithStreamedUnaryMethod_Withdrawal<WithStreamedUnaryMethod_Withdrawals<WithStreamedUnaryMethod_Deposit<WithStreamedUnaryMethod_Deposits<WithStreamedUnaryMethod_NetworkParameters<WithStreamedUnaryMethod_LiquidityProvisions<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_MarketAccounts<WithStreamedUnaryMethod_PartyAccounts<WithStreamedUnaryMethod_FeeInfrastructureAccounts<WithStreamedUnaryMethod_Candles<WithStreamedUnaryMethod_MarketDataByID<WithStreamedUnaryMethod_MarketsData<WithStreamedUnaryMethod_MarketByID<WithStreamedUnaryMethod_MarketDepth<WithStreamedUnaryMethod_Markets<WithStreamedUnaryMethod_OrderByMarketAndID<WithStreamedUnaryMethod_OrderByReference<WithStreamedUnaryMethod_OrdersByMarket<WithStreamedUnaryMethod_OrdersByParty<WithStreamedUnaryMethod_OrderByID<WithStreamedUnaryMethod_OrderVersionsByID<WithStreamedUnaryMethod_MarginLevels<WithStreamedUnaryMethod_Parties<WithStreamedUnaryMethod_PartyByID<WithStreamedUnaryMethod_PositionsByParty<WithStreamedUnaryMethod_LastTrade<WithStreamedUnaryMethod_TradesByMarket<WithStreamedUnaryMethod_TradesByOrder<WithStreamedUnaryMethod_TradesByParty<WithStreamedUnaryMethod_GetProposals<WithStreamedUnaryMethod_GetProposalsByParty<WithStreamedUnaryMethod_GetVotesByParty<WithStreamedUnaryMethod_GetNewMarketProposals<WithStreamedUnaryMethod_GetUpdateMarketProposals<WithStreamedUnaryMethod_GetNetworkParametersProposals<WithStreamedUnaryMethod_GetNewAssetProposals<WithStreamedUnaryMethod_GetProposalByID<WithStreamedUnaryMethod_GetProposalByReference<WithSplitStreamingMethod_ObserveGovernance<WithSplitStreamingMethod_ObservePartyProposals<WithSplitStreamingMethod_ObservePartyVotes<WithSplitStreamingMethod_ObserveProposalVotes<WithStreamedUnaryMethod_Statistics<WithStreamedUnaryMethod_GetVegaTime<WithSplitStreamingMethod_AccountsSubscribe<WithSplitStreamingMethod_CandlesSubscribe<WithSplitStreamingMethod_MarginLevelsSubscribe<WithSplitStreamingMethod_MarketDepthSubscribe<WithSplitStreamingMethod_MarketDepthUpdatesSubscribe<WithSplitStreamingMethod_MarketsDataSubscribe<WithSplitStreamingMethod_OrdersSubscribe<WithSplitStreamingMethod_PositionsSubscribe<WithSplitStreamingMethod_TradesSubscribe<WithSplitStreamingMethod_TransferResponsesSubscribe<WithStreamedUnaryMethod_GetNodeSignaturesAggregate<WithStreamedUnaryMethod_AssetByID<WithStreamedUnaryMethod_Assets<WithStreamedUnaryMethod_EstimateFee<WithStreamedUnaryMethod_EstimateMargin<WithStreamedUnaryMethod_ERC20WithdrawalApproval<WithStreamedUnaryMethod_Withdrawal<WithStreamedUnaryMethod_Withdrawals<WithStreamedUnaryMethod_Deposit<WithStreamedUnaryMethod_Deposits<WithStreamedUnaryMethod_NetworkParameters<WithStreamedUnaryMethod_LiquidityProvisions<WithStreamedUnaryMethod_OracleSpec<WithStreamedUnaryMethod_OracleSpecs<WithStreamedUnaryMethod_OracleDataBySpec<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1

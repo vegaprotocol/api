@@ -14881,7 +14881,8 @@ proto.vega.LiquidityProvisionSubmission.toObject = function(includeInstance, msg
     sellsList: jspb.Message.toObjectList(msg.getSellsList(),
     proto.vega.LiquidityOrder.toObject, includeInstance),
     buysList: jspb.Message.toObjectList(msg.getBuysList(),
-    proto.vega.LiquidityOrder.toObject, includeInstance)
+    proto.vega.LiquidityOrder.toObject, includeInstance),
+    reference: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -14939,6 +14940,10 @@ proto.vega.LiquidityProvisionSubmission.deserializeBinaryFromReader = function(m
       var value = new proto.vega.LiquidityOrder;
       reader.readMessage(value,proto.vega.LiquidityOrder.deserializeBinaryFromReader);
       msg.addBuys(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReference(value);
       break;
     default:
       reader.skipField();
@@ -15004,6 +15009,13 @@ proto.vega.LiquidityProvisionSubmission.serializeBinaryToWriter = function(messa
       5,
       f,
       proto.vega.LiquidityOrder.serializeBinaryToWriter
+    );
+  }
+  f = message.getReference();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
     );
   }
 };
@@ -15136,6 +15148,24 @@ proto.vega.LiquidityProvisionSubmission.prototype.addBuys = function(opt_value, 
  */
 proto.vega.LiquidityProvisionSubmission.prototype.clearBuysList = function() {
   return this.setBuysList([]);
+};
+
+
+/**
+ * optional string reference = 6;
+ * @return {string}
+ */
+proto.vega.LiquidityProvisionSubmission.prototype.getReference = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vega.LiquidityProvisionSubmission} returns this
+ */
+proto.vega.LiquidityProvisionSubmission.prototype.setReference = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -15371,7 +15401,8 @@ proto.vega.LiquidityProvision.toObject = function(includeInstance, msg) {
     buysList: jspb.Message.toObjectList(msg.getBuysList(),
     proto.vega.LiquidityOrderReference.toObject, includeInstance),
     version: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 11, 0)
+    status: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    reference: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -15453,6 +15484,10 @@ proto.vega.LiquidityProvision.deserializeBinaryFromReader = function(msg, reader
     case 11:
       var value = /** @type {!proto.vega.LiquidityProvision.Status} */ (reader.readEnum());
       msg.setStatus(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReference(value);
       break;
     default:
       reader.skipField();
@@ -15559,6 +15594,13 @@ proto.vega.LiquidityProvision.serializeBinaryToWriter = function(message, writer
   if (f !== 0.0) {
     writer.writeEnum(
       11,
+      f
+    );
+  }
+  f = message.getReference();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
       f
     );
   }
@@ -15812,6 +15854,24 @@ proto.vega.LiquidityProvision.prototype.getStatus = function() {
  */
 proto.vega.LiquidityProvision.prototype.setStatus = function(value) {
   return jspb.Message.setProto3EnumField(this, 11, value);
+};
+
+
+/**
+ * optional string reference = 12;
+ * @return {string}
+ */
+proto.vega.LiquidityProvision.prototype.getReference = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vega.LiquidityProvision} returns this
+ */
+proto.vega.LiquidityProvision.prototype.setReference = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
 };
 
 

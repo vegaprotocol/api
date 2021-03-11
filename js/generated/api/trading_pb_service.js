@@ -934,6 +934,33 @@ TradingDataService.LiquidityProvisions = {
   responseType: api_trading_pb.LiquidityProvisionsResponse
 };
 
+TradingDataService.OracleSpec = {
+  methodName: "OracleSpec",
+  service: TradingDataService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_trading_pb.OracleSpecRequest,
+  responseType: api_trading_pb.OracleSpecResponse
+};
+
+TradingDataService.OracleSpecs = {
+  methodName: "OracleSpecs",
+  service: TradingDataService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_trading_pb.OracleSpecsRequest,
+  responseType: api_trading_pb.OracleSpecsResponse
+};
+
+TradingDataService.OracleDataBySpec = {
+  methodName: "OracleDataBySpec",
+  service: TradingDataService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_trading_pb.OracleDataBySpecRequest,
+  responseType: api_trading_pb.OracleDataBySpecResponse
+};
+
 exports.TradingDataService = TradingDataService;
 
 function TradingDataServiceClient(serviceHost, options) {
@@ -2932,6 +2959,99 @@ TradingDataServiceClient.prototype.liquidityProvisions = function liquidityProvi
     callback = arguments[1];
   }
   var client = grpc.unary(TradingDataService.LiquidityProvisions, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TradingDataServiceClient.prototype.oracleSpec = function oracleSpec(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(TradingDataService.OracleSpec, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TradingDataServiceClient.prototype.oracleSpecs = function oracleSpecs(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(TradingDataService.OracleSpecs, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TradingDataServiceClient.prototype.oracleDataBySpec = function oracleDataBySpec(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(TradingDataService.OracleDataBySpec, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
