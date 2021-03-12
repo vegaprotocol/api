@@ -54,10 +54,12 @@ touch "$python_generated_dir/__init__.py"
 
 find "$python_generated_dir" -maxdepth 1 -name '*.py' -print0 | xargs -0r sed --in-place -r \
 	-e 's#^from github.com.mwitkow.go_proto_validators #from .github.com.mwitkow.go_proto_validators #' \
+	-e 's#^from oracles.v1 import#from .oracles.v1 import#' \
 	-e 's#^import ([a-z_]*)_pb2 as #from . import \1_pb2 as #'
 
 find "$python_generated_dir/api" -maxdepth 1 -name '*.py' -print0 | xargs -0r sed --in-place -r \
 	-e 's#^from github.com.mwitkow.go_proto_validators #from ..github.com.mwitkow.go_proto_validators #' \
+	-e 's#^from oracles.v1 import#from ..oracles.v1 import#' \
 	-e 's#^import ([a-z_]*)_pb2 as #from .. import \1_pb2 as #' \
 	-e 's#^from api import #from . import #'
 

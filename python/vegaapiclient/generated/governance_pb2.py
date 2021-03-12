@@ -16,7 +16,7 @@ from .github.com.mwitkow.go_proto_validators import validator_pb2 as github_dot_
 from . import markets_pb2 as markets__pb2
 from . import vega_pb2 as vega__pb2
 from . import assets_pb2 as assets__pb2
-from oracles.v1 import oracle_spec_pb2 as oracles_dot_v1_dot_oracle__spec__pb2
+from .oracles.v1 import oracle_spec_pb2 as oracles_dot_v1_dot_oracle__spec__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(

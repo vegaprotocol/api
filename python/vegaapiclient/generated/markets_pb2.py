@@ -12,7 +12,7 @@ _sym_db = _symbol_database.Default()
 
 
 from .github.com.mwitkow.go_proto_validators import validator_pb2 as github_dot_com_dot_mwitkow_dot_go__proto__validators_dot_validator__pb2
-from oracles.v1 import oracle_spec_pb2 as oracles_dot_v1_dot_oracle__spec__pb2
+from .oracles.v1 import oracle_spec_pb2 as oracles_dot_v1_dot_oracle__spec__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(

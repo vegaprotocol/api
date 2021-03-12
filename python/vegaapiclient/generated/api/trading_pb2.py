@@ -17,8 +17,8 @@ from .. import governance_pb2 as governance__pb2
 from .. import chain_events_pb2 as chain__events__pb2
 from .. import assets_pb2 as assets__pb2
 from .. import events_pb2 as events__pb2
-from oracles.v1 import oracle_spec_pb2 as oracles_dot_v1_dot_oracle__spec__pb2
-from oracles.v1 import oracle_data_pb2 as oracles_dot_v1_dot_oracle__data__pb2
+from ..oracles.v1 import oracle_spec_pb2 as oracles_dot_v1_dot_oracle__spec__pb2
+from ..oracles.v1 import oracle_data_pb2 as oracles_dot_v1_dot_oracle__data__pb2
 from ..github.com.mwitkow.go_proto_validators import validator_pb2 as github_dot_com_dot_mwitkow_dot_go__proto__validators_dot_validator__pb2
 
 
