@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
+    <title>String</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><script src="./assets/line-link.js"></script><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
+</head>
+<body class="slds-scrollable--y">
+    <nav class="slds-grid slds-grid--vertical slds-col--rule-right">
+        <header class="slds-p-around--medium slds-col slds-shrik slds-grow-none">
+            <button class="slds-button slds-button--icon slds-float--right js-toggle-navigation less-than-medium">
+                <i class="material-icons">close</i>
+            </button>
+                <h3 class="slds-text-heading--medium"><a href="./">GraphQL Schema</a></h3>
+            <div class="slds-p-top--small">
+                <input id="type-search" type="text" placeholder="Search a type" autofocus="" class="slds-input" />
+            </div>
+        </header>
+        <div id="navication-scroll" class="slds-scrollable--y slds-col slds-grow">
+            <div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+                <h4 class="slds-text-title--caps slds-p-around--medium">Schema</h4>
+                <ul>
+                    <li  title="Query">
+                        <a href="query.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Query
+                        </a>
+                    </li>
+                    <li  title="Mutation">
+                        <a href="mutation.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Mutation
+                        </a>
+                    </li>
+                    <li  title="Subscription">
+                        <a href="subscription.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Subscription
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+                <h4 class="slds-text-title--caps slds-p-around--medium">Scalars</h4>
+                <ul>
+                    <li  title="Boolean">
+                        <a href="boolean.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Boolean
+                        </a>
+                    </li>
+                    <li  title="Float">
+                        <a href="float.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Float
+                        </a>
+                    </li>
+                    <li  title="ID">
+                        <a href="id.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            ID
+                        </a>
+                    </li>
+                    <li  title="Int">
+                        <a href="int.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Int
+                        </a>
+                    </li>
+                    <li class="slds-is-active" title="String">
+                        <a href="string.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            String
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+                <h4 class="slds-text-title--caps slds-p-around--medium">Enums</h4>
+                <ul>
+                    <li  title="AccountType">
+                        <a href="accounttype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            AccountType
+                        </a>
+                    </li>
+                    <li  title="AuctionTrigger">
+                        <a href="auctiontrigger.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            AuctionTrigger
+                        </a>
+                    </li>
+                    <li  title="BusEventType">
+                        <a href="buseventtype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            BusEventType
+                        </a>
+                    </li>
+                    <li  title="ConditionOperator">
+                        <a href="conditionoperator.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            ConditionOperator
+                        </a>
+                    </li>
+                    <li  title="DepositStatus">
+                        <a href="depositstatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            DepositStatus
+                        </a>
+                    </li>
+                    <li  title="Interval">
+                        <a href="interval.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Interval
+                        </a>
+                    </li>
+                    <li  title="LiquidityProvisionStatus">
+                        <a href="liquidityprovisionstatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            LiquidityProvisionStatus
+                        </a>
+                    </li>
+                    <li  title="MarketState">
+                        <a href="marketstate.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            MarketState
+                        </a>
+                    </li>
+                    <li  title="MarketTradingMode">
+                        <a href="markettradingmode.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            MarketTradingMode
+                        </a>
+                    </li>
+                    <li  title="NodeSignatureKind">
+                        <a href="nodesignaturekind.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            NodeSignatureKind
+                        </a>
+                    </li>
+                    <li  title="OracleSpecStatus">
+                        <a href="oraclespecstatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            OracleSpecStatus
+                        </a>
+                    </li>
+                    <li  title="OrderRejectionReason">
+                        <a href="orderrejectionreason.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            OrderRejectionReason
+                        </a>
+                    </li>
+                    <li  title="OrderStatus">
+                        <a href="orderstatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            OrderStatus
+                        </a>
+                    </li>
+                    <li  title="OrderTimeInForce">
+                        <a href="ordertimeinforce.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            OrderTimeInForce
+                        </a>
+                    </li>
+                    <li  title="OrderType">
+                        <a href="ordertype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            OrderType
+                        </a>
+                    </li>
+                    <li  title="PeggedReference">
+                        <a href="peggedreference.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PeggedReference
+                        </a>
+                    </li>
+                    <li  title="PropertyKeyType">
+                        <a href="propertykeytype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PropertyKeyType
+                        </a>
+                    </li>
+                    <li  title="ProposalRejectionReason">
+                        <a href="proposalrejectionreason.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            ProposalRejectionReason
+                        </a>
+                    </li>
+                    <li  title="ProposalState">
+                        <a href="proposalstate.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            ProposalState
+                        </a>
+                    </li>
+                    <li  title="Side">
+                        <a href="side.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Side
+                        </a>
+                    </li>
+                    <li  title="SubmitTransactionType">
+                        <a href="submittransactiontype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            SubmitTransactionType
+                        </a>
+                    </li>
+                    <li  title="TradeType">
+                        <a href="tradetype.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            TradeType
+                        </a>
+                    </li>
+                    <li  title="VoteValue">
+                        <a href="votevalue.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            VoteValue
+                        </a>
+                    </li>
+                    <li  title="WithdrawalStatus">
+                        <a href="withdrawalstatus.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            WithdrawalStatus
+                        </a>
+                    </li>
+                    <li  title="__DirectiveLocation">
+                        <a href="directivelocation.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            __DirectiveLocation
+                        </a>
+                    </li>
+                    <li  title="__TypeKind">
+                        <a href="typekind.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            __TypeKind
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+                <h4 class="slds-text-title--caps slds-p-around--medium">Unions</h4>
+                <ul>
+                    <li  title="AssetSource">
+                        <a href="assetsource.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            AssetSource
+                        </a>
+                    </li>
+                    <li  title="Event">
+                        <a href="event.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Event
+                        </a>
+                    </li>
+                    <li  title="Oracle">
+                        <a href="oracle.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Oracle
+                        </a>
+                    </li>
+                    <li  title="Product">
+                        <a href="product.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Product
+                        </a>
+                    </li>
+                    <li  title="ProposalChange">
+                        <a href="proposalchange.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            ProposalChange
+                        </a>
+                    </li>
+                    <li  title="RiskModel">
+                        <a href="riskmodel.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            RiskModel
+                        </a>
+                    </li>
+                    <li  title="TradingMode">
+                        <a href="tradingmode.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            TradingMode
+                        </a>
+                    </li>
+                    <li  title="WithdrawalDetails">
+                        <a href="withdrawaldetails.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            WithdrawalDetails
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+                <h4 class="slds-text-title--caps slds-p-around--medium">Objects</h4>
+                <ul>
+                    <li  title="Account">
+                        <a href="account.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Account
+                        </a>
+                    </li>
+                    <li  title="Asset">
+                        <a href="asset.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Asset
+                        </a>
+                    </li>
+                    <li  title="AuctionDuration">
+                        <a href="auctionduration.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            AuctionDuration
+                        </a>
+                    </li>
+                    <li  title="AuctionEvent">
+                        <a href="auctionevent.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            AuctionEvent
+                        </a>
+                    </li>
+                    <li  title="BuiltinAsset">
+                        <a href="builtinasset.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            BuiltinAsset
+                        </a>
+                    </li>
+                    <li  title="BusEvent">
+                        <a href="busevent.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            BusEvent
+                        </a>
+                    </li>
+                    <li  title="Candle">
+                        <a href="candle.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Candle
+                        </a>
+                    </li>
+                    <li  title="Condition">
+                        <a href="condition.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Condition
+                        </a>
+                    </li>
+                    <li  title="ContinuousTrading">
+                        <a href="continuoustrading.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            ContinuousTrading
+                        </a>
+                    </li>
+                    <li  title="Deposit">
+                        <a href="deposit.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Deposit
+                        </a>
+                    </li>
+                    <li  title="DiscreteTrading">
+                        <a href="discretetrading.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            DiscreteTrading
+                        </a>
+                    </li>
+                    <li  title="ERC20">
+                        <a href="erc20.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            ERC20
+                        </a>
+                    </li>
+                    <li  title="Erc20WithdrawalApproval">
+                        <a href="erc20withdrawalapproval.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Erc20WithdrawalApproval
+                        </a>
+                    </li>
+                    <li  title="Erc20WithdrawalDetails">
+                        <a href="erc20withdrawaldetails.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Erc20WithdrawalDetails
+                        </a>
+                    </li>
+                    <li  title="EthereumEvent">
+                        <a href="ethereumevent.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            EthereumEvent
+                        </a>
+                    </li>
+                    <li  title="FeeFactors">
+                        <a href="feefactors.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            FeeFactors
+                        </a>
+                    </li>
+                    <li  title="Fees">
+                        <a href="fees.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Fees
+                        </a>
+                    </li>
+                    <li  title="Filter">
+                        <a href="filter.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Filter
+                        </a>
+                    </li>
+                    <li  title="Future">
+                        <a href="future.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Future
+                        </a>
+                    </li>
+                    <li  title="FutureProduct">
+                        <a href="futureproduct.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            FutureProduct
+                        </a>
+                    </li>
+                    <li  title="Instrument">
+                        <a href="instrument.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Instrument
+                        </a>
+                    </li>
+                    <li  title="InstrumentConfiguration">
+                        <a href="instrumentconfiguration.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            InstrumentConfiguration
+                        </a>
+                    </li>
+                    <li  title="InstrumentMetadata">
+                        <a href="instrumentmetadata.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            InstrumentMetadata
+                        </a>
+                    </li>
+                    <li  title="LedgerEntry">
+                        <a href="ledgerentry.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            LedgerEntry
+                        </a>
+                    </li>
+                    <li  title="LiquidityOrder">
+                        <a href="liquidityorder.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            LiquidityOrder
+                        </a>
+                    </li>
+                    <li  title="LiquidityOrderReference">
+                        <a href="liquidityorderreference.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            LiquidityOrderReference
+                        </a>
+                    </li>
+                    <li  title="LiquidityProviderFeeShare">
+                        <a href="liquidityproviderfeeshare.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            LiquidityProviderFeeShare
+                        </a>
+                    </li>
+                    <li  title="LiquidityProvision">
+                        <a href="liquidityprovision.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            LiquidityProvision
+                        </a>
+                    </li>
+                    <li  title="LogNormalModelParams">
+                        <a href="lognormalmodelparams.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            LogNormalModelParams
+                        </a>
+                    </li>
+                    <li  title="LogNormalRiskModel">
+                        <a href="lognormalriskmodel.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            LogNormalRiskModel
+                        </a>
+                    </li>
+                    <li  title="LossSocialization">
+                        <a href="losssocialization.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            LossSocialization
+                        </a>
+                    </li>
+                    <li  title="MarginCalculator">
+                        <a href="margincalculator.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            MarginCalculator
+                        </a>
+                    </li>
+                    <li  title="MarginLevels">
+                        <a href="marginlevels.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            MarginLevels
+                        </a>
+                    </li>
+                    <li  title="Market">
+                        <a href="market.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Market
+                        </a>
+                    </li>
+                    <li  title="MarketData">
+                        <a href="marketdata.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            MarketData
+                        </a>
+                    </li>
+                    <li  title="MarketDataCommitments">
+                        <a href="marketdatacommitments.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            MarketDataCommitments
+                        </a>
+                    </li>
+                    <li  title="MarketDepth">
+                        <a href="marketdepth.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            MarketDepth
+                        </a>
+                    </li>
+                    <li  title="MarketDepthUpdate">
+                        <a href="marketdepthupdate.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            MarketDepthUpdate
+                        </a>
+                    </li>
+                    <li  title="MarketEvent">
+                        <a href="marketevent.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            MarketEvent
+                        </a>
+                    </li>
+                    <li  title="MarketTick">
+                        <a href="markettick.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            MarketTick
+                        </a>
+                    </li>
+                    <li  title="NetworkParameter">
+                        <a href="networkparameter.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            NetworkParameter
+                        </a>
+                    </li>
+                    <li  title="NewAsset">
+                        <a href="newasset.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            NewAsset
+                        </a>
+                    </li>
+                    <li  title="NewMarket">
+                        <a href="newmarket.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            NewMarket
+                        </a>
+                    </li>
+                    <li  title="NewMarketCommitment">
+                        <a href="newmarketcommitment.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            NewMarketCommitment
+                        </a>
+                    </li>
+                    <li  title="NodeSignature">
+                        <a href="nodesignature.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            NodeSignature
+                        </a>
+                    </li>
+                    <li  title="OracleData">
+                        <a href="oracledata.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            OracleData
+                        </a>
+                    </li>
+                    <li  title="OracleSpec">
+                        <a href="oraclespec.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            OracleSpec
+                        </a>
+                    </li>
+                    <li  title="OracleSpecConfiguration">
+                        <a href="oraclespecconfiguration.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            OracleSpecConfiguration
+                        </a>
+                    </li>
+                    <li  title="OracleSpecToFutureBinding">
+                        <a href="oraclespectofuturebinding.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            OracleSpecToFutureBinding
+                        </a>
+                    </li>
+                    <li  title="Order">
+                        <a href="order.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Order
+                        </a>
+                    </li>
+                    <li  title="OrderEstimate">
+                        <a href="orderestimate.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            OrderEstimate
+                        </a>
+                    </li>
+                    <li  title="Party">
+                        <a href="party.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Party
+                        </a>
+                    </li>
+                    <li  title="PeggedOrder">
+                        <a href="peggedorder.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PeggedOrder
+                        </a>
+                    </li>
+                    <li  title="Position">
+                        <a href="position.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Position
+                        </a>
+                    </li>
+                    <li  title="PositionResolution">
+                        <a href="positionresolution.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PositionResolution
+                        </a>
+                    </li>
+                    <li  title="PreparedAmendOrder">
+                        <a href="preparedamendorder.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PreparedAmendOrder
+                        </a>
+                    </li>
+                    <li  title="PreparedCancelOrder">
+                        <a href="preparedcancelorder.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PreparedCancelOrder
+                        </a>
+                    </li>
+                    <li  title="PreparedLiquidityProvision">
+                        <a href="preparedliquidityprovision.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PreparedLiquidityProvision
+                        </a>
+                    </li>
+                    <li  title="PreparedProposal">
+                        <a href="preparedproposal.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PreparedProposal
+                        </a>
+                    </li>
+                    <li  title="PreparedSubmitOrder">
+                        <a href="preparedsubmitorder.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PreparedSubmitOrder
+                        </a>
+                    </li>
+                    <li  title="PreparedVote">
+                        <a href="preparedvote.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PreparedVote
+                        </a>
+                    </li>
+                    <li  title="PreparedWithdrawal">
+                        <a href="preparedwithdrawal.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PreparedWithdrawal
+                        </a>
+                    </li>
+                    <li  title="PriceLevel">
+                        <a href="pricelevel.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PriceLevel
+                        </a>
+                    </li>
+                    <li  title="PriceMonitoringBounds">
+                        <a href="pricemonitoringbounds.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PriceMonitoringBounds
+                        </a>
+                    </li>
+                    <li  title="PriceMonitoringParameters">
+                        <a href="pricemonitoringparameters.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PriceMonitoringParameters
+                        </a>
+                    </li>
+                    <li  title="PriceMonitoringSettings">
+                        <a href="pricemonitoringsettings.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PriceMonitoringSettings
+                        </a>
+                    </li>
+                    <li  title="PriceMonitoringTrigger">
+                        <a href="pricemonitoringtrigger.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PriceMonitoringTrigger
+                        </a>
+                    </li>
+                    <li  title="Property">
+                        <a href="property.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Property
+                        </a>
+                    </li>
+                    <li  title="PropertyKey">
+                        <a href="propertykey.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PropertyKey
+                        </a>
+                    </li>
+                    <li  title="Proposal">
+                        <a href="proposal.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Proposal
+                        </a>
+                    </li>
+                    <li  title="ProposalTerms">
+                        <a href="proposalterms.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            ProposalTerms
+                        </a>
+                    </li>
+                    <li  title="ProposalVote">
+                        <a href="proposalvote.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            ProposalVote
+                        </a>
+                    </li>
+                    <li  title="RiskFactor">
+                        <a href="riskfactor.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            RiskFactor
+                        </a>
+                    </li>
+                    <li  title="ScalingFactors">
+                        <a href="scalingfactors.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            ScalingFactors
+                        </a>
+                    </li>
+                    <li  title="SettleDistressed">
+                        <a href="settledistressed.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            SettleDistressed
+                        </a>
+                    </li>
+                    <li  title="SettlePosition">
+                        <a href="settleposition.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            SettlePosition
+                        </a>
+                    </li>
+                    <li  title="SimpleRiskModel">
+                        <a href="simpleriskmodel.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            SimpleRiskModel
+                        </a>
+                    </li>
+                    <li  title="SimpleRiskModelParams">
+                        <a href="simpleriskmodelparams.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            SimpleRiskModelParams
+                        </a>
+                    </li>
+                    <li  title="Statistics">
+                        <a href="statistics.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Statistics
+                        </a>
+                    </li>
+                    <li  title="TargetStakeParameters">
+                        <a href="targetstakeparameters.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            TargetStakeParameters
+                        </a>
+                    </li>
+                    <li  title="TimeUpdate">
+                        <a href="timeupdate.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            TimeUpdate
+                        </a>
+                    </li>
+                    <li  title="TradableInstrument">
+                        <a href="tradableinstrument.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            TradableInstrument
+                        </a>
+                    </li>
+                    <li  title="Trade">
+                        <a href="trade.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Trade
+                        </a>
+                    </li>
+                    <li  title="TradeFee">
+                        <a href="tradefee.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            TradeFee
+                        </a>
+                    </li>
+                    <li  title="TradeSettlement">
+                        <a href="tradesettlement.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            TradeSettlement
+                        </a>
+                    </li>
+                    <li  title="TransactionSubmitted">
+                        <a href="transactionsubmitted.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            TransactionSubmitted
+                        </a>
+                    </li>
+                    <li  title="TransferBalance">
+                        <a href="transferbalance.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            TransferBalance
+                        </a>
+                    </li>
+                    <li  title="TransferResponse">
+                        <a href="transferresponse.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            TransferResponse
+                        </a>
+                    </li>
+                    <li  title="TransferResponses">
+                        <a href="transferresponses.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            TransferResponses
+                        </a>
+                    </li>
+                    <li  title="UpdateMarket">
+                        <a href="updatemarket.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            UpdateMarket
+                        </a>
+                    </li>
+                    <li  title="UpdateNetworkParameter">
+                        <a href="updatenetworkparameter.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            UpdateNetworkParameter
+                        </a>
+                    </li>
+                    <li  title="Vote">
+                        <a href="vote.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Vote
+                        </a>
+                    </li>
+                    <li  title="Withdrawal">
+                        <a href="withdrawal.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Withdrawal
+                        </a>
+                    </li>
+                    <li  title="__Directive">
+                        <a href="directive.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            __Directive
+                        </a>
+                    </li>
+                    <li  title="__EnumValue">
+                        <a href="enumvalue.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            __EnumValue
+                        </a>
+                    </li>
+                    <li  title="__Field">
+                        <a href="field.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            __Field
+                        </a>
+                    </li>
+                    <li  title="__InputValue">
+                        <a href="inputvalue.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            __InputValue
+                        </a>
+                    </li>
+                    <li  title="__Schema">
+                        <a href="schema.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            __Schema
+                        </a>
+                    </li>
+                    <li  title="__Type">
+                        <a href="type.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            __Type
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+                <h4 class="slds-text-title--caps slds-p-around--medium">Input Objects</h4>
+                <ul>
+                    <li  title="BuiltinAssetInput">
+                        <a href="builtinassetinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            BuiltinAssetInput
+                        </a>
+                    </li>
+                    <li  title="ConditionInput">
+                        <a href="conditioninput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            ConditionInput
+                        </a>
+                    </li>
+                    <li  title="ContinuousTradingInput">
+                        <a href="continuoustradinginput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            ContinuousTradingInput
+                        </a>
+                    </li>
+                    <li  title="DiscreteTradingInput">
+                        <a href="discretetradinginput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            DiscreteTradingInput
+                        </a>
+                    </li>
+                    <li  title="ERC20Input">
+                        <a href="erc20input.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            ERC20Input
+                        </a>
+                    </li>
+                    <li  title="Erc20WithdrawalDetailsInput">
+                        <a href="erc20withdrawaldetailsinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            Erc20WithdrawalDetailsInput
+                        </a>
+                    </li>
+                    <li  title="FilterInput">
+                        <a href="filterinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            FilterInput
+                        </a>
+                    </li>
+                    <li  title="FutureProductInput">
+                        <a href="futureproductinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            FutureProductInput
+                        </a>
+                    </li>
+                    <li  title="InstrumentConfigurationInput">
+                        <a href="instrumentconfigurationinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            InstrumentConfigurationInput
+                        </a>
+                    </li>
+                    <li  title="LiquidityOrderInput">
+                        <a href="liquidityorderinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            LiquidityOrderInput
+                        </a>
+                    </li>
+                    <li  title="LogNormalModelParamsInput">
+                        <a href="lognormalmodelparamsinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            LogNormalModelParamsInput
+                        </a>
+                    </li>
+                    <li  title="LogNormalRiskModelInput">
+                        <a href="lognormalriskmodelinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            LogNormalRiskModelInput
+                        </a>
+                    </li>
+                    <li  title="NetworkParameterInput">
+                        <a href="networkparameterinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            NetworkParameterInput
+                        </a>
+                    </li>
+                    <li  title="NewAssetInput">
+                        <a href="newassetinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            NewAssetInput
+                        </a>
+                    </li>
+                    <li  title="NewMarketCommitmentInput">
+                        <a href="newmarketcommitmentinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            NewMarketCommitmentInput
+                        </a>
+                    </li>
+                    <li  title="NewMarketInput">
+                        <a href="newmarketinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            NewMarketInput
+                        </a>
+                    </li>
+                    <li  title="OracleSpecConfigurationInput">
+                        <a href="oraclespecconfigurationinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            OracleSpecConfigurationInput
+                        </a>
+                    </li>
+                    <li  title="OracleSpecToFutureBindingInput">
+                        <a href="oraclespectofuturebindinginput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            OracleSpecToFutureBindingInput
+                        </a>
+                    </li>
+                    <li  title="PeggedOrderInput">
+                        <a href="peggedorderinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PeggedOrderInput
+                        </a>
+                    </li>
+                    <li  title="PriceMonitoringParametersInput">
+                        <a href="pricemonitoringparametersinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PriceMonitoringParametersInput
+                        </a>
+                    </li>
+                    <li  title="PriceMonitoringSettingsInput">
+                        <a href="pricemonitoringsettingsinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PriceMonitoringSettingsInput
+                        </a>
+                    </li>
+                    <li  title="PriceMonitoringTriggerInput">
+                        <a href="pricemonitoringtriggerinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PriceMonitoringTriggerInput
+                        </a>
+                    </li>
+                    <li  title="PropertyKeyInput">
+                        <a href="propertykeyinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            PropertyKeyInput
+                        </a>
+                    </li>
+                    <li  title="ProposalTermsInput">
+                        <a href="proposaltermsinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            ProposalTermsInput
+                        </a>
+                    </li>
+                    <li  title="RiskParametersInput">
+                        <a href="riskparametersinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            RiskParametersInput
+                        </a>
+                    </li>
+                    <li  title="SignatureInput">
+                        <a href="signatureinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            SignatureInput
+                        </a>
+                    </li>
+                    <li  title="SimpleRiskModelParamsInput">
+                        <a href="simpleriskmodelparamsinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            SimpleRiskModelParamsInput
+                        </a>
+                    </li>
+                    <li  title="UpdateMarketInput">
+                        <a href="updatemarketinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            UpdateMarketInput
+                        </a>
+                    </li>
+                    <li  title="UpdateNetworkParameterInput">
+                        <a href="updatenetworkparameterinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            UpdateNetworkParameterInput
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+                <h4 class="slds-text-title--caps slds-p-around--medium">Directives</h4>
+                <ul>
+                    <li  title="deprecated">
+                        <a href="deprecated.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            deprecated
+                        </a>
+                    </li>
+                    <li  title="include">
+                        <a href="include.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            include
+                        </a>
+                    </li>
+                    <li  title="skip">
+                        <a href="skip.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            skip
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main><section class="title slds-theme--inverse">
+              <div class="container slds-grid">
+                  <div>
+                  <button class="slds-button js-toggle-navigation less-than-medium">
+                      <i class="material-icons slds-button__icon slds-button__icon--left">menu</i>
+                      <span class="slds-text-title--caps">Types</span>
+                  </button>
+                  </div>
+                  </div>
+              </div>
+              <div class="container">
+                  <p class="slds-text-title--caps slds-text-color--weak">SCALAR</p>
+                  <h1 class="slds-text-heading--large">String</h1>
+                  <div class="slds-text-body--regular"><p>The <code>String</code> scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.</p>
+</div>
+              </div>
+          </section>
+          <section>
+              <div class="container">
+                  <h2 id="graphql-schema-definition" class="graphdoc-section__title slds-text-heading--medium slds-m-top--small">
+                      <a href="#graphql-schema-definition">
+                          <i class="material-icons">link</i>
+                      </a>
+                      GraphQL Schema definition
+                  </h2>
+                  <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">scalar</span> <span class="identifier">String</span></td></tr></tbody></table></code>
+              </div>
+          </section>
+          <section>
+              <div class="container">
+                  <h2 id="required-by" class="graphdoc-section__title slds-text-heading--medium slds-m-top--small">
+                      <a href="#required-by">
+                          <i class="material-icons">link</i>
+                      </a>
+                      Required by
+                  </h2>
+                  <ul class="require-by"><li><a href="account.doc.html" title="Account - An account record">Account<em>An account record</em></a><li><li><a href="asset.doc.html" title="Asset - Represents an asset in vega">Asset<em>Represents an asset in vega</em></a><li><li><a href="auctionevent.doc.html" title="AuctionEvent - ">AuctionEvent<em></em></a><li><li><a href="builtinasset.doc.html" title="BuiltinAsset - A vega builtin asset, mostly for testing purpose">BuiltinAsset<em>A vega builtin asset, mostly for testing purpose</em></a><li><li><a href="builtinassetinput.doc.html" title="BuiltinAssetInput - A vega builtin asset, mostly for testing purpose">BuiltinAssetInput<em>A vega builtin asset, mostly for testing purpose</em></a><li><li><a href="busevent.doc.html" title="BusEvent - ">BusEvent<em></em></a><li><li><a href="candle.doc.html" title="Candle - Candle stick representation of trading">Candle<em>Candle stick representation of trading</em></a><li><li><a href="condition.doc.html" title="Condition - Condition describes the condition that must be validated by the">Condition<em>Condition describes the condition that must be validated by the</em></a><li><li><a href="conditioninput.doc.html" title="ConditionInput - Condition describes the condition that must be validated by the">ConditionInput<em>Condition describes the condition that must be validated by the</em></a><li><li><a href="continuoustrading.doc.html" title="ContinuousTrading - A mode where Vega tries to execute orders as soon as they are received">ContinuousTrading<em>A mode where Vega tries to execute orders as soon as they are received</em></a><li><li><a href="continuoustradinginput.doc.html" title="ContinuousTradingInput - A mode where Vega try to execute order as soon as they are received">ContinuousTradingInput<em>A mode where Vega try to execute order as soon as they are received</em></a><li><li><a href="deposit.doc.html" title="Deposit - The details of a deposit processed by vega">Deposit<em>The details of a deposit processed by vega</em></a><li><li><a href="discretetrading.doc.html" title="DiscreteTrading - Frequent batch auctions trading mode">DiscreteTrading<em>Frequent batch auctions trading mode</em></a><li><li><a href="discretetradinginput.doc.html" title="DiscreteTradingInput - Frequent batch auctions trading mode">DiscreteTradingInput<em>Frequent batch auctions trading mode</em></a><li><li><a href="erc20.doc.html" title="ERC20 - An asset originated from an Ethereum ERC20 Token">ERC20<em>An asset originated from an Ethereum ERC20 Token</em></a><li><li><a href="erc20input.doc.html" title="ERC20Input - An asset originated from an Ethereum ERC20 Token">ERC20Input<em>An asset originated from an Ethereum ERC20 Token</em></a><li><li><a href="erc20withdrawalapproval.doc.html" title="Erc20WithdrawalApproval - All the data related to the approval of a withdrawal from the network">Erc20WithdrawalApproval<em>All the data related to the approval of a withdrawal from the network</em></a><li><li><a href="erc20withdrawaldetails.doc.html" title="Erc20WithdrawalDetails - Specific details for an erc20 withdrawal">Erc20WithdrawalDetails<em>Specific details for an erc20 withdrawal</em></a><li><li><a href="erc20withdrawaldetailsinput.doc.html" title="Erc20WithdrawalDetailsInput - ERC20 specific details to start a withdrawal">Erc20WithdrawalDetailsInput<em>ERC20 specific details to start a withdrawal</em></a><li><li><a href="ethereumevent.doc.html" title="EthereumEvent - An Ethereum oracle">EthereumEvent<em>An Ethereum oracle</em></a><li><li><a href="feefactors.doc.html" title="FeeFactors - The factors applied to calculate the fees">FeeFactors<em>The factors applied to calculate the fees</em></a><li><li><a href="future.doc.html" title="Future - A Future product">Future<em>A Future product</em></a><li><li><a href="futureproduct.doc.html" title="FutureProduct - ">FutureProduct<em></em></a><li><li><a href="futureproductinput.doc.html" title="FutureProductInput - Future product configuration">FutureProductInput<em>Future product configuration</em></a><li><li><a href="instrument.doc.html" title="Instrument - Describe something that can be traded on Vega">Instrument<em>Describe something that can be traded on Vega</em></a><li><li><a href="instrumentconfiguration.doc.html" title="InstrumentConfiguration - ">InstrumentConfiguration<em></em></a><li><li><a href="instrumentconfigurationinput.doc.html" title="InstrumentConfigurationInput - ">InstrumentConfigurationInput<em></em></a><li><li><a href="instrumentmetadata.doc.html" title="InstrumentMetadata - A set of metadata to associate to an instrument">InstrumentMetadata<em>A set of metadata to associate to an instrument</em></a><li><li><a href="ledgerentry.doc.html" title="LedgerEntry - ">LedgerEntry<em></em></a><li><li><a href="liquidityproviderfeeshare.doc.html" title="LiquidityProviderFeeShare - The equity like share of liquidity fee for each liquidity provider">LiquidityProviderFeeShare<em>The equity like share of liquidity fee for each liquidity provider</em></a><li><li><a href="liquidityprovision.doc.html" title="LiquidityProvision - The command to be sent to the chain for a liquidity provision submission">LiquidityProvision<em>The command to be sent to the chain for a liquidity provision submission</em></a><li><li><a href="marginlevels.doc.html" title="MarginLevels - Margins for a given a trader">MarginLevels<em>Margins for a given a trader</em></a><li><li><a href="market.doc.html" title="Market - Represents a product & associated parameters that can be traded on Vega, has an associated OrderBook and Trade history">Market<em>Represents a product & associated parameters that can be traded on Vega, has an associated OrderBook and Trade history</em></a><li><li><a href="marketdata.doc.html" title="MarketData - Live data of a Market">MarketData<em>Live data of a Market</em></a><li><li><a href="marketdepth.doc.html" title="MarketDepth - Market Depth is a measure of the number of open buy and sell orders for a security or currency at different prices.
+The depth of market measure provides an indication of the liquidity and depth for the instrument.">MarketDepth<em>Market Depth is a measure of the number of open buy and sell orders for a security or currency at different prices.
+The depth of market measure provides an indication of the liquidity and depth for the instrument.</em></a><li><li><a href="marketdepthupdate.doc.html" title="MarketDepthUpdate - Market Depth Update is a delta to the current market depth which can be used to update the
+market depth structure to keep it correct">MarketDepthUpdate<em>Market Depth Update is a delta to the current market depth which can be used to update the
+market depth structure to keep it correct</em></a><li><li><a href="marketevent.doc.html" title="MarketEvent - ">MarketEvent<em></em></a><li><li><a href="markettick.doc.html" title="MarketTick - ">MarketTick<em></em></a><li><li><a href="mutation.doc.html" title="Mutation - Mutations are similar to GraphQL queries, however they allow a caller to change or mutate data.">Mutation<em>Mutations are similar to GraphQL queries, however they allow a caller to change or mutate data.</em></a><li><li><a href="networkparameter.doc.html" title="NetworkParameter - Representation of a network parameter">NetworkParameter<em>Representation of a network parameter</em></a><li><li><a href="networkparameterinput.doc.html" title="NetworkParameterInput - Representation of a network parameter">NetworkParameterInput<em>Representation of a network parameter</em></a><li><li><a href="newmarket.doc.html" title="NewMarket - ">NewMarket<em></em></a><li><li><a href="newmarketcommitment.doc.html" title="NewMarketCommitment - A commitment of liquidity to be made by the party which proposes a market">NewMarketCommitment<em>A commitment of liquidity to be made by the party which proposes a market</em></a><li><li><a href="newmarketcommitmentinput.doc.html" title="NewMarketCommitmentInput - A commitment of liquidity to be made by the party which proposes a market">NewMarketCommitmentInput<em>A commitment of liquidity to be made by the party which proposes a market</em></a><li><li><a href="newmarketinput.doc.html" title="NewMarketInput - Allows creating new markets on the network">NewMarketInput<em>Allows creating new markets on the network</em></a><li><li><a href="nodesignature.doc.html" title="NodeSignature - Represents a signature for the approval of a resource from a validator">NodeSignature<em>Represents a signature for the approval of a resource from a validator</em></a><li><li><a href="oracledata.doc.html" title="OracleData - An oracle data contains the data sent by an oracle">OracleData<em>An oracle data contains the data sent by an oracle</em></a><li><li><a href="oraclespec.doc.html" title="OracleSpec - An oracle spec describe the oracle data that a product (or a risk model)
+wants to get from the oracle engine.">OracleSpec<em>An oracle spec describe the oracle data that a product (or a risk model)
+wants to get from the oracle engine.</em></a><li><li><a href="oraclespecconfiguration.doc.html" title="OracleSpecConfiguration - An oracle spec describe the oracle data that an instrument wants to get from the
+oracle engine.">OracleSpecConfiguration<em>An oracle spec describe the oracle data that an instrument wants to get from the
+oracle engine.</em></a><li><li><a href="oraclespecconfigurationinput.doc.html" title="OracleSpecConfigurationInput - An oracle spec describe the oracle data that a product (or a risk model)
+wants to get from the oracle engine.">OracleSpecConfigurationInput<em>An oracle spec describe the oracle data that a product (or a risk model)
+wants to get from the oracle engine.</em></a><li><li><a href="oraclespectofuturebinding.doc.html" title="OracleSpecToFutureBinding - OracleSpecToFutureBinding tells on which property oracle data should be
+used as settlement price.">OracleSpecToFutureBinding<em>OracleSpecToFutureBinding tells on which property oracle data should be
+used as settlement price.</em></a><li><li><a href="oraclespectofuturebindinginput.doc.html" title="OracleSpecToFutureBindingInput - OracleSpecToFutureBindingInput tells on which property oracle data should be
+used as settlement price.">OracleSpecToFutureBindingInput<em>OracleSpecToFutureBindingInput tells on which property oracle data should be
+used as settlement price.</em></a><li><li><a href="order.doc.html" title="Order - An order in Vega, if active it will be on the OrderBook for the market">Order<em>An order in Vega, if active it will be on the OrderBook for the market</em></a><li><li><a href="orderestimate.doc.html" title="OrderEstimate - An estimate of the fee to be paid by the order">OrderEstimate<em>An estimate of the fee to be paid by the order</em></a><li><li><a href="party.doc.html" title="Party - Represents a party on Vega, could be an ethereum wallet address in the future">Party<em>Represents a party on Vega, could be an ethereum wallet address in the future</em></a><li><li><a href="peggedorder.doc.html" title="PeggedOrder - Create an order linked to an index rather than a price">PeggedOrder<em>Create an order linked to an index rather than a price</em></a><li><li><a href="peggedorderinput.doc.html" title="PeggedOrderInput - Create an order linked to an index rather than a price">PeggedOrderInput<em>Create an order linked to an index rather than a price</em></a><li><li><a href="position.doc.html" title="Position - An individual trader at any point in time is considered net long or net short. This refers to their Open Volume,
+calculated using FIFO. This volume is signed as either negative for LONG positions and positive for SHORT positions. A
+single trade may end up &quot;splitting&quot; with some of its volume matched into closed volume and some of its volume
+remaining as open volume. This is why we don't refer to positions being comprised of trades, rather of volume.">Position<em>An individual trader at any point in time is considered net long or net short. This refers to their Open Volume,
+calculated using FIFO. This volume is signed as either negative for LONG positions and positive for SHORT positions. A
+single trade may end up "splitting" with some of its volume matched into closed volume and some of its volume
+remaining as open volume. This is why we don't refer to positions being comprised of trades, rather of volume.</em></a><li><li><a href="preparedamendorder.doc.html" title="PreparedAmendOrder - ">PreparedAmendOrder<em></em></a><li><li><a href="preparedcancelorder.doc.html" title="PreparedCancelOrder - ">PreparedCancelOrder<em></em></a><li><li><a href="preparedliquidityprovision.doc.html" title="PreparedLiquidityProvision - A prepared LiquidityProvision command">PreparedLiquidityProvision<em>A prepared LiquidityProvision command</em></a><li><li><a href="preparedproposal.doc.html" title="PreparedProposal - ">PreparedProposal<em></em></a><li><li><a href="preparedsubmitorder.doc.html" title="PreparedSubmitOrder - ">PreparedSubmitOrder<em></em></a><li><li><a href="preparedvote.doc.html" title="PreparedVote - ">PreparedVote<em></em></a><li><li><a href="preparedwithdrawal.doc.html" title="PreparedWithdrawal - ">PreparedWithdrawal<em></em></a><li><li><a href="pricelevel.doc.html" title="PriceLevel - Represents a price on either the buy or sell side and all the orders at that price">PriceLevel<em>Represents a price on either the buy or sell side and all the orders at that price</em></a><li><li><a href="pricemonitoringbounds.doc.html" title="PriceMonitoringBounds - Range of valid prices and the associated price monitoring trigger">PriceMonitoringBounds<em>Range of valid prices and the associated price monitoring trigger</em></a><li><li><a href="property.doc.html" title="Property - A property associates a name to a value">Property<em>A property associates a name to a value</em></a><li><li><a href="propertykey.doc.html" title="PropertyKey - PropertyKey describes the property key contained in an oracle data.">PropertyKey<em>PropertyKey describes the property key contained in an oracle data.</em></a><li><li><a href="propertykeyinput.doc.html" title="PropertyKeyInput - PropertyKey describes the property key contained in an oracle data.">PropertyKeyInput<em>PropertyKey describes the property key contained in an oracle data.</em></a><li><li><a href="proposal.doc.html" title="Proposal - ">Proposal<em></em></a><li><li><a href="proposalterms.doc.html" title="ProposalTerms - ">ProposalTerms<em></em></a><li><li><a href="proposaltermsinput.doc.html" title="ProposalTermsInput - Proposal terms input. Only one kind of change is expected. Proposals with no changes or more than one will not be accepted.">ProposalTermsInput<em>Proposal terms input. Only one kind of change is expected. Proposals with no changes or more than one will not be accepted.</em></a><li><li><a href="query.doc.html" title="Query - Queries allow a caller to read data and filter data via GraphQL.">Query<em>Queries allow a caller to read data and filter data via GraphQL.</em></a><li><li><a href="riskfactor.doc.html" title="RiskFactor - A risk factor emitted by the risk model for a given market">RiskFactor<em>A risk factor emitted by the risk model for a given market</em></a><li><li><a href="signatureinput.doc.html" title="SignatureInput - A signature to be bundled with a transaction">SignatureInput<em>A signature to be bundled with a transaction</em></a><li><li><a href="statistics.doc.html" title="Statistics - Statistics about the node">Statistics<em>Statistics about the node</em></a><li><li><a href="subscription.doc.html" title="Subscription - Subscriptions allow a caller to receive new information as it is available from the VEGA platform.">Subscription<em>Subscriptions allow a caller to receive new information as it is available from the VEGA platform.</em></a><li><li><a href="timeupdate.doc.html" title="TimeUpdate - ">TimeUpdate<em></em></a><li><li><a href="trade.doc.html" title="Trade - A trade on Vega, the result of two orders being 'matched' in the market">Trade<em>A trade on Vega, the result of two orders being 'matched' in the market</em></a><li><li><a href="tradefee.doc.html" title="TradeFee - The fee paid by the party when a trade occurs">TradeFee<em>The fee paid by the party when a trade occurs</em></a><li><li><a href="vote.doc.html" title="Vote - ">Vote<em></em></a><li><li><a href="withdrawal.doc.html" title="Withdrawal - The details of a withdrawal processed by vega">Withdrawal<em>The details of a withdrawal processed by vega</em></a><li><li><a href="directive.spec.html" title="__Directive - A Directive provides a way to describe alternate runtime execution and type validation behavior in a GraphQL document.
+
+In some cases, you need to provide options to alter GraphQL's execution behavior in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives provide this by describing additional information to the executor.">__Directive<em>A Directive provides a way to describe alternate runtime execution and type validation behavior in a GraphQL document.
+
+In some cases, you need to provide options to alter GraphQL's execution behavior in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives provide this by describing additional information to the executor.</em></a><li><li><a href="enumvalue.spec.html" title="__EnumValue - One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string.">__EnumValue<em>One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string.</em></a><li><li><a href="field.spec.html" title="__Field - Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type.">__Field<em>Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type.</em></a><li><li><a href="inputvalue.spec.html" title="__InputValue - Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value.">__InputValue<em>Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value.</em></a><li><li><a href="type.spec.html" title="__Type - The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.
+
+Depending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name and description, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.">__Type<em>The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.
+
+Depending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name and description, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.</em></a><li></ul>
+              </div>
+          </section>
+          <footer>
+          <div class="container slds-p-around--large">
+              <p class="slds-text-align--right slds-text-title--caps">
+                  Generated with <a href="https://github.com/CodeSignal/graphqldoc#readme" target="_blank">graphqldoc 2.5.2</a>
+              </p>
+          </div>
+          </footer>
+</main>
+    <script src="./scripts/focus-active.js"></script>
+    <script src="./scripts/filter-types.js"></script>
+    <script src="./scripts/toggle-navigation.js"></script>
+</body>
