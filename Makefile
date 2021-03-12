@@ -5,8 +5,15 @@ SHELL := /usr/bin/env bash
 .PHONY: default
 default:
 	@echo "Please select a target:"
-	@echo "- preproto:  copy *.proto from vega core repository"
-	@echo "- proto:     Run buf to auto-generate API clients"
+	@echo "- graphql:   Copy schema.graphql from vega core repository. Build documentation."
+	@echo "- preproto:  Copy *.proto from vega core repository."
+	@echo "- proto:     Run buf to auto-generate API clients and documentation."
+
+.PHONY: graphql
+graphql:
+	@if test -z "$(VEGACORE)" ; then echo "Please set VEGACORE" ; exit 1 ; fi
+	@cp -a "$(VEGACORE)/gateway/graphql/schema.graphql" graphql/
+	@cd graphql && npm install && ./node_modules/.bin/graphqldoc -f -s schema.graphql -o doc/
 
 .PHONY: preproto
 preproto:
