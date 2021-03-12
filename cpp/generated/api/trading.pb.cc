@@ -16,9 +16,11 @@
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_api_2ftrading_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OptionalProposalState_api_2ftrading_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_api_2ftrading_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Pagination_api_2ftrading_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_oracles_2fv1_2foracle_5fdata_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_OracleData_oracles_2fv1_2foracle_5fdata_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_oracles_2fv1_2foracle_5fspec_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_OracleSpec_oracles_2fv1_2foracle_5fspec_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Account_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_assets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Asset_assets_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_events_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<26> scc_info_BusEvent_events_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_events_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<28> scc_info_BusEvent_events_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Candle_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_ChainEvent_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Deposit_vega_2eproto;
@@ -619,6 +621,30 @@ class LiquidityProvisionsResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<LiquidityProvisionsResponse> _instance;
 } _LiquidityProvisionsResponse_default_instance_;
+class OracleSpecRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<OracleSpecRequest> _instance;
+} _OracleSpecRequest_default_instance_;
+class OracleSpecResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<OracleSpecResponse> _instance;
+} _OracleSpecResponse_default_instance_;
+class OracleSpecsRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<OracleSpecsRequest> _instance;
+} _OracleSpecsRequest_default_instance_;
+class OracleSpecsResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<OracleSpecsResponse> _instance;
+} _OracleSpecsResponse_default_instance_;
+class OracleDataBySpecRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<OracleDataBySpecRequest> _instance;
+} _OracleDataBySpecRequest_default_instance_;
+class OracleDataBySpecResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<OracleDataBySpecResponse> _instance;
+} _OracleDataBySpecResponse_default_instance_;
 }  // namespace v1
 }  // namespace api
 static void InitDefaultsscc_info_AccountsSubscribeRequest_api_2ftrading_2eproto() {
@@ -1748,6 +1774,87 @@ static void InitDefaultsscc_info_OptionalProposalState_api_2ftrading_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OptionalProposalState_api_2ftrading_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_OptionalProposalState_api_2ftrading_2eproto}, {}};
 
+static void InitDefaultsscc_info_OracleDataBySpecRequest_api_2ftrading_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::v1::_OracleDataBySpecRequest_default_instance_;
+    new (ptr) ::api::v1::OracleDataBySpecRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OracleDataBySpecRequest_api_2ftrading_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_OracleDataBySpecRequest_api_2ftrading_2eproto}, {}};
+
+static void InitDefaultsscc_info_OracleDataBySpecResponse_api_2ftrading_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::v1::_OracleDataBySpecResponse_default_instance_;
+    new (ptr) ::api::v1::OracleDataBySpecResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_OracleDataBySpecResponse_api_2ftrading_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_OracleDataBySpecResponse_api_2ftrading_2eproto}, {
+      &scc_info_OracleData_oracles_2fv1_2foracle_5fdata_2eproto.base,}};
+
+static void InitDefaultsscc_info_OracleSpecRequest_api_2ftrading_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::v1::_OracleSpecRequest_default_instance_;
+    new (ptr) ::api::v1::OracleSpecRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OracleSpecRequest_api_2ftrading_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_OracleSpecRequest_api_2ftrading_2eproto}, {}};
+
+static void InitDefaultsscc_info_OracleSpecResponse_api_2ftrading_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::v1::_OracleSpecResponse_default_instance_;
+    new (ptr) ::api::v1::OracleSpecResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_OracleSpecResponse_api_2ftrading_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_OracleSpecResponse_api_2ftrading_2eproto}, {
+      &scc_info_OracleSpec_oracles_2fv1_2foracle_5fspec_2eproto.base,}};
+
+static void InitDefaultsscc_info_OracleSpecsRequest_api_2ftrading_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::v1::_OracleSpecsRequest_default_instance_;
+    new (ptr) ::api::v1::OracleSpecsRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OracleSpecsRequest_api_2ftrading_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_OracleSpecsRequest_api_2ftrading_2eproto}, {}};
+
+static void InitDefaultsscc_info_OracleSpecsResponse_api_2ftrading_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::v1::_OracleSpecsResponse_default_instance_;
+    new (ptr) ::api::v1::OracleSpecsResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_OracleSpecsResponse_api_2ftrading_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_OracleSpecsResponse_api_2ftrading_2eproto}, {
+      &scc_info_OracleSpec_oracles_2fv1_2foracle_5fspec_2eproto.base,}};
+
 static void InitDefaultsscc_info_OrderByIDRequest_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -2551,7 +2658,7 @@ static void InitDefaultsscc_info_WithdrawalsResponse_api_2ftrading_2eproto() {
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_WithdrawalsResponse_api_2ftrading_2eproto}, {
       &scc_info_Withdrawal_vega_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_api_2ftrading_2eproto[142];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_api_2ftrading_2eproto[148];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_api_2ftrading_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_api_2ftrading_2eproto = nullptr;
 
@@ -3448,6 +3555,41 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_api_2ftrading_2eproto::offsets
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::api::v1::LiquidityProvisionsResponse, liquidity_provisions_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::api::v1::OracleSpecRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::api::v1::OracleSpecRequest, id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::api::v1::OracleSpecResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::api::v1::OracleSpecResponse, oracle_spec_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::api::v1::OracleSpecsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::api::v1::OracleSpecsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::api::v1::OracleSpecsResponse, oracle_specs_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::api::v1::OracleDataBySpecRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::api::v1::OracleDataBySpecRequest, id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::api::v1::OracleDataBySpecResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::api::v1::OracleDataBySpecResponse, oracle_data_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::api::v1::PropagateChainEventRequest)},
@@ -3592,6 +3734,12 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 873, -1, sizeof(::api::v1::NetworkParametersResponse)},
   { 879, -1, sizeof(::api::v1::LiquidityProvisionsRequest)},
   { 886, -1, sizeof(::api::v1::LiquidityProvisionsResponse)},
+  { 892, -1, sizeof(::api::v1::OracleSpecRequest)},
+  { 898, -1, sizeof(::api::v1::OracleSpecResponse)},
+  { 904, -1, sizeof(::api::v1::OracleSpecsRequest)},
+  { 909, -1, sizeof(::api::v1::OracleSpecsResponse)},
+  { 915, -1, sizeof(::api::v1::OracleDataBySpecRequest)},
+  { 921, -1, sizeof(::api::v1::OracleDataBySpecResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -3737,451 +3885,475 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_NetworkParametersResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_LiquidityProvisionsRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_LiquidityProvisionsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_OracleSpecRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_OracleSpecResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_OracleSpecsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_OracleSpecsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_OracleDataBySpecRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_OracleDataBySpecResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_api_2ftrading_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\021api/trading.proto\022\006api.v1\032\nvega.proto\032"
   "\rmarkets.proto\032\020governance.proto\032\022chain_"
   "events.proto\032\014assets.proto\032\014events.proto"
-  "\0326github.com/mwitkow/go-proto-validators"
-  "/validator.proto\"w\n\032PropagateChainEventR"
-  "equest\022\"\n\003evt\030\001 \001(\0132\020.vega.ChainEventR\003e"
-  "vt\022\027\n\007pub_key\030\002 \001(\tR\006pubKey\022\034\n\tsignature"
-  "\030\003 \001(\014R\tsignature\"7\n\033PropagateChainEvent"
-  "Response\022\030\n\007success\030\001 \001(\010R\007success\"\307\001\n\030S"
-  "ubmitTransactionRequest\022\"\n\002tx\030\001 \001(\0132\022.ve"
-  "ga.SignedBundleR\002tx\0229\n\004type\030\002 \001(\0162%.api."
-  "v1.SubmitTransactionRequest.TypeR\004type\"L"
-  "\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\016\n\nTYPE_ASY"
-  "NC\020\001\022\r\n\tTYPE_SYNC\020\002\022\017\n\013TYPE_COMMIT\020\003\"5\n\031"
-  "SubmitTransactionResponse\022\030\n\007success\030\001 \001"
-  "(\010R\007success\"N\n\026PrepareWithdrawRequest\0224\n"
-  "\010withdraw\030\001 \001(\0132\030.vega.WithdrawSubmissio"
-  "nR\010withdraw\"-\n\027PrepareWithdrawResponse\022\022"
-  "\n\004blob\030\001 \001(\014R\004blob\"M\n\032PrepareSubmitOrder"
-  "Response\022\022\n\004blob\030\001 \001(\014R\004blob\022\033\n\tsubmit_i"
-  "d\030\002 \001(\tR\010submitId\"0\n\032PrepareCancelOrderR"
-  "esponse\022\022\n\004blob\030\001 \001(\014R\004blob\"/\n\031PrepareAm"
-  "endOrderResponse\022\022\n\004blob\030\001 \001(\014R\004blob\"R\n\031"
-  "PrepareSubmitOrderRequest\0225\n\nsubmission\030"
-  "\001 \001(\0132\025.vega.OrderSubmissionR\nsubmission"
-  "\"X\n\031PrepareCancelOrderRequest\022;\n\014cancell"
-  "ation\030\001 \001(\0132\027.vega.OrderCancellationR\014ca"
-  "ncellation\"N\n\030PrepareAmendOrderRequest\0222"
-  "\n\tamendment\030\001 \001(\0132\024.vega.OrderAmendmentR"
-  "\tamendment\"\017\n\rAssetsRequest\"5\n\016AssetsRes"
-  "ponse\022#\n\006assets\030\001 \003(\0132\013.vega.AssetR\006asse"
-  "ts\"*\n\020AssetByIDRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002"
-  "X\001R\002id\"6\n\021AssetByIDResponse\022!\n\005asset\030\001 \001"
-  "(\0132\013.vega.AssetR\005asset\";\n!GetNodeSignatu"
-  "resAggregateRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R"
-  "\002id\"Y\n\"GetNodeSignaturesAggregateRespons"
-  "e\0223\n\nsignatures\030\001 \003(\0132\023.vega.NodeSignatu"
-  "reR\nsignatures\"C\n\025OptionalProposalState\022"
-  "*\n\005value\030\001 \001(\0162\024.vega.Proposal.StateR\005va"
-  "lue\"\\\n\023GetProposalsRequest\022E\n\017select_in_"
-  "state\030\001 \001(\0132\035.api.v1.OptionalProposalSta"
-  "teR\rselectInState\"@\n\024GetProposalsRespons"
-  "e\022(\n\004data\030\001 \003(\0132\024.vega.GovernanceDataR\004d"
-  "ata\"\206\001\n\032GetProposalsByPartyRequest\022!\n\010pa"
-  "rty_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022E\n\017select_"
-  "in_state\030\002 \001(\0132\035.api.v1.OptionalProposal"
-  "StateR\rselectInState\"G\n\033GetProposalsByPa"
-  "rtyResponse\022(\n\004data\030\001 \003(\0132\024.vega.Governa"
-  "nceDataR\004data\";\n\026GetVotesByPartyRequest\022"
-  "!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\";\n\027Ge"
-  "tVotesByPartyResponse\022 \n\005votes\030\001 \003(\0132\n.v"
-  "ega.VoteR\005votes\"e\n\034GetNewMarketProposals"
-  "Request\022E\n\017select_in_state\030\001 \001(\0132\035.api.v"
-  "1.OptionalProposalStateR\rselectInState\"I"
-  "\n\035GetNewMarketProposalsResponse\022(\n\004data\030"
-  "\001 \003(\0132\024.vega.GovernanceDataR\004data\"\215\001\n\037Ge"
-  "tUpdateMarketProposalsRequest\022#\n\tmarket_"
-  "id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022E\n\017select_in_"
-  "state\030\002 \001(\0132\035.api.v1.OptionalProposalSta"
-  "teR\rselectInState\"L\n GetUpdateMarketProp"
-  "osalsResponse\022(\n\004data\030\001 \003(\0132\024.vega.Gover"
-  "nanceDataR\004data\"m\n$GetNetworkParametersP"
-  "roposalsRequest\022E\n\017select_in_state\030\001 \001(\013"
-  "2\035.api.v1.OptionalProposalStateR\rselectI"
-  "nState\"Q\n%GetNetworkParametersProposalsR"
-  "esponse\022(\n\004data\030\001 \003(\0132\024.vega.GovernanceD"
-  "ataR\004data\"d\n\033GetNewAssetProposalsRequest"
-  "\022E\n\017select_in_state\030\001 \001(\0132\035.api.v1.Optio"
-  "nalProposalStateR\rselectInState\"H\n\034GetNe"
-  "wAssetProposalsResponse\022(\n\004data\030\001 \003(\0132\024."
-  "vega.GovernanceDataR\004data\"A\n\026GetProposal"
-  "ByIDRequest\022\'\n\013proposal_id\030\001 \001(\tB\006\342\337\037\002X\001"
-  "R\nproposalId\"C\n\027GetProposalByIDResponse\022"
-  "(\n\004data\030\001 \001(\0132\024.vega.GovernanceDataR\004dat"
-  "a\"E\n\035GetProposalByReferenceRequest\022$\n\tre"
-  "ference\030\001 \001(\tB\006\342\337\037\002X\001R\treference\"J\n\036GetP"
-  "roposalByReferenceResponse\022(\n\004data\030\001 \001(\013"
-  "2\024.vega.GovernanceDataR\004data\"\032\n\030ObserveG"
-  "overnanceRequest\"E\n\031ObserveGovernanceRes"
-  "ponse\022(\n\004data\030\001 \001(\0132\024.vega.GovernanceDat"
-  "aR\004data\"A\n\034ObservePartyProposalsRequest\022"
-  "!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\"I\n\035Ob"
-  "servePartyProposalsResponse\022(\n\004data\030\001 \001("
-  "\0132\024.vega.GovernanceDataR\004data\"F\n\033Observe"
-  "ProposalVotesRequest\022\'\n\013proposal_id\030\001 \001("
-  "\tB\006\342\337\037\002X\001R\nproposalId\">\n\034ObserveProposal"
-  "VotesResponse\022\036\n\004vote\030\001 \001(\0132\n.vega.VoteR"
-  "\004vote\"=\n\030ObservePartyVotesRequest\022!\n\010par"
-  "ty_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\";\n\031ObserveP"
-  "artyVotesResponse\022\036\n\004vote\030\001 \001(\0132\n.vega.V"
-  "oteR\004vote\"^\n\034MarginLevelsSubscribeReques"
-  "t\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022\033\n\t"
-  "market_id\030\002 \001(\tR\010marketId\"X\n\035MarginLevel"
-  "sSubscribeResponse\0227\n\rmargin_levels\030\001 \001("
-  "\0132\022.vega.MarginLevelsR\014marginLevels\"U\n\023M"
-  "arginLevelsRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337"
-  "\037\002X\001R\007partyId\022\033\n\tmarket_id\030\002 \001(\tR\010market"
-  "Id\"O\n\024MarginLevelsResponse\0227\n\rmargin_lev"
-  "els\030\001 \003(\0132\022.vega.MarginLevelsR\014marginLev"
-  "els\":\n\033MarketsDataSubscribeRequest\022\033\n\tma"
-  "rket_id\030\001 \001(\tR\010marketId\"Q\n\034MarketsDataSu"
-  "bscribeResponse\0221\n\013market_data\030\001 \001(\0132\020.v"
-  "ega.MarketDataR\nmarketData\"<\n\025MarketData"
-  "ByIDRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010"
-  "marketId\"K\n\026MarketDataByIDResponse\0221\n\013ma"
-  "rket_data\030\001 \001(\0132\020.vega.MarketDataR\nmarke"
-  "tData\"\024\n\022MarketsDataRequest\"J\n\023MarketsDa"
-  "taResponse\0223\n\014markets_data\030\001 \003(\0132\020.vega."
-  "MarketDataR\013marketsData\"7\n\020LastTradeRequ"
-  "est\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId"
-  "\"6\n\021LastTradeResponse\022!\n\005trade\030\001 \001(\0132\013.v"
-  "ega.TradeR\005trade\"8\n\021MarketByIDRequest\022#\n"
-  "\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\":\n\022Ma"
-  "rketByIDResponse\022$\n\006market\030\001 \001(\0132\014.vega."
-  "MarketR\006market\"5\n\020PartyByIDRequest\022!\n\010pa"
-  "rty_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\"6\n\021PartyBy"
-  "IDResponse\022!\n\005party\030\001 \001(\0132\013.vega.PartyR\005"
-  "party\"\020\n\016PartiesRequest\"8\n\017PartiesRespon"
-  "se\022%\n\007parties\030\001 \003(\0132\013.vega.PartyR\007partie"
-  "s\"\202\001\n\024TradesByPartyRequest\022\031\n\010party_id\030\001"
-  " \001(\tR\007partyId\022\033\n\tmarket_id\030\002 \001(\tR\010market"
-  "Id\0222\n\npagination\030\003 \001(\0132\022.api.v1.Paginati"
-  "onR\npagination\"<\n\025TradesByPartyResponse\022"
-  "#\n\006trades\030\001 \003(\0132\013.vega.TradeR\006trades\"1\n\024"
-  "TradesByOrderRequest\022\031\n\010order_id\030\001 \001(\tR\007"
-  "orderId\"<\n\025TradesByOrderResponse\022#\n\006trad"
-  "es\030\001 \003(\0132\013.vega.TradeR\006trades\"\217\001\n\030Accoun"
-  "tsSubscribeRequest\022\033\n\tmarket_id\030\001 \001(\tR\010m"
-  "arketId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\024\n\005as"
-  "set\030\003 \001(\tR\005asset\022%\n\004type\030\004 \001(\0162\021.vega.Ac"
-  "countTypeR\004type\"D\n\031AccountsSubscribeResp"
-  "onse\022\'\n\007account\030\001 \001(\0132\r.vega.AccountR\007ac"
-  "count\"P\n\026OrdersSubscribeRequest\022\033\n\tmarke"
-  "t_id\030\001 \001(\tR\010marketId\022\031\n\010party_id\030\002 \001(\tR\007"
-  "partyId\"P\n\026TradesSubscribeRequest\022\033\n\tmar"
-  "ket_id\030\001 \001(\tR\010marketId\022\031\n\010party_id\030\002 \001(\t"
-  "R\007partyId\"j\n\027CandlesSubscribeRequest\022#\n\t"
-  "market_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022*\n\010int"
-  "erval\030\002 \001(\0162\016.vega.IntervalR\010interval\"@\n"
-  "\030CandlesSubscribeResponse\022$\n\006candle\030\001 \001("
-  "\0132\014.vega.CandleR\006candle\"B\n\033MarketDepthSu"
-  "bscribeRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X"
-  "\001R\010marketId\"T\n\034MarketDepthSubscribeRespo"
-  "nse\0224\n\014market_depth\030\001 \001(\0132\021.vega.MarketD"
-  "epthR\013marketDepth\"I\n\"MarketDepthUpdatesS"
-  "ubscribeRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002"
-  "X\001R\010marketId\"V\n#MarketDepthUpdatesSubscr"
-  "ibeResponse\022/\n\006update\030\001 \001(\0132\027.vega.Marke"
-  "tDepthUpdateR\006update\"S\n\031PositionsSubscri"
-  "beRequest\022\031\n\010party_id\030\001 \001(\tR\007partyId\022\033\n\t"
-  "market_id\030\002 \001(\tR\010marketId\"H\n\032PositionsSu"
-  "bscribeResponse\022*\n\010position\030\001 \001(\0132\016.vega"
-  ".PositionR\010position\"p\n\025OrdersByMarketReq"
-  "uest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketI"
-  "d\0222\n\npagination\030\002 \001(\0132\022.api.v1.Paginatio"
-  "nR\npagination\"=\n\026OrdersByMarketResponse\022"
-  "#\n\006orders\030\001 \003(\0132\013.vega.OrderR\006orders\"m\n\024"
-  "OrdersByPartyRequest\022!\n\010party_id\030\001 \001(\tB\006"
-  "\342\337\037\002X\001R\007partyId\0222\n\npagination\030\002 \001(\0132\022.ap"
-  "i.v1.PaginationR\npagination\"<\n\025OrdersByP"
-  "artyResponse\022#\n\006orders\030\001 \003(\0132\013.vega.Orde"
-  "rR\006orders\"c\n\031OrderByMarketAndIDRequest\022#"
-  "\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022!\n\010o"
-  "rder_id\030\002 \001(\tB\006\342\337\037\002X\001R\007orderId\"\?\n\032OrderB"
-  "yMarketAndIDResponse\022!\n\005order\030\001 \001(\0132\013.ve"
-  "ga.OrderR\005order\"\?\n\027OrderByReferenceReque"
-  "st\022$\n\treference\030\001 \001(\tB\006\342\337\037\002X\001R\treference"
-  "\"=\n\030OrderByReferenceResponse\022!\n\005order\030\001 "
-  "\001(\0132\013.vega.OrderR\005order\"\020\n\016MarketsReques"
-  "t\"9\n\017MarketsResponse\022&\n\007markets\030\001 \003(\0132\014."
-  "vega.MarketR\007markets\"\222\001\n\016CandlesRequest\022"
-  "#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022/\n\017"
-  "since_timestamp\030\002 \001(\003B\006\342\337\037\002\020\000R\016sinceTime"
-  "stamp\022*\n\010interval\030\003 \001(\0162\016.vega.IntervalR"
-  "\010interval\"9\n\017CandlesResponse\022&\n\007candles\030"
-  "\001 \003(\0132\014.vega.CandleR\007candles\"V\n\022MarketDe"
-  "pthRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010m"
-  "arketId\022\033\n\tmax_depth\030\002 \001(\004R\010maxDepth\"\321\001\n"
-  "\023MarketDepthResponse\022\033\n\tmarket_id\030\001 \001(\tR"
-  "\010marketId\022\"\n\003buy\030\002 \003(\0132\020.vega.PriceLevel"
-  "R\003buy\022$\n\004sell\030\003 \003(\0132\020.vega.PriceLevelR\004s"
-  "ell\022*\n\nlast_trade\030\004 \001(\0132\013.vega.TradeR\tla"
-  "stTrade\022\'\n\017sequence_number\030\005 \001(\004R\016sequen"
-  "ceNumber\"p\n\025TradesByMarketRequest\022#\n\tmar"
-  "ket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\0222\n\npagina"
-  "tion\030\002 \001(\0132\022.api.v1.PaginationR\npaginati"
-  "on\"=\n\026TradesByMarketResponse\022#\n\006trades\030\001"
-  " \003(\0132\013.vega.TradeR\006trades\"Y\n\027PositionsBy"
-  "PartyRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007"
-  "partyId\022\033\n\tmarket_id\030\002 \001(\tR\010marketId\"H\n\030"
-  "PositionsByPartyResponse\022,\n\tpositions\030\001 "
-  "\003(\0132\016.vega.PositionR\tpositions\"\024\n\022GetVeg"
-  "aTimeRequest\"3\n\023GetVegaTimeResponse\022\034\n\tt"
-  "imestamp\030\001 \001(\003R\ttimestamp\"V\n\nPagination\022"
-  "\022\n\004skip\030\001 \001(\004R\004skip\022\024\n\005limit\030\002 \001(\004R\005limi"
-  "t\022\036\n\ndescending\030\003 \001(\010R\ndescending\">\n\027Ord"
-  "ersSubscribeResponse\022#\n\006orders\030\001 \003(\0132\013.v"
-  "ega.OrderR\006orders\">\n\027TradesSubscribeResp"
-  "onse\022#\n\006trades\030\001 \003(\0132\013.vega.TradeR\006trade"
-  "s\"#\n!TransferResponsesSubscribeRequest\"X"
-  "\n\"TransferResponsesSubscribeResponse\0222\n\010"
-  "response\030\001 \001(\0132\026.vega.TransferResponseR\010"
-  "response\"\213\001\n\024PartyAccountsRequest\022\031\n\010par"
-  "ty_id\030\001 \001(\tR\007partyId\022\033\n\tmarket_id\030\002 \001(\tR"
-  "\010marketId\022%\n\004type\030\003 \001(\0162\021.vega.AccountTy"
-  "peR\004type\022\024\n\005asset\030\004 \001(\tR\005asset\"B\n\025PartyA"
-  "ccountsResponse\022)\n\010accounts\030\001 \003(\0132\r.vega"
-  ".AccountR\010accounts\"J\n\025MarketAccountsRequ"
-  "est\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\024\n\005asse"
-  "t\030\002 \001(\tR\005asset\"C\n\026MarketAccountsResponse"
-  "\022)\n\010accounts\030\001 \003(\0132\r.vega.AccountR\010accou"
-  "nts\"8\n FeeInfrastructureAccountsRequest\022"
-  "\024\n\005asset\030\001 \001(\tR\005asset\"N\n!FeeInfrastructu"
-  "reAccountsResponse\022)\n\010accounts\030\001 \003(\0132\r.v"
-  "ega.AccountR\010accounts\"\222\001\n\026PrepareProposa"
-  "lRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007part"
-  "yId\022\034\n\treference\030\002 \001(\tR\treference\0227\n\010pro"
-  "posal\030\003 \001(\0132\023.vega.ProposalTermsB\006\342\337\037\002 \001"
-  "R\010proposal\"h\n\027PrepareProposalResponse\022\022\n"
-  "\004blob\030\001 \001(\014R\004blob\0229\n\020pending_proposal\030\002 "
-  "\001(\0132\016.vega.ProposalR\017pendingProposal\"<\n\022"
-  "PrepareVoteRequest\022&\n\004vote\030\001 \001(\0132\n.vega."
-  "VoteB\006\342\337\037\002 \001R\004vote\"I\n\023PrepareVoteRespons"
-  "e\022\022\n\004blob\030\001 \001(\014R\004blob\022\036\n\004vote\030\002 \001(\0132\n.ve"
-  "ga.VoteR\004vote\"n\n PrepareLiquidityProvisi"
-  "onRequest\022J\n\nsubmission\030\001 \001(\0132\".vega.Liq"
-  "uidityProvisionSubmissionB\006\342\337\037\002 \001R\nsubmi"
-  "ssion\"7\n!PrepareLiquidityProvisionRespon"
-  "se\022\022\n\004blob\030\001 \001(\014R\004blob\"O\n\020OrderByIDReque"
-  "st\022!\n\010order_id\030\001 \001(\tB\006\342\337\037\002 \001R\007orderId\022\030\n"
-  "\007version\030\002 \001(\004R\007version\"6\n\021OrderByIDResp"
-  "onse\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005order\""
-  "q\n\030OrderVersionsByIDRequest\022!\n\010order_id\030"
-  "\001 \001(\tB\006\342\337\037\002 \001R\007orderId\0222\n\npagination\030\002 \001"
-  "(\0132\022.api.v1.PaginationR\npagination\"@\n\031Or"
-  "derVersionsByIDResponse\022#\n\006orders\030\001 \003(\0132"
-  "\013.vega.OrderR\006orders\"7\n\022EstimateFeeReque"
-  "st\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005order\"2\n"
-  "\023EstimateFeeResponse\022\033\n\003fee\030\002 \001(\0132\t.vega"
-  ".FeeR\003fee\":\n\025EstimateMarginRequest\022!\n\005or"
-  "der\030\001 \001(\0132\013.vega.OrderR\005order\"Q\n\026Estimat"
-  "eMarginResponse\0227\n\rmargin_levels\030\002 \001(\0132\022"
-  ".vega.MarginLevelsR\014marginLevels\"\227\001\n\026Obs"
-  "erveEventBusRequest\022&\n\004type\030\001 \003(\0162\022.vega"
-  ".BusEventTypeR\004type\022\033\n\tmarket_id\030\002 \001(\tR\010"
-  "marketId\022\031\n\010party_id\030\003 \001(\tR\007partyId\022\035\n\nb"
-  "atch_size\030\004 \001(\003R\tbatchSize\"A\n\027ObserveEve"
-  "ntBusResponse\022&\n\006events\030\001 \003(\0132\016.vega.Bus"
-  "EventR\006events\"\023\n\021StatisticsRequest\"F\n\022St"
-  "atisticsResponse\0220\n\nstatistics\030\001 \001(\0132\020.v"
-  "ega.StatisticsR\nstatistics\"7\n\022Withdrawal"
-  "sRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007part"
-  "yId\"I\n\023WithdrawalsResponse\0222\n\013withdrawal"
-  "s\030\001 \003(\0132\020.vega.WithdrawalR\013withdrawals\"+"
-  "\n\021WithdrawalRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R"
-  "\002id\"F\n\022WithdrawalResponse\0220\n\nwithdrawal\030"
-  "\001 \001(\0132\020.vega.WithdrawalR\nwithdrawal\"M\n\036E"
-  "RC20WithdrawalApprovalRequest\022+\n\rwithdra"
-  "wal_id\030\001 \001(\tB\006\342\337\037\002X\001R\014withdrawalId\"\252\001\n\037E"
-  "RC20WithdrawalApprovalResponse\022!\n\014asset_"
-  "source\030\001 \001(\tR\013assetSource\022\026\n\006amount\030\002 \001("
-  "\tR\006amount\022\026\n\006expiry\030\003 \001(\003R\006expiry\022\024\n\005non"
-  "ce\030\004 \001(\tR\005nonce\022\036\n\nsignatures\030\005 \001(\tR\nsig"
-  "natures\"4\n\017DepositsRequest\022!\n\010party_id\030\001"
-  " \001(\tB\006\342\337\037\002X\001R\007partyId\"=\n\020DepositsRespons"
-  "e\022)\n\010deposits\030\001 \003(\0132\r.vega.DepositR\010depo"
-  "sits\"(\n\016DepositRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002"
-  "X\001R\002id\":\n\017DepositResponse\022\'\n\007deposit\030\001 \001"
-  "(\0132\r.vega.DepositR\007deposit\"\032\n\030NetworkPar"
-  "ametersRequest\"b\n\031NetworkParametersRespo"
-  "nse\022E\n\022network_parameters\030\001 \003(\0132\026.vega.N"
-  "etworkParameterR\021networkParameters\"J\n\032Li"
-  "quidityProvisionsRequest\022\026\n\006market\030\001 \001(\t"
-  "R\006market\022\024\n\005party\030\002 \001(\tR\005party\"j\n\033Liquid"
-  "ityProvisionsResponse\022K\n\024liquidity_provi"
-  "sions\030\001 \003(\0132\030.vega.LiquidityProvisionR\023l"
-  "iquidityProvisions2\300\006\n\016TradingService\022[\n"
-  "\022PrepareSubmitOrder\022!.api.v1.PrepareSubm"
-  "itOrderRequest\032\".api.v1.PrepareSubmitOrd"
-  "erResponse\022[\n\022PrepareCancelOrder\022!.api.v"
-  "1.PrepareCancelOrderRequest\032\".api.v1.Pre"
-  "pareCancelOrderResponse\022X\n\021PrepareAmendO"
-  "rder\022 .api.v1.PrepareAmendOrderRequest\032!"
-  ".api.v1.PrepareAmendOrderResponse\022R\n\017Pre"
-  "pareWithdraw\022\036.api.v1.PrepareWithdrawReq"
-  "uest\032\037.api.v1.PrepareWithdrawResponse\022X\n"
-  "\021SubmitTransaction\022 .api.v1.SubmitTransa"
-  "ctionRequest\032!.api.v1.SubmitTransactionR"
-  "esponse\022R\n\017PrepareProposal\022\036.api.v1.Prep"
-  "areProposalRequest\032\037.api.v1.PreparePropo"
-  "salResponse\022F\n\013PrepareVote\022\032.api.v1.Prep"
-  "areVoteRequest\032\033.api.v1.PrepareVoteRespo"
-  "nse\022^\n\023PropagateChainEvent\022\".api.v1.Prop"
-  "agateChainEventRequest\032#.api.v1.Propagat"
-  "eChainEventResponse\022p\n\031PrepareLiquidityP"
-  "rovision\022(.api.v1.PrepareLiquidityProvis"
-  "ionRequest\032).api.v1.PrepareLiquidityProv"
-  "isionResponse2\367(\n\022TradingDataService\022O\n\016"
-  "MarketAccounts\022\035.api.v1.MarketAccountsRe"
-  "quest\032\036.api.v1.MarketAccountsResponse\022L\n"
-  "\rPartyAccounts\022\034.api.v1.PartyAccountsReq"
-  "uest\032\035.api.v1.PartyAccountsResponse\022p\n\031F"
-  "eeInfrastructureAccounts\022(.api.v1.FeeInf"
-  "rastructureAccountsRequest\032).api.v1.FeeI"
-  "nfrastructureAccountsResponse\022:\n\007Candles"
-  "\022\026.api.v1.CandlesRequest\032\027.api.v1.Candle"
-  "sResponse\022O\n\016MarketDataByID\022\035.api.v1.Mar"
-  "ketDataByIDRequest\032\036.api.v1.MarketDataBy"
-  "IDResponse\022F\n\013MarketsData\022\032.api.v1.Marke"
-  "tsDataRequest\032\033.api.v1.MarketsDataRespon"
-  "se\022C\n\nMarketByID\022\031.api.v1.MarketByIDRequ"
-  "est\032\032.api.v1.MarketByIDResponse\022F\n\013Marke"
-  "tDepth\022\032.api.v1.MarketDepthRequest\032\033.api"
-  ".v1.MarketDepthResponse\022:\n\007Markets\022\026.api"
-  ".v1.MarketsRequest\032\027.api.v1.MarketsRespo"
-  "nse\022[\n\022OrderByMarketAndID\022!.api.v1.Order"
-  "ByMarketAndIDRequest\032\".api.v1.OrderByMar"
-  "ketAndIDResponse\022U\n\020OrderByReference\022\037.a"
-  "pi.v1.OrderByReferenceRequest\032 .api.v1.O"
-  "rderByReferenceResponse\022O\n\016OrdersByMarke"
-  "t\022\035.api.v1.OrdersByMarketRequest\032\036.api.v"
-  "1.OrdersByMarketResponse\022L\n\rOrdersByPart"
-  "y\022\034.api.v1.OrdersByPartyRequest\032\035.api.v1"
-  ".OrdersByPartyResponse\022@\n\tOrderByID\022\030.ap"
-  "i.v1.OrderByIDRequest\032\031.api.v1.OrderByID"
-  "Response\022X\n\021OrderVersionsByID\022 .api.v1.O"
-  "rderVersionsByIDRequest\032!.api.v1.OrderVe"
-  "rsionsByIDResponse\022I\n\014MarginLevels\022\033.api"
-  ".v1.MarginLevelsRequest\032\034.api.v1.MarginL"
-  "evelsResponse\022:\n\007Parties\022\026.api.v1.Partie"
-  "sRequest\032\027.api.v1.PartiesResponse\022@\n\tPar"
-  "tyByID\022\030.api.v1.PartyByIDRequest\032\031.api.v"
-  "1.PartyByIDResponse\022U\n\020PositionsByParty\022"
-  "\037.api.v1.PositionsByPartyRequest\032 .api.v"
-  "1.PositionsByPartyResponse\022@\n\tLastTrade\022"
-  "\030.api.v1.LastTradeRequest\032\031.api.v1.LastT"
-  "radeResponse\022O\n\016TradesByMarket\022\035.api.v1."
-  "TradesByMarketRequest\032\036.api.v1.TradesByM"
-  "arketResponse\022L\n\rTradesByOrder\022\034.api.v1."
-  "TradesByOrderRequest\032\035.api.v1.TradesByOr"
-  "derResponse\022L\n\rTradesByParty\022\034.api.v1.Tr"
-  "adesByPartyRequest\032\035.api.v1.TradesByPart"
-  "yResponse\022I\n\014GetProposals\022\033.api.v1.GetPr"
-  "oposalsRequest\032\034.api.v1.GetProposalsResp"
-  "onse\022^\n\023GetProposalsByParty\022\".api.v1.Get"
-  "ProposalsByPartyRequest\032#.api.v1.GetProp"
-  "osalsByPartyResponse\022R\n\017GetVotesByParty\022"
-  "\036.api.v1.GetVotesByPartyRequest\032\037.api.v1"
-  ".GetVotesByPartyResponse\022d\n\025GetNewMarket"
-  "Proposals\022$.api.v1.GetNewMarketProposals"
-  "Request\032%.api.v1.GetNewMarketProposalsRe"
-  "sponse\022m\n\030GetUpdateMarketProposals\022\'.api"
-  ".v1.GetUpdateMarketProposalsRequest\032(.ap"
-  "i.v1.GetUpdateMarketProposalsResponse\022|\n"
-  "\035GetNetworkParametersProposals\022,.api.v1."
-  "GetNetworkParametersProposalsRequest\032-.a"
-  "pi.v1.GetNetworkParametersProposalsRespo"
-  "nse\022a\n\024GetNewAssetProposals\022#.api.v1.Get"
-  "NewAssetProposalsRequest\032$.api.v1.GetNew"
-  "AssetProposalsResponse\022R\n\017GetProposalByI"
-  "D\022\036.api.v1.GetProposalByIDRequest\032\037.api."
-  "v1.GetProposalByIDResponse\022g\n\026GetProposa"
-  "lByReference\022%.api.v1.GetProposalByRefer"
-  "enceRequest\032&.api.v1.GetProposalByRefere"
-  "nceResponse\022Z\n\021ObserveGovernance\022 .api.v"
-  "1.ObserveGovernanceRequest\032!.api.v1.Obse"
-  "rveGovernanceResponse0\001\022f\n\025ObservePartyP"
-  "roposals\022$.api.v1.ObservePartyProposalsR"
-  "equest\032%.api.v1.ObservePartyProposalsRes"
-  "ponse0\001\022Z\n\021ObservePartyVotes\022 .api.v1.Ob"
-  "servePartyVotesRequest\032!.api.v1.ObserveP"
-  "artyVotesResponse0\001\022c\n\024ObserveProposalVo"
-  "tes\022#.api.v1.ObserveProposalVotesRequest"
-  "\032$.api.v1.ObserveProposalVotesResponse0\001"
-  "\022V\n\017ObserveEventBus\022\036.api.v1.ObserveEven"
-  "tBusRequest\032\037.api.v1.ObserveEventBusResp"
-  "onse(\0010\001\022C\n\nStatistics\022\031.api.v1.Statisti"
-  "csRequest\032\032.api.v1.StatisticsResponse\022F\n"
-  "\013GetVegaTime\022\032.api.v1.GetVegaTimeRequest"
-  "\032\033.api.v1.GetVegaTimeResponse\022Z\n\021Account"
-  "sSubscribe\022 .api.v1.AccountsSubscribeReq"
-  "uest\032!.api.v1.AccountsSubscribeResponse0"
-  "\001\022W\n\020CandlesSubscribe\022\037.api.v1.CandlesSu"
-  "bscribeRequest\032 .api.v1.CandlesSubscribe"
-  "Response0\001\022f\n\025MarginLevelsSubscribe\022$.ap"
-  "i.v1.MarginLevelsSubscribeRequest\032%.api."
-  "v1.MarginLevelsSubscribeResponse0\001\022c\n\024Ma"
-  "rketDepthSubscribe\022#.api.v1.MarketDepthS"
-  "ubscribeRequest\032$.api.v1.MarketDepthSubs"
-  "cribeResponse0\001\022x\n\033MarketDepthUpdatesSub"
-  "scribe\022*.api.v1.MarketDepthUpdatesSubscr"
-  "ibeRequest\032+.api.v1.MarketDepthUpdatesSu"
-  "bscribeResponse0\001\022c\n\024MarketsDataSubscrib"
-  "e\022#.api.v1.MarketsDataSubscribeRequest\032$"
-  ".api.v1.MarketsDataSubscribeResponse0\001\022T"
-  "\n\017OrdersSubscribe\022\036.api.v1.OrdersSubscri"
-  "beRequest\032\037.api.v1.OrdersSubscribeRespon"
-  "se0\001\022]\n\022PositionsSubscribe\022!.api.v1.Posi"
-  "tionsSubscribeRequest\032\".api.v1.Positions"
-  "SubscribeResponse0\001\022T\n\017TradesSubscribe\022\036"
-  ".api.v1.TradesSubscribeRequest\032\037.api.v1."
-  "TradesSubscribeResponse0\001\022u\n\032TransferRes"
-  "ponsesSubscribe\022).api.v1.TransferRespons"
-  "esSubscribeRequest\032*.api.v1.TransferResp"
-  "onsesSubscribeResponse0\001\022s\n\032GetNodeSigna"
-  "turesAggregate\022).api.v1.GetNodeSignature"
-  "sAggregateRequest\032*.api.v1.GetNodeSignat"
-  "uresAggregateResponse\022@\n\tAssetByID\022\030.api"
-  ".v1.AssetByIDRequest\032\031.api.v1.AssetByIDR"
-  "esponse\0227\n\006Assets\022\025.api.v1.AssetsRequest"
-  "\032\026.api.v1.AssetsResponse\022F\n\013EstimateFee\022"
-  "\032.api.v1.EstimateFeeRequest\032\033.api.v1.Est"
-  "imateFeeResponse\022O\n\016EstimateMargin\022\035.api"
-  ".v1.EstimateMarginRequest\032\036.api.v1.Estim"
-  "ateMarginResponse\022j\n\027ERC20WithdrawalAppr"
-  "oval\022&.api.v1.ERC20WithdrawalApprovalReq"
-  "uest\032\'.api.v1.ERC20WithdrawalApprovalRes"
-  "ponse\022C\n\nWithdrawal\022\031.api.v1.WithdrawalR"
-  "equest\032\032.api.v1.WithdrawalResponse\022F\n\013Wi"
-  "thdrawals\022\032.api.v1.WithdrawalsRequest\032\033."
-  "api.v1.WithdrawalsResponse\022:\n\007Deposit\022\026."
-  "api.v1.DepositRequest\032\027.api.v1.DepositRe"
-  "sponse\022=\n\010Deposits\022\027.api.v1.DepositsRequ"
-  "est\032\030.api.v1.DepositsResponse\022X\n\021Network"
-  "Parameters\022 .api.v1.NetworkParametersReq"
-  "uest\032!.api.v1.NetworkParametersResponse\022"
-  "^\n\023LiquidityProvisions\022\".api.v1.Liquidit"
-  "yProvisionsRequest\032#.api.v1.LiquidityPro"
-  "visionsResponseB\?\n\030io.vegaprotocol.vega."
-  "apiZ#code.vegaprotocol.io/vega/proto/api"
-  "b\006proto3"
+  "\032\034oracles/v1/oracle_spec.proto\032\034oracles/"
+  "v1/oracle_data.proto\0326github.com/mwitkow"
+  "/go-proto-validators/validator.proto\"w\n\032"
+  "PropagateChainEventRequest\022\"\n\003evt\030\001 \001(\0132"
+  "\020.vega.ChainEventR\003evt\022\027\n\007pub_key\030\002 \001(\tR"
+  "\006pubKey\022\034\n\tsignature\030\003 \001(\014R\tsignature\"7\n"
+  "\033PropagateChainEventResponse\022\030\n\007success\030"
+  "\001 \001(\010R\007success\"\307\001\n\030SubmitTransactionRequ"
+  "est\022\"\n\002tx\030\001 \001(\0132\022.vega.SignedBundleR\002tx\022"
+  "9\n\004type\030\002 \001(\0162%.api.v1.SubmitTransaction"
+  "Request.TypeR\004type\"L\n\004Type\022\024\n\020TYPE_UNSPE"
+  "CIFIED\020\000\022\016\n\nTYPE_ASYNC\020\001\022\r\n\tTYPE_SYNC\020\002\022"
+  "\017\n\013TYPE_COMMIT\020\003\"5\n\031SubmitTransactionRes"
+  "ponse\022\030\n\007success\030\001 \001(\010R\007success\"N\n\026Prepa"
+  "reWithdrawRequest\0224\n\010withdraw\030\001 \001(\0132\030.ve"
+  "ga.WithdrawSubmissionR\010withdraw\"-\n\027Prepa"
+  "reWithdrawResponse\022\022\n\004blob\030\001 \001(\014R\004blob\"M"
+  "\n\032PrepareSubmitOrderResponse\022\022\n\004blob\030\001 \001"
+  "(\014R\004blob\022\033\n\tsubmit_id\030\002 \001(\tR\010submitId\"0\n"
+  "\032PrepareCancelOrderResponse\022\022\n\004blob\030\001 \001("
+  "\014R\004blob\"/\n\031PrepareAmendOrderResponse\022\022\n\004"
+  "blob\030\001 \001(\014R\004blob\"R\n\031PrepareSubmitOrderRe"
+  "quest\0225\n\nsubmission\030\001 \001(\0132\025.vega.OrderSu"
+  "bmissionR\nsubmission\"X\n\031PrepareCancelOrd"
+  "erRequest\022;\n\014cancellation\030\001 \001(\0132\027.vega.O"
+  "rderCancellationR\014cancellation\"N\n\030Prepar"
+  "eAmendOrderRequest\0222\n\tamendment\030\001 \001(\0132\024."
+  "vega.OrderAmendmentR\tamendment\"\017\n\rAssets"
+  "Request\"5\n\016AssetsResponse\022#\n\006assets\030\001 \003("
+  "\0132\013.vega.AssetR\006assets\"*\n\020AssetByIDReque"
+  "st\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"6\n\021AssetByIDR"
+  "esponse\022!\n\005asset\030\001 \001(\0132\013.vega.AssetR\005ass"
+  "et\";\n!GetNodeSignaturesAggregateRequest\022"
+  "\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"Y\n\"GetNodeSignat"
+  "uresAggregateResponse\0223\n\nsignatures\030\001 \003("
+  "\0132\023.vega.NodeSignatureR\nsignatures\"C\n\025Op"
+  "tionalProposalState\022*\n\005value\030\001 \001(\0162\024.veg"
+  "a.Proposal.StateR\005value\"\\\n\023GetProposalsR"
+  "equest\022E\n\017select_in_state\030\001 \001(\0132\035.api.v1"
+  ".OptionalProposalStateR\rselectInState\"@\n"
+  "\024GetProposalsResponse\022(\n\004data\030\001 \003(\0132\024.ve"
+  "ga.GovernanceDataR\004data\"\206\001\n\032GetProposals"
+  "ByPartyRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001"
+  "R\007partyId\022E\n\017select_in_state\030\002 \001(\0132\035.api"
+  ".v1.OptionalProposalStateR\rselectInState"
+  "\"G\n\033GetProposalsByPartyResponse\022(\n\004data\030"
+  "\001 \003(\0132\024.vega.GovernanceDataR\004data\";\n\026Get"
+  "VotesByPartyRequest\022!\n\010party_id\030\001 \001(\tB\006\342"
+  "\337\037\002X\001R\007partyId\";\n\027GetVotesByPartyRespons"
+  "e\022 \n\005votes\030\001 \003(\0132\n.vega.VoteR\005votes\"e\n\034G"
+  "etNewMarketProposalsRequest\022E\n\017select_in"
+  "_state\030\001 \001(\0132\035.api.v1.OptionalProposalSt"
+  "ateR\rselectInState\"I\n\035GetNewMarketPropos"
+  "alsResponse\022(\n\004data\030\001 \003(\0132\024.vega.Governa"
+  "nceDataR\004data\"\215\001\n\037GetUpdateMarketProposa"
+  "lsRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010ma"
+  "rketId\022E\n\017select_in_state\030\002 \001(\0132\035.api.v1"
+  ".OptionalProposalStateR\rselectInState\"L\n"
+  " GetUpdateMarketProposalsResponse\022(\n\004dat"
+  "a\030\001 \003(\0132\024.vega.GovernanceDataR\004data\"m\n$G"
+  "etNetworkParametersProposalsRequest\022E\n\017s"
+  "elect_in_state\030\001 \001(\0132\035.api.v1.OptionalPr"
+  "oposalStateR\rselectInState\"Q\n%GetNetwork"
+  "ParametersProposalsResponse\022(\n\004data\030\001 \003("
+  "\0132\024.vega.GovernanceDataR\004data\"d\n\033GetNewA"
+  "ssetProposalsRequest\022E\n\017select_in_state\030"
+  "\001 \001(\0132\035.api.v1.OptionalProposalStateR\rse"
+  "lectInState\"H\n\034GetNewAssetProposalsRespo"
+  "nse\022(\n\004data\030\001 \003(\0132\024.vega.GovernanceDataR"
+  "\004data\"A\n\026GetProposalByIDRequest\022\'\n\013propo"
+  "sal_id\030\001 \001(\tB\006\342\337\037\002X\001R\nproposalId\"C\n\027GetP"
+  "roposalByIDResponse\022(\n\004data\030\001 \001(\0132\024.vega"
+  ".GovernanceDataR\004data\"E\n\035GetProposalByRe"
+  "ferenceRequest\022$\n\treference\030\001 \001(\tB\006\342\337\037\002X"
+  "\001R\treference\"J\n\036GetProposalByReferenceRe"
+  "sponse\022(\n\004data\030\001 \001(\0132\024.vega.GovernanceDa"
+  "taR\004data\"\032\n\030ObserveGovernanceRequest\"E\n\031"
+  "ObserveGovernanceResponse\022(\n\004data\030\001 \001(\0132"
+  "\024.vega.GovernanceDataR\004data\"A\n\034ObservePa"
+  "rtyProposalsRequest\022!\n\010party_id\030\001 \001(\tB\006\342"
+  "\337\037\002X\001R\007partyId\"I\n\035ObservePartyProposalsR"
+  "esponse\022(\n\004data\030\001 \001(\0132\024.vega.GovernanceD"
+  "ataR\004data\"F\n\033ObserveProposalVotesRequest"
+  "\022\'\n\013proposal_id\030\001 \001(\tB\006\342\337\037\002X\001R\nproposalI"
+  "d\">\n\034ObserveProposalVotesResponse\022\036\n\004vot"
+  "e\030\001 \001(\0132\n.vega.VoteR\004vote\"=\n\030ObservePart"
+  "yVotesRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R"
+  "\007partyId\";\n\031ObservePartyVotesResponse\022\036\n"
+  "\004vote\030\001 \001(\0132\n.vega.VoteR\004vote\"^\n\034MarginL"
+  "evelsSubscribeRequest\022!\n\010party_id\030\001 \001(\tB"
+  "\006\342\337\037\002X\001R\007partyId\022\033\n\tmarket_id\030\002 \001(\tR\010mar"
+  "ketId\"X\n\035MarginLevelsSubscribeResponse\0227"
+  "\n\rmargin_levels\030\001 \001(\0132\022.vega.MarginLevel"
+  "sR\014marginLevels\"U\n\023MarginLevelsRequest\022!"
+  "\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022\033\n\tmar"
+  "ket_id\030\002 \001(\tR\010marketId\"O\n\024MarginLevelsRe"
+  "sponse\0227\n\rmargin_levels\030\001 \003(\0132\022.vega.Mar"
+  "ginLevelsR\014marginLevels\":\n\033MarketsDataSu"
+  "bscribeRequest\022\033\n\tmarket_id\030\001 \001(\tR\010marke"
+  "tId\"Q\n\034MarketsDataSubscribeResponse\0221\n\013m"
+  "arket_data\030\001 \001(\0132\020.vega.MarketDataR\nmark"
+  "etData\"<\n\025MarketDataByIDRequest\022#\n\tmarke"
+  "t_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\"K\n\026MarketDa"
+  "taByIDResponse\0221\n\013market_data\030\001 \001(\0132\020.ve"
+  "ga.MarketDataR\nmarketData\"\024\n\022MarketsData"
+  "Request\"J\n\023MarketsDataResponse\0223\n\014market"
+  "s_data\030\001 \003(\0132\020.vega.MarketDataR\013marketsD"
+  "ata\"7\n\020LastTradeRequest\022#\n\tmarket_id\030\001 \001"
+  "(\tB\006\342\337\037\002X\001R\010marketId\"6\n\021LastTradeRespons"
+  "e\022!\n\005trade\030\001 \001(\0132\013.vega.TradeR\005trade\"8\n\021"
+  "MarketByIDRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337"
+  "\037\002X\001R\010marketId\":\n\022MarketByIDResponse\022$\n\006"
+  "market\030\001 \001(\0132\014.vega.MarketR\006market\"5\n\020Pa"
+  "rtyByIDRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001"
+  "R\007partyId\"6\n\021PartyByIDResponse\022!\n\005party\030"
+  "\001 \001(\0132\013.vega.PartyR\005party\"\020\n\016PartiesRequ"
+  "est\"8\n\017PartiesResponse\022%\n\007parties\030\001 \003(\0132"
+  "\013.vega.PartyR\007parties\"\202\001\n\024TradesByPartyR"
+  "equest\022\031\n\010party_id\030\001 \001(\tR\007partyId\022\033\n\tmar"
+  "ket_id\030\002 \001(\tR\010marketId\0222\n\npagination\030\003 \001"
+  "(\0132\022.api.v1.PaginationR\npagination\"<\n\025Tr"
+  "adesByPartyResponse\022#\n\006trades\030\001 \003(\0132\013.ve"
+  "ga.TradeR\006trades\"1\n\024TradesByOrderRequest"
+  "\022\031\n\010order_id\030\001 \001(\tR\007orderId\"<\n\025TradesByO"
+  "rderResponse\022#\n\006trades\030\001 \003(\0132\013.vega.Trad"
+  "eR\006trades\"\217\001\n\030AccountsSubscribeRequest\022\033"
+  "\n\tmarket_id\030\001 \001(\tR\010marketId\022\031\n\010party_id\030"
+  "\002 \001(\tR\007partyId\022\024\n\005asset\030\003 \001(\tR\005asset\022%\n\004"
+  "type\030\004 \001(\0162\021.vega.AccountTypeR\004type\"D\n\031A"
+  "ccountsSubscribeResponse\022\'\n\007account\030\001 \001("
+  "\0132\r.vega.AccountR\007account\"P\n\026OrdersSubsc"
+  "ribeRequest\022\033\n\tmarket_id\030\001 \001(\tR\010marketId"
+  "\022\031\n\010party_id\030\002 \001(\tR\007partyId\"P\n\026TradesSub"
+  "scribeRequest\022\033\n\tmarket_id\030\001 \001(\tR\010market"
+  "Id\022\031\n\010party_id\030\002 \001(\tR\007partyId\"j\n\027Candles"
+  "SubscribeRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037"
+  "\002X\001R\010marketId\022*\n\010interval\030\002 \001(\0162\016.vega.I"
+  "ntervalR\010interval\"@\n\030CandlesSubscribeRes"
+  "ponse\022$\n\006candle\030\001 \001(\0132\014.vega.CandleR\006can"
+  "dle\"B\n\033MarketDepthSubscribeRequest\022#\n\tma"
+  "rket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\"T\n\034Marke"
+  "tDepthSubscribeResponse\0224\n\014market_depth\030"
+  "\001 \001(\0132\021.vega.MarketDepthR\013marketDepth\"I\n"
+  "\"MarketDepthUpdatesSubscribeRequest\022#\n\tm"
+  "arket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\"V\n#Mark"
+  "etDepthUpdatesSubscribeResponse\022/\n\006updat"
+  "e\030\001 \001(\0132\027.vega.MarketDepthUpdateR\006update"
+  "\"S\n\031PositionsSubscribeRequest\022\031\n\010party_i"
+  "d\030\001 \001(\tR\007partyId\022\033\n\tmarket_id\030\002 \001(\tR\010mar"
+  "ketId\"H\n\032PositionsSubscribeResponse\022*\n\010p"
+  "osition\030\001 \001(\0132\016.vega.PositionR\010position\""
+  "p\n\025OrdersByMarketRequest\022#\n\tmarket_id\030\001 "
+  "\001(\tB\006\342\337\037\002X\001R\010marketId\0222\n\npagination\030\002 \001("
+  "\0132\022.api.v1.PaginationR\npagination\"=\n\026Ord"
+  "ersByMarketResponse\022#\n\006orders\030\001 \003(\0132\013.ve"
+  "ga.OrderR\006orders\"m\n\024OrdersByPartyRequest"
+  "\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\0222\n\np"
+  "agination\030\002 \001(\0132\022.api.v1.PaginationR\npag"
+  "ination\"<\n\025OrdersByPartyResponse\022#\n\006orde"
+  "rs\030\001 \003(\0132\013.vega.OrderR\006orders\"c\n\031OrderBy"
+  "MarketAndIDRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342"
+  "\337\037\002X\001R\010marketId\022!\n\010order_id\030\002 \001(\tB\006\342\337\037\002X"
+  "\001R\007orderId\"\?\n\032OrderByMarketAndIDResponse"
+  "\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005order\"\?\n\027O"
+  "rderByReferenceRequest\022$\n\treference\030\001 \001("
+  "\tB\006\342\337\037\002X\001R\treference\"=\n\030OrderByReference"
+  "Response\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005or"
+  "der\"\020\n\016MarketsRequest\"9\n\017MarketsResponse"
+  "\022&\n\007markets\030\001 \003(\0132\014.vega.MarketR\007markets"
+  "\"\222\001\n\016CandlesRequest\022#\n\tmarket_id\030\001 \001(\tB\006"
+  "\342\337\037\002X\001R\010marketId\022/\n\017since_timestamp\030\002 \001("
+  "\003B\006\342\337\037\002\020\000R\016sinceTimestamp\022*\n\010interval\030\003 "
+  "\001(\0162\016.vega.IntervalR\010interval\"9\n\017Candles"
+  "Response\022&\n\007candles\030\001 \003(\0132\014.vega.CandleR"
+  "\007candles\"V\n\022MarketDepthRequest\022#\n\tmarket"
+  "_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022\033\n\tmax_depth"
+  "\030\002 \001(\004R\010maxDepth\"\321\001\n\023MarketDepthResponse"
+  "\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\"\n\003buy\030\002 \003"
+  "(\0132\020.vega.PriceLevelR\003buy\022$\n\004sell\030\003 \003(\0132"
+  "\020.vega.PriceLevelR\004sell\022*\n\nlast_trade\030\004 "
+  "\001(\0132\013.vega.TradeR\tlastTrade\022\'\n\017sequence_"
+  "number\030\005 \001(\004R\016sequenceNumber\"p\n\025TradesBy"
+  "MarketRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001"
+  "R\010marketId\0222\n\npagination\030\002 \001(\0132\022.api.v1."
+  "PaginationR\npagination\"=\n\026TradesByMarket"
+  "Response\022#\n\006trades\030\001 \003(\0132\013.vega.TradeR\006t"
+  "rades\"Y\n\027PositionsByPartyRequest\022!\n\010part"
+  "y_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022\033\n\tmarket_id"
+  "\030\002 \001(\tR\010marketId\"H\n\030PositionsByPartyResp"
+  "onse\022,\n\tpositions\030\001 \003(\0132\016.vega.PositionR"
+  "\tpositions\"\024\n\022GetVegaTimeRequest\"3\n\023GetV"
+  "egaTimeResponse\022\034\n\ttimestamp\030\001 \001(\003R\ttime"
+  "stamp\"V\n\nPagination\022\022\n\004skip\030\001 \001(\004R\004skip\022"
+  "\024\n\005limit\030\002 \001(\004R\005limit\022\036\n\ndescending\030\003 \001("
+  "\010R\ndescending\">\n\027OrdersSubscribeResponse"
+  "\022#\n\006orders\030\001 \003(\0132\013.vega.OrderR\006orders\">\n"
+  "\027TradesSubscribeResponse\022#\n\006trades\030\001 \003(\013"
+  "2\013.vega.TradeR\006trades\"#\n!TransferRespons"
+  "esSubscribeRequest\"X\n\"TransferResponsesS"
+  "ubscribeResponse\0222\n\010response\030\001 \001(\0132\026.veg"
+  "a.TransferResponseR\010response\"\213\001\n\024PartyAc"
+  "countsRequest\022\031\n\010party_id\030\001 \001(\tR\007partyId"
+  "\022\033\n\tmarket_id\030\002 \001(\tR\010marketId\022%\n\004type\030\003 "
+  "\001(\0162\021.vega.AccountTypeR\004type\022\024\n\005asset\030\004 "
+  "\001(\tR\005asset\"B\n\025PartyAccountsResponse\022)\n\010a"
+  "ccounts\030\001 \003(\0132\r.vega.AccountR\010accounts\"J"
+  "\n\025MarketAccountsRequest\022\033\n\tmarket_id\030\001 \001"
+  "(\tR\010marketId\022\024\n\005asset\030\002 \001(\tR\005asset\"C\n\026Ma"
+  "rketAccountsResponse\022)\n\010accounts\030\001 \003(\0132\r"
+  ".vega.AccountR\010accounts\"8\n FeeInfrastruc"
+  "tureAccountsRequest\022\024\n\005asset\030\001 \001(\tR\005asse"
+  "t\"N\n!FeeInfrastructureAccountsResponse\022)"
+  "\n\010accounts\030\001 \003(\0132\r.vega.AccountR\010account"
+  "s\"\222\001\n\026PrepareProposalRequest\022!\n\010party_id"
+  "\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022\034\n\treference\030\002 \001"
+  "(\tR\treference\0227\n\010proposal\030\003 \001(\0132\023.vega.P"
+  "roposalTermsB\006\342\337\037\002 \001R\010proposal\"h\n\027Prepar"
+  "eProposalResponse\022\022\n\004blob\030\001 \001(\014R\004blob\0229\n"
+  "\020pending_proposal\030\002 \001(\0132\016.vega.ProposalR"
+  "\017pendingProposal\"<\n\022PrepareVoteRequest\022&"
+  "\n\004vote\030\001 \001(\0132\n.vega.VoteB\006\342\337\037\002 \001R\004vote\"I"
+  "\n\023PrepareVoteResponse\022\022\n\004blob\030\001 \001(\014R\004blo"
+  "b\022\036\n\004vote\030\002 \001(\0132\n.vega.VoteR\004vote\"n\n Pre"
+  "pareLiquidityProvisionRequest\022J\n\nsubmiss"
+  "ion\030\001 \001(\0132\".vega.LiquidityProvisionSubmi"
+  "ssionB\006\342\337\037\002 \001R\nsubmission\"7\n!PrepareLiqu"
+  "idityProvisionResponse\022\022\n\004blob\030\001 \001(\014R\004bl"
+  "ob\"O\n\020OrderByIDRequest\022!\n\010order_id\030\001 \001(\t"
+  "B\006\342\337\037\002 \001R\007orderId\022\030\n\007version\030\002 \001(\004R\007vers"
+  "ion\"6\n\021OrderByIDResponse\022!\n\005order\030\001 \001(\0132"
+  "\013.vega.OrderR\005order\"q\n\030OrderVersionsByID"
+  "Request\022!\n\010order_id\030\001 \001(\tB\006\342\337\037\002 \001R\007order"
+  "Id\0222\n\npagination\030\002 \001(\0132\022.api.v1.Paginati"
+  "onR\npagination\"@\n\031OrderVersionsByIDRespo"
+  "nse\022#\n\006orders\030\001 \003(\0132\013.vega.OrderR\006orders"
+  "\"7\n\022EstimateFeeRequest\022!\n\005order\030\001 \001(\0132\013."
+  "vega.OrderR\005order\"2\n\023EstimateFeeResponse"
+  "\022\033\n\003fee\030\002 \001(\0132\t.vega.FeeR\003fee\":\n\025Estimat"
+  "eMarginRequest\022!\n\005order\030\001 \001(\0132\013.vega.Ord"
+  "erR\005order\"Q\n\026EstimateMarginResponse\0227\n\rm"
+  "argin_levels\030\002 \001(\0132\022.vega.MarginLevelsR\014"
+  "marginLevels\"\227\001\n\026ObserveEventBusRequest\022"
+  "&\n\004type\030\001 \003(\0162\022.vega.BusEventTypeR\004type\022"
+  "\033\n\tmarket_id\030\002 \001(\tR\010marketId\022\031\n\010party_id"
+  "\030\003 \001(\tR\007partyId\022\035\n\nbatch_size\030\004 \001(\003R\tbat"
+  "chSize\"A\n\027ObserveEventBusResponse\022&\n\006eve"
+  "nts\030\001 \003(\0132\016.vega.BusEventR\006events\"\023\n\021Sta"
+  "tisticsRequest\"F\n\022StatisticsResponse\0220\n\n"
+  "statistics\030\001 \001(\0132\020.vega.StatisticsR\nstat"
+  "istics\"7\n\022WithdrawalsRequest\022!\n\010party_id"
+  "\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\"I\n\023WithdrawalsRe"
+  "sponse\0222\n\013withdrawals\030\001 \003(\0132\020.vega.Withd"
+  "rawalR\013withdrawals\"+\n\021WithdrawalRequest\022"
+  "\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"F\n\022WithdrawalRes"
+  "ponse\0220\n\nwithdrawal\030\001 \001(\0132\020.vega.Withdra"
+  "walR\nwithdrawal\"M\n\036ERC20WithdrawalApprov"
+  "alRequest\022+\n\rwithdrawal_id\030\001 \001(\tB\006\342\337\037\002X\001"
+  "R\014withdrawalId\"\252\001\n\037ERC20WithdrawalApprov"
+  "alResponse\022!\n\014asset_source\030\001 \001(\tR\013assetS"
+  "ource\022\026\n\006amount\030\002 \001(\tR\006amount\022\026\n\006expiry\030"
+  "\003 \001(\003R\006expiry\022\024\n\005nonce\030\004 \001(\tR\005nonce\022\036\n\ns"
+  "ignatures\030\005 \001(\tR\nsignatures\"4\n\017DepositsR"
+  "equest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyI"
+  "d\"=\n\020DepositsResponse\022)\n\010deposits\030\001 \003(\0132"
+  "\r.vega.DepositR\010deposits\"(\n\016DepositReque"
+  "st\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\":\n\017DepositRes"
+  "ponse\022\'\n\007deposit\030\001 \001(\0132\r.vega.DepositR\007d"
+  "eposit\"\032\n\030NetworkParametersRequest\"b\n\031Ne"
+  "tworkParametersResponse\022E\n\022network_param"
+  "eters\030\001 \003(\0132\026.vega.NetworkParameterR\021net"
+  "workParameters\"J\n\032LiquidityProvisionsReq"
+  "uest\022\026\n\006market\030\001 \001(\tR\006market\022\024\n\005party\030\002 "
+  "\001(\tR\005party\"j\n\033LiquidityProvisionsRespons"
+  "e\022K\n\024liquidity_provisions\030\001 \003(\0132\030.vega.L"
+  "iquidityProvisionR\023liquidityProvisions\"+"
+  "\n\021OracleSpecRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R"
+  "\002id\"M\n\022OracleSpecResponse\0227\n\013oracle_spec"
+  "\030\001 \001(\0132\026.oracles.v1.OracleSpecR\noracleSp"
+  "ec\"\024\n\022OracleSpecsRequest\"P\n\023OracleSpecsR"
+  "esponse\0229\n\014oracle_specs\030\001 \003(\0132\026.oracles."
+  "v1.OracleSpecR\013oracleSpecs\"1\n\027OracleData"
+  "BySpecRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"S\n"
+  "\030OracleDataBySpecResponse\0227\n\013oracle_data"
+  "\030\001 \003(\0132\026.oracles.v1.OracleDataR\noracleDa"
+  "ta2\300\006\n\016TradingService\022[\n\022PrepareSubmitOr"
+  "der\022!.api.v1.PrepareSubmitOrderRequest\032\""
+  ".api.v1.PrepareSubmitOrderResponse\022[\n\022Pr"
+  "epareCancelOrder\022!.api.v1.PrepareCancelO"
+  "rderRequest\032\".api.v1.PrepareCancelOrderR"
+  "esponse\022X\n\021PrepareAmendOrder\022 .api.v1.Pr"
+  "epareAmendOrderRequest\032!.api.v1.PrepareA"
+  "mendOrderResponse\022R\n\017PrepareWithdraw\022\036.a"
+  "pi.v1.PrepareWithdrawRequest\032\037.api.v1.Pr"
+  "epareWithdrawResponse\022X\n\021SubmitTransacti"
+  "on\022 .api.v1.SubmitTransactionRequest\032!.a"
+  "pi.v1.SubmitTransactionResponse\022R\n\017Prepa"
+  "reProposal\022\036.api.v1.PrepareProposalReque"
+  "st\032\037.api.v1.PrepareProposalResponse\022F\n\013P"
+  "repareVote\022\032.api.v1.PrepareVoteRequest\032\033"
+  ".api.v1.PrepareVoteResponse\022^\n\023Propagate"
+  "ChainEvent\022\".api.v1.PropagateChainEventR"
+  "equest\032#.api.v1.PropagateChainEventRespo"
+  "nse\022p\n\031PrepareLiquidityProvision\022(.api.v"
+  "1.PrepareLiquidityProvisionRequest\032).api"
+  ".v1.PrepareLiquidityProvisionResponse2\333*"
+  "\n\022TradingDataService\022O\n\016MarketAccounts\022\035"
+  ".api.v1.MarketAccountsRequest\032\036.api.v1.M"
+  "arketAccountsResponse\022L\n\rPartyAccounts\022\034"
+  ".api.v1.PartyAccountsRequest\032\035.api.v1.Pa"
+  "rtyAccountsResponse\022p\n\031FeeInfrastructure"
+  "Accounts\022(.api.v1.FeeInfrastructureAccou"
+  "ntsRequest\032).api.v1.FeeInfrastructureAcc"
+  "ountsResponse\022:\n\007Candles\022\026.api.v1.Candle"
+  "sRequest\032\027.api.v1.CandlesResponse\022O\n\016Mar"
+  "ketDataByID\022\035.api.v1.MarketDataByIDReque"
+  "st\032\036.api.v1.MarketDataByIDResponse\022F\n\013Ma"
+  "rketsData\022\032.api.v1.MarketsDataRequest\032\033."
+  "api.v1.MarketsDataResponse\022C\n\nMarketByID"
+  "\022\031.api.v1.MarketByIDRequest\032\032.api.v1.Mar"
+  "ketByIDResponse\022F\n\013MarketDepth\022\032.api.v1."
+  "MarketDepthRequest\032\033.api.v1.MarketDepthR"
+  "esponse\022:\n\007Markets\022\026.api.v1.MarketsReque"
+  "st\032\027.api.v1.MarketsResponse\022[\n\022OrderByMa"
+  "rketAndID\022!.api.v1.OrderByMarketAndIDReq"
+  "uest\032\".api.v1.OrderByMarketAndIDResponse"
+  "\022U\n\020OrderByReference\022\037.api.v1.OrderByRef"
+  "erenceRequest\032 .api.v1.OrderByReferenceR"
+  "esponse\022O\n\016OrdersByMarket\022\035.api.v1.Order"
+  "sByMarketRequest\032\036.api.v1.OrdersByMarket"
+  "Response\022L\n\rOrdersByParty\022\034.api.v1.Order"
+  "sByPartyRequest\032\035.api.v1.OrdersByPartyRe"
+  "sponse\022@\n\tOrderByID\022\030.api.v1.OrderByIDRe"
+  "quest\032\031.api.v1.OrderByIDResponse\022X\n\021Orde"
+  "rVersionsByID\022 .api.v1.OrderVersionsByID"
+  "Request\032!.api.v1.OrderVersionsByIDRespon"
+  "se\022I\n\014MarginLevels\022\033.api.v1.MarginLevels"
+  "Request\032\034.api.v1.MarginLevelsResponse\022:\n"
+  "\007Parties\022\026.api.v1.PartiesRequest\032\027.api.v"
+  "1.PartiesResponse\022@\n\tPartyByID\022\030.api.v1."
+  "PartyByIDRequest\032\031.api.v1.PartyByIDRespo"
+  "nse\022U\n\020PositionsByParty\022\037.api.v1.Positio"
+  "nsByPartyRequest\032 .api.v1.PositionsByPar"
+  "tyResponse\022@\n\tLastTrade\022\030.api.v1.LastTra"
+  "deRequest\032\031.api.v1.LastTradeResponse\022O\n\016"
+  "TradesByMarket\022\035.api.v1.TradesByMarketRe"
+  "quest\032\036.api.v1.TradesByMarketResponse\022L\n"
+  "\rTradesByOrder\022\034.api.v1.TradesByOrderReq"
+  "uest\032\035.api.v1.TradesByOrderResponse\022L\n\rT"
+  "radesByParty\022\034.api.v1.TradesByPartyReque"
+  "st\032\035.api.v1.TradesByPartyResponse\022I\n\014Get"
+  "Proposals\022\033.api.v1.GetProposalsRequest\032\034"
+  ".api.v1.GetProposalsResponse\022^\n\023GetPropo"
+  "salsByParty\022\".api.v1.GetProposalsByParty"
+  "Request\032#.api.v1.GetProposalsByPartyResp"
+  "onse\022R\n\017GetVotesByParty\022\036.api.v1.GetVote"
+  "sByPartyRequest\032\037.api.v1.GetVotesByParty"
+  "Response\022d\n\025GetNewMarketProposals\022$.api."
+  "v1.GetNewMarketProposalsRequest\032%.api.v1"
+  ".GetNewMarketProposalsResponse\022m\n\030GetUpd"
+  "ateMarketProposals\022\'.api.v1.GetUpdateMar"
+  "ketProposalsRequest\032(.api.v1.GetUpdateMa"
+  "rketProposalsResponse\022|\n\035GetNetworkParam"
+  "etersProposals\022,.api.v1.GetNetworkParame"
+  "tersProposalsRequest\032-.api.v1.GetNetwork"
+  "ParametersProposalsResponse\022a\n\024GetNewAss"
+  "etProposals\022#.api.v1.GetNewAssetProposal"
+  "sRequest\032$.api.v1.GetNewAssetProposalsRe"
+  "sponse\022R\n\017GetProposalByID\022\036.api.v1.GetPr"
+  "oposalByIDRequest\032\037.api.v1.GetProposalBy"
+  "IDResponse\022g\n\026GetProposalByReference\022%.a"
+  "pi.v1.GetProposalByReferenceRequest\032&.ap"
+  "i.v1.GetProposalByReferenceResponse\022Z\n\021O"
+  "bserveGovernance\022 .api.v1.ObserveGoverna"
+  "nceRequest\032!.api.v1.ObserveGovernanceRes"
+  "ponse0\001\022f\n\025ObservePartyProposals\022$.api.v"
+  "1.ObservePartyProposalsRequest\032%.api.v1."
+  "ObservePartyProposalsResponse0\001\022Z\n\021Obser"
+  "vePartyVotes\022 .api.v1.ObservePartyVotesR"
+  "equest\032!.api.v1.ObservePartyVotesRespons"
+  "e0\001\022c\n\024ObserveProposalVotes\022#.api.v1.Obs"
+  "erveProposalVotesRequest\032$.api.v1.Observ"
+  "eProposalVotesResponse0\001\022V\n\017ObserveEvent"
+  "Bus\022\036.api.v1.ObserveEventBusRequest\032\037.ap"
+  "i.v1.ObserveEventBusResponse(\0010\001\022C\n\nStat"
+  "istics\022\031.api.v1.StatisticsRequest\032\032.api."
+  "v1.StatisticsResponse\022F\n\013GetVegaTime\022\032.a"
+  "pi.v1.GetVegaTimeRequest\032\033.api.v1.GetVeg"
+  "aTimeResponse\022Z\n\021AccountsSubscribe\022 .api"
+  ".v1.AccountsSubscribeRequest\032!.api.v1.Ac"
+  "countsSubscribeResponse0\001\022W\n\020CandlesSubs"
+  "cribe\022\037.api.v1.CandlesSubscribeRequest\032 "
+  ".api.v1.CandlesSubscribeResponse0\001\022f\n\025Ma"
+  "rginLevelsSubscribe\022$.api.v1.MarginLevel"
+  "sSubscribeRequest\032%.api.v1.MarginLevelsS"
+  "ubscribeResponse0\001\022c\n\024MarketDepthSubscri"
+  "be\022#.api.v1.MarketDepthSubscribeRequest\032"
+  "$.api.v1.MarketDepthSubscribeResponse0\001\022"
+  "x\n\033MarketDepthUpdatesSubscribe\022*.api.v1."
+  "MarketDepthUpdatesSubscribeRequest\032+.api"
+  ".v1.MarketDepthUpdatesSubscribeResponse0"
+  "\001\022c\n\024MarketsDataSubscribe\022#.api.v1.Marke"
+  "tsDataSubscribeRequest\032$.api.v1.MarketsD"
+  "ataSubscribeResponse0\001\022T\n\017OrdersSubscrib"
+  "e\022\036.api.v1.OrdersSubscribeRequest\032\037.api."
+  "v1.OrdersSubscribeResponse0\001\022]\n\022Position"
+  "sSubscribe\022!.api.v1.PositionsSubscribeRe"
+  "quest\032\".api.v1.PositionsSubscribeRespons"
+  "e0\001\022T\n\017TradesSubscribe\022\036.api.v1.TradesSu"
+  "bscribeRequest\032\037.api.v1.TradesSubscribeR"
+  "esponse0\001\022u\n\032TransferResponsesSubscribe\022"
+  ").api.v1.TransferResponsesSubscribeReque"
+  "st\032*.api.v1.TransferResponsesSubscribeRe"
+  "sponse0\001\022s\n\032GetNodeSignaturesAggregate\022)"
+  ".api.v1.GetNodeSignaturesAggregateReques"
+  "t\032*.api.v1.GetNodeSignaturesAggregateRes"
+  "ponse\022@\n\tAssetByID\022\030.api.v1.AssetByIDReq"
+  "uest\032\031.api.v1.AssetByIDResponse\0227\n\006Asset"
+  "s\022\025.api.v1.AssetsRequest\032\026.api.v1.Assets"
+  "Response\022F\n\013EstimateFee\022\032.api.v1.Estimat"
+  "eFeeRequest\032\033.api.v1.EstimateFeeResponse"
+  "\022O\n\016EstimateMargin\022\035.api.v1.EstimateMarg"
+  "inRequest\032\036.api.v1.EstimateMarginRespons"
+  "e\022j\n\027ERC20WithdrawalApproval\022&.api.v1.ER"
+  "C20WithdrawalApprovalRequest\032\'.api.v1.ER"
+  "C20WithdrawalApprovalResponse\022C\n\nWithdra"
+  "wal\022\031.api.v1.WithdrawalRequest\032\032.api.v1."
+  "WithdrawalResponse\022F\n\013Withdrawals\022\032.api."
+  "v1.WithdrawalsRequest\032\033.api.v1.Withdrawa"
+  "lsResponse\022:\n\007Deposit\022\026.api.v1.DepositRe"
+  "quest\032\027.api.v1.DepositResponse\022=\n\010Deposi"
+  "ts\022\027.api.v1.DepositsRequest\032\030.api.v1.Dep"
+  "ositsResponse\022X\n\021NetworkParameters\022 .api"
+  ".v1.NetworkParametersRequest\032!.api.v1.Ne"
+  "tworkParametersResponse\022^\n\023LiquidityProv"
+  "isions\022\".api.v1.LiquidityProvisionsReque"
+  "st\032#.api.v1.LiquidityProvisionsResponse\022"
+  "C\n\nOracleSpec\022\031.api.v1.OracleSpecRequest"
+  "\032\032.api.v1.OracleSpecResponse\022F\n\013OracleSp"
+  "ecs\022\032.api.v1.OracleSpecsRequest\032\033.api.v1"
+  ".OracleSpecsResponse\022U\n\020OracleDataBySpec"
+  "\022\037.api.v1.OracleDataBySpecRequest\032 .api."
+  "v1.OracleDataBySpecResponseB\?\n\030io.vegapr"
+  "otocol.vega.apiZ#code.vegaprotocol.io/ve"
+  "ga/proto/apib\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_api_2ftrading_2eproto_deps[7] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_api_2ftrading_2eproto_deps[9] = {
   &::descriptor_table_assets_2eproto,
   &::descriptor_table_chain_5fevents_2eproto,
   &::descriptor_table_events_2eproto,
   &::descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto,
   &::descriptor_table_governance_2eproto,
   &::descriptor_table_markets_2eproto,
+  &::descriptor_table_oracles_2fv1_2foracle_5fdata_2eproto,
+  &::descriptor_table_oracles_2fv1_2foracle_5fspec_2eproto,
   &::descriptor_table_vega_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_api_2ftrading_2eproto_sccs[142] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_api_2ftrading_2eproto_sccs[148] = {
   &scc_info_AccountsSubscribeRequest_api_2ftrading_2eproto.base,
   &scc_info_AccountsSubscribeResponse_api_2ftrading_2eproto.base,
   &scc_info_AssetByIDRequest_api_2ftrading_2eproto.base,
@@ -4265,6 +4437,12 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_api
   &scc_info_ObserveProposalVotesRequest_api_2ftrading_2eproto.base,
   &scc_info_ObserveProposalVotesResponse_api_2ftrading_2eproto.base,
   &scc_info_OptionalProposalState_api_2ftrading_2eproto.base,
+  &scc_info_OracleDataBySpecRequest_api_2ftrading_2eproto.base,
+  &scc_info_OracleDataBySpecResponse_api_2ftrading_2eproto.base,
+  &scc_info_OracleSpecRequest_api_2ftrading_2eproto.base,
+  &scc_info_OracleSpecResponse_api_2ftrading_2eproto.base,
+  &scc_info_OracleSpecsRequest_api_2ftrading_2eproto.base,
+  &scc_info_OracleSpecsResponse_api_2ftrading_2eproto.base,
   &scc_info_OrderByIDRequest_api_2ftrading_2eproto.base,
   &scc_info_OrderByIDResponse_api_2ftrading_2eproto.base,
   &scc_info_OrderByMarketAndIDRequest_api_2ftrading_2eproto.base,
@@ -4327,10 +4505,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_api
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_api_2ftrading_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_api_2ftrading_2eproto = {
-  false, false, descriptor_table_protodef_api_2ftrading_2eproto, "api/trading.proto", 17208,
-  &descriptor_table_api_2ftrading_2eproto_once, descriptor_table_api_2ftrading_2eproto_sccs, descriptor_table_api_2ftrading_2eproto_deps, 142, 7,
+  false, false, descriptor_table_protodef_api_2ftrading_2eproto, "api/trading.proto", 17860,
+  &descriptor_table_api_2ftrading_2eproto_once, descriptor_table_api_2ftrading_2eproto_sccs, descriptor_table_api_2ftrading_2eproto_deps, 148, 9,
   schemas, file_default_instances, TableStruct_api_2ftrading_2eproto::offsets,
-  file_level_metadata_api_2ftrading_2eproto, 142, file_level_enum_descriptors_api_2ftrading_2eproto, file_level_service_descriptors_api_2ftrading_2eproto,
+  file_level_metadata_api_2ftrading_2eproto, 148, file_level_enum_descriptors_api_2ftrading_2eproto, file_level_service_descriptors_api_2ftrading_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -35222,6 +35400,1202 @@ void LiquidityProvisionsResponse::InternalSwap(LiquidityProvisionsResponse* othe
 }
 
 
+// ===================================================================
+
+class OracleSpecRequest::_Internal {
+ public:
+};
+
+OracleSpecRequest::OracleSpecRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:api.v1.OracleSpecRequest)
+}
+OracleSpecRequest::OracleSpecRequest(const OracleSpecRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_id().empty()) {
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(),
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:api.v1.OracleSpecRequest)
+}
+
+void OracleSpecRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_OracleSpecRequest_api_2ftrading_2eproto.base);
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+OracleSpecRequest::~OracleSpecRequest() {
+  // @@protoc_insertion_point(destructor:api.v1.OracleSpecRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void OracleSpecRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void OracleSpecRequest::ArenaDtor(void* object) {
+  OracleSpecRequest* _this = reinterpret_cast< OracleSpecRequest* >(object);
+  (void)_this;
+}
+void OracleSpecRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void OracleSpecRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const OracleSpecRequest& OracleSpecRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_OracleSpecRequest_api_2ftrading_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void OracleSpecRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.v1.OracleSpecRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  id_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* OracleSpecRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string id = 1 [json_name = "id", (.validator.field) = {
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "api.v1.OracleSpecRequest.id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* OracleSpecRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:api.v1.OracleSpecRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string id = 1 [json_name = "id", (.validator.field) = {
+  if (this->id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "api.v1.OracleSpecRequest.id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.v1.OracleSpecRequest)
+  return target;
+}
+
+size_t OracleSpecRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.v1.OracleSpecRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string id = 1 [json_name = "id", (.validator.field) = {
+  if (this->id().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void OracleSpecRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.v1.OracleSpecRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const OracleSpecRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<OracleSpecRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.v1.OracleSpecRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.v1.OracleSpecRequest)
+    MergeFrom(*source);
+  }
+}
+
+void OracleSpecRequest::MergeFrom(const OracleSpecRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.v1.OracleSpecRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.id().size() > 0) {
+    _internal_set_id(from._internal_id());
+  }
+}
+
+void OracleSpecRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.v1.OracleSpecRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void OracleSpecRequest::CopyFrom(const OracleSpecRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.v1.OracleSpecRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool OracleSpecRequest::IsInitialized() const {
+  return true;
+}
+
+void OracleSpecRequest::InternalSwap(OracleSpecRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata OracleSpecRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class OracleSpecResponse::_Internal {
+ public:
+  static const ::oracles::v1::OracleSpec& oracle_spec(const OracleSpecResponse* msg);
+};
+
+const ::oracles::v1::OracleSpec&
+OracleSpecResponse::_Internal::oracle_spec(const OracleSpecResponse* msg) {
+  return *msg->oracle_spec_;
+}
+void OracleSpecResponse::clear_oracle_spec() {
+  if (GetArena() == nullptr && oracle_spec_ != nullptr) {
+    delete oracle_spec_;
+  }
+  oracle_spec_ = nullptr;
+}
+OracleSpecResponse::OracleSpecResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:api.v1.OracleSpecResponse)
+}
+OracleSpecResponse::OracleSpecResponse(const OracleSpecResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_oracle_spec()) {
+    oracle_spec_ = new ::oracles::v1::OracleSpec(*from.oracle_spec_);
+  } else {
+    oracle_spec_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:api.v1.OracleSpecResponse)
+}
+
+void OracleSpecResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_OracleSpecResponse_api_2ftrading_2eproto.base);
+  oracle_spec_ = nullptr;
+}
+
+OracleSpecResponse::~OracleSpecResponse() {
+  // @@protoc_insertion_point(destructor:api.v1.OracleSpecResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void OracleSpecResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  if (this != internal_default_instance()) delete oracle_spec_;
+}
+
+void OracleSpecResponse::ArenaDtor(void* object) {
+  OracleSpecResponse* _this = reinterpret_cast< OracleSpecResponse* >(object);
+  (void)_this;
+}
+void OracleSpecResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void OracleSpecResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const OracleSpecResponse& OracleSpecResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_OracleSpecResponse_api_2ftrading_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void OracleSpecResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.v1.OracleSpecResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArena() == nullptr && oracle_spec_ != nullptr) {
+    delete oracle_spec_;
+  }
+  oracle_spec_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* OracleSpecResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .oracles.v1.OracleSpec oracle_spec = 1 [json_name = "oracleSpec"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_oracle_spec(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* OracleSpecResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:api.v1.OracleSpecResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .oracles.v1.OracleSpec oracle_spec = 1 [json_name = "oracleSpec"];
+  if (this->has_oracle_spec()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::oracle_spec(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.v1.OracleSpecResponse)
+  return target;
+}
+
+size_t OracleSpecResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.v1.OracleSpecResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .oracles.v1.OracleSpec oracle_spec = 1 [json_name = "oracleSpec"];
+  if (this->has_oracle_spec()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *oracle_spec_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void OracleSpecResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.v1.OracleSpecResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const OracleSpecResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<OracleSpecResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.v1.OracleSpecResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.v1.OracleSpecResponse)
+    MergeFrom(*source);
+  }
+}
+
+void OracleSpecResponse::MergeFrom(const OracleSpecResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.v1.OracleSpecResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_oracle_spec()) {
+    _internal_mutable_oracle_spec()->::oracles::v1::OracleSpec::MergeFrom(from._internal_oracle_spec());
+  }
+}
+
+void OracleSpecResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.v1.OracleSpecResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void OracleSpecResponse::CopyFrom(const OracleSpecResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.v1.OracleSpecResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool OracleSpecResponse::IsInitialized() const {
+  return true;
+}
+
+void OracleSpecResponse::InternalSwap(OracleSpecResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(oracle_spec_, other->oracle_spec_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata OracleSpecResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class OracleSpecsRequest::_Internal {
+ public:
+};
+
+OracleSpecsRequest::OracleSpecsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:api.v1.OracleSpecsRequest)
+}
+OracleSpecsRequest::OracleSpecsRequest(const OracleSpecsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:api.v1.OracleSpecsRequest)
+}
+
+void OracleSpecsRequest::SharedCtor() {
+}
+
+OracleSpecsRequest::~OracleSpecsRequest() {
+  // @@protoc_insertion_point(destructor:api.v1.OracleSpecsRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void OracleSpecsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void OracleSpecsRequest::ArenaDtor(void* object) {
+  OracleSpecsRequest* _this = reinterpret_cast< OracleSpecsRequest* >(object);
+  (void)_this;
+}
+void OracleSpecsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void OracleSpecsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const OracleSpecsRequest& OracleSpecsRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_OracleSpecsRequest_api_2ftrading_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void OracleSpecsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.v1.OracleSpecsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* OracleSpecsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* OracleSpecsRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:api.v1.OracleSpecsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.v1.OracleSpecsRequest)
+  return target;
+}
+
+size_t OracleSpecsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.v1.OracleSpecsRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void OracleSpecsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.v1.OracleSpecsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const OracleSpecsRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<OracleSpecsRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.v1.OracleSpecsRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.v1.OracleSpecsRequest)
+    MergeFrom(*source);
+  }
+}
+
+void OracleSpecsRequest::MergeFrom(const OracleSpecsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.v1.OracleSpecsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void OracleSpecsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.v1.OracleSpecsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void OracleSpecsRequest::CopyFrom(const OracleSpecsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.v1.OracleSpecsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool OracleSpecsRequest::IsInitialized() const {
+  return true;
+}
+
+void OracleSpecsRequest::InternalSwap(OracleSpecsRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata OracleSpecsRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class OracleSpecsResponse::_Internal {
+ public:
+};
+
+void OracleSpecsResponse::clear_oracle_specs() {
+  oracle_specs_.Clear();
+}
+OracleSpecsResponse::OracleSpecsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  oracle_specs_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:api.v1.OracleSpecsResponse)
+}
+OracleSpecsResponse::OracleSpecsResponse(const OracleSpecsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      oracle_specs_(from.oracle_specs_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:api.v1.OracleSpecsResponse)
+}
+
+void OracleSpecsResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_OracleSpecsResponse_api_2ftrading_2eproto.base);
+}
+
+OracleSpecsResponse::~OracleSpecsResponse() {
+  // @@protoc_insertion_point(destructor:api.v1.OracleSpecsResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void OracleSpecsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void OracleSpecsResponse::ArenaDtor(void* object) {
+  OracleSpecsResponse* _this = reinterpret_cast< OracleSpecsResponse* >(object);
+  (void)_this;
+}
+void OracleSpecsResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void OracleSpecsResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const OracleSpecsResponse& OracleSpecsResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_OracleSpecsResponse_api_2ftrading_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void OracleSpecsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.v1.OracleSpecsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  oracle_specs_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* OracleSpecsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_oracle_specs(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* OracleSpecsResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:api.v1.OracleSpecsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_oracle_specs_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_oracle_specs(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.v1.OracleSpecsResponse)
+  return target;
+}
+
+size_t OracleSpecsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.v1.OracleSpecsResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];
+  total_size += 1UL * this->_internal_oracle_specs_size();
+  for (const auto& msg : this->oracle_specs_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void OracleSpecsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.v1.OracleSpecsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const OracleSpecsResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<OracleSpecsResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.v1.OracleSpecsResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.v1.OracleSpecsResponse)
+    MergeFrom(*source);
+  }
+}
+
+void OracleSpecsResponse::MergeFrom(const OracleSpecsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.v1.OracleSpecsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  oracle_specs_.MergeFrom(from.oracle_specs_);
+}
+
+void OracleSpecsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.v1.OracleSpecsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void OracleSpecsResponse::CopyFrom(const OracleSpecsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.v1.OracleSpecsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool OracleSpecsResponse::IsInitialized() const {
+  return true;
+}
+
+void OracleSpecsResponse::InternalSwap(OracleSpecsResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  oracle_specs_.InternalSwap(&other->oracle_specs_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata OracleSpecsResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class OracleDataBySpecRequest::_Internal {
+ public:
+};
+
+OracleDataBySpecRequest::OracleDataBySpecRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:api.v1.OracleDataBySpecRequest)
+}
+OracleDataBySpecRequest::OracleDataBySpecRequest(const OracleDataBySpecRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_id().empty()) {
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(),
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:api.v1.OracleDataBySpecRequest)
+}
+
+void OracleDataBySpecRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_OracleDataBySpecRequest_api_2ftrading_2eproto.base);
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+OracleDataBySpecRequest::~OracleDataBySpecRequest() {
+  // @@protoc_insertion_point(destructor:api.v1.OracleDataBySpecRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void OracleDataBySpecRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void OracleDataBySpecRequest::ArenaDtor(void* object) {
+  OracleDataBySpecRequest* _this = reinterpret_cast< OracleDataBySpecRequest* >(object);
+  (void)_this;
+}
+void OracleDataBySpecRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void OracleDataBySpecRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const OracleDataBySpecRequest& OracleDataBySpecRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_OracleDataBySpecRequest_api_2ftrading_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void OracleDataBySpecRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.v1.OracleDataBySpecRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  id_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* OracleDataBySpecRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string id = 1 [json_name = "id", (.validator.field) = {
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "api.v1.OracleDataBySpecRequest.id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* OracleDataBySpecRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:api.v1.OracleDataBySpecRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string id = 1 [json_name = "id", (.validator.field) = {
+  if (this->id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_id().data(), static_cast<int>(this->_internal_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "api.v1.OracleDataBySpecRequest.id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.v1.OracleDataBySpecRequest)
+  return target;
+}
+
+size_t OracleDataBySpecRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.v1.OracleDataBySpecRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string id = 1 [json_name = "id", (.validator.field) = {
+  if (this->id().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void OracleDataBySpecRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.v1.OracleDataBySpecRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const OracleDataBySpecRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<OracleDataBySpecRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.v1.OracleDataBySpecRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.v1.OracleDataBySpecRequest)
+    MergeFrom(*source);
+  }
+}
+
+void OracleDataBySpecRequest::MergeFrom(const OracleDataBySpecRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.v1.OracleDataBySpecRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.id().size() > 0) {
+    _internal_set_id(from._internal_id());
+  }
+}
+
+void OracleDataBySpecRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.v1.OracleDataBySpecRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void OracleDataBySpecRequest::CopyFrom(const OracleDataBySpecRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.v1.OracleDataBySpecRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool OracleDataBySpecRequest::IsInitialized() const {
+  return true;
+}
+
+void OracleDataBySpecRequest::InternalSwap(OracleDataBySpecRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata OracleDataBySpecRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class OracleDataBySpecResponse::_Internal {
+ public:
+};
+
+void OracleDataBySpecResponse::clear_oracle_data() {
+  oracle_data_.Clear();
+}
+OracleDataBySpecResponse::OracleDataBySpecResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  oracle_data_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:api.v1.OracleDataBySpecResponse)
+}
+OracleDataBySpecResponse::OracleDataBySpecResponse(const OracleDataBySpecResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      oracle_data_(from.oracle_data_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:api.v1.OracleDataBySpecResponse)
+}
+
+void OracleDataBySpecResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_OracleDataBySpecResponse_api_2ftrading_2eproto.base);
+}
+
+OracleDataBySpecResponse::~OracleDataBySpecResponse() {
+  // @@protoc_insertion_point(destructor:api.v1.OracleDataBySpecResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void OracleDataBySpecResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void OracleDataBySpecResponse::ArenaDtor(void* object) {
+  OracleDataBySpecResponse* _this = reinterpret_cast< OracleDataBySpecResponse* >(object);
+  (void)_this;
+}
+void OracleDataBySpecResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void OracleDataBySpecResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const OracleDataBySpecResponse& OracleDataBySpecResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_OracleDataBySpecResponse_api_2ftrading_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void OracleDataBySpecResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.v1.OracleDataBySpecResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  oracle_data_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* OracleDataBySpecResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_oracle_data(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* OracleDataBySpecResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:api.v1.OracleDataBySpecResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_oracle_data_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_oracle_data(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.v1.OracleDataBySpecResponse)
+  return target;
+}
+
+size_t OracleDataBySpecResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.v1.OracleDataBySpecResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];
+  total_size += 1UL * this->_internal_oracle_data_size();
+  for (const auto& msg : this->oracle_data_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void OracleDataBySpecResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.v1.OracleDataBySpecResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const OracleDataBySpecResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<OracleDataBySpecResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.v1.OracleDataBySpecResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.v1.OracleDataBySpecResponse)
+    MergeFrom(*source);
+  }
+}
+
+void OracleDataBySpecResponse::MergeFrom(const OracleDataBySpecResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.v1.OracleDataBySpecResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  oracle_data_.MergeFrom(from.oracle_data_);
+}
+
+void OracleDataBySpecResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.v1.OracleDataBySpecResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void OracleDataBySpecResponse::CopyFrom(const OracleDataBySpecResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.v1.OracleDataBySpecResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool OracleDataBySpecResponse::IsInitialized() const {
+  return true;
+}
+
+void OracleDataBySpecResponse::InternalSwap(OracleDataBySpecResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  oracle_data_.InternalSwap(&other->oracle_data_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata OracleDataBySpecResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace api
@@ -35651,6 +37025,24 @@ template<> PROTOBUF_NOINLINE ::api::v1::LiquidityProvisionsRequest* Arena::Creat
 }
 template<> PROTOBUF_NOINLINE ::api::v1::LiquidityProvisionsResponse* Arena::CreateMaybeMessage< ::api::v1::LiquidityProvisionsResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::api::v1::LiquidityProvisionsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::api::v1::OracleSpecRequest* Arena::CreateMaybeMessage< ::api::v1::OracleSpecRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::api::v1::OracleSpecRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::api::v1::OracleSpecResponse* Arena::CreateMaybeMessage< ::api::v1::OracleSpecResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::api::v1::OracleSpecResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::api::v1::OracleSpecsRequest* Arena::CreateMaybeMessage< ::api::v1::OracleSpecsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::api::v1::OracleSpecsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::api::v1::OracleSpecsResponse* Arena::CreateMaybeMessage< ::api::v1::OracleSpecsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::api::v1::OracleSpecsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::api::v1::OracleDataBySpecRequest* Arena::CreateMaybeMessage< ::api::v1::OracleDataBySpecRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::api::v1::OracleDataBySpecRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::api::v1::OracleDataBySpecResponse* Arena::CreateMaybeMessage< ::api::v1::OracleDataBySpecResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::api::v1::OracleDataBySpecResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

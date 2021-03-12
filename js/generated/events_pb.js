@@ -22,6 +22,10 @@ var governance_pb = require('./governance_pb.js');
 goog.object.extend(proto, governance_pb);
 var vega_pb = require('./vega_pb.js');
 goog.object.extend(proto, vega_pb);
+var oracles_v1_oracle_spec_pb = require('./oracles/v1/oracle_spec_pb.js');
+goog.object.extend(proto, oracles_v1_oracle_spec_pb);
+var oracles_v1_oracle_data_pb = require('./oracles/v1/oracle_data_pb.js');
+goog.object.extend(proto, oracles_v1_oracle_data_pb);
 goog.exportSymbol('proto.vega.AuctionEvent', null, global);
 goog.exportSymbol('proto.vega.BusEvent', null, global);
 goog.exportSymbol('proto.vega.BusEvent.EventCase', null, global);
@@ -2672,7 +2676,7 @@ proto.vega.AuctionEvent.prototype.setTrigger = function(value) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.vega.BusEvent.oneofGroups_ = [[101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,1001,2001]];
+proto.vega.BusEvent.oneofGroups_ = [[101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,1001,2001]];
 
 /**
  * @enum {number}
@@ -2704,6 +2708,8 @@ proto.vega.BusEvent.EventCase = {
   NETWORK_PARAMETER: 123,
   LIQUIDITY_PROVISION: 124,
   MARKET_UPDATED: 125,
+  ORACLE_SPEC: 126,
+  ORACLE_DATA: 127,
   MARKET: 1001,
   TX_ERR_EVENT: 2001
 };
@@ -2774,6 +2780,8 @@ proto.vega.BusEvent.toObject = function(includeInstance, msg) {
     networkParameter: (f = msg.getNetworkParameter()) && vega_pb.NetworkParameter.toObject(includeInstance, f),
     liquidityProvision: (f = msg.getLiquidityProvision()) && vega_pb.LiquidityProvision.toObject(includeInstance, f),
     marketUpdated: (f = msg.getMarketUpdated()) && markets_pb.Market.toObject(includeInstance, f),
+    oracleSpec: (f = msg.getOracleSpec()) && oracles_v1_oracle_spec_pb.OracleSpec.toObject(includeInstance, f),
+    oracleData: (f = msg.getOracleData()) && oracles_v1_oracle_data_pb.OracleData.toObject(includeInstance, f),
     market: (f = msg.getMarket()) && proto.vega.MarketEvent.toObject(includeInstance, f),
     txErrEvent: (f = msg.getTxErrEvent()) && proto.vega.TxErrorEvent.toObject(includeInstance, f)
   };
@@ -2948,6 +2956,16 @@ proto.vega.BusEvent.deserializeBinaryFromReader = function(msg, reader) {
       var value = new markets_pb.Market;
       reader.readMessage(value,markets_pb.Market.deserializeBinaryFromReader);
       msg.setMarketUpdated(value);
+      break;
+    case 126:
+      var value = new oracles_v1_oracle_spec_pb.OracleSpec;
+      reader.readMessage(value,oracles_v1_oracle_spec_pb.OracleSpec.deserializeBinaryFromReader);
+      msg.setOracleSpec(value);
+      break;
+    case 127:
+      var value = new oracles_v1_oracle_data_pb.OracleData;
+      reader.readMessage(value,oracles_v1_oracle_data_pb.OracleData.deserializeBinaryFromReader);
+      msg.setOracleData(value);
       break;
     case 1001:
       var value = new proto.vega.MarketEvent;
@@ -3207,6 +3225,22 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       125,
       f,
       markets_pb.Market.serializeBinaryToWriter
+    );
+  }
+  f = message.getOracleSpec();
+  if (f != null) {
+    writer.writeMessage(
+      126,
+      f,
+      oracles_v1_oracle_spec_pb.OracleSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getOracleData();
+  if (f != null) {
+    writer.writeMessage(
+      127,
+      f,
+      oracles_v1_oracle_data_pb.OracleData.serializeBinaryToWriter
     );
   }
   f = message.getMarket();
@@ -4208,6 +4242,80 @@ proto.vega.BusEvent.prototype.hasMarketUpdated = function() {
 
 
 /**
+ * optional oracles.v1.OracleSpec oracle_spec = 126;
+ * @return {?proto.oracles.v1.OracleSpec}
+ */
+proto.vega.BusEvent.prototype.getOracleSpec = function() {
+  return /** @type{?proto.oracles.v1.OracleSpec} */ (
+    jspb.Message.getWrapperField(this, oracles_v1_oracle_spec_pb.OracleSpec, 126));
+};
+
+
+/**
+ * @param {?proto.oracles.v1.OracleSpec|undefined} value
+ * @return {!proto.vega.BusEvent} returns this
+*/
+proto.vega.BusEvent.prototype.setOracleSpec = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 126, proto.vega.BusEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.vega.BusEvent} returns this
+ */
+proto.vega.BusEvent.prototype.clearOracleSpec = function() {
+  return this.setOracleSpec(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.BusEvent.prototype.hasOracleSpec = function() {
+  return jspb.Message.getField(this, 126) != null;
+};
+
+
+/**
+ * optional oracles.v1.OracleData oracle_data = 127;
+ * @return {?proto.oracles.v1.OracleData}
+ */
+proto.vega.BusEvent.prototype.getOracleData = function() {
+  return /** @type{?proto.oracles.v1.OracleData} */ (
+    jspb.Message.getWrapperField(this, oracles_v1_oracle_data_pb.OracleData, 127));
+};
+
+
+/**
+ * @param {?proto.oracles.v1.OracleData|undefined} value
+ * @return {!proto.vega.BusEvent} returns this
+*/
+proto.vega.BusEvent.prototype.setOracleData = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 127, proto.vega.BusEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.vega.BusEvent} returns this
+ */
+proto.vega.BusEvent.prototype.clearOracleData = function() {
+  return this.setOracleData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.BusEvent.prototype.hasOracleData = function() {
+  return jspb.Message.getField(this, 127) != null;
+};
+
+
+/**
  * optional MarketEvent market = 1001;
  * @return {?proto.vega.MarketEvent}
  */
@@ -4312,6 +4420,8 @@ proto.vega.BusEventType = {
   BUS_EVENT_TYPE_NETWORK_PARAMETER: 24,
   BUS_EVENT_TYPE_LIQUIDITY_PROVISION: 25,
   BUS_EVENT_TYPE_MARKET_UPDATED: 26,
+  BUS_EVENT_TYPE_ORACLE_SPEC: 27,
+  BUS_EVENT_TYPE_ORACLE_DATA: 28,
   BUS_EVENT_TYPE_MARKET: 101,
   BUS_EVENT_TYPE_TX_ERROR: 201
 };

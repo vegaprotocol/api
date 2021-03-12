@@ -481,6 +481,9 @@ static const char* TradingDataService_method_names[] = {
   "/api.v1.TradingDataService/Deposits",
   "/api.v1.TradingDataService/NetworkParameters",
   "/api.v1.TradingDataService/LiquidityProvisions",
+  "/api.v1.TradingDataService/OracleSpec",
+  "/api.v1.TradingDataService/OracleSpecs",
+  "/api.v1.TradingDataService/OracleDataBySpec",
 };
 
 std::unique_ptr< TradingDataService::Stub> TradingDataService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -551,6 +554,9 @@ TradingDataService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>&
   , rpcmethod_Deposits_(TradingDataService_method_names[58], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_NetworkParameters_(TradingDataService_method_names[59], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_LiquidityProvisions_(TradingDataService_method_names[60], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_OracleSpec_(TradingDataService_method_names[61], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_OracleSpecs_(TradingDataService_method_names[62], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_OracleDataBySpec_(TradingDataService_method_names[63], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status TradingDataService::Stub::MarketAccounts(::grpc::ClientContext* context, const ::api::v1::MarketAccountsRequest& request, ::api::v1::MarketAccountsResponse* response) {
@@ -1851,6 +1857,75 @@ void TradingDataService::Stub::experimental_async::LiquidityProvisions(::grpc::C
   return result;
 }
 
+::grpc::Status TradingDataService::Stub::OracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest& request, ::api::v1::OracleSpecResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::OracleSpecRequest, ::api::v1::OracleSpecResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OracleSpec_, context, request, response);
+}
+
+void TradingDataService::Stub::experimental_async::OracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest* request, ::api::v1::OracleSpecResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::OracleSpecRequest, ::api::v1::OracleSpecResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OracleSpec_, context, request, response, std::move(f));
+}
+
+void TradingDataService::Stub::experimental_async::OracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest* request, ::api::v1::OracleSpecResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OracleSpec_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecResponse>* TradingDataService::Stub::PrepareAsyncOracleSpecRaw(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::OracleSpecResponse, ::api::v1::OracleSpecRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OracleSpec_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecResponse>* TradingDataService::Stub::AsyncOracleSpecRaw(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncOracleSpecRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status TradingDataService::Stub::OracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest& request, ::api::v1::OracleSpecsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::OracleSpecsRequest, ::api::v1::OracleSpecsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OracleSpecs_, context, request, response);
+}
+
+void TradingDataService::Stub::experimental_async::OracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest* request, ::api::v1::OracleSpecsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::OracleSpecsRequest, ::api::v1::OracleSpecsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OracleSpecs_, context, request, response, std::move(f));
+}
+
+void TradingDataService::Stub::experimental_async::OracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest* request, ::api::v1::OracleSpecsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OracleSpecs_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecsResponse>* TradingDataService::Stub::PrepareAsyncOracleSpecsRaw(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::OracleSpecsResponse, ::api::v1::OracleSpecsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OracleSpecs_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecsResponse>* TradingDataService::Stub::AsyncOracleSpecsRaw(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncOracleSpecsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status TradingDataService::Stub::OracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest& request, ::api::v1::OracleDataBySpecResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::OracleDataBySpecRequest, ::api::v1::OracleDataBySpecResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OracleDataBySpec_, context, request, response);
+}
+
+void TradingDataService::Stub::experimental_async::OracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest* request, ::api::v1::OracleDataBySpecResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::OracleDataBySpecRequest, ::api::v1::OracleDataBySpecResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OracleDataBySpec_, context, request, response, std::move(f));
+}
+
+void TradingDataService::Stub::experimental_async::OracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest* request, ::api::v1::OracleDataBySpecResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OracleDataBySpec_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::OracleDataBySpecResponse>* TradingDataService::Stub::PrepareAsyncOracleDataBySpecRaw(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::OracleDataBySpecResponse, ::api::v1::OracleDataBySpecRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OracleDataBySpec_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::OracleDataBySpecResponse>* TradingDataService::Stub::AsyncOracleDataBySpecRaw(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncOracleDataBySpecRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 TradingDataService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TradingDataService_method_names[0],
@@ -2462,6 +2537,36 @@ TradingDataService::Service::Service() {
              ::api::v1::LiquidityProvisionsResponse* resp) {
                return service->LiquidityProvisions(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TradingDataService_method_names[61],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::OracleSpecRequest, ::api::v1::OracleSpecResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::api::v1::OracleSpecRequest* req,
+             ::api::v1::OracleSpecResponse* resp) {
+               return service->OracleSpec(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TradingDataService_method_names[62],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::OracleSpecsRequest, ::api::v1::OracleSpecsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::api::v1::OracleSpecsRequest* req,
+             ::api::v1::OracleSpecsResponse* resp) {
+               return service->OracleSpecs(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TradingDataService_method_names[63],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::OracleDataBySpecRequest, ::api::v1::OracleDataBySpecResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::api::v1::OracleDataBySpecRequest* req,
+             ::api::v1::OracleDataBySpecResponse* resp) {
+               return service->OracleDataBySpec(ctx, req, resp);
+             }, this)));
 }
 
 TradingDataService::Service::~Service() {
@@ -2887,6 +2992,27 @@ TradingDataService::Service::~Service() {
 }
 
 ::grpc::Status TradingDataService::Service::LiquidityProvisions(::grpc::ServerContext* context, const ::api::v1::LiquidityProvisionsRequest* request, ::api::v1::LiquidityProvisionsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TradingDataService::Service::OracleSpec(::grpc::ServerContext* context, const ::api::v1::OracleSpecRequest* request, ::api::v1::OracleSpecResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TradingDataService::Service::OracleSpecs(::grpc::ServerContext* context, const ::api::v1::OracleSpecsRequest* request, ::api::v1::OracleSpecsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TradingDataService::Service::OracleDataBySpec(::grpc::ServerContext* context, const ::api::v1::OracleDataBySpecRequest* request, ::api::v1::OracleDataBySpecResponse* response) {
   (void) context;
   (void) request;
   (void) response;

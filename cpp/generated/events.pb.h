@@ -36,6 +36,8 @@
 #include "assets.pb.h"
 #include "governance.pb.h"
 #include "vega.pb.h"
+#include "oracles/v1/oracle_spec.pb.h"
+#include "oracles/v1/oracle_data.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_events_2eproto
@@ -140,6 +142,8 @@ enum BusEventType : int {
   BUS_EVENT_TYPE_NETWORK_PARAMETER = 24,
   BUS_EVENT_TYPE_LIQUIDITY_PROVISION = 25,
   BUS_EVENT_TYPE_MARKET_UPDATED = 26,
+  BUS_EVENT_TYPE_ORACLE_SPEC = 27,
+  BUS_EVENT_TYPE_ORACLE_DATA = 28,
   BUS_EVENT_TYPE_MARKET = 101,
   BUS_EVENT_TYPE_TX_ERROR = 201,
   BusEventType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
@@ -2177,6 +2181,8 @@ class BusEvent PROTOBUF_FINAL :
     kNetworkParameter = 123,
     kLiquidityProvision = 124,
     kMarketUpdated = 125,
+    kOracleSpec = 126,
+    kOracleData = 127,
     kMarket = 1001,
     kTxErrEvent = 2001,
     EVENT_NOT_SET = 0,
@@ -2286,6 +2292,8 @@ class BusEvent PROTOBUF_FINAL :
     kNetworkParameterFieldNumber = 123,
     kLiquidityProvisionFieldNumber = 124,
     kMarketUpdatedFieldNumber = 125,
+    kOracleSpecFieldNumber = 126,
+    kOracleDataFieldNumber = 127,
     kMarketFieldNumber = 1001,
     kTxErrEventFieldNumber = 2001,
   };
@@ -2780,6 +2788,42 @@ class BusEvent PROTOBUF_FINAL :
       ::vega::Market* market_updated);
   ::vega::Market* unsafe_arena_release_market_updated();
 
+  // .oracles.v1.OracleSpec oracle_spec = 126 [json_name = "oracleSpec"];
+  bool has_oracle_spec() const;
+  private:
+  bool _internal_has_oracle_spec() const;
+  public:
+  void clear_oracle_spec();
+  const ::oracles::v1::OracleSpec& oracle_spec() const;
+  ::oracles::v1::OracleSpec* release_oracle_spec();
+  ::oracles::v1::OracleSpec* mutable_oracle_spec();
+  void set_allocated_oracle_spec(::oracles::v1::OracleSpec* oracle_spec);
+  private:
+  const ::oracles::v1::OracleSpec& _internal_oracle_spec() const;
+  ::oracles::v1::OracleSpec* _internal_mutable_oracle_spec();
+  public:
+  void unsafe_arena_set_allocated_oracle_spec(
+      ::oracles::v1::OracleSpec* oracle_spec);
+  ::oracles::v1::OracleSpec* unsafe_arena_release_oracle_spec();
+
+  // .oracles.v1.OracleData oracle_data = 127 [json_name = "oracleData"];
+  bool has_oracle_data() const;
+  private:
+  bool _internal_has_oracle_data() const;
+  public:
+  void clear_oracle_data();
+  const ::oracles::v1::OracleData& oracle_data() const;
+  ::oracles::v1::OracleData* release_oracle_data();
+  ::oracles::v1::OracleData* mutable_oracle_data();
+  void set_allocated_oracle_data(::oracles::v1::OracleData* oracle_data);
+  private:
+  const ::oracles::v1::OracleData& _internal_oracle_data() const;
+  ::oracles::v1::OracleData* _internal_mutable_oracle_data();
+  public:
+  void unsafe_arena_set_allocated_oracle_data(
+      ::oracles::v1::OracleData* oracle_data);
+  ::oracles::v1::OracleData* unsafe_arena_release_oracle_data();
+
   // .vega.MarketEvent market = 1001 [json_name = "market"];
   bool has_market() const;
   private:
@@ -2846,6 +2890,8 @@ class BusEvent PROTOBUF_FINAL :
   void set_has_network_parameter();
   void set_has_liquidity_provision();
   void set_has_market_updated();
+  void set_has_oracle_spec();
+  void set_has_oracle_data();
   void set_has_market();
   void set_has_tx_err_event();
 
@@ -2885,6 +2931,8 @@ class BusEvent PROTOBUF_FINAL :
     ::vega::NetworkParameter* network_parameter_;
     ::vega::LiquidityProvision* liquidity_provision_;
     ::vega::Market* market_updated_;
+    ::oracles::v1::OracleSpec* oracle_spec_;
+    ::oracles::v1::OracleData* oracle_data_;
     ::vega::MarketEvent* market_;
     ::vega::TxErrorEvent* tx_err_event_;
   } event_;
@@ -6299,6 +6347,136 @@ inline ::vega::Market* BusEvent::_internal_mutable_market_updated() {
 inline ::vega::Market* BusEvent::mutable_market_updated() {
   // @@protoc_insertion_point(field_mutable:vega.BusEvent.market_updated)
   return _internal_mutable_market_updated();
+}
+
+// .oracles.v1.OracleSpec oracle_spec = 126 [json_name = "oracleSpec"];
+inline bool BusEvent::_internal_has_oracle_spec() const {
+  return event_case() == kOracleSpec;
+}
+inline bool BusEvent::has_oracle_spec() const {
+  return _internal_has_oracle_spec();
+}
+inline void BusEvent::set_has_oracle_spec() {
+  _oneof_case_[0] = kOracleSpec;
+}
+inline ::oracles::v1::OracleSpec* BusEvent::release_oracle_spec() {
+  // @@protoc_insertion_point(field_release:vega.BusEvent.oracle_spec)
+  if (_internal_has_oracle_spec()) {
+    clear_has_event();
+      ::oracles::v1::OracleSpec* temp = event_.oracle_spec_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    event_.oracle_spec_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::oracles::v1::OracleSpec& BusEvent::_internal_oracle_spec() const {
+  return _internal_has_oracle_spec()
+      ? *event_.oracle_spec_
+      : reinterpret_cast< ::oracles::v1::OracleSpec&>(::oracles::v1::_OracleSpec_default_instance_);
+}
+inline const ::oracles::v1::OracleSpec& BusEvent::oracle_spec() const {
+  // @@protoc_insertion_point(field_get:vega.BusEvent.oracle_spec)
+  return _internal_oracle_spec();
+}
+inline ::oracles::v1::OracleSpec* BusEvent::unsafe_arena_release_oracle_spec() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.BusEvent.oracle_spec)
+  if (_internal_has_oracle_spec()) {
+    clear_has_event();
+    ::oracles::v1::OracleSpec* temp = event_.oracle_spec_;
+    event_.oracle_spec_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void BusEvent::unsafe_arena_set_allocated_oracle_spec(::oracles::v1::OracleSpec* oracle_spec) {
+  clear_event();
+  if (oracle_spec) {
+    set_has_oracle_spec();
+    event_.oracle_spec_ = oracle_spec;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.BusEvent.oracle_spec)
+}
+inline ::oracles::v1::OracleSpec* BusEvent::_internal_mutable_oracle_spec() {
+  if (!_internal_has_oracle_spec()) {
+    clear_event();
+    set_has_oracle_spec();
+    event_.oracle_spec_ = CreateMaybeMessage< ::oracles::v1::OracleSpec >(GetArena());
+  }
+  return event_.oracle_spec_;
+}
+inline ::oracles::v1::OracleSpec* BusEvent::mutable_oracle_spec() {
+  // @@protoc_insertion_point(field_mutable:vega.BusEvent.oracle_spec)
+  return _internal_mutable_oracle_spec();
+}
+
+// .oracles.v1.OracleData oracle_data = 127 [json_name = "oracleData"];
+inline bool BusEvent::_internal_has_oracle_data() const {
+  return event_case() == kOracleData;
+}
+inline bool BusEvent::has_oracle_data() const {
+  return _internal_has_oracle_data();
+}
+inline void BusEvent::set_has_oracle_data() {
+  _oneof_case_[0] = kOracleData;
+}
+inline ::oracles::v1::OracleData* BusEvent::release_oracle_data() {
+  // @@protoc_insertion_point(field_release:vega.BusEvent.oracle_data)
+  if (_internal_has_oracle_data()) {
+    clear_has_event();
+      ::oracles::v1::OracleData* temp = event_.oracle_data_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    event_.oracle_data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::oracles::v1::OracleData& BusEvent::_internal_oracle_data() const {
+  return _internal_has_oracle_data()
+      ? *event_.oracle_data_
+      : reinterpret_cast< ::oracles::v1::OracleData&>(::oracles::v1::_OracleData_default_instance_);
+}
+inline const ::oracles::v1::OracleData& BusEvent::oracle_data() const {
+  // @@protoc_insertion_point(field_get:vega.BusEvent.oracle_data)
+  return _internal_oracle_data();
+}
+inline ::oracles::v1::OracleData* BusEvent::unsafe_arena_release_oracle_data() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.BusEvent.oracle_data)
+  if (_internal_has_oracle_data()) {
+    clear_has_event();
+    ::oracles::v1::OracleData* temp = event_.oracle_data_;
+    event_.oracle_data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void BusEvent::unsafe_arena_set_allocated_oracle_data(::oracles::v1::OracleData* oracle_data) {
+  clear_event();
+  if (oracle_data) {
+    set_has_oracle_data();
+    event_.oracle_data_ = oracle_data;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.BusEvent.oracle_data)
+}
+inline ::oracles::v1::OracleData* BusEvent::_internal_mutable_oracle_data() {
+  if (!_internal_has_oracle_data()) {
+    clear_event();
+    set_has_oracle_data();
+    event_.oracle_data_ = CreateMaybeMessage< ::oracles::v1::OracleData >(GetArena());
+  }
+  return event_.oracle_data_;
+}
+inline ::oracles::v1::OracleData* BusEvent::mutable_oracle_data() {
+  // @@protoc_insertion_point(field_mutable:vega.BusEvent.oracle_data)
+  return _internal_mutable_oracle_data();
 }
 
 // .vega.MarketEvent market = 1001 [json_name = "market"];

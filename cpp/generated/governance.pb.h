@@ -39,6 +39,7 @@
 #include "markets.pb.h"
 #include "vega.pb.h"
 #include "assets.pb.h"
+#include "oracles/v1/oracle_spec.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_governance_2eproto
@@ -207,12 +208,13 @@ enum ProposalError : int {
   PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE = 23,
   PROPOSAL_ERROR_MARKET_MISSING_LIQUIDITY_COMMITMENT = 24,
   PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET = 25,
+  PROPOSAL_ERROR_INVALID_FUTUR_PRODUCT = 26,
   ProposalError_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   ProposalError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool ProposalError_IsValid(int value);
 constexpr ProposalError ProposalError_MIN = PROPOSAL_ERROR_UNSPECIFIED;
-constexpr ProposalError ProposalError_MAX = PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET;
+constexpr ProposalError ProposalError_MAX = PROPOSAL_ERROR_INVALID_FUTUR_PRODUCT;
 constexpr int ProposalError_ARRAYSIZE = ProposalError_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ProposalError_descriptor();
@@ -346,6 +348,8 @@ class FutureProduct PROTOBUF_FINAL :
     kMaturityFieldNumber = 1,
     kSettlementAssetFieldNumber = 2,
     kQuoteNameFieldNumber = 3,
+    kOracleSpecFieldNumber = 5,
+    kOracleSpecBindingFieldNumber = 6,
   };
   // string maturity = 1 [json_name = "maturity", (.validator.field) = {
   void clear_maturity();
@@ -395,6 +399,42 @@ class FutureProduct PROTOBUF_FINAL :
   std::string* _internal_mutable_quote_name();
   public:
 
+  // .oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];
+  bool has_oracle_spec() const;
+  private:
+  bool _internal_has_oracle_spec() const;
+  public:
+  void clear_oracle_spec();
+  const ::oracles::v1::OracleSpecConfiguration& oracle_spec() const;
+  ::oracles::v1::OracleSpecConfiguration* release_oracle_spec();
+  ::oracles::v1::OracleSpecConfiguration* mutable_oracle_spec();
+  void set_allocated_oracle_spec(::oracles::v1::OracleSpecConfiguration* oracle_spec);
+  private:
+  const ::oracles::v1::OracleSpecConfiguration& _internal_oracle_spec() const;
+  ::oracles::v1::OracleSpecConfiguration* _internal_mutable_oracle_spec();
+  public:
+  void unsafe_arena_set_allocated_oracle_spec(
+      ::oracles::v1::OracleSpecConfiguration* oracle_spec);
+  ::oracles::v1::OracleSpecConfiguration* unsafe_arena_release_oracle_spec();
+
+  // .vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];
+  bool has_oracle_spec_binding() const;
+  private:
+  bool _internal_has_oracle_spec_binding() const;
+  public:
+  void clear_oracle_spec_binding();
+  const ::vega::OracleSpecToFutureBinding& oracle_spec_binding() const;
+  ::vega::OracleSpecToFutureBinding* release_oracle_spec_binding();
+  ::vega::OracleSpecToFutureBinding* mutable_oracle_spec_binding();
+  void set_allocated_oracle_spec_binding(::vega::OracleSpecToFutureBinding* oracle_spec_binding);
+  private:
+  const ::vega::OracleSpecToFutureBinding& _internal_oracle_spec_binding() const;
+  ::vega::OracleSpecToFutureBinding* _internal_mutable_oracle_spec_binding();
+  public:
+  void unsafe_arena_set_allocated_oracle_spec_binding(
+      ::vega::OracleSpecToFutureBinding* oracle_spec_binding);
+  ::vega::OracleSpecToFutureBinding* unsafe_arena_release_oracle_spec_binding();
+
   // @@protoc_insertion_point(class_scope:vega.FutureProduct)
  private:
   class _Internal;
@@ -405,6 +445,8 @@ class FutureProduct PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr maturity_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr settlement_asset_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr quote_name_;
+  ::oracles::v1::OracleSpecConfiguration* oracle_spec_;
+  ::vega::OracleSpecToFutureBinding* oracle_spec_binding_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_governance_2eproto;
 };
@@ -1038,6 +1080,7 @@ class NewMarketCommitment PROTOBUF_FINAL :
     kSellsFieldNumber = 3,
     kBuysFieldNumber = 4,
     kFeeFieldNumber = 2,
+    kReferenceFieldNumber = 5,
     kCommitmentAmountFieldNumber = 1,
   };
   // repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];
@@ -1092,6 +1135,22 @@ class NewMarketCommitment PROTOBUF_FINAL :
   std::string* _internal_mutable_fee();
   public:
 
+  // string reference = 5 [json_name = "reference"];
+  void clear_reference();
+  const std::string& reference() const;
+  void set_reference(const std::string& value);
+  void set_reference(std::string&& value);
+  void set_reference(const char* value);
+  void set_reference(const char* value, size_t size);
+  std::string* mutable_reference();
+  std::string* release_reference();
+  void set_allocated_reference(std::string* reference);
+  private:
+  const std::string& _internal_reference() const;
+  void _internal_set_reference(const std::string& value);
+  std::string* _internal_mutable_reference();
+  public:
+
   // uint64 commitment_amount = 1 [json_name = "commitmentAmount"];
   void clear_commitment_amount();
   ::PROTOBUF_NAMESPACE_ID::uint64 commitment_amount() const;
@@ -1111,6 +1170,7 @@ class NewMarketCommitment PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder > sells_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder > buys_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fee_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
   ::PROTOBUF_NAMESPACE_ID::uint64 commitment_amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_governance_2eproto;
@@ -2928,6 +2988,160 @@ inline void FutureProduct::set_allocated_quote_name(std::string* quote_name) {
   // @@protoc_insertion_point(field_set_allocated:vega.FutureProduct.quote_name)
 }
 
+// .oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];
+inline bool FutureProduct::_internal_has_oracle_spec() const {
+  return this != internal_default_instance() && oracle_spec_ != nullptr;
+}
+inline bool FutureProduct::has_oracle_spec() const {
+  return _internal_has_oracle_spec();
+}
+inline const ::oracles::v1::OracleSpecConfiguration& FutureProduct::_internal_oracle_spec() const {
+  const ::oracles::v1::OracleSpecConfiguration* p = oracle_spec_;
+  return p != nullptr ? *p : reinterpret_cast<const ::oracles::v1::OracleSpecConfiguration&>(
+      ::oracles::v1::_OracleSpecConfiguration_default_instance_);
+}
+inline const ::oracles::v1::OracleSpecConfiguration& FutureProduct::oracle_spec() const {
+  // @@protoc_insertion_point(field_get:vega.FutureProduct.oracle_spec)
+  return _internal_oracle_spec();
+}
+inline void FutureProduct::unsafe_arena_set_allocated_oracle_spec(
+    ::oracles::v1::OracleSpecConfiguration* oracle_spec) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec_);
+  }
+  oracle_spec_ = oracle_spec;
+  if (oracle_spec) {
+
+  } else {
+
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.FutureProduct.oracle_spec)
+}
+inline ::oracles::v1::OracleSpecConfiguration* FutureProduct::release_oracle_spec() {
+
+  ::oracles::v1::OracleSpecConfiguration* temp = oracle_spec_;
+  oracle_spec_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::oracles::v1::OracleSpecConfiguration* FutureProduct::unsafe_arena_release_oracle_spec() {
+  // @@protoc_insertion_point(field_release:vega.FutureProduct.oracle_spec)
+
+  ::oracles::v1::OracleSpecConfiguration* temp = oracle_spec_;
+  oracle_spec_ = nullptr;
+  return temp;
+}
+inline ::oracles::v1::OracleSpecConfiguration* FutureProduct::_internal_mutable_oracle_spec() {
+
+  if (oracle_spec_ == nullptr) {
+    auto* p = CreateMaybeMessage<::oracles::v1::OracleSpecConfiguration>(GetArena());
+    oracle_spec_ = p;
+  }
+  return oracle_spec_;
+}
+inline ::oracles::v1::OracleSpecConfiguration* FutureProduct::mutable_oracle_spec() {
+  // @@protoc_insertion_point(field_mutable:vega.FutureProduct.oracle_spec)
+  return _internal_mutable_oracle_spec();
+}
+inline void FutureProduct::set_allocated_oracle_spec(::oracles::v1::OracleSpecConfiguration* oracle_spec) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec_);
+  }
+  if (oracle_spec) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec)->GetArena();
+    if (message_arena != submessage_arena) {
+      oracle_spec = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, oracle_spec, submessage_arena);
+    }
+
+  } else {
+
+  }
+  oracle_spec_ = oracle_spec;
+  // @@protoc_insertion_point(field_set_allocated:vega.FutureProduct.oracle_spec)
+}
+
+// .vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];
+inline bool FutureProduct::_internal_has_oracle_spec_binding() const {
+  return this != internal_default_instance() && oracle_spec_binding_ != nullptr;
+}
+inline bool FutureProduct::has_oracle_spec_binding() const {
+  return _internal_has_oracle_spec_binding();
+}
+inline const ::vega::OracleSpecToFutureBinding& FutureProduct::_internal_oracle_spec_binding() const {
+  const ::vega::OracleSpecToFutureBinding* p = oracle_spec_binding_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::OracleSpecToFutureBinding&>(
+      ::vega::_OracleSpecToFutureBinding_default_instance_);
+}
+inline const ::vega::OracleSpecToFutureBinding& FutureProduct::oracle_spec_binding() const {
+  // @@protoc_insertion_point(field_get:vega.FutureProduct.oracle_spec_binding)
+  return _internal_oracle_spec_binding();
+}
+inline void FutureProduct::unsafe_arena_set_allocated_oracle_spec_binding(
+    ::vega::OracleSpecToFutureBinding* oracle_spec_binding) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec_binding_);
+  }
+  oracle_spec_binding_ = oracle_spec_binding;
+  if (oracle_spec_binding) {
+
+  } else {
+
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.FutureProduct.oracle_spec_binding)
+}
+inline ::vega::OracleSpecToFutureBinding* FutureProduct::release_oracle_spec_binding() {
+
+  ::vega::OracleSpecToFutureBinding* temp = oracle_spec_binding_;
+  oracle_spec_binding_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::vega::OracleSpecToFutureBinding* FutureProduct::unsafe_arena_release_oracle_spec_binding() {
+  // @@protoc_insertion_point(field_release:vega.FutureProduct.oracle_spec_binding)
+
+  ::vega::OracleSpecToFutureBinding* temp = oracle_spec_binding_;
+  oracle_spec_binding_ = nullptr;
+  return temp;
+}
+inline ::vega::OracleSpecToFutureBinding* FutureProduct::_internal_mutable_oracle_spec_binding() {
+
+  if (oracle_spec_binding_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::OracleSpecToFutureBinding>(GetArena());
+    oracle_spec_binding_ = p;
+  }
+  return oracle_spec_binding_;
+}
+inline ::vega::OracleSpecToFutureBinding* FutureProduct::mutable_oracle_spec_binding() {
+  // @@protoc_insertion_point(field_mutable:vega.FutureProduct.oracle_spec_binding)
+  return _internal_mutable_oracle_spec_binding();
+}
+inline void FutureProduct::set_allocated_oracle_spec_binding(::vega::OracleSpecToFutureBinding* oracle_spec_binding) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec_binding_);
+  }
+  if (oracle_spec_binding) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec_binding)->GetArena();
+    if (message_arena != submessage_arena) {
+      oracle_spec_binding = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, oracle_spec_binding, submessage_arena);
+    }
+
+  } else {
+
+  }
+  oracle_spec_binding_ = oracle_spec_binding;
+  // @@protoc_insertion_point(field_set_allocated:vega.FutureProduct.oracle_spec_binding)
+}
+
 // -------------------------------------------------------------------
 
 // InstrumentConfiguration
@@ -3827,6 +4041,67 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder >
 NewMarketCommitment::buys() const {
   // @@protoc_insertion_point(field_list:vega.NewMarketCommitment.buys)
   return buys_;
+}
+
+// string reference = 5 [json_name = "reference"];
+inline void NewMarketCommitment::clear_reference() {
+  reference_.ClearToEmpty();
+}
+inline const std::string& NewMarketCommitment::reference() const {
+  // @@protoc_insertion_point(field_get:vega.NewMarketCommitment.reference)
+  return _internal_reference();
+}
+inline void NewMarketCommitment::set_reference(const std::string& value) {
+  _internal_set_reference(value);
+  // @@protoc_insertion_point(field_set:vega.NewMarketCommitment.reference)
+}
+inline std::string* NewMarketCommitment::mutable_reference() {
+  // @@protoc_insertion_point(field_mutable:vega.NewMarketCommitment.reference)
+  return _internal_mutable_reference();
+}
+inline const std::string& NewMarketCommitment::_internal_reference() const {
+  return reference_.Get();
+}
+inline void NewMarketCommitment::_internal_set_reference(const std::string& value) {
+
+  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void NewMarketCommitment::set_reference(std::string&& value) {
+
+  reference_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.NewMarketCommitment.reference)
+}
+inline void NewMarketCommitment::set_reference(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.NewMarketCommitment.reference)
+}
+inline void NewMarketCommitment::set_reference(const char* value,
+    size_t size) {
+
+  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.NewMarketCommitment.reference)
+}
+inline std::string* NewMarketCommitment::_internal_mutable_reference() {
+
+  return reference_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* NewMarketCommitment::release_reference() {
+  // @@protoc_insertion_point(field_release:vega.NewMarketCommitment.reference)
+  return reference_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void NewMarketCommitment::set_allocated_reference(std::string* reference) {
+  if (reference != nullptr) {
+
+  } else {
+
+  }
+  reference_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reference,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.NewMarketCommitment.reference)
 }
 
 // -------------------------------------------------------------------

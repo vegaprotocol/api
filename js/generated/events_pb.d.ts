@@ -6,6 +6,8 @@ import * as markets_pb from "./markets_pb";
 import * as assets_pb from "./assets_pb";
 import * as governance_pb from "./governance_pb";
 import * as vega_pb from "./vega_pb";
+import * as oracles_v1_oracle_spec_pb from "./oracles/v1/oracle_spec_pb";
+import * as oracles_v1_oracle_data_pb from "./oracles/v1/oracle_data_pb";
 
 export class MarketEvent extends jspb.Message {
   getMarketId(): string;
@@ -486,6 +488,16 @@ export class BusEvent extends jspb.Message {
   getMarketUpdated(): markets_pb.Market | undefined;
   setMarketUpdated(value?: markets_pb.Market): void;
 
+  hasOracleSpec(): boolean;
+  clearOracleSpec(): void;
+  getOracleSpec(): oracles_v1_oracle_spec_pb.OracleSpec | undefined;
+  setOracleSpec(value?: oracles_v1_oracle_spec_pb.OracleSpec): void;
+
+  hasOracleData(): boolean;
+  clearOracleData(): void;
+  getOracleData(): oracles_v1_oracle_data_pb.OracleData | undefined;
+  setOracleData(value?: oracles_v1_oracle_data_pb.OracleData): void;
+
   hasMarket(): boolean;
   clearMarket(): void;
   getMarket(): MarketEvent | undefined;
@@ -537,6 +549,8 @@ export namespace BusEvent {
     networkParameter?: vega_pb.NetworkParameter.AsObject,
     liquidityProvision?: vega_pb.LiquidityProvision.AsObject,
     marketUpdated?: markets_pb.Market.AsObject,
+    oracleSpec?: oracles_v1_oracle_spec_pb.OracleSpec.AsObject,
+    oracleData?: oracles_v1_oracle_data_pb.OracleData.AsObject,
     market?: MarketEvent.AsObject,
     txErrEvent?: TxErrorEvent.AsObject,
   }
@@ -568,6 +582,8 @@ export namespace BusEvent {
     NETWORK_PARAMETER = 123,
     LIQUIDITY_PROVISION = 124,
     MARKET_UPDATED = 125,
+    ORACLE_SPEC = 126,
+    ORACLE_DATA = 127,
     MARKET = 1001,
     TX_ERR_EVENT = 2001,
   }
@@ -601,6 +617,8 @@ export interface BusEventTypeMap {
   BUS_EVENT_TYPE_NETWORK_PARAMETER: 24;
   BUS_EVENT_TYPE_LIQUIDITY_PROVISION: 25;
   BUS_EVENT_TYPE_MARKET_UPDATED: 26;
+  BUS_EVENT_TYPE_ORACLE_SPEC: 27;
+  BUS_EVENT_TYPE_ORACLE_DATA: 28;
   BUS_EVENT_TYPE_MARKET: 101;
   BUS_EVENT_TYPE_TX_ERROR: 201;
 }
