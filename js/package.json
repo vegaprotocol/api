@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vegaprotocol/api-clients.git"
+    "url": "git+https://github.com/vegaprotocol/api.git"
   },
   "keywords": [
     "vega",
@@ -22,9 +22,9 @@
   "author": "Vega <hi@vega.xyz>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vegaprotocol/api-clients/issues"
+    "url": "https://github.com/vegaprotocol/api/issues"
   },
-  "homepage": "https://github.com/vegaprotocol/api-clients#readme",
+  "homepage": "https://github.com/vegaprotocol/api#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "4.18.0",
     "@typescript-eslint/parser": "4.18.0",
