@@ -13,7 +13,7 @@ setuptools.setup(
     description="Vega API client for gRPC",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/vegaprotocol/api-clients",
+    url="https://github.com/vegaprotocol/api",
     packages=setuptools.find_packages(),
     package_data={"vegaapiclient": ["py.typed"]},
     classifiers=[

@@ -1,6 +1,6 @@
 # Vega API client
 
-![Python tests](https://github.com/vegaprotocol/api-clients/workflows/Python%20tests/badge.svg?branch=master)
+![Python tests](https://github.com/vegaprotocol/api/workflows/Python%20tests/badge.svg?branch=master)
 
 This is the Vega API client, which talks to a Vega node using gRPC, and to a Vega Wallet server using REST.
 
