@@ -1894,11 +1894,11 @@ const char descriptor_table_protodef_vega_2eproto[] PROTOBUF_SECTION_VARIABLE(pr
   "balance\022\024\n\005asset\030\004 \001(\tR\005asset\022\033\n\tmarket_"
   "id\030\005 \001(\tR\010marketId\022%\n\004type\030\006 \001(\0162\021.vega."
   "AccountTypeR\004type\"\?\n\017FinancialAmount\022\026\n\006"
-  "amount\030\001 \001(\003R\006amount\022\024\n\005asset\030\002 \001(\tR\005ass"
+  "amount\030\001 \001(\004R\006amount\022\024\n\005asset\030\002 \001(\tR\005ass"
   "et\"\226\001\n\010Transfer\022\024\n\005owner\030\001 \001(\tR\005owner\022-\n"
   "\006amount\030\002 \001(\0132\025.vega.FinancialAmountR\006am"
   "ount\022&\n\004type\030\003 \001(\0162\022.vega.TransferTypeR\004"
-  "type\022\035\n\nmin_amount\030\004 \001(\003R\tminAmount\"\334\001\n\017"
+  "type\022\035\n\nmin_amount\030\004 \001(\004R\tminAmount\"\334\001\n\017"
   "TransferRequest\0220\n\014from_account\030\001 \003(\0132\r."
   "vega.AccountR\013fromAccount\022,\n\nto_account\030"
   "\002 \003(\0132\r.vega.AccountR\ttoAccount\022\026\n\006amoun"
@@ -13491,7 +13491,7 @@ FinancialAmount::FinancialAmount(const FinancialAmount& from)
 void FinancialAmount::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FinancialAmount_vega_2eproto.base);
   asset_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  amount_ = PROTOBUF_LONGLONG(0);
+  amount_ = PROTOBUF_ULONGLONG(0);
 }
 
 FinancialAmount::~FinancialAmount() {
@@ -13527,7 +13527,7 @@ void FinancialAmount::Clear() {
   (void) cached_has_bits;
 
   asset_.ClearToEmpty();
-  amount_ = PROTOBUF_LONGLONG(0);
+  amount_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -13538,7 +13538,7 @@ const char* FinancialAmount::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // int64 amount = 1 [json_name = "amount"];
+      // uint64 amount = 1 [json_name = "amount"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           amount_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -13582,10 +13582,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 amount = 1 [json_name = "amount"];
+  // uint64 amount = 1 [json_name = "amount"];
   if (this->amount() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_amount(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_amount(), target);
   }
 
   // string asset = 2 [json_name = "asset"];
@@ -13621,10 +13621,10 @@ size_t FinancialAmount::ByteSizeLong() const {
         this->_internal_asset());
   }
 
-  // int64 amount = 1 [json_name = "amount"];
+  // uint64 amount = 1 [json_name = "amount"];
   if (this->amount() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_amount());
   }
 
@@ -13817,7 +13817,7 @@ const char* Transfer::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           _internal_set_type(static_cast<::vega::TransferType>(val));
         } else goto handle_unusual;
         continue;
-      // int64 min_amount = 4 [json_name = "minAmount"];
+      // uint64 min_amount = 4 [json_name = "minAmount"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           min_amount_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -13877,10 +13877,10 @@ failure:
       3, this->_internal_type(), target);
   }
 
-  // int64 min_amount = 4 [json_name = "minAmount"];
+  // uint64 min_amount = 4 [json_name = "minAmount"];
   if (this->min_amount() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(4, this->_internal_min_amount(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_min_amount(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -13913,10 +13913,10 @@ size_t Transfer::ByteSizeLong() const {
         *amount_);
   }
 
-  // int64 min_amount = 4 [json_name = "minAmount"];
+  // uint64 min_amount = 4 [json_name = "minAmount"];
   if (this->min_amount() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_min_amount());
   }
 

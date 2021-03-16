@@ -1174,7 +1174,7 @@ Asset value information used within a transfer
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| amount | [int64](#int64) |  | A signed integer amount of asset |
+| amount | [uint64](#uint64) |  | A signed integer amount of asset |
 | asset | [string](#string) |  | Asset identifier |
 
 
@@ -1962,7 +1962,7 @@ Represents a financial transfer within Vega
 | owner | [string](#string) |  | Party identifier for the owner of the transfer |
 | amount | [FinancialAmount](#vega.FinancialAmount) |  | A financial amount (of an asset) to transfer |
 | type | [TransferType](#vega.TransferType) |  | The type of transfer, gives the reason for the transfer |
-| min_amount | [int64](#int64) |  | A minimum amount |
+| min_amount | [uint64](#uint64) |  | A minimum amount |
 
 
 
@@ -2822,7 +2822,7 @@ A list of possible errors that can cause a proposal to be in state rejected or f
 | PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE | 23 | Opening auction duration is more than the network minimum opening auction time |
 | PROPOSAL_ERROR_MARKET_MISSING_LIQUIDITY_COMMITMENT | 24 | Market proposal is missing a liquidity commitment |
 | PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET | 25 | Market proposal market could not be instantiate in execution |
-| PROPOSAL_ERROR_INVALID_FUTUR_PRODUCT | 26 | Market proposal market contained invalid product definition |
+| PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT | 26 | Market proposal market contained invalid product definition |
 
 
 

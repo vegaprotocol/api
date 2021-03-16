@@ -44782,7 +44782,7 @@ public final class Vega {
      * A signed integer amount of asset
      * </pre>
      *
-     * <code>int64 amount = 1 [json_name = "amount"];</code>
+     * <code>uint64 amount = 1 [json_name = "amount"];</code>
      * @return The amount.
      */
     long getAmount();
@@ -44859,7 +44859,7 @@ public final class Vega {
               break;
             case 8: {
 
-              amount_ = input.readInt64();
+              amount_ = input.readUInt64();
               break;
             }
             case 18: {
@@ -44907,7 +44907,7 @@ public final class Vega {
      * A signed integer amount of asset
      * </pre>
      *
-     * <code>int64 amount = 1 [json_name = "amount"];</code>
+     * <code>uint64 amount = 1 [json_name = "amount"];</code>
      * @return The amount.
      */
     @java.lang.Override
@@ -44976,7 +44976,7 @@ public final class Vega {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (amount_ != 0L) {
-        output.writeInt64(1, amount_);
+        output.writeUInt64(1, amount_);
       }
       if (!getAssetBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, asset_);
@@ -44992,7 +44992,7 @@ public final class Vega {
       size = 0;
       if (amount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, amount_);
+          .computeUInt64Size(1, amount_);
       }
       if (!getAssetBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, asset_);
@@ -45291,7 +45291,7 @@ public final class Vega {
        * A signed integer amount of asset
        * </pre>
        *
-       * <code>int64 amount = 1 [json_name = "amount"];</code>
+       * <code>uint64 amount = 1 [json_name = "amount"];</code>
        * @return The amount.
        */
       @java.lang.Override
@@ -45303,7 +45303,7 @@ public final class Vega {
        * A signed integer amount of asset
        * </pre>
        *
-       * <code>int64 amount = 1 [json_name = "amount"];</code>
+       * <code>uint64 amount = 1 [json_name = "amount"];</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
@@ -45318,7 +45318,7 @@ public final class Vega {
        * A signed integer amount of asset
        * </pre>
        *
-       * <code>int64 amount = 1 [json_name = "amount"];</code>
+       * <code>uint64 amount = 1 [json_name = "amount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
@@ -45551,7 +45551,7 @@ public final class Vega {
      * A minimum amount
      * </pre>
      *
-     * <code>int64 min_amount = 4 [json_name = "minAmount"];</code>
+     * <code>uint64 min_amount = 4 [json_name = "minAmount"];</code>
      * @return The minAmount.
      */
     long getMinAmount();
@@ -45634,7 +45634,7 @@ public final class Vega {
             }
             case 32: {
 
-              minAmount_ = input.readInt64();
+              minAmount_ = input.readUInt64();
               break;
             }
             default: {
@@ -45787,7 +45787,7 @@ public final class Vega {
      * A minimum amount
      * </pre>
      *
-     * <code>int64 min_amount = 4 [json_name = "minAmount"];</code>
+     * <code>uint64 min_amount = 4 [json_name = "minAmount"];</code>
      * @return The minAmount.
      */
     @java.lang.Override
@@ -45819,7 +45819,7 @@ public final class Vega {
         output.writeEnum(3, type_);
       }
       if (minAmount_ != 0L) {
-        output.writeInt64(4, minAmount_);
+        output.writeUInt64(4, minAmount_);
       }
       unknownFields.writeTo(output);
     }
@@ -45843,7 +45843,7 @@ public final class Vega {
       }
       if (minAmount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, minAmount_);
+          .computeUInt64Size(4, minAmount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -46496,7 +46496,7 @@ public final class Vega {
        * A minimum amount
        * </pre>
        *
-       * <code>int64 min_amount = 4 [json_name = "minAmount"];</code>
+       * <code>uint64 min_amount = 4 [json_name = "minAmount"];</code>
        * @return The minAmount.
        */
       @java.lang.Override
@@ -46508,7 +46508,7 @@ public final class Vega {
        * A minimum amount
        * </pre>
        *
-       * <code>int64 min_amount = 4 [json_name = "minAmount"];</code>
+       * <code>uint64 min_amount = 4 [json_name = "minAmount"];</code>
        * @param value The minAmount to set.
        * @return This builder for chaining.
        */
@@ -46523,7 +46523,7 @@ public final class Vega {
        * A minimum amount
        * </pre>
        *
-       * <code>int64 min_amount = 4 [json_name = "minAmount"];</code>
+       * <code>uint64 min_amount = 4 [json_name = "minAmount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMinAmount() {
@@ -73719,11 +73719,11 @@ public final class Vega {
       "balance\022\024\n\005asset\030\004 \001(\tR\005asset\022\033\n\tmarket_" +
       "id\030\005 \001(\tR\010marketId\022%\n\004type\030\006 \001(\0162\021.vega." +
       "AccountTypeR\004type\"?\n\017FinancialAmount\022\026\n\006" +
-      "amount\030\001 \001(\003R\006amount\022\024\n\005asset\030\002 \001(\tR\005ass" +
+      "amount\030\001 \001(\004R\006amount\022\024\n\005asset\030\002 \001(\tR\005ass" +
       "et\"\226\001\n\010Transfer\022\024\n\005owner\030\001 \001(\tR\005owner\022-\n" +
       "\006amount\030\002 \001(\0132\025.vega.FinancialAmountR\006am" +
       "ount\022&\n\004type\030\003 \001(\0162\022.vega.TransferTypeR\004" +
-      "type\022\035\n\nmin_amount\030\004 \001(\003R\tminAmount\"\334\001\n\017" +
+      "type\022\035\n\nmin_amount\030\004 \001(\004R\tminAmount\"\334\001\n\017" +
       "TransferRequest\0220\n\014from_account\030\001 \003(\0132\r." +
       "vega.AccountR\013fromAccount\022,\n\nto_account\030" +
       "\002 \003(\0132\r.vega.AccountR\ttoAccount\022\026\n\006amoun" +

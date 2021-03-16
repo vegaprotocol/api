@@ -236,9 +236,9 @@ public final class Governance {
      * Market proposal market contained invalid product definition
      * </pre>
      *
-     * <code>PROPOSAL_ERROR_INVALID_FUTUR_PRODUCT = 26;</code>
+     * <code>PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT = 26;</code>
      */
-    PROPOSAL_ERROR_INVALID_FUTUR_PRODUCT(26),
+    PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT(26),
     UNRECOGNIZED(-1),
     ;
 
@@ -455,9 +455,9 @@ public final class Governance {
      * Market proposal market contained invalid product definition
      * </pre>
      *
-     * <code>PROPOSAL_ERROR_INVALID_FUTUR_PRODUCT = 26;</code>
+     * <code>PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT = 26;</code>
      */
-    public static final int PROPOSAL_ERROR_INVALID_FUTUR_PRODUCT_VALUE = 26;
+    public static final int PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT_VALUE = 26;
 
 
     public final int getNumber() {
@@ -510,7 +510,7 @@ public final class Governance {
         case 23: return PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE;
         case 24: return PROPOSAL_ERROR_MARKET_MISSING_LIQUIDITY_COMMITMENT;
         case 25: return PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET;
-        case 26: return PROPOSAL_ERROR_INVALID_FUTUR_PRODUCT;
+        case 26: return PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT;
         default: return null;
       }
     }
@@ -18068,7 +18068,7 @@ public final class Governance {
       "\337\037\003\210\001\001R\005value\022\'\n\013proposal_id\030\003 \001(\tB\006\342\337\037\002" +
       "X\001R\nproposalId\022\034\n\ttimestamp\030\004 \001(\003R\ttimes" +
       "tamp\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010" +
-      "VALUE_NO\020\001\022\r\n\tVALUE_YES\020\002*\305\t\n\rProposalEr" +
+      "VALUE_NO\020\001\022\r\n\tVALUE_YES\020\002*\306\t\n\rProposalEr" +
       "ror\022\036\n\032PROPOSAL_ERROR_UNSPECIFIED\020\000\022&\n\"P" +
       "ROPOSAL_ERROR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"P" +
       "ROPOSAL_ERROR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"P" +
@@ -18098,9 +18098,9 @@ public final class Governance {
       "N_DURATION_TOO_LARGE\020\027\0226\n2PROPOSAL_ERROR" +
       "_MARKET_MISSING_LIQUIDITY_COMMITMENT\020\030\022/" +
       "\n+PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_M" +
-      "ARKET\020\031\022(\n$PROPOSAL_ERROR_INVALID_FUTUR_" +
-      "PRODUCT\020\032B7\n\024io.vegaprotocol.vegaZ\037code." +
-      "vegaprotocol.io/vega/protob\006proto3"
+      "ARKET\020\031\022)\n%PROPOSAL_ERROR_INVALID_FUTURE" +
+      "_PRODUCT\020\032B7\n\024io.vegaprotocol.vegaZ\037code" +
+      ".vegaprotocol.io/vega/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

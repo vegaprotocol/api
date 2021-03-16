@@ -10268,7 +10268,7 @@ proto.vega.FinancialAmount.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {number} */ (reader.readUint64());
       msg.setAmount(value);
       break;
     case 2:
@@ -10306,7 +10306,7 @@ proto.vega.FinancialAmount.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAmount();
   if (f !== 0) {
-    writer.writeInt64(
+    writer.writeUint64(
       1,
       f
     );
@@ -10322,7 +10322,7 @@ proto.vega.FinancialAmount.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional int64 amount = 1;
+ * optional uint64 amount = 1;
  * @return {number}
  */
 proto.vega.FinancialAmount.prototype.getAmount = function() {
@@ -10443,7 +10443,7 @@ proto.vega.Transfer.deserializeBinaryFromReader = function(msg, reader) {
       msg.setType(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {number} */ (reader.readUint64());
       msg.setMinAmount(value);
       break;
     default:
@@ -10499,7 +10499,7 @@ proto.vega.Transfer.serializeBinaryToWriter = function(message, writer) {
   }
   f = message.getMinAmount();
   if (f !== 0) {
-    writer.writeInt64(
+    writer.writeUint64(
       4,
       f
     );
@@ -10581,7 +10581,7 @@ proto.vega.Transfer.prototype.setType = function(value) {
 
 
 /**
- * optional int64 min_amount = 4;
+ * optional uint64 min_amount = 4;
  * @return {number}
  */
 proto.vega.Transfer.prototype.getMinAmount = function() {

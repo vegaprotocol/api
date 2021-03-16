@@ -7657,13 +7657,13 @@ class FinancialAmount PROTOBUF_FINAL :
   std::string* _internal_mutable_asset();
   public:
 
-  // int64 amount = 1 [json_name = "amount"];
+  // uint64 amount = 1 [json_name = "amount"];
   void clear_amount();
-  ::PROTOBUF_NAMESPACE_ID::int64 amount() const;
-  void set_amount(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 amount() const;
+  void set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_amount() const;
-  void _internal_set_amount(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_amount() const;
+  void _internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.FinancialAmount)
@@ -7674,7 +7674,7 @@ class FinancialAmount PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr asset_;
-  ::PROTOBUF_NAMESPACE_ID::int64 amount_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -7831,13 +7831,13 @@ class Transfer PROTOBUF_FINAL :
       ::vega::FinancialAmount* amount);
   ::vega::FinancialAmount* unsafe_arena_release_amount();
 
-  // int64 min_amount = 4 [json_name = "minAmount"];
+  // uint64 min_amount = 4 [json_name = "minAmount"];
   void clear_min_amount();
-  ::PROTOBUF_NAMESPACE_ID::int64 min_amount() const;
-  void set_min_amount(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 min_amount() const;
+  void set_min_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_min_amount() const;
-  void _internal_set_min_amount(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_min_amount() const;
+  void _internal_set_min_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // .vega.TransferType type = 3 [json_name = "type"];
@@ -7858,7 +7858,7 @@ class Transfer PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr owner_;
   ::vega::FinancialAmount* amount_;
-  ::PROTOBUF_NAMESPACE_ID::int64 min_amount_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 min_amount_;
   int type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
@@ -18904,22 +18904,22 @@ inline void Account::set_type(::vega::AccountType value) {
 
 // FinancialAmount
 
-// int64 amount = 1 [json_name = "amount"];
+// uint64 amount = 1 [json_name = "amount"];
 inline void FinancialAmount::clear_amount() {
-  amount_ = PROTOBUF_LONGLONG(0);
+  amount_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 FinancialAmount::_internal_amount() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 FinancialAmount::_internal_amount() const {
   return amount_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 FinancialAmount::amount() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 FinancialAmount::amount() const {
   // @@protoc_insertion_point(field_get:vega.FinancialAmount.amount)
   return _internal_amount();
 }
-inline void FinancialAmount::_internal_set_amount(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void FinancialAmount::_internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
   amount_ = value;
 }
-inline void FinancialAmount::set_amount(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void FinancialAmount::set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_amount(value);
   // @@protoc_insertion_point(field_set:vega.FinancialAmount.amount)
 }
@@ -19153,22 +19153,22 @@ inline void Transfer::set_type(::vega::TransferType value) {
   // @@protoc_insertion_point(field_set:vega.Transfer.type)
 }
 
-// int64 min_amount = 4 [json_name = "minAmount"];
+// uint64 min_amount = 4 [json_name = "minAmount"];
 inline void Transfer::clear_min_amount() {
-  min_amount_ = PROTOBUF_LONGLONG(0);
+  min_amount_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Transfer::_internal_min_amount() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Transfer::_internal_min_amount() const {
   return min_amount_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Transfer::min_amount() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Transfer::min_amount() const {
   // @@protoc_insertion_point(field_get:vega.Transfer.min_amount)
   return _internal_min_amount();
 }
-inline void Transfer::_internal_set_min_amount(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void Transfer::_internal_set_min_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
   min_amount_ = value;
 }
-inline void Transfer::set_min_amount(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void Transfer::set_min_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_min_amount(value);
   // @@protoc_insertion_point(field_set:vega.Transfer.min_amount)
 }
