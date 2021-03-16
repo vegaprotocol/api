@@ -21,8 +21,6 @@ export function decodeTx(encodedTx: string) {
     const signedBundle = SignedBundle.deserializeBinary(buf);
     txArray = signedBundle.getTx_asB64();
   } catch (e) {
-    //@ts-ignore
-      console.log(e)
     throw ErrorGettingTransaction;
   }
 
@@ -30,8 +28,7 @@ export function decodeTx(encodedTx: string) {
   try {
     const rawTx = Transaction.deserializeBinary(txArray);
 
-    // @ts-ignore
-    txBuf = Buffer.from(rawTx.toObject().inputdata, "base64");
+    txBuf = Buffer.from(rawTx.getInputData_asB64(), "base64");
   } catch (e) {
     throw ErrorDeserializingTransaction;
   }

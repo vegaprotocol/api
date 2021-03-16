@@ -6,14 +6,16 @@ const encodedTx = `CvABCsABNDliOTk4MzEtMmRjYS00YzA1LThhZTAtN2I3MDA4YWYzN2M4QBIQM
 test('A raw encoded TX decodes', t => {
    const res = decodeTx(encodedTx)
 
-   t.equal(res.marketid, '2839D9B2329C9E70')
+   t.equal(res.marketId, '2839D9B2329C9E70', 'Decodes marketId correctly')
+   t.equal(res.partyId, '0fc936abc51dc949919ed8a56c934dfab1c151d5af1ab36ce7647c6f5a631788', 'Decodes partyId correctly')
+   t.equal(res.type, 1, 'Decodes the TX type')
    t.end()
 })
 
 test('A totally invalid transaction throws an error', t => {
    t.throws(() => {
        decodeTx('decode-this')
-   }, /Cannot decode signed bundle/)
+   }, /Cannot decode signed bundle/, 'Correctly throws a cannot decode error')
 
    t.end()
 })
@@ -21,7 +23,7 @@ test('A totally invalid transaction throws an error', t => {
 test('A more reasonable invalid signed transaction throws an error', t => {
    t.throws(() => {
        decodeTx(encodedTx.substring(20))
-   }, /Cannot decode signed bundle/)
+   }, /Cannot decode signed bundle/, 'Correctly throws a cannot decode error')
 
    t.end()
 })

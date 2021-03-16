@@ -15,15 +15,12 @@ function decodeTx(encodedTx) {
         txArray = signedBundle.getTx_asB64();
     }
     catch (e) {
-        //@ts-ignore
-        console.log(e);
         throw exports.ErrorGettingTransaction;
     }
     // Get the Vega TX from the signed bundle
     try {
         const rawTx = vega_pb_1.Transaction.deserializeBinary(txArray);
-        // @ts-ignore
-        txBuf = buffer_1.Buffer.from(rawTx.toObject().inputdata, "base64");
+        txBuf = buffer_1.Buffer.from(rawTx.getInputData_asB64(), "base64");
     }
     catch (e) {
         throw exports.ErrorDeserializingTransaction;
