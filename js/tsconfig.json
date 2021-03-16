@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "ES2016",
+    "lib": [
+      "es2020"
+    ],
+   "moduleResolution": "Node"
+  },
+  "include": [
+    "tx/**/*.ts"
+  ]
+}

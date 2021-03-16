@@ -72,7 +72,7 @@ def js_requires(files: List[str]) -> List[Tuple[str, str]]:
     return [(fn_to_js_varname(f), f) for f in files if f.endswith("_pb.js")]
 
 
-def js_module_exports(files: List[str]) -> str:
+def js_module_exports(files: List[str]) -> Dict[str, Any]:
     result: Dict[str, Any] = {}
     for f in files:
         if not f.endswith("_pb.js"):
@@ -91,9 +91,7 @@ def js_module_exports(files: List[str]) -> str:
 
             resultref = resultref[x]
 
-    return json.dumps(
-        result["_"]["generated"], indent=2, sort_keys=True
-    ).replace('"', "")
+    return result["_"]["generated"]
 
 
 def ts_exports(files: List[str]) -> List[Tuple[str, str]]:
@@ -114,20 +112,40 @@ def main():
     )
     env = jinja2.Environment(loader=jinja2.FileSystemLoader("."))
 
-    js_data = {
-        "js_requires": js_requires(files),
-        "js_module_exports": js_module_exports(files),
-    }
+    reqs = js_requires(files)
+    js_exp = js_module_exports(files)
+
+    # Add tx
+    reqs.append(["tx", "./tx"])
+    js_exp["tx"] = "tx"
+
     template = env.get_template("index.js.jinja2")
     with open("index.js", "w") as fh:
-        fh.write(template.render(js_data))
+        fh.write(
+            template.render(
+                {
+                    "js_requires": reqs,
+                    "js_module_exports": json.dumps(
+                        js_exp, indent=2, sort_keys=True
+                    ).replace('"', ""),
+                }
+            )
+        )
 
-    ts_data = {
-        "ts_exports": ts_exports(files),
-    }
+    ts_exp = ts_exports(files)
+
+    # Add tx
+    ts_exp.append(["tx", "./tx/index"])
+
     template = env.get_template("index.d.ts.jinja2")
     with open("index.d.ts", "w") as fh:
-        fh.write(template.render(ts_data))
+        fh.write(
+            template.render(
+                {
+                    "ts_exports": ts_exp,
+                }
+            )
+        )
 
 
 if __name__ == "__main__":

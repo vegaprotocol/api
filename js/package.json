@@ -2,9 +2,12 @@
   "name": "@vegaprotocol/vega-grpc",
   "version": "0.32.0",
   "description": "A gRPC client for Vega Protocol",
-  "main": "index.js",
+  "main": "bundle/index.js",
   "types": "./index.d.ts",
   "scripts": {
+    "build": "npm run lint && npm run build:ts && npm run build:browser",
+    "build:ts": "tsc",
+    "build:browser": "browserify -p tinyify index.js > bundle/index.js",
     "lint": "npm run lint:javascript && npm run lint:typescript",
     "lint:javascript": "eslint generated/**/*.js",
     "lint:typescript": "eslint generated/**/*.d.ts",
@@ -26,14 +29,19 @@
   },
   "homepage": "https://github.com/vegaprotocol/api#readme",
   "devDependencies": {
+    "@types/google-protobuf": "3.7.4",
+    "@types/node": "14.14.21",
     "@typescript-eslint/eslint-plugin": "4.18.0",
     "@typescript-eslint/parser": "4.18.0",
+    "browserify": "17.0.0",
     "eslint": "7.22.0",
     "google-protobuf": "3.15.6",
     "tap-dot": "2.0.0",
     "tape": "5.2.2",
+    "tinyify": "3.0.0",
     "ts-protoc-gen": "0.14.0",
     "typescript": "4.2.3",
+    "uglify-js": "3.12.4",
     "xmlhttprequest": "1.8.0"
   }
 }

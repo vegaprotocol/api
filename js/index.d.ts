@@ -33,3 +33,4 @@ export * as tm_replay_service from "./generated/tm/replay_pb_service";
 export * as vega_grpc from "./generated/vega_grpc_pb";
 export * as vega from "./generated/vega_pb";
 export * as vega_service from "./generated/vega_pb_service";
+export * as tx from "./tx/index";

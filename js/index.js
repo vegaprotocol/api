@@ -11,6 +11,7 @@ var oracles_v1_oracle_data = require('./generated/oracles/v1/oracle_data_pb.js')
 var oracles_v1_oracle_spec = require('./generated/oracles/v1/oracle_spec_pb.js')
 var tm_replay = require('./generated/tm/replay_pb.js')
 var vega = require('./generated/vega_pb.js')
+var tx = require('./tx')
 
 module.exports = {
   api: {
@@ -37,5 +38,6 @@ module.exports = {
   tm: {
     replay: tm_replay
   },
+  tx: tx,
   vega: vega
 }
